@@ -56,38 +56,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* _setupProjectile(::Actor* trident, ::ItemStack item, bool creative) const;
+    MCNAPI ::Actor* _setupProjectile(::Actor* trident, ::ItemStack item, bool creative) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCFOLD int $getEnchantValue() const;
+    MCNAPI int $getEnchantValue() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCFOLD short $getMaxDamage() const;
+    MCNAPI short $getMaxDamage() const;
 
-    MCFOLD int $getAttackDamage() const;
+    MCNAPI int $getAttackDamage() const;
 
-    MCFOLD bool $canDestroyInCreative() const;
+    MCNAPI bool $canDestroyInCreative() const;
 
 
     // NOLINTEND

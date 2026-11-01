@@ -36,33 +36,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OpenAndCloseRealmCommandsFacet(
+    MCNAPI explicit OpenAndCloseRealmCommandsFacet(
         ::std::shared_ptr<::Realms::OpenAndCloseRealmManager> openAndCloseRealmManager
     );
 
-    MCAPI void closeRealm(int64 realmId);
+    MCNAPI void closeRealm(int64 realmId);
 
-    MCAPI ::Realms::OpenAndCloseRealmManager::RequestQueueStatus getStatus() const;
+    MCNAPI ::Realms::OpenAndCloseRealmManager::RequestQueueStatus getStatus() const;
 
-    MCAPI void openRealm(int64 realmId);
+    MCNAPI void openRealm(int64 realmId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::OpenAndCloseRealmManager> openAndCloseRealmManager);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::OpenAndCloseRealmManager> openAndCloseRealmManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

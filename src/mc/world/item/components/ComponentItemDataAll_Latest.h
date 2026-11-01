@@ -24,14 +24,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest&&);
+    MCNAPI ComponentItemDataAll_Latest(::ComponentItemDataAll_Latest&&);
 
-    MCAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest const&);
+    MCNAPI ::ComponentItemDataAll_Latest& operator=(::ComponentItemDataAll_Latest const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ComponentItemDataAll_Latest&&);
+    MCNAPI void* $ctor(::ComponentItemDataAll_Latest&&);
     // NOLINTEND
 };

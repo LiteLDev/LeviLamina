@@ -34,14 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameCorePlayerInput(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
+    MCNAPI GameCorePlayerInput(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
 
-    MCAPI bool tryAddHardwareDeviceMapping(::GameInput::v2::IGameInputDevice* device);
+    MCNAPI bool tryAddHardwareDeviceMapping(::GameInput::v2::IGameInputDevice* device);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
+    MCNAPI void* $ctor(::GameInput::v2::IGameInputDevice* device, ::Social::XsapiHandle<::XUser*> mappedUser);
     // NOLINTEND
 };

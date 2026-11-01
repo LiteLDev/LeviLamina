@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void processReplicationForPlayers(
+    MCNAPI void processReplicationForPlayers(
         ::std::vector<::WeakEntityRef> const& playerList,
         ::Level const&                        level,
         ::ChunkSource&                        chunkSource

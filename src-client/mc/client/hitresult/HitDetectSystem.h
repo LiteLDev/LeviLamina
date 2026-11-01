@@ -62,25 +62,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HitDetectSystem(::ClientHitDetectCoordinator& eventCoordinator);
+    MCNAPI explicit HitDetectSystem(::ClientHitDetectCoordinator& eventCoordinator);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientHitDetectCoordinator& eventCoordinator);
+    MCNAPI void* $ctor(::ClientHitDetectCoordinator& eventCoordinator);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $evaluate(::IClientInstance& client, float a);
+    MCNAPI void $evaluate(::IClientInstance& client, float a);
 
-    MCAPI void $_evaluateType(
+    MCNAPI void $_evaluateType(
         ::IClientInstance& client,
         float              a,
         ::Actor&           cameraEntity,

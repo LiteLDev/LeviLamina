@@ -79,43 +79,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSystemBeforeEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    MCNAPI ScriptSystemBeforeEvents(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptSystemBeforeEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI void onBeforeModuleShutdown(
+    MCNAPI void onBeforeModuleShutdown(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleShutdownBeforeEvent> eventData
     );
 
-    MCAPI void onBeforeModuleStartup(
+    MCNAPI void onBeforeModuleStartup(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptModuleStartupBeforeEvent> eventData
     );
 
-    MCAPI void onBeforeWatchdogTerminate(
+    MCNAPI void onBeforeWatchdogTerminate(
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWatchdogTerminateBeforeEvent>
             beforeWatchdogTerminateEvent
     );
 
-    MCAPI ~ScriptSystemBeforeEvents();
+    MCNAPI ~ScriptSystemBeforeEvents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::ServerLevel*> level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

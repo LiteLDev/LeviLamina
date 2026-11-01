@@ -29,11 +29,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
 
-    MCAPI static ::Scripting::ClassBinding bindV1();
+    MCNAPI static ::Scripting::ClassBinding bindV1();
     // NOLINTEND
 };
 

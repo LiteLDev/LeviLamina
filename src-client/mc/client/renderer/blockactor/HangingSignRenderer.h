@@ -62,6 +62,6 @@ public:
 
     MCAPI float $_zTextOffset() const;
 
-    MCFOLD int $_getSignWidth() const;
+    MCNAPI int $_getSignWidth() const;
     // NOLINTEND
 };

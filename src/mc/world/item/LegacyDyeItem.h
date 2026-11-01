@@ -21,7 +21,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isDye() const;
+    MCNAPI bool $isDye() const;
 
 
     // NOLINTEND
@@ -29,6 +29,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

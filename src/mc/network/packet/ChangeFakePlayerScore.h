@@ -25,7 +25,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChangeFakePlayerScore(::ChangeFakePlayerScore const&);
 
-    MCAPI bool operator==(::ChangeFakePlayerScore const&) const;
+    MCNAPI bool operator==(::ChangeFakePlayerScore const&) const;
     // NOLINTEND
 
 public:

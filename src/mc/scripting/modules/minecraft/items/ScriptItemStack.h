@@ -61,86 +61,86 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI ScriptItemStack(::ScriptModuleMinecraft::ScriptItemStack const&);
 #endif
 
-    MCAPI ScriptItemStack(
+    MCNAPI ScriptItemStack(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
         int                                                                                  amount,
         int                                                                                  data
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
     _validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value
     ) const;
 
-    MCAPI ::std::vector<::std::string> getCanDestroy() const;
+    MCNAPI ::std::vector<::std::string> getCanDestroy() const;
 
-    MCAPI ::std::vector<::std::string> getCanPlaceOn() const;
+    MCNAPI ::std::vector<::std::string> getCanPlaceOn() const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components,
         ::std::string_view                                               id,
         bool                                                             includeCustom
     );
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemComponent>>
     getComponents(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents> components, bool includeCustom);
 
-    MCAPI ::std::vector<::std::string> getLore() const;
+    MCNAPI ::std::vector<::std::string> getLore() const;
 
-    MCAPI ::std::vector<::std::string> getTags() const;
+    MCNAPI ::std::vector<::std::string> getTags() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemStack& operator=(::ScriptModuleMinecraft::ScriptItemStack const&);
 
-    MCAPI void setAmountV010(int amount);
+    MCNAPI void setAmountV010(int amount);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setCanDestroy(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setCanPlaceOn(::std::optional<::std::vector<::std::string>> const& blockIdentifiers);
 
-    MCAPI void setData(int data);
+    MCNAPI void setData(int data);
 
-    MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError, ::Scripting::UnsupportedAPIError>
     setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& optionalValue
     );
 
-    MCAPI ~ScriptItemStack();
+    MCNAPI ~ScriptItemStack();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind(
+    MCNAPI static ::Scripting::ClassBinding bind(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemComponents>& itemComponents,
         ::Scripting::Version const&                                       version
     );
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>
     createHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>
     createOptionalHandle(::Scripting::WeakLifetimeScope scope, ::ItemStackBase const& item);
 
-    MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface>
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface>
     createRawLoreVector(::std::vector<::std::string> lore);
 
-    MCAPI static ::std::optional<::std::vector<::std::string>> tryCreateLoreVector(
+    MCNAPI static ::std::optional<::std::vector<::std::string>> tryCreateLoreVector(
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
                        loreVariantList,
         ::std::string& errorMessage
     );
 
-    MCAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError>
+    MCNAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError>
     validateLoreLength(::std::vector<::std::string> const& loreList);
     // NOLINTEND
 
@@ -148,10 +148,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemStack const&);
 #endif
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope&                                                      scope,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemType> const& itemTypeHandle,
         int                                                                                  amount,
@@ -162,7 +162,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

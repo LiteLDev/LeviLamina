@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplorationMapData(
+    MCNAPI ExplorationMapData(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
@@ -37,13 +37,13 @@ public:
         int                                    searchRadiusCells
     );
 
-    MCAPI ~ExplorationMapData();
+    MCNAPI ~ExplorationMapData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
@@ -57,6 +57,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -46,10 +46,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _add(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output, ::EffectDuration duration) const;
 
-    MCAPI void _clearEffect(
+    MCNAPI void _clearEffect(
         ::CommandSelectorResults<::Actor>& targets,
         ::CommandOutput&                   output,
         ::MobEffect const&                 effect,
@@ -60,7 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output);
+    MCNAPI static void _clearAllEffects(::CommandSelectorResults<::Actor>& targets, ::CommandOutput& output);
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -68,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

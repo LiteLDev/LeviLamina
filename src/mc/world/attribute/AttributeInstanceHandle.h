@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::AttributeInstanceConstRef getInstance(::BaseAttributeMap const& map) const;
+    MCNAPI ::AttributeInstanceConstRef getInstance(::BaseAttributeMap const& map) const;
     // NOLINTEND
 };

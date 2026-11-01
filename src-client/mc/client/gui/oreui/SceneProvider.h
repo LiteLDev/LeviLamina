@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SceneProvider(
+    MCNAPI SceneProvider(
         ::std::unique_ptr<::OreUI::FacetRegistryFactory>           facetRegistryFactory,
         ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory> bindingRegistryFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
@@ -59,17 +59,17 @@ public:
         ::OreUI::FacetRegistryLocation                      location
     ) const;
 
-    MCAPI void preCacheGameplayViews(::OreUI::Router& router);
+    MCNAPI void preCacheGameplayViews(::OreUI::Router& router);
 
-    MCAPI void preCacheOutOfGameViews(::OreUI::Router& router);
+    MCNAPI void preCacheOutOfGameViews(::OreUI::Router& router);
 
-    MCAPI ~SceneProvider();
+    MCNAPI ~SceneProvider();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::OreUI::FacetRegistryFactory>           facetRegistryFactory,
         ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory> bindingRegistryFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
@@ -81,7 +81,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

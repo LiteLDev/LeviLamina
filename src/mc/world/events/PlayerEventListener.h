@@ -247,7 +247,7 @@ public:
 
     MCFOLD ::EventResult $onPlayerEquippedArmor(::Player& player, ::ItemDescriptor const& item);
 
-    MCFOLD ::EventResult
+    MCNAPI ::EventResult
     $onPlayerEnchantedItem(::Player& player, ::ItemStack const& item, ::ItemEnchants const& enchants);
 
     MCFOLD ::EventResult $onPlayerNamedItem(::Player& player, ::ItemDescriptor const& item);

@@ -50,39 +50,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcSceneDialogueData(::WeakEntityRef npc, ::std::string const& sceneName);
+    MCNAPI NpcSceneDialogueData(::WeakEntityRef npc, ::std::string const& sceneName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef npc, ::std::string const& sceneName);
+    MCNAPI void* $ctor(::WeakEntityRef npc, ::std::string const& sceneName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getDialogueText() const;
+    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCFOLD ::std::string const& $getSceneName() const;
+    MCNAPI ::std::string const& $getSceneName() const;
 
-    MCAPI ::std::string const& $getNameText() const;
+    MCNAPI ::std::string const& $getNameText() const;
 
-    MCAPI ::std::string const& $getNameRawText() const;
+    MCNAPI ::std::string const& $getNameRawText() const;
 
-    MCFOLD ::npc::ActionContainer* $getActionsContainer();
+    MCNAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
+    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::ActorUniqueID $getActorUniqueID();
-#else // LL_PLAT_C
-    MCFOLD ::ActorUniqueID $getActorUniqueID();
-#endif
+    MCNAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCFOLD ::Actor* $getActor();
+    MCNAPI ::Actor* $getActor();
 
-    MCFOLD ::Actor const* $getActor() const;
+    MCNAPI ::Actor const* $getActor() const;
 
 
     // NOLINTEND
@@ -90,6 +86,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

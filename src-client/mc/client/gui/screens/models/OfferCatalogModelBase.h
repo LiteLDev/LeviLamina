@@ -58,22 +58,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint $getNumOfferModels() const;
+    MCNAPI uint $getNumOfferModels() const;
 
-    MCAPI uint $getNumActiveOfferModels() const;
+    MCNAPI uint $getNumActiveOfferModels() const;
 
-    MCAPI ::PlatformOfferModel& $getOfferModel(int index);
+    MCNAPI ::PlatformOfferModel& $getOfferModel(int index);
 
-    MCAPI ::PlatformOfferModel& $getActiveOfferModel(int index);
+    MCNAPI ::PlatformOfferModel& $getActiveOfferModel(int index);
 
-    MCAPI ::PlatformOfferModel* $findOfferModelBySku(::ProductSku const& sku);
+    MCNAPI ::PlatformOfferModel* $findOfferModelBySku(::ProductSku const& sku);
 
-    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(::std::string const& coinsNeeded);
+    MCNAPI ::PlatformOfferModel* $findOfferModelByMinCoins(::std::string const& coinsNeeded);
 
-    MCAPI ::PlatformOfferModel* $findOfferModelByMinCoins(int const coinsNeeded);
+    MCNAPI ::PlatformOfferModel* $findOfferModelByMinCoins(int const coinsNeeded);
 
-    MCAPI ::PlatformOfferModel* $_findActiveOfferModelByProductId(::std::string const& productId);
+    MCNAPI ::PlatformOfferModel* $_findActiveOfferModelByProductId(::std::string const& productId);
 
-    MCAPI ::PlatformOfferModel* $_findOfferModelByProductId(::std::string const& productId);
+    MCNAPI ::PlatformOfferModel* $_findOfferModelByProductId(::std::string const& productId);
     // NOLINTEND
 };

@@ -27,9 +27,9 @@ public:
     // NOLINTBEGIN
     MCAPI void addAction(::InventoryAction const& action);
 
-    MCAPI void addItemToContent(::ItemStack const& item, int count);
+    MCNAPI void addItemToContent(::ItemStack const& item, int count);
 
-    MCAPI void forceBalanceTransaction();
+    MCNAPI void forceBalanceTransaction();
 
     MCAPI ::std::vector<::InventoryAction> const& getActions(::InventorySource const& source) const;
 
@@ -39,15 +39,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkTransactionItemsMatch(::ItemStack const& serverItem, ::ItemStack const& clientItem);
+    MCNAPI static bool checkTransactionItemsMatch(::ItemStack const& serverItem, ::ItemStack const& clientItem);
 
-    MCAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
+    MCNAPI static ::std::string const getInventoryTransactionErrorName(::InventoryTransactionError type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::InventoryTransactionError, ::std::string> const&
     inventoryTransactionErrorMap();
     // NOLINTEND
 

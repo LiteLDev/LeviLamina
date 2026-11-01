@@ -53,9 +53,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::LevelChunkTimingData cloneAllTimingData() const;
+    MCNAPI ::Bedrock::LevelChunkTimingData cloneAllTimingData() const;
 
-    MCAPI void onStateChange(::ChunkState from, ::ChunkState to);
+    MCNAPI void onStateChange(::ChunkState from, ::ChunkState to);
     // NOLINTEND
 };
 

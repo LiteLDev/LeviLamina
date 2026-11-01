@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Strider(
+    MCNAPI Strider(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -74,7 +74,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -84,9 +84,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
 
     // NOLINTEND
@@ -94,6 +94,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

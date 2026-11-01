@@ -18,6 +18,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion getLatestCompatibleSemVersion(::SemVersion const& currentGameSemVersion, int version);
+    MCNAPI static ::SemVersion getLatestCompatibleSemVersion(::SemVersion const& currentGameSemVersion, int version);
     // NOLINTEND
 };

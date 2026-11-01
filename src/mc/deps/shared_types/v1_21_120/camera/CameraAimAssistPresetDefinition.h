@@ -34,39 +34,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
 
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
 
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const& rhs) const;
 
-    MCAPI ~CameraAimAssistPresetDefinition();
+    MCNAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

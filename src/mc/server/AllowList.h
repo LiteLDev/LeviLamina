@@ -40,10 +40,10 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit AllowList(::std::function<void()> syncCallback);
+    MCNAPI explicit AllowList(::std::function<void()> syncCallback);
 #endif
 
-    MCAPI bool isAllowed(
+    MCNAPI bool isAllowed(
         ::mce::UUID const& uuid,
         ::std::string_view xuid,
         ::std::string_view psnId,
@@ -51,9 +51,9 @@ public:
     ) const;
 
 #ifdef LL_PLAT_S
-    MCAPI bool removeByName(::std::string_view name);
+    MCNAPI bool removeByName(::std::string_view name);
 
-    MCAPI bool removeEntry(
+    MCNAPI bool removeEntry(
         ::std::string_view name,
         ::std::string_view xuid,
         ::std::string_view psnId,
@@ -61,7 +61,7 @@ public:
     );
 #endif
 
-    MCAPI bool tryUpdateEntries(
+    MCNAPI bool tryUpdateEntries(
         ::std::string_view name,
         ::std::string_view xuid,
         ::std::string_view psnId,
@@ -74,16 +74,16 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::function<void()> syncCallback);
+    MCNAPI void* $ctor(::std::function<void()> syncCallback);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Json::Value $serialize() const;
+    MCNAPI ::Json::Value $serialize() const;
 
-    MCAPI void $deserialize(::Json::Value const& root);
+    MCNAPI void $deserialize(::Json::Value const& root);
 
 
     // NOLINTEND

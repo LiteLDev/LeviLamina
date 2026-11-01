@@ -46,25 +46,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DebugScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit DebugScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCFOLD void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 
 public:

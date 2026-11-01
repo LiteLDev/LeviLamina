@@ -50,43 +50,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptRawMessageInterface(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    MCNAPI ScriptRawMessageInterface(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
-    MCAPI void buildJsonObject(::Json::Value& val) const;
+    MCNAPI void buildJsonObject(::Json::Value& val) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface&& other);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
+    MCNAPI ::ScriptModuleMinecraft::ScriptRawMessageInterface&
     operator=(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
 
-    MCAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
+    MCNAPI bool operator==(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other) const;
 
-    MCAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    MCNAPI ::Scripting::Result<::Json::Value, ::ScriptModuleMinecraft::ScriptRawMessageError>
     resolveAsJson(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError>
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError>
     resolveAsJsonString(::Actor& recipient, ::CurrentCmdVersion commandVersion) const;
 
-    MCAPI ::Json::Value toJson() const;
+    MCNAPI ::Json::Value toJson() const;
 
-    MCAPI ::Json::Value toRawTextJson() const;
+    MCNAPI ::Json::Value toRawTextJson() const;
 
-    MCAPI ::std::string toString() const;
+    MCNAPI ::std::string toString() const;
 
-    MCAPI ~ScriptRawMessageInterface();
+    MCNAPI ~ScriptRawMessageInterface();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(::Json::Value const& json);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromJSON(::Json::Value const& json);
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromString(::std::string const& str);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptRawMessageInterface fromString(::std::string const& str);
 
-    MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptRawMessageInterface> rawTextStringsToRawText(
         ::std::vector<::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface>> const&
             rawTextWithString
     );
@@ -95,13 +95,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptRawMessageInterface const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

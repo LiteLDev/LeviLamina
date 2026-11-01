@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getAmplifier() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getDuration() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDuration() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V1() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getTypeId_V2() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

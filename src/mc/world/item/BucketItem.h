@@ -100,7 +100,7 @@ public:
         uchar              face
     ) const;
 
-    MCAPI bool readBucketEntitySaveData(
+    MCNAPI bool readBucketEntitySaveData(
         ::BlockSource&        region,
         ::Actor*              placer,
         ::BlockPos            pos,
@@ -111,52 +111,52 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material);
+    MCNAPI static void _broadcastBucketFillSound(::BlockSource& region, ::Actor& entity, ::Material const& material);
 
-    MCAPI static void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity);
+    MCNAPI static void _replaceWithEmptyBucket(::ItemStack& instance, ::Actor& entity);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
+    MCNAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCAPI bool $canUseOnSimTick() const;
+    MCNAPI bool $canUseOnSimTick() const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
+    MCNAPI void $releaseUsing(::ItemStack& inoutInstance, ::Player* player, int durationLeft) const;
 
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCFOLD bool $uniqueAuxValues() const;
+    MCNAPI bool $uniqueAuxValues() const;
 
-    MCFOLD bool $isBucket() const;
+    MCNAPI bool $isBucket() const;
 
     MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
-    MCAPI bool $validFishInteraction(int) const;
+    MCNAPI bool $validFishInteraction(int) const;
 
-    MCAPI ::Brightness $getLightEmission(int) const;
+    MCNAPI ::Brightness $getLightEmission(int) const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI bool $isDestructive(int auxValue) const;
+    MCNAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -171,6 +171,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -51,13 +51,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Slot();
+        MCNAPI ~Slot();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -71,13 +71,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PendingSubscribe();
+        MCNAPI ~PendingSubscribe();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,15 +99,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void processTick(uint currentTick, ::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void processTick(uint currentTick, ::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
+    MCNAPI uint scheduleInterval(::Scripting::Closure<void()>&& closure, uint interval, uint currentTick);
 
-    MCAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
+    MCNAPI uint scheduleTimeout(::Scripting::Closure<void()>&& closure, uint delay, uint currentTick);
 
-    MCAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
+    MCNAPI uint scheduleTimeout(::std::function<void()> function, uint delay, uint currentTick);
 
-    MCAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
+    MCNAPI uint scheduleTimeoutSafe(::Scripting::Closure<void()>&& closure, uint currentTick);
     // NOLINTEND
 };
 

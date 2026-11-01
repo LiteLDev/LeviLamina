@@ -58,25 +58,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
+    MCNAPI void $setMapping(
         ::InputEventQueue&      eventQueue,
         ::BindingFactory const& bindingFactory,
         ::InputMapping const&   inputMapping,
         int                     controllerId
     );
 
-    MCAPI void $clearMapping(int controllerId);
+    MCNAPI void $clearMapping(int controllerId);
 
-    MCFOLD void $clearInputDeviceQueue();
+    MCNAPI void $clearInputDeviceQueue();
 
-    MCFOLD void $clearInputDeviceQueueForFrame();
+    MCNAPI void $clearInputDeviceQueueForFrame();
 
-    MCFOLD bool
+    MCNAPI bool
     $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
-    MCFOLD ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCAPI void $changeControllerId(int oldId, int newId);
+    MCNAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND
 
 public:

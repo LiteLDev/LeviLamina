@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
+    MCNAPI ::Scripting::Result_deprecated<::std::string> _prependVariable(::std::string const& variableName);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRBGA_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setColorRBG_V010(::std::string const& variableName, ::ScriptModuleMinecraft::ScriptColor const& color);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

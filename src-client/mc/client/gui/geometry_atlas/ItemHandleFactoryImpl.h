@@ -35,13 +35,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<int> _resolveBlockIDAux(::BlockType const& blockType) const;
+    MCNAPI ::std::optional<int> _resolveBlockIDAux(::BlockType const& blockType) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemHandle>
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::IItemHandle>
     $createItem(::std::string_view name, ::std::unique_ptr<::PropertyBag> bag) const;
     // NOLINTEND
 

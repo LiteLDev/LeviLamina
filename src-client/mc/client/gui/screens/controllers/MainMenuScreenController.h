@@ -51,29 +51,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MainMenuScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
+    MCNAPI MainMenuScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
 
-    MCAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
+    MCNAPI ::std::string _checkTextEditEventForProfanityAndOpenWarning(::TextEditScreenEventData const& textEditEvent);
 
-    MCAPI void _displayWorldConversionErrorModalDialog(::Legacy::ImportStatus status);
+    MCNAPI void _displayWorldConversionErrorModalDialog(::Legacy::ImportStatus status);
 
-    MCAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
+    MCNAPI ::ui::ViewRequest _startLocalWorldSubRoutine(
         ::LocalWorldInfo const&                        world,
         ::DlcUIWrapper&                                dlcUIWrapper,
         ::std::function<void(::LocalWorldInfo const&)> startLocalWorldCallback
     );
 
-    MCAPI void _verifySkinApprovedBeforeJoin(::std::function<void()> const& joinCallback);
+    MCNAPI void _verifySkinApprovedBeforeJoin(::std::function<void()> const& joinCallback);
 
-    MCAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
+    MCNAPI ::ui::ViewRequest attemptUserSignIn(::std::function<void()> adHocCallback);
 
-    MCAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void confirmationNoCrossPlatformMultiplayerDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void confirmationNoCrossPlatformMultiplayerSkinDialog(::std::function<void()> callback);
+    MCNAPI void confirmationNoCrossPlatformMultiplayerSkinDialog(::std::function<void()> callback);
 
-    MCAPI void showInvalidCrossPlatformMultiplayerSkinModal();
+    MCNAPI void showInvalidCrossPlatformMultiplayerSkinModal();
 
-    MCAPI void startRealm(
+    MCNAPI void startRealm(
         ::IMinecraftEventing::RealmConnectionFlow fromFlow,
         ::Realms::World&                          world,
         ::std::function<void(::IMinecraftEventing::RealmConnectionResult, ::std::optional<::Realms::FailureReason>)>
@@ -86,19 +86,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::ScreenExitBehavior exitBehavior);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

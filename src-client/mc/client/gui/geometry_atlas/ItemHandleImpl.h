@@ -43,27 +43,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemHandleImpl(::GeometryAtlas::ItemHandleData&& data);
+    MCNAPI explicit ItemHandleImpl(::GeometryAtlas::ItemHandleData&& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryAtlas::ItemHandleData&& data);
+    MCNAPI void* $ctor(::GeometryAtlas::ItemHandleData&& data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isAnimated() const;
+    MCNAPI bool $isAnimated() const;
 
-    MCFOLD uint64 $hash() const;
+    MCNAPI uint64 $hash() const;
 
-    MCAPI void $visitItem(
+    MCNAPI void $visitItem(
         ::brstd::function_ref<void(::InventoryItemRenderer&) const, void(::InventoryItemRenderer&)> visitor
     ) const;
 
-    MCFOLD ::PropertyBag const& $getBag() const;
+    MCNAPI ::PropertyBag const& $getBag() const;
     // NOLINTEND
 
 public:

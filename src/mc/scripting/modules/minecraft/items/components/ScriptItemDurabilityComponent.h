@@ -18,9 +18,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
+    MCNAPI ::Scripting::Result_deprecated<int> getCurrentDamage();
 
-    MCAPI ::Scripting::Result_deprecated<int> getMaxDurability();
+    MCNAPI ::Scripting::Result_deprecated<int> getMaxDurability();
     // NOLINTEND
 };
 

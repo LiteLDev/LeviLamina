@@ -37,13 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addResultItem(::ItemStack const& resultItem);
+    MCNAPI void addResultItem(::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LabTableReaction>
+    MCNAPI static ::std::unique_ptr<::LabTableReaction>
     createReaction(::LabTableReactionType type, ::BlockPos const& pos, bool isClientSide);
     // NOLINTEND
 };

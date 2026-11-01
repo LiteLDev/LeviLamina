@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseScriptBlockLiquidContainerComponentV010(
+    MCNAPI BaseScriptBlockLiquidContainerComponentV010(
         ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&
     );
     // NOLINTEND
@@ -49,22 +49,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
+    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
+    MCNAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

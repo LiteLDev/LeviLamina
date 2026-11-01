@@ -41,19 +41,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeveledConstraint(::StructureTemplate& structure, int groundLevel);
+    MCNAPI LeveledConstraint(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
+    MCNAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(
+    MCNAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
         ::Rotation const&          structureRot,

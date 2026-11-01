@@ -10,7 +10,7 @@ struct TerrainLayer;
 namespace RenderChunkSorterProps {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<::TerrainLayer const*[]> sBlockToTerrainLayerMap();
+MCNAPI ::std::add_lvalue_reference_t<::TerrainLayer const*[]> sBlockToTerrainLayerMap();
 // NOLINTEND
 
 } // namespace RenderChunkSorterProps

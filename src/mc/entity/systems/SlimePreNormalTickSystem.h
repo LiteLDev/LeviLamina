@@ -33,13 +33,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doSlimePreNormalTickSystem(
+    MCNAPI static void _doSlimePreNormalTickSystem(
         ::StrictEntityContext&                                            context,
         ::ActorOwnerComponent&                                            actorOwnerComponent,
         ::Optional<::OnGroundFlagComponent const>                         onGround,
         ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> const& mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -66,33 +66,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getDebugSkinSpeedMultiplier();
+    MCNAPI float $getDebugSkinSpeedMultiplier();
 
-    MCFOLD bool $shouldDisableRenderMainMenuPaperDollAnimation();
+    MCNAPI bool $shouldDisableRenderMainMenuPaperDollAnimation();
 
-    MCAPI ::MatrixStack& $getWorldMatrixStack();
+    MCNAPI ::MatrixStack& $getWorldMatrixStack();
 
-    MCAPI float $getLegacyGuiOffsetY(float screenScale);
+    MCNAPI float $getLegacyGuiOffsetY(float screenScale);
 
-    MCAPI void $renderGui(
+    MCNAPI void $renderGui(
         ::HashedString const&                rendererName,
         ::ActorRenderData&                   data,
         ::OffscreenCaptureDescription const* capture
     );
 
-    MCAPI ::std::optional<::std::string> $getCoCoEntityIdentifier(::std::string const& pieceId);
+    MCNAPI ::std::optional<::std::string> $getCoCoEntityIdentifier(::std::string const& pieceId);
 
-    MCAPI ::ActorRenderDispatcher* $getActorRenderDispatcher();
+    MCNAPI ::ActorRenderDispatcher* $getActorRenderDispatcher();
 
-    MCAPI ::MinecraftGameplayGraphicsResources& $getGameplayGraphicsResources();
+    MCNAPI ::MinecraftGameplayGraphicsResources& $getGameplayGraphicsResources();
 
-    MCAPI float $getLastTimestamp();
+    MCNAPI float $getLastTimestamp();
 
-    MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
+    MCNAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
 
-    MCAPI ::SubClientId $getClientSubId();
+    MCNAPI ::SubClientId $getClientSubId();
 
-    MCAPI ::std::optional<::AABB> $getDefaultPoseBounds(::HashedString const& rendererName);
+    MCNAPI ::std::optional<::AABB> $getDefaultPoseBounds(::HashedString const& rendererName);
     // NOLINTEND
 
 public:

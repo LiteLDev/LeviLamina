@@ -27,24 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleData(::ActorSpawnRuleData const&);
+    MCNAPI ActorSpawnRuleData(::ActorSpawnRuleData const&);
 
-    MCAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData&&);
+    MCNAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData&&);
 
-    MCAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData const&);
+    MCNAPI ::ActorSpawnRuleData& operator=(::ActorSpawnRuleData const&);
 
-    MCAPI ~ActorSpawnRuleData();
+    MCNAPI ~ActorSpawnRuleData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorSpawnRuleData const&);
+    MCNAPI void* $ctor(::ActorSpawnRuleData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

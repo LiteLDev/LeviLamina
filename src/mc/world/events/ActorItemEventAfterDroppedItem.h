@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorItemEventAfterDroppedItem();
+    MCNAPI ~ActorItemEventAfterDroppedItem();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

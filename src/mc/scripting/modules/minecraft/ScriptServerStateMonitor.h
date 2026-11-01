@@ -42,29 +42,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
+    MCNAPI explicit ScriptServerStateMonitor(::ServerScriptManagerEvents& events);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerScriptManagerEvents& events);
+    MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_onReload();
+    MCNAPI void $_onReload();
 
-    MCFOLD void $_onScriptInitializationComplete();
+    MCNAPI void $_onScriptInitializationComplete();
 
-    MCFOLD void $_onScriptModuleStartupComplete();
+    MCNAPI void $_onScriptModuleStartupComplete();
 
 
     // NOLINTEND

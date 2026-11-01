@@ -52,16 +52,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _displayLinkErrorModal(::std::string const& title, ::std::string const& body);
+    MCNAPI void _displayLinkErrorModal(::std::string const& title, ::std::string const& body);
 
-    MCAPI void _updateInviteLink(::Realms::InviteLink tempLink);
+    MCNAPI void _updateInviteLink(::Realms::InviteLink tempLink);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD bool $_doesScreenHaveExitBehavior() const;
+    MCNAPI bool $_doesScreenHaveExitBehavior() const;
     // NOLINTEND
 };

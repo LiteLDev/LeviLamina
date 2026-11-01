@@ -12,6 +12,6 @@ class CopperGolemStatueBlockActor {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
+    MCNAPI static ::std::unique_ptr<::SerializedActorBlockActor> create(::BlockPos const& pos);
     // NOLINTEND
 };

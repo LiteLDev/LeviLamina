@@ -19,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::Actor const&, ::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::Actor const&, ::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void convertFromLegacyData(::CompoundTag const& tag, ::CompoundTag& outTag);
+    MCNAPI static void convertFromLegacyData(::CompoundTag const& tag, ::CompoundTag& outTag);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& LEGACY_FIRE_TAG();
+    MCNAPI static ::std::string const& LEGACY_FIRE_TAG();
 
-    MCAPI static ::std::string const& ON_FIRE_TAG();
+    MCNAPI static ::std::string const& ON_FIRE_TAG();
     // NOLINTEND
 };

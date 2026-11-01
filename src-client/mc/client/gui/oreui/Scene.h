@@ -258,7 +258,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateRouteAndRouteMode(
+    MCNAPI void _updateRouteAndRouteMode(
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
@@ -267,191 +267,191 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCFOLD void $init(::ScreenSizeData const&);
+    MCNAPI void $init(::ScreenSizeData const&);
 
-    MCAPI void $setSize(::ScreenSizeData const& screenSizeData);
+    MCNAPI void $setSize(::ScreenSizeData const& screenSizeData);
 
-    MCFOLD void $onSetKeyboardHeight(float);
+    MCNAPI void $onSetKeyboardHeight(float);
 
-    MCFOLD ::std::vector<::RectangleArea> $getInputAreas() const;
+    MCNAPI ::std::vector<::RectangleArea> $getInputAreas() const;
 
-    MCFOLD void $onInternetUpdate();
+    MCNAPI void $onInternetUpdate();
 
-    MCFOLD void $onFocusGained();
+    MCNAPI void $onFocusGained();
 
-    MCAPI void $onFocusLost();
+    MCNAPI void $onFocusLost();
 
-    MCFOLD void $terminate();
+    MCNAPI void $terminate();
 
-    MCFOLD void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCFOLD void $onGameEventNotification(::ui::GameEventNotification);
+    MCNAPI void $onGameEventNotification(::ui::GameEventNotification);
 
-    MCFOLD void $leaveScreen();
+    MCNAPI void $leaveScreen();
 
-    MCFOLD void $preFrameTick();
+    MCNAPI void $preFrameTick();
 
-    MCFOLD void $tick(int, int);
+    MCNAPI void $tick(int, int);
 
-    MCFOLD void $frameUpdate(::MinecraftUIFrameUpdateContext&);
+    MCNAPI void $frameUpdate(::MinecraftUIFrameUpdateContext&);
 
-    MCFOLD void $applyInput(float);
+    MCNAPI void $applyInput(float);
 
-    MCFOLD void $preRenderUpdate(::ScreenContext&);
+    MCNAPI void $preRenderUpdate(::ScreenContext&);
 
-    MCFOLD void $prepareFrame(::ScreenContext&);
+    MCNAPI void $prepareFrame(::ScreenContext&);
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
+    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext&);
+    MCNAPI void $postRenderUpdate(::ScreenContext&);
 
-    MCFOLD void $handleInputModeChanged(::InputMode);
+    MCNAPI void $handleInputModeChanged(::InputMode);
 
-    MCFOLD void $handleButtonPress(uint, ::FocusImpact);
+    MCNAPI void $handleButtonPress(uint, ::FocusImpact);
 
-    MCFOLD void $handleButtonRelease(uint, ::FocusImpact);
+    MCNAPI void $handleButtonRelease(uint, ::FocusImpact);
 
-    MCFOLD void $handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool);
+    MCNAPI void $handleRawInputEvent(int, ::RawInputType, ::ButtonState, bool);
 
-    MCFOLD bool $handlePointerLocation(::PointerLocationEventData const&, ::FocusImpact);
+    MCNAPI bool $handlePointerLocation(::PointerLocationEventData const&, ::FocusImpact);
 
-    MCFOLD void $handlePointerPressed(bool);
+    MCNAPI void $handlePointerPressed(bool);
 
-    MCFOLD void $handleDirection(::DirectionId, float, float, ::FocusImpact);
+    MCNAPI void $handleDirection(::DirectionId, float, float, ::FocusImpact);
 
-    MCFOLD void $handleTextChar(::std::string const&, ::FocusImpact);
+    MCNAPI void $handleTextChar(::std::string const&, ::FocusImpact);
 
-    MCFOLD void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
+    MCNAPI void $handleTouchPadTouch(::TouchPadTouchEventData const&, ::FocusImpact);
 
-    MCFOLD void $setTextboxText(::std::string const&, ::TextboxTextUpdateReason);
+    MCNAPI void $setTextboxText(::std::string const&, ::TextboxTextUpdateReason);
 
-    MCFOLD void $onKeyboardDismissed();
+    MCNAPI void $onKeyboardDismissed();
 
-    MCFOLD void $handleLicenseChanged();
+    MCNAPI void $handleLicenseChanged();
 
-    MCFOLD bool $renderGameBehind() const;
+    MCNAPI bool $renderGameBehind() const;
 
-    MCAPI bool $absorbsInput() const;
+    MCNAPI bool $absorbsInput() const;
 
-    MCFOLD bool $closeOnPlayerHurt() const;
+    MCNAPI bool $closeOnPlayerHurt() const;
 
-    MCFOLD bool $useCustomPocketToast() const;
+    MCNAPI bool $useCustomPocketToast() const;
 
-    MCAPI bool $isModal() const;
+    MCNAPI bool $isModal() const;
 
-    MCAPI bool $isEditorMode() const;
+    MCNAPI bool $isEditorMode() const;
 
-    MCAPI bool $isShowingMenu() const;
+    MCNAPI bool $isShowingMenu() const;
 
-    MCAPI bool $shouldStealMouse() const;
+    MCNAPI bool $shouldStealMouse() const;
 
-    MCAPI bool $screenIsNotFlushable() const;
+    MCNAPI bool $screenIsNotFlushable() const;
 
-    MCAPI bool $alwaysAcceptsInput() const;
+    MCNAPI bool $alwaysAcceptsInput() const;
 
-    MCFOLD bool $screenDrawsLast() const;
+    MCNAPI bool $screenDrawsLast() const;
 
-    MCFOLD bool $isPlayScreen() const;
+    MCNAPI bool $isPlayScreen() const;
 
-    MCFOLD bool $renderOnlyWhenTopMost() const;
+    MCNAPI bool $renderOnlyWhenTopMost() const;
 
-    MCFOLD bool $lowFreqRendering() const;
+    MCNAPI bool $lowFreqRendering() const;
 
-    MCAPI bool $ignoreAsTop() const;
+    MCNAPI bool $ignoreAsTop() const;
 
-    MCFOLD bool $shouldBeSkippedInAutomation() const;
+    MCNAPI bool $shouldBeSkippedInAutomation() const;
 
-    MCAPI int $getWidth();
+    MCNAPI int $getWidth();
 
-    MCAPI int $getHeight();
+    MCNAPI int $getHeight();
 
-    MCFOLD void $reload();
+    MCNAPI void $reload();
 
-    MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
+    MCNAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
 
-    MCAPI ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI ::std::string $getScreenName() const;
+    MCNAPI ::std::string $getScreenName() const;
 
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+    MCNAPI bool $equalsScreenName(::std::string_view comparison) const;
 
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+    MCNAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
 
-    MCAPI ::std::string $getRawScreenName() const;
+    MCNAPI ::std::string $getRawScreenName() const;
 
-    MCAPI bool $equalsRawScreenName(::std::string_view comparison) const;
+    MCNAPI bool $equalsRawScreenName(::std::string_view comparison) const;
 
-    MCFOLD ::std::string $getRoute() const;
+    MCNAPI ::std::string $getRoute() const;
 
-    MCFOLD ::std::string $getScreenTelemetryName() const;
+    MCNAPI ::std::string $getScreenTelemetryName() const;
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>&) const;
 
-    MCFOLD int $getScreenVersion() const;
+    MCNAPI int $getScreenVersion() const;
 
-    MCFOLD void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
+    MCNAPI void $processBufferedTextCharEvents(::std::vector<::TextCharEventData> const&);
 
-    MCFOLD bool $getShouldSendEvents();
+    MCNAPI bool $getShouldSendEvents();
 
-    MCFOLD void $setShouldSendEvents(bool);
+    MCNAPI void $setShouldSendEvents(bool);
 
-    MCFOLD bool $getWantsTextOnly();
+    MCNAPI bool $getWantsTextOnly();
 
-    MCFOLD void $setWantsTextOnly(bool);
+    MCNAPI void $setWantsTextOnly(bool);
 
-    MCFOLD void $onDelete(::CachedScenes&, ::TaskGroup&);
+    MCNAPI void $onDelete(::CachedScenes&, ::TaskGroup&);
 
-    MCFOLD bool $isGamepadCursorEnabled() const;
+    MCNAPI bool $isGamepadCursorEnabled() const;
 
-    MCFOLD bool $isGamepadDeflectionModeEnabled() const;
+    MCNAPI bool $isGamepadDeflectionModeEnabled() const;
 
-    MCAPI ::glm::vec2 const& $getGamepadCursorPosition() const;
+    MCNAPI ::glm::vec2 const& $getGamepadCursorPosition() const;
 
-    MCFOLD void $cleanInputComponents();
+    MCNAPI void $cleanInputComponents();
 
-    MCAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
+    MCNAPI ::std::weak_ptr<::AbstractSceneProxy> $getProxy();
 
-    MCFOLD bool $canBePushed() const;
+    MCNAPI bool $canBePushed() const;
 
-    MCFOLD bool $canBePopped() const;
+    MCNAPI bool $canBePopped() const;
 
-    MCAPI bool $canBeTransitioned() const;
+    MCNAPI bool $canBeTransitioned() const;
 
-    MCAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
+    MCNAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
 
-    MCAPI void $onScreenEntrance(bool, bool);
+    MCNAPI void $onScreenEntrance(bool, bool);
 
-    MCFOLD bool $isEntering() const;
+    MCNAPI bool $isEntering() const;
 
-    MCAPI bool $isExiting() const;
+    MCNAPI bool $isExiting() const;
 
-    MCFOLD void $schedulePop();
+    MCNAPI void $schedulePop();
 
-    MCFOLD bool $isTerminating() const;
+    MCNAPI bool $isTerminating() const;
 
-    MCFOLD bool $loadScreenImmediately() const;
+    MCNAPI bool $loadScreenImmediately() const;
 
-    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
+    MCNAPI bool $forceUpdateActiveSceneStackWhenPushed() const;
 
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
+    MCNAPI ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
 
-    MCAPI bool $hasFinishedLoading() const;
+    MCNAPI bool $hasFinishedLoading() const;
 
-    MCAPI void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
+    MCNAPI void $sendScreenEvent(::std::string const& eventName, ::std::string const& eventData);
 
-    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
+    MCNAPI void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::Debug::ISceneDataProvider const> $getDebugDataProvider() const;
 
-    MCAPI void $onLoadFailed(char const*, char const*);
+    MCNAPI void $onLoadFailed(char const*, char const*);
 
-    MCAPI void $onViewReused();
+    MCNAPI void $onViewReused();
 
-    MCAPI void $onReusedViewReleased();
+    MCNAPI void $onReusedViewReleased();
 
-    MCAPI bool $isInputEnabled() const;
+    MCNAPI bool $isInputEnabled() const;
     // NOLINTEND
 };
 

@@ -53,19 +53,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Material(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
+    MCNAPI Material(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::TextureUVCoordinateSet> const& EMPTY_TEXTURES();
+    MCNAPI static ::std::vector<::TextureUVCoordinateSet> const& EMPTY_TEXTURES();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
+    MCNAPI void* $ctor(::std::vector<::TextureUVCoordinateSet> const& uvSets, ::BlockRenderLayer terrainLayer);
     // NOLINTEND
 
 public:

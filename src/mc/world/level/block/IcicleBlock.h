@@ -58,20 +58,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tryMelting(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI void tryMelting(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    placingActor,
         ::BlockPos const& pos,
         uchar             face,
@@ -79,15 +79,15 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI void $randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void $randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const&) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCAPI bool $_isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
+    MCNAPI bool $_isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
 
-    MCAPI void $_createSpeleothem(
+    MCNAPI void $_createSpeleothem(
         ::BlockSource&        region,
         ::BlockPos const&     pos,
         uchar                 direction,

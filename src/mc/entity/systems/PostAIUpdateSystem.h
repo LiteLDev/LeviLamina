@@ -18,7 +18,7 @@ class PostAIUpdateSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doPostAiUpdate(
+    MCNAPI static void doPostAiUpdate(
         ::StrictEntityContext&                              entity,
         ::Optional<::OnGroundFlagComponent const>           onGround,
         ::NoActionTimeComponent&                            noActionTime,

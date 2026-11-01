@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onRemove(::Actor& owner);
+    MCNAPI void onRemove(::Actor& owner);
     // NOLINTEND
 };

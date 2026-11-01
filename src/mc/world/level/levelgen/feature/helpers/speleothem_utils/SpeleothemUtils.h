@@ -16,7 +16,7 @@ class IBlockWorldGenAPI;
 namespace SpeleothemUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void buildBaseToTipColumn(
+MCNAPI void buildBaseToTipColumn(
     ::IBlockWorldGenAPI&                                  target,
     ::BlockPos const&                                     basePos,
     uchar const                                           direction,
@@ -26,21 +26,21 @@ MCAPI void buildBaseToTipColumn(
     ::std::function<::Block const&(::Block const&)> const baseBlockTransformer
 );
 
-MCAPI ::Block const&
+MCNAPI ::Block const&
 getPlacementBlock(uchar const direction, ::SpeleothemThickness const& thickness, ::HashedString const& speleothemBlock);
 
-MCAPI float getSpeleothemHeight(float xzDistanceFromCenter, float speleothemRadius, float scale, float bluntness);
+MCNAPI float getSpeleothemHeight(float xzDistanceFromCenter, float speleothemRadius, float scale, float bluntness);
 
-MCAPI bool isBaseOrLava(
+MCNAPI bool isBaseOrLava(
     ::IBlockWorldGenAPI const&                                           target,
     ::BlockPos const&                                                    pos,
     ::HashedString const&                                                baseBlock,
     ::std::vector<::std::reference_wrapper<::HashedString const>> const& replaceableBlocks
 );
 
-MCAPI bool isCircleMostlyEmbeddedInTerrain(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
+MCNAPI bool isCircleMostlyEmbeddedInTerrain(::IBlockWorldGenAPI& target, ::BlockPos const& center, int xzRadius);
 
-MCAPI bool placeBaseBlockIfPossible(
+MCNAPI bool placeBaseBlockIfPossible(
     ::IBlockWorldGenAPI&                                                 target,
     ::BlockPos const&                                                    pos,
     ::HashedString const&                                                baseBlock,

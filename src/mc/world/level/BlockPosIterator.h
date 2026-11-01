@@ -32,7 +32,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockPosIterator::FromCenter& operator++();
+        MCNAPI ::BlockPosIterator::FromCenter& operator++();
         // NOLINTEND
     };
 
@@ -46,7 +46,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockPosIterator::ManhattanDistance& operator++();
+        MCNAPI ::BlockPosIterator::ManhattanDistance& operator++();
         // NOLINTEND
     };
 

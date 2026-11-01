@@ -33,9 +33,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void dump(::std::function<void(::Core::PathView const&, ::std::string_view)> func);
+    MCNAPI void dump(::std::function<void(::Core::PathView const&, ::std::string_view)> func);
 
-    MCAPI ::SharedTypes::JSONSchemaDumper& minecraftVersion(::std::string version);
+    MCNAPI ::SharedTypes::JSONSchemaDumper& minecraftVersion(::std::string version);
 #endif
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::Core::Path
+    MCNAPI static ::Core::Path
     buildSchemaOutputPath(::Core::PathView const baseFolder, ::JSONSchemaProperty const& property);
 #endif
     // NOLINTEND

@@ -29,11 +29,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
 
     // NOLINTEND
@@ -41,6 +41,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -43,9 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackInfoData(::PackInfoData const&);
+    MCNAPI PackInfoData(::PackInfoData const&);
 
-    MCAPI PackInfoData(
+    MCNAPI PackInfoData(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -59,22 +59,22 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::PackInfoData& operator=(::PackInfoData&&);
+    MCNAPI ::PackInfoData& operator=(::PackInfoData&&);
 
-    MCAPI ::PackInfoData& operator=(::PackInfoData const&);
+    MCNAPI ::PackInfoData& operator=(::PackInfoData const&);
 #endif
 
-    MCAPI bool operator==(::PackInfoData const& info) const;
+    MCNAPI bool operator==(::PackInfoData const& info) const;
 
-    MCAPI ~PackInfoData();
+    MCNAPI ~PackInfoData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackInfoData const&);
+    MCNAPI void* $ctor(::PackInfoData const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID const&       guid,
         ::SemVersion const&      version,
         uint64                   packSize,
@@ -91,6 +91,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

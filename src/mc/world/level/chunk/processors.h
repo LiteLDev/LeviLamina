@@ -10,7 +10,7 @@ namespace br::worldgen::processors::BlockRules { struct Test; }
 namespace br::worldgen::processors {
 // functions
 // NOLINTBEGIN
-MCAPI ::br::worldgen::processors::BlockRules::Test TagMatch(::std::string_view tag);
+MCNAPI ::br::worldgen::processors::BlockRules::Test TagMatch(::std::string_view tag);
 // NOLINTEND
 
 } // namespace br::worldgen::processors

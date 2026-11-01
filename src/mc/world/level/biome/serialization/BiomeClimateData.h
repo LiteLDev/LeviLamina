@@ -24,7 +24,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::Bedrock::Result<::BiomeClimateData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeClimateData> read(::ReadOnlyBinaryStream& stream);
 #endif
     // NOLINTEND
 };

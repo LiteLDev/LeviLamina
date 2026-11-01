@@ -18,14 +18,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalLinkSettings(::ExternalLinkSettings const&);
+    MCNAPI ExternalLinkSettings(::ExternalLinkSettings const&);
 
-    MCFOLD ::ExternalLinkSettings& operator=(::ExternalLinkSettings&&);
+    MCNAPI ::ExternalLinkSettings& operator=(::ExternalLinkSettings&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ExternalLinkSettings const&);
+    MCNAPI void* $ctor(::ExternalLinkSettings const&);
     // NOLINTEND
 };

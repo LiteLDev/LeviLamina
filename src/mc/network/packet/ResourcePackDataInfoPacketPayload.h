@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackDataInfoPacketPayload(
+    MCNAPI ResourcePackDataInfoPacketPayload(
         ::std::string const& name,
         uint                 chunkSize,
         int                  nbChunk,
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& name,
         uint                 chunkSize,
         int                  nbChunk,

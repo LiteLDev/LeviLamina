@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
+    MCNAPI explicit DurabilitySensorItemComponent(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::DurabilitySensorItemComponent data);
     // NOLINTEND
 
 public:

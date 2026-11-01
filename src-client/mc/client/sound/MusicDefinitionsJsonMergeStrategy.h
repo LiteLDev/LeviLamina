@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_preMergeObjectTransform(::Json::Value& root, ::Json::Value const& object);
+    MCNAPI bool $_preMergeObjectTransform(::Json::Value& root, ::Json::Value const& object);
     // NOLINTEND
 
 public:

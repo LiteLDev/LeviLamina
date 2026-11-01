@@ -41,15 +41,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tessellateCrystalBeam(::Tessellator& tessellator, ::Vec3 const& beamStart, ::Vec3 const& beamEnd);
+    MCNAPI static void
+    tessellateCrystalBeam(::Tessellator& tessellator, ::Vec3 const& beamStart, ::Vec3 const& beamEnd);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    MCAPI void $renderEffects(
+    MCNAPI void $renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams

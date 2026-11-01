@@ -33,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsInviteQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsInviteQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

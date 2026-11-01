@@ -5,9 +5,9 @@
 namespace SharedTypes::BiomeComponentConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string_view const& BUILDER();
+MCNAPI ::std::string_view const& BUILDER();
 
-MCAPI ::std::string_view const& TYPE();
+MCNAPI ::std::string_view const& TYPE();
 // NOLINTEND
 
 } // namespace SharedTypes::BiomeComponentConstants

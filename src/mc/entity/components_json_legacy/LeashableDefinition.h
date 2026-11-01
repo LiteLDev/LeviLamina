@@ -30,15 +30,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::LeashableComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::LeashableComponent& component) const;
 
-    MCAPI void uninitialize(::EntityContext& entity, ::LeashableComponent&) const;
+    MCNAPI void uninitialize(::EntityContext& entity, ::LeashableComponent&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LeashableDefinition>>& root
     );
     // NOLINTEND

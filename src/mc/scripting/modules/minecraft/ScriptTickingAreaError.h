@@ -33,9 +33,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
     // NOLINTEND
 };
 

@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/services/Response.h"
+#include "mc/deps/core/http/Response.h"
 
 namespace Bedrock::Http {
 

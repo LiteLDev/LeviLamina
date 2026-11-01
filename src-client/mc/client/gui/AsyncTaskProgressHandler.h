@@ -50,32 +50,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AsyncTaskProgressHandler(::std::string const& title, ::std::function<void()> asyncTaskWorkCallback);
+    MCNAPI AsyncTaskProgressHandler(::std::string const& title, ::std::function<void()> asyncTaskWorkCallback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& title, ::std::function<void()> asyncTaskWorkCallback);
+    MCNAPI void* $ctor(::std::string const& title, ::std::function<void()> asyncTaskWorkCallback);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

@@ -62,11 +62,11 @@ public:
 
     MCAPI ::std::unique_ptr<::ListTag> copyList() const;
 
-    MCAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
+    MCNAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
 
-    MCAPI ::ListTag& operator=(::ListTag&&);
+    MCNAPI ::ListTag& operator=(::ListTag&&);
 
-    MCAPI void write(::IDataOutput& dos, int depth) const;
+    MCNAPI void write(::IDataOutput& dos, int depth) const;
     // NOLINTEND
 
 public:

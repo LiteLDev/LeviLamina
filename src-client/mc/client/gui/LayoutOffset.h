@@ -32,35 +32,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayoutOffset(::ui::LayoutOffset const&);
+    MCNAPI LayoutOffset(::ui::LayoutOffset const&);
 
-    MCAPI explicit LayoutOffset(::glm::vec2 const size);
+    MCNAPI explicit LayoutOffset(::glm::vec2 const size);
 
-    MCAPI explicit LayoutOffset(::Json::Value const& val);
+    MCNAPI explicit LayoutOffset(::Json::Value const& val);
 
-    MCAPI LayoutOffset(::ui::LayoutAxisType xType, float xValue, ::ui::LayoutAxisType yType, float yValue);
+    MCNAPI LayoutOffset(::ui::LayoutAxisType xType, float xValue, ::ui::LayoutAxisType yType, float yValue);
 
-    MCAPI bool operator!=(::ui::LayoutOffset const& other) const;
+    MCNAPI bool operator!=(::ui::LayoutOffset const& other) const;
 
-    MCAPI ~LayoutOffset();
+    MCNAPI ~LayoutOffset();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ui::LayoutOffset const&);
+    MCNAPI void* $ctor(::ui::LayoutOffset const&);
 
-    MCAPI void* $ctor(::glm::vec2 const size);
+    MCNAPI void* $ctor(::glm::vec2 const size);
 
-    MCAPI void* $ctor(::Json::Value const& val);
+    MCNAPI void* $ctor(::Json::Value const& val);
 
-    MCAPI void* $ctor(::ui::LayoutAxisType xType, float xValue, ::ui::LayoutAxisType yType, float yValue);
+    MCNAPI void* $ctor(::ui::LayoutAxisType xType, float xValue, ::ui::LayoutAxisType yType, float yValue);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

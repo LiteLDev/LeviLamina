@@ -35,59 +35,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecentlyPlayedTarget(::World::RecentlyPlayedTarget&&);
+    MCNAPI RecentlyPlayedTarget(::World::RecentlyPlayedTarget&&);
 
-    MCAPI RecentlyPlayedTarget(::World::RecentlyPlayedTarget const&);
+    MCNAPI RecentlyPlayedTarget(::World::RecentlyPlayedTarget const&);
 
-    MCAPI bool isSameDestination(::World::RecentlyPlayedTarget const& other) const;
+    MCNAPI bool isSameDestination(::World::RecentlyPlayedTarget const& other) const;
 
-    MCAPI ::World::RecentlyPlayedTarget mergeDestinationIdentity(::World::RecentlyPlayedTarget const& other) const;
+    MCNAPI ::World::RecentlyPlayedTarget mergeDestinationIdentity(::World::RecentlyPlayedTarget const& other) const;
 
-    MCAPI ::World::RecentlyPlayedTarget& operator=(::World::RecentlyPlayedTarget&&);
+    MCNAPI ::World::RecentlyPlayedTarget& operator=(::World::RecentlyPlayedTarget&&);
 
-    MCAPI ~RecentlyPlayedTarget();
+    MCNAPI ~RecentlyPlayedTarget();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::World::RecentlyPlayedTarget experience(
+    MCNAPI static ::World::RecentlyPlayedTarget experience(
         ::std::string                  experienceId,
         ::std::optional<::std::string> worldId,
         ::std::optional<::std::string> friendId
     );
 
-    MCAPI static ::World::RecentlyPlayedTarget externalServer(::std::string address, int port);
+    MCNAPI static ::World::RecentlyPlayedTarget externalServer(::std::string address, int port);
 
-    MCAPI static ::World::RecentlyPlayedTarget friendWorld(
+    MCNAPI static ::World::RecentlyPlayedTarget friendWorld(
         ::std::string                  levelId,
         int64                          realmId,
         ::std::optional<::std::string> netherNetId,
         ::std::optional<::std::string> rakNetGuid
     );
 
-    MCAPI static ::World::RecentlyPlayedTarget
+    MCNAPI static ::World::RecentlyPlayedTarget
     lanWorld(::std::string hostGuid, ::std::optional<::std::string> webRtcNetworkId);
 
-    MCAPI static ::World::RecentlyPlayedTarget localWorld(::std::string levelId, bool isEditorWorld);
+    MCNAPI static ::World::RecentlyPlayedTarget localWorld(::std::string levelId, bool isEditorWorld);
 
-    MCAPI static ::World::RecentlyPlayedTarget realmWorld(int64 realmId);
+    MCNAPI static ::World::RecentlyPlayedTarget realmWorld(int64 realmId);
 
-    MCAPI static ::World::RecentlyPlayedTarget thirdPartyServer(::std::string productId);
+    MCNAPI static ::World::RecentlyPlayedTarget thirdPartyServer(::std::string productId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::RecentlyPlayedTarget&&);
+    MCNAPI void* $ctor(::World::RecentlyPlayedTarget&&);
 
-    MCAPI void* $ctor(::World::RecentlyPlayedTarget const&);
+    MCNAPI void* $ctor(::World::RecentlyPlayedTarget const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

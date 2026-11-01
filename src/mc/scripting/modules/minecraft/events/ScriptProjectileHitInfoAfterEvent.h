@@ -42,18 +42,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptProjectileHitInfoAfterEvent(
+    MCNAPI ScriptProjectileHitInfoAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );
 
-    MCAPI ~ScriptProjectileHitInfoAfterEvent();
+    MCNAPI ~ScriptProjectileHitInfoAfterEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData> const& projectileHitEvent,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

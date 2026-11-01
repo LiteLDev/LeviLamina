@@ -32,21 +32,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+    MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

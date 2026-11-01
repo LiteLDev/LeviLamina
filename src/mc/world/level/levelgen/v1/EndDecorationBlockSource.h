@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $setBlock(
+    MCNAPI bool $setBlock(
         ::BlockPos const&              pos,
         ::Block const&                 block,
         int                            updateFlags,
@@ -41,9 +41,9 @@ public:
         ::BlockChangeContext const&    changeSourceContext
     );
 
-    MCAPI bool $setExtraBlock(::BlockPos const& pos, ::Block const& block, int updateFlags);
+    MCNAPI bool $setExtraBlock(::BlockPos const& pos, ::Block const& block, int updateFlags);
 
-    MCAPI bool $removeBlock(::BlockPos const& pos, ::BlockChangeContext const& changeSourceContext);
+    MCNAPI bool $removeBlock(::BlockPos const& pos, ::BlockChangeContext const& changeSourceContext);
 
 
     // NOLINTEND

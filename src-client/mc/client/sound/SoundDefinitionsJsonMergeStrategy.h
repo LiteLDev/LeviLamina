@@ -21,7 +21,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_preMergeTransform(::Json::Value& root, ::LoadedResourceData const&);
+    MCNAPI void $_preMergeTransform(::Json::Value& root, ::LoadedResourceData const&);
     // NOLINTEND
 
 public:

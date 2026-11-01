@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CropArchetype(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&);
+    MCNAPI CropArchetype(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::CropArchetype&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::CropArchetype&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype&&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::CropArchetype&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::CropArchetype&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&) const;
 
-    MCAPI ~CropArchetype();
+    MCNAPI ~CropArchetype();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::CropArchetype const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

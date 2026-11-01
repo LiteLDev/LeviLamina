@@ -20,15 +20,15 @@ class TextureJSONParser {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ActorTextureInfo
+    MCNAPI static ::ActorTextureInfo
     getTextureInfoFromTextureSet(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::Json::Value const& texture);
 
-    MCAPI static ::ActorTextureInfo getTextureInfoFromTextureSet(
+    MCNAPI static ::ActorTextureInfo getTextureInfoFromTextureSet(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::ParsedTextureSet const&              textureSet
     );
 
-    MCAPI static void loadTextureSetLayer(
+    MCNAPI static void loadTextureSetLayer(
         ::ParsedTextureSetLayer&                   layer,
         ::Json::Value const&                       layerJsonData,
         float                                      mipFadeAmount,
@@ -37,7 +37,7 @@ public:
         ::std::optional<::cg::TextureSetLayerType> textureSetLayerType
     );
 
-    MCAPI static void parseTextureSet(
+    MCNAPI static void parseTextureSet(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Json::Value const&                   texture,
         ::ParsedTextureSet&                    outTextureSet,
@@ -46,7 +46,7 @@ public:
         bool                                   isAdditive
     );
 
-    MCAPI static void parseTextureSetLayers(
+    MCNAPI static void parseTextureSetLayers(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::ResourceLocation const&              textureSetLocation,
         ::ParsedTextureSet&                    textureSet

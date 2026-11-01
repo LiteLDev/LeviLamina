@@ -58,11 +58,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
+    MCNAPI explicit TextureSetImageDescription(::cg::ImageDescription const& imageDesc);
 
-    MCAPI explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    MCNAPI explicit TextureSetImageDescription(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
 
-    MCAPI ~TextureSetImageDescription();
+    MCNAPI ~TextureSetImageDescription();
 #endif
     // NOLINTEND
 
@@ -70,9 +70,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::cg::ImageDescription const& imageDesc);
+    MCNAPI void* $ctor(::cg::ImageDescription const& imageDesc);
 
-    MCAPI void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
+    MCNAPI void* $ctor(::gsl::not_null<::cg::TextureSetDefinition const*> textureSet);
 #endif
     // NOLINTEND
 
@@ -80,7 +80,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

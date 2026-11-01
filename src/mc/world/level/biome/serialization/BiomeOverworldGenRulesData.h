@@ -31,16 +31,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
+    MCNAPI ::BiomeOverworldGenRulesData& operator=(::BiomeOverworldGenRulesData&&);
 
-    MCAPI bool operator==(::BiomeOverworldGenRulesData const& other) const;
+    MCNAPI bool operator==(::BiomeOverworldGenRulesData const& other) const;
 
-    MCAPI ~BiomeOverworldGenRulesData();
+    MCNAPI ~BiomeOverworldGenRulesData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

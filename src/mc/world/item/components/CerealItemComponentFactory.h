@@ -50,16 +50,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CerealItemComponentFactory::ComponentMetadata&
+        MCNAPI ::CerealItemComponentFactory::ComponentMetadata&
         operator=(::CerealItemComponentFactory::ComponentMetadata&&);
 
-        MCAPI ~ComponentMetadata();
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -81,28 +81,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addComponentMetadata(
+    MCNAPI static void addComponentMetadata(
         ::cereal::ReflectionCtx&                          ctx,
         ::std::string const&                              componentName,
         ::CerealItemComponentFactory::ComponentMetadata&& metadata,
         ::std::optional<::SemVersion>                     releasedMinFormatVersion
     );
 
-    MCAPI static ::std::shared_ptr<::ItemComponent>
+    MCNAPI static ::std::shared_ptr<::ItemComponent>
     constructItemComponent(::std::string const& name, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void deprecateComponentStartingFromVersion(
+    MCNAPI static void deprecateComponentStartingFromVersion(
         ::std::string const&           name,
         ::SemVersion const             deprecatedVersion,
         ::cereal::ReflectionCtx const& ctx
     );
 
-    MCAPI static ::std::optional<::SemVersion>
+    MCNAPI static ::std::optional<::SemVersion>
     getReleasedMinFormatVersionForAnyComponent(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::CerealItemComponentFactory& setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
+    MCNAPI static void
     updateReleasedMinFormatVersionForAnyComponentIfLower(::CerealItemComponentFactory& instance, ::SemVersion version);
     // NOLINTEND
 };

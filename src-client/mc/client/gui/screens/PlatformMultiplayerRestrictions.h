@@ -26,14 +26,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::PlatformMultiplayerRestrictions>
+    MCNAPI static ::std::unique_ptr<::PlatformMultiplayerRestrictions>
     create(::std::shared_ptr<::MinecraftScreenModel> model, ::IClientInstance& client);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::function<::std::unique_ptr<
+    MCNAPI static ::std::function<::std::unique_ptr<
         ::PlatformMultiplayerRestrictions>(::std::shared_ptr<::MinecraftScreenModel>, ::IClientInstance&)>&
     sFactory();
     // NOLINTEND

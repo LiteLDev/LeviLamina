@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_0::VillageBiomeTypeInternals {
 // functions
 // NOLINTBEGIN
-MCAPI void bindType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_26_0::VillageBiomeTypeInternals

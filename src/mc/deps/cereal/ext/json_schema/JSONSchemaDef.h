@@ -47,31 +47,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);
+    MCNAPI JSONSchemaDef(::cereal::ext::internal::JSONSchemaDef const&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaDef& operator=(::cereal::ext::internal::JSONSchemaDef&&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaDef& operator=(::cereal::ext::internal::JSONSchemaDef&&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaDef& operator=(::cereal::ext::internal::JSONSchemaDef const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaDef& operator=(::cereal::ext::internal::JSONSchemaDef const&);
 
-    MCAPI ~JSONSchemaDef();
+    MCNAPI ~JSONSchemaDef();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaDef const&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaDef const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

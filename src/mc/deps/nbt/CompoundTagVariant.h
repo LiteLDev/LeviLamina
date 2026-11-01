@@ -63,6 +63,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Tag& emplace(::Tag&& tag);
+    MCNAPI ::Tag& emplace(::Tag&& tag);
     // NOLINTEND
 };

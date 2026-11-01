@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addEnvironmentTrigger(::ActorDefinitionTrigger const& trigger);
+    MCNAPI void addEnvironmentTrigger(::ActorDefinitionTrigger const& trigger);
     // NOLINTEND
 };

@@ -56,9 +56,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
+    MCNAPI ushort addBan(::RakNet::SystemAddress const& addr, ::std::chrono::seconds time);
 
-    MCAPI ::RakNet::RakPeer::RemoteSystemStruct* shouldDisconnectConnection(
+    MCNAPI ::RakNet::RakPeer::RemoteSystemStruct* shouldDisconnectConnection(
         ::RakNet::SystemAddress                             srcAddr,
         ::std::chrono::seconds                              now,
         ::gsl::span<::RakNet::RakPeer::RemoteSystemStruct*> remotes

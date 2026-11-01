@@ -29,27 +29,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRendererV2RequiredData(
+    MCNAPI DataDrivenRendererV2RequiredData(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCAPI bool _addRendererToDedicatedPool(
+    MCNAPI bool _addRendererToDedicatedPool(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
 
-    MCAPI bool forceReinitialize(
+    MCNAPI bool forceReinitialize(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCAPI bool removeIndependentRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
+    MCNAPI bool removeIndependentRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
 
-    MCAPI bool tryAddIndependentRenderer(
+    MCNAPI bool tryAddIndependentRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
@@ -59,7 +59,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion

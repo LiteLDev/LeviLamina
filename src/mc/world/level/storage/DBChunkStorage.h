@@ -161,7 +161,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI DBChunkStorage(
+    MCNAPI DBChunkStorage(
         ::std::unique_ptr<::ChunkSource> parent,
         ::DBStorage&                     storage,
         ::Scheduler&                     scheduler,
@@ -169,59 +169,59 @@ public:
     );
 #endif
 
-    MCAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
+    MCNAPI ::std::pair<bool, ::std::shared_ptr<::BlendingData>> _cacheSeamlessChunkBlendingData(
         ::ChunkPos                        chunkPos,
         bool                              isCompleted,
         ::std::shared_ptr<::BlendingData> blendingData
     );
 
-    MCAPI void _deleteChunkEntityData(::DBChunkStorageKey const& key, ::LevelStorageWriteBatch& batch);
+    MCNAPI void _deleteChunkEntityData(::DBChunkStorageKey const& key, ::LevelStorageWriteBatch& batch);
 
-    MCAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
+    MCNAPI void _deserializeIndependentActorStorage(::LevelChunk& lc, ::std::string const& storageKeyDigestBuffer);
 
-    MCAPI ::LevelChunk::Neighbors _getChunkNeighbors(::ChunkPos lc, ::DimensionType dimensionType);
+    MCNAPI ::LevelChunk::Neighbors _getChunkNeighbors(::ChunkPos lc, ::DimensionType dimensionType);
 
-    MCAPI bool _hasChunk(::DBChunkStorageKey const& key);
+    MCNAPI bool _hasChunk(::DBChunkStorageKey const& key);
 
-    MCAPI bool _hasChunkUncached(::DBChunkStorageKey const& key);
+    MCNAPI bool _hasChunkUncached(::DBChunkStorageKey const& key);
 
-    MCAPI bool _loadChunkFromDB(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::ChunkViewSource& neighborhood);
+    MCNAPI bool _loadChunkFromDB(::LevelChunk& lc, ::LevelChunk& generatedChunk, ::ChunkViewSource& neighborhood);
 
-    MCAPI void _saveBlendData(
+    MCNAPI void _saveBlendData(
         ::LevelStorageWriteBatch& batch,
         ::std::string_view        prefix,
         ::std::string&            buffer,
         ::PersistentBlendData     data
     ) const;
 
-    MCAPI void
+    MCNAPI void
     _serializeChunk(::LevelChunk& lc, ::LevelStorageWriteBatch& batch, bool const markEntitiesProcesedOnChunkDiscard);
 
-    MCAPI void _serializeEntities(
+    MCNAPI void _serializeEntities(
         ::LevelChunk&             lc,
         ::LevelStorageWriteBatch& batch,
         ::std::string&            buffer,
         bool                      markEntitiesProcesedOnChunkDiscard
     );
 
-    MCAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
+    MCNAPI ::std::string _upgradeActorStorage(::ChunkKey chunkKey, ::std::string_view& legacyActorData);
 
-    MCAPI void _writeDiscardChunksBatch();
+    MCNAPI void _writeDiscardChunksBatch();
 
 #ifdef LL_PLAT_S
-    MCAPI void freeCaches();
+    MCNAPI void freeCaches();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> _deserializeChunkActorStorageKeys(::IDataInput& digestStream);
+    MCNAPI static ::std::vector<::std::string> _deserializeChunkActorStorageKeys(::IDataInput& digestStream);
 
-    MCAPI static void
+    MCNAPI static void
     _writeActorDigest(::LevelStorageWriteBatch& batch, ::ChunkKey const& chunkKey, ::std::string const& digestBuffer);
 
-    MCAPI static ::std::string deserializeActorStorageToString(
+    MCNAPI static ::std::string deserializeActorStorageToString(
         bool                                                      hasActorDigestVersionTag,
         ::std::string const&                                      storageKeyDigestBuffer,
         ::std::function<bool(::std::string_view, ::std::string&)> loadDataCallback
@@ -232,7 +232,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ChunkSource> parent,
         ::DBStorage&                     storage,
         ::Scheduler&                     scheduler,
@@ -244,66 +244,66 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $shutdown();
+    MCNAPI void $shutdown();
 
-    MCAPI bool $isShutdownDone();
+    MCNAPI bool $isShutdownDone();
 
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
+    MCNAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCAPI bool $isChunkSaved(::ChunkPos const& chunkPos);
+    MCNAPI bool $isChunkSaved(::ChunkPos const& chunkPos);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
+    MCNAPI void $checkAndReplaceChunk(::ChunkViewSource& neighborhood, ::LevelChunk& lc);
 
-    MCAPI bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
+    MCNAPI bool $verifyChunkNeedsNeighborAwareUpgrade(::LevelChunk& lc);
 
-    MCAPI void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
+    MCNAPI void $neighborAwareChunkUpgrade(::LevelChunk& levelChunk, ::ChunkViewSource& neighborhood);
 
-    MCAPI void $deleteAllChunkData(
+    MCNAPI void $deleteAllChunkData(
         ::std::unordered_set<::ChunkPos>           excludedChunks,
         ::std::function<void()>                    completionCallback,
         ::std::shared_ptr<::ChunkDeletionMetadata> metadata
     );
 
-    MCAPI void $deleteStoredChunkData(
+    MCNAPI void $deleteStoredChunkData(
         ::std::unordered_set<::ChunkPos>           chunksToDelete,
         ::std::function<void()>                    completionCallback,
         ::std::shared_ptr<::ChunkDeletionMetadata> metadata
     );
 
-    MCAPI bool $saveLiveChunk(::LevelChunk& lc);
+    MCNAPI bool $saveLiveChunk(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
+    MCNAPI void $writeEntityChunkTransfer(::LevelChunk& lc);
 
-    MCAPI void $writeEntityChunkTransfersToUnloadedChunk(
+    MCNAPI void $writeEntityChunkTransfersToUnloadedChunk(
         ::ChunkKey const&                                       chunkKey,
         ::std::vector<::ActorUnloadedChunkTransferEntry> const& transfers
     );
 
-    MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
+    MCNAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCAPI void $hintDiscardBatchBegin();
+    MCNAPI void $hintDiscardBatchBegin();
 
-    MCAPI void $hintDiscardBatchEnd();
+    MCNAPI void $hintDiscardBatchEnd();
 
-    MCAPI void $flushPendingDiscardedChunkWrites();
+    MCNAPI void $flushPendingDiscardedChunkWrites();
 
-    MCAPI void $flushThreadBatch();
+    MCNAPI void $flushThreadBatch();
 
-    MCAPI ::std::unique_ptr<::BlendingDataProvider> $tryGetBlendingDataProvider();
+    MCNAPI ::std::unique_ptr<::BlendingDataProvider> $tryGetBlendingDataProvider();
 
-    MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
+    MCNAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
-    MCAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
+    MCNAPI void $deserializeActorStorageToLevelChunk(::LevelChunk& levelChunk);
 
-    MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+    MCNAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 

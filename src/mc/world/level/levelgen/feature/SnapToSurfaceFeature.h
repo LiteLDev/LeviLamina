@@ -47,14 +47,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     _findSnapPosInDirection(::IBlockWorldGenAPI& target, ::BlockPos const& pos, uchar direction) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

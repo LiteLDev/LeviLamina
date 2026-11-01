@@ -57,12 +57,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OreVeinifier(::OreVeinifierNoises const& noiseSource);
+    MCNAPI explicit OreVeinifier(::OreVeinifierNoises const& noiseSource);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreVeinifierNoises const& noiseSource);
+    MCNAPI void* $ctor(::OreVeinifierNoises const& noiseSource);
     // NOLINTEND
 };

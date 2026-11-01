@@ -50,39 +50,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CameraAimAssistDataRegistryComponent(::IMinecraftEventing& eventing);
+    MCNAPI explicit CameraAimAssistDataRegistryComponent(::IMinecraftEventing& eventing);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&
     addCategory(::EntityContext& levelEntity, ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&& category);
 
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const&
     addPreset(::EntityContext& levelEntity, ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition&& preset);
 
-    MCAPI void loadJsonFilesForServer(
+    MCNAPI void loadJsonFilesForServer(
         ::EntityContext&                                   levelEntity,
         ::cereal::ReflectionCtx const&                     ctx,
         ::ResourcePackManager const&                       resourcePackManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;
+    MCNAPI ::CameraAimAssistPresetsPacket makePresetsPacketFromFullRegistry() const;
 
-    MCAPI ::CameraAimAssistPresetsPacket makeUpdatePresetsPacketFromDirtyRegistry(
+    MCNAPI ::CameraAimAssistPresetsPacket makeUpdatePresetsPacketFromDirtyRegistry(
         ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent
     ) const;
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const*
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const*
     tryGetCategory(::HashedString const& id) const;
 
-    MCAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const* tryGetPreset(::HashedString const& id) const;
+    MCNAPI ::SharedTypes::v1_21_120::CameraAimAssistPresetDefinition const*
+    tryGetPreset(::HashedString const& id) const;
 
-    MCAPI void updateServerAndSendRegistryToClient(
+    MCNAPI void updateServerAndSendRegistryToClient(
         ::PacketSender&                     packetSender,
         ::CameraAimAssistRegistryComponent& aimAssistRegistry,
         ::NetworkIdentifier const&          source
     );
 
-    MCAPI void updateServerAndSynchronizeWithClients(
+    MCNAPI void updateServerAndSynchronizeWithClients(
         ::CameraAimAssistDataRegistryDirtyComponent const& registryDirtyComponent,
         ::CameraAimAssistRegistryComponent&                aimAssistRegistry,
         ::PacketSender&                                    packetSender
@@ -92,13 +93,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _validatePresetCategorySetting(::std::string const& categoryId);
+    MCNAPI static bool _validatePresetCategorySetting(::std::string const& categoryId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

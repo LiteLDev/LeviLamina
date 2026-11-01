@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketViolationWarningPacketPayload(
+    MCNAPI PacketViolationWarningPacketPayload(
         ::std::error_code const&  error_code,
         ::PacketViolationResponse violationResponse,
         ::MinecraftPacketIds      violatingPacketId,
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::error_code const&  error_code,
         ::PacketViolationResponse violationResponse,
         ::MinecraftPacketIds      violatingPacketId,

@@ -80,7 +80,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool edgesTo(int x, int y, int ifValue);
+        MCNAPI bool edgesTo(int x, int y, int ifValue);
         // NOLINTEND
     };
 
@@ -122,14 +122,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI WoodlandMansionPiece(
+        MCNAPI WoodlandMansionPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string const&                              templateName,
             ::BlockPos const&                                 origin,
             ::Rotation                                        rotation
         );
 
-        MCAPI WoodlandMansionPiece(
+        MCNAPI WoodlandMansionPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string const&                              templateName,
             ::BlockPos const&                                 origin,
@@ -141,14 +141,14 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string const&                              templateName,
             ::BlockPos const&                                 origin,
             ::Rotation                                        rotation
         );
 
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string const&                              templateName,
             ::BlockPos const&                                 origin,
@@ -160,11 +160,11 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::StructurePieceType $getType() const;
+        MCNAPI ::StructurePieceType $getType() const;
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $_handleDataMarker(
+        MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
@@ -200,19 +200,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::string $get1x1(::Random& random);
+        MCNAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCNAPI ::std::string $get1x1Secret(::Random& random);
 
-        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+        MCNAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
-        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+        MCNAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
 
-        MCAPI ::std::string $get1x2Secret(::Random& random);
+        MCNAPI ::std::string $get1x2Secret(::Random& random);
 
-        MCAPI ::std::string $get2x2(::Random& random);
+        MCNAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCNAPI ::std::string $get2x2Secret(::Random& random);
 
 
         // NOLINTEND
@@ -239,13 +239,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void
+        MCNAPI void
         _identifyRooms(::WoodlandMansionPieces::SimpleGrid& fromGrid, ::WoodlandMansionPieces::SimpleGrid& roomGrid);
 
-        MCAPI void
+        MCNAPI void
         _recursiveCorridor(::WoodlandMansionPieces::SimpleGrid& grid, int x, int y, uchar heading, int depth);
 
-        MCAPI uchar get1x2RoomDirection(
+        MCNAPI uchar get1x2RoomDirection(
             ::WoodlandMansionPieces::SimpleGrid const& grid,
             int                                        x,
             int                                        y,
@@ -257,7 +257,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
+        MCNAPI static bool _cleanEdges(::WoodlandMansionPieces::SimpleGrid& grid);
         // NOLINTEND
     };
 
@@ -280,7 +280,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _createRoof(
+        MCNAPI void _createRoof(
             ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
             ::BlockPos const&                                   roofOrigin,
             ::Rotation                                          rotation,
@@ -288,7 +288,7 @@ public:
             ::WoodlandMansionPieces::SimpleGrid*                aboveGrid
         );
 
-        MCAPI void _traverseOuterWalls(
+        MCNAPI void _traverseOuterWalls(
             ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
             ::WoodlandMansionPieces::PlacementData&             data,
             ::WoodlandMansionPieces::SimpleGrid&                grid,
@@ -299,7 +299,7 @@ public:
             int                                                 endY
         );
 
-        MCAPI void _traverseWallPiece(
+        MCNAPI void _traverseWallPiece(
             ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
             ::WoodlandMansionPieces::PlacementData&             data
         );
@@ -337,19 +337,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::string $get1x1(::Random& random);
+        MCNAPI ::std::string $get1x1(::Random& random);
 
-        MCAPI ::std::string $get1x1Secret(::Random& random);
+        MCNAPI ::std::string $get1x1Secret(::Random& random);
 
-        MCAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+        MCNAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
 
-        MCAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+        MCNAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
 
-        MCAPI ::std::string $get1x2Secret(::Random& random);
+        MCNAPI ::std::string $get1x2Secret(::Random& random);
 
-        MCAPI ::std::string $get2x2(::Random& random);
+        MCNAPI ::std::string $get2x2(::Random& random);
 
-        MCAPI ::std::string $get2x2Secret(::Random& random);
+        MCNAPI ::std::string $get2x2Secret(::Random& random);
 
 
         // NOLINTEND

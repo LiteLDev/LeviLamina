@@ -36,13 +36,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Descriptions();
+        MCNAPI ~Descriptions();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -59,27 +59,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<bool> _insertDescriptions(
+    MCNAPI ::std::shared_ptr<bool> _insertDescriptions(
         ::std::vector<::ChunkPos> const&                                                           intersectingChunks,
         ::std::function<void(::FeatureTerrainAdjustments::Descriptions&, ::std::weak_ptr<bool>)>&& modifyFn
     );
 
-    MCAPI ::FeatureTerrainAdjustments::Descriptions at(::ChunkPos const& chunkPos);
+    MCNAPI ::FeatureTerrainAdjustments::Descriptions at(::ChunkPos const& chunkPos);
 
-    MCAPI void garbageCollectDescriptions();
+    MCNAPI void garbageCollectDescriptions();
 
-    MCAPI ::std::shared_ptr<bool>
+    MCNAPI ::std::shared_ptr<bool>
     setBeardAndShaver(::BoundingBox const& bb, int deltaY, float minBeardWidth, float maxBeardWidth);
 
-    MCAPI ::std::shared_ptr<bool> setBeardifier(::BoundingBox const& bb, int deltaY);
+    MCNAPI ::std::shared_ptr<bool> setBeardifier(::BoundingBox const& bb, int deltaY);
 
-    MCAPI ::std::shared_ptr<bool> setBury(::BoundingBox const& bb);
+    MCNAPI ::std::shared_ptr<bool> setBury(::BoundingBox const& bb);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float calculateContribution(
+    MCNAPI static float calculateContribution(
         ::FeatureTerrainAdjustments::Descriptions const& descriptions,
         ::BlockPos const&                                currentPos,
         float                                            noiseValue
@@ -89,6 +89,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BeardKernel& mBeardKernel();
+    MCNAPI static ::BeardKernel& mBeardKernel();
     // NOLINTEND
 };

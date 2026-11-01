@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeaveLevelProgressScreenController(
+    MCNAPI LeaveLevelProgressScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressInterfaces,
@@ -74,19 +74,19 @@ public:
         bool                                               forceRenderBelow
     );
 
-    MCAPI void _closeEduCloudConflictPopup();
+    MCNAPI void _closeEduCloudConflictPopup();
 
-    MCAPI bool _exitingErrorScreen() const;
+    MCNAPI bool _exitingErrorScreen() const;
 
-    MCAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
+    MCNAPI ::std::chrono::milliseconds const _getEduCloudIsDoneInterval() const;
 
-    MCAPI void _showEduCloudConflictPopup();
+    MCNAPI void _showEduCloudConflictPopup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressInterfaces,
@@ -98,20 +98,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $onReload();
+    MCNAPI void $onReload();
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

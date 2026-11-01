@@ -32,13 +32,13 @@ public:
     // NOLINTBEGIN
     MCAPI void updateViewMatrixDependencies();
 
-    MCAPI ~Camera();
+    MCNAPI ~Camera();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

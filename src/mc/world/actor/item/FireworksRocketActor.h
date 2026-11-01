@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FireworksRocketActor(
+    MCNAPI FireworksRocketActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -67,7 +67,7 @@ public:
         bool                 isProjectile
     );
 
-    MCAPI void initTagData(::Random& random);
+    MCNAPI void initTagData(::Random& random);
 
     MCAPI void postNormalTick();
     // NOLINTEND
@@ -75,7 +75,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initData(
+    MCNAPI static void initData(
         ::SynchedActorDataEntityWrapper& data,
         ::CompoundTag const&             rocketUserData,
         ::Vec3 const&                    dir,
@@ -86,7 +86,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -96,17 +96,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $lerpMotion(::Vec3 const& delta);
+    MCNAPI void $lerpMotion(::Vec3 const& delta);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

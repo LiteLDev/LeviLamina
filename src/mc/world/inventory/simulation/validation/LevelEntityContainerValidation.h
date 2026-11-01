@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
 
     // NOLINTEND

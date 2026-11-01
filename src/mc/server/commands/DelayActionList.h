@@ -43,14 +43,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadRequests(
+    MCNAPI void _loadRequests(
         ::Dimension&            dimension,
         ::LevelStorage&         levelStorage,
         ::ICommandOriginLoader& loader,
         uint64                  currentTick
     );
 
-    MCAPI ::QueueRequestResult _queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult _queueRequestOrExecuteAction(
         ::DelayRequest  request,
         ::LevelStorage& levelStorage,
         ::Dimension&    dimension,
@@ -58,16 +58,16 @@ public:
         bool            allowDuplicates
     );
 
-    MCAPI int clearRequestWithAction(::LevelStorage& levelStorage, ::gsl::not_null<::IRequestAction*> actionToRemove);
+    MCNAPI int clearRequestWithAction(::LevelStorage& levelStorage, ::gsl::not_null<::IRequestAction*> actionToRemove);
 
-    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(
         ::DelayRequest request,
         ::Dimension&   dimension,
         uint64         currentTick,
         bool           allowDuplicates
     );
 
-    MCAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
+    MCNAPI void tick(::ServerLevel& level, ::Dimension& dimension, uint64 currentTick);
     // NOLINTEND
 
 public:

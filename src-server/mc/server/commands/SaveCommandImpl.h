@@ -31,22 +31,22 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::nonstd::expected<::Bedrock::Threading::Async<void>, ::SaveCommandImpl::Errors>
+    MCNAPI static ::nonstd::expected<::Bedrock::Threading::Async<void>, ::SaveCommandImpl::Errors>
     saveHold(::Level& level, ::FileArchiver* fileArchiver);
 
-    MCAPI static ::nonstd::expected<::Bedrock::Threading::Async<void>, ::SaveCommandImpl::Errors>
+    MCNAPI static ::nonstd::expected<::Bedrock::Threading::Async<void>, ::SaveCommandImpl::Errors>
     saveResume(::Level& level);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string& mGeneratedVanillaLevelDataPath();
+    MCNAPI static ::std::string& mGeneratedVanillaLevelDataPath();
 
-    MCAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
+    MCNAPI static ::std::vector<::SnapshotFilenameAndLength>& mSaveAllFileList();
 
-    MCAPI static ::std::mutex& mSaveAllMutex();
+    MCNAPI static ::std::mutex& mSaveAllMutex();
 
-    MCAPI static ::SaveCommandImpl::State& mState();
+    MCNAPI static ::SaveCommandImpl::State& mState();
     // NOLINTEND
 };

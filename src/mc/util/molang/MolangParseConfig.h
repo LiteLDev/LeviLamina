@@ -25,6 +25,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::MolangParseConfig& allowSpecificQuery(::std::string queryName);
+    MCNAPI ::MolangParseConfig& allowSpecificQuery(::std::string queryName);
     // NOLINTEND
 };

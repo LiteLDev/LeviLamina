@@ -17,7 +17,7 @@ struct Encoder {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void blit(
+    MCNAPI void blit(
         ushort                _id,
         ::bgfx::TextureHandle _dst,
         uchar                 _dstMip,
@@ -34,7 +34,7 @@ public:
         ushort                _depth
     );
 
-    MCAPI void setImagesAsRanged(
+    MCNAPI void setImagesAsRanged(
         uchar                              _stage,
         ::bgfx::TextureHandle const*       _textureHandles,
         uint64                             _textureHandleStride,

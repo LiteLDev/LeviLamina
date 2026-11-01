@@ -30,12 +30,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doMinecartPreNormalTickSystem(
+    MCNAPI static void _doMinecartPreNormalTickSystem(
         ::StrictEntityContext&                                            context,
         ::ActorOwnerComponent&                                            actorOwnerComponent,
         ::EntityModifier<::MinecartPreNormalTickBlockPosComponent> const& mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

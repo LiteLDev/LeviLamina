@@ -8,7 +8,7 @@
 namespace SpawnCategory {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::SpawnCategory::Type> tryParse(::std::string_view spawnCategory);
+MCNAPI ::std::optional<::SpawnCategory::Type> tryParse(::std::string_view spawnCategory);
 // NOLINTEND
 
 } // namespace SpawnCategory

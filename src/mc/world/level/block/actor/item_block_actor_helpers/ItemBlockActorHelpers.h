@@ -15,7 +15,7 @@ namespace ItemBlockActorHelpers { struct SpriteCalculatorRefs; }
 namespace ItemBlockActorHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI void tickSpriteCalculators(
+MCNAPI void tickSpriteCalculators(
     ::ItemStackBase const&                         item,
     ::ItemBlockActorHelpers::SpriteCalculatorRefs& spriteCalculators,
     ::BlockSource const&                           region,
@@ -24,14 +24,14 @@ MCAPI void tickSpriteCalculators(
     bool                                           instant
 );
 
-MCAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSource& region);
+MCNAPI bool tryDestroyDisplayEntitiy(::WeakEntityRef& displayEntityRef, ::BlockSource& region);
 
 #ifdef LL_PLAT_C
-MCAPI ::Actor*
+MCNAPI ::Actor*
 tryGetOrCreateDisplayEntity(::WeakEntityRef& displayEntityRef, ::BlockSource& region, ::BlockPos const& pos);
 #endif
 
-MCAPI void updateSpriteCalculators(
+MCNAPI void updateSpriteCalculators(
     ::ItemStackBase const&                               item,
     ::ItemBlockActorHelpers::SpriteCalculatorRefs const& spriteCalculators,
     ::BlockSource const&                                 region,

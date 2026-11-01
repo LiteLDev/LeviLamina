@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void animate(
+    MCNAPI void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,
         float                         scale,

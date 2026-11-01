@@ -42,11 +42,11 @@ public:
 
     MCAPI explicit NetworkItemStackDescriptor(::ItemStack const& item);
 
-    MCAPI ::ItemStack getItemStack(::BlockPalette const& blockPalette) const;
+    MCNAPI ::ItemStack getItemStack(::BlockPalette const& blockPalette) const;
 
-    MCAPI bool operator==(::NetworkItemStackDescriptor const& rhs) const;
+    MCNAPI bool operator==(::NetworkItemStackDescriptor const& rhs) const;
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -66,6 +66,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

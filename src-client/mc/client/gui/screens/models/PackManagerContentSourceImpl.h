@@ -53,31 +53,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManagerContentSourceImpl(
+    MCNAPI PackManagerContentSourceImpl(
         ::ContentSourceType                                       sourceType,
         ::PackManagerContentSourceArgs&&                          args,
         ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository
     );
 
-    MCAPI ::std::vector<::std::shared_ptr<::PackContentItem>> _getAllSelectedItems() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::PackContentItem>> _getAllSelectedItems() const;
 
-    MCAPI void _save(bool const shouldSaveAll);
+    MCNAPI void _save(bool const shouldSaveAll);
 
-    MCAPI void getSortedSelectedContent(
+    MCNAPI void getSortedSelectedContent(
         ::std::vector<::PackInstanceId>&                     modelManagerIdentities,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
 
-    MCAPI void
+    MCNAPI void
     repopulateReports(::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> uiDefRepo, ::ResourcePackManager& packManager);
 
-    MCAPI void resetCache();
+    MCNAPI void resetCache();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ContentSourceType                                       sourceType,
         ::PackManagerContentSourceArgs&&                          args,
         ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository
@@ -87,19 +87,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save();
+    MCNAPI void $save();
 
-    MCAPI void $saveAllPacks();
+    MCNAPI void $saveAllPacks();
 
-    MCAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
 
-    MCAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
     // NOLINTEND
 
 public:

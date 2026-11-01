@@ -40,19 +40,19 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~BiomeDescription();
+            MCNAPI ~BiomeDescription();
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
@@ -72,21 +72,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BiomeJsonObject(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI BiomeJsonObject(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
 
-        MCAPI ~BiomeJsonObject();
+        MCNAPI ~BiomeJsonObject();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_21_110::BiomeJsonDocument::BiomeJsonObject const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -105,23 +105,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
+    MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument&&);
 
-    MCAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
+    MCNAPI ::SharedTypes::v1_21_110::BiomeJsonDocument& operator=(::SharedTypes::v1_21_110::BiomeJsonDocument const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& REGEX_BIOME_IDENTIFIER();
+    MCNAPI static ::std::string const& REGEX_BIOME_IDENTIFIER();
 
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

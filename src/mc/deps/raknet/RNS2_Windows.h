@@ -37,10 +37,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::RakNet::RNS2BindResult
+    MCNAPI ::RakNet::RNS2BindResult
     $Bind(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
 
-    MCAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
+    MCNAPI int $Send(::RakNet::RNS2_SendParameters* sendParameters, char const* file, uint line);
 
 
     // NOLINTEND

@@ -55,32 +55,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StonecutterScreenController(
+    MCNAPI StonecutterScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&,
         ::BlockPos const& pos,
         ::ActorUniqueID
     );
 
-    MCAPI void _changeLeftTab(int dir);
+    MCNAPI void _changeLeftTab(int dir);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player&, ::BlockPos const& pos, ::ActorUniqueID);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
     // NOLINTEND
 };

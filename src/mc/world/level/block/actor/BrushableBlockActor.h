@@ -93,64 +93,64 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BrushableBlockActor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
 
-    MCAPI void _brushingCompleted(::BlockSource& region);
+    MCNAPI void _brushingCompleted(::BlockSource& region);
 
-    MCAPI void _removeDisplayEntity(::BlockSource& region);
+    MCNAPI void _removeDisplayEntity(::BlockSource& region);
 
-    MCAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
+    MCNAPI ::BrushableBlockActor::BrushingState brush(::BlockSource& region, ::BlockPos const& pos, uchar face);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+    MCNAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
 
-    MCAPI void update(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI void update(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
+    MCNAPI static ::std::string getLootTableFromVariant(::BrushableBlockActor::Placement state);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
+    MCNAPI void* $ctor(::HashedString const& name, ::BlockPos const& pos, ::BrushableBlockActor::Placement placement);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

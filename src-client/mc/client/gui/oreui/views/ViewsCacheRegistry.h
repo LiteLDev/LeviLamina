@@ -34,15 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::SubClientId subClientId, ::OreUI::ViewId viewId, ::std::string_view path);
+    MCNAPI void add(::SubClientId subClientId, ::OreUI::ViewId viewId, ::std::string_view path);
 
-    MCAPI ~ViewsCacheRegistry();
+    MCNAPI ~ViewsCacheRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

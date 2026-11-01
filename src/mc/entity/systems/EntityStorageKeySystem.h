@@ -11,13 +11,13 @@ class EntityStorageKeySystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string generateStorageKey(int64 actorId);
+    MCNAPI static ::std::string generateStorageKey(int64 actorId);
 
-    MCAPI static bool
+    MCNAPI static bool
     getIsDirtySinceSerialization(::EntityContext& entity, ::std::string const& currentSerializedState);
 
-    MCAPI static void setDirtyFromNonSerializedState(::EntityContext& entity);
+    MCNAPI static void setDirtyFromNonSerializedState(::EntityContext& entity);
 
-    MCAPI static void setLastSerializedState(::EntityContext& entity, ::std::string const& currentSerializedState);
+    MCNAPI static void setLastSerializedState(::EntityContext& entity, ::std::string const& currentSerializedState);
     // NOLINTEND
 };

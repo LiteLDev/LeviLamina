@@ -19,13 +19,13 @@ class ScriptBlockVibrationPropertiesComponent : public ::ScriptModuleMinecraft::
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getCanDampenVibrations() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
@@ -35,13 +35,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 };
 

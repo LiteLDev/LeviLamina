@@ -82,12 +82,12 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
+        MCNAPI ::std::shared_ptr<::RepositoryLoading::AllRefreshTaskData>
         $buildTaskData(::RepositoryLoading::BuildTaskDataOptions const& ops);
 
-        MCAPI void $applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData);
+        MCNAPI void $applyTaskResults(::RepositoryLoading::AllRefreshTaskData&& taskData);
 
-        MCAPI ::std::shared_ptr<::RepositoryPacks const> $getPacks() const;
+        MCNAPI ::std::shared_ptr<::RepositoryPacks const> $getPacks() const;
 
 
         // NOLINTEND
@@ -274,7 +274,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackRepository(
+    MCNAPI ResourcePackRepository(
         ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -286,13 +286,13 @@ public:
         ::std::unique_ptr<::IRepositoryFactory>                               factory
     );
 
-    MCAPI void _postDeletePacks(::gsl::span<::ResourceLocation const> packLocations);
+    MCNAPI void _postDeletePacks(::gsl::span<::ResourceLocation const> packLocations);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -309,142 +309,142 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $getResourcePacksByPackId(
+    MCNAPI void $getResourcePacksByPackId(
         ::std::vector<::PackInstanceId> const& packInstanceIds,
         ::std::vector<::PackInstance>&         result
     ) const;
 
-    MCAPI ::std::shared_ptr<::ResourcePack> $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
+    MCNAPI ::std::shared_ptr<::ResourcePack> $getResourcePackForPackId(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::ResourcePack* $getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const;
+    MCNAPI ::ResourcePack* $getResourcePackOfDifferentVersionForPackId(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::ResourcePack*
+    MCNAPI ::ResourcePack*
     $getResourcePackForPackIdInPath(::PackIdVersion const& idAndVersion, ::Core::Path const& fullPath) const;
 
-    MCAPI ::std::vector<::ResourcePack*> $getResourcePacksByUUID(::mce::UUID const& id) const;
+    MCNAPI ::std::vector<::ResourcePack*> $getResourcePacksByUUID(::mce::UUID const& id) const;
 
-    MCAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
+    MCNAPI ::ResourcePack* $getResourcePackForPackIdOwned(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::std::shared_ptr<::ResourcePack> $getResourcePackSatisfiesPackId(
+    MCNAPI ::std::shared_ptr<::ResourcePack> $getResourcePackSatisfiesPackId(
         ::PackIdVersion const&        idAndVersion,
         bool                          requireOwnership,
         ::ResourcePackSelectionPolicy selectionPolicy
     ) const;
 
-    MCAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
+    MCNAPI ::ResourcePack* $getResourcePackContainingModule(::PackIdVersion const& idAndVersion) const;
 
-    MCAPI ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
+    MCNAPI ::Bedrock::Threading::Async<::std::shared_ptr<::ResourcePack>>
     $getResourcePackInPath(::Core::Path const& path) const;
 
-    MCAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
+    MCNAPI bool $isResourcePackLoaded(::PackIdVersion const& identity, ::PackOrigin const& location);
 
-    MCFOLD ::PackSourceReport const* $getPackLoadingReport() const;
+    MCNAPI ::PackSourceReport const* $getPackLoadingReport() const;
 
-    MCAPI ::std::shared_ptr<::ResourcePack> $getEditorPack() const;
+    MCNAPI ::std::shared_ptr<::ResourcePack> $getEditorPack() const;
 
-    MCAPI ::std::shared_ptr<::ResourcePack> $getVanillaPack() const;
+    MCNAPI ::std::shared_ptr<::ResourcePack> $getVanillaPack() const;
 
-    MCAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
+    MCNAPI bool $setServicePacks(::std::vector<::PackIdVersion> servicePackIds);
 
-    MCAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
+    MCNAPI void $addServicePacksToStack(::ResourcePackStack& stack) const;
 
-    MCAPI void $addSystemPacksToStack(::ResourcePackStack& stack, ::std::optional<::std::string> worldId) const;
+    MCNAPI void $addSystemPacksToStack(::ResourcePackStack& stack, ::std::optional<::std::string> worldId) const;
 
-    MCAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
+    MCNAPI void $addCachedResourcePacks(::std::unordered_map<::ContentIdentity, ::std::string> const* tempCacheKeys);
 
-    MCAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
+    MCNAPI void $addWorldResourcePacks(::Core::Path const& levelPath);
 
-    MCAPI void $addPremiumWorldTemplateResourcePacks(
+    MCNAPI void $addPremiumWorldTemplateResourcePacks(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     );
 
-    MCAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
+    MCNAPI void $addTempWorldTemplateResourcePacks(::mce::UUID const& worldTemplateUUID);
 
-    MCAPI void $addWorldPackSource(::Core::Path const& levelPath);
+    MCNAPI void $addWorldPackSource(::Core::Path const& levelPath);
 
-    MCAPI void $addPremiumWorldTemplatePackSource(
+    MCNAPI void $addPremiumWorldTemplatePackSource(
         ::Core::Path const&      worldTemplatePath,
         ::ContentIdentity const& premiumWorldIdentity
     );
 
-    MCAPI void $removePacksLoadedFromCache();
+    MCNAPI void $removePacksLoadedFromCache();
 
-    MCAPI void $removePacksLoadedFromWorld();
+    MCNAPI void $removePacksLoadedFromWorld();
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getResourcePacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getBehaviorPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getSkinPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getCustomSkinDirectoryPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getCustomSkinDirectoryPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentResourcePacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentBehaviorPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getDevelopmentSkinPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getTreatmentPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getSystemBehaviorPacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getSystemBehaviorPacksPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getSystemResourcePacksPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getSystemResourcePacksPath() const;
 
-    MCAPI void $refreshPacks();
+    MCNAPI void $refreshPacks();
 
-    MCAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync();
+    MCNAPI ::Bedrock::Threading::Async<void> $refreshPacksAsync();
 
-    MCAPI void $requestReloadUserPacks();
+    MCNAPI void $requestReloadUserPacks();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCFOLD ::PackManifestFactory& $getPackManifestFactory();
+    MCNAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCFOLD ::PackSettingsFactory& $getPackSettingsFactory() const;
+    MCNAPI ::PackSettingsFactory& $getPackSettingsFactory() const;
 
-    MCFOLD ::PackSourceFactory& $getPackSourceFactory();
+    MCNAPI ::PackSourceFactory& $getPackSourceFactory();
 
-    MCAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
+    MCNAPI ::std::vector<::ResourcePack*> $getPacksByResourceLocation(::PackOrigin type) const;
 
-    MCAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
+    MCNAPI ::std::vector<::ResourcePack*> $getPacksByType(::PackType type) const;
 
-    MCAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
+    MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::ResourcePack>>>
     $getPacksByCategory(::PackCategory category) const;
 
-    MCAPI void $forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const;
+    MCNAPI void $forEachPack(::std::function<void(::ResourcePack const&)> const& callback) const;
 
-    MCFOLD ::std::vector<::InvalidPack> const& $getInvalidPacks() const;
+    MCNAPI ::std::vector<::InvalidPack> const& $getInvalidPacks() const;
 
-    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackType type) const;
+    MCNAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackType type) const;
 
-    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
+    MCNAPI ::std::vector<::InvalidPack> $getInvalidPacks(::InvalidPacksFilterGroup const& packTypes) const;
 
-    MCAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackOrigin origin) const;
+    MCNAPI ::std::vector<::InvalidPack> $getInvalidPacks(::PackOrigin origin) const;
 
-    MCAPI void $deletePacks(::gsl::span<::ResourceLocation const> packLocations, ::std::string_view deletionReason);
+    MCNAPI void $deletePacks(::gsl::span<::ResourceLocation const> packLocations, ::std::string_view deletionReason);
 
-    MCAPI void $deletePack(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
+    MCNAPI void $deletePack(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
 
-    MCAPI void $deletePackFiles(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
+    MCNAPI void $deletePackFiles(::ResourceLocation const& packLocation, ::std::string_view deletionReason);
 
-    MCAPI void $postDeletePack(::ResourceLocation const& packLocation);
+    MCNAPI void $postDeletePack(::ResourceLocation const& packLocation);
 
-    MCAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
+    MCNAPI void $untrackInvalidPack(::ResourceLocation const& packLocation);
 
-    MCAPI bool $isInitialized() const;
+    MCNAPI bool $isInitialized() const;
 
-    MCAPI ::ResourcePackStack $createStack(::std::vector<::PackInstanceId> const& identities);
+    MCNAPI ::ResourcePackStack $createStack(::std::vector<::PackInstanceId> const& identities);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> $getContentSourceRepository();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> $getContentSourceRepository();
 
 
     // NOLINTEND

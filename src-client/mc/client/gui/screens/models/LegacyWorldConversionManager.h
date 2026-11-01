@@ -44,20 +44,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyWorldConversionManager(
+    MCNAPI LegacyWorldConversionManager(
         ::ILevelListCache&                                                        levelListCache,
         ::IContentAcquisition&                                                    contentAcquisition,
         ::IDlcValidation&                                                         dlcValidation,
         ::std::function<::IDlcBatchModel&(::std::vector<::PackIdVersion> const&)> dlcBatchModelProvider
     );
 
-    MCAPI void tryAcquireMissingDlc(::std::string const& levelId, ::std::function<void(bool)> downloadCompleteCallback);
+    MCNAPI void
+    tryAcquireMissingDlc(::std::string const& levelId, ::std::function<void(bool)> downloadCompleteCallback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ILevelListCache&                                                        levelListCache,
         ::IContentAcquisition&                                                    contentAcquisition,
         ::IDlcValidation&                                                         dlcValidation,
@@ -68,7 +69,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

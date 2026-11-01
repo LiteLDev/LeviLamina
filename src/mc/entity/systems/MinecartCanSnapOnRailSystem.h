@@ -28,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _checkCanSnapOnRail(
+    MCNAPI static void _checkCanSnapOnRail(
         ::StrictEntityContext const&                   context,
         ::StateVectorComponent const&                  stateVectorComponent,
         ::EntityModifier<::SnapOnRailComponent> const& mod,

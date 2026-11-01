@@ -10,7 +10,7 @@ namespace OreUI::InputUtils { struct TextInputResult; }
 namespace OreUI::InputUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::OreUI::InputUtils::TextInputResult>
+MCNAPI ::std::optional<::OreUI::InputUtils::TextInputResult>
 calculateTextChange(::std::string const& currentInput, ::std::string const& newInput, bool isNumbersOnly);
 // NOLINTEND
 

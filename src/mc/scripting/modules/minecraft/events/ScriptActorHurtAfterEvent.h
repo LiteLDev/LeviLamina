@@ -45,36 +45,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCNAPI ScriptActorHurtAfterEvent(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI ScriptActorHurtAfterEvent(
+    MCNAPI ScriptActorHurtAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptActorHurtAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI ~ScriptActorHurtAfterEvent();
+    MCNAPI ~ScriptActorHurtAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                        scope
     );
@@ -83,7 +83,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

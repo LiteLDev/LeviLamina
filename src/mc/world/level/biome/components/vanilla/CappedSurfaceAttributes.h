@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeNoise(uint levelSeed);
+    MCNAPI void initializeNoise(uint levelSeed);
     // NOLINTEND
 
 public:

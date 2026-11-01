@@ -33,9 +33,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void bind();
+    MCNAPI void bind();
 
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 };
 

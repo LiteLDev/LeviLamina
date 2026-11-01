@@ -5,13 +5,13 @@
 namespace SharedTypes::v1_21_100::CustomMapTintInternals {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> FOLIAGE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FOLIAGE();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> GRASS();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> GRASS();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> GRASS_TINT();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> GRASS_TINT();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> TYPE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> TYPE();
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_100::CustomMapTintInternals

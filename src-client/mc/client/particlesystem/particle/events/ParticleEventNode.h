@@ -29,27 +29,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ParticleEventNode(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI explicit ParticleEventNode(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI explicit ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const& nodeData);
+    MCNAPI explicit ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const& nodeData);
 
-    MCAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEventNode& data);
+    MCNAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEventNode& data);
 
-    MCAPI ~ParticleEventNode();
+    MCNAPI ~ParticleEventNode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void* $ctor(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const& nodeData);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const& nodeData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

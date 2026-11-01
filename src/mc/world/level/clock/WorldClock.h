@@ -97,57 +97,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClock();
+    MCNAPI WorldClock();
 
 #ifdef LL_PLAT_C
-    MCAPI explicit WorldClock(::WorldClockData const& data);
+    MCNAPI explicit WorldClock(::WorldClockData const& data);
 #endif
 
-    MCAPI WorldClock(::WorldClock const& rhs);
+    MCNAPI WorldClock(::WorldClock const& rhs);
 
-    MCAPI void _fireTimeMarkerEvents();
+    MCNAPI void _fireTimeMarkerEvents();
 
-    MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
+    MCNAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
 
-    MCAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
+    MCNAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
 
-    MCAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
+    MCNAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
 
-    MCAPI void addTime(int time);
+    MCNAPI void addTime(int time);
 
-    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
+    MCNAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
     addTimeMarker(::TimeMarker const& timeMarker, bool isVanilla);
 
 #ifdef LL_PLAT_C
-    MCAPI void
+    MCNAPI void
     initializeLevelEventCoordinator(::Bedrock::NonOwnerPointer<::LevelEventCoordinator> const eventCoordinator);
 #endif
 
-    MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
+    MCNAPI ::WorldClock& operator=(::WorldClock const& rhs);
 
-    MCAPI ::std::optional<::TimeMarkerError>
+    MCNAPI ::std::optional<::TimeMarkerError>
     serverReloadCreatorTimeMarkers(::std::vector<::TimeMarker> const& timeMarkers);
 
-    MCAPI void setIsPaused(bool isPaused);
+    MCNAPI void setIsPaused(bool isPaused);
 
 #ifdef LL_PLAT_C
-    MCAPI void tick();
+    MCNAPI void tick();
 #endif
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
+    MCNAPI ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::WorldClockData const& data);
+    MCNAPI void* $ctor(::WorldClockData const& data);
 #endif
 
-    MCAPI void* $ctor(::WorldClock const& rhs);
+    MCNAPI void* $ctor(::WorldClock const& rhs);
     // NOLINTEND
 };

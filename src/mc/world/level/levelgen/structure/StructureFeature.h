@@ -91,24 +91,24 @@ public:
     // NOLINTBEGIN
     MCAPI StructureFeature(uint seed, ::HashedString structureFeatureType);
 
-    MCAPI void createBlueprints(
+    MCNAPI void createBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
         ::BiomeSource const&                 biomeSource,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
+    MCNAPI void foreachIntersectingStructureStart(::BoundingBox const& bb, ::std::function<void(::StructureStart&)> fn);
 
     MCAPI void garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks, uint safetyBorder);
 
-    MCAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
+    MCNAPI void postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool findNearestFeaturePositionBySpacing(
+    MCNAPI static bool findNearestFeaturePositionBySpacing(
         ::Dimension&                           dimension,
         ::IPreliminarySurfaceProvider const&   preliminarySurfaceLevel,
         ::StructureFeature&                    feature,
@@ -124,7 +124,7 @@ public:
         bool                                   mustBeInNewChunks
     );
 
-    MCAPI static ::ChunkPos getChunkPosInSpace(
+    MCNAPI static ::ChunkPos getChunkPosInSpace(
         ::ChunkPos const& cp,
         ::Random&         random,
         uint              levelSeed,
@@ -166,7 +166,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
+    MCNAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
 
 
     // NOLINTEND

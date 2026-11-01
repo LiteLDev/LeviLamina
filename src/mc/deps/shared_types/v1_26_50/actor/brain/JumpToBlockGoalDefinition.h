@@ -35,36 +35,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JumpToBlockGoalDefinition(::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition const&);
+    MCNAPI JumpToBlockGoalDefinition(::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition&
     operator=(::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition&&);
 
-    MCAPI ~JumpToBlockGoalDefinition();
+    MCNAPI ~JumpToBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::Brain::MemoryGoals::JumpToBlockGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

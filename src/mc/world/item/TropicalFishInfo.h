@@ -20,12 +20,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCNAPI TropicalFishInfo(int color, int color2, int variant, int markVariant, ::std::string name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
+    MCNAPI void* $ctor(int color, int color2, int variant, int markVariant, ::std::string name);
     // NOLINTEND
 };

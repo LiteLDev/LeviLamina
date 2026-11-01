@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool loadImpl(
+    MCNAPI bool loadImpl(
         ::cereal::SchemaReader&                reader,
         ::entt::meta_handle                    handle,
         ::entt::meta_any const&                loadContext,
@@ -43,7 +43,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

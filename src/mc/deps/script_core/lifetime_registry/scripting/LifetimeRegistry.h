@@ -43,52 +43,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LifetimeRegistry(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
+    MCNAPI LifetimeRegistry(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
 
-    MCAPI ::Scripting::ObjectHandle _createBaseObject(::Scripting::internal::BaseScriptComponent&& baseScriptComp);
+    MCNAPI ::Scripting::ObjectHandle _createBaseObject(::Scripting::internal::BaseScriptComponent&& baseScriptComp);
 
-    MCAPI void
+    MCNAPI void
     _destroyObject(::Scripting::ObjectHandle handle, ::Scripting::internal::BaseScriptComponent& baseScriptComp);
 
-    MCAPI bool _doTypesMatch(::Scripting::ObjectHandle handle, ::entt::meta_type const& expectedType);
+    MCNAPI bool _doTypesMatch(::Scripting::ObjectHandle handle, ::entt::meta_type const& expectedType);
 
-    MCAPI void addReference(::Scripting::ObjectHandle handle);
+    MCNAPI void addReference(::Scripting::ObjectHandle handle);
 
-    MCAPI void destroyLifetimeScope(bool expectAllDead);
+    MCNAPI void destroyLifetimeScope(bool expectAllDead);
 
-    MCAPI ::Scripting::IScriptRef* getScriptRef(::Scripting::ObjectHandle handle);
+    MCNAPI ::Scripting::IScriptRef* getScriptRef(::Scripting::ObjectHandle handle);
 
-    MCAPI void removeObjectListener(::std::shared_ptr<::Scripting::ILifetimeObjectListener> strongListener);
+    MCNAPI void removeObjectListener(::std::shared_ptr<::Scripting::ILifetimeObjectListener> strongListener);
 
-    MCAPI bool removeReference(::Scripting::ObjectHandle handle);
+    MCNAPI bool removeReference(::Scripting::ObjectHandle handle);
 
-    MCAPI ::entt::meta_any resolveAsAny(::Scripting::ObjectHandle handle);
+    MCNAPI ::entt::meta_any resolveAsAny(::Scripting::ObjectHandle handle);
 
-    MCAPI ::entt::meta_any resolveAsStrongTypedObjectHandle(::Scripting::ObjectHandle handle);
+    MCNAPI ::entt::meta_any resolveAsStrongTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI ::entt::meta_any resolveAsTypedObjectHandle(::Scripting::ObjectHandle handle);
+    MCNAPI ::entt::meta_any resolveAsTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI ::entt::meta_any resolveAsWeakTypedObjectHandle(::Scripting::ObjectHandle handle);
+    MCNAPI ::entt::meta_any resolveAsWeakTypedObjectHandle(::Scripting::ObjectHandle handle);
 
-    MCAPI ::entt::meta_type const& resolvedType(::Scripting::ObjectHandle handle);
+    MCNAPI ::entt::meta_type const& resolvedType(::Scripting::ObjectHandle handle);
 
-    MCAPI void setScriptRef(::Scripting::ObjectHandle handle, ::std::unique_ptr<::Scripting::IScriptRef>&& scriptRef);
+    MCNAPI void setScriptRef(::Scripting::ObjectHandle handle, ::std::unique_ptr<::Scripting::IScriptRef>&& scriptRef);
 
-    MCAPI bool valid(::Scripting::ObjectHandle const& handle);
+    MCNAPI bool valid(::Scripting::ObjectHandle const& handle);
 
-    MCAPI ~LifetimeRegistry();
+    MCNAPI ~LifetimeRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
+    MCNAPI void* $ctor(::Scripting::ContextId contextId, ::Scripting::LifetimeRegistryReference& registryRef);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

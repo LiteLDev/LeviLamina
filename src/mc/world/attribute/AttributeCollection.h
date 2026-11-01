@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Attribute& getAttribute(::HashedString const& name);
+    MCNAPI ::Attribute& getAttribute(::HashedString const& name);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool hasAttribute(::HashedString const& name);
+    MCNAPI static bool hasAttribute(::HashedString const& name);
     // NOLINTEND
 };

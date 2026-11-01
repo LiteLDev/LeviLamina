@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getAmount(int amplification, float scale) const;
+    MCNAPI float $getAmount(int amplification, float scale) const;
 
 
     // NOLINTEND

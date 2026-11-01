@@ -52,10 +52,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BiomeManager(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
 
-    MCAPI void _initializeServerBiomeRegistry(
+    MCNAPI void _initializeServerBiomeRegistry(
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::LevelSeed64                                      levelSeed,
         ::LevelStorage&                                    levelStorage,
@@ -64,7 +64,7 @@ public:
             biomeIdToResolvedData
     );
 
-    MCAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
+    MCNAPI void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(
         ::IWorldRegistriesProvider&                        worldRegistries,
         ::ResourcePackManager&                             resourcePackManager,
         ::LevelSeed64                                      levelSeed,
@@ -74,19 +74,19 @@ public:
             biomeIdToResolvedData
     );
 
-    MCAPI ~BiomeManager();
+    MCNAPI ~BiomeManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::OwnerPtr<::BiomeRegistry> biomes, ::std::unique_ptr<::AutomaticFeatureRules> automaticFeatureRules);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

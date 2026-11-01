@@ -48,24 +48,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SubChunkInsertManager(::std::function<::Player*()> getPrimaryLocalPlayer);
+    MCNAPI explicit SubChunkInsertManager(::std::function<::Player*()> getPrimaryLocalPlayer);
 
     MCAPI void addSubChunkInsertTask(::std::shared_ptr<::SubChunkPacketHandler> handler);
 
-    MCAPI void tick();
+    MCNAPI void tick();
 
-    MCAPI ~SubChunkInsertManager();
+    MCNAPI ~SubChunkInsertManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::Player*()> getPrimaryLocalPlayer);
+    MCNAPI void* $ctor(::std::function<::Player*()> getPrimaryLocalPlayer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

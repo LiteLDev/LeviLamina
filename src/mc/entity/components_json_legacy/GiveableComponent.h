@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 };

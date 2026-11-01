@@ -61,6 +61,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void draw(::ScreenContext& screenContext, ::Tessellator& tessellator, float x, float y);
+    MCNAPI void draw(::ScreenContext& screenContext, ::Tessellator& tessellator, float x, float y);
     // NOLINTEND
 };

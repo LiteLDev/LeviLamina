@@ -54,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ScopedContext();
+        MCNAPI ~ScopedContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -87,10 +87,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     TickingAreasManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, ::TickingAreaLimitPolicy limitPolicy);
 
-    MCAPI ::AddTickingAreaStatus _addArea(
+    MCNAPI ::AddTickingAreaStatus _addArea(
         ::DimensionType                       dimensionId,
         ::std::string const&                  name,
         ::Bounds const&                       bounds,
@@ -101,16 +101,16 @@ public:
         ::LevelStorage&                       levelStorage
     );
 
-    MCAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(
+    MCNAPI ::std::vector<::TickingAreaDescription> _getPendingAreaDescriptionsFiltered(
         ::DimensionType                             dimensionId,
         ::std::function<bool(::PendingArea const&)> includeInList
     ) const;
 
-    MCAPI void _postReloadActorAdded(::Actor& actor);
+    MCNAPI void _postReloadActorAdded(::Actor& actor);
 
-    MCAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
+    MCNAPI void addEntityArea(::DimensionType dimensionId, ::Actor const& actor, ::LevelStorage& levelStorage);
 
-    MCAPI void addEntityArea(
+    MCNAPI void addEntityArea(
         ::DimensionType        dimensionId,
         ::ActorUniqueID const& entityId,
         ::Bounds               bounds,
@@ -119,12 +119,12 @@ public:
         ::LevelStorage&        levelStorage
     );
 
-    MCAPI void addTickingAreaListForDimension(
+    MCNAPI void addTickingAreaListForDimension(
         ::DimensionType                             dimensionId,
         ::std::shared_ptr<::TickingAreaList> const& tickingAreaList
     );
 
-    MCAPI ::TickingAreasManager::ScopedContext addTransientScopedArea(
+    MCNAPI ::TickingAreasManager::ScopedContext addTransientScopedArea(
         ::DimensionType      dimensionId,
         ::std::string const& name,
         uint64               scopeKey,
@@ -132,51 +132,51 @@ public:
         ::Bounds const&      bounds
     );
 
-    MCAPI uint countStandaloneTickingAreas() const;
+    MCNAPI uint countStandaloneTickingAreas() const;
 
-    MCAPI void registerForActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
+    MCNAPI void registerForActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
-    MCAPI void registerForLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerForLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI ::std::vector<::TickingAreaDescription>
+    MCNAPI ::std::vector<::TickingAreaDescription>
     removePendingAreaByName(::DimensionType dimensionId, ::std::string const& name, ::LevelStorage& levelStorage);
 
-    MCAPI ::std::vector<::TickingAreaDescription>
+    MCNAPI ::std::vector<::TickingAreaDescription>
     removePendingAreaByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::LevelStorage& levelStorage);
 
-    MCAPI void removeScopedAreas(::std::vector<::mce::UUID> const& uuids);
+    MCNAPI void removeScopedAreas(::std::vector<::mce::UUID> const& uuids);
 
-    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(
+    MCNAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(
         ::DimensionType       dimensionId,
         ::std::string const&  name,
         ::TickingAreaLoadMode loadMode,
         ::LevelStorage&       levelStorage
     );
 
-    MCAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByPosition(
+    MCNAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByPosition(
         ::DimensionType       dimensionId,
         ::BlockPos const&     position,
         ::TickingAreaLoadMode loadMode,
         ::LevelStorage&       levelStorage
     );
 
-    MCAPI void update(::Level& level, ::LevelStorage& levelStorage);
+    MCNAPI void update(::Level& level, ::LevelStorage& levelStorage);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
+    MCNAPI static void _deletePendingArea(::LevelStorage& levelStorage, ::PendingArea const& pendingArea);
 
-    MCAPI static void
+    MCNAPI static void
     _savePendingArea(::LevelStorage& levelStorage, ::DimensionType dimensionId, ::PendingArea const& pendingArea);
 
-    MCAPI static ::TickingAreasManager::AreaLimitCheck getLimitCheck(::Level const& level, bool enforce);
+    MCNAPI static ::TickingAreasManager::AreaLimitCheck getLimitCheck(::Level const& level, bool enforce);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, ::TickingAreaLimitPolicy limitPolicy);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, ::TickingAreaLimitPolicy limitPolicy);
     // NOLINTEND
 };

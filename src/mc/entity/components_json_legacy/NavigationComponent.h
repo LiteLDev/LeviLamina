@@ -57,30 +57,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NavigationComponent(::NavigationComponent const& other);
+    MCNAPI NavigationComponent(::NavigationComponent const& other);
 
-    MCAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCNAPI void initMultiTypeNavigationComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription const* description);
+    MCNAPI void initializeFromDefinition(::Mob& owner, ::NavigationDescription const* description);
 
     MCAPI bool moveTo(::Mob& owner, ::std::unique_ptr<::Path> newPath, float speed);
 
-    MCAPI ::NavigationComponent& operator=(::NavigationComponent&&);
+    MCNAPI ::NavigationComponent& operator=(::NavigationComponent&&);
 
-    MCAPI void setPath(::std::unique_ptr<::Path> path);
+    MCNAPI void setPath(::std::unique_ptr<::Path> path);
 
-    MCAPI ~NavigationComponent();
+    MCNAPI ~NavigationComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::NavigationComponent const& other);
+    MCNAPI void* $ctor(::NavigationComponent const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

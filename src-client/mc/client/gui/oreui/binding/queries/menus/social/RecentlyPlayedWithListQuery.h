@@ -49,15 +49,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RecentlyPlayedWithListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCNAPI
+    RecentlyPlayedWithListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
 
-    MCAPI void _updateLists();
+    MCNAPI void _updateLists();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

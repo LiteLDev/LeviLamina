@@ -16,7 +16,7 @@ struct ScriptWorldClockRemoveMinecraftTimeMarkerError : public ::Scripting::Base
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 };
 

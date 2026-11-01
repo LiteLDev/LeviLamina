@@ -19,15 +19,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-#ifdef LL_PLAT_S
-    MCAPI int $getMaxCost(int level) const;
-#else // LL_PLAT_C
-    MCFOLD int $getMaxCost(int level) const;
-#endif
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCFOLD int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
 
     // NOLINTEND

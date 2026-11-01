@@ -41,20 +41,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI ::Actor* $createProjectileActor(
+    MCNAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
         ::Vec3 const&      direction
     ) const;
 
-    MCFOLD bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
 
     // NOLINTEND
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

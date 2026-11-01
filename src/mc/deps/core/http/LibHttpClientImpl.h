@@ -44,41 +44,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibHttpClientImpl();
+    MCNAPI LibHttpClientImpl();
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>>
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::Bedrock::Http::Internal::IResponseBody>>
     _getResponseBody(::gsl::not_null<::HC_CALL*> call);
 
-    MCAPI void _logRequestUrl(::gsl::not_null<::HC_CALL*> callHandle);
+    MCNAPI void _logRequestUrl(::gsl::not_null<::HC_CALL*> callHandle);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static HRESULT
+    MCNAPI static HRESULT
     _requestBodyRead(::HC_CALL* call, uint64, uint64 bytesAvailable, void*, uchar* destination, uint64* bytesWritten);
 
-    MCAPI static HRESULT _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void*);
+    MCNAPI static HRESULT _responseBodyWrite(::HC_CALL* call, uchar const* source, uint64 bytesAvailable, void*);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::mutex& sWeakThisMutex();
+    MCNAPI static ::std::mutex& sWeakThisMutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI void $shutdown();
+    MCNAPI void $shutdown();
 
     MCAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> $send(::Bedrock::Http::Request&& request);
 

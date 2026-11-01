@@ -41,10 +41,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
+    MCNAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
-    MCAPI bool isKeymappingDefault(uint64 index) const;
+    MCNAPI bool isKeymappingDefault(uint64 index) const;
 
-    MCAPI void unassignDuplicateKeys(uint64 index);
+    MCNAPI void unassignDuplicateKeys(uint64 index);
     // NOLINTEND
 };

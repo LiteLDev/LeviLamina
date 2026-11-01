@@ -71,21 +71,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _parseColorBlock(::ConstDeserializeDataParams const& deserializeDataParams, float value);
+    MCNAPI void _parseColorBlock(::ConstDeserializeDataParams const& deserializeDataParams, float value);
 
-    MCAPI void _parseGradientBlock(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void _parseGradientBlock(::ConstDeserializeDataParams const& deserializeDataParams);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI void $updateParticleAppearance(
+    MCNAPI void $updateParticleAppearance(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams

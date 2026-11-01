@@ -30,26 +30,26 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& HIDE_BOUNDARY();
+    MCNAPI static ::std::string_view const& HIDE_BOUNDARY();
 
-    MCAPI static ::std::string_view const& HIDE_DELAY_SECONDS();
+    MCNAPI static ::std::string_view const& HIDE_DELAY_SECONDS();
 
-    MCAPI static ::std::string_view const& HIDE_TRANSITION_SECONDS();
+    MCNAPI static ::std::string_view const& HIDE_TRANSITION_SECONDS();
 
-    MCAPI static ::std::string_view const& MIN_HIDDEN_SECONDS();
+    MCNAPI static ::std::string_view const& MIN_HIDDEN_SECONDS();
 
-    MCAPI static ::std::string_view const& MIN_VISIBLE_SECONDS();
+    MCNAPI static ::std::string_view const& MIN_VISIBLE_SECONDS();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& REVEAL_BOUNDARY();
+    MCNAPI static ::std::string_view const& REVEAL_BOUNDARY();
     // NOLINTEND
 };
 

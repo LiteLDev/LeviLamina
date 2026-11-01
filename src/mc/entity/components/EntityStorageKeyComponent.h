@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntityStorageKeyComponent(::EntityStorageKeyComponent const&);
+    MCNAPI EntityStorageKeyComponent(::EntityStorageKeyComponent const&);
 
-    MCAPI explicit EntityStorageKeyComponent(::std::string const& storageKey);
+    MCNAPI explicit EntityStorageKeyComponent(::std::string const& storageKey);
 
-    MCAPI void addAdditionalSaveData(::Actor const& owner, ::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::Actor const& owner, ::CompoundTag& tag) const;
 
-    MCFOLD ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
+    MCNAPI ::EntityStorageKeyComponent& operator=(::EntityStorageKeyComponent&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::EntityStorageKeyComponent const&);
+    MCNAPI void* $ctor(::EntityStorageKeyComponent const&);
 
-    MCAPI void* $ctor(::std::string const& storageKey);
+    MCNAPI void* $ctor(::std::string const& storageKey);
     // NOLINTEND
 };

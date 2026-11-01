@@ -31,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiplayerBroadcastStateInfo(::Settings::MultiplayerBroadcastStateInfo const&);
+    MCNAPI MultiplayerBroadcastStateInfo(::Settings::MultiplayerBroadcastStateInfo const&);
 
-    MCAPI ~MultiplayerBroadcastStateInfo();
+    MCNAPI ~MultiplayerBroadcastStateInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Settings::MultiplayerBroadcastStateInfo const&);
+    MCNAPI void* $ctor(::Settings::MultiplayerBroadcastStateInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

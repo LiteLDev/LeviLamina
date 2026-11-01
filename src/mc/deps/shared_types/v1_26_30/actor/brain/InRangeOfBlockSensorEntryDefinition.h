@@ -36,41 +36,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InRangeOfBlockSensorEntryDefinition(
+    MCNAPI InRangeOfBlockSensorEntryDefinition(
         ::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition const&
     );
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition&&);
 
-    MCAPI bool
+    MCNAPI bool
     operator==(::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition const&) const;
 
-    MCAPI ~InRangeOfBlockSensorEntryDefinition();
+    MCNAPI ~InRangeOfBlockSensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::InRangeOfBlockSensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

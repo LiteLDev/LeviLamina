@@ -37,24 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyComponent(::PropertyComponent&&);
+    MCNAPI PropertyComponent(::PropertyComponent&&);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void
+    MCNAPI void
     applyPendingChanges(::std::unordered_map<uint64, ::std::variant<int, float, bool, uint64>> const& pendingChanges);
 
-    MCAPI bool getBool(uint64 h) const;
+    MCNAPI bool getBool(uint64 h) const;
 
-    MCAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
+    MCNAPI ::PropertyMetadata::ContainedType getPropertyType(uint64 h) const;
 
-    MCAPI ::PropertySyncData packAllSyncData() const;
+    MCNAPI ::PropertySyncData packAllSyncData() const;
 
-    MCAPI ::PropertySyncData packDirtySyncData();
+    MCNAPI ::PropertySyncData packDirtySyncData();
 
     MCAPI void readLoadedProperties(::CompoundTag const& loadedPropertyTag);
 
-    MCAPI void setAliasProperties(
+    MCNAPI void setAliasProperties(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::Tag>> const& aliasProperties,
         ::std::string const&                                                  aliasName,
         ::std::string const&                                                  canonicalName
@@ -62,12 +62,12 @@ public:
 
     MCAPI ::std::optional<bool> tryGetBool(uint64 h) const;
 
-    MCAPI ::HashedString const* tryGetString(uint64 h) const;
+    MCNAPI ::HashedString const* tryGetString(uint64 h) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PropertyComponent&&);
+    MCNAPI void* $ctor(::PropertyComponent&&);
     // NOLINTEND
 };

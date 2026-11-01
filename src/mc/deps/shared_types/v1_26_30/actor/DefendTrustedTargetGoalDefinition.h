@@ -27,30 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefendTrustedTargetGoalDefinition(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+    MCNAPI DefendTrustedTargetGoalDefinition(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
     operator=(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
 
-    MCAPI ~DefendTrustedTargetGoalDefinition();
+    MCNAPI ~DefendTrustedTargetGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

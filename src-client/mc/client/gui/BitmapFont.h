@@ -100,9 +100,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BitmapFont(::BitmapFont const& rhs);
+    MCNAPI BitmapFont(::BitmapFont const& rhs);
 
-    MCAPI BitmapFont(
+    MCNAPI BitmapFont(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
@@ -110,15 +110,15 @@ public:
         bool                                   uploadOnConstruction
     );
 
-    MCAPI ::Core::PathBuffer<::std::string> getAsciiFontNameWithPage(uchar const page) const;
+    MCNAPI ::Core::PathBuffer<::std::string> getAsciiFontNameWithPage(uchar const page) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BitmapFont const& rhs);
+    MCNAPI void* $ctor(::BitmapFont const& rhs);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
@@ -130,35 +130,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
+    MCNAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
-    MCAPI bool $supportsChar(int const& character);
+    MCNAPI bool $supportsChar(int const& character);
 
-    MCAPI float $getWrapHeight() const;
+    MCNAPI float $getWrapHeight() const;
 
-    MCAPI float $getScaleFactor(int c) const;
+    MCNAPI float $getScaleFactor(int c) const;
 
-    MCAPI float $getScaleFactor() const;
+    MCNAPI float $getScaleFactor() const;
 
-    MCFOLD bool $isScreenPixelAligned() const;
+    MCNAPI bool $isScreenPixelAligned() const;
 
-    MCFOLD bool $materialCanBeOverridden() const;
+    MCNAPI bool $materialCanBeOverridden() const;
 
-    MCAPI void $uploadTextureToGPU();
+    MCNAPI void $uploadTextureToGPU();
 
-    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+    MCNAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD bool $_supportsShadowInSingleDraw();
+    MCNAPI bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
+    MCNAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCNAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
-    MCAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
+    MCNAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
 
-    MCAPI void $loadFontData(bool uploadTextureImmediately);
+    MCNAPI void $loadFontData(bool uploadTextureImmediately);
 
-    MCAPI float $buildChar(
+    MCNAPI float $buildChar(
         ::std::vector<::Font::GlyphQuad>& quads,
         int                               i,
         ::mce::Color const&               color,
@@ -168,18 +168,18 @@ public:
         bool                              unicode
     );
 
-    MCAPI ::Core::PathBuffer<::std::string>
+    MCNAPI ::Core::PathBuffer<::std::string>
     $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
-    MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
+    MCNAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
 
-    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    MCNAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
 
-    MCAPI uchar $_getAsciiSheetCount() const;
+    MCNAPI uchar $_getAsciiSheetCount() const;
 
-    MCAPI int $_getAsciiGlyphsPerPage() const;
+    MCNAPI int $_getAsciiGlyphsPerPage() const;
 
-    MCAPI bool $_usesLegacyAsciiMapping() const;
+    MCNAPI bool $_usesLegacyAsciiMapping() const;
     // NOLINTEND
 };

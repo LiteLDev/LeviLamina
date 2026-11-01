@@ -22,16 +22,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NetworkID(::std::string const& str);
+    MCNAPI explicit NetworkID(::std::string const& str);
 
-    MCAPI explicit NetworkID(::Json::Value const& value);
+    MCNAPI explicit NetworkID(::Json::Value const& value);
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
-    MCAPI ::std::string toCorrelationId() const;
+    MCNAPI ::std::string toCorrelationId() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::Json::Value toJson() const;
+    MCNAPI ::Json::Value toJson() const;
 #endif
 
     MCAPI ::std::string toString() const;
@@ -40,9 +40,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& str);
+    MCNAPI void* $ctor(::std::string const& str);
 
-    MCAPI void* $ctor(::Json::Value const& value);
+    MCNAPI void* $ctor(::Json::Value const& value);
     // NOLINTEND
 };
 

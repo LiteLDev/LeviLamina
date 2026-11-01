@@ -49,25 +49,25 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
+        MCNAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
 
-        MCAPI ::std::function<float()> $getFloatBinding(uint) const;
+        MCNAPI ::std::function<float()> $getFloatBinding(uint) const;
 
-        MCAPI ::std::function<::std::string()> $getStringBinding(uint) const;
+        MCNAPI ::std::function<::std::string()> $getStringBinding(uint) const;
 
-        MCAPI ::std::function<::glm::vec2()> $getPointBinding(uint) const;
+        MCNAPI ::std::function<::glm::vec2()> $getPointBinding(uint) const;
 
-        MCAPI ::std::function<::RectangleArea()> $getAreaBinding(uint) const;
+        MCNAPI ::std::function<::RectangleArea()> $getAreaBinding(uint) const;
 
-        MCAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint) const;
+        MCNAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint) const;
 
-        MCAPI ::std::function<void(float)> $getFloatSetter(uint) const;
+        MCNAPI ::std::function<void(float)> $getFloatSetter(uint) const;
 
-        MCFOLD void $setCustomAreaBinding(::std::string const&, ::RectangleArea);
+        MCNAPI void $setCustomAreaBinding(::std::string const&, ::RectangleArea);
 
-        MCFOLD void $removeCustomAreaBinding(::std::string const&);
+        MCNAPI void $removeCustomAreaBinding(::std::string const&);
 
-        MCFOLD ::std::vector<uint> $getCustomAreaBindingNames() const;
+        MCNAPI ::std::vector<uint> $getCustomAreaBindingNames() const;
         // NOLINTEND
     };
 
@@ -87,6 +87,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BindingFactory const& $getBindingFactory(int controllerId) const;
+    MCNAPI ::BindingFactory const& $getBindingFactory(int controllerId) const;
     // NOLINTEND
 };

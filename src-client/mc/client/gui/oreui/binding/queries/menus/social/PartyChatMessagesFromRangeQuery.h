@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyChatMessagesFromRangeQuery(::OreUI::GameDependencies const& game, uint start, uint end);
+    MCNAPI PartyChatMessagesFromRangeQuery(::OreUI::GameDependencies const& game, uint start, uint end);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, uint start, uint end);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, uint start, uint end);
     // NOLINTEND
 };
 

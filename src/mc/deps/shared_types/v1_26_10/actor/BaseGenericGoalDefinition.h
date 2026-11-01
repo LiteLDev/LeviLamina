@@ -16,7 +16,7 @@ struct BaseGenericGoalDefinition : public ::SharedTypes::v1_26_10::Brain::BaseMe
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -42,7 +42,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldOccludeAgainst(
+    MCNAPI static bool _shouldOccludeAgainst(
         ::BlockPos const&                                                 relativePos,
         uchar                                                             neighborDirection,
         ::ClientBlockPipeline::BlockVolumeArea const&                     area,
@@ -56,7 +56,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(
+    MCNAPI void $execute(
         ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,

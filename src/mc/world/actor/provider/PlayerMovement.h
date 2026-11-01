@@ -22,10 +22,10 @@ struct VanillaClientGameplayComponent;
 namespace PlayerMovement {
 // functions
 // NOLINTBEGIN
-MCAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
+MCNAPI void applyInputLocks(::ClientInputLockComponent const& lockComponent, ::MoveInputState& inputState);
 
 #ifdef LL_PLAT_C
-MCAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
+MCNAPI ::Vec2 calculateButtonMoveVector(::MoveInputState const& inputState);
 #endif
 
 MCAPI ::Vec2 calculateMoveVector(
@@ -37,24 +37,24 @@ MCAPI ::Vec2 calculateMoveVector(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void clearInputState(::MoveInputComponent& input);
+MCNAPI void clearInputState(::MoveInputComponent& input);
 
-MCAPI float getBob(::EntityContext const& provider);
+MCNAPI float getBob(::EntityContext const& provider);
 
-MCAPI float getBobPrev(::EntityContext const& provider);
+MCNAPI float getBobPrev(::EntityContext const& provider);
 #endif
 
-MCAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(::EntityContext const& provider);
+MCNAPI ::PlayerPositionModeComponent::PositionMode getPositionMode(::EntityContext const& provider);
 
-MCAPI void initializePlayer(::EntityContext& provider);
+MCNAPI void initializePlayer(::EntityContext& provider);
 
-MCAPI void resetBob(::EntityContext& provider);
+MCNAPI void resetBob(::EntityContext& provider);
 
-MCAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
+MCNAPI void setElytraFlightTimeTicks(::EntityContext& provider, ::Tick const& value);
 
-MCAPI void setPositionMode(::EntityContext& provider, ::PlayerPositionModeComponent::PositionMode positionMode);
+MCNAPI void setPositionMode(::EntityContext& provider, ::PlayerPositionModeComponent::PositionMode positionMode);
 
-MCAPI bool shouldStopEmoting(
+MCNAPI bool shouldStopEmoting(
     ::Vec2                            rawMove,
     ::ActorDataFlagComponent&         actorDataFlag,
     ::ActorDataDirtyFlagsComponent&   actorDataDirtyFlags,

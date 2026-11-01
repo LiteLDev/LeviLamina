@@ -20,7 +20,7 @@ class UniversalGameJoiner {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void joinGame(
+    MCNAPI static void joinGame(
         ::INetworkGameConnector&                         minecraftGame,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> clientInstance,
         ::std::variant<

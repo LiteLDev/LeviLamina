@@ -41,23 +41,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
-#else // LL_PLAT_C
-    MCFOLD void $initBuilder(::LevelSeed64 levelSeed);
-#endif
+    MCNAPI void $initBuilder(::LevelSeed64 levelSeed);
 
-    MCAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
+    MCNAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
+    MCNAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
-    MCAPI void $buildSurfaceAt(
+    MCNAPI void $buildSurfaceAt(
         ::ISurfaceBuilder::GlobalParameters const&,
         ::ISurfaceBuilder::SurfaceBuilderParameters const& surfaceBuilderParams,
         ::ISurfaceBuilder::PerColumnParameters const&      columnParams
     ) const;
 
-    MCFOLD bool $getUsesDepthValue() const;
+    MCNAPI bool $getUsesDepthValue() const;
 
 
     // NOLINTEND

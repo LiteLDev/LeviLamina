@@ -43,61 +43,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DebugSettingsFacet(
+    MCNAPI explicit DebugSettingsFacet(
         ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider
     );
 
-    MCAPI void _setGameVersion(::std::string const& versionName);
+    MCNAPI void _setGameVersion(::std::string const& versionName);
 
-    MCFOLD int getBiomeOverride() const;
+    MCNAPI int getBiomeOverride() const;
 
-    MCFOLD bool getEnableGameVersionOverride() const;
+    MCNAPI bool getEnableGameVersionOverride() const;
 
-    MCAPI bool getFlatNether() const;
+    MCNAPI bool getFlatNether() const;
 
-    MCFOLD ::std::string const& getGameVersionOverride() const;
+    MCNAPI ::std::string const& getGameVersionOverride() const;
 
-    MCFOLD int getSpawnBiome() const;
+    MCNAPI int getSpawnBiome() const;
 
-    MCFOLD int getSpawnDimension() const;
+    MCNAPI int getSpawnDimension() const;
 
-    MCAPI bool isEnableBiomeOverride() const;
+    MCNAPI bool isEnableBiomeOverride() const;
 
-    MCFOLD bool isEnableSpawnBiome() const;
+    MCNAPI bool isEnableSpawnBiome() const;
 
-    MCAPI void setBiomeOverride(int biomeIndex);
+    MCNAPI void setBiomeOverride(int biomeIndex);
 
-    MCAPI void setEnableBiomeOverride(bool enable);
+    MCNAPI void setEnableBiomeOverride(bool enable);
 
-    MCAPI void setEnableGameVersionOverride(bool doOverride);
+    MCNAPI void setEnableGameVersionOverride(bool doOverride);
 
-    MCAPI void setEnableSpawnBiome(bool enable);
+    MCNAPI void setEnableSpawnBiome(bool enable);
 
-    MCAPI void setFlatNether(bool isFlat);
+    MCNAPI void setFlatNether(bool isFlat);
 
-    MCAPI void setGameVersionOverride(::std::string const& version);
+    MCNAPI void setGameVersionOverride(::std::string const& version);
 
-    MCAPI void setSpawnBiome(int biomeIndex);
+    MCNAPI void setSpawnBiome(int biomeIndex);
 
-    MCAPI void setSpawnDimension(int spawnDimensionIndex);
+    MCNAPI void setSpawnDimension(int spawnDimensionIndex);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider);
+    MCNAPI void* $ctor(::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

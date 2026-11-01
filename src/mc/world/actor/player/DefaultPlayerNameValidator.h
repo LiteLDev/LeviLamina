@@ -10,7 +10,7 @@ class GameplayUserManager;
 namespace DefaultPlayerNameValidator {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::std::string>
+MCNAPI ::std::optional<::std::string>
 validatePlayerName(::std::string const& originalName, ::GameplayUserManager const& gameplayUserManager);
 // NOLINTEND
 

@@ -30,17 +30,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
+    MCNAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const&) const;
 
-    MCFOLD bool $isSilentWhenJumpingOff() const;
+    MCNAPI bool $isSilentWhenJumpingOff() const;
 
 
     // NOLINTEND
@@ -48,6 +48,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

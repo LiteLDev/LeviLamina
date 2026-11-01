@@ -70,13 +70,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TransferPacket(::TransferPacketPayload payload);
+    MCNAPI explicit TransferPacket(::TransferPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TransferPacketPayload payload);
+    MCNAPI void* $ctor(::TransferPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -117,9 +117,9 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

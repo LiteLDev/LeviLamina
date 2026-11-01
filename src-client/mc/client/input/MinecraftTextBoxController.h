@@ -42,11 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange);
+    MCNAPI void $setTextBoxState(int controllerId, ::TextBoxStateChange const& stateChange);
 
-    MCAPI void $onKeyboardDismissed(int controllerId);
+    MCNAPI void $onKeyboardDismissed(int controllerId);
 
-    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
+    MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
     // NOLINTEND
 
 public:

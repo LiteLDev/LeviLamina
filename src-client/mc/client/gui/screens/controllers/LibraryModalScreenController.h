@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibraryModalScreenController(
+    MCNAPI LibraryModalScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>                model,
         ::LibraryModalScreenType                                 type,
         ::std::function<void(bool)>                              onModalDismissed,
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>                model,
         ::LibraryModalScreenType                                 type,
         ::std::function<void(bool)>                              onModalDismissed,
@@ -63,10 +63,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI ::std::string $getTelemetryOverride() const;
+    MCNAPI ::std::string $getTelemetryOverride() const;
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
     // NOLINTEND
 };

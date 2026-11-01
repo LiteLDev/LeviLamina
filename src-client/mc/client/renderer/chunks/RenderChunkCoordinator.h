@@ -107,22 +107,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkCoordinator(::Level& level, ::LevelRenderer& levelRenderer, ::DimensionType dimensionID);
+    MCNAPI RenderChunkCoordinator(::Level& level, ::LevelRenderer& levelRenderer, ::DimensionType dimensionID);
 
-    MCAPI void _handleVisibilityUpdates();
+    MCNAPI void _handleVisibilityUpdates();
 
-    MCAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
+    MCNAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
 
-    MCAPI void _setAllDirty(bool immediate, bool changesVisibility);
+    MCNAPI void _setAllDirty(bool immediate, bool changesVisibility);
 
     MCAPI void
     _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
 
-    MCAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
+    MCNAPI ::std::shared_ptr<::RenderChunkShared> getOrCreateChunkAtPos(::SubChunkPos const& pos);
 
-    MCAPI uint64 getRenderChunkGeometryFaceMetadataMemoryUsed() const;
+    MCNAPI uint64 getRenderChunkGeometryFaceMetadataMemoryUsed() const;
 
-    MCAPI void relightAllRenderChunkGeometry();
+    MCNAPI void relightAllRenderChunkGeometry();
 
     MCAPI void tick();
     // NOLINTEND
@@ -130,22 +130,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level, ::LevelRenderer& levelRenderer, ::DimensionType dimensionID);
+    MCNAPI void* $ctor(::Level& level, ::LevelRenderer& levelRenderer, ::DimensionType dimensionID);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk& lc);
+    MCNAPI void $onChunkLoaded(::ChunkSource&, ::LevelChunk& lc);
 
-    MCAPI void
+    MCNAPI void
     $onSubChunkLoaded(::ChunkSource&, ::LevelChunk& lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged);
 
-    MCAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
+    MCNAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
-    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCNAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
-    MCAPI void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
         uint                           layer,

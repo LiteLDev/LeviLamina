@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isOverlapping(::RectangleArea const& rect) const;
+    MCNAPI bool isOverlapping(::RectangleArea const& rect) const;
     // NOLINTEND
 };

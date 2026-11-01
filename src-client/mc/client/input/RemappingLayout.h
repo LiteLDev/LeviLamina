@@ -75,50 +75,50 @@ public:
     // NOLINTBEGIN
     MCAPI void assignDefaultMapping(::std::vector<::Keymapping>&& newDefaultMapping);
 
-    MCAPI void defaultKeyAtIndex(uint64 index);
+    MCNAPI void defaultKeyAtIndex(uint64 index);
 
-    MCAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
+    MCNAPI ::std::vector<::DuplicateKey> generateIndicesOfDuplicates() const;
 
     MCAPI ::Keymapping const& getKeymappingByAction(::std::string_view action) const;
 
-    MCAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
+    MCNAPI ::RemappingLayout& operator=(::RemappingLayout const& other);
 
     MCAPI void setMapping(::std::string_view action, ::std::vector<int> const& keys);
 
-    MCAPI void unassignDuplicateKeys(uint64 index);
+    MCNAPI void unassignDuplicateKeys(uint64 index);
 
-    MCAPI void unassignKeyAtIndex(uint64 index);
+    MCNAPI void unassignKeyAtIndex(uint64 index);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
+    MCNAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
 
-    MCFOLD int $getAdjustedKey(int key) const;
+    MCNAPI int $getAdjustedKey(int key) const;
 
-    MCFOLD ::std::string $getSaveString(::std::string const& action) const;
+    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
 
-    MCFOLD ::std::string $getMappedKeyName(int key) const;
+    MCNAPI ::std::string $getMappedKeyName(int key) const;
 
-    MCFOLD ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    MCAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    MCFOLD ::std::string $getKeySpriteLocation(
+    MCNAPI ::std::string $getKeySpriteLocation(
         int        key,
         bool       checkUserConfiguredSwap,
         bool       checkPlatformButtonSwapping,
         ::IconSize iconSize
     ) const;
 
-    MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
     // NOLINTEND
 
 public:

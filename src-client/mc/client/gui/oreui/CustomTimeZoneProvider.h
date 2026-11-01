@@ -21,11 +21,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $GetLocalTimezoneName(double timeMsUtc, char* buffer, uint64 maxBufferSize);
+    MCNAPI void $GetLocalTimezoneName(double timeMsUtc, char* buffer, uint64 maxBufferSize);
 
-    MCAPI double $GetDaylightSavingsOffset(double timeMsUtc);
+    MCNAPI double $GetDaylightSavingsOffset(double timeMsUtc);
 
-    MCAPI double $GetLocalTimeOffset(double timeMs, bool isTimeUtc);
+    MCNAPI double $GetLocalTimeOffset(double timeMs, bool isTimeUtc);
     // NOLINTEND
 };
 

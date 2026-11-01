@@ -94,50 +94,50 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCAPI bool $getScreenIsNotFlushable() const;
+    MCNAPI bool $getScreenIsNotFlushable() const;
 
-    MCAPI bool $getAlwaysAcceptsInput() const;
+    MCNAPI bool $getAlwaysAcceptsInput() const;
 
-    MCAPI bool $getRenderGameBehind() const;
+    MCNAPI bool $getRenderGameBehind() const;
 
-    MCAPI bool $getAbsorbsInput() const;
+    MCNAPI bool $getAbsorbsInput() const;
 
-    MCAPI bool $getIsShowingMenu() const;
+    MCNAPI bool $getIsShowingMenu() const;
 
-    MCAPI bool $getIsModal() const;
+    MCNAPI bool $getIsModal() const;
 
-    MCAPI bool $getShouldStealMouse() const;
+    MCNAPI bool $getShouldStealMouse() const;
 
-    MCFOLD bool $getLowFreqRendering() const;
+    MCNAPI bool $getLowFreqRendering() const;
 
-    MCAPI bool $getScreenDrawsLast() const;
+    MCNAPI bool $getScreenDrawsLast() const;
 
-    MCFOLD bool $getForceRenderBelow() const;
+    MCNAPI bool $getForceRenderBelow() const;
 
-    MCFOLD bool $getShouldSendEvents() const;
+    MCNAPI bool $getShouldSendEvents() const;
 
-    MCAPI bool $getCloseOnPlayerHurt() const;
+    MCNAPI bool $getCloseOnPlayerHurt() const;
 
-    MCAPI bool $getCustomPocketToast() const;
+    MCNAPI bool $getCustomPocketToast() const;
 
-    MCAPI bool $getCacheScreen() const;
+    MCNAPI bool $getCacheScreen() const;
 
-    MCAPI bool $getGamepadCursor() const;
+    MCNAPI bool $getGamepadCursor() const;
 
-    MCAPI bool $getGamepadCursorDeflectionMode() const;
+    MCNAPI bool $getGamepadCursorDeflectionMode() const;
 
-    MCFOLD float $getVerticalScrollDelta() const;
+    MCNAPI float $getVerticalScrollDelta() const;
 
-    MCAPI bool $loadScreenImmediately() const;
+    MCNAPI bool $loadScreenImmediately() const;
 
-    MCAPI bool $getRenderOnlyWhenTopmost() const;
+    MCNAPI bool $getRenderOnlyWhenTopmost() const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI bool $getShouldBeSkippedDuringAutomation() const;
+    MCNAPI bool $getShouldBeSkippedDuringAutomation() const;
     // NOLINTEND
 };

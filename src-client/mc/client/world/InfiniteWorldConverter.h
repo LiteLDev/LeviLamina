@@ -64,27 +64,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InfiniteWorldConverter(
+    MCNAPI InfiniteWorldConverter(
         ::ILevelListCache&                                                levelListCache,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
     );
 
-    MCAPI void _tick();
+    MCNAPI void _tick();
 
-    MCAPI void makeWorldInfinite(
+    MCNAPI void makeWorldInfinite(
         ::World::WorldID const&                                        id,
         ::std::function<void()>                                        onCompleteCallback,
         ::std::function<void(::World::InfiniteWorldConverter::Result)> onErrorCallback
     );
 
-    MCAPI ~InfiniteWorldConverter();
+    MCNAPI ~InfiniteWorldConverter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ILevelListCache&                                                levelListCache,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
         ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv>                       levelDbEnv
@@ -94,7 +94,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

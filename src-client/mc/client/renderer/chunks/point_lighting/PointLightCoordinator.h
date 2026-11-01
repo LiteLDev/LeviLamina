@@ -90,23 +90,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PointLightCoordinator(bool lightLODsEnabled, ::std::weak_ptr<::RuntimeLocalLightingConfig const> lightingConfig);
 
-    MCAPI ::std::optional<::mce::PointLightParameters>
+    MCNAPI ::std::optional<::mce::PointLightParameters>
     _createPointLightFromBlock(::Block const& block, ::BlockPos const& blockPos) const;
 
-    MCAPI void _releaseAllResources(::BlockPos const& blockPos, ::PointLighting::ManagedPointLight& pointLight);
+    MCNAPI void _releaseAllResources(::BlockPos const& blockPos, ::PointLighting::ManagedPointLight& pointLight);
 
-    MCAPI void applyBlockQueue(::SubChunkPos const& subChunkPos, ::std::vector<::BlockQueueEntry> const& queue);
+    MCNAPI void applyBlockQueue(::SubChunkPos const& subChunkPos, ::std::vector<::BlockQueueEntry> const& queue);
 
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI ::std::vector<::mce::AnalyticalLight> getAnalyticalLights() const;
+    MCNAPI ::std::vector<::mce::AnalyticalLight> getAnalyticalLights() const;
 
-    MCAPI void reset(::BlockSource const& region);
+    MCNAPI void reset(::BlockSource const& region);
 
-    MCAPI void update(
+    MCNAPI void update(
         ::std::optional<::Bounds> const&                       viewBounds,
         bool                                                   pointLightsEnabled,
         ::mce::framebuilder::PointLightBudgetParameters const& params,
@@ -115,19 +115,19 @@ public:
         ::FrustumCuller const&                                 frustumCuller
     );
 
-    MCAPI ~PointLightCoordinator();
+    MCNAPI ~PointLightCoordinator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool lightLODsEnabled, ::std::weak_ptr<::RuntimeLocalLightingConfig const> lightingConfig);
+    MCNAPI void* $ctor(bool lightLODsEnabled, ::std::weak_ptr<::RuntimeLocalLightingConfig const> lightingConfig);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

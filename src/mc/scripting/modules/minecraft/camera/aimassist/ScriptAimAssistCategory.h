@@ -27,27 +27,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const* _getCategoryDefinition() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockPriorities() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getBlockPriorities() const;
 
-    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
     getBlockTagPriorities() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getDefaultBlockPriority() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDefaultBlockPriority() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getDefaultEntityPriority() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getDefaultEntityPriority() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getEntityPriorities() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::unordered_map<::std::string, int>> getEntityPriorities() const;
 
-    MCAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::std::unordered_map<::std::string, int>, ::Scripting::EngineError>
     getEntityTypeFamilyPriorities() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

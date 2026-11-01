@@ -23,23 +23,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> ejectRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> ejectRecord();
 
-    MCAPI ::Scripting::Result_deprecated<void> pauseRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> pauseRecord();
 
-    MCAPI ::Scripting::Result_deprecated<void> playRecord();
+    MCNAPI ::Scripting::Result_deprecated<void> playRecord();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

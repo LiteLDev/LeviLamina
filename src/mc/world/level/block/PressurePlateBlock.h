@@ -42,13 +42,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI int $getSignalStrength(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI int $getSignalForData(int data) const;
+    MCNAPI int $getSignalForData(int data) const;
 
-    MCAPI int $getRedstoneSignal(int signal) const;
+    MCNAPI int $getRedstoneSignal(int signal) const;
 
-    MCAPI void $_addHardCodedBlockComponents(::Experiments const&);
+    MCNAPI void $_addHardCodedBlockComponents(::Experiments const&);
 
 
     // NOLINTEND
@@ -56,6 +56,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

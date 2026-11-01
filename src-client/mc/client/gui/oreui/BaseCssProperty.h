@@ -30,14 +30,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string getCssFloatProp(
+    MCNAPI static ::std::string getCssFloatProp(
         ::std::string const&                       propertyName,
         ::std::optional<float> const&              value,
         ::OreUI::Styling::CssParsingOptions const& options,
         ::std::unordered_set<::std::string>&       addedProperties
     );
 
-    MCAPI static ::std::string getCssFloatRemProp(
+    MCNAPI static ::std::string getCssFloatRemProp(
         ::std::string const&                       propertyName,
         ::std::optional<float> const&              value,
         ::OreUI::Styling::CssParsingOptions const& options,

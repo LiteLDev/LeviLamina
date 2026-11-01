@@ -23,7 +23,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _tickAmbientSoundComponent(
+    MCNAPI static void _tickAmbientSoundComponent(
         ::ActorOwnerComponent&   actorOwnerComponent,
         ::AmbientSoundComponent& ambientSoundComponent
     );
@@ -34,7 +34,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

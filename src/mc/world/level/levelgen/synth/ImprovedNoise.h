@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void readArea(
+    MCNAPI void readArea(
         float*        buffer,
         ::Vec3 const& pos,
         int           xCount,

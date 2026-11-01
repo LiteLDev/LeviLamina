@@ -114,7 +114,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+        MCNAPI void $onFlushWorldAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
 
         // NOLINTEND
@@ -467,7 +467,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorldAfterEvents(
+    MCNAPI ScriptWorldAfterEvents(
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
@@ -475,18 +475,18 @@ public:
         ::Scripting::Version                  serverModuleVersion
     );
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptWorldAfterEvents::SignalNameSubscriberCount>
     getFineGrainedSignalSubscriberStats() const;
 
-    MCAPI void registerListeners(::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
+    MCNAPI void registerListeners(::ScriptModuleMinecraft::ScriptGlobalEventListeners& globalEventListeners);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void generateOrderDocumentationForVersion(
+    MCNAPI static void generateOrderDocumentationForVersion(
         ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
         ::Json::Value&                       eventOrderArray
     );
@@ -495,7 +495,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const& scope,
         ::gsl::not_null<::Level*>             level,
         ::Scripting::DependencyLocator&       locator,
@@ -507,269 +507,271 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Level& $getLevel() const;
+    MCNAPI ::Level& $getLevel() const;
 
-    MCAPI void $onChat(::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData>& eventData);
+    MCNAPI void $onChat(::std::shared_ptr<::ScriptModuleMinecraft::ScriptChatSendIntermediateData>& eventData);
 
-    MCAPI void $onGameRuleChange(
+    MCNAPI void $onGameRuleChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptGameRuleChangeAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPackSettingChange(
+    MCNAPI void $onPackSettingChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData>& packSettingChangeEvent
     );
 
-    MCAPI void
+    MCNAPI void
     $onServerMessage(::std::shared_ptr<::ScriptModuleMinecraft::ScriptServerMessageIntermediateData>& eventData);
 
-    MCAPI void $onSoundCompleted(
+    MCNAPI void $onSoundCompleted(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptSoundCompletedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onWeatherChanged(
+    MCNAPI void $onWeatherChanged(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWeatherChangedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onWorldInitialize(
+    MCNAPI void $onWorldInitialize(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldInitializeAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorAddEffect(
+    MCNAPI void $onActorAddEffect(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorAddEffectAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorContainerClosed(
+    MCNAPI void $onActorContainerClosed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorContainerOpened(
+    MCNAPI void $onActorContainerOpened(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onActorDie(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onActorHeal(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onActorHealthChanged(
+    MCNAPI void $onActorHealthChanged(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHealthChangedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorHitBlock(
+    MCNAPI void $onActorHitBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorHitEntity(
+    MCNAPI void $onActorHitEntity(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHitEntityAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onActorHurt(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorHurtAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onActorItemDrop(
+    MCNAPI void $onActorItemDrop(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemDropAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorItemPickup(
+    MCNAPI void $onActorItemPickup(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorItemPickupAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onActorLoad(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onActorRemoved(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorRemoveAfterEventIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onActorSpawn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSpawnAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onActorStartSneaking(
+    MCNAPI void $onActorStartSneaking(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorStopSneaking(
+    MCNAPI void $onActorStopSneaking(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorSneakingStateAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onActorTamed(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorTamedAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onDataDrivenActorEventSend(
+    MCNAPI void $onDataDrivenActorEventSend(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptDataDrivenActorTriggerAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onActorUpgrade(
+    MCNAPI void $onActorUpgrade(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorUpgradeAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerButtonInput(
+    MCNAPI void $onPlayerButtonInput(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerButtonInputIntermediateData>& inputEvent
     );
 
-    MCAPI void $onPlayerDimensionChange(
+    MCNAPI void $onPlayerDimensionChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onPlayerEmote(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerEmoteIntermediateData>& emoteEvent);
 
-    MCAPI void $onPlayerGameModeChange(
+    MCNAPI void $onPlayerGameModeChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerHotbarSelectedSlotChange(
+    MCNAPI void $onPlayerHotbarSelectedSlotChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerHotbarSelectedSlotChangeIntermediateData>& hotbarEvent
     );
 
-    MCAPI void $onPlayerInputModeChange(
+    MCNAPI void $onPlayerInputModeChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInputModeChangeIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerInputPermissionCategoryChange(
+    MCNAPI void $onPlayerInputPermissionCategoryChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInputPermissionCategoryChangeIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerInteractWithBlock(
+    MCNAPI void $onPlayerInteractWithBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerInteractWithEntity(
+    MCNAPI void $onPlayerInteractWithEntity(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerInventoryItemChange(
+    MCNAPI void $onPlayerInventoryItemChange(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData>& inventoryEvent
     );
 
-    MCAPI void $onPlayerCursorItemGrab(
+    MCNAPI void $onPlayerCursorItemGrab(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerCursorItemRelease(
+    MCNAPI void $onPlayerCursorItemRelease(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCursorItemTransferIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerCraftRecipe(
+    MCNAPI void $onPlayerCraftRecipe(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerCraftRecipeIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onPlayerJoin(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerJoinAfterEventIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onPlayerLeave(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onPlayerStartBreakingBlock(
+    MCNAPI void $onPlayerStartBreakingBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerCancelBreakingBlock(
+    MCNAPI void $onPlayerCancelBreakingBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerSpawn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerSpawnIntermediateData>& eventData);
+    MCNAPI void
+    $onPlayerSpawn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerSpawnIntermediateData>& eventData);
 
-    MCAPI void $onPlayerSwingStart(
+    MCNAPI void $onPlayerSwingStart(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerSwingStartIntermediateData>& playerSwingStartEvent
     );
 
-    MCAPI void $onPlayerUseNameTag(
+    MCNAPI void $onPlayerUseNameTag(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData>& useNameTagEvent
     );
 
-    MCAPI void $onActivateLever(
+    MCNAPI void $onActivateLever(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptLeverActionAfterEventIntermediateData>& leverEvent
     );
 
-    MCAPI void $onActivatePiston(
+    MCNAPI void $onActivatePiston(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPistonActionAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onBlockContainerClosed(
+    MCNAPI void $onBlockContainerClosed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onBlockContainerOpened(
+    MCNAPI void $onBlockContainerOpened(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockContainerAccessAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onExplodeBlock(
+    MCNAPI void $onExplodeBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptBlockExplodedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onExplosion(
+    MCNAPI void $onExplosion(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptExplosionStartedAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onHitTargetBlock(
+    MCNAPI void $onHitTargetBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTargetBlockHitAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerBreakBlock(
+    MCNAPI void $onPlayerBreakBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPlayerPlaceBlock(
+    MCNAPI void $onPlayerPlaceBlock(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onPopPressurePlate(
+    MCNAPI void $onPopPressurePlate(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePopAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onPushButton(::std::shared_ptr<::ScriptModuleMinecraft::ScriptButtonPushAfterEventIntermediateData>& eventData);
 
-    MCAPI void $onPushPressurePlate(
+    MCNAPI void $onPushPressurePlate(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPressurePlatePushAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void $onTripTripWire(
+    MCNAPI void $onTripTripWire(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData>& eventData
     );
 
-    MCAPI void
+    MCNAPI void
     $onItemCompleteUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemCompleteUseIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onItemReleaseUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemReleaseUseIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onItemStartUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onItemStartUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStartUseOnIntermediateData>& eventData);
 
-    MCAPI void $onItemStopUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseIntermediateData>& eventData);
+    MCNAPI void
+    $onItemStopUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onItemStopUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseOnIntermediateData>& eventData);
 
-    MCAPI void $onItemUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseIntermediateData>& eventData);
+    MCNAPI void $onItemUse(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseIntermediateData>& eventData);
 
-    MCAPI void $onItemUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData>& eventData);
+    MCNAPI void $onItemUseOn(::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onProjectileHitBlock(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
 
-    MCAPI void
+    MCNAPI void
     $onProjectileHitEntity(::std::shared_ptr<::ScriptModuleMinecraft::ScriptProjectileHitIntermediateData>& eventData);
 
-    MCAPI void $onWorldClockTimeModified(
+    MCNAPI void $onWorldClockTimeModified(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeModifiedAfterEventIntermediateData>&
             clockTimeModifiedEvent
     );
 
-    MCAPI void $onWorldClockPaused(
+    MCNAPI void $onWorldClockPaused(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockPausedAfterEventIntermediateData>& clockPausedEvent
     );
 
-    MCAPI void $onWorldClockResumed(
+    MCNAPI void $onWorldClockResumed(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockResumedAfterEventIntermediateData>& clockResumedEvent
     );
 
-    MCAPI void $onWorldClockTimeMarker(
+    MCNAPI void $onWorldClockTimeMarker(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerAfterEventIntermediateData>&
             clockTimeMarkerEvent
     );

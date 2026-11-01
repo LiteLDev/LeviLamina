@@ -89,7 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>,
         ::ScriptModuleMinecraft::ScriptContainerRulesError,
         ::Scripting::Error>
@@ -99,50 +99,50 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::Scripting::Error> _isSlotBeyondMaxCapacity(::Container& container, int slot);
+    MCNAPI static ::std::optional<::Scripting::Error> _isSlotBeyondMaxCapacity(::Container& container, int slot);
 
-    MCAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
+    MCNAPI static ::std::optional<::Scripting::Error> _isSlotInvalid(::Container& container, int slot);
 
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> $getSize() const;
+    MCNAPI ::Scripting::Result_deprecated<int> $getSize() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $setItemV010(int slot, ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $setItem(int slot, ::std::optional<::ScriptModuleMinecraft::ScriptItemStack> const& scriptItemStack) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     $getItemV010(int slot) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack>>>
     $getItem(int slot) const;
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     $addItemV010(::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     $transferItemV010(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainer& toScriptContainer) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $moveItem(int fromSlot, int toSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& toScriptContainer) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     $swapItemsV010(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainer& otherScriptContainer) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptContainerRulesError, ::Scripting::Error>
     $swapItems(int slot, int otherSlot, ::ScriptModuleMinecraft::ScriptContainerWrapper& otherScriptContainer) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptContainerSlot>>
     $getSlot(
         int slot,
@@ -150,9 +150,9 @@ public:
             scriptContainerWrapperHandle
     );
 
-    MCAPI ::Scripting::Result_deprecated<void> $clearAll() const;
+    MCNAPI ::Scripting::Result_deprecated<void> $clearAll() const;
 
-    MCFOLD void $_onContainerChanged() const;
+    MCNAPI void $_onContainerChanged() const;
 
 
     // NOLINTEND

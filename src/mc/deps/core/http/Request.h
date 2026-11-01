@@ -38,29 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Request();
+    MCNAPI Request();
 
-    MCAPI Request(::Bedrock::Http::Request const& rhs);
+    MCNAPI Request(::Bedrock::Http::Request const& rhs);
 
-    MCAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
+    MCNAPI ::Bedrock::Http::Request& operator=(::Bedrock::Http::Request const&);
 
-    MCAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Http::Response> send();
 
-    MCAPI ~Request();
+    MCNAPI ~Request();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Bedrock::Http::Request const& rhs);
+    MCNAPI void* $ctor(::Bedrock::Http::Request const& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -22,21 +22,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateBoundsFromOriginSize();
+    MCNAPI void _updateBoundsFromOriginSize();
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::BlockDefinition::BoundingBoxData const& value) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::BlockDefinition::BoundingBoxData const& value) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& MaxId();
+    MCNAPI static ::std::string_view const& MaxId();
 
-    MCAPI static ::std::string_view const& MinId();
+    MCNAPI static ::std::string_view const& MinId();
 
-    MCAPI static ::std::string_view const& OriginId();
+    MCNAPI static ::std::string_view const& OriginId();
 
-    MCAPI static ::std::string_view const& SizeId();
+    MCNAPI static ::std::string_view const& SizeId();
     // NOLINTEND
 };
 

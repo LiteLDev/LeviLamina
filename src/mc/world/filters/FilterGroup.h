@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _parseFilterParam(
+    MCNAPI bool _parseFilterParam(
         ::std::string const&                                             filter,
         ::std::string const&                                             member,
         ::std::optional<::std::variant<bool, int, float, ::std::string>> param,
@@ -59,20 +59,20 @@ public:
         ::FilterInput&                                                   input
     );
 
-    MCAPI bool _parseMemberCollection(
+    MCNAPI bool _parseMemberCollection(
         ::FilterGroup::CollectionType                   collectionType,
         ::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData
     );
 
-    MCAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
+    MCNAPI bool _parseTest(::SharedTypes::v1_21_20::FilterTestData const& filterTestData);
 
-    MCAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
+    MCNAPI bool addFilterTest(::FilterTest::Definition const& filterDef, ::FilterInputs const& inputs);
 
-    MCAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
+    MCNAPI bool evaluate(::std::array<::FilterContext, 10>& contextSet) const;
 
-    MCAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
+    MCNAPI void fillFromData(::SharedTypes::v1_21_20::FilterGroupData const& filterGroupData);
 
-    MCAPI void serialize(::Json::Value& jsonVal) const;
+    MCNAPI void serialize(::Json::Value& jsonVal) const;
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
+    MCNAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
 
 
     // NOLINTEND
@@ -94,6 +94,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

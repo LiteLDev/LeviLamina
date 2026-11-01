@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InGameSettings(
+    MCNAPI InGameSettings(
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance
     );
@@ -55,13 +55,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::ILevelListCache&()> getLevelListCache,
         ::std::function<::ServerInstance*()>  getServerInstance
     );
@@ -70,9 +70,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

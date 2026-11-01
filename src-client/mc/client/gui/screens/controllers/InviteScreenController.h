@@ -111,34 +111,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InviteScreenController(
+    MCNAPI InviteScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
 
-    MCAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+    MCNAPI ::std::string _getHoverText(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
 
-    MCAPI ::std::string _getLinkedAccountFirstDisplayName(int const collectionIndex) const;
+    MCNAPI ::std::string _getLinkedAccountFirstDisplayName(int const collectionIndex) const;
 
-    MCAPI ::std::string _getLinkedAccountFriendTitleName(int const collectionIndex) const;
+    MCNAPI ::std::string _getLinkedAccountFriendTitleName(int const collectionIndex) const;
 
-    MCAPI ::std::string _getPlatformDisplayName(int const collectionIndex) const;
+    MCNAPI ::std::string _getPlatformDisplayName(int const collectionIndex) const;
 
-    MCAPI ::std::string _getPlatformFriendTitleName(int const collectionIndex) const;
+    MCNAPI ::std::string _getPlatformFriendTitleName(int const collectionIndex) const;
 
-    MCAPI ::std::string _getXboxFriendTitleName(int const collectionIndex) const;
+    MCNAPI ::std::string _getXboxFriendTitleName(int const collectionIndex) const;
 
-    MCAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
+    MCNAPI ::std::string _getXboxLiveDisplayName(::Social::XboxLiveUserProfileData const* xboxUserProfileData) const;
 
-    MCAPI void _refreshXboxLiveFriendsData();
+    MCNAPI void _refreshXboxLiveFriendsData();
 
-    MCAPI void _sortDataList();
+    MCNAPI void _sortDataList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
@@ -147,16 +147,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $queueTitleNarration();
+    MCNAPI void $queueTitleNarration();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
     // NOLINTEND
 };

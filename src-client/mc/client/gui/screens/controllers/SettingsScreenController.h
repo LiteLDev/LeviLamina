@@ -100,14 +100,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SettingsScreenController(
+    MCNAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     createWorld,
         ::SettingsTabIndex                       tabIndex,
         bool                                     maintainOldFocus
     );
 
-    MCAPI SettingsScreenController(
+    MCNAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::Realms::InviteLink const&              link,
@@ -115,7 +115,7 @@ public:
         bool                                     maintainOldFocus
     );
 
-    MCAPI SettingsScreenController(
+    MCNAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::SettingsTabIndex                       tabIndex,
@@ -123,7 +123,7 @@ public:
         ::std::string                            packId
     );
 
-    MCAPI SettingsScreenController(
+    MCNAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
@@ -133,7 +133,7 @@ public:
         bool                                     maintainOldFocus
     );
 
-    MCAPI SettingsScreenController(
+    MCNAPI SettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         ::SettingsTabIndex                       tabIndex,
@@ -144,15 +144,15 @@ public:
         bool                                     legacySyncOnly
     );
 
-    MCAPI void _init();
+    MCNAPI void _init();
 
-    MCAPI void _registerSubControllers();
+    MCNAPI void _registerSubControllers();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addStaticScreenVars(
+    MCNAPI static void addStaticScreenVars(
         ::Json::Value&                      globalVars,
         bool                                isWorldCreate,
         bool                                isWorldEdit,
@@ -177,20 +177,20 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> const& mScreenInfo();
+    MCNAPI static ::std::unordered_map<int, ::SettingsScreenController::SettingsScreenTabInfo> const& mScreenInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     createWorld,
         ::SettingsTabIndex                       tabIndex,
         bool                                     maintainOldFocus
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::Realms::InviteLink const&              link,
@@ -198,7 +198,7 @@ public:
         bool                                     maintainOldFocus
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::SettingsTabIndex                       tabIndex,
@@ -206,7 +206,7 @@ public:
         ::std::string                            packId
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
@@ -216,7 +216,7 @@ public:
         bool                                     maintainOldFocus
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         ::SettingsTabIndex                       tabIndex,
@@ -231,16 +231,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCAPI int $getScreenVersion() const;
+    MCNAPI int $getScreenVersion() const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

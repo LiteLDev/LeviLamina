@@ -18,9 +18,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void add(::ItemStackBase const& item);
+    MCNAPI void add(::ItemStackBase const& item);
 
-    MCAPI ~RecipeIngredientSet();
+    MCNAPI ~RecipeIngredientSet();
 #endif
     // NOLINTEND
 
@@ -28,7 +28,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

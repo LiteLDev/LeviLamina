@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateAttributesPacketPayload(
+    MCNAPI UpdateAttributesPacketPayload(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
         ::PlayerInputTick                               tick
     );
 
-    MCAPI ~UpdateAttributesPacketPayload();
+    MCNAPI ~UpdateAttributesPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
@@ -53,6 +53,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

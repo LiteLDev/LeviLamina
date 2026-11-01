@@ -23,27 +23,27 @@ class OreUISocialPlayerFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromFriendData(
+    MCNAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromFriendData(
         ::Social::FriendData const&                                friendData,
         ::std::vector<::PlayerListEntry const*> const&             lobbyPlayers,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::std::shared_ptr<::Parties::Party> const&                 party
     );
 
-    MCAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromPlayerProfileData(
+    MCNAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromPlayerProfileData(
         ::Social::PlayerProfileData const&                         playerProfileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::std::shared_ptr<::Parties::Party> const&                 party,
         ::std::vector<::PlayerListEntry const*> const&             lobbyPlayers
     );
 
-    MCAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromWorldPlayerInfo(
+    MCNAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromWorldPlayerInfo(
         ::OreUI::WorldPlayerInfoBindings const&    worldPlayerInfoBindings,
         ::std::shared_ptr<::Parties::Party> const& party,
         ::std::optional<::Social::FriendData>      friendData
     );
 
-    MCAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromXboxLiveUserProfileData(
+    MCNAPI static ::OreUI::SocialPlayerData createSocialPlayerDataFromXboxLiveUserProfileData(
         ::Social::XboxLiveUserProfileData const&                   xboxLiveUserProfileData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::std::shared_ptr<::Parties::Party> const&                 party,

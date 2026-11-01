@@ -49,17 +49,17 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ClientBiomeJsonObject(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
+        MCNAPI ClientBiomeJsonObject(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
-        MCAPI ::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCNAPI ::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject&&);
 
-        MCAPI ::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCNAPI ::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
-        MCAPI bool operator==(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const& other) const;
+        MCNAPI bool operator==(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const& other) const;
 
-        MCAPI ~ClientBiomeJsonObject();
+        MCNAPI ~ClientBiomeJsonObject();
 #endif
         // NOLINTEND
 
@@ -67,7 +67,7 @@ public:
         // static functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
 #endif
         // NOLINTEND
 
@@ -75,7 +75,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void* $ctor(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
+        MCNAPI void* $ctor(::SharedTypes::Beta::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 #endif
         // NOLINTEND
 
@@ -83,7 +83,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -100,7 +100,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
 #endif
     // NOLINTEND
 };

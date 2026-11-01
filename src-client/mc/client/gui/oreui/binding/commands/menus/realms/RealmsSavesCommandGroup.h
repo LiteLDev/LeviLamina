@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _resolveStatus(
+    MCNAPI static void _resolveStatus(
         ::std::shared_ptr<::OreUI::InvocationStatus> const& commandStatus,
         ::Realms::GenericStatus                             responseStatus
     );
@@ -84,13 +84,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

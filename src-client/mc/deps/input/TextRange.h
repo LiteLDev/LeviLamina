@@ -13,6 +13,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::pair<int, int> getWordRange(::std::string const& textLine, int caret);
+    MCNAPI static ::std::pair<int, int> getWordRange(::std::string const& textLine, int caret);
     // NOLINTEND
 };

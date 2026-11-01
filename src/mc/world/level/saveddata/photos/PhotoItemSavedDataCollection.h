@@ -23,10 +23,10 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::PhotoItemSavedData*
+    MCNAPI ::PhotoItemSavedData*
     _loadPhotoData(::ActorUniqueID const& id, ::ActorUniqueID const& owner, ::std::string const& name);
 
-    MCAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const* instance);
+    MCNAPI ::PhotoItemSavedData* getPhotoSavedData(::CompoundTag const* instance);
 #endif
     // NOLINTEND
 };

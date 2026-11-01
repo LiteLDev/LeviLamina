@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AngerLevelComponentDefinition();
+    MCNAPI AngerLevelComponentDefinition();
 
-    MCAPI void addOnIncreaseSoundDefinition(::SharedTypes::v1_26_50::SoundDefinition const& soundDefinition);
+    MCNAPI void addOnIncreaseSoundDefinition(::SharedTypes::v1_26_50::SoundDefinition const& soundDefinition);
 
-    MCAPI ~AngerLevelComponentDefinition();
+    MCNAPI ~AngerLevelComponentDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

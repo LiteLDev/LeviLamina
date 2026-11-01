@@ -1220,7 +1220,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientLevel* $asClientLevel();
+    MCNAPI ::ClientLevel* $asClientLevel();
 
 
     // NOLINTEND

@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WeakStorageEntity(::OwnerStorageEntity const& ownerStorage);
+    MCNAPI explicit WeakStorageEntity(::OwnerStorageEntity const& ownerStorage);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OwnerStorageEntity const& ownerStorage);
+    MCNAPI void* $ctor(::OwnerStorageEntity const& ownerStorage);
     // NOLINTEND
 };

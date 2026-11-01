@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageItem(
+    MCNAPI MessageItem(
         ::MessageItemData const&                                   item,
         ::std::function<::ImageData(::std::string)>                imageLookup,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MessageItemData const&                                   item,
         ::std::function<::ImageData(::std::string)>                imageLookup,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,

@@ -39,22 +39,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
+    MCNAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
 
-    MCAPI ::IPlayerTickPolicy::TickAction
+    MCNAPI ::IPlayerTickPolicy::TickAction
     $shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isStrictMovement() const;
-#else // LL_PLAT_C
-    MCFOLD bool $isStrictMovement() const;
-#endif
+    MCNAPI bool $isStrictMovement() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isStrictDismount() const;
-#else // LL_PLAT_C
-    MCFOLD bool $isStrictDismount() const;
-#endif
+    MCNAPI bool $isStrictDismount() const;
 
 
     // NOLINTEND

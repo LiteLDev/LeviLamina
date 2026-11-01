@@ -33,12 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
+    MCNAPI bool hasValidBlockAtHomePos(::BlockSource const& region) const;
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void tick(::Actor& owner);
+    MCNAPI void tick(::Actor& owner);
     // NOLINTEND
 };

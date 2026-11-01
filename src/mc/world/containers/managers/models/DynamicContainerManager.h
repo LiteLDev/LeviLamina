@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicContainerManager(
+    MCNAPI DynamicContainerManager(
         ::FullContainerName const&          name,
         ::std::shared_ptr<::ContainerModel> model,
         ::std::shared_ptr<::Container>      container,
         ::ItemStack const&                  storageItem
     );
 
-    MCAPI void
+    MCNAPI void
     broadcastChanges(::PlayerContainerRefresher const& refresher, ::std::function<void()> contentsChangedCallback);
 
-    MCAPI void shareContainer(::ContainerOwner& containerOwner);
+    MCNAPI void shareContainer(::ContainerOwner& containerOwner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FullContainerName const&          name,
         ::std::shared_ptr<::ContainerModel> model,
         ::std::shared_ptr<::Container>      container,

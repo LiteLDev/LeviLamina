@@ -12,11 +12,11 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::Sapling {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getComplexAliasCallback();
 
-MCAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
+MCNAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::Sapling

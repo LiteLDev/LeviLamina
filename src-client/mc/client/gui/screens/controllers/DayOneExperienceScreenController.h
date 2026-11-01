@@ -42,27 +42,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DayOneExperienceScreenController(::std::shared_ptr<::DayOneExperienceModel> model);
+    MCNAPI explicit DayOneExperienceScreenController(::std::shared_ptr<::DayOneExperienceModel> model);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DayOneExperienceModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::DayOneExperienceModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
     // NOLINTEND
 
 public:

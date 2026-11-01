@@ -41,28 +41,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureRegistry();
+    MCNAPI JigsawStructureRegistry();
 
-    MCAPI void initialize(
+    MCNAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
         ::IWorldRegistriesProvider& registries
     );
 
-    MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
+    MCNAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
 
-    MCAPI ~JigsawStructureRegistry();
+    MCNAPI ~JigsawStructureRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

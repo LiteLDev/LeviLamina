@@ -47,29 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RiverFollowingGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
+    MCNAPI RiverFollowingGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, float lookAhead, float speed);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

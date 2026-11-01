@@ -10,7 +10,7 @@ namespace Settings { struct LocStringData; }
 namespace Settings::DataProvider::Util {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getValue(
+MCNAPI ::std::string getValue(
     ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData> const& stringSource
 );
 // NOLINTEND

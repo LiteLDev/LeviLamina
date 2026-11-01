@@ -24,12 +24,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SeatDescription const& seat) const;
+    MCNAPI bool operator==(::SeatDescription const& seat) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SeatDescription const& EMPTY();
+    MCNAPI static ::SeatDescription const& EMPTY();
     // NOLINTEND
 };

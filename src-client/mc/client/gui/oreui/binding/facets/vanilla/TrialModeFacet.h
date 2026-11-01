@@ -36,29 +36,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TrialModeFacet(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
+    MCNAPI explicit TrialModeFacet(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
 
-    MCFOLD ::std::optional<::OreUI::PurchaseGameError> const& getPurchaseGameError() const;
+    MCNAPI ::std::optional<::OreUI::PurchaseGameError> const& getPurchaseGameError() const;
 
-    MCAPI void purchaseGame(::TrialUpgradePurchaseTier tier);
+    MCNAPI void purchaseGame(::TrialUpgradePurchaseTier tier);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::TrialManager> trialManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

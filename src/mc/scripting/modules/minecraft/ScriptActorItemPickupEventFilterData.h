@@ -30,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorItemPickupEventFilterData(
+    MCNAPI ScriptActorItemPickupEventFilterData(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items
     );
 
-    MCAPI ~ScriptActorItemPickupEventFilterData();
+    MCNAPI ~ScriptActorItemPickupEventFilterData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::Actor const&                           item
     );
 
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemPickupEventFilterData create(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope           scope,
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::std::vector<::ItemStack>               items
@@ -68,7 +68,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

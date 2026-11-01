@@ -33,6 +33,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
     // NOLINTEND
 };

@@ -44,21 +44,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[22]> LEGACY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[22]> LEGACY_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack
     ) const;
 
-    MCAPI bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
     // NOLINTEND
 
 public:

@@ -35,15 +35,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WeaponItemComponent(::WeaponItemComponent const&);
+    MCNAPI WeaponItemComponent(::WeaponItemComponent const&);
 
-    MCAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
+    MCNAPI ::WeaponItemComponent& operator=(::WeaponItemComponent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -53,13 +53,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeaponItemComponent const&);
+    MCNAPI void* $ctor(::WeaponItemComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

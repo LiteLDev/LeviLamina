@@ -38,11 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenReaderCommandGroup(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI ScreenReaderCommandGroup(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
 
-    MCAPI void _clear() const;
+    MCNAPI void _clear() const;
 
-    MCAPI void _read(
+    MCNAPI void _read(
         ::std::string const&     text,
         ::ProfanityFilterContext context,
         bool                     interruptable,
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:

@@ -36,50 +36,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkWorldInfo();
+    MCNAPI NetworkWorldInfo();
 
-    MCAPI explicit NetworkWorldInfo(::ExternalServer& externalServer);
+    MCNAPI explicit NetworkWorldInfo(::ExternalServer& externalServer);
 
-    MCAPI explicit NetworkWorldInfo(::Social::MultiplayerGameInfo const& friendGame);
+    MCNAPI explicit NetworkWorldInfo(::Social::MultiplayerGameInfo const& friendGame);
 
-    MCAPI explicit NetworkWorldInfo(::PingedCompatibleServer const& remoteServer);
+    MCNAPI explicit NetworkWorldInfo(::PingedCompatibleServer const& remoteServer);
 
-    MCAPI NetworkWorldInfo(::NetworkWorldInfo const& rhs);
+    MCNAPI NetworkWorldInfo(::NetworkWorldInfo const& rhs);
 
-    MCAPI explicit NetworkWorldInfo(::std::shared_ptr<::ThirdPartyServer> const& server);
+    MCNAPI explicit NetworkWorldInfo(::std::shared_ptr<::ThirdPartyServer> const& server);
 
-    MCAPI ::std::string const getPingTextureName(bool isNetworkEnabled) const;
+    MCNAPI ::std::string const getPingTextureName(bool isNetworkEnabled) const;
 
-    MCFOLD ::std::string getUpdatedHeader() const;
+    MCNAPI ::std::string getUpdatedHeader() const;
 
-    MCAPI ::std::string const getWorldName(bool versionRequired) const;
+    MCNAPI ::std::string const getWorldName(bool versionRequired) const;
 
-    MCAPI ::NetworkWorldInfo& operator=(::NetworkWorldInfo const& rhs);
+    MCNAPI ::NetworkWorldInfo& operator=(::NetworkWorldInfo const& rhs);
 
-    MCAPI void updateExternalServer();
+    MCNAPI void updateExternalServer();
 
-    MCAPI ~NetworkWorldInfo();
+    MCNAPI ~NetworkWorldInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ExternalServer& externalServer);
+    MCNAPI void* $ctor(::ExternalServer& externalServer);
 
-    MCAPI void* $ctor(::Social::MultiplayerGameInfo const& friendGame);
+    MCNAPI void* $ctor(::Social::MultiplayerGameInfo const& friendGame);
 
-    MCAPI void* $ctor(::PingedCompatibleServer const& remoteServer);
+    MCNAPI void* $ctor(::PingedCompatibleServer const& remoteServer);
 
-    MCAPI void* $ctor(::NetworkWorldInfo const& rhs);
+    MCNAPI void* $ctor(::NetworkWorldInfo const& rhs);
 
-    MCAPI void* $ctor(::std::shared_ptr<::ThirdPartyServer> const& server);
+    MCNAPI void* $ctor(::std::shared_ptr<::ThirdPartyServer> const& server);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

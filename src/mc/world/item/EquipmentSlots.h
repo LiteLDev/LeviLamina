@@ -15,11 +15,11 @@ class EntityContext;
 namespace EquipmentSlots {
 // functions
 // NOLINTBEGIN
-MCAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(::EntityContext const& entityContext);
+MCNAPI ::SharedTypes::Legacy::ArmorSlot getArmorSlotForEntityArmorEquipmentSlot(::EntityContext const& entityContext);
 
-MCAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
+MCNAPI ::SharedTypes::Legacy::EquipmentSlot nameToEquipmentSlot(::std::string const& slotName);
 
-MCAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std::string const& nbtKey);
+MCNAPI ::SharedTypes::Legacy::SlotWithDropChance nbtKeyToSlotWithDropChance(::std::string const& nbtKey);
 // NOLINTEND
 
 } // namespace EquipmentSlots

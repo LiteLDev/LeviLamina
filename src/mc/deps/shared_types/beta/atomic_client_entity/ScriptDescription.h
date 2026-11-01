@@ -16,15 +16,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::Beta::AtomicClientEntity::ScriptDescription const&) const;
+    MCNAPI bool operator==(::SharedTypes::Beta::AtomicClientEntity::ScriptDescription const&) const;
 
-    MCAPI ~ScriptDescription();
+    MCNAPI ~ScriptDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

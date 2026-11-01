@@ -102,15 +102,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
+    MCNAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
 
-    MCAPI void _calcPOIDist();
+    MCNAPI void _calcPOIDist();
 
-    MCAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
+    MCNAPI void _clearVillagerPOIs(::ActorUniqueID const& villager);
 
-    MCAPI void _createRaid();
+    MCNAPI void _createRaid();
 
-    MCAPI bool _findSpawnPointForRaid(
+    MCNAPI bool _findSpawnPointForRaid(
         ::Vec3&     outSpawnPoint,
         float const distanceTolerance,
         float const boundsScaling,
@@ -118,91 +118,91 @@ public:
         bool        outsideOfVillage
     ) const;
 
-    MCAPI ::BlockSource*
+    MCNAPI ::BlockSource*
     _findSpawnableRegion(::Vec3 spawnPosition, int xzSpreadDistance, bool& outHasSpawnAreaLoaded) const;
 
-    MCAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
+    MCNAPI void _playSoundFrom(::Vec3 const& soundOrigin, ::SharedTypes::Legacy::LevelSoundEvent sound);
 
-    MCAPI void _saveVillageData(::LevelStorage& levelStorage) const;
+    MCNAPI void _saveVillageData(::LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageDwellers(::LevelStorage& levelStorage) const;
+    MCNAPI void _saveVillageDwellers(::LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePOIs(::LevelStorage& levelStorage) const;
+    MCNAPI void _saveVillagePOIs(::LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
+    MCNAPI void _saveVillagePlayerStanding(::LevelStorage& levelStorage) const;
 
-    MCAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
+    MCNAPI void _saveVillageRaid(::LevelStorage& levelStorage) const;
 
-    MCAPI void _tryAddPoiToVillage(::ActorUniqueID const& villager, ::std::weak_ptr<::POIInstance> pi);
+    MCNAPI void _tryAddPoiToVillage(::ActorUniqueID const& villager, ::std::weak_ptr<::POIInstance> pi);
 
-    MCAPI void addActorToVillage(::DwellerRole role, ::ActorUniqueID const& actorID);
+    MCNAPI void addActorToVillage(::DwellerRole role, ::ActorUniqueID const& actorID);
 
-    MCAPI bool addPOI(::std::weak_ptr<::POIInstance> pi);
+    MCNAPI bool addPOI(::std::weak_ptr<::POIInstance> pi);
 
-    MCAPI void addVillager(::ActorUniqueID const& villagerID);
+    MCNAPI void addVillager(::ActorUniqueID const& villagerID);
 
-    MCAPI bool checkNeedMoreVillagers() const;
+    MCNAPI bool checkNeedMoreVillagers() const;
 
-    MCAPI ::std::weak_ptr<::POIInstance> fetchOwnedPOI(::ActorUniqueID const& id, ::POIType type);
+    MCNAPI ::std::weak_ptr<::POIInstance> fetchOwnedPOI(::ActorUniqueID const& id, ::POIType type);
 
-    MCAPI void fireSoundTheAlarm();
+    MCNAPI void fireSoundTheAlarm();
 
-    MCAPI ::Actor* getClosestAggressor(::Actor* from);
+    MCNAPI ::Actor* getClosestAggressor(::Actor* from);
 
-    MCAPI ::Player* getClosestBadStandingPlayer(::Actor& from);
+    MCNAPI ::Player* getClosestBadStandingPlayer(::Actor& from);
 
-    MCAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
+    MCNAPI ::std::weak_ptr<::POIInstance> getClosestPOI(::POIType type, ::BlockPos const& position);
 
-    MCAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
+    MCNAPI bool hasInvalidRole(::ActorUniqueID const& actorId, ::DwellerRole const& role);
 
-    MCAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
+    MCNAPI bool hasSpecificDweller(::DwellerRole role, ::ActorUniqueID const& id) const;
 
-    MCAPI int modifyStanding(::ActorUniqueID const& playerID, int delta);
+    MCNAPI int modifyStanding(::ActorUniqueID const& playerID, int delta);
 
-    MCAPI ::std::_List_iterator<
+    MCNAPI ::std::_List_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<::ActorUniqueID const, ::Village::DwellerData>>>>
     removeActorFromVillage(::DwellerRole role, ::ActorUniqueID const& actor);
 
-    MCAPI void removeAllInstancesofActorFromVillage(::ActorUniqueID const& actor);
+    MCNAPI void removeAllInstancesofActorFromVillage(::ActorUniqueID const& actor);
 
-    MCAPI ::std::_List_iterator<
+    MCNAPI ::std::_List_iterator<
         ::std::_List_val<::std::_List_simple_types<::std::pair<::ActorUniqueID const, ::Village::DwellerData>>>>
     removeVillager(::ActorUniqueID const& villager);
 
-    MCAPI void resetDwellerTimer(::DwellerRole role, ::ActorUniqueID const& id);
+    MCNAPI void resetDwellerTimer(::DwellerRole role, ::ActorUniqueID const& id);
 
-    MCAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
+    MCNAPI void setSavedDwellerPosition(::DwellerRole role, ::ActorUniqueID const& id, ::BlockPos pos);
 
     MCAPI void tick(::Tick tick, ::BlockSource& region);
 
-    MCAPI void triggerRaid();
+    MCNAPI void triggerRaid();
 
-    MCAPI void trySetVillagerWorkTimestamp(::ActorUniqueID const& id);
+    MCNAPI void trySetVillagerWorkTimestamp(::ActorUniqueID const& id);
 
-    MCAPI void unlinkMismatchedJobsites(::Actor const& villager);
+    MCNAPI void unlinkMismatchedJobsites(::Actor const& villager);
 
-    MCAPI bool villagerLivesHere(::ActorUniqueID const& villager) const;
+    MCNAPI bool villagerLivesHere(::ActorUniqueID const& villager) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
+    MCNAPI static bool isVillagePOI(::VillageManager const& villageManager, ::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& CELEBRATION_EVENT();
+    MCNAPI static ::std::string const& CELEBRATION_EVENT();
 
-    MCAPI static ::std::string const& RAID_EXPIRY_EVENT();
+    MCNAPI static ::std::string const& RAID_EXPIRY_EVENT();
 
-    MCAPI static ::std::string const& STORAGE_KEY_PREFIX();
+    MCNAPI static ::std::string const& STORAGE_KEY_PREFIX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
+    MCNAPI void* $ctor(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
     // NOLINTEND
 };

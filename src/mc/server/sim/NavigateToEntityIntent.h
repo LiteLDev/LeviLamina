@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void finalize(::SimulatedPlayer& player);
+    MCNAPI void finalize(::SimulatedPlayer& player);
     // NOLINTEND
 };
 

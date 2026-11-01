@@ -60,24 +60,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
+    MCNAPI static ::std::array<::MobEffectInstance, 13> const& _getStewEffects();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCFOLD bool $uniqueAuxValues() const;
+    MCNAPI bool $uniqueAuxValues() const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
+    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool const playerIsCreative) const;
 
 
     // NOLINTEND

@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool growCrops(::BlockSource& region, ::BlockPos const& pos, ::FertilizerType fType) const;
+    MCNAPI bool growCrops(::BlockSource& region, ::BlockPos const& pos, ::FertilizerType fType) const;
     // NOLINTEND
 
 public:
@@ -62,7 +62,7 @@ public:
 
     MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCFOLD ::AABB $getCollisionShape(
         ::Block const&                                     block,
@@ -71,11 +71,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $setGrowth(
+    MCNAPI ::Block const& $setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Block const&    baseBlock,
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

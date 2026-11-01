@@ -18,11 +18,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isLocked() const;
+    MCNAPI bool $isLocked() const;
 
-    MCFOLD void $setLockedByBehaviorPack(bool isLocked);
+    MCNAPI void $setLockedByBehaviorPack(bool isLocked);
 
-    MCFOLD void $setLockedByResourcePack(bool isLocked);
+    MCNAPI void $setLockedByResourcePack(bool isLocked);
     // NOLINTEND
 
 public:

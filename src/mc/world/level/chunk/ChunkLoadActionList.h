@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addChunkLoadedRequest(
+    MCNAPI void _addChunkLoadedRequest(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::std::string const& dimensionPrefix,
         ::ChunksLoadedStatus chunksLoadedStatus,
         ::LevelStorage&      levelStorage
     );
 
-    MCAPI void _addChunkLoadedRequestToTickingList(
+    MCNAPI void _addChunkLoadedRequestToTickingList(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::std::string const& dimensionPrefix,
         ::LevelStorage&      levelStorage
     );
 
-    MCAPI int
+    MCNAPI int
     _clearRequest(::LevelStorage& levelStorage, ::IRequestAction* actionToRemove, ::std::string_view tickingAreaName);
 
-    MCAPI void _loadRequests(
+    MCNAPI void _loadRequests(
         ::LevelStorage&                                         storage,
         ::ICommandOriginLoader&                                 loader,
         ::std::string const&                                    dimensionPrefix,
@@ -59,26 +59,26 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
     );
 
-    MCAPI void _saveRequest(
+    MCNAPI void _saveRequest(
         ::ChunkLoadedRequest&  request,
         ::std::string const&   dimensionPrefix,
         ::ChunkRequestListType chunkRequestListType,
         ::LevelStorage&        levelStorage
     );
 
-    MCAPI void _updateAsyncList(
+    MCNAPI void _updateAsyncList(
         ::LevelStorage&                                              levelStorage,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCAPI void _updateTickingList(
+    MCNAPI void _updateTickingList(
         ::ServerLevel&                                               serverLevel,
         ::Dimension&                                                 dimension,
         ::std::function<::ChunksLoadedStatus(::ChunkLoadedRequest&)> chunksLoadedCheckFunction
     );
 
-    MCAPI void loadRequests(
+    MCNAPI void loadRequests(
         ::LevelStorage&                                         storage,
         ::ICommandOriginLoader&                                 loader,
         ::std::string const&                                    dimensionPrefix,
@@ -87,24 +87,24 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
     );
 
-    MCAPI ::QueueRequestResult queueRequestActionWithoutDuplicates(
+    MCNAPI ::QueueRequestResult queueRequestActionWithoutDuplicates(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::Dimension&         dimension
     );
 
-    MCAPI ::QueueRequestResult queueRequestOrExecuteAction(
+    MCNAPI ::QueueRequestResult queueRequestOrExecuteAction(
         ::ChunkLoadedRequest chunkLoadedRequest,
         ::ServerLevel&       serverLevel,
         ::Dimension&         dimension
     );
 
-    MCAPI ~ChunkLoadActionList();
+    MCNAPI ~ChunkLoadActionList();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

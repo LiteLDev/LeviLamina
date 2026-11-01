@@ -19,9 +19,9 @@ class RequestActionLoader {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
+    MCNAPI static bool isValidTag(::IRequestAction::RequestActionType actionType, ::CompoundTag const& tag);
 
-    MCAPI static ::std::unique_ptr<::IRequestAction> load(
+    MCNAPI static ::std::unique_ptr<::IRequestAction> load(
         ::IRequestAction::RequestActionType                     actionType,
         ::CompoundTag const&                                    tag,
         ::ICommandOriginLoader&                                 loader,
@@ -29,7 +29,7 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockTypeRegistry
     );
 
-    MCAPI static ::std::unique_ptr<::IRequestAction> load(
+    MCNAPI static ::std::unique_ptr<::IRequestAction> load(
         ::IRequestAction::RequestActionType                     actionType,
         ::CompoundTag const&                                    tag,
         ::ICommandOriginLoader&                                 loader,

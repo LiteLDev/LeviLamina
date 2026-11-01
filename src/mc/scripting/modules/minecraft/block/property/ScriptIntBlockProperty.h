@@ -31,27 +31,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptIntBlockProperty(
+    MCNAPI ScriptIntBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<int>                                                                    validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty&
+    MCNAPI ::ScriptModuleMinecraft::ScriptIntBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptIntBlockProperty&& rhs);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<int>                                                                    validValues,

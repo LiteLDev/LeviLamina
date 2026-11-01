@@ -26,11 +26,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCFOLD bool $structurePostProcessChunk(::ChunkViewSource&);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource&);
 
-    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource&);
 #endif
 
 

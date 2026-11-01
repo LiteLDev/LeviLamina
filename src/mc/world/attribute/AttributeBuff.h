@@ -49,9 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
+    MCNAPI AttributeBuff(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI AttributeBuff(
+    MCNAPI AttributeBuff(
         float                                         amount,
         int                                           operand,
         ::ActorDamageSource const&                    source,
@@ -59,17 +59,17 @@ public:
         ::std::optional<::HurtEffectsSettings> const& hurtEffectsSettings
     );
 
-    MCAPI ::AttributeBuff& operator=(::AttributeBuff const&);
+    MCNAPI ::AttributeBuff& operator=(::AttributeBuff const&);
 
-    MCAPI void setSource(::Actor* source);
+    MCNAPI void setSource(::Actor* source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
+    MCNAPI void* $ctor(float amount, int operand, ::AttributeBuffType type);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         float                                         amount,
         int                                           operand,
         ::ActorDamageSource const&                    source,
@@ -81,7 +81,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
+    MCNAPI void $setDurationAmplifier(::std::shared_ptr<::Amplifier> amplifier);
 
 
     // NOLINTEND
@@ -89,6 +89,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

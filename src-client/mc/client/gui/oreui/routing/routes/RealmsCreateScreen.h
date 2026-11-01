@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsCreateScreen(
+    MCNAPI RealmsCreateScreen(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                 userManager,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>()>  getOfferRepository,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::SunsettingManager>()> getSunsettingManager,
@@ -60,15 +60,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[21]> BASE_SCREEN_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[21]> BASE_SCREEN_ID();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>                 userManager,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>()>  getOfferRepository,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::SunsettingManager>()> getSunsettingManager,
@@ -79,9 +79,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

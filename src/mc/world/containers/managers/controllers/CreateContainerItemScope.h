@@ -35,7 +35,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CreateContainerItemScope(
+    MCNAPI CreateContainerItemScope(
         ::ItemStackRequestScope&&                requestScope,
         ::SlotData const&                        createdItemOutputSlot,
         ::ItemInstance const&                    item,
@@ -43,14 +43,14 @@ public:
         ::std::shared_ptr<::ContainerController> createdItemOutputContainerController
     );
 
-    MCAPI void _createItemStack(
+    MCNAPI void _createItemStack(
         ::ItemStackRequestId const& currentRequestId,
         ::SlotData const&           createdItemOutputSlot,
         ::ItemInstance const&       item,
         ::ItemTransferAmount        takeAmount
     );
 
-    MCAPI ~CreateContainerItemScope();
+    MCNAPI ~CreateContainerItemScope();
 #endif
     // NOLINTEND
 
@@ -58,7 +58,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::CreateContainerItemScope _createInnerScope(
+    MCNAPI static ::CreateContainerItemScope _createInnerScope(
         ::ItemStackRequestScope const&           requestScope,
         ::SlotData const&                        createdItemOutputSlot,
         ::ItemInstance const&                    item,
@@ -72,7 +72,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ItemStackRequestScope&&                requestScope,
         ::SlotData const&                        createdItemOutputSlot,
         ::ItemInstance const&                    item,
@@ -86,7 +86,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

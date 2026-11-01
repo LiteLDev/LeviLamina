@@ -23,6 +23,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
+    MCNAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
     // NOLINTEND
 };

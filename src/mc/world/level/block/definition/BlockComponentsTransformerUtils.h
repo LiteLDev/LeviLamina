@@ -13,7 +13,7 @@ struct BlockComponentsTransformerUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void transform(
+    MCNAPI static void transform(
         ::cereal::ReflectionCtx const&                                   ctx,
         ::std::string const&                                             name,
         ::SharedTypes::v1_26_60::BlockDefinition::BlockComponents const& blockComponents,

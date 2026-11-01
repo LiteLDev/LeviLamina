@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerCommandOrigin(
+    MCNAPI ServerCommandOrigin(
         ::std::string const&     requestId,
         ::ServerLevel&           level,
         ::CommandPermissionLevel permission,
@@ -86,7 +86,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&     requestId,
         ::ServerLevel&           level,
         ::CommandPermissionLevel permission,

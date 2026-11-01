@@ -53,43 +53,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MarketplacePassWorldTemplateListFacet(
+    MCNAPI MarketplacePassWorldTemplateListFacet(
         ::World::MarketplacePassWorldTemplateManager&              marketplacePassWorldTemplateManager,
         ::MarketplaceServicesManager&                              marketplaceServicesManager,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>               dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> _getMarketplacePassWorldTemplates() const;
+    MCNAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> _getMarketplacePassWorldTemplates() const;
 
-    MCAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
+    MCNAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
 
-    MCAPI void _updateBindings(
+    MCNAPI void _updateBindings(
         ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings>&& templateBindings,
         ::OreUI::SeeMoreRouteData&&                                    seeMoreRouteData
     );
 
-    MCAPI void clearRefreshTaskState();
+    MCNAPI void clearRefreshTaskState();
 
-    MCFOLD ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getMarketplacePassWorldTemplates() const;
+    MCNAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getMarketplacePassWorldTemplates() const;
 
-    MCAPI ::OreUI::FacetTaskState getRefreshTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getRefreshTaskState() const;
 
-    MCFOLD ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData() const;
+    MCNAPI ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData() const;
 
-    MCAPI void refreshOffers();
+    MCNAPI void refreshOffers();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::MarketplacePassWorldTemplateManager&              marketplacePassWorldTemplateManager,
         ::MarketplaceServicesManager&                              marketplaceServicesManager,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>               dateManager,
@@ -100,7 +100,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocumentDataParams(
+    MCNAPI ActorDocumentDataParams(
         ::ComponentStorageLoadDataRefVariant<
             ::SharedTypes::v1_26_60::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
@@ -45,13 +45,13 @@ public:
         bool const                                 isBaseGamePack
     );
 
-    MCAPI ~ActorDocumentDataParams();
+    MCNAPI ~ActorDocumentDataParams();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ComponentStorageLoadDataRefVariant<
             ::SharedTypes::v1_26_60::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions> value,
@@ -64,6 +64,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -29,10 +29,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::InvalidArgumentError>
+    MCNAPI ::std::optional<::Scripting::InvalidArgumentError>
     _validateFaceOrError(::ScriptModuleMinecraft::ScriptFacing face) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::string,
         ::Scripting::InvalidArgumentError,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,

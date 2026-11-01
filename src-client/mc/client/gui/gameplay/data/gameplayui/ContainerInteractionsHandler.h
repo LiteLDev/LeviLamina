@@ -35,35 +35,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameplayUI::ContainerAction handleSlotGamepadDrag(
+    MCNAPI ::GameplayUI::ContainerAction handleSlotGamepadDrag(
         ::GameplayUI::ContainerInteractionsContext context,
         ::OreUI::GamepadButton                     button,
         ::ContainerEnumName                        container,
         int                                        slot
     );
 
-    MCAPI ::GameplayUI::ContainerAction handleSlotGamepadPress(
+    MCNAPI ::GameplayUI::ContainerAction handleSlotGamepadPress(
         ::GameplayUI::ContainerInteractionsContext context,
         ::OreUI::GamepadButton                     button,
         ::ContainerEnumName                        container,
         int                                        slot
     );
 
-    MCAPI ::GameplayUI::ContainerAction handleSlotMousePress(
+    MCNAPI ::GameplayUI::ContainerAction handleSlotMousePress(
         ::GameplayUI::ContainerInteractionsContext context,
         ::OreUI::MouseButton                       button,
         ::ContainerEnumName                        container,
         int                                        slot
     );
 
-    MCAPI ::GameplayUI::ContainerAction handleSlotMouseRelease(
+    MCNAPI ::GameplayUI::ContainerAction handleSlotMouseRelease(
         ::GameplayUI::ContainerInteractionsContext context,
         ::OreUI::MouseButton                       button,
         ::ContainerEnumName                        container,
         int                                        slot
     );
 
-    MCAPI ::GameplayUI::ContainerAction
+    MCNAPI ::GameplayUI::ContainerAction
     handleSlotTouchRelease(::GameplayUI::ContainerInteractionsContext context, ::ContainerEnumName container, int slot);
     // NOLINTEND
 };

@@ -54,13 +54,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
-    MCFOLD void $update();
+    MCNAPI void $update();
     // NOLINTEND
 
 public:

@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManagerContentSourceData(
+    MCNAPI PackManagerContentSourceData(
         ::Core::Path const&                                        path,
         ::ContentType const                                        contentType,
         ::std::unique_ptr<::CompositePackSource>                   packSource,
@@ -50,7 +50,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::Path const&                                        path,
         ::ContentType const                                        contentType,
         ::std::unique_ptr<::CompositePackSource>                   packSource,

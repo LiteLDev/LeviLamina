@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduLibraryCategoryScreenController(
+    MCNAPI EduLibraryCategoryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string                            title,
         ::std::string                            icon,
@@ -54,13 +54,13 @@ public:
         bool                                     firstPage
     );
 
-    MCAPI ::EduLibraryCategory* _getCategory(::UIPropertyBag const& bag);
+    MCNAPI ::EduLibraryCategory* _getCategory(::UIPropertyBag const& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string                            title,
         ::std::string                            icon,
@@ -75,8 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

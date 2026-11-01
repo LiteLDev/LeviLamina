@@ -15,7 +15,7 @@ namespace Crypto::Random {
 // NOLINTBEGIN
 MCAPI ::mce::UUID generateUUID(::Crypto::Random::RandomPurpose purpose);
 
-MCAPI uint64 generateUUID64Bit(::Crypto::Random::RandomPurpose purpose);
+MCNAPI uint64 generateUUID64Bit(::Crypto::Random::RandomPurpose purpose);
 // NOLINTEND
 
 } // namespace Crypto::Random

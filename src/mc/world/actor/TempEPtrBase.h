@@ -38,25 +38,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* _lock() const;
+    MCNAPI ::Actor* _lock() const;
 
-    MCAPI void _set(::Actor* e);
+    MCNAPI void _set(::Actor* e);
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
-    MCAPI ::TempEPtrBase& operator=(::TempEPtrBase const& e);
+    MCNAPI ::TempEPtrBase& operator=(::TempEPtrBase const& e);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $invalidate();
+    MCNAPI void $invalidate();
 
 
     // NOLINTEND
@@ -64,6 +64,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

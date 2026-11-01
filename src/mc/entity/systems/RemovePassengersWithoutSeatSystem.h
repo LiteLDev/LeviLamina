@@ -17,7 +17,7 @@ class RemovePassengersWithoutSeatSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void removePassengersWithoutSeat(
+    MCNAPI static void removePassengersWithoutSeat(
         ::StrictEntityContext&,
         ::RideableComponent const&                            rideableComponent,
         ::VehicleComponent&                                   vehicleComponent,

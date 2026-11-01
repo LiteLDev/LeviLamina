@@ -39,11 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContentView&
+    MCNAPI ::ContentView&
     $getContentView(::brstd::move_only_function<bool(::std::shared_ptr<::ContentItem const> const&)> predicate);
 
-    MCFOLD ::std::vector<::std::unique_ptr<::ContentView>> const& $getContentViews() const;
+    MCNAPI ::std::vector<::std::unique_ptr<::ContentView>> const& $getContentViews() const;
 
-    MCAPI void $onLanguageChanged();
+    MCNAPI void $onLanguageChanged();
     // NOLINTEND
 };

@@ -22,13 +22,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickComponent(::EntityContext& entity, ::AngryComponent& angryComponent);
+    MCNAPI static void _tickComponent(::EntityContext& entity, ::AngryComponent& angryComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

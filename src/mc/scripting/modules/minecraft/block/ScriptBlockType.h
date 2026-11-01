@@ -41,17 +41,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
 
-    MCAPI ::std::string getLocalizationKey() const;
+    MCNAPI ::std::string getLocalizationKey() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockType const& block);
     // NOLINTEND
 };

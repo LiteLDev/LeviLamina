@@ -62,50 +62,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyStructureTemplate();
+    MCNAPI LegacyStructureTemplate();
 
 #ifdef LL_PLAT_C
-    MCAPI ::Block const* _fixExtraWaterBlock(::BlockType const& blockType);
+    MCNAPI ::Block const* _fixExtraWaterBlock(::BlockType const& blockType);
 #endif
 
-    MCAPI ::BlockPos calculateConnectedPosition(
+    MCNAPI ::BlockPos calculateConnectedPosition(
         ::LegacyStructureSettings const& settings1,
         ::BlockPos const&                connection1,
         ::LegacyStructureSettings const& settings2,
         ::BlockPos const&                connection2
     ) const;
 
-    MCAPI void finalizeBlockRules(
+    MCNAPI void finalizeBlockRules(
         ::BlockSource&             region,
         ::BlockPos const&          position,
         ::LegacyStructureSettings& settings,
         ::Random&
     ) const;
 
-    MCAPI ::std::unordered_map<::BlockPos, ::StructureSpawnEntityInfo>
+    MCNAPI ::std::unordered_map<::BlockPos, ::StructureSpawnEntityInfo>
     getEntitiesToPlace(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
+    MCNAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _fixItemStack(::CompoundTag& itemTag, int const dataVersion);
+    MCNAPI static void _fixItemStack(::CompoundTag& itemTag, int const dataVersion);
 
 #ifdef LL_PLAT_C
-    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+    MCNAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
+    MCNAPI static void _mapPropertiesToTags(::CompoundTag& originalTag, ::CompoundTag const& paletteTag);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI static ::Block const*
+    MCNAPI static ::Block const*
     _mapPropertyToExtraBlock(::std::string const& propertyString, ::std::string const& valueString);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
         ::std::string const&             javaBlockName,
         int                              dataVersion,
@@ -114,7 +114,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _mapTag(
         ::std::unique_ptr<::CompoundTag> originalTag,
         ::std::string const&             javaBlockName,
         int const                        dataVersion,
@@ -122,74 +122,74 @@ public:
     );
 #endif
 
-    MCAPI static ::Block const* _mapToBlock(::std::string const& blockName);
+    MCNAPI static ::Block const* _mapToBlock(::std::string const& blockName);
 
-    MCAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
+    MCNAPI static ::Block const& _mapToData(::Block const& curr, ::LegacyStructureSettings const& settings);
 
-    MCAPI static ::Block const*
+    MCNAPI static ::Block const*
     _mapToProperty(::std::string const& propertyString, ::std::string const& valueString, ::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& AUTHOR_TAG();
+    MCNAPI static ::std::string const& AUTHOR_TAG();
 
-    MCAPI static ::std::string const& BLOCKS_TAG();
+    MCNAPI static ::std::string const& BLOCKS_TAG();
 
-    MCAPI static ::std::string const& BLOCK_TAG_NBT();
+    MCNAPI static ::std::string const& BLOCK_TAG_NBT();
 
-    MCAPI static ::std::string const& BLOCK_TAG_POS();
+    MCNAPI static ::std::string const& BLOCK_TAG_POS();
 
-    MCAPI static ::std::string const& BLOCK_TAG_STATE();
+    MCNAPI static ::std::string const& BLOCK_TAG_STATE();
 
-    MCAPI static ::std::string const& DATA_VERSION_TAG();
+    MCNAPI static ::std::string const& DATA_VERSION_TAG();
 
-    MCAPI static ::std::string const& ENTITIES_TAG();
+    MCNAPI static ::std::string const& ENTITIES_TAG();
 
-    MCAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
+    MCNAPI static ::std::string const& ENTITY_TAG_BLOCKPOS();
 
-    MCAPI static ::std::string const& ENTITY_TAG_NBT();
+    MCNAPI static ::std::string const& ENTITY_TAG_NBT();
 
-    MCAPI static ::std::string const& ENTITY_TAG_POS();
+    MCNAPI static ::std::string const& ENTITY_TAG_POS();
 
-    MCAPI static ::std::string const& MINECRAFT_PREFIX();
+    MCNAPI static ::std::string const& MINECRAFT_PREFIX();
 
-    MCAPI static ::std::string const& PALETTE_TAG();
+    MCNAPI static ::std::string const& PALETTE_TAG();
 
-    MCAPI static ::std::string const& SIZE_TAG();
+    MCNAPI static ::std::string const& SIZE_TAG();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::BlockPos, ::std::string>
+    MCNAPI ::std::unordered_map<::BlockPos, ::std::string>
     $getMarkers(::BlockPos const& position, ::LegacyStructureSettings& settings) const;
 
-    MCAPI void $placeInWorld(
+    MCNAPI void $placeInWorld(
         ::BlockSource&             region,
         ::BlockPos const&          pos,
         ::LegacyStructureSettings& settings,
         ::Random&                  random
     ) const;
 
-    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
+    MCNAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
 
-    MCAPI ::BlockPos $rawSize() const;
+    MCNAPI ::BlockPos $rawSize() const;
 
-    MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
+    MCNAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos) const;
 
 
     // NOLINTEND

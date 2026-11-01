@@ -27,7 +27,7 @@ public:
     // NOLINTBEGIN
     MCAPI ::Vec3 getPosition(int version, ::CommandOrigin const& origin, ::Vec3 const& offsetFromBase) const;
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
     // NOLINTEND
 };
 

@@ -20,6 +20,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ClientMoveInputHandler> $_createClientMoveInputHandler();
+    MCNAPI ::std::unique_ptr<::ClientMoveInputHandler> $_createClientMoveInputHandler();
     // NOLINTEND
 };

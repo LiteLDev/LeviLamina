@@ -34,31 +34,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsSubscriptionsMethodsFacet(
+    MCNAPI explicit RealmsSubscriptionsMethodsFacet(
         ::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions
     );
 
-    MCAPI void initialize();
+    MCNAPI void initialize();
 
-    MCAPI void reset();
+    MCNAPI void reset();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

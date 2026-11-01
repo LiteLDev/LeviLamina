@@ -37,7 +37,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canAddOn(::Block const& block) const;
+    MCNAPI bool $canAddOn(::Block const& block) const;
 
 
     // NOLINTEND

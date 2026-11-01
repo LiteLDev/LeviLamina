@@ -103,11 +103,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit CartographyContainerManagerController(
+    MCNAPI explicit CartographyContainerManagerController(
         ::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel
     );
 
-    MCAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool _handleTransferCraft(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 #endif
     // NOLINTEND
 
@@ -115,7 +115,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
+    MCNAPI void* $ctor(::std::weak_ptr<::CartographyContainerManagerModel> containerManagerModel);
 #endif
     // NOLINTEND
 
@@ -123,46 +123,46 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
-    MCAPI bool $isOutputSlot(::std::string const& collectionName) const;
+    MCNAPI bool $isOutputSlot(::std::string const& collectionName) const;
 
-    MCAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
+    MCNAPI ::ItemStackBase const& $getTakeableItemStackBase(::SlotData const& slot) const;
 
-    MCAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void $setPreviewItemName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void $setItemName(::Bedrock::Safety::RedactableString const& name);
 
-    MCFOLD ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
+    MCNAPI ::Bedrock::Safety::RedactableString const& $getPreviewItemName() const;
 
-    MCAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
+    MCNAPI ::Bedrock::Safety::RedactableString const& $getItemName() const;
 
-    MCAPI void $updatePreviewItem();
+    MCNAPI void $updatePreviewItem();
 
-    MCAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
+    MCNAPI bool $handleTakeAmount(::SlotData const& dstSlot, int amount, ::SlotData const& srcSlot);
 
-    MCAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCNAPI bool $handleTakeAll(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
+    MCNAPI bool $handleTakeHalf(::SlotData const& dstSlot, ::SlotData const& srcSlot);
 
-    MCAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
+    MCNAPI bool $handlePlaceOne(::SlotData const& srcSlot, ::SlotData const& dstSlot);
 
-    MCAPI int $handleAutoPlace(
+    MCNAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCAPI void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
+    MCNAPI void $_onContainerScreenAction(::ContainerScreenActionResult const& result);
 
-    MCAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
+    MCNAPI ::CreateContainerItemScope $_makeCreateItemScope(::SlotData const& srcSlot, ::ItemTransferAmount const&);
 
-    MCAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
+    MCNAPI void $_onItemAcquired(::ItemInstance const& instance, ::SlotData const& srcSlot);
 
-    MCAPI void $_updateItemStackRequest(
+    MCNAPI void $_updateItemStackRequest(
         ::ContainerScreenRequestActionType,
         ::ContainerScreenActionResult const& result,
         ::ItemStackRequestScope&             requestScope

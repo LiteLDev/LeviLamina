@@ -88,7 +88,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlugin(
+    MCNAPI ScriptPlugin(
         ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
         ::Scripting::ModuleDescriptor&&                moduleDesc,
         ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
@@ -103,15 +103,15 @@ public:
         ::std::unique_ptr<::Scripting::IPrinter>       printLogger
     );
 
-    MCAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
+    MCNAPI ::std::optional<::Scripting::ScriptData> _loadScript(::std::string const& fileName);
 
-    MCAPI void enableHandleCounter(bool enabled);
+    MCNAPI void enableHandleCounter(bool enabled);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::IScriptPluginSource>       pluginSource,
         ::Scripting::ModuleDescriptor&&                moduleDesc,
         ::std::vector<::Scripting::ModuleDescriptor>&& moduleDependencies,
@@ -130,27 +130,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Scripting::ScriptData> $onLoadScript(::std::string const& name);
+    MCNAPI ::std::optional<::Scripting::ScriptData> $onLoadScript(::std::string const& name);
 
-    MCAPI void $onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
+    MCNAPI void $onInfo(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCAPI void $onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
+    MCNAPI void $onWarn(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
+    MCNAPI void $onError(::Scripting::ContextId contextId, ::std::string_view message) const;
 
-    MCAPI void $onException(
+    MCNAPI void $onException(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny
     ) const;
 
-    MCAPI bool $shouldPrintException(
+    MCNAPI bool $shouldPrintException(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny
     ) const;
 
-    MCAPI void $onPromiseRejection(
+    MCNAPI void $onPromiseRejection(
         ::Scripting::ContextId        contextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&       errorAny,

@@ -58,14 +58,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockBreakingEventListener(
+    MCNAPI ScriptBlockBreakingEventListener(
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar)>      sendStartBreakingFunction,
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar, int)> sendCancelBreakingFunction
     );
 
-    MCAPI void _flushPlayerBreaking(::Player& player, int previousProgress);
+    MCNAPI void _flushPlayerBreaking(::Player& player, int previousProgress);
 
-    MCAPI void _startBreakingBlock(
+    MCNAPI void _startBreakingBlock(
         ::Player&         player,
         ::BlockPos const& blockPos,
         ::Block const&    hitBlock,
@@ -73,15 +73,15 @@ public:
         int               previousProgress
     );
 
-    MCAPI void onBreakBlock(::Player& player);
+    MCNAPI void onBreakBlock(::Player& player);
 
-    MCAPI ~ScriptBlockBreakingEventListener();
+    MCNAPI ~ScriptBlockBreakingEventListener();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar)>      sendStartBreakingFunction,
         ::std::function<void(::Player&, ::BlockPos const&, ::Block const&, uchar, int)> sendCancelBreakingFunction
     );
@@ -90,7 +90,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

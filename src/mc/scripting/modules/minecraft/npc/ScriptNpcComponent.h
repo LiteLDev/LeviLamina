@@ -23,31 +23,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getDefaultScene() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getName() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getName() const;
 
-    MCAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
+    MCNAPI ::Scripting::Result_deprecated<void> setDefaultScene(::std::string sceneId);
 
-    MCAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
+    MCNAPI ::Scripting::Result_deprecated<void> setName(::std::string name);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

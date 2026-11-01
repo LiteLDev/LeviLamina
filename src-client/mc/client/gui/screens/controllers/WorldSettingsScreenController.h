@@ -151,13 +151,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSettingsScreenController(
+    MCNAPI WorldSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         bool                                     createWorld,
         bool                                     unhideServerSettings
     );
 
-    MCAPI WorldSettingsScreenController(
+    MCNAPI WorldSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
@@ -166,51 +166,51 @@ public:
         bool                                     unhideServerSettings
     );
 
-    MCAPI bool _canChangeWorldOption() const;
+    MCNAPI bool _canChangeWorldOption() const;
 
-    MCAPI bool _canEditDifficulty();
+    MCNAPI bool _canEditDifficulty();
 
-    MCAPI void _copyAndSetDataHelper(::std::function<void(::LevelData&)> setDataCallback);
+    MCNAPI void _copyAndSetDataHelper(::std::function<void(::LevelData&)> setDataCallback);
 
-    MCAPI ::ui::ViewRequest _copyWorld(::std::function<void(::LevelData&)> setDataCallback, bool leaveScreen);
+    MCNAPI ::ui::ViewRequest _copyWorld(::std::function<void(::LevelData&)> setDataCallback, bool leaveScreen);
 
-    MCAPI ::ui::ViewRequest _createWorld(::PostCreateWorldAction postCreateWorldAction);
+    MCNAPI ::ui::ViewRequest _createWorld(::PostCreateWorldAction postCreateWorldAction);
 
-    MCAPI int _getDifficulty();
+    MCNAPI int _getDifficulty();
 
-    MCAPI ::std::string _getPlatformMultiplayerWarningText() const;
+    MCNAPI ::std::string _getPlatformMultiplayerWarningText() const;
 
-    MCAPI ::std::string _getWorldName();
+    MCNAPI ::std::string _getWorldName();
 
-    MCAPI ::std::string _getXBLMultiplayerWarningText() const;
+    MCNAPI ::std::string _getXBLMultiplayerWarningText() const;
 
-    MCAPI void _init();
+    MCNAPI void _init();
 
-    MCAPI bool _passedLockedContentCheck();
+    MCNAPI bool _passedLockedContentCheck();
 
-    MCAPI void _selectRealm(::std::function<void(::Realms::World)> callback);
+    MCNAPI void _selectRealm(::std::function<void(::Realms::World)> callback);
 
-    MCAPI void _setAllowCheatsHelper(bool value);
+    MCNAPI void _setAllowCheatsHelper(bool value);
 
-    MCAPI void _setDefaultPermissionLevelHelper(::PlayerPermissionLevel value);
+    MCNAPI void _setDefaultPermissionLevelHelper(::PlayerPermissionLevel value);
 
-    MCAPI void _setGameRule(bool value, ::GameRuleId gameRuleId, bool suppressOuput);
+    MCNAPI void _setGameRule(bool value, ::GameRuleId gameRuleId, bool suppressOuput);
 
-    MCAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
+    MCNAPI void _setGameRule(int value, ::GameRuleId gameRuleId, bool suppressOuput);
 
-    MCAPI void _setMultiplayerEnabled(bool value);
+    MCNAPI void _setMultiplayerEnabled(bool value);
 
-    MCAPI void _setWorldGameModeHelper(int value);
+    MCNAPI void _setWorldGameModeHelper(int value);
 
-    MCAPI void _setWorldName(::std::string value);
+    MCNAPI void _setWorldName(::std::string value);
 
-    MCAPI void _setWorldTypeHelper(int value);
+    MCNAPI void _setWorldTypeHelper(int value);
 
-    MCAPI bool _shouldShowMultiplayerWarningMessages() const;
+    MCNAPI bool _shouldShowMultiplayerWarningMessages() const;
 
-    MCAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
+    MCNAPI ::ui::ViewRequest _startEducationWorld(bool shouldHost);
 
-    MCAPI void confirmationExperimentalGameplayDialog(
+    MCNAPI void confirmationExperimentalGameplayDialog(
         ::std::string const&                         messageId,
         ::std::function<void(::ModalScreenButtonId)> callback
     );
@@ -219,15 +219,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addStaticScreenVars(::Json::Value& globalVars, bool exportDisabled, bool isMultiplayerClient);
+    MCNAPI static void addStaticScreenVars(::Json::Value& globalVars, bool exportDisabled, bool isMultiplayerClient);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool createWorld, bool unhideServerSettings);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool createWorld, bool unhideServerSettings);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LevelSummary const&                    levelSummary,
         bool                                     createFromTemplate,
@@ -240,30 +240,30 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCAPI void $onStorageChanged();
+    MCNAPI void $onStorageChanged();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
+    MCNAPI bool $hasAvailableSpaceForLevel(::std::shared_ptr<::Core::FileStorageArea> sptStorageArea);
 
-    MCAPI void $saveWorld();
+    MCNAPI void $saveWorld();
 
-    MCFOLD ::LevelSummary& $getLevelSummary();
+    MCNAPI ::LevelSummary& $getLevelSummary();
 
-    MCAPI ::LevelData& $getLevelData();
+    MCNAPI ::LevelData& $getLevelData();
 
-    MCAPI void $_registerControllerCallbacks();
+    MCNAPI void $_registerControllerCallbacks();
 
-    MCAPI void $_displayLockedWorldPopup();
+    MCNAPI void $_displayLockedWorldPopup();
     // NOLINTEND
 };

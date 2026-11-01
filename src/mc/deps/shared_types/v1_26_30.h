@@ -20,47 +20,47 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_30 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                    legacyGoal,
     ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition& sharedGoal
 );
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                              legacyGoal,
     ::SharedTypes::v1_26_30::FollowCaravanGoalDefinition& sharedGoal
 );
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                             legacyGoal,
     ::SharedTypes::v1_26_30::HurtByTargetGoalDefinition& sharedGoal
 );
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                                   legacyGoal,
     ::SharedTypes::v1_26_30::NearestPrioritizedAttackableTargetGoalDefinition& sharedGoal
 );
 
-MCFOLD void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                  legacyGoal,
     ::SharedTypes::v1_26_30::OwnerHurtByTargetGoalDefinition& sharedGoal
 );
 
-MCFOLD void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                legacyGoal,
     ::SharedTypes::v1_26_30::OwnerHurtTargetGoalDefinition& sharedGoal
 );
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                           legacyGoal,
     ::SharedTypes::v1_26_30::ShareItemsGoalDefinition& sharedGoal
 );
 
-MCAPI void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_30::SneezeGoalDefinition& sharedGoal);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                                 legacyGoal,
     ::SharedTypes::v1_26_30::TargetWhenPushedGoalDefinition& sharedGoal
 );

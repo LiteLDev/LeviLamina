@@ -203,7 +203,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickUpdateClientInputView(
+    MCNAPI static void tickUpdateClientInputView(
         ::StrictEntityContext const&                           entity,
         ::AABBShapeComponent const&                            aabbShape,
         ::MovementAbilitiesComponent const&                    abilities,
@@ -228,7 +228,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,

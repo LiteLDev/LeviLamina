@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeTableData(
+    MCNAPI TradeTableData(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
         ::ItemRegistryRef const&                itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment,
@@ -35,7 +35,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SharedTypes::v1_21_30::TradeTableData parsedData,
         ::ItemRegistryRef const&                itemRegistry,
         bool                                    usingUpcomingCreatorFeaturesExperiment,

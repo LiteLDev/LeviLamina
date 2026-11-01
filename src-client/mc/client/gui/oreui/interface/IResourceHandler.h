@@ -43,9 +43,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onViewCreate(::IClientInstance& client);
+    MCNAPI void $onViewCreate(::IClientInstance& client);
 
-    MCFOLD void $onAppPreSuspend();
+    MCNAPI void $onAppPreSuspend();
     // NOLINTEND
 };
 

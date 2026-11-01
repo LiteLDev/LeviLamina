@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LibraryProgressHandler(
+    MCNAPI LibraryProgressHandler(
         ::std::string                                            title,
         ::std::function<void(bool&)>                             tickCallback,
         ::std::function<void()>                                  cancelCallback,
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                            title,
         ::std::function<void(bool&)>                             tickCallback,
         ::std::function<void()>                                  cancelCallback,
@@ -51,8 +51,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& container) const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

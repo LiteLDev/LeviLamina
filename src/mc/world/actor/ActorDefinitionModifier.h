@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
+    MCNAPI ActorDefinitionModifier(::ActorDefinitionModifier const&);
 
-    MCAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
+    MCNAPI ::ActorDefinitionModifier& operator=(::ActorDefinitionModifier&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionModifier const&);
+    MCNAPI void* $ctor(::ActorDefinitionModifier const&);
     // NOLINTEND
 };

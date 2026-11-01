@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _recomputeHash() const;
+    MCNAPI void _recomputeHash() const;
     // NOLINTEND
 };

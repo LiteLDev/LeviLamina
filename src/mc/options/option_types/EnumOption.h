@@ -30,7 +30,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EnumOption(
+    MCNAPI EnumOption(
         ::OptionID                                      id,
         ::OptionOwnerType                               ownerType,
         ::OptionResetFlags                              resetFlags,
@@ -48,7 +48,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID                                      id,
         ::OptionOwnerType                               ownerType,
         ::OptionResetFlags                              resetFlags,

@@ -51,13 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clientSideCloseDataDrivenScreens();
+    MCNAPI void clientSideCloseDataDrivenScreens();
 
-    MCAPI void closeAllDataDrivenScreens();
+    MCNAPI void closeAllDataDrivenScreens();
 
-    MCAPI void closeDataDrivenScreen(uint formId);
+    MCNAPI void closeDataDrivenScreen(uint formId);
 
-    MCAPI void showDataDrivenScreen(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
+    MCNAPI void showDataDrivenScreen(::std::string const& screenId, uint formId, ::std::optional<uint> dataInstanceId);
     // NOLINTEND
 };
 

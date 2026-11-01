@@ -51,31 +51,31 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI BlockDescription(::BlockDescription&&);
+    MCNAPI BlockDescription(::BlockDescription&&);
 #endif
 
-    MCAPI BlockDescription(::BlockDescription const&);
+    MCNAPI BlockDescription(::BlockDescription const&);
 
-    MCAPI ::BlockDescription& operator=(::BlockDescription&&);
+    MCNAPI ::BlockDescription& operator=(::BlockDescription&&);
 
-    MCAPI ::BlockDescription& operator=(::BlockDescription const&);
+    MCNAPI ::BlockDescription& operator=(::BlockDescription const&);
 
-    MCAPI ~BlockDescription();
+    MCNAPI ~BlockDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::BlockDescription&&);
+    MCNAPI void* $ctor(::BlockDescription&&);
 #endif
 
-    MCAPI void* $ctor(::BlockDescription const&);
+    MCNAPI void* $ctor(::BlockDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

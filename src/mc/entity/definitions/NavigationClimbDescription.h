@@ -15,7 +15,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
 
     // NOLINTEND

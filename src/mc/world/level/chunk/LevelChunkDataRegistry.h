@@ -57,13 +57,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkDataRegistry();
+    MCNAPI LevelChunkDataRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

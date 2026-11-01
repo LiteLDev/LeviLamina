@@ -103,7 +103,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpeleothemBlock(
+    MCNAPI SpeleothemBlock(
         ::std::string const&               nameId,
         int                                id,
         ::HashedString const&              blockToGrowOn,
@@ -113,48 +113,48 @@ public:
         ::SpeleothemBlock::DealsFallDamage dealsFallDamage
     );
 
-    MCAPI ::SpeleothemThickness _calculateSpeleothemThickness(
+    MCNAPI ::SpeleothemThickness _calculateSpeleothemThickness(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         uchar             tipDirection,
         bool              mergeOpposingTips
     ) const;
 
-    MCAPI bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos) const;
+    MCNAPI bool _canTipGrow(::BlockSource& region, ::BlockPos const& tipPos) const;
 
-    MCAPI void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos) const;
+    MCNAPI void _createMergedTips(::BlockSource& region, ::Block const& tipBlock, ::BlockPos const& tipPos) const;
 
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     _findRootBlock(::BlockSource& region, ::BlockPos const& pos, int maxSearchLength) const;
 
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     _findTip(::BlockSource& region, ::BlockPos const& pos, uchar searchDirection, int maxSearchLength, bool) const;
 
-    MCAPI void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection) const;
+    MCNAPI void _grow(::BlockSource& region, ::BlockPos const& growFromPos, uchar growToDirection) const;
 
-    MCAPI void _growStalagmiteBelow(::BlockSource& region, ::BlockPos const& growIntoPos) const;
+    MCNAPI void _growStalagmiteBelow(::BlockSource& region, ::BlockPos const& growIntoPos) const;
 
-    MCAPI void growStalactite(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void growStalactite(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void growStalagmite(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void growStalagmite(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isTip(::Block const& block, bool includeMergedTip);
+    MCNAPI static bool _isTip(::Block const& block, bool includeMergedTip);
 
-    MCAPI static bool isSpeleothemWithDirection(::Block const& block, uchar tipDirection);
+    MCNAPI static bool isSpeleothemWithDirection(::Block const& block, uchar tipDirection);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&               nameId,
         int                                id,
         ::HashedString const&              blockToGrowOn,
@@ -168,13 +168,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getDustColor(::Block const&) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const&) const;
 
-    MCFOLD ::std::string $getDustParticleName(::Block const&) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const&) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -182,34 +182,34 @@ public:
         int               itemValue
     ) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $canGrow(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& stalactiteTipPos) const;
+    MCNAPI bool $canGrow(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& stalactiteTipPos) const;
 
-    MCAPI ::Block const& $getInitialDefaultState();
+    MCNAPI ::Block const& $getInitialDefaultState();
 
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
+    MCNAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
-    MCFOLD bool $falling() const;
+    MCNAPI bool $falling() const;
 
-    MCAPI void
+    MCNAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
-    MCAPI void $randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void $randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI bool $_canGrow(::Block const& rootBlock, ::Block const& aboveRootLiquidBlock) const;
+    MCNAPI bool $_canGrow(::Block const& rootBlock, ::Block const& aboveRootLiquidBlock) const;
 
-    MCAPI bool $_isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
+    MCNAPI bool $_isValidTipGrowPos(::BlockSource& region, ::BlockPos const& growPos, uchar growDirection) const;
 
-    MCAPI void $_createSpeleothem(
+    MCNAPI void $_createSpeleothem(
         ::BlockSource&        region,
         ::BlockPos const&     pos,
         uchar                 direction,

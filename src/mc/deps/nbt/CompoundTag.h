@@ -55,23 +55,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompoundTag();
+    MCNAPI CompoundTag();
 
-    MCAPI CompoundTag(::CompoundTag&& rhs);
+    MCNAPI CompoundTag(::CompoundTag&& rhs);
 
-    MCAPI void append(::CompoundTag const& tag);
+    MCNAPI void append(::CompoundTag const& tag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
-    MCAPI void deepCopy(::CompoundTag const& other);
+    MCNAPI void deepCopy(::CompoundTag const& other);
 
     MCFOLD ::Tag const* get(::std::string_view name) const;
 
     MCFOLD ::Tag* get(::std::string_view name);
 
-    MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
+    MCNAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
 
-    MCAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
+    MCNAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
 
     MCAPI ::Tag& put(::std::string name, ::Tag&& tag);
 
@@ -81,11 +81,11 @@ public:
 
     MCAPI uchar& putByte(::std::string name, uchar value);
 
-    MCAPI ::std::vector<uchar>& putByteArray(::std::string name, ::std::vector<uchar> mem);
+    MCNAPI ::std::vector<uchar>& putByteArray(::std::string name, ::std::vector<uchar> mem);
 
     MCAPI ::CompoundTag& putCompound(::std::string name, ::CompoundTag value);
 
-    MCAPI ::CompoundTag* putCompound(::std::string name, ::std::unique_ptr<::CompoundTag> value);
+    MCNAPI ::CompoundTag* putCompound(::std::string name, ::std::unique_ptr<::CompoundTag> value);
 
     MCAPI float& putFloat(::std::string name, float value);
 
@@ -99,23 +99,23 @@ public:
 
     MCAPI bool remove(::std::string_view name);
 
-    MCAPI void rename(::std::string_view name, ::std::string newName);
+    MCNAPI void rename(::std::string_view name, ::std::string newName);
 
-    MCAPI void write(::IDataOutput& dos, int depth) const;
+    MCNAPI void write(::IDataOutput& dos, int depth) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::CompoundTag&& rhs);
+    MCNAPI void* $ctor(::CompoundTag&& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

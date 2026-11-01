@@ -45,16 +45,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $load();
+    MCNAPI void $load();
 
-    MCFOLD void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+    MCNAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
-    MCFOLD void $save();
+    MCNAPI void $save();
 
-    MCFOLD void $saveAllPacks();
+    MCNAPI void $saveAllPacks();
 
-    MCFOLD void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $deleteContentFiles(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
 
-    MCFOLD void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
+    MCNAPI void $postDeleteContent(::std::vector<::std::shared_ptr<::ContentItem const>> const& items);
     // NOLINTEND
 };

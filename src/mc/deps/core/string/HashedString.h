@@ -18,61 +18,61 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HashedString(::HashedString const& rhs);
+    MCNAPI HashedString(::HashedString const& rhs);
 
-    MCAPI explicit HashedString(::std::string const& str);
+    MCNAPI explicit HashedString(::std::string const& str);
 
-    MCAPI explicit HashedString(char const* str);
+    MCNAPI explicit HashedString(char const* str);
 
-    MCAPI explicit HashedString(::std::string_view str);
+    MCNAPI explicit HashedString(::std::string_view str);
 
-    MCAPI HashedString(uint64 hash, char const* str);
+    MCNAPI HashedString(uint64 hash, char const* str);
 
-    MCAPI ::HashedString& operator=(::HashedString&& rhs);
+    MCNAPI ::HashedString& operator=(::HashedString&& rhs);
 
-    MCAPI ::HashedString& operator=(::HashedString const& rhs);
+    MCNAPI ::HashedString& operator=(::HashedString const& rhs);
 
-    MCAPI ~HashedString();
+    MCNAPI ~HashedString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 computeHash(::std::string const& str);
+    MCNAPI static uint64 computeHash(::std::string const& str);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& defaultErrorValue();
+    MCNAPI static ::HashedString const& defaultErrorValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& rhs);
+    MCNAPI void* $ctor(::HashedString const& rhs);
 
-    MCAPI void* $ctor(::std::string const& str);
+    MCNAPI void* $ctor(::std::string const& str);
 
-    MCAPI void* $ctor(char const* str);
+    MCNAPI void* $ctor(char const* str);
 
-    MCAPI void* $ctor(::std::string_view str);
+    MCNAPI void* $ctor(::std::string_view str);
 
-    MCAPI void* $ctor(uint64 hash, char const* str);
+    MCNAPI void* $ctor(uint64 hash, char const* str);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
+MCNAPI bool operator!=(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCAPI ::std::strong_ordering operator<=>(::HashedString const& lhs, ::HashedString const& rhs);
+MCNAPI ::std::strong_ordering operator<=>(::HashedString const& lhs, ::HashedString const& rhs);
 
-MCAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
+MCNAPI bool operator==(::HashedString const& lhs, ::HashedString const& rhs);
 // NOLINTEND

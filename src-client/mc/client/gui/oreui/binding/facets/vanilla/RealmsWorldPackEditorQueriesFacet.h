@@ -72,66 +72,66 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsWorldPackEditorQueriesFacet(
+    MCNAPI RealmsWorldPackEditorQueriesFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>              profanityContext
     );
 
-    MCAPI ::std::vector<::World::PackDetails>
+    MCNAPI ::std::vector<::World::PackDetails>
     _collectionToDetails(::std::shared_ptr<::ContentItemCollection> collection);
 
-    MCAPI void _regeneratePackDetails();
+    MCNAPI void _regeneratePackDetails();
 
-    MCAPI ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getAvailableBehaviorPacks() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getAvailableResourcePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getAvailableResourcePacks() const;
 
-    MCAPI ::std::optional<::World::PackActionError> const& getChangePackPriorityError() const;
+    MCNAPI ::std::optional<::World::PackActionError> const& getChangePackPriorityError() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getGlobalResourcePacks() const;
 
-    MCAPI bool getIsPackEditorContentChanged() const;
+    MCNAPI bool getIsPackEditorContentChanged() const;
 
-    MCAPI ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
+    MCNAPI ::std::optional<::IMarketplacePackDownloader::MarketplacePackDownloadStatus> const&
     getMarketplacePackDownloadStatus();
 
-    MCAPI ::std::vector<::World::PackDetails> const& getMarketplacePassBehaviorPacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getMarketplacePassBehaviorPacks() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getMarketplacePassResourcePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getMarketplacePassResourcePacks() const;
 
-    MCAPI ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
+    MCNAPI ::std::optional<::World::PackActionError> const& getPackApplicationError() const;
 
-    MCFOLD ::std::optional<::std::string> const& getPackEditorFailedUploadPackName() const;
+    MCNAPI ::std::optional<::std::string> const& getPackEditorFailedUploadPackName() const;
 
-    MCAPI ::std::optional<::Realms::GenericStatus> getPackEditorFetchError() const;
+    MCNAPI ::std::optional<::Realms::GenericStatus> getPackEditorFetchError() const;
 
-    MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorFetchState() const;
+    MCNAPI ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorFetchState() const;
 
-    MCAPI ::std::optional<::Realms::GenericStatus> const& getPackEditorSaveError() const;
+    MCNAPI ::std::optional<::Realms::GenericStatus> const& getPackEditorSaveError() const;
 
-    MCFOLD ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorSaveState() const;
+    MCNAPI ::Realms::RealmsWorldPackEditor::ProcessState getPackEditorSaveState() const;
 
-    MCAPI ::std::optional<::std::vector<::Realms::RealmsWorldPackEditor::PackProfanityInfo>> const&
+    MCNAPI ::std::optional<::std::vector<::Realms::RealmsWorldPackEditor::PackProfanityInfo>> const&
     getPackProfanityInfo() const;
 
-    MCFOLD ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
+    MCNAPI ::std::optional<::World::PendingPackAction> const& getPendingPackAction() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getSelectedBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getSelectedResourcePacks() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>     resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>              profanityContext
@@ -141,7 +141,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

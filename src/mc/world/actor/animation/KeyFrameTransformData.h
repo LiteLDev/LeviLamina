@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
+    MCNAPI void addChannelTransform(::ExpressionNode const& expression, int axisIndex);
     // NOLINTEND
 };

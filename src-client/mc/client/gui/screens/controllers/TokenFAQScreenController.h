@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TokenFAQScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit TokenFAQScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

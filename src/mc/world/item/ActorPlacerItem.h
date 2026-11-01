@@ -73,62 +73,62 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
+    MCNAPI ::ActorDefinitionIdentifier _getActorID(::BlockSource& region) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     forEachCustomEgg(::ItemRegistryRef itemRegistry, ::brstd::function_ref<void(::Item const&)> callback);
 
-    MCAPI static ::std::string getCustomSpawnEggName(int runtimeId);
+    MCNAPI static ::std::string getCustomSpawnEggName(int runtimeId);
 
 #ifdef LL_PLAT_C
-    MCAPI static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
+    MCNAPI static void initializeIcons(::std::unordered_map<::HashedString, ::ResolvedItemIconInfo> icons);
 #endif
 
-    MCAPI static void registerCustomEggs(
+    MCNAPI static void registerCustomEggs(
         ::ItemRegistryRef          itemRegistry,
         ::ActorInfoRegistry const& registry,
         ::Experiments const&       experiments
     );
 
-    MCAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
+    MCNAPI static ::Actor* spawnOrMoveAgent(::Vec3 const& pos, ::Actor& owner);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
+    MCNAPI static ::std::unordered_map<uint, ::std::string>& mCustomSpawnEggs();
 
-    MCAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
+    MCNAPI static ::std::unordered_map<::HashedString, ::ResolvedItemIconInfo>& mEggTextureInfoMap();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tearDown();
+    MCNAPI void $tearDown();
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const&, int, bool) const;
 
-    MCAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
+    MCNAPI ::ActorDefinitionIdentifier $getActorIdentifier(::ItemStack const&) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCFOLD bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
-    MCAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
+    MCNAPI bool $shouldInteractionWithBlockBypassLiquid(::Block const& block) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::ItemTintStrategy $getTintStrategy() const;
+    MCNAPI ::ItemTintStrategy $getTintStrategy() const;
 
-    MCFOLD bool $isActorPlacerItem() const;
+    MCNAPI bool $isActorPlacerItem() const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -143,6 +143,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

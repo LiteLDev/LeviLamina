@@ -97,7 +97,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ~LevelArguments();
+    MCNAPI ~LevelArguments();
 #endif
     // NOLINTEND
 
@@ -105,7 +105,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

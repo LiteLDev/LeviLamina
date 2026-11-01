@@ -49,9 +49,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptStructureTemplate(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+    MCNAPI ScriptStructureTemplate(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
 
-    MCAPI ScriptStructureTemplate(
+    MCNAPI ScriptStructureTemplate(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,
@@ -59,30 +59,30 @@ public:
         ::LevelStorage&                                                                     levelStorage
     );
 
-    MCAPI ::Scripting::InvalidArgumentError
+    MCNAPI ::Scripting::InvalidArgumentError
     _createBoundsError(int index, ::BlockPos const& pos, ::BlockPos const& size) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindAnimationModeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindAnimationModeEnum();
 
-    MCAPI static ::Scripting::EnumBinding bindMirrorEnum();
+    MCNAPI static ::Scripting::EnumBinding bindMirrorEnum();
 
-    MCAPI static ::Scripting::EnumBinding bindRotationEnum();
+    MCNAPI static ::Scripting::EnumBinding bindRotationEnum();
 
-    MCAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindStructureSaveModeEnum();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptStructureTemplate const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                                id,
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>                                   structureManager,
         ::Scripting::WeakLifetimeScope                                                      scope,
@@ -94,13 +94,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getContentType() const;
+    MCNAPI ::std::string const& $getContentType() const;
 
 
     // NOLINTEND

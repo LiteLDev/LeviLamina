@@ -12,9 +12,9 @@ namespace SharedTypes::v1_20_60 { struct BlockSpecifier; }
 namespace BlockSpecifierGlue {
 // functions
 // NOLINTBEGIN
-MCAPI ::Block const* getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
+MCNAPI ::Block const* getResolvedBlock(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
 
-MCAPI ::std::unique_ptr<::BlockDescriptor>
+MCNAPI ::std::unique_ptr<::BlockDescriptor>
 getResolvedBlockDescriptor(::SharedTypes::v1_20_60::BlockSpecifier const& blockSpecifier);
 // NOLINTEND
 

@@ -52,14 +52,14 @@ public:
         // NOLINTBEGIN
         MCAPI AddEntry(::PlayerListPacketPayload::AddEntry const&);
 
-        MCAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry&&);
+        MCNAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry&&);
 
-        MCAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry const&);
+        MCNAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry const&);
 
-        MCAPI bool operator==(::PlayerListPacketPayload::AddEntry const& other) const;
+        MCNAPI bool operator==(::PlayerListPacketPayload::AddEntry const& other) const;
 
 #ifdef LL_PLAT_C
-        MCAPI ::PlayerListEntry toPlayerListEntry() const;
+        MCNAPI ::PlayerListEntry toPlayerListEntry() const;
 #endif
 
         MCAPI ~AddEntry();

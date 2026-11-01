@@ -43,7 +43,7 @@ public:
 
     MCAPI MerchantRecipe(::ItemInstance const& buyA, ::ItemInstance const& buyB, ::ItemInstance const& sell);
 
-    MCAPI void calculateDemandPrices(
+    MCNAPI void calculateDemandPrices(
         int               minorPositiveGossip,
         int               majorPositiveGossip,
         int               nearbyCuredDiscount,
@@ -52,9 +52,9 @@ public:
         ::BaseGameVersion baseGameVersion
     );
 
-    MCAPI bool isSame(::MerchantRecipe const& lhs) const;
+    MCNAPI bool isSame(::MerchantRecipe const& lhs) const;
 
-    MCAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
+    MCNAPI void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount);
 
     MCAPI ~MerchantRecipe();
     // NOLINTEND

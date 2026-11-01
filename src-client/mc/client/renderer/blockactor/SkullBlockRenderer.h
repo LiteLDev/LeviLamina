@@ -55,14 +55,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkullBlockRenderer(
+    MCNAPI SkullBlockRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> const definition,
         ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
         ::BaseGameVersion const&                           baseGameVersion,
         ::Experiments const&
     );
 
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::BlockActor&,
@@ -74,7 +74,7 @@ public:
         bool                  isGlint
     );
 
-    MCAPI void renderSkull(
+    MCNAPI void renderSkull(
         ::BaseActorRenderContext&       entityRenderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::Vec3 const&                   pos,
@@ -92,7 +92,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ActorResourceDefinition> const definition,
         ::std::shared_ptr<::mce::TextureGroup>             textureGroup,
         ::BaseGameVersion const&                           baseGameVersion,
@@ -103,6 +103,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

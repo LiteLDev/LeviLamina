@@ -20,23 +20,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description(::SharedTypes::Legacy::Spawn::Description const&);
+    MCNAPI Description(::SharedTypes::Legacy::Spawn::Description const&);
 
-    MCFOLD ::SharedTypes::Legacy::Spawn::Description& operator=(::SharedTypes::Legacy::Spawn::Description&&);
+    MCNAPI ::SharedTypes::Legacy::Spawn::Description& operator=(::SharedTypes::Legacy::Spawn::Description&&);
 
-    MCAPI ~Description();
+    MCNAPI ~Description();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::Description const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::Description const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

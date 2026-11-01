@@ -39,26 +39,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
+    MCNAPI void setRenderer(::std::shared_ptr<::UICustomRenderer> renderer);
 
-    MCAPI bool updateCustom(::IClientInstance& client, ::UIScene const& scene);
+    MCNAPI bool updateCustom(::IClientInstance& client, ::UIScene const& scene);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
 
-    MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

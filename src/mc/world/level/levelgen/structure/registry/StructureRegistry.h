@@ -48,10 +48,10 @@ public:
     // NOLINTBEGIN
     MCAPI ::std::shared_ptr<::br::worldgen::JigsawStructure const> get(::std::string_view key) const;
 
-    MCAPI ::br::worldgen::OnStructurePlacedToken
+    MCNAPI ::br::worldgen::OnStructurePlacedToken
     record(::std::string_view name, ::std::function<void(::Dimension&, ::br::worldgen::StructureInstance const&)>&& cb);
 
-    MCAPI ::br::worldgen::OnStructurePlacedToken reserveOnPlaced(::std::string_view name);
+    MCNAPI ::br::worldgen::OnStructurePlacedToken reserveOnPlaced(::std::string_view name);
     // NOLINTEND
 };
 

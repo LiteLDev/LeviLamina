@@ -19,7 +19,7 @@ class PreventMobEjectionFromLegacyVehicleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _preventEjectionIfNeeded(
+    MCNAPI static void _preventEjectionIfNeeded(
         ::StrictEntityContext&                                                     strictEntityContext,
         ::PassengerComponent const&                                                passengerComponent,
         ::AABBShapeComponent const&                                                aabbShapeComponent,

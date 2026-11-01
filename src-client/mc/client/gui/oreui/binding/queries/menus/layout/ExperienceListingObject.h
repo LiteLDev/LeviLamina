@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperienceListingObject(
+    MCNAPI ExperienceListingObject(
         ::std::string const&                                         name,
         ::OreUI::Detail::IPropertyObject*                            parent,
         ::Bedrock::Services::layout::model::ExperienceListing const& src
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                         name,
         ::OreUI::Detail::IPropertyObject*                            parent,
         ::Bedrock::Services::layout::model::ExperienceListing const& src

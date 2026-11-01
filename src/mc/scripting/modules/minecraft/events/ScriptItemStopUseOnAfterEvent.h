@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemStopUseOnAfterEvent(
+    MCNAPI ScriptItemStopUseOnAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseOnIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );
@@ -50,13 +50,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemStopUseOnIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );

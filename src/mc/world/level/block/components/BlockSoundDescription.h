@@ -41,44 +41,44 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit BlockSoundDescription(::std::string_view soundType);
+    MCNAPI explicit BlockSoundDescription(::std::string_view soundType);
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string_view soundType);
+    MCNAPI void* $ctor(::std::string_view soundType);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

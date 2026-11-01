@@ -133,14 +133,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool findNextSpawnBlockUnder(
+    MCNAPI static bool findNextSpawnBlockUnder(
         ::BlockSource const&                                   region,
         ::BlockPos&                                            pos,
         ::std::optional<::SharedTypes::v1_26_20::MaterialType> materialToSpawnIn,
         ::SpawnBlockRequirements                               spawnBlockRequirements
     );
 
-    MCAPI static bool isSpawnPositionOk(
+    MCNAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
         ::BlockSource&         region,
         ::BlockPos const&      pos,
@@ -151,7 +151,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Mob* $spawnMob(
+    MCNAPI ::Mob* $spawnMob(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -161,10 +161,10 @@ public:
         bool                               fromSpawner
     );
 
-    MCAPI ::ItemActor*
+    MCNAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    MCAPI ::Actor* $spawnProjectile(
+    MCNAPI ::Actor* $spawnProjectile(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -172,10 +172,10 @@ public:
         ::Vec3 const&                      direction
     );
 
-    MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    MCNAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    MCFOLD void $spawnForChunk(
+    MCNAPI void $spawnForChunk(
         ::BlockSource&,
         ::LevelChunkVolumeData const&,
         ::br::spawn::State&,
@@ -183,7 +183,7 @@ public:
         ::IRandom&
     ) const;
 
-    MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
+    MCNAPI void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
 
 
     // NOLINTEND

@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     setOwnerSubscription(uint64 typeId, ::Bedrock::PubSub::Subscription&& subscription, bool assertOnDuplicate);
     // NOLINTEND
 

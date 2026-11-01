@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EntityContext* $getLocalPlayerEntityContext() const;
+    MCNAPI ::EntityContext* $getLocalPlayerEntityContext() const;
     // NOLINTEND
 
 public:

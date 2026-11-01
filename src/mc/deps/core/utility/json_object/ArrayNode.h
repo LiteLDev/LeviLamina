@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/list.h"
 #include "mc/deps/core/utility/json_object/Collection.h"
 #include "mc/deps/core/utility/json_object/Node.h"
-#include "mc/platform/container/list.h"
 
 // auto generated forward declare list
 // clang-format off

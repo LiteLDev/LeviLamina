@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_20_50::ItemDeprecatedComponentData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_50::ItemDeprecatedComponentData const&) const;
 
-    MCAPI ~ItemDeprecatedComponentData();
+    MCNAPI ~ItemDeprecatedComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

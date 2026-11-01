@@ -16,7 +16,7 @@ struct ActorDefinitions : public ::SharedTypes::v1_26_0::ActorDefinitions {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

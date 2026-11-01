@@ -69,21 +69,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThrownTrident(
+    MCNAPI ThrownTrident(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void doNormalTick();
+    MCNAPI void doNormalTick();
 
-    MCAPI void returnWithLoyalty(int enchantLevel);
+    MCNAPI void returnWithLoyalty(int enchantLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -93,26 +93,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
+    MCNAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCAPI void $playerTouch(::Player& player);
+    MCNAPI void $playerTouch(::Player& player);
 
-    MCAPI void $despawn();
+    MCNAPI void $despawn();
 
-    MCAPI void $outOfWorld();
+    MCNAPI void $outOfWorld();
 
-    MCAPI bool $isEnchanted() const;
+    MCNAPI bool $isEnchanted() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::ItemStack $_getPickupItem() const;
+    MCNAPI ::ItemStack $_getPickupItem() const;
 
 
     // NOLINTEND
@@ -120,6 +120,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

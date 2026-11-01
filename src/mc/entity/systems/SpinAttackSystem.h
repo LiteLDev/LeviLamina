@@ -23,7 +23,7 @@ struct TickingSystemWithInfo;
 namespace SpinAttackSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _fetchEntitiesForSpinAttack(
+MCNAPI void _fetchEntitiesForSpinAttack(
     ::StrictEntityContext const&                                         entity,
     ::AABBShapeComponent const&                                          aabb,
     ::ActorDataFlagComponent const&                                      actorData,
@@ -33,11 +33,11 @@ MCAPI void _fetchEntitiesForSpinAttack(
     ::EntityModifier<::SpinAttackResultsComponent> const&                modifier
 );
 
-MCAPI ::TickingSystemWithInfo createFetchEntitySystem();
+MCNAPI ::TickingSystemWithInfo createFetchEntitySystem();
 
-MCAPI ::TickingSystemWithInfo createStartSpinAttackSystem();
+MCNAPI ::TickingSystemWithInfo createStartSpinAttackSystem();
 
-MCAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void createSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace SpinAttackSystem

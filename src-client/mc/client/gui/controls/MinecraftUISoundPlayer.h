@@ -34,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $play(::std::string const& name, float volume, float pitch) const;
+    MCNAPI void $play(::std::string const& name, float volume, float pitch) const;
     // NOLINTEND
 
 public:

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::bgfx::VertexDeclHandle release(::bgfx::VertexDeclHandle _declHandle);
+    MCNAPI ::bgfx::VertexDeclHandle release(::bgfx::VertexDeclHandle _declHandle);
     // NOLINTEND
 };
 

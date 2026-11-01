@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackOverridesFacet(
+    MCNAPI ResourcePackOverridesFacet(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
@@ -73,13 +73,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository const> defRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IUIRepository>          uiRepository,
         ::ResourcePackManager&                                  resourcePackManager
@@ -89,7 +89,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

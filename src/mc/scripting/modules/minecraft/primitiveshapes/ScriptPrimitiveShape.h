@@ -103,40 +103,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
+    MCNAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
+    MCNAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
 
-    MCAPI ScriptPrimitiveShape(
+    MCNAPI ScriptPrimitiveShape(
         ::ScriptModuleMinecraft::ScriptPrimitiveShapeType                               shapeType,
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
         bool                                                                            isDebugShape
     );
 
-    MCFOLD ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
     getHiddenFrom() const;
 
-    MCFOLD ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
     getVisibleTo() const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
     operator=(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI void setAttachedTo(
+    MCNAPI void setAttachedTo(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& attachedTo
     );
 
-    MCAPI void setHiddenFrom(
+    MCNAPI void setHiddenFrom(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& hiddenFrom
     );
 
-    MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
+    MCNAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
 
-    MCAPI void setMaxRenderDistance(::std::optional<float> dist);
+    MCNAPI void setMaxRenderDistance(::std::optional<float> dist);
 
-    MCAPI void setTotalTimeLeft(::std::optional<float> timeSec);
+    MCNAPI void setTotalTimeLeft(::std::optional<float> timeSec);
 
-    MCAPI void setVisibleTo(
+    MCNAPI void setVisibleTo(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& visibleTo
     );
     // NOLINTEND
@@ -144,17 +144,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptPrimitiveShapeType                               shapeType,
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
         bool                                                                            isDebugShape
@@ -164,15 +164,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::PrimitiveShapeDataPayload& packet) const;
+    MCNAPI void $populatePacketData(::PrimitiveShapeDataPayload& packet) const;
 
-    MCAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& packet);
+    MCNAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& packet);
 
 
     // NOLINTEND

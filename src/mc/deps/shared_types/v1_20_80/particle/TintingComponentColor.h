@@ -30,7 +30,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI TintingComponentColor(::SharedTypes::v1_20_80::TintingComponentColor const&);
+    MCNAPI TintingComponentColor(::SharedTypes::v1_20_80::TintingComponentColor const&);
 #endif
     // NOLINTEND
 
@@ -38,7 +38,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::TintingComponentColor const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::TintingComponentColor const&);
 #endif
     // NOLINTEND
 };

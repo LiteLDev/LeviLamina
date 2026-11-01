@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerCommandTemplate(
+    MCNAPI void registerCommandTemplate(
         ::std::string                                                        name,
         ::std::function<::std::unique_ptr<::OreUI::Detail::ICommandGroup>()> constructor
     );
@@ -74,19 +74,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
+    MCNAPI void $onReadyForBindings();
 
-    MCFOLD void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCFOLD void $onBindingsReleased();
+    MCNAPI void $onBindingsReleased();
 
-    MCFOLD void $update(double const time);
+    MCNAPI void $update(double const time);
     // NOLINTEND
 };
 

@@ -51,14 +51,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
+    MCNAPI ::SetItemDataFunction::ApplyForComplexAliasBlockResult _applyImplForComplexAliasBlock(
         ::Item const*&       inOutItemDef,
         ::std::string const& originalItemName,
         ::Random&            random,
         int&                 outResultAux
     );
 
-    MCAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
+    MCNAPI ::SetItemDataFunction::ApplyForItemResult _applyImplForItem(
         ::std::string const& originalItemName,
         ::std::string const& itemRawNameId,
         ::Random&            random,
@@ -70,18 +70,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
-    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
 
     // NOLINTEND

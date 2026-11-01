@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
+    MCNAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
 
-    MCAPI ::OreUI::NewOreUIScreenOverride getScreenOverride(::std::string const& screenName) const;
+    MCNAPI ::OreUI::NewOreUIScreenOverride getScreenOverride(::std::string const& screenName) const;
 
     MCAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
 
-    MCAPI bool isOreUISupportedForScreen(::std::string const& screenName) const;
+    MCNAPI bool isOreUISupportedForScreen(::std::string const& screenName) const;
 
-    MCAPI ::ui::OreUIScreenConfiguration& registerScreen(
+    MCNAPI ::ui::OreUIScreenConfiguration& registerScreen(
         ::std::string const&       screenName,
         ::std::optional<::Option*> isSelectedOption,
         ::std::optional<::Option*> isForceEnabledOption
     );
 
-    MCAPI void selectPreferredTechStackForScreen(::std::string const& screenName, ::ui::TechStack tech);
+    MCNAPI void selectPreferredTechStackForScreen(::std::string const& screenName, ::ui::TechStack tech);
     // NOLINTEND
 };
 

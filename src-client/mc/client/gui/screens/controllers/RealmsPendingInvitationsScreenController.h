@@ -46,26 +46,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     RealmsPendingInvitationsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
 
-    MCAPI void _fetchPendingInvites();
+    MCNAPI void _fetchPendingInvites();
 
-    MCAPI ::ui::ViewRequest _handleInvitationDecline(::UIPropertyBag* bag);
+    MCNAPI ::ui::ViewRequest _handleInvitationDecline(::UIPropertyBag* bag);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, bool hasPendingInvites);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

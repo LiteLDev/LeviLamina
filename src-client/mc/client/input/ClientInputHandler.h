@@ -59,50 +59,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientInputHandler(
+    MCNAPI ClientInputHandler(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::InputHandler&                                                            inputHandler,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
         ::IGameModuleApp&                                                          gameModuleApp
     );
 
-    MCAPI ::std::string _interactWithImmersiveReader() const;
+    MCNAPI ::std::string _interactWithImmersiveReader() const;
 
-    MCAPI bool allowPicking() const;
+    MCNAPI bool allowPicking() const;
 
-    MCAPI bool canInteract() const;
+    MCNAPI bool canInteract() const;
 
-    MCAPI ::std::string getBoatExitText() const;
+    MCNAPI ::std::string getBoatExitText() const;
 
-    MCAPI void getCursorPos(float& xCursor, float& yCursor) const;
+    MCNAPI void getCursorPos(float& xCursor, float& yCursor) const;
 
-    MCAPI ::std::string getInteractText() const;
+    MCNAPI ::std::string getInteractText() const;
 
-    MCAPI bool getSplitscreenJoinPromptVisible() const;
+    MCNAPI bool getSplitscreenJoinPromptVisible() const;
 
-    MCAPI bool isBlockSelectToggled() const;
+    MCNAPI bool isBlockSelectToggled() const;
 
-    MCAPI bool isTouchGameplayAllowed() const;
+    MCNAPI bool isTouchGameplayAllowed() const;
 
-    MCAPI void onConfigChanged(::Config const& c);
+    MCNAPI void onConfigChanged(::Config const& c);
 
-    MCAPI void pushInputMapping(bool inGame);
+    MCNAPI void pushInputMapping(bool inGame);
 
-    MCAPI void releaseButtonsAndSticks();
+    MCNAPI void releaseButtonsAndSticks();
 
-    MCAPI void render(::ScreenContext& screenContext);
+    MCNAPI void render(::ScreenContext& screenContext);
 
-    MCAPI void resetPlayerState();
+    MCNAPI void resetPlayerState();
 
-    MCAPI void setBlockSelectToggle(bool value);
+    MCNAPI void setBlockSelectToggle(bool value);
 
-    MCAPI bool showImmersiveReader() const;
+    MCNAPI bool showImmersiveReader() const;
 
-    MCAPI void updateInputMapping();
+    MCNAPI void updateInputMapping();
 
-    MCAPI bool updateInputMode(::std::string const& mode);
+    MCNAPI bool updateInputMode(::std::string const& mode);
 
-    MCAPI void updatePlayerState(
+    MCNAPI void updatePlayerState(
         ::gsl::not_null<::IClientInstance const*> client,
         ::MovementAbilitiesComponent const&       abilities,
         ::MobEffectsComponent const&              mobEffects,
@@ -112,15 +112,15 @@ public:
         bool                                      isInWater
     );
 
-    MCAPI bool useFreeformPickDirection() const;
+    MCNAPI bool useFreeformPickDirection() const;
 
-    MCAPI ~ClientInputHandler();
+    MCNAPI ~ClientInputHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::InputHandler&                                                            inputHandler,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
@@ -131,6 +131,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

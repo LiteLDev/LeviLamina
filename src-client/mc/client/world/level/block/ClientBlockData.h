@@ -29,6 +29,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $visit(::brstd::function_ref<void(::ClientBlockData const&)> visitor) const;
+    MCNAPI void $visit(::brstd::function_ref<void(::ClientBlockData const&)> visitor) const;
     // NOLINTEND
 };

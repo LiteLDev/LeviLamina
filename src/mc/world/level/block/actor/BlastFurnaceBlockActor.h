@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlastFurnaceBlockActor(::BlockPos const& blockPos);
+    MCNAPI explicit BlastFurnaceBlockActor(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& blockPos);
+    MCNAPI void* $ctor(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
 
     // NOLINTEND
@@ -44,7 +44,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
     MCNAPI static void** $vftable();
 

@@ -63,35 +63,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SchemaDescription(::cereal::SchemaDescription&&);
+    MCNAPI SchemaDescription(::cereal::SchemaDescription&&);
 
-    MCAPI SchemaDescription(::cereal::SchemaDescription const&);
+    MCNAPI SchemaDescription(::cereal::SchemaDescription const&);
 
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
+    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
 
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
+    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
 
-    MCAPI ~SchemaDescription();
+    MCNAPI ~SchemaDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::SchemaDescription&&);
+    MCNAPI void* $ctor(::cereal::SchemaDescription&&);
 
-    MCAPI void* $ctor(::cereal::SchemaDescription const&);
+    MCNAPI void* $ctor(::cereal::SchemaDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

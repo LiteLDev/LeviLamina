@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
+    MCNAPI void _postReloadActorAdded(::Actor& actor, ::ActorInitializationMethod);
 
-    MCAPI void registerGameRules(::GameRules& gameRules);
+    MCNAPI void registerGameRules(::GameRules& gameRules);
 
-    MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
+    MCNAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector, bool isClientSide);
 
-    MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void sendLevelRemovedActor(::Actor& actor);
+    MCNAPI void sendLevelRemovedActor(::Actor& actor);
 
-    MCAPI void sendLevelWeatherChanged(
+    MCNAPI void sendLevelWeatherChanged(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -59,13 +59,13 @@ public:
         bool                 isLightning
     );
 
-    MCAPI void sendWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
+    MCNAPI void sendWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

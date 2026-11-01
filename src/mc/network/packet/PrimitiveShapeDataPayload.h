@@ -59,7 +59,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPrimitiveShape> constructShape() const;
+    MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPrimitiveShape> constructShape() const;
 #endif
     // NOLINTEND
 };

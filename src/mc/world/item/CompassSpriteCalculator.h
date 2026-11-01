@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int updateFromPosition(
+    MCNAPI int updateFromPosition(
         ::BlockSource const* region,
         ::Actor*             actor,
         float                x,
@@ -57,12 +57,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isInLastDeathDimension(::BlockSource const* region, ::Actor* actor);
+    MCNAPI static bool isInLastDeathDimension(::BlockSource const* region, ::Actor* actor);
 
-    MCAPI static bool isInOverworldDimension(::BlockSource const* region, ::Actor*);
+    MCNAPI static bool isInOverworldDimension(::BlockSource const* region, ::Actor*);
 
-    MCAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
+    MCNAPI static ::BlockPos pointTowardsLastDeathLocation(::BlockSource const* region, ::Actor* actor);
 
-    MCAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
+    MCNAPI static ::BlockPos pointTowardsSpawnPoint(::BlockSource const* region, ::Actor*);
     // NOLINTEND
 };

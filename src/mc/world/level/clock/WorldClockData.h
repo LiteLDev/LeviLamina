@@ -26,14 +26,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClockData(::WorldClockData const&);
+    MCNAPI WorldClockData(::WorldClockData const&);
 
-    MCAPI bool operator==(::WorldClockData const& rhs) const;
+    MCNAPI bool operator==(::WorldClockData const& rhs) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorldClockData const&);
+    MCNAPI void* $ctor(::WorldClockData const&);
     // NOLINTEND
 };

@@ -30,14 +30,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::BlockPos> $relightSubChunk(
+    MCNAPI ::std::vector<::BlockPos> $relightSubChunk(
         ::BlockSource&                              source,
         ::LevelChunk const&                         levelChunk,
         uint64                                      centerSubChunkIndex,
         ::std::vector<::SubChunkLightUpdate> const& alteredBlockList
     ) const;
 
-    MCFOLD bool $isDeferredEnabled() const;
+    MCNAPI bool $isDeferredEnabled() const;
 
 
     // NOLINTEND

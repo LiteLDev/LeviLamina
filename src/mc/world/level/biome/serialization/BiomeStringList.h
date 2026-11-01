@@ -25,6 +25,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeStringList> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeStringList> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

@@ -53,7 +53,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ::Scripting::ResultAny $runOn(
+    MCNAPI ::Scripting::ResultAny $runOn(
         ::Scripting::ContextId      contextId,
         ::Scripting::NativeRuntime& runtime,
         ::std::optional<::Scripting::Privilege>

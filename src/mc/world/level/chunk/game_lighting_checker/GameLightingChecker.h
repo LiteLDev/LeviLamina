@@ -13,7 +13,7 @@ namespace GameLightingChecker { struct CheckAreaForLightingResults; }
 namespace GameLightingChecker {
 // functions
 // NOLINTBEGIN
-MCAPI void checkAreaForLighting(
+MCNAPI void checkAreaForLighting(
     ::BlockSource&                                      region,
     ::BlockPos const&                                   min,
     ::BlockPos const&                                   max,
@@ -21,7 +21,8 @@ MCAPI void checkAreaForLighting(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void sortErrorListByDistance(::GameLightingChecker::CheckAreaForLightingResults& results, ::Vec3 const& position);
+MCNAPI void
+sortErrorListByDistance(::GameLightingChecker::CheckAreaForLightingResults& results, ::Vec3 const& position);
 #endif
 // NOLINTEND
 

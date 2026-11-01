@@ -15,7 +15,7 @@ namespace Scripting { class WeakLifetimeScope; }
 namespace ScriptModuleMinecraft::LootTableHelpers {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
+MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptLootItemCondition>>
 makeScriptLootItemConditions(
     ::Scripting::WeakLifetimeScope const&                        scope,
     ::std::vector<::std::unique_ptr<::LootItemCondition>> const& conditions

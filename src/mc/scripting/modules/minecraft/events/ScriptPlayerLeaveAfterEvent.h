@@ -31,31 +31,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerLeaveAfterEvent(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
+    MCNAPI ScriptPlayerLeaveAfterEvent(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
 
-    MCAPI ScriptPlayerLeaveAfterEvent(
+    MCNAPI ScriptPlayerLeaveAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&
     );
 
-    MCFOLD ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerLeaveAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&
     );

@@ -33,15 +33,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ActorAnimationController(
+    MCNAPI ActorAnimationController(
         ::HashedString const& name,
         ::SemVersion const&   version,
         ::std::string const&  sourceFilePathWithExtension
     );
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerState>& addState(::HashedString const& name);
 
-    MCAPI void resolveTransitionStateIndices();
+    MCNAPI void resolveTransitionStateIndices();
 #endif
     // NOLINTEND
 
@@ -49,7 +49,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void*
+    MCNAPI void*
     $ctor(::HashedString const& name, ::SemVersion const& version, ::std::string const& sourceFilePathWithExtension);
 #endif
     // NOLINTEND

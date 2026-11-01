@@ -46,27 +46,27 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isWildcard(::CommandSelectorBase const& selector);
+    MCNAPI static bool isWildcard(::CommandSelectorBase const& selector);
 
-    MCAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
+    MCNAPI static bool shouldUseCommandOriginRotation(::CommandOrigin const& origin, int version);
 
     MCAPI static bool validRange(int input, int low, int high, ::CommandOutput& output);
 
-    MCAPI static bool validRange(float input, float low, float high, ::CommandOutput& output);
+    MCNAPI static bool validRange(float input, float low, float high, ::CommandOutput& output);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& WILDCARD_TOKEN();
+    MCNAPI static ::std::string const& WILDCARD_TOKEN();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $collectOptionalArguments();
+    MCNAPI bool $collectOptionalArguments();
 
 
     // NOLINTEND

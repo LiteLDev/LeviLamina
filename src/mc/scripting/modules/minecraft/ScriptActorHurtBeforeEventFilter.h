@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptActorHurtBeforeEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilter const&);
     // NOLINTEND
 };
 

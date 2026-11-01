@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
+    MCNAPI bool clearIdentity(::ScoreboardId const& scoreboardId);
 
     MCAPI ::ScoreboardId const&
     convertFakeToReal(::ScoreboardId const& scoreboardId, ::PlayerScoreboardId const& playerId);

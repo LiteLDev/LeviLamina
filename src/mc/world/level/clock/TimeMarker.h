@@ -30,25 +30,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit TimeMarker(::TimeMarkerData const& data);
+    MCNAPI explicit TimeMarker(::TimeMarkerData const& data);
 #endif
 
-    MCAPI ::TimeMarkerData toData() const;
+    MCNAPI ::TimeMarkerData toData() const;
 
-    MCAPI ~TimeMarker();
+    MCNAPI ~TimeMarker();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::TimeMarkerData const& data);
+    MCNAPI void* $ctor(::TimeMarkerData const& data);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

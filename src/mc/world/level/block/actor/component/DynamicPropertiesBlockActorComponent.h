@@ -77,14 +77,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadInception(::CompoundTag const& parentTag);
+    MCNAPI void _loadInception(::CompoundTag const& parentTag);
 
-    MCAPI ::std::optional<::std::variant<double, float, bool, ::LeanDynamicProperty::String, ::Vec3>>
+    MCNAPI ::std::optional<::std::variant<double, float, bool, ::LeanDynamicProperty::String, ::Vec3>>
     get(::std::string const& bucket, ::std::string const& key) const;
 
-    MCAPI uint64 getByteCount(::std::string const& bucket) const;
+    MCNAPI uint64 getByteCount(::std::string const& bucket) const;
 
-    MCAPI ::DynamicPropertiesBlockActorComponent::SetResult remove(
+    MCNAPI ::DynamicPropertiesBlockActorComponent::SetResult remove(
         ::std::string const& bucket,
         ::std::string const& key,
         ::std::function<void(
@@ -96,9 +96,9 @@ public:
         )>                   callback
     );
 
-    MCAPI void saveToTag(::CompoundTag& parentTag) const;
+    MCNAPI void saveToTag(::CompoundTag& parentTag) const;
 
-    MCAPI ::DynamicPropertiesBlockActorComponent::SetResult
+    MCNAPI ::DynamicPropertiesBlockActorComponent::SetResult
     set(::std::string const&                                                              bucket,
         ::std::string const&                                                              key,
         ::std::variant<double, float, bool, ::LeanDynamicProperty::String, ::Vec3> const& value,
@@ -115,22 +115,22 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::DynamicPropertiesBlockActorComponent> tryCreateFor(::BlockType const& blockType);
+    MCNAPI static ::std::unique_ptr<::DynamicPropertiesBlockActorComponent> tryCreateFor(::BlockType const& blockType);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> DYNAMIC_PROPERTIES_TAG();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DYNAMIC_PROPERTIES_TAG();
 
-    MCAPI static ::brstd::
+    MCNAPI static ::brstd::
         flat_map<uint, ::std::string, ::std::less<uint>, ::std::vector<uint>, ::std::vector<::std::string>>&
         mBucketDictionary();
 
-    MCAPI static ::std::mutex& mDictionaryMutex();
+    MCNAPI static ::std::mutex& mDictionaryMutex();
 
-    MCAPI static ::brstd::
+    MCNAPI static ::brstd::
         flat_map<uint, ::std::string, ::std::less<uint>, ::std::vector<uint>, ::std::vector<::std::string>>&
         mVariableDictionary();
     // NOLINTEND
@@ -138,15 +138,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::CompoundTag& parentTag, ::SaveContext const&) const;
+    MCNAPI void $save(::CompoundTag& parentTag, ::SaveContext const&) const;
 
-    MCAPI void $load(::CompoundTag const& parentTag, ::ILevel&, ::BlockActorVersion version);
+    MCNAPI void $load(::CompoundTag const& parentTag, ::ILevel&, ::BlockActorVersion version);
 
 
     // NOLINTEND

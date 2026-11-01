@@ -57,22 +57,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageMigrationProgressScreenController(
+    MCNAPI StorageMigrationProgressScreenController(
         ::std::shared_ptr<::StorageMigrationProgressScreenModel>                                model,
         ::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& service
     );
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _registerEventHandlers();
+    MCNAPI void _registerEventHandlers();
 
-    MCAPI void _showModal(::std::string const& modalName);
+    MCNAPI void _showModal(::std::string const& modalName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::StorageMigrationProgressScreenModel>                                model,
         ::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& service
     );
@@ -81,17 +81,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
     // NOLINTEND
 
 public:

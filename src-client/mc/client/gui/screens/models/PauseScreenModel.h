@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fireFriendsDrawerOpenedEvent();
+    MCNAPI void fireFriendsDrawerOpenedEvent();
     // NOLINTEND
 };

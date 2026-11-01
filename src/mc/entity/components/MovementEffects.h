@@ -15,10 +15,10 @@ struct RuntimeIDComponent;
 namespace MovementEffects {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::MovementEffectPacket>
+MCNAPI ::std::optional<::MovementEffectPacket>
 addToEntity(::EntityContext& entity, ::MovementEffect movementEffect, bool isClientSide);
 
-MCAPI ::std::optional<::MovementEffectPacket> addToEntity(
+MCNAPI ::std::optional<::MovementEffectPacket> addToEntity(
     ::MovementEffectsComponent& movementEffects,
     ::ReplayStateComponent*     replayState,
     ::RuntimeIDComponent const* runtimeID,

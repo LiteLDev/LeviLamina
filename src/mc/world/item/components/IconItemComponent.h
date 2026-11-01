@@ -35,21 +35,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit IconItemComponent(::SharedTypes::v1_21_80::IconItemComponent component);
+    MCNAPI explicit IconItemComponent(::SharedTypes::v1_21_80::IconItemComponent component);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& getBundleOpenBackTexture() const;
+    MCNAPI ::std::string const& getBundleOpenBackTexture() const;
 
-    MCAPI ::std::string const& getBundleOpenFrontTexture() const;
+    MCNAPI ::std::string const& getBundleOpenFrontTexture() const;
 #endif
 
-    MCAPI void setTexturePath(::std::string const& texturePath);
+    MCNAPI void setTexturePath(::std::string const& texturePath);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -59,13 +59,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_80::IconItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_80::IconItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

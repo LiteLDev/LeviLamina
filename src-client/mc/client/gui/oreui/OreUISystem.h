@@ -106,18 +106,18 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::brstd::move_only_function<::std::unique_ptr<::OreUI::Library>(::OreUI::LibraryFactoryArguments&&)
-                                                     const>
+        MCNAPI static ::brstd::move_only_function<
+            ::std::unique_ptr<::OreUI::Library>(::OreUI::LibraryFactoryArguments&&) const>
         createLibraryFactory(
             ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> fileSystem,
             ::Bedrock::NotNullNonOwnerPtr<::IFileAccess>      appPackageFileAccess
         );
 
-        MCAPI static ::brstd::move_only_function<::std::unique_ptr<
+        MCNAPI static ::brstd::move_only_function<::std::unique_ptr<
             ::Gameface::ResourceHandlerBroker>(::OreUI::RegisterResourceHandlersArguments const&) const>
         createResourceHandlerBrokerFactory(::OreUI::ResourceHandlerFactoryArguments const& args);
 
-        MCAPI static ::OreUI::ResourceHandlerFactory
+        MCNAPI static ::OreUI::ResourceHandlerFactory
         createResourceHandlerFactory(::OreUI::ResourceHandlerFactoryArguments const& args);
         // NOLINTEND
     };
@@ -180,49 +180,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OreUISystem(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
+    MCNAPI explicit OreUISystem(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
 
-    MCAPI ::std::unique_ptr<::OreUI::Router> createInGameRouter(
+    MCNAPI ::std::unique_ptr<::OreUI::Router> createInGameRouter(
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
         ::SceneFactory&                                       sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     ) const;
 
-    MCAPI ::std::unique_ptr<::OreUI::Router> createOutOfGameRouter(
+    MCNAPI ::std::unique_ptr<::OreUI::Router> createOutOfGameRouter(
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
         ::SceneFactory&                                       sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     ) const;
 
-    MCAPI ::std::unique_ptr<::OreUI::SceneProvider> createSceneProvider(
+    MCNAPI ::std::unique_ptr<::OreUI::SceneProvider> createSceneProvider(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
         ::std::unique_ptr<::OreUI::FacetRegistryFactory>           facetRegistryFactory,
         ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory> bindingRegistryFactory
     ) const;
 
-    MCAPI void registerOptionObservers(::IOptionRegistry& options);
+    MCNAPI void registerOptionObservers(::IOptionRegistry& options);
 
-    MCAPI void registerRouteConfigurationChangeCallback(void* token, ::std::function<void()> const& callback);
+    MCNAPI void registerRouteConfigurationChangeCallback(void* token, ::std::function<void()> const& callback);
 
-    MCAPI void unregisterRouteConfigurationChangeCallback(void* token);
+    MCNAPI void unregisterRouteConfigurationChangeCallback(void* token);
 
-    MCAPI void update(double time);
+    MCNAPI void update(double time);
 
-    MCAPI ~OreUISystem();
+    MCNAPI ~OreUISystem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
+    MCNAPI void* $ctor(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

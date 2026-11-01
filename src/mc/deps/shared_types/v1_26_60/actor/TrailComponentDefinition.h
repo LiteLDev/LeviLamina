@@ -34,40 +34,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrailComponentDefinition(::SharedTypes::v1_26_60::TrailComponentDefinition const&);
+    MCNAPI TrailComponentDefinition(::SharedTypes::v1_26_60::TrailComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_60::TrailComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TrailComponentDefinition&
     operator=(::SharedTypes::v1_26_60::TrailComponentDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::TrailComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::TrailComponentDefinition const&) const;
 
-    MCAPI ~TrailComponentDefinition();
+    MCNAPI ~TrailComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_SPAWN_OFFSET();
+    MCNAPI static ::Vec3 const& DEFAULT_SPAWN_OFFSET();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::TrailComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::TrailComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

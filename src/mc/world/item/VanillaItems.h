@@ -24,7 +24,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void applyHardcodedLegacyIconsClient(
+    MCNAPI static void applyHardcodedLegacyIconsClient(
         ::ItemRegistryRef          itemRegistry,
         ::BaseGameVersion const&   baseGameVersion,
         ::Experiments const&       experiments,

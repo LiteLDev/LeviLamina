@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setUpCallbacksForNestedButtonInCollection(
+    MCNAPI void setUpCallbacksForNestedButtonInCollection(
         ::std::string const&                         nestedBaseButtonId,
         ::std::string const&                         nestedControlEnabledBinding,
         ::std::vector<uint>                          ignoredControls,
@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+    MCNAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
     // NOLINTEND
 
 public:

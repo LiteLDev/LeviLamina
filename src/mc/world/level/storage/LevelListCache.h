@@ -157,42 +157,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelListCache(
+    MCNAPI LevelListCache(
         ::LevelStorageSource&                              levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
         ::std::function<bool()>&&                          checkIsSafeToFlushCache,
         ::std::function<bool()>&&                          checkIsCloudSyncAvailable
     );
 
-    MCAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
+    MCNAPI ::LevelCache* _addOrReplaceCache(::Core::Path const& path);
 
-    MCAPI ::LevelCache* _addToCache(
+    MCNAPI ::LevelCache* _addToCache(
         ::std::string const&                     levelId,
         ::LevelCache&&                           levelCache,
         ::LevelListCacheObserver::LevelAddedType levelAddedType
     );
 
-    MCAPI ::LevelCache* _createAndAddToCache(
+    MCNAPI ::LevelCache* _createAndAddToCache(
         ::std::string const&                     levelId,
         ::Core::Path const&                      directory,
         ::LevelListCacheObserver::LevelAddedType levelAddedType
     );
 
-    MCAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
+    MCNAPI ::LevelCache* _getLevelCache(::std::string const& levelId);
 
-    MCAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
+    MCNAPI ::LevelSummary* _getLevelSummary(::std::string const& levelId);
 
-    MCAPI void _notifyLevelUpdated(::std::string const& levelId);
+    MCNAPI void _notifyLevelUpdated(::std::string const& levelId);
 
-    MCAPI void _notifyNewLevelFound(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
+    MCNAPI void _notifyNewLevelFound(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
-    MCAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
+    MCNAPI void _refreshSummary(::std::string const& levelId, ::LevelCache& cache);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelStorageSource&                              levelStorageSource,
         ::Bedrock::NotNullNonOwnerPtr<::AppPlatform const> appPlatform,
         ::std::function<bool()>&&                          checkIsSafeToFlushCache,
@@ -203,45 +203,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addLevel(::std::string const& levelId, ::LevelData&& levelData);
+    MCNAPI void $addLevel(::std::string const& levelId, ::LevelData&& levelData);
 
-    MCAPI void $deleteLevel(::std::string const& levelId);
+    MCNAPI void $deleteLevel(::std::string const& levelId);
 
-    MCAPI void $refreshLevel(::std::string const& levelId);
+    MCNAPI void $refreshLevel(::std::string const& levelId);
 
-    MCAPI void $ensureLevelInitialized(::std::string const& levelId);
+    MCNAPI void $ensureLevelInitialized(::std::string const& levelId);
 
-    MCAPI void $deleteLevelFiles(::std::string const& levelId);
+    MCNAPI void $deleteLevelFiles(::std::string const& levelId);
 
-    MCAPI void $postDeleteLevel(::std::string const& levelId);
+    MCNAPI void $postDeleteLevel(::std::string const& levelId);
 
-    MCAPI void $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
+    MCNAPI void $renameLevel(::std::string const& levelId, ::std::string const& newLevelName);
 
-    MCAPI void $renameAndSaveLevelData(
+    MCNAPI void $renameAndSaveLevelData(
         ::std::string const& levelId,
         ::std::string const& newLevelName,
         ::LevelData const&   levelData
     );
 
-    MCAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
+    MCNAPI void $saveLevelData(::std::string const& levelId, ::LevelData const& levelData);
 
-    MCAPI void $createBackupCopyOfWorld(
+    MCNAPI void $createBackupCopyOfWorld(
         ::std::string const& levelId,
         ::std::string const& newLevelId,
         ::std::string const& newName
     );
 
-    MCAPI bool $hasLevelWithId(::std::string const& levelId);
+    MCNAPI bool $hasLevelWithId(::std::string const& levelId);
 
-    MCAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath);
+    MCNAPI ::std::string $getLevelIdFromPath(::Core::Path const& fullPath, ::Core::Path const& worldsPath);
 
-    MCAPI bool $checkIfLevelIsCorruptOrMissing(::std::string const& levelId);
+    MCNAPI bool $checkIfLevelIsCorruptOrMissing(::std::string const& levelId);
 
-    MCAPI void $addObserver(::LevelListCacheObserver& observer);
+    MCNAPI void $addObserver(::LevelListCacheObserver& observer);
 
-    MCAPI void $removeObserver(::LevelListCacheObserver& observer);
+    MCNAPI void $removeObserver(::LevelListCacheObserver& observer);
 
-    MCAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
+    MCNAPI ::Bedrock::UniqueOwnerPointer<::LevelStorage> $createLevelStorage(
         ::Scheduler&                                                      scheduler,
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
@@ -251,25 +251,25 @@ public:
         ::std::unique_ptr<::LevelStorageEventing>                         levelStorageEventing
     );
 
-    MCAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
+    MCNAPI ::std::unique_ptr<::LevelLooseFileStorage> $createLevelLooseStorage(
         ::std::string const&                                              levelId,
         ::ContentIdentity const&                                          contentIdentity,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI ::LevelSummary* $getLevelSummary(::std::string const& levelId);
+    MCNAPI ::LevelSummary* $getLevelSummary(::std::string const& levelId);
 
-    MCAPI ::LevelSummary const* $getLevelSummaryByName(::std::string const& levelName);
+    MCNAPI ::LevelSummary const* $getLevelSummaryByName(::std::string const& levelName);
 
-    MCAPI ::LevelSummary* $getOrCreateLevelSummary(::Core::Path const& directory);
+    MCNAPI ::LevelSummary* $getOrCreateLevelSummary(::Core::Path const& directory);
 
-    MCAPI ::LevelData* $getLevelData(::std::string const& levelId);
+    MCNAPI ::LevelData* $getLevelData(::std::string const& levelId);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::LevelData> $getLevelDataNonOwnerPointer(::std::string const& levelId);
+    MCNAPI ::Bedrock::NonOwnerPointer<::LevelData> $getLevelDataNonOwnerPointer(::std::string const& levelId);
 
-    MCAPI ::LevelSummary* $getShallowLevelSummary(::std::string const& levelId);
+    MCNAPI ::LevelSummary* $getShallowLevelSummary(::std::string const& levelId);
 
-    MCAPI void $getLevelList(
+    MCNAPI void $getLevelList(
         ::std::vector<::LevelSummary>& dest,
         bool                           includeShallowSummaries,
         bool                           includePartiallyCopiedLevels,
@@ -277,19 +277,19 @@ public:
         bool                           includeInvalidLevelDataLevels
     );
 
-    MCAPI bool $hasCachedLevels(bool includeShallowSummaries) const;
+    MCNAPI bool $hasCachedLevels(bool includeShallowSummaries) const;
 
-    MCAPI void $updateLevelCache(::std::string const& levelId);
+    MCNAPI void $updateLevelCache(::std::string const& levelId);
 
-    MCAPI ::std::unique_ptr<::LevelStorageObserver> $createLevelStorageObserver();
+    MCNAPI ::std::unique_ptr<::LevelStorageObserver> $createLevelStorageObserver();
 
-    MCAPI void $onSave(::std::string const& levelId);
+    MCNAPI void $onSave(::std::string const& levelId);
 
-    MCAPI void $onStorageChanged();
+    MCNAPI void $onStorageChanged();
 
-    MCAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getBasePath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
+    MCNAPI ::Core::PathBuffer<::std::string> const $getPathToLevel(::std::string const& levelId) const;
 
 
     // NOLINTEND

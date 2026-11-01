@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommonDialogInfoScreenController(
+    MCNAPI CommonDialogInfoScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      dialogTitle,
         ::std::string const&                      dialogBody
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      dialogTitle,
         ::std::string const&                      dialogBody
@@ -53,6 +53,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

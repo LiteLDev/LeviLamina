@@ -32,25 +32,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
+    MCNAPI void addRandomItem(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 #endif
 
     MCAPI void addRandomItems(::std::vector<::ItemStack>& result, ::Random& random, ::LootTableContext& context);
 
 #ifdef LL_PLAT_S
-    MCAPI void deserialize(
+    MCNAPI void deserialize(
         ::Json::Value const& pool,
         bool                 usingUpcomingCreatorFeaturesExperiment,
         ::SemVersion const&  jsonVersion
     );
 #endif
 
-    MCAPI ~LootPool();
+    MCNAPI ~LootPool();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -280,14 +280,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _computeEntityTransformAndReturnIfAttachedToLocator(
+    MCNAPI bool _computeEntityTransformAndReturnIfAttachedToLocator(
         float     a,
         ::Matrix& actorTransform,
         bool      useActorPosition,
         bool      useActorRotation
     ) const;
 
-    MCAPI void _emitNewParticle(
+    MCNAPI void _emitNewParticle(
         ::ParticleSystem::ParticleEffect const& effect,
         ::Vec3 const&                           particleOriginOffset,
         ::Vec3 const&                           velocityAdd,
@@ -295,34 +295,34 @@ public:
         float const                             a
     );
 
-    MCAPI void _executeEventNode(
+    MCNAPI void _executeEventNode(
         ::ParticleSystem::ParticleEventNode const& eventNode,
         ::HashedString const&                      eventName,
         ::Matrix const&                            transform,
         ::Vec3 const&                              velocity
     );
 
-    MCAPI ::mce::Color _getLightColorForParticle(
+    MCNAPI ::mce::Color _getLightColorForParticle(
         ::ParticleSystem::CommonParticle const&                         particle,
         ::std::shared_ptr<::LightPropagation::LightVolumeManager const> lightVolumeManager
     ) const;
 
-    MCAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> _lockEffect();
+    MCNAPI ::std::shared_ptr<::ParticleSystem::ParticleEffect> _lockEffect();
 
-    MCAPI bool _prepareEmitterRenderParams();
+    MCNAPI bool _prepareEmitterRenderParams();
 
-    MCAPI void _prepareParticleForRendering(
+    MCNAPI void _prepareParticleForRendering(
         ::ParticleSystem::ParticleEffect const& effect,
         ::ParticleSystem::CommonParticle&       particle
     );
 
-    MCAPI void _prepareParticlesForRendering(bool particlesRenderFrame);
+    MCNAPI void _prepareParticlesForRendering(bool particlesRenderFrame);
 
-    MCAPI void _resetParticleEffectProperties(bool firstTime);
+    MCNAPI void _resetParticleEffectProperties(bool firstTime);
 
-    MCAPI void _setGracefullyExpire();
+    MCNAPI void _setGracefullyExpire();
 
-    MCAPI void _updateRenderParamsForParticle(
+    MCNAPI void _updateRenderParamsForParticle(
         ::ParticleSystem::ParticleEffect const& effect,
         ::ParticleSystem::CommonParticle const& particle
     );
@@ -331,133 +331,133 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color& mParticleInitialColor();
+    MCNAPI static ::mce::Color& mParticleInitialColor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEntityBindInfo(
+    MCNAPI void $setEntityBindInfo(
         ::Dimension*          dimension,
         ::ActorUniqueID       actorId,
         ::HashedString const& locator,
         ::Vec3 const&         offset
     );
 
-    MCAPI void $setEntityBindInfo(::WeakEntityRef entityRef, ::HashedString const& locator, ::Vec3 const& offset);
+    MCNAPI void $setEntityBindInfo(::WeakEntityRef entityRef, ::HashedString const& locator, ::Vec3 const& offset);
 
-    MCAPI void $setEntityBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
+    MCNAPI void $setEntityBindInfo(::Actor* actor, ::HashedString const& locator, ::Vec3 const& offset);
 
-    MCAPI void $setEnableUpdate(bool enable);
+    MCNAPI void $setEnableUpdate(bool enable);
 
-    MCAPI void $setEnableRender(bool enable);
+    MCNAPI void $setEnableRender(bool enable);
 
-    MCAPI void $runInitializationScript(::ExpressionNode const& initializationScript);
+    MCNAPI void $runInitializationScript(::ExpressionNode const& initializationScript);
 
-    MCAPI void $onBlockChanged(::BlockPos const& blockPosition);
+    MCNAPI void $onBlockChanged(::BlockPos const& blockPosition);
 
-    MCAPI void $expire();
+    MCNAPI void $expire();
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI bool $isManualEmitter() const;
+    MCNAPI bool $isManualEmitter() const;
 
-    MCAPI bool $expirationRequested() const;
+    MCNAPI bool $expirationRequested() const;
 
-    MCAPI bool $hasExpired() const;
+    MCNAPI bool $hasExpired() const;
 
-    MCAPI ::AABB const& $getAABB() const;
+    MCNAPI ::AABB const& $getAABB() const;
 
-    MCFOLD ::HashedString const& $getEffectName() const;
+    MCNAPI ::HashedString const& $getEffectName() const;
 
-    MCAPI uint64 $getParticleCount() const;
+    MCNAPI uint64 $getParticleCount() const;
 
-    MCAPI uint64 $getEffectEmitterCount() const;
+    MCNAPI uint64 $getEffectEmitterCount() const;
 
-    MCAPI uint64 $getEffectParticleCount() const;
+    MCNAPI uint64 $getEffectParticleCount() const;
 
-    MCAPI uint64 $getTotalEmitterCount() const;
+    MCNAPI uint64 $getTotalEmitterCount() const;
 
-    MCAPI uint64 $getTotalParticleCount() const;
+    MCNAPI uint64 $getTotalParticleCount() const;
 
-    MCAPI ::Vec3 const& $getLastCameraPosition() const;
+    MCNAPI ::Vec3 const& $getLastCameraPosition() const;
 
-    MCAPI bool $getAreParticlesFromActorButWorldRelative() const;
+    MCNAPI bool $getAreParticlesFromActorButWorldRelative() const;
 
-    MCAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
+    MCNAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
 
-    MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCNAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
+    MCNAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
 
-    MCAPI void $setManualParticleEmission(bool manualParticleEmission);
+    MCNAPI void $setManualParticleEmission(bool manualParticleEmission);
 
-    MCAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
+    MCNAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
 
-    MCAPI ::ParticleSystem::EntityBindInfo $getEntityBindInfo() const;
+    MCNAPI ::ParticleSystem::EntityBindInfo $getEntityBindInfo() const;
 
-    MCAPI ::Vec3 const& $getPosition() const;
+    MCNAPI ::Vec3 const& $getPosition() const;
 
-    MCAPI ::Matrix const& $getTransform() const;
+    MCNAPI ::Matrix const& $getTransform() const;
 
-    MCAPI ::Vec3 const& $getWorldPosition() const;
+    MCNAPI ::Vec3 const& $getWorldPosition() const;
 
-    MCFOLD ::Vec3 const& $getWorldVelocity() const;
+    MCNAPI ::Vec3 const& $getWorldVelocity() const;
 
-    MCAPI void $setMaxNumParticles(uint64 num);
+    MCNAPI void $setMaxNumParticles(uint64 num);
 
-    MCAPI uint64 $getMaxNumParticles() const;
+    MCNAPI uint64 $getMaxNumParticles() const;
 
-    MCAPI uint64 $getNumParticles() const;
+    MCNAPI uint64 $getNumParticles() const;
 
-    MCFOLD uint64 $getNumParticlesEmitted() const;
+    MCNAPI uint64 $getNumParticlesEmitted() const;
 
-    MCAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
+    MCNAPI void $setActorFrameOfReference(bool useActorPosition, bool useActorRotation, bool useEmitterVelocity);
 
-    MCAPI void $setEmissionDuration(float activeTime);
+    MCNAPI void $setEmissionDuration(float activeTime);
 
-    MCAPI void $setSleepDuration(float sleepTime);
+    MCNAPI void $setSleepDuration(float sleepTime);
 
-    MCAPI void $setFacing(::HashedString const& facing);
+    MCNAPI void $setFacing(::HashedString const& facing);
 
-    MCAPI bool $blockListInitialized();
+    MCNAPI bool $blockListInitialized();
 
-    MCAPI void $initializeBlockList(::buffer_span<::std::string> blockList);
+    MCNAPI void $initializeBlockList(::buffer_span<::std::string> blockList);
 
-    MCAPI bool $blockAtPositionIsInList(::BlockPos const& blockPos);
+    MCNAPI bool $blockAtPositionIsInList(::BlockPos const& blockPos);
 
-    MCAPI ::BrightnessPair $getBrightnessPairAtBlock(::BlockPos const& blockPosition) const;
+    MCNAPI ::BrightnessPair $getBrightnessPairAtBlock(::BlockPos const& blockPosition) const;
 
-    MCAPI ::std::pair<::BrightnessPair, ::BlockPos>
+    MCNAPI ::std::pair<::BrightnessPair, ::BlockPos>
     $getBrightestNeighbor(::BlockPos const& blockPosition, ::ParticleSystem::CommonParticle const& particle) const;
 
-    MCAPI bool $getVisibilityAtBlock(::BlockPos const& blockPosition) const;
+    MCNAPI bool $getVisibilityAtBlock(::BlockPos const& blockPosition) const;
 
-    MCAPI ::mce::Color $getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const;
+    MCNAPI ::mce::Color $getGameplayLightForParticle(::ParticleSystem::CommonParticle const& particle) const;
 
-    MCAPI ::BrightnessPair $getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const;
+    MCNAPI ::BrightnessPair $getBrightnessPairForParticle(::ParticleSystem::CommonParticle const& particle) const;
 
-    MCAPI ::std::vector<::AABB> const& $getCollisionShapesForBlockPosition(::BlockPos const& blockPosition);
+    MCNAPI ::std::vector<::AABB> const& $getCollisionShapesForBlockPosition(::BlockPos const& blockPosition);
 
-    MCAPI ::std::vector<::AABB>& $getCollisionAabbList();
+    MCNAPI ::std::vector<::AABB>& $getCollisionAabbList();
 
-    MCAPI ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>& $getCollisionSweepList();
+    MCNAPI ::std::vector<::ParticleSystem::ComponentAccessParticleEmitter::CollisionHelper>& $getCollisionSweepList();
 
-    MCAPI void $fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity);
+    MCNAPI void $fireEvent(::HashedString const& eventName, ::Vec3 const& position, ::Vec3 const& velocity);
 
-    MCAPI void $fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity);
+    MCNAPI void $fireEvent(::HashedString const& eventName, ::Matrix const& transform, ::Vec3 const& velocity);
 
-    MCAPI bool $getUseActorPosition() const;
+    MCNAPI bool $getUseActorPosition() const;
 
-    MCAPI bool $getUseActorRotation() const;
+    MCNAPI bool $getUseActorRotation() const;
 
-    MCAPI void $getParticleWorldPositionAndVelocity(
+    MCNAPI void $getParticleWorldPositionAndVelocity(
         ::ParticleSystem::CommonParticle& particle,
         ::Vec3&                           particleWorldPosition,
         ::Vec3&                           particleWorldVelocity
     );
 
-    MCAPI ::AABB $getEntityAABB() const;
+    MCNAPI ::AABB $getEntityAABB() const;
     // NOLINTEND
 };
 

@@ -29,7 +29,7 @@ public:
 
     MCAPI static ::DimensionType fromString(::std::string const& name);
 
-    MCAPI static ::std::string const toString(::DimensionType const& type);
+    MCNAPI static ::std::string const toString(::DimensionType const& type);
     // NOLINTEND
 
 public:
@@ -43,7 +43,7 @@ public:
 
     MCAPI static ::DimensionType const& TheEnd();
 
-    MCAPI static ::Vec3 const& TheEndSpawnPoint();
+    MCNAPI static ::Vec3 const& TheEndSpawnPoint();
 
     MCAPI static ::DimensionType const& Undefined();
     // NOLINTEND

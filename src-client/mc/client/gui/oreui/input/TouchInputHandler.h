@@ -51,21 +51,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchInputHandler(
+    MCNAPI TouchInputHandler(
         ::std::unique_ptr<::OreUI::ITouchSystem>  touchSystem,
         ::std::unique_ptr<::OreUI::GesturePolicy> gesturePolicy,
         ::Option*                                 ttsOption
     );
 
-    MCAPI void handle(::std::vector<::OreUI::TouchEvent> const& rawTouchEvents);
+    MCNAPI void handle(::std::vector<::OreUI::TouchEvent> const& rawTouchEvents);
 
-    MCAPI ~TouchInputHandler();
+    MCNAPI ~TouchInputHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::OreUI::ITouchSystem>  touchSystem,
         ::std::unique_ptr<::OreUI::GesturePolicy> gesturePolicy,
         ::Option*                                 ttsOption
@@ -75,7 +75,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

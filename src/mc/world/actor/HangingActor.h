@@ -68,40 +68,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingActor(
+    MCNAPI HangingActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
         int                                wouldSurviveCheckCooldown
     );
 
-    MCAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    MCNAPI bool _blockContainsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
-    MCAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
+    MCNAPI bool _blockIsObstruction(::BlockSource const& region, ::BlockPos const& blockPos) const;
 
-    MCAPI void _calculateAABB();
+    MCNAPI void _calculateAABB();
 
 #ifdef LL_PLAT_S
-    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
+    MCNAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
+    MCNAPI void _calculateActorPositionFromPlacementPosition(::BlockPos const& blockPos);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
+    MCNAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
+    MCNAPI bool _wouldSurvive(::BlockSource& region, ::BlockPos const& blockPos, bool beingPlaced);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
@@ -112,25 +112,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCFOLD bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCNAPI bool $placeHangingEntity(::BlockSource& region, int direction);
 
-    MCAPI bool $wouldSurvive(::BlockSource& region);
+    MCNAPI bool $wouldSurvive(::BlockSource& region);
 
-    MCFOLD bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
+    MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, ::HurtParameters const&);
+    MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, ::HurtParameters const&);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AutoSaveInfoScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit AutoSaveInfoScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 
 public:

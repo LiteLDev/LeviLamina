@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(
+    MCNAPI ::std::optional<::BlockPos> findNearestStructureFeature(
         ::Dimension&         dimension,
         ::HashedString       feature,
         ::BlockPos const&    origin,

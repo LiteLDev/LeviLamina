@@ -35,15 +35,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition::Effect const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition::Effect const&) const;
 
-        MCAPI ~Effect();
+        MCNAPI ~Effect();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -65,18 +65,18 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SharedTypes::v1_26_60::HealableComponentDefinition::FeedItem&
+        MCNAPI ::SharedTypes::v1_26_60::HealableComponentDefinition::FeedItem&
         operator=(::SharedTypes::v1_26_60::HealableComponentDefinition::FeedItem const&);
 
-        MCAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition::FeedItem const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition::FeedItem const&) const;
 
-        MCAPI ~FeedItem();
+        MCNAPI ~FeedItem();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -96,35 +96,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HealableComponentDefinition(::SharedTypes::v1_26_60::HealableComponentDefinition const&);
+    MCNAPI HealableComponentDefinition(::SharedTypes::v1_26_60::HealableComponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::HealableComponentDefinition const&) const;
 
-    MCAPI ~HealableComponentDefinition();
+    MCNAPI ~HealableComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::HealableComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::HealableComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

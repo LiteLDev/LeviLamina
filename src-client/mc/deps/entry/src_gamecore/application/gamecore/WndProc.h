@@ -80,17 +80,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<int64> $onShow(::MainGameCore::WndProc::WndProcParams params);
+    MCNAPI ::std::optional<int64> $onShow(::MainGameCore::WndProc::WndProcParams params);
 
-    MCAPI ::std::optional<int64> $onEnterSizeMove(::MainGameCore::WndProc::WndProcParams params);
+    MCNAPI ::std::optional<int64> $onEnterSizeMove(::MainGameCore::WndProc::WndProcParams params);
 
-    MCAPI ::std::optional<int64> $onDPIChange(::MainGameCore::WndProc::WndProcParams params);
+    MCNAPI ::std::optional<int64> $onDPIChange(::MainGameCore::WndProc::WndProcParams params);
 
-    MCFOLD ::std::optional<int64> $onCompacting(::MainGameCore::WndProc::WndProcParams);
+    MCNAPI ::std::optional<int64> $onCompacting(::MainGameCore::WndProc::WndProcParams);
 
-    MCAPI ::std::optional<int64> $onActivateApp(::MainGameCore::WndProc::WndProcParams params);
+    MCNAPI ::std::optional<int64> $onActivateApp(::MainGameCore::WndProc::WndProcParams params);
 
-    MCAPI ::std::optional<int64> $onFocusChange(::MainGameCore::WndProc::WndProcParams params);
+    MCNAPI ::std::optional<int64> $onFocusChange(::MainGameCore::WndProc::WndProcParams params);
     // NOLINTEND
 };
 

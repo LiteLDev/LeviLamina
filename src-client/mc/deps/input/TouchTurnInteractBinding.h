@@ -38,20 +38,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchTurnInteractBinding(::TouchTurnInteractBinding const&);
+    MCNAPI TouchTurnInteractBinding(::TouchTurnInteractBinding const&);
 
-    MCAPI ~TouchTurnInteractBinding();
+    MCNAPI ~TouchTurnInteractBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TouchTurnInteractBinding const&);
+    MCNAPI void* $ctor(::TouchTurnInteractBinding const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

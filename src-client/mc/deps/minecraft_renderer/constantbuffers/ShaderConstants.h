@@ -38,15 +38,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void getConstants();
+    MCNAPI void getConstants();
 
-    MCAPI void setUVTransform(::mce::RenderContext& renderContext, ::glm::mat2x3 const& transform);
+    MCNAPI void setUVTransform(::mce::RenderContext& renderContext, ::glm::mat2x3 const& transform);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
     // NOLINTEND
 
 public:

@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setRegenDuration(int const& duration);
+    MCNAPI void setRegenDuration(int const& duration);
 
-    MCAPI void setRegenDurationWithInfiniteString(::std::string const& duration);
+    MCNAPI void setRegenDurationWithInfiniteString(::std::string const& duration);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::CombatRegenerationDefinition>>&
             root
     );

@@ -41,25 +41,26 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SurfaceMaterialAdjustmentMaterials(
+        MCNAPI SurfaceMaterialAdjustmentMaterials(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
         );
 
-        MCAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::SurfaceMaterialAdjustmentMaterials&
-        operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                      SurfaceMaterialAdjustmentMaterials const&);
+        MCNAPI ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+            SurfaceMaterialAdjustmentMaterials&
+            operator=(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                          SurfaceMaterialAdjustmentMaterials const&);
 
-        MCAPI bool operator==(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
-                                  SurfaceMaterialAdjustmentMaterials const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
+                                   SurfaceMaterialAdjustmentMaterials const&) const;
 
-        MCAPI ~SurfaceMaterialAdjustmentMaterials();
+        MCNAPI ~SurfaceMaterialAdjustmentMaterials();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::SharedTypes::v1_20_60::SurfaceMaterialAdjustmentsBiomeJsonComponent::
                 SurfaceMaterialAdjustmentMaterials const&
         );
@@ -68,7 +69,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -102,13 +103,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:

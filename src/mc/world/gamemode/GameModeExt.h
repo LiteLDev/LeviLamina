@@ -12,14 +12,14 @@ namespace GameModeExt {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessenger(::Player& player);
+MCNAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessenger(::Player& player);
 
-MCAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessengerWithServerAuthBlockBreaking(::Player& player);
+MCNAPI ::std::unique_ptr<::IGameModeMessenger> createClientMessengerWithServerAuthBlockBreaking(::Player& player);
 #endif
 
-MCAPI ::std::unique_ptr<::IGameModeMessenger> createServerMessenger(::Player& player);
+MCNAPI ::std::unique_ptr<::IGameModeMessenger> createServerMessenger(::Player& player);
 
-MCAPI ::std::unique_ptr<::IGameModeMessenger> createServerMessengerWithServerAuthBlockBreaking(::Player& player);
+MCNAPI ::std::unique_ptr<::IGameModeMessenger> createServerMessengerWithServerAuthBlockBreaking(::Player& player);
 // NOLINTEND
 
 } // namespace GameModeExt

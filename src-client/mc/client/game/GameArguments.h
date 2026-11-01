@@ -60,45 +60,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameArguments(::IMinecraftGame& minecraft);
+    MCNAPI explicit GameArguments(::IMinecraftGame& minecraft);
 
-    MCAPI void _checkStoreArguments(::ActivationUri const& uri);
+    MCNAPI void _checkStoreArguments(::ActivationUri const& uri);
 
-    MCAPI void _deeplinkToServer(::std::string const& connectionUrl, int connectionPort, bool askForConfirmation);
+    MCNAPI void _deeplinkToServer(::std::string const& connectionUrl, int connectionPort, bool askForConfirmation);
 
-    MCAPI ::std::string _getStringForArgument(
+    MCNAPI ::std::string _getStringForArgument(
         ::std::unordered_map<::std::string, ::std::string> const& arguments,
         ::std::string const&                                      argument
     ) const;
 
-    MCAPI void _goBackPushOrReplaceRoute(::std::string const& route);
+    MCNAPI void _goBackPushOrReplaceRoute(::std::string const& route);
 
-    MCAPI void _import(
+    MCNAPI void _import(
         ::std::shared_ptr<::DefaultImportContext> context,
         ::std::string const&                      mcContentPath,
         bool                                      fromTemp,
         ::LoadImportedLevelData                   loadLevelData
     );
 
-    MCAPI void _loadGameTypeActivity(::GameType gameType);
+    MCNAPI void _loadGameTypeActivity(::GameType gameType);
 
-    MCAPI void _onUri(::ActivationUri const& uri);
+    MCNAPI void _onUri(::ActivationUri const& uri);
 
-    MCAPI void _queryForRealmAndJoin(::Realms::RealmId const& realmId);
+    MCNAPI void _queryForRealmAndJoin(::Realms::RealmId const& realmId);
 
-    MCAPI void _queryForRealmAndOpenStories(::Realms::RealmId const& realmId);
+    MCNAPI void _queryForRealmAndOpenStories(::Realms::RealmId const& realmId);
 
-    MCAPI void _requestAddEduServer(::std::string const& serverId);
+    MCNAPI void _requestAddEduServer(::std::string const& serverId);
 
-    MCAPI void _requestJoinEduServer(::std::string const& serverId);
+    MCNAPI void _requestJoinEduServer(::std::string const& serverId);
 
-    MCAPI ::Bedrock::Threading::Async<void> _thirdPartyServersFetched();
+    MCNAPI ::Bedrock::Threading::Async<void> _thirdPartyServersFetched();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _validateJsonMember(
+    MCNAPI static bool _validateJsonMember(
         ::Json::Value const&     jsonBody,
         ::std::string const&     memberName,
         ::Json::ValueType const& valueType
@@ -108,16 +108,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraft);
+    MCNAPI void* $ctor(::IMinecraftGame& minecraft);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $onUri(::ActivationUri const& uri);
+    MCNAPI void $onUri(::ActivationUri const& uri);
 
-    MCAPI void $executeStartupUris();
+    MCNAPI void $executeStartupUris();
     // NOLINTEND
 };

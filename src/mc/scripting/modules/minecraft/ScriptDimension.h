@@ -113,7 +113,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::nonstd::expected<
+    MCNAPI ::nonstd::expected<
         ::std::vector<::Vec3>,
         ::std::variant<::ScriptModuleMinecraft::ScriptUnloadedChunksError, ::Scripting::Error>>
     _getBlockPositions(
@@ -122,7 +122,7 @@ public:
         bool                                                                                        allowUnloadedChunks
     ) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
@@ -136,13 +136,13 @@ public:
         ::std::string const&                                                           spawnEvent
     ) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError,
         ::ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>
     getBlock(::Scripting::WeakLifetimeScope scope, ::Vec3 const& position) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockAbove(
         ::Scripting::WeakLifetimeScope                                             scope,
@@ -150,7 +150,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockBelow(
         ::Scripting::WeakLifetimeScope                                             scope,
@@ -158,24 +158,24 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getEntitiesAtBlockLocation_V010(::BlockPos const& pos) const;
 
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getLightLevel(::Vec3 const& location) const;
 
-    MCAPI ::std::string getLocalizationKey() const;
+    MCNAPI ::std::string getLocalizationKey() const;
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<int, ::Scripting::InvalidArgumentError, ::ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError>
         getSkyLightLevel(::Vec3 const& location) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptDimension& operator=(::ScriptModuleMinecraft::ScriptDimension&& rhs);
+    MCNAPI ::ScriptModuleMinecraft::ScriptDimension& operator=(::ScriptModuleMinecraft::ScriptDimension&& rhs);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundInstance>,
         ::Scripting::PropertyOutOfBoundsError,
         ::Scripting::EngineError>
@@ -186,7 +186,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::Promise<
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
         ::ScriptModuleMinecraft::ScriptCommandError>>
     runCommandAsync(
@@ -196,7 +196,7 @@ public:
         ::std::string const&              commandString
     );
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     spawnItem_V010(
         ::ScriptModuleMinecraft::ScriptItemStack const& scriptItemStack,
         ::std::variant<::BlockPos, ::Vec3> const&       pos
@@ -206,11 +206,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindScriptWeatherType();
+    MCNAPI static ::Scripting::EnumBinding bindScriptWeatherType();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>
     getOrCreateHandle(::DimensionType id, ::Level& level, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

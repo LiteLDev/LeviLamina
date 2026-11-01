@@ -54,33 +54,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerComponent(::ContainerComponent&& other);
+    MCNAPI ContainerComponent(::ContainerComponent&& other);
 
-    MCAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
+    MCNAPI bool _tryMoveInItem(::ItemStack& item, int slot, int face, int itemCount);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool addItem(::ItemStack& item, int face, int itemCount);
+    MCNAPI bool addItem(::ItemStack& item, int face, int itemCount);
 
-    MCAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
+    MCNAPI bool canOpenContainer(::Actor const& containerActor, ::Player& player) const;
 
-    MCAPI int countItemsOfType(::ItemStack const& item) const;
+    MCNAPI int countItemsOfType(::ItemStack const& item) const;
 
     MCAPI void dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCAPI void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
+    MCNAPI void dropSlotContent(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI int getEmptySlotsCount() const;
+    MCNAPI int getEmptySlotsCount() const;
 
-    MCAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
+    MCNAPI void initFromDefinition(::Actor& actor, ::ContainerDescription const& desc);
 
-    MCAPI bool isEmpty() const;
+    MCNAPI bool isEmpty() const;
 
     MCAPI bool openContainer(::Actor& containerActor, ::Player& player);
 
-    MCAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
+    MCNAPI ::ContainerComponent& operator=(::ContainerComponent&& other);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
     MCAPI void rebuildContainer(
         ::Actor&                             owner,
@@ -91,36 +91,36 @@ public:
         bool isPrivate
     );
 
-    MCAPI void removeItemsOfType(::ItemStack const& item, int count);
+    MCNAPI void removeItemsOfType(::ItemStack const& item, int count);
 
-    MCAPI void
+    MCNAPI void
     serverInitItemStackIds(int containerSlot, int count, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
     MCAPI void setCustomName(::std::string const& name);
 
-    MCAPI void setLootTable(::std::string const& lootTable, int lootTableSeed);
+    MCNAPI void setLootTable(::std::string const& lootTable, int lootTableSeed);
 
-    MCAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId, ::Actor& owner);
+    MCNAPI void unpackLootTable(::Level& level, ::DimensionType dimensionId, ::Actor& owner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerComponent&& other);
+    MCNAPI void* $ctor(::ContainerComponent&& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int iSlot);
+    MCNAPI void $containerContentChanged(int iSlot);
 
-    MCAPI void $containerClosed(::Actor& actor);
+    MCNAPI void $containerClosed(::Actor& actor);
 
 
     // NOLINTEND

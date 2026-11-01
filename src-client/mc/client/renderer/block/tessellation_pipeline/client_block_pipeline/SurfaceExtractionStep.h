@@ -28,26 +28,26 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Matrix
+    MCNAPI static ::Matrix
     _getUnitCubeWorldTransform(::ClientBlockPipeline::BlockLookupData const& blockData, ::Vec3 const& localPosition);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockGeoType::GeoTypeResolver& mGeoTypeResolver();
+    MCNAPI static ::BlockGeoType::GeoTypeResolver& mGeoTypeResolver();
 
-    MCAPI static float& mLastPositionRandom();
+    MCNAPI static float& mLastPositionRandom();
 
-    MCAPI static ::ClientBlockPipeline::Material const*& mLastResolvedMaterial();
+    MCNAPI static ::ClientBlockPipeline::Material const*& mLastResolvedMaterial();
 
-    MCAPI static uchar& mLastTextureIndex();
+    MCNAPI static uchar& mLastTextureIndex();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
+    MCNAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
     // NOLINTEND
 };
 

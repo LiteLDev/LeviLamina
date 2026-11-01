@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayerObject(
+    MCNAPI SocialPlayerObject(
         ::std::string                     name,
         ::OreUI::Detail::IPropertyObject* parent,
         ::OreUI::SocialPlayerData const&  data
@@ -73,7 +73,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string name, ::OreUI::Detail::IPropertyObject* parent, ::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 };

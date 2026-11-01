@@ -29,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
+    MCNAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
+    MCNAPI CameraAimAssistCategoryDefinition(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const& rhs) const;
 
-    MCAPI ~CameraAimAssistCategoryDefinition();
+    MCNAPI ~CameraAimAssistCategoryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistCategoryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -46,10 +46,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptPlayerStartBreakingBlockAfterEvent(::ScriptModuleMinecraft::ScriptPlayerStartBreakingBlockAfterEvent const&);
 
-    MCAPI ScriptPlayerStartBreakingBlockAfterEvent(
+    MCNAPI ScriptPlayerStartBreakingBlockAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData> const&
                                               eventData,
         ::Scripting::WeakLifetimeScope const& scope
@@ -59,15 +59,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerStartBreakingBlockAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerStartBreakingBlockAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerBreakingBlockAfterEventIntermediateData> const&
                                               eventData,
         ::Scripting::WeakLifetimeScope const& scope

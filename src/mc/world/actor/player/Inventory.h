@@ -37,32 +37,32 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
+    MCNAPI void dropSlot(int slot, bool onlyClearContainer, bool dropAll, bool randomly);
 #endif
 
-    MCAPI void setupDefault();
+    MCNAPI void setupDefault();
 
-    MCAPI void tick(int selectedSlot);
+    MCNAPI void tick(int selectedSlot);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
 
-    MCAPI bool $add(::ItemStack& item);
+    MCNAPI bool $add(::ItemStack& item);
 
-    MCAPI bool $canAdd(::ItemStack const& item) const;
+    MCNAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCAPI int $getFirstEmptySlot() const;
+    MCNAPI int $getFirstEmptySlot() const;
 
-    MCFOLD int $getEmptySlotsCount() const;
+    MCNAPI int $getEmptySlotsCount() const;
 
-    MCAPI void $setContainerSize(int size);
+    MCNAPI void $setContainerSize(int size);
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
 
     // NOLINTEND

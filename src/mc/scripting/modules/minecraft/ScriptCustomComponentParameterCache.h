@@ -55,13 +55,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ParameterCache();
+        MCNAPI ~ParameterCache();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -84,28 +84,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptCustomComponentParameterCache(::ServerScriptManagerEvents& events);
+    MCNAPI explicit ScriptCustomComponentParameterCache(::ServerScriptManagerEvents& events);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     _getOrCreatePayload(
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache::ParameterCache& cache,
         ::Scripting::WeakLifetimeScope const&                                         scope
     );
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCustomComponentParameters> const&
     getOrCreateParameterPayload(
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle const& handle,
         ::Scripting::WeakLifetimeScope const&                                     scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle
+    MCNAPI ::ScriptModuleMinecraft::ScriptCustomComponentParameterCacheHandle
     registerParameterPayload(::cereal::DynamicValue const& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerScriptManagerEvents& events);
+    MCNAPI void* $ctor(::ServerScriptManagerEvents& events);
     // NOLINTEND
 };
 

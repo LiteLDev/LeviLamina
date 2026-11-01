@@ -44,29 +44,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     WorldLimitChunkSource(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
+    MCNAPI void* $ctor(::std::unique_ptr<::ChunkSource> storage, ::BlockPos const& center, int width, int depth);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::LevelChunk>
+    MCNAPI ::std::shared_ptr<::LevelChunk>
     $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& cp);
 
-    MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
+    MCNAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
-    MCFOLD bool $canCreateViews() const;
+    MCNAPI bool $canCreateViews() const;
 
-    MCAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap() const;
+    MCNAPI ::std::unordered_map<::ChunkPos, ::std::weak_ptr<::LevelChunk>> const* $getChunkMap() const;
 
 
     // NOLINTEND

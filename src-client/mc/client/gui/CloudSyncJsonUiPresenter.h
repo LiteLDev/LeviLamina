@@ -36,19 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CloudSyncJsonUiPresenter(
+    MCNAPI CloudSyncJsonUiPresenter(
         ::CloudSyncTrigger&                                              cloudSyncTrigger,
         ::std::function<::Bedrock::NonOwnerPointer<::IClientInstance>()> clientProvider,
         ::std::function<bool()>                                          shouldDisplay
     );
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CloudSyncTrigger&                                              cloudSyncTrigger,
         ::std::function<::Bedrock::NonOwnerPointer<::IClientInstance>()> clientProvider,
         ::std::function<bool()>                                          shouldDisplay

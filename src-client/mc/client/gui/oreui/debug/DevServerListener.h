@@ -54,19 +54,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _handleNewMessages();
+    MCNAPI void _handleNewMessages();
 
-    MCAPI void _removeOldDevServers();
+    MCNAPI void _removeOldDevServers();
 
-    MCAPI void update();
+    MCNAPI void update();
 
-    MCAPI ~DevServerListener();
+    MCNAPI ~DevServerListener();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

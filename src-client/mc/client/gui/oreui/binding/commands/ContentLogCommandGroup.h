@@ -18,7 +18,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void log(::std::string const& message, int verbosity);
+    MCNAPI void log(::std::string const& message, int verbosity);
     // NOLINTEND
 };
 

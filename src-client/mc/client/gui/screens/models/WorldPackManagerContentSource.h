@@ -41,12 +41,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load();
+    MCNAPI void $load();
 
-    MCAPI void
+    MCNAPI void
     $_createSelectedPackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& selected);
 
-    MCAPI void
+    MCNAPI void
     $_createAvailablePackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& available);
     // NOLINTEND
 };

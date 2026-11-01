@@ -30,26 +30,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalServer(::ExternalServer const&);
+    MCNAPI ExternalServer(::ExternalServer const&);
 
-    MCAPI ExternalServer(int id, ::std::string const& name, ::std::string const& address, int port, int64 lastJoinTime);
+    MCNAPI
+    ExternalServer(int id, ::std::string const& name, ::std::string const& address, int port, int64 lastJoinTime);
 
-    MCAPI ::AsynchronousIPResolver const& getFutureIP() const;
+    MCNAPI ::AsynchronousIPResolver const& getFutureIP() const;
 
-    MCAPI ~ExternalServer();
+    MCNAPI ~ExternalServer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExternalServer const&);
+    MCNAPI void* $ctor(::ExternalServer const&);
 
-    MCAPI void* $ctor(int id, ::std::string const& name, ::std::string const& address, int port, int64 lastJoinTime);
+    MCNAPI void* $ctor(int id, ::std::string const& name, ::std::string const& address, int port, int64 lastJoinTime);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

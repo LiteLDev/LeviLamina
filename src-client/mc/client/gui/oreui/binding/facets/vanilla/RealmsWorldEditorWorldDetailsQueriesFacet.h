@@ -71,63 +71,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWorldEditorWorldDetailsQueriesFacet(
+    MCNAPI explicit RealmsWorldEditorWorldDetailsQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor
     );
 
-    MCAPI void _refreshRealmWorldSubscriptions();
+    MCNAPI void _refreshRealmWorldSubscriptions();
 
-    MCAPI bool areRealmCheatsEnabled() const;
+    MCNAPI bool areRealmCheatsEnabled() const;
 
-    MCAPI bool areRealmTexturesRequired() const;
+    MCNAPI bool areRealmTexturesRequired() const;
 
-    MCFOLD ::Realms::RealmsWorldEditorFetchState getFetchState() const;
+    MCNAPI ::Realms::RealmsWorldEditorFetchState getFetchState() const;
 
-    MCAPI ::Realms::RealmsWorldEditorStateStatus getFetchStateStatus() const;
+    MCNAPI ::Realms::RealmsWorldEditorStateStatus getFetchStateStatus() const;
 
-    MCFOLD ::std::optional<::std::string> const& getFlatWorldPreset() const;
+    MCNAPI ::std::optional<::std::string> const& getFlatWorldPreset() const;
 
-    MCFOLD int getGeneratorType() const;
+    MCNAPI int getGeneratorType() const;
 
-    MCAPI int getRealmDaylightCycle() const;
+    MCNAPI int getRealmDaylightCycle() const;
 
-    MCFOLD ::Realms::RealmsWorldGeneralSettings const& getRealmWorldGeneralSettings() const;
+    MCNAPI ::Realms::RealmsWorldGeneralSettings const& getRealmWorldGeneralSettings() const;
 
-    MCAPI ::std::string const& getRealmsDescription() const;
+    MCNAPI ::std::string const& getRealmsDescription() const;
 
-    MCAPI ::std::string const& getRealmsName() const;
+    MCNAPI ::std::string const& getRealmsName() const;
 
-    MCFOLD int getSimulationDistance() const;
+    MCNAPI int getSimulationDistance() const;
 
-    MCAPI bool getStartWithBonusChest() const;
+    MCNAPI bool getStartWithBonusChest() const;
 
-    MCFOLD bool getStartWithMap() const;
+    MCNAPI bool getStartWithMap() const;
 
-    MCFOLD ::Realms::RealmsWorldEditorState getState() const;
+    MCNAPI ::Realms::RealmsWorldEditorState getState() const;
 
-    MCFOLD ::Realms::RealmsWorldEditorStateStatus getStatus() const;
+    MCNAPI ::Realms::RealmsWorldEditorStateStatus getStatus() const;
 
-    MCAPI bool getUseFlatWorld() const;
+    MCNAPI bool getUseFlatWorld() const;
 
-    MCFOLD int64 const getWorldSeed() const;
+    MCNAPI int64 const getWorldSeed() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -23,7 +23,7 @@ struct WasInWaterFlagComponent;
 namespace SneakTriggerSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void doIntentTick(
+MCNAPI void doIntentTick(
     ::StrictEntityContext const&,
     ::MoveInputComponent const&                               moveInput,
     ::ActorGameTypeComponent const&                           actorGameType,

@@ -150,39 +150,39 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _getProfileStringRecursive(
+    MCNAPI void _getProfileStringRecursive(
         ::ProfilerLite::ScopedData& scope,
         uint64&                     writeCount,
         uint64&                     remainingLength,
         char*&                      stringBuilderTemp
     );
 
-    MCFOLD void _shutdown();
+    MCNAPI void _shutdown();
 
-    MCAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
+    MCNAPI void applyProfilerOptions(bool isClientDiagnosticsEnabled);
 #endif
 
-    MCAPI ::_ProfilerLiteTimer* getActiveScope(::std::thread::id threadId);
+    MCNAPI ::_ProfilerLiteTimer* getActiveScope(::std::thread::id threadId);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
+    MCNAPI ::Bedrock::ScopeExit init(::Core::Path const& logFilePath);
 
-    MCAPI void initWithFlightingAndOptions(bool isClientDiagnosticsEnabled);
+    MCNAPI void initWithFlightingAndOptions(bool isClientDiagnosticsEnabled);
 
-    MCAPI void logMultipleTimedEvents(
+    MCNAPI void logMultipleTimedEvents(
         ::brstd::function_ref<
             void(::brstd::function_ref<void(::std::string const&, double), void(::std::string const&, double)>)> events
     );
 
-    MCAPI void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
+    MCNAPI void logScreenCreationEvent(::std::string const& screenName, double creationTime, uchar clientID);
 
-    MCAPI void reset();
+    MCNAPI void reset();
 #endif
 
-    MCAPI void setActiveScope(::std::thread::id threadId, ::_ProfilerLiteTimer* newScope);
+    MCNAPI void setActiveScope(::std::thread::id threadId, ::_ProfilerLiteTimer* newScope);
 
 #ifdef LL_PLAT_C
-    MCAPI bool tick(
+    MCNAPI bool tick(
         bool                           isVSynced,
         bool                           frameDiscarded,
         bool                           outputProfilerInfo,
@@ -197,10 +197,10 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void
+    MCNAPI static void
     _writeHeadersIfEmpty(::std::string const& header, ::Core::Path logFileName, ::Core::OutputFileStream& file);
 
-    MCAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
+    MCNAPI static void getNetworkStats(::NetworkStatMetrics& stats, uint& lastSampleNum, ::TrackerType type);
 #endif
     // NOLINTEND
 

@@ -30,12 +30,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
+    MCNAPI ::std::string _parseRawText(::Json::Value const& value) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createBindingData(::Json::Value const& formData);
+    MCNAPI void $createBindingData(::Json::Value const& formData);
     // NOLINTEND
 };

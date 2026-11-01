@@ -31,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<
+    MCNAPI ::std::unordered_map<
         ::std::string_view,
         ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory>> const&
     _getOrCreateActorComponentFactories() const;
 
-    MCAPI ::std::vector<::std::string_view> getSupportedComponentIds(::WeakRef<::EntityContext> entityRef) const;
+    MCNAPI ::std::vector<::std::string_view> getSupportedComponentIds(::WeakRef<::EntityContext> entityRef) const;
 
-    MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory> const&
+    MCNAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptActorComponentFactory> const&
     tryGetFactory(::std::string const& componentName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(
+    MCNAPI static void bind(
         ::Scripting::ModuleBindingBuilder&                                       moduleBuilder,
         ::Scripting::Version const&                                              scriptingVersion,
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder&                 actorComponentTypesEnum,

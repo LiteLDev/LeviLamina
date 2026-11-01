@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void $onRunSystemTick(::ScriptDeferredFlushTracker& deferredTracker);
 
 
     // NOLINTEND

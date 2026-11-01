@@ -78,7 +78,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
+        MCNAPI ::ImguiProfiler::RecordGroup::FullStackRecord& operator[](::std::string const& name);
         // NOLINTEND
     };
 
@@ -139,7 +139,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
 
     public:
@@ -166,38 +166,38 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ImguiProfiler();
+    MCNAPI ImguiProfiler();
 #endif
 
-    MCAPI ::TimeAccumulator
+    MCNAPI ::TimeAccumulator
     getTimeAccumulator(::std::string const& group, ::std::string const& name, bool isClientSide);
 
 #ifdef LL_PLAT_S
-    MCAPI void update();
+    MCNAPI void update();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addRecord(::ImguiProfiler::Record&& record);
+    MCNAPI static void addRecord(::ImguiProfiler::Record&& record);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
+    MCNAPI static ::std::vector<::ImguiProfiler::Record>& sPendingRecords();
 
-    MCAPI static int& sProduceRecords();
+    MCNAPI static int& sProduceRecords();
 
-    MCAPI static ::std::mutex& sRecordMutex();
+    MCNAPI static ::std::mutex& sRecordMutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 };

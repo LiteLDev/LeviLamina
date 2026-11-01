@@ -42,33 +42,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveOutdoorsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI MoveOutdoorsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static bool mobHasClearSpaceAbove(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

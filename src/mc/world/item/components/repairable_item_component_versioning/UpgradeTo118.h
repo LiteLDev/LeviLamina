@@ -34,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkRepairItemEntrySchema(
+    MCNAPI static bool checkRepairItemEntrySchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -44,13 +44,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $previousSchema(
+    MCNAPI bool $previousSchema(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component
     ) const;
 
-    MCAPI void $upgradeToNext(
+    MCNAPI void $upgradeToNext(
         ::rapidjson::GenericDocument<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,

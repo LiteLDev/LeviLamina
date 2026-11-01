@@ -211,7 +211,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doTick(
+    MCNAPI static void doTick(
         ::StrictEntityContext const&                      entity,
         ::ActorDataFlagComponent const&                   synchedActorData,
         ::AABBShapeComponent const&                       aabbShape,
@@ -227,7 +227,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,

@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::StartupResult _startupInternal(
+    MCNAPI ::RakNet::StartupResult _startupInternal(
         ::gsl::not_null<::RakNet::RakPeerInterface*> peer,
         ::ConnectionDefinition const&                definition,
         ::RakNet::SocketDescriptor*                  sockets,
@@ -74,7 +74,7 @@ public:
         int                                          ipv6Index
     );
 
-    MCAPI ::RakNet::StartupResult peerStartup(
+    MCNAPI ::RakNet::StartupResult peerStartup(
         ::RakNet::RakPeerInterface*   peerIn,
         ::ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose  purpose

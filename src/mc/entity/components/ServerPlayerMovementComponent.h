@@ -35,24 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPlayerMovementComponent();
+    MCNAPI ServerPlayerMovementComponent();
 
-    MCAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
+    MCNAPI ServerPlayerMovementComponent(::ServerPlayerMovementComponent&&);
 
-    MCAPI bool addInventoryTransactionPacket(::InventoryPacketHandler packet);
+    MCNAPI bool addInventoryTransactionPacket(::InventoryPacketHandler packet);
 
-    MCAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacket&& packet);
+    MCNAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacket&& packet);
 
-    MCAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacketPayload&& payload, ::SubClientId senderSubId);
+    MCNAPI bool addPlayerAuthInputPacket(::PlayerAuthInputPacketPayload&& payload, ::SubClientId senderSubId);
 
-    MCAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
+    MCNAPI ::optional_ref<::MovementPackets> getOrCreate(::std::function<bool(::MovementPackets&)> const& fn);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ServerPlayerMovementComponent&&);
+    MCNAPI void* $ctor(::ServerPlayerMovementComponent&&);
     // NOLINTEND
 };

@@ -197,7 +197,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EntityInsideViews(
+    MCNAPI explicit EntityInsideViews(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -240,7 +240,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,

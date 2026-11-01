@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void bind(
+    MCNAPI void bind(
         ::Scripting::ModuleBindingBuilder&                       moduleBuilder,
         ::Scripting::Version const&                              scriptingVersion,
         ::ScriptModuleMinecraft::ScriptComponentTypeEnumBuilder& componentTypeEnumBuilder
     );
 
-    MCAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory> const&
+    MCNAPI ::std::shared_ptr<::ScriptModuleMinecraft::IScriptItemComponentFactory> const&
     tryGetFactory(::std::string_view componentName);
     // NOLINTEND
 };

@@ -34,9 +34,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSoundEventPacketPayload(::LevelSoundEventPacketPayload const&);
+    MCNAPI LevelSoundEventPacketPayload(::LevelSoundEventPacketPayload const&);
 
-    MCAPI LevelSoundEventPacketPayload(
+    MCNAPI LevelSoundEventPacketPayload(
         ::SoundEventIdentifier         soundEvent,
         ::Vec3 const&                  pos,
         int                            data,
@@ -51,9 +51,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelSoundEventPacketPayload const&);
+    MCNAPI void* $ctor(::LevelSoundEventPacketPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SoundEventIdentifier         soundEvent,
         ::Vec3 const&                  pos,
         int                            data,

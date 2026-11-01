@@ -92,11 +92,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void refresh();
+    MCNAPI void refresh();
 
-    MCAPI void refresh(::std::string_view id);
+    MCNAPI void refresh(::std::string_view id);
 
-    MCAPI void registerSettingsFactory(
+    MCNAPI void registerSettingsFactory(
         ::std::string_view                      key,
         ::std::function<::std::vector<::std::unique_ptr<::std::variant<
             ::Settings::BooleanComponent,
@@ -114,12 +114,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::std::string_view> $getSettingsGroups() const;
+    MCNAPI ::std::vector<::std::string_view> $getSettingsGroups() const;
 
-    MCAPI ::std::optional<::std::vector<::Settings::IRegistry::SettingId>>
+    MCNAPI ::std::optional<::std::vector<::Settings::IRegistry::SettingId>>
     $getSettingsGroup(::std::string_view settingsGroupId);
 
-    MCAPI ::std::optional<::std::reference_wrapper<::std::variant<
+    MCNAPI ::std::optional<::std::reference_wrapper<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,
         ::Settings::NumberComponent<float>,

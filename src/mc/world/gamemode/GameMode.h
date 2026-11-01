@@ -169,30 +169,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameMode(
+    MCNAPI GameMode(
         ::Player&                               player,
         ::std::unique_ptr<::IGameModeTimer>     timer,
         ::std::unique_ptr<::IGameModeMessenger> messenger
     );
 
-    MCAPI bool _attack(::Actor& entity, bool playPredictiveSound, ::Vec3 const& hitPosition);
+    MCNAPI bool _attack(::Actor& entity, bool playPredictiveSound, ::Vec3 const& hitPosition);
 
-    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+    MCNAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool _enableBlockBreakDelay() const;
+    MCNAPI bool _enableBlockBreakDelay() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
+    MCNAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);
 #endif
 
     MCAPI bool baseUseItem(::ItemStack const& item, ::HandSlot handSlot);
 
-    MCAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
+    MCNAPI bool baseUseItemAsAttack(::ItemStack const& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
-    MCAPI void
+    MCNAPI void
     continueBuildBlockAction(::Player const& player, ::HitResult const& hr, ::HandSlot handSlot, float buildDelayScale);
 
-    MCAPI float getDestroyRate(::Block const& block);
+    MCNAPI float getDestroyRate(::Block const& block);
 
     MCAPI float getMaxPickRange();
     // NOLINTEND
@@ -200,7 +200,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendPlayerInteractWithBlockAfterEvent(
+    MCNAPI static void _sendPlayerInteractWithBlockAfterEvent(
         ::ItemStack const& beforeItem,
         ::ItemStack const& afterItem,
         ::Player&          player,
@@ -214,7 +214,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player&                               player,
         ::std::unique_ptr<::IGameModeTimer>     timer,
         ::std::unique_ptr<::IGameModeMessenger> messenger
@@ -224,38 +224,38 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool
+    MCNAPI bool
     $continueDestroyBlock(::BlockPos const& pos, uchar face, ::Vec3 const& playerPos, bool& hasDestroyedBlock);
 
-    MCAPI void $stopDestroyBlock(::BlockPos const& pos);
+    MCNAPI void $stopDestroyBlock(::BlockPos const& pos);
 
-    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
+    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
-    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
+    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
     MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, float buildDelayScale);
 
-    MCAPI void $stopBuildBlock();
+    MCNAPI void $stopBuildBlock();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI float $getPickRange(::InputMode const& currentInputMode);
+    MCNAPI float $getPickRange(::InputMode const& currentInputMode);
 
-    MCAPI bool $useItem(::ItemStack& item, ::HandSlot handSlot);
+    MCNAPI bool $useItem(::ItemStack& item, ::HandSlot handSlot);
 
-    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
+    MCNAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
-    MCAPI ::InteractionResult $useItemOn(
+    MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -265,17 +265,17 @@ public:
         bool              isFirstEvent
     );
 
-    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
+    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
 
-    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
+    MCNAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
-    MCAPI void $releaseUsingItem();
+    MCNAPI void $releaseUsingItem();
 
-    MCFOLD void $setTrialMode(bool isEnabled);
+    MCNAPI void $setTrialMode(bool isEnabled);
 
-    MCFOLD bool $isInTrialMode();
+    MCNAPI bool $isInTrialMode();
 
-    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
+    MCNAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
     // NOLINTEND

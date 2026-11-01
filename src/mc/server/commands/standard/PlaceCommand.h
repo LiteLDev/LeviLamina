@@ -62,7 +62,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeJigsaw(
+    MCNAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeJigsaw(
         ::std::string const&           pool,
         ::std::string const&           target,
         schar                          maxDepth,
@@ -73,7 +73,7 @@ public:
         ::br::worldgen::LiquidSettings liquidSettings
     );
 
-    MCAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeStructure(
+    MCNAPI static ::nonstd::expected<::BoundingBox, ::std::string_view> placeStructure(
         ::std::string const&           id,
         ::BlockPos const&              pos,
         ::Dimension&                   dimension,
@@ -93,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

@@ -90,21 +90,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool arePacksDifferentFromSnapshotPacks() const;
+    MCNAPI bool arePacksDifferentFromSnapshotPacks() const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void saveResourcePacksSnapshot();
+    MCNAPI void saveResourcePacksSnapshot();
 
-    MCAPI void setContentViews(
+    MCNAPI void setContentViews(
         ::std::shared_ptr<::ContentViews> texturePackViews,
         ::std::shared_ptr<::ContentViews> behaviorPackViews
     );
 
-    MCAPI ::OreUI::WorldSettingsProvider_DEPRECATED::StartLoadingTemplateResult
+    MCNAPI ::OreUI::WorldSettingsProvider_DEPRECATED::StartLoadingTemplateResult
     startLoadingTemplate(::std::string const& worldTemplateId);
 
-    MCAPI ::OreUI::WorldSettingsProvider_DEPRECATED::TemplateLoadingState tickTemplateLoader();
+    MCNAPI ::OreUI::WorldSettingsProvider_DEPRECATED::TemplateLoadingState tickTemplateLoader();
     // NOLINTEND
 };
 

@@ -173,31 +173,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AtlasImpl();
+    MCNAPI AtlasImpl();
 
-    MCAPI void
+    MCNAPI void
     _processCommand(::GeometryAtlas::AtlasImpl::CommandArgs& args, ::GeometryAtlas::AllocateAtlasPayload&& payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemTile> $createItem(::GeometryAtlas::TileDefinition const& definition);
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::IItemTile> $createItem(::GeometryAtlas::TileDefinition const& definition);
 
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::IPaperDollTile>
     $createDoll(::GeometryAtlas::TileDefinition const& definition);
 
-    MCAPI void $trySubmitUpdates(::GeometryAtlas::IRenderContext& context);
+    MCNAPI void $trySubmitUpdates(::GeometryAtlas::IRenderContext& context);
 
-    MCAPI bool $hasAnyUpdates() const;
+    MCNAPI bool $hasAnyUpdates() const;
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& $getTileChangeConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::std::vector<uint> const&)>& $getTileChangeConnector();
     // NOLINTEND
 };
 

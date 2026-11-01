@@ -52,23 +52,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool partiallyCreateGridItems(int startIndex, int endIndex);
+    MCNAPI bool partiallyCreateGridItems(int startIndex, int endIndex);
 
-    MCAPI void reassignGridPositions();
+    MCNAPI void reassignGridPositions();
 
-    MCAPI void refreshGridItems();
+    MCNAPI void refreshGridItems();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCFOLD void $onNotifyChildAdded();
+    MCNAPI void $onNotifyChildAdded();
 
-    MCFOLD void $onNotifyChildRemoved();
+    MCNAPI void $onNotifyChildRemoved();
     // NOLINTEND
 
 public:

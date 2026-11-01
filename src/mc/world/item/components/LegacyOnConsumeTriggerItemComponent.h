@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnConsumeTriggerItemComponent(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
+    MCNAPI explicit LegacyOnConsumeTriggerItemComponent(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::OnConsumeTriggerItemComponent&& data);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

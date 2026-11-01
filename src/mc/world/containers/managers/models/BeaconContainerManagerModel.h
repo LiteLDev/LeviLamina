@@ -42,30 +42,30 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void confirmTransaction(bool isPaymentConfirmed);
+    MCNAPI void confirmTransaction(bool isPaymentConfirmed);
 
-    MCAPI ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
+    MCNAPI ::std::string getEffectHoverName(int iSlot, bool bSecondaryEffect);
 
-    MCAPI bool isPaymentAvailable() const;
+    MCNAPI bool isPaymentAvailable() const;
 
-    MCAPI bool isSelected(int iSlot, bool isSecondary);
+    MCNAPI bool isSelected(int iSlot, bool isSecondary);
 
-    MCAPI bool isTierAvailable(int iTier);
+    MCNAPI bool isTierAvailable(int iTier);
 
-    MCAPI void selectEffect(int iSlot, bool bSecondaryEffect);
+    MCNAPI void selectEffect(int iSlot, bool bSecondaryEffect);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -73,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

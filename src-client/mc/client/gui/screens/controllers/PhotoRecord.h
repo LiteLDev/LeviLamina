@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const getName() const;
+    MCNAPI ::std::string const getName() const;
     // NOLINTEND
 };

@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PaperDollHandle(
+    MCNAPI PaperDollHandle(
         ::brstd::move_only_function<
             void(::brstd::function_ref<void(::PaperDollRenderer&) const, void(::PaperDollRenderer&)>) const>
                                          visitorImpl,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::brstd::move_only_function<
             void(::brstd::function_ref<void(::PaperDollRenderer&) const, void(::PaperDollRenderer&)>) const>
                                          visitorImpl,

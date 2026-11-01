@@ -47,32 +47,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeDefinitionChunkGenData(::BiomeDefinitionChunkGenData&&);
+    MCNAPI BiomeDefinitionChunkGenData(::BiomeDefinitionChunkGenData&&);
 
-    MCAPI ::BiomeDefinitionChunkGenData& operator=(::BiomeDefinitionChunkGenData&&);
+    MCNAPI ::BiomeDefinitionChunkGenData& operator=(::BiomeDefinitionChunkGenData&&);
 
-    MCAPI bool operator==(::BiomeDefinitionChunkGenData const& other) const;
+    MCNAPI bool operator==(::BiomeDefinitionChunkGenData const& other) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 
-    MCAPI ~BiomeDefinitionChunkGenData();
+    MCNAPI ~BiomeDefinitionChunkGenData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeDefinitionChunkGenData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeDefinitionChunkGenData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeDefinitionChunkGenData&&);
+    MCNAPI void* $ctor(::BiomeDefinitionChunkGenData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

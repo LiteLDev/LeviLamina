@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<int> _tryGetFillLevel() const;
+    MCNAPI ::std::optional<int> _tryGetFillLevel() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::ScriptModuleMinecraft::ScriptFluidType
+    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronFluidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
 
-    MCAPI static ::std::optional<
+    MCNAPI static ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockFluidContainerComponent>>
     tryCreate(
         ::BlockSource&                        region,
@@ -49,7 +49,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

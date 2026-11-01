@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_50::DimensionDefinition::Components&
+    MCNAPI ::SharedTypes::v1_26_50::DimensionDefinition::Components&
     operator=(::SharedTypes::v1_26_50::DimensionDefinition::Components const&);
 
-    MCAPI ~Components();
+    MCNAPI ~Components();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

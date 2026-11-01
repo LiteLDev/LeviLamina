@@ -10,7 +10,7 @@ class DBChunkStorageKey;
 namespace ChunkKeyUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::DBChunkStorageKey> tryGetChunkKeyFromString(::std::string_view key);
+MCNAPI ::std::optional<::DBChunkStorageKey> tryGetChunkKeyFromString(::std::string_view key);
 // NOLINTEND
 
 } // namespace ChunkKeyUtil

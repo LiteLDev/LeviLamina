@@ -43,7 +43,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(
+        MCNAPI bool operator==(
             ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent::MaterialInstance const& instance
         ) const;
         // NOLINTEND
@@ -61,7 +61,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+        MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
         // NOLINTEND
@@ -97,44 +97,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::MaterialInstancesComponent const&);
 
-    MCAPI ~MaterialInstancesComponent();
+    MCNAPI ~MaterialInstancesComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& AlphaMaskedTintId();
+    MCNAPI static ::std::string_view const& AlphaMaskedTintId();
 
-    MCAPI static ::std::string_view const& AmbientOcclusionId();
+    MCNAPI static ::std::string_view const& AmbientOcclusionId();
 
-    MCAPI static ::std::string_view const& DitheringId();
+    MCNAPI static ::std::string_view const& DitheringId();
 
-    MCAPI static ::std::string_view const& FaceDimmingId();
+    MCNAPI static ::std::string_view const& FaceDimmingId();
 
-    MCAPI static ::std::string_view const& IsotropicId();
+    MCNAPI static ::std::string_view const& IsotropicId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& RenderMethodId();
+    MCNAPI static ::std::string_view const& RenderMethodId();
 
-    MCAPI static ::std::string_view const& TextureId();
+    MCNAPI static ::std::string_view const& TextureId();
 
-    MCAPI static ::std::string_view const& TintMethodId();
+    MCNAPI static ::std::string_view const& TintMethodId();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

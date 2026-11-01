@@ -35,12 +35,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
+    MCNAPI ::HandlerResult $handleEvent(::PlayerDisconnectEvent const& playerDisconnectEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::MutablePlayerGameplayEvent<::CoordinatorResult>& event);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::PlayerGameplayEvent<::CoordinatorResult> const& event);
 
 

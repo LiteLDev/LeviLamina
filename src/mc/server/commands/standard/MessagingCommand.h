@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI bool checkChatPermissions(::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(
+    MCNAPI static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(
         ::CommandOriginIdentity const&                     identity,
         ::Level const&                                     level,
         ::std::vector<::Safety::TextFilteringEvent> const& events

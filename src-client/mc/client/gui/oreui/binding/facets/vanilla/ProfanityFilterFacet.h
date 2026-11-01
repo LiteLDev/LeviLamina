@@ -35,27 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProfanityFilterFacet(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
+    MCNAPI explicit ProfanityFilterFacet(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
 
-    MCAPI bool isProfanityInString(::std::string const& stringToCheck) const;
+    MCNAPI bool isProfanityInString(::std::string const& stringToCheck) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> profanityContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

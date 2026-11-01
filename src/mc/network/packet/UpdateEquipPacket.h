@@ -64,54 +64,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateEquipPacket();
+    MCNAPI UpdateEquipPacket();
 
-    MCAPI explicit UpdateEquipPacket(::UpdateEquipPacketPayload payload);
+    MCNAPI explicit UpdateEquipPacket(::UpdateEquipPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::UpdateEquipPacketPayload payload);
+    MCNAPI void* $ctor(::UpdateEquipPacketPayload payload);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::MinecraftPacketIds $getId() const;
+    MCNAPI ::MinecraftPacketIds $getId() const;
 
-    MCAPI ::std::string_view $getName() const;
+    MCNAPI ::std::string_view $getName() const;
 
-    MCFOLD ::SerializationMode $getSerializationMode() const;
+    MCNAPI ::SerializationMode $getSerializationMode() const;
 
-    MCFOLD void $setSerializationMode(::SerializationMode mode);
+    MCNAPI void $setSerializationMode(::SerializationMode mode);
 
-    MCAPI void $writeWithSerializationMode(
+    MCNAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCNAPI void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    MCAPI void $write(::BinaryStream& stream) const;
+    MCNAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    MCFOLD bool $disallowBatching() const;
+    MCNAPI bool $disallowBatching() const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD uint64 $getMaxSize() const;
+    MCNAPI uint64 $getMaxSize() const;
 
-    MCAPI ::std::string $toString() const;
+    MCNAPI ::std::string $toString() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

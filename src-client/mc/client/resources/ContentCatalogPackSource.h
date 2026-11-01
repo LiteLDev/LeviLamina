@@ -52,18 +52,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<void> _load();
+    MCNAPI ::Bedrock::Threading::Async<void> _load();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEnabled(bool enabled);
+    MCNAPI void $setEnabled(bool enabled);
 
-    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
-    MCAPI ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCAPI void $refreshCatalogItems(::IPackManifestFactory&);
+    MCNAPI void $refreshCatalogItems(::IPackManifestFactory&);
     // NOLINTEND
 };

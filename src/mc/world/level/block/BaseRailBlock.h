@@ -50,23 +50,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Rail(::BlockSource& region, ::BlockPos const& pos);
+        MCNAPI Rail(::BlockSource& region, ::BlockPos const& pos);
 
-        MCAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
+        MCNAPI ::std::shared_ptr<::BaseRailBlock::Rail> getRail(::BlockPos const& p);
 
-        MCAPI bool hasNeighborRail(::BlockPos const& pos);
+        MCNAPI bool hasNeighborRail(::BlockPos const& pos);
 
-        MCAPI void place(int signalStrength, bool first);
+        MCNAPI void place(int signalStrength, bool first);
 
-        MCAPI void removeSoftConnections();
+        MCNAPI void removeSoftConnections();
 
-        MCAPI void updateConnections(int direction);
+        MCNAPI void updateConnections(int direction);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
+        MCNAPI void* $ctor(::BlockSource& region, ::BlockPos const& pos);
         // NOLINTEND
     };
 
@@ -122,72 +122,72 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseRailBlock(::std::string const& nameId, int id, bool usesDataBit);
+    MCNAPI BaseRailBlock(::std::string const& nameId, int id, bool usesDataBit);
 
-    MCFOLD void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCNAPI void _onRedstoneUpdateBase(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCFOLD void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
+    MCNAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _createCircuitComponent(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool isCorner(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool isFacingWestEast(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isRail(::Block const& block);
+    MCNAPI static bool isRail(::Block const& block);
 
-    MCAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool isRail(::IConstBlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static bool isSlope(::Block const& block);
+    MCNAPI static bool isSlope(::Block const& block);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool usesDataBit);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, bool usesDataBit);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $setupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $requiresLegacyRedstoneSetup() const;
+    MCNAPI bool $requiresLegacyRedstoneSetup() const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCFOLD bool $isRailBlock() const;
+    MCNAPI bool $isRailBlock() const;
 
-    MCFOLD bool $canSpawnOn(::Actor*) const;
+    MCNAPI bool $canSpawnOn(::Actor*) const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
+    MCNAPI void $onGraphicsModeChanged(::BlockGraphicsModeChangeContext const& context);
 
-    MCAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void $tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCNAPI void $_onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
 
     // NOLINTEND

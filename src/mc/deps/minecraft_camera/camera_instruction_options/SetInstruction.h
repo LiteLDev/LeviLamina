@@ -93,7 +93,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::CameraInstructionOptions::SetInstruction const& other) const;
+    MCNAPI bool operator==(::CameraInstructionOptions::SetInstruction const& other) const;
     // NOLINTEND
 };
 

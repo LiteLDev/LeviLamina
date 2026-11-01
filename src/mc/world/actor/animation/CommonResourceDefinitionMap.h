@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
+    MCNAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
 #ifdef LL_PLAT_C
-    MCAPI uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
+    MCNAPI uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
 
-    MCAPI void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
+    MCNAPI void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
 #endif
 
-    MCAPI void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
+    MCNAPI void mergeActorAnimateScriptArray(::std::vector<::NamedMolangScript> const& actorAnimateScriptArray);
 
-    MCAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
+    MCNAPI void mergeAnimation(::HashedString const& name, ::ActorSkeletalAnimationPtr animationPtr);
 
-    MCAPI void
+    MCNAPI void
     mergeAnimationController(::HashedString const& name, ::ActorAnimationControllerPtr animationControllerPtr);
 
 #ifdef LL_PLAT_C
-    MCAPI void mergePublicVariable(::HashedString const& variableName);
+    MCNAPI void mergePublicVariable(::HashedString const& variableName);
 
-    MCAPI void removeActorAnimateScript(::HashedString const& animateScriptName);
+    MCNAPI void removeActorAnimateScript(::HashedString const& animateScriptName);
 
-    MCAPI ~CommonResourceDefinitionMap();
+    MCNAPI ~CommonResourceDefinitionMap();
 #endif
     // NOLINTEND
 
@@ -56,7 +56,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

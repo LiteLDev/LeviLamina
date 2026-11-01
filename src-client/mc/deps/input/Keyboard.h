@@ -118,34 +118,34 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void feedText(::std::string const& inputUtf8, uchar textId);
+    MCNAPI static void feedText(::std::string const& inputUtf8, uchar textId);
 
-    MCAPI static void reset();
+    MCNAPI static void reset();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& _gameControllerId();
+    MCNAPI static int& _gameControllerId();
 
-    MCAPI static int& _index();
+    MCNAPI static int& _index();
 
-    MCAPI static ::std::vector<::TextInput>& _inputText();
+    MCNAPI static ::std::vector<::TextInput>& _inputText();
 
-    MCAPI static ::std::vector<::KeyboardAction>& _inputs();
+    MCNAPI static ::std::vector<::KeyboardAction>& _inputs();
 
-    MCAPI static ::std::array<::std::string_view, 256>& _keyNames();
+    MCNAPI static ::std::array<::std::string_view, 256>& _keyNames();
 
-    MCAPI static ::std::vector<::TextInput>& _nativeTextInputs();
+    MCNAPI static ::std::vector<::TextInput>& _nativeTextInputs();
 
-    MCAPI static int& _nativeTextInputsIndex();
+    MCNAPI static int& _nativeTextInputsIndex();
 
-    MCAPI static ::std::array<::std::string_view, 256>& _shortKeyNames();
+    MCNAPI static ::std::array<::std::string_view, 256>& _shortKeyNames();
 
-    MCAPI static ::std::add_lvalue_reference_t<int[]> _states();
+    MCNAPI static ::std::add_lvalue_reference_t<int[]> _states();
 
-    MCAPI static int& _textIndex();
+    MCNAPI static int& _textIndex();
 
-    MCAPI static ::std::array<::std::string_view, 256>& _ttsKeyNames();
+    MCNAPI static ::std::array<::std::string_view, 256>& _ttsKeyNames();
     // NOLINTEND
 };

@@ -37,15 +37,15 @@ namespace cereal { struct ReflectionCtx; }
 namespace ItemStackRequestCereal {
 // functions
 // NOLINTBEGIN
-MCAPI void bindActionData(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindActionData(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindItemDescriptorData(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindItemDescriptorData(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindRequestData(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindRequestData(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindTextProcessingEventOrigin(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindTextProcessingEventOrigin(::cereal::ReflectionCtx& ctx);
 
-MCAPI ::std::unique_ptr<::ItemStackRequestData> requestFromSerializedData(::ItemStackRequestCereal::RequestData data);
+MCNAPI ::std::unique_ptr<::ItemStackRequestData> requestFromSerializedData(::ItemStackRequestCereal::RequestData data);
 
 MCAPI ::std::variant<
     ::ItemStackRequestCereal::TakeActionData,
@@ -69,7 +69,7 @@ MCAPI ::std::variant<
     ::ItemStackRequestCereal::CraftResultsActionData>
 toActionData(::ItemStackRequestAction const& action);
 
-MCAPI ::ItemDescriptor toItemDescriptor(
+MCNAPI ::ItemDescriptor toItemDescriptor(
     ::std::variant<
         ::ItemStackRequestCereal::EmptyItemDescriptorData,
         ::ItemStackRequestCereal::ItemNameDescriptorData,
@@ -77,14 +77,14 @@ MCAPI ::ItemDescriptor toItemDescriptor(
         ::ItemStackRequestCereal::ItemTagDescriptorData> const& data
 );
 
-MCAPI ::std::variant<
+MCNAPI ::std::variant<
     ::ItemStackRequestCereal::EmptyItemDescriptorData,
     ::ItemStackRequestCereal::ItemNameDescriptorData,
     ::ItemStackRequestCereal::MolangItemDescriptorData,
     ::ItemStackRequestCereal::ItemTagDescriptorData>
 toItemDescriptorData(::ItemDescriptor const& descriptor);
 
-MCAPI ::std::unique_ptr<::ItemStackRequestAction> toItemStackRequestAction(
+MCNAPI ::std::unique_ptr<::ItemStackRequestAction> toItemStackRequestAction(
     ::std::variant<
         ::ItemStackRequestCereal::TakeActionData,
         ::ItemStackRequestCereal::PlaceActionData,
@@ -107,7 +107,7 @@ MCAPI ::std::unique_ptr<::ItemStackRequestAction> toItemStackRequestAction(
         ::ItemStackRequestCereal::CraftResultsActionData> const& data
 );
 
-MCAPI ::ItemStackRequestCereal::RequestData toRequestData(::ItemStackRequestData const& request);
+MCNAPI ::ItemStackRequestCereal::RequestData toRequestData(::ItemStackRequestData const& request);
 // NOLINTEND
 
 } // namespace ItemStackRequestCereal

@@ -38,38 +38,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EconomyTradeableComponentDefinition(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&);
+    MCNAPI EconomyTradeableComponentDefinition(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition&
     operator=(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&) const;
 
-    MCAPI ~EconomyTradeableComponentDefinition();
+    MCNAPI ~EconomyTradeableComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

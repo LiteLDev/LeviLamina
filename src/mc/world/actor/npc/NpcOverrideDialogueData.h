@@ -53,7 +53,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit NpcOverrideDialogueData(::NPCDialogueData&& overrideData);
+    MCNAPI explicit NpcOverrideDialogueData(::NPCDialogueData&& overrideData);
 #endif
     // NOLINTEND
 
@@ -61,7 +61,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::NPCDialogueData&& overrideData);
+    MCNAPI void* $ctor(::NPCDialogueData&& overrideData);
 #endif
     // NOLINTEND
 
@@ -69,23 +69,23 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::std::string const& $getDialogueText() const;
+    MCNAPI ::std::string const& $getDialogueText() const;
 
-    MCFOLD ::std::string const& $getSceneName() const;
+    MCNAPI ::std::string const& $getSceneName() const;
 
-    MCFOLD ::std::string const& $getNameText() const;
+    MCNAPI ::std::string const& $getNameText() const;
 
-    MCFOLD ::npc::ActionContainer* $getActionsContainer();
+    MCNAPI ::npc::ActionContainer* $getActionsContainer();
 
-    MCFOLD ::npc::ActionContainer const* $getActionsContainer() const;
+    MCNAPI ::npc::ActionContainer const* $getActionsContainer() const;
 
-    MCFOLD bool $isRemoteFire();
+    MCNAPI bool $isRemoteFire();
 
-    MCFOLD ::ActorUniqueID $getActorUniqueID();
+    MCNAPI ::ActorUniqueID $getActorUniqueID();
 
-    MCFOLD ::Actor* $getActor();
+    MCNAPI ::Actor* $getActor();
 
-    MCFOLD ::Actor const* $getActor() const;
+    MCNAPI ::Actor const* $getActor() const;
 #endif
 
 
@@ -94,6 +94,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

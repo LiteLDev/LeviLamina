@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _receiveTile(
+    MCNAPI void _receiveTile(
         ::GeometryAtlas::TileDefinition const&                definition,
         ::std::shared_ptr<::GeometryAtlas::IAtlasTile> const& tile,
         ::Gameface::ResourceResponse&                         response
@@ -67,17 +67,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
 
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void $onViewCreate(::IClientInstance&);
+    MCNAPI void $onViewCreate(::IClientInstance&);
 
-    MCAPI void $onAppPreSuspend();
+    MCNAPI void $onAppPreSuspend();
     // NOLINTEND
 };
 

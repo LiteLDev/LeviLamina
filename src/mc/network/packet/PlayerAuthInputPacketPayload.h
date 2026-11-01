@@ -128,12 +128,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PlayerAuthInputPacketPayload& operator=(::PlayerAuthInputPacketPayload&& rhs);
+    MCNAPI ::PlayerAuthInputPacketPayload& operator=(::PlayerAuthInputPacketPayload&& rhs);
 
-    MCAPI ::PlayerActionComponent readIntoComponent() const;
+    MCNAPI ::PlayerActionComponent readIntoComponent() const;
 
 #ifdef LL_PLAT_C
-    MCAPI void setFromComponent(::PlayerActionComponent& input);
+    MCNAPI void setFromComponent(::PlayerActionComponent& input);
 #endif
 
     MCAPI ~PlayerAuthInputPacketPayload();

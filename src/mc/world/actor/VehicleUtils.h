@@ -16,28 +16,28 @@ namespace VehicleUtils { struct VehicleDirections; }
 namespace VehicleUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool arePassengersOfSameActor(::Actor const& maybePassenger1, ::Actor const& maybePassenger2);
+MCNAPI bool arePassengersOfSameActor(::Actor const& maybePassenger1, ::Actor const& maybePassenger2);
 
-MCAPI ::std::optional<float> calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
+MCNAPI ::std::optional<float> calculateBlockFloorHeight(::IConstBlockSource const& region, ::BlockPos const& blockPos);
 
-MCAPI auto getActorExitPatternStrategy(::BaseGameVersion const& version) -> ::std::optional<::Vec3> (*)(
+MCNAPI auto getActorExitPatternStrategy(::BaseGameVersion const& version) -> ::std::optional<::Vec3> (*)(
     ::VehicleUtils::VehicleDirections const&,
     ::std::function<bool(::Vec3 const&, ::Vec3 const&)>
 );
 
-MCAPI bool ignoredExitCollisionBlock(::Block const& block);
+MCNAPI bool ignoredExitCollisionBlock(::Block const& block);
 
-MCAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(
+MCNAPI ::std::optional<::Vec3> testPosFollowingEjectPattern(
     ::VehicleUtils::VehicleDirections const&            vehicleDirections,
     ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
 );
 
-MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
+MCNAPI ::std::optional<::Vec3> testPosFollowingLegacyActivatorRailPattern(
     ::VehicleUtils::VehicleDirections const&            vehicleDirections,
     ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
 );
 
-MCAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
+MCNAPI ::std::optional<::Vec3> testPosFollowingLegacyActorPattern(
     ::VehicleUtils::VehicleDirections const&,
     ::std::function<bool(::Vec3 const&, ::Vec3 const&)> callback
 );

@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GammaCalibrationScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit GammaCalibrationScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
-    MCAPI void _registerControllerCallbacks();
+    MCNAPI void _registerControllerCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:

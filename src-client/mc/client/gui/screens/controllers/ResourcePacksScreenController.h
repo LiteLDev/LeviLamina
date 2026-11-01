@@ -104,7 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksScreenController(
+    MCNAPI ResourcePacksScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::IContentManager&                       contentManager,
         ::ContentType                            type,
@@ -118,7 +118,7 @@ public:
         ::std::string                            initialPackId
     );
 
-    MCAPI void _confirmationRestrictedPacksOnWorldDialog(
+    MCNAPI void _confirmationRestrictedPacksOnWorldDialog(
         ::PackContentItem&                               packItem,
         ::ContentView&                                   contentView,
         int                                              collectionIndex,
@@ -126,15 +126,15 @@ public:
         ::ResourcePacksScreenController::PackRestriction restriction
     );
 
-    MCAPI ::ContentView* _getContentView(::UIPropertyBag* bag) const;
+    MCNAPI ::ContentView* _getContentView(::UIPropertyBag* bag) const;
 
-    MCAPI ::ResourceLocation _getInvalidResource(int slot) const;
+    MCNAPI ::ResourceLocation _getInvalidResource(int slot) const;
 
-    MCAPI ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
+    MCNAPI ::ui::ViewRequest _handleAvailablePackClicked(::UIPropertyBag* bag);
 
-    MCAPI ::ui::ViewRequest _handleSortPackClicked(::UIPropertyBag* bag, int dir);
+    MCNAPI ::ui::ViewRequest _handleSortPackClicked(::UIPropertyBag* bag, int dir);
 
-    MCAPI bool _launchPlatformLockedDialogIfNeeded(
+    MCNAPI bool _launchPlatformLockedDialogIfNeeded(
         ::PackContentItem&      packItem,
         ::ContentView&          contentView,
         int                     collectionIndex,
@@ -144,9 +144,9 @@ public:
         ::std::function<void()> moveCallback
     );
 
-    MCAPI void _movePackAfterDataPackWarningMessage(::MoveResourcePackResult result);
+    MCNAPI void _movePackAfterDataPackWarningMessage(::MoveResourcePackResult result);
 
-    MCAPI void _moveResource(
+    MCNAPI void _moveResource(
         ::std::shared_ptr<::PackContentItem> const& item,
         ::ContentView*                              contentView,
         int                                         collectionIndex,
@@ -155,13 +155,13 @@ public:
         bool forceMove
     );
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _removeSelectedPacks(int beginAtIndex);
+    MCNAPI void _removeSelectedPacks(int beginAtIndex);
 
-    MCAPI void _showMissingDependencyMessage(::ContentView* contentView, int index, ::PackListType fromPacks);
+    MCNAPI void _showMissingDependencyMessage(::ContentView* contentView, int index, ::PackListType fromPacks);
 
-    MCAPI void _tryMoveResource(
+    MCNAPI void _tryMoveResource(
         ::std::shared_ptr<::PackContentItem> const& packItem,
         ::ContentView*                              contentView,
         int                                         collectionIndex,
@@ -169,19 +169,19 @@ public:
         bool                                        forceMove
     );
 
-    MCAPI void activatePack(::std::string const packId);
+    MCNAPI void activatePack(::std::string const packId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasRestrictedContent(::ContentView& view);
+    MCNAPI static bool _hasRestrictedContent(::ContentView& view);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::IContentManager&                       contentManager,
         ::ContentType                            type,
@@ -199,8 +199,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

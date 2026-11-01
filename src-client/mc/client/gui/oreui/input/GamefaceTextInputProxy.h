@@ -58,25 +58,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $imeStartComposition();
+    MCNAPI void $imeStartComposition();
 
-    MCAPI void $imeUpdateCompositionText(::std::string const& compositionString);
+    MCNAPI void $imeUpdateCompositionText(::std::string const& compositionString);
 
-    MCAPI void $imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
+    MCNAPI void $imeReplaceCompositionTextRange(::std::string const& replacement, int from, int to);
 
-    MCAPI void $imeConfirmComposition(::std::string const& compositionString);
+    MCNAPI void $imeConfirmComposition(::std::string const& compositionString);
 
-    MCAPI void $imeConfirmComposition();
+    MCNAPI void $imeConfirmComposition();
 
-    MCAPI void $imeEndComposition();
+    MCNAPI void $imeEndComposition();
 
-    MCAPI void $setText(::std::string const& text, ::TextBoxSelection selection);
+    MCNAPI void $setText(::std::string const& text, ::TextBoxSelection selection);
 
-    MCAPI void $setSelection(::TextBoxSelection selection);
+    MCNAPI void $setSelection(::TextBoxSelection selection);
 
-    MCAPI ::std::string $getText() const;
+    MCNAPI ::std::string $getText() const;
 
-    MCAPI ::TextBoxSelection $getSelection() const;
+    MCNAPI ::TextBoxSelection $getSelection() const;
     // NOLINTEND
 
 public:

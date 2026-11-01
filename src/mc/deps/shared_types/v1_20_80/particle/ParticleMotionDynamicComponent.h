@@ -41,25 +41,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
+    MCNAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
 
-    MCAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
+    MCNAPI ParticleMotionDynamicComponent(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleMotionDynamicComponent const&);
 #endif
     // NOLINTEND
 
@@ -67,14 +67,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

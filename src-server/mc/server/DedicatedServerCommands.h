@@ -39,6 +39,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string>& mSaveAllFileList();
+    MCNAPI static ::std::vector<::std::string>& mSaveAllFileList();
     // NOLINTEND
 };

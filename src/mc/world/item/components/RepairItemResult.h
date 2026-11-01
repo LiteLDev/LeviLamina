@@ -16,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~RepairItemResult();
+    MCNAPI ~RepairItemResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

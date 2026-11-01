@@ -42,29 +42,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
+    MCNAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
-    MCAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlaceBase(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $falling() const;
+    MCNAPI bool $falling() const;
 
-    MCFOLD void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
 

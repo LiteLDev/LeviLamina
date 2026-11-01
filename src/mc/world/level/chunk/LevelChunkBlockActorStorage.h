@@ -64,23 +64,23 @@ public:
         bool>
     emplace(::ChunkBlockPos pos, ::std::shared_ptr<::BlockActor> blockActor);
 
-    MCAPI ::std::_List_const_iterator<::std::_List_val<
+    MCNAPI ::std::_List_const_iterator<::std::_List_val<
         ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>>
     erase(
         ::std::_List_const_iterator<::std::_List_val<
             ::std::_List_simple_types<::std::pair<::ChunkBlockPos const, ::std::shared_ptr<::BlockActor>>>>> ite
     );
 
-    MCAPI uint64 erase(::ChunkBlockPos const& pos);
+    MCNAPI uint64 erase(::ChunkBlockPos const& pos);
 
-    MCAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
+    MCNAPI ::LevelChunkBlockActorStorage& operator=(::LevelChunkBlockActorStorage&& other);
 
-    MCAPI ~LevelChunkBlockActorStorage();
+    MCNAPI ~LevelChunkBlockActorStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -47,29 +47,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);
+    MCNAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);
 
-    MCAPI ::Json::Value& deref() const;
+    MCNAPI ::Json::Value& deref() const;
 
-    MCAPI void increment();
+    MCNAPI void increment();
 
-    MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
+    MCNAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
 
-    MCAPI char const* memberName() const;
+    MCNAPI char const* memberName() const;
 
-    MCAPI ~ValueIteratorBase();
+    MCNAPI ~ValueIteratorBase();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Json::ValueIteratorBase const& other);
+    MCNAPI void* $ctor(::Json::ValueIteratorBase const& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

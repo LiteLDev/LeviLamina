@@ -20,6 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void transformAABBs(::BlockShapeComponentData& data, ::Matrix const& transform);
+    MCNAPI static void transformAABBs(::BlockShapeComponentData& data, ::Matrix const& transform);
     // NOLINTEND
 };

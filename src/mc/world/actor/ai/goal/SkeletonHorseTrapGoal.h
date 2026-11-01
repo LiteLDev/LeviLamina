@@ -40,13 +40,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $appendDebugInfo(::std::string& debugInfo) const;
+    MCNAPI void $appendDebugInfo(::std::string& debugInfo) const;
 
 
     // NOLINTEND

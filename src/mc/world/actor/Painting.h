@@ -53,21 +53,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Painting(
+    MCNAPI Painting(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void clientInitialize(int dir, ::std::string const& motifName);
+    MCNAPI void clientInitialize(int dir, ::std::string const& motifName);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -77,23 +77,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
+    MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
-    MCAPI int $getWidth() const;
+    MCNAPI int $getWidth() const;
 
-    MCAPI int $getHeight() const;
+    MCNAPI int $getHeight() const;
 
-    MCAPI void $dropItem();
+    MCNAPI void $dropItem();
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCNAPI bool $placeHangingEntity(::BlockSource& region, int direction);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND
@@ -101,6 +101,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

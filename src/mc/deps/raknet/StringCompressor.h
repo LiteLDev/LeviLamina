@@ -20,27 +20,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringCompressor();
+    MCNAPI StringCompressor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void RemoveReference();
+    MCNAPI static void RemoveReference();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RakNet::StringCompressor*& instance();
+    MCNAPI static ::RakNet::StringCompressor*& instance();
 
-    MCAPI static int& referenceCount();
+    MCNAPI static int& referenceCount();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

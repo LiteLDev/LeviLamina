@@ -28,13 +28,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Node();
+        MCNAPI ~Node();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -48,6 +48,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag);
+    MCNAPI static bool _update(::CompoundTagUpdater::Node const& node, ::CompoundTag& tag);
     // NOLINTEND
 };

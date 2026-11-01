@@ -27,9 +27,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $drawRectangle(::ScreenContext& screenContext, ::UIControl& owner, float percentage, ::mce::Color const& color);
 
-    MCAPI int $getHotBarIndex(::UIControl& owner) const;
+    MCNAPI int $getHotBarIndex(::UIControl& owner) const;
     // NOLINTEND
 };

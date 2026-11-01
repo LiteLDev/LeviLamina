@@ -17,10 +17,10 @@ class Random;
 namespace FlowerHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::Block const&
+MCNAPI ::Block const&
 getRandomFlowerBlock(::BlockSource& region, ::BlockPos const& pos, ::PerlinSimplexNoise const& biomeInfoNoise);
 
-MCAPI ::Block const& getRandomFlowerBlock(
+MCNAPI ::Block const& getRandomFlowerBlock(
     ::FlowerPlacementType       type,
     ::BlockPos const&           pos,
     ::Random&                   random,

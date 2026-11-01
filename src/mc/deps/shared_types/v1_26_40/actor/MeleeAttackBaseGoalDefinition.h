@@ -16,7 +16,7 @@ struct MeleeAttackBaseGoalDefinition : public ::SharedTypes::v1_21_120::MeleeAtt
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -23,7 +23,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void appendMetadataKey(::Util::XXHash& hash) const;
 #endif
     // NOLINTEND
 };

@@ -28,17 +28,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::EnderChestBlockActor> createEnderChestBlockEntity(::BlockPos const& pos);
+    MCNAPI static ::std::unique_ptr<::EnderChestBlockActor> createEnderChestBlockEntity(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $openBy(::Player& p);
+    MCNAPI void $openBy(::Player& p);
 
-    MCFOLD bool $canPushInItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPushInItem(int, int, ::ItemStack const&) const;
 
-    MCFOLD bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
 
     // NOLINTEND

@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelStringDataProvider(
+    MCNAPI LevelStringDataProvider(
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback,
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
@@ -60,7 +60,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback,
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
@@ -71,13 +71,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI ::std::string $getValue() const;
+    MCNAPI ::std::string $getValue() const;
 
-    MCAPI void $setValue(::std::string_view value);
+    MCNAPI void $setValue(::std::string_view value);
 
-    MCAPI void $commitValue();
+    MCNAPI void $commitValue();
     // NOLINTEND
 };
 

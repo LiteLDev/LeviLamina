@@ -51,21 +51,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Modifier(::br::worldgen::processors::BlockEntity::AppendLoot match);
+    MCNAPI explicit Modifier(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::BlockEntity::AppendLoot match);
+    MCNAPI void* $ctor(::br::worldgen::processors::BlockEntity::AppendLoot match);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $apply(::IRandom& random, ::CompoundTag const* existingTag) const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

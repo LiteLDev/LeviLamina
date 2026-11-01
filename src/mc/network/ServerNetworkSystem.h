@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerNetworkSystem(
+    MCNAPI ServerNetworkSystem(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                                networkToggles,
@@ -69,25 +69,25 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
+    MCNAPI ::std::shared_ptr<::SignalingServiceSignInJob> createSignalingServiceSigninJobIfNeeded(
         ::std::shared_ptr<::SignalingService>                                        signalingService,
         ::Bedrock::Threading::Async<::std::optional<::PlayerMessaging::NetworkID>>&& playerMessagingId
     );
 #endif
 
-    MCAPI ::NetworkIdentifier getLocalNetworkId() const;
+    MCNAPI ::NetworkIdentifier getLocalNetworkId() const;
 
-    MCAPI bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
+    MCNAPI bool host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
 #ifdef LL_PLAT_S
-    MCAPI void reloadPacketLimitConfig(::PacketGroupDefinition::PacketGroupBuilder&& packetGroupBuilder);
+    MCNAPI void reloadPacketLimitConfig(::PacketGroupDefinition::PacketGroupBuilder&& packetGroupBuilder);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scheduler&                                                 receiveThread,
         ::std::vector<::std::string> const&                          overrideBroadcastAddresses,
         ::NetworkSystemToggles const&                                networkToggles,

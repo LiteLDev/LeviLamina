@@ -33,40 +33,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerActionComponent(::PlayerActionComponent&&);
+    MCNAPI PlayerActionComponent(::PlayerActionComponent&&);
 
 #ifdef LL_PLAT_C
-    MCAPI void addAbortDestroyBlock(::BlockPos const& pos, int data);
+    MCNAPI void addAbortDestroyBlock(::BlockPos const& pos, int data);
 
     MCAPI void addContinueDestroyBlock(::BlockPos const& pos, int facing);
 
     MCAPI void addCrackBlock(::BlockPos const& pos, int facing);
 
-    MCAPI void addItemStackRequest(::std::unique_ptr<::ItemStackRequestData> request);
+    MCNAPI void addItemStackRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
-    MCAPI void addPredictDestroyBlock(::BlockPos const& pos, int facing);
+    MCNAPI void addPredictDestroyBlock(::BlockPos const& pos, int facing);
 
     MCAPI void addStartDestroyBlock(::BlockPos const& pos, int facing);
 
     MCAPI void addStopDestroyBlock();
 
-    MCAPI void clear();
+    MCNAPI void clear();
 #endif
 
-    MCAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
+    MCNAPI ::PlayerActionComponent& operator=(::PlayerActionComponent&&);
 
-    MCAPI ~PlayerActionComponent();
+    MCNAPI ~PlayerActionComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerActionComponent&&);
+    MCNAPI void* $ctor(::PlayerActionComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

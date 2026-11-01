@@ -34,11 +34,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isBlockSource() const;
+    MCNAPI bool $isBlockSource() const;
 
-    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 

@@ -148,12 +148,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertiesSettings();
+    MCNAPI PropertiesSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

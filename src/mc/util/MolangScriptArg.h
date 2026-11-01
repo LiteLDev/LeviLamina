@@ -91,27 +91,27 @@ public:
     // NOLINTBEGIN
     MCAPI MolangScriptArg(::MolangScriptArg const& other);
 
-    MCAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
+    MCNAPI ::MolangScriptArg& operator=(::MolangScriptArg&& other);
 
-    MCAPI void reportGetFailure() const;
+    MCNAPI void reportGetFailure() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_break();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_break();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
 
     MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_floatNeg1();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_floatNeg1();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_molangActorIdEmptyArrayPtr();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_structUV0();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_structUV0();
     // NOLINTEND
 
 public:

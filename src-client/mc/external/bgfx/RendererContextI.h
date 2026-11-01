@@ -227,10 +227,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void
+    MCNAPI void
     $wrapExternalTexture(::bgfx::TextureHandle _handle, ::bgfx::RendererType::Enum _type, void* _texturePtr, void* ref);
 
-    MCFOLD void $schedulePreBlasSkinningDispatch(
+    MCNAPI void $schedulePreBlasSkinningDispatch(
         ::bgfx::VertexBufferHandle _preSkinVBHandle,
         uint                       _preSkinVertOffset,
         ::bgfx::VertexBufferHandle _postSkinVBHandle,
@@ -241,7 +241,7 @@ public:
         ::bx::StringT const&       _debugName
     );
 
-    MCFOLD void $createBottomLevelAccelerationStructure(
+    MCNAPI void $createBottomLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle           _handle,
         ::bgfx::VertexBufferHandle                    _vertexBufferHandle,
         ::bgfx::VertexDeclHandle                      _vertexDeclHandle,
@@ -254,13 +254,13 @@ public:
         ::bgfx::AccelerationStructureBuildFlags::Enum _flags
     );
 
-    MCFOLD void $createTopLevelAccelerationStructure(
+    MCNAPI void $createTopLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle _handle,
         uint                                numInstances,
         ::bgfx::TopLevelInstanceDesc*       instanceDescs
     );
 
-    MCFOLD void $destroyAccelerationStructureBuffer(::bgfx::AccelerationStructureHandle _handle);
+    MCNAPI void $destroyAccelerationStructureBuffer(::bgfx::AccelerationStructureHandle _handle);
     // NOLINTEND
 };
 

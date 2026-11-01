@@ -235,7 +235,7 @@ public:
         ::gsl::span<::std::string const> extensionList
     ) const;
 
-    MCNAPI bool $load(
+    MCAPI bool $load(
         ::ResourceLocationPair const&    resourceLocationPair,
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
@@ -249,7 +249,7 @@ public:
     MCNAPI ::Core::PathBuffer<::std::string>
     $getPathContainingResource(::ResourceLocation const& resourceLocation) const;
 
-    MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
+    MCAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,
         ::gsl::span<::std::string const> extensionList
     ) const;

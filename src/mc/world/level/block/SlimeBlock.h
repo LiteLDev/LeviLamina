@@ -27,17 +27,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOn(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCFOLD int $getExtraRenderLayers() const;
+    MCNAPI int $getExtraRenderLayers() const;
 
-    MCFOLD float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
+    MCNAPI float $getBounciness(::IConstBlockSource const&, ::BlockPos const&) const;
 
 
     // NOLINTEND
@@ -45,6 +45,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

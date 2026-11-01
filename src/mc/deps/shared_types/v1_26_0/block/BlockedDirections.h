@@ -19,7 +19,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindBlockedDirections(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindBlockedDirections(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

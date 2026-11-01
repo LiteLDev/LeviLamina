@@ -73,9 +73,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _extractEvent(::Json::Value const& event);
+    MCNAPI void _extractEvent(::Json::Value const& event);
 
-    MCAPI ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult _sweep(
+    MCNAPI ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult _sweep(
         ::ParticleSystem::ComponentAccessParticleEmitter&                      emitter,
         ::ParticleSystem::ParticleMotionCollisionComponent::SweepResult const& previousRay,
         ::Vec3 const&                                                          collisionRadius,
@@ -86,20 +86,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCAPI void $updateParticleMotion(
+    MCNAPI void $updateParticleMotion(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams,
         ::std::chrono::nanoseconds const&                 dt
     );
 
-    MCFOLD int $getSortOrderNumber() const;
+    MCNAPI int $getSortOrderNumber() const;
     // NOLINTEND
 };
 

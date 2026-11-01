@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalWorldUploadScreenController(
+    MCNAPI LocalWorldUploadScreenController(
         ::std::shared_ptr<::PlayScreenModel>                  model,
         ::std::string const&                                  realmID,
         int                                                   slotIndex,
@@ -50,13 +50,13 @@ public:
         ::std::function<void(::UploadState, ::Realms::World)> callbackAfterUpload
     );
 
-    MCAPI void _upload(int const worldIndex);
+    MCNAPI void _upload(int const worldIndex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::PlayScreenModel>                  model,
         ::std::string const&                                  realmID,
         int                                                   slotIndex,
@@ -68,10 +68,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $_registerEventHandlers();
+    MCNAPI void $_registerEventHandlers();
     // NOLINTEND
 };

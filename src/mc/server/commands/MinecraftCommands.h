@@ -59,7 +59,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftCommands(::MinecraftCommandsArguments&& args);
+    MCNAPI explicit MinecraftCommands(::MinecraftCommandsArguments&& args);
 
     MCAPI ::Command* compileCommand(
         ::HashedString const&                       commandStr,
@@ -68,21 +68,21 @@ public:
         ::std::function<void(::std::string const&)> onParserError
     );
 
-    MCAPI void enqueueDeferredCommand(
+    MCNAPI void enqueueDeferredCommand(
         ::std::unique_ptr<::CommandContext> context,
         bool                                suppressOutput,
         bool                                isRequest,
         ::std::function<void(::MCRESULT)>   callback
     );
 
-    MCAPI void
+    MCNAPI void
     enqueueDeferredCompiledCommand(::gsl::not_null<::Command*> command, ::std::unique_ptr<::CommandOrigin> origin);
 
     MCAPI ::MCRESULT executeCommand(::CommandContext& context, bool suppressOutput) const;
 
     MCAPI void handleOutput(::CommandOrigin const& origin, ::CommandOutput const& output) const;
 
-    MCAPI void initCoreEnums(
+    MCNAPI void initCoreEnums(
         ::ItemRegistryRef        itemRegistry,
         ::Level const&           level,
         ::ActorFactory const&    actorFactory,
@@ -90,20 +90,20 @@ public:
         ::BaseGameVersion const& worldBaseGameVersion
     );
 
-    MCAPI void initCoreEnumsServer(
+    MCNAPI void initCoreEnumsServer(
         ::ActorDefinitionGroup const& actorDefinitionGroup,
         ::CameraPresets const&        cameraPresets,
         ::Recipes const&              recipes
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void registerChatPermissionsCallback(::std::function<bool()> callback);
+    MCNAPI void registerChatPermissionsCallback(::std::function<bool()> callback);
 #endif
 
-    MCAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
+    MCNAPI ::MCRESULT requestCommandExecution(::CommandContext& context, bool suppressOutput);
 
 #ifdef LL_PLAT_C
-    MCAPI ::MCRESULT requestCommandExecution(
+    MCNAPI ::MCRESULT requestCommandExecution(
         ::std::unique_ptr<::CommandOrigin> origin,
         ::std::string const&               commandLine,
         int                                version,
@@ -114,21 +114,21 @@ public:
     MCAPI void
     runCommand(::HashedString const& commandStr, ::CommandOrigin& origin, ::CurrentCmdVersion commandVersion);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CommandOutputType getOutputType(::CommandOrigin const& origin);
+    MCNAPI static ::CommandOutputType getOutputType(::CommandOrigin const& origin);
 
-    MCAPI static void registerSharedClientServerEnums(::CommandRegistry& registry);
+    MCNAPI static void registerSharedClientServerEnums(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftCommandsArguments&& args);
+    MCNAPI void* $ctor(::MinecraftCommandsArguments&& args);
     // NOLINTEND
 
 public:

@@ -33,11 +33,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCFOLD ::ItemStackNetIdVariant const& $getRecipeNetId() const;
+    MCNAPI ::ItemStackNetIdVariant const& $getRecipeNetId() const;
 
 
     // NOLINTEND

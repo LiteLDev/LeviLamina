@@ -54,27 +54,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FloatWanderGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI FloatWanderGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
+    MCNAPI bool _canReach(::Vec3 const& targetPos, float dist) const;
 
-    MCAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
+    MCNAPI ::Vec3 _chooseRandomPosition(::Vec3 const& mobPos, ::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

@@ -42,28 +42,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string_view _getPlaceErrorMessage(::std::string_view const key) const;
+    MCNAPI ::std::string_view _getPlaceErrorMessage(::std::string_view const key) const;
 
-    MCAPI ::StructureTemplate const* _getStructure(
+    MCNAPI ::StructureTemplate const* _getStructure(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>> const&
             scriptStructureOrName
     ) const;
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptStructureTemplate>
     getOrCreateScriptStructure(::StructureTemplate& structureTemplate);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptStructureManager&
+    MCNAPI ::ScriptModuleMinecraft::ScriptStructureManager&
     operator=(::ScriptModuleMinecraft::ScriptStructureManager const&);
 
-    MCAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
+    MCNAPI ::std::optional<::Scripting::InvalidArgumentError> validateIdentifier(::std::string const& identifier) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

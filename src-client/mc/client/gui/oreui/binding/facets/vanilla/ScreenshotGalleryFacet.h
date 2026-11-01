@@ -61,69 +61,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenshotGalleryFacet(
+    MCNAPI ScreenshotGalleryFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI void addScreenshotToShowcase(::std::string const& id, bool isFeatured);
+    MCNAPI void addScreenshotToShowcase(::std::string const& id, bool isFeatured);
 
-    MCAPI void clearDeleteScreenshotsError();
+    MCNAPI void clearDeleteScreenshotsError();
 
-    MCAPI void clearLoadGalleryError();
+    MCNAPI void clearLoadGalleryError();
 
-    MCAPI void clearModifyShowcaseGalleryError();
+    MCNAPI void clearModifyShowcaseGalleryError();
 
-    MCAPI void deleteScreenshots(::std::vector<::std::string> const& ids);
+    MCNAPI void deleteScreenshots(::std::vector<::std::string> const& ids);
 
-    MCAPI uint64 getCount() const;
+    MCNAPI uint64 getCount() const;
 
-    MCAPI ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
+    MCNAPI ::OreUI::ScreenshotGalleryFacetError const getDeleteScreenshotsError() const;
 
-    MCFOLD ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
+    MCNAPI ::OreUI::AllowListPath const& getFeaturedScreenshot() const;
 
-    MCAPI bool const getIsAddFeaturedImageInProgress() const;
+    MCNAPI bool const getIsAddFeaturedImageInProgress() const;
 
-    MCAPI bool const getIsAddShowcasedImageInProgress() const;
+    MCNAPI bool const getIsAddShowcasedImageInProgress() const;
 
-    MCAPI bool const getIsDeleteScreenshotsInProgress() const;
+    MCNAPI bool const getIsDeleteScreenshotsInProgress() const;
 
-    MCFOLD bool const getIsLoadGalleryInProgress() const;
+    MCNAPI bool const getIsLoadGalleryInProgress() const;
 
-    MCFOLD bool const getIsModifyShowcaseGalleryInProgress() const;
+    MCNAPI bool const getIsModifyShowcaseGalleryInProgress() const;
 
-    MCAPI ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
+    MCNAPI ::OreUI::ScreenshotGalleryFacetError const getLoadGalleryError() const;
 
-    MCFOLD uint64 getMaxScreenshots() const;
+    MCNAPI uint64 getMaxScreenshots() const;
 
-    MCAPI ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
+    MCNAPI ::OreUI::ScreenshotGalleryFacetError const getModifyShowcaseGalleryError() const;
 
-    MCAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
+    MCNAPI ::std::vector<::OreUI::GalleryScreenshot> const& getScreenshots() const;
 
-    MCAPI uint64 getUndownloadedCount() const;
+    MCNAPI uint64 getUndownloadedCount() const;
 
-    MCAPI bool isLoadingCount() const;
+    MCNAPI bool isLoadingCount() const;
 
-    MCAPI bool isLoadingFeaturedScreenshot() const;
+    MCNAPI bool isLoadingFeaturedScreenshot() const;
 
-    MCAPI void removeShowcasedScreenshot(::std::string const& id);
+    MCNAPI void removeShowcasedScreenshot(::std::string const& id);
 
-    MCAPI void retryLoadGallery();
+    MCNAPI void retryLoadGallery();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
@@ -133,7 +133,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

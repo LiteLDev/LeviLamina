@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FloatOptionQuery(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
+    MCNAPI FloatOptionQuery(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 };
 

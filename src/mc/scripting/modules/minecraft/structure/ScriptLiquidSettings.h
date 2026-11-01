@@ -13,7 +13,7 @@ struct ScriptLiquidSettings {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBinding bind();
+    MCNAPI static ::Scripting::EnumBinding bind();
     // NOLINTEND
 };
 

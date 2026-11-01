@@ -37,29 +37,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void spawnSilverfish(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Block const* $tryGetUninfested(::Block const& block) const;
+    MCNAPI ::Block const* $tryGetUninfested(::Block const& block) const;
 
-#ifdef LL_PLAT_S
-    MCAPI void $spawnAfterBreak(
+    MCNAPI void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
-#else // LL_PLAT_C
-    MCFOLD void $spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
-#endif
 
 
     // NOLINTEND
@@ -67,6 +58,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

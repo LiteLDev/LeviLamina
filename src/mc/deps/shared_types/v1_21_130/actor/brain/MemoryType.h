@@ -34,31 +34,31 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::string_view const& BLOCK_POS();
+        MCNAPI static ::std::string_view const& BLOCK_POS();
 
-        MCAPI static ::std::string_view const& BLOCK_POS_VEC();
+        MCNAPI static ::std::string_view const& BLOCK_POS_VEC();
 
-        MCAPI static ::std::string_view const& BLOCK_REF();
+        MCNAPI static ::std::string_view const& BLOCK_REF();
 
-        MCAPI static ::std::string_view const& BOOL();
+        MCNAPI static ::std::string_view const& BOOL();
 
-        MCAPI static ::std::string_view const& COUNTDOWN();
+        MCNAPI static ::std::string_view const& COUNTDOWN();
 
-        MCAPI static ::std::string_view const& DAMAGE_CAUSE();
+        MCNAPI static ::std::string_view const& DAMAGE_CAUSE();
 
-        MCAPI static ::std::string_view const& ENTITY_REF();
+        MCNAPI static ::std::string_view const& ENTITY_REF();
 
-        MCAPI static ::std::string_view const& FLOAT();
+        MCNAPI static ::std::string_view const& FLOAT();
 
-        MCAPI static ::std::string_view const& INT();
+        MCNAPI static ::std::string_view const& INT();
 
-        MCAPI static ::std::string_view const& POI_MEMORY();
+        MCNAPI static ::std::string_view const& POI_MEMORY();
 
-        MCAPI static ::std::string_view const& STRING();
+        MCNAPI static ::std::string_view const& STRING();
 
-        MCAPI static ::std::string_view const& VEC3();
+        MCNAPI static ::std::string_view const& VEC3();
 
-        MCAPI static ::std::string_view const& WORLD_POS();
+        MCNAPI static ::std::string_view const& WORLD_POS();
         // NOLINTEND
     };
 };

@@ -33,30 +33,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHealEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
+    MCNAPI ScriptActorHealEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
 
-    MCAPI ~ScriptActorHealEventFilter();
+    MCNAPI ~ScriptActorHealEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

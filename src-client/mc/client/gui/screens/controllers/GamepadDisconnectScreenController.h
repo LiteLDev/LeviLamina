@@ -34,25 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GamepadDisconnectScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit GamepadDisconnectScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 
 public:

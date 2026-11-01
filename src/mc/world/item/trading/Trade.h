@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Trade& operator=(::Trade&&);
+    MCNAPI ::Trade& operator=(::Trade&&);
 
-    MCAPI ~Trade();
+    MCNAPI ~Trade();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

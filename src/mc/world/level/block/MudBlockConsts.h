@@ -10,7 +10,7 @@ class AABB;
 namespace MudBlockConsts {
 // static variables
 // NOLINTBEGIN
-MCAPI ::AABB const& MUD_BLOCK_AABB();
+MCNAPI ::AABB const& MUD_BLOCK_AABB();
 // NOLINTEND
 
 } // namespace MudBlockConsts

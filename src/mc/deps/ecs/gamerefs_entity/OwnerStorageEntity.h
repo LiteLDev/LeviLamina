@@ -26,22 +26,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OwnerStorageEntity(::EntityRegistry& registry);
+    MCNAPI explicit OwnerStorageEntity(::EntityRegistry& registry);
 
-    MCAPI ::OwnerStorageEntity& operator=(::OwnerStorageEntity&& other);
+    MCNAPI ::OwnerStorageEntity& operator=(::OwnerStorageEntity&& other);
 
-    MCAPI ~OwnerStorageEntity();
+    MCNAPI ~OwnerStorageEntity();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityRegistry& registry);
+    MCNAPI void* $ctor(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

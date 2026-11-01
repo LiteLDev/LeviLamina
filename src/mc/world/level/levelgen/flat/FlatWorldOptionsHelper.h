@@ -10,7 +10,7 @@ class LevelData;
 namespace FlatWorldOptionsHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getJSON(::LevelData const& levelData);
+MCNAPI ::std::string getJSON(::LevelData const& levelData);
 // NOLINTEND
 
 } // namespace FlatWorldOptionsHelper

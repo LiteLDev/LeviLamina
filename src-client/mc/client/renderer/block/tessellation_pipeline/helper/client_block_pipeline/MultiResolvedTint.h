@@ -29,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color const& $get(int materialInstanceId, uchar facing) const;
+    MCNAPI ::mce::Color const& $get(int materialInstanceId, uchar facing) const;
     // NOLINTEND
 
 public:

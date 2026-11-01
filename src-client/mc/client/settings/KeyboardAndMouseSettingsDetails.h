@@ -23,7 +23,7 @@ namespace Settings::KeyboardAndMouseSettingsDetails { struct AdvancedLayoutConfi
 namespace Settings::KeyboardAndMouseSettingsDetails {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::std::unique_ptr<::std::variant<
+MCNAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BooleanComponent,
     ::Settings::NumberComponent<int>,
     ::Settings::NumberComponent<float>,
@@ -40,7 +40,7 @@ createAdvancedLayoutGroup(
     ::Settings::KeyboardAndMouseSettingsDetails::AdvancedLayoutConfig const& config
 );
 
-MCAPI ::std::optional<::std::unique_ptr<::std::variant<
+MCNAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BooleanComponent,
     ::Settings::NumberComponent<int>,
     ::Settings::NumberComponent<float>,
@@ -52,11 +52,11 @@ MCAPI ::std::optional<::std::unique_ptr<::std::variant<
     ::Settings::BannerComponent>>>
 createKeyboardLayoutGroup(::IOptionRegistry& options, ::std::string_view id, ::KeyboardType type);
 
-MCAPI ::std::vector<uint64> getChordKeysIndex(::KeyboardRemappingLayout const& layout);
+MCNAPI ::std::vector<uint64> getChordKeysIndex(::KeyboardRemappingLayout const& layout);
 
-MCAPI ::std::vector<uint64> getMacroKeysIndex(::KeyboardRemappingLayout const& layout);
+MCNAPI ::std::vector<uint64> getMacroKeysIndex(::KeyboardRemappingLayout const& layout);
 
-MCAPI ::std::vector<uint64> getNormalKeysIndex(::KeyboardRemappingLayout const& layout);
+MCNAPI ::std::vector<uint64> getNormalKeysIndex(::KeyboardRemappingLayout const& layout);
 // NOLINTEND
 
 } // namespace Settings::KeyboardAndMouseSettingsDetails

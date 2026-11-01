@@ -84,7 +84,7 @@ public:
     // NOLINTBEGIN
     MCAPI StrongholdFeature(::VillageFeature* villages, uint seed);
 
-    MCAPI void generatePositions(
+    MCNAPI void generatePositions(
         ::Random&                            random,
         ::BiomeSource const&                 biomeSource,
         uint                                 levelSeed,
@@ -102,7 +102,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isFeatureChunk(
+    MCNAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    pos,
@@ -111,7 +111,7 @@ public:
         ::Dimension const&                   dimension
     );
 
-    MCAPI bool $getNearestGeneratedFeature(
+    MCNAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -121,7 +121,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
         ::Random&         random,
@@ -135,6 +135,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LavaSlime(
+    MCNAPI LavaSlime(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -55,15 +55,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCFOLD bool $isDarkEnoughToSpawn() const;
+    MCNAPI bool $isDarkEnoughToSpawn() const;
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCFOLD float $getBrightness(float a, ::IConstBlockSource const& region) const;
+    MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 
-    MCFOLD bool $isOnFire() const;
+    MCNAPI bool $isOnFire() const;
 
 
     // NOLINTEND
@@ -71,6 +71,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

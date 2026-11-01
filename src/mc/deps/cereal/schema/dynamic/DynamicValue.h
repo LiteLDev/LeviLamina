@@ -63,11 +63,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool hasMember(::std::string const& member) const;
+    MCNAPI bool hasMember(::std::string const& member) const;
 
     MCAPI uint64 hash() const;
 
-    MCAPI bool operator==(::cereal::DynamicValue const& other) const;
+    MCNAPI bool operator==(::cereal::DynamicValue const& other) const;
     // NOLINTEND
 };
 

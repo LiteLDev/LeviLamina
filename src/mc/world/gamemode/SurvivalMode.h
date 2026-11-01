@@ -73,45 +73,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SurvivalMode(::Player& player);
+    MCNAPI explicit SurvivalMode(::Player& player);
 
-    MCAPI void _messagePlayers(::std::string message);
+    MCNAPI void _messagePlayers(::std::string message);
 
-    MCAPI void _showTrialReminder(bool force);
+    MCNAPI void _showTrialReminder(bool force);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& mTrialHasEnded();
+    MCNAPI static bool& mTrialHasEnded();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player);
+    MCNAPI void* $ctor(::Player& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
+    MCNAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
-    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot);
+    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot);
 
-    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot);
+    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot);
 
-    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick);
+    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick);
 
-    MCAPI bool $useItem(::ItemStack& item, ::HandSlot const handSlot);
+    MCNAPI bool $useItem(::ItemStack& item, ::HandSlot const handSlot);
 
-    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
+    MCNAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
 
-    MCAPI ::InteractionResult $useItemOn(
+    MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -121,17 +121,13 @@ public:
         bool              isFirstEvent
     );
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $setTrialMode(bool isEnabled);
+    MCNAPI void $setTrialMode(bool isEnabled);
 
-    MCAPI bool $isInTrialMode();
+    MCNAPI bool $isInTrialMode();
 
-#ifdef LL_PLAT_S
-    MCAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
-#else // LL_PLAT_C
-    MCFOLD void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
-#endif
+    MCNAPI void $registerUpsellScreenCallback(::std::function<void(bool)> callback);
 
 
     // NOLINTEND

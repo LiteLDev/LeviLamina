@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BookScreenController(
+    MCNAPI BookScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         int                                            bookSlot,
         bool                                           editable,
@@ -83,29 +83,29 @@ public:
         ::BlockActor*                                  lectern
     );
 
-    MCAPI void _addPageAt(int index, ::PageContent const& page);
+    MCNAPI void _addPageAt(int index, ::PageContent const& page);
 
-    MCAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
+    MCNAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
 
-    MCAPI void _parsePageText(int index);
+    MCNAPI void _parsePageText(int index);
 
-    MCAPI void _setPageText(int index, ::std::string const& text);
+    MCNAPI void _setPageText(int index, ::std::string const& text);
 
-    MCAPI void _swapPages(int page1Index, int page2Index);
+    MCNAPI void _swapPages(int page1Index, int page2Index);
 
-    MCAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
+    MCNAPI void _tryFirePageTurnSound(::UIPropertyBag const& bag) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
+    MCNAPI static int _getPickIndex(char const* collectionPrefix, ::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         int                                            bookSlot,
         bool                                           editable,
@@ -117,14 +117,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $preFrameTick();
+    MCNAPI void $preFrameTick();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI ::std::string $_getButtonBDescription();
+    MCNAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

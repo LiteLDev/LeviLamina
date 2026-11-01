@@ -35,9 +35,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SUBSURFACE_BUILDER_SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SUBSURFACE_BUILDER_SCHEMA_NAME();
     // NOLINTEND
 
 public:

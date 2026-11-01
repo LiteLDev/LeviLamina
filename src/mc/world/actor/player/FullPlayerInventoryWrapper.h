@@ -34,11 +34,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
+    MCNAPI int _clearSimpleContainerItem(::SimpleContainer& container, ::ContainerID containerId, int slot);
 
-    MCAPI int _removeCursorItem();
+    MCNAPI int _removeCursorItem();
 
-    MCAPI int _removeSimpleContainerItem(
+    MCNAPI int _removeSimpleContainerItem(
         ::SimpleContainer& container,
         ::ContainerID      containerId,
         int                slot,
@@ -47,11 +47,11 @@ public:
         int                maxCount
     );
 
-    MCAPI int clearAllItems();
+    MCNAPI int clearAllItems();
 
-    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCAPI int removeResource(
+    MCNAPI int removeResource(
         ::ItemStack const&                        sourceItem,
         ::std::function<bool(::ItemStack const&)> comparator,
         bool                                      requireExactAux,

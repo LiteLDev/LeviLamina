@@ -11,23 +11,23 @@ namespace PlayerMoveInput {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void clearMovementState(::EntityContext& entity);
+MCNAPI void clearMovementState(::EntityContext& entity);
 
-MCAPI bool isAutoJumpEnabled(::EntityContext const& entity);
+MCNAPI bool isAutoJumpEnabled(::EntityContext const& entity);
 #endif
 
-MCAPI bool isDescending(::EntityContext const& entity);
+MCNAPI bool isDescending(::EntityContext const& entity);
 
 #ifdef LL_PLAT_C
 MCAPI bool isJumping(::EntityContext const& entity);
 
-MCAPI bool isPlayerMoving(::EntityContext const& entity);
+MCNAPI bool isPlayerMoving(::EntityContext const& entity);
 #endif
 
-MCAPI bool isSneakDown(::EntityContext const& entity);
+MCNAPI bool isSneakDown(::EntityContext const& entity);
 
 #ifdef LL_PLAT_C
-MCAPI void setAutoJumpEnabled(::EntityContext& entity, bool autoJumpEnabled);
+MCNAPI void setAutoJumpEnabled(::EntityContext& entity, bool autoJumpEnabled);
 #endif
 // NOLINTEND
 

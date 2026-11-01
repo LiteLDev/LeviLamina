@@ -34,25 +34,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LootItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCNAPI LootItemStack(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
+    MCNAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reinit(::Block const& block, int count);
+    MCNAPI void $reinit(::Block const& block, int count);
 
-    MCAPI void $reinit(::Item const& item, int count, int auxValue);
+    MCNAPI void $reinit(::Item const& item, int count, int auxValue);
 
-    MCAPI void $reinit(::std::string_view item, int count, int auxValue);
+    MCNAPI void $reinit(::std::string_view item, int count, int auxValue);
 
-    MCAPI void $setNull(::std::optional<::std::string> reason);
+    MCNAPI void $setNull(::std::optional<::std::string> reason);
 
 
     // NOLINTEND

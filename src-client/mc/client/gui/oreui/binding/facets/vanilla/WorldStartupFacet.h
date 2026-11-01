@@ -89,7 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldStartupFacet(
+    MCNAPI WorldStartupFacet(
         ::World::LocalWorldStarter&                                       localWorldStarter,
         ::World::IWorldCloudSyncer&                                       worldCloudSyncer,
         ::World::IWorldResourcePackHandler&                               worldResourcePackHandler,
@@ -99,47 +99,47 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager> ownedWorldTemplateManager
     );
 
-    MCAPI ::DlcCheckResult _checkDLCsToStartLocalWorld(::std::string const& worldIdStr);
+    MCNAPI ::DlcCheckResult _checkDLCsToStartLocalWorld(::std::string const& worldIdStr);
 
-    MCAPI void _pushLoadingScreen(::ProgressContentType contentType, ::GameType gametype);
+    MCNAPI void _pushLoadingScreen(::ProgressContentType contentType, ::GameType gametype);
 
-    MCAPI void clearStartLocalWorldResult();
+    MCNAPI void clearStartLocalWorldResult();
 
-    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<
+    MCNAPI ::OreUI::AsyncStatefulFunction_DEPRECATED<
         ::OreUI::WorldStartupFacet::BackupThenStartLocalWorldResult(::std::string const&)>&
     getBackupThenStartLocalWorldFunctor_DEPRECATED();
 
-    MCAPI ::std::vector<::World::PackDetails> const& getBrokenPacksToStart() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getBrokenPacksToStart() const;
 
-    MCAPI bool const getHasMissingResources() const;
+    MCNAPI bool const getHasMissingResources() const;
 
-    MCAPI ::std::string const& getMissingPacksSize() const;
+    MCNAPI ::std::string const& getMissingPacksSize() const;
 
-    MCAPI ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
+    MCNAPI ::std::vector<::World::PackDetails> const& getMissingPacksToStart() const;
 
-    MCAPI ::std::string const& getMissingTemplateToStart() const;
+    MCNAPI ::std::string const& getMissingTemplateToStart() const;
 
-    MCFOLD ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
+    MCNAPI ::std::optional<::World::StartLocalWorldResult> const& getStartLocalWorldResult();
 
-    MCAPI ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getStartLocalWorldTaskState() const;
 
-    MCAPI bool hasConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
+    MCNAPI bool hasConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
 
-    MCAPI void setConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
+    MCNAPI void setConfirmedPlatformLockedContentForWorld(::std::string const& worldIdStr);
 
-    MCAPI void startLocalWorld(::std::string const& worldIdStr);
+    MCNAPI void startLocalWorld(::std::string const& worldIdStr);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::LocalWorldStarter&                                       localWorldStarter,
         ::World::IWorldCloudSyncer&                                       worldCloudSyncer,
         ::World::IWorldResourcePackHandler&                               worldResourcePackHandler,
@@ -153,7 +153,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

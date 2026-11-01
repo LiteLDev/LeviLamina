@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TrailToSurfaceFeature(
+    MCNAPI TrailToSurfaceFeature(
         ::std::string const&                                                       feature,
         ::HashedString const&                                                      hangingBlock,
         ::HashedString const&                                                      trailBlock,
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                                       feature,
         ::HashedString const&                                                      hangingBlock,
         ::HashedString const&                                                      trailBlock,
@@ -70,7 +70,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

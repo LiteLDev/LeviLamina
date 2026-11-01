@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAABB(::HitboxJson const& aabb);
+    MCNAPI void addAABB(::HitboxJson const& aabb);
     // NOLINTEND
 };

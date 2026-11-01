@@ -41,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BoundingBox getTransformedBoundBox() const;
+    MCNAPI ::BoundingBox getTransformedBoundBox() const;
 
-    MCAPI bool operator==(::StructureSettings const& rhs) const;
+    MCNAPI bool operator==(::StructureSettings const& rhs) const;
 
-    MCAPI void setPaletteName(::std::string paletteName);
+    MCNAPI void setPaletteName(::std::string paletteName);
 
-    MCAPI void setPivot(::Vec3 const& pivot);
+    MCNAPI void setPivot(::Vec3 const& pivot);
 
     MCAPI ~StructureSettings();
     // NOLINTEND
@@ -55,9 +55,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& DEFAULT_STRUCTURE_OFFSET();
+    MCNAPI static ::BlockPos const& DEFAULT_STRUCTURE_OFFSET();
 
-    MCAPI static ::BlockPos const& DEFAULT_STRUCTURE_SIZE();
+    MCNAPI static ::BlockPos const& DEFAULT_STRUCTURE_SIZE();
     // NOLINTEND
 
 public:

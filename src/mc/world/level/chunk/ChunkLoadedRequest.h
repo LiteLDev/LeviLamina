@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChunkLoadedRequest(
+    MCNAPI ChunkLoadedRequest(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
+    MCNAPI ::ITickingAreaView const* _getTickingArea(::Dimension const& dimension) const;
 
-    MCAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
+    MCNAPI ::ChunksLoadedStatus areAllChunksLoaded(::Dimension& dimension, ::Tick currentLevelTick) const;
 
-    MCAPI ~ChunkLoadedRequest();
+    MCNAPI ~ChunkLoadedRequest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                tickingAreaName,
         ::std::unique_ptr<::IRequestAction> requestAction,
         bool                                allowNonTickingPlayerAndTickingAreaChunks
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

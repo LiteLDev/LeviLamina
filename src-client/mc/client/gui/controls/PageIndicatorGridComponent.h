@@ -37,24 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _findCorrespondingDescendant(::std::shared_ptr<::UIControl> child, bool const isSelected, uint64& countFound);
 
-    MCAPI void _registerWithManager();
+    MCNAPI void _registerWithManager();
 
-    MCAPI ::PageIndicatorManagerComponent* getPageIndicatorManager();
+    MCNAPI ::PageIndicatorManagerComponent* getPageIndicatorManager();
 
-    MCAPI void notifyGridCompletedConstruction(uint64);
+    MCNAPI void notifyGridCompletedConstruction(uint64);
 
-    MCAPI void notifySubPageChanged(uint64 newPage);
+    MCNAPI void notifySubPageChanged(uint64 newPage);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:

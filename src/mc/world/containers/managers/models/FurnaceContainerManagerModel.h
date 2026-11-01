@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceContainerManagerModel(
+    MCNAPI FurnaceContainerManagerModel(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,
@@ -88,36 +88,36 @@ public:
         ::BlockPos const&                    blockPos
     );
 
-    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+    MCNAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
 
-    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
+    MCNAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
 
-    MCAPI void _populateRecipeBook();
+    MCNAPI void _populateRecipeBook();
 
 #ifdef LL_PLAT_C
-    MCAPI int getBurnProgress(int max);
+    MCNAPI int getBurnProgress(int max);
 
-    MCAPI int getLitProgress(int max);
+    MCNAPI int getLitProgress(int max);
 
-    MCAPI ::std::vector<::ItemInstance> getUnlockedRecipeIngredientsForResult(::ItemInstance const& item) const;
+    MCNAPI ::std::vector<::ItemInstance> getUnlockedRecipeIngredientsForResult(::ItemInstance const& item) const;
 
-    MCAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
+    MCNAPI bool isFinished(::std::string& outputName, int& outputId, int& outputAuxValue);
 
-    MCAPI ::IngredientSearchInfo searchIngredientInContainers(
+    MCNAPI ::IngredientSearchInfo searchIngredientInContainers(
         ::ItemInstance const&                   itemInstance,
         ::std::vector<::ContainerModel*> const& containers
     ) const;
 
-    MCAPI void setIsFiltering(bool smeltableFilterOn);
+    MCNAPI void setIsFiltering(bool smeltableFilterOn);
 
-    MCAPI void setSearchString(::std::string const& searchString);
+    MCNAPI void setSearchString(::std::string const& searchString);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,
@@ -130,27 +130,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCNAPI void $setData(int id, int value);
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
-    MCAPI void $_onDynamicContainerContentsChanged();
+    MCNAPI void $_onDynamicContainerContentsChanged();
 
 
     // NOLINTEND
@@ -158,6 +158,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::BiomeSurfaceMaterialData const&) const;
+    MCNAPI bool operator==(::BiomeSurfaceMaterialData const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeSurfaceMaterialData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeSurfaceMaterialData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

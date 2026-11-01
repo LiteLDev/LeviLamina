@@ -39,25 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ShieldModel(::GeometryPtr source);
+    MCNAPI explicit ShieldModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:

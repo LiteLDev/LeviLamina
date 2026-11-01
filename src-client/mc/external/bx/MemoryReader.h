@@ -35,15 +35,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
+    MCNAPI int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
 
-    MCAPI int $read(void* _data, int _size, ::bx::Error* _err);
+    MCNAPI int $read(void* _data, int _size, ::bx::Error* _err);
     // NOLINTEND
 
 public:

@@ -18,10 +18,10 @@ namespace BlockSerializationUtils { struct NbtToBlockCache; }
 namespace BlockSerializationUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Block const&
+MCNAPI ::Block const&
 getBlockFromNBT(::CompoundTag const& tag, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-MCAPI void initBlockReplaceDataMap();
+MCNAPI void initBlockReplaceDataMap();
 
 MCAPI ::std::pair<::BlockSerializationUtils::NBTState, ::Block const*>
 tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlockCache* localCache);
@@ -29,7 +29,7 @@ tryGetBlockFromNBT(::CompoundTag const& tag, ::BlockSerializationUtils::NbtToBlo
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::HashedString, ::std::function<void(int, ::CompoundTag&)>>& BLOCK_REPLACE_DATA_MAP();
+MCNAPI ::std::unordered_map<::HashedString, ::std::function<void(int, ::CompoundTag&)>>& BLOCK_REPLACE_DATA_MAP();
 // NOLINTEND
 
 } // namespace BlockSerializationUtils

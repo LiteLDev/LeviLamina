@@ -55,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderFacesWithActorTexture(
+    MCNAPI void _renderFacesWithActorTexture(
         ::dragon::RenderMetadata const&       renderMetadata,
         ::ScreenContext&                      screenContext,
         ::std::array<::std::string, 4> const& sherdNames,
@@ -63,9 +63,9 @@ public:
         ::mce::ClientTexture const&           forcedTexture
     );
 
-    MCAPI void _setModelMaterial(::DecoratedPotRenderer::ModelMaterial const& modelMaterial);
+    MCNAPI void _setModelMaterial(::DecoratedPotRenderer::ModelMaterial const& modelMaterial);
 
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ItemStack const&              decoratedPotItem,
@@ -75,13 +75,13 @@ public:
         float                           lightMultiplier
     );
 
-    MCAPI void renderInHand(
+    MCNAPI void renderInHand(
         ::BaseActorRenderContext&     renderContext,
         ::BlockActorRenderData const& blockEntityRenderData,
         bool                          isFirstPerson
     );
 
-    MCAPI void renderInItemFrame(
+    MCNAPI void renderInItemFrame(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ItemStack const&              decoratedPotItem,
@@ -97,12 +97,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string, 4> _getSherdsFromPotItem(::ItemStack const& decoratedPotItem);
+    MCNAPI static ::std::array<::std::string, 4> _getSherdsFromPotItem(::ItemStack const& decoratedPotItem);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

@@ -14,25 +14,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Semaphore();
+    MCNAPI Semaphore();
 
-    MCAPI void post(uint _count);
+    MCNAPI void post(uint _count);
 
-    MCAPI bool wait(int _msecs);
+    MCNAPI bool wait(int _msecs);
 
-    MCAPI ~Semaphore();
+    MCNAPI ~Semaphore();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

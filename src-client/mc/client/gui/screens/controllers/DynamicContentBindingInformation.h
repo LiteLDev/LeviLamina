@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createBindingData(::Json::Value const& contentData);
+    MCNAPI void $createBindingData(::Json::Value const& contentData);
     // NOLINTEND
 
 public:

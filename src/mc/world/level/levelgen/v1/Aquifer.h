@@ -83,14 +83,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
+    MCNAPI ::Aquifer::FluidSample _computeAquifer(::BlockPos const& cellCenter) const;
 
-    MCAPI void computeAt(::BlockPos const& worldPos);
+    MCNAPI void computeAt(::BlockPos const& worldPos);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
+    MCNAPI static ::std::array<::std::pair<int, int>, 13> const& chunkOffset();
     // NOLINTEND
 };

@@ -37,24 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldTemplateListFacet(
+    MCNAPI WorldTemplateListFacet(
         ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager>      worldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getTemplates() const;
+    MCNAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& getTemplates() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager>      worldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -63,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -45,9 +45,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit CompositePackSource(::CompositePackSourceOptions options);
+    MCNAPI explicit CompositePackSource(::CompositePackSourceOptions options);
 
-    MCAPI ::std::vector<::PackSource*> getPackSources();
+    MCNAPI ::std::vector<::PackSource*> getPackSources();
 #endif
     // NOLINTEND
 
@@ -55,18 +55,18 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::CompositePackSourceOptions options);
+    MCNAPI void* $ctor(::CompositePackSourceOptions options);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
+    MCNAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
-    MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
+    MCNAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
-    MCAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
+    MCNAPI ::PackSourceLoadResult $_loadImpl(::PackSourceLoadOptions&&);
 
 
     // NOLINTEND

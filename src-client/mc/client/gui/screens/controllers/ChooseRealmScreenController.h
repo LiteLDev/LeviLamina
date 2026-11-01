@@ -55,22 +55,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChooseRealmScreenController(
+    MCNAPI ChooseRealmScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void(::Realms::World)>   callback,
         ::SlotSelectedAction                     selectionAction,
         ::std::function<void()>                  onCancelCallback
     );
 
-    MCAPI ::Realms::Slot _getSlotAt(int index);
+    MCNAPI ::Realms::Slot _getSlotAt(int index);
 
-    MCAPI ::ui::ViewRequest _notifyCallback(::Realms::World world);
+    MCNAPI ::ui::ViewRequest _notifyCallback(::Realms::World world);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void(::Realms::World)>   callback,
         ::SlotSelectedAction                     selectionAction,
@@ -81,12 +81,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onDelete();
+    MCNAPI void $onDelete();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

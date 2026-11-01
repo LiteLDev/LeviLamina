@@ -26,9 +26,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& CARDINAL_CONNECTIONS_ID();
+    MCNAPI static ::std::string_view const& CARDINAL_CONNECTIONS_ID();
 
-    MCAPI static ::std::string_view const& VERTICAL_CONNECTIONS_ID();
+    MCNAPI static ::std::string_view const& VERTICAL_CONNECTIONS_ID();
     // NOLINTEND
 };
 

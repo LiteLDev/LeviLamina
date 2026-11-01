@@ -65,14 +65,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _drawIconBackground(
+        MCNAPI void _drawIconBackground(
             ::ScreenContext&                     screenContext,
             ::mce::Color const&                  color,
             float                                zOffset,
             ::OffscreenCaptureDescription const& offscreenCaptureDescription
         );
 
-        MCAPI bool _renderFaceIcon(
+        MCNAPI bool _renderFaceIcon(
             ::Tessellator&,
             ::BaseActorRenderContext& renderContext,
             ::Player*                 holdingPlayer,
@@ -84,20 +84,20 @@ public:
             bool isEduWorld
         );
 
-        MCAPI void _renderLabel(
+        MCNAPI void _renderLabel(
             ::BaseActorRenderContext& renderContext,
             ::Vec3 const&             pos,
             ::std::string const&      label,
             ::mce::Color const&       labelColor
         );
 
-        MCAPI ~MapInstance();
+        MCNAPI ~MapInstance();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -135,13 +135,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapRenderer(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI MapRenderer(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _generateMeshes(::BaseActorRenderContext& renderContext);
+    MCNAPI void _generateMeshes(::BaseActorRenderContext& renderContext);
 
-    MCAPI ::MapRenderer::MapInstance& _getMapInstance(::MapItemSavedData const& data);
+    MCNAPI ::MapRenderer::MapInstance& _getMapInstance(::MapItemSavedData const& data);
 
-    MCAPI void render(
+    MCNAPI void render(
         ::BaseActorRenderContext&           renderContext,
         ::Player*                           holdingPlayer,
         ::BlockPos const&                   pos,
@@ -157,14 +157,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void* $ctor(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
     // NOLINTEND
 };

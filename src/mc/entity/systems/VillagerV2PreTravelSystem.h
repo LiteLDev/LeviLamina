@@ -16,13 +16,13 @@ struct TickingSystemWithInfo;
 namespace VillagerV2PreTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _doVillagerV2PreTravel(
+MCNAPI void _doVillagerV2PreTravel(
     ::StrictEntityContext const&                      entity,
     ::ActorDataFlagComponent const&                   synchedActorDataComponent,
     ::EntityModifier<::SkipMobTravelComponent> const& modifier
 );
 
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace VillagerV2PreTravelSystem

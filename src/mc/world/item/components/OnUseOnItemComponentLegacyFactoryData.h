@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OnUseOnItemComponentLegacyFactoryData(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
+    MCNAPI explicit OnUseOnItemComponentLegacyFactoryData(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::OnUseOnTriggerItemComponent data);
     // NOLINTEND
 
 public:

@@ -35,27 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PotentSulfurBlock(::std::string const& nameId, int id, ::Material const& material);
+    MCNAPI PotentSulfurBlock(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void _onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void _onTick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void _onTick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::Material const& material);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $canInstatick() const;
+    MCNAPI bool $canInstatick() const;
 
 
     // NOLINTEND

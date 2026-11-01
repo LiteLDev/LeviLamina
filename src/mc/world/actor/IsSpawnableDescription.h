@@ -27,14 +27,14 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void parse(::Json::Value const& root);
+    MCNAPI void parse(::Json::Value const& root);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
 
     // NOLINTEND

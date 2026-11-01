@@ -13,7 +13,7 @@ struct MaxAutoStepComponent;
 namespace SneakMovementSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::AABB
+MCNAPI ::AABB
 getMaxCollisionVolume(::Vec3 const& speed, ::MaxAutoStepComponent const& step, ::AABBShapeComponent const& shape);
 // NOLINTEND
 

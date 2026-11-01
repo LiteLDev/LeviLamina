@@ -70,20 +70,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandParameterData(::CommandParameterData const& p);
+    MCNAPI CommandParameterData(::CommandParameterData const& p);
 
-    MCAPI ~CommandParameterData();
+    MCNAPI ~CommandParameterData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandParameterData const& p);
+    MCNAPI void* $ctor(::CommandParameterData const& p);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

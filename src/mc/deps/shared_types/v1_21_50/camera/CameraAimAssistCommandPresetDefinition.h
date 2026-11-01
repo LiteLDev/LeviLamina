@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_50::CameraAimAssistCommandPresetDefinition const& rhs) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -48,22 +48,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockStateType(::ScriptModuleMinecraft::ScriptBlockStateType const&);
+    MCNAPI ScriptBlockStateType(::ScriptModuleMinecraft::ScriptBlockStateType const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockStateType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::BlockState const& blockState);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockStateType const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockStateType const&);
     // NOLINTEND
 };
 

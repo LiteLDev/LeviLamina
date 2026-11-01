@@ -42,7 +42,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ControlResolutionInfo(
+        MCNAPI ControlResolutionInfo(
             ::std::string const&                                                aTargetControlName,
             ::ui::NameResolutionScope                                           aScope,
             ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> aSetter
@@ -52,7 +52,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string const&                                                aTargetControlName,
             ::ui::NameResolutionScope                                           aScope,
             ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> aSetter
@@ -119,75 +119,75 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _propagateLockStateChange(bool broadcastEvent);
+    MCNAPI void _propagateLockStateChange(bool broadcastEvent);
 
-    MCAPI void _registerControlNameResolver(
+    MCNAPI void _registerControlNameResolver(
         ::std::string const&                                                controlName,
         ::ui::NameResolutionScope                                           scope,
         ::std::function<void(::UIControl&, ::std::shared_ptr<::UIControl>)> setter
     );
 
-    MCAPI void _resolveControlNames(::UIControl& rootControl);
+    MCNAPI void _resolveControlNames(::UIControl& rootControl);
 
-    MCAPI void _resolvePostCreate();
+    MCNAPI void _resolvePostCreate();
 
-    MCAPI void _setCachedPosition() const;
+    MCNAPI void _setCachedPosition() const;
 
-    MCAPI void _setPositionDirty();
+    MCNAPI void _setPositionDirty();
 
-    MCAPI void
+    MCNAPI void
     _setVisible(::ui::VisibilityFlag visibleFlags, bool setLayoutChangedFlag, bool doLayout, bool shrinkInvisible);
 
-    MCAPI void addChild(::std::shared_ptr<::UIControl> child, ::ui::ChildInsertPosition childInsertPosition);
+    MCNAPI void addChild(::std::shared_ptr<::UIControl> child, ::ui::ChildInsertPosition childInsertPosition);
 
-    MCAPI ::std::shared_ptr<::UIControl> clone(::UIControl* parent) const;
+    MCNAPI ::std::shared_ptr<::UIControl> clone(::UIControl* parent) const;
 
     MCAPI void findAllCollectionIndices(::brstd::function_ref<void(::std::string const&, int)> callback);
 
     MCAPI int findCollectionIndex(::std::string const& collectionName) const;
 
-    MCAPI ::std::shared_ptr<::UIControl> getAncestorWhere(::brstd::function_ref<bool(::UIControl const&)> predicate);
+    MCNAPI ::std::shared_ptr<::UIControl> getAncestorWhere(::brstd::function_ref<bool(::UIControl const&)> predicate);
 
-    MCAPI ::std::string const getPathedName() const;
+    MCNAPI ::std::string const getPathedName() const;
 
-    MCFOLD ::UIPropertyBag const& getPropertyBag() const;
+    MCNAPI ::UIPropertyBag const& getPropertyBag() const;
 
     MCFOLD ::UIPropertyBag& getPropertyBag();
 
-    MCAPI ::std::shared_ptr<::UIControl> moveChild(int index, bool notify);
+    MCNAPI ::std::shared_ptr<::UIControl> moveChild(int index, bool notify);
 
-    MCAPI void notifyBindingsUpdated(
+    MCNAPI void notifyBindingsUpdated(
         ::std::vector<::std::string> controlList,
         ::std::string                propertyName,
         bool                         value,
         bool                         siblingScope
     );
 
-    MCAPI void popBackChild();
+    MCNAPI void popBackChild();
 
-    MCAPI void popFrontChild();
+    MCNAPI void popFrontChild();
 
-    MCAPI void processPropertyBags(
+    MCNAPI void processPropertyBags(
         ::std::unique_ptr<::UIPropertyBag> propertyBag,
         ::std::unique_ptr<::UIPropertyBag> propertyBagForChildren
     );
 
-    MCAPI void reloadFromControl(::UIControl const& control);
+    MCNAPI void reloadFromControl(::UIControl const& control);
 
-    MCAPI bool removeChild(::std::shared_ptr<::UIControl> control);
+    MCNAPI bool removeChild(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void reset(bool recursive, bool shouldClearCollectionFlag);
+    MCNAPI void reset(bool recursive, bool shouldClearCollectionFlag);
 
-    MCAPI void setEnabled(bool enabled, bool broadcastEvent);
+    MCNAPI void setEnabled(bool enabled, bool broadcastEvent);
 
-    MCAPI void setIsTemplate(bool isTemplate);
+    MCNAPI void setIsTemplate(bool isTemplate);
 
-    MCAPI ~UIControl();
+    MCNAPI ~UIControl();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

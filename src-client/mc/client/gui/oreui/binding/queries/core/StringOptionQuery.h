@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StringOptionQuery(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
+    MCNAPI StringOptionQuery(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& optionName);
     // NOLINTEND
 };
 

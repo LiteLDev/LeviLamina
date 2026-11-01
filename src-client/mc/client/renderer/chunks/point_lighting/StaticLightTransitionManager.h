@@ -147,41 +147,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _advanceGroup(::PointLighting::Detail::ColorGroup& group, short groupIndex, float transitionStepSize);
+    MCNAPI void _advanceGroup(::PointLighting::Detail::ColorGroup& group, short groupIndex, float transitionStepSize);
 
-    MCAPI bool _asyncResourcesSaturated() const;
+    MCNAPI bool _asyncResourcesSaturated() const;
 
-    MCAPI void _clearStaleCells(::PointLighting::Detail::ColorGroup& group, short groupIndex);
+    MCNAPI void _clearStaleCells(::PointLighting::Detail::ColorGroup& group, short groupIndex);
 
-    MCAPI void _commitPropagationResults();
+    MCNAPI void _commitPropagationResults();
 
-    MCAPI void _flushStagedStep(::PointLighting::Detail::ColorGroup& group, short groupIndex);
+    MCNAPI void _flushStagedStep(::PointLighting::Detail::ColorGroup& group, short groupIndex);
 
-    MCAPI void _spawnPendingTasks(
+    MCNAPI void _spawnPendingTasks(
         ::TaskGroup&                                                       taskGroup,
         ::ChunkSource&                                                     chunkSource,
         ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator> lightPropagationCoordinator
     );
 
-    MCAPI void _writeVolume(
+    MCNAPI void _writeVolume(
         ::std::unique_ptr<::LightPropagation::LightAccumulationVolume const> volumePtr,
         ::SubChunkPos                                                        pos,
         short                                                                layer
     );
 
-    MCAPI ::std::optional<::mce::framebuilder::TransitioningVoxelVolumeDescription>
+    MCNAPI ::std::optional<::mce::framebuilder::TransitioningVoxelVolumeDescription>
     getVoxelVolumeBuffers(::mce::CheckedResourceService<::dragon::ResolvedShaderBufferResource>* bufferResourceService);
 
-    MCAPI void processPropagationTasks(
+    MCNAPI void processPropagationTasks(
         ::TaskGroup&                                                       taskGroup,
         ::ChunkSource&                                                     chunkSource,
         ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator> lightPropagationCoordinator,
         ::mce::framebuilder::PointLightBudgetParameters const&             pointLightParameters
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> localLightConfig);
+    MCNAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> localLightConfig);
     // NOLINTEND
 };
 

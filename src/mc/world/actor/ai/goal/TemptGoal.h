@@ -43,31 +43,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TemptGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI TemptGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $updateMovement();
+    MCNAPI void $updateMovement();
 
-    MCFOLD void $stopMovement();
+    MCNAPI void $stopMovement();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

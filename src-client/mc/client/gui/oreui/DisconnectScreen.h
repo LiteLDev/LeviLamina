@@ -5,7 +5,7 @@
 namespace OreUI::EntryPoints::DisconnectScreen {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(
+MCNAPI ::std::string composeRoute(
     int                  reason,
     ::std::string const& titleMessage,
     ::std::string const& errorMessage,
@@ -18,7 +18,7 @@ MCAPI ::std::string composeRoute(
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::DisconnectScreen

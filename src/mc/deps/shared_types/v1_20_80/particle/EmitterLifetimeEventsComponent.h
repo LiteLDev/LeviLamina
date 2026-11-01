@@ -42,33 +42,33 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+    MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
-    MCAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+    MCNAPI EmitterLifetimeEventsComponent(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
-    MCAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
+    MCNAPI ::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&
     operator=(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&) const;
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterLifetimeEventsComponent const&);
 #endif
     // NOLINTEND
 
@@ -76,14 +76,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addDropItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
+    MCNAPI void addFeedItem(::ActorDefinitionFeedItem const& feedItem);
 
-    MCAPI void addFeedItemByName(::std::string const& itemName);
+    MCNAPI void addFeedItemByName(::std::string const& itemName);
 
-    MCAPI void addPauseGrowthItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addPauseGrowthItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void addResetGrowthItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addResetGrowthItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::AgeableComponent& component) const;
 
-    MCAPI ~AgeableDefinition();
+    MCNAPI ~AgeableDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AgeableDefinition>>& root);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

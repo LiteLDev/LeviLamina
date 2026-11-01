@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DoubleSaplingBlock(
+    MCNAPI DoubleSaplingBlock(
         ::std::string const&                  nameId,
         int                                   id,
         ::std::optional<::std::string> const& singleSaplingTree,
@@ -57,18 +57,18 @@ public:
         ::std::optional<::std::string> const& quadrupleSaplingTree
     );
 
-    MCAPI ::std::optional<::BlockPos>
+    MCNAPI ::std::optional<::BlockPos>
     _getQuadrupleSaplingOffset(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool _growSapling(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool _growSapling(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                  nameId,
         int                                   id,
         ::std::optional<::std::string> const& singleSaplingTree,
@@ -80,17 +80,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fertilizerType) const;
 
 

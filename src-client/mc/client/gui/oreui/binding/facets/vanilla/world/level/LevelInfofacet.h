@@ -49,32 +49,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelInfofacet(
+    MCNAPI LevelInfofacet(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::LocalPlayerChangedConnector const&                       localPlayerChangedConnector,
         ::std::function<::LocalPlayer*()>                          getCurrentLocalPlayer,
         ::std::function<::LevelSummary*(::std::string)>            getCurrentLevelSummary
     );
 
-    MCAPI void _init();
+    MCNAPI void _init();
 
-    MCAPI bool getIsInitialized() const;
+    MCNAPI bool getIsInitialized() const;
 
-    MCFOLD ::OreUI::AllowListPath const& getWorldIconPath() const;
+    MCNAPI ::OreUI::AllowListPath const& getWorldIconPath() const;
 
-    MCAPI ::std::string const& getWorldName() const;
+    MCNAPI ::std::string const& getWorldName() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::LocalPlayerChangedConnector const&                       localPlayerChangedConnector,
         ::std::function<::LocalPlayer*()>                          getCurrentLocalPlayer,
@@ -85,7 +85,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

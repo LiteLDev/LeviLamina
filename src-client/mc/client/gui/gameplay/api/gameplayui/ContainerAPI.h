@@ -85,79 +85,79 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::GameplayUI::ContainerItem
+    MCNAPI ::GameplayUI::ContainerItem
     _containerItemFromItemStack(::ItemStackBase const& item, ::GameplayUI::ContainerItemType containerItemType) const;
 
-    MCAPI void _doContainerAction(::GameplayUI::ContainerAction const& action);
+    MCNAPI void _doContainerAction(::GameplayUI::ContainerAction const& action);
 
-    MCAPI ::GameplayUI::ContainerInteractionsContext
+    MCNAPI ::GameplayUI::ContainerInteractionsContext
     _getInteractionsContext(::ContainerEnumName container, int slot, bool isDoubleClick, bool isShiftClick) const;
 
-    MCAPI void _playSound(::SharedTypes::Legacy::LevelSoundEvent eventName) const;
+    MCNAPI void _playSound(::SharedTypes::Legacy::LevelSoundEvent eventName) const;
 
-    MCAPI void _playSound(::std::string const& soundName) const;
+    MCNAPI void _playSound(::std::string const& soundName) const;
 
-    MCAPI void _recipeAutoCraft(::ContainerEnumName collectionName, int collectionIndex, ::ItemCraftType craftType);
+    MCNAPI void _recipeAutoCraft(::ContainerEnumName collectionName, int collectionIndex, ::ItemCraftType craftType);
 
-    MCAPI void _refreshInputLegend();
+    MCNAPI void _refreshInputLegend();
 
-    MCAPI void _resetSelectedRecipeTabIfEmpty(
+    MCNAPI void _resetSelectedRecipeTabIfEmpty(
         ::std::unordered_map<::std::string, ::std::shared_ptr<::ContainerModel>> const& containers
     );
 
-    MCAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
+    MCNAPI ::std::shared_ptr<::ContainerModel> _tryGetContainerModel(::ContainerEnumName containerName) const;
 
-    MCAPI ::CraftingContainerManagerController* _tryGetCraftingContainerManagerController() const;
+    MCNAPI ::CraftingContainerManagerController* _tryGetCraftingContainerManagerController() const;
 
-    MCAPI void _tryUpdateCraftingContainer();
+    MCNAPI void _tryUpdateCraftingContainer();
 
-    MCAPI void closeContainer();
+    MCNAPI void closeContainer();
 
-    MCAPI ::std::vector<::GameplayUI::RecipeBookTab> getActiveRecipeBookTabs() const;
+    MCNAPI ::std::vector<::GameplayUI::RecipeBookTab> getActiveRecipeBookTabs() const;
 
-    MCAPI ::std::optional<::GameplayUI::AnvilInfo> getAnvilInfo() const;
+    MCNAPI ::std::optional<::GameplayUI::AnvilInfo> getAnvilInfo() const;
 
-    MCAPI ::std::vector<::GameplayUI::RecipeBookTabData> getAvailableRecipeBookTabs() const;
+    MCNAPI ::std::vector<::GameplayUI::RecipeBookTabData> getAvailableRecipeBookTabs() const;
 
-    MCAPI ::std::optional<::GameplayUI::BrewingStandInfo> getBrewingStandInfo() const;
+    MCNAPI ::std::optional<::GameplayUI::BrewingStandInfo> getBrewingStandInfo() const;
 
-    MCAPI ::std::vector<::GameplayUI::ContainerItem> getBundleContent(int bundleID) const;
+    MCNAPI ::std::vector<::GameplayUI::ContainerItem> getBundleContent(int bundleID) const;
 
-    MCAPI ::std::optional<::GameplayUI::ChestType> getChestType() const;
+    MCNAPI ::std::optional<::GameplayUI::ChestType> getChestType() const;
 
-    MCAPI ::std::optional<::GameplayUI::ContainerColorMode> getContainerColorMode();
+    MCNAPI ::std::optional<::GameplayUI::ContainerColorMode> getContainerColorMode();
 
-    MCAPI ::std::optional<::GameplayUI::ContainerItem>
+    MCNAPI ::std::optional<::GameplayUI::ContainerItem>
     getContainerItem(::ContainerEnumName containerName, int index) const;
 
-    MCAPI ::std::string getContainerName() const;
+    MCNAPI ::std::string getContainerName() const;
 
-    MCAPI ::std::optional<::GameplayUI::ContainerItem> getFocusedBundle() const;
+    MCNAPI ::std::optional<::GameplayUI::ContainerItem> getFocusedBundle() const;
 
-    MCAPI ::std::string getFocusedSlotTooltip() const;
+    MCNAPI ::std::string getFocusedSlotTooltip() const;
 
-    MCAPI ::std::optional<::GameplayUI::FurnaceInfo> getFurnaceInfo() const;
+    MCNAPI ::std::optional<::GameplayUI::FurnaceInfo> getFurnaceInfo() const;
 
-    MCAPI ::std::string getRecipeBookSearchString() const;
+    MCNAPI ::std::string getRecipeBookSearchString() const;
 
-    MCAPI ::GameplayUI::ContainerItem getSelectedBundleItem() const;
+    MCNAPI ::GameplayUI::ContainerItem getSelectedBundleItem() const;
 
-    MCAPI ::GameplayUI::TradeOfferInfo getTradeOfferInfo(int tradeTier, int tradeIndex) const;
+    MCNAPI ::GameplayUI::TradeOfferInfo getTradeOfferInfo(int tradeTier, int tradeIndex) const;
 
-    MCAPI ::GameplayUI::TradeOverview getTradeOverview() const;
+    MCNAPI ::GameplayUI::TradeOverview getTradeOverview() const;
 
-    MCAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
+    MCNAPI ::GameplayUI::TradeTierInfo getTradeTierInfo(int tradeTier) const;
 
-    MCAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void
+    MCNAPI void
     handleSlotGamepadPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotMousePress(
+    MCNAPI void handleSlotMousePress(
         ::OreUI::MouseButton button,
         ::ContainerEnumName  container,
         int                  slot,
@@ -165,45 +165,45 @@ public:
         bool                 isShiftClick
     );
 
-    MCAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
+    MCNAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
 
-    MCAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
+    MCNAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI bool isRecipeBookAvailable() const;
+    MCNAPI bool isRecipeBookAvailable() const;
 
-    MCAPI void onPlayerOpenContainer(
+    MCNAPI void onPlayerOpenContainer(
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockPos const&                    blockPos,
         ::ActorUniqueID const&               uniqueId
     );
 
-    MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
+    MCNAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void pullInIngredientsForSelectedTrade();
+    MCNAPI void pullInIngredientsForSelectedTrade();
 
-    MCAPI void selectTrade(int tradeTier, int tradeIndex);
+    MCNAPI void selectTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void setAnvilPreviewItemName(::std::string const& name);
+    MCNAPI void setAnvilPreviewItemName(::std::string const& name);
 
-    MCAPI void setRecipeBookFiltering(bool isFiltering);
+    MCNAPI void setRecipeBookFiltering(bool isFiltering);
 
-    MCAPI void setRecipeBookSearchString(::std::string const& searchText);
+    MCNAPI void setRecipeBookSearchString(::std::string const& searchText);
 
-    MCAPI void setRecipeBookVisibility(bool visible);
+    MCNAPI void setRecipeBookVisibility(bool visible);
 
-    MCAPI ~ContainerAPI();
+    MCNAPI ~ContainerAPI();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

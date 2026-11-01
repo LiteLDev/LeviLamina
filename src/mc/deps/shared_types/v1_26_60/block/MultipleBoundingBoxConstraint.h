@@ -32,13 +32,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& INVALID_BOX_DESCRIPTION();
+    MCNAPI static ::std::string const& INVALID_BOX_DESCRIPTION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
     // NOLINTEND

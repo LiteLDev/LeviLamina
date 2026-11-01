@@ -14,7 +14,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
+    MCNAPI static ::Bedrock::Threading::OSThreadPriority const& Normal();
     // NOLINTEND
 };
 

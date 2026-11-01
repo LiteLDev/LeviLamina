@@ -90,26 +90,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WebBrowserFacet(
+    MCNAPI WebBrowserFacet(
         ::std::function<void(::std::string const&)> launchUri,
         ::std::function<void()>                     launchBetaFeedbackQr,
         bool                                        useBetaFeedbackQr,
         ::IOptionRegistry&                          options
     );
 
-    MCAPI void openBetaFeedbackQr();
+    MCNAPI void openBetaFeedbackQr();
 
-    MCAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
+    MCNAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
 
-    MCAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
+    MCNAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
 
-    MCAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
+    MCNAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<void(::std::string const&)> launchUri,
         ::std::function<void()>                     launchBetaFeedbackQr,
         bool                                        useBetaFeedbackQr,
@@ -120,7 +120,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

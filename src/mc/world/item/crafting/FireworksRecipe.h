@@ -42,25 +42,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID& ID();
+    MCNAPI static ::mce::UUID& ID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
+    MCNAPI ::std::vector<::ItemInstance> const& $assemble(::CraftingContainer&, ::CraftingContext&) const;
 
-    MCFOLD int $getCraftingSize() const;
+    MCNAPI int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int, int) const;
+    MCNAPI ::RecipeIngredient const& $getIngredient(int, int) const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCFOLD bool $isShapeless() const;
+    MCNAPI bool $isShapeless() const;
 
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
-    MCFOLD int $size() const;
+    MCNAPI int $size() const;
 
 
     // NOLINTEND
@@ -68,6 +68,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

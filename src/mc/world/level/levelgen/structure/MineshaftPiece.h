@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructurePiece* generateAndAddPiece(
+    MCNAPI ::StructurePiece* generateAndAddPiece(
         ::StructurePiece&                                   startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -52,9 +52,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
+    MCNAPI bool $isInInvalidLocation(::BlockSource& region, ::BoundingBox const& chunkBB);
 
-    MCAPI bool
+    MCNAPI bool
     $canBeReplaced(::BlockSource& region, int const x, int const y, int const z, ::BoundingBox const& chunkBB);
 
 

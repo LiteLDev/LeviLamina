@@ -40,11 +40,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::dragon::atlas::IAtlasUserOperations& $getFrontend();
+    MCNAPI ::dragon::atlas::IAtlasUserOperations& $getFrontend();
 
-    MCAPI bool $renderItemToTile(::dragon::atlas::AtlasTileHandle const& tile, ::GeometryAtlas::ItemData const& data);
+    MCNAPI bool $renderItemToTile(::dragon::atlas::AtlasTileHandle const& tile, ::GeometryAtlas::ItemData const& data);
 
-    MCAPI void
+    MCNAPI void
     $renderDollToTile(::dragon::atlas::AtlasTileHandle const& tile, ::GeometryAtlas::PaperDollData const& data);
     // NOLINTEND
 

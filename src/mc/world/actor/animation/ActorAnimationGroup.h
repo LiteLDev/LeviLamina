@@ -39,14 +39,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationGroup();
+    MCNAPI ActorAnimationGroup();
 
-    MCAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
+    MCNAPI ::ActorSkeletalAnimationPtr getActorAnimation(::HashedString const& name);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationInfo> getActorAnimationInfo(::HashedString const& name);
 
 #ifdef LL_PLAT_C
-    MCAPI void loadActorAnimation(
+    MCNAPI void loadActorAnimation(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::PackStats&              stats,
@@ -56,19 +56,19 @@ public:
         ::std::string const&      personaPieceId
     );
 
-    MCAPI void loadActorAnimationsAsync(
+    MCNAPI void loadActorAnimationsAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
 #endif
 
-    MCAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
+    MCNAPI void loadActorAnimationsSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

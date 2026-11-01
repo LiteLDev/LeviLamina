@@ -44,7 +44,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EntryPoint(
+        MCNAPI EntryPoint(
             ::std::string const&                    route,
             ::OreUI::EntryPoints::RouteFlags const  flags,
             ::std::unique_ptr<::OreUI::IEntryPoint> definition
@@ -54,7 +54,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string const&                    route,
             ::OreUI::EntryPoints::RouteFlags const  flags,
             ::std::unique_ptr<::OreUI::IEntryPoint> definition
@@ -83,42 +83,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouterConfiguration(::OreUI::RouterConfiguration&&);
+    MCNAPI RouterConfiguration(::OreUI::RouterConfiguration&&);
 
-    MCAPI RouterConfiguration(
+    MCNAPI RouterConfiguration(
         ::OreUI::RouteDataParser&& routeDataParser,
         ::std::function<bool()>    isUsingWebComponentsGameplayScreens
     );
 
-    MCAPI void _fillRoutes(::std::vector<::OreUI::RouteData> const& routeData);
+    MCNAPI void _fillRoutes(::std::vector<::OreUI::RouteData> const& routeData);
 
-    MCAPI ::std::unique_ptr<::OreUI::IRouteMatcher> createRouteMatcher(
+    MCNAPI ::std::unique_ptr<::OreUI::IRouteMatcher> createRouteMatcher(
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack,
         ::OreUI::EntryPoints::RouteFlags                    scope
     ) const;
 
-    MCAPI ::std::tuple<::std::vector<::OreUI::RouteData>, ::std::vector<::OreUI::RouteJsonMetadata>>
+    MCNAPI ::std::tuple<::std::vector<::OreUI::RouteData>, ::std::vector<::OreUI::RouteJsonMetadata>>
     getRouteData() const;
 
-    MCAPI bool reload();
+    MCNAPI bool reload();
 
-    MCAPI ~RouterConfiguration();
+    MCNAPI ~RouterConfiguration();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::RouterConfiguration&&);
+    MCNAPI void* $ctor(::OreUI::RouterConfiguration&&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::OreUI::RouteDataParser&& routeDataParser, ::std::function<bool()> isUsingWebComponentsGameplayScreens);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

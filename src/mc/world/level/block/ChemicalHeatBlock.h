@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void _tick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getExtraRenderLayers() const;
+    MCNAPI int $getExtraRenderLayers() const;
 
-    MCFOLD bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool $canBeUsedInCommands(::BaseGameVersion const& baseGameVersion) const;
 
 
     // NOLINTEND
@@ -50,6 +50,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

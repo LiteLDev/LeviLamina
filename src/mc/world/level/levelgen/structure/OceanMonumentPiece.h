@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OceanMonumentPiece(
+    MCNAPI OceanMonumentPiece(
         int                                 genDepth,
         int&                                orientation,
         ::std::shared_ptr<::RoomDefinition> roomDefinition,
@@ -52,26 +52,26 @@ public:
         int                                 roomDepth
     );
 
-    MCAPI void
+    MCNAPI void
     generateDefaultFloor(::BlockSource& region, ::BoundingBox const& chunkBB, int xOff, int zOff, bool downOpening);
 
-    MCAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
+    MCNAPI void spawnElder(::BlockSource& region, ::BoundingBox const& chunkBB, int x, int y, int z);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& mLeftWingIndex();
+    MCNAPI static int const& mLeftWingIndex();
 
-    MCAPI static int const& mPenthouseIndex();
+    MCNAPI static int const& mPenthouseIndex();
 
-    MCAPI static int const& mRightWingIndex();
+    MCNAPI static int const& mRightWingIndex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         int                                 genDepth,
         int&                                orientation,
         ::std::shared_ptr<::RoomDefinition> roomDefinition,
@@ -84,13 +84,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-    MCAPI int $getWorldZ(int x, int z);
+    MCNAPI int $getWorldZ(int x, int z);
 
-    MCAPI int $getWorldX(int x, int z);
+    MCNAPI int $getWorldX(int x, int z);
 
-    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
 
     // NOLINTEND

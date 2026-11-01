@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSoundByName(::std::string const& name);
+    MCNAPI void addSoundByName(::std::string const& name);
 
-    MCAPI void setActorDefByName(::std::string const& name);
+    MCNAPI void setActorDefByName(::std::string const& name);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ShooterDefinition>>& root);
     // NOLINTEND
 };

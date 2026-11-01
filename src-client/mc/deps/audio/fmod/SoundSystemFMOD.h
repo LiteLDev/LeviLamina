@@ -391,7 +391,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SoundSystemFMOD(
+    MCNAPI SoundSystemFMOD(
         ::ResourceLoader&                                     resourceLoader,
         ::std::unique_ptr<::Audio::IAudioAssetProvider const> audioAssetProvider,
         ::Core::Path const&                                   tempFolderPath,
@@ -399,20 +399,20 @@ public:
         uint64                                                threadMask
     );
 
-    MCAPI void _loadSoundAsync(
+    MCNAPI void _loadSoundAsync(
         ::SoundItem const&                     soundItem,
         ::SoundCacheKeyFMOD                    soundCacheKey,
         ::std::weak_ptr<::DiskSoundSourceFMOD> weakSoundSource
     );
 
-    MCAPI void _loadSoundAsync(
+    MCNAPI void _loadSoundAsync(
         ::Core::Path const&                               soundPath,
         ::std::unique_ptr<::Audio::IStreamableAudioAsset> streamableAudioAsset,
         ::SoundCacheKeyFMOD                               soundCacheKey,
         ::std::weak_ptr<::DiskSoundSourceFMOD>            weakSoundSource
     );
 
-    MCAPI uint64 _playAt(
+    MCNAPI uint64 _playAt(
         ::Core::Path const&                  soundPath,
         ::SoundEvent const*                  soundEvent,
         ::std::string const&                 eventName,
@@ -433,7 +433,7 @@ public:
         int                                  channelPriority
     );
 
-    MCAPI uint64 _playEvent(
+    MCNAPI uint64 _playEvent(
         ::SoundEvent const&                  soundEvent,
         ::std::string const&                 eventName,
         float                                volumeScalar,
@@ -452,7 +452,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourceLoader&                                     resourceLoader,
         ::std::unique_ptr<::Audio::IAudioAssetProvider const> audioAssetProvider,
         ::Core::Path const&                                   tempFolderPath,
@@ -464,35 +464,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $preinit();
+    MCNAPI bool $preinit();
 
-    MCAPI void $init();
+    MCNAPI void $init();
 
-    MCAPI void $destroy();
+    MCNAPI void $destroy();
 
-    MCAPI void $setOutputDevice(::SoundSystemGUID& outputDevice);
+    MCNAPI void $setOutputDevice(::SoundSystemGUID& outputDevice);
 
-    MCAPI void $setAsyncLoadFunction(::std::function<void(::SoundLoadTask)> asyncLoad);
+    MCNAPI void $setAsyncLoadFunction(::std::function<void(::SoundLoadTask)> asyncLoad);
 
-    MCAPI void $enable(bool status);
+    MCNAPI void $enable(bool status);
 
-    MCAPI void $mute(bool muted);
+    MCNAPI void $mute(bool muted);
 
-    MCAPI bool $addListener(int const handle);
+    MCNAPI bool $addListener(int const handle);
 
-    MCAPI void $removeListener(int const handle);
+    MCNAPI void $removeListener(int const handle);
 
-    MCAPI void $setMainVolume(float vol);
+    MCNAPI void $setMainVolume(float vol);
 
-    MCAPI void $setMusicVolume(float vol);
+    MCNAPI void $setMusicVolume(float vol);
 
-    MCAPI void $setSoundVolume(float vol);
+    MCNAPI void $setSoundVolume(float vol);
 
-    MCAPI void $setSoundCategoryVolume(::std::string const& category, float vol);
+    MCNAPI void $setSoundCategoryVolume(::std::string const& category, float vol);
 
-    MCAPI void $setTTSVolume(float vol);
+    MCNAPI void $setTTSVolume(float vol);
 
-    MCAPI bool $loadRawFromMemory(
+    MCNAPI bool $loadRawFromMemory(
         ::Core::Path const& soundPath,
         char const*         data,
         uint64              dataSize,
@@ -501,49 +501,49 @@ public:
         ::SoundFormat       format
     );
 
-    MCAPI bool $loadFromMemory(::Core::Path const& soundPath, char const* data, uint64 dataSize);
+    MCNAPI bool $loadFromMemory(::Core::Path const& soundPath, char const* data, uint64 dataSize);
 
-    MCAPI void $unload(::Core::Path const& soundPath);
+    MCNAPI void $unload(::Core::Path const& soundPath);
 
-    MCAPI void $unloadAllExcept(::std::vector<::Core::PathBuffer<::std::string>> const& exceptions);
+    MCNAPI void $unloadAllExcept(::std::vector<::Core::PathBuffer<::std::string>> const& exceptions);
 
-    MCAPI void $stop(::std::string const& eventName);
+    MCNAPI void $stop(::std::string const& eventName);
 
-    MCAPI void $stop(uint64 handle);
+    MCNAPI void $stop(uint64 handle);
 
-    MCAPI void $stop(::ServerSoundHandle serverSoundHandle);
+    MCNAPI void $stop(::ServerSoundHandle serverSoundHandle);
 
-    MCAPI void $setVolume(::ServerSoundHandle serverSoundHandle, float volume);
+    MCNAPI void $setVolume(::ServerSoundHandle serverSoundHandle, float volume);
 
-    MCAPI void $setPitch(::ServerSoundHandle serverSoundHandle, float pitch);
+    MCNAPI void $setPitch(::ServerSoundHandle serverSoundHandle, float pitch);
 
-    MCAPI void $fade(::ServerSoundHandle serverSoundHandle, float duration, float targetVolume);
+    MCNAPI void $fade(::ServerSoundHandle serverSoundHandle, float duration, float targetVolume);
 
-    MCAPI void $setPlaybackPosition(::ServerSoundHandle serverSoundHandle, float seconds);
+    MCNAPI void $setPlaybackPosition(::ServerSoundHandle serverSoundHandle, float seconds);
 
-    MCAPI void $setPlaybackPosition(uint64 soundHandle, float seconds);
+    MCNAPI void $setPlaybackPosition(uint64 soundHandle, float seconds);
 
-    MCAPI void $pause(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
+    MCNAPI void $pause(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
 
-    MCAPI void $pause(uint64 soundHandle, ::SoundPauseSource source);
+    MCNAPI void $pause(uint64 soundHandle, ::SoundPauseSource source);
 
-    MCAPI void $resume(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
+    MCNAPI void $resume(::ServerSoundHandle serverSoundHandle, ::SoundPauseSource source);
 
-    MCAPI void $resume(uint64 soundHandle, ::SoundPauseSource source);
+    MCNAPI void $resume(uint64 soundHandle, ::SoundPauseSource source);
 
-    MCAPI void $signalStart(uint64 soundHandle);
+    MCNAPI void $signalStart(uint64 soundHandle);
 
-    MCAPI void $stopAllSounds();
+    MCNAPI void $stopAllSounds();
 
-    MCAPI void $pauseAllPlayingSounds(::SoundPauseSource source);
+    MCNAPI void $pauseAllPlayingSounds(::SoundPauseSource source);
 
-    MCAPI void $resumeAllPreviouslyPlayingSounds(::SoundPauseSource source);
+    MCNAPI void $resumeAllPreviouslyPlayingSounds(::SoundPauseSource source);
 
-    MCAPI void $fadeOut(uint64 handle, float duration) const;
+    MCNAPI void $fadeOut(uint64 handle, float duration) const;
 
-    MCAPI uint64 $playEvent(::SoundEvent const& soundEvent, ::std::string const& eventName, float volume, float pitch);
+    MCNAPI uint64 $playEvent(::SoundEvent const& soundEvent, ::std::string const& eventName, float volume, float pitch);
 
-    MCAPI uint64 $playEventAt(
+    MCNAPI uint64 $playEventAt(
         ::SoundEvent const&                  soundEvent,
         ::std::string const&                 eventName,
         float                                x,
@@ -554,22 +554,22 @@ public:
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     );
 
-    MCAPI uint64 $playEventAt(::SoundEvent const& soundEvent, ::PlaySoundOptions const& options);
+    MCNAPI uint64 $playEventAt(::SoundEvent const& soundEvent, ::PlaySoundOptions const& options);
 
-    MCAPI uint64 $playStreamableEventAt(
+    MCNAPI uint64 $playStreamableEventAt(
         ::SoundEvent const&                               soundEvent,
         ::SoundItem const&                                soundItem,
         ::std::unique_ptr<::Audio::IStreamableAudioAsset> streamableAudioAsset,
         ::PlaySoundOptions const&                         options
     );
 
-    MCAPI uint64 $playEventAttached(
+    MCNAPI uint64 $playEventAttached(
         ::SoundEvent const&                                 soundEvent,
         ::std::string const&                                eventName,
         ::std::function<void(::SoundInstanceProperties&)>&& getSoundProperties
     );
 
-    MCAPI uint64 $playAt(
+    MCNAPI uint64 $playAt(
         ::Core::Path const&                  soundPath,
         ::SoundEvent const*                  soundEvent,
         ::std::string const&                 eventName,
@@ -589,37 +589,37 @@ public:
         float                                volumeBase
     );
 
-    MCAPI void $playMusic(::PlayMusicOptions options, ::SoundItem const& soundItem);
+    MCNAPI void $playMusic(::PlayMusicOptions options, ::SoundItem const& soundItem);
 
-    MCAPI uint64 $playStreamableMusic(
+    MCNAPI uint64 $playStreamableMusic(
         ::std::string const&                              eventName,
         ::SoundItem const&                                soundItem,
         ::std::unique_ptr<::Audio::IStreamableAudioAsset> streamableAudioAsset
     );
 
-    MCAPI void $pauseMusic(bool paused);
+    MCNAPI void $pauseMusic(bool paused);
 
-    MCAPI void $stopMusic();
+    MCNAPI void $stopMusic();
 
-    MCAPI void $fadeMusicOut(float time);
+    MCNAPI void $fadeMusicOut(float time);
 
-    MCAPI bool $isMusicChannelPlaying() const;
+    MCNAPI bool $isMusicChannelPlaying() const;
 
-    MCAPI bool $isPlayingMusicEvent(::std::string const& eventName) const;
+    MCNAPI bool $isPlayingMusicEvent(::std::string const& eventName) const;
 
-    MCAPI bool $isPlayingMusic(::Core::PathView soundPath) const;
+    MCNAPI bool $isPlayingMusic(::Core::PathView soundPath) const;
 
-    MCAPI bool $isLoadingMusic() const;
+    MCNAPI bool $isLoadingMusic() const;
 
-    MCAPI void $cancelLoadMusic();
+    MCNAPI void $cancelLoadMusic();
 
-    MCAPI ::Core::PathView $getCurrentlyPlayingMusicPath() const;
+    MCNAPI ::Core::PathView $getCurrentlyPlayingMusicPath() const;
 
-    MCAPI ::std::string $getCurrentlyPlayingEventName() const;
+    MCNAPI ::std::string $getCurrentlyPlayingEventName() const;
 
-    MCAPI void $update(float elapsedTime);
+    MCNAPI void $update(float elapsedTime);
 
-    MCAPI void $playSound(
+    MCNAPI void $playSound(
         float                 x,
         float                 y,
         float                 z,
@@ -635,19 +635,19 @@ public:
         int                   loopCount
     );
 
-    MCAPI ::FMOD::Sound* $getFirstSubSound(::std::shared_ptr<::FMOD::Sound> const& sound) const;
+    MCNAPI ::FMOD::Sound* $getFirstSubSound(::std::shared_ptr<::FMOD::Sound> const& sound) const;
 
-    MCAPI bool $isPlayingSound(uint64 handle) const;
+    MCNAPI bool $isPlayingSound(uint64 handle) const;
 
-    MCAPI bool $isPlayingSound(::Core::Path const& soundPath) const;
+    MCNAPI bool $isPlayingSound(::Core::Path const& soundPath) const;
 
-    MCAPI bool $isPlayingSound(::ServerSoundHandle serverSoundHandle) const;
+    MCNAPI bool $isPlayingSound(::ServerSoundHandle serverSoundHandle) const;
 
-    MCAPI bool $isSoundActive(uint64 handle) const;
+    MCNAPI bool $isSoundActive(uint64 handle) const;
 
-    MCAPI bool $wasSoundStoppedExplicitly(::ServerSoundHandle serverSoundHandle) const;
+    MCNAPI bool $wasSoundStoppedExplicitly(::ServerSoundHandle serverSoundHandle) const;
 
-    MCAPI uint64 $registerLoop(
+    MCNAPI uint64 $registerLoop(
         ::SoundItem const&                          soundItem,
         ::std::weak_ptr<::SoundEvent> const         soundEvent,
         ::std::string const&                        eventName,
@@ -656,41 +656,41 @@ public:
         float                                       fadeOutDuration
     );
 
-    MCAPI void $unregisterLoop(uint64 handle, bool hard);
+    MCNAPI void $unregisterLoop(uint64 handle, bool hard);
 
-    MCAPI void $displayDebugStats(::std::string& debugOutputFormat) const;
+    MCNAPI void $displayDebugStats(::std::string& debugOutputFormat) const;
 
-    MCAPI uint64 $getNewSoundHandle();
+    MCNAPI uint64 $getNewSoundHandle();
 
-    MCAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64 handle) const;
+    MCNAPI ::std::optional<::PlayingSoundAttributes> $tryGetPlayingSoundAttributes(uint64 handle) const;
 
-    MCAPI ::std::optional<::PlayingSoundAttributes>
+    MCNAPI ::std::optional<::PlayingSoundAttributes>
     $tryGetPlayingSoundAttributes(::ServerSoundHandle serverSoundHandle) const;
 
-    MCAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64 handle) const;
+    MCNAPI ::std::optional<::LoopingSoundAttributes> $tryGetLoopingSoundAttributes(uint64 handle) const;
 
-    MCAPI uint64 $playOnlineMusic(
+    MCNAPI uint64 $playOnlineMusic(
         ::std::string const&                  eventName,
         ::WeakRef<::Audio::OnlineAudioStream> stream,
         float                                 volume,
         ::Audio::SoundStartOptions            startOptions
     );
 
-    MCAPI uint64 $playOnlineMusic(
+    MCNAPI uint64 $playOnlineMusic(
         ::std::string const&                  eventName,
         ::SoundItem const&                    soundItem,
         ::WeakRef<::Audio::OnlineAudioStream> stream,
         ::Audio::SoundStartOptions            startOptions
     );
 
-    MCAPI uint64 $playOnlineSound(
+    MCNAPI uint64 $playOnlineSound(
         ::WeakRef<::Audio::OnlineAudioStream> stream,
         float                                 volume,
         float                                 pitch,
         ::Audio::SoundStartOptions            startOptions
     );
 
-    MCAPI uint64 $playOnlineSound(
+    MCNAPI uint64 $playOnlineSound(
         ::SoundEvent const&                   soundEvent,
         ::SoundItem const&                    soundItem,
         ::WeakRef<::Audio::OnlineAudioStream> stream,
@@ -698,33 +698,33 @@ public:
         ::Audio::SoundStartOptions            startOptions
     );
 
-    MCAPI uint64 $createRawUISoundStream(int bitDepth, int channels, float samplingRate);
+    MCNAPI uint64 $createRawUISoundStream(int bitDepth, int channels, float samplingRate);
 
-    MCAPI void $closeRawUISoundStream(uint64 handle);
+    MCNAPI void $closeRawUISoundStream(uint64 handle);
 
-    MCAPI void $playRawUISoundStream(uint64 handle);
+    MCNAPI void $playRawUISoundStream(uint64 handle);
 
-    MCAPI void $pauseRawUISoundStream(uint64 handle);
+    MCNAPI void $pauseRawUISoundStream(uint64 handle);
 
-    MCAPI void $feedRawUISoundStream(uint64 handle, int samples, float** pcm, int channels);
+    MCNAPI void $feedRawUISoundStream(uint64 handle, int samples, float** pcm, int channels);
 
-    MCAPI void $endRawUISoundStream(uint64 handle);
+    MCNAPI void $endRawUISoundStream(uint64 handle);
 
-    MCAPI void $setRawUISoundStreamVolume(uint64 handle, float volume);
+    MCNAPI void $setRawUISoundStreamVolume(uint64 handle, float volume);
 
-    MCAPI void $flushRawUISoundStreamData(uint64 handle);
+    MCNAPI void $flushRawUISoundStreamData(uint64 handle);
 
-    MCAPI bool $_createSystem();
+    MCNAPI bool $_createSystem();
 
-    MCAPI bool $_initSystem();
+    MCNAPI bool $_initSystem();
 
-    MCAPI void $_updateSystem(float elapsedTime);
+    MCNAPI void $_updateSystem(float elapsedTime);
 
-    MCAPI void $_destroySystem();
+    MCNAPI void $_destroySystem();
 
-    MCAPI void $_updateListenerAttributes();
+    MCNAPI void $_updateListenerAttributes();
 
-    MCAPI void $_setPositionalAttributes(
+    MCNAPI void $_setPositionalAttributes(
         ::FMOD::Channel* channel,
         ::FMOD::Sound*   sound,
         ::FMOD::Sound*   soundToPlay,

@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EmotePacketPayload(::EmotePacketPayload const&);
+    MCNAPI EmotePacketPayload(::EmotePacketPayload const&);
 
-    MCAPI ~EmotePacketPayload();
+    MCNAPI ~EmotePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EmotePacketPayload const&);
+    MCNAPI void* $ctor(::EmotePacketPayload const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

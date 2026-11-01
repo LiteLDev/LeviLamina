@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getInitialDefaultState();
+    MCNAPI ::Block const& $getInitialDefaultState();
 
 
     // NOLINTEND
@@ -28,6 +28,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -114,33 +114,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NpcInteractScreenController(
+    MCNAPI NpcInteractScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::std::shared_ptr<::INpcDialogueData>          dialogueData
     );
 
-    MCAPI void _addNewDeferredButtonTexts(uint64 actionIndex);
+    MCNAPI void _addNewDeferredButtonTexts(uint64 actionIndex);
 
-    MCAPI void _handleTextChanged(::NpcInteractScreenController::NpcTextEdit edit, int index);
+    MCNAPI void _handleTextChanged(::NpcInteractScreenController::NpcTextEdit edit, int index);
 
-    MCAPI bool _isAddActionAllowed();
+    MCNAPI bool _isAddActionAllowed();
 
-    MCAPI ::ui::ViewRequest _leaveFrom(::NpcInteractScreenController::Section fromSection);
+    MCNAPI ::ui::ViewRequest _leaveFrom(::NpcInteractScreenController::Section fromSection);
 
-    MCAPI void _saveEditsToServer();
+    MCNAPI void _saveEditsToServer();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _bagVecs(::UIPropertyBag& bag, ::NpcGUIOffset const& offsets);
+    MCNAPI static void _bagVecs(::UIPropertyBag& bag, ::NpcGUIOffset const& offsets);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::std::shared_ptr<::INpcDialogueData>          dialogueData
@@ -150,18 +150,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
+    MCNAPI ::EventResult $onNpcDialogueDataChange(::std::shared_ptr<::INpcDialogueData> dialogueData);
 
-    MCAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
+    MCNAPI ::EventResult $onNpcInteractScreenClose(::ActorUniqueID npcId, bool);
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 };

@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MolangMemberArray(::MolangStruct_RGB, ::mce::Color const& color);
+    MCNAPI MolangMemberArray(::MolangStruct_RGB, ::mce::Color const& color);
 
     MCAPI MolangMemberArray(::MolangStruct_RGBA, ::mce::Color const& color);
 
@@ -50,39 +50,39 @@ public:
     MCAPI MolangMemberArray(::MolangStruct_XYZ, ::Vec3 const& vec);
 
 #ifdef LL_PLAT_C
-    MCAPI MolangMemberArray(::MolangStruct_Z, float z);
+    MCNAPI MolangMemberArray(::MolangStruct_Z, float z);
 #endif
 
-    MCAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
+    MCNAPI MolangMemberArray(::MolangStruct_BaseAndPattern, int base, int pattern);
 
-    MCAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
+    MCNAPI MolangMemberArray(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
 
-    MCAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
+    MCNAPI MolangMemberArray(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
-    MCAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float rotY, float posY);
+    MCNAPI MolangMemberArray(::MolangStruct_RotYAndPosY, float rotY, float posY);
 
-    MCAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float speed, ::Vec3 const& direction);
+    MCNAPI MolangMemberArray(::MolangStruct_SpeedAndDirection, float speed, ::Vec3 const& direction);
 
-    MCAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
+    MCNAPI MolangMemberArray(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
-    MCAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
+    MCNAPI MolangMemberArray(::MolangStruct_UV, float u, float v);
 
-    MCAPI MolangMemberArray(
+    MCNAPI MolangMemberArray(
         ::MolangStruct_TRS,
         ::MolangMemberArray&& translation,
         ::MolangMemberArray&& rotation,
         ::MolangMemberArray&& scale
     );
 
-    MCAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
+    MCNAPI void add(::HashedString const& name, ::MolangScriptArg const& value);
 
-    MCAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
+    MCNAPI ::MolangScriptArg& getOrAdd(::HashedString const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MolangStruct_RGB, ::mce::Color const& color);
+    MCNAPI void* $ctor(::MolangStruct_RGB, ::mce::Color const& color);
 
     MCAPI void* $ctor(::MolangStruct_RGBA, ::mce::Color const& color);
 
@@ -91,24 +91,24 @@ public:
     MCAPI void* $ctor(::MolangStruct_XYZ, ::Vec3 const& vec);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::MolangStruct_Z, float z);
+    MCNAPI void* $ctor(::MolangStruct_Z, float z);
 #endif
 
-    MCAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
+    MCNAPI void* $ctor(::MolangStruct_BaseAndPattern, int base, int pattern);
 
-    MCAPI void* $ctor(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
+    MCNAPI void* $ctor(::MolangStruct_MinAndMax, ::MolangMemberArray&& min, ::MolangMemberArray&& max);
 
-    MCAPI void* $ctor(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
+    MCNAPI void* $ctor(::MolangStruct_PoseIndexAndHurtTime, int poseIndex, int hurtTime);
 
-    MCAPI void* $ctor(::MolangStruct_RotYAndPosY, float rotY, float posY);
+    MCNAPI void* $ctor(::MolangStruct_RotYAndPosY, float rotY, float posY);
 
-    MCAPI void* $ctor(::MolangStruct_SpeedAndDirection, float speed, ::Vec3 const& direction);
+    MCNAPI void* $ctor(::MolangStruct_SpeedAndDirection, float speed, ::Vec3 const& direction);
 
-    MCAPI void* $ctor(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
+    MCNAPI void* $ctor(::MolangStruct_TentacleAngleAndSwimRotation, float tentacleAngle, float swimRotation);
 
-    MCAPI void* $ctor(::MolangStruct_UV, float u, float v);
+    MCNAPI void* $ctor(::MolangStruct_UV, float u, float v);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MolangStruct_TRS,
         ::MolangMemberArray&& translation,
         ::MolangMemberArray&& rotation,

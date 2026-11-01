@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::std::string, ::Social::Events::OptionChange> getTrackedOptionChanges() const;
+    MCNAPI ::std::unordered_map<::std::string, ::Social::Events::OptionChange> getTrackedOptionChanges() const;
 
-    MCAPI ::std::unordered_map<::std::string, int> getTrackedOptions() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getTrackedOptions() const;
 
-    MCAPI void sendTrackedTelemetry(::std::string const& optionsGroupName);
+    MCNAPI void sendTrackedTelemetry(::std::string const& optionsGroupName);
 
-    MCAPI void sendTrackedTelemetryAlt(::std::string const& optionsGroupName);
+    MCNAPI void sendTrackedTelemetryAlt(::std::string const& optionsGroupName);
     // NOLINTEND
 };
 

@@ -35,7 +35,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _sendEvent(
+    MCNAPI static bool _sendEvent(
         ::Level&                              level,
         ::std::string const&                  sender,
         ::std::vector<::EntityContext> const& targets,
@@ -43,7 +43,7 @@ public:
         ::std::optional<::std::string> const& filteredMessage
     );
 
-    MCAPI static void _sendMessageToPlayer(
+    MCNAPI static void _sendMessageToPlayer(
         ::Player&                            player,
         ::std::string const&                 message,
         ::std::optional<::std::string> const filteredMessage,
@@ -58,7 +58,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

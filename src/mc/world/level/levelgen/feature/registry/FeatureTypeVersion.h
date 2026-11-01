@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
+    MCNAPI FeatureTypeVersion(::FeatureLoading::FeatureVersion version, bool isInternal);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
+    MCNAPI void* $ctor(::FeatureLoading::FeatureVersion version, bool isInternal);
     // NOLINTEND
 };

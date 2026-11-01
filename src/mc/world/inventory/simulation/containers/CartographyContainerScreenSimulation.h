@@ -61,9 +61,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::RecipeNetId _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& additionalStack);
+    MCNAPI ::RecipeNetId _getRecipeNetId(::ItemStack const& inputStack, ::ItemStack const& additionalStack);
 
-    MCAPI ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     _tryTransferCraft(::ContainerValidationSlotData const&, ::ContainerValidationSlotData const& dstSlot);
 #endif
     // NOLINTEND
@@ -72,29 +72,29 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::ContainerScreenActionResult $tryTakeAmount(
+    MCNAPI ::ContainerScreenActionResult $tryTakeAmount(
         ::ContainerValidationSlotData const& dstSlot,
         int                                  amount,
         ::ContainerValidationSlotData const& srcSlot
     );
 
-    MCAPI ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     $tryTakeAll(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    MCAPI ::ContainerScreenActionResult
+    MCNAPI ::ContainerScreenActionResult
     $tryTakeHalf(::ContainerValidationSlotData const& dstSlot, ::ContainerValidationSlotData const& srcSlot);
 
-    MCAPI ::ContainerScreenActionResult $tryAutoPlace(
+    MCNAPI ::ContainerScreenActionResult $tryAutoPlace(
         ::ContainerValidationSlotData const& srcSlot,
         ::ItemTransferAmount                 amount,
         ::ContainerScreenAutoplaceBehaviour  autoplaceBehaviour
     );
 
-    MCAPI ::ContainerValidationCraftResult $getCraftPreview();
+    MCNAPI ::ContainerValidationCraftResult $getCraftPreview();
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 #endif
 
 

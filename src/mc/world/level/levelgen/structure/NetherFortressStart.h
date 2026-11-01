@@ -17,9 +17,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
 
-    MCFOLD bool $requiresNeighborAwareBlockUpgrade() const;
+    MCNAPI bool $requiresNeighborAwareBlockUpgrade() const;
 
 
     // NOLINTEND

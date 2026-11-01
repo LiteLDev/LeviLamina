@@ -40,43 +40,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI explicit EditorFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
+    MCNAPI void _handleModeChanged(::Editor::Mode from, ::Editor::Mode to);
 
-    MCAPI ::std::optional<::std::string> const getCursorBlockName() const;
+    MCNAPI ::std::optional<::std::string> const getCursorBlockName() const;
 
-    MCAPI ::Editor::Mode getEditorMode() const;
+    MCNAPI ::Editor::Mode getEditorMode() const;
 
-    MCAPI void navigateUri(::std::string const& uri);
+    MCNAPI void navigateUri(::std::string const& uri);
 
-    MCAPI void onViewportFocusAreaResized(float width, float height, float offsetX, float offsetY);
+    MCNAPI void onViewportFocusAreaResized(float width, float height, float offsetX, float offsetY);
 
-    MCAPI void openConsole();
+    MCNAPI void openConsole();
 
-    MCAPI void openPauseMenu();
+    MCNAPI void openPauseMenu();
 
-    MCAPI void setEditorMode(::Editor::Mode newMode);
+    MCNAPI void setEditorMode(::Editor::Mode newMode);
 
-    MCAPI bool shouldDisplayReloadModal() const;
+    MCNAPI bool shouldDisplayReloadModal() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

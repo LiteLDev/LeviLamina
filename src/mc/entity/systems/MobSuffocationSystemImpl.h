@@ -120,7 +120,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickCheckSuffocation(
+    MCNAPI static void _tickCheckSuffocation(
         ::StrictEntityContext const&           entity,
         ::ActorInWallDetectionComponent const& actorInWallDetectionComponent,
         ::StateVectorComponent const&          stateVectorComponent,
@@ -138,7 +138,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::MobFlagComponent, ::ActorMovementTickNeededComponent, ::PlayerComponent, ::PassengerComponent>,
             ::Read<

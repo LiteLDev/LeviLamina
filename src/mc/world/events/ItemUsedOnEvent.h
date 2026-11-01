@@ -16,12 +16,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ItemUsedOnEvent();
+    MCNAPI ~ItemUsedOnEvent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

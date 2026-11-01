@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getLocalizationKey() const;
+    MCNAPI ::std::string getLocalizationKey() const;
 
-    MCAPI ::std::string getName() const;
+    MCNAPI ::std::string getName() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

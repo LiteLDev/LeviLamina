@@ -58,25 +58,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemUseOnActorInventoryTransaction& operator=(::ItemUseOnActorInventoryTransaction const&);
+    MCNAPI ::ItemUseOnActorInventoryTransaction& operator=(::ItemUseOnActorInventoryTransaction const&);
 
-    MCAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
+    MCNAPI ::ItemUseOnActorInventoryTransaction& setSelectedItem(::ItemStack const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCFOLD void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
+    MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
 
     // NOLINTEND
@@ -90,5 +90,6 @@ public:
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator==(::ItemUseOnActorInventoryTransaction const& lhs, ::ItemUseOnActorInventoryTransaction const& rhs);
+MCNAPI bool
+operator==(::ItemUseOnActorInventoryTransaction const& lhs, ::ItemUseOnActorInventoryTransaction const& rhs);
 // NOLINTEND

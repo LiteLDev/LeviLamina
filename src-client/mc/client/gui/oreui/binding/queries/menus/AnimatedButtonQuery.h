@@ -46,23 +46,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedButtonQuery(::OreUI::GameDependencies const& game, ::std::string const& resourceKey);
+    MCNAPI AnimatedButtonQuery(::OreUI::GameDependencies const& game, ::std::string const& resourceKey);
 
-    MCAPI ::std::string _getImageUrl(::MessageData const& message, ::std::string const& imageId) const;
+    MCNAPI ::std::string _getImageUrl(::MessageData const& message, ::std::string const& imageId) const;
 
-    MCAPI void _refresh();
+    MCNAPI void _refresh();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& resourceKey);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& resourceKey);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

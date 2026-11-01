@@ -126,20 +126,20 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
+        MCNAPI void $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility);
 
-        MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+        MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
             ::std::string&                                                    outData,
             ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
         );
 
-        MCAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+        MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-        MCAPI void $update();
+        MCNAPI void $update();
 
-        MCFOLD bool $isLocal() const;
+        MCNAPI bool $isLocal() const;
 
-        MCFOLD bool $isEncrypted() const;
+        MCNAPI bool $isEncrypted() const;
 
 
         // NOLINTEND
@@ -241,28 +241,28 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI RakNetConnector(
+    MCNAPI RakNetConnector(
         ::RakNetConnector::ConnectionCallbacks&  callbacks,
         ::RakPeerHelper::IPSupportInterface&     ipInterface,
         ::brstd::copyable_function<bool() const> isNetworkAllowed,
         ::RakNet::RakPeerConfiguration const&    rakPeerConfig
     );
 
-    MCAPI void getPingTimeForConnection(
+    MCNAPI void getPingTimeForConnection(
         ::std::string const&                                           address,
         int                                                            port,
         ::brstd::move_only_function<void(::std::chrono::milliseconds)> pingTimeCallback
     );
 #endif
 
-    MCAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
+    MCNAPI bool getStatistics(::RakNet::RakNetStatistics& rns);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::RakNetConnector::ConnectionCallbacks&  callbacks,
         ::RakPeerHelper::IPSupportInterface&     ipInterface,
         ::brstd::copyable_function<bool() const> isNetworkAllowed,
@@ -274,57 +274,57 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const&);
+    MCNAPI bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const&);
 
-    MCAPI bool $connect(
+    MCNAPI bool $connect(
         ::Social::GameConnectionInfo const& primaryConnection,
         ::Social::GameConnectionInfo const& backupConnection,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     );
 
-    MCAPI void $disconnect();
+    MCNAPI void $disconnect();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $runEvents();
+    MCNAPI void $runEvents();
 
-    MCAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
+    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const& id);
 
-    MCAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
+    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const& id);
 
-    MCAPI bool $isServer() const;
+    MCNAPI bool $isServer() const;
 
-    MCAPI ::std::string $getLocalIp();
+    MCNAPI ::std::string $getLocalIp();
 
-    MCAPI ushort $getPort() const;
+    MCNAPI ushort $getPort() const;
 
-    MCAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCAPI void $setConnectedResolvedExperienceInfo(
+    MCNAPI void $setConnectedResolvedExperienceInfo(
         ::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo
     );
 
-    MCAPI bool $isIPv4Supported() const;
+    MCNAPI bool $isIPv4Supported() const;
 
-    MCAPI bool $isIPv6Supported() const;
+    MCNAPI bool $isIPv6Supported() const;
 
-    MCAPI ushort $getIPv4Port() const;
+    MCNAPI ushort $getIPv4Port() const;
 
-    MCAPI ushort $getIPv6Port() const;
+    MCNAPI ushort $getIPv6Port() const;
 
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
+    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCAPI ::RakNet::RakPeerInterface* $getPeer();
+    MCNAPI ::RakNet::RakPeerInterface* $getPeer();
 
-    MCAPI ::RakNet::RakPeerInterface const* $getPeer() const;
+    MCNAPI ::RakNet::RakPeerInterface const* $getPeer() const;
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
 
-    MCFOLD void $setDisableLanSignaling(bool);
+    MCNAPI void $setDisableLanSignaling(bool);
 
-    MCAPI void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCAPI void $_onEnable();
+    MCNAPI void $_onEnable();
 
 
     // NOLINTEND

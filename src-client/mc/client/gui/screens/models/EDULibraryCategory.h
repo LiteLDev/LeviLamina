@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduLibraryCategory(::EduLibraryCategory const&);
+    MCNAPI EduLibraryCategory(::EduLibraryCategory const&);
 
-    MCAPI ~EduLibraryCategory();
+    MCNAPI ~EduLibraryCategory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EduLibraryCategory const&);
+    MCNAPI void* $ctor(::EduLibraryCategory const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

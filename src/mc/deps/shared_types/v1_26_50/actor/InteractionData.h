@@ -44,15 +44,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD bool operator==(::SharedTypes::v1_26_50::InteractionData::AddItemsData const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_50::InteractionData::AddItemsData const&) const;
 
-        MCAPI ~AddItemsData();
+        MCNAPI ~AddItemsData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -78,9 +78,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void setCopperEventType(::std::string const& name);
+        MCNAPI void setCopperEventType(::std::string const& name);
 
-        MCAPI void setParticleType(::std::string const& name);
+        MCNAPI void setParticleType(::std::string const& name);
         // NOLINTEND
     };
 
@@ -95,23 +95,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SharedTypes::v1_26_50::InteractionData::RepairEntityItemData const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_50::InteractionData::RepairEntityItemData const&) const;
 
-        MCAPI void setRepairItemAmount(int const& amount);
+        MCNAPI void setRepairItemAmount(int const& amount);
 
-        MCAPI ~RepairEntityItemData();
+        MCNAPI ~RepairEntityItemData();
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::string const& SLOT_DESCRIPTION();
+        MCNAPI static ::std::string const& SLOT_DESCRIPTION();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -126,15 +126,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SharedTypes::v1_26_50::InteractionData::SpawnItemsData const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_50::InteractionData::SpawnItemsData const&) const;
 
-        MCAPI ~SpawnItemsData();
+        MCNAPI ~SpawnItemsData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -169,54 +169,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InteractionData();
+    MCNAPI InteractionData();
 
-    MCAPI InteractionData(::SharedTypes::v1_26_50::InteractionData const&);
+    MCNAPI InteractionData(::SharedTypes::v1_26_50::InteractionData const&);
 
-    MCAPI void addActorDefinitionIdentifier(::std::string const& name);
+    MCNAPI void addActorDefinitionIdentifier(::std::string const& name);
 
-    MCAPI void addLevelSoundEvent(::std::string const& name);
+    MCNAPI void addLevelSoundEvent(::std::string const& name);
 
-    MCAPI ::SharedTypes::v1_26_50::InteractionData& operator=(::SharedTypes::v1_26_50::InteractionData const&);
+    MCNAPI ::SharedTypes::v1_26_50::InteractionData& operator=(::SharedTypes::v1_26_50::InteractionData const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_50::InteractionData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_50::InteractionData const&) const;
 
-    MCAPI void setVibrationType(::std::string const& name);
+    MCNAPI void setVibrationType(::std::string const& name);
 
-    MCAPI ~InteractionData();
+    MCNAPI ~InteractionData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void bindVibrationTypeEnum(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindVibrationTypeEnum(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     vibrationNameFromType(::SharedTypes::v1_26_50::InteractionData::VibrationType const& type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DROP_ITEM_SLOT_DESCRIPTION();
+    MCNAPI static ::std::string const& DROP_ITEM_SLOT_DESCRIPTION();
 
-    MCAPI static ::std::string const& EQUIP_ITEM_SLOT_DESCRIPTION();
+    MCNAPI static ::std::string const& EQUIP_ITEM_SLOT_DESCRIPTION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::InteractionData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::InteractionData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

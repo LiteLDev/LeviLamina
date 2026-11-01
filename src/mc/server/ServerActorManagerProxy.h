@@ -38,15 +38,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeActor(::Actor& actor);
+    MCNAPI void $initializeActor(::Actor& actor);
 
-    MCAPI ::Bedrock::Result<void, ::ActorValidationError> $validate(::Actor const& actor);
+    MCNAPI ::Bedrock::Result<void, ::ActorValidationError> $validate(::Actor const& actor);
 
-    MCAPI void $addActor(::Actor& actor);
+    MCNAPI void $addActor(::Actor& actor);
 
-    MCAPI void $removeActorInLevelChunk(::Actor const& actor);
+    MCNAPI void $removeActorInLevelChunk(::Actor const& actor);
 
-    MCAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
+    MCNAPI void $deleteActorFromWorldInLevelChunk(::Actor const& actor);
 
 
     // NOLINTEND

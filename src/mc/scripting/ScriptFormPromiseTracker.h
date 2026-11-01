@@ -73,13 +73,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~FromRequest();
+        MCNAPI ~FromRequest();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -116,13 +116,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptFormPromiseTracker(
+    MCNAPI ScriptFormPromiseTracker(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
     );
 
-    MCAPI void rejectAll();
+    MCNAPI void rejectAll();
 
     MCAPI void showDataDrivenScreenToPlayer(
         ::Player const&                              player,
@@ -135,13 +135,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
+    MCNAPI static void _sendToClient(::Player const& player, ::Json::Value formJson, uint formId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerScriptManagerEvents&    events,
         ::LevelEventCoordinator&        levelEventCoordinator,
         ::ServerPlayerEventCoordinator& playerEventCooordinator
@@ -151,13 +151,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerFormResponseEvent const& formResponseEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerFormCloseEvent const& formCloseEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerDataDrivenScreenClosedEvent const& formResponseEvent);
 
-    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
 
     // NOLINTEND

@@ -37,21 +37,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ComponentData(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
+        MCNAPI ComponentData(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
 
-        MCAPI ~ComponentData();
+        MCNAPI ~ComponentData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_21_60::CustomComponentsItemComponent::ComponentData const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -66,9 +66,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::std::optional<::SharedTypes::v1_20_80::CustomComponentsItemComponent>& oldComp,
         ::std::optional<::SharedTypes::v1_21_60::CustomComponentsItemComponent>& newComp
     );
@@ -77,7 +77,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

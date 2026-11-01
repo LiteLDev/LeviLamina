@@ -77,37 +77,37 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ActorAddEffectEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorAddEffectEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorDefinitionEndedEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorUpgradeEndedEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorUpgradeEndedEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorHealEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorHealEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorHurtEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorHurtEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorDiedEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorDiedEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorAttackEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorAttackEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorHealthChangedEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorDroppedItemEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorDroppedItemEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ActorAcquiredItemEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
+    MCNAPI ::EventResult $onEvent(::ProjectileHitEvent const& projectileHitEvent);
 
-    MCAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    MCNAPI ::EventResult $onEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
-    MCAPI ::EventResult $onEvent(::MountTamingEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::MountTamingEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::TamingEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::TamingEvent const& eventData);
 
-    MCAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
+    MCNAPI ::EventResult $onActorSneakChanged(::Actor& actor, bool isSneaking);
 
-    MCAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
+    MCNAPI ::EventResult $onActorCreated(::Actor& actor, ::ActorInitializationMethod initializationMethod);
 
 
     // NOLINTEND

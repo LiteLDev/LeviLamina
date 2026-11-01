@@ -49,27 +49,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
+    MCNAPI bool _finalize(::BlockSource& region, ::IRandom& random, ::std::function<void(::BlockPos&)> applyToBlocks);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $test(::Block const& block, ::IRandom&) const;
+    MCNAPI bool $test(::Block const& block, ::IRandom&) const;
 
-    MCAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::IRandom&) const;
+    MCNAPI bool $test(::BlockPos const& worldPos, ::BlockPos const&, ::IRandom&) const;
 
-    MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
+    MCNAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

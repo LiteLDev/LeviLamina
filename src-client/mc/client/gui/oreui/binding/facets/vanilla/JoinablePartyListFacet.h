@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JoinablePartyListFacet(
+    MCNAPI JoinablePartyListFacet(
         ::Bedrock::NonOwnerPointer<::Parties::JoinablePartyList>   joinablePartyList,
         ::std::shared_ptr<::Social::ProfileSystem>                 profileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
@@ -62,21 +62,21 @@ public:
         ::World::WorldPlayerListTracker&                           worldPlayerListTracker
     );
 
-    MCAPI void _updateJoinableParties();
+    MCNAPI void _updateJoinableParties();
 
-    MCFOLD ::std::vector<::OreUI::JoinablePartyFriend> const& getJoinablePartyFriends() const;
+    MCNAPI ::std::vector<::OreUI::JoinablePartyFriend> const& getJoinablePartyFriends() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NonOwnerPointer<::Parties::JoinablePartyList>   joinablePartyList,
         ::std::shared_ptr<::Social::ProfileSystem>                 profileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -41,22 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::RakNet::RNS2BindResult
+    MCNAPI ::RakNet::RNS2BindResult
     BindSharedIPV4And6(::RakNet::RNS2_BerkleyBindParameters* bindParameters, char const* file, uint line);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
+    MCNAPI static void GetSystemAddressIPV4And6(int rns2Socket, ::RakNet::SystemAddress* systemAddressOut);
 
-    MCAPI static uint RecvFromLoop(void* arguments);
+    MCNAPI static uint RecvFromLoop(void* arguments);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $SetMulticastInterface(int interfaceIndex);
+    MCNAPI void $SetMulticastInterface(int interfaceIndex);
 
 
     // NOLINTEND

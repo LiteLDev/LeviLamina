@@ -29,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CopperBehavior(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
+    MCNAPI CopperBehavior(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
+    MCNAPI void* $ctor(::CopperBlockSet const& blockSet, ::HashedString const& thisBlock);
     // NOLINTEND
 };

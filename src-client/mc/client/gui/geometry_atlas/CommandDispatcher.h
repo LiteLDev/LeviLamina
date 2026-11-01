@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tryDispatch(
+    MCNAPI void tryDispatch(
         ::std::variant<
             ::GeometryAtlas::AllocateAtlasPayload,
             ::GeometryAtlas::AllocateBackendPayload,

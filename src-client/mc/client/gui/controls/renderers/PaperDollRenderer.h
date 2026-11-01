@@ -87,41 +87,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PaperDollRenderer();
+    MCNAPI PaperDollRenderer();
 
-    MCAPI explicit PaperDollRenderer(::IPaperDollUIDefSource const& def);
+    MCNAPI explicit PaperDollRenderer(::IPaperDollUIDefSource const& def);
 
-    MCAPI void _addAnimationIfNotRegistered(
+    MCNAPI void _addAnimationIfNotRegistered(
         ::std::shared_ptr<::ActorAnimationGroup> actorAnimationGroup,
         ::HashedString const&                    friendlyName
     );
 
-    MCAPI ::AnimationComponent& _getAnimationComponent();
+    MCNAPI ::AnimationComponent& _getAnimationComponent();
 
-    MCAPI void _render(
+    MCNAPI void _render(
         ::IPaperDollRenderContext&           context,
         ::PaperDollRenderOwnerData const&    data,
         ::OffscreenCaptureDescription const* capture
     );
 
-    MCAPI void _update(::IPaperDollUpdateContext& context, ::PaperDollUpdateOwnerData const& data);
+    MCNAPI void _update(::IPaperDollUpdateContext& context, ::PaperDollUpdateOwnerData const& data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::IPaperDollUIDefSource const& def);
+    MCNAPI void* $ctor(::IPaperDollUIDefSource const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 };

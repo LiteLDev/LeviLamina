@@ -45,17 +45,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
+    MCNAPI ::std::vector<::ItemStack> const* getReduction(::ItemStackBase const& block) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
+    MCNAPI ::ItemDescriptor tryGetItemDescriptorFromKey(int blockKey) const;
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
+    MCNAPI void $registerBlock(::ItemStack const& block, ::std::vector<::ItemStack> const& elements);
 
 
     // NOLINTEND

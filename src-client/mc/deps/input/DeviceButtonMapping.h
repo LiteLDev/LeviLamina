@@ -13,12 +13,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DeviceButtonMapping();
+    MCNAPI ~DeviceButtonMapping();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

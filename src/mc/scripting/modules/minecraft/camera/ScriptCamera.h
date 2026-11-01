@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> setCamera(
+    MCNAPI ::Scripting::Result_deprecated<void> setCamera(
         ::std::string const&                                        cameraPreset,
         ::std::optional<::std::variant<
             ::ScriptModuleMinecraft::ScriptCameraSetFacingOptions,
@@ -46,7 +46,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -10,7 +10,7 @@ struct BiomeIdType;
 namespace VanillaBiomeGroups {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<::BiomeIdType, 4> const& CAVE_BIOMES();
+MCNAPI ::std::array<::BiomeIdType, 4> const& CAVE_BIOMES();
 // NOLINTEND
 
 } // namespace VanillaBiomeGroups

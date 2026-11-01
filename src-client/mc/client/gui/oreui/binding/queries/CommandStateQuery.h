@@ -47,13 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandStateQuery(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
+    MCNAPI CommandStateQuery(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
+    MCNAPI void* $ctor(::OreUI::Detail::InvocationStateTracker& tracker, ::OreUI::Detail::IdType const& id);
     // NOLINTEND
 };
 

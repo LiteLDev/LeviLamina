@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
 
     // NOLINTEND

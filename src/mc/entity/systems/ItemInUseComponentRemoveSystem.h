@@ -17,13 +17,13 @@ struct TickingSystemWithInfo;
 namespace ItemInUseComponentRemoveSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickItemInUseComponentRemoveSystem(
+MCNAPI void _tickItemInUseComponentRemoveSystem(
     ::StrictEntityContext const&                                                           entity,
     ::ActorDataFlagComponent const&                                                        actorDataFlagComponent,
     ::EntityModifier<::ItemInUseComponent, ::ItemInUseTicksDuringMovementComponent> const& modifier
 );
 
-MCAPI ::TickingSystemWithInfo createRemoveItemInUseSystem();
+MCNAPI ::TickingSystemWithInfo createRemoveItemInUseSystem();
 // NOLINTEND
 
 } // namespace ItemInUseComponentRemoveSystem

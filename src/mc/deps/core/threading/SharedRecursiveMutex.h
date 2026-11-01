@@ -28,11 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_threadHoldsSharedLock(::std::thread::id);
+    MCNAPI bool $_threadHoldsSharedLock(::std::thread::id);
 
-    MCAPI bool $_shouldLockForSharedAccess(::std::thread::id);
+    MCNAPI bool $_shouldLockForSharedAccess(::std::thread::id);
 
-    MCAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
+    MCNAPI bool $_shouldUnLockForSharedAccess(::std::thread::id);
 
 
     // NOLINTEND

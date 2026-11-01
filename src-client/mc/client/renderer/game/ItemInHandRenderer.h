@@ -167,7 +167,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemInHandRenderer(
+    MCNAPI ItemInHandRenderer(
         ::IClientInstance&                     client,
         ::BlockTessellator&                    commonRenderer,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup
@@ -184,14 +184,15 @@ public:
         bool                           posAndRotSetByJSON
     );
 
-    MCAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
+    MCNAPI ::ItemRenderCall* _getRenderCall(::Mob* mob, ::ItemStack const& itemInstance, int fallbackFrame);
 
-    MCAPI void _pushSparklerParticles(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Level& level);
+    MCNAPI void
+    _pushSparklerParticles(::BaseActorRenderContext& renderContext, ::ItemStack const& item, ::Level& level);
 
-    MCAPI ::ItemRenderCall&
+    MCNAPI ::ItemRenderCall&
     _rebuildItem(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int fallbackFrame);
 
-    MCAPI void _renderBannerBlockItem(
+    MCNAPI void _renderBannerBlockItem(
         ::BaseActorRenderContext&           renderContext,
         ::dragon::RenderMetadata const      renderMetadata,
         ::ItemStack const&                  item,
@@ -202,7 +203,7 @@ public:
         float                               scale
     ) const;
 
-    MCAPI void _renderConduitBlockItem(
+    MCNAPI void _renderConduitBlockItem(
         ::BaseActorRenderContext&           renderContext,
         ::dragon::RenderMetadata const      renderMetadata,
         ::Actor&                            entity,
@@ -211,7 +212,7 @@ public:
         float                               frameAlpha
     ) const;
 
-    MCAPI void _renderCopperGolemStatueBlockItem(
+    MCNAPI void _renderCopperGolemStatueBlockItem(
         ::BaseActorRenderContext&      renderContext,
         ::dragon::RenderMetadata const renderMetadata,
         ::ItemStack const&             item,
@@ -220,7 +221,7 @@ public:
         bool const                     isInHandItem
     ) const;
 
-    MCAPI void _renderDecoratedPotBlockItem(
+    MCNAPI void _renderDecoratedPotBlockItem(
         ::BaseActorRenderContext&      renderContext,
         ::dragon::RenderMetadata const renderMetadata,
         ::ItemStack const&             item,
@@ -228,7 +229,7 @@ public:
         bool const                     isFirstPerson
     ) const;
 
-    MCAPI void _renderGlowstickBlockItem(
+    MCNAPI void _renderGlowstickBlockItem(
         ::BaseActorRenderContext&           renderContext,
         ::dragon::RenderMetadata const      renderMetadata,
         ::ItemStack const&                  item,
@@ -240,23 +241,23 @@ public:
         float                               scale
     );
 
-    MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
+    MCNAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
 
-    MCAPI void _renderPhotoMapItem(
+    MCNAPI void _renderPhotoMapItem(
         ::BaseActorRenderContext& renderContext,
         ::Player&                 player,
         float const               frameAlpha,
         bool const                isMainHand
     );
 
-    MCAPI void _tessellateBlockItem(
+    MCNAPI void _tessellateBlockItem(
         ::Tessellator&                                             tessellator,
         ::BlockTessellator&                                        t,
         ::Block const&                                             block,
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCaps
     );
 
-    MCAPI void _transformWorldMatrixFromJson(
+    MCNAPI void _transformWorldMatrixFromJson(
         ::MatrixStack::MatrixStackRef& worldMatrix,
         ::ItemStack const&             item,
         bool const                     isMainHand,
@@ -264,12 +265,12 @@ public:
         float                          textureScale
     );
 
-    MCAPI void clearRenderObjects();
+    MCNAPI void clearRenderObjects();
 
     MCAPI ::ItemRenderCall const&
     getRenderCallAtFrame(::BaseActorRenderContext& renderContext, ::ItemStack const& item, int frame);
 
-    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
     MCAPI void
     renderFirstPerson(::BaseActorRenderContext& renderContext, ::Matrix const& prevProj, ::ItemContextFlags itemFlags);
@@ -284,7 +285,7 @@ public:
         bool                      renderingMainHand
     );
 
-    MCAPI void renderItemNew(
+    MCNAPI void renderItemNew(
         ::BaseActorRenderContext& renderContext,
         ::Actor&                  entity,
         ::ItemStack const&        item,
@@ -299,23 +300,23 @@ public:
         ::ItemContextFlags              itemFlags
     );
 
-    MCAPI void
+    MCNAPI void
     tessellateAtFrame(::BaseActorRenderContext& renderContext, ::Mob* mob, ::ItemStack const& item, int frame);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
+    MCNAPI static bool _areNotMatchingChemistrySticks(::ItemStack& itemBefore, ::ItemStack const& itemAfter);
 
-    MCAPI static ::dragon::RenderMetadata _createRenderMetadata(
+    MCNAPI static ::dragon::RenderMetadata _createRenderMetadata(
         ::BaseActorRenderContext const& renderContext,
         ::Actor const&                  entity,
         ::ItemStack const&              item,
         bool const                      isPaperDoll
     );
 
-    MCAPI static void _tessellateTextureItem(
+    MCNAPI static void _tessellateTextureItem(
         ::BaseActorRenderContext& renderContext,
         ::TextureTessellator&     textureTessellator,
         ::Mob*                    mob,
@@ -331,7 +332,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                     client,
         ::BlockTessellator&                    commonRenderer,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup

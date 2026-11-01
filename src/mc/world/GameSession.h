@@ -42,7 +42,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI GameSession(
+    MCNAPI GameSession(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
@@ -51,7 +51,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI GameSession(
+    MCNAPI GameSession(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
@@ -61,19 +61,19 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
+    MCNAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 #endif
 
-    MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+    MCNAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
-    MCAPI ~GameSession();
+    MCNAPI ~GameSession();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
@@ -82,7 +82,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
@@ -95,6 +95,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

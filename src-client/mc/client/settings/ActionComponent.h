@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActionComponent(
+    MCNAPI ActionComponent(
         ::std::string_view                                 id,
         ::std::string_view                                 name,
         ::std::optional<::std::string>                     description,
@@ -65,15 +65,15 @@ public:
         ::std::unique_ptr<::Settings::IActionDataProvider> dataProvider
     );
 
-    MCAPI ::std::string getActionLabel() const;
+    MCNAPI ::std::string getActionLabel() const;
 
-    MCAPI bool invokeClickCallback(::std::function<void(bool)> statusCallback);
+    MCNAPI bool invokeClickCallback(::std::function<void(bool)> statusCallback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view                                 id,
         ::std::string_view                                 name,
         ::std::optional<::std::string>                     description,
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Settings::ComponentState $getDefaultState() const;
+    MCNAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

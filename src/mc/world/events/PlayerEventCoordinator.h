@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutablePlayerGameplayEvent<::CoordinatorResult>> event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutablePlayerGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI void sendPlayerKineticDamageDealt(
+    MCNAPI void sendPlayerKineticDamageDealt(
         ::Player&                           player,
         ::ActorUniqueID const&              target,
         ::DealKineticDamageComponent const& dealKinematicDamageComponent

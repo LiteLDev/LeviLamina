@@ -11,7 +11,7 @@ class ScreenContext;
 namespace ScreenSetupCleanupHelper {
 // functions
 // NOLINTBEGIN
-MCAPI void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance& client);
+MCNAPI void setupForStandardUIDrawing(::ScreenContext& screenContext, ::IClientInstance& client);
 // NOLINTEND
 
 } // namespace ScreenSetupCleanupHelper

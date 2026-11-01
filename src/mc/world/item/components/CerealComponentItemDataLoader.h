@@ -32,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     CerealComponentItemDataLoader(::BedrockLoadContext const& bedrockLoadContext, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BedrockLoadContext const& bedrockLoadContext, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void* $ctor(::BedrockLoadContext const& bedrockLoadContext, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 };

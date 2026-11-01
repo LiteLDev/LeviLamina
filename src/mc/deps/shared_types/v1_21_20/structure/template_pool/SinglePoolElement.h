@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SinglePoolElement(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
+    MCNAPI SinglePoolElement(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::SinglePoolElement const&);
     // NOLINTEND
 };
 

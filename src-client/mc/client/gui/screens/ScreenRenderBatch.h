@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addRenderControl(
+    MCNAPI bool _addRenderControl(
         ::UIControl&                control,
         ::BatchClippingState const& batchClippingState,
         ::BatchVisualState const&   batchVisualState,
@@ -41,9 +41,9 @@ public:
         bool                        hasRenderableComponent
     );
 
-    MCAPI ::ComponentRenderBatch& _findOrAddRenderBatch(::BatchKey&& batchKey);
+    MCNAPI ::ComponentRenderBatch& _findOrAddRenderBatch(::BatchKey&& batchKey);
 
-    MCAPI bool _populateRenderControlsCollection(
+    MCNAPI bool _populateRenderControlsCollection(
         ::UIControl&                control,
         ::BatchClippingState const& batchClippingState,
         ::BatchClippingState const& unclippedBatchClippingState,
@@ -52,13 +52,13 @@ public:
         bool                        checkIfRendered
     );
 
-    MCAPI void _storeTextureState(::UIControl& control, bool state);
+    MCNAPI void _storeTextureState(::UIControl& control, bool state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BatchKey createBatchKey(
+    MCNAPI static ::BatchKey createBatchKey(
         ::UICustomRenderer const&   renderer,
         int                         pass,
         float                       alpha,
@@ -70,6 +70,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
     // NOLINTEND
 };

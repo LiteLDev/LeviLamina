@@ -298,35 +298,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderDragonRenderingBackend(
+    MCNAPI RenderDragonRenderingBackend(
         ::OreUI::FrameDebugData&            frameDebugData,
         ::Gameface::TemporaryTextureHolder& temporaryTextureHolder
     );
 
-    MCAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
+    MCNAPI void _drawIndexedInstanced(uint indexCount, uint indexOffset, uint instanceCount, uint instanceOffset);
 
-    MCAPI void _flush(::OreUI::FrameDebugData::FlushTrigger trigger);
+    MCNAPI void _flush(::OreUI::FrameDebugData::FlushTrigger trigger);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::OreUI::FrameDebugData& frameDebugData, ::Gameface::TemporaryTextureHolder& temporaryTextureHolder);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&);
+    MCNAPI void $initializeStaticResources(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> const&);
 
-    MCFOLD void $onAppPreSuspended();
+    MCNAPI void $onAppPreSuspended();
 
-    MCFOLD void $BeginCommands();
+    MCNAPI void $BeginCommands();
 
-    MCAPI void $FillCaps(::renoir::RendererCaps& outCaps);
+    MCNAPI void $FillCaps(::renoir::RendererCaps& outCaps);
 
-    MCAPI void $WrapUserRenderTarget(
+    MCNAPI void $WrapUserRenderTarget(
         void*                                userObject,
         ::renoir::Texture2D const&           description,
         ::renoir::Texture2DObject            object,
@@ -335,44 +335,44 @@ public:
         ::renoir::DepthStencilTextureObject  dsObject
     );
 
-    MCAPI void
+    MCNAPI void
     $WrapUserTexture(void* userObject, ::renoir::Texture2D const& description, ::renoir::Texture2DObject object);
 
-    MCAPI bool $CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object);
+    MCNAPI bool $CreatePipelineState(::renoir::PipelineState const& state, ::renoir::PipelineStateObject object);
 
-    MCAPI void $DestroyPipelineState(::renoir::PipelineStateObject object);
+    MCNAPI void $DestroyPipelineState(::renoir::PipelineStateObject object);
 
-    MCAPI bool $CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool);
+    MCNAPI bool $CreateVertexBuffer(::renoir::VertexType type, uint count, ::renoir::VertexBufferObject object, bool);
 
-    MCAPI void $DestroyVertexBuffer(::renoir::VertexBufferObject object);
+    MCNAPI void $DestroyVertexBuffer(::renoir::VertexBufferObject object);
 
-    MCAPI void* $MapVertexBuffer(::renoir::VertexBufferObject object);
+    MCNAPI void* $MapVertexBuffer(::renoir::VertexBufferObject object);
 
-    MCAPI void $UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count);
+    MCNAPI void $UnmapVertexBuffer(::renoir::VertexBufferObject object, uint count);
 
-    MCAPI bool
+    MCNAPI bool
     $CreateIndexBuffer(::renoir::IndexBufferType format, uint count, ::renoir::IndexBufferObject object, bool);
 
-    MCAPI void $DestroyIndexBuffer(::renoir::IndexBufferObject object);
+    MCNAPI void $DestroyIndexBuffer(::renoir::IndexBufferObject object);
 
-    MCAPI void* $MapIndexBuffer(::renoir::IndexBufferObject object);
+    MCNAPI void* $MapIndexBuffer(::renoir::IndexBufferObject object);
 
-    MCAPI void $UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount);
+    MCNAPI void $UnmapIndexBuffer(::renoir::IndexBufferObject object, uint elemCount);
 
-    MCAPI bool $CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size);
+    MCNAPI bool $CreateConstantBuffer(::renoir::CBType type, ::renoir::ConstantBufferObject object, uint size);
 
-    MCAPI void $DestroyConstantBuffer(::renoir::ConstantBufferObject object);
+    MCNAPI void $DestroyConstantBuffer(::renoir::ConstantBufferObject object);
 
-    MCAPI bool $CreateTexture(
+    MCNAPI bool $CreateTexture(
         ::renoir::Texture2DObject  object,
         ::renoir::Texture2D const& description,
         void const*                data,
         uint                       dataLen
     );
 
-    MCAPI void $DestroyTexture(::renoir::Texture2DObject object);
+    MCNAPI void $DestroyTexture(::renoir::Texture2DObject object);
 
-    MCAPI void $UpdateTexture(
+    MCNAPI void $UpdateTexture(
         ::renoir::Texture2DObject  object,
         ::renoir::Texture2D const& description,
         ::renoir::UpdateBox*       boxes,
@@ -381,40 +381,40 @@ public:
         bool
     );
 
-    MCAPI bool $CreateDepthStencilTexture(
+    MCNAPI bool $CreateDepthStencilTexture(
         ::renoir::DepthStencilTextureObject  object,
         ::renoir::DepthStencilTexture const& description
     );
 
-    MCAPI void $DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object);
+    MCNAPI void $DestroyDepthStencilTexture(::renoir::DepthStencilTextureObject object);
 
-    MCFOLD void $CopyTextureToTexture(
+    MCNAPI void $CopyTextureToTexture(
         ::renoir::Texture2DObject,
         ::renoir::Texture2DObject,
         ::renoir::UpdateBox,
         ::renoir::float2
     );
 
-    MCAPI bool $CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description);
+    MCNAPI bool $CreateSampler2D(::renoir::Sampler2DObject object, ::renoir::Sampler2D const& description);
 
-    MCAPI void $DestroySampler2D(::renoir::Sampler2DObject object);
+    MCNAPI void $DestroySampler2D(::renoir::Sampler2DObject object);
 
-    MCFOLD bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
+    MCNAPI bool $ReadTexture(::renoir::TextureObject, ::renoir::UpdateBox const&, void*);
 
-    MCAPI void $ExecuteRendering(
+    MCNAPI void $ExecuteRendering(
         ::renoir::RendererBackend::BackendCommandsBuffer const*    buffers,
         uint                                                       buffersCount,
         ::renoir::RendererBackend::ConstantBufferUpdateData const* cboUpdates,
         uint                                                       numCboUpdates
     );
 
-    MCAPI void $ExecuteResourceCommands(
+    MCNAPI void $ExecuteResourceCommands(
         ::renoir::RendererBackend::BackendResourceCommandsBuffer const* buffers,
         uint                                                            buffersCount,
         ::renoir::ResourcesCommandsStage
     );
 
-    MCAPI void $EndCommands();
+    MCNAPI void $EndCommands();
     // NOLINTEND
 };
 

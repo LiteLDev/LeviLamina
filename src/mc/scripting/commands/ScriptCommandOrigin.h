@@ -72,39 +72,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string const& $getRequestId() const;
+    MCNAPI ::std::string const& $getRequestId() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::BlockPos $getBlockPosition() const;
+    MCNAPI ::BlockPos $getBlockPosition() const;
 
-    MCFOLD ::Vec3 $getWorldPosition() const;
+    MCNAPI ::Vec3 $getWorldPosition() const;
 
-    MCFOLD ::std::optional<::Vec2> $getRotation() const;
+    MCNAPI ::std::optional<::Vec2> $getRotation() const;
 
-    MCAPI ::Level* $getLevel() const;
+    MCNAPI ::Level* $getLevel() const;
 
-    MCFOLD ::Dimension* $getDimension() const;
+    MCNAPI ::Dimension* $getDimension() const;
 
-    MCFOLD ::Actor* $getEntity() const;
+    MCNAPI ::Actor* $getEntity() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::CommandPermissionLevel $getPermissionsLevel() const;
-#else // LL_PLAT_C
-    MCFOLD ::CommandPermissionLevel $getPermissionsLevel() const;
-#endif
+    MCNAPI ::CommandPermissionLevel $getPermissionsLevel() const;
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $clone() const;
 
-    MCFOLD bool $canUseCommandsWithoutCheatsEnabled() const;
+    MCNAPI bool $canUseCommandsWithoutCheatsEnabled() const;
 
-    MCFOLD bool $isSelectorExpansionAllowed() const;
+    MCNAPI bool $isSelectorExpansionAllowed() const;
 
-    MCFOLD ::CommandOriginType $getOriginType() const;
+    MCNAPI ::CommandOriginType $getOriginType() const;
 
-    MCAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
+    MCNAPI void $handleCommandOutputCallback(int successCount, ::std::string&& messages) const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
 
     // NOLINTEND

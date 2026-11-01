@@ -37,21 +37,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _notifyPageIndicatorManagerOfNewSubscriber();
+    MCNAPI void _notifyPageIndicatorManagerOfNewSubscriber();
 
-    MCAPI void _notifySubPageChanged(uint64 newPage);
+    MCNAPI void _notifySubPageChanged(uint64 newPage);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:

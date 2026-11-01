@@ -1461,15 +1461,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Level(::LevelArguments&& args);
+    MCNAPI explicit Level(::LevelArguments&& args);
 
-    MCAPI void _onAddBreakingItemParticleEffect(
+    MCNAPI void _onAddBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
         ::BreakingItemParticleData const& data,
         ::ResolvedItemIconInfo const&     textureInfo
     );
 
-    MCAPI void _onAddTerrainParticleEffect(
+    MCNAPI void _onAddTerrainParticleEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -1478,7 +1478,7 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void _onAddTerrainSlideEffect(
+    MCNAPI void _onAddTerrainSlideEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -1487,23 +1487,23 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void _onAnyGameplayUsersRemoved();
+    MCNAPI void _onAnyGameplayUsersRemoved();
 
-    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+    MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int);
+    MCNAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int);
 
-    MCAPI void _onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
+    MCNAPI void _onChunkReloaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk);
 
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI void _onLevelEventCompoundTag(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+    MCNAPI void _onLevelEventCompoundTag(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
-    MCAPI void _onLevelEventData(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+    MCNAPI void _onLevelEventData(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    MCAPI void _onPictureTaken(
+    MCNAPI void _onPictureTaken(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,
         ::Actor*                                                        target,
@@ -1511,18 +1511,18 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     );
 
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
+    MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
+    MCNAPI void _onSendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
-    MCAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
+    MCNAPI ::Bedrock::Result<::Actor*, ::ActorValidationError>
     addEntityWithError(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void earlyShutdownMainthread();
+    MCNAPI void earlyShutdownMainthread();
 
-    MCAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
+    MCNAPI ::ServerLevelEventCoordinator& getServerLevelEventCoordinator();
 
-    MCAPI ::NodeType isFree(
+    MCNAPI ::NodeType isFree(
         ::NavigationComponent& navigation,
         ::Actor&               entity,
         ::BlockPos const&      lastPathPos,
@@ -1531,33 +1531,33 @@ public:
         ::CanJumpIntoNode      jumpIntoNode
     );
 
-    MCAPI void loadShapeRegistry();
+    MCNAPI void loadShapeRegistry();
 
-    MCAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
+    MCNAPI void setPerformanceTelemetryPeriodicCallback(::std::function<void()> callback);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LevelStorageManager> _createLevelStorageManager(
+    MCNAPI static ::std::unique_ptr<::LevelStorageManager> _createLevelStorageManager(
         ::Bedrock::UniqueOwnerPointer<::LevelStorage> levelStorage,
         ::Scheduler&                                  scheduler,
         ::IMinecraftEventing&                         eventing
     );
 
-    MCAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
+    MCNAPI static ::LevelSeed64 parseLevelSeed64(::std::string const& seedString);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelArguments&& args);
+    MCNAPI void* $ctor(::LevelArguments&& args);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -1574,254 +1574,255 @@ public:
         ::ServerInitialization::IServerInitializer* init
     );
 
-    MCAPI void $startLeaveGame();
+    MCNAPI void $startLeaveGame();
 
-    MCAPI bool $isLeaveGameDone();
+    MCNAPI bool $isLeaveGameDone();
 
-    MCAPI bool $isDimensionTypeActive(::DimensionType dimensionType) const;
+    MCNAPI bool $isDimensionTypeActive(::DimensionType dimensionType) const;
 
-    MCAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
+    MCNAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
 
-    MCAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
+    MCNAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
 
-    MCAPI ::PlayerSpawnDimensionResolution $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
+    MCNAPI ::PlayerSpawnDimensionResolution $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
 
-    MCFOLD void $forEachDimension(::std::function<bool(::Dimension&)> callback);
+    MCNAPI void $forEachDimension(::std::function<bool(::Dimension&)> callback);
 
-    MCFOLD void $forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
+    MCNAPI void $forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
 
-    MCAPI uint $getChunkTickRange() const;
+    MCNAPI uint $getChunkTickRange() const;
 
-    MCAPI ::ChunkTickRangeManager const& $getChunkTickRangeManager() const;
+    MCNAPI ::ChunkTickRangeManager const& $getChunkTickRangeManager() const;
 
-    MCAPI ::PortalForcer& $getPortalForcer();
+    MCNAPI ::PortalForcer& $getPortalForcer();
 
-    MCAPI void $requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest);
+    MCNAPI void $requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
 
-    MCAPI void
+    MCNAPI void
     $entityChangeDimension(::Actor& entity, ::ActorDimensionTransferRequest const& actorDimensionTransferRequest);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
 
-    MCAPI ::Spawner& $getSpawner() const;
+    MCNAPI ::Spawner& $getSpawner() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::BossEventSubscriptionManager> $getBossEventSubscriptionManager();
 
-    MCFOLD ::ProjectileFactory& $getProjectileFactory() const;
+    MCNAPI ::ProjectileFactory& $getProjectileFactory() const;
 
-    MCAPI ::ActorDefinitionGroup* $getEntityDefinitions() const;
+    MCNAPI ::ActorDefinitionGroup* $getEntityDefinitions() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> $getActorAnimationGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationGroup> $getActorAnimationGroup() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
 
-    MCAPI ::BlockDefinitionGroup* $getBlockDefinitions() const;
+    MCNAPI ::BlockDefinitionGroup* $getBlockDefinitions() const;
 
-    MCFOLD ::PropertyGroupManager& $getActorPropertyGroup() const;
+    MCNAPI ::PropertyGroupManager& $getActorPropertyGroup() const;
 
-    MCFOLD ::CameraPresets const& $getCameraPresets() const;
+    MCNAPI ::CameraPresets const& $getCameraPresets() const;
 
-    MCFOLD ::CameraPresets& $getCameraPresets();
+    MCNAPI ::CameraPresets& $getCameraPresets();
 
-    MCAPI ::SharedTypes::v1_26_50::CameraPreset const* $getCameraPreset(int presetIndex) const;
+    MCNAPI ::SharedTypes::v1_26_50::CameraPreset const* $getCameraPreset(int presetIndex) const;
 
-    MCAPI bool $getDisablePlayerInteractions() const;
+    MCNAPI bool $getDisablePlayerInteractions() const;
 
-    MCAPI void $setDisablePlayerInteractions(bool const disable);
+    MCNAPI void $setDisablePlayerInteractions(bool const disable);
 
-    MCAPI ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
+    MCNAPI ::AutomationBehaviorTreeGroup& $getAutomationBehaviorTreeGroup() const;
 
-    MCAPI ::BehaviorFactory& $getBehaviorFactory() const;
+    MCNAPI ::BehaviorFactory& $getBehaviorFactory() const;
 
-    MCAPI ::SharedTypes::Legacy::Difficulty $getDifficulty() const;
+    MCNAPI ::SharedTypes::Legacy::Difficulty $getDifficulty() const;
 
-    MCAPI ::DimensionConversionData $getDimensionConversionData() const;
+    MCNAPI ::DimensionConversionData $getDimensionConversionData() const;
 
-    MCAPI float $getSpecialMultiplier(::DimensionType dimensionType) const;
+    MCNAPI float $getSpecialMultiplier(::DimensionType dimensionType) const;
 
-    MCAPI bool $hasCommandsEnabled() const;
+    MCNAPI bool $hasCommandsEnabled() const;
 
-    MCAPI bool $useMsaGamertagsOnly() const;
+    MCNAPI bool $useMsaGamertagsOnly() const;
 
-    MCAPI void $setMsaGamertagsOnly(bool msaGamertagsOnly);
+    MCNAPI void $setMsaGamertagsOnly(bool msaGamertagsOnly);
 
-    MCAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* $putEntity(
+    MCNAPI ::Actor* $putEntity(
         ::BlockSource&              region,
         ::ActorUniqueID             id,
         ::ActorRuntimeID            runtimeId,
         ::OwnerPtr<::EntityContext> entity
     );
 
-    MCAPI ::Actor* $putEntity(::BlockSource& region, ::ActorUniqueID id, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $putEntity(::BlockSource& region, ::ActorUniqueID id, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* $addGlobalEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addGlobalEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* $addAutonomousEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addAutonomousEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
+    MCNAPI void $addUser(::OwnerPtr<::EntityContext> userEntity);
 
 #ifdef LL_PLAT_S
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
+    MCNAPI ::Actor* $addDisplayEntity(::BlockSource&, ::OwnerPtr<::EntityContext>);
 #else // LL_PLAT_C
-    MCAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* $addDisplayEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 #endif
 
 #ifdef LL_PLAT_S
-    MCFOLD void $removeDisplayEntity(::WeakEntityRef);
+    MCNAPI void $removeDisplayEntity(::WeakEntityRef);
 #else // LL_PLAT_C
-    MCFOLD void $removeDisplayEntity(::WeakEntityRef entity);
+    MCNAPI void $removeDisplayEntity(::WeakEntityRef entity);
 #endif
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::DisplayActorManager> $getDisplayActorManager();
 
-    MCAPI void $suspendPlayer(::Player& player);
+    MCNAPI void $suspendPlayer(::Player& player);
 
-    MCAPI void $resumePlayer(::Player& player);
+    MCNAPI void $resumePlayer(::Player& player);
 
-    MCAPI bool $isPlayerSuspended(::Player& player) const;
+    MCNAPI bool $isPlayerSuspended(::Player& player) const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> $getGameplayUserManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> $getGameplayUserManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager const> $getGameplayUserManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager const> $getGameplayUserManager() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> $getPlayerLocationReceiver();
+    MCNAPI ::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> $getPlayerLocationReceiver();
 
-    MCAPI ::OwnerPtr<::EntityContext> $removeActorAndTakeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> $removeActorAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> $removeActorFromWorldAndTakeEntity(::WeakEntityRef entityRef);
 
-    MCAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc);
+    MCNAPI ::OwnerPtr<::EntityContext> $takeEntity(::WeakEntityRef entityRef, ::LevelChunk& lc);
 
-    MCAPI ::StrictEntityContext $fetchStrictEntity(::ActorUniqueID actorId, bool getRemoved) const;
+    MCNAPI ::StrictEntityContext $fetchStrictEntity(::ActorUniqueID actorId, bool getRemoved) const;
 
-    MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorId, bool getRemoved) const;
+    MCNAPI ::Actor* $fetchEntity(::ActorUniqueID actorId, bool getRemoved) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> $getActorFetcher() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorFetcher const> $getActorFetcher() const;
 
-    MCAPI ::Actor* $getRuntimeEntity(::ActorRuntimeID actorId, bool getRemoved) const;
+    MCNAPI ::Actor* $getRuntimeEntity(::ActorRuntimeID actorId, bool getRemoved) const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager> $getActorRuntimeIDManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager> $getActorRuntimeIDManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager const> $getActorRuntimeIDManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorRuntimeIDManager const> $getActorRuntimeIDManager() const;
 
-    MCAPI ::Mob* $getMob(::ActorUniqueID mobId) const;
+    MCNAPI ::Mob* $getMob(::ActorUniqueID mobId) const;
 
-    MCAPI ::Player* $getPlayer(::std::string const& name) const;
+    MCNAPI ::Player* $getPlayer(::std::string const& name) const;
 
-    MCAPI ::Player* $getPlayer(::mce::UUID const& uuid) const;
+    MCNAPI ::Player* $getPlayer(::mce::UUID const& uuid) const;
 
-    MCAPI ::Player* $getPlayer(::ActorUniqueID entityID) const;
+    MCNAPI ::Player* $getPlayer(::ActorUniqueID entityID) const;
 
-    MCAPI ::Player* $getPlayerByXuid(::std::string const& xuid) const;
+    MCNAPI ::Player* $getPlayerByXuid(::std::string const& xuid) const;
 
-    MCAPI ::Player* $getPlatformPlayer(::std::string const& platformOnlineId) const;
+    MCNAPI ::Player* $getPlatformPlayer(::std::string const& platformOnlineId) const;
 
-    MCAPI ::Player* $getPlayerFromServerId(::std::string const& serverId) const;
+    MCNAPI ::Player* $getPlayerFromServerId(::std::string const& serverId) const;
 
-    MCAPI ::Player* $getRuntimePlayer(::ActorRuntimeID runtimeId) const;
+    MCNAPI ::Player* $getRuntimePlayer(::ActorRuntimeID runtimeId) const;
 
-    MCAPI int $getNumRemotePlayers() const;
+    MCNAPI int $getNumRemotePlayers() const;
 
-    MCAPI ::Player* $getPrimaryLocalPlayer() const;
+    MCNAPI ::Player* $getPrimaryLocalPlayer() const;
 
-    MCAPI ::IMinecraftEventing& $getEventing();
+    MCNAPI ::IMinecraftEventing& $getEventing();
 
-    MCAPI ::mce::Color $getPlayerColor(::Player const& player) const;
+    MCNAPI ::mce::Color $getPlayerColor(::Player const& player) const;
 
-    MCAPI ::Tick const& $getCurrentTick() const;
+    MCNAPI ::Tick const& $getCurrentTick() const;
 
-    MCAPI ::Tick const $getCurrentServerTick() const;
+    MCNAPI ::Tick const $getCurrentServerTick() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TickDeltaTimeManager const> $getTickDeltaTimeManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TickDeltaTimeManager const> $getTickDeltaTimeManager() const;
 
-    MCFOLD ::ArmorTrimUnloader* $getArmorTrimUnloader();
+    MCNAPI ::ArmorTrimUnloader* $getArmorTrimUnloader();
 
-    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> $getContainerRegistryAccess() const;
+    MCNAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryAccess>> $getContainerRegistryAccess() const;
 
-    MCAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> $getContainerRegistryTracker() const;
+    MCNAPI ::gsl::not_null<::StackRefResult<::IContainerRegistryTracker>> $getContainerRegistryTracker() const;
 
-    MCAPI ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>> $getDynamicContainerSerialization() const;
+    MCNAPI ::gsl::not_null<::StackRefResult<::IDynamicContainerSerialization>>
+    $getDynamicContainerSerialization() const;
 
-    MCFOLD ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry const> $getShapeRegistry() const;
+    MCNAPI ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry const> $getShapeRegistry() const;
 
-    MCFOLD ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> $getMutableShapeRegistry() const;
+    MCNAPI ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry> $getMutableShapeRegistry() const;
 
-    MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
+    MCNAPI ::BiomeRegistry const& $getBiomeRegistry() const;
 
-    MCFOLD ::BiomeRegistry& $getBiomeRegistry();
+    MCNAPI ::BiomeRegistry& $getBiomeRegistry();
 
-    MCFOLD ::BlockPalette const& $getBlockPalette() const;
+    MCNAPI ::BlockPalette const& $getBlockPalette() const;
 
-    MCFOLD ::BlockPalette& $getBlockPalette();
+    MCNAPI ::BlockPalette& $getBlockPalette();
 
-    MCFOLD ::FeatureRegistry const& $getFeatureRegistry() const;
+    MCNAPI ::FeatureRegistry const& $getFeatureRegistry() const;
 
-    MCFOLD ::FeatureRegistry& $getFeatureRegistry();
+    MCNAPI ::FeatureRegistry& $getFeatureRegistry();
 
-    MCFOLD ::FeatureTypeFactory const& $getFeatureTypeFactory() const;
+    MCNAPI ::FeatureTypeFactory const& $getFeatureTypeFactory() const;
 
-    MCFOLD ::FeatureTypeFactory& $getFeatureTypeFactory();
+    MCNAPI ::FeatureTypeFactory& $getFeatureTypeFactory();
 
-    MCFOLD ::JigsawStructureRegistry const& $getJigsawStructureRegistry() const;
+    MCNAPI ::JigsawStructureRegistry const& $getJigsawStructureRegistry() const;
 
-    MCFOLD ::JigsawStructureRegistry& $getJigsawStructureRegistry();
+    MCNAPI ::JigsawStructureRegistry& $getJigsawStructureRegistry();
 
-    MCFOLD ::StructureSpawnRegistry const& $getStructureSpawnRegistry() const;
+    MCNAPI ::StructureSpawnRegistry const& $getStructureSpawnRegistry() const;
 
-    MCFOLD ::StructureSpawnRegistry& $getStructureSpawnRegistry();
+    MCNAPI ::StructureSpawnRegistry& $getStructureSpawnRegistry();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> const $getStructureManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> const $getStructureManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> $getStructureManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> $getStructureManager();
 
-    MCFOLD ::BiomeComponentFactory const& $getBiomeComponentFactory() const;
+    MCNAPI ::BiomeComponentFactory const& $getBiomeComponentFactory() const;
 
-    MCFOLD ::BiomeComponentFactory& $getBiomeComponentFactory();
+    MCNAPI ::BiomeComponentFactory& $getBiomeComponentFactory();
 
-    MCFOLD ::SurfaceBuilderRegistry const& $getSurfaceBuilderRegistry() const;
+    MCNAPI ::SurfaceBuilderRegistry const& $getSurfaceBuilderRegistry() const;
 
-    MCFOLD ::SurfaceBuilderRegistry& $getSurfaceBuilderRegistry();
+    MCNAPI ::SurfaceBuilderRegistry& $getSurfaceBuilderRegistry();
 
-    MCFOLD ::BiomeManager const& $getBiomeManager() const;
+    MCNAPI ::BiomeManager const& $getBiomeManager() const;
 
-    MCFOLD ::BiomeManager& $getBiomeManager();
+    MCNAPI ::BiomeManager& $getBiomeManager();
 
-    MCFOLD ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const& $getDimensionFactory() const;
+    MCNAPI ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&> const& $getDimensionFactory() const;
 
-    MCFOLD ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& $getDimensionFactory();
+    MCNAPI ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& $getDimensionFactory();
 
-    MCFOLD ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const&
+    MCNAPI ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&> const&
     $getLightTextureImageBuilderFactory() const;
 
-    MCFOLD ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& $getLightTextureImageBuilderFactory();
+    MCNAPI ::Factory<::BaseLightTextureImageBuilder, ::Level&, ::Scheduler&>& $getLightTextureImageBuilderFactory();
 
-    MCAPI ::InternalComponentRegistry& $getInternalComponentRegistry() const;
+    MCNAPI ::InternalComponentRegistry& $getInternalComponentRegistry() const;
 
-    MCFOLD ::IWorldRegistriesProvider const& $getWorldRegistriesProvider() const;
+    MCNAPI ::IWorldRegistriesProvider const& $getWorldRegistriesProvider() const;
 
-    MCFOLD ::IWorldRegistriesProvider& $getWorldRegistriesProvider();
+    MCNAPI ::IWorldRegistriesProvider& $getWorldRegistriesProvider();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const> const $getWorldClockRegistry() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> $getWorldClockRegistry();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry> $getWorldClockRegistry();
 
-    MCAPI void $addListener(::LevelListener& listener);
+    MCNAPI void $addListener(::LevelListener& listener);
 
-    MCAPI void $removeListener(::LevelListener& listener);
+    MCNAPI void $removeListener(::LevelListener& listener);
 
-    MCAPI void $tickEntities();
+    MCNAPI void $tickEntities();
 
-    MCAPI void $tickEntitySystems();
+    MCNAPI void $tickEntitySystems();
 
-    MCAPI void $onPlayerDeath(::Player& player, ::ActorDamageSource const& source);
+    MCNAPI void $onPlayerDeath(::Player& player, ::ActorDamageSource const& source);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $explode(
+    MCNAPI bool $explode(
         ::BlockSource& region,
         ::Actor*       source,
         ::Vec3 const&  pos,
@@ -1832,133 +1833,133 @@ public:
         bool           allowUnderwater
     );
 
-    MCAPI bool $explode(::Explosion& explosion);
+    MCNAPI bool $explode(::Explosion& explosion);
 
-    MCAPI void $denyEffect(::BlockSource& region, ::Vec3 const& pos);
+    MCNAPI void $denyEffect(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI void $potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect);
+    MCNAPI void $potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect);
 
-    MCAPI bool $extinguishFire(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source);
+    MCNAPI bool $extinguishFire(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor* source);
 
-    MCAPI ::std::unique_ptr<::Path>
+    MCNAPI ::std::unique_ptr<::Path>
     $findPath(::Actor& from, int xBest, int yBest, int zBest, ::NavigationComponent& navigation);
 
-    MCAPI ::std::unique_ptr<::Path> $findPath(::Actor& from, ::Actor const& to, ::NavigationComponent& navigation);
+    MCNAPI ::std::unique_ptr<::Path> $findPath(::Actor& from, ::Actor const& to, ::NavigationComponent& navigation);
 
-    MCAPI void $setSleepStatus(::PlayerSleepStatus const& status);
+    MCNAPI void $setSleepStatus(::PlayerSleepStatus const& status);
 
-    MCAPI ::PlayerSleepStatus $getSleepStatus() const;
+    MCNAPI ::PlayerSleepStatus $getSleepStatus() const;
 
-    MCAPI void $updateSleepingPlayerList();
+    MCNAPI void $updateSleepingPlayerList();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
 
-    MCAPI int $getTime() const;
+    MCNAPI int $getTime() const;
 
-    MCAPI void $setTime(int time);
+    MCNAPI void $setTime(int time);
 
-    MCAPI uint $getSeed();
+    MCNAPI uint $getSeed();
 
-    MCAPI ::LevelSeed64 $getLevelSeed64() const;
+    MCNAPI ::LevelSeed64 $getLevelSeed64() const;
 
-    MCFOLD ::BlockPos const& $getSharedSpawnPos() const;
+    MCNAPI ::BlockPos const& $getSharedSpawnPos() const;
 
-    MCAPI void $setDefaultSpawn(::BlockPos const& spawnPos);
+    MCNAPI void $setDefaultSpawn(::BlockPos const& spawnPos);
 
-    MCFOLD ::BlockPos const& $getDefaultSpawn() const;
+    MCNAPI ::BlockPos const& $getDefaultSpawn() const;
 
-    MCAPI void $setDefaultGameType(::GameType gameType);
+    MCNAPI void $setDefaultGameType(::GameType gameType);
 
-    MCAPI ::GameType $getDefaultGameType() const;
+    MCNAPI ::GameType $getDefaultGameType() const;
 
-    MCAPI void $setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
+    MCNAPI void $setDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
-    MCAPI void $setMultiplayerGameIntent(bool multiplayerGame);
+    MCNAPI void $setMultiplayerGameIntent(bool multiplayerGame);
 
-    MCAPI bool $getMultiplayerGameIntent() const;
+    MCNAPI bool $getMultiplayerGameIntent() const;
 
-    MCAPI void $setMultiplayerGame(bool multiplayerGame);
+    MCNAPI void $setMultiplayerGame(bool multiplayerGame);
 
-    MCAPI bool $isMultiplayerGame() const;
+    MCNAPI bool $isMultiplayerGame() const;
 
-    MCAPI void $setLANBroadcastIntent(bool broadcast);
+    MCNAPI void $setLANBroadcastIntent(bool broadcast);
 
-    MCAPI bool $getLANBroadcastIntent() const;
+    MCNAPI bool $getLANBroadcastIntent() const;
 
-    MCAPI void $setLANBroadcast(bool broadcast);
+    MCNAPI void $setLANBroadcast(bool broadcast);
 
-    MCAPI bool $getLANBroadcast() const;
+    MCNAPI bool $getLANBroadcast() const;
 
-    MCAPI void $setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+    MCNAPI void $setXBLBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
-    MCAPI ::Social::GamePublishSetting $getXBLBroadcastIntent() const;
+    MCNAPI ::Social::GamePublishSetting $getXBLBroadcastIntent() const;
 
-    MCAPI bool $hasXBLBroadcastIntent() const;
+    MCNAPI bool $hasXBLBroadcastIntent() const;
 
-    MCAPI void $setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
+    MCNAPI void $setXBLBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
-    MCAPI ::Social::GamePublishSetting $getXBLBroadcastMode() const;
+    MCNAPI ::Social::GamePublishSetting $getXBLBroadcastMode() const;
 
-    MCAPI bool $hasXBLBroadcast() const;
+    MCNAPI bool $hasXBLBroadcast() const;
 
-    MCAPI void $setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
+    MCNAPI void $setPlatformBroadcastIntent(::Social::GamePublishSetting broadcastMode);
 
-    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastIntent() const;
+    MCNAPI ::Social::GamePublishSetting $getPlatformBroadcastIntent() const;
 
-    MCAPI bool $hasPlatformBroadcastIntent() const;
+    MCNAPI bool $hasPlatformBroadcastIntent() const;
 
-    MCAPI void $setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
+    MCNAPI void $setPlatformBroadcastMode(::Social::GamePublishSetting broadcastMode);
 
-    MCAPI ::Social::GamePublishSetting $getPlatformBroadcastMode() const;
+    MCNAPI ::Social::GamePublishSetting $getPlatformBroadcastMode() const;
 
-    MCAPI bool $hasPlatformBroadcast() const;
+    MCNAPI bool $hasPlatformBroadcast() const;
 
-    MCAPI void $setHasLockedBehaviorPack(bool hasLocked);
+    MCNAPI void $setHasLockedBehaviorPack(bool hasLocked);
 
-    MCAPI void $setHasLockedResourcePack(bool hasLocked);
+    MCNAPI void $setHasLockedResourcePack(bool hasLocked);
 
-    MCAPI void $setCommandsEnabled(bool commandsEnabled);
+    MCNAPI void $setCommandsEnabled(bool commandsEnabled);
 
-    MCAPI void $setWorldTemplateOptionsUnlocked();
+    MCNAPI void $setWorldTemplateOptionsUnlocked();
 
-    MCAPI bool $hasLevelStorage() const;
+    MCNAPI bool $hasLevelStorage() const;
 
-    MCFOLD ::LevelStorage& $getLevelStorage();
+    MCNAPI ::LevelStorage& $getLevelStorage();
 
-    MCFOLD ::LevelStorage const& $getLevelStorage() const;
+    MCNAPI ::LevelStorage const& $getLevelStorage() const;
 
-    MCFOLD ::LevelData& $getLevelData();
+    MCNAPI ::LevelData& $getLevelData();
 
-    MCFOLD ::LevelData const& $getLevelData() const;
+    MCNAPI ::LevelData const& $getLevelData() const;
 
-    MCAPI ::PhotoStorage& $getPhotoStorage() const;
+    MCNAPI ::PhotoStorage& $getPhotoStorage() const;
 
-    MCAPI void $createPhotoStorage();
+    MCNAPI void $createPhotoStorage();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PhotoManager> $getPhotoManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PhotoManager> $getPhotoManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PhotoManager const> $getPhotoManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PhotoManager const> $getPhotoManager() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager> $getEducationSettingsManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager> $getEducationSettingsManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager const> $getEducationSettingsManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::EducationSettingsManager const> $getEducationSettingsManager() const;
 
-    MCAPI void $save();
+    MCNAPI void $save();
 
-    MCAPI void $saveLevelData();
+    MCNAPI void $saveLevelData();
 
-    MCAPI void $saveGameData();
+    MCNAPI void $saveGameData();
 
-    MCAPI ::std::shared_ptr<void*> $requestTimedStorageDeferment();
+    MCNAPI ::std::shared_ptr<void*> $requestTimedStorageDeferment();
 
-    MCAPI ::TickingAreasManager& $getTickingAreasMgr();
+    MCNAPI ::TickingAreasManager& $getTickingAreasMgr();
 
-    MCAPI void
+    MCNAPI void
     $addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas);
 
-    MCAPI void $playSound(
+    MCNAPI void $playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int                                    data,
@@ -1966,12 +1967,12 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI void
+    MCNAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
 
-    MCAPI void $playSound(::PlaySoundOptions const& options);
+    MCNAPI void $playSound(::PlaySoundOptions const& options);
 
-    MCAPI void $playSound(
+    MCNAPI void $playSound(
         ::IConstBlockSource const&             region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1980,7 +1981,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI void $playSound(
+    MCNAPI void $playSound(
         ::DimensionType                        dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1989,62 +1990,62 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI ::PlayerEventCoordinator& $getRemotePlayerEventCoordinator();
+    MCNAPI ::PlayerEventCoordinator& $getRemotePlayerEventCoordinator();
 
-    MCAPI ::ServerPlayerEventCoordinator& $getServerPlayerEventCoordinator();
+    MCNAPI ::ServerPlayerEventCoordinator& $getServerPlayerEventCoordinator();
 
-    MCAPI ::ClientPlayerEventCoordinator& $getClientPlayerEventCoordinator();
+    MCNAPI ::ClientPlayerEventCoordinator& $getClientPlayerEventCoordinator();
 
-    MCAPI ::ActorEventCoordinator& $getActorEventCoordinator();
+    MCNAPI ::ActorEventCoordinator& $getActorEventCoordinator();
 
-    MCAPI ::BlockEventCoordinator& $getBlockEventCoordinator();
+    MCNAPI ::BlockEventCoordinator& $getBlockEventCoordinator();
 
-    MCAPI ::ItemEventCoordinator& $getItemEventCoordinator();
+    MCNAPI ::ItemEventCoordinator& $getItemEventCoordinator();
 
-    MCAPI ::ServerNetworkEventCoordinator& $getServerNetworkEventCoordinator();
+    MCNAPI ::ServerNetworkEventCoordinator& $getServerNetworkEventCoordinator();
 
-    MCAPI ::ScriptingEventCoordinator& $getScriptingEventCoordinator();
+    MCNAPI ::ScriptingEventCoordinator& $getScriptingEventCoordinator();
 
-    MCAPI ::ScriptDeferredEventCoordinator& $getScriptDeferredEventCoordinator();
+    MCNAPI ::ScriptDeferredEventCoordinator& $getScriptDeferredEventCoordinator();
 
-    MCAPI ::LevelEventCoordinator& $getLevelEventCoordinator();
+    MCNAPI ::LevelEventCoordinator& $getLevelEventCoordinator();
 
-    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+    MCNAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    MCAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+    MCNAPI void $handleLevelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> $getLevelEventManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelEventManager> $getLevelEventManager();
 
-    MCAPI void $handleStopSoundEvent(::std::string const& name);
+    MCNAPI void $handleStopSoundEvent(::std::string const& name);
 
-    MCAPI void $handleStopAllSounds();
+    MCNAPI void $handleStopAllSounds();
 
-    MCAPI void $handleStopMusicEvent();
+    MCNAPI void $handleStopMusicEvent();
 
-    MCAPI void $broadcastLevelEvent(
+    MCNAPI void $broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::Vec3 const&                          pos,
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifier
     );
 
-    MCAPI void $broadcastLevelEvent(
+    MCNAPI void $broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::CompoundTag const&                   tag,
         ::UserEntityIdentifierComponent const* userIdentifier
     );
 
-    MCAPI void
+    MCNAPI void
     $broadcastLocalEvent(::BlockSource& region, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    MCAPI void $broadcastLocalEvent(
+    MCNAPI void $broadcastLocalEvent(
         ::BlockSource&                    region,
         ::SharedTypes::Legacy::LevelEvent type,
         ::Vec3 const&                     pos,
         ::Block const&                    block
     );
 
-    MCAPI void $broadcastSoundEvent(
+    MCNAPI void $broadcastSoundEvent(
         ::BlockSource&                         region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -2054,7 +2055,7 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
-    MCAPI void $broadcastSoundEvent(
+    MCNAPI void $broadcastSoundEvent(
         ::BlockSource&                         region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -2064,7 +2065,7 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
-    MCAPI void $broadcastSoundEvent(
+    MCNAPI void $broadcastSoundEvent(
         ::Dimension&                           dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -2074,87 +2075,87 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
-    MCAPI void $broadcastActorEvent(
+    MCNAPI void $broadcastActorEvent(
         ::Actor&                       actor,
         ::ActorEvent                   eventId,
         int                            data,
         ::std::optional<::Vec3> const& fireAtPosition
     ) const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> $getActorEventBroadcaster() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ActorEventBroadcaster const> $getActorEventBroadcaster() const;
 
-    MCAPI void $addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
+    MCNAPI void $addChunkViewTracker(::std::weak_ptr<::ChunkViewSource> chunkViewSource);
 
-    MCAPI void $onChunkReload(::Bounds const& bound);
+    MCNAPI void $onChunkReload(::Bounds const& bound);
 
-    MCAPI int $getActivePlayerCount() const;
+    MCNAPI int $getActivePlayerCount() const;
 
-    MCAPI int $getActiveUsersCount() const;
+    MCNAPI int $getActiveUsersCount() const;
 
-    MCAPI void $forEachPlayer(::std::function<bool(::Player&)> callback);
+    MCNAPI void $forEachPlayer(::std::function<bool(::Player&)> callback);
 
-    MCAPI void $forEachPlayer(::std::function<bool(::Player const&)> callback) const;
+    MCNAPI void $forEachPlayer(::std::function<bool(::Player const&)> callback) const;
 
-    MCAPI void $forEachUser(::std::function<bool(::EntityContext&)> callback);
+    MCNAPI void $forEachUser(::std::function<bool(::EntityContext&)> callback);
 
-    MCAPI void $forEachUser(::std::function<bool(::EntityContext const&)> callback) const;
+    MCNAPI void $forEachUser(::std::function<bool(::EntityContext const&)> callback) const;
 
-    MCAPI ::Player* $findPlayer(::std::function<bool(::Player const&)> pred) const;
+    MCNAPI ::Player* $findPlayer(::std::function<bool(::Player const&)> pred) const;
 
-    MCAPI ::Player* $findPlayer(::std::function<bool(::WeakEntityRef const&)> pred) const;
+    MCNAPI ::Player* $findPlayer(::std::function<bool(::WeakEntityRef const&)> pred) const;
 
-    MCAPI int $getUserCount() const;
+    MCNAPI int $getUserCount() const;
 
-    MCAPI int $countUsersWithMatchingNetworkId(::NetworkIdentifier const& networkId) const;
+    MCNAPI int $countUsersWithMatchingNetworkId(::NetworkIdentifier const& networkId) const;
 
-    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getUsers() const;
+    MCNAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getUsers() const;
 
-    MCAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getEntities() const;
+    MCNAPI ::std::vector<::OwnerPtr<::EntityContext>> const& $getEntities() const;
 
-    MCAPI void $onSourceCreated(::BlockSource& source);
+    MCNAPI void $onSourceCreated(::BlockSource& source);
 
-    MCAPI void $onSourceDestroyed(::BlockSource& source);
+    MCNAPI void $onSourceDestroyed(::BlockSource& source);
 
-    MCFOLD void $onSubChunkLoaded(
+    MCNAPI void $onSubChunkLoaded(
         ::ChunkSource& source,
         ::LevelChunk&  lc,
         short          absoluteSubChunkIndex,
         bool           subChunkVisibilityChanged
     );
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::SubChunkManager> $getSubChunkManager();
 
-    MCAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $onChunkLoaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCAPI void $onChunkReloaded(::ChunkSource& source, ::LevelChunk& lc);
+    MCNAPI void $onChunkReloaded(::ChunkSource& source, ::LevelChunk& lc);
 
-    MCFOLD ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
+    MCNAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
 
-    MCAPI void $onChunkDiscarded(::LevelChunk& lc);
+    MCNAPI void $onChunkDiscarded(::LevelChunk& lc);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> $getLevelChunkEventManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkEventManager> $getLevelChunkEventManager();
 
-    MCAPI void $queueEntityDestruction(::OwnerPtr<::EntityContext> entity);
+    MCNAPI void $queueEntityDestruction(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::OwnerPtr<::EntityContext> $removeEntity(::Actor& actor);
+    MCNAPI ::OwnerPtr<::EntityContext> $removeEntity(::Actor& actor);
 
-    MCAPI ::OwnerPtr<::EntityContext> $removeEntity(::WeakEntityRef entityRef);
+    MCNAPI ::OwnerPtr<::EntityContext> $removeEntity(::WeakEntityRef entityRef);
 
-    MCAPI void $forceRemoveEntity(::Actor& actor);
+    MCNAPI void $forceRemoveEntity(::Actor& actor);
 
-    MCAPI void $forceRemoveEntityfromWorld(::Actor& actor);
+    MCNAPI void $forceRemoveEntityfromWorld(::Actor& actor);
 
-    MCAPI void $forceFlushRemovedPlayers();
+    MCNAPI void $forceFlushRemovedPlayers();
 
-    MCFOLD void $loadFunctionManager();
+    MCNAPI void $loadFunctionManager();
 
-    MCAPI void $levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext> entity);
+    MCNAPI void $levelCleanupQueueEntityRemoval(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void $registerTemporaryPointer(::_TickPtr& ptr);
+    MCNAPI void $registerTemporaryPointer(::_TickPtr& ptr);
 
-    MCAPI void $unregisterTemporaryPointer(::_TickPtr& ptr);
+    MCNAPI void $unregisterTemporaryPointer(::_TickPtr& ptr);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> $getTempEPtrManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TempEPtrManager> $getTempEPtrManager();
 
     MCAPI bool $destroyBlock(
         ::BlockSource&              region,
@@ -2164,15 +2165,15 @@ public:
         ::BlockDestroySound         destroySound
     );
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelBlockDestroyer> $getLevelBlockDestroyer();
 
-    MCAPI void $upgradeStorageVersion(::StorageVersion v);
+    MCNAPI void $upgradeStorageVersion(::StorageVersion v);
 
-    MCAPI void $suspendAndSave();
+    MCNAPI void $suspendAndSave();
 
-    MCAPI void $sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
+    MCNAPI void $sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
-    MCAPI ::Particle* $addParticle(
+    MCNAPI ::Particle* $addParticle(
         ::ParticleType       id,
         ::Vec3 const&        pos,
         ::Vec3 const&        dir,
@@ -2181,18 +2182,18 @@ public:
         bool                 isGlobal
     );
 
-    MCAPI void
+    MCNAPI void
     $spawnParticleEffect(::std::string const& effectName, ::Vec3 const& spawnLocation, ::Dimension* dimension);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> $getServerParticleManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> $getServerParticleManager();
 
-    MCAPI void $addParticleEffect(
+    MCNAPI void $addParticleEffect(
         ::HashedString const&      effect,
         ::Vec3 const&              emitterPosition,
         ::MolangVariableMap const& molangVariables
     );
 
-    MCAPI void $addTerrainParticleEffect(
+    MCNAPI void $addTerrainParticleEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -2201,7 +2202,7 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void $addTerrainSlideEffect(
+    MCNAPI void $addTerrainSlideEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -2210,265 +2211,265 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void $addBreakingItemParticleEffect(
+    MCNAPI void $addBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
         ::BreakingItemParticleData const& data,
         ::ResolvedItemIconInfo const&     textureInfo
     );
 
-    MCAPI void $addBiomeTintedParticleEffect(
+    MCNAPI void $addBiomeTintedParticleEffect(
         ::HashedString const&         effect,
         ::BlockPos const&             pos,
         ::Block const&                block,
         ::std::optional<::mce::Color> overrideColor
     );
 
-    MCAPI ::ActorUniqueID $getNewUniqueID();
+    MCNAPI ::ActorUniqueID $getNewUniqueID();
 
-    MCAPI ::ActorRuntimeID $getNextRuntimeID();
+    MCNAPI ::ActorRuntimeID $getNextRuntimeID();
 
-    MCAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
+    MCNAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
-    MCAPI ::std::vector<::ChunkPos> const& $getClientTickingOffsets() const;
+    MCNAPI ::std::vector<::ChunkPos> const& $getClientTickingOffsets() const;
 
-    MCAPI ::std::vector<::ChunkPos>
+    MCNAPI ::std::vector<::ChunkPos>
     $getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> $getChunkTickOffsetManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> $getChunkTickOffsetManager() const;
 
-    MCAPI bool $isExporting() const;
+    MCNAPI bool $isExporting() const;
 
-    MCAPI void $setIsExporting(bool IsExporting);
+    MCNAPI void $setIsExporting(bool IsExporting);
 
-    MCAPI ::SavedDataStorage& $getSavedData();
+    MCNAPI ::SavedDataStorage& $getSavedData();
 
-    MCAPI ::MapItemSavedData* $getMapSavedData(::ActorUniqueID const uuid);
+    MCNAPI ::MapItemSavedData* $getMapSavedData(::ActorUniqueID const uuid);
 
-    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const& instance);
+    MCNAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const& instance);
 
-    MCAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const* instance);
+    MCNAPI ::MapItemSavedData* $getMapSavedData(::CompoundTag const* instance);
 
-    MCAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
+    MCNAPI void $requestMapInfo(::ActorUniqueID const uuid, bool forceUpdate);
 
-    MCAPI ::ActorUniqueID $expandMapByID(::ActorUniqueID const uuid, bool wasInit);
+    MCNAPI ::ActorUniqueID $expandMapByID(::ActorUniqueID const uuid, bool wasInit);
 
-    MCAPI bool $copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
+    MCNAPI bool $copyAndLockMap(::ActorUniqueID const originalMapUuid, ::ActorUniqueID const newMapUuid);
 
-    MCAPI ::MapItemSavedData& $createMapSavedData(
+    MCNAPI ::MapItemSavedData& $createMapSavedData(
         ::ActorUniqueID const& uuid,
         ::BlockPos const&      origin,
         ::DimensionType        dimension,
         int                    returnScaleLevel
     );
 
-    MCAPI ::MapItemSavedData& $createMapSavedData(
+    MCNAPI ::MapItemSavedData& $createMapSavedData(
         ::std::vector<::ActorUniqueID> const& mapIds,
         ::BlockPos const&                     origin,
         ::DimensionType                       dimension,
         int                                   returnScaleLevel
     );
 
-    MCAPI ::Core::PathBuffer<::std::string> $getScreenshotsFolder() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getScreenshotsFolder() const;
 
-    MCAPI ::std::string $getLevelId() const;
+    MCNAPI ::std::string $getLevelId() const;
 
-    MCAPI void $setLevelId(::std::string LevelId);
+    MCNAPI void $setLevelId(::std::string LevelId);
 
-    MCAPI ::TaskGroup& $getSyncTasksGroup();
+    MCNAPI ::TaskGroup& $getSyncTasksGroup();
 
-    MCAPI ::TaskGroup& $getIOTasksGroup();
+    MCNAPI ::TaskGroup& $getIOTasksGroup();
 
-    MCFOLD ::ResourcePackManager* $getClientResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
-    MCFOLD ::ResourcePackManager* $getServerResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getServerResourcePackManager() const;
 
-    MCFOLD ::TradeTables* $getTradeTables();
+    MCNAPI ::TradeTables* $getTradeTables();
 
-    MCFOLD void $decrementTagCache(
+    MCNAPI void $decrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCFOLD void $incrementTagCache(
+    MCNAPI void $incrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
-    MCAPI bool $isEdu() const;
+    MCNAPI bool $isEdu() const;
 
-    MCFOLD ::ActorFactory& $getActorFactory();
+    MCNAPI ::ActorFactory& $getActorFactory();
 
-    MCFOLD ::ActorFactory const& $getActorFactory() const;
+    MCNAPI ::ActorFactory const& $getActorFactory() const;
 
-    MCFOLD ::ActorInfoRegistry* $getActorInfoRegistry();
+    MCNAPI ::ActorInfoRegistry* $getActorInfoRegistry();
 
-    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
+    MCNAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+    MCNAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
 
-    MCAPI ::EntitySystems& $getEntitySystems();
+    MCNAPI ::EntitySystems& $getEntitySystems();
 
-    MCFOLD ::WeakRef<::EntityContext> $getLevelEntity();
+    MCNAPI ::WeakRef<::EntityContext> $getLevelEntity();
 
-    MCFOLD ::WeakRef<::EntityContext const> $getLevelEntity() const;
+    MCNAPI ::WeakRef<::EntityContext const> $getLevelEntity() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
-    MCFOLD void $runCommand(
+    MCNAPI void $runCommand(
         ::HashedString const&     commandStr,
         ::CommandOrigin&          origin,
         ::CommandOriginSystem     originSystem,
         ::CurrentCmdVersion const commandVersion
     );
 
-    MCFOLD void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCNAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
-    MCAPI ::PlayerCapabilities::ISharedController const& $getCapabilities() const;
+    MCNAPI ::PlayerCapabilities::ISharedController const& $getCapabilities() const;
 
-    MCFOLD ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& $getTagRegistry();
+    MCNAPI ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& $getTagRegistry();
 
-    MCAPI ::PlayerMovementSettings const& $getPlayerMovementSettings() const;
+    MCNAPI ::PlayerMovementSettings const& $getPlayerMovementSettings() const;
 
-    MCAPI void $setPlayerMovementSettings(::PlayerMovementSettings const& settings);
+    MCNAPI void $setPlayerMovementSettings(::PlayerMovementSettings const& settings);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> $getPlayerMovementSettingsManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager> $getPlayerMovementSettingsManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerMovementSettingsManager const>
     $getPlayerMovementSettingsManager() const;
 
-    MCFOLD bool $canUseSkin(
+    MCNAPI bool $canUseSkin(
         ::SerializedSkinRef const& skin,
         ::NetworkIdentifier const& networkIdentifier,
         ::ActorUniqueID const&     playerId
     ) const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::TrustedSkinHelper const> $getTrustedSkinHelper() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry const> $getCameraRegistry() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
+    MCNAPI ::Bedrock::NonOwnerPointer<::CameraRegistry> $getCameraRegistry();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
+    MCNAPI ::Bedrock::NonOwnerPointer<::EntitySystems> $getCameraSystems();
 
-    MCAPI ::PositionTrackingDB::PositionTrackingDBClient* $getPositionTrackerDBClient() const;
+    MCNAPI ::PositionTrackingDB::PositionTrackingDBClient* $getPositionTrackerDBClient() const;
 
-    MCFOLD ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
+    MCNAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
 
-    MCAPI void $flushRunTimeLighting();
+    MCNAPI void $flushRunTimeLighting();
 
-    MCFOLD ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+    MCNAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
-    MCAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
+    MCNAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
 
-    MCAPI void $initializeBlockDefinitionGroup();
+    MCNAPI void $initializeBlockDefinitionGroup();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> $getUnknownBlockTypeRegistry();
+    MCNAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> $getUnknownBlockTypeRegistry();
 
-    MCAPI bool $isClientSideGenerationEnabled();
+    MCNAPI bool $isClientSideGenerationEnabled();
 
-    MCAPI bool $blockNetworkIdsAreHashes();
+    MCNAPI bool $blockNetworkIdsAreHashes();
 
-    MCAPI ::ItemRegistryRef $getItemRegistry() const;
+    MCNAPI ::ItemRegistryRef $getItemRegistry() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> $getBlockTypeRegistry() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry> $getBlockTypeRegistry() const;
 
-    MCFOLD ::Level* $asLevel();
+    MCNAPI ::Level* $asLevel();
 
-    MCAPI bool $use3DBiomeMaps() const;
+    MCNAPI bool $use3DBiomeMaps() const;
 
-    MCAPI void $pauseAndFlushTaskGroups();
+    MCNAPI void $pauseAndFlushTaskGroups();
 
-    MCFOLD ::DimensionManager& $getDimensionManager();
+    MCNAPI ::DimensionManager& $getDimensionManager();
 
-    MCFOLD ::DimensionManager const& $getDimensionManager() const;
+    MCNAPI ::DimensionManager const& $getDimensionManager() const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> $getDimensionManagerNonOwner();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> $getDimensionManagerNonOwner();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> $getDimensionManagerNonOwner() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> $getDimensionManagerNonOwner() const;
 
-    MCFOLD void $subChunkTickAndSendRequests();
+    MCNAPI void $subChunkTickAndSendRequests();
 
-    MCAPI void $_subTick();
+    MCNAPI void $_subTick();
 
-    MCFOLD ::StackRefResult<::PauseManager> $getPauseManager();
+    MCNAPI ::StackRefResult<::PauseManager> $getPauseManager();
 
-    MCFOLD ::StackRefResult<::PauseManager const> $getPauseManager() const;
+    MCNAPI ::StackRefResult<::PauseManager const> $getPauseManager() const;
 
-    MCAPI bool $isClientSide() const;
+    MCNAPI bool $isClientSide() const;
 
-    MCAPI ::SubClientId $getSubClientId() const;
+    MCNAPI ::SubClientId $getSubClientId() const;
 
-    MCAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
+    MCNAPI ::std::unordered_map<::mce::UUID, ::PlayerListEntry> const& $getPlayerList() const;
 
-    MCAPI ::std::string const& $getPlayerXUID(::mce::UUID const& uuid) const;
+    MCNAPI ::std::string const& $getPlayerXUID(::mce::UUID const& uuid) const;
 
-    MCAPI ::std::string const& $getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
+    MCNAPI ::std::string const& $getPlayerPlatformOnlineId(::mce::UUID const& uuid) const;
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> $getPlayerListManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager> $getPlayerListManager();
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager const> $getPlayerListManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerListManager const> $getPlayerListManager() const;
 
-    MCAPI ::std::vector<::WeakEntityRef> const& $getActiveUsers() const;
+    MCNAPI ::std::vector<::WeakEntityRef> const& $getActiveUsers() const;
 
-    MCFOLD void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
+    MCNAPI void $notifySubChunkRequestManager(::SubChunkPacket const& packet);
 
-    MCFOLD ::SubChunkRequestManager* $getSubChunkRequestManager();
+    MCNAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
 
-    MCAPI ::std::vector<::Actor*> $getRuntimeActorList() const;
+    MCNAPI ::std::vector<::Actor*> $getRuntimeActorList() const;
 
-    MCAPI ::PacketSender* $getPacketSender() const;
+    MCNAPI ::PacketSender* $getPacketSender() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> $getNetEventCallback() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> $getNetEventCallback() const;
 
-    MCAPI void $setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback> val);
+    MCNAPI void $setNetEventCallback(::Bedrock::NonOwnerPointer<::NetEventCallback> val);
 
-    MCAPI ::gsl::not_null<::StackRefResult<::ILevelRandom>> $getILevelRandom();
+    MCNAPI ::gsl::not_null<::StackRefResult<::ILevelRandom>> $getILevelRandom();
 
-    MCAPI ::IRandom& $getIRandom() const;
+    MCNAPI ::IRandom& $getIRandom() const;
 
-    MCAPI ::Random& $getRandom() const;
+    MCNAPI ::Random& $getRandom() const;
 
-    MCAPI ::Random& $getThreadRandom() const;
+    MCNAPI ::Random& $getThreadRandom() const;
 
-    MCAPI ::HitResult& $getHitResult();
+    MCNAPI ::HitResult& $getHitResult();
 
-    MCAPI ::HitResult& $getLiquidHitResult();
+    MCNAPI ::HitResult& $getLiquidHitResult();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> $getHitResultWrapper();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::HitResultWrapper> $getHitResultWrapper();
 
-    MCAPI ::std::string const& $getImmersiveReaderString() const;
+    MCNAPI ::std::string const& $getImmersiveReaderString() const;
 
-    MCAPI void $setImmersiveReaderString(::std::string newString);
+    MCNAPI void $setImmersiveReaderString(::std::string newString);
 
-    MCAPI ::AdventureSettings& $getAdventureSettings();
+    MCNAPI ::AdventureSettings& $getAdventureSettings();
 
-    MCAPI ::AdventureSettings const& $getAdventureSettings() const;
+    MCNAPI ::AdventureSettings const& $getAdventureSettings() const;
 
-    MCAPI ::GameRules const& $getGameRules() const;
+    MCNAPI ::GameRules const& $getGameRules() const;
 
-    MCAPI ::GameRules& $getGameRules();
+    MCNAPI ::GameRules& $getGameRules();
 
-    MCAPI bool $hasStartWithMapEnabled() const;
+    MCNAPI bool $hasStartWithMapEnabled() const;
 
-    MCAPI bool $isEditorWorld() const;
+    MCNAPI bool $isEditorWorld() const;
 
-    MCAPI bool $isEditorTestWorld() const;
+    MCNAPI bool $isEditorTestWorld() const;
 
-    MCAPI bool $getAllowAnonymousBlockDropsInEditorWorlds() const;
+    MCNAPI bool $getAllowAnonymousBlockDropsInEditorWorlds() const;
 
-    MCAPI bool $isHardcore() const;
+    MCNAPI bool $isHardcore() const;
 
-    MCAPI ::Abilities& $getDefaultAbilities();
+    MCNAPI ::Abilities& $getDefaultAbilities();
 
-    MCAPI ::PermissionsHandler& $getDefaultPermissions();
+    MCNAPI ::PermissionsHandler& $getDefaultPermissions();
 
-    MCAPI ::PermissionsHandler const& $getDefaultPermissions() const;
+    MCNAPI ::PermissionsHandler const& $getDefaultPermissions() const;
 
-    MCAPI bool $getTearingDown() const;
+    MCNAPI bool $getTearingDown() const;
 
-    MCAPI void $takePicture(
+    MCNAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,
         ::Actor*                                                        target,
@@ -2476,77 +2477,77 @@ public:
         ::std::function<void(::cg::ImageBuffer&, ::ScreenshotOptions&)> completedScreenshotCallback
     );
 
-    MCAPI ::LevelSoundManager& $getLevelSoundManager();
+    MCNAPI ::LevelSoundManager& $getLevelSoundManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> $getSoundPlayer() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> $getSoundPlayer() const;
 
-    MCAPI void $setSimPaused(bool value);
+    MCNAPI void $setSimPaused(bool value);
 
-    MCAPI bool $getSimPaused() const;
+    MCNAPI bool $getSimPaused() const;
 
-    MCAPI void $setFinishedInitializing();
+    MCNAPI void $setFinishedInitializing();
 
-    MCAPI ::LootTables& $getLootTables();
+    MCNAPI ::LootTables& $getLootTables();
 
-    MCAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCNAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
-    MCAPI int $getNetherScale() const;
+    MCNAPI int $getNetherScale() const;
 
-    MCFOLD ::Scoreboard& $getScoreboard();
+    MCNAPI ::Scoreboard& $getScoreboard();
 
-    MCFOLD ::Scoreboard const& $getScoreboard() const;
+    MCNAPI ::Scoreboard const& $getScoreboard() const;
 
-    MCFOLD ::Scoreboard* $tryGetScoreboard();
+    MCNAPI ::Scoreboard* $tryGetScoreboard();
 
-    MCAPI ::LayeredAbilities* $getPlayerAbilities(::ActorUniqueID const& playerId);
+    MCNAPI ::LayeredAbilities* $getPlayerAbilities(::ActorUniqueID const& playerId);
 
-    MCAPI void $setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
+    MCNAPI void $setPlayerAbilities(::ActorUniqueID const& playerId, ::LayeredAbilities const& abilities);
 
-    MCAPI void $sendAllPlayerAbilities(::Player const& playerReference);
+    MCNAPI void $sendAllPlayerAbilities(::Player const& playerReference);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> $getPlayerAbilitiesManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerAbilitiesManager> $getPlayerAbilitiesManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsManager> $getPlayerPermissionsManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsManager> $getPlayerPermissionsManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsSynchroniser> $getPlayerPermissionsSynchroniser();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerPermissionsSynchroniser> $getPlayerPermissionsSynchroniser();
 
-    MCAPI ::Recipes& $getRecipes() const;
+    MCNAPI ::Recipes& $getRecipes() const;
 
-    MCFOLD ::BlockReducer* $getBlockReducer() const;
+    MCNAPI ::BlockReducer* $getBlockReducer() const;
 
-    MCFOLD ::std::weak_ptr<::TrimPatternRegistry const> $getTrimPatternRegistry() const;
+    MCNAPI ::std::weak_ptr<::TrimPatternRegistry const> $getTrimPatternRegistry() const;
 
-    MCFOLD ::std::weak_ptr<::TrimPatternRegistry> $getTrimPatternRegistry();
+    MCNAPI ::std::weak_ptr<::TrimPatternRegistry> $getTrimPatternRegistry();
 
-    MCFOLD ::std::weak_ptr<::TrimMaterialRegistry const> $getTrimMaterialRegistry() const;
+    MCNAPI ::std::weak_ptr<::TrimMaterialRegistry const> $getTrimMaterialRegistry() const;
 
-    MCFOLD ::std::weak_ptr<::TrimMaterialRegistry> $getTrimMaterialRegistry();
+    MCNAPI ::std::weak_ptr<::TrimMaterialRegistry> $getTrimMaterialRegistry();
 
-    MCAPI ::BlockType const& $getRegisteredBorderBlock() const;
+    MCNAPI ::BlockType const& $getRegisteredBorderBlock() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkPerformanceTelemetry> $getLevelChunkPerformanceTelemetry();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelChunkPerformanceTelemetry> $getLevelChunkPerformanceTelemetry();
 
-    MCFOLD ::cereal::ReflectionCtx& $cerealContext();
+    MCNAPI ::cereal::ReflectionCtx& $cerealContext();
 
-    MCFOLD ::cereal::ReflectionCtx const& $cerealContext() const;
+    MCNAPI ::cereal::ReflectionCtx const& $cerealContext() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
-    MCFOLD void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+    MCNAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
-    MCAPI void $digestServerBlockProperties(::StartGamePacket const& packet);
+    MCNAPI void $digestServerBlockProperties(::StartGamePacket const& packet);
 
-    MCAPI ::MolangPackSettingsCache const* $getMolangPackSettingsCache() const;
+    MCNAPI ::MolangPackSettingsCache const* $getMolangPackSettingsCache() const;
 
-    MCFOLD ::PlayerDeathManager* $_getPlayerDeathManager();
+    MCNAPI ::PlayerDeathManager* $_getPlayerDeathManager();
 
-    MCAPI void $_initializeMapDataManager();
+    MCNAPI void $_initializeMapDataManager();
 
-    MCFOLD ::cereal::ReflectionCtx& $_cerealContext();
+    MCNAPI ::cereal::ReflectionCtx& $_cerealContext();
 
-    MCAPI void $_onLowMemory();
+    MCNAPI void $_onLowMemory();
 
 
     // NOLINTEND

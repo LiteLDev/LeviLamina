@@ -55,7 +55,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ResourceLocation> _getAssetResourceLocationFromResourcePackManager(
+    MCNAPI ::std::optional<::ResourceLocation> _getAssetResourceLocationFromResourcePackManager(
         ::Gameface::ResourceRequest const&  request,
         ::std::optional<::mce::UUID> const& packId
     ) const;
@@ -64,13 +64,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
-    MCFOLD void $update();
+    MCNAPI void $update();
     // NOLINTEND
 
 public:

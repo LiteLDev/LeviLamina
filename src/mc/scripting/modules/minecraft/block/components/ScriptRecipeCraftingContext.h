@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptRecipeCraftingContext(
+    MCNAPI ScriptRecipeCraftingContext(
         ::Recipes const&                                                                    recipes,
         ::CraftingContext                                                                   craftingContext,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>         player,
@@ -57,13 +57,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Recipes const&                                                                    recipes,
         ::CraftingContext                                                                   craftingContext,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>         player,

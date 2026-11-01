@@ -117,9 +117,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 
-    MCAPI static void tickMonsterAiStep(
+    MCNAPI static void tickMonsterAiStep(
         ::StrictEntityContext const&                                               entity,
         ::AABBShapeComponent const&                                                aabbShapeComponent,
         ::OffsetsComponent const&                                                  offsetsComponent,
@@ -134,7 +134,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::ActorMovementTickNeededComponent,

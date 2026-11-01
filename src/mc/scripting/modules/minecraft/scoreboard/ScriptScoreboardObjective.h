@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> _modifyScore(
+    MCNAPI ::Scripting::Result_deprecated<int> _modifyScore(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -39,15 +39,15 @@ public:
         int                      score
     );
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getDisplayName() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getObjectiveId() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getObjectiveId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -11,6 +11,6 @@ struct MobTravelTeleportedFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo create();
+    MCNAPI static ::TickingSystemWithInfo create();
     // NOLINTEND
 };

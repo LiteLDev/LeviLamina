@@ -34,7 +34,7 @@ public:
 
     MCAPI ::Bedrock::Result<float> getFloat();
 
-    MCAPI ::Bedrock::Result<void> getRawBytes(::buffer_span_mut<uchar> outBuffer, uint64 length);
+    MCNAPI ::Bedrock::Result<void> getRawBytes(::buffer_span_mut<uchar> outBuffer, uint64 length);
 
     MCAPI ::Bedrock::Result<int> getSignedBigEndianInt();
 
@@ -48,9 +48,9 @@ public:
 
     MCAPI ::Bedrock::Result<::std::string> getString(uint64 maxLength);
 
-    MCAPI ::Bedrock::Result<void> getString(::std::string& outStringStream, uint64 maxLength);
+    MCNAPI ::Bedrock::Result<void> getString(::std::string& outStringStream, uint64 maxLength);
 
-    MCAPI ::Bedrock::Result<uchar> getUnsignedChar();
+    MCNAPI ::Bedrock::Result<uchar> getUnsignedChar();
 
     MCAPI ::Bedrock::Result<uint> getUnsignedInt();
 
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> $read(void* target, uint64 num);
+    MCNAPI ::Bedrock::Result<void> $read(void* target, uint64 num);
 
 
     // NOLINTEND

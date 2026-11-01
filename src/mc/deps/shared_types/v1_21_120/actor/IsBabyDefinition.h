@@ -11,9 +11,9 @@ struct IsBabyDefinition : public ::SharedTypes::ActorFlagDefinition<::SharedType
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& TITLE();
+    MCNAPI static ::std::string_view const& TITLE();
     // NOLINTEND
 };
 

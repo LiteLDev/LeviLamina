@@ -29,24 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     AsyncCachedTextureLoader(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string const& taskGroupName);
 
-    MCAPI ::cg::ImageBuffer*
+    MCNAPI ::cg::ImageBuffer*
     getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad, ::mce::TextureGroup& textureGroup);
 
-    MCAPI ~AsyncCachedTextureLoader();
+    MCNAPI ~AsyncCachedTextureLoader();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string const& taskGroupName);
+    MCNAPI void* $ctor(::WorkerPool& workerPool, ::Scheduler& scheduler, ::std::string const& taskGroupName);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

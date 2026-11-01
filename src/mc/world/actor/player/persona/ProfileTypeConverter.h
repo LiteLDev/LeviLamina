@@ -12,7 +12,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
+    MCNAPI static ::persona::ProfileType getProfileTypeFromString(::std::string const& profileTypeStr);
 #endif
     // NOLINTEND
 };

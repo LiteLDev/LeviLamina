@@ -87,7 +87,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI DataStoreSync();
+    MCNAPI DataStoreSync();
 #endif
 
     MCAPI ::nonstd::
@@ -101,13 +101,13 @@ public:
         ::std::function<void(::cereal::DynamicValue const*)> onChange
     );
 
-    MCAPI void
+    MCNAPI void
     set(::std::string const&          datastoreName,
         ::std::string const&          property,
         ::cereal::DynamicValue const& obj,
         bool                          addToOutgoingChanges);
 
-    MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
+    MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
         ::std::string const&                               dataStoreName,
         ::std::string const&                               propertyName,
         ::std::string const&                               path,
@@ -121,7 +121,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 
@@ -129,14 +129,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
+    MCNAPI void $clear(::std::string const& datastoreName, bool addToOutgoingChanges);
 
 
     // NOLINTEND

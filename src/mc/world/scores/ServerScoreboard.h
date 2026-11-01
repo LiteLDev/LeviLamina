@@ -104,40 +104,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerScoreboard(
+    MCNAPI ServerScoreboard(
         ::CommandSoftEnumRegistry                            registry,
         ::LevelStorage*                                      levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
     );
 
-    MCAPI void
+    MCNAPI void
     _clearAllScoreTagsForObjective(::std::string const& displaySlotName, ::DisplayObjective const& displayObjective);
 
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
+    MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _onSaveEvent(::LevelStorage&);
+    MCNAPI void _onSaveEvent(::LevelStorage&);
 
-    MCAPI ::std::variant<::RemoveScore, ::ChangePlayerScore, ::ChangeEntityScore, ::ChangeFakePlayerScore>
+    MCNAPI ::std::variant<::RemoveScore, ::ChangePlayerScore, ::ChangeEntityScore, ::ChangeFakePlayerScore>
     _unpackIdentityDefToScorePacket(
         ::ScoreboardIdentityRef const& identityDef,
         ::std::string const&           objName,
         int                            score
     );
 
-    MCAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
+    MCNAPI void _updateScoreTag(::ScoreboardId const& scoreboardId, bool assertOnFakePlayer);
 
-    MCAPI void
+    MCNAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
+    MCNAPI void intializeWithActorManager(::IActorManagerConnector& actorManagerConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CommandSoftEnumRegistry                            registry,
         ::LevelStorage*                                      levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
@@ -147,39 +147,39 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onObjectiveAdded(::Objective const& objective);
+    MCNAPI void $onObjectiveAdded(::Objective const& objective);
 
-    MCAPI void $onObjectiveRemoved(::Objective& objective);
+    MCNAPI void $onObjectiveRemoved(::Objective& objective);
 
-    MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
+    MCNAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
-    MCAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
+    MCNAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 
-    MCAPI void $setPacketSender(::PacketSender* sender);
+    MCNAPI void $setPacketSender(::PacketSender* sender);
 
-    MCAPI ::DisplayObjective const* $setDisplayObjective(
+    MCNAPI ::DisplayObjective const* $setDisplayObjective(
         ::std::string const&       displaySlotName,
         ::Objective const&         objective,
         ::ObjectiveSortOrder const order
     );
 
-    MCAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
+    MCNAPI ::Objective* $clearDisplayObjective(::std::string const& displaySlotName);
 
-    MCAPI void $onPlayerJoined(::Player const& player);
+    MCNAPI void $onPlayerJoined(::Player const& player);
 
-    MCAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
+    MCNAPI void $onPlayerIdentityUpdated(::PlayerScoreboardId const& playerId);
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
+    MCNAPI ::ScoreboardId const& $createScoreboardId(::Player const& player);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
+    MCNAPI ::ScoreboardId const& $createScoreboardId(::Actor const& entity);
 
-    MCAPI ::ScoreboardId const& $createScoreboardId(::std::string const& name);
+    MCNAPI ::ScoreboardId const& $createScoreboardId(::std::string const& name);
 
-    MCAPI void $writeToLevelStorage();
+    MCNAPI void $writeToLevelStorage();
 
-    MCFOLD bool $isClientSide() const;
+    MCNAPI bool $isClientSide() const;
 
 
     // NOLINTEND

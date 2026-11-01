@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::Vec2 const& vec, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
     // NOLINTEND

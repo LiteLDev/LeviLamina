@@ -43,25 +43,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _determineMovePos();
+    MCNAPI void _determineMovePos();
 
-    MCAPI bool _evaluateLeaderFilters(::Actor const* actor) const;
+    MCNAPI bool _evaluateLeaderFilters(::Actor const* actor) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
 
     // NOLINTEND

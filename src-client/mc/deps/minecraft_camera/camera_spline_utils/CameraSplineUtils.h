@@ -11,9 +11,9 @@ namespace CameraSplineUtils { struct Linear3d; }
 namespace CameraSplineUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::CameraSplineUtils::Hermite3d> catmullrom(::std::vector<::glm::vec3> points);
+MCNAPI ::std::optional<::CameraSplineUtils::Hermite3d> catmullrom(::std::vector<::glm::vec3> points);
 
-MCAPI ::std::optional<::CameraSplineUtils::Linear3d> linear(::std::vector<::glm::vec3> points);
+MCNAPI ::std::optional<::CameraSplineUtils::Linear3d> linear(::std::vector<::glm::vec3> points);
 // NOLINTEND
 
 } // namespace CameraSplineUtils

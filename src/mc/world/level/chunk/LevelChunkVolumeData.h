@@ -41,15 +41,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
+    MCNAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCFOLD void addStructure(::StructureStart const& start);
+    MCNAPI void addStructure(::StructureStart const& start);
 
-    MCAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
+    MCNAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCFOLD void addStructureReference(::StructureStart const& start);
+    MCNAPI void addStructureReference(::StructureStart const& start);
 
-    MCAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
 
     MCAPI ::std::vector<::BlockPos> structureSpawnPos() const;
     // NOLINTEND

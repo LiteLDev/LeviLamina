@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::gsl::span<::World::RecentlyPlayedEntry const> getEntries() const;
+    MCNAPI ::gsl::span<::World::RecentlyPlayedEntry const> getEntries() const;
     // NOLINTEND
 };
 

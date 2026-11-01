@@ -108,9 +108,9 @@ public:
         ::AABB const&                              area
     );
 
-    MCAPI void _onAreaChanged(::AABB const& newArea);
+    MCNAPI void _onAreaChanged(::AABB const& newArea);
 
-    MCAPI void _render(
+    MCNAPI void _render(
         ::MinecraftUIRenderContext& renderContext,
         ::BlockSource&              region,
         ::IClientInstance&          client,
@@ -122,7 +122,7 @@ public:
 
     MCAPI bool _renderBlocks(::BaseActorRenderContext& renderContext, ::BlockSource& region, ::AABB const& area);
 
-    MCAPI void _renderThumbnailOffscreen(
+    MCNAPI void _renderThumbnailOffscreen(
         ::MinecraftUIRenderContext&                                                    renderContext,
         ::BlockSource&                                                                 region,
         ::IClientInstance&                                                             client,
@@ -134,9 +134,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
+    MCNAPI static ::std::vector<::BlockPos> _generateChunkStartPositions(::AABB const& area);
 
-    MCAPI static float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key);
+    MCNAPI static float _getAndResetFloatValue(::UIPropertyBag& bag, ::std::string const& key);
 
     MCAPI static void _iterateOverBlockEntities(
         ::BlockSource&                                                     region,
@@ -154,14 +154,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCAPI void $onSourceDestroyed(::BlockSource& source);
+    MCNAPI void $onSourceDestroyed(::BlockSource& source);
 
-    MCAPI void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              pos,
         uint                           layer,
@@ -173,8 +173,8 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
     // NOLINTEND
 };

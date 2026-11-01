@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePackStackPacketPayload(
+    MCNAPI ResourcePackStackPacketPayload(
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,
@@ -33,13 +33,13 @@ public:
         bool                            includeEditorPacks
     );
 
-    MCAPI ~ResourcePackStackPacketPayload();
+    MCNAPI ~ResourcePackStackPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,
@@ -51,6 +51,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

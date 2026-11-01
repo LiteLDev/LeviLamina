@@ -17,6 +17,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NORMAL_SOUND();
+    MCNAPI static ::HashedString const& NORMAL_SOUND();
     // NOLINTEND
 };

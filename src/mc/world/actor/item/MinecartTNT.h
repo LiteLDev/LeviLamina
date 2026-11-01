@@ -39,26 +39,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
+    MCNAPI void primeFuse(::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
+    MCNAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCFOLD ::MinecartType $getType();
+    MCNAPI ::MinecartType $getType();
 
-    MCAPI ::Block const* $getDefaultDisplayBlock() const;
+    MCNAPI ::Block const* $getDefaultDisplayBlock() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
+    MCNAPI float $causeFallDamageToActor(float distance, float, ::ActorDamageSource);
 
 
     // NOLINTEND

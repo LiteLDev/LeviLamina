@@ -50,22 +50,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubmitFeedbackScreenController(
+    MCNAPI SubmitFeedbackScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::FeedbackType                           feedbackType,
         ::std::string const&                     identifier,
         int                                      feedbackTextLimit
     );
 
-    MCAPI void _displayResponseStatusDialog(bool receivedSuccessResponse);
+    MCNAPI void _displayResponseStatusDialog(bool receivedSuccessResponse);
 
-    MCAPI void _setResponseMessage();
+    MCNAPI void _setResponseMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::FeedbackType                           feedbackType,
         ::std::string const&                     identifier,
@@ -76,8 +76,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

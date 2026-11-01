@@ -36,19 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HugeFungusFeature(bool isBlue);
+    MCNAPI explicit HugeFungusFeature(bool isBlue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(bool isBlue);
+    MCNAPI void* $ctor(bool isBlue);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

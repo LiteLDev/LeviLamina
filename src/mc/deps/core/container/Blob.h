@@ -62,14 +62,14 @@ public:
 #ifdef LL_PLAT_C
     MCAPI explicit Blob(uint64 size);
 
-    MCAPI Blob(uchar const* const ptr, uint64 size);
+    MCNAPI Blob(uchar const* const ptr, uint64 size);
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void defaultDeleter(uchar* ptr);
+    MCNAPI static void defaultDeleter(uchar* ptr);
     // NOLINTEND
 
 public:
@@ -78,7 +78,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI void* $ctor(uint64 size);
 
-    MCAPI void* $ctor(uchar const* const ptr, uint64 size);
+    MCNAPI void* $ctor(uchar const* const ptr, uint64 size);
 #endif
     // NOLINTEND
 };

@@ -34,21 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduDiscoveryDialogScreenController(
+    MCNAPI EduDiscoveryDialogScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::EduDiscoveryDialogCallbacks             callbacks
     );
 
-    MCAPI void _openPopup();
+    MCNAPI void _openPopup();
 
-    MCAPI void _performButtonAction(::EduDiscovery::ButtonAction action);
+    MCNAPI void _performButtonAction(::EduDiscovery::ButtonAction action);
 
-    MCAPI bool presentIfNeeded();
+    MCNAPI bool presentIfNeeded();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::EduDiscoveryDialogCallbacks callbacks);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::EduDiscoveryDialogCallbacks callbacks);
     // NOLINTEND
 };

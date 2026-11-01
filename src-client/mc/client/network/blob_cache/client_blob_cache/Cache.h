@@ -53,48 +53,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _flushTimestampsToDisk(::Bedrock::Threading::UniqueLock<::std::mutex> lock);
+    MCNAPI void _flushTimestampsToDisk(::Bedrock::Threading::UniqueLock<::std::mutex> lock);
 
-    MCAPI void _updateTimestamp(uint64 id);
+    MCNAPI void _updateTimestamp(uint64 id);
 
     MCAPI bool doesBlobExist(uint64 id) const;
 
-    MCAPI bool get(uint64 id, ::std::string& buffer);
+    MCNAPI bool get(uint64 id, ::std::string& buffer);
 
-    MCAPI bool hasClientRecentlyRequestedBlobId(uint64 id);
+    MCNAPI bool hasClientRecentlyRequestedBlobId(uint64 id);
 
-    MCAPI bool hasClientRequestedBlobId(uint64 id);
+    MCNAPI bool hasClientRequestedBlobId(uint64 id);
 
-    MCAPI void insert(::std::unordered_map<uint64, ::std::string> const& blobs);
+    MCNAPI void insert(::std::unordered_map<uint64, ::std::string> const& blobs);
 
-    MCAPI void pruneRecentlyReceivedBlobIds(::std::chrono::steady_clock::time_point currentTime);
+    MCNAPI void pruneRecentlyReceivedBlobIds(::std::chrono::steady_clock::time_point currentTime);
 
-    MCAPI void recordReceivedBlobId(uint64 id);
+    MCNAPI void recordReceivedBlobId(uint64 id);
 
-    MCAPI void recordRequestedBlobId(uint64 id);
+    MCNAPI void recordRequestedBlobId(uint64 id);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::DBStorage>
+    MCNAPI static ::std::shared_ptr<::DBStorage>
     _openDB(::Core::Path path, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
 
-    MCAPI static void
+    MCNAPI static void
     _writeTimestampsToDisk(::LevelStorage& db, ::std::unordered_map<uint64, uint64> const& timestamps);
 
-    MCAPI static ::Core::PathBuffer<::std::string> getPath();
+    MCNAPI static ::Core::PathBuffer<::std::string> getPath();
 
-    MCAPI static ::std::shared_ptr<::ClientBlobCache::Cache>
+    MCNAPI static ::std::shared_ptr<::ClientBlobCache::Cache>
     tryCreate(::WorkerPool& workers, ::Scheduler& context, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
     // NOLINTEND
 };
 

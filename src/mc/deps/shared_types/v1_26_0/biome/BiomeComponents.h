@@ -16,7 +16,7 @@ struct BiomeComponents : public ::SharedTypes::v1_21_110::BiomeComponents {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

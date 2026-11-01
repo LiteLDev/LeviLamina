@@ -43,32 +43,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScoreboardScreenController(
+    MCNAPI ScoreboardScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::function<void(::ActorUniqueID const&)>  navigateToPermissions
     );
 
-    MCAPI ::PlayerListInfo _findPlayerListInfoForId(int64 playerId) const;
+    MCNAPI ::PlayerListInfo _findPlayerListInfoForId(int64 playerId) const;
 
-    MCAPI ::std::string _getPermissionIcon(::ActorUniqueID playerId) const;
+    MCNAPI ::std::string _getPermissionIcon(::ActorUniqueID playerId) const;
 
-    MCAPI ::ResourceLocation _getScoredPlayerIconInfo(int index) const;
+    MCNAPI ::ResourceLocation _getScoredPlayerIconInfo(int index) const;
 
-    MCAPI ::ResourceLocation _getUnscoredPlayerIconInfo(int index) const;
+    MCNAPI ::ResourceLocation _getUnscoredPlayerIconInfo(int index) const;
 
-    MCAPI void buildCacheFromDisplayInfo(
+    MCNAPI void buildCacheFromDisplayInfo(
         ::std::vector<::ScoreboardCacheData>&                         output,
         ::std::vector<::PlayerScore> const&                           input,
         ::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver
     );
 
-    MCAPI bool isSidebarValid();
+    MCNAPI bool isSidebarValid();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::std::function<void(::ActorUniqueID const&)>  navigateToPermissions
     );
@@ -77,6 +77,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace GlideMoveSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createGlideMoveSystem();
+MCNAPI ::TickingSystemWithInfo createGlideMoveSystem();
 // NOLINTEND
 
 } // namespace GlideMoveSystem

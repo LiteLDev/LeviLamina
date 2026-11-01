@@ -42,14 +42,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getDescription() const;
+    MCNAPI char const* $getDescription() const;
 
-    MCAPI bool $_init(
+    MCNAPI bool $_init(
         ::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer> databasePtr,
         ::PositionTrackingDB::TrackingRecord&                           record
     );
 
-    MCAPI bool
+    MCNAPI bool
     $_tick(::std::weak_ptr<::PositionTrackingDB::PositionTrackingDBServer>, ::PositionTrackingDB::TrackingRecord&);
 
 

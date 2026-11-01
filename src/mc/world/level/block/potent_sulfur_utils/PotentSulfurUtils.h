@@ -11,13 +11,13 @@ class IConstBlockSource;
 namespace PotentSulfurUtils {
 // functions
 // NOLINTBEGIN
-MCAPI int getUnobstructedWaterColumnHeight(::IConstBlockSource const& region, ::BlockPos const& pos);
+MCNAPI int getUnobstructedWaterColumnHeight(::IConstBlockSource const& region, ::BlockPos const& pos);
 
-MCAPI int getWaterColumnHeight(::IConstBlockSource const& region, ::BlockPos const& pos);
+MCNAPI int getWaterColumnHeight(::IConstBlockSource const& region, ::BlockPos const& pos);
 
-MCAPI bool isCollisionlessWaterSource(::IConstBlockSource const& region, ::BlockPos const& pos);
+MCNAPI bool isCollisionlessWaterSource(::IConstBlockSource const& region, ::BlockPos const& pos);
 
-MCAPI bool isEmissionObstructed(::IConstBlockSource const& region, ::BlockPos const& pos);
+MCNAPI bool isEmissionObstructed(::IConstBlockSource const& region, ::BlockPos const& pos);
 // NOLINTEND
 
 } // namespace PotentSulfurUtils

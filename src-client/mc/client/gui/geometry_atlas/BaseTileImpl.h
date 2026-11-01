@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseTileImpl(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
+    MCNAPI BaseTileImpl(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
+    MCNAPI void* $ctor(::GeometryAtlas::CommandDispatcherArgs&& args, ::GeometryAtlas::InsertTilePayload payload);
     // NOLINTEND
 };
 

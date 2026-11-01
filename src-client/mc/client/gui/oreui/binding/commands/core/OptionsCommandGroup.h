@@ -35,23 +35,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OptionsCommandGroup(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit OptionsCommandGroup(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _resetOption(::std::string const& name);
+    MCNAPI void _resetOption(::std::string const& name);
 
-    MCAPI void _setBoolOption(::std::string const& name, bool value);
+    MCNAPI void _setBoolOption(::std::string const& name, bool value);
 
-    MCAPI void _setFloatOption(::std::string const& name, float value);
+    MCNAPI void _setFloatOption(::std::string const& name, float value);
 
-    MCAPI void _setIntOption(::std::string const& name, int value);
+    MCNAPI void _setIntOption(::std::string const& name, int value);
 
-    MCAPI void _setStringOption(::std::string const& name, ::std::string const& value);
+    MCNAPI void _setStringOption(::std::string const& name, ::std::string const& value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:

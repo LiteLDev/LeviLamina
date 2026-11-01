@@ -68,16 +68,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FeatureToggles(::AppPlatform& appPlatform);
+    MCNAPI explicit FeatureToggles(::AppPlatform& appPlatform);
 
-    MCAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
+    MCNAPI ::std::function<void(bool&)> _getLockIfInGameOrOptionExpectationsNotMetLockCallback(
         ::std::vector<::FeatureOptionID> expectedDisabledOptions,
         ::std::vector<::FeatureOptionID> expectedEnabledOptions
     );
 
-    MCAPI void _initialize(::AppPlatform& appPlatform);
+    MCNAPI void _initialize(::AppPlatform& appPlatform);
 
-    MCAPI void _registerFeature(
+    MCNAPI void _registerFeature(
         ::FeatureOptionTabID             tabID,
         ::FeatureOptionID                featureID,
         ::std::string const&             locName,
@@ -88,21 +88,21 @@ public:
         ::std::function<void(bool&)>     lock
     );
 
-    MCAPI void _registerFeatures();
+    MCNAPI void _registerFeatures();
 
-    MCAPI bool isEnabled(::FeatureOptionID featureID) const;
+    MCNAPI bool isEnabled(::FeatureOptionID featureID) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AppPlatform& appPlatform);
+    MCNAPI void* $ctor(::AppPlatform& appPlatform);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

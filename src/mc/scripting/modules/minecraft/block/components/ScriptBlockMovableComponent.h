@@ -16,9 +16,9 @@ class ScriptBlockMovableComponent : public ::ScriptModuleMinecraft::BaseScriptBl
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::EnumBinding bindMovementType();
+    MCNAPI static ::Scripting::EnumBinding bindMovementType();
 
-    MCAPI static ::Scripting::EnumBinding bindStickyType();
+    MCNAPI static ::Scripting::EnumBinding bindStickyType();
     // NOLINTEND
 };
 

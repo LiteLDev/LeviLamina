@@ -48,15 +48,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayerInfoBindings(::OreUI::WorldPlayerInfoBindings const& data);
+    MCNAPI WorldPlayerInfoBindings(::OreUI::WorldPlayerInfoBindings const& data);
 
-    MCAPI WorldPlayerInfoBindings(
+    MCNAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
         ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
     );
 
-    MCAPI WorldPlayerInfoBindings(
+    MCNAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::LocalPlayer const*                     localPlayer,
         ::std::shared_ptr<::Social::User>        user,
@@ -65,21 +65,21 @@ public:
         ::BuildPlatform                          platform
     );
 
-    MCAPI ~WorldPlayerInfoBindings();
+    MCNAPI ~WorldPlayerInfoBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::WorldPlayerInfoBindings const& data);
+    MCNAPI void* $ctor(::OreUI::WorldPlayerInfoBindings const& data);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
         ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::LocalPlayer const*                     localPlayer,
         ::std::shared_ptr<::Social::User>        user,
@@ -92,7 +92,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

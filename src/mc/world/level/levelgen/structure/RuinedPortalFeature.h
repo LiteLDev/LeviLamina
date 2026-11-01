@@ -72,7 +72,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension&         dimension,
         ::BiomeSource const& biomeSource,
         ::Random&,
@@ -80,7 +80,7 @@ public:
         ::IPreliminarySurfaceProvider const& preliminarySurfaceLevel
     );
 
-    MCAPI bool $isFeatureChunk(
+    MCNAPI bool $isFeatureChunk(
         ::BiomeSource const&,
         ::Random&         random,
         ::ChunkPos const& pos,
@@ -95,6 +95,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -41,9 +41,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& module);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& module);
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType> getOrCreateHandle(
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimensionType> getOrCreateHandle(
         ::DimensionType                       dimensionType,
         ::DimensionManager const&             dimensionManager,
         ::Scripting::WeakLifetimeScope const& scope

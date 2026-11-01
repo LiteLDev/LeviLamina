@@ -57,9 +57,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _initializeGroupHandle();
+    MCNAPI void _initializeGroupHandle();
 
-    MCAPI void _onWaypointPropertyUpdate(
+    MCNAPI void _onWaypointPropertyUpdate(
         ::std::variant<
             bool,
             ::std::optional<::ScriptModuleMinecraft::ScriptRGB>,
@@ -68,15 +68,15 @@ public:
         ::WaypointGroup::WaypointHandle                              handle
     );
 
-    MCAPI void _onWaypointRemoveEvent(::WaypointGroup::WaypointHandle handle);
+    MCNAPI void _onWaypointRemoveEvent(::WaypointGroup::WaypointHandle handle);
 
-    MCAPI void _removeInvalidWaypoints(::std::vector<::WaypointGroup::WaypointHandle> const& handles);
+    MCNAPI void _removeInvalidWaypoints(::std::vector<::WaypointGroup::WaypointHandle> const& handles);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

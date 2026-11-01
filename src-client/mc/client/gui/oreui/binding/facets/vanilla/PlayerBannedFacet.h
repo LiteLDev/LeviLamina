@@ -17,21 +17,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void openBannedInfoPage();
+    MCNAPI void openBannedInfoPage();
 
-    MCAPI void openXboxLiveBannedInfoPage();
+    MCNAPI void openXboxLiveBannedInfoPage();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

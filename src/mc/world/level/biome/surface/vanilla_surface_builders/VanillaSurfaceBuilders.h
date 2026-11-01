@@ -10,7 +10,7 @@ class Block;
 namespace VanillaSurfaceBuilders {
 // functions
 // NOLINTBEGIN
-MCAPI ::Block const& getBlockOrUnknown(::Block const* block);
+MCNAPI ::Block const& getBlockOrUnknown(::Block const* block);
 // NOLINTEND
 
 } // namespace VanillaSurfaceBuilders

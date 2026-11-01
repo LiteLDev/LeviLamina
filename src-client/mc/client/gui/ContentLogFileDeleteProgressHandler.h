@@ -56,33 +56,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContentLogFileDeleteProgressHandler(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
+    MCNAPI explicit ContentLogFileDeleteProgressHandler(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
+    MCNAPI void* $ctor(::ContentLogFileDeleteProgressHandler::FileDeleteTarget target);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $tick(::MinecraftScreenModel&);
+    MCNAPI void $tick(::MinecraftScreenModel&);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel&);
+    MCNAPI void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel&);
+    MCNAPI void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

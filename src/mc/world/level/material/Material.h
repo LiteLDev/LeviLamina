@@ -19,6 +19,14 @@ public:
         NonSolid = 2,
     };
 
+    class Builder {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 2, ::Material> mMaterial;
+        // NOLINTEND
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,13 +37,5 @@ public:
     bool                                                            mBlocksPrecipitation : 1;
     bool                                                            mSolid               : 1;
     bool                                                            mSuperHot            : 1;
-    // NOLINTEND
-};
-
-class Material::Builder {
-public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::TypedStorage<1, 2, ::Material> mMaterial;
     // NOLINTEND
 };

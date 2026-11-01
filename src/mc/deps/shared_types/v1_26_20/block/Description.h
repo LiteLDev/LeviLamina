@@ -34,39 +34,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
+    MCNAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
 
-    MCAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
+    MCNAPI Description(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::Description&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Description const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Description const&) const;
 
-    MCAPI ~Description();
+    MCNAPI ~Description();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::Description const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

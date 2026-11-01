@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureAnimationAction(
+    MCNAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -66,9 +66,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

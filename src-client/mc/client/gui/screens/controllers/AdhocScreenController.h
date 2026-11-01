@@ -32,19 +32,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AdhocScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit AdhocScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

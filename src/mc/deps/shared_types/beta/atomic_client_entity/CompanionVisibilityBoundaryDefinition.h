@@ -16,13 +16,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& LOOKAHEAD_MAX();
+    MCNAPI static ::std::string_view const& LOOKAHEAD_MAX();
 
-    MCAPI static ::std::string_view const& LOOKAHEAD_PER_SPEED();
+    MCNAPI static ::std::string_view const& LOOKAHEAD_PER_SPEED();
 
-    MCAPI static ::std::string_view const& MARGIN();
+    MCNAPI static ::std::string_view const& MARGIN();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

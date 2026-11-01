@@ -74,7 +74,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    MCNAPI explicit ShooterItemComponent(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
 
     MCAPI void _consumeAmmunition(
         ::Player*          player,
@@ -88,13 +88,13 @@ public:
 
     MCAPI void _shootProjectiles(::ItemStack& shooterStack, ::Player* player, int durationLeft) const;
 
-    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -104,15 +104,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::ShooterItemComponent const& component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
-    MCAPI bool $checkComponentDataForContentErrors() const;
+    MCNAPI bool $checkComponentDataForContentErrors() const;
 
 
     // NOLINTEND

@@ -38,30 +38,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BossComponent();
+    MCNAPI BossComponent();
 
-    MCAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
+    MCNAPI void _sendBossEvent(::Actor& owner, ::BossEventUpdateType type, ::Player* player);
 
-    MCAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
+    MCNAPI void broadcastBossEvent(::Actor& owner, ::BossEventUpdateType type);
 
-    MCAPI void handleRegisterPlayers(::Actor& owner);
+    MCNAPI void handleRegisterPlayers(::Actor& owner);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void registerPlayer(::Actor& owner, ::Player* player);
+    MCNAPI void registerPlayer(::Actor& owner, ::Player* player);
 
-    MCAPI void resendBossEventData(::Actor& owner, ::Player* player);
+    MCNAPI void resendBossEventData(::Actor& owner, ::Player* player);
 
-    MCAPI void sendDeathTelemetry(::Actor& owner);
+    MCNAPI void sendDeathTelemetry(::Actor& owner);
 
-    MCAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
+    MCNAPI bool tryRemoveBoss(::Actor& owner, ::Player& player);
 
-    MCAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
+    MCNAPI void unRegisterPlayer(::Actor& owner, ::Player* player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -39,17 +39,17 @@ public:
 
     MCAPI static bool _performAbsorbWater(::BlockSource& region, ::BlockPos const& startPos);
 
-    MCAPI static void _setShouldDry(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _setShouldDry(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static void _spawnAbsorbParticles(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _spawnAbsorbParticles(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
 
     // NOLINTEND
@@ -57,6 +57,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,18 +15,18 @@ class Vec3;
 namespace LeashKnotUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::LeashKnot* findAt(::BlockSource& region, ::BlockPos const& pos);
+MCNAPI ::LeashKnot* findAt(::BlockSource& region, ::BlockPos const& pos);
 
-MCAPI ::LeashKnot*
+MCNAPI ::LeashKnot*
 trySpawn(::BlockSource& region, ::BlockPos const& pos, ::ItemInstance const* itemUsed, ::Vec3 knotOffset);
 
-MCAPI bool
+MCNAPI bool
 tryTransferLeashedActors(::Actor& holderActor, ::BlockPos const& pos, ::ItemInstance* itemUsed, ::Vec3 knotOffset);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& DEFAULT_KNOT_OFFSET();
+MCNAPI ::Vec3 const& DEFAULT_KNOT_OFFSET();
 // NOLINTEND
 
 } // namespace LeashKnotUtility

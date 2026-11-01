@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InvitableFriendsListFacet(
+    MCNAPI InvitableFriendsListFacet(
         ::std::shared_ptr<::Social::FriendList>                                   friendList,
         ::World::WorldPlayerListTracker&                                          worldPlayerListTracker,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> const& multiplayerServiceManager,
@@ -62,29 +62,29 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>                resourceAllowList
     );
 
-    MCAPI void _fetchInvitableFriends();
+    MCNAPI void _fetchInvitableFriends();
 
-    MCFOLD ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
+    MCNAPI ::std::vector<::OreUI::InvitableFriendBindings> const& getInvitableFriends();
 
-    MCFOLD ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
+    MCNAPI ::OreUI::FriendsLoadingState getPlatformFriendsLoadingState() const;
 
-    MCAPI ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
+    MCNAPI ::OreUI::FriendsLoadingState getXblFriendsLoadingState() const;
 
-    MCAPI bool const hasPlatformIcons() const;
+    MCNAPI bool const hasPlatformIcons() const;
 
-    MCAPI void sendInvite(::std::string const userId, ::Social::FriendInviteType const entryType);
+    MCNAPI void sendInvite(::std::string const userId, ::Social::FriendInviteType const entryType);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Social::FriendList>                                   friendList,
         ::World::WorldPlayerListTracker&                                          worldPlayerListTracker,
         ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> const& multiplayerServiceManager,
@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

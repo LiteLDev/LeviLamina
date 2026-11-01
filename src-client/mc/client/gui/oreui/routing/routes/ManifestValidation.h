@@ -56,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _navigateToManifestValidationScreen(
+    MCNAPI void _navigateToManifestValidationScreen(
         ::SceneFactory&                                      sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&  sceneStack,
         ::std::string const&                                 path,
@@ -68,19 +68,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[20]> BASE_SCREEN_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[20]> BASE_SCREEN_ID();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[29]> ROUTE_STORAGE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[29]> ROUTE_STORAGE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

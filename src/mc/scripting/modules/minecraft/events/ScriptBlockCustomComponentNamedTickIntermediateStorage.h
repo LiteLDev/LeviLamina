@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBlockCustomComponentNamedTickIntermediateStorage(
+    MCNAPI explicit ScriptBlockCustomComponentNamedTickIntermediateStorage(
         ::BlockEvents::NamedTickEvent const& eventData
     );
     // NOLINTEND
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockEvents::NamedTickEvent const& eventData);
+    MCNAPI void* $ctor(::BlockEvents::NamedTickEvent const& eventData);
     // NOLINTEND
 };
 

@@ -18,7 +18,7 @@ struct ResourceDropsContext;
 namespace VanillaBlockDrops {
 // functions
 // NOLINTBEGIN
-MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+MCNAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
 combine(
     ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
         dropStrategyA,
@@ -26,21 +26,21 @@ combine(
         dropStrategyB
 );
 
-MCAPI void configureBlockDrops(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+MCNAPI void configureBlockDrops(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
-MCAPI ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> limitCount(
+MCNAPI ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> limitCount(
     int                                                                                               max,
     ::brstd::move_only_function<int(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> countProvider
 );
 
-MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+MCNAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
 when(
     ::brstd::move_only_function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> condition,
     ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
         trueStrategy
 );
 
-MCAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
+MCNAPI ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>
 when(
     ::brstd::move_only_function<bool(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const> condition,
     ::brstd::move_only_function<::ResourceDrops(::Block const&, ::IRandom&, ::ResourceDropsContext const&) const>

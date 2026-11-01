@@ -29,33 +29,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSoundDefinitionFilter(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter const&);
+    MCNAPI ScriptSoundDefinitionFilter(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSoundDefinitionFilter&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSoundDefinitionFilter&
     operator=(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSoundDefinitionFilter&
+    MCNAPI ::ScriptModuleMinecraft::ScriptSoundDefinitionFilter&
     operator=(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter const&);
 
-    MCAPI ~ScriptSoundDefinitionFilter();
+    MCNAPI ~ScriptSoundDefinitionFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundDefinitionFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

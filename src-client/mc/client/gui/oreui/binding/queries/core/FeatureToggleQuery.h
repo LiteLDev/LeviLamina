@@ -29,13 +29,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureToggleQuery(::OreUI::GameDependencies const& game, ::std::string const& tag);
+    MCNAPI FeatureToggleQuery(::OreUI::GameDependencies const& game, ::std::string const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& tag);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& tag);
     // NOLINTEND
 };
 

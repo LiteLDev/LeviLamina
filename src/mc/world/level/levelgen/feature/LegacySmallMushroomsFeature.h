@@ -38,19 +38,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacySmallMushroomsFeature(::FeatureRegistry const& registry);
+    MCNAPI explicit LegacySmallMushroomsFeature(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FeatureRegistry const& registry);
+    MCNAPI void* $ctor(::FeatureRegistry const& registry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

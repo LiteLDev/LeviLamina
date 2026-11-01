@@ -61,37 +61,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
+    MCNAPI explicit SculkShriekerBlockActor(::BlockPos const& pos);
 
-    MCAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI void tryRespond(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
+    MCNAPI bool tryShriek(::BlockSource& region, ::BlockPos pos, ::Player& provokingPlayer);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool _canRespond(::BlockSource const& region, ::BlockPos const& pos);
 
-    MCAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
+    MCNAPI static ::Player* tryGetPlayerInHierarchy(::Actor* actor);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
 
     // NOLINTEND

@@ -76,7 +76,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldCreationHelper(
+    MCNAPI WorldCreationHelper(
         ::IContentManager&                                              contentManager,
         ::IDlcValidation&                                               dlcValidation,
         ::ILevelListCache&                                              levelListCache,
@@ -90,20 +90,20 @@ public:
         ::IGameServerStartup&                                           gameServerStartup
     );
 
-    MCAPI ::WorldCreationUtils::WorldCreationResult
+    MCNAPI ::WorldCreationUtils::WorldCreationResult
     _createWorldImpl(::LevelDataWrapper& levelData, ::LevelSummary& levelSummary);
 
-    MCAPI ::DlcCheckResult checkDlc();
+    MCNAPI ::DlcCheckResult checkDlc();
 
-    MCAPI ::CopyResourcePacksResult startCopyingResourcePacks();
+    MCNAPI ::CopyResourcePacksResult startCopyingResourcePacks();
 
-    MCAPI ~WorldCreationHelper();
+    MCNAPI ~WorldCreationHelper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IContentManager&                                              contentManager,
         ::IDlcValidation&                                               dlcValidation,
         ::ILevelListCache&                                              levelListCache,
@@ -121,6 +121,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

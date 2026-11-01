@@ -43,17 +43,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageMigrationProgressScreenModel(::MinecraftScreenModelContext context);
+    MCNAPI explicit StorageMigrationProgressScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI void beginTransfer();
+    MCNAPI void beginTransfer();
 
-    MCAPI void
+    MCNAPI void
     initTransferSystem(::Bedrock::NonOwnerPointer<::Bedrock::StorageMigration::StorageMigrationService> const& service);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModelContext context);
+    MCNAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 };

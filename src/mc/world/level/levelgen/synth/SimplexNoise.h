@@ -21,8 +21,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float _getValue(::Vec2 const& vin) const;
+    MCNAPI float _getValue(::Vec2 const& vin) const;
 
-    MCAPI float _getValue(::Vec3 const& vin) const;
+    MCNAPI float _getValue(::Vec3 const& vin) const;
     // NOLINTEND
 };

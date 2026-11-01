@@ -50,17 +50,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem, ::HandSlot handSlot);
+    MCNAPI bool _canBreed(::Actor& owner, ::Player& player, ::ItemStack const& playerItem, ::HandSlot handSlot);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
+    MCNAPI bool canMate(::Actor const& owner, ::Actor const& partner) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
     MCAPI ::std::vector<::WeakEntityRef> mate(::Actor& owner, ::Actor& partner);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 
 public:
@@ -70,6 +70,6 @@ public:
 
     MCAPI static void _spawnLoveParticles(::Actor& owner);
 
-    MCAPI static bool meetsSittingRequirements(::Actor const& actor);
+    MCNAPI static bool meetsSittingRequirements(::Actor const& actor);
     // NOLINTEND
 };

@@ -22,14 +22,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     tickCountdown(::EntityContext& entity, ::NpcComponents::LeaveMenuCountdown& leaveMenuCountdownComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

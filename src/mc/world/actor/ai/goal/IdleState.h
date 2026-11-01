@@ -17,9 +17,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
 
     // NOLINTEND

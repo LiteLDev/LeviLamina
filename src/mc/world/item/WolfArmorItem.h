@@ -53,36 +53,36 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
+    MCNAPI static ::std::vector<::SharedTypes::Legacy::ActorDamageCause> const& ABSORBABLE_DAMAGE_CAUSES();
 
-    MCAPI static ::std::vector<::DurabilityThreshold> const& DURABILITY_THRESHOLDS();
+    MCNAPI static ::std::vector<::DurabilityThreshold> const& DURABILITY_THRESHOLDS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
+    MCNAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const* item, bool) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               item,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const*) const;
 
-    MCFOLD bool $isBodyArmor() const;
+    MCNAPI bool $isBodyArmor() const;
 
-    MCFOLD int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getBreakSound() const;
 
 
     // NOLINTEND

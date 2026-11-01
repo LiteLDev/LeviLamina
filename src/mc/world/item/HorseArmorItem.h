@@ -74,27 +74,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isBodyArmor() const;
+    MCNAPI bool $isBodyArmor() const;
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCAPI int $getToughnessValue() const;
+    MCNAPI int $getToughnessValue() const;
 
-    MCAPI float $getKnockbackResistanceValue() const;
+    MCNAPI float $getKnockbackResistanceValue() const;
 
-    MCAPI bool $hasCustomColor(::CompoundTag const* userData) const;
+    MCNAPI bool $hasCustomColor(::CompoundTag const* userData) const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD void $clearColor(::ItemStackBase& item) const;
+    MCNAPI void $clearColor(::ItemStackBase& item) const;
 
-    MCFOLD void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
+    MCNAPI void $setColor(::ItemStackBase& item, ::mce::Color const& color) const;
 
-    MCAPI bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCFOLD void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

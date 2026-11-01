@@ -44,24 +44,24 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& CartographyTableID();
+    MCNAPI static ::mce::UUID const& CartographyTableID();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
+    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
 
-    MCAPI ::std::vector<::ItemInstance> const&
+    MCNAPI ::std::vector<::ItemInstance> const&
     $assemble(::CraftingContainer& craftSlots, ::CraftingContext& craftingContext) const;
 
-    MCFOLD ::std::vector<::ItemInstance> const& $getResultItems() const;
+    MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCFOLD int $getCraftingSize() const;
+    MCNAPI int $getCraftingSize() const;
 
-    MCFOLD ::RecipeIngredient const& $getIngredient(int x, int y) const;
+    MCNAPI ::RecipeIngredient const& $getIngredient(int x, int y) const;
 
-    MCFOLD int $size() const;
+    MCNAPI int $size() const;
 
 
     // NOLINTEND
@@ -69,6 +69,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

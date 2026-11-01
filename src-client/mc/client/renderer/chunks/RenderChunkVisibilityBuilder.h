@@ -31,6 +31,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void buildVisibilityData(::RenderChunkShared& renderChunkShared);
+    MCNAPI void buildVisibilityData(::RenderChunkShared& renderChunkShared);
     // NOLINTEND
 };

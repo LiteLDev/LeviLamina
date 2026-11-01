@@ -40,26 +40,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BowItem(::std::string const& name, int id);
+    MCNAPI BowItem(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id);
+    MCNAPI void* $ctor(::std::string const& name, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCFOLD int $getEnchantSlot() const;
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
+    MCNAPI void $enchantProjectile(::ItemStackBase const& weapon, ::Actor& projectile) const;
 
 
     // NOLINTEND

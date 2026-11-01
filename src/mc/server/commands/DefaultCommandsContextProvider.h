@@ -47,11 +47,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ILevel* $getLevel();
+    MCNAPI ::ILevel* $getLevel();
 
-    MCAPI ::NetworkIdentifier $getLocalNetworkId() const;
+    MCNAPI ::NetworkIdentifier $getLocalNetworkId() const;
 
-    MCAPI void $onCommandExecuted(
+    MCNAPI void $onCommandExecuted(
         ::MCRESULT           result,
         ::CommandOriginType  originType,
         ::std::string const& commandName,

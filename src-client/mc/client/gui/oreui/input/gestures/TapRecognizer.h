@@ -41,12 +41,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
+    MCNAPI void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    MCAPI void
+    MCNAPI void
     $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
-    MCAPI void $onGestureRecognized();
+    MCNAPI void $onGestureRecognized();
     // NOLINTEND
 };
 

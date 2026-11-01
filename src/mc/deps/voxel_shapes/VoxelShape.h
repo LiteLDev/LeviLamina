@@ -34,24 +34,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VoxelShape(::VoxelShapes::VoxelShape&&);
+    MCNAPI VoxelShape(::VoxelShapes::VoxelShape&&);
 
-    MCAPI VoxelShape(::VoxelShapes::VoxelShape const&);
+    MCNAPI VoxelShape(::VoxelShapes::VoxelShape const&);
 
-    MCAPI VoxelShape(
+    MCNAPI VoxelShape(
         ::VoxelShapes::Cells               cells,
         ::Bedrock::small_vector<float, 12> xCoords,
         ::Bedrock::small_vector<float, 12> yCoords,
         ::Bedrock::small_vector<float, 12> zCoords
     );
 
-    MCAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
+    MCNAPI ::VoxelShapes::VoxelShape computeFaceShape(uchar face) const;
 
-    MCAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
+    MCNAPI ::VoxelShapes::VoxelShape& operator=(::VoxelShapes::VoxelShape&&);
 
-    MCAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
+    MCNAPI bool operator==(::VoxelShapes::VoxelShape const& rhs) const;
 
-    MCAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
+    MCNAPI ::VoxelShapes::SerializableVoxelShape toSerializable() const;
 
     MCAPI ~VoxelShape();
     // NOLINTEND
@@ -59,30 +59,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::VoxelShapes::VoxelShape
+    MCNAPI static ::VoxelShapes::VoxelShape
     createCuboidShape(float xMin, float yMin, float zMin, float xMax, float yMax, float zMax);
 
-    MCAPI static ::VoxelShapes::VoxelShape createEmptyShape();
+    MCNAPI static ::VoxelShapes::VoxelShape createEmptyShape();
 
-    MCAPI static ::VoxelShapes::VoxelShape createShapeFromAabbs(::gsl::span<::AABB const> boxes);
+    MCNAPI static ::VoxelShapes::VoxelShape createShapeFromAabbs(::gsl::span<::AABB const> boxes);
 
-    MCAPI static ::VoxelShapes::VoxelShape fromSerializable(::VoxelShapes::SerializableVoxelShape const& serializable);
+    MCNAPI static ::VoxelShapes::VoxelShape fromSerializable(::VoxelShapes::SerializableVoxelShape const& serializable);
 
 #ifdef LL_PLAT_C
-    MCAPI static bool joinIsNotEmpty(
+    MCNAPI static bool joinIsNotEmpty(
         ::VoxelShapes::VoxelShape const& first,
         ::VoxelShapes::VoxelShape const& second,
         ::VoxelShapes::JoinOperation     operation
     );
 #endif
 
-    MCAPI static ::VoxelShapes::VoxelShape joinUnoptimized(
+    MCNAPI static ::VoxelShapes::VoxelShape joinUnoptimized(
         ::VoxelShapes::VoxelShape const& first,
         ::VoxelShapes::VoxelShape const& second,
         ::VoxelShapes::JoinOperation     operation
     );
 
-    MCAPI static ::VoxelShapes::VoxelShape transform(
+    MCNAPI static ::VoxelShapes::VoxelShape transform(
         ::VoxelShapes::VoxelShape shape,
         ::Vec3 const&             scale,
         ::Vec3 const&             scalePivot,
@@ -95,19 +95,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::VoxelShapes::VoxelShape const& emptyShape();
+    MCNAPI static ::VoxelShapes::VoxelShape const& emptyShape();
 
-    MCAPI static ::VoxelShapes::VoxelShape const& unitCubeShape();
+    MCNAPI static ::VoxelShapes::VoxelShape const& unitCubeShape();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::VoxelShapes::VoxelShape&&);
+    MCNAPI void* $ctor(::VoxelShapes::VoxelShape&&);
 
-    MCAPI void* $ctor(::VoxelShapes::VoxelShape const&);
+    MCNAPI void* $ctor(::VoxelShapes::VoxelShape const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::VoxelShapes::Cells               cells,
         ::Bedrock::small_vector<float, 12> xCoords,
         ::Bedrock::small_vector<float, 12> yCoords,

@@ -62,9 +62,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _clearInvitesMessages();
+    MCNAPI void _clearInvitesMessages();
 
-    MCAPI void _setInvitationStatus(
+    MCNAPI void _setInvitationStatus(
         ::OreUI::InboxFacet::InboxMessageData const& inMessage,
         ::Invites::Invite::InvitationStatus const&   status
     );

@@ -10,137 +10,137 @@ class GameEvent;
 namespace GameEventRegistry {
 // static variables
 // NOLINTBEGIN
-MCAPI ::GameEvent const& blockActivate();
+MCNAPI ::GameEvent const& blockActivate();
 
-MCAPI ::GameEvent const& blockAttach();
+MCNAPI ::GameEvent const& blockAttach();
 
-MCAPI ::GameEvent const& blockChange();
+MCNAPI ::GameEvent const& blockChange();
 
-MCAPI ::GameEvent const& blockClose();
+MCNAPI ::GameEvent const& blockClose();
 
-MCAPI ::GameEvent const& blockDeactivate();
+MCNAPI ::GameEvent const& blockDeactivate();
 
 MCAPI ::GameEvent const& blockDestroy();
 
-MCAPI ::GameEvent const& blockDetach();
+MCNAPI ::GameEvent const& blockDetach();
 
-MCAPI ::GameEvent const& blockOpen();
+MCNAPI ::GameEvent const& blockOpen();
 
 MCAPI ::GameEvent const& blockPlace();
 
-MCAPI ::GameEvent const& bounce();
+MCNAPI ::GameEvent const& bounce();
 
-MCAPI ::GameEvent const& containerClose();
+MCNAPI ::GameEvent const& containerClose();
 
-MCAPI ::GameEvent const& containerOpen();
+MCNAPI ::GameEvent const& containerOpen();
 
-MCAPI ::GameEvent const& dispenseFail();
+MCNAPI ::GameEvent const& dispenseFail();
 
-MCAPI ::GameEvent const& drink();
+MCNAPI ::GameEvent const& drink();
 
-MCAPI ::GameEvent const& eat();
+MCNAPI ::GameEvent const& eat();
 
-MCAPI ::GameEvent const& elytraGlide();
+MCNAPI ::GameEvent const& elytraGlide();
 
-MCAPI ::GameEvent const& entityAct();
+MCNAPI ::GameEvent const& entityAct();
 
-MCAPI ::GameEvent const& entityDamage();
+MCNAPI ::GameEvent const& entityDamage();
 
-MCAPI ::GameEvent const& entityDie();
+MCNAPI ::GameEvent const& entityDie();
 
-MCAPI ::GameEvent const& entityDismount();
+MCNAPI ::GameEvent const& entityDismount();
 
-MCAPI ::GameEvent const& entityInteract();
+MCNAPI ::GameEvent const& entityInteract();
 
-MCAPI ::GameEvent const& entityMount();
+MCNAPI ::GameEvent const& entityMount();
 
-MCAPI ::GameEvent const& entityMove();
+MCNAPI ::GameEvent const& entityMove();
 
-MCAPI ::GameEvent const& entityPlace();
+MCNAPI ::GameEvent const& entityPlace();
 
-MCAPI ::GameEvent const& entityRoar();
+MCNAPI ::GameEvent const& entityRoar();
 
-MCAPI ::GameEvent const& equip();
+MCNAPI ::GameEvent const& equip();
 
-MCAPI ::GameEvent const& explode();
+MCNAPI ::GameEvent const& explode();
 
-MCAPI ::GameEvent const& flap();
+MCNAPI ::GameEvent const& flap();
 
-MCAPI ::GameEvent const& fluidPickup();
+MCNAPI ::GameEvent const& fluidPickup();
 
-MCAPI ::GameEvent const& fluidPlace();
+MCNAPI ::GameEvent const& fluidPlace();
 
-MCAPI ::GameEvent const& hitGround();
+MCNAPI ::GameEvent const& hitGround();
 
-MCAPI ::GameEvent const& invalid();
+MCNAPI ::GameEvent const& invalid();
 
-MCAPI ::GameEvent const& itemInteractFinish();
+MCNAPI ::GameEvent const& itemInteractFinish();
 
-MCAPI ::GameEvent const& itemInteractStart();
+MCNAPI ::GameEvent const& itemInteractStart();
 
-MCAPI ::GameEvent const& lightningStrike();
+MCNAPI ::GameEvent const& lightningStrike();
 
-MCAPI ::GameEvent const& multiItemSwap();
+MCNAPI ::GameEvent const& multiItemSwap();
 
-MCAPI ::GameEvent const& noteBlockPlay();
+MCNAPI ::GameEvent const& noteBlockPlay();
 
-MCAPI ::GameEvent const& pistonContract();
+MCNAPI ::GameEvent const& pistonContract();
 
-MCAPI ::GameEvent const& pistonExtend();
+MCNAPI ::GameEvent const& pistonExtend();
 
-MCAPI ::GameEvent const& primeFuse();
+MCNAPI ::GameEvent const& primeFuse();
 
 MCAPI ::GameEvent const& projectileLand();
 
 MCAPI ::GameEvent const& projectileShoot();
 
-MCAPI ::GameEvent const& resonate1();
+MCNAPI ::GameEvent const& resonate1();
 
-MCAPI ::GameEvent const& resonate10();
+MCNAPI ::GameEvent const& resonate10();
 
-MCAPI ::GameEvent const& resonate11();
+MCNAPI ::GameEvent const& resonate11();
 
-MCAPI ::GameEvent const& resonate12();
+MCNAPI ::GameEvent const& resonate12();
 
-MCAPI ::GameEvent const& resonate13();
+MCNAPI ::GameEvent const& resonate13();
 
-MCAPI ::GameEvent const& resonate14();
+MCNAPI ::GameEvent const& resonate14();
 
-MCAPI ::GameEvent const& resonate15();
+MCNAPI ::GameEvent const& resonate15();
 
-MCAPI ::GameEvent const& resonate2();
+MCNAPI ::GameEvent const& resonate2();
 
-MCAPI ::GameEvent const& resonate3();
+MCNAPI ::GameEvent const& resonate3();
 
-MCAPI ::GameEvent const& resonate4();
+MCNAPI ::GameEvent const& resonate4();
 
-MCAPI ::GameEvent const& resonate5();
+MCNAPI ::GameEvent const& resonate5();
 
-MCAPI ::GameEvent const& resonate6();
+MCNAPI ::GameEvent const& resonate6();
 
-MCAPI ::GameEvent const& resonate7();
+MCNAPI ::GameEvent const& resonate7();
 
-MCAPI ::GameEvent const& resonate8();
+MCNAPI ::GameEvent const& resonate8();
 
-MCAPI ::GameEvent const& resonate9();
+MCNAPI ::GameEvent const& resonate9();
 
-MCAPI ::GameEvent const& sculkSensorTendrilsClicking();
+MCNAPI ::GameEvent const& sculkSensorTendrilsClicking();
 
-MCAPI ::GameEvent const& sculkTouch();
+MCNAPI ::GameEvent const& sculkTouch();
 
-MCAPI ::GameEvent const& shear();
+MCNAPI ::GameEvent const& shear();
 
-MCAPI ::GameEvent const& shriek();
+MCNAPI ::GameEvent const& shriek();
 
-MCAPI ::GameEvent const& singleItemSwap();
+MCNAPI ::GameEvent const& singleItemSwap();
 
-MCAPI ::GameEvent const& splash();
+MCNAPI ::GameEvent const& splash();
 
-MCAPI ::GameEvent const& swim();
+MCNAPI ::GameEvent const& swim();
 
 MCAPI ::GameEvent const& teleport();
 
-MCAPI ::GameEvent const& unequip();
+MCNAPI ::GameEvent const& unequip();
 // NOLINTEND
 
 } // namespace GameEventRegistry

@@ -49,7 +49,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void addPacketAlgorithm(
+        MCNAPI void addPacketAlgorithm(
             ::std::vector<::MinecraftPacketIds> const& packetIds,
             ::std::unique_ptr<::IPacketLimitAlgorithm> algorithm
         );

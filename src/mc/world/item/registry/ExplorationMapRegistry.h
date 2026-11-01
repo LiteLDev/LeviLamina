@@ -14,10 +14,10 @@ class ExplorationMapRegistry {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::array<::ExplorationMapData, 23> const& _getRegistry();
+    MCNAPI static ::std::array<::ExplorationMapData, 23> const& _getRegistry();
 
-    MCAPI static ::ExplorationMapData const* getExplorationMapDataByFeatureName(::std::string const& featureName);
+    MCNAPI static ::ExplorationMapData const* getExplorationMapDataByFeatureName(::std::string const& featureName);
 
-    MCAPI static ::ExplorationMapData const* getExplorationMapDataByMapType(::MapType mapType);
+    MCNAPI static ::ExplorationMapData const* getExplorationMapDataByMapType(::MapType mapType);
     // NOLINTEND
 };

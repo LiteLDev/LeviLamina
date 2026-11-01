@@ -38,20 +38,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialButtonScreenController(
+    MCNAPI SocialButtonScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );
 
-    MCAPI void _onPartyChanged();
+    MCNAPI void _onPartyChanged();
 
-    MCAPI void _updateSocialIconControl();
+    MCNAPI void _updateSocialIconControl();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem> partySystem
     );

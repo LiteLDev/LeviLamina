@@ -14,7 +14,7 @@ class EntitySensorSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickEntitySensorComponent(
+    MCNAPI static void _tickEntitySensorComponent(
         ::StrictEntityContext&,
         ::ActorOwnerComponent&        actorOwnerComponent,
         ::EntitySensorComponent&      entitySensorComponent,

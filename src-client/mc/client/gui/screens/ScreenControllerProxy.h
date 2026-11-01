@@ -28,6 +28,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
+    MCNAPI ::std::shared_ptr<::MainMenuScreenModel> $getMainMenuScreenModel();
     // NOLINTEND
 };

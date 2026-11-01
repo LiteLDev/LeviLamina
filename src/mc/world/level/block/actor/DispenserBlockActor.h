@@ -76,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DispenserBlockActor(::BlockPos pos);
 
-    MCAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
+    MCNAPI DispenserBlockActor(::BlockPos pos, ::BlockActorType type);
     // NOLINTEND
 
 public:
@@ -84,14 +84,14 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::BlockPos pos);
 
-    MCAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
+    MCNAPI void* $ctor(::BlockPos pos, ::BlockActorType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -110,17 +110,17 @@ public:
 
     MCAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
     MCAPI void $startOpen(::Actor& actor);
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCFOLD void $onMove();
 
@@ -130,9 +130,9 @@ public:
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

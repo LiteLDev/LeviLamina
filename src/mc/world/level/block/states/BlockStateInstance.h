@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Block const*
+    MCNAPI ::Block const*
     _trySet(ushort data, uint value, ::std::vector<::std::unique_ptr<::Block>> const& blockPermutations) const;
     // NOLINTEND
 };

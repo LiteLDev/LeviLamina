@@ -32,29 +32,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsListActionsFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
+    MCNAPI explicit RealmsListActionsFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
 
-    MCAPI void clearRealmUnreadCount(::std::string const& realmId) const;
+    MCNAPI void clearRealmUnreadCount(::std::string const& realmId) const;
 
-    MCAPI void forceFetchRealmList() const;
+    MCNAPI void forceFetchRealmList() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsList> realmsList);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsList> realmsList);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

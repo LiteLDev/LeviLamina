@@ -33,19 +33,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdhocInProgressScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool enableAdhoc);
+    MCNAPI AdhocInProgressScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool enableAdhoc);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool enableAdhoc);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool enableAdhoc);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

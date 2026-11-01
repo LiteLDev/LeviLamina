@@ -40,18 +40,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedRenderer(::std::shared_ptr<::ActorResourceDefinition> definition);
+    MCNAPI explicit BedRenderer(::std::shared_ptr<::ActorResourceDefinition> definition);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ActorResourceDefinition> definition);
+    MCNAPI void* $ctor(::std::shared_ptr<::ActorResourceDefinition> definition);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

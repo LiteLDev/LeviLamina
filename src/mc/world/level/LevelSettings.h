@@ -120,34 +120,34 @@ public:
     // NOLINTBEGIN
     MCAPI LevelSettings();
 
-    MCAPI LevelSettings(::LevelSettings&&);
+    MCNAPI LevelSettings(::LevelSettings&&);
 
-    MCAPI LevelSettings(::LevelSettings const&);
+    MCNAPI LevelSettings(::LevelSettings const&);
 
 #ifdef LL_PLAT_C
-    MCAPI explicit LevelSettings(::LevelSummary const& summary);
+    MCNAPI explicit LevelSettings(::LevelSummary const& summary);
 #endif
 
-    MCAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
+    MCNAPI LevelSettings(::LevelData const& data, ::DimensionType dimension);
 
-    MCAPI ::SpawnSettings getSpawnSettings() const;
+    MCNAPI ::SpawnSettings getSpawnSettings() const;
 
-    MCAPI bool hasCloudSaveAssociation() const;
+    MCNAPI bool hasCloudSaveAssociation() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& operator=(::LevelSettings&&);
+    MCNAPI ::LevelSettings& operator=(::LevelSettings&&);
 
-    MCAPI ::LevelSettings& setCloudSaveInfo(::std::optional<::CloudSaveLevelInfo> cloudSaveInfo);
+    MCNAPI ::LevelSettings& setCloudSaveInfo(::std::optional<::CloudSaveLevelInfo> cloudSaveInfo);
 
-    MCAPI ::LevelSettings& setEducationCreatorID(::std::string id);
+    MCNAPI ::LevelSettings& setEducationCreatorID(::std::string id);
 
-    MCAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
+    MCNAPI ::LevelSettings& setEducationCreatorWorldID(::std::string id);
 #endif
 
-    MCAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
+    MCNAPI ::LevelSettings& setExperiments(::ExperimentStorage const& experiments);
 
 #ifdef LL_PLAT_C
-    MCAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
+    MCNAPI ::LevelSettings& setSpawnSettings(::SpawnSettings spawnSettings);
 #endif
 
     MCAPI ~LevelSettings();
@@ -164,15 +164,15 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::LevelSettings&&);
+    MCNAPI void* $ctor(::LevelSettings&&);
 
-    MCAPI void* $ctor(::LevelSettings const&);
+    MCNAPI void* $ctor(::LevelSettings const&);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::LevelSummary const& summary);
+    MCNAPI void* $ctor(::LevelSummary const& summary);
 #endif
 
-    MCAPI void* $ctor(::LevelData const& data, ::DimensionType dimension);
+    MCNAPI void* $ctor(::LevelData const& data, ::DimensionType dimension);
     // NOLINTEND
 
 public:

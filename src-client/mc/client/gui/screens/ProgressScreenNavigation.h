@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProgressScreenNavigation(
+    MCNAPI ProgressScreenNavigation(
         ::SceneFactory&                                                 sceneFactory,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStackCallback,
         ::OreUI::Router&                                                router
@@ -52,29 +52,29 @@ public:
 
     MCAPI void leaveProgressScreen();
 
-    MCAPI void navigateToJoinLanServerProgressScreen(
+    MCNAPI void navigateToJoinLanServerProgressScreen(
         ::std::unique_ptr<::ProgressHandler> connectHandler,
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
-    MCAPI void navigateToJoinServerProgressScreen(
+    MCNAPI void navigateToJoinServerProgressScreen(
         ::std::deque<::std::unique_ptr<::ProgressHandler>> connectHandlers,
         bool                                               allowSmallDownloads,
         ::OnlineSafetyDialogVisibility                     onlineSafetyDialogVisibility
     );
 
-    MCAPI void navigateToRealmsWarningScreen(::World::RealmsJoinData& realmsJoinData);
+    MCNAPI void navigateToRealmsWarningScreen(::World::RealmsJoinData& realmsJoinData);
 
-    MCAPI void navigateToRealmsWorldProgressScreen(
+    MCNAPI void navigateToRealmsWorldProgressScreen(
         ::std::unique_ptr<::ProgressHandler> connectHandler,
         ::std::unique_ptr<::ProgressHandler> progressHandler,
         bool                                 isRealmsPlusExpired,
         ::std::function<void()>              onlineSafetyCancelledCallback
     );
 
-    MCAPI void navigateToTimelineRequirementScreen(::std::string const& realmId);
+    MCNAPI void navigateToTimelineRequirementScreen(::std::string const& realmId);
 
-    MCAPI void pushProgressScreen(
+    MCNAPI void pushProgressScreen(
         ::std::string const&  screenTitle,
         ::std::string const&  eventName,
         ::ProgressContentType contentType,
@@ -85,7 +85,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SceneFactory&                                                 sceneFactory,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStackCallback,
         ::OreUI::Router&                                                router
@@ -95,7 +95,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

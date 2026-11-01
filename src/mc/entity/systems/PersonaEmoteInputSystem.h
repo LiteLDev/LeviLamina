@@ -29,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _personaEmoteInputSystem(
+    MCNAPI static void _personaEmoteInputSystem(
         ::StrictEntityContext const&                                           entity,
         ::EventingDispatcherComponent const&                                   eventingDispatcherComponent,
         ::EmotePlayedTelemetryDataComponent const&                             emotePlayedTelemetryDataComponent,
@@ -37,6 +37,6 @@ public:
         ::EntityModifier<::EmotePlayedTelemetryDataComponent, ::ShouldStopEmotingRequestComponent> const& modifier
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

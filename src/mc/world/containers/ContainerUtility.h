@@ -11,7 +11,7 @@ class ContainerComponent;
 namespace ContainerUtility {
 // functions
 // NOLINTBEGIN
-MCAPI ::ContainerComponent* getNotNoneTypeContainerComponentFromActor(::Actor* actor);
+MCNAPI ::ContainerComponent* getNotNoneTypeContainerComponentFromActor(::Actor* actor);
 // NOLINTEND
 
 } // namespace ContainerUtility

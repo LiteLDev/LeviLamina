@@ -42,6 +42,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createLavaMoveSystem();
+    MCNAPI static ::TickingSystemWithInfo createLavaMoveSystem();
     // NOLINTEND
 };

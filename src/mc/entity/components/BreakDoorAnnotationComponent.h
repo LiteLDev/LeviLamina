@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cleanUp(::Mob& mob);
+    MCNAPI void _cleanUp(::Mob& mob);
 
-    MCAPI bool canMobBreakDoor(::Mob& mob, ::Path const& path) const;
+    MCNAPI bool canMobBreakDoor(::Mob& mob, ::Path const& path) const;
 
-    MCAPI void clearProgress(::Mob& mob);
+    MCNAPI void clearProgress(::Mob& mob);
 
-    MCAPI void obstructionCheck(::Mob& mob);
+    MCNAPI void obstructionCheck(::Mob& mob);
 
-    MCAPI void onComponentRemoved(::EntityContext& entity);
+    MCNAPI void onComponentRemoved(::EntityContext& entity);
     // NOLINTEND
 };

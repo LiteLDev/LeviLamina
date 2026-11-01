@@ -44,17 +44,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addBreedItem(::ActorDefinitionBreedItem const& breedItem);
+    MCNAPI void addBreedItem(::ActorDefinitionBreedItem const& breedItem);
 
-    MCAPI void addBreedItemByName(::std::string const& itemName);
+    MCNAPI void addBreedItemByName(::std::string const& itemName);
 
-    MCAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
+    MCNAPI void addEnvironmentRequirement(::EnvironmentRequirement const& envReq);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::BreedableDefinition>>& root
     );
     // NOLINTEND

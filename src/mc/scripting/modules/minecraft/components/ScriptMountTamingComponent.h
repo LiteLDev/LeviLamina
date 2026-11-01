@@ -21,21 +21,21 @@ class ScriptMountTamingComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> isTamed() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isTamed() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isTamedToPlayer() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:

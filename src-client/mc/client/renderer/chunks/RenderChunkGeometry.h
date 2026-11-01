@@ -90,7 +90,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkGeometry(
+    MCNAPI RenderChunkGeometry(
         ::BlockPos                             p,
         bool                                   immediateChangeRequested,
         int                                    buildIterationCount,
@@ -100,14 +100,14 @@ public:
         ::EntityId                             entityId
     );
 
-    MCAPI void _convertFaceMetaDataToFaceSortingMetaData(
+    MCNAPI void _convertFaceMetaDataToFaceSortingMetaData(
         ::std::array<::std::vector<::RenderChunkQuadInfo>, 7> const& faceMetadata,
         bool                                                         hasSortedLayers
     );
 
-    MCAPI void _resetFaceMetadata();
+    MCNAPI void _resetFaceMetadata();
 
-    MCAPI uint64 endFaceSortOnly(
+    MCNAPI uint64 endFaceSortOnly(
         ::mce::BufferResourceService& bufferResourceService,
         ::RenderChunkSorter&          sorter,
         ::std::variant<
@@ -136,19 +136,19 @@ public:
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
+    MCNAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 
-    MCAPI ~RenderChunkGeometry();
+    MCNAPI ~RenderChunkGeometry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
+    MCNAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
 
-    MCAPI static void initTextures(
+    MCNAPI static void initTextures(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> const&  minecraftGraphics,
         ::std::shared_ptr<::mce::TextureGroup>                     textureGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& atlas
@@ -158,13 +158,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::TerrainTextures>& mTerrainTextures();
+    MCNAPI static ::std::unique_ptr<::TerrainTextures>& mTerrainTextures();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockPos                             p,
         bool                                   immediateChangeRequested,
         int                                    buildIterationCount,
@@ -178,6 +178,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

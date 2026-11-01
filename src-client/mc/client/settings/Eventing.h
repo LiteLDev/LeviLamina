@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fireEventSetValidForAchievements(bool currentlyValidForAchievements);
+    MCNAPI void fireEventSetValidForAchievements(bool currentlyValidForAchievements);
     // NOLINTEND
 };
 

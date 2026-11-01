@@ -77,32 +77,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIThumbnailAtlasRenderer(
+    MCNAPI UIThumbnailAtlasRenderer(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>      client,
         ::UIThumbnailAtlasRenderer::AtlasInfo                 atlasInfo,
         ::std::unordered_map<::HashedString, ::HashedString>& substitutions
     );
 
-    MCAPI bool renderOffscreen(
+    MCNAPI bool renderOffscreen(
         ::OreUI::AtlasIndex&                         items,
         ::TaskGroup&                                 taskGroup,
         ::std::function<void(::cg::ImageBuffer&&)>&& callback,
         ::UIThumbnailAtlasRenderer::AtlasInfo const& atlasInfo
     );
 
-    MCAPI ~UIThumbnailAtlasRenderer();
+    MCNAPI ~UIThumbnailAtlasRenderer();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& mRenderCounter();
+    MCNAPI static int& mRenderCounter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>      client,
         ::UIThumbnailAtlasRenderer::AtlasInfo                 atlasInfo,
         ::std::unordered_map<::HashedString, ::HashedString>& substitutions
@@ -112,6 +112,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

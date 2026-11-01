@@ -37,29 +37,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SeedTemplateFacet(
+    MCNAPI SeedTemplateFacet(
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>                dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>             userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
 
-    MCAPI bool failedFetch() const;
+    MCNAPI bool failedFetch() const;
 
-    MCFOLD ::std::vector<::WorldSeedModel>& getWorldSeedModels();
+    MCNAPI ::std::vector<::WorldSeedModel>& getWorldSeedModels();
 
-    MCAPI void refresh();
+    MCNAPI void refresh();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>                dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>             userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
@@ -69,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

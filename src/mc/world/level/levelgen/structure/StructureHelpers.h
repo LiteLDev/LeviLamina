@@ -27,7 +27,7 @@ public:
         ::std::string const& lootTable
     );
 
-    MCAPI static bool createDispenser(
+    MCNAPI static bool createDispenser(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -39,7 +39,7 @@ public:
         ::std::string const& lootTable
     );
 
-    MCAPI static bool createMinecartChest(
+    MCNAPI static bool createMinecartChest(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::BoundingBox const& chunkBB,
@@ -51,7 +51,7 @@ public:
         ::std::string const& lootTable
     );
 
-    MCAPI static void fillColumnDown(
+    MCNAPI static void fillColumnDown(
         ::StructurePiece&    piece,
         ::BlockSource&       region,
         ::Block const&       block,
@@ -61,14 +61,14 @@ public:
         ::BoundingBox const& chunkBB
     );
 
-    MCAPI static int getDirectionRotation(int structureOrientation, ushort inOrientation);
+    MCNAPI static int getDirectionRotation(int structureOrientation, ushort inOrientation);
 
-    MCAPI static int getDoorRotation(int structureOrientation, ushort inOrientation);
+    MCNAPI static int getDoorRotation(int structureOrientation, ushort inOrientation);
 
-    MCAPI static int getFacingDirectionRotation(int structureOrientation, ushort inOrientation);
+    MCNAPI static int getFacingDirectionRotation(int structureOrientation, ushort inOrientation);
 
-    MCAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
+    MCNAPI static int getTorchRotation(int structureOrientation, ushort torchOrientation);
 
-    MCAPI static int getWeirdoDirectionRotation(int structureOrientation, ushort inOrientation);
+    MCNAPI static int getWeirdoDirectionRotation(int structureOrientation, ushort inOrientation);
     // NOLINTEND
 };

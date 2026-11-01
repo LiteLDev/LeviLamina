@@ -60,26 +60,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveDirectoryAuthenticationScreenController(
+    MCNAPI ActiveDirectoryAuthenticationScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         bool                                                    displaySignIn,
         ::std::unique_ptr<::ClickSourceContext>                 clickedSource,
         ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> progressTips
     );
 
-    MCAPI void _announceModalDialog() const;
+    MCNAPI void _announceModalDialog() const;
 
-    MCAPI void _closeModalDialog(bool doPostAction);
+    MCNAPI void _closeModalDialog(bool doPostAction);
 
-    MCAPI void _dialogPurchaseFailed();
+    MCNAPI void _dialogPurchaseFailed();
 
-    MCAPI void _handlePopupButton(::ADPopupButtonAction const& action);
+    MCNAPI void _handlePopupButton(::ADPopupButtonAction const& action);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         bool                                                    displaySignIn,
         ::std::unique_ptr<::ClickSourceContext>                 clickedSource,
@@ -90,12 +90,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

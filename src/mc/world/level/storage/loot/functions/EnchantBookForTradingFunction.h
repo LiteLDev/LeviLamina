@@ -56,17 +56,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
+    MCNAPI ::std::optional<::EnchantmentInstance> _trySelectEnchantmentFromOptions(::Random& random) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
-    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&);
+    MCNAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&);
 
-    MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&, ::Trade const&);
+    MCNAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext&, ::Trade const&);
 
 
     // NOLINTEND

@@ -36,20 +36,20 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI explicit PermissionsFile(::Core::Path const& filePath);
+    MCNAPI explicit PermissionsFile(::Core::Path const& filePath);
 #endif
 
-    MCAPI void applyPlayerPermissionsFromDisk(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
+    MCNAPI void applyPlayerPermissionsFromDisk(::Player& player, ::CommandPermissionLevel opCommandPermissionLevel);
 
     MCAPI void persistPlayerPermissionsToDisk(::Player& player, ::PlayerPermissionLevel permission);
 
-    MCAPI void persistPlayerPermissionsToDisk(::std::string const& playerId, ::PlayerPermissionLevel permission);
+    MCNAPI void persistPlayerPermissionsToDisk(::std::string const& playerId, ::PlayerPermissionLevel permission);
 
-    MCAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
+    MCNAPI ::std::tuple<::FileReadResult, ::Json::Value> readPermissionFile();
 
-    MCAPI ::FileReadResult reload();
+    MCNAPI ::FileReadResult reload();
 
-    MCAPI ::FileReadResult reloadAndApply(
+    MCNAPI ::FileReadResult reloadAndApply(
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> userManager,
         ::CommandPermissionLevel                             opCommandPermissionLevel
     );
@@ -58,14 +58,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _getPermissionIdForPlayer(::Player& player);
+    MCNAPI static ::std::string _getPermissionIdForPlayer(::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor(::Core::Path const& filePath);
+    MCNAPI void* $ctor(::Core::Path const& filePath);
 #endif
     // NOLINTEND
 };

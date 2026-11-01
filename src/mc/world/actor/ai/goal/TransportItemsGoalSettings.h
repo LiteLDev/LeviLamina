@@ -45,12 +45,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~TransportItemsGoalSettings();
+    MCNAPI ~TransportItemsGoalSettings();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

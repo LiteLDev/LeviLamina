@@ -26,16 +26,16 @@ struct VehicleInputIntentComponent;
 namespace InitialTickFilterSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createTickingAreaFilterSystem();
+MCNAPI ::TickingSystemWithInfo createTickingAreaFilterSystem();
 
-MCAPI void tickingAreaFilterTickEntity(
+MCNAPI void tickingAreaFilterTickEntity(
     ::StrictEntityContext const&  context,
     ::TickWorldComponent&         tickWorldComponent,
     ::CurrentTickComponent const& currentTickComponent,
     ::EntityModifier<::ActorMovementTickNeededComponent, ::InterpolateMovementNeededComponent> const& modifier
 );
 
-MCAPI void validChunkFilterTickEntity(
+MCNAPI void validChunkFilterTickEntity(
     ::StrictEntityContext const&                    context,
     ::StateVectorComponent&                         stateVector,
     ::Optional<::ActorRotationComponent> const&     actorRotation,

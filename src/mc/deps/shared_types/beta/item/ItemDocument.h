@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDocument(::SharedTypes::Beta::ItemDocument const&);
+    MCNAPI ItemDocument(::SharedTypes::Beta::ItemDocument const&);
 
-    MCFOLD ::SharedTypes::Beta::ItemDocument& operator=(::SharedTypes::Beta::ItemDocument&&);
+    MCNAPI ::SharedTypes::Beta::ItemDocument& operator=(::SharedTypes::Beta::ItemDocument&&);
 
-    MCAPI ~ItemDocument();
+    MCNAPI ~ItemDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&         ctx,
         ::std::set<::std::string> const& activeExperiments,
         ::cereal::ReflectMode            mode
@@ -55,19 +55,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Beta::ItemDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::ItemDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addQueuedMusic(
+    MCNAPI void addQueuedMusic(
         ::std::string const& eventName,
         float                volume,
         float                fadeoutSeconds,
@@ -58,23 +58,23 @@ public:
         bool                 treatFadeAsDelay
     );
 
-    MCAPI void clearQueuedMusic();
+    MCNAPI void clearQueuedMusic();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $hasTracks() const;
+    MCNAPI bool $hasTracks() const;
 
-    MCAPI void $nextTrack();
+    MCNAPI void $nextTrack();
 
-    MCAPI void $setActive(bool active);
+    MCNAPI void $setActive(bool active);
     // NOLINTEND
 
 public:

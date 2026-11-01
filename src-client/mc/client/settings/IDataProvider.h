@@ -32,13 +32,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setChangeListener(::std::function<void()> callback);
+    MCNAPI void $setChangeListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:

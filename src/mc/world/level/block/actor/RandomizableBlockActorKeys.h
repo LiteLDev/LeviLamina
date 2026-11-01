@@ -5,9 +5,9 @@
 namespace RandomizableBlockActorKeys {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& LOOT_TABLE();
+MCNAPI ::std::string const& LOOT_TABLE();
 
-MCAPI ::std::string const& LOOT_TABLE_SEED();
+MCNAPI ::std::string const& LOOT_TABLE_SEED();
 // NOLINTEND
 
 } // namespace RandomizableBlockActorKeys

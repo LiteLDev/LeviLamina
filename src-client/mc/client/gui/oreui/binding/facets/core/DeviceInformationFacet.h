@@ -65,28 +65,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeviceInformationFacet(
+    MCNAPI DeviceInformationFacet(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                   appPlatform
     );
 
-    MCFOLD ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
+    MCNAPI ::std::vector<::OreUI::InputMethod> const& getInputMethods() const;
 
-    MCFOLD bool getIsLowMemoryDevice() const;
+    MCNAPI bool getIsLowMemoryDevice() const;
 
-    MCFOLD ::OreUI::DeviceInformationFacet::Platform getPlatform() const;
+    MCNAPI ::OreUI::DeviceInformationFacet::Platform getPlatform() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::IClientInstance>()> getClientInstance,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                   appPlatform
     );
@@ -95,9 +95,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
 
-    MCAPI void $onOperationModeChanged(::OperationMode operationMode);
+    MCNAPI void $onOperationModeChanged(::OperationMode operationMode);
     // NOLINTEND
 };
 

@@ -30,21 +30,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourceRequest(::cohtml::IAsyncResourceRequest const& request);
+    MCNAPI explicit ResourceRequest(::cohtml::IAsyncResourceRequest const& request);
 
-    MCAPI ~ResourceRequest();
+    MCNAPI ~ResourceRequest();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cohtml::IAsyncResourceRequest const& request);
+    MCNAPI void* $ctor(::cohtml::IAsyncResourceRequest const& request);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

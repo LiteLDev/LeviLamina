@@ -20,11 +20,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _fromList(::ListTag const& tag);
+    MCNAPI void _fromList(::ListTag const& tag);
 
-    MCAPI ::std::unique_ptr<::ListTag> _toList() const;
+    MCNAPI ::std::unique_ptr<::ListTag> _toList() const;
 
-    MCAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
+    MCNAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
 
     MCAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 
@@ -32,11 +32,11 @@ public:
 
     MCAPI ::std::array<::std::vector<::EnchantmentInstance>, 3> getEnchantInstances() const;
 
-    MCAPI ::std::vector<::std::string> getEnchantNames() const;
+    MCNAPI ::std::vector<::std::string> getEnchantNames() const;
 
-    MCAPI int getTotalValue(bool bookModifier) const;
+    MCNAPI int getTotalValue(bool bookModifier) const;
 
-    MCAPI bool operator==(::ItemEnchants const& rhs) const;
+    MCNAPI bool operator==(::ItemEnchants const& rhs) const;
 
     MCAPI void setEnchantInstances(::std::array<::std::vector<::EnchantmentInstance>, 3> enchants);
     // NOLINTEND

@@ -19,9 +19,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void disconnect();
+    MCNAPI void disconnect();
 
-    MCAPI void disconnect_async();
+    MCNAPI void disconnect_async();
     // NOLINTEND
 };
 

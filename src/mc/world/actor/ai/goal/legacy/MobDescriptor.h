@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_120::MobDescriptor toSharedTypes() const;
+    MCNAPI ::SharedTypes::v1_21_120::MobDescriptor toSharedTypes() const;
     // NOLINTEND
 };
 

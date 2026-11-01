@@ -73,52 +73,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
+    MCNAPI ItemFrameBlockActor(::BlockPos const& pos, ::BlockActorType type);
 
-    MCAPI void
+    MCNAPI void
     _updateBit(::BlockSource& region, ::BlockStateVariant<bool> const& vanillaState, ::HashedString const& itemName);
 
-    MCAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
+    MCNAPI void actuallyDropItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
     MCAPI void dropFramedItem(::BlockSource& region, bool dropItem, ::Actor* entitySource);
 
     MCAPI void setItem(::BlockSource& region, ::ItemInstance const& item, ::Actor* entitySource);
 
-    MCAPI void updateNameTag();
+    MCNAPI void updateNameTag();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
+    MCNAPI void* $ctor(::BlockPos const& pos, ::BlockActorType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+    MCNAPI bool $isTypeOrDerived(::BlockActorType type) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD float $getShadowRadius(::BlockSource&) const;
+    MCNAPI float $getShadowRadius(::BlockSource&) const;
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

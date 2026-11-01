@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::Settings::ConfirmationRequest& operator=(::Settings::ConfirmationRequest&&);
+    MCNAPI ::Settings::ConfirmationRequest& operator=(::Settings::ConfirmationRequest&&);
 
-    MCAPI ~ConfirmationRequest();
+    MCNAPI ~ConfirmationRequest();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

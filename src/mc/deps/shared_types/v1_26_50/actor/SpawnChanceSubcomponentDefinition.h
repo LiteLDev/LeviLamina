@@ -42,33 +42,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnChanceSubcomponentDefinition(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&);
+    MCNAPI SpawnChanceSubcomponentDefinition(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::SpawnChanceSubcomponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string_view const $getName() const;
+    MCNAPI ::std::string_view const $getName() const;
 
 
     // NOLINTEND

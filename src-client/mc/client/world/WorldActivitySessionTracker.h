@@ -40,14 +40,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::World::SessionTrackerOperationResult
+    MCNAPI ::World::SessionTrackerOperationResult
     _addOrUpdate(::std::unique_ptr<::World::WorldJoinedRecord> pJoinedRecord);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
+    MCNAPI ::EventResult $onClientEnteredWorld(::ClientInstance& instance);
     // NOLINTEND
 };
 

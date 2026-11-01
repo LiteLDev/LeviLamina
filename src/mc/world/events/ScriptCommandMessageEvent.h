@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCommandMessageEvent(
+    MCNAPI ScriptCommandMessageEvent(
         ::std::string const&             messageId,
         ::std::string const&             messageValue,
         ::Level const&                   level,
@@ -41,13 +41,13 @@ public:
         ::std::optional<::ActorUniqueID> initiatorId
     );
 
-    MCAPI ~ScriptCommandMessageEvent();
+    MCNAPI ~ScriptCommandMessageEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&             messageId,
         ::std::string const&             messageValue,
         ::Level const&                   level,
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

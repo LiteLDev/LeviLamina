@@ -35,23 +35,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Actor> const& entities);
 
-    MCAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const& entities);
+    MCNAPI explicit CommandOutputParameter(::std::vector<::Actor const*> const& entities);
 
-    MCAPI explicit CommandOutputParameter(::CommandSelectorResults<::Player> const& players);
+    MCNAPI explicit CommandOutputParameter(::CommandSelectorResults<::Player> const& players);
 
-    MCAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);
+    MCNAPI explicit CommandOutputParameter(::std::vector<::Player const*> const& players);
 
     MCAPI CommandOutputParameter(::CommandOutputParameter const& rhs);
 
-    MCAPI explicit CommandOutputParameter(::std::vector<::std::string> const& strings);
+    MCNAPI explicit CommandOutputParameter(::std::vector<::std::string> const& strings);
 
     MCAPI explicit CommandOutputParameter(::std::string const& text);
 
-    MCAPI explicit CommandOutputParameter(char const* text);
+    MCNAPI explicit CommandOutputParameter(char const* text);
 
-    MCAPI explicit CommandOutputParameter(int value);
+    MCNAPI explicit CommandOutputParameter(int value);
 
-    MCAPI explicit CommandOutputParameter(float value);
+    MCNAPI explicit CommandOutputParameter(float value);
 
     MCAPI ~CommandOutputParameter();
     // NOLINTEND
@@ -61,23 +61,23 @@ public:
     // NOLINTBEGIN
     MCFOLD void* $ctor(::CommandSelectorResults<::Actor> const& entities);
 
-    MCFOLD void* $ctor(::std::vector<::Actor const*> const& entities);
+    MCNAPI void* $ctor(::std::vector<::Actor const*> const& entities);
 
-    MCFOLD void* $ctor(::CommandSelectorResults<::Player> const& players);
+    MCNAPI void* $ctor(::CommandSelectorResults<::Player> const& players);
 
-    MCFOLD void* $ctor(::std::vector<::Player const*> const& players);
+    MCNAPI void* $ctor(::std::vector<::Player const*> const& players);
 
     MCAPI void* $ctor(::CommandOutputParameter const& rhs);
 
-    MCAPI void* $ctor(::std::vector<::std::string> const& strings);
+    MCNAPI void* $ctor(::std::vector<::std::string> const& strings);
 
     MCAPI void* $ctor(::std::string const& text);
 
-    MCAPI void* $ctor(char const* text);
+    MCNAPI void* $ctor(char const* text);
 
-    MCAPI void* $ctor(int value);
+    MCNAPI void* $ctor(int value);
 
-    MCAPI void* $ctor(float value);
+    MCNAPI void* $ctor(float value);
     // NOLINTEND
 
 public:

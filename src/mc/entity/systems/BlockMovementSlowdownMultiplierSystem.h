@@ -18,28 +18,28 @@ struct TickingSystemWithInfo;
 namespace BlockMovementSlowdownMultiplierSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
+MCNAPI ::TickingSystemWithInfo createAdjustFallDistanceSystem();
 
-MCAPI ::TickingSystemWithInfo createImmunePlayerSystem();
+MCNAPI ::TickingSystemWithInfo createImmunePlayerSystem();
 
-MCAPI ::TickingSystemWithInfo createImmuneWitherBossSystem();
+MCNAPI ::TickingSystemWithInfo createImmuneWitherBossSystem();
 
-MCAPI ::TickingSystemWithInfo createWeavingMobSystem();
+MCNAPI ::TickingSystemWithInfo createWeavingMobSystem();
 
-MCAPI void tickImmunePlayer(
+MCNAPI void tickImmunePlayer(
     ::StrictEntityContext const&                                     entity,
     ::BlockMovementSlowdownMultiplierComponent&                      blockMovementSlowdownMultiplierComponent,
     ::MovementAbilitiesComponent const&                              abilitiesComponent,
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent> const& modifier
 );
 
-MCAPI void tickImmuneSlowdown(
+MCNAPI void tickImmuneSlowdown(
     ::StrictEntityContext const&                                     entity,
     ::BlockMovementSlowdownMultiplierComponent&                      blockMovementSlowdownMultiplierComponent,
     ::EntityModifier<::BlockMovementSlowdownAppliedComponent> const& modifier
 );
 
-MCAPI void tickWeavingSlowdownOverride(
+MCNAPI void tickWeavingSlowdownOverride(
     ::StrictEntityContext const&,
     ::BlockMovementSlowdownMultiplierComponent& blockMovementSlowdownMultiplierComponent,
     ::MobEffectsComponent const&                mobEffectsComponent

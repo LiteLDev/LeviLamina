@@ -50,7 +50,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
+    MCNAPI static ::std::unique_ptr<::LootPoolEntry> deserialize(
         ::Json::Value const& entryJson,
         bool                 usingUpcomingCreatorFeaturesExperiment,
         ::SemVersion const&  jsonVersion
@@ -61,6 +61,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& START_VERSIONING_VERSION();
+    MCNAPI static ::SemVersionConstant const& START_VERSIONING_VERSION();
     // NOLINTEND
 };

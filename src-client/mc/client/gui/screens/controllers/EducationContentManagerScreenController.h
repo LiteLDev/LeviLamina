@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EducationContentManagerScreenController(
+    MCNAPI EducationContentManagerScreenController(
         ::std::shared_ptr<::PlayScreenModel>                        model,
         ::std::function<void()>                                     onDownloadError,
         ::IResourcePackRepository&                                  rpr,
@@ -76,25 +76,25 @@ public:
         ::EducationContentManagerScreenController::OptionalBehavior optionalBehavior
     );
 
-    MCAPI void cancelWorldDownload();
+    MCNAPI void cancelWorldDownload();
 
-    MCAPI void importWorld(::LessonItem& item);
+    MCNAPI void importWorld(::LessonItem& item);
 
-    MCAPI void launchWorld(
+    MCNAPI void launchWorld(
         ::LessonItem&                              item,
         ::std::function<void()> const&             onLaunchSucceeded,
         ::std::function<void()> const&             onLaunchFailed,
         ::std::function<void(::LevelData&)> const& onLevelDataConstructed
     );
 
-    MCAPI ::ui::DirtyFlag
+    MCNAPI ::ui::DirtyFlag
     tick(::LessonItem& activeItem, ::std::function<void(::LevelData&)> const& onLevelDataConstructed);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::PlayScreenModel>                        model,
         ::std::function<void()>                                     onDownloadError,
         ::IResourcePackRepository&                                  rpr,

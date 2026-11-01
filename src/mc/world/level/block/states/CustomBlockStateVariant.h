@@ -33,9 +33,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Tag> $_toNBT(int val) const;
+    MCNAPI ::std::unique_ptr<::Tag> $_toNBT(int val) const;
 
-    MCAPI ::std::optional<int> $_fromNBT(::Tag const& tag) const;
+    MCNAPI ::std::optional<int> $_fromNBT(::Tag const& tag) const;
 
 
     // NOLINTEND

@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ParameterList(::std::vector<::BiomeNoiseTarget> const& targets);
+    MCNAPI explicit ParameterList(::std::vector<::BiomeNoiseTarget> const& targets);
 
-    MCAPI ~ParameterList();
+    MCNAPI ~ParameterList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::BiomeNoiseTarget> const& targets);
+    MCNAPI void* $ctor(::std::vector<::BiomeNoiseTarget> const& targets);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -38,24 +38,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorRuntimeIDManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI explicit ActorRuntimeIDManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI void _addEntity(::EntityContext const& entity);
+    MCNAPI void _addEntity(::EntityContext const& entity);
 
-    MCAPI void _onActorAdded(::Actor& actor);
+    MCNAPI void _onActorAdded(::Actor& actor);
 
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
+    MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _removeEntity(::EntityContext const& entity);
+    MCNAPI void _removeEntity(::EntityContext const& entity);
 
-    MCAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
+    MCNAPI ::Actor* getRuntimeActorEntity(::ActorRuntimeID actorId, bool getRemoved) const;
 
-    MCAPI void initialize(::IActorManagerConnector& actorManagerConnector);
+    MCNAPI void initialize(::IActorManagerConnector& actorManagerConnector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 };

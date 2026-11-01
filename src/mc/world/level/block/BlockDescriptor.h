@@ -51,7 +51,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void resolve(bool logInvalidBlocks);
+        MCNAPI void resolve(bool logInvalidBlocks);
         // NOLINTEND
     };
 
@@ -79,25 +79,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
+        MCNAPI State(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
 
-        MCAPI State(::HashedString name, ::std::string const& stringState);
+        MCNAPI State(::HashedString name, ::std::string const& stringState);
 
-        MCAPI ~State();
+        MCNAPI ~State();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
+        MCNAPI void* $ctor(::HashedString name, ::SharedTypes::Legacy::BlockDescriptor::Compound state);
 
-        MCAPI void* $ctor(::HashedString name, ::std::string const& stringState);
+        MCNAPI void* $ctor(::HashedString name, ::std::string const& stringState);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -127,7 +127,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI explicit BlockDescriptor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI explicit BlockDescriptor(::HashedString const& fullName);
 
@@ -135,33 +135,33 @@ public:
 
     MCAPI BlockDescriptor(::BlockDescriptor const& rhs);
 
-    MCAPI BlockDescriptor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
+    MCNAPI BlockDescriptor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
 
-    MCAPI bool _anyTagsMatch(::Block const& block) const;
+    MCNAPI bool _anyTagsMatch(::Block const& block) const;
 
-    MCAPI bool _statesMatch(::Block const& block) const;
+    MCNAPI bool _statesMatch(::Block const& block) const;
 
     MCAPI ::Block const& getBlockOrUnknownBlock() const;
 
-    MCAPI ::BlockDescriptor::CompareType const& getCompareType() const;
+    MCNAPI ::BlockDescriptor::CompareType const& getCompareType() const;
 
-    MCAPI ::std::string const& getFullName() const;
+    MCNAPI ::std::string const& getFullName() const;
 
-    MCAPI bool isValid() const;
+    MCNAPI bool isValid() const;
 
     MCAPI bool matches(::Block const& block) const;
 
-    MCAPI bool matches(::BlockDescriptor const& otherDescriptor) const;
+    MCNAPI bool matches(::BlockDescriptor const& otherDescriptor) const;
 
-    MCAPI void operator=(::BlockDescriptor&& rhs);
+    MCNAPI void operator=(::BlockDescriptor&& rhs);
 
-    MCAPI void operator=(::BlockDescriptor const& rhs);
+    MCNAPI void operator=(::BlockDescriptor const& rhs);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> toCompoundTag() const;
 
     MCAPI ::Block const* tryGetBlock() const;
 
-    MCAPI ::Block const* tryGetBlockNoLogging() const;
+    MCNAPI ::Block const* tryGetBlockNoLogging() const;
 
     MCAPI ~BlockDescriptor();
     // NOLINTEND
@@ -169,29 +169,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
+    MCNAPI static ::BlockDescriptor fromCompoundTag(::CompoundTag const& tag);
 
-    MCAPI static ::BlockDescriptor fromTagExpression(::std::string const& tagExpression, ::MolangVersion molangVersion);
+    MCNAPI static ::BlockDescriptor
+    fromTagExpression(::std::string const& tagExpression, ::MolangVersion molangVersion);
 
-    MCAPI static ::SharedTypes::Legacy::BlockDescriptor toSharedTypes(::BlockDescriptor const& instance);
+    MCNAPI static ::SharedTypes::Legacy::BlockDescriptor toSharedTypes(::BlockDescriptor const& instance);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_NAME_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_NAME_FIELD();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_STATES_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_STATES_FIELD();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> JSON_TAGS_FIELD();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> JSON_TAGS_FIELD();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::BlockDescriptor desc);
 
     MCAPI void* $ctor(::HashedString const& fullName);
 
@@ -199,7 +200,7 @@ public:
 
     MCAPI void* $ctor(::BlockDescriptor const& rhs);
 
-    MCAPI void* $ctor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
+    MCNAPI void* $ctor(::std::string const& name, ::std::vector<::BlockDescriptor::State>&& states);
     // NOLINTEND
 
 public:

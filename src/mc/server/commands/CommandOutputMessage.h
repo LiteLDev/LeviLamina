@@ -24,7 +24,7 @@ public:
     // NOLINTBEGIN
     MCAPI CommandOutputMessage(::CommandOutputMessage const& rhs);
 
-    MCAPI bool operator==(::CommandOutputMessage const& other) const;
+    MCNAPI bool operator==(::CommandOutputMessage const& other) const;
     // NOLINTEND
 
 public:

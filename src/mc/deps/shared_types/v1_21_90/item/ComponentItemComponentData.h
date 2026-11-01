@@ -145,41 +145,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
+    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
 
-    MCFOLD ::std::shared_ptr<::cereal::DynamicValue>
+    MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
     getCustomComponent(::cereal::SerializerContext const& context) const;
 
-    MCAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_90::ComponentItemComponentData&&);
 
-    MCAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_90::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_90::ComponentItemComponentData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_90::ComponentItemComponentData const&) const;
 
-    MCFOLD void
+    MCNAPI void
     setCustomComponent(::std::shared_ptr<::cereal::DynamicValue> data, ::cereal::SerializerContext const& context);
 
-    MCAPI ~ComponentItemComponentData();
+    MCNAPI ~ComponentItemComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_90::ComponentItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

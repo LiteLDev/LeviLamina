@@ -22,7 +22,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void validateFunction(
+    MCNAPI static void validateFunction(
         ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument const& document,
         ::BlockDefinitionValidate::ValidateContext const&                        validateContext,
         ::Puv::Logger&                                                           logger

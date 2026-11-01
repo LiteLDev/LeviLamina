@@ -50,22 +50,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LayoutQuery(
+    MCNAPI LayoutQuery(
         ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> layoutServiceCache,
         ::std::string const&                                               layoutId
     );
 
-    MCAPI void _applyLayout(::LayoutCacheSnapshot const& layout);
+    MCNAPI void _applyLayout(::LayoutCacheSnapshot const& layout);
 
-    MCAPI void _continueLayout(::std::string const& layoutId);
+    MCNAPI void _continueLayout(::std::string const& layoutId);
 
-    MCAPI void _fetchLayout(::std::string const& layoutId);
+    MCNAPI void _fetchLayout(::std::string const& layoutId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> layoutServiceCache,
         ::std::string const&                                               layoutId
     );

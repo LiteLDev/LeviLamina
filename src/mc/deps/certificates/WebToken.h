@@ -31,24 +31,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WebToken(::WebToken const&);
+    MCNAPI WebToken(::WebToken const&);
 
-    MCAPI ::std::string getKeyId() const;
+    MCNAPI ::std::string getKeyId() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getSignerPublicKey() const;
+    MCNAPI ::std::string getSignerPublicKey() const;
 #endif
 
-    MCAPI ::WebToken& operator=(::WebToken&&);
+    MCNAPI ::WebToken& operator=(::WebToken&&);
 
-    MCAPI ::WebToken& operator=(::WebToken const&);
+    MCNAPI ::WebToken& operator=(::WebToken const&);
 
-    MCAPI bool verifyWithExternalKey(
+    MCNAPI bool verifyWithExternalKey(
         ::std::string const&                          publicKey,
         ::std::optional<::Crypto::Asymmetric::System> expectedSystem
     ) const;
 
-    MCAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
+    MCNAPI bool verifyWithIncludedKey(::std::vector<::std::string> const& trustedKeys) const;
 
     MCAPI ~WebToken();
     // NOLINTEND
@@ -56,31 +56,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::WebToken>
+    MCNAPI static ::std::optional<::WebToken>
     createFromData(::Json::Value const& dataInfo, ::PrivateKeyManager const& manager);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::WebToken> createFromData(
+    MCNAPI static ::std::optional<::WebToken> createFromData(
         ::Json::Value const&       dataInfo,
         ::PrivateKeyManager const& manager,
         ::Json::Value const&       extraHeaders
     );
 #endif
 
-    MCAPI static ::std::optional<::WebToken> createFromData(
+    MCNAPI static ::std::optional<::WebToken> createFromData(
         ::Json::Value const&                                                  dataInfo,
         ::PrivateKeyManager const&                                            manager,
         ::Json::Value const&                                                  extraHeaders,
         ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> const& signatureType
     );
 
-    MCAPI static ::std::optional<::WebToken> parse(::std::string_view token, uint64 maxLength);
+    MCNAPI static ::std::optional<::WebToken> parse(::std::string_view token, uint64 maxLength);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WebToken const&);
+    MCNAPI void* $ctor(::WebToken const&);
     // NOLINTEND
 
 public:

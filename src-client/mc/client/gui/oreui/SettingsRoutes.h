@@ -9,9 +9,9 @@
 namespace OreUI::EntryPoints::SettingsRoutes {
 // functions
 // NOLINTBEGIN
-MCAPI ::gsl::span<::std::string const> getOreUiSettingsRoutes();
+MCNAPI ::gsl::span<::std::string const> getOreUiSettingsRoutes();
 
-MCAPI bool isMatchingRoute(
+MCNAPI bool isMatchingRoute(
     ::std::string const&                route,
     ::std::optional<::SettingsTabIndex> indexToMatch,
     ::OreUI::RouteType                  routeType

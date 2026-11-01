@@ -35,7 +35,7 @@ MCAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&                     screenContext,
     ::Tessellator&                       tessellator,
     ::mce::MaterialPtr const&            material,
@@ -43,7 +43,7 @@ MCAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&                                                           screenContext,
     ::Tessellator&                                                             tessellator,
     ::mce::MaterialPtr const&                                                  material,
@@ -51,7 +51,7 @@ MCAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const&                                       offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&          screenContext,
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,
@@ -65,7 +65,7 @@ MCAPI void renderMeshImmediately(
     )> const&                              meshRenderOverride
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&          screenContext,
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,

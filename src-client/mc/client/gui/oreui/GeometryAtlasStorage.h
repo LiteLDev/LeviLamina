@@ -50,21 +50,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Impl(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+        MCNAPI explicit Impl(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
 
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+        MCNAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,11 +77,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeometryAtlasStorage();
+    MCNAPI GeometryAtlasStorage();
 
-    MCAPI explicit GeometryAtlasStorage(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+    MCNAPI explicit GeometryAtlasStorage(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
 
-    MCAPI ::std::unique_ptr<::Gameface::IResourceHandler> createGeometryAtlasResourceHandler(
+    MCNAPI ::std::unique_ptr<::Gameface::IResourceHandler> createGeometryAtlasResourceHandler(
         ::std::unique_ptr<::OreUI::IItemHandleFactory>              itemFactory,
         ::std::unique_ptr<::GeometryAtlas::IPaperDollHandleFactory> dollFactory,
         ::std::shared_ptr<::OreUI::ILiveViewCollectionPublisher>    publisher,
@@ -89,17 +89,17 @@ public:
         ::OreUI::GeometryProtocolType                               type
     );
 
-    MCAPI ::OreUI::LiveViewCollection createLiveViewCollection();
+    MCNAPI ::OreUI::LiveViewCollection createLiveViewCollection();
 
-    MCAPI ::std::unique_ptr<::OreUI::AllKnownTiles> getKnownTiles();
+    MCNAPI ::std::unique_ptr<::OreUI::AllKnownTiles> getKnownTiles();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
+    MCNAPI void* $ctor(::std::shared_ptr<::GeometryAtlas::IGeometryAtlas> atlas);
     // NOLINTEND
 };
 

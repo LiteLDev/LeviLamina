@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeJsonDocumentLoader(
+    MCNAPI BiomeJsonDocumentLoader(
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
         ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cereal::ReflectionCtx&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator,
         ::BiomeJsonDocumentGlue&                           biomeJsonDocumentGlue,

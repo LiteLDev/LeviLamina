@@ -31,17 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RecordItemComponent(::SharedTypes::Beta::RecordItemComponent component);
+    MCNAPI explicit RecordItemComponent(::SharedTypes::Beta::RecordItemComponent component);
 
-    MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
+    MCNAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCAPI ::std::string getRecordDescription() const;
+    MCNAPI ::std::string getRecordDescription() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::RecordItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::Beta::RecordItemComponent component);
     // NOLINTEND
 
 public:

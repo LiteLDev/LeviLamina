@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::World {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::World

@@ -85,34 +85,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureEditorScreenController(
+    MCNAPI StructureEditorScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _filePicker(::StructureEditorScreenController::FilePickerType op);
+    MCNAPI void _filePicker(::StructureEditorScreenController::FilePickerType op);
 
-    MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
+    MCNAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
-    MCAPI void _initiateFileGeneration();
+    MCNAPI void _initiateFileGeneration();
 
-    MCAPI void _setSeedFromString();
+    MCNAPI void _setSeedFromString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent);
+    MCNAPI static float _getTextEditValueAsFloat(::TextEditScreenEventData& textEditEvent);
 
-    MCAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
+    MCNAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -123,16 +123,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

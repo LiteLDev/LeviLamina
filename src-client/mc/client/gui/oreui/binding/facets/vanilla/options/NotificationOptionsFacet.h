@@ -35,123 +35,123 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool getDoNotAddonStackingWarning() const;
+    MCNAPI bool getDoNotAddonStackingWarning() const;
 
-    MCAPI bool getDoNotShowAlternativeStorageHasWorlds() const;
+    MCNAPI bool getDoNotShowAlternativeStorageHasWorlds() const;
 
-    MCAPI bool getDoNotShowEntitlementWarning() const;
+    MCNAPI bool getDoNotShowEntitlementWarning() const;
 
-    MCAPI bool getDoNotShowExperimentalWorldWarning(::std::string const& worldID) const;
+    MCNAPI bool getDoNotShowExperimentalWorldWarning(::std::string const& worldID) const;
 
-    MCAPI bool getDoNotShowFriendsListFTUE() const;
+    MCNAPI bool getDoNotShowFriendsListFTUE() const;
 
-    MCAPI bool getDoNotShowHardcoreModeWarning() const;
+    MCNAPI bool getDoNotShowHardcoreModeWarning() const;
 
-    MCAPI bool getDoNotShowHardcoreModeWarningThisJoin() const;
+    MCNAPI bool getDoNotShowHardcoreModeWarningThisJoin() const;
 
-    MCAPI bool getDoNotShowHiddenAlternativeStorageWorldsWarning() const;
+    MCNAPI bool getDoNotShowHiddenAlternativeStorageWorldsWarning() const;
 
-    MCAPI bool getDoNotShowHiddenLocalWorldsWarning() const;
+    MCNAPI bool getDoNotShowHiddenLocalWorldsWarning() const;
 
-    MCAPI bool getDoNotShowManageShowcaseClearWarning() const;
+    MCNAPI bool getDoNotShowManageShowcaseClearWarning() const;
 
-    MCAPI bool getDoNotShowManageShowcaseReplaceWarning() const;
+    MCNAPI bool getDoNotShowManageShowcaseReplaceWarning() const;
 
-    MCFOLD bool getDoNotShowMarioMashUpWarning() const;
+    MCNAPI bool getDoNotShowMarioMashUpWarning() const;
 
-    MCAPI bool getDoNotShowMultiplayerIpSafetyWarning() const;
+    MCNAPI bool getDoNotShowMultiplayerIpSafetyWarning() const;
 
-    MCAPI bool getDoNotShowMultiplayerOnlineSafetyWarning() const;
+    MCNAPI bool getDoNotShowMultiplayerOnlineSafetyWarning() const;
 
-    MCAPI bool getDoNotShowNonPublicServerWarning() const;
+    MCNAPI bool getDoNotShowNonPublicServerWarning() const;
 
-    MCAPI bool getDoNotShowNotFollowingPartyWarning() const;
+    MCNAPI bool getDoNotShowNotFollowingPartyWarning() const;
 
-    MCAPI bool getDoNotShowOldWorldsWarning() const;
+    MCNAPI bool getDoNotShowOldWorldsWarning() const;
 
-    MCAPI bool getDoNotShowPartiesNotSupportedWarning() const;
+    MCNAPI bool getDoNotShowPartiesNotSupportedWarning() const;
 
-    MCAPI bool getDoNotShowPartyAddMembersToRealmModal() const;
+    MCNAPI bool getDoNotShowPartyAddMembersToRealmModal() const;
 
-    MCAPI bool getDoNotShowPartyPermissionRequiredRealmsWarning() const;
+    MCNAPI bool getDoNotShowPartyPermissionRequiredRealmsWarning() const;
 
-    MCAPI bool getDoNotShowPartyTabFTUE() const;
+    MCNAPI bool getDoNotShowPartyTabFTUE() const;
 
-    MCAPI bool getDoNotShowPartyWorldCapacityRealmsWarning() const;
+    MCNAPI bool getDoNotShowPartyWorldCapacityRealmsWarning() const;
 
-    MCAPI bool getDoNotShowStorageLowWarning() const;
+    MCNAPI bool getDoNotShowStorageLowWarning() const;
 
-    MCFOLD bool getDoNotShowUnavailableDependenciesBeta() const;
+    MCNAPI bool getDoNotShowUnavailableDependenciesBeta() const;
 
-    MCAPI bool getDoNotShowUsingExternalStorageWarning() const;
+    MCNAPI bool getDoNotShowUsingExternalStorageWarning() const;
 
-    MCAPI bool getdoNotShowManageFeedDeleteWarning() const;
+    MCNAPI bool getdoNotShowManageFeedDeleteWarning() const;
 
-    MCAPI void resetPartyJoinRealmsWarnings();
+    MCNAPI void resetPartyJoinRealmsWarnings();
 
-    MCAPI void setDoNotAddonStackingWarning(bool newValue);
+    MCNAPI void setDoNotAddonStackingWarning(bool newValue);
 
-    MCAPI void setDoNotShowAlternativeStorageHasWorlds(bool newValue);
+    MCNAPI void setDoNotShowAlternativeStorageHasWorlds(bool newValue);
 
-    MCAPI void setDoNotShowEntitlementWarning(bool newValue);
+    MCNAPI void setDoNotShowEntitlementWarning(bool newValue);
 
-    MCAPI void setDoNotShowExperimentalWorldWarning(::std::string const& worldID, bool const shouldNotShow);
+    MCNAPI void setDoNotShowExperimentalWorldWarning(::std::string const& worldID, bool const shouldNotShow);
 
-    MCAPI void setDoNotShowFriendsListFTUE(bool newValue);
+    MCNAPI void setDoNotShowFriendsListFTUE(bool newValue);
 
-    MCAPI void setDoNotShowHardcoreModeWarning(bool newValue);
+    MCNAPI void setDoNotShowHardcoreModeWarning(bool newValue);
 
-    MCAPI void setDoNotShowHardcoreModeWarningThisJoin(bool newValue);
+    MCNAPI void setDoNotShowHardcoreModeWarningThisJoin(bool newValue);
 
-    MCAPI void setDoNotShowHiddenAlternativeStorageWorldsWarning(bool newValue);
+    MCNAPI void setDoNotShowHiddenAlternativeStorageWorldsWarning(bool newValue);
 
-    MCAPI void setDoNotShowHiddenLocalWorldsWarning(bool newValue);
+    MCNAPI void setDoNotShowHiddenLocalWorldsWarning(bool newValue);
 
-    MCAPI void setDoNotShowManageShowcaseClearWarning(bool newValue);
+    MCNAPI void setDoNotShowManageShowcaseClearWarning(bool newValue);
 
-    MCAPI void setDoNotShowManageShowcaseReplaceWarning(bool newValue);
+    MCNAPI void setDoNotShowManageShowcaseReplaceWarning(bool newValue);
 
-    MCFOLD void setDoNotShowMarioMashUpWarning(bool newValue);
+    MCNAPI void setDoNotShowMarioMashUpWarning(bool newValue);
 
-    MCAPI void setDoNotShowMultiplayerIpSafetyWarning(bool newValue);
+    MCNAPI void setDoNotShowMultiplayerIpSafetyWarning(bool newValue);
 
-    MCAPI void setDoNotShowMultiplayerOnlineSafetyWarning(bool newValue);
+    MCNAPI void setDoNotShowMultiplayerOnlineSafetyWarning(bool newValue);
 
-    MCAPI void setDoNotShowNonPublicServerWarning(bool newValue);
+    MCNAPI void setDoNotShowNonPublicServerWarning(bool newValue);
 
-    MCAPI void setDoNotShowNotFollowingPartyWarning(bool newValue);
+    MCNAPI void setDoNotShowNotFollowingPartyWarning(bool newValue);
 
-    MCAPI void setDoNotShowOldWorldsWarning(bool newValue);
+    MCNAPI void setDoNotShowOldWorldsWarning(bool newValue);
 
-    MCAPI void setDoNotShowPartiesNotSupportedWarning(bool newValue);
+    MCNAPI void setDoNotShowPartiesNotSupportedWarning(bool newValue);
 
-    MCAPI void setDoNotShowPartyAddMembersToRealmModal(bool newValue);
+    MCNAPI void setDoNotShowPartyAddMembersToRealmModal(bool newValue);
 
-    MCAPI void setDoNotShowPartyPermissionRequiredRealmsWarning(bool newValue);
+    MCNAPI void setDoNotShowPartyPermissionRequiredRealmsWarning(bool newValue);
 
-    MCAPI void setDoNotShowPartyTabFTUE(bool newValue);
+    MCNAPI void setDoNotShowPartyTabFTUE(bool newValue);
 
-    MCAPI void setDoNotShowPartyWorldCapacityRealmsWarning(bool newValue);
+    MCNAPI void setDoNotShowPartyWorldCapacityRealmsWarning(bool newValue);
 
-    MCAPI void setDoNotShowStorageLowWarning(bool newValue);
+    MCNAPI void setDoNotShowStorageLowWarning(bool newValue);
 
-    MCAPI void setDoNotShowUnavailableDependenciesBeta(bool newValue);
+    MCNAPI void setDoNotShowUnavailableDependenciesBeta(bool newValue);
 
-    MCAPI void setDoNotShowUsingExternalStorageWarning(bool newValue);
+    MCNAPI void setDoNotShowUsingExternalStorageWarning(bool newValue);
 
-    MCAPI void setdoNotShowManageFeedDeleteWarning(bool newValue);
+    MCNAPI void setdoNotShowManageFeedDeleteWarning(bool newValue);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

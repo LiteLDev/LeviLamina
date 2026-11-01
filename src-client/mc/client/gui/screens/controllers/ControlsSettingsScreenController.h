@@ -114,56 +114,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ControlsSettingsScreenController(
+    MCNAPI ControlsSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::vector<::std::string> const&      disabledInputMappings
     );
 
-    MCFOLD bool _commandMacrosAllowed() const;
+    MCNAPI bool _commandMacrosAllowed() const;
 
-    MCAPI void _generateBindingInfo(
+    MCNAPI void _generateBindingInfo(
         ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
         ::RemappingLayout&                                              layout,
         uint                                                            layoutStartIndex
     );
 
-    MCAPI void _generateKeyboardBindingInfo(
+    MCNAPI void _generateKeyboardBindingInfo(
         ::ControlsSettingsScreenController::KeyboardLayoutInfo& keyboardInfo,
         uint                                                    layoutStartIndex
     );
 
-    MCAPI ::std::string _getBindingText(
+    MCNAPI ::std::string _getBindingText(
         ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
         int                                                             collectionIndex,
         ::RemappingLayout&                                              layout
     );
 
-    MCAPI ::std::string _getIconSprite(
+    MCNAPI ::std::string _getIconSprite(
         ::std::vector<::ControlsSettingsScreenController::BindingInfo>& bindings,
         int                                                             collectionIndex,
         ::RemappingLayout&                                              layout
     );
 
-    MCAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
+    MCNAPI int _getIndexAdjustmentOffsetFromCollectionGroup(::std::string const& collectionGroup, int gridIndex);
 
-    MCAPI bool
+    MCNAPI bool
     _mapRawInputToLayout(::RemappingLayout& layout, int keymappingIndex, ::RawInputScreenEventData& rawInputData);
 
-    MCAPI ::ui::ViewRequest _resetAllBindingsToDefault(::InputMode inputMode);
+    MCNAPI ::ui::ViewRequest _resetAllBindingsToDefault(::InputMode inputMode);
 
-    MCAPI void _setCommandMacroCommandAtIndex(int collectionIndex, ::std::string const command);
+    MCNAPI void _setCommandMacroCommandAtIndex(int collectionIndex, ::std::string const command);
 
-    MCAPI void
+    MCNAPI void
     setUpCallbacksForBooleanInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& toggleName);
 
-    MCAPI void
+    MCNAPI void
     setUpCallbacksForFloatInputOption(::OptionID optionID, ::InputMode inputMode, ::std::string const& sliderName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canSetCommandMacroCommandAtIndex(
+    MCNAPI static bool _canSetCommandMacroCommandAtIndex(
         int                                                     collectionIndex,
         ::ControlsSettingsScreenController::KeyboardLayoutInfo& layout
     );
@@ -172,25 +172,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsInt();
+    MCNAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsInt();
 
-    MCAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsPercentInt();
+    MCNAPI static ::std::function<::std::string(::std::string const&, float, bool)>& floatSliderLabellerAsPercentInt();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::vector<::std::string> const& disabledInputMappings);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_registerControllerCallbacks();
+    MCNAPI void $_registerControllerCallbacks();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI bool $canExit();
+    MCNAPI bool $canExit();
     // NOLINTEND
 };

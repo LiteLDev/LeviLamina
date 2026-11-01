@@ -19,9 +19,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void deserialize(uint data);
+    MCNAPI void deserialize(uint data);
 #endif
 
-    MCAPI void setLockCategory(::ClientInputLockCategory category, bool state);
+    MCNAPI void setLockCategory(::ClientInputLockCategory category, bool state);
     // NOLINTEND
 };

@@ -54,29 +54,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Allocate(uint64 len);
+    MCNAPI void Allocate(uint64 len);
 
-    MCAPI void Assign(char const* str, char* ap);
+    MCNAPI void Assign(char const* str, char* ap);
 
-    MCAPI bool Deserialize(::RakNet::BitStream* bs);
+    MCNAPI bool Deserialize(::RakNet::BitStream* bs);
 
-    MCAPI void Free();
+    MCNAPI void Free();
 
-    MCAPI RakString(char const* format, ...);
+    MCNAPI RakString(char const* format, ...);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RakNet::RakString::SharedString& emptyString();
+    MCNAPI static ::RakNet::RakString::SharedString& emptyString();
 
-    MCAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
+    MCNAPI static ::DataStructures::List<::RakNet::RakString::SharedString*>& freeList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(char const* format, ...);
+    MCNAPI void* $ctor(char const* format, ...);
     // NOLINTEND
 };
 

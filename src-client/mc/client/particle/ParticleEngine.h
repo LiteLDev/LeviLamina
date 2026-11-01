@@ -77,15 +77,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleEngine(
+    MCNAPI ParticleEngine(
         ::Level&                                         level,
         ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons,
         ::LightTexture&                                  lightTexture
     );
 
-    MCAPI ::std::unique_ptr<::Particle> _create(::ParticleType type);
+    MCNAPI ::std::unique_ptr<::Particle> _create(::ParticleType type);
 
-    MCAPI void _emitParticleNew(
+    MCNAPI void _emitParticleNew(
         ::ParticleSystemEngine& particleSystemEngine,
         ::ParticleType          type,
         ::Vec3 const&           pos,
@@ -93,23 +93,23 @@ public:
         int                     data
     );
 
-    MCAPI ::ParticleLayerRenderObject _extractParticleLayer(
+    MCNAPI ::ParticleLayerRenderObject _extractParticleLayer(
         ::ScreenContext&               screenContext,
         ::ParticleRenderContext const& particleRenderContext,
         ::ParticleLayer                particleLayer,
         ::mce::MaterialPtr const&      mat
     ) const;
 
-    MCAPI void addCustomParticle(::std::unique_ptr<::CustomParticle> particle);
+    MCNAPI void addCustomParticle(::std::unique_ptr<::CustomParticle> particle);
 
     MCAPI void clear();
 
-    MCAPI ::ParticleRenderObjectCollection
+    MCNAPI ::ParticleRenderObjectCollection
     extract(::ScreenContext& screenContext, ::Vec3 const& cameraPos, ::Vec3 const& viewOff, float minDist) const;
 
-    MCAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
+    MCNAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
 
-    MCAPI ::Particle* instance(
+    MCNAPI ::Particle* instance(
         ::ParticleType          type,
         ::Vec3 const&           pos,
         ::Vec3 const&           dir,
@@ -118,7 +118,7 @@ public:
         ::CompoundTag const*    tag
     );
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
@@ -130,7 +130,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Level& level, ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons, ::LightTexture& lightTexture);
     // NOLINTEND
 };

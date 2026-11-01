@@ -32,35 +32,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents(::SharedTypes::v1_21_60::Spawn::Contents const&);
+    MCNAPI Contents(::SharedTypes::v1_21_60::Spawn::Contents const&);
 
-    MCAPI ::SharedTypes::v1_21_60::Spawn::Contents& operator=(::SharedTypes::v1_21_60::Spawn::Contents&&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::Contents& operator=(::SharedTypes::v1_21_60::Spawn::Contents&&);
 
-    MCAPI ~Contents();
+    MCNAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersion const& VERSION();
+    MCNAPI static ::SemVersion const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Contents const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Contents const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

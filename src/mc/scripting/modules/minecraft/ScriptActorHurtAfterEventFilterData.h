@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorHurtAfterEventFilterData();
+    MCNAPI ~ScriptActorHurtAfterEventFilterData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData create(
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData create(
         ::ScriptModuleMinecraft::ScriptActorData const& actorData,
         ::SharedTypes::Legacy::ActorDamageCause         damageCause
     );
@@ -36,7 +36,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

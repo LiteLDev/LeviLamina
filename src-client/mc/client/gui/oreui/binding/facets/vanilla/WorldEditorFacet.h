@@ -99,7 +99,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldEditorFacet(
+    MCNAPI WorldEditorFacet(
         ::World::WorldEditor&                                      worldEditor,
         ::World::IWorldCloudSyncer&                                worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem>           newPlayerSystem,
@@ -109,59 +109,59 @@ public:
         ::WorldSettingsRules                                       worldSettingsRules
     );
 
-    MCAPI void _finishLoadWorld(::World::WorldID const& worldId);
+    MCNAPI void _finishLoadWorld(::World::WorldID const& worldId);
 
-    MCAPI void _finishSaveWorld(::World::WorldID const& worldId);
+    MCNAPI void _finishSaveWorld(::World::WorldID const& worldId);
 
-    MCAPI void _initializeDataBindings(::World::WorldData const& worldData);
+    MCNAPI void _initializeDataBindings(::World::WorldData const& worldData);
 
-    MCAPI void _resetLevelData();
+    MCNAPI void _resetLevelData();
 
-    MCAPI void addWorld();
+    MCNAPI void addWorld();
 
-    MCAPI void clearSaveWorldTaskState();
+    MCNAPI void clearSaveWorldTaskState();
 
-    MCAPI ::std::optional<::World::CloseWorldError> closeWorld(::std::string const& id);
+    MCNAPI ::std::optional<::World::CloseWorldError> closeWorld(::std::string const& id);
 
-    MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
+    MCNAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
 
-    MCAPI ::std::string const& getCurrentWorldID() const;
+    MCNAPI ::std::string const& getCurrentWorldID() const;
 
-    MCAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
+    MCNAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
 
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> const& getLoadWorldError() const;
+    MCNAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> const& getLoadWorldError() const;
 
-    MCAPI ::OreUI::FacetTaskState getLoadWorldTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getLoadWorldTaskState() const;
 
-    MCAPI ::std::optional<::World::SaveWorldError> const& getSaveWorldError() const;
+    MCNAPI ::std::optional<::World::SaveWorldError> const& getSaveWorldError() const;
 
-    MCAPI ::OreUI::FacetTaskState getSaveWorldTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getSaveWorldTaskState() const;
 
-    MCAPI bool isAchievementsDisabled() const;
+    MCNAPI bool isAchievementsDisabled() const;
 
-    MCAPI bool isEditorWorld() const;
+    MCNAPI bool isEditorWorld() const;
 
-    MCAPI void loadWorld(::std::string const& id);
+    MCNAPI void loadWorld(::std::string const& id);
 
-    MCAPI void reloadWorld();
+    MCNAPI void reloadWorld();
 
-    MCAPI void saveLocalWorld(::std::string const& id);
+    MCNAPI void saveLocalWorld(::std::string const& id);
 
-    MCAPI bool worldHasBeenModified();
+    MCNAPI bool worldHasBeenModified();
 
-    MCAPI bool worldIsInitialized() const;
+    MCNAPI bool worldIsInitialized() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::WorldEditor&                                      worldEditor,
         ::World::IWorldCloudSyncer&                                worldCloudSyncer,
         ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem>           newPlayerSystem,
@@ -175,7 +175,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

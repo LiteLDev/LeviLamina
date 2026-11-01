@@ -35,16 +35,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldSettings(::Minecraft& serverData);
+    MCNAPI explicit WorldSettings(::Minecraft& serverData);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     registerLevelChangedListener(::std::function<void(::LevelDataWrapper&)> callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Minecraft& serverData);
+    MCNAPI void* $ctor(::Minecraft& serverData);
     // NOLINTEND
 };
 

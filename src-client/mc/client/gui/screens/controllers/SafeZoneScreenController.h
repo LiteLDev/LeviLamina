@@ -45,24 +45,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SafeZoneScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit SafeZoneScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _roundToString(float val);
+    MCNAPI static ::std::string _roundToString(float val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $tryExit();
+    MCNAPI ::ui::ViewRequest $tryExit();
     // NOLINTEND
 };

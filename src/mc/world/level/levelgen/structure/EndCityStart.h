@@ -31,15 +31,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
+    MCNAPI static int getYPositionForFeature(::ChunkPos const& pos, ::Dimension& dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::std::string_view $getStructureName() const;
+    MCNAPI ::std::string_view $getStructureName() const;
 
 
     // NOLINTEND

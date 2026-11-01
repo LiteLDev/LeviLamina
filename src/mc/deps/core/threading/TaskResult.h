@@ -14,7 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::TaskResult requeueAfter(::std::chrono::nanoseconds requeueDelay);
+    MCNAPI static ::TaskResult requeueAfter(::std::chrono::nanoseconds requeueDelay);
 #endif
     // NOLINTEND
 
@@ -23,6 +23,6 @@ public:
     // NOLINTBEGIN
     MCAPI static ::TaskResult const& Done();
 
-    MCAPI static ::TaskResult const& RequeueImmediateAggressive();
+    MCNAPI static ::TaskResult const& RequeueImmediateAggressive();
     // NOLINTEND
 };

@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FlatWorldPresetsFacet();
+    MCNAPI FlatWorldPresetsFacet();
 
-    MCFOLD ::std::unordered_map<::std::string, ::FlatWorldPreset> const& getPresets() const;
+    MCNAPI ::std::unordered_map<::std::string, ::FlatWorldPreset> const& getPresets() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

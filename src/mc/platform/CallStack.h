@@ -72,13 +72,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
+    MCNAPI explicit CallStack(::Bedrock::CallStack::FrameWithContext&& frame);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
+    MCNAPI void* $ctor(::Bedrock::CallStack::FrameWithContext&& frame);
     // NOLINTEND
 };
 

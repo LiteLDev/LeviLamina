@@ -15,19 +15,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
+    MCNAPI explicit Path(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::Path const& EMPTY();
+    MCNAPI static ::Core::Path const& EMPTY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::Core::PathBuffer<::std::string> const& rhs);
+    MCNAPI void* $ctor(::Core::PathBuffer<::std::string> const& rhs);
     // NOLINTEND
 };
 

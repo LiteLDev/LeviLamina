@@ -42,15 +42,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OldWorldsQuery(::OreUI::GameDependencies const& game, ::std::string const& type);
+    MCNAPI OldWorldsQuery(::OreUI::GameDependencies const& game, ::std::string const& type);
 
-    MCAPI void _updateOldWorlds(::StorageManager::ContentType contentType);
+    MCNAPI void _updateOldWorlds(::StorageManager::ContentType contentType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& type);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string const& type);
     // NOLINTEND
 };
 

@@ -17,6 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool setTextureIsotropic(::Json::Value const& isotropicData);
+    MCNAPI bool setTextureIsotropic(::Json::Value const& isotropicData);
     // NOLINTEND
 };

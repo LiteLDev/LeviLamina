@@ -33,21 +33,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EatAndReplaceBlockPair(::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair const&);
+        MCNAPI EatAndReplaceBlockPair(::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair const&);
 
-        MCAPI ~EatAndReplaceBlockPair();
+        MCNAPI ~EatAndReplaceBlockPair();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -70,32 +70,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EatBlockGoalDefinition(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
+    MCNAPI EatBlockGoalDefinition(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_40::EatBlockGoalDefinition& operator=(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
+    MCNAPI ::SharedTypes::v1_26_40::EatBlockGoalDefinition&
+    operator=(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
 
-    MCAPI ~EatBlockGoalDefinition();
+    MCNAPI ~EatBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair> const&
+    MCNAPI static ::std::vector<::SharedTypes::v1_26_40::EatBlockGoalDefinition::EatAndReplaceBlockPair> const&
     DEFAULT_EAT_AND_REPLACE_BLOCK_PAIR();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::EatBlockGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

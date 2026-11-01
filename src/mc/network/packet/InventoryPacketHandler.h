@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InventoryPacketHandler(::gsl::not_null<::std::shared_ptr<::InventoryTransactionPacket>> packet);
+    MCNAPI explicit InventoryPacketHandler(::gsl::not_null<::std::shared_ptr<::InventoryTransactionPacket>> packet);
 
-    MCAPI explicit InventoryPacketHandler(::gsl::not_null<::std::shared_ptr<::MobEquipmentPacket>> packet);
+    MCNAPI explicit InventoryPacketHandler(::gsl::not_null<::std::shared_ptr<::MobEquipmentPacket>> packet);
 
-    MCAPI void _handleMobEquipmentPacket(::MobEquipmentPacket const& packet, ::ServerPlayer& player) const;
+    MCNAPI void _handleMobEquipmentPacket(::MobEquipmentPacket const& packet, ::ServerPlayer& player) const;
 
-    MCAPI void handle(
+    MCNAPI void handle(
         ::ServerPlayer&             player,
         ::BlockPalette&             blockPalette,
         ::MoveInputComponent const& moveInput,
@@ -50,9 +50,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::InventoryTransactionPacket>> packet);
+    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::InventoryTransactionPacket>> packet);
 
-    MCAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::MobEquipmentPacket>> packet);
+    MCNAPI void* $ctor(::gsl::not_null<::std::shared_ptr<::MobEquipmentPacket>> packet);
     // NOLINTEND
 
 public:

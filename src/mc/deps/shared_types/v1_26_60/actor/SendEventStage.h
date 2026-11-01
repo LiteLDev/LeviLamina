@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SendEventStage(::SharedTypes::v1_26_60::SendEventStage const&);
+    MCNAPI SendEventStage(::SharedTypes::v1_26_60::SendEventStage const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::SendEventStage const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::SendEventStage const&);
     // NOLINTEND
 };
 

@@ -72,19 +72,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WaypointGroup::WaypointHandle add(::std::unique_ptr<::ServerWaypoint> waypoint);
+    MCNAPI ::WaypointGroup::WaypointHandle add(::std::unique_ptr<::ServerWaypoint> waypoint);
 
-    MCAPI ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord> consumeChanges();
+    MCNAPI ::std::map<::WaypointGroup::WaypointHandle, ::ServerWaypointGroup::WaypointChangeRecord> consumeChanges();
 
-    MCAPI void update(::Player const& viewingPlayer);
+    MCNAPI void update(::Player const& viewingPlayer);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $has(::WaypointGroup::WaypointHandle const& handle) const;
+    MCNAPI bool $has(::WaypointGroup::WaypointHandle const& handle) const;
 
-    MCAPI bool $remove(::WaypointGroup::WaypointHandle const& handle);
+    MCNAPI bool $remove(::WaypointGroup::WaypointHandle const& handle);
 
 
     // NOLINTEND

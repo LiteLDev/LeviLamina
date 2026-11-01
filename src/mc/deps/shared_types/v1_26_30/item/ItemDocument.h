@@ -34,39 +34,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDocument(::SharedTypes::v1_26_30::ItemDocument&&);
+    MCNAPI ItemDocument(::SharedTypes::v1_26_30::ItemDocument&&);
 
-    MCAPI ItemDocument(::SharedTypes::v1_26_30::ItemDocument const&);
+    MCNAPI ItemDocument(::SharedTypes::v1_26_30::ItemDocument const&);
 
-    MCFOLD ::SharedTypes::v1_26_30::ItemDocument& operator=(::SharedTypes::v1_26_30::ItemDocument&&);
+    MCNAPI ::SharedTypes::v1_26_30::ItemDocument& operator=(::SharedTypes::v1_26_30::ItemDocument&&);
 
-    MCAPI ~ItemDocument();
+    MCNAPI ~ItemDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_30::ItemDocument&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::ItemDocument&&);
 
-    MCFOLD void* $ctor(::SharedTypes::v1_26_30::ItemDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::ItemDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

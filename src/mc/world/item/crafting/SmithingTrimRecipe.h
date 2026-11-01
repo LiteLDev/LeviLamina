@@ -45,7 +45,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI SmithingTrimRecipe(
+    MCNAPI SmithingTrimRecipe(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
         ::RecipeIngredient const& baseIngredient,
@@ -65,7 +65,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&      recipeId,
         ::RecipeIngredient const& templateIngredient,
         ::RecipeIngredient const& baseIngredient,

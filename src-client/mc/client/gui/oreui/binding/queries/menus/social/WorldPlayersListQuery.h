@@ -53,29 +53,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayersListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI WorldPlayersListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
 
-    MCAPI void _handleLocalPlayerDataChanged();
+    MCNAPI void _handleLocalPlayerDataChanged();
 
-    MCAPI void _handlePlayerInfoChanged(
+    MCNAPI void _handlePlayerInfoChanged(
         ::Social::PlayerIdentifier const& playerIdentifier,
         ::OreUI::AllowListProfileImage    profileImage,
         ::OreUI::AllowListPath            platformProfilePic,
         ::Social::PlayerProfile const&    playerProfile
     );
 
-    MCAPI void _handlePlayerPermissionsChanged(
+    MCNAPI void _handlePlayerPermissionsChanged(
         ::ActorUniqueID const&                         playerId,
         ::std::optional<::PlayerPermissionLevel> const permissionLevel
     );
 
-    MCAPI void _handlePlayersRefreshed();
+    MCNAPI void _handlePlayersRefreshed();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
     // NOLINTEND
 };
 

@@ -102,21 +102,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Frame();
+    MCNAPI Frame();
 
-    MCAPI void cloneRangedBindingsToRenderItem(uint _renderItemIdx, ::bgfx::RangedBindings const& _rangedBindings);
+    MCNAPI void cloneRangedBindingsToRenderItem(uint _renderItemIdx, ::bgfx::RangedBindings const& _rangedBindings);
 
-    MCAPI void create();
+    MCNAPI void create();
 
-    MCAPI void destroy();
+    MCNAPI void destroy();
 
-    MCAPI void sort();
+    MCNAPI void sort();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

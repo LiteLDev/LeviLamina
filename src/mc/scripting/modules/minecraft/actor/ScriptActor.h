@@ -155,12 +155,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI ScriptActor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI
+    MCNAPI
     ScriptActor(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::UnsupportedAPIError,
@@ -172,14 +172,14 @@ public:
         bool                                                                   safeTeleport
     );
 
-    MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
+    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
         ::Actor&                                                          self,
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value,
         ::std::string const&                                              functionName
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::ArgumentOutOfBoundsError,
@@ -193,7 +193,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityEffectOptions> const&                  options
     );
 
-    MCAPI ::Scripting::Result_deprecated<void> addEffect_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> addEffect_V010(
         ::Actor&                                         self,
         ::ScriptModuleMinecraft::ScriptEffectType const& effectType,
         int                                              duration,
@@ -201,7 +201,7 @@ public:
         bool                                             showParticles
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::ArgumentOutOfBoundsError,
@@ -215,13 +215,13 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityEffectOptions> const&                  options
     );
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         addTag(::Actor& self, ::std::string const& tag);
 
-    MCAPI ::Scripting::Result_deprecated<bool> addTag_010(::Actor& self, ::std::string const& tag);
+    MCNAPI ::Scripting::Result_deprecated<bool> addTag_010(::Actor& self, ::std::string const& tag);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::UnsupportedAPIError,
@@ -234,11 +234,11 @@ public:
             ::ScriptModuleMinecraft::ScriptActorApplyDamageByProjectileOptions>> const& options
     );
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         applyImpulse(::Actor& self, ::Vec3 const& vector);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     applyKnockback_V1(
         ::Actor& self,
         float    directionX,
@@ -247,21 +247,21 @@ public:
         float    verticalStrength
     );
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     applyKnockback_V2(::Actor& self, ::VecXZ const& horizontalForce, float verticalStrength);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     clearDynamicProperties(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> clearVelocity(::Actor& self);
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> clearVelocity(::Actor& self);
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     extinguishFire(::Actor& self, bool useEffects);
 
-    MCAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptAABB, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::ScriptModuleMinecraft::ScriptAABB, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getAABB(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getAllBlocksStandingOn(
@@ -270,7 +270,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptGetBlocksStandingOnOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastHit>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getBlockFromViewDirection(
@@ -279,7 +279,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>>
     getBlockFromViewVector_010(
         ::Actor const&                                                             self,
@@ -287,7 +287,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptBlockRaycastOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlock>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getBlockStandingOn(
@@ -296,43 +296,44 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptGetBlocksStandingOnOptions> const& options
     ) const;
 
-    MCAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
     getComponent(
         ::Scripting::WeakLifetimeScope                                           scope,
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents,
         ::std::string_view                                                       id
     );
 
-    MCAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorComponent>>
     getComponents(
         ::Scripting::WeakLifetimeScope                                           scope,
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::EngineError>
     getDimension(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
+    MCNAPI ::Scripting::Result_deprecated<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptDimension>>
     getDimension_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getDynamicProperty(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getDynamicPropertyIds(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<int, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getDynamicPropertyTotalByteCount(::Actor& self, ::Scripting::ContextConfig const& contextConfig);
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>>
     getDynamicProperty_V010(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& key);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError>
@@ -343,16 +344,16 @@ public:
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>>
     getEffect_V010(::Actor const& self, ::ScriptModuleMinecraft::ScriptEffectType const& effectType) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptMobEffectInstance>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getEffects(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::vector<::ScriptModuleMinecraft::ScriptEntityRaycastHit>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
@@ -364,7 +365,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityRaycastOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>>
     getEntitiesFromViewVector_010(
         ::Actor const&                                                              self,
@@ -372,142 +373,143 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptEntityRaycastOptions> const& options
     ) const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getHeadLocation(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getHeadLocation_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getHeadLocation_010(::Actor const& self) const;
 
-    MCFOLD ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getId_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocalizationKey(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getLocation(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getLocation_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<float, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<float, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getNameplateRenderDistance(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::std::variant<float, bool, ::std::string>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getProperty(::Actor const& self, ::std::string const& identifier) const;
 
-    MCAPI ::Scripting::Result<::Vec2, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::Vec2, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getRotation(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptXYRotation>
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptXYRotation>
     getRotation_V010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::std::vector<::std::string>, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getTags(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::vector<::std::string>> getTags_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getTarget(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getTarget_010(::Actor const& self) const;
 
-    MCAPI ::std::string getTypeId() const;
+    MCNAPI ::std::string getTypeId() const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getVelocity(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
     getVelocity_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::Vec3, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     getViewDirection(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
+    MCNAPI ::Scripting::Result_deprecated<::ScriptModuleMinecraft::ScriptVector>
     getViewVector_010(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     hasTag(::Actor const& self, ::std::string const& tag) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> hasTag_010(::Actor const& self, ::std::string const& tag) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isClimbing(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isFalling(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isInWater(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isOnGround(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isSleeping(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isSprinting(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     isSwimming(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> kill(::Actor& self);
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError> kill(::Actor& self);
 
-    MCAPI ::Scripting::Result_deprecated<void> kill_010(::Actor& self);
+    MCNAPI ::Scripting::Result_deprecated<void> kill_010(::Actor& self);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
         ::Scripting::UnsupportedAPIError>
     matches(::Actor const& self, ::ScriptModuleMinecraft::ScriptActorQueryOptions options) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptActor& operator=(::ScriptModuleMinecraft::ScriptActor&& rhs);
+    MCNAPI ::ScriptModuleMinecraft::ScriptActor& operator=(::ScriptModuleMinecraft::ScriptActor&& rhs);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> playAnimation(
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError> playAnimation(
         ::Actor&                                                                    self,
         ::std::string const&                                                        animationName,
         ::std::optional<::ScriptModuleMinecraft::ScriptPlayAnimationOptions> const& options
     );
 
-    MCAPI ::Scripting::Result_deprecated<bool> removeDynamicProperty_V010(
+    MCNAPI ::Scripting::Result_deprecated<bool> removeDynamicProperty_V010(
         ::Actor&                          self,
         ::Scripting::ContextConfig const& contextConfig,
         ::std::string const&              key
     );
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::InvalidArgumentError>
-    removeEffect(
-        ::Actor& self,
-        ::std::variant<
-            ::std::string,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType
-    );
+    MCNAPI ::Scripting::
+        Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::InvalidArgumentError>
+        removeEffect(
+            ::Actor& self,
+            ::std::variant<
+                ::std::string,
+                ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effectType
+        );
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     removeTag(::Actor& self, ::std::string const& tag);
 
-    MCAPI ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
+    MCNAPI ::Scripting::Result_deprecated<bool> removeTag_010(::Actor& self, ::std::string const& tag);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::std::variant<float, bool, ::std::string>,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::EngineError,
         ::Scripting::Error>
     resetProperty(::Actor& self, ::std::string const& identifier);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
         ::ScriptModuleMinecraft::ScriptCommandError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError>
     runCommand(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptCommandResult>,
             ::ScriptModuleMinecraft::ScriptCommandError>,
@@ -520,10 +522,10 @@ public:
         ::std::string const&              commandString
     );
 
-    MCAPI ::Scripting::Result_deprecated<::Scripting::JSON>
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::JSON>
     runCommand_V010(::Actor& self, ::Scripting::ContextConfig const& contextConfig, ::std::string const& commandString);
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         setDynamicProperties(
             ::Actor&                          self,
@@ -533,7 +535,7 @@ public:
                 ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>> const& values
         );
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::ArgumentOutOfBoundsError>
         setDynamicProperty(
             ::Actor&                                                                           self,
@@ -542,20 +544,20 @@ public:
             ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
         );
 
-    MCAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> setDynamicProperty_V010(
         ::Actor&                                                    self,
         ::Scripting::ContextConfig const&                           contextConfig,
         ::std::string const&                                        key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3>& value
     );
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setNameplateRenderDistance(::Actor& self, float renderDistanceMax);
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setOnFire(::Actor& self, int const seconds, bool useEffects);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::InvalidArgumentError,
@@ -566,18 +568,18 @@ public:
         ::std::variant<float, bool, ::std::string> const& value
     );
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     setRotation(::Actor& self, ::Vec2 rotation);
 
-    MCAPI ::Scripting::Result_deprecated<void> setRotation_V010(::Actor& self, float x, float y);
+    MCNAPI ::Scripting::Result_deprecated<void> setRotation_V010(::Actor& self, float x, float y);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setTarget_010(::Actor& self, ::ScriptModuleMinecraft::ScriptActor& target);
 
-    MCAPI ::Scripting::Result_deprecated<void>
+    MCNAPI ::Scripting::Result_deprecated<void>
     setVelocity_010(::Actor& self, ::ScriptModuleMinecraft::ScriptVector const& vel);
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::UnsupportedAPIError,
@@ -588,7 +590,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptTeleportOptions> const& options
     );
 
-    MCAPI ::Scripting::Result_deprecated<void> teleportFacing_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> teleportFacing_V010(
         ::Actor&                                  self,
         ::Vec3 const&                             location,
         ::ScriptModuleMinecraft::ScriptDimension& dimension,
@@ -596,7 +598,7 @@ public:
         bool                                      keepVelocity
     );
 
-    MCAPI ::Scripting::Result_deprecated<void> teleport_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> teleport_V010(
         ::Actor&                                  self,
         ::Vec3 const&                             location,
         ::ScriptModuleMinecraft::ScriptDimension& dimension,
@@ -605,14 +607,15 @@ public:
         bool                                      keepVelocity
     );
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::InvalidArgumentError>
-    triggerEvent(::Actor& self, ::std::string const& eventName);
+    MCNAPI ::Scripting::
+        Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::InvalidArgumentError>
+        triggerEvent(::Actor& self, ::std::string const& eventName);
 
-    MCAPI ::Scripting::Result_deprecated<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
+    MCNAPI ::Scripting::Result_deprecated<void> triggerEvent_V010(::Actor& self, ::std::string const& eventName);
 
-    MCAPI ::Actor* tryGetActor() const;
+    MCNAPI ::Actor* tryGetActor() const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         bool,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
         ::Scripting::UnsupportedAPIError,
@@ -627,19 +630,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MobEffect const* _getEffectHelper(
+    MCNAPI static ::MobEffect const* _getEffectHelper(
         ::std::variant<
             ::std::string,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptEffectType>> const& effect
     );
 
-    MCAPI static ::Scripting::ClassBinding
+    MCNAPI static ::Scripting::ClassBinding
     bind(::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorComponents> const& actorComponents);
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>>
     getHandle(::WeakEntityRef entityRef, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI static ::Actor* tryGetActor(
+    MCNAPI static ::Actor* tryGetActor(
         ::Scripting::TypedObjectHandle<::ScriptModuleMinecraft::ScriptActor> const& handle,
         ::Scripting::WeakLifetimeScope const&                                       context
     );
@@ -648,60 +651,60 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Actor const& actor, ::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ScriptModuleMinecraft::ScriptActorData const& actorData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setLoading(::Actor const& actor);
+    MCNAPI void $setLoading(::Actor const& actor);
 
-    MCAPI void $setUnloaded(::Actor& actor);
+    MCNAPI void $setUnloaded(::Actor& actor);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $lookAt(::Actor& self, ::Vec3 const& targetLocation);
 
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getNameTag(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> $getNameTag_010(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setNameTag(::Actor& self, ::std::string const& nameTag);
 
-    MCFOLD ::Scripting::Result_deprecated<void> $setNameTag_010(::Actor& self, ::std::string const& nameTag);
+    MCNAPI ::Scripting::Result_deprecated<void> $setNameTag_010(::Actor& self, ::std::string const& nameTag);
 
-    MCFOLD ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getSneaking(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> $getSneaking_010(::Actor const& self) const;
 
-    MCFOLD ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setSneaking(::Actor& self, bool isSneaking);
 
-    MCFOLD ::Scripting::Result_deprecated<void> $setSneaking_010(::Actor& self, bool isSneaking);
+    MCNAPI ::Scripting::Result_deprecated<void> $setSneaking_010(::Actor& self, bool isSneaking);
 
-    MCAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<bool, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $getNameplateDepthTested(::Actor const& self) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError>
     $setNameplateDepthTested(::Actor& self, bool isNameplateDepthTested);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptInvalidActorError, ::Scripting::UnsupportedAPIError>
     $remove(::Actor& self);
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
+    MCNAPI ::ScoreboardId const& $_getScoreboardId(::Scoreboard const& scoreboard) const;
 
 
     // NOLINTEND

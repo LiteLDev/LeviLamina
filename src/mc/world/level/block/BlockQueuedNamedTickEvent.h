@@ -43,6 +43,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTag serialize() const;
+    MCNAPI ::CompoundTag serialize() const;
     // NOLINTEND
 };

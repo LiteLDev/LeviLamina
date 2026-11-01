@@ -67,44 +67,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setGameControllerConnected(int gameControllerId, bool isConnected);
+    MCNAPI void setGameControllerConnected(int gameControllerId, bool isConnected);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::GameControllerManager& sGamePadManager();
+    MCNAPI static ::GameControllerManager& sGamePadManager();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::weak_ptr<::IGameController> $getGameController(int id);
+    MCNAPI ::std::weak_ptr<::IGameController> $getGameController(int id);
 
-    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getConnectedGameControllers();
+    MCNAPI ::std::vector<::std::weak_ptr<::IGameController>> $getConnectedGameControllers();
 
-    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $getGameControllersInUse();
+    MCNAPI ::std::vector<::std::weak_ptr<::IGameController>> $getGameControllersInUse();
 
-    MCAPI bool $hasAdequateConnectedGameController() const;
+    MCNAPI bool $hasAdequateConnectedGameController() const;
 
-    MCAPI bool $hasAdequateConnectedGameControllers(uint64 const playerCount) const;
+    MCNAPI bool $hasAdequateConnectedGameControllers(uint64 const playerCount) const;
 
-    MCFOLD uint64 $getMaxGameControllerButtons() const;
+    MCNAPI uint64 $getMaxGameControllerButtons() const;
 
-    MCAPI void $registerConsumer(void const* token);
+    MCNAPI void $registerConsumer(void const* token);
 
-    MCAPI void $unregisterConsumer(void const* token);
+    MCNAPI void $unregisterConsumer(void const* token);
 
-    MCFOLD void $setControllerRefreshState(::ControllerRefreshState state);
+    MCNAPI void $setControllerRefreshState(::ControllerRefreshState state);
 
-    MCFOLD ::ControllerRefreshState $getControllerRefreshState() const;
+    MCNAPI ::ControllerRefreshState $getControllerRefreshState() const;
 
-    MCAPI ::GameControllerErrorType $getPlatformSpecificControllerError() const;
+    MCNAPI ::GameControllerErrorType $getPlatformSpecificControllerError() const;
 
-    MCAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
+    MCNAPI void $setPlatformSpecificControllerErrorRetrievalFunc(::std::function<::GameControllerErrorType()>&& lambda);
 
-    MCAPI void $resetClientControllerCount();
+    MCNAPI void $resetClientControllerCount();
 
-    MCAPI void $addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId);
+    MCNAPI void $addClientHasAdequateConnectedController(int id, bool const isAdequate, ::SubClientId clientId);
     // NOLINTEND
 };

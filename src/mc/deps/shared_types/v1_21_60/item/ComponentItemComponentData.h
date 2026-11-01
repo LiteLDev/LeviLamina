@@ -128,35 +128,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
+    MCNAPI ComponentItemComponentData(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
 
-    MCFOLD ::SharedTypes::v1_21_60::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_60::ComponentItemComponentData&&);
 
-    MCFOLD ::SharedTypes::v1_21_60::ComponentItemComponentData&
+    MCNAPI ::SharedTypes::v1_21_60::ComponentItemComponentData&
     operator=(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_21_60::ComponentItemComponentData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_60::ComponentItemComponentData const&) const;
 
-    MCAPI ~ComponentItemComponentData();
+    MCNAPI ~ComponentItemComponentData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::ComponentItemComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

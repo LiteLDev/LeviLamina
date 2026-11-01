@@ -40,28 +40,28 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI EmitterShapePointComponent(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
+    MCNAPI EmitterShapePointComponent(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& NameID();
+    MCNAPI static ::HashedString const& NameID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::EmitterShapePointComponent&&);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString const& $getIdentifier() const;
+    MCNAPI ::HashedString const& $getIdentifier() const;
 
 
     // NOLINTEND

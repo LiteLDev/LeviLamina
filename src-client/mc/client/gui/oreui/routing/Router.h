@@ -81,7 +81,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Router(
+    MCNAPI Router(
         ::std::unique_ptr<::OreUI::IRouteMatcher const>       routeMatcher,
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
@@ -93,9 +93,9 @@ public:
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
+    MCNAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
 
-    MCAPI void _replaceCurrentRouteInHistory(
+    MCNAPI void _replaceCurrentRouteInHistory(
         ::std::string const&                      newRoute,
         ::OreUI::RouteHistoryAction               action,
         ::std::shared_ptr<::AbstractScene> const& scene
@@ -105,25 +105,25 @@ public:
 
     MCAPI void goBack();
 
-    MCAPI bool isCurrentRoute(::std::string_view route) const;
+    MCNAPI bool isCurrentRoute(::std::string_view route) const;
 
     MCAPI bool replaceRoute(::std::string const& route);
 
-    MCAPI void replaceRouteMatcher(::std::unique_ptr<::OreUI::IRouteMatcher> newRouteMatcher);
+    MCNAPI void replaceRouteMatcher(::std::unique_ptr<::OreUI::IRouteMatcher> newRouteMatcher);
 
-    MCAPI ~Router();
+    MCNAPI ~Router();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> BEDROCK_PREFIX();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> BEDROCK_PREFIX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::OreUI::IRouteMatcher const>       routeMatcher,
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
@@ -134,7 +134,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

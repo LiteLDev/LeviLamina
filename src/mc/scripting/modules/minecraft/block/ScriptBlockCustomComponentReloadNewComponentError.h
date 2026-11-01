@@ -16,7 +16,7 @@ struct ScriptBlockCustomComponentReloadNewComponentError : public ::Scripting::B
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 };
 

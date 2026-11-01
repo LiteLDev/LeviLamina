@@ -111,7 +111,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ParticleEventRequest
+    MCNAPI static ::ParticleEventRequest
     addParticleEffect(::HashedString effect, ::Vec3 const& emitterPosition, ::MolangVariableMap molangVariables);
     // NOLINTEND
 };

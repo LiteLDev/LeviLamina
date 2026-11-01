@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::ExplodeComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::ExplodeComponent& component) const;
 
-    MCAPI void setParticleDefinitionByName(::std::string const& name);
+    MCNAPI void setParticleDefinitionByName(::std::string const& name);
 
-    MCAPI void setSoundDefinitionByName(::std::string const& name);
+    MCNAPI void setSoundDefinitionByName(::std::string const& name);
 
-    MCAPI void uninitialize(::EntityContext& entity) const;
+    MCNAPI void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     buildSchema(::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ExplodeDefinition>>& root);
     // NOLINTEND
 };

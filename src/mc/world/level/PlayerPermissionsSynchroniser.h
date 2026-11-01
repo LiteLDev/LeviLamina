@@ -24,7 +24,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void sendPermissionsRequest(::ActorUniqueID playerId);
+    MCNAPI void sendPermissionsRequest(::ActorUniqueID playerId);
 #endif
     // NOLINTEND
 };

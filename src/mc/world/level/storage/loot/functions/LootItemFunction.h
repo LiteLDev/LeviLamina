@@ -98,26 +98,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int apply(::LootItemFunction::ApplyArguments arguments);
+    MCNAPI int apply(::LootItemFunction::ApplyArguments arguments);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, bool usingUpcomingCreatorFeaturesExperiment);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
     mLootingExperimentalFunctions();
 
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
@@ -127,17 +127,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
+    MCNAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
 
-    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI int $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
+    MCNAPI int $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
 
 
     // NOLINTEND

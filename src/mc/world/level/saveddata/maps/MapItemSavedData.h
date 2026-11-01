@@ -109,7 +109,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapItemSavedData(::ActorUniqueID mapId, bool isDLCworld);
+    MCNAPI MapItemSavedData(::ActorUniqueID mapId, bool isDLCworld);
 
     MCAPI void _addDecoration(
         ::MapDecoration::Type                  type,
@@ -119,37 +119,37 @@ public:
         ::mce::Color const&                    color
     );
 
-    MCAPI ::std::shared_ptr<::MapItemTrackedActor> _addTrackedMapEntity(
+    MCNAPI ::std::shared_ptr<::MapItemTrackedActor> _addTrackedMapEntity(
         ::MapItemTrackedActor::UniqueId const& key,
         ::BlockSource&                         region,
         ::MapDecoration::Type                  decorationType
     );
 
-    MCAPI void _deserializeData(::CompoundTag const& tag);
+    MCNAPI void _deserializeData(::CompoundTag const& tag);
 
-    MCAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
+    MCNAPI void _removeDecoration(::MapItemTrackedActor::UniqueId const& id);
 
-    MCAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
+    MCNAPI void _removeTrackedMapEntity(::MapItemTrackedActor::UniqueId const& key);
 
-    MCAPI bool
+    MCNAPI bool
     _updateTrackedEntityDecoration(::BlockSource& region, ::std::shared_ptr<::MapItemTrackedActor> trackedActor);
 
-    MCAPI void _updateTrackedEntityDecorations(::BlockSource& region);
+    MCNAPI void _updateTrackedEntityDecorations(::BlockSource& region);
 
-    MCAPI void copyMapData(::MapItemSavedData const& map);
+    MCNAPI void copyMapData(::MapItemSavedData const& map);
 
-    MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
+    MCNAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
-    MCAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
+    MCNAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
 
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
+    MCNAPI ::std::unique_ptr<::Packet> getUpdatePacket(::Level&, ::BlockPos const& pos) const;
 
-    MCAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
+    MCNAPI ::std::unique_ptr<::Packet> getUpdatePacket(::ItemStack const&, ::Level&, ::Actor& entity) const;
 
-    MCAPI bool isPlayerHoldingMap(::Player& player);
+    MCNAPI bool isPlayerHoldingMap(::Player& player);
 
 #ifdef LL_PLAT_C
-    MCAPI void replaceDecorations(
+    MCNAPI void replaceDecorations(
         ::std::vector<::std::shared_ptr<::MapDecoration>>     decorations,
         ::std::vector<::MapItemTrackedActor::UniqueId> const& uniqueIds
     );
@@ -157,7 +157,7 @@ public:
 
     MCAPI void save(::LevelStorage& storage);
 
-    MCAPI void serialize(::CompoundTag& tag) const;
+    MCNAPI void serialize(::CompoundTag& tag) const;
 
     MCAPI void setMapSection(::buffer_span<uint> src, ::MapItemSavedData::ChunkBounds bb);
 
@@ -170,32 +170,32 @@ public:
         ::BlockPos const& worldCenter
     );
 
-    MCAPI void tickByBlock(::BlockPos const& pos, ::BlockSource& region);
+    MCNAPI void tickByBlock(::BlockPos const& pos, ::BlockSource& region);
 
-    MCAPI void tickCarriedBy(::Actor& player, ::CompoundTag const* item);
+    MCNAPI void tickCarriedBy(::Actor& player, ::CompoundTag const* item);
 
-    MCAPI ~MapItemSavedData();
+    MCNAPI ~MapItemSavedData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::AABB getMapWorldBounds(::BlockPos const& mapOrigin, int blocksPerTexel, int offset);
+    MCNAPI static ::AABB getMapWorldBounds(::BlockPos const& mapOrigin, int blocksPerTexel, int offset);
 #endif
 
-    MCAPI static ::std::string getSerializationKey(::ActorUniqueID id);
+    MCNAPI static ::std::string getSerializationKey(::ActorUniqueID id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorUniqueID mapId, bool isDLCworld);
+    MCNAPI void* $ctor(::ActorUniqueID mapId, bool isDLCworld);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

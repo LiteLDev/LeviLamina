@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SliderSetting(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
+    MCNAPI SliderSetting(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const& other) const;
+    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const& other) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting const&);
     // NOLINTEND
 };
 

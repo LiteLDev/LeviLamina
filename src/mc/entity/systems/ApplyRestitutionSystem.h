@@ -11,7 +11,7 @@ struct EntitySystemTickingMode;
 namespace ApplyRestitutionSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& tickingMode, bool isClientSide);
 // NOLINTEND
 
 } // namespace ApplyRestitutionSystem

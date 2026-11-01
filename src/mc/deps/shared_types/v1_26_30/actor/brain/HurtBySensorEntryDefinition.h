@@ -53,52 +53,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     HurtBySensorEntryDefinition(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&) const;
 
-    MCAPI ~HurtBySensorEntryDefinition();
+    MCNAPI ~HurtBySensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DAMAGE_CAUSES_NAME();
+    MCNAPI static ::std::string_view const& DAMAGE_CAUSES_NAME();
 
-    MCAPI static ::std::string_view const& DAMAGE_CAUSE_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& DAMAGE_CAUSE_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& DAMAGE_SOURCE_POS_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& DAMAGE_SOURCE_POS_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& DAMAGING_BLOCK_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& DAMAGING_BLOCK_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& DAMAGING_ENTITY_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& DAMAGING_ENTITY_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::HurtBySensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

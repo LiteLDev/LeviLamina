@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::IResolvedTint>
+    MCNAPI ::std::shared_ptr<::ClientBlockPipeline::IResolvedTint>
     get(::Block const&                           block,
         ::BlockBakedMaterialDataComponent const& bakedMaterialData,
         ::BlockPos const&                        relativePos,

@@ -23,8 +23,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getCelebrateSound(::Mob const& mob) const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent const getCelebrateSound(::Mob const& mob) const;
 
-    MCAPI void setNextSoundEventTick(::Mob const& mob);
+    MCNAPI void setNextSoundEventTick(::Mob const& mob);
     // NOLINTEND
 };

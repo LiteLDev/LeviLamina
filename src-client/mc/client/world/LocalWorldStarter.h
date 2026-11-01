@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LocalWorldStarter(
+    MCNAPI LocalWorldStarter(
         ::IGameServerStartup&                                           gameServerStartup,
         ::ILevelListCache&                                              levelListCache,
         ::World::IWorldStorageHandler&                                  worldStorageHandler,
@@ -54,22 +54,22 @@ public:
         ::std::function<void(::World::RecentlyPlayedPendingTargetData)> prepareRecentlyPlayedTarget
     );
 
-    MCAPI void backupThenStartLocalWorld(
+    MCNAPI void backupThenStartLocalWorld(
         ::World::WorldID const& worldID,
         ::std::function<
             void(::World::IWorldStorageHandler::DuplicateWorldResult, ::std::optional<::World::StartLocalWorldResult>)>
             onComplete
     );
 
-    MCAPI void setConfirmedPlatformLockedContentForWorld(::World::WorldID const& worldID);
+    MCNAPI void setConfirmedPlatformLockedContentForWorld(::World::WorldID const& worldID);
 
-    MCAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
+    MCNAPI ::World::StartLocalWorldResult startLocalWorld(::World::WorldID const& worldID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IGameServerStartup&                                           gameServerStartup,
         ::ILevelListCache&                                              levelListCache,
         ::World::IWorldStorageHandler&                                  worldStorageHandler,

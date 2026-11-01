@@ -19,7 +19,7 @@ class BounceEventingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doBounceEventingSystem(
+    MCNAPI static void _doBounceEventingSystem(
         ::StrictEntityContext const&,
         ::StateVectorComponent const&                                          stateVectorComponent,
         ::ActorUniqueIDComponent const&                                        actorUniqueIDComponent,

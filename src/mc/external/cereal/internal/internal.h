@@ -21,11 +21,11 @@ namespace cereal::util::internal { struct StringViewHash; }
 namespace cereal::internal {
 // functions
 // NOLINTBEGIN
-MCAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
+MCNAPI void checkAndOverride(::entt::meta_type const& metaType, uint metaDataId);
 
-MCAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
+MCNAPI void deprecateName(::entt::meta_type const& type, ::std::string_view name);
 
-MCAPI void fillEnumDescription(
+MCNAPI void fillEnumDescription(
     ::cereal::internal::ReflectionContext const& ctx,
     ::cereal::SchemaDescription&                 ret,
     ::entt::meta_type const&                     type,
@@ -33,7 +33,7 @@ MCAPI void fillEnumDescription(
 );
 
 #ifdef LL_PLAT_S
-MCAPI bool findAndOverride(
+MCNAPI bool findAndOverride(
     ::brstd::flat_set<
         ::cereal::internal::OverrideState,
         ::std::less<void>,
@@ -44,7 +44,7 @@ MCAPI bool findAndOverride(
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI bool findAndOverride(
+MCNAPI bool findAndOverride(
     ::brstd::flat_set<
         ::cereal::internal::OverrideState,
         ::std::less<void>,
@@ -54,11 +54,11 @@ MCAPI bool findAndOverride(
 );
 #endif
 
-MCAPI ::cereal::internal::ReflectedType
+MCNAPI ::cereal::internal::ReflectedType
 getReflectedType(::cereal::internal::ReflectionContext const& ctx, ::entt::meta_type const& type);
 
 #ifdef LL_PLAT_S
-MCAPI void getSchemaDescriptionAndDeps(
+MCNAPI void getSchemaDescriptionAndDeps(
     ::std::vector<::cereal::SchemaDescription>&  descriptions,
     ::std::set<uint>&                            done,
     ::cereal::internal::ReflectionContext const& ctx,
@@ -68,7 +68,7 @@ MCAPI void getSchemaDescriptionAndDeps(
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI void getSchemaDescriptionAndDeps(
+MCNAPI void getSchemaDescriptionAndDeps(
     ::std::vector<::cereal::SchemaDescription>&  descriptions,
     ::std::set<uint>&                            done,
     ::cereal::internal::ReflectionContext const& ctx,
@@ -77,11 +77,11 @@ MCAPI void getSchemaDescriptionAndDeps(
 );
 #endif
 
-MCAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, uint id);
+MCNAPI ::cereal::internal::BasicSchema const* lookup(::entt::meta_ctx const& ctx, uint id);
 
-MCAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type, ::cereal::ContextArea area);
+MCNAPI ::std::string makeEnumErrorMsg(::entt::meta_type const& type, ::cereal::ContextArea area);
 
-MCAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
+MCNAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
     ::cereal::internal::ReflectionContext const& ctx,
     ::entt::dense_map<
         ::std::string,
@@ -90,7 +90,7 @@ MCAPI ::std::map<::std::string, ::cereal::DynamicValue> pickUserProperties(
         ::std::equal_to<void>> const& userProps
 );
 
-MCAPI ::std::string toString(double d);
+MCNAPI ::std::string toString(double d);
 // NOLINTEND
 
 } // namespace cereal::internal

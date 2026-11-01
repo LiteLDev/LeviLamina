@@ -150,49 +150,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameControllerMapper();
+    MCNAPI GameControllerMapper();
 
-    MCAPI void _enqueueButtonDownUpEvents(
+    MCNAPI void _enqueueButtonDownUpEvents(
         ::InputEventQueue&                            eventQueue,
         ::GameControllerMapper::GamepadStickTurnData& turnData,
         ::DirectionId                                 direction
     );
 
-    MCAPI void _handleButtonEvent(
+    MCNAPI void _handleButtonEvent(
         ::InputEventQueue&                 eventQueue,
         ::GameControllerButtonEvent const& buttonEvent,
         int                                controllerId,
         int                                alternateControllerId
     );
 
-    MCAPI void
+    MCNAPI void
     _handleStickEvent(::InputEventQueue& eventQueue, ::GameControllerStickEvent const& stickEvent, int controllerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
+    MCNAPI void $setMapping(
         ::InputEventQueue&      eventQueue,
         ::BindingFactory const& bindingFactory,
         ::InputMapping const&   inputMapping,
         int                     controllerId
     );
 
-    MCAPI void $clearMapping(int controllerId);
+    MCNAPI void $clearMapping(int controllerId);
 
-    MCAPI bool
+    MCNAPI bool
     $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
-    MCFOLD ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCAPI void $changeControllerId(int oldId, int newId);
+    MCNAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND
 
 public:

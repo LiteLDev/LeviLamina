@@ -44,41 +44,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EducationLevelSettings(::EducationLevelSettings const&);
+    MCNAPI EducationLevelSettings(::EducationLevelSettings const&);
 
-    MCAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
+    MCNAPI ::std::function<void(::std::string const&, ::CommandFlag&, ::CommandPermissionLevel&)>
     getCommandOverrideFunctor() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getScreenShotBorderPath() const;
+    MCNAPI ::std::string getScreenShotBorderPath() const;
 #endif
 
-    MCAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
+    MCNAPI ::EducationLevelSettings& operator=(::EducationLevelSettings const&);
 
-    MCAPI ~EducationLevelSettings();
+    MCNAPI ~EducationLevelSettings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
+    MCNAPI static ::std::optional<::EducationLevelSettings> load(::LevelLooseFileStorage const& storage);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_BORDER_PATH();
+    MCNAPI static ::std::string const& DEFAULT_BORDER_PATH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EducationLevelSettings const&);
+    MCNAPI void* $ctor(::EducationLevelSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

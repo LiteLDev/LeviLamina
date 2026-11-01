@@ -15,7 +15,7 @@ struct GroundTravelTypeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float calcMoveRelativeSpeed(
+    MCNAPI static float calcMoveRelativeSpeed(
         ::IConstBlockSource const& region,
         ::Vec3 const&              pos,
         ::AABB const&              aabb,
@@ -24,12 +24,12 @@ public:
         ::BaseGameVersion const&   version
     );
 
-    MCAPI static ::TickingSystemWithInfo create(::BaseGameVersion const& version);
+    MCNAPI static ::TickingSystemWithInfo create(::BaseGameVersion const& version);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
+    MCNAPI static ::BaseGameVersion const& FRICTION_FIX_VERSION();
     // NOLINTEND
 };

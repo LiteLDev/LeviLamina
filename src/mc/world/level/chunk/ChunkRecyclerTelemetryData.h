@@ -99,25 +99,25 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ChunkRecyclerTelemetryData();
+    MCNAPI ChunkRecyclerTelemetryData();
 #endif
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI void endLevel(::Level& level);
+    MCNAPI void endLevel(::Level& level);
 
-    MCAPI void recordChunkDeleted(::LevelChunk const& lc);
+    MCNAPI void recordChunkDeleted(::LevelChunk const& lc);
 
-    MCAPI void startLevel(::Level const& level);
+    MCNAPI void startLevel(::Level const& level);
 
-    MCAPI void tickLevel(::Level const& level);
+    MCNAPI void tickLevel(::Level const& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 };

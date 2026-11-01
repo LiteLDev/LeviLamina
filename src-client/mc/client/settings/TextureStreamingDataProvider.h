@@ -42,11 +42,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getValue() const;
+    MCNAPI bool $getValue() const;
 
-    MCAPI void $setValue(bool value);
+    MCNAPI void $setValue(bool value);
 
-    MCAPI bool $canModify() const;
+    MCNAPI bool $canModify() const;
     // NOLINTEND
 };
 

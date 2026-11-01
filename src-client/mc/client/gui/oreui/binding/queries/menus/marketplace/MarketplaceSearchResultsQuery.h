@@ -36,15 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MarketplaceSearchResultsQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit MarketplaceSearchResultsQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _update();
+    MCNAPI void _update();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

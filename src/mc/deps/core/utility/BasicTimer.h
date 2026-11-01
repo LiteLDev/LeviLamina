@@ -18,24 +18,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
+    MCNAPI BasicTimer(double timeDelay, ::std::function<double()> getTimeCallback);
 
 #ifdef LL_PLAT_C
-    MCAPI bool isFinished() const;
+    MCNAPI bool isFinished() const;
 
-    MCAPI void resetTime();
+    MCNAPI void resetTime();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static double getSecondsSinceLaunch();
+    MCNAPI static double getSecondsSinceLaunch();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
+    MCNAPI void* $ctor(double timeDelay, ::std::function<double()> getTimeCallback);
     // NOLINTEND
 };

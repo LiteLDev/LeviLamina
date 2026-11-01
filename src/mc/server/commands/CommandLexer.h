@@ -74,6 +74,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void step();
+    MCNAPI void step();
     // NOLINTEND
 };

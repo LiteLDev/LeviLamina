@@ -12,6 +12,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PlayerScoreboardId const& INVALID();
+    MCNAPI static ::PlayerScoreboardId const& INVALID();
     // NOLINTEND
 };

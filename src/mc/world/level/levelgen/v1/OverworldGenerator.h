@@ -135,24 +135,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI void $prepareHeights(
+    MCNAPI void $prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>* ZXheights,
         bool                  factorInBeardsAndShavers
     );
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
+    MCNAPI ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
         ::ChunkPos const&          chunkPos,
         ::SurfaceLevelCache const& surfaceLevelCache,
         short                      minHeight,
@@ -160,7 +160,7 @@ public:
         short                      seaLevel
     ) const;
 
-    MCAPI void $decorateWorldGenLoadChunk(
+    MCNAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -168,7 +168,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+    MCNAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
 
     // NOLINTEND

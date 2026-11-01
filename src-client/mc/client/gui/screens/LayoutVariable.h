@@ -62,37 +62,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float _getMaxSiblingValue() const;
+    MCNAPI float _getMaxSiblingValue() const;
 
-    MCAPI void _initialize(bool checkForDuplicates);
+    MCNAPI void _initialize(bool checkForDuplicates);
 
-    MCAPI void _invalidate(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
+    MCNAPI void _invalidate(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
 
-    MCAPI void
+    MCNAPI void
     _invalidateDependencies(::std::function<void(::VariableRef const&)> invalidCallback, bool forceInvalidation);
 
-    MCAPI bool isSatisfiable() const;
+    MCNAPI bool isSatisfiable() const;
 
-    MCAPI void overrideRenderableLayoutRule(::UIControl& control, ::LayoutVariableType type);
+    MCNAPI void overrideRenderableLayoutRule(::UIControl& control, ::LayoutVariableType type);
 
-    MCAPI void removeDeadDependencies();
+    MCNAPI void removeDeadDependencies();
 
-    MCAPI void removeDependencies();
+    MCNAPI void removeDependencies();
 
-    MCAPI ::ui::DirtyFlag satisfy();
+    MCNAPI ::ui::DirtyFlag satisfy();
 
-    MCAPI void setOverrideValue(float inValue);
+    MCNAPI void setOverrideValue(float inValue);
 
-    MCAPI void setRelativeLayoutRule(::UIControl& control, ::UIControl& relativeTo, ::LayoutVariableType const type);
+    MCNAPI void setRelativeLayoutRule(::UIControl& control, ::UIControl& relativeTo, ::LayoutVariableType const type);
 
-    MCAPI ::std::string toString(::LayoutVariableStringType type) const;
+    MCNAPI ::std::string toString(::LayoutVariableStringType type) const;
 
-    MCAPI ~LayoutVariable();
+    MCNAPI ~LayoutVariable();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

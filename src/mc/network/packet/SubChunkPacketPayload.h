@@ -69,7 +69,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SubChunkPacketPayload::SubChunkPacketData const&) const;
+        MCNAPI bool operator==(::SubChunkPacketPayload::SubChunkPacketData const&) const;
 
 #ifdef LL_PLAT_C
         MCAPI ~SubChunkPacketData();

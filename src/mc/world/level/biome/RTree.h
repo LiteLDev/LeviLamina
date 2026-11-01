@@ -34,16 +34,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void
+        MCNAPI void
         search(::ClimateUtils::TargetSpace const& target, ::std::pair<::RTree::Node const*, int64>& closestLeaf) const;
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
+        MCNAPI static ::std::optional<::RTree::Node> branch(::std::vector<::RTree::Node>&& children);
 
-        MCAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
+        MCNAPI static void sort(::std::vector<::RTree::Node>& children, int dimension, bool absolute);
         // NOLINTEND
     };
 
@@ -64,8 +64,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
+    MCNAPI static ::std::optional<::RTree::Node> build(::std::vector<::RTree::Node>&& children);
 
-    MCAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
+    MCNAPI static ::std::optional<::RTree> create(::std::vector<::BiomeNoiseTarget> const& biomes);
     // NOLINTEND
 };

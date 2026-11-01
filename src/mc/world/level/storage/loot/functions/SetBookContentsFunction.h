@@ -34,16 +34,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
-    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext&);
+    MCNAPI void $applyPreVersion(::ItemStackBase& item, ::Random&, ::LootTableContext&);
 
 
     // NOLINTEND

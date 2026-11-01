@@ -40,9 +40,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
+    MCNAPI explicit BlockCullingGroup(::IMinecraftEventing& eventing);
 
-    MCAPI void loadBlockCullingDataAsync(
+    MCNAPI void loadBlockCullingDataAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::cereal::ReflectionCtx const&                       ctx
@@ -52,7 +52,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::BlockCullingData> parseBlockCullingData(
+    MCNAPI static ::std::optional<::BlockCullingData> parseBlockCullingData(
         ::std::string_view             fileWithExtension,
         ::std::string const&           fileData,
         ::MolangVersion                molangVersion,
@@ -64,7 +64,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:

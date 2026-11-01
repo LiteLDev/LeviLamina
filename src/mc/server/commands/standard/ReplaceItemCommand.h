@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _outputError(
+    MCNAPI void _outputError(
         ::CommandOutput&                 output,
         ::Util::ReplacementResults const errorDetails,
         ::std::string const&             itemName
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

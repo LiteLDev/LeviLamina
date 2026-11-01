@@ -28,27 +28,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCNAPI CameraAimAssistPresetDefinition(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
 
-    MCAPI ~CameraAimAssistPresetDefinition();
+    MCNAPI ~CameraAimAssistPresetDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::CameraAimAssistPresetDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

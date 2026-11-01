@@ -38,33 +38,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Traits const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::Traits const&) const;
 
-    MCAPI ~Traits();
+    MCNAPI ~Traits();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& CONNECTION_ID();
+    MCNAPI static ::std::string_view const& CONNECTION_ID();
 
-    MCAPI static ::std::string_view const& MULTI_BLOCK_ID();
+    MCNAPI static ::std::string_view const& MULTI_BLOCK_ID();
 
-    MCAPI static ::std::string_view const& PLACEMENT_DIRECTION_ID();
+    MCNAPI static ::std::string_view const& PLACEMENT_DIRECTION_ID();
 
-    MCAPI static ::std::string_view const& PLACEMENT_POSITION_ID();
+    MCNAPI static ::std::string_view const& PLACEMENT_POSITION_ID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

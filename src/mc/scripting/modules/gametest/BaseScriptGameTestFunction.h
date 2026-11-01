@@ -37,19 +37,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    MCNAPI BaseScriptGameTestFunction(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
+    MCNAPI void* $ctor(::Scripting::WeakLifetimeScope scope, ::std::string const& testName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext>
+    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionContext>
     $createContext(::gametest::BaseGameTestHelper& helper) const;
 
 

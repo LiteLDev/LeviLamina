@@ -159,37 +159,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRegistry();
+    MCNAPI ItemRegistry();
 
 #ifdef LL_PLAT_C
-    MCAPI void _bindBetaItemTypes(::Experiments const& experiments);
+    MCNAPI void _bindBetaItemTypes(::Experiments const& experiments);
 
-    MCAPI void _movePreRegistryToMainRegistry();
+    MCNAPI void _movePreRegistryToMainRegistry();
 
-    MCAPI void _populateVanillaItemVersionMap(
+    MCNAPI void _populateVanillaItemVersionMap(
         ::ItemRegistry::LoadedItemAsset const& loadedItemAsset,
         ::ItemParseContext&                    parseContext
     );
 #endif
 
-    MCAPI void _preRegisterItem(::HashedString const& itemName, ::SharedPtr<::Item> item);
+    MCNAPI void _preRegisterItem(::HashedString const& itemName, ::SharedPtr<::Item> item);
 
 #ifdef LL_PLAT_C
-    MCAPI ::WeakPtr<::Item>
+    MCNAPI ::WeakPtr<::Item>
     _registerOrPromoteItem(::HashedString const& itemName, bool isComponentBased, ::cereal::ReflectionCtx const& ctx);
 #endif
 
-    MCAPI ::ItemRegistry::ParsedName _tryParseItemName(::Puv::Input const& input);
+    MCNAPI ::ItemRegistry::ParsedName _tryParseItemName(::Puv::Input const& input);
 
-    MCAPI ::ItemRegistryRef::LoadedItem
+    MCNAPI ::ItemRegistryRef::LoadedItem
     _tryRegisterAndInitItem(::ItemRegistry::LoadedItemAsset const& loadedItemAsset, ::ItemParseContext& parseContext);
 
-    MCAPI void addItemToTagMap(::Item const& item);
+    MCNAPI void addItemToTagMap(::Item const& item);
 
-    MCAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
+    MCNAPI void alterAvailableCreativeItems(::ActorInfoRegistry* registry, ::LevelData& levelData);
 
 #ifdef LL_PLAT_C
-    MCAPI void buildClientRegistryFromServer(
+    MCNAPI void buildClientRegistryFromServer(
         ::std::vector<::ItemData> const& serverItemData,
         ::Experiments const&             experiments,
         ::BaseGameVersion const&         baseGameVersion,
@@ -198,7 +198,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void buildServerRegistry(
+    MCNAPI void buildServerRegistry(
         ::Experiments const&                               experiments,
         ::BaseGameVersion const&                           baseGameVersion,
         ::IEducationOptions const&                         educationOptions,
@@ -208,77 +208,77 @@ public:
     );
 #endif
 
-    MCAPI void clearItemAndCreativeItemRegistry();
+    MCNAPI void clearItemAndCreativeItemRegistry();
 
 #ifdef LL_PLAT_C
-    MCAPI void findAllAttachableDefinitions();
+    MCNAPI void findAllAttachableDefinitions();
 
-    MCAPI void finishedRegistration(::Experiments const& experiments);
+    MCNAPI void finishedRegistration(::Experiments const& experiments);
 #endif
 
-    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
 
-    MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id);
+    MCNAPI ::WeakPtr<::Item> getItem(::HashedString const& id);
 
-    MCAPI ::WeakPtr<::Item> getItem(short id);
+    MCNAPI ::WeakPtr<::Item> getItem(short id);
 
-    MCAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
+    MCNAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
-    MCAPI bool isComplexAlias(::HashedString const& oldName) const;
+    MCNAPI bool isComplexAlias(::HashedString const& oldName) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
+    MCNAPI ::WeakPtr<::Item> lookupByName(int& inOutItemAux, ::std::string_view inString) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& inOutItemAux, ::std::string_view inString) const;
+    MCNAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& inOutItemAux, ::std::string_view inString) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
+    MCNAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
-    MCAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
+    MCNAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
-    MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
+    MCNAPI ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void populateClientItemData(
+    MCNAPI void populateClientItemData(
         ::ResourcePackManager& resourcePackManager,
         ::Experiments const&   experiments,
         ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
     );
 #endif
 
-    MCAPI void
+    MCNAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion);
 
-    MCAPI ::WeakPtr<::Item>
+    MCNAPI ::WeakPtr<::Item>
     registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias);
 
-    MCAPI void registerItem(::SharedPtr<::Item> item);
+    MCNAPI void registerItem(::SharedPtr<::Item> item);
 
-    MCAPI void registerLegacyMapping(
+    MCNAPI void registerLegacyMapping(
         ::HashedString const&    alias,
         ::HashedString const&    name,
         ::BaseGameVersion const& fromVersion
     );
 
-    MCAPI void registerValidatorIdentifier(::std::string const& str);
+    MCNAPI void registerValidatorIdentifier(::std::string const& str);
 
-    MCAPI uint64 remapToFullLegacyNameByHash(uint64 newHash);
+    MCNAPI uint64 remapToFullLegacyNameByHash(uint64 newHash);
 
-    MCAPI uint64 remapToLegacyNameByHash(uint64 newHash);
+    MCNAPI uint64 remapToLegacyNameByHash(uint64 newHash);
 
-    MCAPI void shutdown();
+    MCNAPI void shutdown();
 
-    MCAPI void unregisterItem(::HashedString const& itemName);
+    MCNAPI void unregisterItem(::HashedString const& itemName);
 
-    MCAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
+    MCNAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
 
-    MCAPI ~ItemRegistry();
+    MCNAPI ~ItemRegistry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::vector<::ItemRegistry::LoadedItemAsset> _loadAllItemAssets(
+    MCNAPI static ::std::vector<::ItemRegistry::LoadedItemAsset> _loadAllItemAssets(
         ::ResourcePackManager const&   resourcePackManager,
         ::Experiments const&           experiments,
         ::cereal::ReflectionCtx const& ctx
@@ -289,12 +289,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

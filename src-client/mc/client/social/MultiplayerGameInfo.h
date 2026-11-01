@@ -57,47 +57,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiplayerGameInfo();
+    MCNAPI MultiplayerGameInfo();
 
-    MCAPI MultiplayerGameInfo(::Social::MultiplayerGameInfo const&);
+    MCNAPI MultiplayerGameInfo(::Social::MultiplayerGameInfo const&);
 
-    MCAPI MultiplayerGameInfo(::Social::MultiplayerGameInfo&&);
+    MCNAPI MultiplayerGameInfo(::Social::MultiplayerGameInfo&&);
 
-    MCAPI MultiplayerGameInfo(::Social::MultiplayerServiceIdentifier service, ::std::string const& inviteHandle);
+    MCNAPI MultiplayerGameInfo(::Social::MultiplayerServiceIdentifier service, ::std::string const& inviteHandle);
 
-    MCAPI void getConnectionsAsJson(::Json::Value& props) const;
+    MCNAPI void getConnectionsAsJson(::Json::Value& props) const;
 
-    MCAPI ::Social::GameConnectionInfo getOptimumConnection(bool ipV6Supported) const;
+    MCNAPI ::Social::GameConnectionInfo getOptimumConnection(bool ipV6Supported) const;
 
-    MCAPI ::Social::MultiplayerGameInfo& operator=(::Social::MultiplayerGameInfo const&);
+    MCNAPI ::Social::MultiplayerGameInfo& operator=(::Social::MultiplayerGameInfo const&);
 
-    MCAPI ::Social::MultiplayerGameInfo& operator=(::Social::MultiplayerGameInfo&&);
+    MCNAPI ::Social::MultiplayerGameInfo& operator=(::Social::MultiplayerGameInfo&&);
 
-    MCAPI ~MultiplayerGameInfo();
+    MCNAPI ~MultiplayerGameInfo();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Social::MultiplayerGameInfo createFromSessionProperties(::Json::Value const& properties);
+    MCNAPI static ::Social::MultiplayerGameInfo createFromSessionProperties(::Json::Value const& properties);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Social::MultiplayerGameInfo const&);
+    MCNAPI void* $ctor(::Social::MultiplayerGameInfo const&);
 
-    MCAPI void* $ctor(::Social::MultiplayerGameInfo&&);
+    MCNAPI void* $ctor(::Social::MultiplayerGameInfo&&);
 
-    MCAPI void* $ctor(::Social::MultiplayerServiceIdentifier service, ::std::string const& inviteHandle);
+    MCNAPI void* $ctor(::Social::MultiplayerServiceIdentifier service, ::std::string const& inviteHandle);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

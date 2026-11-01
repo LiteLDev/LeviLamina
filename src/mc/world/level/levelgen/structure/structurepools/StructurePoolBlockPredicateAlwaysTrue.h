@@ -30,13 +30,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $test(::Block const& block, ::IRandom& random) const;
+    MCNAPI bool $test(::Block const& block, ::IRandom& random) const;
 
-    MCFOLD bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
+    MCNAPI bool $test(::BlockPos const&, ::BlockPos const&, ::IRandom&) const;
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
-    MCFOLD void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

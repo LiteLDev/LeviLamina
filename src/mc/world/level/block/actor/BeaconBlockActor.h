@@ -104,32 +104,32 @@ public:
     // NOLINTBEGIN
     MCAPI BeaconBlockActor(::BlockPos const& pos, bool permanentlyRendered);
 
-    MCAPI int _getEffectTier(int effectId) const;
+    MCNAPI int _getEffectTier(int effectId) const;
 
-    MCAPI void
+    MCNAPI void
     _notifyBeamSectionsChange(::BlockSource& region, ::std::vector<::BeaconBeamSection> const& oldBeamSections);
 
 #ifdef LL_PLAT_C
-    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool _saveClientSideState(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 #endif
 
 #ifdef LL_PLAT_C
     MCAPI void checkShape(::BlockSource& region);
 
-    MCAPI void generateBeamSections(::BlockSource& region);
+    MCNAPI void generateBeamSections(::BlockSource& region);
 #endif
 
-    MCAPI bool setSecondaryEffect(int effectId);
+    MCNAPI bool setSecondaryEffect(int effectId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
+    MCNAPI static bool isPaymentItem(::ItemDescriptor const& pItem);
     // NOLINTEND
 
 public:
@@ -141,47 +141,47 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD bool $hasAlphaLayer() const;
+    MCNAPI bool $hasAlphaLayer() const;
 
-    MCAPI bool $isPermanentlyRendered() const;
+    MCNAPI bool $isPermanentlyRendered() const;
 
-    MCAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
+    MCNAPI bool $isWithinRenderDistance(::Vec3 const& cameraPosition) const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCFOLD void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD void $removeItem(int slot, int count);
+    MCNAPI void $removeItem(int slot, int count);
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $startOpen(::Actor&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

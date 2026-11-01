@@ -16,25 +16,25 @@ namespace Json { class Value; }
 namespace ClientBlockPipeline::ItemTransforms {
 // functions
 // NOLINTBEGIN
-MCAPI ::Matrix _constructFixSpaceTransform(::ItemTransformType const& type);
+MCNAPI ::Matrix _constructFixSpaceTransform(::ItemTransformType const& type);
 
-MCAPI ::Matrix constructTransform(::ItemTransformType const& type, ::Geometry::ItemDisplayTransform const& transforms);
+MCNAPI ::Matrix constructTransform(::ItemTransformType const& type, ::Geometry::ItemDisplayTransform const& transforms);
 
-MCAPI ::Matrix getDefaultTransformMatrix(::ItemTransformType const& type);
+MCNAPI ::Matrix getDefaultTransformMatrix(::ItemTransformType const& type);
 
-MCAPI ::Geometry::ItemDisplayTransform getDefaultTransforms(::ItemTransformType const& type);
+MCNAPI ::Geometry::ItemDisplayTransform getDefaultTransforms(::ItemTransformType const& type);
 
-MCAPI ::Matrix getFixSpaceTransformMatrix(::ItemTransformType const& type);
+MCNAPI ::Matrix getFixSpaceTransformMatrix(::ItemTransformType const& type);
 
-MCAPI ::ItemTransformType getTypeFromString(::std::string_view type);
+MCNAPI ::ItemTransformType getTypeFromString(::std::string_view type);
 
-MCAPI ::Geometry::ItemDisplayTransform
+MCNAPI ::Geometry::ItemDisplayTransform
 parseItemDisplayTransform(::Json::Value const& itemTransform, ::ItemTransformType const& type);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Bedrock::DenseEnumMap<::ItemTransformType, ::std::string_view, 10> const& mTypeNames();
+MCNAPI ::Bedrock::DenseEnumMap<::ItemTransformType, ::std::string_view, 10> const& mTypeNames();
 // NOLINTEND
 
 } // namespace ClientBlockPipeline::ItemTransforms

@@ -46,13 +46,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canItemMoveToContainer(::ItemStackBase const& item) const;
+    MCNAPI bool $canItemMoveToContainer(::ItemStackBase const& item) const;
 
-    MCFOLD int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
+    MCNAPI int $getContainerOffset(::ContainerScreenContext const& screenContext) const;
 
-    MCFOLD int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
+    MCNAPI int $getContainerSize(::ContainerScreenContext const& screenContext, ::Container const& container) const;
 
-    MCAPI bool $isItemAllowedInSlot(
+    MCNAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const& screenContext,
         int const,
         ::ItemStackBase const& item,
@@ -60,7 +60,7 @@ public:
         bool                   isInternalTransfer
     ) const;
 
-    MCAPI int
+    MCNAPI int
     $getAllowedAddCount(::ContainerScreenContext const& screenContext, ::ItemStackBase const& itemInSlot) const;
 
 

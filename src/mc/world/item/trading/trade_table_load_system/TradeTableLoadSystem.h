@@ -12,7 +12,7 @@ namespace TradeTableLoadSystem { struct TradeTableDataLegacySlice; }
 namespace TradeTableLoadSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TradeTableLoadSystem::TradeTableDataLegacySlice
+MCNAPI ::TradeTableLoadSystem::TradeTableDataLegacySlice
 parseTradeTableData(::Puv::Input const& input, ::Puv::Logger& logger);
 // NOLINTEND
 

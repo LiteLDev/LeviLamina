@@ -19,6 +19,6 @@ public:
     // NOLINTBEGIN
     MCAPI ::gsl::span<::PlayerBlockActionData const> get() const;
 
-    MCAPI bool operator==(::PlayerBlockActions const& other) const;
+    MCNAPI bool operator==(::PlayerBlockActions const& other) const;
     // NOLINTEND
 };

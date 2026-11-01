@@ -21,9 +21,9 @@ namespace SceneStackNavigation {
 // NOLINTBEGIN
 MCAPI void openPauseMenu(::IMinecraftGame& minecraftGame);
 
-MCAPI void toMainMenu(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
+MCNAPI void toMainMenu(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
 
-MCAPI void toMainMenu(
+MCNAPI void toMainMenu(
     ::OreUI::Router&                             router,
     ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> sceneStack,
     ::SceneFactory&                              sceneFactory,
@@ -31,16 +31,16 @@ MCAPI void toMainMenu(
     ::ui::RouteOperation                         routeOperation
 );
 
-MCAPI void toPlayScreen(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
+MCNAPI void toPlayScreen(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
 
-MCAPI void toPreStartScreen(
+MCNAPI void toPreStartScreen(
     ::ui::ScreenTechStackSelector const&         screenTechStackSelector,
     ::OreUI::Router&                             router,
     ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> sceneStack,
     ::SceneFactory&                              sceneFactory
 );
 
-MCAPI void tryShowXblFirstLaunchScreen(::IMinecraftGame& minecraftGame, bool isUserConnectedToPlatform);
+MCNAPI void tryShowXblFirstLaunchScreen(::IMinecraftGame& minecraftGame, bool isUserConnectedToPlatform);
 // NOLINTEND
 
 } // namespace SceneStackNavigation

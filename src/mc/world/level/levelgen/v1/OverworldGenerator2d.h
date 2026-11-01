@@ -87,38 +87,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCNAPI OverworldGenerator2d(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     _generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
+    MCNAPI void* $ctor(::Dimension& dimension, uint seed, bool isLegacyWorld, ::Biome const* biomeOverride);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCNAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI ::BlockPos $findSpawnPosition() const;
+    MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCFOLD int $getLevelGenHeight() const;
+    MCNAPI int $getLevelGenHeight() const;
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
-    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCNAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCNAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCAPI void
+    MCNAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCAPI void $_prepareHeights(
+    MCNAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
         ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
@@ -128,7 +128,7 @@ public:
         ::std::vector<short>*                                           ZXheights
     );
 
-    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+    MCNAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
 
 
     // NOLINTEND

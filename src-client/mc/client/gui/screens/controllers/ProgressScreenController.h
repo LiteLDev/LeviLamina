@@ -118,7 +118,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProgressScreenController(
+    MCNAPI ProgressScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         ::std::string const&                                    calledFrom,
         ::std::unique_ptr<::ProgressHandler>                    progressInterface,
@@ -130,7 +130,7 @@ public:
         float                                                   backgroundFillAlpha
     );
 
-    MCAPI ProgressScreenController(
+    MCNAPI ProgressScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         ::std::string const&                                    calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>>      progressInterfaces,
@@ -146,19 +146,19 @@ public:
         bool                                                    isCancellable
     );
 
-    MCAPI bool _isInCancellableState() const;
+    MCNAPI bool _isInCancellableState() const;
 
-    MCAPI void _openConfirmationDialog();
+    MCNAPI void _openConfirmationDialog();
 
-    MCAPI void _setupProgressScreen(bool const loadAssets);
+    MCNAPI void _setupProgressScreen(bool const loadAssets);
 
-    MCAPI void _updateProgressMessage(int64 const& timeNow, bool force);
+    MCNAPI void _updateProgressMessage(int64 const& timeNow, bool force);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         ::std::string const&                                    calledFrom,
         ::std::unique_ptr<::ProgressHandler>                    progressInterface,
@@ -170,7 +170,7 @@ public:
         float                                                   backgroundFillAlpha
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>               model,
         ::std::string const&                                    calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>>      progressInterfaces,
@@ -190,26 +190,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCAPI ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI bool $_getGamepadHelperVisible() const;
+    MCNAPI bool $_getGamepadHelperVisible() const;
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

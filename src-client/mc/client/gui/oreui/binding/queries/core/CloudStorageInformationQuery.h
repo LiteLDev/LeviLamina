@@ -46,21 +46,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CloudStorageInformationQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit CloudStorageInformationQuery(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _tryUpdate();
+    MCNAPI void _tryUpdate();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

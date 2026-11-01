@@ -35,20 +35,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchInputMapping(::TouchInputMapping const&);
+    MCNAPI TouchInputMapping(::TouchInputMapping const&);
 
-    MCAPI ~TouchInputMapping();
+    MCNAPI ~TouchInputMapping();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TouchInputMapping const&);
+    MCNAPI void* $ctor(::TouchInputMapping const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

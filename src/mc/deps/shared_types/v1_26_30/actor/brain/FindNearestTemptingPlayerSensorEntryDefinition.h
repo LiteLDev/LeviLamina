@@ -51,40 +51,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FindNearestTemptingPlayerSensorEntryDefinition(
+    MCNAPI FindNearestTemptingPlayerSensorEntryDefinition(
         ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestTemptingPlayerSensorEntryDefinition const&
     );
 
-    MCAPI bool operator==(
+    MCNAPI bool operator==(
         ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestTemptingPlayerSensorEntryDefinition const&
     ) const;
 
-    MCAPI ~FindNearestTemptingPlayerSensorEntryDefinition();
+    MCNAPI ~FindNearestTemptingPlayerSensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestTemptingPlayerSensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

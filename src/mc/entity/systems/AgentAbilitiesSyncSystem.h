@@ -11,6 +11,6 @@ class AgentAbilitiesSyncSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
+    MCNAPI static ::TickingSystemWithInfo createAgentAbilitiesSyncSystem();
     // NOLINTEND
 };

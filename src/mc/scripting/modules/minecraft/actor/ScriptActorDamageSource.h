@@ -33,22 +33,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorDamageSource();
+    MCNAPI ~ScriptActorDamageSource();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptActorDamageSource
+    MCNAPI static ::ScriptModuleMinecraft::ScriptActorDamageSource
     create(::ILevel const& level, ::ActorDamageSource const& actorDamageSource, ::Scripting::WeakLifetimeScope& scope);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

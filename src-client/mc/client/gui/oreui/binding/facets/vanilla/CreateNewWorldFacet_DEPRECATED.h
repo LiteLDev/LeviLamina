@@ -101,7 +101,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CreateNewWorldFacet_DEPRECATED(
+    MCNAPI CreateNewWorldFacet_DEPRECATED(
         ::OreUI::Router&                                             uiRouter,
         ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>   resourceAllowList,
@@ -110,59 +110,59 @@ public:
         ::ui::ProgressScreenNavigation                               progressScreenNavigation
     );
 
-    MCAPI void applyTemplate(::std::string const& worldTemplateId);
+    MCNAPI void applyTemplate(::std::string const& worldTemplateId);
 
     MCAPI void clearErrors();
 
-    MCAPI bool consumeResetFlag() const;
+    MCNAPI bool consumeResetFlag() const;
 
-    MCAPI void createOnRealms();
+    MCNAPI void createOnRealms();
 
-    MCAPI void createWorld();
+    MCNAPI void createWorld();
 
-    MCAPI void createWorldOnPreviewRealm(::std::string realmId);
+    MCNAPI void createWorldOnPreviewRealm(::std::string realmId);
 
-    MCAPI ::OreUI::FacetTaskState getApplyTemplateTaskState();
+    MCNAPI ::OreUI::FacetTaskState getApplyTemplateTaskState();
 
-    MCFOLD ::std::optional<::OreUI::CreateOnRealmsError> const& getCreateOnRealmsError() const;
+    MCNAPI ::std::optional<::OreUI::CreateOnRealmsError> const& getCreateOnRealmsError() const;
 
-    MCFOLD ::std::optional<::OreUI::CreateWorldError> const& getCreateWorldError() const;
+    MCNAPI ::std::optional<::OreUI::CreateWorldError> const& getCreateWorldError() const;
 
     MCAPI ::OreUI::LevelDataBindings& getLevelDataBindings() const;
 
-    MCAPI ::std::string const& getWorldPreviewImagePath() const;
+    MCNAPI ::std::string const& getWorldPreviewImagePath() const;
 
-    MCAPI bool hasConfirmedPlatformLockedContent() const;
+    MCNAPI bool hasConfirmedPlatformLockedContent() const;
 
-    MCAPI bool hasUserChangedSettings() const;
+    MCNAPI bool hasUserChangedSettings() const;
 
-    MCAPI bool isCreatingWorld() const;
+    MCNAPI bool isCreatingWorld() const;
 
     MCAPI bool isEditorWorld() const;
 
-    MCAPI bool isRandomSeedAllowed() const;
+    MCNAPI bool isRandomSeedAllowed() const;
 
-    MCFOLD void selectRealmToCreateOn(::std::string const& realmId);
+    MCNAPI void selectRealmToCreateOn(::std::string const& realmId);
 
-    MCAPI void setConfirmedPlatformLockedContent(bool value);
+    MCNAPI void setConfirmedPlatformLockedContent(bool value);
 
-    MCAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
+    MCNAPI void setWorldPreviewImagePath(::std::string const& worldPreviewImagePath);
 
-    MCAPI void unlockTemplateSettings();
+    MCNAPI void unlockTemplateSettings();
 
-    MCAPI void updateWorldPreviewImagePath();
+    MCNAPI void updateWorldPreviewImagePath();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::Router&                                             uiRouter,
         ::std::shared_ptr<::OreUI::WorldSettingsProvider_DEPRECATED> worldSettingsProvider,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>   resourceAllowList,
@@ -175,9 +175,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
 
-    MCAPI void $onStorageChanged();
+    MCNAPI void $onStorageChanged();
     // NOLINTEND
 };
 

@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onCloseEvent(::webrtc::Socket*, int);
+    MCNAPI void _onCloseEvent(::webrtc::Socket*, int);
 
     MCAPI void _onReadEvent(::webrtc::Socket*);
     // NOLINTEND

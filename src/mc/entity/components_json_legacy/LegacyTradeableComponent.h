@@ -44,52 +44,52 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TradeTable* _getTradeTable(::Actor& owner);
+    MCNAPI ::TradeTable* _getTradeTable(::Actor& owner);
 
-    MCAPI bool _refreshTrades(::Actor& owner);
+    MCNAPI bool _refreshTrades(::Actor& owner);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
+    MCNAPI ::UpdateTradePacket createDataPacket(::Actor& owner, ::ContainerID containerID);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot);
 
-    MCAPI ::std::string const& loadDisplayName(::Actor& owner);
+    MCNAPI ::std::string const& loadDisplayName(::Actor& owner);
 
-    MCAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
+    MCNAPI void notifyTrade(::Actor& owner, int recipeIndex, int numTrades);
 
-    MCAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
+    MCNAPI ::LegacyTradeableComponent& operator=(::LegacyTradeableComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void reloadComponent(::Actor& actor);
+    MCNAPI void reloadComponent(::Actor& actor);
 
-    MCAPI void restockAllRecipes(::Actor& owner);
+    MCNAPI void restockAllRecipes(::Actor& owner);
 
 #ifdef LL_PLAT_C
-    MCAPI void setDataFromPacket(::UpdateTradePacket const& packet);
+    MCNAPI void setDataFromPacket(::UpdateTradePacket const& packet);
 #endif
 
-    MCAPI void setOffers(::MerchantRecipeList& offers);
+    MCNAPI void setOffers(::MerchantRecipeList& offers);
 
-    MCAPI bool shouldConvertTrades(::Actor& owner) const;
+    MCNAPI bool shouldConvertTrades(::Actor& owner) const;
 
-    MCAPI bool shouldPersistTrades(::Actor& owner) const;
+    MCNAPI bool shouldPersistTrades(::Actor& owner) const;
 
-    MCAPI void updateTradeTier(::Actor& owner);
+    MCNAPI void updateTradeTier(::Actor& owner);
 
-    MCAPI ~LegacyTradeableComponent();
+    MCNAPI ~LegacyTradeableComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isUseNewTradeScreen(::Actor const& owner);
+    MCNAPI static bool isUseNewTradeScreen(::Actor const& owner);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

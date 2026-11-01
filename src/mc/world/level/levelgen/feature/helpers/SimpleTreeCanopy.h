@@ -51,7 +51,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::ITreeCanopy::BranchSize const&,

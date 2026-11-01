@@ -67,22 +67,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $hasEvents(void const* token) const;
+    MCNAPI bool $hasEvents(void const* token) const;
 
-    MCAPI ::GameControllerEvent $getNextEvent(void const* token);
+    MCNAPI ::GameControllerEvent $getNextEvent(void const* token);
 
-    MCAPI int $getId() const;
+    MCNAPI int $getId() const;
 
-    MCFOLD bool $isConnected() const;
+    MCNAPI bool $isConnected() const;
 
-    MCAPI bool $isAdequateController() const;
+    MCNAPI bool $isAdequateController() const;
 
-    MCAPI void $pairControllerToClient(::SubClientId clientId);
+    MCNAPI void $pairControllerToClient(::SubClientId clientId);
 
-    MCAPI void $unpairControllerFromClient();
+    MCNAPI void $unpairControllerFromClient();
 
-    MCAPI bool $isControllerPairedToClient() const;
+    MCNAPI bool $isControllerPairedToClient() const;
 
-    MCAPI ::std::optional<::SubClientId> $getPairedClientId() const;
+    MCNAPI ::std::optional<::SubClientId> $getPairedClientId() const;
     // NOLINTEND
 };

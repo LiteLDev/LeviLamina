@@ -9,7 +9,7 @@
 namespace mce::TextureHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::mce::FrameBufferAttachmentType frameBufferAttachmentTypeFromTextureFormat(::mce::TextureFormat textureFormat);
+MCNAPI ::mce::FrameBufferAttachmentType frameBufferAttachmentTypeFromTextureFormat(::mce::TextureFormat textureFormat);
 // NOLINTEND
 
 } // namespace mce::TextureHelper

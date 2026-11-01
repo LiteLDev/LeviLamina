@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnDigTriggerItemComponent(
+    MCNAPI explicit LegacyOnDigTriggerItemComponent(
         ::SharedTypes::v1_20_50::DiggerItemComponent const& diggerComponentData
     );
     // NOLINTEND
@@ -65,15 +65,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent const& diggerComponentData);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent const& diggerComponentData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

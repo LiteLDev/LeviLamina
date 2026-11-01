@@ -49,25 +49,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayerData(::OreUI::SocialPlayerData&&);
+    MCNAPI SocialPlayerData(::OreUI::SocialPlayerData&&);
 
-    MCAPI SocialPlayerData(::OreUI::SocialPlayerData const& data);
+    MCNAPI SocialPlayerData(::OreUI::SocialPlayerData const& data);
 
-    MCAPI ~SocialPlayerData();
+    MCNAPI ~SocialPlayerData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayerData&&);
+    MCNAPI void* $ctor(::OreUI::SocialPlayerData&&);
 
-    MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
+    MCNAPI void* $ctor(::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

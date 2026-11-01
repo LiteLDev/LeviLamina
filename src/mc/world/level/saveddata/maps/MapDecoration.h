@@ -62,11 +62,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool isRenderedOnFrame() const;
+    MCNAPI bool isRenderedOnFrame() const;
 #endif
 
-    MCAPI void setColor(::mce::Color const& Color);
+    MCNAPI void setColor(::mce::Color const& Color);
 
-    MCAPI void setLabel(::std::string const& Label);
+    MCNAPI void setLabel(::std::string const& Label);
     // NOLINTEND
 };

@@ -57,19 +57,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void enqueueStagedRecords(::DataLoadHelper& dataLoadHelper, ::Rotation rotation, ::Mirror mirror);
+    MCNAPI void enqueueStagedRecords(::DataLoadHelper& dataLoadHelper, ::Rotation rotation, ::Mirror mirror);
 
-    MCAPI void stageCapturedRecords(
+    MCNAPI void stageCapturedRecords(
         ::BlockPos const&                                 notifiedPos,
         ::StructureBlockPalette::BlockPositionData const& blockPositionData
     );
 
-    MCAPI ~StructureNeighborChangedQueueRestorer();
+    MCNAPI ~StructureNeighborChangedQueueRestorer();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

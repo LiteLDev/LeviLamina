@@ -44,29 +44,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string composeRoute(::std::string const& manifestId);
+    MCNAPI static ::std::string composeRoute(::std::string const& manifestId);
 
-    MCFOLD static bool isSelected();
+    MCNAPI static bool isSelected();
 
-    MCFOLD static bool isSupported();
+    MCNAPI static bool isSupported();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[24]> BASE_SCREEN_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[24]> BASE_SCREEN_ID();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[25]> LEGACY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[25]> LEGACY_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

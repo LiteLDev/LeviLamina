@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<int> _tryGetTimeFromTimeMarker(
+    MCNAPI ::std::optional<int> _tryGetTimeFromTimeMarker(
         ::WorldClock const&  clock,
         ::std::string const& timeMarkerName,
         ::CommandOutput&     output
@@ -93,13 +93,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::TimeCommand::InitProxy&& dependencies);
+    MCNAPI static void setup(::CommandRegistry& registry, ::TimeCommand::InitProxy&& dependencies);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

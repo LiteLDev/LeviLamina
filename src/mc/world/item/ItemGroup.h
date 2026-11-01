@@ -24,11 +24,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ItemGroup(::ItemInstance const& itemInstance);
+    MCNAPI explicit ItemGroup(::ItemInstance const& itemInstance);
 
-    MCAPI ItemGroup(::ItemInstance const& itemInstance, int count);
+    MCNAPI ItemGroup(::ItemInstance const& itemInstance, int count);
 
-    MCAPI ::ItemInstance getItemInstanceCopy() const;
+    MCNAPI ::ItemInstance getItemInstanceCopy() const;
 #endif
     // NOLINTEND
 
@@ -36,9 +36,9 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ItemInstance const& itemInstance);
+    MCNAPI void* $ctor(::ItemInstance const& itemInstance);
 
-    MCAPI void* $ctor(::ItemInstance const& itemInstance, int count);
+    MCNAPI void* $ctor(::ItemInstance const& itemInstance, int count);
 #endif
     // NOLINTEND
 };

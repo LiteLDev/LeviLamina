@@ -108,97 +108,89 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit AppPlatformWindows(::std::unique_ptr<::IAppPlatformImpl> impl);
+    MCNAPI explicit AppPlatformWindows(::std::unique_ptr<::IAppPlatformImpl> impl);
 #endif
 
-    MCAPI uint64 _findHighPerformanceThreadsCount() const;
+    MCNAPI uint64 _findHighPerformanceThreadsCount() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
+    MCNAPI static ::std::string const& EXPERIMENTS_ACTIVE_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::unique_ptr<::IAppPlatformImpl> impl);
+    MCNAPI void* $ctor(::std::unique_ptr<::IAppPlatformImpl> impl);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $getTotalHardwareThreadsCount() const;
+    MCNAPI uint64 $getTotalHardwareThreadsCount() const;
 
-    MCAPI uint64 $getHighPerformanceThreadsCount() const;
+    MCNAPI uint64 $getHighPerformanceThreadsCount() const;
 
-    MCAPI void $initializeGraphicsDeviceTier();
+    MCNAPI void $initializeGraphicsDeviceTier();
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $getPlatformTempPath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
+    MCNAPI ::Core::PathBuffer<::std::string> $copyImportFileToTempFolder(::Core::Path const& filePath);
 
-    MCAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
+    MCNAPI uint64 $calculateAvailableDiskFreeSpace(::Core::Path const& rootPath);
 
-    MCFOLD bool $allowContentLogWriteToDisk();
+    MCNAPI bool $allowContentLogWriteToDisk();
 
-    MCFOLD bool $devHotReloadRenderResources() const;
+    MCNAPI bool $devHotReloadRenderResources() const;
 
-    MCAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
+    MCNAPI void $queueForMainThread_DEPRECATED(::std::function<void()> callback);
 
-    MCFOLD ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
+    MCNAPI ::MPMCQueue<::std::function<void()>>& $getMainThreadQueue();
 
-    MCFOLD bool $canAppSelfTerminate() const;
+    MCNAPI bool $canAppSelfTerminate() const;
 
-    MCFOLD bool $getPlatformTTSExists() const;
+    MCNAPI bool $getPlatformTTSExists() const;
 
-    MCAPI bool $getPlatformTTSEnabled() const;
+    MCNAPI bool $getPlatformTTSEnabled() const;
 
-    MCAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
+    MCNAPI void $registerExperimentsActiveCrashDump(::std::vector<::std::string> const& activeExperiments) const;
 
-    MCAPI bool $is24HourTimeFormat() const;
+    MCNAPI bool $is24HourTimeFormat() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getCurrentStoragePath() const;
 
-    MCFOLD ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getExternalStoragePath() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
-#else // LL_PLAT_C
-    MCFOLD ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
-#endif
+    MCNAPI ::Core::PathBuffer<::std::string> $_getInternalStoragePath() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
-#else // LL_PLAT_C
-    MCFOLD ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
-#endif
+    MCNAPI ::Core::PathBuffer<::std::string> $_getUserdataPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> $_getSharedDataPath() const;
 
-    MCAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
+    MCNAPI ::Core::PathBuffer<::std::string> $getPackagedShaderCachePath();
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string $getSystemLocale() const;
+    MCNAPI ::std::string $getSystemLocale() const;
 
-    MCFOLD void $collectGraphicsHardwareDetails();
+    MCNAPI void $collectGraphicsHardwareDetails();
 
-    MCFOLD bool $supportsMSAA() const;
+    MCNAPI bool $supportsMSAA() const;
 
-    MCFOLD bool $supportsAlbumExport() const;
+    MCNAPI bool $supportsAlbumExport() const;
 
-    MCFOLD bool $supportsPDFExport() const;
+    MCNAPI bool $supportsPDFExport() const;
 
-    MCFOLD ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
+    MCNAPI ::std::shared_ptr<::PDFWriter> $createPlatformPDFWriter();
 
-    MCFOLD bool $isTablet() const;
+    MCNAPI bool $isTablet() const;
 
-    MCAPI double $getTimeSFromProcessStart() const;
+    MCNAPI double $getTimeSFromProcessStart() const;
 
-    MCAPI void $showXboxLiveUserSettings();
+    MCNAPI void $showXboxLiveUserSettings();
 #endif
 
 

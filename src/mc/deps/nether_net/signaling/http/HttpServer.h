@@ -43,9 +43,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onConnectionClosed(::NetherNet::HttpConnection* conn);
+    MCNAPI void _onConnectionClosed(::NetherNet::HttpConnection* conn);
 
-    MCAPI void _onListenReadEvent(::webrtc::Socket*);
+    MCNAPI void _onListenReadEvent(::webrtc::Socket*);
     // NOLINTEND
 };
 

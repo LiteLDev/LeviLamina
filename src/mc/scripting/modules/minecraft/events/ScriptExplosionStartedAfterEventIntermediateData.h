@@ -34,14 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptExplosionStartedAfterEventIntermediateData(::ExplosionStartedEvent const& eventData, ::Actor const* source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Actor const* source);
+    MCNAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Actor const* source);
     // NOLINTEND
 };
 

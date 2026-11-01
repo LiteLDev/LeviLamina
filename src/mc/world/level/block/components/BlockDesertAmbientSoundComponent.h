@@ -12,6 +12,6 @@ struct BlockDesertAmbientSoundComponent {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canPlaySound(::BlockSource const& region, ::BlockPos const& pos);
+    MCNAPI static bool canPlaySound(::BlockSource const& region, ::BlockPos const& pos);
     // NOLINTEND
 };

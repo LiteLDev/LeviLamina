@@ -116,14 +116,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
+    MCNAPI ::BlockComponentStorage::ComponentBase*
+    _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
 
-    MCAPI ~BlockComponentStorage();
+    MCNAPI ~BlockComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

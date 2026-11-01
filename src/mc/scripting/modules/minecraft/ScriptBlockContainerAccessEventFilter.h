@@ -31,14 +31,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptBlockContainerAccessEventFilterData const& data) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

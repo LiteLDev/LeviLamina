@@ -15,7 +15,7 @@ namespace Scripting { struct InvalidArgumentError; }
 namespace ScriptModuleMinecraft::ScriptBiomeFilterUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::ScriptModuleMinecraft::ScriptBiomeFilterUtils::BiomeFilterInclusion filterIncludesBiome(
+MCNAPI ::ScriptModuleMinecraft::ScriptBiomeFilterUtils::BiomeFilterInclusion filterIncludesBiome(
     ::Biome const&                              biome,
     ::BiomeRegistry const&                      registry,
     ::std::unordered_set<::Biome const*> const& includeBiomes,
@@ -26,7 +26,7 @@ MCAPI ::ScriptModuleMinecraft::ScriptBiomeFilterUtils::BiomeFilterInclusion filt
         biomeInclusionCache
 );
 
-MCAPI ::std::optional<::Scripting::InvalidArgumentError> populateBiomes(
+MCNAPI ::std::optional<::Scripting::InvalidArgumentError> populateBiomes(
     ::BiomeRegistry const&                registry,
     ::std::vector<::std::string>          inBiomeNames,
     ::std::unordered_set<::Biome const*>& outBiomes

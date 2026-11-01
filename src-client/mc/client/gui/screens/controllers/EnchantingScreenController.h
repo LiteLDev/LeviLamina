@@ -50,22 +50,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnchantingScreenController(
+    MCNAPI EnchantingScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI ::ui::ViewRequest _enchantmentClicked(int option);
+    MCNAPI ::ui::ViewRequest _enchantmentClicked(int option);
 
-    MCAPI ::ui::ViewRequest _onOptionButtonSelected(::UIPropertyBag* bag);
+    MCNAPI ::ui::ViewRequest _onOptionButtonSelected(::UIPropertyBag* bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -76,16 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
     // NOLINTEND
 };

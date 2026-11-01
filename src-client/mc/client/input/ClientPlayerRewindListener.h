@@ -30,30 +30,30 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::EventResult _applyCorrectionToTick(
+    MCNAPI static ::EventResult _applyCorrectionToTick(
         uint64                                   tick,
         ::std::unique_ptr<::IMovementCorrection> correction,
         ::Actor&                                 actorToRewind,
         ::ReplayStateComponent&                  replay
     );
 
-    MCAPI static ::Actor* _getRewindableActor(::Player& player, ::RewindType rewindType);
+    MCNAPI static ::Actor* _getRewindableActor(::Player& player, ::RewindType rewindType);
 
-    MCAPI static ::EventResult
+    MCNAPI static ::EventResult
     _onCorrectPlayerMovePredictionPacket(::Player& player, ::CorrectPlayerMovePredictionPacket const& packet);
 
-    MCAPI static ::EventResult _onPlayerMovePacketReceived(::Player& player, ::MovePlayerPacket const& packet);
+    MCNAPI static ::EventResult _onPlayerMovePacketReceived(::Player& player, ::MovePlayerPacket const& packet);
 
-    MCAPI static ::EventResult
+    MCNAPI static ::EventResult
     _onUpdateAttributesPacketReceived(::Actor& actor, ::std::shared_ptr<::UpdateAttributesPacket> packet);
 
-    MCAPI static ::ReplayStateComponent* tryGetReplayStateComponentForCorrection(::EntityContext& entity, uint64 tick);
+    MCNAPI static ::ReplayStateComponent* tryGetReplayStateComponentForCorrection(::EntityContext& entity, uint64 tick);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
+    MCNAPI ::EventResult $onCameraSetPlayerRot(::Player& player, ::Vec2 const& rotation);
     // NOLINTEND
 
 public:

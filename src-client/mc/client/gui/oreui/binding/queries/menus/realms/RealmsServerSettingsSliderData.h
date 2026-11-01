@@ -31,19 +31,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsServerSettingsSliderData(
+    MCNAPI RealmsServerSettingsSliderData(
         ::std::string                                name,
         ::OreUI::Detail::IPropertyObject*            parent,
         ::Realms::ServerSettings::SliderValue const& values
     );
 
-    MCAPI void update(::Realms::ServerSettings::SliderValue const& values);
+    MCNAPI void update(::Realms::ServerSettings::SliderValue const& values);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                name,
         ::OreUI::Detail::IPropertyObject*            parent,
         ::Realms::ServerSettings::SliderValue const& values

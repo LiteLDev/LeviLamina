@@ -71,7 +71,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI OceanRuinPiece(
+        MCNAPI OceanRuinPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -85,7 +85,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -99,11 +99,11 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::StructurePieceType $getType() const;
+        MCNAPI ::StructurePieceType $getType() const;
 
-        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $_handleDataMarker(
+        MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
@@ -118,7 +118,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addPiece(
+    MCNAPI static void _addPiece(
         ::Bedrock::NotNullNonOwnerPtr<::StructureManager>   structureManager,
         ::BlockPos const&                                   position,
         ::Rotation const&                                   rotation,
@@ -133,16 +133,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[4]> bigRuinsMossy();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsBrick();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsBrick();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsCracked();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsCracked();
 
-    MCAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsMossy();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string_view[9]> ruinsMossy();
     // NOLINTEND
 };

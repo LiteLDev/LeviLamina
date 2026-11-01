@@ -10,7 +10,7 @@ namespace PotentSulfurConstants { struct GeyserSizeParams; }
 namespace PotentSulfurConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<::PotentSulfurConstants::GeyserSizeParams, 4> const& GEYSER_SIZES();
+MCNAPI ::std::array<::PotentSulfurConstants::GeyserSizeParams, 4> const& GEYSER_SIZES();
 // NOLINTEND
 
 } // namespace PotentSulfurConstants

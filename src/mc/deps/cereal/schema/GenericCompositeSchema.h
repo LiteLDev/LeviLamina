@@ -52,42 +52,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int iterate(
+    MCNAPI int iterate(
         ::entt::meta_type const& type,
         ::entt::meta_any&        src,
         ::entt::meta_any&        dst,
         ::cereal::MetaVisitor&   visitor
     ) const;
 
-    MCAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor);
+    MCNAPI static bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::SchemaDescription
+    MCNAPI ::cereal::SchemaDescription
     $makeDescription(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const;
 
-    MCAPI void $doLoad(
+    MCNAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
 
-    MCAPI void $doSave(
+    MCNAPI void $doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
 
-    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
 
     // NOLINTEND

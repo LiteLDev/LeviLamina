@@ -68,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::ItemStackRequestPacketData::RequestData const&) const;
+    MCNAPI bool operator==(::ItemStackRequestPacketData::RequestData const&) const;
     // NOLINTEND
 };
 

@@ -59,28 +59,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SplineInstruction(::CameraInstructionOptions::SplineInstruction const&);
+    MCNAPI SplineInstruction(::CameraInstructionOptions::SplineInstruction const&);
 
-    MCAPI ::CameraInstructionOptions::SplineInstruction& operator=(::CameraInstructionOptions::SplineInstruction&&);
+    MCNAPI ::CameraInstructionOptions::SplineInstruction& operator=(::CameraInstructionOptions::SplineInstruction&&);
 
-    MCAPI ::CameraInstructionOptions::SplineInstruction&
+    MCNAPI ::CameraInstructionOptions::SplineInstruction&
     operator=(::CameraInstructionOptions::SplineInstruction const&);
 
-    MCAPI bool operator==(::CameraInstructionOptions::SplineInstruction const& other) const;
+    MCNAPI bool operator==(::CameraInstructionOptions::SplineInstruction const& other) const;
 
-    MCAPI ~SplineInstruction();
+    MCNAPI ~SplineInstruction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CameraInstructionOptions::SplineInstruction const&);
+    MCNAPI void* $ctor(::CameraInstructionOptions::SplineInstruction const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WellKnownBiomeTags(
+    MCNAPI explicit WellKnownBiomeTags(
         ::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry
     );
     // NOLINTEND
@@ -65,70 +65,70 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& BIRCH_TAG_HASH();
+    MCNAPI static ::HashedString const& BIRCH_TAG_HASH();
 
-    MCAPI static ::HashedString const& COLD_TAG_HASH();
+    MCNAPI static ::HashedString const& COLD_TAG_HASH();
 
-    MCAPI static ::HashedString const& DEEP_TAG_HASH();
+    MCNAPI static ::HashedString const& DEEP_TAG_HASH();
 
-    MCAPI static ::HashedString const& DESERT_TAG_HASH();
+    MCNAPI static ::HashedString const& DESERT_TAG_HASH();
 
-    MCAPI static ::HashedString const& EXTREME_HILLS_TAG_HASH();
+    MCNAPI static ::HashedString const& EXTREME_HILLS_TAG_HASH();
 
-    MCAPI static ::HashedString const& FAST_FISHING_TAG_HASH();
+    MCNAPI static ::HashedString const& FAST_FISHING_TAG_HASH();
 
-    MCAPI static ::HashedString const& FLOWER_FOREST_TAG_HASH();
+    MCNAPI static ::HashedString const& FLOWER_FOREST_TAG_HASH();
 
-    MCAPI static ::HashedString const& FOREST_GEN_TAG_HASH();
+    MCNAPI static ::HashedString const& FOREST_GEN_TAG_HASH();
 
-    MCAPI static ::HashedString const& FOREST_TAG_HASH();
+    MCNAPI static ::HashedString const& FOREST_TAG_HASH();
 
-    MCAPI static ::HashedString const& FROZEN_TAG_HASH();
+    MCNAPI static ::HashedString const& FROZEN_TAG_HASH();
 
-    MCAPI static ::HashedString const& HIGH_SEAS_TAG_HASH();
+    MCNAPI static ::HashedString const& HIGH_SEAS_TAG_HASH();
 
-    MCAPI static ::HashedString const& HILLS_TAG_HASH();
+    MCNAPI static ::HashedString const& HILLS_TAG_HASH();
 
-    MCAPI static ::HashedString const& ICE_PLAINS_TAG_HASH();
+    MCNAPI static ::HashedString const& ICE_PLAINS_TAG_HASH();
 
-    MCAPI static ::HashedString const& ICE_TAG_HASH();
+    MCNAPI static ::HashedString const& ICE_TAG_HASH();
 
-    MCAPI static ::HashedString const& JUNGLE_TAG_HASH();
+    MCNAPI static ::HashedString const& JUNGLE_TAG_HASH();
 
-    MCAPI static ::HashedString const& MEADOW_TAG_HASH();
+    MCNAPI static ::HashedString const& MEADOW_TAG_HASH();
 
-    MCAPI static ::HashedString const& MESA_TAG_HASH();
+    MCNAPI static ::HashedString const& MESA_TAG_HASH();
 
-    MCAPI static ::HashedString const& MOUNTAIN_TAG_HASH();
+    MCNAPI static ::HashedString const& MOUNTAIN_TAG_HASH();
 
-    MCAPI static ::HashedString const& MUTATED_TAG_HASH();
+    MCNAPI static ::HashedString const& MUTATED_TAG_HASH();
 
-    MCAPI static ::HashedString const& NO_LEGACY_WORLDGEN_TAG_HASH();
+    MCNAPI static ::HashedString const& NO_LEGACY_WORLDGEN_TAG_HASH();
 
-    MCAPI static ::HashedString const& OCEAN_TAG_HASH();
+    MCNAPI static ::HashedString const& OCEAN_TAG_HASH();
 
-    MCAPI static ::HashedString const& OVERWORLD_TAG_HASH();
+    MCNAPI static ::HashedString const& OVERWORLD_TAG_HASH();
 
-    MCAPI static ::HashedString const& PALE_GARDEN_TAG_HASH();
+    MCNAPI static ::HashedString const& PALE_GARDEN_TAG_HASH();
 
-    MCAPI static ::HashedString const& PLAINS_TAG_HASH();
+    MCNAPI static ::HashedString const& PLAINS_TAG_HASH();
 
-    MCAPI static ::HashedString const& RARE_TAG_HASH();
+    MCNAPI static ::HashedString const& RARE_TAG_HASH();
 
-    MCAPI static ::HashedString const& SLIME_TAG_HASH();
+    MCNAPI static ::HashedString const& SLIME_TAG_HASH();
 
-    MCAPI static ::HashedString const& SURFACE_MINESHAFT_TAG_HASH();
+    MCNAPI static ::HashedString const& SURFACE_MINESHAFT_TAG_HASH();
 
-    MCAPI static ::HashedString const& SWAMP_TAG_HASH();
+    MCNAPI static ::HashedString const& SWAMP_TAG_HASH();
 
-    MCAPI static ::HashedString const& SWAMP_WATER_HUGE_MUSHROOM_TAG_HASH();
+    MCNAPI static ::HashedString const& SWAMP_WATER_HUGE_MUSHROOM_TAG_HASH();
 
-    MCAPI static ::HashedString const& TAIGA_TAG_HASH();
+    MCNAPI static ::HashedString const& TAIGA_TAG_HASH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry);
+    MCNAPI void* $ctor(::TagRegistry<::IDType<::BiomeTagIDType>, ::IDType<::BiomeTagSetIDType>>& tagRegistry);
     // NOLINTEND
 };

@@ -47,33 +47,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _poofParticles(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void _poofParticles(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
-    MCFOLD bool $canBeOriginalSurface(bool) const;
+    MCNAPI bool $canBeOriginalSurface(bool) const;
 
-    MCAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $_lightUpBlock(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void $_unlightBlock(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
 
     // NOLINTEND
@@ -81,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

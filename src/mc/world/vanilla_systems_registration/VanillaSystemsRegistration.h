@@ -20,7 +20,7 @@ namespace VanillaSystemsRegistration {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
+MCNAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
     bool                            isClientSide,
     bool                            connectedToThirdPartyServer,
     ::PlayerMovementSettings const& movementSettings,
@@ -29,31 +29,31 @@ MCAPI ::VanillaSystemsRegistration::RegistrationOptions getDefault(
 );
 #endif
 
-MCAPI void registerActorAiStepSystems(
+MCNAPI void registerActorAiStepSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void
+MCNAPI void
 registerActorMoveSystems(::EntitySystems& systems, ::VanillaSystemsRegistration::RegistrationOptions const& options);
 
-MCAPI void registerActorMovementTickSystems(
+MCNAPI void registerActorMovementTickSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerActorNormalTickSystems(
+MCNAPI void registerActorNormalTickSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 #ifdef LL_PLAT_C
-MCAPI void registerBlockPosTrackerSystems(
+MCNAPI void registerBlockPosTrackerSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerClientVariableTickingSystems(
+MCNAPI void registerClientVariableTickingSystems(
     ::EntitySystems& systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const&,
     ::std::vector<::TickingSystemWithInfo> systems20Hz,
@@ -61,29 +61,29 @@ MCAPI void registerClientVariableTickingSystems(
     ::std::vector<::TickingSystemWithInfo> systems1Hz
 );
 
-MCAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerEditorPauseFilterSystems(::EntitySystems& systemRegistry);
 #endif
 
-MCAPI void registerMovementInputSystems(
+MCNAPI void registerMovementInputSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
 #ifdef LL_PLAT_C
-MCAPI void registerSharedVanillaPlayerInteractionSystems(
+MCNAPI void registerSharedVanillaPlayerInteractionSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 
-MCAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerTickFilterSystems(::EntitySystems& systemRegistry);
 
-MCAPI void registerVanillaClientTickingSystems(
+MCNAPI void registerVanillaClientTickingSystems(
     ::EntitySystems&                                         systemRegistry,
     ::VanillaSystemsRegistration::RegistrationOptions const& options
 );
 #endif
 
-MCAPI void registerVanillaServerTickingSystems(
+MCNAPI void registerVanillaServerTickingSystems(
     ::EntitySystems& systemRegistry,
     ::Bedrock::NotNullNonOwnerPtr<::ILevel const> const,
     ::VanillaSystemsRegistration::RegistrationOptions const& options

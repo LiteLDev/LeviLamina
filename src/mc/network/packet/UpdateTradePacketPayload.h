@@ -32,12 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
+    MCNAPI UpdateTradePacketPayload(::UpdateTradePacketPayload const& other);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UpdateTradePacketPayload const& other);
+    MCNAPI void* $ctor(::UpdateTradePacketPayload const& other);
     // NOLINTEND
 };

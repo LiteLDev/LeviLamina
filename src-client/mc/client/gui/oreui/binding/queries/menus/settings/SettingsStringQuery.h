@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SettingsStringQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
+    MCNAPI SettingsStringQuery(::OreUI::ClientDependencies const& client, ::std::string const& id);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& id);
     // NOLINTEND
 };
 

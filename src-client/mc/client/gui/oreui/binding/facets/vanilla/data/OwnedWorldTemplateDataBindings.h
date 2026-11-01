@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canBeRated();
+    MCNAPI bool canBeRated();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreUI::OwnedWorldTemplateDataBindings fromOwnedWorldTemplateData(
+    MCNAPI static ::OreUI::OwnedWorldTemplateDataBindings fromOwnedWorldTemplateData(
         ::World::OwnedWorldTemplateData const&                     ownedWorldTemplateData,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );

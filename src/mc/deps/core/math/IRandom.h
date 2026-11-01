@@ -57,7 +57,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
+    MCNAPI static float const& ChanceFloatGreaterThan_MinExcessiveImprobability();
     // NOLINTEND
 
 public:

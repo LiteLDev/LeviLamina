@@ -42,16 +42,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BeaconRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI explicit BeaconRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     tessellateAlphaBeamSegment(::Tessellator& t, ::Vec3 const& pos, float height, ::mce::Color const& c, float time);
 
-    MCAPI static void tessellateOpaqueBeamSegment(
+    MCNAPI static void tessellateOpaqueBeamSegment(
         ::Tessellator&      t,
         ::Vec3 const&       pos,
         float               height,
@@ -65,12 +65,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

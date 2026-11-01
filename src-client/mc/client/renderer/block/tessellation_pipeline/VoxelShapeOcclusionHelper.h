@@ -10,7 +10,7 @@ class Block;
 namespace ClientBlockPipeline::VoxelShapeOcclusionHelper {
 // functions
 // NOLINTBEGIN
-MCAPI bool shouldRenderFace(::Block const& currentBlock, ::Block const& neighborBlock, uchar neighborDirection);
+MCNAPI bool shouldRenderFace(::Block const& currentBlock, ::Block const& neighborBlock, uchar neighborDirection);
 // NOLINTEND
 
 } // namespace ClientBlockPipeline::VoxelShapeOcclusionHelper

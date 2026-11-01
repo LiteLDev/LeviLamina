@@ -38,23 +38,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     TrialUpsellScreenController(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, bool isNewWorld, bool timeExpired);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleLicenseChanged();
+    MCNAPI void $handleLicenseChanged();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

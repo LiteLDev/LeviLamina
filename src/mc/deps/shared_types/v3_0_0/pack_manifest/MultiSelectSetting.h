@@ -31,32 +31,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiSelectSetting(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
+    MCNAPI MultiSelectSetting(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const& other) const;
+    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const& other) const;
 
-    MCAPI ~MultiSelectSetting();
+    MCNAPI ~MultiSelectSetting();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

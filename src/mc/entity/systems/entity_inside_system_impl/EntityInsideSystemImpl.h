@@ -31,7 +31,7 @@ struct WebBlockFlag;
 namespace EntityInsideSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickPowderSnowMovementSlowdown(
+MCNAPI void tickPowderSnowMovementSlowdown(
     ::StrictEntityContext const&                                        entity,
     ::InsideBlockWithPosAndBlockComponent<::PowderSnowBlockFlag> const& insidePowderSnowBlockComponent,
     ::BlockMovementSlowdownMultiplierComponent&                         blockMovementSlowdownMultiplierComponent,
@@ -52,7 +52,7 @@ MCAPI void tickPowderSnowMovementSlowdown(
         ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag>> const& modifier
 );
 
-MCAPI void tickWebMovementSlowdown(
+MCNAPI void tickWebMovementSlowdown(
     ::StrictEntityContext const&                                 entity,
     ::InsideBlockWithPosAndBlockComponent<::WebBlockFlag> const& insideWebBlockComponent,
     ::BlockMovementSlowdownMultiplierComponent&                  blockMovementSlowdownMultiplierComponent,

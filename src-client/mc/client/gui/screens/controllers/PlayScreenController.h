@@ -123,60 +123,60 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayScreenController(
+    MCNAPI PlayScreenController(
         ::std::shared_ptr<::PlayScreenModel> model,
         ::PlayScreenDefaultTab               tab,
         ::ui::ScreenTechStackSelector&       screenTechStackSelector,
         ::std::string const&                 dirtyLevelId
     );
 
-    MCAPI bool _checkIfPingIsLoading(int collectionIndex);
+    MCNAPI bool _checkIfPingIsLoading(int collectionIndex);
 
-    MCAPI ::ui::ViewRequest _convertLegacyWorld(::LegacyWorldInfo const& world);
+    MCNAPI ::ui::ViewRequest _convertLegacyWorld(::LegacyWorldInfo const& world);
 
-    MCAPI void _displayRealmsFailedToJoinModal(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void _displayRealmsFailedToJoinModal(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI ::std::string _getCrossPlatformFriendsGridWarningText();
+    MCNAPI ::std::string _getCrossPlatformFriendsGridWarningText();
 
-    MCAPI ::std::string _getFriendsGridWarningText();
+    MCNAPI ::std::string _getFriendsGridWarningText();
 
-    MCAPI ::std::string _getGeneralMultiplayerWarningText();
+    MCNAPI ::std::string _getGeneralMultiplayerWarningText();
 
-    MCAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
+    MCNAPI ::ui::ViewRequest _handleStartNetworkItem(int index, ::NetworkWorldType nwt);
 
-    MCAPI void _navigatePlayScreenTechStack(::PlayScreenDefaultTab tab);
+    MCNAPI void _navigatePlayScreenTechStack(::PlayScreenDefaultTab tab);
 
-    MCAPI void _navigateToCreateWorldScreen();
+    MCNAPI void _navigateToCreateWorldScreen();
 
-    MCAPI void _onMCTokenUpdated(::ServicesManager*);
+    MCNAPI void _onMCTokenUpdated(::ServicesManager*);
 
-    MCAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
+    MCNAPI ::Social::PermissionCheckResult _parentalControlsDialogCheck();
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _setOwnershipVerificationAnimationVisibleState();
+    MCNAPI void _setOwnershipVerificationAnimationVisibleState();
 
-    MCAPI bool _shouldShowLockIcon(::LocalWorldInfo const& world) const;
+    MCNAPI bool _shouldShowLockIcon(::LocalWorldInfo const& world) const;
 
-    MCAPI ::ui::ViewRequest _startLocalWorld(::LocalWorldInfo const& world);
+    MCNAPI ::ui::ViewRequest _startLocalWorld(::LocalWorldInfo const& world);
 
-    MCAPI ::ui::ViewRequest _startNetworkWorld(::NetworkWorldInfo const& world, ::NetworkWorldType worldType);
+    MCNAPI ::ui::ViewRequest _startNetworkWorld(::NetworkWorldInfo const& world, ::NetworkWorldType worldType);
 
-    MCAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
+    MCNAPI bool _worldHasHeader(::NetworkWorldType type, int collectionIndex);
 
-    MCAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
+    MCNAPI bool _worldHasImage(::NetworkWorldType type, int collectionIndex);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName);
+    MCNAPI static ::NetworkWorldType _getNetworkWorldTypeFromCollection(::std::string const& collectionName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::PlayScreenModel> model,
         ::PlayScreenDefaultTab               tab,
         ::ui::ScreenTechStackSelector&       screenTechStackSelector,
@@ -187,28 +187,28 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI void $_registerEventHandlers();
+    MCNAPI void $_registerEventHandlers();
     // NOLINTEND
 };

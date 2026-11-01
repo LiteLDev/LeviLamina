@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     GroupInfoComponent(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
+    MCNAPI void* $ctor(::std::string_view id, ::std::string_view name, ::std::optional<::std::string> description);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCNAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 
 public:

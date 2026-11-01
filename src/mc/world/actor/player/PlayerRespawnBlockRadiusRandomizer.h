@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerRespawnBlockRadiusRandomizer(uint spawnRadius, ::XoroshiroRandom& random);
+    MCNAPI PlayerRespawnBlockRadiusRandomizer(uint spawnRadius, ::XoroshiroRandom& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
+    MCNAPI void* $ctor(uint spawnRadius, ::XoroshiroRandom& random);
     // NOLINTEND
 };

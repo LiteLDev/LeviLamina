@@ -45,13 +45,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCNAPI explicit DiggerItemComponent(::SharedTypes::v1_20_50::DiggerItemComponent component);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -61,7 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::DiggerItemComponent component);
     // NOLINTEND
 
 public:

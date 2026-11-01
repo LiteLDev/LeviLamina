@@ -30,6 +30,6 @@ public:
     MCAPI bool
     _shouldRenderFace(::BlockPos const& neighborPos, uchar face, ::AABB const& shape, ::BlockPos const& pos) const;
 
-    MCAPI void _updateRenderFace(::Block const& block, ::BlockPos const& p, ::AABB const& shape, uchar face);
+    MCNAPI void _updateRenderFace(::Block const& block, ::BlockPos const& p, ::AABB const& shape, uchar face);
     // NOLINTEND
 };

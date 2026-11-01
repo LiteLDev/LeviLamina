@@ -13,9 +13,9 @@ struct TickingSystemWithInfo;
 namespace WaterSinkInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createWaterSinkInputSystem();
+MCNAPI ::TickingSystemWithInfo createWaterSinkInputSystem();
 
-MCAPI void doInWaterSinkInputSystem(
+MCNAPI void doInWaterSinkInputSystem(
     ::MovementAbilitiesComponent const& abilitiesComponent,
     ::MoveInputComponent const&         moveInputComponent,
     ::StateVectorComponent&             stateVectorComponent

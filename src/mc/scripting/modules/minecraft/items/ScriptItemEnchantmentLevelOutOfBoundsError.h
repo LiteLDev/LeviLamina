@@ -20,7 +20,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentLevelOutOfBoundsError(
+    MCNAPI ScriptItemEnchantmentLevelOutOfBoundsError(
         ::std::string const& details,
         ::std::string const& typeName,
         int                  level,
@@ -31,13 +31,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
+    MCNAPI void* $ctor(::std::string const& details, ::std::string const& typeName, int level, int maxLevel);
     // NOLINTEND
 };
 

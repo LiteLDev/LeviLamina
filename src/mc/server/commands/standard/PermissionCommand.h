@@ -54,13 +54,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PermissionsFile*& mPermissionsFile();
+    MCNAPI static ::PermissionsFile*& mPermissionsFile();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

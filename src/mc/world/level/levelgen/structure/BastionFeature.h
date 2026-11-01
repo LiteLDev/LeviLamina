@@ -68,21 +68,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BastionFeature(uint seed, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI BastionFeature(uint seed, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint seed, ::BaseGameVersion const& baseGameVersion);
+    MCNAPI void* $ctor(uint seed, ::BaseGameVersion const& baseGameVersion);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
+    MCNAPI ::gsl::span<::BiomeIdType const> $getRequiredBiomes() const;
 
-    MCAPI bool $getNearestGeneratedFeature(
+    MCNAPI bool $getNearestGeneratedFeature(
         ::Dimension&                           dimension,
         ::BiomeSource const&                   biomeSource,
         ::BlockPos const&                      origin,
@@ -92,7 +92,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCAPI bool $isFeatureChunk(
+    MCNAPI bool $isFeatureChunk(
         ::BiomeSource const& biomeSource,
         ::Random&            random,
         ::ChunkPos const&    chunkPos,
@@ -101,9 +101,9 @@ public:
         ::Dimension const&
     );
 
-    MCFOLD bool $shouldPostProcessMobs() const;
+    MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& generator,
         ::BiomeSource const&,
         ::Random&         random,
@@ -117,6 +117,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

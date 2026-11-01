@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerFormScreenController(
+    MCNAPI ServerFormScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::optional<uint>                    formId,
         ::std::string const&                     formData,
@@ -57,15 +57,15 @@ public:
         bool                                     unhideTab
     );
 
-    MCAPI void _createScreen(::std::string const& formJson);
+    MCNAPI void _createScreen(::std::string const& formJson);
 
-    MCAPI ::std::string _parseRawText(::Json::Value const& value) const;
+    MCNAPI ::std::string _parseRawText(::Json::Value const& value) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::optional<uint>                    formId,
         ::std::string const&                     formData,
@@ -77,10 +77,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification event);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification event);
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
     // NOLINTEND
 };

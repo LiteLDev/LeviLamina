@@ -50,12 +50,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldVerificationProgressHandler(
+    MCNAPI WorldVerificationProgressHandler(
         ::std::function<::std::unique_ptr<::PackAccessStrategy>()> createAccess,
         ::std::function<void(::WorldVerificationResult)>           callback
     );
 
-    MCAPI WorldVerificationProgressHandler(
+    MCNAPI WorldVerificationProgressHandler(
         ::std::function<::std::unique_ptr<::PackAccessStrategy>()> createAccess,
         ::std::unique_ptr<::PackAccessStrategy>                    levelAccess,
         ::std::function<void(::WorldVerificationResult)>           callback
@@ -65,12 +65,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::std::unique_ptr<::PackAccessStrategy>()> createAccess,
         ::std::function<void(::WorldVerificationResult)>           callback
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::std::unique_ptr<::PackAccessStrategy>()> createAccess,
         ::std::unique_ptr<::PackAccessStrategy>                    levelAccess,
         ::std::function<void(::WorldVerificationResult)>           callback
@@ -80,10 +80,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCFOLD ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
     // NOLINTEND
 };

@@ -14,12 +14,12 @@ class SpawnChecks {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool canSpawnNaturally(::ILevel const& level);
+    MCNAPI static bool canSpawnNaturally(::ILevel const& level);
 
     MCAPI static bool canSpawnPigZombieFromPortal(::Dimension const& dimension, ::IRandom& random);
 
-    MCAPI static bool canSpawnSkeletonTrap(::ILevel const& level, ::IRandom& random);
+    MCNAPI static bool canSpawnSkeletonTrap(::ILevel const& level, ::IRandom& random);
 
-    MCAPI static bool canSpawnWanderingTrader(::ServerLevel const& level);
+    MCNAPI static bool canSpawnWanderingTrader(::ServerLevel const& level);
     // NOLINTEND
 };

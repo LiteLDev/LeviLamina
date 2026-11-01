@@ -46,7 +46,7 @@ public:
         ::std::optional<::std::string>     filteredTitleText
     );
 
-    MCAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
+    MCNAPI ::SetTitlePacketPayload& operator=(::SetTitlePacketPayload&&);
 
     MCAPI ~SetTitlePacketPayload();
     // NOLINTEND

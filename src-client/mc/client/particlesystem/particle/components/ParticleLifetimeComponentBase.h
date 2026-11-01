@@ -51,27 +51,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
+    MCNAPI ::ParticleSystem::EffectComponentBase::EffectComponentType $getParticleComponentType() const;
 
-    MCFOLD bool $hasParticleExpired(
+    MCNAPI bool $hasParticleExpired(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
         ::RenderParams&                                   renderParams
     );
 
-    MCFOLD void $setParticleLifetime(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams);
+    MCNAPI void $setParticleLifetime(::ParticleSystem::CommonParticle& particle, ::RenderParams& renderParams);
 
-    MCFOLD void $handleCreation(
+    MCNAPI void $handleCreation(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle
     );
 
-    MCFOLD void $handleExpiration(
+    MCNAPI void $handleExpiration(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle
     );
 
-    MCFOLD void $handleTimelineEvents(
+    MCNAPI void $handleTimelineEvents(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::ParticleSystem::CommonParticle&                 particle,
         ::std::chrono::nanoseconds const                  lastAge,

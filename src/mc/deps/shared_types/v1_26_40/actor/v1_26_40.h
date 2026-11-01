@@ -26,56 +26,56 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_40 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCFOLD void
+MCNAPI void
 deserializeLegacyDescription(::SharedTypes::v1_26_40::BucketableComponentDefinition&, ::DeserializeDataParams);
 
-MCFOLD void deserializeLegacyDescription(::SharedTypes::v1_26_40::HideComponentDefinition&, ::DeserializeDataParams);
+MCNAPI void deserializeLegacyDescription(::SharedTypes::v1_26_40::HideComponentDefinition&, ::DeserializeDataParams);
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_40::ManagedWanderingTraderComponentDefinition&,
     ::DeserializeDataParams
 );
 
-MCFOLD void
+MCNAPI void
 deserializeLegacyDescription(::SharedTypes::v1_26_40::OpenDoorAnnotationComponentDefinition&, ::DeserializeDataParams);
 
-MCFOLD void
+MCNAPI void
 deserializeLegacyDescription(::SharedTypes::v1_26_40::PersistentComponentDefinition&, ::DeserializeDataParams);
 
-MCFOLD void
+MCNAPI void
 deserializeLegacyDescription(::SharedTypes::v1_26_40::TradeResupplyComponentDefinition&, ::DeserializeDataParams);
 
-MCFOLD void deserializeLegacyDescription(::SharedTypes::v1_26_40::TrustComponentDefinition&, ::DeserializeDataParams);
+MCNAPI void deserializeLegacyDescription(::SharedTypes::v1_26_40::TrustComponentDefinition&, ::DeserializeDataParams);
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_40::DynamicJumpControlComponentDefinition& desc,
     ::DeserializeDataParams                                         deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_40::JumpControlComponentDefinition& desc,
     ::DeserializeDataParams                                  deserializeDataParams
 );
 
-MCAPI void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_40::BegGoalDefinition& sharedGoal);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                            legacyGoal,
     ::SharedTypes::v1_26_40::DrinkPotionGoalDefinition& sharedGoal
 );
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                            legacyGoal,
     ::SharedTypes::v1_26_40::MoveToBlockGoalDefinition& sharedGoal
 );
 
-MCAPI void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_40::SnackGoalDefinition& sharedGoal);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                            legacyGoal,
     ::SharedTypes::v1_26_40::SummonActorGoalDefinition& sharedGoal
 );

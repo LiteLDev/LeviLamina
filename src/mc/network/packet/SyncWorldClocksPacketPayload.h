@@ -31,7 +31,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::SyncWorldClocksPacketPayload::AddTimeMarkerData const& rhs) const;
+        MCNAPI bool operator==(::SyncWorldClocksPacketPayload::AddTimeMarkerData const& rhs) const;
         // NOLINTEND
     };
 

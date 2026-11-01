@@ -57,31 +57,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::PotionType $getPotionType() const;
+    MCNAPI ::PotionType $getPotionType() const;
 
-    MCAPI ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool                                 showCategory
     ) const;
 
-    MCAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
+    MCNAPI ::ResolvedItemIconInfo $getIconInfo(::ItemStackBase const& item, int, bool) const;
 
-    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $isThrowable() const;
+    MCNAPI bool $isThrowable() const;
 
-    MCAPI ::Actor* $createProjectileActor(
+    MCNAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
         ::Vec3 const&      direction
     ) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
 
     // NOLINTEND

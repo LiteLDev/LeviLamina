@@ -36,17 +36,17 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit PhotoTransferPacketPayload(::std::string const& photoName);
+    MCNAPI explicit PhotoTransferPacketPayload(::std::string const& photoName);
 #endif
 
-    MCAPI ~PhotoTransferPacketPayload();
+    MCNAPI ~PhotoTransferPacketPayload();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static bool fromDisk(::Core::Path path, ::PhotoTransferPacket& result);
+    MCNAPI static bool fromDisk(::Core::Path path, ::PhotoTransferPacket& result);
 #endif
     // NOLINTEND
 
@@ -54,13 +54,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string const& photoName);
+    MCNAPI void* $ctor(::std::string const& photoName);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

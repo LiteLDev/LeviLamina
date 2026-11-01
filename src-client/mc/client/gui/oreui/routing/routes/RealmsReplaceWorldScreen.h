@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsReplaceWorldScreen(
+    MCNAPI RealmsReplaceWorldScreen(
         ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>                   realmsWorldContext,
         ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>                    realmsWorldEditor,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>&& getRealmsWorldPackContext
@@ -57,15 +57,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[21]> BASE_SCREEN_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[21]> BASE_SCREEN_ID();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::std::shared_ptr<::Realms::RealmsWorldContext>()>                   realmsWorldContext,
         ::std::function<::std::shared_ptr<::Realms::RealmsWorldEditor>()>                    realmsWorldEditor,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackContext>()>&& getRealmsWorldPackContext
@@ -75,9 +75,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

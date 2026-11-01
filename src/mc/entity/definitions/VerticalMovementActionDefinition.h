@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity, ::VerticalMovementActionComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::VerticalMovementActionComponent& component) const;
 
-    MCAPI void uninitialize(::EntityContext& entity) const;
+    MCNAPI void uninitialize(::EntityContext& entity) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::VerticalMovementActionDefinition>>&
             root
     );

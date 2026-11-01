@@ -38,36 +38,36 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode&&);
+    MCNAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode&&);
 #endif
 
-    MCAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const&);
+    MCNAPI ParticleEventNode(::SharedTypes::v1_20_80::ParticleEventNode const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventNode const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleEventNode const&) const;
 
-    MCAPI ~ParticleEventNode();
+    MCNAPI ~ParticleEventNode();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode&&);
 #endif
 
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEventNode const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

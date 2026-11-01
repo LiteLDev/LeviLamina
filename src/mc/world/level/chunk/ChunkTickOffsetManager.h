@@ -19,15 +19,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(uint serverTickRange);
+    MCNAPI void initialize(uint serverTickRange);
 
-    MCAPI void shuffleTickingOffsets(::Random& random);
+    MCNAPI void shuffleTickingOffsets(::Random& random);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(
+    MCNAPI static ::std::vector<::ChunkPos> getSortedPositionsFromClientOffsets(
         ::std::vector<::ChunkPos> const& centers,
         ::std::vector<::ChunkPos> const& offsets
     );

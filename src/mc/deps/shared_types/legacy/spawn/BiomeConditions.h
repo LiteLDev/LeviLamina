@@ -85,26 +85,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
+    MCNAPI BiomeConditions(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
-    MCAPI ::SharedTypes::Legacy::Spawn::BiomeConditions&
+    MCNAPI ::SharedTypes::Legacy::Spawn::BiomeConditions&
     operator=(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
 
-    MCAPI bool operator==(::SharedTypes::Legacy::Spawn::BiomeConditions const&) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::Spawn::BiomeConditions const&) const;
 
-    MCAPI ~BiomeConditions();
+    MCNAPI ~BiomeConditions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::BiomeConditions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

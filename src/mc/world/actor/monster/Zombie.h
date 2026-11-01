@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Zombie(
+    MCNAPI Zombie(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -58,15 +58,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& SPAWN_BONUS_UUID();
+    MCNAPI static ::mce::UUID const& SPAWN_BONUS_UUID();
 
-    MCAPI static ::Attribute const& SPAWN_REINFORCEMENTS_CHANCE();
+    MCNAPI static ::Attribute const& SPAWN_REINFORCEMENTS_CHANCE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -76,13 +76,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canPickupItem(::ItemStack const& item) const;
+    MCNAPI bool $canPickupItem(::ItemStack const& item) const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCFOLD int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
 
     // NOLINTEND

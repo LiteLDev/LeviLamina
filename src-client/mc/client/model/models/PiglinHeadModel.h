@@ -39,18 +39,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PiglinHeadModel(::GeometryPtr source);
+    MCNAPI explicit PiglinHeadModel(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

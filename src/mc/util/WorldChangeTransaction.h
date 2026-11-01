@@ -43,20 +43,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
+    MCNAPI explicit WorldChangeTransaction(::IBlockWorldGenAPI& target);
 
-    MCAPI ~WorldChangeTransaction();
+    MCNAPI ~WorldChangeTransaction();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IBlockWorldGenAPI& target);
+    MCNAPI void* $ctor(::IBlockWorldGenAPI& target);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

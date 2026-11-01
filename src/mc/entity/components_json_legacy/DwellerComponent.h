@@ -48,48 +48,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isLockedInToProfession(::Actor const& owner) const;
+    MCNAPI bool _isLockedInToProfession(::Actor const& owner) const;
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag, ::Actor const& owner) const;
 
-    MCAPI void fixupProfession(::Actor const& owner, ::Village* village);
+    MCNAPI void fixupProfession(::Actor const& owner, ::Village* village);
 
-    MCAPI ::std::weak_ptr<::Village> const getVillage(::Actor const& owner) const;
+    MCNAPI ::std::weak_ptr<::Village> const getVillage(::Actor const& owner) const;
 
-    MCAPI ::BlockPos getVillageCenter(::Actor const& owner) const;
+    MCNAPI ::BlockPos getVillageCenter(::Actor const& owner) const;
 
-    MCAPI bool hasPreferredProfession(::Actor const& owner) const;
+    MCNAPI bool hasPreferredProfession(::Actor const& owner) const;
 
-    MCAPI void initFromDefinition(::Actor& owner);
+    MCNAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI bool isWithinRestriction(::Actor const& owner) const;
+    MCNAPI bool isWithinRestriction(::Actor const& owner) const;
 
-    MCAPI bool needsToFixupJobSite(::Actor const& owner) const;
+    MCNAPI bool needsToFixupJobSite(::Actor const& owner) const;
 
-    MCAPI bool needsToFixupProfession(::Actor const& owner) const;
+    MCNAPI bool needsToFixupProfession(::Actor const& owner) const;
 
-    MCAPI void onDeath(::Actor& owner, ::ActorDamageSource const& source);
+    MCNAPI void onDeath(::Actor& owner, ::ActorDamageSource const& source);
 
-    MCAPI void onRemove(::Actor& owner);
+    MCNAPI void onRemove(::Actor& owner);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setDwellingUniqueID(::Actor& owner, ::mce::UUID id);
+    MCNAPI void setDwellingUniqueID(::Actor& owner, ::mce::UUID id);
 
-    MCAPI void setLastHurtByMob(::Actor& owner, ::Mob* mob);
+    MCNAPI void setLastHurtByMob(::Actor& owner, ::Mob* mob);
 
-    MCAPI bool trySetPreferredProfession(::Actor const& owner, ::HashedString const& poi);
+    MCNAPI bool trySetPreferredProfession(::Actor const& owner, ::HashedString const& poi);
 
-    MCAPI bool tryToFixupRole(::Actor const& owner, ::Village* village);
+    MCNAPI bool tryToFixupRole(::Actor const& owner, ::Village* village);
 
-    MCAPI bool tryToMigrate(::Actor& owner, ::Village* oldVillage, ::Village* newVillage);
+    MCNAPI bool tryToMigrate(::Actor& owner, ::Village* oldVillage, ::Village* newVillage);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::DwellerRole> const& DWELLING_ROLES();
+    MCNAPI static ::std::unordered_map<::std::string, ::DwellerRole> const& DWELLING_ROLES();
 
-    MCAPI static ::std::unordered_map<::std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
+    MCNAPI static ::std::unordered_map<::std::string, ::DwellerComponent::DwellingType> const& DWELLING_TYPES();
     // NOLINTEND
 };

@@ -51,18 +51,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EduLessonCompleteScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit EduLessonCompleteScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 };

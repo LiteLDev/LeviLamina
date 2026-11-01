@@ -10,709 +10,709 @@ class HashedString;
 namespace VanillaBlockTypeIds {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& AcaciaButton();
+MCNAPI ::HashedString const& AcaciaButton();
 
-MCAPI ::HashedString const& AcaciaDoor();
+MCNAPI ::HashedString const& AcaciaDoor();
 
-MCAPI ::HashedString const& AcaciaDoubleSlab();
+MCNAPI ::HashedString const& AcaciaDoubleSlab();
 
-MCAPI ::HashedString const& AcaciaFence();
+MCNAPI ::HashedString const& AcaciaFence();
 
-MCAPI ::HashedString const& AcaciaFenceGate();
+MCNAPI ::HashedString const& AcaciaFenceGate();
 
-MCAPI ::HashedString const& AcaciaHangingSign();
+MCNAPI ::HashedString const& AcaciaHangingSign();
 
-MCAPI ::HashedString const& AcaciaLeaves();
+MCNAPI ::HashedString const& AcaciaLeaves();
 
 MCAPI ::HashedString const& AcaciaLog();
 
-MCAPI ::HashedString const& AcaciaPlanks();
+MCNAPI ::HashedString const& AcaciaPlanks();
 
-MCAPI ::HashedString const& AcaciaPressurePlate();
+MCNAPI ::HashedString const& AcaciaPressurePlate();
 
-MCAPI ::HashedString const& AcaciaSapling();
+MCNAPI ::HashedString const& AcaciaSapling();
 
-MCAPI ::HashedString const& AcaciaShelf();
+MCNAPI ::HashedString const& AcaciaShelf();
 
 MCAPI ::HashedString const& AcaciaSlab();
 
-MCAPI ::HashedString const& AcaciaStairs();
+MCNAPI ::HashedString const& AcaciaStairs();
 
-MCAPI ::HashedString const& AcaciaStandingSign();
+MCNAPI ::HashedString const& AcaciaStandingSign();
 
 MCAPI ::HashedString const& AcaciaTrapdoor();
 
-MCAPI ::HashedString const& AcaciaWallSign();
+MCNAPI ::HashedString const& AcaciaWallSign();
 
-MCAPI ::HashedString const& AcaciaWood();
+MCNAPI ::HashedString const& AcaciaWood();
 
-MCAPI ::HashedString const& ActivatorRail();
+MCNAPI ::HashedString const& ActivatorRail();
 
-MCAPI ::HashedString const& Allium();
+MCNAPI ::HashedString const& Allium();
 
-MCAPI ::HashedString const& Allow();
+MCNAPI ::HashedString const& Allow();
 
-MCAPI ::HashedString const& AmethystBlock();
+MCNAPI ::HashedString const& AmethystBlock();
 
-MCAPI ::HashedString const& AmethystCluster();
+MCNAPI ::HashedString const& AmethystCluster();
 
 MCAPI ::HashedString const& AncientDebris();
 
-MCAPI ::HashedString const& Andesite();
+MCNAPI ::HashedString const& Andesite();
 
-MCAPI ::HashedString const& AndesiteDoubleSlab();
+MCNAPI ::HashedString const& AndesiteDoubleSlab();
 
-MCAPI ::HashedString const& AndesiteSlab();
+MCNAPI ::HashedString const& AndesiteSlab();
 
-MCAPI ::HashedString const& AndesiteStairs();
+MCNAPI ::HashedString const& AndesiteStairs();
 
-MCAPI ::HashedString const& AndesiteWall();
+MCNAPI ::HashedString const& AndesiteWall();
 
 MCAPI ::HashedString const& Anvil();
 
-MCAPI ::HashedString const& Azalea();
+MCNAPI ::HashedString const& Azalea();
 
-MCAPI ::HashedString const& AzaleaLeaves();
+MCNAPI ::HashedString const& AzaleaLeaves();
 
-MCAPI ::HashedString const& AzaleaLeavesFlowered();
+MCNAPI ::HashedString const& AzaleaLeavesFlowered();
 
-MCAPI ::HashedString const& AzureBluet();
+MCNAPI ::HashedString const& AzureBluet();
 
-MCAPI ::HashedString const& Bamboo();
+MCNAPI ::HashedString const& Bamboo();
 
-MCAPI ::HashedString const& BambooBlock();
+MCNAPI ::HashedString const& BambooBlock();
 
-MCAPI ::HashedString const& BambooButton();
+MCNAPI ::HashedString const& BambooButton();
 
-MCAPI ::HashedString const& BambooDoor();
+MCNAPI ::HashedString const& BambooDoor();
 
-MCAPI ::HashedString const& BambooDoubleSlab();
+MCNAPI ::HashedString const& BambooDoubleSlab();
 
-MCAPI ::HashedString const& BambooFence();
+MCNAPI ::HashedString const& BambooFence();
 
-MCAPI ::HashedString const& BambooFenceGate();
+MCNAPI ::HashedString const& BambooFenceGate();
 
-MCAPI ::HashedString const& BambooHangingSign();
+MCNAPI ::HashedString const& BambooHangingSign();
 
-MCAPI ::HashedString const& BambooMosaic();
+MCNAPI ::HashedString const& BambooMosaic();
 
-MCAPI ::HashedString const& BambooMosaicDoubleSlab();
+MCNAPI ::HashedString const& BambooMosaicDoubleSlab();
 
-MCAPI ::HashedString const& BambooMosaicSlab();
+MCNAPI ::HashedString const& BambooMosaicSlab();
 
-MCAPI ::HashedString const& BambooMosaicStairs();
+MCNAPI ::HashedString const& BambooMosaicStairs();
 
-MCAPI ::HashedString const& BambooPlanks();
+MCNAPI ::HashedString const& BambooPlanks();
 
-MCAPI ::HashedString const& BambooPressurePlate();
+MCNAPI ::HashedString const& BambooPressurePlate();
 
-MCAPI ::HashedString const& BambooSapling();
+MCNAPI ::HashedString const& BambooSapling();
 
-MCAPI ::HashedString const& BambooShelf();
+MCNAPI ::HashedString const& BambooShelf();
 
 MCAPI ::HashedString const& BambooSlab();
 
-MCAPI ::HashedString const& BambooStairs();
+MCNAPI ::HashedString const& BambooStairs();
 
-MCAPI ::HashedString const& BambooStandingSign();
+MCNAPI ::HashedString const& BambooStandingSign();
 
 MCAPI ::HashedString const& BambooTrapdoor();
 
-MCAPI ::HashedString const& BambooWallSign();
+MCNAPI ::HashedString const& BambooWallSign();
 
-MCAPI ::HashedString const& Barrel();
+MCNAPI ::HashedString const& Barrel();
 
-MCAPI ::HashedString const& Barrier();
+MCNAPI ::HashedString const& Barrier();
 
-MCAPI ::HashedString const& Basalt();
+MCNAPI ::HashedString const& Basalt();
 
-MCAPI ::HashedString const& Beacon();
+MCNAPI ::HashedString const& Beacon();
 
-MCAPI ::HashedString const& Bed();
+MCNAPI ::HashedString const& Bed();
 
-MCAPI ::HashedString const& Bedrock();
+MCNAPI ::HashedString const& Bedrock();
 
-MCAPI ::HashedString const& BeeNest();
+MCNAPI ::HashedString const& BeeNest();
 
-MCAPI ::HashedString const& Beehive();
+MCNAPI ::HashedString const& Beehive();
 
-MCAPI ::HashedString const& Beetroot();
+MCNAPI ::HashedString const& Beetroot();
 
-MCAPI ::HashedString const& Bell();
+MCNAPI ::HashedString const& Bell();
 
-MCAPI ::HashedString const& BigDripleaf();
+MCNAPI ::HashedString const& BigDripleaf();
 
-MCAPI ::HashedString const& BirchButton();
+MCNAPI ::HashedString const& BirchButton();
 
-MCAPI ::HashedString const& BirchDoor();
+MCNAPI ::HashedString const& BirchDoor();
 
-MCAPI ::HashedString const& BirchDoubleSlab();
+MCNAPI ::HashedString const& BirchDoubleSlab();
 
-MCAPI ::HashedString const& BirchFence();
+MCNAPI ::HashedString const& BirchFence();
 
-MCAPI ::HashedString const& BirchFenceGate();
+MCNAPI ::HashedString const& BirchFenceGate();
 
-MCAPI ::HashedString const& BirchHangingSign();
+MCNAPI ::HashedString const& BirchHangingSign();
 
-MCAPI ::HashedString const& BirchLeaves();
+MCNAPI ::HashedString const& BirchLeaves();
 
 MCAPI ::HashedString const& BirchLog();
 
-MCAPI ::HashedString const& BirchPlanks();
+MCNAPI ::HashedString const& BirchPlanks();
 
-MCAPI ::HashedString const& BirchPressurePlate();
+MCNAPI ::HashedString const& BirchPressurePlate();
 
-MCAPI ::HashedString const& BirchSapling();
+MCNAPI ::HashedString const& BirchSapling();
 
-MCAPI ::HashedString const& BirchShelf();
+MCNAPI ::HashedString const& BirchShelf();
 
 MCAPI ::HashedString const& BirchSlab();
 
-MCAPI ::HashedString const& BirchStairs();
+MCNAPI ::HashedString const& BirchStairs();
 
-MCAPI ::HashedString const& BirchStandingSign();
+MCNAPI ::HashedString const& BirchStandingSign();
 
 MCAPI ::HashedString const& BirchTrapdoor();
 
-MCAPI ::HashedString const& BirchWallSign();
+MCNAPI ::HashedString const& BirchWallSign();
 
-MCAPI ::HashedString const& BirchWood();
+MCNAPI ::HashedString const& BirchWood();
 
-MCAPI ::HashedString const& BlackCandle();
+MCNAPI ::HashedString const& BlackCandle();
 
-MCAPI ::HashedString const& BlackCandleCake();
+MCNAPI ::HashedString const& BlackCandleCake();
 
-MCAPI ::HashedString const& BlackCarpet();
+MCNAPI ::HashedString const& BlackCarpet();
 
-MCAPI ::HashedString const& BlackConcrete();
+MCNAPI ::HashedString const& BlackConcrete();
 
-MCAPI ::HashedString const& BlackConcretePowder();
+MCNAPI ::HashedString const& BlackConcretePowder();
 
-MCAPI ::HashedString const& BlackGlazedTerracotta();
+MCNAPI ::HashedString const& BlackGlazedTerracotta();
 
-MCAPI ::HashedString const& BlackShulkerBox();
+MCNAPI ::HashedString const& BlackShulkerBox();
 
-MCAPI ::HashedString const& BlackStainedGlass();
+MCNAPI ::HashedString const& BlackStainedGlass();
 
-MCAPI ::HashedString const& BlackStainedGlassPane();
+MCNAPI ::HashedString const& BlackStainedGlassPane();
 
-MCAPI ::HashedString const& BlackTerracotta();
+MCNAPI ::HashedString const& BlackTerracotta();
 
-MCAPI ::HashedString const& BlackWool();
+MCNAPI ::HashedString const& BlackWool();
 
-MCAPI ::HashedString const& Blackstone();
+MCNAPI ::HashedString const& Blackstone();
 
-MCAPI ::HashedString const& BlackstoneDoubleSlab();
+MCNAPI ::HashedString const& BlackstoneDoubleSlab();
 
-MCAPI ::HashedString const& BlackstoneSlab();
+MCNAPI ::HashedString const& BlackstoneSlab();
 
-MCAPI ::HashedString const& BlackstoneStairs();
+MCNAPI ::HashedString const& BlackstoneStairs();
 
-MCAPI ::HashedString const& BlackstoneWall();
+MCNAPI ::HashedString const& BlackstoneWall();
 
-MCAPI ::HashedString const& BlastFurnace();
+MCNAPI ::HashedString const& BlastFurnace();
 
-MCAPI ::HashedString const& BlueCandle();
+MCNAPI ::HashedString const& BlueCandle();
 
-MCAPI ::HashedString const& BlueCandleCake();
+MCNAPI ::HashedString const& BlueCandleCake();
 
-MCAPI ::HashedString const& BlueCarpet();
+MCNAPI ::HashedString const& BlueCarpet();
 
-MCAPI ::HashedString const& BlueConcrete();
+MCNAPI ::HashedString const& BlueConcrete();
 
-MCAPI ::HashedString const& BlueConcretePowder();
+MCNAPI ::HashedString const& BlueConcretePowder();
 
-MCAPI ::HashedString const& BlueGlazedTerracotta();
+MCNAPI ::HashedString const& BlueGlazedTerracotta();
 
-MCAPI ::HashedString const& BlueIce();
+MCNAPI ::HashedString const& BlueIce();
 
-MCAPI ::HashedString const& BlueOrchid();
+MCNAPI ::HashedString const& BlueOrchid();
 
-MCAPI ::HashedString const& BlueShulkerBox();
+MCNAPI ::HashedString const& BlueShulkerBox();
 
-MCAPI ::HashedString const& BlueStainedGlass();
+MCNAPI ::HashedString const& BlueStainedGlass();
 
-MCAPI ::HashedString const& BlueStainedGlassPane();
+MCNAPI ::HashedString const& BlueStainedGlassPane();
 
-MCAPI ::HashedString const& BlueTerracotta();
+MCNAPI ::HashedString const& BlueTerracotta();
 
-MCAPI ::HashedString const& BlueWool();
+MCNAPI ::HashedString const& BlueWool();
 
-MCAPI ::HashedString const& BoneBlock();
+MCNAPI ::HashedString const& BoneBlock();
 
-MCAPI ::HashedString const& Bookshelf();
+MCNAPI ::HashedString const& Bookshelf();
 
-MCAPI ::HashedString const& BorderBlock();
+MCNAPI ::HashedString const& BorderBlock();
 
-MCAPI ::HashedString const& BrainCoral();
+MCNAPI ::HashedString const& BrainCoral();
 
-MCAPI ::HashedString const& BrainCoralBlock();
+MCNAPI ::HashedString const& BrainCoralBlock();
 
-MCAPI ::HashedString const& BrainCoralFan();
+MCNAPI ::HashedString const& BrainCoralFan();
 
-MCAPI ::HashedString const& BrainCoralWallFan();
+MCNAPI ::HashedString const& BrainCoralWallFan();
 
-MCAPI ::HashedString const& BrewingStand();
+MCNAPI ::HashedString const& BrewingStand();
 
-MCAPI ::HashedString const& BrickBlock();
+MCNAPI ::HashedString const& BrickBlock();
 
-MCAPI ::HashedString const& BrickDoubleSlab();
+MCNAPI ::HashedString const& BrickDoubleSlab();
 
-MCAPI ::HashedString const& BrickSlab();
+MCNAPI ::HashedString const& BrickSlab();
 
-MCAPI ::HashedString const& BrickStairs();
+MCNAPI ::HashedString const& BrickStairs();
 
-MCAPI ::HashedString const& BrickWall();
+MCNAPI ::HashedString const& BrickWall();
 
-MCAPI ::HashedString const& BrownCandle();
+MCNAPI ::HashedString const& BrownCandle();
 
-MCAPI ::HashedString const& BrownCandleCake();
+MCNAPI ::HashedString const& BrownCandleCake();
 
-MCAPI ::HashedString const& BrownCarpet();
+MCNAPI ::HashedString const& BrownCarpet();
 
-MCAPI ::HashedString const& BrownConcrete();
+MCNAPI ::HashedString const& BrownConcrete();
 
-MCAPI ::HashedString const& BrownConcretePowder();
+MCNAPI ::HashedString const& BrownConcretePowder();
 
-MCAPI ::HashedString const& BrownGlazedTerracotta();
+MCNAPI ::HashedString const& BrownGlazedTerracotta();
 
-MCAPI ::HashedString const& BrownMushroom();
+MCNAPI ::HashedString const& BrownMushroom();
 
-MCAPI ::HashedString const& BrownMushroomBlock();
+MCNAPI ::HashedString const& BrownMushroomBlock();
 
-MCAPI ::HashedString const& BrownShulkerBox();
+MCNAPI ::HashedString const& BrownShulkerBox();
 
-MCAPI ::HashedString const& BrownStainedGlass();
+MCNAPI ::HashedString const& BrownStainedGlass();
 
-MCAPI ::HashedString const& BrownStainedGlassPane();
+MCNAPI ::HashedString const& BrownStainedGlassPane();
 
-MCAPI ::HashedString const& BrownTerracotta();
+MCNAPI ::HashedString const& BrownTerracotta();
 
-MCAPI ::HashedString const& BrownWool();
+MCNAPI ::HashedString const& BrownWool();
 
-MCAPI ::HashedString const& BubbleColumn();
+MCNAPI ::HashedString const& BubbleColumn();
 
-MCAPI ::HashedString const& BubbleCoral();
+MCNAPI ::HashedString const& BubbleCoral();
 
-MCAPI ::HashedString const& BubbleCoralBlock();
+MCNAPI ::HashedString const& BubbleCoralBlock();
 
-MCAPI ::HashedString const& BubbleCoralFan();
+MCNAPI ::HashedString const& BubbleCoralFan();
 
-MCAPI ::HashedString const& BubbleCoralWallFan();
+MCNAPI ::HashedString const& BubbleCoralWallFan();
 
-MCAPI ::HashedString const& BuddingAmethyst();
+MCNAPI ::HashedString const& BuddingAmethyst();
 
-MCAPI ::HashedString const& Bush();
+MCNAPI ::HashedString const& Bush();
 
-MCAPI ::HashedString const& Cactus();
+MCNAPI ::HashedString const& Cactus();
 
-MCAPI ::HashedString const& CactusFlower();
+MCNAPI ::HashedString const& CactusFlower();
 
-MCAPI ::HashedString const& Cake();
+MCNAPI ::HashedString const& Cake();
 
-MCAPI ::HashedString const& Calcite();
+MCNAPI ::HashedString const& Calcite();
 
-MCAPI ::HashedString const& CalibratedSculkSensor();
+MCNAPI ::HashedString const& CalibratedSculkSensor();
 
-MCAPI ::HashedString const& Camera();
+MCNAPI ::HashedString const& Camera();
 
-MCAPI ::HashedString const& CampFire();
+MCNAPI ::HashedString const& CampFire();
 
-MCAPI ::HashedString const& Candle();
+MCNAPI ::HashedString const& Candle();
 
-MCAPI ::HashedString const& CandleCake();
+MCNAPI ::HashedString const& CandleCake();
 
-MCAPI ::HashedString const& Carrots();
+MCNAPI ::HashedString const& Carrots();
 
-MCAPI ::HashedString const& CartographyTable();
+MCNAPI ::HashedString const& CartographyTable();
 
-MCAPI ::HashedString const& CarvedPumpkin();
+MCNAPI ::HashedString const& CarvedPumpkin();
 
-MCAPI ::HashedString const& Cauldron();
+MCNAPI ::HashedString const& Cauldron();
 
-MCAPI ::HashedString const& CaveVines();
+MCNAPI ::HashedString const& CaveVines();
 
-MCAPI ::HashedString const& CaveVinesBodyWithBerries();
+MCNAPI ::HashedString const& CaveVinesBodyWithBerries();
 
-MCAPI ::HashedString const& CaveVinesHeadWithBerries();
+MCNAPI ::HashedString const& CaveVinesHeadWithBerries();
 
-MCAPI ::HashedString const& ChainCommandBlock();
+MCNAPI ::HashedString const& ChainCommandBlock();
 
-MCAPI ::HashedString const& Chalkboard();
+MCNAPI ::HashedString const& Chalkboard();
 
-MCAPI ::HashedString const& ChemicalHeat();
+MCNAPI ::HashedString const& ChemicalHeat();
 
-MCAPI ::HashedString const& CherryButton();
+MCNAPI ::HashedString const& CherryButton();
 
-MCAPI ::HashedString const& CherryDoor();
+MCNAPI ::HashedString const& CherryDoor();
 
-MCAPI ::HashedString const& CherryDoubleSlab();
+MCNAPI ::HashedString const& CherryDoubleSlab();
 
-MCAPI ::HashedString const& CherryFence();
+MCNAPI ::HashedString const& CherryFence();
 
-MCAPI ::HashedString const& CherryFenceGate();
+MCNAPI ::HashedString const& CherryFenceGate();
 
-MCAPI ::HashedString const& CherryHangingSign();
+MCNAPI ::HashedString const& CherryHangingSign();
 
-MCAPI ::HashedString const& CherryLeaves();
+MCNAPI ::HashedString const& CherryLeaves();
 
 MCAPI ::HashedString const& CherryLog();
 
-MCAPI ::HashedString const& CherryPlanks();
+MCNAPI ::HashedString const& CherryPlanks();
 
-MCAPI ::HashedString const& CherryPressurePlate();
+MCNAPI ::HashedString const& CherryPressurePlate();
 
-MCAPI ::HashedString const& CherrySapling();
+MCNAPI ::HashedString const& CherrySapling();
 
-MCAPI ::HashedString const& CherryShelf();
+MCNAPI ::HashedString const& CherryShelf();
 
 MCAPI ::HashedString const& CherrySlab();
 
-MCAPI ::HashedString const& CherryStairs();
+MCNAPI ::HashedString const& CherryStairs();
 
-MCAPI ::HashedString const& CherryStandingSign();
+MCNAPI ::HashedString const& CherryStandingSign();
 
 MCAPI ::HashedString const& CherryTrapdoor();
 
-MCAPI ::HashedString const& CherryWallSign();
+MCNAPI ::HashedString const& CherryWallSign();
 
-MCAPI ::HashedString const& CherryWood();
+MCNAPI ::HashedString const& CherryWood();
 
 MCAPI ::HashedString const& Chest();
 
-MCAPI ::HashedString const& ChippedAnvil();
+MCNAPI ::HashedString const& ChippedAnvil();
 
-MCAPI ::HashedString const& ChiseledBookshelf();
+MCNAPI ::HashedString const& ChiseledBookshelf();
 
-MCAPI ::HashedString const& ChiseledCinnabar();
+MCNAPI ::HashedString const& ChiseledCinnabar();
 
-MCAPI ::HashedString const& ChiseledCopper();
+MCNAPI ::HashedString const& ChiseledCopper();
 
-MCAPI ::HashedString const& ChiseledDeepslate();
+MCNAPI ::HashedString const& ChiseledDeepslate();
 
-MCAPI ::HashedString const& ChiseledNetherBricks();
+MCNAPI ::HashedString const& ChiseledNetherBricks();
 
-MCAPI ::HashedString const& ChiseledPolishedBlackstone();
+MCNAPI ::HashedString const& ChiseledPolishedBlackstone();
 
-MCAPI ::HashedString const& ChiseledQuartzBlock();
+MCNAPI ::HashedString const& ChiseledQuartzBlock();
 
-MCAPI ::HashedString const& ChiseledRedSandstone();
+MCNAPI ::HashedString const& ChiseledRedSandstone();
 
-MCAPI ::HashedString const& ChiseledResinBricks();
+MCNAPI ::HashedString const& ChiseledResinBricks();
 
-MCAPI ::HashedString const& ChiseledSandstone();
+MCNAPI ::HashedString const& ChiseledSandstone();
 
-MCAPI ::HashedString const& ChiseledStoneBricks();
+MCNAPI ::HashedString const& ChiseledStoneBricks();
 
-MCAPI ::HashedString const& ChiseledSulfur();
+MCNAPI ::HashedString const& ChiseledSulfur();
 
-MCAPI ::HashedString const& ChiseledTuff();
+MCNAPI ::HashedString const& ChiseledTuff();
 
-MCAPI ::HashedString const& ChiseledTuffBricks();
+MCNAPI ::HashedString const& ChiseledTuffBricks();
 
-MCAPI ::HashedString const& ChorusFlower();
+MCNAPI ::HashedString const& ChorusFlower();
 
-MCAPI ::HashedString const& ChorusPlant();
+MCNAPI ::HashedString const& ChorusPlant();
 
-MCAPI ::HashedString const& Cinnabar();
+MCNAPI ::HashedString const& Cinnabar();
 
-MCAPI ::HashedString const& CinnabarBrickDoubleSlab();
+MCNAPI ::HashedString const& CinnabarBrickDoubleSlab();
 
-MCAPI ::HashedString const& CinnabarBrickSlab();
+MCNAPI ::HashedString const& CinnabarBrickSlab();
 
-MCAPI ::HashedString const& CinnabarBrickStairs();
+MCNAPI ::HashedString const& CinnabarBrickStairs();
 
-MCAPI ::HashedString const& CinnabarBrickWall();
+MCNAPI ::HashedString const& CinnabarBrickWall();
 
-MCAPI ::HashedString const& CinnabarBricks();
+MCNAPI ::HashedString const& CinnabarBricks();
 
-MCAPI ::HashedString const& CinnabarDoubleSlab();
+MCNAPI ::HashedString const& CinnabarDoubleSlab();
 
-MCAPI ::HashedString const& CinnabarSlab();
+MCNAPI ::HashedString const& CinnabarSlab();
 
-MCAPI ::HashedString const& CinnabarStairs();
+MCNAPI ::HashedString const& CinnabarStairs();
 
-MCAPI ::HashedString const& CinnabarWall();
+MCNAPI ::HashedString const& CinnabarWall();
 
-MCAPI ::HashedString const& Clay();
+MCNAPI ::HashedString const& Clay();
 
-MCAPI ::HashedString const& ClientRequestPlaceholderBlock();
+MCNAPI ::HashedString const& ClientRequestPlaceholderBlock();
 
-MCAPI ::HashedString const& ClosedEyeblossom();
+MCNAPI ::HashedString const& ClosedEyeblossom();
 
-MCAPI ::HashedString const& CoalBlock();
+MCNAPI ::HashedString const& CoalBlock();
 
 MCAPI ::HashedString const& CoalOre();
 
-MCAPI ::HashedString const& CoarseDirt();
+MCNAPI ::HashedString const& CoarseDirt();
 
-MCAPI ::HashedString const& CobbledDeepslate();
+MCNAPI ::HashedString const& CobbledDeepslate();
 
-MCAPI ::HashedString const& CobbledDeepslateDoubleSlab();
+MCNAPI ::HashedString const& CobbledDeepslateDoubleSlab();
 
-MCAPI ::HashedString const& CobbledDeepslateSlab();
+MCNAPI ::HashedString const& CobbledDeepslateSlab();
 
-MCAPI ::HashedString const& CobbledDeepslateStairs();
+MCNAPI ::HashedString const& CobbledDeepslateStairs();
 
-MCAPI ::HashedString const& CobbledDeepslateWall();
+MCNAPI ::HashedString const& CobbledDeepslateWall();
 
-MCAPI ::HashedString const& Cobblestone();
+MCNAPI ::HashedString const& Cobblestone();
 
-MCAPI ::HashedString const& CobblestoneDoubleSlab();
+MCNAPI ::HashedString const& CobblestoneDoubleSlab();
 
-MCAPI ::HashedString const& CobblestoneSlab();
+MCNAPI ::HashedString const& CobblestoneSlab();
 
-MCAPI ::HashedString const& CobblestoneWall();
+MCNAPI ::HashedString const& CobblestoneWall();
 
-MCAPI ::HashedString const& Cocoa();
+MCNAPI ::HashedString const& Cocoa();
 
-MCAPI ::HashedString const& ColoredTorchBlue();
+MCNAPI ::HashedString const& ColoredTorchBlue();
 
-MCAPI ::HashedString const& ColoredTorchGreen();
+MCNAPI ::HashedString const& ColoredTorchGreen();
 
-MCAPI ::HashedString const& ColoredTorchPurple();
+MCNAPI ::HashedString const& ColoredTorchPurple();
 
-MCAPI ::HashedString const& ColoredTorchRed();
+MCNAPI ::HashedString const& ColoredTorchRed();
 
-MCAPI ::HashedString const& CommandBlock();
+MCNAPI ::HashedString const& CommandBlock();
 
 MCAPI ::HashedString const& Composter();
 
-MCAPI ::HashedString const& CompoundCreator();
+MCNAPI ::HashedString const& CompoundCreator();
 
-MCAPI ::HashedString const& Conduit();
+MCNAPI ::HashedString const& Conduit();
 
-MCAPI ::HashedString const& CopperBars();
+MCNAPI ::HashedString const& CopperBars();
 
-MCAPI ::HashedString const& CopperBlock();
+MCNAPI ::HashedString const& CopperBlock();
 
-MCAPI ::HashedString const& CopperBulb();
+MCNAPI ::HashedString const& CopperBulb();
 
-MCAPI ::HashedString const& CopperChain();
+MCNAPI ::HashedString const& CopperChain();
 
-MCAPI ::HashedString const& CopperChest();
+MCNAPI ::HashedString const& CopperChest();
 
-MCAPI ::HashedString const& CopperDoor();
+MCNAPI ::HashedString const& CopperDoor();
 
-MCAPI ::HashedString const& CopperGolemStatue();
+MCNAPI ::HashedString const& CopperGolemStatue();
 
-MCAPI ::HashedString const& CopperGrate();
+MCNAPI ::HashedString const& CopperGrate();
 
-MCAPI ::HashedString const& CopperLantern();
+MCNAPI ::HashedString const& CopperLantern();
 
 MCAPI ::HashedString const& CopperOre();
 
-MCAPI ::HashedString const& CopperTorch();
+MCNAPI ::HashedString const& CopperTorch();
 
-MCAPI ::HashedString const& CopperTrapdoor();
+MCNAPI ::HashedString const& CopperTrapdoor();
 
-MCAPI ::HashedString const& Cornflower();
+MCNAPI ::HashedString const& Cornflower();
 
-MCAPI ::HashedString const& CrackedDeepslateBricks();
+MCNAPI ::HashedString const& CrackedDeepslateBricks();
 
-MCAPI ::HashedString const& CrackedDeepslateTiles();
+MCNAPI ::HashedString const& CrackedDeepslateTiles();
 
-MCAPI ::HashedString const& CrackedNetherBricks();
+MCNAPI ::HashedString const& CrackedNetherBricks();
 
-MCAPI ::HashedString const& CrackedPolishedBlackstoneBricks();
+MCNAPI ::HashedString const& CrackedPolishedBlackstoneBricks();
 
-MCAPI ::HashedString const& CrackedStoneBricks();
+MCNAPI ::HashedString const& CrackedStoneBricks();
 
-MCAPI ::HashedString const& Crafter();
+MCNAPI ::HashedString const& Crafter();
 
-MCAPI ::HashedString const& CraftingTable();
+MCNAPI ::HashedString const& CraftingTable();
 
-MCAPI ::HashedString const& CreakingHeart();
+MCNAPI ::HashedString const& CreakingHeart();
 
-MCAPI ::HashedString const& CreeperHead();
+MCNAPI ::HashedString const& CreeperHead();
 
-MCAPI ::HashedString const& CrimsonButton();
+MCNAPI ::HashedString const& CrimsonButton();
 
-MCAPI ::HashedString const& CrimsonDoor();
+MCNAPI ::HashedString const& CrimsonDoor();
 
-MCAPI ::HashedString const& CrimsonDoubleSlab();
+MCNAPI ::HashedString const& CrimsonDoubleSlab();
 
-MCAPI ::HashedString const& CrimsonFence();
+MCNAPI ::HashedString const& CrimsonFence();
 
-MCAPI ::HashedString const& CrimsonFenceGate();
+MCNAPI ::HashedString const& CrimsonFenceGate();
 
-MCAPI ::HashedString const& CrimsonFungus();
+MCNAPI ::HashedString const& CrimsonFungus();
 
-MCAPI ::HashedString const& CrimsonHangingSign();
+MCNAPI ::HashedString const& CrimsonHangingSign();
 
-MCAPI ::HashedString const& CrimsonHyphae();
+MCNAPI ::HashedString const& CrimsonHyphae();
 
-MCAPI ::HashedString const& CrimsonNylium();
+MCNAPI ::HashedString const& CrimsonNylium();
 
-MCAPI ::HashedString const& CrimsonPlanks();
+MCNAPI ::HashedString const& CrimsonPlanks();
 
-MCAPI ::HashedString const& CrimsonPressurePlate();
+MCNAPI ::HashedString const& CrimsonPressurePlate();
 
-MCAPI ::HashedString const& CrimsonRoots();
+MCNAPI ::HashedString const& CrimsonRoots();
 
-MCAPI ::HashedString const& CrimsonShelf();
+MCNAPI ::HashedString const& CrimsonShelf();
 
 MCAPI ::HashedString const& CrimsonSlab();
 
-MCAPI ::HashedString const& CrimsonStairs();
+MCNAPI ::HashedString const& CrimsonStairs();
 
-MCAPI ::HashedString const& CrimsonStandingSign();
+MCNAPI ::HashedString const& CrimsonStandingSign();
 
 MCAPI ::HashedString const& CrimsonStem();
 
 MCAPI ::HashedString const& CrimsonTrapdoor();
 
-MCAPI ::HashedString const& CrimsonWallSign();
+MCNAPI ::HashedString const& CrimsonWallSign();
 
-MCAPI ::HashedString const& CryingObsidian();
+MCNAPI ::HashedString const& CryingObsidian();
 
-MCAPI ::HashedString const& CutCopper();
+MCNAPI ::HashedString const& CutCopper();
 
-MCAPI ::HashedString const& CutCopperSlab();
+MCNAPI ::HashedString const& CutCopperSlab();
 
-MCAPI ::HashedString const& CutCopperStairs();
+MCNAPI ::HashedString const& CutCopperStairs();
 
-MCAPI ::HashedString const& CutRedSandstone();
+MCNAPI ::HashedString const& CutRedSandstone();
 
-MCAPI ::HashedString const& CutRedSandstoneDoubleSlab();
+MCNAPI ::HashedString const& CutRedSandstoneDoubleSlab();
 
-MCAPI ::HashedString const& CutRedSandstoneSlab();
+MCNAPI ::HashedString const& CutRedSandstoneSlab();
 
-MCAPI ::HashedString const& CutSandstone();
+MCNAPI ::HashedString const& CutSandstone();
 
-MCAPI ::HashedString const& CutSandstoneDoubleSlab();
+MCNAPI ::HashedString const& CutSandstoneDoubleSlab();
 
-MCAPI ::HashedString const& CutSandstoneSlab();
+MCNAPI ::HashedString const& CutSandstoneSlab();
 
-MCAPI ::HashedString const& CyanCandle();
+MCNAPI ::HashedString const& CyanCandle();
 
-MCAPI ::HashedString const& CyanCandleCake();
+MCNAPI ::HashedString const& CyanCandleCake();
 
-MCAPI ::HashedString const& CyanCarpet();
+MCNAPI ::HashedString const& CyanCarpet();
 
-MCAPI ::HashedString const& CyanConcrete();
+MCNAPI ::HashedString const& CyanConcrete();
 
-MCAPI ::HashedString const& CyanConcretePowder();
+MCNAPI ::HashedString const& CyanConcretePowder();
 
-MCAPI ::HashedString const& CyanGlazedTerracotta();
+MCNAPI ::HashedString const& CyanGlazedTerracotta();
 
-MCAPI ::HashedString const& CyanShulkerBox();
+MCNAPI ::HashedString const& CyanShulkerBox();
 
-MCAPI ::HashedString const& CyanStainedGlass();
+MCNAPI ::HashedString const& CyanStainedGlass();
 
-MCAPI ::HashedString const& CyanStainedGlassPane();
+MCNAPI ::HashedString const& CyanStainedGlassPane();
 
-MCAPI ::HashedString const& CyanTerracotta();
+MCNAPI ::HashedString const& CyanTerracotta();
 
-MCAPI ::HashedString const& CyanWool();
+MCNAPI ::HashedString const& CyanWool();
 
-MCAPI ::HashedString const& DamagedAnvil();
+MCNAPI ::HashedString const& DamagedAnvil();
 
-MCAPI ::HashedString const& Dandelion();
+MCNAPI ::HashedString const& Dandelion();
 
-MCAPI ::HashedString const& DarkOakButton();
+MCNAPI ::HashedString const& DarkOakButton();
 
-MCAPI ::HashedString const& DarkOakDoor();
+MCNAPI ::HashedString const& DarkOakDoor();
 
-MCAPI ::HashedString const& DarkOakDoubleSlab();
+MCNAPI ::HashedString const& DarkOakDoubleSlab();
 
-MCAPI ::HashedString const& DarkOakFence();
+MCNAPI ::HashedString const& DarkOakFence();
 
-MCAPI ::HashedString const& DarkOakFenceGate();
+MCNAPI ::HashedString const& DarkOakFenceGate();
 
-MCAPI ::HashedString const& DarkOakLeaves();
+MCNAPI ::HashedString const& DarkOakLeaves();
 
 MCAPI ::HashedString const& DarkOakLog();
 
-MCAPI ::HashedString const& DarkOakPlanks();
+MCNAPI ::HashedString const& DarkOakPlanks();
 
-MCAPI ::HashedString const& DarkOakPressurePlate();
+MCNAPI ::HashedString const& DarkOakPressurePlate();
 
-MCAPI ::HashedString const& DarkOakSapling();
+MCNAPI ::HashedString const& DarkOakSapling();
 
-MCAPI ::HashedString const& DarkOakShelf();
+MCNAPI ::HashedString const& DarkOakShelf();
 
 MCAPI ::HashedString const& DarkOakSlab();
 
-MCAPI ::HashedString const& DarkOakStairs();
+MCNAPI ::HashedString const& DarkOakStairs();
 
 MCAPI ::HashedString const& DarkOakTrapdoor();
 
-MCAPI ::HashedString const& DarkOakWood();
+MCNAPI ::HashedString const& DarkOakWood();
 
-MCAPI ::HashedString const& DarkPrismarine();
+MCNAPI ::HashedString const& DarkPrismarine();
 
-MCAPI ::HashedString const& DarkPrismarineDoubleSlab();
+MCNAPI ::HashedString const& DarkPrismarineDoubleSlab();
 
-MCAPI ::HashedString const& DarkPrismarineSlab();
+MCNAPI ::HashedString const& DarkPrismarineSlab();
 
-MCAPI ::HashedString const& DarkPrismarineStairs();
+MCNAPI ::HashedString const& DarkPrismarineStairs();
 
-MCAPI ::HashedString const& DarkoakHangingSign();
+MCNAPI ::HashedString const& DarkoakHangingSign();
 
-MCAPI ::HashedString const& DarkoakStandingSign();
+MCNAPI ::HashedString const& DarkoakStandingSign();
 
-MCAPI ::HashedString const& DarkoakWallSign();
+MCNAPI ::HashedString const& DarkoakWallSign();
 
-MCAPI ::HashedString const& DaylightDetector();
+MCNAPI ::HashedString const& DaylightDetector();
 
-MCAPI ::HashedString const& DaylightDetectorInverted();
+MCNAPI ::HashedString const& DaylightDetectorInverted();
 
-MCAPI ::HashedString const& DeadBrainCoral();
+MCNAPI ::HashedString const& DeadBrainCoral();
 
-MCAPI ::HashedString const& DeadBrainCoralBlock();
+MCNAPI ::HashedString const& DeadBrainCoralBlock();
 
-MCAPI ::HashedString const& DeadBrainCoralFan();
+MCNAPI ::HashedString const& DeadBrainCoralFan();
 
-MCAPI ::HashedString const& DeadBrainCoralWallFan();
+MCNAPI ::HashedString const& DeadBrainCoralWallFan();
 
-MCAPI ::HashedString const& DeadBubbleCoral();
+MCNAPI ::HashedString const& DeadBubbleCoral();
 
-MCAPI ::HashedString const& DeadBubbleCoralBlock();
+MCNAPI ::HashedString const& DeadBubbleCoralBlock();
 
-MCAPI ::HashedString const& DeadBubbleCoralFan();
+MCNAPI ::HashedString const& DeadBubbleCoralFan();
 
-MCAPI ::HashedString const& DeadBubbleCoralWallFan();
+MCNAPI ::HashedString const& DeadBubbleCoralWallFan();
 
-MCAPI ::HashedString const& DeadFireCoral();
+MCNAPI ::HashedString const& DeadFireCoral();
 
-MCAPI ::HashedString const& DeadFireCoralBlock();
+MCNAPI ::HashedString const& DeadFireCoralBlock();
 
-MCAPI ::HashedString const& DeadFireCoralFan();
+MCNAPI ::HashedString const& DeadFireCoralFan();
 
-MCAPI ::HashedString const& DeadFireCoralWallFan();
+MCNAPI ::HashedString const& DeadFireCoralWallFan();
 
-MCAPI ::HashedString const& DeadHornCoral();
+MCNAPI ::HashedString const& DeadHornCoral();
 
-MCAPI ::HashedString const& DeadHornCoralBlock();
+MCNAPI ::HashedString const& DeadHornCoralBlock();
 
-MCAPI ::HashedString const& DeadHornCoralFan();
+MCNAPI ::HashedString const& DeadHornCoralFan();
 
-MCAPI ::HashedString const& DeadHornCoralWallFan();
+MCNAPI ::HashedString const& DeadHornCoralWallFan();
 
-MCAPI ::HashedString const& DeadTubeCoral();
+MCNAPI ::HashedString const& DeadTubeCoral();
 
-MCAPI ::HashedString const& DeadTubeCoralBlock();
+MCNAPI ::HashedString const& DeadTubeCoralBlock();
 
-MCAPI ::HashedString const& DeadTubeCoralFan();
+MCNAPI ::HashedString const& DeadTubeCoralFan();
 
-MCAPI ::HashedString const& DeadTubeCoralWallFan();
+MCNAPI ::HashedString const& DeadTubeCoralWallFan();
 
-MCAPI ::HashedString const& Deadbush();
+MCNAPI ::HashedString const& Deadbush();
 
-MCAPI ::HashedString const& DecoratedPot();
+MCNAPI ::HashedString const& DecoratedPot();
 
-MCAPI ::HashedString const& Deepslate();
+MCNAPI ::HashedString const& Deepslate();
 
-MCAPI ::HashedString const& DeepslateBrickDoubleSlab();
+MCNAPI ::HashedString const& DeepslateBrickDoubleSlab();
 
-MCAPI ::HashedString const& DeepslateBrickSlab();
+MCNAPI ::HashedString const& DeepslateBrickSlab();
 
-MCAPI ::HashedString const& DeepslateBrickStairs();
+MCNAPI ::HashedString const& DeepslateBrickStairs();
 
-MCAPI ::HashedString const& DeepslateBrickWall();
+MCNAPI ::HashedString const& DeepslateBrickWall();
 
-MCAPI ::HashedString const& DeepslateBricks();
+MCNAPI ::HashedString const& DeepslateBricks();
 
 MCAPI ::HashedString const& DeepslateCoalOre();
 
@@ -730,1333 +730,1333 @@ MCAPI ::HashedString const& DeepslateLapisOre();
 
 MCAPI ::HashedString const& DeepslateRedstoneOre();
 
-MCAPI ::HashedString const& DeepslateTileDoubleSlab();
+MCNAPI ::HashedString const& DeepslateTileDoubleSlab();
 
-MCAPI ::HashedString const& DeepslateTileSlab();
+MCNAPI ::HashedString const& DeepslateTileSlab();
 
-MCAPI ::HashedString const& DeepslateTileStairs();
+MCNAPI ::HashedString const& DeepslateTileStairs();
 
-MCAPI ::HashedString const& DeepslateTileWall();
+MCNAPI ::HashedString const& DeepslateTileWall();
 
-MCAPI ::HashedString const& DeepslateTiles();
+MCNAPI ::HashedString const& DeepslateTiles();
 
-MCAPI ::HashedString const& Deny();
+MCNAPI ::HashedString const& Deny();
 
-MCAPI ::HashedString const& DeprecatedAnvil();
+MCNAPI ::HashedString const& DeprecatedAnvil();
 
-MCAPI ::HashedString const& DeprecatedPurpurBlock1();
+MCNAPI ::HashedString const& DeprecatedPurpurBlock1();
 
-MCAPI ::HashedString const& DeprecatedPurpurBlock2();
+MCNAPI ::HashedString const& DeprecatedPurpurBlock2();
 
-MCAPI ::HashedString const& DetectorRail();
+MCNAPI ::HashedString const& DetectorRail();
 
-MCAPI ::HashedString const& DiamondBlock();
+MCNAPI ::HashedString const& DiamondBlock();
 
 MCAPI ::HashedString const& DiamondOre();
 
-MCAPI ::HashedString const& Diorite();
+MCNAPI ::HashedString const& Diorite();
 
-MCAPI ::HashedString const& DioriteDoubleSlab();
+MCNAPI ::HashedString const& DioriteDoubleSlab();
 
-MCAPI ::HashedString const& DioriteSlab();
+MCNAPI ::HashedString const& DioriteSlab();
 
-MCAPI ::HashedString const& DioriteStairs();
+MCNAPI ::HashedString const& DioriteStairs();
 
-MCAPI ::HashedString const& DioriteWall();
+MCNAPI ::HashedString const& DioriteWall();
 
-MCAPI ::HashedString const& Dirt();
+MCNAPI ::HashedString const& Dirt();
 
-MCAPI ::HashedString const& DirtWithRoots();
+MCNAPI ::HashedString const& DirtWithRoots();
 
-MCAPI ::HashedString const& DiscPress();
+MCNAPI ::HashedString const& DiscPress();
 
-MCAPI ::HashedString const& Dispenser();
+MCNAPI ::HashedString const& Dispenser();
 
-MCAPI ::HashedString const& DoubleCutCopperSlab();
+MCNAPI ::HashedString const& DoubleCutCopperSlab();
 
 MCAPI ::HashedString const& DragonEgg();
 
-MCAPI ::HashedString const& DragonHead();
+MCNAPI ::HashedString const& DragonHead();
 
-MCAPI ::HashedString const& DriedGhast();
+MCNAPI ::HashedString const& DriedGhast();
 
-MCAPI ::HashedString const& DriedKelpBlock();
+MCNAPI ::HashedString const& DriedKelpBlock();
 
-MCAPI ::HashedString const& Dripstone();
+MCNAPI ::HashedString const& Dripstone();
 
-MCAPI ::HashedString const& Dropper();
+MCNAPI ::HashedString const& Dropper();
 
-MCAPI ::HashedString const& ElementConstructor();
+MCNAPI ::HashedString const& ElementConstructor();
 
-MCAPI ::std::array<::HashedString const, 119> const& Elements();
+MCNAPI ::std::array<::HashedString const, 119> const& Elements();
 
-MCAPI ::HashedString const& EmeraldBlock();
+MCNAPI ::HashedString const& EmeraldBlock();
 
 MCAPI ::HashedString const& EmeraldOre();
 
-MCAPI ::HashedString const& EnchantingTable();
+MCNAPI ::HashedString const& EnchantingTable();
 
-MCAPI ::HashedString const& EndBrickStairs();
+MCNAPI ::HashedString const& EndBrickStairs();
 
-MCAPI ::HashedString const& EndBricks();
+MCNAPI ::HashedString const& EndBricks();
 
-MCAPI ::HashedString const& EndGateway();
+MCNAPI ::HashedString const& EndGateway();
 
 MCAPI ::HashedString const& EndPortal();
 
-MCAPI ::HashedString const& EndPortalFrame();
+MCNAPI ::HashedString const& EndPortalFrame();
 
-MCAPI ::HashedString const& EndRod();
+MCNAPI ::HashedString const& EndRod();
 
-MCAPI ::HashedString const& EndStone();
+MCNAPI ::HashedString const& EndStone();
 
-MCAPI ::HashedString const& EndStoneBrickDoubleSlab();
+MCNAPI ::HashedString const& EndStoneBrickDoubleSlab();
 
-MCAPI ::HashedString const& EndStoneBrickSlab();
+MCNAPI ::HashedString const& EndStoneBrickSlab();
 
-MCAPI ::HashedString const& EndStoneBrickWall();
+MCNAPI ::HashedString const& EndStoneBrickWall();
 
-MCAPI ::HashedString const& EnderChest();
+MCNAPI ::HashedString const& EnderChest();
 
-MCAPI ::HashedString const& ExposedChiseledCopper();
+MCNAPI ::HashedString const& ExposedChiseledCopper();
 
-MCAPI ::HashedString const& ExposedCopper();
+MCNAPI ::HashedString const& ExposedCopper();
 
-MCAPI ::HashedString const& ExposedCopperBars();
+MCNAPI ::HashedString const& ExposedCopperBars();
 
-MCAPI ::HashedString const& ExposedCopperBulb();
+MCNAPI ::HashedString const& ExposedCopperBulb();
 
-MCAPI ::HashedString const& ExposedCopperChain();
+MCNAPI ::HashedString const& ExposedCopperChain();
 
-MCAPI ::HashedString const& ExposedCopperChest();
+MCNAPI ::HashedString const& ExposedCopperChest();
 
-MCAPI ::HashedString const& ExposedCopperDoor();
+MCNAPI ::HashedString const& ExposedCopperDoor();
 
-MCAPI ::HashedString const& ExposedCopperGolemStatue();
+MCNAPI ::HashedString const& ExposedCopperGolemStatue();
 
-MCAPI ::HashedString const& ExposedCopperGrate();
+MCNAPI ::HashedString const& ExposedCopperGrate();
 
-MCAPI ::HashedString const& ExposedCopperLantern();
+MCNAPI ::HashedString const& ExposedCopperLantern();
 
-MCAPI ::HashedString const& ExposedCopperTrapdoor();
+MCNAPI ::HashedString const& ExposedCopperTrapdoor();
 
-MCAPI ::HashedString const& ExposedCutCopper();
+MCNAPI ::HashedString const& ExposedCutCopper();
 
-MCAPI ::HashedString const& ExposedCutCopperSlab();
+MCNAPI ::HashedString const& ExposedCutCopperSlab();
 
-MCAPI ::HashedString const& ExposedCutCopperStairs();
+MCNAPI ::HashedString const& ExposedCutCopperStairs();
 
-MCAPI ::HashedString const& ExposedDoubleCutCopperSlab();
+MCNAPI ::HashedString const& ExposedDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& ExposedLightningRod();
+MCNAPI ::HashedString const& ExposedLightningRod();
 
-MCAPI ::HashedString const& FarmlandBlock();
+MCNAPI ::HashedString const& FarmlandBlock();
 
-MCAPI ::HashedString const& FenceGate();
+MCNAPI ::HashedString const& FenceGate();
 
-MCAPI ::HashedString const& Fern();
+MCNAPI ::HashedString const& Fern();
 
-MCAPI ::HashedString const& Fire();
+MCNAPI ::HashedString const& Fire();
 
-MCAPI ::HashedString const& FireCoral();
+MCNAPI ::HashedString const& FireCoral();
 
-MCAPI ::HashedString const& FireCoralBlock();
+MCNAPI ::HashedString const& FireCoralBlock();
 
-MCAPI ::HashedString const& FireCoralFan();
+MCNAPI ::HashedString const& FireCoralFan();
 
-MCAPI ::HashedString const& FireCoralWallFan();
+MCNAPI ::HashedString const& FireCoralWallFan();
 
-MCAPI ::HashedString const& FireflyBush();
+MCNAPI ::HashedString const& FireflyBush();
 
-MCAPI ::HashedString const& FletchingTable();
+MCNAPI ::HashedString const& FletchingTable();
 
-MCAPI ::HashedString const& FlowerPot();
+MCNAPI ::HashedString const& FlowerPot();
 
-MCAPI ::HashedString const& FloweringAzalea();
+MCNAPI ::HashedString const& FloweringAzalea();
 
-MCAPI ::HashedString const& FlowingLava();
+MCNAPI ::HashedString const& FlowingLava();
 
-MCAPI ::HashedString const& FlowingWater();
+MCNAPI ::HashedString const& FlowingWater();
 
-MCAPI ::HashedString const& FrogSpawn();
+MCNAPI ::HashedString const& FrogSpawn();
 
 MCAPI ::HashedString const& FrostedIce();
 
-MCAPI ::HashedString const& Furnace();
+MCNAPI ::HashedString const& Furnace();
 
-MCAPI ::HashedString const& GildedBlackstone();
+MCNAPI ::HashedString const& GildedBlackstone();
 
-MCAPI ::HashedString const& Glass();
+MCNAPI ::HashedString const& Glass();
 
-MCAPI ::HashedString const& GlassPane();
+MCNAPI ::HashedString const& GlassPane();
 
-MCAPI ::HashedString const& GlowItemFrame();
+MCNAPI ::HashedString const& GlowItemFrame();
 
-MCAPI ::HashedString const& GlowLichen();
+MCNAPI ::HashedString const& GlowLichen();
 
-MCAPI ::HashedString const& GlowingObsidian();
+MCNAPI ::HashedString const& GlowingObsidian();
 
 MCAPI ::HashedString const& Glowstone();
 
-MCAPI ::HashedString const& GoldBlock();
+MCNAPI ::HashedString const& GoldBlock();
 
 MCAPI ::HashedString const& GoldOre();
 
-MCAPI ::HashedString const& GoldenDandelion();
+MCNAPI ::HashedString const& GoldenDandelion();
 
-MCAPI ::HashedString const& GoldenRail();
+MCNAPI ::HashedString const& GoldenRail();
 
-MCAPI ::HashedString const& Granite();
+MCNAPI ::HashedString const& Granite();
 
-MCAPI ::HashedString const& GraniteDoubleSlab();
+MCNAPI ::HashedString const& GraniteDoubleSlab();
 
-MCAPI ::HashedString const& GraniteSlab();
+MCNAPI ::HashedString const& GraniteSlab();
 
-MCAPI ::HashedString const& GraniteStairs();
+MCNAPI ::HashedString const& GraniteStairs();
 
-MCAPI ::HashedString const& GraniteWall();
+MCNAPI ::HashedString const& GraniteWall();
 
-MCAPI ::HashedString const& GrassBlock();
+MCNAPI ::HashedString const& GrassBlock();
 
-MCAPI ::HashedString const& GrassPath();
+MCNAPI ::HashedString const& GrassPath();
 
-MCAPI ::HashedString const& Gravel();
+MCNAPI ::HashedString const& Gravel();
 
-MCAPI ::HashedString const& GrayCandle();
+MCNAPI ::HashedString const& GrayCandle();
 
-MCAPI ::HashedString const& GrayCandleCake();
+MCNAPI ::HashedString const& GrayCandleCake();
 
-MCAPI ::HashedString const& GrayCarpet();
+MCNAPI ::HashedString const& GrayCarpet();
 
-MCAPI ::HashedString const& GrayConcrete();
+MCNAPI ::HashedString const& GrayConcrete();
 
-MCAPI ::HashedString const& GrayConcretePowder();
+MCNAPI ::HashedString const& GrayConcretePowder();
 
-MCAPI ::HashedString const& GrayGlazedTerracotta();
+MCNAPI ::HashedString const& GrayGlazedTerracotta();
 
-MCAPI ::HashedString const& GrayShulkerBox();
+MCNAPI ::HashedString const& GrayShulkerBox();
 
-MCAPI ::HashedString const& GrayStainedGlass();
+MCNAPI ::HashedString const& GrayStainedGlass();
 
-MCAPI ::HashedString const& GrayStainedGlassPane();
+MCNAPI ::HashedString const& GrayStainedGlassPane();
 
-MCAPI ::HashedString const& GrayTerracotta();
+MCNAPI ::HashedString const& GrayTerracotta();
 
-MCAPI ::HashedString const& GrayWool();
+MCNAPI ::HashedString const& GrayWool();
 
-MCAPI ::HashedString const& GreenCandle();
+MCNAPI ::HashedString const& GreenCandle();
 
-MCAPI ::HashedString const& GreenCandleCake();
+MCNAPI ::HashedString const& GreenCandleCake();
 
-MCAPI ::HashedString const& GreenCarpet();
+MCNAPI ::HashedString const& GreenCarpet();
 
-MCAPI ::HashedString const& GreenConcrete();
+MCNAPI ::HashedString const& GreenConcrete();
 
-MCAPI ::HashedString const& GreenConcretePowder();
+MCNAPI ::HashedString const& GreenConcretePowder();
 
-MCAPI ::HashedString const& GreenGlazedTerracotta();
+MCNAPI ::HashedString const& GreenGlazedTerracotta();
 
-MCAPI ::HashedString const& GreenShulkerBox();
+MCNAPI ::HashedString const& GreenShulkerBox();
 
-MCAPI ::HashedString const& GreenStainedGlass();
+MCNAPI ::HashedString const& GreenStainedGlass();
 
-MCAPI ::HashedString const& GreenStainedGlassPane();
+MCNAPI ::HashedString const& GreenStainedGlassPane();
 
-MCAPI ::HashedString const& GreenTerracotta();
+MCNAPI ::HashedString const& GreenTerracotta();
 
-MCAPI ::HashedString const& GreenWool();
+MCNAPI ::HashedString const& GreenWool();
 
-MCAPI ::HashedString const& Grindstone();
+MCNAPI ::HashedString const& Grindstone();
 
-MCAPI ::HashedString const& HangingRoots();
+MCNAPI ::HashedString const& HangingRoots();
 
-MCAPI ::HashedString const& HardBlackStainedGlass();
+MCNAPI ::HashedString const& HardBlackStainedGlass();
 
-MCAPI ::HashedString const& HardBlackStainedGlassPane();
+MCNAPI ::HashedString const& HardBlackStainedGlassPane();
 
-MCAPI ::HashedString const& HardBlueStainedGlass();
+MCNAPI ::HashedString const& HardBlueStainedGlass();
 
-MCAPI ::HashedString const& HardBlueStainedGlassPane();
+MCNAPI ::HashedString const& HardBlueStainedGlassPane();
 
-MCAPI ::HashedString const& HardBrownStainedGlass();
+MCNAPI ::HashedString const& HardBrownStainedGlass();
 
-MCAPI ::HashedString const& HardBrownStainedGlassPane();
+MCNAPI ::HashedString const& HardBrownStainedGlassPane();
 
-MCAPI ::HashedString const& HardCyanStainedGlass();
+MCNAPI ::HashedString const& HardCyanStainedGlass();
 
-MCAPI ::HashedString const& HardCyanStainedGlassPane();
+MCNAPI ::HashedString const& HardCyanStainedGlassPane();
 
-MCAPI ::HashedString const& HardGlass();
+MCNAPI ::HashedString const& HardGlass();
 
-MCAPI ::HashedString const& HardGlassPane();
+MCNAPI ::HashedString const& HardGlassPane();
 
-MCAPI ::HashedString const& HardGrayStainedGlass();
+MCNAPI ::HashedString const& HardGrayStainedGlass();
 
-MCAPI ::HashedString const& HardGrayStainedGlassPane();
+MCNAPI ::HashedString const& HardGrayStainedGlassPane();
 
-MCAPI ::HashedString const& HardGreenStainedGlass();
+MCNAPI ::HashedString const& HardGreenStainedGlass();
 
-MCAPI ::HashedString const& HardGreenStainedGlassPane();
+MCNAPI ::HashedString const& HardGreenStainedGlassPane();
 
-MCAPI ::HashedString const& HardLightBlueStainedGlass();
+MCNAPI ::HashedString const& HardLightBlueStainedGlass();
 
-MCAPI ::HashedString const& HardLightBlueStainedGlassPane();
+MCNAPI ::HashedString const& HardLightBlueStainedGlassPane();
 
-MCAPI ::HashedString const& HardLightGrayStainedGlass();
+MCNAPI ::HashedString const& HardLightGrayStainedGlass();
 
-MCAPI ::HashedString const& HardLightGrayStainedGlassPane();
+MCNAPI ::HashedString const& HardLightGrayStainedGlassPane();
 
-MCAPI ::HashedString const& HardLimeStainedGlass();
+MCNAPI ::HashedString const& HardLimeStainedGlass();
 
-MCAPI ::HashedString const& HardLimeStainedGlassPane();
+MCNAPI ::HashedString const& HardLimeStainedGlassPane();
 
-MCAPI ::HashedString const& HardMagentaStainedGlass();
+MCNAPI ::HashedString const& HardMagentaStainedGlass();
 
-MCAPI ::HashedString const& HardMagentaStainedGlassPane();
+MCNAPI ::HashedString const& HardMagentaStainedGlassPane();
 
-MCAPI ::HashedString const& HardOrangeStainedGlass();
+MCNAPI ::HashedString const& HardOrangeStainedGlass();
 
-MCAPI ::HashedString const& HardOrangeStainedGlassPane();
+MCNAPI ::HashedString const& HardOrangeStainedGlassPane();
 
-MCAPI ::HashedString const& HardPinkStainedGlass();
+MCNAPI ::HashedString const& HardPinkStainedGlass();
 
-MCAPI ::HashedString const& HardPinkStainedGlassPane();
+MCNAPI ::HashedString const& HardPinkStainedGlassPane();
 
-MCAPI ::HashedString const& HardPurpleStainedGlass();
+MCNAPI ::HashedString const& HardPurpleStainedGlass();
 
-MCAPI ::HashedString const& HardPurpleStainedGlassPane();
+MCNAPI ::HashedString const& HardPurpleStainedGlassPane();
 
-MCAPI ::HashedString const& HardRedStainedGlass();
+MCNAPI ::HashedString const& HardRedStainedGlass();
 
-MCAPI ::HashedString const& HardRedStainedGlassPane();
+MCNAPI ::HashedString const& HardRedStainedGlassPane();
 
-MCAPI ::HashedString const& HardWhiteStainedGlass();
+MCNAPI ::HashedString const& HardWhiteStainedGlass();
 
-MCAPI ::HashedString const& HardWhiteStainedGlassPane();
+MCNAPI ::HashedString const& HardWhiteStainedGlassPane();
 
-MCAPI ::HashedString const& HardYellowStainedGlass();
+MCNAPI ::HashedString const& HardYellowStainedGlass();
 
-MCAPI ::HashedString const& HardYellowStainedGlassPane();
+MCNAPI ::HashedString const& HardYellowStainedGlassPane();
 
-MCAPI ::HashedString const& HardenedClay();
+MCNAPI ::HashedString const& HardenedClay();
 
-MCAPI ::HashedString const& HayBlock();
+MCNAPI ::HashedString const& HayBlock();
 
-MCAPI ::HashedString const& HeavyCore();
+MCNAPI ::HashedString const& HeavyCore();
 
-MCAPI ::HashedString const& HeavyWeightedPressurePlate();
+MCNAPI ::HashedString const& HeavyWeightedPressurePlate();
 
-MCAPI ::HashedString const& HoneyBlock();
+MCNAPI ::HashedString const& HoneyBlock();
 
-MCAPI ::HashedString const& HoneycombBlock();
+MCNAPI ::HashedString const& HoneycombBlock();
 
-MCAPI ::HashedString const& Hopper();
+MCNAPI ::HashedString const& Hopper();
 
-MCAPI ::HashedString const& HornCoral();
+MCNAPI ::HashedString const& HornCoral();
 
-MCAPI ::HashedString const& HornCoralBlock();
+MCNAPI ::HashedString const& HornCoralBlock();
 
-MCAPI ::HashedString const& HornCoralFan();
+MCNAPI ::HashedString const& HornCoralFan();
 
-MCAPI ::HashedString const& HornCoralWallFan();
+MCNAPI ::HashedString const& HornCoralWallFan();
 
-MCAPI ::HashedString const& Ice();
+MCNAPI ::HashedString const& Ice();
 
-MCAPI ::HashedString const& IceCrystal();
+MCNAPI ::HashedString const& IceCrystal();
 
-MCAPI ::HashedString const& Icicle();
+MCNAPI ::HashedString const& Icicle();
 
-MCAPI ::HashedString const& InfestedChiseledStoneBricks();
+MCNAPI ::HashedString const& InfestedChiseledStoneBricks();
 
-MCAPI ::HashedString const& InfestedCobblestone();
+MCNAPI ::HashedString const& InfestedCobblestone();
 
-MCAPI ::HashedString const& InfestedCrackedStoneBricks();
+MCNAPI ::HashedString const& InfestedCrackedStoneBricks();
 
-MCAPI ::HashedString const& InfestedDeepslate();
+MCNAPI ::HashedString const& InfestedDeepslate();
 
-MCAPI ::HashedString const& InfestedMossyStoneBricks();
+MCNAPI ::HashedString const& InfestedMossyStoneBricks();
 
-MCAPI ::HashedString const& InfestedStone();
+MCNAPI ::HashedString const& InfestedStone();
 
-MCAPI ::HashedString const& InfestedStoneBricks();
+MCNAPI ::HashedString const& InfestedStoneBricks();
 
-MCAPI ::HashedString const& InfoUpdate();
+MCNAPI ::HashedString const& InfoUpdate();
 
-MCAPI ::HashedString const& InfoUpdate2();
+MCNAPI ::HashedString const& InfoUpdate2();
 
-MCAPI ::HashedString const& InvisibleBedrock();
+MCNAPI ::HashedString const& InvisibleBedrock();
 
-MCAPI ::HashedString const& IronBars();
+MCNAPI ::HashedString const& IronBars();
 
-MCAPI ::HashedString const& IronBlock();
+MCNAPI ::HashedString const& IronBlock();
 
 MCAPI ::HashedString const& IronChain();
 
-MCAPI ::HashedString const& IronDoor();
+MCNAPI ::HashedString const& IronDoor();
 
 MCAPI ::HashedString const& IronOre();
 
-MCAPI ::HashedString const& IronTrapdoor();
+MCNAPI ::HashedString const& IronTrapdoor();
 
-MCAPI ::HashedString const& ItemFrame();
+MCNAPI ::HashedString const& ItemFrame();
 
-MCAPI ::HashedString const& Jigsaw();
+MCNAPI ::HashedString const& Jigsaw();
 
-MCAPI ::HashedString const& Jukebox();
+MCNAPI ::HashedString const& Jukebox();
 
-MCAPI ::HashedString const& JungleButton();
+MCNAPI ::HashedString const& JungleButton();
 
-MCAPI ::HashedString const& JungleDoor();
+MCNAPI ::HashedString const& JungleDoor();
 
-MCAPI ::HashedString const& JungleDoubleSlab();
+MCNAPI ::HashedString const& JungleDoubleSlab();
 
-MCAPI ::HashedString const& JungleFence();
+MCNAPI ::HashedString const& JungleFence();
 
-MCAPI ::HashedString const& JungleFenceGate();
+MCNAPI ::HashedString const& JungleFenceGate();
 
-MCAPI ::HashedString const& JungleHangingSign();
+MCNAPI ::HashedString const& JungleHangingSign();
 
-MCAPI ::HashedString const& JungleLeaves();
+MCNAPI ::HashedString const& JungleLeaves();
 
 MCAPI ::HashedString const& JungleLog();
 
-MCAPI ::HashedString const& JunglePlanks();
+MCNAPI ::HashedString const& JunglePlanks();
 
-MCAPI ::HashedString const& JunglePressurePlate();
+MCNAPI ::HashedString const& JunglePressurePlate();
 
-MCAPI ::HashedString const& JungleSapling();
+MCNAPI ::HashedString const& JungleSapling();
 
-MCAPI ::HashedString const& JungleShelf();
+MCNAPI ::HashedString const& JungleShelf();
 
 MCAPI ::HashedString const& JungleSlab();
 
-MCAPI ::HashedString const& JungleStairs();
+MCNAPI ::HashedString const& JungleStairs();
 
-MCAPI ::HashedString const& JungleStandingSign();
+MCNAPI ::HashedString const& JungleStandingSign();
 
 MCAPI ::HashedString const& JungleTrapdoor();
 
-MCAPI ::HashedString const& JungleWallSign();
+MCNAPI ::HashedString const& JungleWallSign();
 
-MCAPI ::HashedString const& JungleWood();
+MCNAPI ::HashedString const& JungleWood();
 
-MCAPI ::HashedString const& Kelp();
+MCNAPI ::HashedString const& Kelp();
 
-MCAPI ::HashedString const& LabTable();
+MCNAPI ::HashedString const& LabTable();
 
-MCAPI ::HashedString const& Ladder();
+MCNAPI ::HashedString const& Ladder();
 
-MCAPI ::HashedString const& Lantern();
+MCNAPI ::HashedString const& Lantern();
 
-MCAPI ::HashedString const& LapisBlock();
+MCNAPI ::HashedString const& LapisBlock();
 
 MCAPI ::HashedString const& LapisOre();
 
-MCAPI ::HashedString const& LargeAmethystBud();
+MCNAPI ::HashedString const& LargeAmethystBud();
 
-MCAPI ::HashedString const& LargeFern();
+MCNAPI ::HashedString const& LargeFern();
 
-MCAPI ::HashedString const& Lava();
+MCNAPI ::HashedString const& Lava();
 
-MCAPI ::HashedString const& LeafLitter();
+MCNAPI ::HashedString const& LeafLitter();
 
-MCAPI ::HashedString const& Lectern();
+MCNAPI ::HashedString const& Lectern();
 
-MCAPI ::HashedString const& LegacyChain();
+MCNAPI ::HashedString const& LegacyChain();
 
-MCAPI ::HashedString const& Lever();
+MCNAPI ::HashedString const& Lever();
 
-MCAPI ::HashedString const& LightBlock0();
+MCNAPI ::HashedString const& LightBlock0();
 
-MCAPI ::HashedString const& LightBlock1();
+MCNAPI ::HashedString const& LightBlock1();
 
-MCAPI ::HashedString const& LightBlock10();
+MCNAPI ::HashedString const& LightBlock10();
 
-MCAPI ::HashedString const& LightBlock11();
+MCNAPI ::HashedString const& LightBlock11();
 
-MCAPI ::HashedString const& LightBlock12();
+MCNAPI ::HashedString const& LightBlock12();
 
-MCAPI ::HashedString const& LightBlock13();
+MCNAPI ::HashedString const& LightBlock13();
 
-MCAPI ::HashedString const& LightBlock14();
+MCNAPI ::HashedString const& LightBlock14();
 
-MCAPI ::HashedString const& LightBlock15();
+MCNAPI ::HashedString const& LightBlock15();
 
-MCAPI ::HashedString const& LightBlock2();
+MCNAPI ::HashedString const& LightBlock2();
 
-MCAPI ::HashedString const& LightBlock3();
+MCNAPI ::HashedString const& LightBlock3();
 
-MCAPI ::HashedString const& LightBlock4();
+MCNAPI ::HashedString const& LightBlock4();
 
-MCAPI ::HashedString const& LightBlock5();
+MCNAPI ::HashedString const& LightBlock5();
 
-MCAPI ::HashedString const& LightBlock6();
+MCNAPI ::HashedString const& LightBlock6();
 
-MCAPI ::HashedString const& LightBlock7();
+MCNAPI ::HashedString const& LightBlock7();
 
-MCAPI ::HashedString const& LightBlock8();
+MCNAPI ::HashedString const& LightBlock8();
 
-MCAPI ::HashedString const& LightBlock9();
+MCNAPI ::HashedString const& LightBlock9();
 
-MCAPI ::HashedString const& LightBlueCandle();
+MCNAPI ::HashedString const& LightBlueCandle();
 
-MCAPI ::HashedString const& LightBlueCandleCake();
+MCNAPI ::HashedString const& LightBlueCandleCake();
 
-MCAPI ::HashedString const& LightBlueCarpet();
+MCNAPI ::HashedString const& LightBlueCarpet();
 
-MCAPI ::HashedString const& LightBlueConcrete();
+MCNAPI ::HashedString const& LightBlueConcrete();
 
-MCAPI ::HashedString const& LightBlueConcretePowder();
+MCNAPI ::HashedString const& LightBlueConcretePowder();
 
-MCAPI ::HashedString const& LightBlueGlazedTerracotta();
+MCNAPI ::HashedString const& LightBlueGlazedTerracotta();
 
-MCAPI ::HashedString const& LightBlueShulkerBox();
+MCNAPI ::HashedString const& LightBlueShulkerBox();
 
-MCAPI ::HashedString const& LightBlueStainedGlass();
+MCNAPI ::HashedString const& LightBlueStainedGlass();
 
-MCAPI ::HashedString const& LightBlueStainedGlassPane();
+MCNAPI ::HashedString const& LightBlueStainedGlassPane();
 
-MCAPI ::HashedString const& LightBlueTerracotta();
+MCNAPI ::HashedString const& LightBlueTerracotta();
 
-MCAPI ::HashedString const& LightBlueWool();
+MCNAPI ::HashedString const& LightBlueWool();
 
-MCAPI ::HashedString const& LightGrayCandle();
+MCNAPI ::HashedString const& LightGrayCandle();
 
-MCAPI ::HashedString const& LightGrayCandleCake();
+MCNAPI ::HashedString const& LightGrayCandleCake();
 
-MCAPI ::HashedString const& LightGrayCarpet();
+MCNAPI ::HashedString const& LightGrayCarpet();
 
-MCAPI ::HashedString const& LightGrayConcrete();
+MCNAPI ::HashedString const& LightGrayConcrete();
 
-MCAPI ::HashedString const& LightGrayConcretePowder();
+MCNAPI ::HashedString const& LightGrayConcretePowder();
 
-MCAPI ::HashedString const& LightGrayShulkerBox();
+MCNAPI ::HashedString const& LightGrayShulkerBox();
 
-MCAPI ::HashedString const& LightGrayStainedGlass();
+MCNAPI ::HashedString const& LightGrayStainedGlass();
 
-MCAPI ::HashedString const& LightGrayStainedGlassPane();
+MCNAPI ::HashedString const& LightGrayStainedGlassPane();
 
-MCAPI ::HashedString const& LightGrayTerracotta();
+MCNAPI ::HashedString const& LightGrayTerracotta();
 
-MCAPI ::HashedString const& LightGrayWool();
+MCNAPI ::HashedString const& LightGrayWool();
 
-MCAPI ::HashedString const& LightWeightedPressurePlate();
+MCNAPI ::HashedString const& LightWeightedPressurePlate();
 
-MCAPI ::HashedString const& LightningRod();
+MCNAPI ::HashedString const& LightningRod();
 
-MCAPI ::HashedString const& Lilac();
+MCNAPI ::HashedString const& Lilac();
 
-MCAPI ::HashedString const& LilyOfTheValley();
+MCNAPI ::HashedString const& LilyOfTheValley();
 
-MCAPI ::HashedString const& LimeCandle();
+MCNAPI ::HashedString const& LimeCandle();
 
-MCAPI ::HashedString const& LimeCandleCake();
+MCNAPI ::HashedString const& LimeCandleCake();
 
-MCAPI ::HashedString const& LimeCarpet();
+MCNAPI ::HashedString const& LimeCarpet();
 
-MCAPI ::HashedString const& LimeConcrete();
+MCNAPI ::HashedString const& LimeConcrete();
 
-MCAPI ::HashedString const& LimeConcretePowder();
+MCNAPI ::HashedString const& LimeConcretePowder();
 
-MCAPI ::HashedString const& LimeGlazedTerracotta();
+MCNAPI ::HashedString const& LimeGlazedTerracotta();
 
-MCAPI ::HashedString const& LimeShulkerBox();
+MCNAPI ::HashedString const& LimeShulkerBox();
 
-MCAPI ::HashedString const& LimeStainedGlass();
+MCNAPI ::HashedString const& LimeStainedGlass();
 
-MCAPI ::HashedString const& LimeStainedGlassPane();
+MCNAPI ::HashedString const& LimeStainedGlassPane();
 
-MCAPI ::HashedString const& LimeTerracotta();
+MCNAPI ::HashedString const& LimeTerracotta();
 
-MCAPI ::HashedString const& LimeWool();
+MCNAPI ::HashedString const& LimeWool();
 
-MCAPI ::HashedString const& LitBlastFurnace();
+MCNAPI ::HashedString const& LitBlastFurnace();
 
 MCAPI ::HashedString const& LitDeepslateRedstoneOre();
 
-MCAPI ::HashedString const& LitFurnace();
+MCNAPI ::HashedString const& LitFurnace();
 
-MCAPI ::HashedString const& LitPumpkin();
+MCNAPI ::HashedString const& LitPumpkin();
 
-MCAPI ::HashedString const& LitRedstoneLamp();
+MCNAPI ::HashedString const& LitRedstoneLamp();
 
 MCAPI ::HashedString const& LitRedstoneOre();
 
-MCAPI ::HashedString const& LitSmoker();
+MCNAPI ::HashedString const& LitSmoker();
 
-MCAPI ::HashedString const& Lodestone();
+MCNAPI ::HashedString const& Lodestone();
 
-MCAPI ::HashedString const& Loom();
+MCNAPI ::HashedString const& Loom();
 
-MCAPI ::HashedString const& MagentaCandle();
+MCNAPI ::HashedString const& MagentaCandle();
 
-MCAPI ::HashedString const& MagentaCandleCake();
+MCNAPI ::HashedString const& MagentaCandleCake();
 
-MCAPI ::HashedString const& MagentaCarpet();
+MCNAPI ::HashedString const& MagentaCarpet();
 
-MCAPI ::HashedString const& MagentaConcrete();
+MCNAPI ::HashedString const& MagentaConcrete();
 
-MCAPI ::HashedString const& MagentaConcretePowder();
+MCNAPI ::HashedString const& MagentaConcretePowder();
 
-MCAPI ::HashedString const& MagentaGlazedTerracotta();
+MCNAPI ::HashedString const& MagentaGlazedTerracotta();
 
-MCAPI ::HashedString const& MagentaShulkerBox();
+MCNAPI ::HashedString const& MagentaShulkerBox();
 
-MCAPI ::HashedString const& MagentaStainedGlass();
+MCNAPI ::HashedString const& MagentaStainedGlass();
 
-MCAPI ::HashedString const& MagentaStainedGlassPane();
+MCNAPI ::HashedString const& MagentaStainedGlassPane();
 
-MCAPI ::HashedString const& MagentaTerracotta();
+MCNAPI ::HashedString const& MagentaTerracotta();
 
-MCAPI ::HashedString const& MagentaWool();
+MCNAPI ::HashedString const& MagentaWool();
 
-MCAPI ::HashedString const& Magma();
+MCNAPI ::HashedString const& Magma();
 
-MCAPI ::HashedString const& MangroveButton();
+MCNAPI ::HashedString const& MangroveButton();
 
-MCAPI ::HashedString const& MangroveDoor();
+MCNAPI ::HashedString const& MangroveDoor();
 
-MCAPI ::HashedString const& MangroveDoubleSlab();
+MCNAPI ::HashedString const& MangroveDoubleSlab();
 
-MCAPI ::HashedString const& MangroveFence();
+MCNAPI ::HashedString const& MangroveFence();
 
-MCAPI ::HashedString const& MangroveFenceGate();
+MCNAPI ::HashedString const& MangroveFenceGate();
 
-MCAPI ::HashedString const& MangroveHangingSign();
+MCNAPI ::HashedString const& MangroveHangingSign();
 
-MCAPI ::HashedString const& MangroveLeaves();
+MCNAPI ::HashedString const& MangroveLeaves();
 
 MCAPI ::HashedString const& MangroveLog();
 
-MCAPI ::HashedString const& MangrovePlanks();
+MCNAPI ::HashedString const& MangrovePlanks();
 
-MCAPI ::HashedString const& MangrovePressurePlate();
+MCNAPI ::HashedString const& MangrovePressurePlate();
 
-MCAPI ::HashedString const& MangrovePropagule();
+MCNAPI ::HashedString const& MangrovePropagule();
 
-MCAPI ::HashedString const& MangroveRoots();
+MCNAPI ::HashedString const& MangroveRoots();
 
-MCAPI ::HashedString const& MangroveShelf();
+MCNAPI ::HashedString const& MangroveShelf();
 
 MCAPI ::HashedString const& MangroveSlab();
 
-MCAPI ::HashedString const& MangroveStairs();
+MCNAPI ::HashedString const& MangroveStairs();
 
-MCAPI ::HashedString const& MangroveStandingSign();
+MCNAPI ::HashedString const& MangroveStandingSign();
 
 MCAPI ::HashedString const& MangroveTrapdoor();
 
-MCAPI ::HashedString const& MangroveWallSign();
+MCNAPI ::HashedString const& MangroveWallSign();
 
-MCAPI ::HashedString const& MangroveWood();
+MCNAPI ::HashedString const& MangroveWood();
 
-MCAPI ::HashedString const& MaterialReducer();
+MCNAPI ::HashedString const& MaterialReducer();
 
-MCAPI ::HashedString const& MediumAmethystBud();
+MCNAPI ::HashedString const& MediumAmethystBud();
 
-MCAPI ::HashedString const& MelonBlock();
+MCNAPI ::HashedString const& MelonBlock();
 
-MCAPI ::HashedString const& MelonStem();
+MCNAPI ::HashedString const& MelonStem();
 
-MCAPI ::HashedString const& MobSpawner();
+MCNAPI ::HashedString const& MobSpawner();
 
-MCAPI ::HashedString const& MossBlock();
+MCNAPI ::HashedString const& MossBlock();
 
-MCAPI ::HashedString const& MossCarpet();
+MCNAPI ::HashedString const& MossCarpet();
 
-MCAPI ::HashedString const& MossyCobblestone();
+MCNAPI ::HashedString const& MossyCobblestone();
 
-MCAPI ::HashedString const& MossyCobblestoneDoubleSlab();
+MCNAPI ::HashedString const& MossyCobblestoneDoubleSlab();
 
-MCAPI ::HashedString const& MossyCobblestoneSlab();
+MCNAPI ::HashedString const& MossyCobblestoneSlab();
 
-MCAPI ::HashedString const& MossyCobblestoneStairs();
+MCNAPI ::HashedString const& MossyCobblestoneStairs();
 
-MCAPI ::HashedString const& MossyCobblestoneWall();
+MCNAPI ::HashedString const& MossyCobblestoneWall();
 
-MCAPI ::HashedString const& MossyStoneBrickDoubleSlab();
+MCNAPI ::HashedString const& MossyStoneBrickDoubleSlab();
 
-MCAPI ::HashedString const& MossyStoneBrickSlab();
+MCNAPI ::HashedString const& MossyStoneBrickSlab();
 
-MCAPI ::HashedString const& MossyStoneBrickStairs();
+MCNAPI ::HashedString const& MossyStoneBrickStairs();
 
-MCAPI ::HashedString const& MossyStoneBrickWall();
+MCNAPI ::HashedString const& MossyStoneBrickWall();
 
-MCAPI ::HashedString const& MossyStoneBricks();
+MCNAPI ::HashedString const& MossyStoneBricks();
 
-MCAPI ::HashedString const& MovingBlock();
+MCNAPI ::HashedString const& MovingBlock();
 
-MCAPI ::HashedString const& Mud();
+MCNAPI ::HashedString const& Mud();
 
-MCAPI ::HashedString const& MudBrickDoubleSlab();
+MCNAPI ::HashedString const& MudBrickDoubleSlab();
 
-MCAPI ::HashedString const& MudBrickSlab();
+MCNAPI ::HashedString const& MudBrickSlab();
 
-MCAPI ::HashedString const& MudBrickStairs();
+MCNAPI ::HashedString const& MudBrickStairs();
 
-MCAPI ::HashedString const& MudBrickWall();
+MCNAPI ::HashedString const& MudBrickWall();
 
-MCAPI ::HashedString const& MudBricks();
+MCNAPI ::HashedString const& MudBricks();
 
-MCAPI ::HashedString const& MuddyMangroveRoots();
+MCNAPI ::HashedString const& MuddyMangroveRoots();
 
-MCAPI ::HashedString const& MushroomStem();
+MCNAPI ::HashedString const& MushroomStem();
 
-MCAPI ::HashedString const& Mycelium();
+MCNAPI ::HashedString const& Mycelium();
 
-MCAPI ::HashedString const& NetherBrickBlockName();
+MCNAPI ::HashedString const& NetherBrickBlockName();
 
-MCAPI ::HashedString const& NetherBrickDoubleSlab();
+MCNAPI ::HashedString const& NetherBrickDoubleSlab();
 
-MCAPI ::HashedString const& NetherBrickFence();
+MCNAPI ::HashedString const& NetherBrickFence();
 
-MCAPI ::HashedString const& NetherBrickSlab();
+MCNAPI ::HashedString const& NetherBrickSlab();
 
-MCAPI ::HashedString const& NetherBrickStairs();
+MCNAPI ::HashedString const& NetherBrickStairs();
 
-MCAPI ::HashedString const& NetherBrickWall();
+MCNAPI ::HashedString const& NetherBrickWall();
 
 MCAPI ::HashedString const& NetherGoldOre();
 
-MCAPI ::HashedString const& NetherReactor();
+MCNAPI ::HashedString const& NetherReactor();
 
-MCAPI ::HashedString const& NetherSprouts();
+MCNAPI ::HashedString const& NetherSprouts();
 
-MCAPI ::HashedString const& NetherWart();
+MCNAPI ::HashedString const& NetherWart();
 
-MCAPI ::HashedString const& NetherWartBlock();
+MCNAPI ::HashedString const& NetherWartBlock();
 
-MCAPI ::HashedString const& NetheriteBlock();
+MCNAPI ::HashedString const& NetheriteBlock();
 
-MCAPI ::HashedString const& Netherrack();
+MCNAPI ::HashedString const& Netherrack();
 
-MCAPI ::HashedString const& NormalStoneDoubleSlab();
+MCNAPI ::HashedString const& NormalStoneDoubleSlab();
 
-MCAPI ::HashedString const& NormalStoneSlab();
+MCNAPI ::HashedString const& NormalStoneSlab();
 
-MCAPI ::HashedString const& NormalStoneStairs();
+MCNAPI ::HashedString const& NormalStoneStairs();
 
-MCAPI ::HashedString const& Noteblock();
+MCNAPI ::HashedString const& Noteblock();
 
-MCAPI ::HashedString const& OakDoubleSlab();
+MCNAPI ::HashedString const& OakDoubleSlab();
 
-MCAPI ::HashedString const& OakFence();
+MCNAPI ::HashedString const& OakFence();
 
-MCAPI ::HashedString const& OakHangingSign();
+MCNAPI ::HashedString const& OakHangingSign();
 
-MCAPI ::HashedString const& OakLeaves();
+MCNAPI ::HashedString const& OakLeaves();
 
 MCAPI ::HashedString const& OakLog();
 
-MCAPI ::HashedString const& OakPlanks();
+MCNAPI ::HashedString const& OakPlanks();
 
-MCAPI ::HashedString const& OakSapling();
+MCNAPI ::HashedString const& OakSapling();
 
-MCAPI ::HashedString const& OakShelf();
+MCNAPI ::HashedString const& OakShelf();
 
 MCAPI ::HashedString const& OakSlab();
 
-MCAPI ::HashedString const& OakStairs();
+MCNAPI ::HashedString const& OakStairs();
 
-MCAPI ::HashedString const& OakWood();
+MCNAPI ::HashedString const& OakWood();
 
-MCAPI ::HashedString const& Observer();
+MCNAPI ::HashedString const& Observer();
 
-MCAPI ::HashedString const& Obsidian();
+MCNAPI ::HashedString const& Obsidian();
 
-MCAPI ::HashedString const& OchreFroglight();
+MCNAPI ::HashedString const& OchreFroglight();
 
-MCAPI ::HashedString const& OpenEyeblossom();
+MCNAPI ::HashedString const& OpenEyeblossom();
 
-MCAPI ::HashedString const& OrangeCandle();
+MCNAPI ::HashedString const& OrangeCandle();
 
-MCAPI ::HashedString const& OrangeCandleCake();
+MCNAPI ::HashedString const& OrangeCandleCake();
 
-MCAPI ::HashedString const& OrangeCarpet();
+MCNAPI ::HashedString const& OrangeCarpet();
 
-MCAPI ::HashedString const& OrangeConcrete();
+MCNAPI ::HashedString const& OrangeConcrete();
 
-MCAPI ::HashedString const& OrangeConcretePowder();
+MCNAPI ::HashedString const& OrangeConcretePowder();
 
-MCAPI ::HashedString const& OrangeGlazedTerracotta();
+MCNAPI ::HashedString const& OrangeGlazedTerracotta();
 
-MCAPI ::HashedString const& OrangePoplarLeaves();
+MCNAPI ::HashedString const& OrangePoplarLeaves();
 
-MCAPI ::HashedString const& OrangeShulkerBox();
+MCNAPI ::HashedString const& OrangeShulkerBox();
 
-MCAPI ::HashedString const& OrangeStainedGlass();
+MCNAPI ::HashedString const& OrangeStainedGlass();
 
-MCAPI ::HashedString const& OrangeStainedGlassPane();
+MCNAPI ::HashedString const& OrangeStainedGlassPane();
 
-MCAPI ::HashedString const& OrangeTerracotta();
+MCNAPI ::HashedString const& OrangeTerracotta();
 
-MCAPI ::HashedString const& OrangeTulip();
+MCNAPI ::HashedString const& OrangeTulip();
 
-MCAPI ::HashedString const& OrangeWool();
+MCNAPI ::HashedString const& OrangeWool();
 
-MCAPI ::HashedString const& OxeyeDaisy();
+MCNAPI ::HashedString const& OxeyeDaisy();
 
-MCAPI ::HashedString const& OxidizedChiseledCopper();
+MCNAPI ::HashedString const& OxidizedChiseledCopper();
 
-MCAPI ::HashedString const& OxidizedCopper();
+MCNAPI ::HashedString const& OxidizedCopper();
 
-MCAPI ::HashedString const& OxidizedCopperBars();
+MCNAPI ::HashedString const& OxidizedCopperBars();
 
-MCAPI ::HashedString const& OxidizedCopperBulb();
+MCNAPI ::HashedString const& OxidizedCopperBulb();
 
-MCAPI ::HashedString const& OxidizedCopperChain();
+MCNAPI ::HashedString const& OxidizedCopperChain();
 
-MCAPI ::HashedString const& OxidizedCopperChest();
+MCNAPI ::HashedString const& OxidizedCopperChest();
 
-MCAPI ::HashedString const& OxidizedCopperDoor();
+MCNAPI ::HashedString const& OxidizedCopperDoor();
 
-MCAPI ::HashedString const& OxidizedCopperGolemStatue();
+MCNAPI ::HashedString const& OxidizedCopperGolemStatue();
 
-MCAPI ::HashedString const& OxidizedCopperGrate();
+MCNAPI ::HashedString const& OxidizedCopperGrate();
 
-MCAPI ::HashedString const& OxidizedCopperLantern();
+MCNAPI ::HashedString const& OxidizedCopperLantern();
 
-MCAPI ::HashedString const& OxidizedCopperTrapdoor();
+MCNAPI ::HashedString const& OxidizedCopperTrapdoor();
 
-MCAPI ::HashedString const& OxidizedCutCopper();
+MCNAPI ::HashedString const& OxidizedCutCopper();
 
-MCAPI ::HashedString const& OxidizedCutCopperSlab();
+MCNAPI ::HashedString const& OxidizedCutCopperSlab();
 
-MCAPI ::HashedString const& OxidizedCutCopperStairs();
+MCNAPI ::HashedString const& OxidizedCutCopperStairs();
 
-MCAPI ::HashedString const& OxidizedDoubleCutCopperSlab();
+MCNAPI ::HashedString const& OxidizedDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& OxidizedLightningRod();
+MCNAPI ::HashedString const& OxidizedLightningRod();
 
-MCAPI ::HashedString const& PackedIce();
+MCNAPI ::HashedString const& PackedIce();
 
-MCAPI ::HashedString const& PackedMud();
+MCNAPI ::HashedString const& PackedMud();
 
-MCAPI ::HashedString const& PaleHangingMoss();
+MCNAPI ::HashedString const& PaleHangingMoss();
 
-MCAPI ::HashedString const& PaleMossBlock();
+MCNAPI ::HashedString const& PaleMossBlock();
 
-MCAPI ::HashedString const& PaleMossCarpet();
+MCNAPI ::HashedString const& PaleMossCarpet();
 
-MCAPI ::HashedString const& PaleOakButton();
+MCNAPI ::HashedString const& PaleOakButton();
 
-MCAPI ::HashedString const& PaleOakDoor();
+MCNAPI ::HashedString const& PaleOakDoor();
 
-MCAPI ::HashedString const& PaleOakDoubleSlab();
+MCNAPI ::HashedString const& PaleOakDoubleSlab();
 
-MCAPI ::HashedString const& PaleOakFence();
+MCNAPI ::HashedString const& PaleOakFence();
 
-MCAPI ::HashedString const& PaleOakFenceGate();
+MCNAPI ::HashedString const& PaleOakFenceGate();
 
-MCAPI ::HashedString const& PaleOakHangingSign();
+MCNAPI ::HashedString const& PaleOakHangingSign();
 
-MCAPI ::HashedString const& PaleOakLeaves();
+MCNAPI ::HashedString const& PaleOakLeaves();
 
-MCAPI ::HashedString const& PaleOakLog();
+MCNAPI ::HashedString const& PaleOakLog();
 
-MCAPI ::HashedString const& PaleOakPlanks();
+MCNAPI ::HashedString const& PaleOakPlanks();
 
-MCAPI ::HashedString const& PaleOakPressurePlate();
+MCNAPI ::HashedString const& PaleOakPressurePlate();
 
-MCAPI ::HashedString const& PaleOakSapling();
+MCNAPI ::HashedString const& PaleOakSapling();
 
-MCAPI ::HashedString const& PaleOakShelf();
+MCNAPI ::HashedString const& PaleOakShelf();
 
-MCAPI ::HashedString const& PaleOakSlab();
+MCNAPI ::HashedString const& PaleOakSlab();
 
-MCAPI ::HashedString const& PaleOakStairs();
+MCNAPI ::HashedString const& PaleOakStairs();
 
-MCAPI ::HashedString const& PaleOakStandingSign();
+MCNAPI ::HashedString const& PaleOakStandingSign();
 
-MCAPI ::HashedString const& PaleOakTrapdoor();
+MCNAPI ::HashedString const& PaleOakTrapdoor();
 
-MCAPI ::HashedString const& PaleOakWallSign();
+MCNAPI ::HashedString const& PaleOakWallSign();
 
-MCAPI ::HashedString const& PaleOakWood();
+MCNAPI ::HashedString const& PaleOakWood();
 
-MCAPI ::HashedString const& PearlescentFroglight();
+MCNAPI ::HashedString const& PearlescentFroglight();
 
-MCAPI ::HashedString const& Peony();
+MCNAPI ::HashedString const& Peony();
 
-MCAPI ::HashedString const& PetrifiedOakDoubleSlab();
+MCNAPI ::HashedString const& PetrifiedOakDoubleSlab();
 
-MCAPI ::HashedString const& PetrifiedOakSlab();
+MCNAPI ::HashedString const& PetrifiedOakSlab();
 
-MCAPI ::HashedString const& PiglinHead();
+MCNAPI ::HashedString const& PiglinHead();
 
-MCAPI ::HashedString const& PinkCandle();
+MCNAPI ::HashedString const& PinkCandle();
 
-MCAPI ::HashedString const& PinkCandleCake();
+MCNAPI ::HashedString const& PinkCandleCake();
 
-MCAPI ::HashedString const& PinkCarpet();
+MCNAPI ::HashedString const& PinkCarpet();
 
-MCAPI ::HashedString const& PinkConcrete();
+MCNAPI ::HashedString const& PinkConcrete();
 
-MCAPI ::HashedString const& PinkConcretePowder();
+MCNAPI ::HashedString const& PinkConcretePowder();
 
-MCAPI ::HashedString const& PinkGlazedTerracotta();
+MCNAPI ::HashedString const& PinkGlazedTerracotta();
 
-MCAPI ::HashedString const& PinkPetals();
+MCNAPI ::HashedString const& PinkPetals();
 
-MCAPI ::HashedString const& PinkShulkerBox();
+MCNAPI ::HashedString const& PinkShulkerBox();
 
-MCAPI ::HashedString const& PinkStainedGlass();
+MCNAPI ::HashedString const& PinkStainedGlass();
 
-MCAPI ::HashedString const& PinkStainedGlassPane();
+MCNAPI ::HashedString const& PinkStainedGlassPane();
 
-MCAPI ::HashedString const& PinkTerracotta();
+MCNAPI ::HashedString const& PinkTerracotta();
 
-MCAPI ::HashedString const& PinkTulip();
+MCNAPI ::HashedString const& PinkTulip();
 
-MCAPI ::HashedString const& PinkWool();
+MCNAPI ::HashedString const& PinkWool();
 
-MCAPI ::HashedString const& Piston();
+MCNAPI ::HashedString const& Piston();
 
 MCAPI ::HashedString const& PistonArmCollision();
 
-MCAPI ::HashedString const& PitcherCrop();
+MCNAPI ::HashedString const& PitcherCrop();
 
-MCAPI ::HashedString const& PitcherPlant();
+MCNAPI ::HashedString const& PitcherPlant();
 
-MCAPI ::HashedString const& PlayerHead();
+MCNAPI ::HashedString const& PlayerHead();
 
-MCAPI ::HashedString const& Podzol();
+MCNAPI ::HashedString const& Podzol();
 
-MCAPI ::HashedString const& PointedDripstone();
+MCNAPI ::HashedString const& PointedDripstone();
 
-MCAPI ::HashedString const& PolishedAndesite();
+MCNAPI ::HashedString const& PolishedAndesite();
 
-MCAPI ::HashedString const& PolishedAndesiteDoubleSlab();
+MCNAPI ::HashedString const& PolishedAndesiteDoubleSlab();
 
-MCAPI ::HashedString const& PolishedAndesiteSlab();
+MCNAPI ::HashedString const& PolishedAndesiteSlab();
 
-MCAPI ::HashedString const& PolishedAndesiteStairs();
+MCNAPI ::HashedString const& PolishedAndesiteStairs();
 
-MCAPI ::HashedString const& PolishedBasalt();
+MCNAPI ::HashedString const& PolishedBasalt();
 
-MCAPI ::HashedString const& PolishedBlackstone();
+MCNAPI ::HashedString const& PolishedBlackstone();
 
-MCAPI ::HashedString const& PolishedBlackstoneBrickDoubleSlab();
+MCNAPI ::HashedString const& PolishedBlackstoneBrickDoubleSlab();
 
-MCAPI ::HashedString const& PolishedBlackstoneBrickSlab();
+MCNAPI ::HashedString const& PolishedBlackstoneBrickSlab();
 
-MCAPI ::HashedString const& PolishedBlackstoneBrickStairs();
+MCNAPI ::HashedString const& PolishedBlackstoneBrickStairs();
 
-MCAPI ::HashedString const& PolishedBlackstoneBrickWall();
+MCNAPI ::HashedString const& PolishedBlackstoneBrickWall();
 
-MCAPI ::HashedString const& PolishedBlackstoneBricks();
+MCNAPI ::HashedString const& PolishedBlackstoneBricks();
 
-MCAPI ::HashedString const& PolishedBlackstoneButton();
+MCNAPI ::HashedString const& PolishedBlackstoneButton();
 
-MCAPI ::HashedString const& PolishedBlackstoneDoubleSlab();
+MCNAPI ::HashedString const& PolishedBlackstoneDoubleSlab();
 
-MCAPI ::HashedString const& PolishedBlackstonePressurePlate();
+MCNAPI ::HashedString const& PolishedBlackstonePressurePlate();
 
-MCAPI ::HashedString const& PolishedBlackstoneSlab();
+MCNAPI ::HashedString const& PolishedBlackstoneSlab();
 
-MCAPI ::HashedString const& PolishedBlackstoneStairs();
+MCNAPI ::HashedString const& PolishedBlackstoneStairs();
 
-MCAPI ::HashedString const& PolishedBlackstoneWall();
+MCNAPI ::HashedString const& PolishedBlackstoneWall();
 
-MCAPI ::HashedString const& PolishedCinnabar();
+MCNAPI ::HashedString const& PolishedCinnabar();
 
-MCAPI ::HashedString const& PolishedCinnabarDoubleSlab();
+MCNAPI ::HashedString const& PolishedCinnabarDoubleSlab();
 
-MCAPI ::HashedString const& PolishedCinnabarSlab();
+MCNAPI ::HashedString const& PolishedCinnabarSlab();
 
-MCAPI ::HashedString const& PolishedCinnabarStairs();
+MCNAPI ::HashedString const& PolishedCinnabarStairs();
 
-MCAPI ::HashedString const& PolishedCinnabarWall();
+MCNAPI ::HashedString const& PolishedCinnabarWall();
 
-MCAPI ::HashedString const& PolishedDeepslate();
+MCNAPI ::HashedString const& PolishedDeepslate();
 
-MCAPI ::HashedString const& PolishedDeepslateDoubleSlab();
+MCNAPI ::HashedString const& PolishedDeepslateDoubleSlab();
 
-MCAPI ::HashedString const& PolishedDeepslateSlab();
+MCNAPI ::HashedString const& PolishedDeepslateSlab();
 
-MCAPI ::HashedString const& PolishedDeepslateStairs();
+MCNAPI ::HashedString const& PolishedDeepslateStairs();
 
-MCAPI ::HashedString const& PolishedDeepslateWall();
+MCNAPI ::HashedString const& PolishedDeepslateWall();
 
-MCAPI ::HashedString const& PolishedDiorite();
+MCNAPI ::HashedString const& PolishedDiorite();
 
-MCAPI ::HashedString const& PolishedDioriteDoubleSlab();
+MCNAPI ::HashedString const& PolishedDioriteDoubleSlab();
 
-MCAPI ::HashedString const& PolishedDioriteSlab();
+MCNAPI ::HashedString const& PolishedDioriteSlab();
 
-MCAPI ::HashedString const& PolishedDioriteStairs();
+MCNAPI ::HashedString const& PolishedDioriteStairs();
 
-MCAPI ::HashedString const& PolishedGranite();
+MCNAPI ::HashedString const& PolishedGranite();
 
-MCAPI ::HashedString const& PolishedGraniteDoubleSlab();
+MCNAPI ::HashedString const& PolishedGraniteDoubleSlab();
 
-MCAPI ::HashedString const& PolishedGraniteSlab();
+MCNAPI ::HashedString const& PolishedGraniteSlab();
 
-MCAPI ::HashedString const& PolishedGraniteStairs();
+MCNAPI ::HashedString const& PolishedGraniteStairs();
 
-MCAPI ::HashedString const& PolishedSulfur();
+MCNAPI ::HashedString const& PolishedSulfur();
 
-MCAPI ::HashedString const& PolishedSulfurDoubleSlab();
+MCNAPI ::HashedString const& PolishedSulfurDoubleSlab();
 
-MCAPI ::HashedString const& PolishedSulfurSlab();
+MCNAPI ::HashedString const& PolishedSulfurSlab();
 
-MCAPI ::HashedString const& PolishedSulfurStairs();
+MCNAPI ::HashedString const& PolishedSulfurStairs();
 
-MCAPI ::HashedString const& PolishedSulfurWall();
+MCNAPI ::HashedString const& PolishedSulfurWall();
 
-MCAPI ::HashedString const& PolishedTuff();
+MCNAPI ::HashedString const& PolishedTuff();
 
-MCAPI ::HashedString const& PolishedTuffDoubleSlab();
+MCNAPI ::HashedString const& PolishedTuffDoubleSlab();
 
-MCAPI ::HashedString const& PolishedTuffSlab();
+MCNAPI ::HashedString const& PolishedTuffSlab();
 
-MCAPI ::HashedString const& PolishedTuffStairs();
+MCNAPI ::HashedString const& PolishedTuffStairs();
 
-MCAPI ::HashedString const& PolishedTuffWall();
+MCNAPI ::HashedString const& PolishedTuffWall();
 
-MCAPI ::HashedString const& PoplarButton();
+MCNAPI ::HashedString const& PoplarButton();
 
-MCAPI ::HashedString const& PoplarDoor();
+MCNAPI ::HashedString const& PoplarDoor();
 
-MCAPI ::HashedString const& PoplarDoubleSlab();
+MCNAPI ::HashedString const& PoplarDoubleSlab();
 
-MCAPI ::HashedString const& PoplarFence();
+MCNAPI ::HashedString const& PoplarFence();
 
-MCAPI ::HashedString const& PoplarFenceGate();
+MCNAPI ::HashedString const& PoplarFenceGate();
 
-MCAPI ::HashedString const& PoplarHangingSign();
+MCNAPI ::HashedString const& PoplarHangingSign();
 
-MCAPI ::HashedString const& PoplarLog();
+MCNAPI ::HashedString const& PoplarLog();
 
-MCAPI ::HashedString const& PoplarPlanks();
+MCNAPI ::HashedString const& PoplarPlanks();
 
-MCAPI ::HashedString const& PoplarPressurePlate();
+MCNAPI ::HashedString const& PoplarPressurePlate();
 
-MCAPI ::HashedString const& PoplarSapling();
+MCNAPI ::HashedString const& PoplarSapling();
 
-MCAPI ::HashedString const& PoplarShelf();
+MCNAPI ::HashedString const& PoplarShelf();
 
-MCAPI ::HashedString const& PoplarSlab();
+MCNAPI ::HashedString const& PoplarSlab();
 
-MCAPI ::HashedString const& PoplarStairs();
+MCNAPI ::HashedString const& PoplarStairs();
 
-MCAPI ::HashedString const& PoplarStandingSign();
+MCNAPI ::HashedString const& PoplarStandingSign();
 
-MCAPI ::HashedString const& PoplarTrapdoor();
+MCNAPI ::HashedString const& PoplarTrapdoor();
 
-MCAPI ::HashedString const& PoplarWallSign();
+MCNAPI ::HashedString const& PoplarWallSign();
 
-MCAPI ::HashedString const& PoplarWood();
+MCNAPI ::HashedString const& PoplarWood();
 
-MCAPI ::HashedString const& Poppy();
+MCNAPI ::HashedString const& Poppy();
 
 MCAPI ::HashedString const& Portal();
 
-MCAPI ::HashedString const& Potatoes();
+MCNAPI ::HashedString const& Potatoes();
 
-MCAPI ::HashedString const& PotentSulfur();
+MCNAPI ::HashedString const& PotentSulfur();
 
 MCAPI ::HashedString const& PowderSnow();
 
-MCAPI ::HashedString const& PoweredComparator();
+MCNAPI ::HashedString const& PoweredComparator();
 
-MCAPI ::HashedString const& PoweredRepeater();
+MCNAPI ::HashedString const& PoweredRepeater();
 
-MCAPI ::HashedString const& Prismarine();
+MCNAPI ::HashedString const& Prismarine();
 
-MCAPI ::HashedString const& PrismarineBrickDoubleSlab();
+MCNAPI ::HashedString const& PrismarineBrickDoubleSlab();
 
-MCAPI ::HashedString const& PrismarineBrickSlab();
+MCNAPI ::HashedString const& PrismarineBrickSlab();
 
-MCAPI ::HashedString const& PrismarineBricks();
+MCNAPI ::HashedString const& PrismarineBricks();
 
-MCAPI ::HashedString const& PrismarineBricksStairs();
+MCNAPI ::HashedString const& PrismarineBricksStairs();
 
-MCAPI ::HashedString const& PrismarineDoubleSlab();
+MCNAPI ::HashedString const& PrismarineDoubleSlab();
 
-MCAPI ::HashedString const& PrismarineSlab();
+MCNAPI ::HashedString const& PrismarineSlab();
 
-MCAPI ::HashedString const& PrismarineStairs();
+MCNAPI ::HashedString const& PrismarineStairs();
 
-MCAPI ::HashedString const& PrismarineWall();
+MCNAPI ::HashedString const& PrismarineWall();
 
-MCAPI ::HashedString const& Pumpkin();
+MCNAPI ::HashedString const& Pumpkin();
 
-MCAPI ::HashedString const& PumpkinStem();
+MCNAPI ::HashedString const& PumpkinStem();
 
-MCAPI ::HashedString const& PurpleCandle();
+MCNAPI ::HashedString const& PurpleCandle();
 
-MCAPI ::HashedString const& PurpleCandleCake();
+MCNAPI ::HashedString const& PurpleCandleCake();
 
-MCAPI ::HashedString const& PurpleCarpet();
+MCNAPI ::HashedString const& PurpleCarpet();
 
-MCAPI ::HashedString const& PurpleConcrete();
+MCNAPI ::HashedString const& PurpleConcrete();
 
-MCAPI ::HashedString const& PurpleConcretePowder();
+MCNAPI ::HashedString const& PurpleConcretePowder();
 
-MCAPI ::HashedString const& PurpleGlazedTerracotta();
+MCNAPI ::HashedString const& PurpleGlazedTerracotta();
 
-MCAPI ::HashedString const& PurpleShulkerBox();
+MCNAPI ::HashedString const& PurpleShulkerBox();
 
-MCAPI ::HashedString const& PurpleStainedGlass();
+MCNAPI ::HashedString const& PurpleStainedGlass();
 
-MCAPI ::HashedString const& PurpleStainedGlassPane();
+MCNAPI ::HashedString const& PurpleStainedGlassPane();
 
-MCAPI ::HashedString const& PurpleTerracotta();
+MCNAPI ::HashedString const& PurpleTerracotta();
 
-MCAPI ::HashedString const& PurpleWool();
+MCNAPI ::HashedString const& PurpleWool();
 
-MCAPI ::HashedString const& PurpurBlock();
+MCNAPI ::HashedString const& PurpurBlock();
 
-MCAPI ::HashedString const& PurpurDoubleSlab();
+MCNAPI ::HashedString const& PurpurDoubleSlab();
 
-MCAPI ::HashedString const& PurpurPillar();
+MCNAPI ::HashedString const& PurpurPillar();
 
-MCAPI ::HashedString const& PurpurSlab();
+MCNAPI ::HashedString const& PurpurSlab();
 
-MCAPI ::HashedString const& PurpurStairs();
+MCNAPI ::HashedString const& PurpurStairs();
 
-MCAPI ::HashedString const& QuartzBlock();
+MCNAPI ::HashedString const& QuartzBlock();
 
-MCAPI ::HashedString const& QuartzBricks();
+MCNAPI ::HashedString const& QuartzBricks();
 
-MCAPI ::HashedString const& QuartzDoubleSlab();
+MCNAPI ::HashedString const& QuartzDoubleSlab();
 
 MCAPI ::HashedString const& QuartzOre();
 
-MCAPI ::HashedString const& QuartzPillar();
+MCNAPI ::HashedString const& QuartzPillar();
 
-MCAPI ::HashedString const& QuartzSlab();
+MCNAPI ::HashedString const& QuartzSlab();
 
-MCAPI ::HashedString const& QuartzStairs();
+MCNAPI ::HashedString const& QuartzStairs();
 
-MCAPI ::HashedString const& Rail();
+MCNAPI ::HashedString const& Rail();
 
-MCAPI ::HashedString const& RawCopperBlock();
+MCNAPI ::HashedString const& RawCopperBlock();
 
-MCAPI ::HashedString const& RawGoldBlock();
+MCNAPI ::HashedString const& RawGoldBlock();
 
-MCAPI ::HashedString const& RawIronBlock();
+MCNAPI ::HashedString const& RawIronBlock();
 
-MCAPI ::HashedString const& RedCandle();
+MCNAPI ::HashedString const& RedCandle();
 
-MCAPI ::HashedString const& RedCandleCake();
+MCNAPI ::HashedString const& RedCandleCake();
 
-MCAPI ::HashedString const& RedCarpet();
+MCNAPI ::HashedString const& RedCarpet();
 
-MCAPI ::HashedString const& RedConcrete();
+MCNAPI ::HashedString const& RedConcrete();
 
-MCAPI ::HashedString const& RedConcretePowder();
+MCNAPI ::HashedString const& RedConcretePowder();
 
-MCAPI ::HashedString const& RedGlazedTerracotta();
+MCNAPI ::HashedString const& RedGlazedTerracotta();
 
-MCAPI ::HashedString const& RedMushroom();
+MCNAPI ::HashedString const& RedMushroom();
 
-MCAPI ::HashedString const& RedMushroomBlock();
+MCNAPI ::HashedString const& RedMushroomBlock();
 
-MCAPI ::HashedString const& RedNetherBrick();
+MCNAPI ::HashedString const& RedNetherBrick();
 
-MCAPI ::HashedString const& RedNetherBrickDoubleSlab();
+MCNAPI ::HashedString const& RedNetherBrickDoubleSlab();
 
-MCAPI ::HashedString const& RedNetherBrickSlab();
+MCNAPI ::HashedString const& RedNetherBrickSlab();
 
-MCAPI ::HashedString const& RedNetherBrickStairs();
+MCNAPI ::HashedString const& RedNetherBrickStairs();
 
-MCAPI ::HashedString const& RedNetherBrickWall();
+MCNAPI ::HashedString const& RedNetherBrickWall();
 
-MCAPI ::HashedString const& RedPoplarLeaves();
+MCNAPI ::HashedString const& RedPoplarLeaves();
 
-MCAPI ::HashedString const& RedSand();
+MCNAPI ::HashedString const& RedSand();
 
-MCAPI ::HashedString const& RedSandstone();
+MCNAPI ::HashedString const& RedSandstone();
 
-MCAPI ::HashedString const& RedSandstoneDoubleSlab();
+MCNAPI ::HashedString const& RedSandstoneDoubleSlab();
 
-MCAPI ::HashedString const& RedSandstoneSlab();
+MCNAPI ::HashedString const& RedSandstoneSlab();
 
-MCAPI ::HashedString const& RedSandstoneStairs();
+MCNAPI ::HashedString const& RedSandstoneStairs();
 
-MCAPI ::HashedString const& RedSandstoneWall();
+MCNAPI ::HashedString const& RedSandstoneWall();
 
-MCAPI ::HashedString const& RedShulkerBox();
+MCNAPI ::HashedString const& RedShulkerBox();
 
-MCAPI ::HashedString const& RedStainedGlass();
+MCNAPI ::HashedString const& RedStainedGlass();
 
-MCAPI ::HashedString const& RedStainedGlassPane();
+MCNAPI ::HashedString const& RedStainedGlassPane();
 
-MCAPI ::HashedString const& RedTerracotta();
+MCNAPI ::HashedString const& RedTerracotta();
 
-MCAPI ::HashedString const& RedTulip();
+MCNAPI ::HashedString const& RedTulip();
 
-MCAPI ::HashedString const& RedWool();
+MCNAPI ::HashedString const& RedWool();
 
-MCAPI ::HashedString const& RedstoneBlock();
+MCNAPI ::HashedString const& RedstoneBlock();
 
-MCAPI ::HashedString const& RedstoneLamp();
+MCNAPI ::HashedString const& RedstoneLamp();
 
 MCAPI ::HashedString const& RedstoneOre();
 
-MCAPI ::HashedString const& RedstoneTorch();
+MCNAPI ::HashedString const& RedstoneTorch();
 
-MCAPI ::HashedString const& RedstoneWire();
+MCNAPI ::HashedString const& RedstoneWire();
 
-MCAPI ::HashedString const& Reeds();
+MCNAPI ::HashedString const& Reeds();
 
-MCAPI ::HashedString const& ReinforcedDeepslate();
+MCNAPI ::HashedString const& ReinforcedDeepslate();
 
-MCAPI ::HashedString const& RepeatingCommandBlock();
+MCNAPI ::HashedString const& RepeatingCommandBlock();
 
-MCAPI ::HashedString const& Reserved6();
+MCNAPI ::HashedString const& Reserved6();
 
-MCAPI ::HashedString const& ResinBlock();
+MCNAPI ::HashedString const& ResinBlock();
 
-MCAPI ::HashedString const& ResinBrickDoubleSlab();
+MCNAPI ::HashedString const& ResinBrickDoubleSlab();
 
-MCAPI ::HashedString const& ResinBrickSlab();
+MCNAPI ::HashedString const& ResinBrickSlab();
 
-MCAPI ::HashedString const& ResinBrickStairs();
+MCNAPI ::HashedString const& ResinBrickStairs();
 
-MCAPI ::HashedString const& ResinBrickWall();
+MCNAPI ::HashedString const& ResinBrickWall();
 
-MCAPI ::HashedString const& ResinBricks();
+MCNAPI ::HashedString const& ResinBricks();
 
-MCAPI ::HashedString const& ResinClump();
+MCNAPI ::HashedString const& ResinClump();
 
-MCAPI ::HashedString const& RespawnAnchor();
+MCNAPI ::HashedString const& RespawnAnchor();
 
-MCAPI ::HashedString const& RoseBush();
+MCNAPI ::HashedString const& RoseBush();
 
-MCAPI ::HashedString const& Sand();
+MCNAPI ::HashedString const& Sand();
 
-MCAPI ::HashedString const& Sandstone();
+MCNAPI ::HashedString const& Sandstone();
 
-MCAPI ::HashedString const& SandstoneDoubleSlab();
+MCNAPI ::HashedString const& SandstoneDoubleSlab();
 
-MCAPI ::HashedString const& SandstoneSlab();
+MCNAPI ::HashedString const& SandstoneSlab();
 
-MCAPI ::HashedString const& SandstoneStairs();
+MCNAPI ::HashedString const& SandstoneStairs();
 
-MCAPI ::HashedString const& SandstoneWall();
+MCNAPI ::HashedString const& SandstoneWall();
 
 MCAPI ::HashedString const& Scaffolding();
 
-MCAPI ::HashedString const& Sculk();
+MCNAPI ::HashedString const& Sculk();
 
-MCAPI ::HashedString const& SculkCatalyst();
+MCNAPI ::HashedString const& SculkCatalyst();
 
-MCAPI ::HashedString const& SculkSensor();
+MCNAPI ::HashedString const& SculkSensor();
 
 MCAPI ::HashedString const& SculkShrieker();
 
-MCAPI ::HashedString const& SculkVein();
+MCNAPI ::HashedString const& SculkVein();
 
-MCAPI ::HashedString const& SeaLantern();
+MCNAPI ::HashedString const& SeaLantern();
 
-MCAPI ::HashedString const& SeaPickle();
+MCNAPI ::HashedString const& SeaPickle();
 
-MCAPI ::HashedString const& Seagrass();
+MCNAPI ::HashedString const& Seagrass();
 
-MCAPI ::HashedString const& ShortDryGrass();
+MCNAPI ::HashedString const& ShortDryGrass();
 
-MCAPI ::HashedString const& ShortGrass();
+MCNAPI ::HashedString const& ShortGrass();
 
-MCAPI ::HashedString const& Shroomlight();
+MCNAPI ::HashedString const& Shroomlight();
 
-MCAPI ::HashedString const& SilverGlazedTerracotta();
+MCNAPI ::HashedString const& SilverGlazedTerracotta();
 
-MCAPI ::HashedString const& SkeletonSkull();
+MCNAPI ::HashedString const& SkeletonSkull();
 
-MCAPI ::HashedString const& SlimeBlock();
+MCNAPI ::HashedString const& SlimeBlock();
 
-MCAPI ::HashedString const& SmallAmethystBud();
+MCNAPI ::HashedString const& SmallAmethystBud();
 
-MCAPI ::HashedString const& SmallDripleaf();
+MCNAPI ::HashedString const& SmallDripleaf();
 
-MCAPI ::HashedString const& SmithingTable();
+MCNAPI ::HashedString const& SmithingTable();
 
-MCAPI ::HashedString const& Smoker();
+MCNAPI ::HashedString const& Smoker();
 
-MCAPI ::HashedString const& SmoothBasalt();
+MCNAPI ::HashedString const& SmoothBasalt();
 
-MCAPI ::HashedString const& SmoothQuartz();
+MCNAPI ::HashedString const& SmoothQuartz();
 
-MCAPI ::HashedString const& SmoothQuartzDoubleSlab();
+MCNAPI ::HashedString const& SmoothQuartzDoubleSlab();
 
-MCAPI ::HashedString const& SmoothQuartzSlab();
+MCNAPI ::HashedString const& SmoothQuartzSlab();
 
-MCAPI ::HashedString const& SmoothQuartzStairs();
+MCNAPI ::HashedString const& SmoothQuartzStairs();
 
-MCAPI ::HashedString const& SmoothRedSandstone();
+MCNAPI ::HashedString const& SmoothRedSandstone();
 
-MCAPI ::HashedString const& SmoothRedSandstoneDoubleSlab();
+MCNAPI ::HashedString const& SmoothRedSandstoneDoubleSlab();
 
-MCAPI ::HashedString const& SmoothRedSandstoneSlab();
+MCNAPI ::HashedString const& SmoothRedSandstoneSlab();
 
-MCAPI ::HashedString const& SmoothRedSandstoneStairs();
+MCNAPI ::HashedString const& SmoothRedSandstoneStairs();
 
-MCAPI ::HashedString const& SmoothSandstone();
+MCNAPI ::HashedString const& SmoothSandstone();
 
-MCAPI ::HashedString const& SmoothSandstoneDoubleSlab();
+MCNAPI ::HashedString const& SmoothSandstoneDoubleSlab();
 
-MCAPI ::HashedString const& SmoothSandstoneSlab();
+MCNAPI ::HashedString const& SmoothSandstoneSlab();
 
-MCAPI ::HashedString const& SmoothSandstoneStairs();
+MCNAPI ::HashedString const& SmoothSandstoneStairs();
 
-MCAPI ::HashedString const& SmoothStone();
+MCNAPI ::HashedString const& SmoothStone();
 
-MCAPI ::HashedString const& SmoothStoneDoubleSlab();
+MCNAPI ::HashedString const& SmoothStoneDoubleSlab();
 
-MCAPI ::HashedString const& SmoothStoneSlab();
+MCNAPI ::HashedString const& SmoothStoneSlab();
 
 MCAPI ::HashedString const& SnifferEgg();
 
-MCAPI ::HashedString const& Snow();
+MCNAPI ::HashedString const& Snow();
 
-MCAPI ::HashedString const& SnowLayer();
+MCNAPI ::HashedString const& SnowLayer();
 
-MCAPI ::HashedString const& SoulCampfire();
+MCNAPI ::HashedString const& SoulCampfire();
 
-MCAPI ::HashedString const& SoulFire();
+MCNAPI ::HashedString const& SoulFire();
 
-MCAPI ::HashedString const& SoulLantern();
+MCNAPI ::HashedString const& SoulLantern();
 
-MCAPI ::HashedString const& SoulSand();
+MCNAPI ::HashedString const& SoulSand();
 
-MCAPI ::HashedString const& SoulSoil();
+MCNAPI ::HashedString const& SoulSoil();
 
-MCAPI ::HashedString const& SoulTorch();
+MCNAPI ::HashedString const& SoulTorch();
 
-MCAPI ::HashedString const& Sponge();
+MCNAPI ::HashedString const& Sponge();
 
-MCAPI ::HashedString const& SporeBlossom();
+MCNAPI ::HashedString const& SporeBlossom();
 
-MCAPI ::HashedString const& SpruceButton();
+MCNAPI ::HashedString const& SpruceButton();
 
-MCAPI ::HashedString const& SpruceDoor();
+MCNAPI ::HashedString const& SpruceDoor();
 
-MCAPI ::HashedString const& SpruceDoubleSlab();
+MCNAPI ::HashedString const& SpruceDoubleSlab();
 
-MCAPI ::HashedString const& SpruceFence();
+MCNAPI ::HashedString const& SpruceFence();
 
-MCAPI ::HashedString const& SpruceFenceGate();
+MCNAPI ::HashedString const& SpruceFenceGate();
 
 MCAPI ::HashedString const& SpruceHangingSign();
 
-MCAPI ::HashedString const& SpruceLeaves();
+MCNAPI ::HashedString const& SpruceLeaves();
 
 MCAPI ::HashedString const& SpruceLog();
 
-MCAPI ::HashedString const& SprucePlanks();
+MCNAPI ::HashedString const& SprucePlanks();
 
-MCAPI ::HashedString const& SprucePressurePlate();
+MCNAPI ::HashedString const& SprucePressurePlate();
 
-MCAPI ::HashedString const& SpruceSapling();
+MCNAPI ::HashedString const& SpruceSapling();
 
-MCAPI ::HashedString const& SpruceShelf();
+MCNAPI ::HashedString const& SpruceShelf();
 
 MCAPI ::HashedString const& SpruceSlab();
 
-MCAPI ::HashedString const& SpruceStairs();
+MCNAPI ::HashedString const& SpruceStairs();
 
 MCAPI ::HashedString const& SpruceStandingSign();
 
@@ -2064,477 +2064,477 @@ MCAPI ::HashedString const& SpruceTrapdoor();
 
 MCAPI ::HashedString const& SpruceWallSign();
 
-MCAPI ::HashedString const& SpruceWood();
+MCNAPI ::HashedString const& SpruceWood();
 
-MCAPI ::HashedString const& StandingBanner();
+MCNAPI ::HashedString const& StandingBanner();
 
-MCAPI ::HashedString const& StandingSign();
+MCNAPI ::HashedString const& StandingSign();
 
-MCAPI ::HashedString const& StickyPiston();
+MCNAPI ::HashedString const& StickyPiston();
 
 MCAPI ::HashedString const& StickyPistonArmCollision();
 
-MCAPI ::HashedString const& Stone();
+MCNAPI ::HashedString const& Stone();
 
-MCAPI ::HashedString const& StoneBrickDoubleSlab();
+MCNAPI ::HashedString const& StoneBrickDoubleSlab();
 
-MCAPI ::HashedString const& StoneBrickSlab();
+MCNAPI ::HashedString const& StoneBrickSlab();
 
-MCAPI ::HashedString const& StoneBrickStairs();
+MCNAPI ::HashedString const& StoneBrickStairs();
 
-MCAPI ::HashedString const& StoneBrickWall();
+MCNAPI ::HashedString const& StoneBrickWall();
 
-MCAPI ::HashedString const& StoneBricks();
+MCNAPI ::HashedString const& StoneBricks();
 
-MCAPI ::HashedString const& StoneButton();
+MCNAPI ::HashedString const& StoneButton();
 
-MCAPI ::HashedString const& StonePressurePlate();
+MCNAPI ::HashedString const& StonePressurePlate();
 
-MCAPI ::HashedString const& StoneStairs();
+MCNAPI ::HashedString const& StoneStairs();
 
-MCAPI ::HashedString const& Stonecutter();
+MCNAPI ::HashedString const& Stonecutter();
 
-MCAPI ::HashedString const& StonecutterBlock();
+MCNAPI ::HashedString const& StonecutterBlock();
 
-MCAPI ::HashedString const& StrawBed();
+MCNAPI ::HashedString const& StrawBed();
 
-MCAPI ::HashedString const& StrippedAcaciaLog();
+MCNAPI ::HashedString const& StrippedAcaciaLog();
 
-MCAPI ::HashedString const& StrippedAcaciaWood();
+MCNAPI ::HashedString const& StrippedAcaciaWood();
 
-MCAPI ::HashedString const& StrippedBambooBlock();
+MCNAPI ::HashedString const& StrippedBambooBlock();
 
-MCAPI ::HashedString const& StrippedBirchLog();
+MCNAPI ::HashedString const& StrippedBirchLog();
 
-MCAPI ::HashedString const& StrippedBirchWood();
+MCNAPI ::HashedString const& StrippedBirchWood();
 
-MCAPI ::HashedString const& StrippedCherryLog();
+MCNAPI ::HashedString const& StrippedCherryLog();
 
-MCAPI ::HashedString const& StrippedCherryWood();
+MCNAPI ::HashedString const& StrippedCherryWood();
 
-MCAPI ::HashedString const& StrippedCrimsonHyphae();
+MCNAPI ::HashedString const& StrippedCrimsonHyphae();
 
-MCAPI ::HashedString const& StrippedCrimsonStem();
+MCNAPI ::HashedString const& StrippedCrimsonStem();
 
-MCAPI ::HashedString const& StrippedDarkOakLog();
+MCNAPI ::HashedString const& StrippedDarkOakLog();
 
-MCAPI ::HashedString const& StrippedDarkOakWood();
+MCNAPI ::HashedString const& StrippedDarkOakWood();
 
-MCAPI ::HashedString const& StrippedJungleLog();
+MCNAPI ::HashedString const& StrippedJungleLog();
 
-MCAPI ::HashedString const& StrippedJungleWood();
+MCNAPI ::HashedString const& StrippedJungleWood();
 
-MCAPI ::HashedString const& StrippedMangroveLog();
+MCNAPI ::HashedString const& StrippedMangroveLog();
 
-MCAPI ::HashedString const& StrippedMangroveWood();
+MCNAPI ::HashedString const& StrippedMangroveWood();
 
-MCAPI ::HashedString const& StrippedOakLog();
+MCNAPI ::HashedString const& StrippedOakLog();
 
-MCAPI ::HashedString const& StrippedOakWood();
+MCNAPI ::HashedString const& StrippedOakWood();
 
-MCAPI ::HashedString const& StrippedPaleOakLog();
+MCNAPI ::HashedString const& StrippedPaleOakLog();
 
-MCAPI ::HashedString const& StrippedPaleOakWood();
+MCNAPI ::HashedString const& StrippedPaleOakWood();
 
-MCAPI ::HashedString const& StrippedPoplarLog();
+MCNAPI ::HashedString const& StrippedPoplarLog();
 
-MCAPI ::HashedString const& StrippedPoplarWood();
+MCNAPI ::HashedString const& StrippedPoplarWood();
 
-MCAPI ::HashedString const& StrippedSpruceLog();
+MCNAPI ::HashedString const& StrippedSpruceLog();
 
-MCAPI ::HashedString const& StrippedSpruceWood();
+MCNAPI ::HashedString const& StrippedSpruceWood();
 
-MCAPI ::HashedString const& StrippedWarpedHyphae();
+MCNAPI ::HashedString const& StrippedWarpedHyphae();
 
-MCAPI ::HashedString const& StrippedWarpedStem();
+MCNAPI ::HashedString const& StrippedWarpedStem();
 
-MCAPI ::HashedString const& StructureBlock();
+MCNAPI ::HashedString const& StructureBlock();
 
-MCAPI ::HashedString const& StructureVoid();
+MCNAPI ::HashedString const& StructureVoid();
 
-MCAPI ::HashedString const& Sulfur();
+MCNAPI ::HashedString const& Sulfur();
 
-MCAPI ::HashedString const& SulfurBrickDoubleSlab();
+MCNAPI ::HashedString const& SulfurBrickDoubleSlab();
 
-MCAPI ::HashedString const& SulfurBrickSlab();
+MCNAPI ::HashedString const& SulfurBrickSlab();
 
-MCAPI ::HashedString const& SulfurBrickStairs();
+MCNAPI ::HashedString const& SulfurBrickStairs();
 
-MCAPI ::HashedString const& SulfurBrickWall();
+MCNAPI ::HashedString const& SulfurBrickWall();
 
-MCAPI ::HashedString const& SulfurBricks();
+MCNAPI ::HashedString const& SulfurBricks();
 
-MCAPI ::HashedString const& SulfurDoubleSlab();
+MCNAPI ::HashedString const& SulfurDoubleSlab();
 
-MCAPI ::HashedString const& SulfurSlab();
+MCNAPI ::HashedString const& SulfurSlab();
 
-MCAPI ::HashedString const& SulfurSpike();
+MCNAPI ::HashedString const& SulfurSpike();
 
-MCAPI ::HashedString const& SulfurStairs();
+MCNAPI ::HashedString const& SulfurStairs();
 
-MCAPI ::HashedString const& SulfurWall();
+MCNAPI ::HashedString const& SulfurWall();
 
-MCAPI ::HashedString const& Sunflower();
+MCNAPI ::HashedString const& Sunflower();
 
-MCAPI ::HashedString const& SuspiciousGravel();
+MCNAPI ::HashedString const& SuspiciousGravel();
 
-MCAPI ::HashedString const& SuspiciousSand();
+MCNAPI ::HashedString const& SuspiciousSand();
 
-MCAPI ::HashedString const& SweetBerryBush();
+MCNAPI ::HashedString const& SweetBerryBush();
 
-MCAPI ::HashedString const& TallDryGrass();
+MCNAPI ::HashedString const& TallDryGrass();
 
-MCAPI ::HashedString const& TallGrass();
+MCNAPI ::HashedString const& TallGrass();
 
-MCAPI ::HashedString const& Target();
+MCNAPI ::HashedString const& Target();
 
-MCAPI ::HashedString const& TintedGlass();
+MCNAPI ::HashedString const& TintedGlass();
 
-MCAPI ::HashedString const& Tnt();
+MCNAPI ::HashedString const& Tnt();
 
-MCAPI ::HashedString const& Torch();
+MCNAPI ::HashedString const& Torch();
 
-MCAPI ::HashedString const& Torchflower();
+MCNAPI ::HashedString const& Torchflower();
 
-MCAPI ::HashedString const& TorchflowerCrop();
+MCNAPI ::HashedString const& TorchflowerCrop();
 
 MCAPI ::HashedString const& Trapdoor();
 
-MCAPI ::HashedString const& TrappedChest();
+MCNAPI ::HashedString const& TrappedChest();
 
-MCAPI ::HashedString const& TrialSpawner();
+MCNAPI ::HashedString const& TrialSpawner();
 
-MCAPI ::HashedString const& TripWire();
+MCNAPI ::HashedString const& TripWire();
 
-MCAPI ::HashedString const& TripWireHook();
+MCNAPI ::HashedString const& TripWireHook();
 
-MCAPI ::HashedString const& TubeCoral();
+MCNAPI ::HashedString const& TubeCoral();
 
-MCAPI ::HashedString const& TubeCoralBlock();
+MCNAPI ::HashedString const& TubeCoralBlock();
 
-MCAPI ::HashedString const& TubeCoralFan();
+MCNAPI ::HashedString const& TubeCoralFan();
 
-MCAPI ::HashedString const& TubeCoralWallFan();
+MCNAPI ::HashedString const& TubeCoralWallFan();
 
-MCAPI ::HashedString const& Tuff();
+MCNAPI ::HashedString const& Tuff();
 
-MCAPI ::HashedString const& TuffBrickDoubleSlab();
+MCNAPI ::HashedString const& TuffBrickDoubleSlab();
 
-MCAPI ::HashedString const& TuffBrickSlab();
+MCNAPI ::HashedString const& TuffBrickSlab();
 
-MCAPI ::HashedString const& TuffBrickStairs();
+MCNAPI ::HashedString const& TuffBrickStairs();
 
-MCAPI ::HashedString const& TuffBrickWall();
+MCNAPI ::HashedString const& TuffBrickWall();
 
-MCAPI ::HashedString const& TuffBricks();
+MCNAPI ::HashedString const& TuffBricks();
 
-MCAPI ::HashedString const& TuffDoubleSlab();
+MCNAPI ::HashedString const& TuffDoubleSlab();
 
-MCAPI ::HashedString const& TuffSlab();
+MCNAPI ::HashedString const& TuffSlab();
 
-MCAPI ::HashedString const& TuffStairs();
+MCNAPI ::HashedString const& TuffStairs();
 
-MCAPI ::HashedString const& TuffWall();
+MCNAPI ::HashedString const& TuffWall();
 
-MCAPI ::HashedString const& TurtleEgg();
+MCNAPI ::HashedString const& TurtleEgg();
 
-MCAPI ::HashedString const& TwistingVines();
+MCNAPI ::HashedString const& TwistingVines();
 
-MCAPI ::HashedString const& UnderwaterTnt();
+MCNAPI ::HashedString const& UnderwaterTnt();
 
-MCAPI ::HashedString const& UnderwaterTorch();
+MCNAPI ::HashedString const& UnderwaterTorch();
 
-MCAPI ::HashedString const& UndyedShulkerBox();
+MCNAPI ::HashedString const& UndyedShulkerBox();
 
-MCAPI ::HashedString const& UnlitRedstoneTorch();
+MCNAPI ::HashedString const& UnlitRedstoneTorch();
 
-MCAPI ::HashedString const& UnpoweredComparator();
+MCNAPI ::HashedString const& UnpoweredComparator();
 
-MCAPI ::HashedString const& UnpoweredRepeater();
+MCNAPI ::HashedString const& UnpoweredRepeater();
 
-MCAPI ::HashedString const& Vault();
+MCNAPI ::HashedString const& Vault();
 
-MCAPI ::HashedString const& VerdantFroglight();
+MCNAPI ::HashedString const& VerdantFroglight();
 
-MCAPI ::HashedString const& Vine();
+MCNAPI ::HashedString const& Vine();
 
-MCAPI ::HashedString const& WallBanner();
+MCNAPI ::HashedString const& WallBanner();
 
-MCAPI ::HashedString const& WallSign();
+MCNAPI ::HashedString const& WallSign();
 
-MCAPI ::HashedString const& WarpedButton();
+MCNAPI ::HashedString const& WarpedButton();
 
-MCAPI ::HashedString const& WarpedDoor();
+MCNAPI ::HashedString const& WarpedDoor();
 
-MCAPI ::HashedString const& WarpedDoubleSlab();
+MCNAPI ::HashedString const& WarpedDoubleSlab();
 
-MCAPI ::HashedString const& WarpedFence();
+MCNAPI ::HashedString const& WarpedFence();
 
-MCAPI ::HashedString const& WarpedFenceGate();
+MCNAPI ::HashedString const& WarpedFenceGate();
 
-MCAPI ::HashedString const& WarpedFungus();
+MCNAPI ::HashedString const& WarpedFungus();
 
-MCAPI ::HashedString const& WarpedHangingSign();
+MCNAPI ::HashedString const& WarpedHangingSign();
 
-MCAPI ::HashedString const& WarpedHyphae();
+MCNAPI ::HashedString const& WarpedHyphae();
 
-MCAPI ::HashedString const& WarpedNylium();
+MCNAPI ::HashedString const& WarpedNylium();
 
-MCAPI ::HashedString const& WarpedPlanks();
+MCNAPI ::HashedString const& WarpedPlanks();
 
-MCAPI ::HashedString const& WarpedPressurePlate();
+MCNAPI ::HashedString const& WarpedPressurePlate();
 
-MCAPI ::HashedString const& WarpedRoots();
+MCNAPI ::HashedString const& WarpedRoots();
 
-MCAPI ::HashedString const& WarpedShelf();
+MCNAPI ::HashedString const& WarpedShelf();
 
 MCAPI ::HashedString const& WarpedSlab();
 
-MCAPI ::HashedString const& WarpedStairs();
+MCNAPI ::HashedString const& WarpedStairs();
 
-MCAPI ::HashedString const& WarpedStandingSign();
+MCNAPI ::HashedString const& WarpedStandingSign();
 
 MCAPI ::HashedString const& WarpedStem();
 
 MCAPI ::HashedString const& WarpedTrapdoor();
 
-MCAPI ::HashedString const& WarpedWallSign();
+MCNAPI ::HashedString const& WarpedWallSign();
 
-MCAPI ::HashedString const& WarpedWartBlock();
+MCNAPI ::HashedString const& WarpedWartBlock();
 
-MCAPI ::HashedString const& Water();
+MCNAPI ::HashedString const& Water();
 
-MCAPI ::HashedString const& WaterLily();
+MCNAPI ::HashedString const& WaterLily();
 
-MCAPI ::HashedString const& WaxedChiseledCopper();
+MCNAPI ::HashedString const& WaxedChiseledCopper();
 
-MCAPI ::HashedString const& WaxedCopper();
+MCNAPI ::HashedString const& WaxedCopper();
 
-MCAPI ::HashedString const& WaxedCopperBars();
+MCNAPI ::HashedString const& WaxedCopperBars();
 
-MCAPI ::HashedString const& WaxedCopperBulb();
+MCNAPI ::HashedString const& WaxedCopperBulb();
 
-MCAPI ::HashedString const& WaxedCopperChain();
+MCNAPI ::HashedString const& WaxedCopperChain();
 
-MCAPI ::HashedString const& WaxedCopperChest();
+MCNAPI ::HashedString const& WaxedCopperChest();
 
-MCAPI ::HashedString const& WaxedCopperDoor();
+MCNAPI ::HashedString const& WaxedCopperDoor();
 
-MCAPI ::HashedString const& WaxedCopperGolemStatue();
+MCNAPI ::HashedString const& WaxedCopperGolemStatue();
 
-MCAPI ::HashedString const& WaxedCopperGrate();
+MCNAPI ::HashedString const& WaxedCopperGrate();
 
-MCAPI ::HashedString const& WaxedCopperLantern();
+MCNAPI ::HashedString const& WaxedCopperLantern();
 
-MCAPI ::HashedString const& WaxedCopperTrapdoor();
+MCNAPI ::HashedString const& WaxedCopperTrapdoor();
 
-MCAPI ::HashedString const& WaxedCutCopper();
+MCNAPI ::HashedString const& WaxedCutCopper();
 
-MCAPI ::HashedString const& WaxedCutCopperSlab();
+MCNAPI ::HashedString const& WaxedCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedCutCopperStairs();
+MCNAPI ::HashedString const& WaxedCutCopperStairs();
 
-MCAPI ::HashedString const& WaxedDoubleCutCopperSlab();
+MCNAPI ::HashedString const& WaxedDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedExposedChiseledCopper();
+MCNAPI ::HashedString const& WaxedExposedChiseledCopper();
 
-MCAPI ::HashedString const& WaxedExposedCopper();
+MCNAPI ::HashedString const& WaxedExposedCopper();
 
-MCAPI ::HashedString const& WaxedExposedCopperBars();
+MCNAPI ::HashedString const& WaxedExposedCopperBars();
 
-MCAPI ::HashedString const& WaxedExposedCopperBulb();
+MCNAPI ::HashedString const& WaxedExposedCopperBulb();
 
-MCAPI ::HashedString const& WaxedExposedCopperChain();
+MCNAPI ::HashedString const& WaxedExposedCopperChain();
 
-MCAPI ::HashedString const& WaxedExposedCopperChest();
+MCNAPI ::HashedString const& WaxedExposedCopperChest();
 
-MCAPI ::HashedString const& WaxedExposedCopperDoor();
+MCNAPI ::HashedString const& WaxedExposedCopperDoor();
 
-MCAPI ::HashedString const& WaxedExposedCopperGolemStatue();
+MCNAPI ::HashedString const& WaxedExposedCopperGolemStatue();
 
-MCAPI ::HashedString const& WaxedExposedCopperGrate();
+MCNAPI ::HashedString const& WaxedExposedCopperGrate();
 
-MCAPI ::HashedString const& WaxedExposedCopperLantern();
+MCNAPI ::HashedString const& WaxedExposedCopperLantern();
 
-MCAPI ::HashedString const& WaxedExposedCopperTrapdoor();
+MCNAPI ::HashedString const& WaxedExposedCopperTrapdoor();
 
-MCAPI ::HashedString const& WaxedExposedCutCopper();
+MCNAPI ::HashedString const& WaxedExposedCutCopper();
 
-MCAPI ::HashedString const& WaxedExposedCutCopperSlab();
+MCNAPI ::HashedString const& WaxedExposedCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedExposedCutCopperStairs();
+MCNAPI ::HashedString const& WaxedExposedCutCopperStairs();
 
-MCAPI ::HashedString const& WaxedExposedDoubleCutCopperSlab();
+MCNAPI ::HashedString const& WaxedExposedDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedExposedLightningRod();
+MCNAPI ::HashedString const& WaxedExposedLightningRod();
 
-MCAPI ::HashedString const& WaxedLightningRod();
+MCNAPI ::HashedString const& WaxedLightningRod();
 
-MCAPI ::HashedString const& WaxedOxidizedChiseledCopper();
+MCNAPI ::HashedString const& WaxedOxidizedChiseledCopper();
 
-MCAPI ::HashedString const& WaxedOxidizedCopper();
+MCNAPI ::HashedString const& WaxedOxidizedCopper();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperBars();
+MCNAPI ::HashedString const& WaxedOxidizedCopperBars();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperBulb();
+MCNAPI ::HashedString const& WaxedOxidizedCopperBulb();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperChain();
+MCNAPI ::HashedString const& WaxedOxidizedCopperChain();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperChest();
+MCNAPI ::HashedString const& WaxedOxidizedCopperChest();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperDoor();
+MCNAPI ::HashedString const& WaxedOxidizedCopperDoor();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperGolemStatue();
+MCNAPI ::HashedString const& WaxedOxidizedCopperGolemStatue();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperGrate();
+MCNAPI ::HashedString const& WaxedOxidizedCopperGrate();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperLantern();
+MCNAPI ::HashedString const& WaxedOxidizedCopperLantern();
 
-MCAPI ::HashedString const& WaxedOxidizedCopperTrapdoor();
+MCNAPI ::HashedString const& WaxedOxidizedCopperTrapdoor();
 
-MCAPI ::HashedString const& WaxedOxidizedCutCopper();
+MCNAPI ::HashedString const& WaxedOxidizedCutCopper();
 
-MCAPI ::HashedString const& WaxedOxidizedCutCopperSlab();
+MCNAPI ::HashedString const& WaxedOxidizedCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedOxidizedCutCopperStairs();
+MCNAPI ::HashedString const& WaxedOxidizedCutCopperStairs();
 
-MCAPI ::HashedString const& WaxedOxidizedDoubleCutCopperSlab();
+MCNAPI ::HashedString const& WaxedOxidizedDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedOxidizedLightningRod();
+MCNAPI ::HashedString const& WaxedOxidizedLightningRod();
 
-MCAPI ::HashedString const& WaxedWeatheredChiseledCopper();
+MCNAPI ::HashedString const& WaxedWeatheredChiseledCopper();
 
-MCAPI ::HashedString const& WaxedWeatheredCopper();
+MCNAPI ::HashedString const& WaxedWeatheredCopper();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperBars();
+MCNAPI ::HashedString const& WaxedWeatheredCopperBars();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperBulb();
+MCNAPI ::HashedString const& WaxedWeatheredCopperBulb();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperChain();
+MCNAPI ::HashedString const& WaxedWeatheredCopperChain();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperChest();
+MCNAPI ::HashedString const& WaxedWeatheredCopperChest();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperDoor();
+MCNAPI ::HashedString const& WaxedWeatheredCopperDoor();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperGolemStatue();
+MCNAPI ::HashedString const& WaxedWeatheredCopperGolemStatue();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperGrate();
+MCNAPI ::HashedString const& WaxedWeatheredCopperGrate();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperLantern();
+MCNAPI ::HashedString const& WaxedWeatheredCopperLantern();
 
-MCAPI ::HashedString const& WaxedWeatheredCopperTrapdoor();
+MCNAPI ::HashedString const& WaxedWeatheredCopperTrapdoor();
 
-MCAPI ::HashedString const& WaxedWeatheredCutCopper();
+MCNAPI ::HashedString const& WaxedWeatheredCutCopper();
 
-MCAPI ::HashedString const& WaxedWeatheredCutCopperSlab();
+MCNAPI ::HashedString const& WaxedWeatheredCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedWeatheredCutCopperStairs();
+MCNAPI ::HashedString const& WaxedWeatheredCutCopperStairs();
 
-MCAPI ::HashedString const& WaxedWeatheredDoubleCutCopperSlab();
+MCNAPI ::HashedString const& WaxedWeatheredDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& WaxedWeatheredLightningRod();
+MCNAPI ::HashedString const& WaxedWeatheredLightningRod();
 
-MCAPI ::HashedString const& WeatheredChiseledCopper();
+MCNAPI ::HashedString const& WeatheredChiseledCopper();
 
-MCAPI ::HashedString const& WeatheredCopper();
+MCNAPI ::HashedString const& WeatheredCopper();
 
-MCAPI ::HashedString const& WeatheredCopperBars();
+MCNAPI ::HashedString const& WeatheredCopperBars();
 
-MCAPI ::HashedString const& WeatheredCopperBulb();
+MCNAPI ::HashedString const& WeatheredCopperBulb();
 
-MCAPI ::HashedString const& WeatheredCopperChain();
+MCNAPI ::HashedString const& WeatheredCopperChain();
 
-MCAPI ::HashedString const& WeatheredCopperChest();
+MCNAPI ::HashedString const& WeatheredCopperChest();
 
-MCAPI ::HashedString const& WeatheredCopperDoor();
+MCNAPI ::HashedString const& WeatheredCopperDoor();
 
-MCAPI ::HashedString const& WeatheredCopperGolemStatue();
+MCNAPI ::HashedString const& WeatheredCopperGolemStatue();
 
-MCAPI ::HashedString const& WeatheredCopperGrate();
+MCNAPI ::HashedString const& WeatheredCopperGrate();
 
-MCAPI ::HashedString const& WeatheredCopperLantern();
+MCNAPI ::HashedString const& WeatheredCopperLantern();
 
-MCAPI ::HashedString const& WeatheredCopperTrapdoor();
+MCNAPI ::HashedString const& WeatheredCopperTrapdoor();
 
-MCAPI ::HashedString const& WeatheredCutCopper();
+MCNAPI ::HashedString const& WeatheredCutCopper();
 
-MCAPI ::HashedString const& WeatheredCutCopperSlab();
+MCNAPI ::HashedString const& WeatheredCutCopperSlab();
 
-MCAPI ::HashedString const& WeatheredCutCopperStairs();
+MCNAPI ::HashedString const& WeatheredCutCopperStairs();
 
-MCAPI ::HashedString const& WeatheredDoubleCutCopperSlab();
+MCNAPI ::HashedString const& WeatheredDoubleCutCopperSlab();
 
-MCAPI ::HashedString const& WeatheredLightningRod();
+MCNAPI ::HashedString const& WeatheredLightningRod();
 
-MCAPI ::HashedString const& Web();
+MCNAPI ::HashedString const& Web();
 
-MCAPI ::HashedString const& WeepingVines();
+MCNAPI ::HashedString const& WeepingVines();
 
-MCAPI ::HashedString const& WetSponge();
+MCNAPI ::HashedString const& WetSponge();
 
-MCAPI ::HashedString const& Wheat();
+MCNAPI ::HashedString const& Wheat();
 
-MCAPI ::HashedString const& WhiteCandle();
+MCNAPI ::HashedString const& WhiteCandle();
 
-MCAPI ::HashedString const& WhiteCandleCake();
+MCNAPI ::HashedString const& WhiteCandleCake();
 
-MCAPI ::HashedString const& WhiteCarpet();
+MCNAPI ::HashedString const& WhiteCarpet();
 
-MCAPI ::HashedString const& WhiteConcrete();
+MCNAPI ::HashedString const& WhiteConcrete();
 
-MCAPI ::HashedString const& WhiteConcretePowder();
+MCNAPI ::HashedString const& WhiteConcretePowder();
 
-MCAPI ::HashedString const& WhiteGlazedTerracotta();
+MCNAPI ::HashedString const& WhiteGlazedTerracotta();
 
-MCAPI ::HashedString const& WhiteShulkerBox();
+MCNAPI ::HashedString const& WhiteShulkerBox();
 
-MCAPI ::HashedString const& WhiteStainedGlass();
+MCNAPI ::HashedString const& WhiteStainedGlass();
 
-MCAPI ::HashedString const& WhiteStainedGlassPane();
+MCNAPI ::HashedString const& WhiteStainedGlassPane();
 
-MCAPI ::HashedString const& WhiteTerracotta();
+MCNAPI ::HashedString const& WhiteTerracotta();
 
-MCAPI ::HashedString const& WhiteTulip();
+MCNAPI ::HashedString const& WhiteTulip();
 
-MCAPI ::HashedString const& WhiteWool();
+MCNAPI ::HashedString const& WhiteWool();
 
-MCAPI ::HashedString const& Wildflowers();
+MCNAPI ::HashedString const& Wildflowers();
 
-MCAPI ::HashedString const& WitherRose();
+MCNAPI ::HashedString const& WitherRose();
 
-MCAPI ::HashedString const& WitherSkeletonSkull();
+MCNAPI ::HashedString const& WitherSkeletonSkull();
 
-MCAPI ::HashedString const& WoodenButton();
+MCNAPI ::HashedString const& WoodenButton();
 
-MCAPI ::HashedString const& WoodenDoor();
+MCNAPI ::HashedString const& WoodenDoor();
 
-MCAPI ::HashedString const& WoodenPressurePlate();
+MCNAPI ::HashedString const& WoodenPressurePlate();
 
-MCAPI ::HashedString const& YellowCandle();
+MCNAPI ::HashedString const& YellowCandle();
 
-MCAPI ::HashedString const& YellowCandleCake();
+MCNAPI ::HashedString const& YellowCandleCake();
 
-MCAPI ::HashedString const& YellowCarpet();
+MCNAPI ::HashedString const& YellowCarpet();
 
-MCAPI ::HashedString const& YellowConcrete();
+MCNAPI ::HashedString const& YellowConcrete();
 
-MCAPI ::HashedString const& YellowConcretePowder();
+MCNAPI ::HashedString const& YellowConcretePowder();
 
-MCAPI ::HashedString const& YellowGlazedTerracotta();
+MCNAPI ::HashedString const& YellowGlazedTerracotta();
 
-MCAPI ::HashedString const& YellowPoplarLeaves();
+MCNAPI ::HashedString const& YellowPoplarLeaves();
 
-MCAPI ::HashedString const& YellowShulkerBox();
+MCNAPI ::HashedString const& YellowShulkerBox();
 
-MCAPI ::HashedString const& YellowStainedGlass();
+MCNAPI ::HashedString const& YellowStainedGlass();
 
-MCAPI ::HashedString const& YellowStainedGlassPane();
+MCNAPI ::HashedString const& YellowStainedGlassPane();
 
-MCAPI ::HashedString const& YellowTerracotta();
+MCNAPI ::HashedString const& YellowTerracotta();
 
-MCAPI ::HashedString const& YellowWool();
+MCNAPI ::HashedString const& YellowWool();
 
-MCAPI ::HashedString const& ZombieHead();
+MCNAPI ::HashedString const& ZombieHead();
 // NOLINTEND
 
 } // namespace VanillaBlockTypeIds

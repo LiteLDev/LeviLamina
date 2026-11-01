@@ -59,7 +59,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string formatTickingAreaList(::std::vector<::TickingAreaDescription> const& tickingAreas);
+    MCNAPI static ::std::string formatTickingAreaList(::std::vector<::TickingAreaDescription> const& tickingAreas);
 
     MCAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
@@ -67,7 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND
