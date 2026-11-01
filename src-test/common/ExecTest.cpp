@@ -4,9 +4,9 @@
 
 #include "ll/api/chrono/GameChrono.h"
 #include "ll/api/coro/CallbackTransformer.h"
+#include "ll/api/coro/ConditionVariable.h"
 #include "ll/api/coro/CoroTask.h"
 #include "ll/api/coro/Generator.h"
-#include "ll/api/coro/InterruptableSleep.h"
 #include "ll/api/thread/InplaceExecutor.h"
 #include "ll/api/thread/ServerThreadExecutor.h"
 #include "ll/api/thread/ThreadName.h"
@@ -56,16 +56,16 @@ Generator<size_t> generator(size_t n) {
     }
 }
 
-InterruptableSleep sleeper;
+ConditionVariable sleeper;
 
 CoroTask<Expected<int>> coroutine() {
     std::thread{[] {
         std::this_thread::sleep_for(1s);
-        sleeper.interrupt(true);
+        sleeper.notifyAll(true);
         getLogger().info("thread: {}", *thread::getThreadName());
     }}.detach();
     getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), *thread::getThreadName());
-    co_await sleeper.sleep();
+    co_await sleeper.wait();
     getLogger().info("coroutine: {}, thread: {}", std::chrono::system_clock::now(), *thread::getThreadName());
     for (size_t i = 0;; i++) {
         co_await 2_tick;
@@ -159,14 +159,14 @@ namespace {
 constexpr size_t waiterCount = 4;
 
 struct MultiSleepContext {
-    InterruptableSleep    sleeper;
+    ConditionVariable     sleeper;
     std::binary_semaphore started{0};
     std::atomic_size_t    finished{0};
 };
 
 CoroTask<void> multiSleepWaiter(MultiSleepContext& ctx) {
     ctx.started.release();
-    co_await ctx.sleeper.sleep();
+    co_await ctx.sleeper.wait();
     ++ctx.finished;
 }
 
@@ -182,7 +182,7 @@ CoroTask<size_t> multiSleepAll(MultiSleepContext& ctx) {
 
 } // namespace
 
-TEST(ExecTest, InterruptableSleepInterruptsAllWaiters) {
+TEST(ExecTest, ConditionVariableNotifyAllWakesAllWaiters) {
     MultiSleepContext  ctx;
     std::atomic_size_t interrupted{0};
 
@@ -192,7 +192,7 @@ TEST(ExecTest, InterruptableSleepInterruptsAllWaiters) {
         }
         // An interrupt may arrive before a waiter has registered, so keep waking until all of them are done.
         while (ctx.finished.load() < waiterCount) {
-            interrupted += ctx.sleeper.interrupt();
+            interrupted += ctx.sleeper.notifyAll();
             std::this_thread::yield();
         }
     }};
@@ -203,6 +203,102 @@ TEST(ExecTest, InterruptableSleepInterruptsAllWaiters) {
     ASSERT_TRUE(result.has_value());
     EXPECT_EQ(result.value(), waiterCount);
     EXPECT_EQ(interrupted.load(), waiterCount);
+}
+
+TEST(ExecTest, ConditionVariableWaitForReportsTimeout) {
+    ConditionVariable localSleeper;
+    auto result = [](ConditionVariable& s) -> CoroTask<bool> { co_return co_await s.waitFor(10ms); }(localSleeper)
+                                                  .syncLaunch(thread::ThreadPoolExecutor::getDefault());
+
+    ASSERT_TRUE(result.has_value());
+    EXPECT_FALSE(result.value());
+    EXPECT_EQ(localSleeper.notifyAll(), 0u);
+}
+
+namespace {
+
+struct ConditionContext {
+    ConditionVariable     cv;
+    std::atomic_int       tickets{0};
+    std::atomic_int       consumed{0};
+    std::binary_semaphore started{0};
+};
+
+CoroTask<void> conditionConsumer(ConditionContext& ctx, int count) {
+    ctx.started.release();
+    for (int i = 0; i < count; ++i) {
+        co_await ctx.cv.wait([&] {
+            int t = ctx.tickets.load();
+            while (t > 0) {
+                if (ctx.tickets.compare_exchange_weak(t, t - 1)) {
+                    return true;
+                }
+            }
+            return false;
+        });
+        ++ctx.consumed;
+    }
+}
+
+CoroTask<int> conditionConsumeAll(ConditionContext& ctx, int consumers, int perConsumer) {
+    std::vector<CoroTask<void>> tasks;
+    for (int i = 0; i < consumers; ++i) {
+        tasks.emplace_back(conditionConsumer(ctx, perConsumer));
+    }
+    co_await collectAll(std::move(tasks));
+    co_return ctx.consumed.load();
+}
+
+} // namespace
+
+TEST(ExecTest, ConditionVariablePredicateWaitDoesNotLoseNotifications) {
+    constexpr int    consumers = 8, perConsumer = 500;
+    ConditionContext ctx;
+
+    std::thread producer{[&ctx] {
+        for (int i = 0; i < consumers; ++i) {
+            ctx.started.acquire();
+        }
+        for (int i = 0; i < consumers * perConsumer; ++i) {
+            ++ctx.tickets;
+            if (i % 2) {
+                ctx.cv.notifyOne();
+            } else {
+                ctx.cv.notifyAll();
+            }
+        }
+    }};
+
+    auto result = conditionConsumeAll(ctx, consumers, perConsumer).syncLaunch(thread::ThreadPoolExecutor::getDefault());
+    producer.join();
+
+    ASSERT_TRUE(result.has_value());
+    EXPECT_EQ(result.value(), consumers * perConsumer);
+}
+
+TEST(ExecTest, ConditionVariableWaitForReturnsPredicate) {
+    ConditionVariable cv;
+    std::atomic_bool  flag{false};
+
+    auto timedOut = [](ConditionVariable& c, std::atomic_bool& f)
+        -> CoroTask<bool> { co_return co_await c.waitFor(10ms, [&] { return f.load(); }); }(cv, flag).syncLaunch(
+            thread::ThreadPoolExecutor::getDefault()
+        );
+    ASSERT_TRUE(timedOut.has_value());
+    EXPECT_FALSE(timedOut.value());
+
+    std::thread notifier{[&] {
+        std::this_thread::sleep_for(20ms);
+        flag = true;
+        cv.notifyAll();
+    }};
+    auto        notified = [](ConditionVariable& c, std::atomic_bool& f)
+        -> CoroTask<bool> { co_return co_await c.waitFor(10s, [&] { return f.load(); }); }(cv, flag).syncLaunch(
+            thread::ThreadPoolExecutor::getDefault()
+        );
+    notifier.join();
+    ASSERT_TRUE(notified.has_value());
+    EXPECT_TRUE(notified.value());
 }
 
 TEST(ExecTest, GeneratorProducesExpectedSequence) {

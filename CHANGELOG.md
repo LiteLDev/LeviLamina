@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `ll::coro::ConditionVariable`, supporting multiple waiters, predicates, timeouts and `notifyOne` / `notifyAll`
+- Added `ll::data::IntrusiveList`
+
+### Removed
+
+- Removed `ll::coro::InterruptableSleep`, use `ll::coro::ConditionVariable` instead
+
 ## [26.51.7] - 2026-10-12
 
 ### Added
