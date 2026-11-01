@@ -64,6 +64,7 @@ private:
     ConcurrentQueue<std::shared_ptr<CacheReadme>>                      mPushRequests;
     ConcurrentQueue<PendingResponse>                                   mPendingResponses;
     std::atomic_uint64_t                                               mGeneration{};
+    SmallDenseSet<cohtml::View*>                                       mPageScriptViews;
 
 private:
     uint64 nextGeneration() { return mGeneration.fetch_add(1, std::memory_order_relaxed) + 1; }
@@ -363,9 +364,10 @@ private:
         } while (mPushRequests.try_dequeue(requested));
         if (pending.empty()) return;
 
+        auto injectPageScript = mPageScriptViews.insert(oreui->mGamefaceView).second;
         std::string batch;
-        batch.reserve(detail::MotdPageScript.size() + scripts.size());
-        batch.append(detail::MotdPageScript);
+        batch.reserve((injectPageScript ? detail::MotdPageScript.size() : 0) + scripts.size());
+        if (injectPageScript) batch.append(detail::MotdPageScript);
         batch.append(scripts);
         ll::memory::virtualCall<void, char const*>(oreui->mGamefaceView, GamefaceExecuteScriptSlot, batch.c_str());
 
