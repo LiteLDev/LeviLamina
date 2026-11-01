@@ -28,6 +28,10 @@ public:
 
     [[nodiscard]] std::vector<std::string> getSortedModNames() const;
 
+    [[nodiscard]] std::vector<std::string> getDependencies(std::string_view name) const;
+
+    [[nodiscard]] std::vector<std::string> getDependents(std::string_view name) const;
+
     void loadAllMods() noexcept;
 
     void enableAllMods() noexcept;

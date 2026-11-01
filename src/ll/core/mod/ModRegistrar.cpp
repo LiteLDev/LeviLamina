@@ -280,6 +280,22 @@ std::vector<std::string> ModRegistrar::getSortedModNames() const {
     return result;
 }
 
+std::vector<std::string> ModRegistrar::getDependencies(std::string_view name) const {
+    std::lock_guard          lock(impl->mutex);
+    auto                     dependencies = impl->lifecycleDependencies.dependentOn(std::string{name});
+    std::vector<std::string> result{dependencies.begin(), dependencies.end()};
+    std::ranges::sort(result);
+    return result;
+}
+
+std::vector<std::string> ModRegistrar::getDependents(std::string_view name) const {
+    std::lock_guard          lock(impl->mutex);
+    auto                     dependents = impl->lifecycleDependencies.dependentBy(std::string{name});
+    std::vector<std::string> result{dependents.begin(), dependents.end()};
+    std::ranges::sort(result);
+    return result;
+}
+
 void ModRegistrar::enableAllMods() noexcept try {
     std::lock_guard lock(impl->mutex);
     auto            names = getSortedModNames();

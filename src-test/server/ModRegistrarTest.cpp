@@ -332,6 +332,33 @@ TEST_F(ModRegistrarLifecycleTest, CascadeLoadsDependentsWithSharedDependencies) 
     EXPECT_LT(providerPosition, branchCPosition);
     EXPECT_LT(branchBPosition, consumerPosition);
     EXPECT_LT(branchCPosition, consumerPosition);
+
+    EXPECT_EQ(
+        registrar.getDependencies(CascadeConsumer),
+        (std::vector<std::string>{"LLTestCascadeBranchB", "LLTestCascadeBranchC"})
+    );
+    EXPECT_EQ(
+        registrar.getDependents(CascadeProvider),
+        (std::vector<std::string>{"LLTestCascadeBranchB", "LLTestCascadeBranchC"})
+    );
+
+    output = executeLlCommand("ll show LLTestCascadeBranchB cascade");
+    std::vector<std::string> lines;
+    for (auto const& message : output.mMessages) {
+        lines.emplace_back(message.mMessageId);
+    }
+    auto const dependencies = std::ranges::find(lines, "Dependencies:");
+    auto const dependents   = std::ranges::find(lines, "Dependents:");
+    ASSERT_NE(dependencies, lines.end());
+    ASSERT_NE(dependents, lines.end());
+    EXPECT_EQ(
+        std::vector<std::string>(dependencies + 1, dependents),
+        (std::vector<std::string>{"  LLTestCascadeProvider"})
+    );
+    EXPECT_EQ(
+        std::vector<std::string>(dependents + 1, lines.end()),
+        (std::vector<std::string>{"  LLTestCascadeConsumer"})
+    );
 }
 
 TEST_F(ModRegistrarLifecycleTest, CascadeReloadAndUnloadHandleMissingLifecycleCallbacks) {
