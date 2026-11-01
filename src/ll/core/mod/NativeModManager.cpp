@@ -79,15 +79,9 @@ static Error diagnosticDependency(std::filesystem::path const& path) {
 }
 
 Expected<> NativeModManager::load(Manifest manifest) {
-    auto            l(lock());
-    ScopedValue     currentLoadingScope{currentLoadingMod, std::make_shared<NativeMod>(std::move(manifest))};
-    std::error_code ec;
-    auto            modDir = getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName());
-    if (auto c = std::filesystem::canonical(modDir, ec); ec.value() == 0) {
-        modDir = c;
-    } else {
-        modDir = modDir.lexically_normal();
-    }
+    auto        l(lock());
+    ScopedValue currentLoadingScope{currentLoadingMod, std::make_shared<NativeMod>(std::move(manifest))};
+    auto        modDir = sys_utils::normalizePath(getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName()));
     sys_utils::addOrSetEnvironmentVariable("PATH", string_utils::u8sv2sv(modDir.u8string()));
 
     auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);

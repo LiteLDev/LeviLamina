@@ -14,15 +14,35 @@
 // Modified by LeviMC in 2026.
 
 #include "ll/core/network/NetherNetInfo.h"
+
 #include <string_view>
+#include <variant>
+
+#include "ll/api/base/Containers.h"
 
 namespace ll::network {
+struct NetworkIdHash {
+    size_t operator()(NetherNet::NetworkID const& id) const {
+        using Base = std::variant<std::monostate, NetherNet::P2P::NetworkID, NetherNet::Realms::NetworkID>;
+        return std::visit(
+            []<class V>(V const& value) -> size_t {
+                if constexpr (std::is_same_v<V, std::monostate>) {
+                    return 0;
+                } else {
+                    return std::hash<decltype(value.mValue)>{}(value.mValue);
+                }
+            },
+            static_cast<Base const&>(id)
+        );
+    }
+};
+
 struct NetherNetInfo::Impl {
-    std::mutex                                                     mutex;
-    std::map<std::string, NetherNet::NetworkID>                    byUfrag;
-    std::map<NetherNet::NetworkID, std::pair<std::string, ushort>> byId;
-    std::deque<std::string>                                        ufragOrder;
-    std::deque<NetherNet::NetworkID>                               idOrder;
+    std::mutex                                                                    mutex;
+    StringMap<NetherNet::NetworkID>                                               byUfrag;
+    DenseMap<NetherNet::NetworkID, std::pair<std::string, ushort>, NetworkIdHash> byId;
+    std::deque<std::string>                                                       ufragOrder;
+    std::deque<NetherNet::NetworkID>                                              idOrder;
 };
 
 NetherNetInfo::NetherNetInfo() : impl(std::make_unique<Impl>()) {}
@@ -33,17 +53,15 @@ NetherNetInfo& NetherNetInfo::getInstance() {
     return instance;
 }
 
-namespace {
-constexpr std::string_view UFRAG_ATTRIBUTE      = "a=ice-ufrag:";
-constexpr std::size_t      MAX_PENDING_SESSIONS = 256;
-} // namespace
+static constexpr std::string_view UfragAttribute     = "a=ice-ufrag:";
+static constexpr std::size_t      MaxPendingSessions = 256;
 
 void NetherNetInfo::addSession(NetherNet::NetworkID const& id, std::string_view const sdp) {
-    auto const begin = sdp.find(UFRAG_ATTRIBUTE);
+    auto const begin = sdp.find(UfragAttribute);
     if (begin == std::string_view::npos) {
         return;
     }
-    auto const value = sdp.substr(begin + UFRAG_ATTRIBUTE.size());
+    auto const value = sdp.substr(begin + UfragAttribute.size());
     auto const ufrag = value.substr(0, value.find_first_of("\r\n"));
     if (ufrag.empty()) {
         return;
@@ -53,7 +71,7 @@ void NetherNetInfo::addSession(NetherNet::NetworkID const& id, std::string_view 
     if (impl->byUfrag.insert_or_assign(std::string(ufrag), id).second) {
         impl->ufragOrder.emplace_back(ufrag);
     }
-    while (impl->ufragOrder.size() > MAX_PENDING_SESSIONS) {
+    while (impl->ufragOrder.size() > MaxPendingSessions) {
         impl->byUfrag.erase(impl->ufragOrder.front());
         impl->ufragOrder.pop_front();
     }
@@ -61,14 +79,14 @@ void NetherNetInfo::addSession(NetherNet::NetworkID const& id, std::string_view 
 
 void NetherNetInfo::addAddress(webrtc::Candidate const& candidate, std::pair<std::string, ushort> const& address) {
     std::lock_guard const lock(impl->mutex);
-    auto const            it = impl->byUfrag.find(candidate.username_);
+    auto const            it = impl->byUfrag.find(*candidate.username_);
     if (it == impl->byUfrag.end()) {
         return;
     }
     if (impl->byId.insert_or_assign(it->second, address).second) {
         impl->idOrder.emplace_back(it->second);
     }
-    while (impl->idOrder.size() > MAX_PENDING_SESSIONS) {
+    while (impl->idOrder.size() > MaxPendingSessions) {
         impl->byId.erase(impl->idOrder.front());
         impl->idOrder.pop_front();
     }

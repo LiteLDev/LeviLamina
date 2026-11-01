@@ -9,5 +9,5 @@ class BlockDataFetchResult {
 public:
     std::reference_wrapper<T const> mData;
     BlockPos                        mDataPos;
-    uint32_t                        mDistanceSquared;
+    uint32                          mDistanceSquared;
 };

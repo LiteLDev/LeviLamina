@@ -201,4 +201,4 @@ ll::coro::CoroTask<> collectExample() {
 ## 相关模块
 
 - [Thread（线程工具）](thread.zh.md) — `ThreadPoolExecutor` 和 `ServerThreadExecutor` 实现了 `Executor`
-- [操作指南：协程](../developer_guides/how_to_guides/coro_guide.md) — 分步教程
+- [操作指南：协程](../developer_guides/how_to_guides/coro_guide.zh.md) — 分步教程

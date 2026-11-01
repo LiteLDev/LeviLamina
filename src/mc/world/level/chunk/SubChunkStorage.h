@@ -43,9 +43,9 @@ public:
 
     virtual bool isPaletteUniform(T const&) const = 0;
 
-    virtual T const& getElement(uint16_t) const = 0;
+    virtual T const& getElement(uint16) const = 0;
 
-    virtual bool trySetElement(uint16_t, T const&) = 0;
+    virtual bool trySetElement(uint16, T const&) = 0;
 
     virtual size_t getElementTypeCapacity() const = 0;
 
@@ -64,8 +64,8 @@ public:
     virtual void fetchElementInCylinder(
         BlockPos const&,
         BlockPos const&,
-        uint32_t,
-        uint32_t,
+        uint32,
+        uint32,
         brstd::function_ref<bool(T const&), bool(T const&)> const&,
         std::vector<BlockDataFetchResult<T>>&
     ) const = 0;

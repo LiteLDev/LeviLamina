@@ -327,6 +327,6 @@ void setupMulti() {
 
 ## 相关模块
 
-- [操作指南：事件](../developer_guides/how_to_guides/event_guide.md) — 分步教程
-- [Input（输入系统）](input.zh.md) — 客户端输入事件详情
+- [操作指南：事件](../developer_guides/how_to_guides/event_guide.zh.md) — 分步教程
+- [Input（输入系统 · 客户端）](input.zh.md) — 客户端输入事件详情
 - [Service（服务系统）](service.zh.md) — 服务注册/注销事件

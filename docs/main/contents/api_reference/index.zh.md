@@ -14,6 +14,7 @@ LeviLamina 的 API 按以下模块组织：
 | [Expected（错误处理）](expected.zh.md) | `Expected<T>` 和 `Error` 类型的错误处理 | 通用 |
 | [Config（配置系统）](config.zh.md) | 基于 JSON 序列化的配置加载与保存 | 通用 |
 | [Reflection（反射）](reflection.zh.md) | 编译期反射、序列化和反序列化 | 通用 |
+| [Reflection（反射 · 进阶）](reflection_advanced.zh.md) | 调度模型、特化签名与复杂示例 | 通用 |
 
 ### 核心系统
 
@@ -30,7 +31,7 @@ LeviLamina 的 API 按以下模块组织：
 
 | 模块 | 说明 | 适用范围 |
 |------|------|----------|
-| [IO & Logger（日志系统）](io.zh.md) | 日志器、输出目标、格式化器和文件工具 | 通用 |
+| [IO & Logger（输入输出与日志）](io.zh.md) | 日志器、输出目标、格式化器和文件工具 | 通用 |
 | [I18n（国际化）](i18n.zh.md) | 国际化与本地化支持 | 通用 |
 
 ### 异步与线程
@@ -59,7 +60,7 @@ LeviLamina 的 API 按以下模块组织：
 
 | 模块 | 说明 | 适用范围 |
 |------|------|----------|
-| [Input（输入系统）](input.zh.md) | 键盘/鼠标输入绑定和输入事件 | 仅客户端 |
+| [Input（输入系统 · 客户端）](input.zh.md) | 键盘/鼠标输入绑定和输入事件 | 仅客户端 |
 
 ## 适用范围说明
 

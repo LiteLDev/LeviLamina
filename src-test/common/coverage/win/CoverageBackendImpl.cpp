@@ -289,7 +289,7 @@ bool AddressSampler::addModule(
 
 size_t AddressSampler::moduleCount() const { return mRuntimes.size(); }
 
-std::span<uint8_t const> AddressSampler::addressHits(size_t moduleIndex) const {
+std::span<uint8 const> AddressSampler::addressHits(size_t moduleIndex) const {
     return mRuntimes[moduleIndex].addressHits;
 }
 
@@ -305,7 +305,7 @@ void AddressSampler::installBreakpoints() {
             if (!VirtualQuery(reinterpret_cast<void*>(addr), &mbi, sizeof(mbi))) continue;
             uintptr_t pageBase = reinterpret_cast<uintptr_t>(mbi.BaseAddress);
             size_t    pageSize = mbi.RegionSize;
-            auto      byte     = *reinterpret_cast<uint8_t*>(addr);
+            auto      byte     = *reinterpret_cast<uint8*>(addr);
             if (byte == 0xCC) {
                 continue;
             }
@@ -323,9 +323,9 @@ void AddressSampler::installBreakpoints() {
                     mr.modifiedPages.push_back({pageBase, pageSize, oldProtect});
                 }
             }
-            mr.origBytes[i]                   = byte;
-            mr.instrumented[i]                = 1;
-            *reinterpret_cast<uint8_t*>(addr) = 0xCC;
+            mr.origBytes[i]                 = byte;
+            mr.instrumented[i]              = 1;
+            *reinterpret_cast<uint8*>(addr) = 0xCC;
         }
     }
     FlushInstructionCache(GetCurrentProcess(), nullptr, 0);
@@ -338,9 +338,9 @@ void AddressSampler::removeBreakpoints() {
             if (!mr.instrumented[i]) {
                 continue;
             }
-            uintptr_t addr                    = mr.addrs[i];
-            *reinterpret_cast<uint8_t*>(addr) = mr.origBytes[i];
-            mr.instrumented[i]                = 0;
+            uintptr_t addr                  = mr.addrs[i];
+            *reinterpret_cast<uint8*>(addr) = mr.origBytes[i];
+            mr.instrumented[i]              = 0;
         }
         for (auto& p : mr.modifiedPages) {
             DWORD dummy{};
@@ -392,8 +392,8 @@ LONG NTAPI AddressSampler::vehHandler(EXCEPTION_POINTERS* ep) {
             if (addr < mr.base || addr >= mr.base + mr.size) continue;
             auto it = std::lower_bound(mr.addrs.begin(), mr.addrs.end(), addr);
             if (it != mr.addrs.end() && *it == addr) {
-                size_t   idx = static_cast<size_t>(it - mr.addrs.begin());
-                uint8_t* ptr = reinterpret_cast<uint8_t*>(addr);
+                size_t idx = static_cast<size_t>(it - mr.addrs.begin());
+                uint8* ptr = reinterpret_cast<uint8*>(addr);
 
                 if (!mr.instrumented[idx]) {
                     if (*ptr == 0xCC) {
@@ -402,7 +402,7 @@ LONG NTAPI AddressSampler::vehHandler(EXCEPTION_POINTERS* ep) {
                     if (addr != exceptionAddress) {
                         continue;
                     }
-                    std::atomic_ref<uint8_t>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
+                    std::atomic_ref<uint8>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
                     ep->ContextRecord->Rip = addr;
                     return EXCEPTION_CONTINUE_EXECUTION;
                 }
@@ -413,7 +413,7 @@ LONG NTAPI AddressSampler::vehHandler(EXCEPTION_POINTERS* ep) {
                 }
                 mr.instrumented[idx] = 0;
 
-                std::atomic_ref<uint8_t>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
+                std::atomic_ref<uint8>(mr.addressHits[idx]).store(1, std::memory_order_relaxed);
 
                 ep->ContextRecord->Rip = addr;
                 return EXCEPTION_CONTINUE_EXECUTION;

@@ -11,13 +11,42 @@ on:
       - src/**/*.h
     branches:
       - '**'
+  # levimc-kit (the LeviMC bar, footer, docs engine and the Doxygen header/footer) is published by levimc.org and
+  # fetched by `npm ci`: levimc.org triggers this workflow when it publishes a new kit, and the hourly check below
+  # catches up otherwise.
+  schedule:
+    - cron: '41 * * * *'
   workflow_dispatch:
 
 jobs:
+  # On the schedule: build only when levimc.org publishes a kit the live site does not run yet.
+  kit:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    outputs:
+      stale: ${{ steps.check.outputs.stale }}
+    steps:
+      - id: check
+        run: |
+          want=$(curl -fsSL https://levimc.org/kit/v2/manifest.json | jq -r '"levimc-kit " + .version + "+" + .build')
+          have=$(curl -fsSL https://docs.levimc.org/LeviLamina/ | grep -o 'levimc-kit [^"]*' | head -1)
+          echo "live: $have · published: $want"
+          echo "stale=$([ "$want" != "$have" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
   build-doxygen:
+    needs: kit
+    if: ${{ !cancelled() && (github.event_name != 'schedule' || needs.kit.outputs.stale == 'true') }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # the Doxygen header, footer, stylesheets and kit.js are levimc-kit's (docs/main/kit/static/)
+      - run: |
+          node docs/main/scripts/fetch-kit.mjs --dest docs/main/kit
 
       - run: |
           git clone --depth 1 --branch v2.4.1 https://github.com/jothepro/doxygen-awesome-css.git docs/api/doxygen-awesome-css
@@ -45,30 +74,53 @@ jobs:
           path: |
             artifact.tar
 
-  build-mkdocs:
+  build-docs:
+    needs: kit
+    if: ${{ !cancelled() && (github.event_name != 'schedule' || needs.kit.outputs.stale == 'true') }}
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: docs/main
     steps:
       - uses: actions/checkout@v7
+        with:
+          # full history for the "Last updated" dates
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: docs/main/package-lock.json
 
       - run: |
-          pip install -r docs/main/requirements.txt
+          npm ci
+
+      # tsc --noEmit over docs.config.ts and the kit (the Vite build strips types without checking them)
+      - run: |
+          npm run typecheck
 
       - run: |
-          mkdocs build -f docs/main/mkdocs.yml -d ../../site
+          npm run build
+
+      # internal links, anchors and redirects (the Doxygen output under /LeviLamina/api/ is merged below)
+      - run: |
+          npm run linkcheck
 
       - run: |
-          tar -cvf artifact.tar -C site/ .
+          tar -cvf ../../artifact.tar -C dist/ .
 
       - uses: actions/upload-artifact@v7
         with:
-          name: mkdocs-pages
+          name: docs-pages
           path: |
             artifact.tar
 
   merge:
     needs:
       - build-doxygen
-      - build-mkdocs
+      - build-docs
+    if: ${{ !cancelled() && needs.build-doxygen.result == 'success' && needs.build-docs.result == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v8
@@ -79,14 +131,14 @@ jobs:
         run: |
           mkdir site
           tar -xvf artifacts/doxygen-pages/artifact.tar -C site/
-          tar -xvf artifacts/mkdocs-pages/artifact.tar -C site/
+          tar -xvf artifacts/docs-pages/artifact.tar -C site/
 
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site/
 
   deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: ${{ !cancelled() && needs.merge.result == 'success' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request' }}
     needs:
       - merge
     permissions:

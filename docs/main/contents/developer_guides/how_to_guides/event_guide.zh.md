@@ -2,7 +2,7 @@
 
 ## 介绍
 
-LeviLamina内置了一套事件系统，提供简单事件和供Mod发布自己的事件。  
+LeviLamina内置了一套事件系统，提供简单事件和供模组发布自己的事件。  
 所有的内置事件都被放在了`ll/api/event/`目录下，并且被分类并放置在`command`,`entity`,`player`,`world`等子目录下。
 
 ## 监听事件
@@ -18,7 +18,7 @@ void ListenEvents() {
     EventBus& bus = EventBus::getInstance();
     bus.emplaceListener<ServerStartedEvent>([](ServerStartedEvent& event) {
         // 服务端启动完成后要执行的代码
-    }
+    });
 }
 ```
 
@@ -36,9 +36,9 @@ void ListenEvents() {
 
 !!! tip "关于LLAPI"
     LeviLamina中的`LLAPI`宏本质是通过在`xmake.lua`中使用`add_defines("LL_EXPORT")`预定义`LL_EXPORT`
-    以实现在LeviLamina编译时`LLAPI`表示`__declspec(dllexport)`，在其它Mod引用时变为`__declspec(dllimport)`
-    以供其它Mod导入该方法，以下是一个实现这样的宏的简单的示例，在实际使用中你需要将`MOD_EXPORT`和`MODAPI`
-    改名以避免与其它Mod的宏产生冲突:
+    以实现在LeviLamina编译时`LLAPI`表示`__declspec(dllexport)`，在其它模组引用时变为`__declspec(dllimport)`
+    以供其它模组导入该方法，以下是一个实现这样的宏的简单的示例，在实际使用中你需要将`MOD_EXPORT`和`MODAPI`
+    改名以避免与其它模组的宏产生冲突:
 
 ```cpp
 #ifdef MOD_EXPORT
@@ -48,9 +48,9 @@ void ListenEvents() {
 #endif
 ```
 
-这样，你只需要在你的Mod的`xmake.lua`中添加`add_defines("MOD_EXPORT")`，然后在需要被导出的方法前面添加`MODAPI`
-即可导出你的Mod的方法。  
-如果你希望其它Mod能够在不链接你的Mod的情况下使用你的Mod提供的事件，可以直接将事件的成员设为
+这样，你只需要在你的模组的`xmake.lua`中添加`add_defines("MOD_EXPORT")`，然后在需要被导出的方法前面添加`MODAPI`
+即可导出你的模组的方法。  
+如果你希望其它模组能够在不链接你的模组的情况下使用你的模组提供的事件，可以直接将事件的成员设为
 `public`，或直接在头文件中实现获取方法。另外，最好在事件中声明并实现一个`serialize`方法，以方便在控制台中输出该事件的信息。
 
 ```cpp

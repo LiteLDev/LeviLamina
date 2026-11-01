@@ -1,5 +1,6 @@
 #pragma once
 
+#include <array>
 #include <cctype>
 #include <cstddef>
 #include <optional>
@@ -38,6 +39,8 @@ constexpr bool is_key_formatter_v = requires(F f, std::string_view sv) {
 } || requires(F f, std::string_view sv) {
     { f(sv) } -> std::convertible_to<std::string_view>;
 };
+
+constexpr auto default_key_formatter = [](std::string_view sv) -> std::string_view { return sv; };
 
 template <typename T>
 constexpr bool is_string_serializable_v = requires(T const& t, std::string_view sv) {
@@ -80,6 +83,16 @@ constexpr bool has_value_serializer_v = requires(T const& t, F const& f) {
 };
 
 template <typename T, typename J, typename F>
+constexpr bool has_inplace_serializer_v = requires(T const& t, std::remove_cvref_t<J>& j, F const& f) {
+    { Serializer<T>::serialize(t, j, f) } -> std::convertible_to<ll::Expected<>>;
+} || requires(T const& t, std::remove_cvref_t<J>& j) {
+    { Serializer<T>::serialize(t, j) } -> std::convertible_to<ll::Expected<>>;
+};
+
+template <typename T, typename J, typename F>
+constexpr bool has_custom_serializer_v = has_value_serializer_v<T, J, F> || has_inplace_serializer_v<T, J, F>;
+
+template <typename T, typename J, typename F>
 constexpr bool has_value_deserializer_v = requires(std::remove_cvref_t<J> const& j, F const& f) {
     { Serializer<std::remove_cvref_t<T>, std::remove_cvref_t<J>>::deserialize(j, f) };
 } || requires(std::remove_cvref_t<J> const& j) {
@@ -118,16 +131,6 @@ constexpr bool has_inplace_deserializer_v = requires(std::remove_cvref_t<T>& t, 
         Serializer<std::remove_cvref_t<T>>::template deserialize<std::remove_cvref_t<J>>(t, std::forward<J>(j))
     } -> std::convertible_to<ll::Expected<>>;
 };
-
-template <typename T, typename J, typename F>
-constexpr bool has_inplace_serializer_v = requires(T const& t, std::remove_cvref_t<J>& j, F const& f) {
-    { Serializer<T>::serialize(t, j, f) } -> std::convertible_to<ll::Expected<>>;
-} || requires(T const& t, std::remove_cvref_t<J>& j) {
-    { Serializer<T>::serialize(t, j) } -> std::convertible_to<ll::Expected<>>;
-};
-
-template <typename T, typename J, typename F>
-constexpr bool has_custom_serializer_v = has_value_serializer_v<T, J, F> || has_inplace_serializer_v<T, J, F>;
 
 constexpr std::string_view trim_ascii_spaces(std::string_view sv) {
     while (!sv.empty() && std::isspace(static_cast<unsigned char>(sv.front()))) {
@@ -249,14 +252,12 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
         }
     }
 
-    if (auto num = string_utils::svtonum<underlying_type>(sv, nullptr, 10)) {
+    if (auto num = string_utils::svtonum<underlying_type>(sv)) {
         return static_cast<enum_type>(*num);
     }
 
     return std::nullopt;
 }
-
-constexpr auto default_key_formatter = [](std::string_view sv) -> std::string_view { return sv; };
 
 } // namespace detail
 
@@ -307,7 +308,8 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
     static_assert(
         detail::has_custom_key_serializer_v<T, F> || detail::has_typed_key_formatter_v<T, F>
             || detail::is_string_serializable_v<T> || traits::is_string_convertible_v<T> || std::is_enum_v<T>,
-        "the key type must be serializable to a string"
+        "the key type has to be a string, an enum, or a type with a ll::reflection::Serializer<T>::to_string "
+        "specialization"
     );
     if constexpr (std::is_enum_v<T>) {
         if (auto name = detail::enum_name_to_string(t, keyFormatter)) return *std::move(name);
@@ -328,7 +330,7 @@ constexpr std::string type_to_string(T const& t, F const& keyFormatter) {
     } else if constexpr (detail::is_string_serializable_v<T>) {
         return Serializer<T>::to_string(t);
     } else {
-        static_assert(std::is_enum_v<T>, "unreachable");
+        static_assert(traits::always_false<T>, "the key type cannot be converted to a string; see the assertion above");
     }
 }
 

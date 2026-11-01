@@ -23,7 +23,7 @@ void test() { uint formId = ll::form::FormIdManager::genFormId(); }
 
 SimpleForm is a basic form that provides a title, content, and buttons.  
 The header file for SimpleForm is located at `ll/api/form/SimpleForm.h`.  
-Additionally, since methods like `addButton` in SimpleForm return a reference to SimpleForm, they support method
+Additionally, since methods like `appendButton` in SimpleForm return a reference to SimpleForm, they support method
 chaining.
 
 ### Usage
@@ -170,7 +170,8 @@ ModalForm is a modal form that provides a title, content, and two buttons, typic
    manually calling `setTitle`, `setContent`, `setUpperButton`, and `setLowerButton` methods.
 3. Use the `sendTo` method to send the form to a player. This requires passing a reference to a `Player` object and a
    callback function. The callback function parameters include a reference to the `Player` object, the button selection
-   result, and an enumeration of the cancellation reason.
+   result, and an enumeration of the cancellation reason. For detailed parameters, refer to the `Callback` declaration in
+   the `ll/api/form/ModalForm.h` header file.
 
 !!! tip
     `ModalFormResult` is actually an alias for `std::optional<ModalFormSelectedButton>`, and `ModalFormSelectedButton` is a

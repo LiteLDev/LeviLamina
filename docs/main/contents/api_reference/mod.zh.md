@@ -86,7 +86,7 @@ struct Manifest {
 }
 ```
 
-依赖项沿用现有的 manifest JSON 结构：
+依赖项沿用现有的清单 JSON 结构：
 
 ```json
 {
@@ -106,16 +106,29 @@ struct Manifest {
 完整语法见 [Data（数据结构）](data.zh.md#versionrequirement)。裸完整版本 `1.2.3` 暂时保留旧语义
 `>=1.2.3 <2.0.0`，并会输出迁移警告；精确匹配请使用 `=1.2.3`。
 
+### 模组类型
+
+清单中的 `type` 字段决定由谁加载该模组：
+
+| `type` | 加载者 | 加载时机 |
+|--------|--------|----------|
+| `native` | LeviLamina 的原生模组管理器（`NativeModManagerName`） | LeviLamina 启动后，与其他 LeviLamina 模组一起加载。普通的 C++ 模组使用此类型。 |
+| `preload-native` | PreLoader | 游戏启动前、LeviLamina 的模组之前加载。LeviLamina 本身就使用此类型。LeviLamina 的模组注册表会跳过这类清单，因此它们不属于 LeviLamina 模组。 |
+
+其他 `type` 由通过 `ModManagerRegistry` 为该类型注册的模组管理器加载（例如脚本引擎）。如果没有为该类型注册管理器，加载会失败并提示 "Unrecognized mod type"。
+
+无论哪种类型，将 `passive` 设为 `true` 后，只有当其他模组依赖它时才会加载该模组。
+
 ### 依赖语义
 
-| Manifest 字段 | 加载顺序 | 依赖加载失败 | disable/unload 保护 |
+| 清单字段 | 加载顺序 | 依赖加载失败 | disable/unload 保护 |
 |---------------|----------|--------------|---------------------|
 | `dependencies` | 依赖先加载 | 阻止依赖方加载 | 有 |
 | `optionalDependencies` | 可用且版本匹配的依赖先加载 | 不阻止使用方加载 | 加载时成功绑定后有 |
 | `loadBefore` | 声明方先加载 | 不建立依赖关系 | 无 |
 
 `loadBefore` 只约束启动加载和批量操作顺序，绝不会阻止任一方单独 disable 或 unload。动态加载不会重排已经加载的
-mod；若新 mod 要求在已加载目标之前加载，LeviLamina 会记录警告并继续。可选依赖只在使用方加载时绑定，因此之后
+模组；若新模组要求在已加载目标之前加载，LeviLamina 会记录警告并继续。可选依赖只在使用方加载时绑定，因此之后
 才动态加载的可选依赖提供方不会被追溯加入生命周期保护。
 
 ## 使用方法
@@ -175,30 +188,34 @@ void registerCallbacks(ll::mod::Mod& mod) {
 
 ### 目录结构
 
-每个模组具有以下目录结构：
+模组位于模组根目录（`getModsRoot()`）中：服务端为 `plugins/`，客户端为 `mods/`。（`plugins/` 目录存在时 PreLoader
+使用它，否则使用 `mods/`；`PreLoaderConfig.json` 中的 `modsPath` 可以覆盖该设置。）每个模组具有以下目录结构：
 
 ```
-mods/
+plugins/                       # 客户端为 mods/
 └── MyMod/
     ├── manifest.json          # 模组元数据
     ├── MyMod.dll              # 模组二进制文件
     ├── config/                # 配置文件 (getConfigDir())
     ├── data/                  # 持久化数据 (getDataDir())
     ├── lang/                  # 翻译文件 (getLangDir())
-    ├── resources/             # 资源包 (getResourceDir())
-    └── behavior/              # 行为包 (getBehaviorDir())
+    ├── resource_packs/        # 资源包 (getResourceDir())
+    └── behavior_packs/        # 行为包 (getBehaviorDir())
 
 worlds/
-└── Bedrock level/
-    └── plugins/
-        └── MyMod/
-            ├── config/        # 世界特定配置 (getWorldConfigDir())
-            └── data/          # 世界特定数据 (getWorldDataDir())
+└── Bedrock level/             # 当前世界的文件夹
+    ├── ll_config/
+    │   └── MyMod/             # 世界特定配置 (getWorldConfigDir())
+    └── ll_data/
+        └── MyMod/             # 世界特定数据 (getWorldDataDir())
 ```
+
+未加载世界时，`getWorldConfigDir()` 和 `getWorldDataDir()` 返回 `std::nullopt`。在客户端连接远程服务器时，它们分别是游戏目录下的
+`ll_config/<host>_<port>/MyMod/` 和 `ll_data/<host>_<port>/MyMod/`。
 
 ## 相关模块
 
 - [Config（配置系统）](config.zh.md) — 使用 `getConfigDir()` 获取配置文件位置
 - [Data（数据结构）](data.zh.md) — 使用 `getDataDir()` 存储数据库
 - [I18n（国际化）](i18n.zh.md) — 使用 `getLangDir()` 存储翻译文件
-- [IO & Logger（日志系统）](io.zh.md) — `getLogger()` 返回模组的日志器
+- [IO & Logger（输入输出与日志）](io.zh.md) — `getLogger()` 返回模组的日志器

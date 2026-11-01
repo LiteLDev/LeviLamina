@@ -107,6 +107,20 @@ the target must declare a matching version. See [Data](data.md#versionrequiremen
 full version such as `1.2.3` temporarily keeps the legacy meaning `>=1.2.3 <2.0.0` and emits a migration warning; use
 `=1.2.3` for an exact match.
 
+### Mod Types
+
+The manifest's `type` field decides who loads the mod:
+
+| `type` | Loaded by | When |
+|--------|-----------|------|
+| `native` | LeviLamina's native mod manager (`NativeModManagerName`) | After LeviLamina has started, together with the other LeviLamina mods. Use this for ordinary C++ mods. |
+| `preload-native` | PreLoader | Before the game starts, before LeviLamina's own mods. LeviLamina itself uses this type. LeviLamina skips these manifests in its own mod registry, so they are not LeviLamina mods. |
+
+Any other `type` is loaded by the mod manager that was registered for that type through `ModManagerRegistry` (for
+example by a script engine). If no manager is registered for it, loading fails with "Unrecognized mod type".
+
+For every type, setting `passive` to `true` means the mod is loaded only when another mod depends on it.
+
 ### Dependency Semantics
 
 | Manifest field | Load ordering | Load failure | Disable and unload protection |
@@ -177,26 +191,32 @@ void registerCallbacks(ll::mod::Mod& mod) {
 
 ### Directory Structure
 
-Each mod has the following directory structure:
+Mods live in the mods root (`getModsRoot()`): `plugins/` on the server and `mods/` on the client. (PreLoader uses
+`plugins/` when that directory exists, otherwise `mods/`; `modsPath` in `PreLoaderConfig.json` overrides it.) Each mod
+has the following directory structure:
 
 ```
-mods/
+plugins/                       # mods/ on the client
 └── MyMod/
     ├── manifest.json          # Mod metadata
     ├── MyMod.dll              # Mod binary
     ├── config/                # Config files (getConfigDir())
     ├── data/                  # Persistent data (getDataDir())
     ├── lang/                  # Translations (getLangDir())
-    ├── resources/             # Resource packs (getResourceDir())
-    └── behavior/              # Behavior packs (getBehaviorDir())
+    ├── resource_packs/        # Resource packs (getResourceDir())
+    └── behavior_packs/        # Behavior packs (getBehaviorDir())
 
 worlds/
-└── Bedrock level/
-    └── plugins/
-        └── MyMod/
-            ├── config/        # World-specific config (getWorldConfigDir())
-            └── data/          # World-specific data (getWorldDataDir())
+└── Bedrock level/             # The current world's folder
+    ├── ll_config/
+    │   └── MyMod/             # World-specific config (getWorldConfigDir())
+    └── ll_data/
+        └── MyMod/             # World-specific data (getWorldDataDir())
 ```
+
+`getWorldConfigDir()` and `getWorldDataDir()` return `std::nullopt` while no world is loaded. On the client, when
+connected to a remote server, they are `ll_config/<host>_<port>/MyMod/` and `ll_data/<host>_<port>/MyMod/` in the game
+directory instead.
 
 ## Related
 

@@ -1,9 +1,10 @@
 #pragma once
 
 #include <cstdint>
-#include <map>
 #include <memory>
 #include <utility>
+
+#include "ll/api/base/Containers.h"
 
 #include "mc/platform/brstd/move_only_function.h"
 
@@ -13,15 +14,15 @@ template <class T>
 class Observable {
 public:
     using Callback       = brstd::move_only_function<void(T const&)>;
-    using SubscriptionId = std::uint32_t;
+    using SubscriptionId = uint32;
 
 private:
     struct State {
         explicit State(T initial) : data(std::move(initial)) {}
 
-        std::map<SubscriptionId, Callback> callbacks;
-        SubscriptionId                     nextId{};
-        T                                  data;
+        OrderedMap<SubscriptionId, Callback> callbacks;
+        SubscriptionId                       nextId{};
+        T                                    data;
     };
 
     std::shared_ptr<State> state;

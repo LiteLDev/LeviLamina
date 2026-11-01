@@ -189,5 +189,5 @@ ll::Expected<> initializeWithError() {
 
 ## 相关模块
 
-- [IO & Logger（日志系统）](io.zh.md) — `Error::log()` 输出到 Logger
+- [IO & Logger（输入输出与日志）](io.zh.md) — `Error::log()` 输出到 Logger
 - [Mod（模组系统）](mod.zh.md) — 模组生命周期回调返回 `Expected<>`

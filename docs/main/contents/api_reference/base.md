@@ -25,7 +25,7 @@ The Base module provides the foundational building blocks used throughout the Le
 
 Defined in `Macro.h`, these macros control symbol visibility between LeviLamina and mods:
 
-| Macro | Expansion (when building LL) | Expansion (when consumed by mod) |
+| Macro | Expansion (when building LeviLamina) | Expansion (when consumed by mod) |
 |-------|------------------------------|----------------------------------|
 | `LLAPI` | `[[maybe_unused]] __declspec(dllexport)` | `[[maybe_unused]] __declspec(dllimport)` |
 | `LLNDAPI` | `[[nodiscard]] LLAPI` | `[[nodiscard]] LLAPI` |

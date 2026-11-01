@@ -1,6 +1,7 @@
 #include "ll/core/tweak/SimulatedPlayerFixes.h"
 
 #include "ll/api/base/ScopedValue.h"
+#include "ll/api/base/TypeTraits.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/memory/Memory.h"
 #include "mc/deps/script_core/binding_type/scripting/ClassBinding.h"
@@ -27,17 +28,16 @@
 #include <variant>
 
 namespace ll::simulated_player_fixes {
-namespace {
 
 using GameTestSimulatedPlayerSpawnResult = std::variant<gametest::GameTestError, SimulatedPlayer*>;
 
-thread_local bool isSpawningGameTestSimulatedPlayer = false;
+static thread_local bool isSpawningGameTestSimulatedPlayer = false;
 
-bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
+static bool shouldUsePlayerChunkLoading(SimulatedPlayer const& player) {
     return !isSpawningGameTestSimulatedPlayer && !*player.mGameTestHelper;
 }
 
-void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
+static void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
     auto const serverTickRange = player.getLevel().getLevelData().mServerTickRange;
     if (serverTickRange == 0) {
         return;
@@ -51,25 +51,11 @@ void configureSimulatedPlayerChunkRadius(SimulatedPlayer& player) {
     }
 }
 
-template <class>
-struct MemberFunctionToFunctionPointer;
-
-template <class R, class C, class... Args>
-struct MemberFunctionToFunctionPointer<R (C::*)(Args...)> {
-    using type = R (*)(C*, Args...);
-};
-
-template <class R, class C, class... Args>
-struct MemberFunctionToFunctionPointer<R (C::*)(Args...) const> {
-    using type = R (*)(C const*, Args...);
-};
-
-template <class T>
-using MemberFunctionToFunctionPointerT = typename MemberFunctionToFunctionPointer<T>::type;
-
 class SimulatedPlayerChunkLoadingVtablePatch {
-    using GetSpawnChunkLimit = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_getSpawnChunkLimit)>;
-    using UpdateChunkView    = MemberFunctionToFunctionPointerT<decltype(&SimulatedPlayer::_updateChunkPublisherView)>;
+    using GetSpawnChunkLimit =
+        traits::function_traits<decltype(&SimulatedPlayer::_getSpawnChunkLimit)>::function_pointer;
+    using UpdateChunkView =
+        traits::function_traits<decltype(&SimulatedPlayer::_updateChunkPublisherView)>::function_pointer;
 
     inline static GetSpawnChunkLimit mOriginalGetSpawnChunkLimit{};
     inline static UpdateChunkView    mOriginalUpdateChunkView{};
@@ -130,8 +116,6 @@ public:
     }
 };
 
-} // namespace
-
 LL_TYPE_INSTANCE_HOOK(
     SimulatedPlayerPrepareRegionHook,
     HookPriority::Highest,
@@ -191,7 +175,6 @@ LL_TYPE_INSTANCE_HOOK(
     ScriptModuleGameTest::ScriptSimulatedPlayer::bind();
     origin(plugin, pluginResult);
 }
-
 
 void enable(bool enableChunkLoading) {
     static memory::HookRegistrar<ScriptSimulatedPlayerMetaHook> gameTestSimulatedPlayerRegistrar;

@@ -2,17 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/math/Vec3.h"
+#include "mc/world/level/dimension/DimensionType.h"
+
 struct WorldPosition {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 12> mUnk4d9121;
-    ::ll::UntypedStorage<4, 4>  mUnkd4ba9a;
+    ::ll::TypedStorage<4, 12, ::Vec3>         mPos;
+    ::ll::TypedStorage<4, 4, ::DimensionType> mDimensionType;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    WorldPosition& operator=(WorldPosition const&);
-    WorldPosition(WorldPosition const&);
-    WorldPosition();
 };

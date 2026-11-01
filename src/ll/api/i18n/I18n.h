@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "ll/api/Expected.h"
 #include "ll/api/base/Concepts.h"
@@ -90,7 +90,7 @@ public:
 } // namespace ll::i18n
 
 #ifdef LL_I18N_COLLECT_STRINGS
-#include "ll/api/reflection/TypeName.h"
+#include "ll/api/base/SourceLocation.h"
 
 #ifndef LL_I18N_STRING_LITERAL_TYPE
 #define LL_I18N_STRING_LITERAL_TYPE ::ll::FixedStrWithLoc
@@ -119,7 +119,7 @@ namespace ll {
 template <LL_I18N_STRING_LITERAL_TYPE Fmt, typename... Args>
 [[nodiscard]] inline Unexpected makeI18nStringError(Args&&... args) noexcept {
 #ifdef LL_I18N_COLLECT_STRINGS
-    static i18n::detail::TrStrOut<Fmt> e{};
+    [[maybe_unused]] auto out{i18n::detail::TrStrOut<Fmt>::_};
 #endif
     return makeError<i18n::I18nStringError>(fmt::format_string<Args...>(Fmt.sv()), std::forward<Args>(args)...);
 }
@@ -129,7 +129,7 @@ namespace ll::inline literals::inline i18n_literals {
 template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 [[nodiscard]] constexpr auto operator""_tr() {
 #ifdef LL_I18N_COLLECT_STRINGS
-    static i18n::detail::TrStrOut<Fmt> e{};
+    [[maybe_unused]] auto out{i18n::detail::TrStrOut<Fmt>::_};
 #endif
     return [=]<class... Args>(Args&&... args) {
         [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(Fmt.sv());
@@ -139,7 +139,7 @@ template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 template <LL_I18N_STRING_LITERAL_TYPE Fmt>
 [[nodiscard]] constexpr auto operator""_trl() {
 #ifdef LL_I18N_COLLECT_STRINGS
-    static i18n::detail::TrStrOut<Fmt> e{};
+    [[maybe_unused]] auto out{i18n::detail::TrStrOut<Fmt>::_};
 #endif
     return [=]<class... Args>(std::string_view localeCode, Args&&... args) {
         [[maybe_unused]] static constexpr auto checker = fmt::format_string<Args...>(Fmt.sv());

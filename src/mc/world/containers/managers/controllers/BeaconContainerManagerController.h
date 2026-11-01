@@ -66,20 +66,20 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit BeaconContainerManagerController(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
+    MCAPI explicit BeaconContainerManagerController(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
 
-    MCNAPI void _confirmTransaction();
+    MCAPI void _confirmTransaction();
 
-    MCNAPI void _setupCallbacks();
+    MCAPI void _setupCallbacks();
 
-    MCNAPI ::BeaconContainerManagerController::ClickStatus
+    MCAPI ::BeaconContainerManagerController::ClickStatus
     buttonClicked(::BeaconContainerManagerController::ButtonId id);
 
-    MCNAPI ::std::string getButtonHoverText(::std::string const& buttonName) const;
+    MCAPI ::std::string getButtonHoverText(::std::string const& buttonName) const;
 
-    MCNAPI ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;
+    MCAPI ::BeaconContainerManagerController::ButtonStatus getButtonStatus(::std::string const& buttonName) const;
 
-    MCNAPI bool isSecondaryEffect(::std::string const& buttonName) const;
+    MCAPI bool isSecondaryEffect(::std::string const& buttonName) const;
 #endif
     // NOLINTEND
 
@@ -87,7 +87,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::BeaconContainerManagerController::ButtonId buttonNameToButtonId(::std::string const& buttonName);
+    MCAPI static ::BeaconContainerManagerController::ButtonId buttonNameToButtonId(::std::string const& buttonName);
 #endif
     // NOLINTEND
 
@@ -95,7 +95,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
+    MCAPI void* $ctor(::std::weak_ptr<::BeaconContainerManagerModel> ptrModel);
 #endif
     // NOLINTEND
 
@@ -103,7 +103,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 #endif
 
 

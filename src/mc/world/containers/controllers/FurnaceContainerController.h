@@ -52,7 +52,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI FurnaceContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+    MCAPI FurnaceContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
 #endif
     // NOLINTEND
 
@@ -60,7 +60,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+    MCAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
 #endif
     // NOLINTEND
 
@@ -68,7 +68,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -76,15 +76,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::ItemInstance const& $getRecipeItem(int) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int) const;
 
-    MCNAPI void $onRecipeSelected(::ItemInstance const& recipeItem, bool displayGhostItems);
+    MCAPI void $onRecipeSelected(::ItemInstance const& recipeItem, bool displayGhostItems);
 
-    MCNAPI void $setGhostItem(::ItemInstance const& item);
+    MCAPI void $setGhostItem(::ItemInstance const& item);
 
-    MCNAPI ::ItemInstance const& $getGhostItem() const;
+    MCFOLD ::ItemInstance const& $getGhostItem() const;
 
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 #endif
 
 

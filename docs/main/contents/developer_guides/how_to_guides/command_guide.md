@@ -17,8 +17,9 @@ of its approaches are now outdated.
     #include "ll/api/command/CommandHandle.h"
     #include "ll/api/command/CommandRegistrar.h"
     ```
-2. Call the `CommandRegistrar::getInstance().getOrCreateCommand` method to obtain or create a command and assign it to
-   `auto& command`.
+2. Call the `CommandRegistrar::getInstance(false).getOrCreateCommand` method to obtain or create a command and assign it
+   to `auto& command`. The argument of `getInstance` tells whether the command is client-side (`false` registers a
+   server-side command); `getServerInstance()` and `getClientInstance()` are shorthands.
 3. Call `command.overload` to overload the command. If you don't need a command that accepts parameters, you can omit
    the template parameters, for example: `command.overload()`.
 4. Use the `required` method to add a mandatory parameter. This method and the `optional` method require passing the
@@ -42,7 +43,7 @@ struct NewCommand {
 
 void registerCommand() {
     using namespace ll::command;
-    auto& command = CommandRegistrar::getInstance().getOrCreateCommand("new", "A example command");
+    auto& command = CommandRegistrar::getInstance(false).getOrCreateCommand("new", "A example command");
     command.overload<NewCommand>().text("test").required("enum1").required("str").optional("number").execute(
         [](CommandOrigin const& origin, CommandOutput& output, NewCommand const& param) {
             output.success("test! {} {} {}", param.enum1, param.str, param.number);
@@ -53,7 +54,7 @@ void registerCommand() {
 
 In this example, we define a structure named `NewCommand`, which stores the command parameters. Using the
 `getOrCreateCommand` method, we create a command named **new**. Through `overload` method, we overload a subcommand
-named **text**,
+named **test** (added with `text("test")`),
 along with an enumeration, a string, and an integer parameter. The in-game usage appears as follows:
 
 ```

@@ -348,7 +348,8 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 {
     static_assert(
         detail::is_key_stringifiable_v<typename std::remove_cvref_t<T>::key_type>,
-        "the key type of the associative container must be convertible to a string"
+        "an associative container key has to be a string, an enum, or a type with a "
+        "ll::reflection::Serializer<T>::to_string / from_string specialization"
     );
     Expected<J> res{J::object()};
     for (auto&& [k, v] : t) {
@@ -369,7 +370,7 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 {
     Expected<J> res{J::object()};
     forEachMember(t, [&](std::string_view name, auto&& member) {
-        if (name.starts_with('$') || !res) return;
+        if (!res) return;
         auto key = keyFormatter(name);
         auto v   = serialize_impl<J>(std::forward<decltype((member))>(member), keyFormatter, meta::PriorityTag<11>{});
         if (v) {
@@ -383,7 +384,12 @@ inline Expected<J> serialize_impl(T&& t, F const& keyFormatter, meta::PriorityTa
 
 template <typename J, typename T, IsKeyFormatter F>
 inline Expected<J> serialize_impl(T&&, F const&, meta::PriorityTag<0>) {
-    static_assert(traits::always_false<T>, "this type can't serialize");
+    static_assert(
+        traits::always_false<std::remove_cvref_t<T>>,
+        "cannot serialize this type: provide a ll::reflection::Serializer<T> specialization, or use an "
+        "arithmetic type, a string, an optional, a dispatcher, an enum, a variant, a tuple-like, an array-like "
+        "or associative container, or a reflectable aggregate"
+    );
 }
 
 } // namespace

@@ -165,443 +165,442 @@ namespace SharedTypes::v1_26_50 { struct RangedAttackGoalDefinition; }
 namespace JsonComponentGlueUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::InteractComponent&                                        comp,
     ::SharedTypes::v1_26_50::InteractComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::SpawnOnDeathComponent&                                 component,
     ::SharedTypes::v1_26_20::SpawnOnDeathComponentDefinition definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::AddRiderComponent&                                         component,
     ::SharedTypes::v1_21_130::AddRiderComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::AdmireItemGoal&                                        goal,
     ::SharedTypes::v1_26_20::AdmireItemGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::AvoidBlockGoal&                                         goal,
     ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::AvoidMobTypeGoal&                                         goal,
     ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition const& definition
 );
 
-MCNAPI void initialize(::EntityContext&, ::BegGoal& goal, ::SharedTypes::v1_26_40::BegGoalDefinition const& definition);
+MCAPI void initialize(::EntityContext&, ::BegGoal& goal, ::SharedTypes::v1_26_40::BegGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::ChargeHeldItemGoal&                                        goal,
     ::SharedTypes::v1_26_40::ChargeHeldItemGoalDefinition const& definition
 );
 
-MCNAPI void
-initialize(::EntityContext&, ::DigGoal& goal, ::SharedTypes::v1_21_120::DigGoalDefinition const& definition);
+MCAPI void initialize(::EntityContext&, ::DigGoal& goal, ::SharedTypes::v1_21_120::DigGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::DrinkPotionGoal&                                        goal,
     ::SharedTypes::v1_26_40::DrinkPotionGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::DropItemForGoal&                                        goal,
     ::SharedTypes::v1_26_10::DropItemForGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::EatBlockGoal& goal, ::SharedTypes::v1_26_40::EatBlockGoalDefinition const& definition);
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::EatMobGoal& goal, ::SharedTypes::v1_21_100::EatMobGoalDefinition const& definition);
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::EmergeGoal& goal, ::SharedTypes::v1_26_30::EmergeGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::FireAtTargetGoal&                                        goal,
     ::SharedTypes::v1_26_30::FireAtTargetGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::FollowCaravanGoal&                                        goal,
     ::SharedTypes::v1_26_30::FollowCaravanGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::FollowMobGoal& goal, ::SharedTypes::v1_26_50::FollowMobGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::GoAndGiveItemsToNoteblockGoal&                                        goal,
     ::SharedTypes::v1_26_20::GoAndGiveItemsToNoteblockGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::GoAndGiveItemsToOwnerGoal&                                        goal,
     ::SharedTypes::v1_26_20::GoAndGiveItemsToOwnerGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::GoHomeGoal& goal, ::SharedTypes::v1_26_20::GoHomeGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::HoldGroundGoal&                                        goal,
     ::SharedTypes::v1_26_20::HoldGroundGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::JumpAroundTargetGoal&                                        goal,
     ::SharedTypes::v1_26_20::JumpAroundTargetGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::JumpToBlockGoal&                                        goal,
     ::SharedTypes::v1_26_20::JumpToBlockGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::KnockbackRoarGoal&                                        goal,
     ::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::LayEggGoal& goal, ::SharedTypes::v1_26_10::LayEggGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::MoveToBlockGoal&                                        goal,
     ::SharedTypes::v1_26_40::MoveToBlockGoalDefinition const& definition
 );
 
-MCNAPI void initialize(::EntityContext&, ::NapGoal& goal, ::SharedTypes::v1_26_40::NapGoalDefinition const& definition);
+MCAPI void initialize(::EntityContext&, ::NapGoal& goal, ::SharedTypes::v1_26_40::NapGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::PickupItemsGoal&                                        goal,
     ::SharedTypes::v1_26_30::PickupItemsGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::PlaceBlockGoal&                                        goal,
     ::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::PlayDeadGoal& goal, ::SharedTypes::v1_26_10::PlayDeadGoalDefinition const& definition);
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::PlayGoal& goal, ::SharedTypes::v1_26_10::PlayGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::RaidGardenGoal&                                        goal,
     ::SharedTypes::v1_26_10::RaidGardenGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::RaiderCelebrationGoal&                                        goal,
     ::SharedTypes::v1_26_10::RaiderCelebrationGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::RamAttackGoal& goal, ::SharedTypes::v1_26_10::RamAttackGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::RandomSearchAndDigGoal&                                        goal,
     ::SharedTypes::v1_26_10::RandomSearchAndDigGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::RangedAttackGoal&                                        goal,
     ::SharedTypes::v1_26_50::RangedAttackGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::ShareItemsGoal&                                        goal,
     ::SharedTypes::v1_26_30::ShareItemsGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::SnackGoal& goal, ::SharedTypes::v1_26_40::SnackGoalDefinition const& definition);
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::SneezeGoal& goal, ::SharedTypes::v1_26_30::SneezeGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::SummonActorGoal&                                        goal,
     ::SharedTypes::v1_26_40::SummonActorGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::SwimUpForBreathGoal&                                         goal,
     ::SharedTypes::v1_21_110::SwimUpForBreathGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::SwimWithEntityGoal&                                        goal,
     ::SharedTypes::v1_26_10::SwimWithEntityGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initialize(::EntityContext&, ::TakeBlockGoal& goal, ::SharedTypes::v1_26_30::TakeBlockGoalDefinition const& definition);
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::TakeFlowerGoal&                                        goal,
     ::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::TargetWhenPushedGoal&                                        goal,
     ::SharedTypes::v1_26_30::TargetWhenPushedGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::TimerActorFlagBaseGoal&                              goal,
     ::SharedTypes::TimerActorFlagBaseGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::TransportItemsGoal&                                         goal,
     ::SharedTypes::v1_21_100::TransportItemsGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::VillagerCelebrationGoal&                                        goal,
     ::SharedTypes::v1_26_10::VillagerCelebrationGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::HomeComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::HomeComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::ApplyKnockbackRulesComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_30::ApplyKnockbackRulesComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::BlockMovementSlowdownImmunityComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::BlockMovementSlowdownImmunityComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::OnEquipmentChangedComponent&                               runtimeComponent,
     ::SharedTypes::v1_26_20::OnEquipmentChangedDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::PushableByEntityComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_40::PushableByEntityComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                         runtimeComponent,
     ::SharedTypes::v1_26_40::OnDeathDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                 runtimeComponent,
     ::SharedTypes::v1_26_40::OnFriendlyAngerDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                runtimeComponent,
     ::SharedTypes::v1_26_40::OnHurtByPlayerDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                        runtimeComponent,
     ::SharedTypes::v1_26_40::OnHurtDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                          runtimeComponent,
     ::SharedTypes::v1_26_40::OnIgniteDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                runtimeComponent,
     ::SharedTypes::v1_26_40::OnStartLandingDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                runtimeComponent,
     ::SharedTypes::v1_26_40::OnStartTakeoffDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                  runtimeComponent,
     ::SharedTypes::v1_26_40::OnTargetAcquiredDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                runtimeComponent,
     ::SharedTypes::v1_26_40::OnTargetEscapeDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&,
     ::ActorDefinitionTrigger&                                 runtimeComponent,
     ::SharedTypes::v1_26_40::OnWakeWithOwnerDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&,
     ::ExperienceRewardComponent&                                       runtimeComponent,
     ::SharedTypes::v1_26_0::ExperienceRewardComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext& entity,
     ::OutOfControlComponent&,
     ::SharedTypes::v1_26_20::OutOfControlComponentDefinition const&
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext& entity,
     ::PhysicsComponent&,
     ::SharedTypes::v1_26_50::PhysicsComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&              entity,
     ::VibrationListenerComponent& component,
     ::SharedTypes::v1_26_20::VibrationListenerComponentDefinition const&
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                              entity,
     ::AngerLevelComponent&                                        component,
     ::SharedTypes::v1_26_50::AngerLevelComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                               entity,
     ::MountTamingComponent&                                        component,
     ::SharedTypes::v1_26_50::MountTamingComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                                  entity,
     ::DefendTrustedTargetGoal&                                        goal,
     ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                          entity,
     ::LookAtPlayerGoal&                                       goal,
     ::SharedTypes::v1_26_0::LookAtPlayerGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&                                          entity,
     ::LookAtTargetGoal&                                       goal,
     ::SharedTypes::v1_26_0::LookAtTargetGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCFOLD void initialize(
     ::EntityContext&                                                 entity,
     ::LookAtTradingPlayerGoal&                                       goal,
     ::SharedTypes::v1_26_0::LookAtTradingPlayerGoalDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                                             entity,
     ::GameEventMovementTrackingComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::GameEventMovementTrackingComponentDefinition const& definition
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                        entity,
     ::BossComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::BossComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                                entity,
     ::CollisionBoxComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::CollisionBoxComponentDefinition const& loadedData
 );
 
-MCNAPI void initialize(
+MCAPI void initialize(
     ::EntityContext&                                            entity,
     ::FlockingComponent&                                        runtimeComponent,
     ::SharedTypes::v1_26_50::FlockingComponentDefinition const& loadedData
 );
 
-MCNAPI void initializeMeleeAttackBaseGoal(
+MCAPI void initializeMeleeAttackBaseGoal(
     ::MeleeAttackBaseGoal&                                        goal,
     ::SharedTypes::v1_26_40::MeleeAttackBaseGoalDefinition const& definition
 );
 
-MCNAPI void
+MCAPI void
 initializeTargetGoal(::EntityContext&, ::TargetGoal& goal, ::SharedTypes::TargetGoalDefinition const& definition);
 
-MCNAPI void initializeWorkGoal(::WorkGoal& goal, ::SharedTypes::v1_26_10::WorkGoalDefinition const& definition);
+MCAPI void initializeWorkGoal(::WorkGoal& goal, ::SharedTypes::v1_26_10::WorkGoalDefinition const& definition);
 
-MCNAPI void transformToVersionedWitherTargetHighestDamage(
+MCFOLD void transformToVersionedWitherTargetHighestDamage(
     ::LegacyGoalDefinition&&                                          legacyGoal,
     ::SharedTypes::v1_26_30::WitherTargetHighestDamageGoalDefinition& sharedGoal
 );
 
-MCNAPI void uninitialize(
+MCAPI void uninitialize(
     ::EntityContext& entity,
     ::OutOfControlComponent&,
     ::SharedTypes::v1_26_20::OutOfControlComponentDefinition const&
 );
 
-MCNAPI bool validate(::SharedTypes::v1_26_0::NearestAttackableTargetGoalDefinition const& definition, ::Mob const& mob);
+MCAPI bool validate(::SharedTypes::v1_26_0::NearestAttackableTargetGoalDefinition const& definition, ::Mob const& mob);
 // NOLINTEND
 
 } // namespace JsonComponentGlueUtils

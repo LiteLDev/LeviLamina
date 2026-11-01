@@ -5,38 +5,47 @@
 // auto generated inclusion list
 #include "mc/deps/core/container/MovePriorityQueue.h"
 #include "mc/deps/core/threading/BackgroundTaskBase.h"
+#include "mc/deps/core/threading/BackgroundTaskQueue.h"
+#include "mc/deps/core/threading/BackgroundWorkerPerfInfo.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/flat_set.h"
+#include "mc/platform/threading/OSThreadPriority.h"
+#include "mc/platform/threading/SpinLockImpl.h"
 
 // auto generated forward declare list
 // clang-format off
 class BackgroundTaskBase;
+class BackgroundWorker;
+class Scheduler;
 // clang-format on
 
 class WorkerPool : public ::Bedrock::EnableNonOwnerReferences {
 public:
-    // member variables
-    // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1>   mUnkc24dea;
-    ::ll::UntypedStorage<8, 24>  mUnkd8a69f;
-    ::ll::UntypedStorage<8, 32>  mUnk7789a2;
-    ::ll::UntypedStorage<8, 64>  mUnk66023e;
-    ::ll::UntypedStorage<8, 8>   mUnk462341;
-    ::ll::UntypedStorage<8, 8>   mUnk5991a5;
-    ::ll::UntypedStorage<8, 80>  mUnk831ddc;
-    ::ll::UntypedStorage<4, 4>   mUnkda7062;
-    ::ll::UntypedStorage<4, 4>   mUnk853032;
-    ::ll::UntypedStorage<8, 24>  mUnkceb84a;
-    ::ll::UntypedStorage<8, 24>  mUnk6b6c7b;
-    ::ll::UntypedStorage<8, 8>   mUnk5695b7;
-    ::ll::UntypedStorage<8, 360> mUnk40c061;
-    // NOLINTEND
+    // WorkerPool inner types define
+    using PendingJobQueue =
+        ::MovePriorityQueue<::std::shared_ptr<::BackgroundTaskBase>, ::BackgroundTaskBase::PendingComparer>;
 
 public:
-    // prevent constructor by default
-    WorkerPool& operator=(WorkerPool const&);
-    WorkerPool(WorkerPool const&);
-    WorkerPool();
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const>                                            mAsync;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::BackgroundWorker>>> mWorkers;
+    ::ll::TypedStorage<8, 32, ::std::string>                                        mName;
+    ::ll::TypedStorage<8, 64, ::BackgroundWorkerPerfInfo>                           mPerfInfo;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>               mLastPerfInfoUpdate;
+    ::ll::TypedStorage<8, 8, ::Scheduler*>                                          mOwnerScheduler;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                         mSuspendLock;
+    ::ll::TypedStorage<4, 4, ::Bedrock::Threading::OSThreadPriority>                mPoolPriority;
+    ::ll::TypedStorage<4, 4, float>                                                 mMinBacklogDurationSeconds;
+    ::ll::TypedStorage<8, 24, ::SpinLockImpl>                                       mPendingWorkQueueLock;
+    ::ll::TypedStorage<
+        8,
+        24,
+        ::MovePriorityQueue<::std::shared_ptr<::BackgroundTaskBase>, ::BackgroundTaskBase::PendingComparer>>
+                                                                      mPendingWorkQueue;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mNextPendingWorkTime;
+    ::ll::TypedStorage<8, 360, ::BackgroundTaskQueue>                 mTaskQueue;
+    // NOLINTEND
 
 public:
     // virtual functions
@@ -48,26 +57,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI ::std::vector<::std::thread::id> getThreadIds() const;
+    MCAPI ::std::vector<::std::thread::id> getThreadIds() const;
 
-    MCNAPI void kick(uint64 count);
+    MCAPI void kick(uint64 count);
 #endif
 
-    MCNAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+    MCAPI void queue(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _registerPool(::WorkerPool& pool);
+    MCAPI static void _registerPool(::WorkerPool& pool);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
+    MCAPI static ::brstd::flat_set<::WorkerPool*, ::std::less<::WorkerPool*>, ::std::vector<::WorkerPool*>>&
     sAllPools();
 
-    MCNAPI static ::std::mutex& sAllPoolsMutex();
+    MCAPI static ::std::mutex& sAllPoolsMutex();
     // NOLINTEND
 };

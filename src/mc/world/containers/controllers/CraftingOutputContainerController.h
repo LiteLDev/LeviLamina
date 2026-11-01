@@ -39,15 +39,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
+    MCAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
-    MCNAPI ::ItemInstance const& $getRecipeItem(int slot) const;
+    MCFOLD ::ItemInstance const& $getRecipeItem(int slot) const;
 
-    MCNAPI void $clearSelectedRecipe();
+    MCAPI void $clearSelectedRecipe();
 
-    MCNAPI bool $_canRemove(int slot, int removeCount) const;
+    MCFOLD bool $_canRemove(int slot, int removeCount) const;
 #endif
 
 

@@ -55,8 +55,9 @@ Client-specific extensions and overrides (28 files):
 src-client/
 ├── ll/
 │   ├── api/
-│   │   ├── KeyRegistry.h      # Input binding
-│   │   ├── KeyHandle.h
+│   │   ├── input/
+│   │   │   ├── KeyRegistry.h  # Input binding
+│   │   │   └── KeyHandle.h
 │   │   └── event/
 │   │       ├── input/         # Input events
 │   │       ├── render/        # Render events
@@ -202,12 +203,12 @@ option("target_type")
 ### Runtime Behavior
 
 **Server:**
-- Loaded by PreLoader into `bedrock_server_mod.exe`
+- Loaded by PreLoader into `bedrock_server_mod.exe` (generated from `bedrock_server.exe` by PeEditor during installation; the original is kept as `bedrock_server.exe.bak`)
 - Hooks server initialization
 - Provides server-side events and services
 
 **Client:**
-- Loaded by PreLoader into `Minecraft.Windows.exe`
+- Loaded by PreLoader into `Minecraft.Windows.exe` (patched in place by PeEditor during installation; the original is kept as `Minecraft.Windows.exe.bak`)
 - Hooks client initialization
 - Provides client-side input, rendering, and UI
 
@@ -217,7 +218,7 @@ option("target_type")
 
 Used for global registries:
 - `EventBus::getInstance()`
-- `CommandRegistrar::getInstance()`
+- `CommandRegistrar::getInstance(bool isClientSide)`
 - `ServiceManager::getInstance()`
 - `ModManagerRegistry::getInstance()`
 

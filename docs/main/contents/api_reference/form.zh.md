@@ -144,11 +144,25 @@ public:
     CustomForm& appendLabel(std::string const& text);
     CustomForm& appendDivider();
 
-    CustomForm& appendInput(name, text, placeholder, defaultVal, tooltip);
-    CustomForm& appendToggle(name, text, defaultVal, tooltip);
-    CustomForm& appendDropdown(name, text, options, defaultVal, tooltip);
-    CustomForm& appendSlider(name, text, min, max, step, defaultVal, tooltip);
-    CustomForm& appendStepSlider(name, text, steps, defaultVal, tooltip);
+    CustomForm& appendInput(std::string const& name, std::string const& text,
+                            std::string const& placeholder = {},
+                            std::string const& defaultVal = {},
+                            std::string const& tooltip = {});
+
+    CustomForm& appendToggle(std::string const& name, std::string const& text,
+                             bool defaultVal = false, std::string const& tooltip = {});
+
+    CustomForm& appendDropdown(std::string const& name, std::string const& text,
+                               std::vector<std::string> const& options,
+                               size_t defaultVal = 0, std::string const& tooltip = {});
+
+    CustomForm& appendSlider(std::string const& name, std::string const& text,
+                             double min, double max, double step = 0.0,
+                             double defaultVal = 0.0, std::string const& tooltip = {});
+
+    CustomForm& appendStepSlider(std::string const& name, std::string const& text,
+                                 std::vector<std::string> const& steps,
+                                 size_t defaultVal = 0, std::string const& tooltip = {});
 
     CustomForm& sendTo(Player& player, Callback callback = {});
     CustomForm& sendUpdate(Player& player, Callback callback = {});
@@ -184,4 +198,4 @@ void showSettings(Player& player) {
 
 ## 相关模块
 
-- [操作指南：表单](../developer_guides/how_to_guides/form_guide.md) — 分步教程
+- [操作指南：表单](../developer_guides/how_to_guides/form_guide.zh.md) — 分步教程

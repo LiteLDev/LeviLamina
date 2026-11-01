@@ -25,7 +25,7 @@ The Command module provides a high-level API for registering custom commands in 
 
 ### CommandRegistrar
 
-Singleton that manages all command registrations. Accessed via `getInstance()`.
+Singleton that manages all command registrations. Accessed via `getInstance(bool isClientSide)` (or the shorthands `getServerInstance()` / `getClientInstance()`).
 
 ```cpp
 namespace ll::command {

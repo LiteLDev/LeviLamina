@@ -1,0 +1,168 @@
+// LeviLamina docs (https://docs.levimc.org/LeviLamina/), built with the vendored levimc-kit.
+// Content lives in contents/ (x.md = English, x.zh.md = Chinese). Register new pages in `nav` below
+// and their Chinese nav labels in `navTranslations.zh`. See kit/README.md for every option.
+import { defineDocsConfig } from './kit/docs/node/config.ts';
+
+export default defineDocsConfig({
+  base: '/LeviLamina/',
+  // Header brand; page titles keep the MkDocs site_name ("Install - LeviLamina Docs").
+  title: 'LeviLamina',
+  titleTemplate: ':title - LeviLamina Docs',
+  logo: 'logo.svg',
+  favicon: 'favicon.ico',
+  project: 'LeviLamina',
+  repo: 'https://github.com/LiteLDev/LeviLamina',
+  editLink: 'https://github.com/LiteLDev/LeviLamina/edit/main/docs/main/contents/:path',
+  contentDir: 'contents',
+  hostname: 'https://docs.levimc.org',
+  sitemap: { hostname: 'https://docs.levimc.org' },
+  i18n: {
+    mode: 'suffix',
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', label: 'English', lang: 'en' },
+      { code: 'zh', label: '简体中文', lang: 'zh' },
+      // Traditional Chinese, generated from the zh pages (levimc-kit convertFrom)
+      { code: 'zh-Hant', label: '繁體中文', lang: 'zh-Hant', convertFrom: 'zh' },
+    ],
+  },
+  urlStyle: 'directory',
+  slug: 'pymdownx',
+  markdown: { compat: 'python-markdown', lineNumbers: true, codeTitle: 'pygments' },
+  lastUpdated: true,
+  sidebar: 'tabs',
+  // The header row (logo + name, the top-level sections, search) fits itself to the width (kit `header.tabsRow`
+  // 'auto'): one row on wide screens, the sections in their own row below when they no longer fit, then the drawer.
+  nav: [
+    { Home: 'index.md' },
+    {
+      'User Guides': [
+        'user_guides/install.md',
+        'user_guides/install_on_client.md',
+        'user_guides/troubleshooting.md',
+        'common_guides/usage_guidelines.md',
+      ],
+    },
+    {
+      'Developer Guides': [
+        // Groups written in the { text, collapsed, items } form so that, like MkDocs Material, only the group
+        // holding the current page starts open (navTranslations apply to `text` as well).
+        { text: 'Tutorials', collapsed: true, items: ['developer_guides/tutorials/create_your_first_mod.md'] },
+        {
+          text: 'How-to Guides',
+          collapsed: true,
+          items: [
+            'developer_guides/how_to_guides/event_guide.md',
+            'developer_guides/how_to_guides/interface_export_guide.md',
+            'developer_guides/how_to_guides/find_function_guide.md',
+            'developer_guides/how_to_guides/data_driven_ui_guide.md',
+            'developer_guides/how_to_guides/form_guide.md',
+            'developer_guides/how_to_guides/hook_guide.md',
+            'developer_guides/how_to_guides/i18n_guide.md',
+            'developer_guides/how_to_guides/item_guide.md',
+            'developer_guides/how_to_guides/command_guide.md',
+            'developer_guides/how_to_guides/coro_guide.md',
+            'developer_guides/how_to_guides/build_guide.md',
+          ],
+        },
+        // Native mods for Minecraft on Android: loaded by LeviLauncher's Android version through the Preloader SDK
+        // (moved here from LeviLauncher's docs); titles are the pages' own.
+        {
+          text: 'Android Native Mods',
+          collapsed: true,
+          items: [
+            'developer_guides/android/index.md',
+            'developer_guides/android/api/mod.md',
+            'developer_guides/android/api/mod_menu.md',
+            'developer_guides/android/api/config.md',
+            'developer_guides/android/api/input.md',
+            'developer_guides/android/api/hook.md',
+            'developer_guides/android/api/signature.md',
+            'developer_guides/android/api/patch.md',
+            'developer_guides/android/api/memory_hook_macros.md',
+            'developer_guides/android/api/types_and_macros.md',
+          ],
+        },
+        { FAQ: 'developer_guides/faq.md' },
+        { Architecture: 'developer_guides/architecture.md' },
+        {
+          text: 'API Guides',
+          collapsed: true,
+          items: [
+            { Overview: 'api_reference/index.md' },
+            { Base: 'api_reference/base.md' },
+            { Chrono: 'api_reference/chrono.md' },
+            { Command: 'api_reference/command.md' },
+            { Config: 'api_reference/config.md' },
+            { Coroutine: 'api_reference/coro.md' },
+            { Data: 'api_reference/data.md' },
+            { 'Data-driven UI': 'api_reference/data_driven_ui.md' },
+            { Event: 'api_reference/event.md' },
+            { Expected: 'api_reference/expected.md' },
+            { Form: 'api_reference/form.md' },
+            { I18n: 'api_reference/i18n.md' },
+            { 'IO & Logger': 'api_reference/io.md' },
+            { 'Memory & Hook': 'api_reference/memory.md' },
+            { Mod: 'api_reference/mod.md' },
+            { Network: 'api_reference/network.md' },
+            { Reflection: 'api_reference/reflection.md' },
+            { 'Reflection (Advanced)': 'api_reference/reflection_advanced.md' },
+            { Service: 'api_reference/service.md' },
+            { Thread: 'api_reference/thread.md' },
+            { Utils: 'api_reference/utils.md' },
+            { 'Input (Client)': 'api_reference/input.md' },
+          ],
+        },
+      ],
+    },
+    // The Doxygen API reference, a page of this site (opened in place, not a new tab): built by the build-doxygen CI
+    // job and merged into dist/api/; its header is this docs header with this tab current.
+    { 'API Reference': 'https://docs.levimc.org/LeviLamina/api/' },
+    { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
+    { 'Supported Versions': 'versions.md' },
+  ],
+  // The Docker install page became a section of the one server install page.
+  redirects: {
+    'user_guides/install_on_docker/': 'user_guides/install/#install-with-docker',
+    'zh/user_guides/install_on_docker/': 'zh/user_guides/install/#通过-docker-安装',
+    'zh-Hant/user_guides/install_on_docker/': 'zh-Hant/user_guides/install/#通過-docker-安裝',
+  },
+  navTranslations: {
+    zh: {
+      Home: '主页',
+      FAQ: '常见问题',
+      'User Guides': '用户指南',
+      'Developer Guides': '开发者指南',
+      Tutorials: '教程',
+      'How-to Guides': '如何做到······',
+      'Android Native Mods': 'Android 原生模组',
+      Architecture: '项目架构',
+      'API Reference': 'API 参考',
+      'API Guides': 'API 指南',
+      Overview: '概览',
+      Base: '基础类型',
+      Chrono: '游戏时间',
+      Command: '命令系统',
+      Config: '配置系统',
+      Coroutine: '协程',
+      Data: '数据结构',
+      'Data-driven UI': '数据驱动 UI',
+      Event: '事件系统',
+      Expected: '错误处理',
+      Form: '表单 UI',
+      I18n: '国际化',
+      'IO & Logger': '输入输出与日志',
+      'Memory & Hook': '内存与钩子',
+      Mod: '模组系统',
+      Network: '网络',
+      Reflection: '反射',
+      'Reflection (Advanced)': '反射（进阶）',
+      Service: '服务系统',
+      Thread: '线程工具',
+      Utils: '工具函数',
+      'Input (Client)': '输入系统（客户端）',
+      'Maintainer Guides': '维护者指南',
+      'Supported Versions': '支持的版本',
+    },
+  },
+});

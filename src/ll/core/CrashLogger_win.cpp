@@ -6,6 +6,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/io/ConsoleSink.h"
 #include "ll/api/io/FileSink.h"
 #include "ll/api/io/FileUtils.h"
 #include "ll/api/io/Logger.h"
@@ -357,12 +358,7 @@ static BOOL CALLBACK dumpModules(
 }
 
 static bool genMiniDumpFile(PEXCEPTION_POINTERS e, std::filesystem::path& dumpFilePath) {
-    std::error_code ec;
-    if (auto c = std::filesystem::canonical(dumpFilePath, ec); ec.value() == 0) {
-        dumpFilePath = c;
-    } else {
-        dumpFilePath = dumpFilePath.lexically_normal();
-    }
+    dumpFilePath = sys_utils::normalizePath(dumpFilePath);
 
     auto hDumpFile =
         CreateFileW(dumpFilePath.c_str(), GENERIC_WRITE, 0, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
@@ -426,8 +422,9 @@ static LONG unhandledExceptionFilter(_In_ struct _EXCEPTION_POINTERS* e) {
              fmt::fg(fmt::color::light_blue),
              }
         };
-        crashInfo.logger.getSink(0)->setFormatter(std::move(formatter));
-        crashInfo.logger.addSink(
+        crashInfo.logger.setSink("ll_default_console", std::make_shared<io::ConsoleSink>(std::move(formatter)));
+        crashInfo.logger.setSink(
+            "crash",
             std::make_shared<io::FileSink>(
                 logFilePath,
                 makePolymorphic<io::PatternFormatter>("{tm:.3%F %T.} [{lvl}] {msg}", false)
