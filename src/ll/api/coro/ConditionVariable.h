@@ -16,7 +16,7 @@
 
 namespace ll::coro {
 class ConditionVariable {
-    struct Waiter : data::IntrusiveListNode {
+    struct Waiter : data::IntrusiveListNode<> {
         ConditionVariable& cv;
         bool (*pred)(Waiter&);
         ExecutorRef                                exec{};
