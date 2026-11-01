@@ -37,14 +37,14 @@ Expected<> ModManager::disable(std::string_view name) {
     return getMod(name)->onDisable();
 }
 
-[[nodiscard]] std::string const& ModManager::getType() const { return impl->type; }
+std::string const& ModManager::getType() const { return impl->type; }
 
-[[nodiscard]] bool ModManager::hasMod(std::string_view name) const {
+bool ModManager::hasMod(std::string_view name) const {
     auto l(lock());
     return impl->mods.contains(name);
 }
 
-[[nodiscard]] std::shared_ptr<Mod> ModManager::getMod(std::string_view name) const {
+std::shared_ptr<Mod> ModManager::getMod(std::string_view name) const {
     auto l(lock());
     if (auto i = impl->mods.find(name); i != impl->mods.end()) {
         return i->second;
@@ -52,7 +52,7 @@ Expected<> ModManager::disable(std::string_view name) {
     return {};
 }
 
-[[nodiscard]] size_t ModManager::getModCount() const {
+size_t ModManager::getModCount() const {
     auto l(lock());
     return impl->mods.size();
 }

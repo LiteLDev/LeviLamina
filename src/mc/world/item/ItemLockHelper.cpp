@@ -12,7 +12,6 @@
         if (auto byteTag = tag->get(name)) {
             return static_cast<ItemLockMode>(byteTag->as<ByteTag>().data);
         }
-    } else {
-        return ItemLockMode::None;
     }
+    return ItemLockMode::None;
 }

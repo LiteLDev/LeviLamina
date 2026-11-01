@@ -13,7 +13,6 @@ class Vec2;
 
 namespace SynchedActorDataAccess {
 
-LLAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
 // functions
 // NOLINTBEGIN
 MCAPI bool getActorFlag(::EntityContext const& entity, ::ActorFlags flag);
