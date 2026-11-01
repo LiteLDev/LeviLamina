@@ -44,7 +44,7 @@ Before developing mods (or learning C++), you need to set up a development envir
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Git](https://git-scm.com)
 - [Visual Studio](https://visualstudio.microsoft.com/) (When installing Visual Studio, make sure to select "Desktop development with C++")
-- LLVM: Open Visual Studio Installer, select "C++ Clang tools for Windows" under the optional components of "Desktop development with C++". Alternatively, download it from [GitHub](https://github.com/llvm/llvm-project/releases/latest).
+- [LLVM](https://github.com/llvm/llvm-project/releases/latest)
 
 ### Installing Extensions for Visual Studio Code
 

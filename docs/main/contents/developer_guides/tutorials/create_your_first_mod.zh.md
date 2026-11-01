@@ -44,7 +44,7 @@
 - [Visual Studio Code](https://code.visualstudio.com)
 - [Git](https://git-scm.com)
 - [Visual Studio](https://visualstudio.microsoft.com/)（安装Visual Studio时，请确保勾选了“使用C++的桌面开发”这一项）
-- LLVM：打开Visual Studio Installer，在“使用 C++ 的桌面开发”可选组件下选择“适用于 Windows 的 C++ Clang 工具”。或者从[GitHub](https://github.com/llvm/llvm-project/releases/latest)下载。
+- [LLVM](https://github.com/llvm/llvm-project/releases/latest)
 
 ### 为Visual Studio Code安装扩展程序
 
