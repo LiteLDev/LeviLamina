@@ -22,8 +22,7 @@
 #include "ll/core/LeviLamina.h"
 
 namespace ll::mod {
-NativeModManager::NativeModManager(std::filesystem::path loadDirectory)
-: ModManager(NativeModManagerName, std::move(loadDirectory)) {
+NativeModManager::NativeModManager() : ModManager(NativeModManagerName) {
     handleMap[sys_utils::getCurrentModuleHandle()] = NativeMod::current();
 }
 NativeModManager::~NativeModManager() = default;
@@ -81,12 +80,8 @@ static Error diagnosticDependency(std::filesystem::path const& path) {
 
 Expected<> NativeModManager::load(Manifest manifest) {
     auto        l(lock());
-    ScopedValue currentLoadingScope{
-        currentLoadingMod,
-        std::make_shared<NativeMod>(std::move(manifest), nullptr, getLoadDirectory())
-    };
-    std::error_code ec;
-    auto            modDir = currentLoadingMod->getModDir();
+    ScopedValue currentLoadingScope{currentLoadingMod, std::make_shared<NativeMod>(std::move(manifest))};
+    auto        modDir = sys_utils::normalizePath(getModsRoot() / string_utils::sv2u8sv(currentLoadingMod->getName()));
     sys_utils::addOrSetEnvironmentVariable("PATH", string_utils::u8sv2sv(modDir.u8string()));
 
     auto entry = modDir / string_utils::sv2u8sv(currentLoadingMod->getManifest().entry);

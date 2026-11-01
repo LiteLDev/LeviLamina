@@ -4,7 +4,6 @@
 #include <array>
 #include <filesystem>
 #include <fstream>
-#include <functional>
 #include <memory>
 #include <stdexcept>
 #include <string>
@@ -31,8 +30,7 @@
 namespace ll::mod {
 namespace {
 
-constexpr std::string_view TestModType       = "ll-test-lifecycle";
-constexpr std::string_view ScriptTestModType = "ll-test-script";
+constexpr std::string_view TestModType = "ll-test-lifecycle";
 
 constexpr std::string_view LoadBeforeTarget = "LLTestLoadBeforeTarget";
 constexpr std::string_view LoadBeforeSource = "LLTestLoadBeforeSource";
@@ -50,19 +48,16 @@ constexpr std::string_view ConflictTarget   = "LLTestConflictTarget";
 constexpr std::string_view ExistingTarget   = "LLTestExistingTarget";
 constexpr std::string_view ConflictConsumer = "LLTestConflictConsumer";
 constexpr std::string_view ClientOnly       = "LLTestClientOnly";
-constexpr std::string_view DynamicConsumer  = "LLTestDynamicAConsumer";
-constexpr std::string_view DynamicProvider  = "LLTestDynamicScriptProvider";
-constexpr std::string_view DynamicLoader    = "LLTestDynamicZLoader";
 constexpr std::string_view CascadeProvider  = "LLTestCascadeProvider";
 constexpr std::string_view CascadeBranchB   = "LLTestCascadeBranchB";
 constexpr std::string_view CascadeBranchC   = "LLTestCascadeBranchC";
 constexpr std::string_view CascadeConsumer  = "LLTestCascadeConsumer";
 
 constexpr std::array TestModNames{
-    LoadBeforeTarget, LoadBeforeSource, Provider,         RequiredConsumer, OptionalConsumer, LateProvider,
-    LateConsumer,     MissingProvider,  MissingConsumer,  LoadFailure,      UnloadFailure,    ConflictSource,
-    ConflictTarget,   ExistingTarget,   ConflictConsumer, ClientOnly,       DynamicConsumer,  DynamicProvider,
-    DynamicLoader,    CascadeProvider,  CascadeBranchB,   CascadeBranchC,   CascadeConsumer,
+    LoadBeforeTarget, LoadBeforeSource, Provider,        RequiredConsumer, OptionalConsumer,
+    LateProvider,     LateConsumer,     MissingProvider, MissingConsumer,  LoadFailure,
+    UnloadFailure,    ConflictSource,   ConflictTarget,  ExistingTarget,   ConflictConsumer,
+    ClientOnly,       CascadeProvider,  CascadeBranchB,  CascadeBranchC,   CascadeConsumer,
 };
 
 class TestMod final : public Mod {
@@ -74,20 +69,17 @@ public:
 };
 
 class TestModManager final : public ModManager {
-    std::unordered_set<std::string>       loadFailures;
-    std::unordered_set<std::string>       unloadFailures;
-    std::function<bool(std::string_view)> loadCallback;
+    std::unordered_set<std::string> loadFailures;
+    std::unordered_set<std::string> unloadFailures;
 
 public:
-    explicit TestModManager(std::string_view type = TestModType, std::filesystem::path loadDirectory = {})
-    : ModManager(type, std::move(loadDirectory)) {}
+    TestModManager() : ModManager(TestModType) {}
     ~TestModManager() override = default;
 
     void failLoad(std::string_view name) { loadFailures.emplace(name); }
     void allowLoad(std::string_view name) { loadFailures.erase(std::string{name}); }
     void failUnload(std::string_view name) { unloadFailures.emplace(name); }
     void allowUnload(std::string_view name) { unloadFailures.erase(std::string{name}); }
-    void setLoadCallback(std::function<bool(std::string_view)> callback) { loadCallback = std::move(callback); }
 
     void allowAll() {
         loadFailures.clear();
@@ -102,10 +94,7 @@ protected:
             return makeStringError("injected load failure");
         }
 
-        auto mod = std::make_shared<TestMod>(std::move(manifest), getLoadDirectory());
-        if (loadCallback) {
-            mod->onLoad([this](Mod& loaded) { return loadCallback(loaded.getName()); });
-        }
+        auto mod = std::make_shared<TestMod>(std::move(manifest));
         return mod->load().transform([&, this] { addMod(name, mod); });
     }
 
@@ -146,44 +135,27 @@ protected:
 
     static std::filesystem::path modPath(std::string_view name) { return getModsRoot() / std::string{name}; }
 
-    static std::filesystem::path scriptModsRoot() { return getModsRoot().parent_path() / "ll_test_plugins"; }
-
-    static std::filesystem::path packagePath(std::filesystem::path const& root, std::string_view name) {
-        auto            package = root / std::string{name};
-        std::error_code ec;
-        if (auto canonical = std::filesystem::canonical(package, ec); !ec) {
-            return canonical;
-        }
-        return package.lexically_normal();
-    }
-
     static void removeTestManifests() {
         for (auto const name : TestModNames) {
             std::error_code ec;
             std::filesystem::remove_all(modPath(name), ec);
-            std::filesystem::remove_all(scriptModsRoot() / name, ec);
-            if (scriptModsRoot().empty()) {
-                std::filesystem::remove_all(scriptModsRoot(), ec);
-            }
         }
     }
 
-    static void writeManifestTo(
-        std::filesystem::path const& root,
-        std::string_view             name,
-        std::string_view             type,
-        nlohmann::json               fields  = nlohmann::json::object(),
-        std::string_view             version = "1.2.3"
+    static void writeManifest(
+        std::string_view name,
+        nlohmann::json   fields  = nlohmann::json::object(),
+        std::string_view version = "1.2.3"
     ) {
-        auto path = root / name;
+        auto path = modPath(name);
         std::filesystem::create_directories(path);
 
         nlohmann::json manifest{
-            {    "name",     name},
-            {   "entry", "unused"},
-            {    "type",     type},
-            {"platform", "server"},
-            { "version",  version},
+            {    "name",        name},
+            {   "entry",    "unused"},
+            {    "type", TestModType},
+            {"platform",    "server"},
+            { "version",     version},
         };
         for (auto const& [key, value] : fields.items()) {
             manifest[key] = value;
@@ -196,19 +168,10 @@ protected:
         }
     }
 
-    static void writeManifest(
-        std::string_view name,
-        nlohmann::json   fields  = nlohmann::json::object(),
-        std::string_view version = "1.2.3"
-    ) {
-        writeManifestTo(getModsRoot(), name, TestModType, std::move(fields), version);
-    }
-
     void SetUp() override {
         removeTestManifests();
         auto& registry = ModManagerRegistry::getInstance();
         ASSERT_FALSE(registry.hasManager(TestModType));
-        ASSERT_FALSE(registry.hasManager(ScriptTestModType));
         manager = std::make_shared<TestModManager>();
         ASSERT_TRUE(registry.addManager(manager));
         managerRegistered = true;
@@ -236,8 +199,7 @@ protected:
             }
         }
 
-        registry.eraseManager(TestModType);
-        registry.eraseManager(ScriptTestModType);
+        (void)registry.eraseManager(TestModType);
         std::vector<std::string> enumValues;
         enumValues.reserve(TestModNames.size());
         for (auto const name : TestModNames) {
@@ -329,101 +291,6 @@ TEST_F(ModRegistrarLifecycleTest, BoundRequiredAndOptionalDependenciesProtectLif
     EXPECT_FALSE(registrar.unloadMod(Provider));
     EXPECT_TRUE(registrar.unloadMod(OptionalConsumer));
     EXPECT_TRUE(registrar.unloadMod(Provider));
-}
-
-TEST_F(ModRegistrarLifecycleTest, RescansNewManagerBeforeLoadingCrossTypeDependents) {
-    writeManifest(DynamicLoader);
-    writeManifest(
-        DynamicConsumer,
-        {
-            {"dependencies", nlohmann::json::array({dependency(DynamicProvider)})}
-    }
-    );
-    writeManifestTo(scriptModsRoot(), DynamicProvider, ScriptTestModType);
-
-    auto&                           registry = ModManagerRegistry::getInstance();
-    std::shared_ptr<TestModManager> scriptManager;
-    std::vector<std::string>        loadOrder;
-    manager->setLoadCallback([&](std::string_view name) {
-        loadOrder.emplace_back(name);
-        if (name == DynamicLoader) {
-            scriptManager = std::make_shared<TestModManager>(ScriptTestModType, scriptModsRoot());
-            scriptManager->setLoadCallback([&](std::string_view scriptName) {
-                loadOrder.emplace_back(scriptName);
-                return true;
-            });
-            return registry.addManager(scriptManager);
-        }
-        if (name == DynamicConsumer) {
-            return registry.hasMod(DynamicProvider);
-        }
-        return true;
-    });
-
-    ModRegistrar::getInstance().loadAllMods();
-    manager->setLoadCallback({});
-    if (scriptManager) {
-        scriptManager->setLoadCallback({});
-    }
-
-    ASSERT_TRUE(registry.hasMod(DynamicLoader));
-    ASSERT_TRUE(registry.hasMod(DynamicProvider));
-    ASSERT_TRUE(registry.hasMod(DynamicConsumer));
-    auto const providerPath = packagePath(scriptModsRoot(), DynamicProvider);
-    EXPECT_EQ(registry.getMod(DynamicProvider)->getModDir(), providerPath);
-    EXPECT_EQ(
-        loadOrder,
-        (std::vector<std::string>{
-            std::string{DynamicLoader},
-            std::string{DynamicProvider},
-            std::string{DynamicConsumer},
-        })
-    );
-}
-
-TEST_F(ModRegistrarLifecycleTest, RescansDirectoryForNewlyRegisteredManagerType) {
-    writeManifest(DynamicLoader);
-    writeManifestTo(getModsRoot(), DynamicProvider, ScriptTestModType);
-
-    auto&                           registry = ModManagerRegistry::getInstance();
-    std::shared_ptr<TestModManager> scriptManager;
-    manager->setLoadCallback([&](std::string_view name) {
-        if (name == DynamicLoader) {
-            scriptManager = std::make_shared<TestModManager>(ScriptTestModType, getModsRoot());
-            return registry.addManager(scriptManager);
-        }
-        return true;
-    });
-
-    ModRegistrar::getInstance().loadAllMods();
-    manager->setLoadCallback({});
-
-    ASSERT_TRUE(registry.hasMod(DynamicLoader));
-    ASSERT_TRUE(registry.hasMod(DynamicProvider));
-    EXPECT_EQ(registry.getMod(DynamicProvider)->getModDir(), packagePath(getModsRoot(), DynamicProvider));
-}
-
-TEST_F(ModRegistrarLifecycleTest, IgnoresManifestsFromMismatchedManagerDirectories) {
-    auto& registry      = ModManagerRegistry::getInstance();
-    auto  scriptManager = std::make_shared<TestModManager>(ScriptTestModType, scriptModsRoot());
-    ASSERT_TRUE(registry.addManager(scriptManager));
-    writeManifestTo(scriptModsRoot(), DynamicProvider, TestModType);
-
-    ModRegistrar::getInstance().loadAllMods();
-
-    EXPECT_FALSE(registry.hasMod(DynamicProvider));
-}
-
-TEST_F(ModRegistrarLifecycleTest, RejectsDuplicateModNamesAcrossManagerDirectories) {
-    auto& registry      = ModManagerRegistry::getInstance();
-    auto  scriptManager = std::make_shared<TestModManager>(ScriptTestModType, scriptModsRoot());
-    ASSERT_TRUE(registry.addManager(scriptManager));
-    writeManifest(DynamicProvider);
-    writeManifestTo(scriptModsRoot(), DynamicProvider, ScriptTestModType);
-
-    ModRegistrar::getInstance().loadAllMods();
-
-    EXPECT_FALSE(registry.hasMod(DynamicProvider));
 }
 
 TEST_F(ModRegistrarLifecycleTest, CascadeLoadsDependentsWithSharedDependencies) {

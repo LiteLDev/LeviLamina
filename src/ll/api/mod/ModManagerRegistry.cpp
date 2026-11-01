@@ -3,10 +3,7 @@
 
 #include "ll/core/LeviLamina.h"
 
-#include <functional>
-
 namespace ll::mod {
-
 struct ModCallbackRecord {
     std::weak_ptr<Mod>                    owner;
     ModManagerRegistry::CallbackId        id;
@@ -17,7 +14,6 @@ struct ModManagerRegistry::Impl {
     std::recursive_mutex                   modMtx;
     StringMap<std::shared_ptr<ModManager>> managers;
     StringMap<std::string>                 loadedMods; // k, v: name, type
-    uint64                                 loadConfigurationRevision{};
 
     std::recursive_mutex           fnMtx;
     std::vector<ModCallbackRecord> onModLoad;
@@ -111,17 +107,7 @@ bool ModManagerRegistry::addManager(std::shared_ptr<ModManager> const& manager) 
     if (!manager) {
         return false;
     }
-    if (impl->managers.contains(manager->getType())) {
-        return false;
-    }
-    impl->managers.emplace(manager->getType(), manager);
-    ++impl->loadConfigurationRevision;
-    return true;
-}
-
-uint64 ModManagerRegistry::getLoadConfigurationRevision() const {
-    std::lock_guard lock(impl->modMtx);
-    return impl->loadConfigurationRevision;
+    return impl->managers.emplace(manager->getType(), manager).second;
 }
 
 bool ModManagerRegistry::hasManager(std::string_view type) const {
@@ -150,7 +136,6 @@ bool ModManagerRegistry::eraseManager(std::string_view type) {
     if (auto i = impl->managers.find(type); i != impl->managers.end()) {
         erase_if(impl->loadedMods, [type](auto& item) { return item.second == type; });
         impl->managers.erase(i);
-        ++impl->loadConfigurationRevision;
         return true;
     }
     return false;

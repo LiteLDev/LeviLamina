@@ -16,7 +16,6 @@
 #include "ll/api/Expected.h"
 #include "ll/api/Versions.h"
 #include "ll/api/base/Containers.h"
-#include "ll/api/coro/Generator.h"
 #include "ll/api/data/DependencyGraph.h"
 #include "ll/api/data/Version.h"
 #include "ll/api/i18n/I18n.h"
@@ -38,11 +37,6 @@
 #include "pl/Config.h"
 
 namespace ll::mod {
-
-namespace {
-
-using ManagerTypes              = SmallDenseSet<std::string>;
-using ScannedManagerDirectories = DenseMap<std::filesystem::path, ManagerTypes>;
 
 static std::vector<std::string> sortedKeys(auto const& map) {
     std::vector<std::string> result;
@@ -129,9 +123,6 @@ static void logLoadIssue(std::string const& name, ModLoadIssue const& issue) {
     case ModLoadIssueKind::Conflict:
         getLogger().error("{0} will not be loaded because it conflicts with {1}"_tr(name, issue.related));
         break;
-    case ModLoadIssueKind::DuplicateMod:
-        getLogger().error("{0} will not be loaded because its name is duplicated at {1}"_tr(name, issue.related));
-        break;
     case ModLoadIssueKind::DependencyUnavailable:
         getLogger().error("{0} will not be loaded because dependency {1} cannot be loaded"_tr(name, issue.related));
         break;
@@ -164,100 +155,6 @@ static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
         return std::forward<decltype(manifest)>(manifest);
     });
 }
-
-static Expected<Manifest> loadManifestFromRegisteredDirectories(ModManagerRegistry const& registry, std::string_view name) {
-    std::optional<Manifest>         manifest;
-    DenseSet<std::filesystem::path> searchedDirectories;
-    for (auto const& manager : registry.managers()) {
-        auto& directory = manager.getLoadDirectory();
-        if (!searchedDirectories.emplace(directory).second) {
-            continue;
-        }
-        auto result = loadManifest(directory / string_utils::sv2u8sv(name));
-        if (result) {
-            auto manager = registry.getManager(result->type);
-            if (!manager || manager->getLoadDirectory() != directory) {
-                continue;
-            }
-            if (manifest) {
-                auto path = directory / string_utils::sv2u8sv(name);
-                return makeI18nStringError<"{0} will not be loaded because its name is duplicated at {1}">(
-                    name,
-                    string_utils::u8str2str(path.u8string())
-                );
-            }
-            manifest = std::move(*result);
-        } else if (result.error()) {
-            return result;
-        }
-    }
-    if (manifest) {
-        return std::move(*manifest);
-    }
-    return makeSuccessed();
-}
-
-static void scanRegisteredManifests(
-    ModManagerRegistry const&        registry,
-    DenseMap<std::string, Manifest>& manifests,
-    DenseSet<std::string>&           duplicateMods,
-    ScannedManagerDirectories&       scannedManagerDirectories
-) {
-    DenseMap<std::filesystem::path, ManagerTypes> pendingManagers;
-    for (auto& manager : registry.managers()) {
-        auto& scannedTypes = scannedManagerDirectories[manager.getLoadDirectory()];
-        if (!scannedTypes.contains(manager.getType())) {
-            pendingManagers[manager.getLoadDirectory()].emplace(manager.getType());
-        }
-    }
-
-    for (auto const& [directory, pendingTypes] : pendingManagers) {
-        auto& scannedTypes = scannedManagerDirectories[directory];
-        scannedTypes.insert(pendingTypes.begin(), pendingTypes.end());
-
-        std::error_code                     ec;
-        std::filesystem::directory_iterator files(directory, ec);
-        if (ec) {
-            continue;
-        }
-        for (auto const& file : files) {
-            if (!file.is_directory(ec)) {
-                continue;
-            }
-            auto result = loadManifest(file.path());
-            if (result) {
-                auto manager = registry.getManager(result->type);
-                if (!manager || manager->getLoadDirectory() != directory || !pendingTypes.contains(result->type)
-                    || duplicateMods.contains(result->name)) {
-                    continue;
-                }
-                std::string name          = result->name;
-                auto [manifest, inserted] = manifests.try_emplace(name, std::move(*result));
-                if (!inserted) {
-                    logLoadIssue(
-                        name,
-                        ModLoadIssue{
-                            ModLoadIssueKind::DuplicateMod,
-                            string_utils::u8str2str(file.path().u8string()),
-                            {},
-                            {},
-                            {}
-                        }
-                    );
-                    manifests.erase(manifest);
-                    duplicateMods.emplace(std::move(name));
-                }
-            } else if (result.error()) {
-                getLogger().error(
-                    "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
-                );
-                result.error().log(getLogger());
-            }
-        }
-    }
-}
-
-} // namespace
 
 struct ModRegistrar::Impl {
     std::recursive_mutex               mutex;
@@ -311,56 +208,58 @@ void ModRegistrar::loadAllMods() noexcept try {
 
     getLogger().info("Loading mods..."_tr());
     auto& registry = impl->registry;
-    if (!registry.hasManager(NativeModManagerName)
-        && !registry.addManager(std::make_shared<NativeModManager>(getModsRoot()))) {
+    if (!registry.addManager(std::make_shared<NativeModManager>())) {
         getLogger().error("Failed to create native mod manager"_tr());
         return;
     }
 
     DenseMap<std::string, Manifest> manifests;
-    DenseSet<std::string>           failedMods;
-    DenseSet<std::string>           duplicateMods;
-    ScannedManagerDirectories       scannedManagerDirectories;
-    size_t                          loadedCount{};
+    for (auto const& file : std::filesystem::directory_iterator(getModsRoot())) {
+        if (!file.is_directory()) {
+            continue;
+        }
+        auto result = loadManifest(file.path());
+        if (result) {
+            manifests.try_emplace(result->name, std::move(*result));
+        } else if (result.error()) {
+            getLogger().error(
+                "Failed to load manifest for {0}"_tr(string_utils::u8str2str(file.path().stem().u8string()))
+            );
+            result.error().log(getLogger());
+        }
+    }
 
-    while (true) {
-        scanRegisteredManifests(registry, manifests, duplicateMods, scannedManagerDirectories);
+    auto plan = ModLoadPlanner::resolve(manifests, isClient());
+    for (auto const& name : sortedKeys(plan.rejected)) {
+        logLoadIssue(name, plan.rejected.at(name));
+    }
 
-        auto plan = ModLoadPlanner::resolve(manifests, isClient());
-
-        bool loadedAny{};
-        bool configurationChanged{};
-        auto configurationRevision = registry.getLoadConfigurationRevision();
-        for (auto const& name : plan.order) {
-            if (registry.hasMod(name) || failedMods.contains(name)) {
-                continue;
-            }
-            auto& manifest = manifests.at(name);
-
-            getLogger().info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
-            if (auto result = registry.loadMod(manifest); result) {
-                impl->commitLoadedMod(name);
-                ++loadedCount;
-                loadedAny = true;
-                getLogger().info("{0} loaded"_tr(name));
-            } else {
-                failedMods.emplace(name);
-                getLogger().error("Failed to load mod {0}"_tr(name));
-                result.error().log(getLogger());
-            }
-            if (registry.getLoadConfigurationRevision() != configurationRevision) {
-                // A mod can register a manager while it is loading. Rebuild the plan after
-                // scanning the newly registered manager so cross-manager dependencies remain ordered.
-                configurationChanged = true;
-                break;
+    size_t loadedCount{};
+    for (auto const& name : plan.order) {
+        auto& manifest = manifests.at(name);
+        bool  dependencyFailed{};
+        if (manifest.dependencies) {
+            for (auto const& dependency : *manifest.dependencies) {
+                auto target = registry.getMod(dependency.name);
+                if (!target || !ModLoadPlanner::matchesDependency(target->getManifest(), dependency)) {
+                    dependencyFailed = true;
+                    break;
+                }
             }
         }
+        if (dependencyFailed) {
+            getLogger().error("{0} will not be loaded because its dependencies failed to load"_tr(name));
+            continue;
+        }
 
-        if (!configurationChanged && !loadedAny) {
-            for (auto const& name : sortedKeys(plan.rejected)) {
-                logLoadIssue(name, plan.rejected.at(name));
-            }
-            break;
+        getLogger().info("Loading {0} v{1}"_tr(name, manifest.version.value_or(data::Version{0, 0, 0})));
+        if (auto result = registry.loadMod(std::move(manifest)); result) {
+            impl->commitLoadedMod(name);
+            ++loadedCount;
+            getLogger().info("{0} loaded"_tr(name));
+        } else {
+            getLogger().error("Failed to load mod {0}"_tr(name));
+            result.error().log(getLogger());
         }
     }
 
@@ -439,9 +338,9 @@ void ModRegistrar::disableAllMods() noexcept try {
     error_utils::printCurrentException(getLogger());
 }
 
-Expected<> ModRegistrar::loadMod(std::string_view name, bool loadDependents) noexcept try {
+Expected<> ModRegistrar::loadMod(std::string_view name, bool cascade) noexcept try {
     std::lock_guard lock(impl->mutex);
-    auto            manifestResult = loadManifestFromRegisteredDirectories(impl->registry, name);
+    auto            manifestResult = loadManifest(getModsRoot() / string_utils::sv2u8sv(name));
     if (!manifestResult) {
         if (manifestResult.error()) {
             return forwardError(
@@ -520,99 +419,78 @@ Expected<> ModRegistrar::loadMod(std::string_view name, bool loadDependents) noe
         });
     };
 
-    auto rootManifest = *manifestResult;
-    auto rootName     = rootManifest.name;
+    auto rootName = manifestResult->name;
     if (auto result = loadSingle(std::move(*manifestResult)); !result) {
         return result;
     }
-    if (!loadDependents) {
+    if (!cascade) {
         return {};
     }
 
     DenseMap<std::string, Manifest> manifests;
+    for (auto const& file : std::filesystem::directory_iterator(getModsRoot())) {
+        if (!file.is_directory()) {
+            continue;
+        }
+        if (auto result = loadManifest(file.path()); result) {
+            manifests.try_emplace(result->name, std::move(*result));
+        }
+    }
     for (auto& mod : registry.mods()) {
-        manifests.try_emplace(mod.getName(), mod.getManifest());
+        manifests.insert_or_assign(mod.getName(), mod.getManifest());
     }
 
-    DenseSet<std::string>     duplicateMods;
-    ScannedManagerDirectories scannedManagerDirectories;
-    while (true) {
-        scanRegisteredManifests(registry, manifests, duplicateMods, scannedManagerDirectories);
-
-        if (auto root = registry.getMod(rootName)) {
-            manifests.insert_or_assign(rootName, root->getManifest());
-        } else {
-            manifests.try_emplace(rootName, rootManifest);
-        }
-
-        DenseSet<std::string> roots{rootName};
-        bool                  rootsChanged{};
-        do {
-            rootsChanged = false;
-            for (auto const& [candidateName, candidate] : manifests) {
-                if (roots.contains(candidateName) || !candidate.dependencies) {
-                    continue;
-                }
-                for (auto const& dependency : *candidate.dependencies) {
-                    if (!roots.contains(dependency.name)) {
-                        continue;
-                    }
-                    auto target = manifests.find(dependency.name);
-                    if (target != manifests.end() && ModLoadPlanner::matchesDependency(target->second, dependency)
-                        && roots.emplace(candidateName).second) {
-                        rootsChanged = true;
-                    }
-                    break;
-                }
-            }
-        } while (rootsChanged);
-
-        // Dynamic loading does not pull optional dependencies into the plan. They
-        // are still bound by commitLoadedModTree when already loaded.
-        DenseMap<std::string, Manifest> planManifests;
-        for (auto const& [manifestName, manifest] : manifests) {
-            auto planManifest = manifest;
-            planManifest.optionalDependencies.reset();
-            planManifests.emplace(manifestName, std::move(planManifest));
-        }
-
-        auto plan                  = ModLoadPlanner::resolve(planManifests, roots, isClient());
-        auto configurationRevision = registry.getLoadConfigurationRevision();
-        bool configurationChanged{};
-        for (auto const& modName : plan.order) {
-            if (registry.hasMod(modName)) {
+    DenseSet<std::string> roots{rootName};
+    bool                  rootsChanged{};
+    do {
+        rootsChanged = false;
+        for (auto const& [candidateName, candidate] : manifests) {
+            if (roots.contains(candidateName) || !candidate.dependencies) {
                 continue;
             }
-            if (auto result = loadSingle(manifests.at(modName)); !result) {
-                return result;
-            }
-            if (registry.getLoadConfigurationRevision() != configurationRevision) {
-                configurationChanged = true;
+            for (auto const& dependency : *candidate.dependencies) {
+                if (!roots.contains(dependency.name)) {
+                    continue;
+                }
+                auto target = manifests.find(dependency.name);
+                if (target != manifests.end() && ModLoadPlanner::matchesDependency(target->second, dependency)
+                    && roots.emplace(candidateName).second) {
+                    rootsChanged = true;
+                }
                 break;
             }
         }
-        if (configurationChanged) {
+    } while (rootsChanged);
+
+    for (auto& [manifestName, manifest] : manifests) {
+        manifest.optionalDependencies.reset();
+    }
+
+    auto plan = ModLoadPlanner::resolve(manifests, roots, isClient());
+    for (auto const& modName : plan.order) {
+        if (registry.hasMod(modName)) {
             continue;
         }
-
-        for (auto const& rejected : sortedKeys(plan.rejected)) {
-            logLoadIssue(rejected, plan.rejected.at(rejected));
+        if (auto result = loadSingle(manifests.at(modName)); !result) {
+            return result;
         }
-        break;
+    }
+    for (auto const& rejected : sortedKeys(plan.rejected)) {
+        logLoadIssue(rejected, plan.rejected.at(rejected));
     }
     return {};
 } catch (...) {
     return makeExceptionError();
 }
 
-Expected<> ModRegistrar::reloadMod(std::string_view name, bool reloadDependents) noexcept try {
+Expected<> ModRegistrar::reloadMod(std::string_view name, bool cascade) noexcept try {
     std::lock_guard lock(impl->mutex);
     if (!impl->registry.hasMod(name)) {
         return makeI18nStringError<"Mod {0} not found">(name);
     }
 
     DenseSet<std::string> reloadSet{std::string{name}};
-    if (reloadDependents) {
+    if (cascade) {
         std::vector<std::string> pending{std::string{name}};
         for (size_t index = 0; index < pending.size(); ++index) {
             auto const& current = pending[index];
@@ -632,7 +510,7 @@ Expected<> ModRegistrar::reloadMod(std::string_view name, bool reloadDependents)
         }
     }
 
-    if (auto result = unloadMod(name, reloadDependents); !result) {
+    if (auto result = unloadMod(name, cascade); !result) {
         return result;
     }
     for (auto const& modName : reloadOrder) {
@@ -648,10 +526,10 @@ Expected<> ModRegistrar::reloadMod(std::string_view name, bool reloadDependents)
     return makeExceptionError();
 }
 
-Expected<> ModRegistrar::unloadMod(std::string_view name, bool unloadDependents) noexcept try {
+Expected<> ModRegistrar::unloadMod(std::string_view name, bool cascade) noexcept try {
     std::lock_guard lock(impl->mutex);
 
-    if (unloadDependents) {
+    if (cascade) {
         std::function<Expected<>(std::string_view)> unload = [&](std::string_view current) -> Expected<> {
             auto dependents = impl->lifecycleDependencies.dependentBy(std::string{current});
             for (auto const& loaded : std::ranges::reverse_view(impl->loadedOrder)) {
@@ -680,7 +558,7 @@ Expected<> ModRegistrar::unloadMod(std::string_view name, bool unloadDependents)
     return makeExceptionError();
 }
 
-Expected<> ModRegistrar::enableMod(std::string_view name, bool enableDependencies) noexcept try {
+Expected<> ModRegistrar::enableMod(std::string_view name, bool cascade) noexcept try {
     std::lock_guard lock(impl->mutex);
     auto&           registry = impl->registry;
     auto            mod      = registry.getMod(name);
@@ -688,7 +566,7 @@ Expected<> ModRegistrar::enableMod(std::string_view name, bool enableDependencie
         return makeI18nStringError<"Mod {0} not found">(name);
     }
 
-    if (enableDependencies && mod->getManifest().dependencies) {
+    if (cascade && mod->getManifest().dependencies) {
         for (auto const& dependency : *mod->getManifest().dependencies) {
             auto target = registry.getMod(dependency.name);
             if (!target || target->isEnabled()) {
@@ -722,11 +600,11 @@ Expected<> ModRegistrar::enableMod(std::string_view name, bool enableDependencie
     return makeExceptionError();
 }
 
-Expected<> ModRegistrar::disableMod(std::string_view name, bool disableDependents) noexcept try {
+Expected<> ModRegistrar::disableMod(std::string_view name, bool cascade) noexcept try {
     std::lock_guard lock(impl->mutex);
     auto&           registry = impl->registry;
 
-    if (disableDependents) {
+    if (cascade) {
         auto dependents = impl->lifecycleDependencies.dependentBy(std::string{name});
         for (auto const& loaded : std::ranges::reverse_view(impl->loadedOrder)) {
             if (!dependents.contains(loaded)) {

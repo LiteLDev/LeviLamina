@@ -12,8 +12,8 @@ struct NativeMod::Impl {
     sys_utils::DynamicLibrary lib;
 };
 
-NativeMod::NativeMod(Manifest manifest, sys_utils::HandleT handle, std::filesystem::path loadDirectory)
-: Mod(std::move(manifest), std::move(loadDirectory)),
+NativeMod::NativeMod(Manifest manifest, sys_utils::HandleT handle)
+: Mod(std::move(manifest)),
   mImpl(std::make_unique<Impl>(handle)) {}
 
 NativeMod::~NativeMod() { release(); }

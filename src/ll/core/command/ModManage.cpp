@@ -16,7 +16,6 @@
 #include "mc/server/commands/CommandOutput.h"
 #include "mc/server/commands/CommandPermissionLevel.h"
 
-#include <ranges>
 #include <string>
 #include <string_view>
 

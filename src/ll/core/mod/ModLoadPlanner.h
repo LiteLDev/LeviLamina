@@ -16,7 +16,6 @@ enum class ModLoadIssueKind {
     IncompatibleDependencyVersion,
     IncompatiblePlatform,
     Conflict,
-    DuplicateMod,
     DependencyUnavailable,
     DependencyCycle,
 };

@@ -1,6 +1,5 @@
 #pragma once
 
-#include <filesystem>
 #include <memory>
 #include <string_view>
 
@@ -14,7 +13,7 @@ class NativeModManager final : public ModManager {
 public:
     using Handle = void*;
 
-    explicit NativeModManager(std::filesystem::path loadDirectory = {});
+    NativeModManager();
     ~NativeModManager() override;
 
     std::shared_ptr<NativeMod> getModByHandle(Handle handle);
