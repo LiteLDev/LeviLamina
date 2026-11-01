@@ -10,7 +10,7 @@ In LeviLamina, we provide well-packaged Hook APIs, allowing you to quickly and c
 
 ## Defines of Hooks
 
-In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L180C1-L180C1), we defined the following Hook macros:
+In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/a4e181914f7a4cc3a6a574fe9d4e9976a25a684a/src/ll/api/memory/Hook.h#L261), we defined the following Hook macros:
 
 ```cpp
 #define LL_TYPE_STATIC_HOOK(DEF_TYPE, PRIORITY, TYPE, IDENTIFIER, RET_TYPE, ...)
@@ -31,7 +31,7 @@ In [`ll/api/memory/Hook.h`](https://github.com/LiteLDev/LeviLamina/blob/develop/
 ```
 
 The `AUTO`-marked Hooks automatically register, i.e., call the `hook()` function to register at runtime.  
-The `TYPED`-marked Hooks inherit your `DEF_TYPE` to the specified type.
+The `TYPE`-marked Hooks inherit your `DEF_TYPE` to the specified type.
 
 ### STATIC_HOOK
 
@@ -45,7 +45,7 @@ For hooking member functions.
 
 `DEF_TYPE`: The type name you give to your Hook.
 
-`PRIORITY`: [Hook priority](https://github.com/LiteLDev/LeviLamina/blob/develop/src/ll/api/memory/Hook.h#L73), e.g., `ll::memory::HookPriority::Normal`
+`PRIORITY`: [Hook priority](https://github.com/LiteLDev/LeviLamina/blob/a4e181914f7a4cc3a6a574fe9d4e9976a25a684a/src/ll/api/memory/Hook.h#L45), e.g., `ll::memory::HookPriority::Normal`
 
 !!! note
     Generally, unless there's a special need, we do not recommend a very high priority; Normal is sufficient.
@@ -60,7 +60,7 @@ For hooking member functions.
 
 ## Using Hooks
 
-You can refer to the [`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/develop/src/mc) provided by LeviLamina to obtain the definitions of the functions you want to Hook.
+You can refer to the [`Fake Header`](https://github.com/LiteLDev/LeviLamina/tree/main/src/mc) provided by LeviLamina to obtain the definitions of the functions you want to Hook.
 
 ### A Simple Hook Example
 

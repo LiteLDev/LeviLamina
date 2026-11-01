@@ -14,7 +14,8 @@ C++23 features enabled), built with xmake and clang-cl on Windows x64.
 | `src-client`  | Client-only code, compiled when `target_type=client`.                  |
 | `src-test`    | GTest suites split into `common/`, `server/`, `client/`.               |
 | `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`.          |
-| `docs/main`   | mkdocs sources; every page is mirrored as `*.md` and `*.zh.md`.        |
+| `docs/main`   | Docs site (levimc-kit); pages in `contents/`, as `*.md` + `*.zh.md`.   |
+| `docs/api`    | Doxygen config for the API reference at `/LeviLamina/api/`.            |
 
 ## Editing `src/mc` (and `mc/` under src-server/src-client)
 
@@ -101,10 +102,19 @@ Naming follows `docs/main/contents/maintainer_guides/cpp_style_guide.md`:
 - directories `snake_case`, files and types `PascalCase`, namespaces lowercase
 - functions and locals `camelCase`, constants `PascalCase`, macros `UPPER_SNAKE_CASE`
 - non-public data members Hungarian `mMember`, public ones plain `camelCase`
-- `///` for Doxygen comments, `// TODO(#1234): ...` for TODOs
 
-New API in `src/ll/api` needs Doxygen comments on public members. Prefer `Expected<T>` for
-recoverable errors over exceptions; the Windows build sets `set_exceptions("none")` in xmake.
+Code explains itself: do not add explanatory or Doxygen comments, choose clear names instead, and
+put usage explanations and tutorials in `docs/main/contents`.
+
+Do not use anonymous namespaces. Give file-local functions and variables `static`, and put helper
+classes in the file's named namespace.
+
+Do not use `std::map`, `std::set`, `std::unordered_map` or `std::unordered_set`; use the aliases in
+`ll/api/base/Containers.h` (`DenseMap`, `SmallDenseSet`, `OrderedMap`, `StringMap`,
+`ConcurrentDenseMap`, ...).
+
+Prefer `Expected<T>` for recoverable errors over exceptions; the Windows build sets
+`set_exceptions("none")` in xmake.
 
 ## Changelog and commits
 
@@ -119,4 +129,28 @@ output or bump versions manually.
 ## Docs
 
 Documentation in `docs/main/contents` is bilingual. When you change an English page, update its
-`.zh.md` sibling in the same pass, and register new pages in `docs/main/mkdocs.yml`.
+`.zh.md` sibling in the same pass, and register new pages in the `nav` of `docs/main/docs.config.ts`
+(with their Chinese label in `navTranslations.zh` when the entry is titled).
+
+The site is built with levimc-kit (Vite + React, statically prerendered), which lives in
+LiteLDev/levimc.org (`kit/`) and is published at https://levimc.org/kit/v2/: `npm ci` fetches it into
+`docs/main/kit/` (git-ignored; `npm run kit` refreshes it, `kit/.vendored` records the build, and
+`LEVIMC_KIT_SOURCE=<path to a levimc.org checkout>/kit npm run kit` tries unpublished kit changes). Never
+edit `kit/`: the LeviMC bar, footer, docs engine and Doxygen header/footer are changed in levimc.org, and
+this site picks them up with its next build (levimc.org triggers it, and an hourly check catches up).
+Markdown follows MkDocs /
+Python-Markdown conventions (4-space list nesting, `!!! note` admonitions, `=== "Tab"` tabs) and links
+use relative `.md` paths. From `docs/main` (Node 24):
+
+```sh
+npm ci
+npm run typecheck   # tsc over docs.config.ts and the kit
+npm run build       # → dist/; prints unresolved links and missing anchors
+npm run preview     # http://127.0.0.1:4173/LeviLamina/ with GitHub Pages semantics
+npm run linkcheck   # internal links, anchors and redirects of dist/ (`-- --external` checks external URLs)
+npm run dev         # dev server with hot reload
+```
+
+The Doxygen reference (`docs/api/Doxyfile`, run from the repository root after `npm ci` in `docs/main`)
+uses the kit's header, footer and stylesheets from `docs/main/kit/static/`; CI merges it into the site
+under `api/`.

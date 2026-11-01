@@ -55,8 +55,9 @@ src/
 src-client/
 ├── ll/
 │   ├── api/
-│   │   ├── KeyRegistry.h      # 输入绑定
-│   │   ├── KeyHandle.h
+│   │   ├── input/
+│   │   │   ├── KeyRegistry.h  # 输入绑定
+│   │   │   └── KeyHandle.h
 │   │   └── event/
 │   │       ├── input/         # 输入事件
 │   │       ├── render/        # 渲染事件
@@ -202,12 +203,12 @@ option("target_type")
 ### 运行时行为
 
 **服务端:**
-- 由 PreLoader 加载到 `bedrock_server_mod.exe`
+- 由 PreLoader 加载到 `bedrock_server_mod.exe`（安装时由 PeEditor 从 `bedrock_server.exe` 生成，原文件保留为 `bedrock_server.exe.bak`）
 - 钩子服务器初始化
 - 提供服务端事件和服务
 
 **客户端:**
-- 由 PreLoader 加载到 `Minecraft.Windows.exe`
+- 由 PreLoader 加载到 `Minecraft.Windows.exe`（安装时由 PeEditor 原地修改，原文件保留为 `Minecraft.Windows.exe.bak`）
 - 钩子客户端初始化
 - 提供客户端输入、渲染和 UI
 
@@ -217,7 +218,7 @@ option("target_type")
 
 用于全局注册表：
 - `EventBus::getInstance()`
-- `CommandRegistrar::getInstance()`
+- `CommandRegistrar::getInstance(bool isClientSide)`
 - `ServiceManager::getInstance()`
 - `ModManagerRegistry::getInstance()`
 

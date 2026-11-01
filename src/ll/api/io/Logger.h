@@ -130,12 +130,14 @@ public:
 
     LLAPI void flush() const;
 
-    LLAPI void clearSink() const;
+    LLAPI std::shared_ptr<SinkBase> setSink(std::string_view name, std::shared_ptr<SinkBase> sink) const;
 
-    LLAPI size_t addSink(std::shared_ptr<SinkBase> sink) const;
+    LLAPI std::shared_ptr<SinkBase> removeSink(std::string_view name) const;
 
-    LLAPI std::shared_ptr<SinkBase> getSink(size_t index) const;
+    LLNDAPI std::shared_ptr<SinkBase> getSink(std::string_view name) const;
 
-    LLNDAPI coro::Generator<SinkBase&> sinks() const;
+    LLAPI void clearSinks() const;
+
+    LLNDAPI coro::Generator<std::pair<std::string_view, SinkBase&>> sinks() const;
 };
 } // namespace ll::io

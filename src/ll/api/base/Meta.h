@@ -161,6 +161,9 @@ struct PriorityTag : PriorityTag<N - 1> {};
 template <>
 struct PriorityTag<0> {};
 
+template <bool&>
+struct StaticRegistrationAnchor {};
+
 template <class... Ts, class Fn>
 constexpr void unrollType(Fn&& fn) {
     [&]<size_t... I>(std::index_sequence<I...>) {

@@ -21,7 +21,7 @@ void MessageBoxModel::button2(TextValue label, std::optional<TextValue> tooltip)
     button2Tooltip = std::move(tooltip);
 }
 
-std::optional<std::uint32_t> MessageBoxModel::selection() const noexcept { return selected; }
+std::optional<uint32> MessageBoxModel::selection() const noexcept { return selected; }
 
 cereal::DynamicValue MessageBoxModel::serialize() const {
     auto first = cereal::DynamicValue::object();

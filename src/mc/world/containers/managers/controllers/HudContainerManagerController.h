@@ -31,7 +31,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void refreshHotbar();
+    MCAPI void refreshHotbar();
 #endif
     // NOLINTEND
 
@@ -39,7 +39,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $registerContainerCallbacks();
+    MCAPI void $registerContainerCallbacks();
 #endif
 
 

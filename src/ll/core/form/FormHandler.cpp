@@ -129,7 +129,7 @@ void ModalFormHandler::handle(
 }
 
 ConcurrentDenseMap<uint, std::unique_ptr<FormHandler>> formHandlers = {};
-ConcurrentDenseMap<ActorUniqueID, std::set<uint>>      formViewers  = {};
+ConcurrentDenseMap<ActorUniqueID, SmallDenseSet<uint>> formViewers  = {};
 
 bool updateViewer(ActorUniqueID uid, uint formId, bool update) {
     auto iter = formViewers.find(uid);
@@ -137,7 +137,7 @@ bool updateViewer(ActorUniqueID uid, uint formId, bool update) {
         return false; // Update without a previous form
     }
     if (iter == formViewers.end()) {
-        iter = formViewers.emplace(uid, std::set<uint>{formId}).first;
+        iter = formViewers.emplace(uid, SmallDenseSet<uint>{formId}).first;
     }
     if (update) {
         iter->second.insert(formId);

@@ -87,7 +87,7 @@ gsl::span<unsigned char const> Blob::getSpan() const {
     return {p, s};
 }
 
-void Blob::fillBlob(std::uint8_t val) {
+void Blob::fillBlob(uint8 val) {
     if (mSize) std::memset(mBlob.get(), val, mSize);
 }
 

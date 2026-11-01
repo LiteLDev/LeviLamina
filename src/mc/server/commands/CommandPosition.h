@@ -25,12 +25,7 @@ public:
 
 public:
     BlockPos getBlockPos(int version, CommandOrigin const& origin, Vec3 const& offset) const {
-        BlockPos result;
-        auto     pos = getPosition(version, origin, offset);
-        result.x     = pos.x + 0.001f;
-        result.y     = pos.y + 0.001f;
-        result.z     = pos.z + 0.001f;
-        return result;
+        return getPosition(version, origin, offset) + 0.001f;
     }
 
 public:

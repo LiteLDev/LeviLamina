@@ -32,11 +32,9 @@ The following function uses a coroutine to print a string to the console every 2
 void createServerThreadCoro() {
     using namespace ll::chrono_literals;
     ll::coro::keepThis([]() -> ll::coro::CoroTask<> {
-        co_await 20_tick;
-        static int i = 0;
-        while (i < 20) {
+        for (int i = 0; i < 20; ++i) {
+            co_await 20_tick;
             std::cout << "This is coro in server thread\n";
-            ++i;
         }
         co_return;
     }).launch(ll::thread::ServerThreadExecutor::getDefault());
@@ -52,14 +50,12 @@ The following function uses a coroutine to print a string to the console every s
 #include "ll/api/coro/CoroTask.h"
 #include "ll/api/thread/ThreadPoolExecutor.h"
 
-void createServerThreadCoro() {
+void createThreadPoolCoro() {
     using namespace ll::chrono_literals;
     ll::coro::keepThis([]() -> ll::coro::CoroTask<> {
-        co_await 1s;
-        static int i = 0;
-        while (i < 20) {
-            std::cout << "This is coro in server thread\n";
-            ++i;
+        for (int i = 0; i < 20; ++i) {
+            co_await 1s;
+            std::cout << "This is coro in thread pool\n";
         }
         co_return;
     }).launch(ll::thread::ThreadPoolExecutor::getDefault());

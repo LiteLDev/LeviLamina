@@ -35,10 +35,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
+    MCAPI void _networkUpdateItem(int slot, ::ItemStack const& newItem);
 
 #ifdef LL_PLAT_C
-    MCNAPI void _pushHistoricPredictionItem(
+    MCAPI void _pushHistoricPredictionItem(
         int                                        slot,
         int                                        amount,
         ::ItemStackNetId const&                    itemStackNetId,
@@ -47,12 +47,12 @@ public:
         ::ItemStack&&                              item
     );
 
-    MCNAPI ::ItemStack const&
+    MCAPI ::ItemStack const&
     _setCreatedItem(::ItemStackRequestId const& currentRequestId, int slot, ::ItemStack const& item);
 
-    MCNAPI void clearAllPredictions(::ItemStackRequestId const& requestId, bool shouldBeEmpty, ::Player& player);
+    MCAPI void clearAllPredictions(::ItemStackRequestId const& requestId, bool shouldBeEmpty, ::Player& player);
 
-    MCNAPI ::SparseContainerClient::PushSlotPredictionResult tryPushSlotPrediction(
+    MCAPI ::SparseContainerClient::PushSlotPredictionResult tryPushSlotPrediction(
         ::ItemStackRequestId const&                requestId,
         int                                        requestedSlot,
         int                                        backingSlot,
@@ -69,7 +69,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::std::string const
+    MCAPI static ::std::string const
     getPushSlotPredictionResultName(::SparseContainerClient::PushSlotPredictionResult result);
 #endif
     // NOLINTEND
@@ -77,7 +77,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
+    MCAPI static ::BidirectionalUnorderedMap<::SparseContainerClient::PushSlotPredictionResult, ::std::string> const&
     pushSlotPredictionResultMap();
     // NOLINTEND
 

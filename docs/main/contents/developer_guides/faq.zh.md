@@ -1,29 +1,29 @@
 # 常见问题
 
-## 服务端指令和客户端指令的区别
+## 服务端命令和客户端命令的区别
 
-- 服务端指令是指由服务端注册的指令，可以被服务端自己以及其它处于同一服务端的玩家执行。
-- 客户端指令完全由客户端自行处理，只能由客户端自身执行，其它玩家和服务端不知道客户端指令的存在。
+- 服务端命令是指由服务端注册的命令，可以被服务端自己以及其它处于同一服务端的玩家执行。
+- 客户端命令完全由客户端自行处理，只能由客户端自身执行，其它玩家和服务端不知道客户端命令的存在。
 
-当LeviLamina运行在**Bedrock Dedicated Server**（下文简称BDS）上时，模组只可注册服务端指令。  
-当Minecraft处于**本地世界**时，本质上就是在Minecraft内部运行了一个BDS，这时既可以注册服务端指令也可以注册客户端指令。  
-当Minecraft处于**多人游戏**中时，只能模组只能注册客户端指令。  
+当LeviLamina运行在**Bedrock Dedicated Server**（下文简称BDS）上时，模组只可注册服务端命令。  
+当Minecraft处于**本地世界**时，本质上就是在Minecraft内部运行了一个BDS，这时既可以注册服务端命令也可以注册客户端命令。  
+当Minecraft处于**多人游戏**中时，模组只能注册客户端命令。  
 可以通过
 ```cpp
 ll::command::CommandRegistrar::getInstance(false); // 服务端
 ll::command::CommandRegistrar::getInstance(true); // 客户端
 ```
-获取服务端和客户端的CommandRegistrar来注册指令。  
+获取服务端和客户端的CommandRegistrar来注册命令。  
 
 ---
 
-## 在Mod的`enable()`方法中注册指令，服务端（BDS）成功客户端失败
+## 在模组的`enable()`方法中注册命令，服务端（BDS）成功客户端失败
 
 因为服务端（BDS）和客户端启用所有模组的时机是有区别的。  
 - 服务端会在服务器初始化完成（世界已经加载完成）时启用所有模组
 - 客户端会在游戏启动完成（主界面窗口出现）时启用所有模组
-所以在客户端上，在enable()方法中注册指令不会成功，无论是客户端指令还是服务端指令，  
-解决方案就是监听`ServerCommandRegisterEvent`然后再注册服务端指令，监听`ClientCommandRegisterEvent`然后再注册客户端指令。
+所以在客户端上，在enable()方法中注册命令不会成功，无论是客户端命令还是服务端命令，  
+解决方案就是监听`ServerCommandRegisterEvent`然后再注册服务端命令，监听`ClientCommandRegisterEvent`然后再注册客户端命令。
 
 ---
 

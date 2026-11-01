@@ -1,4 +1,5 @@
-#include "ll/api/network/packet/runtime/RuntimePacket.h"
+#include "ll/core/network/RuntimePacket.h"
+
 #include "ll/api/network/packet/PacketRegistrar.h"
 
 #include "mc/deps/core/utility/BinaryStream.h"
@@ -16,17 +17,19 @@ void RuntimePacket::write(BinaryStream& bs) const {
 }
 
 Bedrock::Result<void> RuntimePacket::_read(ReadOnlyBinaryStream& bs) {
-    if (auto res = bs.getUnsignedInt64(); res) {
-        mRuntimeId = res.value();
-    } else {
-        return nonstd::make_unexpected(res.error());
+    auto runtimeId = bs.getUnsignedInt64();
+    if (!runtimeId) {
+        return nonstd::make_unexpected(runtimeId.error());
     }
-    movePacket(PacketRegistrar::getInstance().createPacket(mRuntimeId));
-    if (!mOwnedPacket) { // Ingore invalid packet
+    mRuntimeId   = *runtimeId;
+    mOwnedPacket = PacketRegistrar::getInstance().createPacket(mRuntimeId);
+    if (!mOwnedPacket) {
         bs.mReadPointer = bs.mView.size();
         return {};
     }
+    mPacket                    = *mOwnedPacket;
+    mOwnedPacket->mSenderSubId = mSenderSubId;
     return mOwnedPacket->read(bs);
 }
 
-}; // namespace ll::network
+} // namespace ll::network

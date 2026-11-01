@@ -26,21 +26,21 @@ struct SymbolRecord {
     uintptr_t   start{};
     uintptr_t   end{};
     std::string sourceFile;
-    uint32_t    startLine{};
-    uint32_t    endLine{};
+    uint32      startLine{};
+    uint32      endLine{};
     bool        hasLineInfo{};
 };
 
 struct SourceLineRecord {
     std::string file;
-    uint32_t    line{};
+    uint32      line{};
     uintptr_t   address{};
 };
 
 struct InstrumentationEvent {
     uintptr_t address{};
-    uint32_t  lineIndex{UINT32_MAX};
-    uint32_t  functionIndex{UINT32_MAX};
+    uint32    lineIndex{UINT32_MAX};
+    uint32    functionIndex{UINT32_MAX};
 };
 
 class IModuleEnumerator {
@@ -79,9 +79,9 @@ public:
     virtual bool
     addModule(uintptr_t baseAddress, size_t imageSize, std::span<uintptr_t const> instrumentedAddresses) = 0;
 
-    [[nodiscard]] virtual size_t                   moduleCount() const                   = 0;
-    [[nodiscard]] virtual std::span<uint8_t const> addressHits(size_t moduleIndex) const = 0;
-    [[nodiscard]] virtual bool                     isRunning() const                     = 0;
+    [[nodiscard]] virtual size_t                 moduleCount() const                   = 0;
+    [[nodiscard]] virtual std::span<uint8 const> addressHits(size_t moduleIndex) const = 0;
+    [[nodiscard]] virtual bool                   isRunning() const                     = 0;
 
     static std::unique_ptr<IAddressSampler> createDefault();
 };

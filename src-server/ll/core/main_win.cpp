@@ -15,7 +15,7 @@
 #include "ll/api/Versions.h"
 #include "ll/api/command/CommandRegistrar.h"
 #include "ll/api/i18n/I18n.h"
-#include "ll/api/io/DefaultSinks.h"
+#include "ll/api/io/FileSink.h"
 #include "ll/api/memory/Hook.h"
 #include "ll/api/service/GamingStatus.h"
 #include "ll/api/service/PlayerInfo.h"
@@ -210,7 +210,7 @@ void leviLaminaMain() {
 
     auto& config = getLeviConfig();
 
-    io::initDefaultFileSink(config.logRotate);
+    io::FileSink::getDefault()->setPolicy(config.logRotate);
 
     // Update default language
     if (config.language != "system") {

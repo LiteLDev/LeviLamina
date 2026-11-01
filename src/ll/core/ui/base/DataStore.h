@@ -51,7 +51,7 @@ struct NativeSubscription {
 };
 
 struct BindingSlot {
-    enum class ClientWriteState : std::uint8_t {
+    enum class ClientWriteState : uint8 {
         Disabled,
         Writable,
         Restoring,

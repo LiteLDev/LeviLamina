@@ -6,8 +6,6 @@
 
 namespace ll::io {
 
-/// A sink that writes to the console, passing the text through the console output events so it can
-/// be observed or cancelled.
 class ConsoleSink : public Sink {
     struct Impl;
     std::unique_ptr<Impl> impl;

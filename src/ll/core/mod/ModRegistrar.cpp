@@ -44,7 +44,7 @@ namespace {
 using ManagerTypes              = SmallDenseSet<std::string>;
 using ScannedManagerDirectories = DenseMap<std::filesystem::path, ManagerTypes>;
 
-std::vector<std::string> sortedKeys(auto const& map) {
+static std::vector<std::string> sortedKeys(auto const& map) {
     std::vector<std::string> result;
     result.reserve(map.size());
     for (auto const& [name, _] : map) {
@@ -54,14 +54,14 @@ std::vector<std::string> sortedKeys(auto const& map) {
     return result;
 }
 
-std::string dependencyDescription(Dependency const& dependency) {
+static std::string dependencyDescription(Dependency const& dependency) {
     if (!dependency.version) {
         return dependency.name;
     }
     return fmt::format("{} ({})", dependency.name, dependency.version->to_string());
 }
 
-constexpr std::string_view trimWhitespace(std::string_view value) noexcept {
+static constexpr std::string_view trimWhitespace(std::string_view value) noexcept {
     auto isWhitespace = [](char c) { return c == ' ' || c == '\t' || c == '\r' || c == '\n'; };
     while (!value.empty() && isWhitespace(value.front())) {
         value.remove_prefix(1);
@@ -72,7 +72,7 @@ constexpr std::string_view trimWhitespace(std::string_view value) noexcept {
     return value;
 }
 
-bool containsLegacyVersionRequirement(nlohmann::json const& dependencies) {
+static bool containsLegacyVersionRequirement(nlohmann::json const& dependencies) {
     if (!dependencies.is_array()) {
         return false;
     }
@@ -91,7 +91,7 @@ bool containsLegacyVersionRequirement(nlohmann::json const& dependencies) {
     return false;
 }
 
-void warnLegacyVersionRequirements(nlohmann::json const& json, std::string_view modName) {
+static void warnLegacyVersionRequirements(nlohmann::json const& json, std::string_view modName) {
     constexpr char const* fields[]{"dependencies", "optionalDependencies", "conflicts", "loadBefore"};
     for (auto field : fields) {
         auto dependencies = json.find(field);
@@ -106,7 +106,7 @@ void warnLegacyVersionRequirements(nlohmann::json const& json, std::string_view 
     }
 }
 
-void logLoadIssue(std::string const& name, ModLoadIssue const& issue) {
+static void logLoadIssue(std::string const& name, ModLoadIssue const& issue) {
     switch (issue.kind) {
     case ModLoadIssueKind::MissingDependency:
         getLogger().error("{0} will not be loaded because dependency {1} is missing"_tr(name, issue.related));
@@ -141,7 +141,7 @@ void logLoadIssue(std::string const& name, ModLoadIssue const& issue) {
     }
 }
 
-Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
+static Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     auto content = file_utils::readFile(dir / u8"manifest.json");
     if (!content || content->empty()) {
         return makeSuccessed();
@@ -165,7 +165,7 @@ Expected<Manifest> loadManifest(std::filesystem::path const& dir) {
     });
 }
 
-Expected<Manifest> loadManifestFromRegisteredDirectories(ModManagerRegistry const& registry, std::string_view name) {
+static Expected<Manifest> loadManifestFromRegisteredDirectories(ModManagerRegistry const& registry, std::string_view name) {
     std::optional<Manifest>         manifest;
     DenseSet<std::filesystem::path> searchedDirectories;
     for (auto const& manager : registry.managers()) {
@@ -197,7 +197,7 @@ Expected<Manifest> loadManifestFromRegisteredDirectories(ModManagerRegistry cons
     return makeSuccessed();
 }
 
-void scanRegisteredManifests(
+static void scanRegisteredManifests(
     ModManagerRegistry const&        registry,
     DenseMap<std::string, Manifest>& manifests,
     DenseSet<std::string>&           duplicateMods,

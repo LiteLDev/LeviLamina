@@ -662,7 +662,7 @@ static_assert(std::derived_from<ll::ui::ObservableBoolean, ll::data::Observable<
 static_assert(std::derived_from<ll::ui::ObservableNumber, ll::data::Observable<double>>);
 static_assert(std::derived_from<ll::ui::ObservableString, ll::data::Observable<std::string>>);
 static_assert(std::derived_from<ll::ui::ObservableUIRawMessage, ll::data::Observable<ll::ui::UIRawMessage>>);
-static_assert(std::same_as<ll::data::Observable<int>::SubscriptionId, std::uint32_t>);
+static_assert(std::same_as<ll::data::Observable<int>::SubscriptionId, uint32>);
 static_assert(!std::copy_constructible<ll::data::Observable<int>::Callback>);
 static_assert(ll::ui::BindingValue<cereal::DynamicValue>);
 static_assert(requires(cereal::DynamicValue::Object const& object, std::string_view key) {

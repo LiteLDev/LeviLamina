@@ -4,12 +4,10 @@
 #include "mc/deps/nbt/CompoundTag.h"
 
 namespace ll::event {
-namespace {
-ConcurrentDenseMap<std::type_index, EventId>& runtimeEventIds() {
+static ConcurrentDenseMap<std::type_index, EventId>& runtimeEventIds() {
     static ConcurrentDenseMap<std::type_index, EventId> ids;
     return ids;
 }
-} // namespace
 
 void detail::registerRuntimeEventId(std::type_index type, EventIdView eventId) {
     runtimeEventIds().lazy_emplace_l(type, [](auto&&...) {}, [&](auto const& ctor) { ctor(type, eventId); });

@@ -12,7 +12,7 @@ public:
     using Handle            = std::shared_ptr<Bedrock::Threading::IAsyncResult<T>>;
     using CompletionHandler = std::function<void(Bedrock::Threading::IAsyncResult<T> const&)>;
 
-    virtual T addOnComplete(Bedrock::Threading::IAsyncResult<T>::CompletionHandler) = 0;
+    virtual void addOnComplete(Bedrock::Threading::IAsyncResult<T>::CompletionHandler) = 0;
 };
 
 } // namespace Bedrock::Threading

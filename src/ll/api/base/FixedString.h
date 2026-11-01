@@ -1,10 +1,9 @@
 #pragma once
 
+#include <algorithm>
 #include <cstddef>
 #include <string>
 #include <string_view>
-
-#include "ll/api/base/SourceLocation.h"
 
 namespace ll {
 template <size_t N>
@@ -12,8 +11,8 @@ struct FixedString {
     char buf[N + 1]{};
 
     consteval FixedString() noexcept = default;
-    consteval FixedString(std::string_view s) noexcept { std::copy_n(s.data(), s.size(), buf); }
-    consteval FixedString(char const* s) noexcept { std::copy_n(s, N, buf); }
+    consteval FixedString(std::string_view s) noexcept { std::copy_n(s.data(), std::min(s.size(), N), buf); }
+    consteval FixedString(char const* s) noexcept : FixedString(std::string_view{s}) {}
 
     constexpr operator std::string_view() const noexcept { return buf; }
 
@@ -39,22 +38,6 @@ struct FixedString {
 };
 
 template <size_t N>
-struct FixedStrWithLoc : FixedString<N> {
-    SourceLocation location;
-
-    consteval FixedStrWithLoc(std::string_view s, SourceLocation const& loc = SourceLocation::current()) noexcept
-    : FixedString<N>(s),
-      location(loc) {}
-    consteval FixedStrWithLoc(char const* s, SourceLocation const& loc = SourceLocation::current()) noexcept
-    : FixedString<N>(s),
-      location(loc) {}
-
-    constexpr SourceLocation const& loc() const noexcept { return location; }
-};
-
-template <size_t N>
 FixedString(char const (&)[N]) -> FixedString<N - 1>;
-template <size_t N>
-FixedStrWithLoc(char const (&)[N]) -> FixedStrWithLoc<N - 1>;
 
 } // namespace ll

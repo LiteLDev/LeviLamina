@@ -353,7 +353,7 @@ void showCustomScreen(Player& player) {
 | 修改普通变量后 UI 不更新 | 绑定 Observable，并调用其 `setData()` |
 | `close()` 报告表单未显示 | 只在成功启动后、完成前调用 |
 | NaN 或无穷大被拒绝 | DDUI 数值必须为有限数 |
-| 只想关闭一个界面 | 使用该表单的 `close()`，不要使用全局 `closeScreen(player)` |
+| 只想关闭一个界面 | 使用该表单的 `close()`，不要使用 `closeScreen(player)`，它会关闭该玩家的所有 DDUI 界面 |
 
 ## 延伸阅读
 

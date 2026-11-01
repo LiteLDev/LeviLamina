@@ -44,11 +44,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
+    MCAPI ::ItemStackNetResult $handleAction(::ItemStackRequestAction const& requestAction);
 
-    MCNAPI ::ItemStackNetResult $endRequest();
+    MCAPI ::ItemStackNetResult $endRequest();
 
-    MCNAPI void $postRequest(bool const wasSuccess);
+    MCAPI void $postRequest(bool const wasSuccess);
 
 
     // NOLINTEND

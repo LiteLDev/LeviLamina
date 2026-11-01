@@ -12,13 +12,13 @@
 template <typename T>
 class SemVersionBase {
 public:
-    uint16_t mMajor;
-    uint16_t mMinor;
-    uint16_t mPatch;
-    bool     mValidVersion;
-    bool     mAnyVersion;
-    T        mPreRelease;
-    T        mBuildMeta;
+    uint16 mMajor;
+    uint16 mMinor;
+    uint16 mPatch;
+    bool   mValidVersion;
+    bool   mAnyVersion;
+    T      mPreRelease;
+    T      mBuildMeta;
 
     SemVersionBase() : mMajor(0), mMinor(0), mPatch(0), mValidVersion(false), mAnyVersion(false) {}
 
@@ -29,7 +29,7 @@ public:
       mValidVersion(true),
       mAnyVersion(true) {}
 
-    explicit SemVersionBase(uint16_t major, uint16_t minor, uint16_t patch, T preRelease, T buildMeta)
+    explicit SemVersionBase(uint16 major, uint16 minor, uint16 patch, T preRelease, T buildMeta)
     : mMajor(major),
       mMinor(minor),
       mPatch(patch),
