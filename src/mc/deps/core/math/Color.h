@@ -386,10 +386,10 @@ struct ll::reflection::Serializer<mce::Color> {
 
         Type result;
 
-        if (auto error = member<&Type::r>(); !error) return forwardError(error.error());
-        if (auto error = member<&Type::g>(); !error) return forwardError(error.error());
-        if (auto error = member<&Type::b>(); !error) return forwardError(error.error());
-        if (auto error = member<&Type::a>(); !error) return forwardError(error.error());
+        if (auto error = member<&Type::r>(result, json); !error) return forwardError(error.error());
+        if (auto error = member<&Type::g>(result, json); !error) return forwardError(error.error());
+        if (auto error = member<&Type::b>(result, json); !error) return forwardError(error.error());
+        if (auto error = member<&Type::a>(result, json); !error) return forwardError(error.error());
 
         Type::forEachComponent([&]<typename axis_type, size_t iter> { result.get<axis_type, iter>() / 255.0f; });
 
