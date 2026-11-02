@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
+    MCNAPI bool parseJson(::Json::Value node, int minDefault, int maxDefault);
     // NOLINTEND
 };

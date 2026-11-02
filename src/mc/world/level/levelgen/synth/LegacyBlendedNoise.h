@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyBlendedNoise(::IRandom& random);
+    MCNAPI explicit LegacyBlendedNoise(::IRandom& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IRandom& random);
+    MCNAPI void* $ctor(::IRandom& random);
     // NOLINTEND
 };

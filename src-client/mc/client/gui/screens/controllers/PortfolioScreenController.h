@@ -62,38 +62,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PortfolioScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit PortfolioScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _createPhotoItem(uint64 index);
+    MCNAPI void _createPhotoItem(uint64 index);
 
-    MCAPI void _deletePhoto(uint64 index);
+    MCNAPI void _deletePhoto(uint64 index);
 
-    MCAPI void _loadCaptionIfUnloaded(::PhotoRecord& record);
+    MCNAPI void _loadCaptionIfUnloaded(::PhotoRecord& record);
 
-    MCAPI void _saveCaptions(bool forceSaveAll);
+    MCNAPI void _saveCaptions(bool forceSaveAll);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getPickIndex(::UIPropertyBag& bag);
+    MCNAPI static int _getPickIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

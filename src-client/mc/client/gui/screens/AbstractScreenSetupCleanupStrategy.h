@@ -26,6 +26,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $cleanupScreen(::ScreenContext& screenContext);
+    MCNAPI void $cleanupScreen(::ScreenContext& screenContext);
     // NOLINTEND
 };

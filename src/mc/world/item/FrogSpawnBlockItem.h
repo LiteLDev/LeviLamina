@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -47,9 +47,9 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const&, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const&, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool $isLiquidClipItem() const;
+    MCNAPI bool $isLiquidClipItem() const;
 
 
     // NOLINTEND
@@ -57,6 +57,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

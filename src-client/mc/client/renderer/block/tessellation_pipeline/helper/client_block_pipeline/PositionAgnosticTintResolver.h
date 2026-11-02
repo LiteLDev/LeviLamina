@@ -27,7 +27,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color $_get(::Block const& block, ::BlockPos const&, ::TintMethod tintMethod, ::BiomeTintCache*);
+    MCNAPI ::mce::Color $_get(::Block const& block, ::BlockPos const&, ::TintMethod tintMethod, ::BiomeTintCache*);
     // NOLINTEND
 };
 

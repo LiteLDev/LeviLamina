@@ -13,18 +13,18 @@ namespace Bedrock::PubSub { class Subscription; }
 namespace VanillaWorldClocks {
 // functions
 // NOLINTBEGIN
-MCAPI void registerWorldClockEvents(
+MCNAPI void registerWorldClockEvents(
     ::WorldClockRegistry&                           registry,
     ::LevelData&                                    levelData,
     ::std::vector<::Bedrock::PubSub::Subscription>& clockSubscriptions
 );
 
-MCAPI void registerWorldClocks(::WorldClockRegistry& registry);
+MCNAPI void registerWorldClocks(::WorldClockRegistry& registry);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& OVERWORLD_CLOCK_NAME();
+MCNAPI ::HashedString const& OVERWORLD_CLOCK_NAME();
 // NOLINTEND
 
 } // namespace VanillaWorldClocks

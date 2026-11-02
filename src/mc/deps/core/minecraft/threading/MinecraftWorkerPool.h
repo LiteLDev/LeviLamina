@@ -22,43 +22,43 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void configureGamefaceThread();
+    MCNAPI static void configureGamefaceThread();
 #endif
 
-    MCAPI static void configureMainThread();
+    MCNAPI static void configureMainThread();
 
-    MCAPI static void configureServerThread();
+    MCNAPI static void configureServerThread();
 
-    MCAPI static void createSingletons();
+    MCNAPI static void createSingletons();
 
-    MCAPI static void destroySingletons();
+    MCNAPI static void destroySingletons();
 
-    MCAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
+    MCNAPI static void loadWorkerConfigurations(uint highPowerCores, uint totalCores);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& DISK();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& GAMEFACE_LAYOUT();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& INPUT();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& INPUT();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& LEVELDB_COMPACTION();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& NETWORK();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& RENDERING_HELPERS();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& WATCHDOG();
     // NOLINTEND
 };

@@ -9,6 +9,6 @@ class SnowBlock : public ::BlockType {
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -188,11 +188,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onActorEntityAdded(::Actor& actor);
+    MCNAPI void _onActorEntityAdded(::Actor& actor);
 
-    MCAPI void _onPlayerWakeUp(::Player& player);
+    MCNAPI void _onPlayerWakeUp(::Player& player);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> getWorldClockRegistryServer() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> getWorldClockRegistryServer() const;
     // NOLINTEND
 
 public:
@@ -209,82 +209,78 @@ public:
         ::ServerInitialization::IServerInitializer* init
     );
 
-    MCAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
+    MCNAPI ::PlayerSleepManager const& $getPlayerSleepManager() const;
 
-    MCAPI ::PlayerSleepManager& $getPlayerSleepManager();
+    MCNAPI ::PlayerSleepManager& $getPlayerSleepManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager> $getServerPlayerSleepManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerPlayerSleepManager const> $getServerPlayerSleepManager() const;
 
-    MCAPI void $setCommandsEnabled(bool commandsEnabled);
+    MCNAPI void $setCommandsEnabled(bool commandsEnabled);
 
-    MCAPI void $setWorldTemplateOptionsUnlocked();
+    MCNAPI void $setWorldTemplateOptionsUnlocked();
 
-    MCAPI ::ResourcePackManager* $getClientResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
-    MCAPI ::ResourcePackManager* $getServerResourcePackManager() const;
+    MCNAPI ::ResourcePackManager* $getServerResourcePackManager() const;
 
-    MCAPI ::TradeTables* $getTradeTables();
+    MCNAPI ::TradeTables* $getTradeTables();
 
-    MCAPI void $runCommand(
+    MCNAPI void $runCommand(
         ::HashedString const&     commandStr,
         ::CommandOrigin&          origin,
         ::CommandOriginSystem     originSystem,
         ::CurrentCmdVersion const commandVersion
     );
 
-    MCAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCNAPI void $runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
 
-    MCAPI void $decrementTagCache(
+    MCNAPI void $decrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCAPI void $incrementTagCache(
+    MCNAPI void $incrementTagCache(
         ::std::string const&                                                      tag,
         ::TagRegistry<::IDType<::LevelTagIDType>, ::IDType<::LevelTagSetIDType>>& tagRegistry
     );
 
-    MCAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::TagCacheManager> $getTagCacheManager();
 
-    MCAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
+    MCNAPI ::LevelChunkMetaDataManager* $getLevelChunkMetaDataManager();
 
-    MCAPI void $loadFunctionManager();
+    MCNAPI void $loadFunctionManager();
 
-#ifdef LL_PLAT_S
-    MCAPI ::Random& $getThreadRandom() const;
-#else // LL_PLAT_C
-    MCFOLD ::Random& $getThreadRandom() const;
-#endif
+    MCNAPI ::Random& $getThreadRandom() const;
 
-    MCAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
+    MCNAPI ::PositionTrackingDB::PositionTrackingDBServer* $getPositionTrackerDBServer() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::VolumeEntityManagerServer> $tryGetVolumeEntityManagerServer() const;
 
-    MCAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
+    MCNAPI void $clearAllGenerationRequests(::NetworkIdentifier const& player, ::SubClientId clientId);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager> $getChunkGenerationManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkGenerationManager const> $getChunkGenerationManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MapDataManager> $getMapDataManager();
 
-    MCAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
+    MCNAPI ::GameModeExt::MessengerFactory $createMessengerFactory() const;
 
-    MCAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
+    MCNAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
-    MCAPI void $_subTick();
+    MCNAPI void $_subTick();
 
-    MCAPI ::TickTimeManager const& $_getTickTimeManager() const;
+    MCNAPI ::TickTimeManager const& $_getTickTimeManager() const;
 
-    MCAPI ::TickTimeManager& $_getTickTimeManager();
+    MCNAPI ::TickTimeManager& $_getTickTimeManager();
 
-    MCAPI ::PlayerDeathManager* $_getPlayerDeathManager();
+    MCNAPI ::PlayerDeathManager* $_getPlayerDeathManager();
 
-    MCAPI ::MapDataManager& $_getMapDataManager();
+    MCNAPI ::MapDataManager& $_getMapDataManager();
 
-    MCAPI void $_initializeMapDataManager();
+    MCNAPI void $_initializeMapDataManager();
 
 
     // NOLINTEND

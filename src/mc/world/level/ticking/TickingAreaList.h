@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $removeDistantEntityAreasAndCheckForRemoved(
+    MCNAPI bool $removeDistantEntityAreasAndCheckForRemoved(
         ::std::vector<::Vec3> const&                 playerPositions,
         ::std::function<void(::ITickingArea const&)> requeue,
         ::LevelStorage&                              levelStorage

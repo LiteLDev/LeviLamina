@@ -48,12 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ActorSelectorArgs();
+    MCNAPI ~ActorSelectorArgs();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

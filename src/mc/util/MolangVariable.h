@@ -37,31 +37,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MolangVariableIndex
+    MCNAPI static ::MolangVariableIndex
     _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
-    MCAPI static void _resetToLowWaterMark();
+    MCNAPI static void _resetToLowWaterMark();
 
-    MCAPI static void _updateLowWaterMark();
+    MCNAPI static void _updateLowWaterMark();
 
-    MCAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
+    MCNAPI static ::MolangVariableIndex getVariableIndex(uint64 nameHash);
 
-    MCAPI static void initVariableMaps();
+    MCNAPI static void initVariableMaps();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& mHasInitializedVariableMaps();
+    MCNAPI static bool& mHasInitializedVariableMaps();
 
-    MCAPI static bool& mHasSetWatermark();
+    MCNAPI static bool& mHasSetWatermark();
 
-    MCAPI static ::std::unordered_map<::MolangVariableIndex, ::HashedString>& mIndexToVariableNameMap();
+    MCNAPI static ::std::unordered_map<::MolangVariableIndex, ::HashedString>& mIndexToVariableNameMap();
 
-    MCAPI static ::std::unordered_map<::MolangVariableIndex, ::HashedString>& mIndexToVariableNameMap_LowWaterMark();
+    MCNAPI static ::std::unordered_map<::MolangVariableIndex, ::HashedString>& mIndexToVariableNameMap_LowWaterMark();
 
-    MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap();
+    MCNAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap();
 
-    MCAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap_LowWaterMark();
+    MCNAPI static ::std::unordered_map<uint64, ::MolangVariableIndex>& mVariableNameToIndexMap_LowWaterMark();
     // NOLINTEND
 };

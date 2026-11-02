@@ -63,21 +63,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Wolf(
+    MCNAPI Wolf(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _updateTintColor();
+    MCNAPI void _updateTintColor();
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -87,23 +87,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onBorn(::Actor&, ::Actor& parentRight);
+    MCNAPI void $onBorn(::Actor&, ::Actor& parentRight);
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCFOLD void $setSitting(bool value);
+    MCNAPI void $setSitting(bool value);
 
-    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
-    MCAPI bool $isAlliedTo(::Mob* other);
+    MCNAPI bool $isAlliedTo(::Mob* other);
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getAmbientSound() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 
@@ -112,6 +112,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

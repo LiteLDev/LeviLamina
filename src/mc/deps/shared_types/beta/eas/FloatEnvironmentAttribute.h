@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _bindEnums(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void _bindEnums(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

@@ -208,13 +208,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~RegistryState();
+        MCNAPI ~RegistryState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -233,13 +233,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SoftEnum(::std::string const& name, ::std::vector<::std::string> values);
+        MCNAPI SoftEnum(::std::string const& name, ::std::vector<::std::string> values);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& name, ::std::vector<::std::string> values);
+        MCNAPI void* $ctor(::std::string const& name, ::std::vector<::std::string> values);
         // NOLINTEND
     };
 
@@ -314,7 +314,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
+        MCNAPI ::CommandRegistry::LexicalToken& operator=(::CommandLexer::Token const& token);
         // NOLINTEND
     };
 
@@ -394,13 +394,13 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string toString() const;
 
-        MCAPI ~ParseToken();
+        MCNAPI ~ParseToken();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -469,7 +469,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
+        MCNAPI ::CommandRegistry::ParseRule& operator=(::CommandRegistry::ParseRule&& rhs);
         // NOLINTEND
     };
 
@@ -507,13 +507,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Signature();
+        MCNAPI ~Signature();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -575,16 +575,16 @@ public:
         // NOLINTBEGIN
         MCAPI Parser(::CommandRegistry const& registry, int version);
 
-        MCAPI bool _parse(::std::string const& in);
+        MCNAPI bool _parse(::std::string const& in);
 
-        MCAPI ::std::unique_ptr<::CommandSelector<::Actor>>
+        MCNAPI ::std::unique_ptr<::CommandSelector<::Actor>>
         createSelector(::std::string const& selectorString, ::CommandOrigin const& origin);
 
-        MCAPI ::std::vector<::std::string> getErrorParams() const;
+        MCNAPI ::std::vector<::std::string> getErrorParams() const;
 
         MCAPI bool parseCommand(::std::string const& in);
 
-        MCAPI bool parseSelector(::std::string const& in);
+        MCNAPI bool parseSelector(::std::string const& in);
 
         MCAPI ~Parser();
         // NOLINTEND
@@ -755,9 +755,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CommandRegistry(::CommandRegistryArguments args);
+    MCNAPI explicit CommandRegistry(::CommandRegistryArguments args);
 
-    MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+    MCNAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                                   name,
         ::std::vector<::std::pair<::std::string, uint>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                 type,
@@ -773,7 +773,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
+    MCNAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                            name,
         ::std::vector<::std::pair<uint64, uint>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>          type,
@@ -789,7 +789,7 @@ public:
     );
 #endif
 
-    MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
+    MCNAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                                     name,
         ::std::vector<::std::pair<::std::string, uint64>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                   type,
@@ -803,7 +803,7 @@ public:
         ) const
     );
 
-    MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
+    MCNAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                              name,
         ::std::vector<::std::pair<uint64, uint64>> const& values,
         ::Bedrock::typeid_t<::CommandRegistry>            type,
@@ -817,7 +817,7 @@ public:
         ) const
     );
 
-    MCAPI ::std::unique_ptr<::CommandSelector<::Actor>> _createSelector(
+    MCNAPI ::std::unique_ptr<::CommandSelector<::Actor>> _createSelector(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
         int                                  version,
@@ -826,10 +826,10 @@ public:
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::CommandRegistry::Symbol _getConstrainedParamEnumSymbol(::CommandRegistry::Symbol symbol) const;
+    MCNAPI ::CommandRegistry::Symbol _getConstrainedParamEnumSymbol(::CommandRegistry::Symbol symbol) const;
 #endif
 
-    MCAPI bool _matchesEnumConstraintsSet(
+    MCNAPI bool _matchesEnumConstraintsSet(
         ::CommandRegistry::Symbol const& commandParamSymbol,
         ::CommandOrigin const&           origin,
         ::CommandRegistry::Symbol const& value,
@@ -837,7 +837,8 @@ public:
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
+    MCNAPI void
+    addChainedSubcommandValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint>> const& values);
 #endif
 
     MCAPI void addEnumValueConstraints(
@@ -846,15 +847,15 @@ public:
         ::SemanticConstraint                constraints
     );
 
-    MCAPI int addEnumValues(::std::string const& name, ::std::vector<::std::string> const& values);
+    MCNAPI int addEnumValues(::std::string const& name, ::std::vector<::std::string> const& values);
 
-    MCAPI void addEnumValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint64>> const& values);
+    MCNAPI void addEnumValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint64>> const& values);
 
 #ifdef LL_PLAT_C
-    MCAPI ::CommandRegistry::Symbol addPostfix(::std::string const& name);
+    MCNAPI ::CommandRegistry::Symbol addPostfix(::std::string const& name);
 #endif
 
-    MCAPI void addRule(
+    MCNAPI void addRule(
         ::CommandRegistry::Symbol                symbol,
         ::std::vector<::CommandRegistry::Symbol> derivation,
         ::std::function<::CommandRegistry::ParseToken*(::CommandRegistry::ParseToken&, ::CommandRegistry::Symbol)>
@@ -862,16 +863,16 @@ public:
         ::CommandVersion versions
     );
 
-    MCAPI void addSemanticConstraint(::SemanticConstraint constraintType);
+    MCNAPI void addSemanticConstraint(::SemanticConstraint constraintType);
 
     MCAPI int addSoftEnum(::std::string const& name, ::std::vector<::std::string> values);
 
     MCAPI void addSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
-    MCAPI ::CommandRegistry::Symbol addSoftTerminal(::std::string const& name);
+    MCNAPI ::CommandRegistry::Symbol addSoftTerminal(::std::string const& name);
 
 #ifdef LL_PLAT_C
-    MCAPI void autoComplete(
+    MCNAPI void autoComplete(
         ::CommandRegistry::Symbol        symbol,
         ::std::string const&             cmdLine,
         ::std::string const&             partialMatch,
@@ -881,33 +882,33 @@ public:
         ::CommandRegistry::SemanticInfo& semanticInfo
     ) const;
 
-    MCAPI void autoCompleteCommand(
+    MCNAPI void autoCompleteCommand(
         ::std::string const&       partialMatch,
         ::CommandOrigin const&     origin,
         ::AutoCompleteInformation& info
     ) const;
 #endif
 
-    MCAPI void buildFirstSet(::CommandRegistry::ParseTable& table, ::CommandRegistry::Symbol t, uint version) const;
+    MCNAPI void buildFirstSet(::CommandRegistry::ParseTable& table, ::CommandRegistry::Symbol t, uint version) const;
 
-    MCAPI void buildFollowSet(
+    MCNAPI void buildFollowSet(
         ::CommandRegistry::ParseTable&         table,
         ::CommandRegistry::Symbol              t,
         uint                                   version,
         ::std::set<::CommandRegistry::Symbol>& workingSet
     ) const;
 
-    MCAPI ::CommandRegistry::Symbol buildRules(
+    MCNAPI ::CommandRegistry::Symbol buildRules(
         ::CommandRegistry::Signature&                                       signature,
         ::std::vector<::gsl::not_null<::CommandRegistry::Overload*>> const& overloads,
         uint64                                                              firstParam
     );
 
-    MCAPI bool
+    MCNAPI bool
     buildSelector(::ActorSelectorArgs const& args, ::CommandSelectorBase* output, ::std::string& error) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool canCommandBeUsed(
+    MCNAPI bool canCommandBeUsed(
         ::std::string const&            commandLine,
         ::CommandPermissionLevel const& permissionLevel,
         bool                            cheatsEnabled,
@@ -916,7 +917,7 @@ public:
     ) const;
 #endif
 
-    MCAPI ::std::unique_ptr<::Command> createCommand(
+    MCNAPI ::std::unique_ptr<::Command> createCommand(
         ::CommandRegistry::ParseToken const& root,
         ::CommandOrigin const&               origin,
         int                                  version,
@@ -927,7 +928,7 @@ public:
     MCAPI ::std::string describe(::CommandRegistry::Symbol symbol) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string describe(
+    MCNAPI ::std::string describe(
         ::CommandRegistry::Signature const& command,
         ::std::string const&                alias,
         ::CommandRegistry::Overload const&  overload,
@@ -937,63 +938,63 @@ public:
     ) const;
 #endif
 
-    MCAPI void finalizeChainedSubcommandOverloadRules(char const* command);
+    MCNAPI void finalizeChainedSubcommandOverloadRules(char const* command);
 
-    MCFOLD ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
+    MCNAPI ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
-    MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
+    MCNAPI ::CommandRegistry::Signature* findCommand(::std::string const& name);
 
-    MCAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
+    MCNAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
-    MCAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
+    MCNAPI void forEachNonTerminal(::std::function<void(::CommandRegistry::Symbol)> func) const;
 
 #ifdef LL_PLAT_S
-    MCAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
+    MCNAPI ::Json::Value generateDocumentationMetadata(bool generateInternalMetadata) const;
 #endif
 
-    MCAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
+    MCNAPI ::std::vector<::std::string> getAliases(::std::string const& command) const;
 
-    MCAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
+    MCNAPI ::std::vector<::std::string> getAlphabeticalLookup(::CommandOrigin const& origin) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::AutoCompleteInformation> getAutoCompleteOptions(
+    MCNAPI ::std::unique_ptr<::AutoCompleteInformation> getAutoCompleteOptions(
         ::CommandOrigin const& origin,
         ::std::string const&   _cmdLine,
         uint                   cursorPositionUnsafe
     ) const;
 #endif
 
-    MCAPI ::std::string getCommandName(::std::string const& commandLine) const;
+    MCNAPI ::std::string getCommandName(::std::string const& commandLine) const;
 
     MCAPI ::CommandSyntaxInformation
     getCommandOverloadSyntaxInformation(::CommandOrigin const& origin, ::std::string const& commandName) const;
 
-    MCAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
+    MCNAPI ::CommandStatus getCommandStatus(::std::string const& nameIn) const;
 
-    MCAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
+    MCNAPI ::InvertableFilter<::std::string> getInvertableFilter(::CommandRegistry::ParseToken const& token) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::CommandSyntaxInformation getOverloadSyntaxInformation(
+    MCNAPI ::CommandSyntaxInformation getOverloadSyntaxInformation(
         ::CommandOrigin const& origin,
         ::std::string const&   cmdLine,
         uint                   cursorPosition
     ) const;
 #endif
 
-    MCAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
+    MCNAPI bool isCommandOfType(::std::string const& nameIn, ::CommandTypeFlag commandType) const;
 
-    MCAPI bool isValid(::CommandRegistry::Symbol symbol) const;
+    MCNAPI bool isValid(::CommandRegistry::Symbol symbol) const;
 
 #ifdef LL_PLAT_C
     MCAPI void loadRemoteCommands(::AvailableCommandsPacket const& packet);
 #endif
 
-    MCAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
+    MCNAPI bool originCanRun(::CommandOrigin const& origin, ::CommandRegistry::Signature const& command) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
+    MCNAPI bool originCanRunOverloadWithParam(::CommandOrigin const& origin, ::CommandParameterData const& param) const;
 
-    MCAPI ::std::string parsePartialCommand(
+    MCNAPI ::std::string parsePartialCommand(
         ::CommandRegistry::Parser& parser,
         ::std::string const&       _cmdLine,
         uint                       cursorPosition,
@@ -1001,7 +1002,7 @@ public:
     ) const;
 #endif
 
-    MCAPI bool parseSelector(
+    MCNAPI bool parseSelector(
         ::ActorSelectorArgs&                 args,
         ::CommandRegistry::ParseToken const& token,
         ::CommandOrigin const&               origin,
@@ -1010,7 +1011,7 @@ public:
         ::std::vector<::std::string>&        errorParams
     ) const;
 
-    MCAPI bool parseSelector(
+    MCNAPI bool parseSelector(
         ::CommandSelectorBase*               output,
         ::CommandRegistry::ParseToken const& token,
         ::CommandOrigin const&               origin,
@@ -1021,9 +1022,9 @@ public:
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void popState();
+    MCNAPI void popState();
 
-    MCAPI void pushState();
+    MCNAPI void pushState();
 #endif
 
     MCAPI void registerAlias(::std::string name, ::std::string alias);
@@ -1037,7 +1038,7 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI void registerCommandFactory(
+    MCNAPI void registerCommandFactory(
         char const*                                                      command,
         ::brstd::copyable_function<::std::unique_ptr<::Command>() const> createCommand
     );
@@ -1050,80 +1051,81 @@ public:
         ::std::vector<::CommandParameterData>           params
     );
 
-    MCAPI void registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);
+    MCNAPI void
+    registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);
 
     MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
     MCAPI ::AvailableCommandsPacket serializeAvailableCommands() const;
 
-    MCAPI void setNetworkUpdateCallback(::std::function<void(::Packet const&)> callback);
+    MCNAPI void setNetworkUpdateCallback(::std::function<void(::Packet const&)> callback);
 
-    MCAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
+    MCNAPI void setScoreCallback(::std::function<int(bool&, ::std::string const&, ::Actor const&)> callback);
 
     MCAPI void setSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
-    MCAPI void setupChainedSubcommandOverloadRules(::CommandRegistry::Signature& signature);
+    MCNAPI void setupChainedSubcommandOverloadRules(::CommandRegistry::Signature& signature);
 
 #ifdef LL_PLAT_C
-    MCAPI void setupOverloadRules(::CommandRegistry::Signature& signature);
+    MCNAPI void setupOverloadRules(::CommandRegistry::Signature& signature);
 #endif
 
-    MCAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
+    MCNAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
 
-    MCAPI ~CommandRegistry();
+    MCNAPI ~CommandRegistry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
+    MCNAPI static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
 #endif
 
-    MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
+    MCNAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
-    MCFOLD static ::CommandRegistry::ParseToken*
+    MCNAPI static ::CommandRegistry::ParseToken*
     collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
-    MCAPI static ::CommandRegistry::ParseToken* collapseOn(
+    MCNAPI static ::CommandRegistry::ParseToken* collapseOn(
         ::CommandRegistry::ParseToken& parent,
         ::CommandRegistry::Symbol      symbol,
         ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static ::CommandRegistry::ParseToken*
+    MCNAPI static ::CommandRegistry::ParseToken*
     expand(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
-    MCAPI static ::CommandRegistry::ParseToken* expandExcept(
+    MCNAPI static ::CommandRegistry::ParseToken* expandExcept(
         ::CommandRegistry::ParseToken& parent,
         ::CommandRegistry::Symbol      symbol,
         ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static ::CommandRegistry::ParseToken* fold(
+    MCNAPI static ::CommandRegistry::ParseToken* fold(
         ::CommandRegistry::ParseToken& parent,
         ::CommandRegistry::Symbol      symbol,
         ::CommandRegistry::Symbol      boundSymbol
     );
 
-    MCAPI static ::CommandRegistry::ParseToken*
+    MCNAPI static ::CommandRegistry::ParseToken*
     kill(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
 
-    MCAPI static bool readFloat(
+    MCNAPI static bool readFloat(
         float&                               value,
         ::CommandRegistry::ParseToken const& token,
         ::std::string&                       error,
         ::std::vector<::std::string>&        errorParams
     );
 
-    MCAPI static bool readInt(
+    MCNAPI static bool readInt(
         int&                                 value,
         ::CommandRegistry::ParseToken const& token,
         ::std::string&                       error,
         ::std::vector<::std::string>&        errorParams
     );
 
-    MCAPI static bool readRelativeCoordinate(
+    MCNAPI static bool readRelativeCoordinate(
         bool&                                relative,
         float&                               offset,
         ::CommandRegistry::ParseToken const& token,
@@ -1132,7 +1134,7 @@ public:
         ::std::vector<::std::string>&        errorParams
     );
 
-    MCAPI static bool readString(
+    MCNAPI static bool readString(
         ::std::string&                       value,
         ::CommandRegistry::ParseToken const& token,
         ::std::string&                       error,
@@ -1143,31 +1145,31 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& CODE_STATUS_PROPERTY_NAME();
+    MCNAPI static char const*& CODE_STATUS_PROPERTY_NAME();
 
-    MCAPI static char const*& COMMAND_NAME_ENUM_NAME();
+    MCNAPI static char const*& COMMAND_NAME_ENUM_NAME();
 
-    MCAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
+    MCNAPI static char const*& FUNCTION_NAME_SOFTENUM_NAME();
 
-    MCAPI static char const*& POI_TAG_SOFTENUM();
+    MCNAPI static char const*& POI_TAG_SOFTENUM();
 
-    MCAPI static char const*& POI_TYPE_SOFTENUM();
+    MCNAPI static char const*& POI_TYPE_SOFTENUM();
 
-    MCAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
+    MCNAPI static char const*& TAG_VALUES_SOFTENUM_NAME();
 
-    MCAPI static char const*& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
+    MCNAPI static char const*& UNLOCKABLE_RECIPES_SOFTENUM_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandRegistryArguments args);
+    MCNAPI void* $ctor(::CommandRegistryArguments args);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -28,24 +28,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptExplosionStartedBeforeEvent(
+    MCNAPI ScriptExplosionStartedBeforeEvent(
         ::ExplosionStartedEvent const&        eventData,
         ::Scripting::WeakLifetimeScope const& scope
     );
 
-    MCAPI void copyTo(::ExplosionStartedEvent& explosionStartedEvent) const;
+    MCNAPI void copyTo(::ExplosionStartedEvent& explosionStartedEvent) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::ExplosionStartedEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

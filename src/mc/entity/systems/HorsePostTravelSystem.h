@@ -17,15 +17,15 @@ struct TickingSystemWithInfo;
 namespace HorsePostTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _doJumpResetSystem(
+MCNAPI void _doJumpResetSystem(
     ::StrictEntityContext const&                                                             context,
     ::JumpPendingScaleComponent&                                                             jumpPendingScale,
     ::EntityModifier<::HorseLandedOnGroundFlagComponent, ::MobIsJumpingFlagComponent> const& modifier
 );
 
-MCAPI ::TickingSystemWithInfo createJumpResetSystem();
+MCNAPI ::TickingSystemWithInfo createJumpResetSystem();
 
-MCAPI ::TickingSystemWithInfo createPostTravelSystem();
+MCNAPI ::TickingSystemWithInfo createPostTravelSystem();
 // NOLINTEND
 
 } // namespace HorsePostTravelSystem

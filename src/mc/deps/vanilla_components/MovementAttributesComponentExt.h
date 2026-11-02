@@ -17,10 +17,10 @@ namespace MovementAttributesComponentExt {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::MovementAttributesComponent create(::std::vector<::AttributeData> const& attributeData);
+MCNAPI ::MovementAttributesComponent create(::std::vector<::AttributeData> const& attributeData);
 #endif
 
-MCAPI ::brstd::flat_map<
+MCNAPI ::brstd::flat_map<
     ::HashedString,
     ::MovementAttributeEntry,
     ::std::less<::HashedString>,

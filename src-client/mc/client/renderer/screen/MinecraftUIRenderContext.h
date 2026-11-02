@@ -252,10 +252,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::MinecraftUIPersistentMeshItem>
+    MCNAPI static ::std::unique_ptr<::MinecraftUIPersistentMeshItem>
     _createPersistentMesh(::ComponentRenderBatch const& renderBatch, ::mce::TextureGroup& textureGroup);
 
-    MCAPI static bool _endSharedMeshBatch(
+    MCNAPI static bool _endSharedMeshBatch(
         ::ComponentRenderBatch&              renderBatch,
         ::MinecraftUIPersistentMeshItem&     persistentMeshItem,
         ::ScreenContext&                     screenContext,
@@ -278,13 +278,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const;
+    MCNAPI int $getLineLength(::Font& font, ::std::string const& text, float fontSize, bool showColorSymbol) const;
 
-    MCFOLD float $getTextAlpha() const;
+    MCNAPI float $getTextAlpha() const;
 
-    MCAPI void $setTextAlpha(float alpha);
+    MCNAPI void $setTextAlpha(float alpha);
 
-    MCAPI void $drawDebugText(
+    MCNAPI void $drawDebugText(
         ::RectangleArea const&    rect,
         ::std::string&&           text,
         ::mce::Color const&       color,
@@ -294,7 +294,7 @@ public:
         ::CaretMeasureData const& caretData
     );
 
-    MCAPI void $drawText(
+    MCNAPI void $drawText(
         ::Font&                   font,
         ::RectangleArea const&    rect,
         ::std::string&&           text,
@@ -305,7 +305,7 @@ public:
         ::CaretMeasureData const& caretData
     );
 
-    MCAPI void $drawText(
+    MCNAPI void $drawText(
         ::Font&                   font,
         ::RectangleArea const&    rect,
         ::std::string_view        text,
@@ -316,9 +316,9 @@ public:
         ::CaretMeasureData const& caretData
     );
 
-    MCAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
+    MCNAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
 
-    MCAPI void $drawImage(
+    MCNAPI void $drawImage(
         ::mce::ClientTexture const& texture,
         ::glm::vec2 const&          position,
         ::glm::vec2 const&          size,
@@ -327,72 +327,72 @@ public:
         bool const                  colorCorrected
     );
 
-    MCAPI void $drawNineslice(::mce::ClientTexture const& texture, ::NinesliceInfo const& info);
+    MCNAPI void $drawNineslice(::mce::ClientTexture const& texture, ::NinesliceInfo const& info);
 
-    MCAPI void $flushImages(::mce::Color const& color, float alpha, ::HashedString const& materialNameHash);
+    MCNAPI void $flushImages(::mce::Color const& color, float alpha, ::HashedString const& materialNameHash);
 
-    MCAPI ::mce::TexturePtr $getTexture(::ResourceLocation const& resourceLocation, bool forceReload) const;
+    MCNAPI ::mce::TexturePtr $getTexture(::ResourceLocation const& resourceLocation, bool forceReload) const;
 
-    MCAPI ::mce::TexturePtr $getZippedTexture(
+    MCNAPI ::mce::TexturePtr $getZippedTexture(
         ::Core::Path const&       zippedFolderPath,
         ::ResourceLocation const& resourceLocation,
         bool                      forceReload
     ) const;
 
-    MCAPI bool $unloadTexture(::ResourceLocation const& resourceLocation);
+    MCNAPI bool $unloadTexture(::ResourceLocation const& resourceLocation);
 
-    MCAPI ::UITextureInfoPtr $getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload) const;
+    MCNAPI ::UITextureInfoPtr $getUITextureInfo(::ResourceLocation const& resourceLocation, bool forceReload) const;
 
-    MCAPI void $touchTexture(::ResourceLocation const& resourceLocation);
+    MCNAPI void $touchTexture(::ResourceLocation const& resourceLocation);
 
-    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+    MCNAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
 
-    MCAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+    MCNAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
 
-    MCAPI void $reserveSharedMeshBatch(uint64 vertexCount);
+    MCNAPI void $reserveSharedMeshBatch(uint64 vertexCount);
 
-    MCAPI uint64 $getSharedMeshBatchVertexCount() const;
+    MCNAPI uint64 $getSharedMeshBatchVertexCount() const;
 
-    MCAPI void $drawRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha, int thickness);
+    MCNAPI void $drawRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha, int thickness);
 
-    MCAPI void $fillRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha);
+    MCNAPI void $fillRectangle(::RectangleArea const& rect, ::mce::Color const& color, float alpha);
 
-    MCAPI void $increaseStencilRef();
+    MCNAPI void $increaseStencilRef();
 
-    MCAPI void $decreaseStencilRef();
+    MCNAPI void $decreaseStencilRef();
 
-    MCAPI void $resetStencilRef();
+    MCNAPI void $resetStencilRef();
 
-    MCAPI void $fillRectangleStencil(::RectangleArea const& rect);
+    MCNAPI void $fillRectangleStencil(::RectangleArea const& rect);
 
-    MCAPI void $enableScissorTest(::RectangleArea const& rect);
+    MCNAPI void $enableScissorTest(::RectangleArea const& rect);
 
-    MCAPI void $disableScissorTest();
+    MCNAPI void $disableScissorTest();
 
-    MCAPI void $setClippingRectangle(::RectangleArea const& rect);
+    MCNAPI void $setClippingRectangle(::RectangleArea const& rect);
 
-    MCAPI void $setFullClippingRectangle();
+    MCNAPI void $setFullClippingRectangle();
 
-    MCAPI void $saveCurrentClippingRectangle();
+    MCNAPI void $saveCurrentClippingRectangle();
 
-    MCAPI void $restoreSavedClippingRectangle();
+    MCNAPI void $restoreSavedClippingRectangle();
 
-    MCAPI ::RectangleArea $getFullClippingRectangle() const;
+    MCNAPI ::RectangleArea $getFullClippingRectangle() const;
 
-    MCAPI void $cleanup();
+    MCNAPI void $cleanup();
 
-    MCAPI void $removePersistentMeshes();
+    MCNAPI void $removePersistentMeshes();
 
-    MCFOLD ::UIMeasureStrategy& $getMeasureStrategy();
+    MCNAPI ::UIMeasureStrategy& $getMeasureStrategy();
 
-    MCAPI void $snapImageSizeToGrid(::glm::vec2& size) const;
+    MCNAPI void $snapImageSizeToGrid(::glm::vec2& size) const;
 
-    MCAPI void $snapImagePositionToGrid(::glm::vec2& position) const;
+    MCNAPI void $snapImagePositionToGrid(::glm::vec2& position) const;
 
-    MCAPI void $notifyImageEstimate(uint64 imageCount);
+    MCNAPI void $notifyImageEstimate(uint64 imageCount);
 
-    MCAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);
+    MCNAPI bool $updateCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer);
 
-    MCAPI void $renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass);
+    MCNAPI void $renderCustom(::gsl::not_null<::CustomRenderComponent*> customRenderer, int pass);
     // NOLINTEND
 };

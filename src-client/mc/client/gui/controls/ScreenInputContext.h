@@ -20,14 +20,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void requestButtonUpRightOfFirstRefusal(uint id, ::std::weak_ptr<::UIControl> control);
+    MCNAPI void requestButtonUpRightOfFirstRefusal(uint id, ::std::weak_ptr<::UIControl> control);
 
-    MCAPI ~ScreenInputContext();
+    MCNAPI ~ScreenInputContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

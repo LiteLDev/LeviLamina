@@ -33,13 +33,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::DebuggerDiagnosticsView createTabData(::std::string_view tabName) const;
+    MCNAPI ::DebuggerDiagnosticsView createTabData(::std::string_view tabName) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

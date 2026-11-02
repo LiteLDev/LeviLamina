@@ -29,24 +29,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     NinePatchFactory(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::ResourceLocation const& resourceLocation);
 
-    MCAPI ::std::unique_ptr<::NinePatchLayer>
+    MCNAPI ::std::unique_ptr<::NinePatchLayer>
     createSymmetrical(::IntRectangle const& src, int xCutAt, int yCutAt, float w, float h);
 
-    MCAPI ~NinePatchFactory();
+    MCNAPI ~NinePatchFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::ResourceLocation const& resourceLocation);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, ::ResourceLocation const& resourceLocation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -101,30 +101,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Scheduler(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
+    MCNAPI Scheduler(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
 
-    MCAPI void processCoroutines(
+    MCNAPI void processCoroutines(
         ::std::chrono::nanoseconds     timeSinceSwap,
         ::Scheduler::MinimumTimeBudget ensureNonZeroRunTime,
         ::Scheduler::MaximumTimeBudget limitMaxRunTime
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
+    MCNAPI ::std::shared_ptr<void> setCoroutinePolicy(::brstd::move_only_function<bool() const> policy);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
+    MCNAPI void* $ctor(::std::string_view name, ::SchedulerDetails::FPSVal idealFPS);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 

@@ -29,7 +29,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ~Downloading();
+        MCNAPI ~Downloading();
 #endif
         // NOLINTEND
 
@@ -37,7 +37,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -77,32 +77,32 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ResourcePackClientResponsePacketPayload(::ResourcePackResponse response);
+    MCNAPI explicit ResourcePackClientResponsePacketPayload(::ResourcePackResponse response);
 
-    MCAPI ResourcePackClientResponsePacketPayload(
+    MCNAPI ResourcePackClientResponsePacketPayload(
         ::ResourcePackResponse    response,
         ::std::set<::std::string> downloadingPacks
     );
 #endif
 
-    MCAPI ::std::set<::std::string> const& getDownloadingPacks() const;
+    MCNAPI ::std::set<::std::string> const& getDownloadingPacks() const;
 
-    MCAPI ~ResourcePackClientResponsePacketPayload();
+    MCNAPI ~ResourcePackClientResponsePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ResourcePackResponse response);
+    MCNAPI void* $ctor(::ResourcePackResponse response);
 
-    MCAPI void* $ctor(::ResourcePackResponse response, ::std::set<::std::string> downloadingPacks);
+    MCNAPI void* $ctor(::ResourcePackResponse response, ::std::set<::std::string> downloadingPacks);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

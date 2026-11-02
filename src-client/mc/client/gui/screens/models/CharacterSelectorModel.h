@@ -51,11 +51,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool nextPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
+        MCNAPI bool nextPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
 
-        MCAPI void openCurrentPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController) const;
+        MCNAPI void openCurrentPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController) const;
 
-        MCAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
+        MCNAPI bool prevPage(::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController);
         // NOLINTEND
     };
 
@@ -94,56 +94,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CharacterSelectorModel(
+    MCNAPI CharacterSelectorModel(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController,
         ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>        screenModel,
         ::LinksToStyle const&                                      classicSkinLinksToStyle,
         ::LinksToStyle const&                                      personaLinksToStyle
     );
 
-    MCAPI void _closeCreatePersonaPopup();
+    MCNAPI void _closeCreatePersonaPopup();
 
-    MCAPI void _loadContentFromSkins();
+    MCNAPI void _loadContentFromSkins();
 
-    MCAPI void _setUpBeforeCharacterEditorScreen();
+    MCNAPI void _setUpBeforeCharacterEditorScreen();
 
-    MCAPI void bindPreviewSkin(::UIPropertyBag& bag);
+    MCNAPI void bindPreviewSkin(::UIPropertyBag& bag);
 
-    MCAPI void castBack(::StoreDataDrivenScreenController& controller);
+    MCNAPI void castBack(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void castLeft(::StoreDataDrivenScreenController& controller);
+    MCNAPI void castLeft(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void castRight(::StoreDataDrivenScreenController& controller);
+    MCNAPI void castRight(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void closeCharacterSelectModal();
+    MCNAPI void closeCharacterSelectModal();
 
-    MCAPI void closeDialog(::StoreDataDrivenScreenController& controller);
+    MCNAPI void closeDialog(::StoreDataDrivenScreenController& controller);
 
-    MCAPI ::std::string getAppearanceName() const;
+    MCNAPI ::std::string getAppearanceName() const;
 
-    MCAPI ::std::string getPersonaConfirmText() const;
+    MCNAPI ::std::string getPersonaConfirmText() const;
 
-    MCAPI ::std::string getPreviewImageFilePath(int index) const;
+    MCNAPI ::std::string getPreviewImageFilePath(int index) const;
 
-    MCAPI void launchDifferenceInformationPopup();
+    MCNAPI void launchDifferenceInformationPopup();
 
-    MCAPI void openCharacterSelectModal(::CharacterSelectorVisibility previewMode);
+    MCNAPI void openCharacterSelectModal(::CharacterSelectorVisibility previewMode);
 
-    MCAPI void openDefaultSelector(::StoreDataDrivenScreenController& controller);
+    MCNAPI void openDefaultSelector(::StoreDataDrivenScreenController& controller);
 
-    MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
+    MCNAPI void tick(::ui::DirtyFlag& dirtyFlags);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void closeDifferencesDialog(::StoreDataDrivenScreenController& controller);
+    MCNAPI static void closeDifferencesDialog(::StoreDataDrivenScreenController& controller);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftScreenController> screenController,
         ::Bedrock::NotNullNonOwnerPtr<::PersonaScreenModel>        screenModel,
         ::LinksToStyle const&                                      classicSkinLinksToStyle,

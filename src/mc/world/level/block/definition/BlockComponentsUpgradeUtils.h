@@ -12,7 +12,7 @@ struct BlockComponentsUpgradeUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::BlockComponentDescription const&                         blockComponentDescription,
         ::SharedTypes::v1_26_20::BlockDefinition::BlockComponents& blockComponents
     );

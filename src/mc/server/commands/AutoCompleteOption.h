@@ -37,7 +37,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI AutoCompleteOption(
+    MCNAPI AutoCompleteOption(
         ::std::string const& _visualText,
         ::std::string const& _desc,
         ::std::string const& _tabCompleteText,
@@ -47,9 +47,9 @@ public:
         uint                 _cmdLineMatchOffset
     );
 
-    MCAPI ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
+    MCNAPI ::AutoCompleteOption& operator=(::AutoCompleteOption&&);
 
-    MCAPI ~AutoCompleteOption();
+    MCNAPI ~AutoCompleteOption();
 #endif
     // NOLINTEND
 
@@ -57,7 +57,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& _visualText,
         ::std::string const& _desc,
         ::std::string const& _tabCompleteText,
@@ -73,7 +73,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

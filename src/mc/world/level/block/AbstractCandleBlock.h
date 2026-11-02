@@ -51,50 +51,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addExtinguishEffects(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _addExtinguishEffects(::Block const&, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _checkForWaterlogging(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void
+    MCNAPI void
     _extinguish(::Actor* extinguisher, ::Block const& block, ::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static bool _canBeLit(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI static bool _isLit(::Block const& block);
+    MCNAPI static bool _isLit(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
-    MCAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
-    MCAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
+    MCNAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor*) const;
 
-    MCFOLD int $_getNumCandles(::Block const& block) const;
+    MCNAPI int $_getNumCandles(::Block const& block) const;
 
-    MCFOLD void $_iterateCandles(
+    MCNAPI void $_iterateCandles(
         ::Block const&                                  block,
         ::BlockPos const&                               pos,
         ::brstd::function_ref<void(::Vec3 const&, int)> callback
     ) const;
 
-    MCFOLD void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    MCNAPI void $_tryLightOnFire(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
 
     // NOLINTEND

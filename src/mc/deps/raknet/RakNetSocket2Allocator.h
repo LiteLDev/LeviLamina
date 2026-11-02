@@ -13,7 +13,7 @@ class RakNetSocket2Allocator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void DeallocRNS2(::RakNet::RakNetSocket2* s);
+    MCNAPI static void DeallocRNS2(::RakNet::RakNetSocket2* s);
     // NOLINTEND
 };
 

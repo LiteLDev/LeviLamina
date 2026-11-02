@@ -59,17 +59,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FriendsListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI FriendsListQuery(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
 
-    MCAPI void _updateLists();
+    MCNAPI void _updateLists();
 
-    MCAPI void _updateStatus();
+    MCNAPI void _updateStatus();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::OreUI::ClientDependencies const&);
     // NOLINTEND
 };
 

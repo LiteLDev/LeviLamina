@@ -37,24 +37,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptActorData(::Actor const& actor);
+    MCNAPI explicit ScriptActorData(::Actor const& actor);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>
     getPlayer(::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCAPI ~ScriptActorData();
+    MCNAPI ~ScriptActorData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& actor);
+    MCNAPI void* $ctor(::Actor const& actor);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -41,9 +41,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+    MCNAPI ScriptPlayerBreakBlockBeforeEvent(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    MCAPI ScriptPlayerBreakBlockBeforeEvent(
+    MCNAPI ScriptPlayerBreakBlockBeforeEvent(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,
@@ -55,15 +55,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                       player,
         ::Dimension&                          dimension,
         ::BlockPos const&                     pos,

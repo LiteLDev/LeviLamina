@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void flipTransform(::Flip flip);
+    MCNAPI void flipTransform(::Flip flip);
 
-    MCAPI void lockUVs(
+    MCNAPI void lockUVs(
         uchar                                       rotX,
         uchar                                       rotY,
         uchar                                       rotZ,

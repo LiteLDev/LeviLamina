@@ -86,7 +86,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkConnection(
+    MCNAPI NetworkConnection(
         ::NetworkIdentifier const&                     id,
         ::std::shared_ptr<::NetworkPeer>               peer,
         bool                                           isSafeAndFast,
@@ -106,7 +106,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::NetworkIdentifier const&                     id,
         ::std::shared_ptr<::NetworkPeer>               peer,
         bool                                           isSafeAndFast,

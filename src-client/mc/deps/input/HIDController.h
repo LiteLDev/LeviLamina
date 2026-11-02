@@ -50,19 +50,19 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::HIDController::GamefaceTextEditContext::StateChange checkForChanges();
+        MCNAPI ::HIDController::GamefaceTextEditContext::StateChange checkForChanges();
 
-        MCAPI void replaceTextRange(::std::string const& text, int from, int to);
+        MCNAPI void replaceTextRange(::std::string const& text, int from, int to);
 
-        MCAPI bool tryEnable(::Bedrock::NonOwnerPointer<::ITextBoxController> textBoxController);
+        MCNAPI bool tryEnable(::Bedrock::NonOwnerPointer<::ITextBoxController> textBoxController);
 
-        MCAPI ~GamefaceTextEditContext();
+        MCNAPI ~GamefaceTextEditContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -133,70 +133,70 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HIDController(::IKeyboardProxy* keyboardProxy);
+    MCNAPI explicit HIDController(::IKeyboardProxy* keyboardProxy);
 
-    MCAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
+    MCNAPI void _clipboardPasteHandler(::ApplicationSignal::ClipboardPaste const& signal);
 
-    MCAPI void deinitialize();
+    MCNAPI void deinitialize();
 
-    MCAPI ::std::string getTextBoxBackend() const;
+    MCNAPI ::std::string getTextBoxBackend() const;
 
-    MCAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> textBoxController);
+    MCNAPI void initialize(::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> textBoxController);
 
-    MCAPI void setTextBoxBackend(::std::string_view newText);
+    MCNAPI void setTextBoxBackend(::std::string_view newText);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IKeyboardProxy* keyboardProxy);
+    MCNAPI void* $ctor(::IKeyboardProxy* keyboardProxy);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
+    MCNAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
 
-    MCAPI void $onKeyUp(int keyCode);
+    MCNAPI void $onKeyUp(int keyCode);
 
-    MCAPI void $updateEditContext(int keyCode);
+    MCNAPI void $updateEditContext(int keyCode);
 
-    MCAPI void $onTextInput(::std::string const& utf8Text);
+    MCNAPI void $onTextInput(::std::string const& utf8Text);
 
-    MCAPI void $imeStartComposition();
+    MCNAPI void $imeStartComposition();
 
-    MCAPI void $imeUpdateCompositionText(::std::string const& utf8Text);
+    MCNAPI void $imeUpdateCompositionText(::std::string const& utf8Text);
 
-    MCAPI void $imeConfirmComposition(::std::string const& utf8Text);
+    MCNAPI void $imeConfirmComposition(::std::string const& utf8Text);
 
-    MCAPI void $imeEndComposition();
+    MCNAPI void $imeEndComposition();
 
-    MCAPI void $onTextEditComponentGainedFocus(::std::string_view const currentText, int maxLength);
+    MCNAPI void $onTextEditComponentGainedFocus(::std::string_view const currentText, int maxLength);
 
-    MCAPI void $onTextEditComponentLostFocus();
+    MCNAPI void $onTextEditComponentLostFocus();
 
-    MCAPI void
+    MCNAPI void
     $onShowKeyboard(::std::string_view const currentText, int maxLength, bool isMultiline, ::InputMode inputMode);
 
-    MCAPI void $onHideKeyboard();
+    MCNAPI void $onHideKeyboard();
 
-    MCAPI void $onAppFocusLost();
+    MCNAPI void $onAppFocusLost();
 
-    MCFOLD void $onAppFocusGained();
+    MCNAPI void $onAppFocusGained();
 
-    MCFOLD int $getCaretPosition() const;
+    MCNAPI int $getCaretPosition() const;
 
-    MCAPI void $setCaretPosition(int position);
+    MCNAPI void $setCaretPosition(int position);
 
-    MCFOLD void $setIMEEnabled(bool);
+    MCNAPI void $setIMEEnabled(bool);
     // NOLINTEND
 
 public:

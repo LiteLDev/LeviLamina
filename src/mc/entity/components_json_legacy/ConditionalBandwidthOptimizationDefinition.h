@@ -22,15 +22,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addConditionalBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
+    MCNAPI void addConditionalBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
 
-    MCAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
+    MCNAPI void addDefaultBandwidthOptimization(::ConditionalBandwidthOptimization const& optimization);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<
             ::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::ConditionalBandwidthOptimizationDefinition>>&
             root

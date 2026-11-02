@@ -8,13 +8,13 @@
 namespace WardenSpawnTrackerComponentInternal {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& THREAT_LEVEL_DECREASE_TIMER_KEY();
+MCNAPI ::std::string const& THREAT_LEVEL_DECREASE_TIMER_KEY();
 
-MCAPI ::std::string const& THREAT_LEVEL_INCREASE_COOLDOWN_KEY();
+MCNAPI ::std::string const& THREAT_LEVEL_INCREASE_COOLDOWN_KEY();
 
-MCAPI ::std::string const& THREAT_LEVEL_KEY();
+MCNAPI ::std::string const& THREAT_LEVEL_KEY();
 
-MCAPI ::std::array<::SharedTypes::Legacy::LevelSoundEvent, 4> const& WARDEN_SOUND_EVENTS();
+MCNAPI ::std::array<::SharedTypes::Legacy::LevelSoundEvent, 4> const& WARDEN_SOUND_EVENTS();
 // NOLINTEND
 
 } // namespace WardenSpawnTrackerComponentInternal

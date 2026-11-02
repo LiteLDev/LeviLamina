@@ -45,56 +45,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InRangeOfEntitySensorEntryDefinition(
+    MCNAPI InRangeOfEntitySensorEntryDefinition(
         ::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&
     );
 
-    MCAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&);
 
-    MCAPI bool
+    MCNAPI bool
     operator==(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&) const;
 
-    MCAPI ~InRangeOfEntitySensorEntryDefinition();
+    MCNAPI ~InRangeOfEntitySensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ENTERED_RANGE_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& ENTERED_RANGE_RESPONSE_NAME();
 
-    MCAPI static ::std::string_view const& EXITED_RANGE_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& EXITED_RANGE_RESPONSE_NAME();
 
-    MCAPI static ::std::string_view const& OUT_OF_RANGE_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& OUT_OF_RANGE_RESPONSE_NAME();
 
-    MCAPI static ::std::string_view const& SEARCH_RANGE_NAME();
+    MCNAPI static ::std::string_view const& SEARCH_RANGE_NAME();
 
-    MCAPI static ::std::string_view const& TARGET_ENTITY_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& TARGET_ENTITY_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
 
-    MCAPI static ::std::string_view const& WITHIN_RANGE_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& WITHIN_RANGE_RESPONSE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::InRangeOfEntitySensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

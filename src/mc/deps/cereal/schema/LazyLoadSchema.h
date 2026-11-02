@@ -52,12 +52,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
-    MCAPI ::cereal::SchemaDescription
+    MCNAPI ::cereal::SchemaDescription
     $makeDescription(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const;
 
-    MCAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
+    MCNAPI ::cereal::internal::VariantPriorityLevel $minVariantPriorityLevel(::entt::meta_ctx const& ctx) const;
 
 
     // NOLINTEND

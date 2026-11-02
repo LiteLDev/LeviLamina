@@ -34,40 +34,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameVersion(::ListTag const& tag);
+    MCNAPI explicit GameVersion(::ListTag const& tag);
 
-    MCAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCNAPI GameVersion(uint major, uint minor, uint patch, uint revision, uint isBeta);
 
 #ifdef LL_PLAT_C
-    MCAPI bool operator!=(::GameVersion const& other) const;
+    MCNAPI bool operator!=(::GameVersion const& other) const;
 #endif
 
-    MCAPI bool operator<(::GameVersion const& other) const;
+    MCNAPI bool operator<(::GameVersion const& other) const;
 
-    MCAPI bool operator>=(::GameVersion const& other) const;
+    MCNAPI bool operator>=(::GameVersion const& other) const;
 
-    MCAPI ::std::unique_ptr<::ListTag> serialize() const;
+    MCNAPI ::std::unique_ptr<::ListTag> serialize() const;
 
-    MCAPI ~GameVersion();
+    MCNAPI ~GameVersion();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::GameVersion const& Zero();
+    MCNAPI static ::GameVersion const& Zero();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ListTag const& tag);
+    MCNAPI void* $ctor(::ListTag const& tag);
 
-    MCAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
+    MCNAPI void* $ctor(uint major, uint minor, uint patch, uint revision, uint isBeta);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

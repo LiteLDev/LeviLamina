@@ -16,19 +16,19 @@ struct ScriptItemEnchantmentUnknownIdError : public ::Scripting::BaseError {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemEnchantmentUnknownIdError();
+    MCNAPI ScriptItemEnchantmentUnknownIdError();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

@@ -85,26 +85,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduCloudUploadProgressHandler(
+    MCNAPI EduCloudUploadProgressHandler(
         ::std::string                                               levelId,
         ::std::string                                               levelName,
         ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> eduCloudSaveSystem,
         ::std::optional<::CloudSaveLevelInfo>                       cloudSaveLevelInfo
     );
 
-    MCFOLD ::std::string getLevelId() const;
+    MCNAPI ::std::string getLevelId() const;
 
-    MCAPI ::std::string const getUploadErrorCode() const;
+    MCNAPI ::std::string const getUploadErrorCode() const;
 
-    MCAPI void startUpload();
+    MCNAPI void startUpload();
 
-    MCAPI void updateText(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void updateText(::MinecraftScreenModel& minecraftScreenModel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                               levelId,
         ::std::string                                               levelName,
         ::Bedrock::NonOwnerPointer<::EduCloud::IEduCloudSaveSystem> eduCloudSaveSystem,
@@ -115,24 +115,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::ProgressAnimation $showLoadingBar() const;
+    MCNAPI ::ProgressAnimation $showLoadingBar() const;
     // NOLINTEND
 };

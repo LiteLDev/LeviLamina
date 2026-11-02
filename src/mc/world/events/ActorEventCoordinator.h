@@ -30,12 +30,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
+    MCNAPI void registerWithActorManagerEvents(::IActorManagerConnector& actorManagerConnector);
 
-    MCAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void registerWithGameplayUserManagerEvents(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
+    MCNAPI ::CoordinatorResult sendEvent(::EventRef<::MutableActorGameplayEvent<::CoordinatorResult>> event);
 
-    MCAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
+    MCNAPI void sendEvent(::EventRef<::ActorGameplayEvent<void>> const& event);
     // NOLINTEND
 };

@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void handleInput(::OreUI::ViewInputHandler& inputHandler, ::OreUI::GamepadMode gamepadMode);
+    MCNAPI void handleInput(::OreUI::ViewInputHandler& inputHandler, ::OreUI::GamepadMode gamepadMode);
     // NOLINTEND
 };
 

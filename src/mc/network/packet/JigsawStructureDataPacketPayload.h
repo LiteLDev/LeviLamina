@@ -24,18 +24,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JigsawStructureDataPacketPayload(
+    MCNAPI explicit JigsawStructureDataPacketPayload(
         ::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
+    MCNAPI ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData> getJigsawStrutureData() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureData const& jigsawStructureData);
     // NOLINTEND
 };

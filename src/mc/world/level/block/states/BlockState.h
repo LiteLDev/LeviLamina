@@ -31,7 +31,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::BlockState::StateListNode*& mHead();
+        MCNAPI static ::BlockState::StateListNode*& mHead();
         // NOLINTEND
     };
 
@@ -69,6 +69,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void toNBT(::CompoundTag& tag, int val) const;
+    MCNAPI void toNBT(::CompoundTag& tag, int val) const;
     // NOLINTEND
 };

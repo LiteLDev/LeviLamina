@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ItemStackResponseContainerInfo const& rhs) const;
+    MCNAPI bool operator==(::ItemStackResponseContainerInfo const& rhs) const;
     // NOLINTEND
 };

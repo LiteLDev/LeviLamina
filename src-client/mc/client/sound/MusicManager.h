@@ -50,50 +50,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MusicManager(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
+    MCNAPI explicit MusicManager(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music> _findBiomeSpecificMusic(
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music> _findBiomeSpecificMusic(
         ::Player const&,
         ::std::string const&                  biomeName,
         ::std::optional<::std::string> const& biomeMusicDefinition
     ) const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music> _getMusic(::std::string const& musicDefinition);
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music> _getMusic(::std::string const& musicDefinition);
 
-    MCAPI void _update(::Bedrock::NotNullNonOwnerPtr<::Music> desiredMusic);
+    MCNAPI void _update(::Bedrock::NotNullNonOwnerPtr<::Music> desiredMusic);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music>
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music>
     getSituationalMusic(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
 
-    MCAPI void load(
+    MCNAPI void load(
         ::ResourcePackManager&                                                      resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>                        resourceLoadManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>                          validator,
         ::std::shared_ptr<::std::vector<::Bedrock::Resources::PreloadedPathHandle>> preloadHandles
     );
 
-    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
-    MCAPI void update(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
+    MCNAPI void update(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
 
-    MCAPI ~MusicManager();
+    MCNAPI ~MusicManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool shouldPlayCreativeMusic(bool playerIsCreative, ::BiomeIdType const biomeId);
+    MCNAPI static bool shouldPlayCreativeMusic(bool playerIsCreative, ::BiomeIdType const biomeId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

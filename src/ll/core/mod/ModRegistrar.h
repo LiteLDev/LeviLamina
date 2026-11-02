@@ -28,19 +28,25 @@ public:
 
     [[nodiscard]] std::vector<std::string> getSortedModNames() const;
 
+    [[nodiscard]] std::vector<std::string> getDependencies(std::string_view name) const;
+
+    [[nodiscard]] std::vector<std::string> getDependents(std::string_view name) const;
+
     void loadAllMods() noexcept;
 
     void enableAllMods() noexcept;
 
     void disableAllMods() noexcept;
 
-    Expected<> loadMod(std::string_view name) noexcept;
+    Expected<> loadMod(std::string_view name, bool cascade = false) noexcept;
 
-    Expected<> unloadMod(std::string_view name) noexcept;
+    Expected<> reloadMod(std::string_view name, bool cascade = false) noexcept;
 
-    Expected<> enableMod(std::string_view name) noexcept;
+    Expected<> unloadMod(std::string_view name, bool cascade = false) noexcept;
 
-    Expected<> disableMod(std::string_view name) noexcept;
+    Expected<> enableMod(std::string_view name, bool cascade = false) noexcept;
+
+    Expected<> disableMod(std::string_view name, bool cascade = false) noexcept;
 };
 
 } // namespace ll::mod

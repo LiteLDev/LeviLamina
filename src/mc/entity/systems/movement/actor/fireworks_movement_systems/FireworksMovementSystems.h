@@ -23,7 +23,7 @@ struct SynchedActorDataComponent;
 namespace FireworksMovementSystems {
 // functions
 // NOLINTBEGIN
-MCAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
+MCNAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity(
     ::StrictEntityContext const&       rocket,
     ::SynchedActorDataComponent const& rocketData,
     ::StateVectorComponent&            rocketStateVector,
@@ -33,7 +33,7 @@ MCAPI ::FireworksMovementSystems::RocketAttached fireworksRocketMoveClientEntity
     ::EntityModifier<::ActorSetPositionRequestComponent> const&                                        modifier
 );
 
-MCAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void registerRocketMovementSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace FireworksMovementSystems

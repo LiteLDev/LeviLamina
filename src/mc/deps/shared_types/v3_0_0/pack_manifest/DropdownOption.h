@@ -20,13 +20,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropdownOption(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
+    MCNAPI DropdownOption(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption const&);
     // NOLINTEND
 };
 

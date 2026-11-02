@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void wakeUp();
+    MCNAPI void wakeUp();
     // NOLINTEND
 
 public:

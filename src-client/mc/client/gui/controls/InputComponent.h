@@ -87,12 +87,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::InputComponent::PressType
+    MCNAPI ::InputComponent::PressType
     _detectDoubleClick(uint buttonId, ::ButtonState state, ::glm::vec2 const& pointerPosition, bool isTTSTouchEnabled);
 
-    MCAPI bool _getContentPanelHover(::glm::vec2 const& pointerPosition);
+    MCNAPI bool _getContentPanelHover(::glm::vec2 const& pointerPosition);
 
-    MCAPI bool _sendButtonScreenEvent(
+    MCNAPI bool _sendButtonScreenEvent(
         ::ScreenInputContext&        context,
         ::ScreenButtonMapping const& buttonMapping,
         ::ButtonState                state,
@@ -102,7 +102,7 @@ public:
         ::InputMode                  inputMode
     );
 
-    MCAPI bool _sendHoverScreenEvent(
+    MCNAPI bool _sendHoverScreenEvent(
         ::ScreenInputContext&    context,
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
@@ -110,9 +110,9 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool _shouldHandleControllerDirection(::DirectionId directionId, ::glm::vec2 const& deltaPosition);
+    MCNAPI bool _shouldHandleControllerDirection(::DirectionId directionId, ::glm::vec2 const& deltaPosition);
 
-    MCAPI bool _shouldHandlePressedMapping(
+    MCNAPI bool _shouldHandlePressedMapping(
         ::ScreenButtonMapping const& buttonMapping,
         uint                         buttonId,
         ::ButtonState                state,
@@ -131,7 +131,7 @@ public:
         bool                     isTTSTouchEnabled
     );
 
-    MCAPI bool handleControllerDirection(
+    MCNAPI bool handleControllerDirection(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
         ::ScreenInputContext&    context,
@@ -140,7 +140,7 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool handleFocusLocation(
+    MCNAPI bool handleFocusLocation(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
         ::ScreenInputContext&    context,
@@ -148,7 +148,7 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool handlePointerLocation(
+    MCNAPI bool handlePointerLocation(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
         ::ScreenInputContext&    context,
@@ -157,17 +157,17 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool isWithinClipRegion(::glm::vec2 const& pointerPosition) const;
+    MCNAPI bool isWithinClipRegion(::glm::vec2 const& pointerPosition) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
     // NOLINTEND
 
 public:

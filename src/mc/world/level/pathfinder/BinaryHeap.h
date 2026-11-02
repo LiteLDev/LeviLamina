@@ -18,16 +18,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void changeCost(::PathfinderNode* node, float newCost);
+    MCNAPI void changeCost(::PathfinderNode* node, float newCost);
 
-    MCAPI ::PathfinderNode* insert(::PathfinderNode* node);
+    MCNAPI ::PathfinderNode* insert(::PathfinderNode* node);
 
-    MCAPI ~BinaryHeap();
+    MCNAPI ~BinaryHeap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

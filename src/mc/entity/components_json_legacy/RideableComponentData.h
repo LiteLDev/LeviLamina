@@ -38,22 +38,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RideableComponentData(::RideableComponentData const&);
+    MCNAPI RideableComponentData(::RideableComponentData const&);
 
-    MCAPI ::RideableComponentData& operator=(::RideableComponentData&&);
+    MCNAPI ::RideableComponentData& operator=(::RideableComponentData&&);
 
-    MCAPI ~RideableComponentData();
+    MCNAPI ~RideableComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RideableComponentData const&);
+    MCNAPI void* $ctor(::RideableComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -10,7 +10,7 @@ namespace Realms { struct RealmId; }
 namespace OreUI::EntryPoints::RealmsPlay {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::std::optional<::Realms::RealmId> realmId);
+MCNAPI ::std::string composeRoute(::std::optional<::Realms::RealmId> realmId);
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::RealmsPlay

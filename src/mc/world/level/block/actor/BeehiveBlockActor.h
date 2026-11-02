@@ -54,25 +54,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
+    MCNAPI ::Actor* _revive(::BlockSource& region, ::BeehiveBlockActor::Occupant const& occupant, uchar spawnDirection);
 
-    MCAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
+    MCNAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
 
-    MCAPI void evictAll(::BlockSource& region, bool angry);
+    MCNAPI void evictAll(::BlockSource& region, bool angry);
 
-    MCAPI void saveUserData(::CompoundTag& tag) const;
+    MCNAPI void saveUserData(::CompoundTag& tag) const;
 
-    MCAPI bool tryAdmit(::Actor& actor);
+    MCNAPI bool tryAdmit(::Actor& actor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
 
     // NOLINTEND

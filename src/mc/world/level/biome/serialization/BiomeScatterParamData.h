@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::BiomeScatterParamData const& other) const;
+    MCNAPI bool operator==(::BiomeScatterParamData const& other) const;
     // NOLINTEND
 };

@@ -76,25 +76,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Horse(
+    MCNAPI Horse(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
+    MCNAPI void _setHorseFlag(::HorseFlags flag, bool shouldAddFlag);
 
-    MCAPI void openMouth();
+    MCNAPI void openMouth();
 
-    MCAPI void postAiStep();
+    MCNAPI void postAiStep();
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Vec3 getInterpolatedRidingOffset(
+    MCNAPI static ::Vec3 getInterpolatedRidingOffset(
         ::RenderRotationComponent const& renderRotationComponent,
         ::StandAnimationComponent const& standAnimationComponent,
         float                            alpha
@@ -104,7 +104,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -114,44 +114,44 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $die(::ActorDamageSource const& damagesource);
+    MCNAPI void $die(::ActorDamageSource const& damagesource);
 
-    MCAPI void $setHorseEating(bool state);
+    MCNAPI void $setHorseEating(bool state);
 
-    MCAPI float $getStandAnim(float a) const;
+    MCNAPI float $getStandAnim(float a) const;
 
-    MCAPI bool $isHorseEating() const;
+    MCNAPI bool $isHorseEating() const;
 
-    MCAPI bool $isMouthOpen() const;
+    MCNAPI bool $isMouthOpen() const;
 
-    MCAPI void $setStanding(bool value);
+    MCNAPI void $setStanding(bool value);
 
-    MCAPI void $onFailedTame();
+    MCNAPI void $onFailedTame();
 
-    MCAPI void $makeMad();
+    MCNAPI void $makeMad();
 
-    MCAPI ::ActorUniqueID $getControllingPlayer() const;
+    MCNAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
+    MCNAPI bool $tameToPlayer(::Player& player, bool tamingParticles);
 
-    MCFOLD void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $openContainerComponent(::Player& player);
+    MCNAPI void $openContainerComponent(::Player& player);
 
-    MCAPI ::Vec3 $getInterpolatedRidingOffset(float a, int const) const;
+    MCNAPI ::Vec3 $getInterpolatedRidingOffset(float a, int const) const;
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $feed(int itemId);
+    MCNAPI void $feed(int itemId);
 
-    MCAPI bool $isImmobile() const;
+    MCNAPI bool $isImmobile() const;
 
-    MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
+    MCNAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
 
     // NOLINTEND

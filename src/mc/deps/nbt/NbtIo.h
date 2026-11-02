@@ -18,13 +18,13 @@ namespace NbtIo {
 // NOLINTBEGIN
 MCAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> read(::IDataInput& dis);
 
-MCAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> readNamedCompoundTag(::IDataInput& dis, ::std::string& name);
+MCNAPI ::Bedrock::Result<::std::unique_ptr<::CompoundTag>> readNamedCompoundTag(::IDataInput& dis, ::std::string& name);
 
 MCAPI ::std::unique_ptr<::CompoundTag> readOrGetEmpty(::IDataInput& dis);
 
 MCAPI void write(::CompoundTag const* tag, ::IDataOutput& dos);
 
-MCAPI void writeNamedTag(::std::string const& name, ::Tag const& tag, ::IDataOutput& dos, int depth);
+MCNAPI void writeNamedTag(::std::string const& name, ::Tag const& tag, ::IDataOutput& dos, int depth);
 // NOLINTEND
 
 } // namespace NbtIo

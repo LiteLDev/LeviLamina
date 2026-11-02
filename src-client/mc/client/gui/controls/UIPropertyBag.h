@@ -55,13 +55,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI PropertyChangedNotificationInfo(::UIPropertyBag::PropertyChangedNotificationInfo const&);
+        MCNAPI PropertyChangedNotificationInfo(::UIPropertyBag::PropertyChangedNotificationInfo const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::UIPropertyBag::PropertyChangedNotificationInfo const&);
+        MCNAPI void* $ctor(::UIPropertyBag::PropertyChangedNotificationInfo const&);
         // NOLINTEND
     };
 
@@ -98,19 +98,19 @@ public:
     // NOLINTBEGIN
     MCAPI UIPropertyBag();
 
-    MCAPI void _handlePropertyChangedNotifications(
+    MCNAPI void _handlePropertyChangedNotifications(
         ::std::string_view             sourcePropertyName,
         ::Json::Value const&           newValue,
         ::UIPropertyBag::ContextObject context
     );
 
-    MCAPI void append(::UIPropertyBag const& propertyBag);
+    MCNAPI void append(::UIPropertyBag const& propertyBag);
 
-    MCAPI void appendNoOverwrite(::UIPropertyBag const& propertyBag);
+    MCNAPI void appendNoOverwrite(::UIPropertyBag const& propertyBag);
 
-    MCAPI void clearWeakRegistrations();
+    MCNAPI void clearWeakRegistrations();
 
-    MCAPI void registerForPropertyChangedNotification(
+    MCNAPI void registerForPropertyChangedNotification(
         ::std::string const&         sourcePropertyName,
         ::std::string const&         targetPropertyName,
         ::std::weak_ptr<::UIControl> targetControl,
@@ -122,9 +122,9 @@ public:
         )> const                     callback
     );
 
-    MCAPI void set(::std::string_view key, ::mce::Color color);
+    MCNAPI void set(::std::string_view key, ::mce::Color color);
 
-    MCAPI void set(::std::string_view key, ::glm::ivec2 gridSize);
+    MCNAPI void set(::std::string_view key, ::glm::ivec2 gridSize);
 
     MCAPI void set(::std::string_view key, ::glm::vec2 uv);
     // NOLINTEND

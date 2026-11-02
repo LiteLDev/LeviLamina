@@ -23,18 +23,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SkinData(::Json::Value const& skinDataJson);
+    MCNAPI explicit SkinData(::Json::Value const& skinDataJson);
 
-    MCAPI void applyToActor(::Actor& actor) const;
+    MCNAPI void applyToActor(::Actor& actor) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::Json::Value serialize() const;
+    MCNAPI ::Json::Value serialize() const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Json::Value const& skinDataJson);
+    MCNAPI void* $ctor(::Json::Value const& skinDataJson);
     // NOLINTEND
 };

@@ -41,35 +41,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkinPackModel(
+    MCNAPI SkinPackModel(
         ::PackIdVersion const& packIdentity,
         ::PersonaClient&       skinRepoInterface,
         ::IEntitlement const*  entitlement
     );
 
-    MCAPI SkinPackModel(
+    MCNAPI SkinPackModel(
         ::PackManifest const& manifest,
         ::PersonaClient&      skinRepoInterface,
         ::IEntitlement const* entitlement,
         bool                  isOfflineLoaded
     );
 
-    MCAPI ::std::string const& getLocName() const;
+    MCNAPI ::std::string const& getLocName() const;
 
-    MCAPI int getNumSkins() const;
+    MCNAPI int getNumSkins() const;
 
-    MCAPI ::std::string const& getSkinName(int skinIndex) const;
+    MCNAPI ::std::string const& getSkinName(int skinIndex) const;
 
-    MCAPI void incrementFirstVisibleSkinIndex(int amount);
+    MCNAPI void incrementFirstVisibleSkinIndex(int amount);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::PackIdVersion const& packIdentity, ::PersonaClient& skinRepoInterface, ::IEntitlement const* entitlement);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PackManifest const& manifest,
         ::PersonaClient&      skinRepoInterface,
         ::IEntitlement const* entitlement,

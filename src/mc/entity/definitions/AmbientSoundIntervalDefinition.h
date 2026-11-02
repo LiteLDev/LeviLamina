@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addDynamic(::DynamicAmbientSound const& definition);
+    MCNAPI void addDynamic(::DynamicAmbientSound const& definition);
 
-    MCAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::AmbientSoundServerComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::AmbientSoundIntervalDefinition>>&
             root
     );

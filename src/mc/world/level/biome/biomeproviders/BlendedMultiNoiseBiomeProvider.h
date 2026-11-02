@@ -35,16 +35,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlendedMultiNoiseBiomeProvider(
+    MCNAPI BlendedMultiNoiseBiomeProvider(
         ::OverworldNoises3d const& overworldNoises,
         ::ParameterList            parameterList,
         ::ChunkBlenderFactory&     attenuatorFactory,
         ::BiomeRegistry const&     biomeRegistry
     );
 
-    MCAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
+    MCNAPI ::Biome const* tryGetBiome(::GetBiomeOptions const& getBiomeOptions) const;
 
-    MCAPI ::Biome const* tryGetBiome(
+    MCNAPI ::Biome const* tryGetBiome(
         ::GetBiomeOptions const&                  getBiomeOptions,
         ::ChunkLocalNoiseCache::CacheEntry const& xzCacheEntry,
         ::RTree::Hint*                            hint
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OverworldNoises3d const& overworldNoises,
         ::ParameterList            parameterList,
         ::ChunkBlenderFactory&     attenuatorFactory,

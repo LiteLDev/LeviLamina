@@ -25,17 +25,17 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI TintColor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&);
+    MCNAPI TintColor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&);
 
-    MCFOLD ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor&&);
 
-    MCFOLD ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&) const;
 
-    MCAPI ~TintColor();
+    MCNAPI ~TintColor();
 #endif
     // NOLINTEND
 
@@ -43,7 +43,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TintColor const&);
 #endif
     // NOLINTEND
 
@@ -51,7 +51,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

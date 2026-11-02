@@ -76,43 +76,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _createSteps();
+    MCNAPI void _createSteps();
 
-    MCAPI void _finalizeSliderBox();
+    MCNAPI void _finalizeSliderBox();
 
-    MCAPI void _sendSliderChangeEvent(::ScreenInputContext& context, bool finalized);
+    MCNAPI void _sendSliderChangeEvent(::ScreenInputContext& context, bool finalized);
 
-    MCAPI void _setSelected(bool selected);
+    MCNAPI void _setSelected(bool selected);
 
-    MCAPI void _setSliderValue(float value);
+    MCNAPI void _setSliderValue(float value);
 
-    MCAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
+    MCNAPI void _updateSliderFromPosition(::glm::vec2 const& pointerPosition, bool finalize);
 
-    MCAPI void _updateSliderFromStepSize(int stepSize);
+    MCNAPI void _updateSliderFromStepSize(int stepSize);
 
-    MCAPI bool getSliderSelected() const;
+    MCNAPI bool getSliderSelected() const;
 
-    MCAPI void setNumberSteps(int steps);
+    MCNAPI void setNumberSteps(int steps);
 
-    MCAPI void setSliderValue(float value);
+    MCNAPI void setSliderValue(float value);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCFOLD ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

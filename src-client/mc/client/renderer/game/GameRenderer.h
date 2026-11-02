@@ -127,54 +127,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRenderer(
+    MCNAPI GameRenderer(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&       ci,
         ::MinecraftGraphics&                                          graphics,
         ::Bedrock::NotNullNonOwnerPtr<::Gameface::IOffscreenRenderer> gamefaceOffscreenRenderer,
         ::Bedrock::NotNullNonOwnerPtr<::FrameAnomalyDetector> const&  frameAnomalyDetector
     );
 
-    MCAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
+    MCNAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
 
-    MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
+    MCNAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
 
-    MCAPI ::ScreenContext makeScreenContext(float a);
+    MCNAPI ::ScreenContext makeScreenContext(float a);
 
-    MCAPI void onAppSuspended();
+    MCNAPI void onAppSuspended();
 
-    MCAPI void onSubClientRemoved(::IClientInstance const& client);
+    MCNAPI void onSubClientRemoved(::IClientInstance const& client);
 
-    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
     MCAPI void renderCurrentFrame(float a);
 
-    MCAPI void renderDebugScreen(::ScreenContext& screenContext, ::IClientInstance& client);
+    MCNAPI void renderDebugScreen(::ScreenContext& screenContext, ::IClientInstance& client);
 
-    MCAPI void setLevel(::Level* level, ::Dimension* dimension);
+    MCNAPI void setLevel(::Level* level, ::Dimension* dimension);
 
-    MCAPI void tick();
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setClearColor(::IClientInstance& client, ::ScreenContext& screenContext);
+    MCNAPI static void setClearColor(::IClientInstance& client, ::ScreenContext& screenContext);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::Color& mClearColor();
+    MCNAPI static ::mce::Color& mClearColor();
 
-    MCAPI static bool& mSplitScreenActive();
+    MCNAPI static bool& mSplitScreenActive();
 
-    MCAPI static ::std::string& mVersionString();
+    MCNAPI static ::std::string& mVersionString();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&       ci,
         ::MinecraftGraphics&                                          graphics,
         ::Bedrock::NotNullNonOwnerPtr<::Gameface::IOffscreenRenderer> gamefaceOffscreenRenderer,

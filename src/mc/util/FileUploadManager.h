@@ -92,21 +92,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI FileUploadManager(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
 #ifdef LL_PLAT_C
-    MCAPI FileUploadManager(
+    MCNAPI FileUploadManager(
         ::TaskGroup&                                         taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
     );
 #endif
 
-    MCAPI void _uploadChunk(::FileChunkInfo const& chunk);
+    MCNAPI void _uploadChunk(::FileChunkInfo const& chunk);
 
-    MCAPI void addCallbackQueue(::std::function<void()> callback);
+    MCNAPI void addCallbackQueue(::std::function<void()> callback);
 
-    MCAPI void uploadFile(
+    MCNAPI void uploadFile(
         ::std::string const& uploadId,
         ::Core::Path const&  filePath,
         bool                 autoStartUpload,
@@ -117,16 +117,16 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BOUNDARY();
+    MCNAPI static ::std::string const& BOUNDARY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
+    MCNAPI void* $ctor(::TaskGroup& taskGroup, ::std::shared_ptr<::IFileChunkUploader> fileUploader);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::TaskGroup&                                         taskGroup,
         ::std::shared_ptr<::IFileChunkUploader>              fileUploader,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> const& fileArchiver
@@ -137,15 +137,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getUploadProgress() const;
+    MCNAPI float $getUploadProgress() const;
 
-    MCAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
+    MCNAPI void $uploadFileToRealmStorage(::std::string const& uploadId, ::Core::Path const& path, int const slotIndex);
 
 
     // NOLINTEND

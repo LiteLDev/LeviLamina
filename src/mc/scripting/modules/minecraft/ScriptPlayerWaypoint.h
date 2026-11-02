@@ -30,13 +30,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
+    MCNAPI ::std::unique_ptr<::ServerWaypoint> $createWaypoint() const;
 
 
     // NOLINTEND

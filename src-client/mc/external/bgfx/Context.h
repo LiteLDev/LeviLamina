@@ -276,28 +276,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Context();
+    MCNAPI Context();
 
-    MCAPI void _initBegin();
+    MCNAPI void _initBegin();
 
-    MCAPI bool _initFinalize();
+    MCNAPI bool _initFinalize();
 
-    MCAPI void _initPending(bool async);
+    MCNAPI void _initPending(bool async);
 
-    MCAPI void _shutdownBegin();
+    MCNAPI void _shutdownBegin();
 
-    MCAPI void _shutdownFinalize();
+    MCNAPI void _shutdownFinalize();
 
-    MCAPI uint64 allocDynamicIndexBuffer(uint _size, ushort _flags);
+    MCNAPI uint64 allocDynamicIndexBuffer(uint _size, ushort _flags);
 
-    MCAPI ::bgfx::Context::DynamicVertexAllocation
+    MCNAPI ::bgfx::Context::DynamicVertexAllocation
     allocDynamicVertexBuffer(uint _size, ushort _flags, ushort _aligment);
 
-    MCAPI ::bgfx::Encoder* begin();
+    MCNAPI ::bgfx::Encoder* begin();
 
-    MCAPI ::bgfx::InitResult continueInit(bool async);
+    MCNAPI ::bgfx::InitResult continueInit(bool async);
 
-    MCAPI ::bgfx::AccelerationStructureHandle createBottomLevelAccelerationStructure(
+    MCNAPI ::bgfx::AccelerationStructureHandle createBottomLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle           _handle,
         ::bgfx::DynamicVertexBufferHandle             _vertexBufferHandle,
         ::bgfx::VertexDeclHandle                      _vertexDeclHandle,
@@ -309,7 +309,7 @@ public:
         ::bgfx::AccelerationStructureBuildFlags::Enum _flags
     );
 
-    MCAPI ::bgfx::AccelerationStructureHandle createBottomLevelAccelerationStructure(
+    MCNAPI ::bgfx::AccelerationStructureHandle createBottomLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle           _handle,
         ::bgfx::VertexBufferHandle                    _vertexBufferHandle,
         ::bgfx::VertexDeclHandle                      _vertexDeclHandle,
@@ -321,36 +321,36 @@ public:
         ::bgfx::AccelerationStructureBuildFlags::Enum _flags
     );
 
-    MCAPI ::bgfx::DynamicIndexBufferHandle createDynamicIndexBuffer(::bgfx::Memory const* _mem, ushort _flags);
+    MCNAPI ::bgfx::DynamicIndexBufferHandle createDynamicIndexBuffer(::bgfx::Memory const* _mem, ushort _flags);
 
-    MCAPI ::bgfx::DynamicIndexBufferHandle createDynamicIndexBuffer(uint _num, ushort _flags);
+    MCNAPI ::bgfx::DynamicIndexBufferHandle createDynamicIndexBuffer(uint _num, ushort _flags);
 
-    MCAPI ::bgfx::DynamicVertexBufferHandle
+    MCNAPI ::bgfx::DynamicVertexBufferHandle
     createDynamicVertexBuffer(::bgfx::Memory const* _mem, ::bgfx::VertexDecl const& _decl, ushort _flags);
 
-    MCAPI ::bgfx::DynamicVertexBufferHandle
+    MCNAPI ::bgfx::DynamicVertexBufferHandle
     createDynamicVertexBuffer(uint _num, ::bgfx::VertexDecl const& _decl, ushort _flags);
 
-    MCAPI ::bgfx::FrameBufferHandle
+    MCNAPI ::bgfx::FrameBufferHandle
     createFrameBuffer(uchar _num, ::bgfx::Attachment const* _attachment, bool _destroyTextures);
 
-    MCAPI ::bgfx::FrameBufferHandle
+    MCNAPI ::bgfx::FrameBufferHandle
     createFrameBuffer(void* _nwh, ushort _width, ushort _height, ::bgfx::TextureFormat::Enum _depthFormat);
 
-    MCAPI ::bgfx::IndexBufferHandle createIndexBuffer(::bgfx::Memory const* _mem, ushort _flags);
+    MCNAPI ::bgfx::IndexBufferHandle createIndexBuffer(::bgfx::Memory const* _mem, ushort _flags);
 
-    MCAPI ::bgfx::ProgramHandle createProgram(::bgfx::ShaderHandle _vsh, bool _destroyShader);
+    MCNAPI ::bgfx::ProgramHandle createProgram(::bgfx::ShaderHandle _vsh, bool _destroyShader);
 
-    MCAPI ::bgfx::ProgramHandle
+    MCNAPI ::bgfx::ProgramHandle
     createProgram(::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh, bool _destroyShaders);
 
-    MCAPI ::bgfx::ShaderHandle createShader(::bgfx::Memory const* _mem);
+    MCNAPI ::bgfx::ShaderHandle createShader(::bgfx::Memory const* _mem);
 
-    MCAPI ::bgfx::ShaderBufferHandle createShaderBuffer(::bgfx::Memory const* _mem, uint _stride, ushort _flags);
+    MCNAPI ::bgfx::ShaderBufferHandle createShaderBuffer(::bgfx::Memory const* _mem, uint _stride, ushort _flags);
 
-    MCAPI ::bgfx::ShaderBufferHandle createShaderBuffer(uint _num, uint _stride, ushort _flags);
+    MCNAPI ::bgfx::ShaderBufferHandle createShaderBuffer(uint _num, uint _stride, ushort _flags);
 
-    MCAPI ::bgfx::TextureHandle createTexture(
+    MCNAPI ::bgfx::TextureHandle createTexture(
         ::bgfx::Memory const*         _mem,
         uint                          _flags,
         uchar                         _skip,
@@ -359,82 +359,82 @@ public:
         bool                          _immutable
     );
 
-    MCAPI ::bgfx::AccelerationStructureHandle createTopLevelAccelerationStructure(
+    MCNAPI ::bgfx::AccelerationStructureHandle createTopLevelAccelerationStructure(
         ::bgfx::AccelerationStructureHandle _handle,
         uint                                numInstances,
         ::bgfx::TopLevelInstanceDesc*       instanceDescs
     );
 
-    MCAPI ::bgfx::TransientIndexBuffer* createTransientIndexBuffer(uint _size);
+    MCNAPI ::bgfx::TransientIndexBuffer* createTransientIndexBuffer(uint _size);
 
-    MCAPI ::bgfx::TransientVertexBuffer* createTransientVertexBuffer(uint _size, ::bgfx::VertexDecl const* _decl);
+    MCNAPI ::bgfx::TransientVertexBuffer* createTransientVertexBuffer(uint _size, ::bgfx::VertexDecl const* _decl);
 
-    MCAPI ::bgfx::UniformHandle createUniform(char const* _name, ::bgfx::UniformType::Enum _type, ushort _num);
+    MCNAPI ::bgfx::UniformHandle createUniform(char const* _name, ::bgfx::UniformType::Enum _type, ushort _num);
 
-    MCAPI ::bgfx::VertexBufferHandle
+    MCNAPI ::bgfx::VertexBufferHandle
     createVertexBuffer(::bgfx::Memory const* _mem, ::bgfx::VertexDecl const& _decl, ushort _flags);
 
-    MCAPI ::bgfx::VertexDeclHandle createVertexDecl(::bgfx::VertexDecl const& _decl);
+    MCNAPI ::bgfx::VertexDeclHandle createVertexDecl(::bgfx::VertexDecl const& _decl);
 
-    MCAPI void destroyAccelerationStructure(::bgfx::AccelerationStructureHandle _handle);
+    MCNAPI void destroyAccelerationStructure(::bgfx::AccelerationStructureHandle _handle);
 
-    MCAPI void destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
+    MCNAPI void destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
 
-    MCAPI void destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
+    MCNAPI void destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
 
-    MCAPI void destroyProgram(::bgfx::ProgramHandle _handle);
+    MCNAPI void destroyProgram(::bgfx::ProgramHandle _handle);
 
-    MCAPI void destroyUniform(::bgfx::UniformHandle _handle);
+    MCNAPI void destroyUniform(::bgfx::UniformHandle _handle);
 
-    MCAPI void destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
+    MCNAPI void destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
-    MCAPI ::bgfx::VertexDeclHandle findVertexDecl(::bgfx::VertexDecl const& _decl);
+    MCNAPI ::bgfx::VertexDeclHandle findVertexDecl(::bgfx::VertexDecl const& _decl);
 
-    MCAPI void flushTextureUpdateBatch(::bgfx::CommandBuffer& _cmdbuf);
+    MCNAPI void flushTextureUpdateBatch(::bgfx::CommandBuffer& _cmdbuf);
 
     MCAPI uint frame(uint _flags);
 
-    MCAPI ::bgfx::Stats const getPerfStats();
+    MCNAPI ::bgfx::Stats const getPerfStats();
 
-    MCAPI ushort getPerfViewStats(ushort _numViewStats, ::bgfx::ViewStats* _viewStats);
+    MCNAPI ushort getPerfViewStats(ushort _numViewStats, ::bgfx::ViewStats* _viewStats);
 
-    MCAPI void getUniformInfo(::bgfx::UniformHandle _handle, ::bgfx::UniformInfo& _info);
+    MCNAPI void getUniformInfo(::bgfx::UniformHandle _handle, ::bgfx::UniformInfo& _info);
 
-    MCAPI uint readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
+    MCNAPI uint readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
 
-    MCAPI ::bgfx::RenderFrame::Enum renderFrame(int _msecs);
+    MCNAPI ::bgfx::RenderFrame::Enum renderFrame(int _msecs);
 
-    MCAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
+    MCNAPI void rendererExecCommands(::bgfx::CommandBuffer& _cmdbuf);
 
-    MCAPI void reset(uint _width, uint _height, uint _flags);
+    MCNAPI void reset(uint _width, uint _height, uint _flags);
 
-    MCAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
+    MCNAPI void setName(::bgfx::ShaderHandle _handle, ::bx::StringView const& _name);
 
-    MCAPI void setName(::bgfx::ShaderBufferHandle _handle, ::bx::StringView const& _name);
+    MCNAPI void setName(::bgfx::ShaderBufferHandle _handle, ::bx::StringView const& _name);
 
-    MCAPI void setViewName(ushort _id, char const* _name);
+    MCNAPI void setViewName(ushort _id, char const* _name);
 
-    MCAPI void shaderBufferDecRef(::bgfx::ShaderBufferHandle _handle);
+    MCNAPI void shaderBufferDecRef(::bgfx::ShaderBufferHandle _handle);
 
-    MCAPI void shaderDecRef(::bgfx::ShaderHandle _handle);
+    MCNAPI void shaderDecRef(::bgfx::ShaderHandle _handle);
 
-    MCAPI void swap();
+    MCNAPI void swap();
 
-    MCAPI void textureDecRef(::bgfx::TextureHandle _handle);
+    MCNAPI void textureDecRef(::bgfx::TextureHandle _handle);
 
-    MCAPI void update(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
+    MCNAPI void update(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
 
-    MCAPI void update(::bgfx::DynamicIndexBufferHandle _handle, uint _startIndex, ::bgfx::Memory const* _mem);
+    MCNAPI void update(::bgfx::DynamicIndexBufferHandle _handle, uint _startIndex, ::bgfx::Memory const* _mem);
 
-    MCAPI void update(::bgfx::DynamicVertexBufferHandle _handle, uint _startVertex, ::bgfx::Memory const* _mem);
+    MCNAPI void update(::bgfx::DynamicVertexBufferHandle _handle, uint _startVertex, ::bgfx::Memory const* _mem);
 
-    MCAPI void
+    MCNAPI void
     updateOffset(::bgfx::DynamicIndexBufferHandle _handle, uint _offset, uint _declStride, ::bgfx::Memory const* _mem);
 
-    MCAPI void
+    MCNAPI void
     updateOffset(::bgfx::DynamicVertexBufferHandle _handle, uint _offset, uint _declStride, ::bgfx::Memory const* _mem);
 
-    MCAPI void updateTexture(
+    MCNAPI void updateTexture(
         ::bgfx::TextureHandle _handle,
         uchar                 _side,
         uchar                 _mip,
@@ -448,27 +448,27 @@ public:
         ::bgfx::Memory const* _mem
     );
 
-    MCAPI ::bgfx::TextureHandle wrapExternalTexture(::bgfx::RendererType::Enum _type, void* _texturePtr);
+    MCNAPI ::bgfx::TextureHandle wrapExternalTexture(::bgfx::RendererType::Enum _type, void* _texturePtr);
 
-    MCAPI ~Context();
+    MCNAPI ~Context();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int renderThread(::bx::Thread*, void*);
+    MCNAPI static int renderThread(::bx::Thread*, void*);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

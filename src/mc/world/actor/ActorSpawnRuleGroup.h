@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorSpawnRuleGroup(
+    MCNAPI ActorSpawnRuleGroup(
         ::ResourcePackManager&         resourcePackManager,
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,
@@ -50,17 +50,17 @@ public:
         ::IMinecraftEventing&          eventing
     );
 
-    MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
+    MCNAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
 
-    MCAPI int getDelayEnd(::std::string const& id) const;
+    MCNAPI int getDelayEnd(::std::string const& id) const;
 
-    MCAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
+    MCNAPI void resetDelayEnd(::MobSpawnRules spawnRules, uint64 age, ::Random& random);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourcePackManager&         resourcePackManager,
         ::IWorldRegistriesProvider&    registries,
         ::br::spawn::SpawnPlacements&  spawnPlacements,

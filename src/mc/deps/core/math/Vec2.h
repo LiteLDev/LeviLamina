@@ -9,8 +9,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec2 const& ONE();
+    MCNAPI static ::Vec2 const& ONE();
 
-    MCAPI static ::Vec2 const& ZERO();
+    MCNAPI static ::Vec2 const& ZERO();
     // NOLINTEND
 };

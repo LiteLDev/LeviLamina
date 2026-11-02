@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastScreenController(
+    MCNAPI ToastScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>                        model,
         ::PersonaRepository&                                             personaRepository,
         ::IOptionRegistry&                                               Options,
@@ -85,15 +85,15 @@ public:
         ::Bedrock::NonOwnerPointer<::Parties::PartySystem>               partySystem
     );
 
-    MCAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
+    MCNAPI ::IStoreCatalogItem const* _getAchievementPersonaPiece();
 
-    MCAPI ::std::string readToastData(::std::string const& field_name) const;
+    MCNAPI ::std::string readToastData(::std::string const& field_name) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>                        model,
         ::PersonaRepository&                                             personaRepository,
         ::IOptionRegistry&                                               Options,
@@ -107,16 +107,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $showToast(::ToastMessage message, bool animateIn);
+    MCNAPI void $showToast(::ToastMessage message, bool animateIn);
 
-    MCAPI void $removeToast();
+    MCNAPI void $removeToast();
 
-    MCAPI void $refreshToast();
+    MCNAPI void $refreshToast();
     // NOLINTEND
 };

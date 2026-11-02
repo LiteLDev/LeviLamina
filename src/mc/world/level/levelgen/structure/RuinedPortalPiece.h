@@ -71,23 +71,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos const pos);
+    MCNAPI void _addNetherrackDripColumn(::Random& random, ::BlockSource& region, ::BlockPos const pos);
 
-    MCAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos const pos);
+    MCNAPI void _maybeReplaceGoldBlock(::Random& random, ::BlockSource& region, ::BlockPos const pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
+    MCNAPI static ::Block const& _getRandomFacingStairs(::Random& random, ::Block const& stairBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::StructurePieceType $getType() const;
+    MCNAPI ::StructurePieceType $getType() const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

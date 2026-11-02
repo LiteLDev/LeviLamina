@@ -14,25 +14,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Mutex();
+    MCNAPI Mutex();
 
-    MCAPI void lock();
+    MCNAPI void lock();
 
-    MCAPI void unlock();
+    MCNAPI void unlock();
 
-    MCAPI ~Mutex();
+    MCNAPI ~Mutex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

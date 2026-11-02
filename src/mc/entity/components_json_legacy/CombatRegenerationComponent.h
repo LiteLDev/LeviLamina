@@ -22,10 +22,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
+    MCNAPI void _applyCombatBuffsToMob(::Actor& owner, ::Actor& mob);
 
-    MCAPI bool _shouldApplyCombatBuffs(::Actor& owner, ::Actor& mob);
+    MCNAPI bool _shouldApplyCombatBuffs(::Actor& owner, ::Actor& mob);
 
-    MCAPI void tick(::Actor& owner);
+    MCNAPI void tick(::Actor& owner);
     // NOLINTEND
 };

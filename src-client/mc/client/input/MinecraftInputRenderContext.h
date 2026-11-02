@@ -82,34 +82,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecraftInputRenderContext(
+    MCNAPI MinecraftInputRenderContext(
         ::ScreenContext&                       screenContext,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::FontHandle                           fontHandle
     );
 
-    MCAPI void render(::mce::TexturePtr overrideTexture);
+    MCNAPI void render(::mce::TexturePtr overrideTexture);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ScreenContext& screenContext, ::std::shared_ptr<::mce::TextureGroup> textureGroup, ::FontHandle fontHandle);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setColor(::mce::Color const& color);
+    MCNAPI void $setColor(::mce::Color const& color);
 
-    MCAPI void $drawRect(
+    MCNAPI void $drawRect(
         ::RectangleArea const& rect,
         int                    u,
         int                    v,
@@ -121,11 +121,11 @@ public:
         float                  py
     ) const;
 
-    MCAPI ::RectangleArea $measureText(::glm::vec2 const& center, ::std::string const& text) const;
+    MCNAPI ::RectangleArea $measureText(::glm::vec2 const& center, ::std::string const& text) const;
 
-    MCAPI void $drawText(::RectangleArea const& area, ::std::string const& text);
+    MCNAPI void $drawText(::RectangleArea const& area, ::std::string const& text);
 
-    MCAPI void $forceRender(::std::string const& texturePath);
+    MCNAPI void $forceRender(::std::string const& texturePath);
     // NOLINTEND
 
 public:

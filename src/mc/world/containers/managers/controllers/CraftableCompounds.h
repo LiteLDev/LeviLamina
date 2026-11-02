@@ -40,18 +40,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CraftableCompounds();
+    MCNAPI CraftableCompounds();
 
-    MCAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
+    MCNAPI ::std::string _getCompoundId(::std::vector<::ItemStack> const& input);
 
-    MCAPI void _registerCompound(
+    MCNAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::ItemStack const&                          result,
         ::LabTableReactionType                      reaction,
         ::CompoundContainerType                     containerOverride
     );
 
-    MCAPI void _registerCompound(
+    MCNAPI void _registerCompound(
         ::std::vector<::ChemistryIngredient> const& input,
         ::CompoundType                              result,
         ::LabTableReactionType                      reaction,
@@ -59,33 +59,33 @@ public:
         int                                         stackCount
     );
 
-    MCAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
+    MCNAPI ::ItemStack const& getCompound(::std::vector<::ItemStack> const& components);
 
 #ifdef LL_PLAT_C
-    MCAPI ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
+    MCNAPI ::CompoundContainerType getContainerType(::std::vector<::ItemStack> const& components);
 #endif
 
-    MCAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
+    MCNAPI ::LabTableReactionType getReaction(::std::vector<::ItemStack> const& components);
 
-    MCAPI void registerCompounds();
+    MCNAPI void registerCompounds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_registerCompound(
+    MCNAPI void $_registerCompound(
         ::std::vector<::ItemStack> const& input,
         ::ItemStack const&                result,
         ::LabTableReactionType            reaction,

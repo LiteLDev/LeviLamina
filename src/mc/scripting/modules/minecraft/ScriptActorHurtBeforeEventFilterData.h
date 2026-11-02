@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtBeforeEventFilterData(
+    MCNAPI ScriptActorHurtBeforeEventFilterData(
         ::ScriptModuleMinecraft::ScriptActorData actorData,
         ::SharedTypes::Legacy::ActorDamageCause  damageCause
     );
@@ -32,14 +32,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilterData
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtBeforeEventFilterData
     create(::ScriptModuleMinecraft::ScriptActorData actorData, ::SharedTypes::Legacy::ActorDamageCause damageCause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ScriptModuleMinecraft::ScriptActorData actorData, ::SharedTypes::Legacy::ActorDamageCause damageCause);
     // NOLINTEND
 };

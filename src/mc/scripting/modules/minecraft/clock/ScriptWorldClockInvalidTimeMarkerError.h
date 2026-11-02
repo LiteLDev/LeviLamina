@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorldClockInvalidTimeMarkerError(
+    MCNAPI ScriptWorldClockInvalidTimeMarkerError(
         ::ScriptModuleMinecraft::ErrorMemberType memberType,
         ::std::string_view                       propertyName
     );
@@ -30,13 +30,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ErrorMemberType memberType, ::std::string_view propertyName);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ErrorMemberType memberType, ::std::string_view propertyName);
     // NOLINTEND
 };
 

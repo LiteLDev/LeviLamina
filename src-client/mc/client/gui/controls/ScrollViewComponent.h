@@ -80,32 +80,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScrollViewComponent(::UIControl& owner);
+    MCNAPI explicit ScrollViewComponent(::UIControl& owner);
 
-    MCAPI ::glm::vec2 _getContentSize() const;
+    MCNAPI ::glm::vec2 _getContentSize() const;
 
-    MCAPI void _makeScrollBarVisible();
+    MCNAPI void _makeScrollBarVisible();
 
-    MCAPI void _setContentOffset(
+    MCNAPI void _setContentOffset(
         ::LayoutComponent& layout,
         ::glm::vec2        offset,
         ::glm::vec2 const& scrollContentSize,
         ::glm::vec2 const& scrollViewPortSize
     );
 
-    MCAPI ::ui::AnimationStatus _updateDynamicsAndScrollPosition(::mce::TimeStep const& timeStep);
+    MCNAPI ::ui::AnimationStatus _updateDynamicsAndScrollPosition(::mce::TimeStep const& timeStep);
 
-    MCAPI void _updateScroll(::glm::vec2 const& delta, bool updateScrollBoxLayout);
+    MCNAPI void _updateScroll(::glm::vec2 const& delta, bool updateScrollBoxLayout);
 
-    MCAPI void _updateScrollBoxSize();
+    MCNAPI void _updateScrollBoxSize();
 
-    MCAPI void _updateScrollFromScrollBox(::ScreenEvent const& screenEvent);
+    MCNAPI void _updateScrollFromScrollBox(::ScreenEvent const& screenEvent);
 
-    MCAPI void _updateTouchScrollbarVisibility(::mce::TimeStep const& timeStep);
+    MCNAPI void _updateTouchScrollbarVisibility(::mce::TimeStep const& timeStep);
 
-    MCAPI ::ui::AnimationStatus animationScrollingTick(::mce::TimeStep const& timeStep);
+    MCNAPI ::ui::AnimationStatus animationScrollingTick(::mce::TimeStep const& timeStep);
 
-    MCAPI bool handleScrollDirection(
+    MCNAPI bool handleScrollDirection(
         ::VisualTree&            visualTree,
         ::UIAnimationController& animationController,
         ::ScreenInputContext&    context,
@@ -114,33 +114,33 @@ public:
         bool                     alreadyHandled
     );
 
-    MCAPI bool isPointInViewPort(::glm::vec2 const& pointerPosition) const;
+    MCNAPI bool isPointInViewPort(::glm::vec2 const& pointerPosition) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $reload(::UIComponent const& rhs);
+    MCNAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCFOLD void $onNotifyChildRemoved();
+    MCNAPI void $onNotifyChildRemoved();
 
-    MCAPI bool $onLayoutChange();
+    MCNAPI bool $onLayoutChange();
     // NOLINTEND
 };

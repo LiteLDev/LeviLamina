@@ -51,47 +51,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OfferRepositoryFacet(
+    MCNAPI OfferRepositoryFacet(
         ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository,
         ::std::shared_ptr<::ISubscriptionStateManager>    subscriptionStateManager,
         bool                                              isCommerceV2Enabled
     );
 
-    MCFOLD ::std::string const& getCoreSubscriptionPrice() const;
+    MCNAPI ::std::string const& getCoreSubscriptionPrice() const;
 
-    MCFOLD ::std::string const& getCoreTerms() const;
+    MCNAPI ::std::string const& getCoreTerms() const;
 
-    MCFOLD ::std::string const& getCoreTermsExtra() const;
+    MCNAPI ::std::string const& getCoreTermsExtra() const;
 
-    MCFOLD ::std::string const& getPlusSubscriptionPrice() const;
+    MCNAPI ::std::string const& getPlusSubscriptionPrice() const;
 
-    MCFOLD ::std::string const& getPlusTerms() const;
+    MCNAPI ::std::string const& getPlusTerms() const;
 
-    MCFOLD ::std::string const& getPlusTermsExtra() const;
+    MCNAPI ::std::string const& getPlusTermsExtra() const;
 
-    MCFOLD ::std::string const& getStoreId() const;
+    MCNAPI ::std::string const& getStoreId() const;
 
-    MCFOLD bool isFinishedQueryingProductsAndPurchases() const;
+    MCNAPI bool isFinishedQueryingProductsAndPurchases() const;
 
-    MCAPI bool isRealmsCoreOfferAvailable() const;
+    MCNAPI bool isRealmsCoreOfferAvailable() const;
 
-    MCFOLD bool isRealmsPlusOfferAvailable() const;
+    MCNAPI bool isRealmsPlusOfferAvailable() const;
 
-    MCAPI bool isRealmsTrialOfferAvailable() const;
+    MCNAPI bool isRealmsTrialOfferAvailable() const;
 
-    MCAPI void setFacetDirty();
+    MCNAPI void setFacetDirty();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> offerRepository,
         ::std::shared_ptr<::ISubscriptionStateManager>    subscriptionStateManager,
         bool                                              isCommerceV2Enabled
@@ -101,7 +101,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

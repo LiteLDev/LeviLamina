@@ -86,28 +86,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Slime(
+    MCNAPI Slime(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
         ::Slime::Parameters                parameters
     );
 
-    MCAPI void _emitLandParticles();
+    MCNAPI void _emitLandParticles();
 
-    MCAPI void _justJumped();
+    MCNAPI void _justJumped();
 
-    MCAPI void _justLanded();
+    MCNAPI void _justLanded();
 
     MCAPI void _setSlimeSize(int size);
 
-    MCAPI void postNormalTick(bool wasOnGround);
+    MCNAPI void postNormalTick(bool wasOnGround);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext,
@@ -118,27 +118,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $onSynchedDataUpdate(int dataId);
+    MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI bool $checkSpawnRules(bool fromSpawner);
+    MCNAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCFOLD bool $_shouldSquish() const;
+    MCNAPI bool $_shouldSquish() const;
 
-    MCAPI bool $_shouldPlayJumpSound() const;
+    MCNAPI bool $_shouldPlayJumpSound() const;
 
-    MCAPI bool $_shouldPlayLandSound() const;
+    MCNAPI bool $_shouldPlayLandSound() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
     // NOLINTEND

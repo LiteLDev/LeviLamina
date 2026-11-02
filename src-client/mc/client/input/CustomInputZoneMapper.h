@@ -63,44 +63,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomInputZoneMapper();
+    MCNAPI CustomInputZoneMapper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMapping(
+    MCNAPI void $setMapping(
         ::InputEventQueue&      eventQueue,
         ::BindingFactory const& bindingFactory,
         ::InputMapping const&   inputMapping,
         int                     controllerId
     );
 
-    MCAPI void $clearMapping(int controllerId);
+    MCNAPI void $clearMapping(int controllerId);
 
-    MCAPI bool $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
+    MCNAPI bool $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const&);
 
-    MCFOLD void $clearInputDeviceQueue();
+    MCNAPI void $clearInputDeviceQueue();
 
-    MCAPI ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
 
-    MCFOLD void $setWindowSize(int width, int height);
+    MCNAPI void $setWindowSize(int width, int height);
 
-    MCAPI void $changeControllerId(int oldId, int newId);
+    MCNAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND
 
 public:

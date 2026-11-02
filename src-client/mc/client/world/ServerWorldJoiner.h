@@ -80,7 +80,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerWorldJoiner(
+    MCNAPI ServerWorldJoiner(
         ::IClientInstance&                                                       client,
         ::IMinecraftEventing&                                                    minecraftEventing,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
@@ -100,20 +100,20 @@ public:
         ::std::function<void(::World::RecentlyPlayedPendingTargetData)>          prepareRecentlyPlayedTarget
     );
 
-    MCAPI ::Social::GameConnectionInfo
+    MCNAPI ::Social::GameConnectionInfo
     _getGameConnectionInfo(::NetworkWorldInfo& world, ::World::ServerWorldJoiner::ServerType const serverType);
 
-    MCAPI ::Bedrock::Threading::Async<::World::JoinServerWorldResult> _joinExperienceWorld(
+    MCNAPI ::Bedrock::Threading::Async<::World::JoinServerWorldResult> _joinExperienceWorld(
         ::ExperienceJoinRequestInfo const& connectionData,
         ::PlayerJoinWorldContext const&    joinContext
     );
 
-    MCAPI void _joinFriendWorld(
+    MCNAPI void _joinFriendWorld(
         ::NetworkWorldInfo const&                             world,
         ::std::function<void(::World::JoinServerWorldResult)> onCompleteCallback
     );
 
-    MCAPI void _joinNetworkWorld(
+    MCNAPI void _joinNetworkWorld(
         ::NetworkWorldInfo&                                                             world,
         ::World::ServerWorldJoiner::ServerType const                                    serverType,
         ::std::optional<::World::RecentlyPlayedPendingTargetData>                       recentlyPlayedTarget,
@@ -122,44 +122,44 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
-    MCAPI void joinExternalNetworkWorld(
+    MCNAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
-    MCAPI void joinExternalServer(
+    MCNAPI void joinExternalServer(
         ::std::string const&                                  server,
         ushort                                                port,
         ::std::string const&                                  externalServerName,
         ::std::function<void(::World::JoinServerWorldResult)> onErrorCallback
     );
 
-    MCAPI void joinFriendServerWorld(
+    MCNAPI void joinFriendServerWorld(
         ::Network::ServerID const&                            serverId,
         ::std::function<void(::World::JoinServerWorldResult)> onCompleteCallback
     );
 
-    MCAPI void joinLANServerWorld(
+    MCNAPI void joinLANServerWorld(
         ::Network::ServerID const&                                  serverId,
         ::std::function<void(::std::unique_ptr<::ProgressHandler>)> onCompleteCallback,
         ::std::function<void(::World::JoinServerWorldResult)>       onErrorCallback
     );
 
-    MCAPI void joinThirdPartyServerWorld(
+    MCNAPI void joinThirdPartyServerWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback,
         ::std::function<void()>                                                         onJoinServerCancelled
     );
 
-    MCAPI ~ServerWorldJoiner();
+    MCNAPI ~ServerWorldJoiner();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                                       client,
         ::IMinecraftEventing&                                                    minecraftEventing,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&             userManager,
@@ -183,7 +183,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

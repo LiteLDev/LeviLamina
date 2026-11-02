@@ -52,6 +52,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::CavifierNoises make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 };

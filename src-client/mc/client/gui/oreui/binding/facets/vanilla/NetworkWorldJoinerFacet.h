@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkWorldJoinerFacet(
+    MCNAPI NetworkWorldJoinerFacet(
         ::World::NetworkWorldJoiner&                         networkWorldJoiner,
         ::ui::ProgressScreenNavigation                       progressScreenNavigation,
         ::DateManager const&                                 dateManager,
@@ -79,68 +79,68 @@ public:
         ::OreUI::Router&                                     uiRouter
     );
 
-    MCAPI void abortPendingGameJoin();
+    MCNAPI void abortPendingGameJoin();
 
-    MCAPI void clearJoinExternalServerTaskState();
+    MCNAPI void clearJoinExternalServerTaskState();
 
-    MCAPI void clearJoinFriendServerTaskState();
+    MCNAPI void clearJoinFriendServerTaskState();
 
-    MCAPI void clearJoinLANServerTaskState();
+    MCNAPI void clearJoinLANServerTaskState();
 
-    MCAPI void clearJoinRealmTaskState();
+    MCNAPI void clearJoinRealmTaskState();
 
-    MCAPI void clearJoinThirdPartyServerTaskState();
+    MCNAPI void clearJoinThirdPartyServerTaskState();
 
-    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinExternalServerResult() const;
+    MCNAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinExternalServerResult() const;
 
-    MCAPI ::OreUI::FacetTaskState getJoinExternalServerTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getJoinExternalServerTaskState() const;
 
-    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinFriendServerResult();
+    MCNAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinFriendServerResult();
 
-    MCAPI ::OreUI::FacetTaskState const getJoinFriendServerTaskState();
+    MCNAPI ::OreUI::FacetTaskState const getJoinFriendServerTaskState();
 
-    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinLANServerResult();
+    MCNAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinLANServerResult();
 
-    MCAPI ::OreUI::FacetTaskState const getJoinLANServerTaskState();
+    MCNAPI ::OreUI::FacetTaskState const getJoinLANServerTaskState();
 
-    MCAPI ::std::optional<::OreUI::RealmJoinFailureData> const& getJoinRealmFailureData();
+    MCNAPI ::std::optional<::OreUI::RealmJoinFailureData> const& getJoinRealmFailureData();
 
-    MCAPI ::std::optional<::World::JoinRealmWorldResult> const& getJoinRealmResult() const;
+    MCNAPI ::std::optional<::World::JoinRealmWorldResult> const& getJoinRealmResult() const;
 
-    MCAPI ::OreUI::FacetTaskState getJoinRealmTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getJoinRealmTaskState() const;
 
-    MCAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinThirdPartyServerResult() const;
+    MCNAPI ::std::optional<::World::JoinServerWorldResult> const& getJoinThirdPartyServerResult() const;
 
-    MCAPI ::OreUI::FacetTaskState getJoinThirdPartyServerTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getJoinThirdPartyServerTaskState() const;
 
-    MCAPI void joinExternalServer(::std::string const& serverID);
+    MCNAPI void joinExternalServer(::std::string const& serverID);
 
-    MCAPI void joinFriendServer(::std::string const& serverID);
+    MCNAPI void joinFriendServer(::std::string const& serverID);
 
-    MCAPI void joinLanServer(::std::string const& serverID);
+    MCNAPI void joinLanServer(::std::string const& serverID);
 
-    MCAPI void joinRealmThroughWorldTransfer(
+    MCNAPI void joinRealmThroughWorldTransfer(
         ::std::string const&                      realmIdString,
         ::IMinecraftEventing::RealmConnectionFlow fromFlow
     );
 
-    MCAPI void joinRealmWorld(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
+    MCNAPI void joinRealmWorld(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
-    MCAPI void joinThirdPartyServer(::std::string const& serverID);
+    MCNAPI void joinThirdPartyServer(::std::string const& serverID);
 
-    MCAPI void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent editorConnectionJoinIntent);
+    MCNAPI void setEditorConnectionJoinIntent(::EditorConnectionJoinIntent editorConnectionJoinIntent);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::NetworkWorldJoiner&                         networkWorldJoiner,
         ::ui::ProgressScreenNavigation                       progressScreenNavigation,
         ::DateManager const&                                 dateManager,
@@ -157,7 +157,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Herd(::SharedTypes::v1_21_60::Spawn::Herd const&);
+    MCNAPI Herd(::SharedTypes::v1_21_60::Spawn::Herd const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_60::Spawn::Herd const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_60::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCFOLD static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
+    MCNAPI static ::SharedTypes::v1_21_60::Spawn::Herd from(::SharedTypes::Legacy::Spawn::Herd const& val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_60::Spawn::Herd const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Herd const&);
     // NOLINTEND
 };
 

@@ -41,22 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+    MCNAPI AvoidMobTypeGoalDefinition(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AvoidMobTypeGoalDefinition&&);
     // NOLINTEND
 };
 

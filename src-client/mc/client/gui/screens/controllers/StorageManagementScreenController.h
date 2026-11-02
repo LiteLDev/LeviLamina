@@ -73,30 +73,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageManagementScreenController(
+    MCNAPI StorageManagementScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::IContentManager&                       manager,
         bool                                     legacySyncOnly
     );
 
-    MCAPI void _convertLegacyWorld(::LegacyWorldInfo const& world);
+    MCNAPI void _convertLegacyWorld(::LegacyWorldInfo const& world);
 
-    MCAPI ::LegacyWorldInfo _getLegacyWorld(int worldIndex);
+    MCNAPI ::LegacyWorldInfo _getLegacyWorld(int worldIndex);
 
-    MCAPI ::std::string _getLegacyWorldsSize(uint numberElements, uint64 size);
+    MCNAPI ::std::string _getLegacyWorldsSize(uint numberElements, uint64 size);
 
-    MCAPI ::LegacyWorldInfo _getRetailToPreviewWorld(int worldIndex);
+    MCNAPI ::LegacyWorldInfo _getRetailToPreviewWorld(int worldIndex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::IContentManager& manager, bool legacySyncOnly);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::IContentManager& manager, bool legacySyncOnly);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

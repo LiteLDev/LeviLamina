@@ -34,15 +34,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::SynchedActorData::CopyableDataList& operator=(::SynchedActorData::CopyableDataList const& other);
+        MCNAPI ::SynchedActorData::CopyableDataList& operator=(::SynchedActorData::CopyableDataList const& other);
 
-        MCAPI ~CopyableDataList();
+        MCNAPI ~CopyableDataList();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -85,53 +85,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SynchedActorData _clone() const;
+    MCNAPI ::SynchedActorData _clone() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool assignValue(::DataItem const& newItem);
+    MCNAPI bool assignValue(::DataItem const& newItem);
 
-    MCAPI void assignValues(
+    MCNAPI void assignValues(
         ::std::vector<::std::unique_ptr<::DataItem>> const& items,
         ::Actor&                                            actor,
         ::std::optional<uint64>                             targetFrame
     );
 #endif
 
-    MCAPI ::CompoundTag const& getCompoundTag(ushort id) const;
+    MCNAPI ::CompoundTag const& getCompoundTag(ushort id) const;
 
-    MCAPI ::SynchedActorData& operator=(::SynchedActorData&& rhs);
+    MCNAPI ::SynchedActorData& operator=(::SynchedActorData&& rhs);
 
     MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packAll(::EntityContext const& entity) const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
+    MCNAPI ::std::vector<::std::unique_ptr<::DataItem>> packDirty(::EntityContext& entity);
 
 #ifdef LL_PLAT_C
-    MCAPI void queueAssignment(
+    MCNAPI void queueAssignment(
         ::std::vector<::std::unique_ptr<::DataItem>> const& items,
         ::Actor&                                            actor,
         ::std::optional<uint64>                             targetFrame
     );
 #endif
 
-    MCAPI ~SynchedActorData();
+    MCNAPI ~SynchedActorData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::unique_ptr<::DataItem>>
+    MCNAPI static ::std::vector<::std::unique_ptr<::DataItem>>
     cloneDataList(::std::vector<::std::unique_ptr<::DataItem>> const& list);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_ITEM_NULL();
+    MCNAPI static ::std::string const& DIFF_ITEM_NULL();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

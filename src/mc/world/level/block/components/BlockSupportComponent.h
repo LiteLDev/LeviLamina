@@ -20,6 +20,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _stairSupportCheck(::Block const& block, uchar face);
+    MCNAPI static bool _stairSupportCheck(::Block const& block, uchar face);
     // NOLINTEND
 };

@@ -93,7 +93,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
 
@@ -101,22 +101,22 @@ public:
         // virtual function thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::ResourceLocation $getBackCompatResourceLocation(::ResourceLocation const& resourceLocation) const;
+        MCNAPI ::ResourceLocation $getBackCompatResourceLocation(::ResourceLocation const& resourceLocation) const;
 
-        MCAPI ::std::optional<uint>
+        MCNAPI ::std::optional<uint>
         $getPackStackIndexOfNoExtensionOrImage(::ResourceLocation const& resourceLocation) const;
 
-        MCAPI ::std::optional<uint> $getPackStackIndexOfTextureSet(::ResourceLocation const& resourceLocation) const;
+        MCNAPI ::std::optional<uint> $getPackStackIndexOfTextureSet(::ResourceLocation const& resourceLocation) const;
 
-        MCAPI bool $loadResourceOfExtensions(
+        MCNAPI bool $loadResourceOfExtensions(
             ::ResourceLocationPair const&    resourceLocationPair,
             ::std::string&                   resourceStream,
             ::gsl::span<::std::string const> extensions
         ) const;
 
-        MCAPI bool $loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
+        MCNAPI bool $loadResource(::ResourceLocation const& resourceLocation, ::std::string& resourceStream) const;
 
-        MCAPI bool $loadImageResourceFromMemory(
+        MCNAPI bool $loadImageResourceFromMemory(
             ::std::shared_ptr<::cg::ImageResource>& out,
             ::std::string const&                    buffer,
             ::ResourceLocationPair const&           resourceLocationPair,
@@ -124,7 +124,7 @@ public:
             ::mce::ImageFormat const&               desiredImageFormat
         ) const;
 
-        MCAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
+        MCNAPI bool $loadCompressedImageFromMemory(::cg::CompressedImageBuffer& out, ::std::string const& buffer) const;
 #endif
 
 
@@ -141,13 +141,13 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
+    MCNAPI static ::TextureSetHelpers::TextureSetDefinitionLoader::LoadImageLayerResult _loadImageLayer(
         ::std::shared_ptr<::cg::TextureSetDefinition>                          textureSetDefinition,
         ::Bedrock::NotNullNonOwnerPtr<::cg::TextureSetLayerDefinition const>   layer,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCAPI static bool _loadImageLayers(
+    MCNAPI static bool _loadImageLayers(
         ::ResourceLocation const&                                        resourceLocation,
         ::std::shared_ptr<::cg::TextureSetDefinition>                    textureSetDefinition,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const& loadMode,
@@ -155,7 +155,7 @@ public:
         ::TextureSetHelpers::TextureSetDefinitionLoader::ResourceHelper const& resourceHelper
     );
 
-    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocation const&                                              resourceLocation,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -164,7 +164,7 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> loadOrCreateTextureSetDefinition(
         ::ResourceLocationPair const&                                          resourceLocationPair,
         ::TextureSetHelpers::TextureSetDefinitionLoader::LoadMode const&       loadMode,
         ::TextureSetHelpers::TextureSetDefinitionLoader::ColorPipeline const&  colorMode,
@@ -173,7 +173,7 @@ public:
         bool                                                                   needsDecompression
     );
 
-    MCAPI static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
+    MCNAPI static ::std::shared_ptr<::cg::TextureSetDefinition> makeDefinitionFromImageBuffer(
         ::ResourceLocationPair const& resourceLocationPair,
         ::cg::ImageBuffer const*      optionalImageBuffer,
         bool                          isMissingTexture,

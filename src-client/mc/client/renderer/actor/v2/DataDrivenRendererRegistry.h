@@ -71,12 +71,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRendererRegistry(::GameVersion const& version, ::DataDrivenRendererPool&& fallbackPool);
+    MCNAPI DataDrivenRendererRegistry(::GameVersion const& version, ::DataDrivenRendererPool&& fallbackPool);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameVersion const& version, ::DataDrivenRendererPool&& fallbackPool);
+    MCNAPI void* $ctor(::GameVersion const& version, ::DataDrivenRendererPool&& fallbackPool);
     // NOLINTEND
 };

@@ -55,24 +55,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ElementConstructorScreenController(
+    MCNAPI ElementConstructorScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void
+    MCNAPI void
     _registerParticleBindings(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
 
-    MCAPI void
+    MCNAPI void
     _registerParticleEventHandlers(::ElementConstructorScreenController::ParticleType type, ::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -83,14 +83,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
     // NOLINTEND
 };

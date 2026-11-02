@@ -47,19 +47,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
+    MCNAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEffectComponent& data);
 
-    MCAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
+    MCNAPI void $parseJson(::ConstDeserializeDataParams const& deserializeDataParams);
 
-    MCFOLD uint64 $getNumberOfParticlesToEmit(
+    MCNAPI uint64 $getNumberOfParticlesToEmit(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams,
         ::std::chrono::nanoseconds const&                 dt
     );
 
-    MCAPI uint64 $getNumberOfManualParticlesAllowed(
+    MCNAPI uint64 $getNumberOfManualParticlesAllowed(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams
     );

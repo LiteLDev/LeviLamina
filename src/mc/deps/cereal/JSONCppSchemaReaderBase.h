@@ -121,78 +121,78 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit JSONCppSchemaReaderBase(::std::string_view data);
+    MCNAPI explicit JSONCppSchemaReaderBase(::std::string_view data);
 
-    MCAPI explicit JSONCppSchemaReaderBase(::std::reference_wrapper<::Json::Value const> value);
+    MCNAPI explicit JSONCppSchemaReaderBase(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view data);
+    MCNAPI void* $ctor(::std::string_view data);
 
-    MCAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
+    MCNAPI void* $ctor(::std::reference_wrapper<::Json::Value const> value);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI ::cereal::SchemaRWType $expectedType() const;
+    MCNAPI ::cereal::SchemaRWType $expectedType() const;
 
-    MCAPI ::Bedrock::Result<void> $asNull();
+    MCNAPI ::Bedrock::Result<void> $asNull();
 
-    MCAPI ::Bedrock::Result<bool> $asBool();
+    MCNAPI ::Bedrock::Result<bool> $asBool();
 
-    MCAPI ::Bedrock::Result<schar> $asInt8();
+    MCNAPI ::Bedrock::Result<schar> $asInt8();
 
-    MCAPI ::Bedrock::Result<uchar> $asUInt8();
+    MCNAPI ::Bedrock::Result<uchar> $asUInt8();
 
-    MCAPI ::Bedrock::Result<short> $asInt16();
+    MCNAPI ::Bedrock::Result<short> $asInt16();
 
-    MCAPI ::Bedrock::Result<ushort> $asUInt16();
+    MCNAPI ::Bedrock::Result<ushort> $asUInt16();
 
-    MCAPI ::Bedrock::Result<int> $asInt32();
+    MCNAPI ::Bedrock::Result<int> $asInt32();
 
-    MCAPI ::Bedrock::Result<uint> $asUInt32();
+    MCNAPI ::Bedrock::Result<uint> $asUInt32();
 
-    MCAPI ::Bedrock::Result<int64> $asInt64();
+    MCNAPI ::Bedrock::Result<int64> $asInt64();
 
-    MCAPI ::Bedrock::Result<uint64> $asUInt64();
+    MCNAPI ::Bedrock::Result<uint64> $asUInt64();
 
-    MCAPI ::Bedrock::Result<float> $asFloat();
+    MCNAPI ::Bedrock::Result<float> $asFloat();
 
-    MCAPI ::Bedrock::Result<double> $asDouble();
+    MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCFOLD ::std::optional<bool> $additionalDataAsBool();
+    MCNAPI ::std::optional<bool> $additionalDataAsBool();
 
-    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
+    MCNAPI ::std::optional<uint> $additionalDataAsUInt32();
 
-    MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64);
+    MCNAPI ::std::optional<::std::string> $additionalDataAsString(uint64);
 
-    MCFOLD uint64 $members();
+    MCNAPI uint64 $members();
 
-    MCFOLD uint64 $length(uint64 expectedSize);
+    MCNAPI uint64 $length(uint64 expectedSize);
 
-    MCAPI bool $pushMember(::std::string_view const name);
+    MCNAPI bool $pushMember(::std::string_view const name);
 
-    MCAPI ::std::string_view $pushNextMember();
+    MCNAPI ::std::string_view $pushNextMember();
 
-    MCAPI void $pushElement(uint64 index);
+    MCNAPI void $pushElement(uint64 index);
 
-    MCAPI void $pop();
+    MCNAPI void $pop();
 
 
     // NOLINTEND

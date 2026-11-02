@@ -27,15 +27,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $GetAllocationPageSize() const;
+    MCNAPI uint64 $GetAllocationPageSize() const;
 
-    MCFOLD uint64 $GetCommitPageSize() const;
+    MCNAPI uint64 $GetCommitPageSize() const;
 
-    MCAPI void* $Allocate(void* address, uint64 size, uint64 alignment, int protection, int flags);
+    MCNAPI void* $Allocate(void* address, uint64 size, uint64 alignment, int protection, int flags);
 
-    MCAPI bool $Free(void* address, uint64 size, int flags);
+    MCNAPI bool $Free(void* address, uint64 size, int flags);
 
-    MCAPI bool $PartialFree(void* address, uint64 oldSize, uint64 newSize, int);
+    MCNAPI bool $PartialFree(void* address, uint64 oldSize, uint64 newSize, int);
     // NOLINTEND
 
 public:

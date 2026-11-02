@@ -39,11 +39,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI NpcRequestPacketPayload(::ActorRuntimeID id, ::std::string const& newActions);
+    MCNAPI NpcRequestPacketPayload(::ActorRuntimeID id, ::std::string const& newActions);
 
-    MCAPI NpcRequestPacketPayload(::ActorRuntimeID id, int actionIndex, ::std::string const& sceneName);
+    MCNAPI NpcRequestPacketPayload(::ActorRuntimeID id, int actionIndex, ::std::string const& sceneName);
 
-    MCAPI NpcRequestPacketPayload(
+    MCNAPI NpcRequestPacketPayload(
         ::ActorRuntimeID                       id,
         ::NpcRequestPacketPayload::RequestType type,
         ::std::string const&                   sceneName
@@ -55,11 +55,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ActorRuntimeID id, ::std::string const& newActions);
+    MCNAPI void* $ctor(::ActorRuntimeID id, ::std::string const& newActions);
 
-    MCAPI void* $ctor(::ActorRuntimeID id, int actionIndex, ::std::string const& sceneName);
+    MCNAPI void* $ctor(::ActorRuntimeID id, int actionIndex, ::std::string const& sceneName);
 
-    MCAPI void* $ctor(::ActorRuntimeID id, ::NpcRequestPacketPayload::RequestType type, ::std::string const& sceneName);
+    MCNAPI void*
+    $ctor(::ActorRuntimeID id, ::NpcRequestPacketPayload::RequestType type, ::std::string const& sceneName);
 #endif
     // NOLINTEND
 };

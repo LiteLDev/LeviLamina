@@ -23,7 +23,7 @@ class ClientCommands {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void init(
+    MCNAPI static void init(
         ::CommandRegistry&                                                  registry,
         ::IMinecraftGame&                                                   minecraftClient,
         ::Bedrock::NotNullNonOwnerPtr<::IApp> const&                        app,
@@ -31,7 +31,7 @@ public:
         ::std::weak_ptr<::AppScripting::IAppScriptManager>                  appScriptManager
     );
 
-    MCAPI static void setupStandard(
+    MCNAPI static void setupStandard(
         ::MinecraftCommands&                   minecraftCommands,
         ::IMinecraftGame&                      minecraftGame,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
@@ -42,6 +42,6 @@ public:
         ::Level const&                         level
     );
 
-    MCAPI static void setupStartMenuScreen(::MinecraftCommands& minecraftCommands, ::IMinecraftGame& minecraftClient);
+    MCNAPI static void setupStartMenuScreen(::MinecraftCommands& minecraftCommands, ::IMinecraftGame& minecraftClient);
     // NOLINTEND
 };

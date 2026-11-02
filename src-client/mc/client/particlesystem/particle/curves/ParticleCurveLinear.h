@@ -36,17 +36,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase& data, ::HashedString const& curveName);
+    MCNAPI void $initializeFromData(::SharedTypes::v1_20_80::ParticleCurveBase& data, ::HashedString const& curveName);
 
-    MCAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase& data);
+    MCNAPI void $upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleCurveBase& data);
 
-    MCFOLD uint64 $_getMinCurveNodesAllowed();
+    MCNAPI uint64 $_getMinCurveNodesAllowed();
 
-    MCFOLD uint64 $_getMaxCurveNodesAllowed();
+    MCNAPI uint64 $_getMaxCurveNodesAllowed();
 
-    MCAPI float $_evaluateCurve(float t, ::RenderParams& renderParams);
+    MCNAPI float $_evaluateCurve(float t, ::RenderParams& renderParams);
 
-    MCFOLD ::ParticleSystem::ParticleCurveType $getCurveType() const;
+    MCNAPI ::ParticleSystem::ParticleCurveType $getCurveType() const;
     // NOLINTEND
 };
 

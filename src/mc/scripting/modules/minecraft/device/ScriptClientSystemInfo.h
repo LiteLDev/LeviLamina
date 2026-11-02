@@ -33,25 +33,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptClientSystemInfo(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
+    MCNAPI ScriptClientSystemInfo(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
 
-    MCAPI explicit ScriptClientSystemInfo(::Player const& player);
+    MCNAPI explicit ScriptClientSystemInfo(::Player const& player);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo& operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptClientSystemInfo&
+    operator=(::ScriptModuleMinecraft::ScriptClientSystemInfo&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptClientSystemInfo const&);
 
-    MCAPI void* $ctor(::Player const& player);
+    MCNAPI void* $ctor(::Player const& player);
     // NOLINTEND
 
 public:

@@ -137,7 +137,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Views(
+        MCNAPI explicit Views(
             ::StrictExecutionContext<
                 ::Filter<
                     ::CanStandOnPowderSnowComponent,
@@ -182,7 +182,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::StrictExecutionContext<
                 ::Filter<
                     ::CanStandOnPowderSnowComponent,
@@ -322,9 +322,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> const& data);
+    MCNAPI static bool _isAutoJumpEnabledGlobally(::OptionalGlobal<::ExternalDataComponent const> const& data);
 
-    MCAPI static void _setJumpingIfPlayerCanAutoJump(
+    MCNAPI static void _setJumpingIfPlayerCanAutoJump(
         ::StrictEntityContext const&              entity,
         ::AABBShapeComponent const&               aabbShape,
         ::ActorRotationComponent const&           actorRotation,
@@ -343,7 +343,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,
@@ -384,7 +384,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::CanStandOnPowderSnowComponent,
@@ -432,7 +432,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -15,14 +15,14 @@ namespace mce { struct ServerTexture; }
 namespace mcr {
 // functions
 // NOLINTBEGIN
-MCAPI bool bindMigrationTextures(
+MCNAPI bool bindMigrationTextures(
     ::mce::RenderContext&         renderContext,
     ::mce::GlobalConstantBuffers& globalConstantBuffers,
     ::gsl::span<::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const>
         textures
 );
 
-MCAPI bool bindTexture(
+MCNAPI bool bindTexture(
     ::mce::RenderContext&       renderContext,
     ::mce::ShaderConstants&     shaderConstants,
     ::mce::ServerTexture const& serverTexture,

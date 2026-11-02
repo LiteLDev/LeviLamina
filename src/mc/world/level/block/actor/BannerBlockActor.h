@@ -48,30 +48,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setItemValues(::ItemStackBase const& instance);
+    MCNAPI void setItemValues(::ItemStackBase const& instance);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+    MCNAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
-    MCAPI static ::std::string getColors(::CompoundTag const* tag);
+    MCNAPI static ::std::string getColors(::CompoundTag const* tag);
 #endif
 
     MCAPI static int getPatternCount(::CompoundTag const* tagElement);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string getPatterns(::CompoundTag const* tag);
+    MCNAPI static ::std::string getPatterns(::CompoundTag const* tag);
 #endif
 
-    MCAPI static bool isDefaultBanner(::ItemStackBase const& instance);
+    MCNAPI static bool isDefaultBanner(::ItemStackBase const& instance);
 
-    MCAPI static void removeLastPattern(::ItemStack& instance);
+    MCNAPI static void removeLastPattern(::ItemStack& instance);
 
 #ifdef LL_PLAT_C
-    MCAPI static void setBannerDetails(
+    MCNAPI static void setBannerDetails(
         ::ItemStack&         instance,
         int                  customColor,
         ::std::string const& patterns,
@@ -84,39 +84,39 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TAG_BASE_COLOR();
+    MCNAPI static ::std::string const& TAG_BASE_COLOR();
 
-    MCAPI static ::std::string const& TAG_COLOR();
+    MCNAPI static ::std::string const& TAG_COLOR();
 
-    MCAPI static ::std::string const& TAG_PATTERN();
+    MCNAPI static ::std::string const& TAG_PATTERN();
 
-    MCAPI static ::std::string const& TAG_PATTERNS();
+    MCNAPI static ::std::string const& TAG_PATTERNS();
 
-    MCAPI static ::std::string const& TAG_TYPE();
+    MCNAPI static ::std::string const& TAG_TYPE();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onPlace(::BlockSource& region);
+    MCNAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

@@ -38,34 +38,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter const&);
+    MCNAPI ScriptItemFilter(::ScriptModuleMinecraft::ScriptItemFilter const&);
 
-    MCAPI ::nonstd::expected<::ItemQueryOptions, ::std::vector<::ScriptModuleMinecraft::ScriptItemFilterError>>
+    MCNAPI ::nonstd::expected<::ItemQueryOptions, ::std::vector<::ScriptModuleMinecraft::ScriptItemFilterError>>
     getItemQueryOptions(::Scripting::WeakLifetimeScope const& scope) const;
 
-    MCAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptItemFilter& operator=(::ScriptModuleMinecraft::ScriptItemFilter&&);
 
-    MCAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void processItemQueryOptions(::Scripting::WeakLifetimeScope const& scope);
 
-    MCAPI ~ScriptItemFilter();
+    MCNAPI ~ScriptItemFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptItemFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

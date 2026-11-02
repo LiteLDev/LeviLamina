@@ -31,7 +31,7 @@ namespace EnchantUtils {
 LLNDAPI ::std::vector<::std::pair<::EnchantmentInstance, int>>
 getAvailableEnchantmentResults(::Item const* item, int value, bool treasure);
 
-MCAPI void appendEnchantToFormattedText(
+MCNAPI void appendEnchantToFormattedText(
     ::Enchant::Type                      type,
     ::std::string_view                   enchantName,
     ::Bedrock::Safety::RedactableString& formattedEnchantmentText
@@ -39,9 +39,9 @@ MCAPI void appendEnchantToFormattedText(
 
 MCAPI bool applyEnchant(::ItemStackBase& out, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
 
-MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
+MCNAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
 
-MCAPI float
+MCNAPI float
 calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
 
 MCAPI ::EnchantResult
@@ -50,17 +50,17 @@ canEnchant(::ItemStackBase const& item, ::EnchantmentInstance const& enchant, bo
 MCAPI int
 combineEnchantedItems(::ItemStack const& first, ::ItemStack const& second, ::ItemStack& out, bool bookEnchant);
 
-MCAPI void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
+MCNAPI void doPostHurtEffects(::Mob& victim, ::Mob& attacker);
 
-MCAPI void doPostPiercingAttackEffects(::Actor& attacker);
+MCNAPI void doPostPiercingAttackEffects(::Actor& attacker);
 
-MCAPI void doPreDamageEffects(::Actor& victim, ::Actor& attacker);
+MCNAPI void doPreDamageEffects(::Actor& victim, ::Actor& attacker);
 
 MCAPI ::std::vector<::Vec3> getBookCasePositions(::BlockSource& source, ::Vec3 const& pos);
 
-MCAPI void getCurses(::ItemStackBase const& item, ::std::vector<::EnchantmentInstance>& outputCurses);
+MCNAPI void getCurses(::ItemStackBase const& item, ::std::vector<::EnchantmentInstance>& outputCurses);
 
-MCAPI float getDamageReduction(::ActorDamageSource const& source, ::Mob const& target);
+MCNAPI float getDamageReduction(::ActorDamageSource const& source, ::Mob const& target);
 
 MCAPI ::std::vector<int> getEnchantCosts(::IRandom& random, ::ItemStackBase const& itemInst, int bookcaseCount);
 
@@ -69,32 +69,32 @@ MCAPI int getEnchantLevel(::Enchant::Type enchantType, ::ItemStackBase const& st
 MCAPI ::std::string getEnchantNameAndLevel(::Enchant::Type id, int level);
 
 #ifdef LL_PLAT_C
-MCAPI ::std::string getEnchantStringId(::Enchant::Type id);
+MCNAPI ::std::string getEnchantStringId(::Enchant::Type id);
 #endif
 
-MCAPI ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
+MCNAPI ::std::vector<::Vec3> getEnchantingTablePositions(::BlockSource& source, ::Vec3 const& pos);
 
 MCAPI ::Enchant::Type getEnchantmentId(::HashedString const& stringId);
 
-MCAPI float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
+MCNAPI float getMeleeDamageBonus(::Actor const& victim, ::Actor const& attacker);
 
 MCAPI ::ItemStack const& getRandomDamagedItemWithMending(::IRandom& random, ::Mob const& equipped);
 
-MCAPI ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
+MCNAPI ::ItemStack const& getRandomItemWith(::Enchant::Type type, ::Mob const& equipped, ::EquipmentFilter filter);
 
-MCAPI ::std::string getRandomName(::IRandom& random);
+MCNAPI ::std::string getRandomName(::IRandom& random);
 
-MCAPI int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
+MCNAPI int getTotalProtectionLevels(::Enchant::Type type, ::Mob const& target);
 
-MCAPI int getTradeableRandomEnchantIndex(::IRandom& random);
+MCNAPI int getTradeableRandomEnchantIndex(::IRandom& random);
 
 MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
 MCAPI void randomlyEnchant(::IRandom& random, ::ItemStackBase& out, int cost, int valueBuff, bool treasure);
 
-MCAPI void removeEnchants(::ItemStack& out);
+MCNAPI void removeEnchants(::ItemStack& out);
 
-MCAPI ::ItemEnchants
+MCNAPI ::ItemEnchants
 selectEnchantments(::IRandom& random, ::Item const* item, int enchantCost, int valueBuff, bool treasure);
 // NOLINTEND
 

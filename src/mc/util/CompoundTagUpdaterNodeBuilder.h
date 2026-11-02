@@ -39,13 +39,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~NodeData();
+        MCNAPI ~NodeData();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -71,34 +71,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
+    MCNAPI ::CompoundTagUpdaterNodeBuilder _addChildNode();
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder&
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
     edit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& match(::std::string const& tagName, ::std::string pattern);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchInteger(::std::string const& tagName, int64 value);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& matchLiteral(::std::string const& tagName, ::std::string pattern);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& popVisit();
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& remove(::std::string const& tagName);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& rename(::std::string const& tagName, ::std::string const& newTagName);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder&
+    MCNAPI ::CompoundTagUpdaterNodeBuilder&
     tryEdit(::std::string const& tagName, ::std::function<void(::CompoundTagEditHelper&)>&& update);
 
-    MCAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
+    MCNAPI ::CompoundTagUpdaterNodeBuilder& visit(::std::string const& tagName);
 
-    MCAPI ~CompoundTagUpdaterNodeBuilder();
+    MCNAPI ~CompoundTagUpdaterNodeBuilder();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

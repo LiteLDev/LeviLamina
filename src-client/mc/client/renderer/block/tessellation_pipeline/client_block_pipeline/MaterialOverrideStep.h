@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _runUvGeneration(
+    MCNAPI void _runUvGeneration(
         ::ClientBlockPipeline::QuadIndicesFaceAttributes const& faceIndices,
         ::ClientBlockPipeline::PositionVertexAttributes const&  vertexPositions,
         ::ClientBlockPipeline::FaceNormalAttributes const&      faceNormals,
@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
+    MCNAPI ::ClientBlockPipeline::StepResult $run(::ClientBlockPipeline::Inputs const& inputs) const;
     // NOLINTEND
 };
 

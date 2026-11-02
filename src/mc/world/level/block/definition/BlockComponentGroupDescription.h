@@ -33,23 +33,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _setCustomComponent(
+        MCNAPI void _setCustomComponent(
             ::std::string_view                               compName,
             ::std::shared_ptr<::cereal::DynamicValue> const& compData,
             bool                                             overridePlayerInteract,
             bool                                             overridePlayerPlacing
         );
 
-        MCAPI ::std::shared_ptr<::cereal::DynamicValue>
+        MCNAPI ::std::shared_ptr<::cereal::DynamicValue>
         getCustomComponent(::cereal::SerializerContext const& context) const;
 
-        MCAPI ~Components();
+        MCNAPI ~Components();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -72,14 +72,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
+    MCNAPI ::BlockComponentGroupDescription& operator=(::BlockComponentGroupDescription const&);
 
-    MCAPI ~BlockComponentGroupDescription();
+    MCNAPI ~BlockComponentGroupDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

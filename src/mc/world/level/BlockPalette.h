@@ -64,23 +64,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockPalette(::Level& level);
+    MCNAPI explicit BlockPalette(::Level& level);
 
     MCAPI void cacheBlockComponentData();
 
-    MCAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
+    MCNAPI ::Block const& getBlockFromLegacyData(::NewBlockID id, uint data) const;
 
-    MCAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
+    MCNAPI bool shouldWarnFor(::NewBlockID id, ushort data) const;
 
-    MCAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
+    MCNAPI ::Block const& switchBlock(::Block const& oldBlock, ::BlockType const& newBlockType) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
+    MCNAPI static ::Block const& convertLegacyBlock(::BlockID id, ushort data);
 
-    MCAPI static bool convertLegacyBlocks(
+    MCNAPI static bool convertLegacyBlocks(
         ::buffer_span_mut<::Block const*> dst,
         ::buffer_span<::BlockID>          blockIDs,
         ::buffer_span<::NibblePair>       data,
@@ -91,25 +91,25 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
+    MCNAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI void $appendBlock(::Block const& blockState);
+    MCNAPI void $appendBlock(::Block const& blockState);
 
-    MCAPI ::Block const& $getBlock(uint const& networkId) const;
+    MCNAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
 
 
     // NOLINTEND
@@ -117,6 +117,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

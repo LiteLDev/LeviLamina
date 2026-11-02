@@ -39,26 +39,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AreaAttackComponent(::AreaAttackComponent const&);
+    MCNAPI AreaAttackComponent(::AreaAttackComponent const&);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
+    MCNAPI ::AreaAttackComponent& operator=(::AreaAttackComponent&&);
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI ~AreaAttackComponent();
+    MCNAPI ~AreaAttackComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AreaAttackComponent const&);
+    MCNAPI void* $ctor(::AreaAttackComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

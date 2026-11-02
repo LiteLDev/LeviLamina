@@ -31,45 +31,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerInteractionStateMachine();
+    MCNAPI ContainerInteractionStateMachine();
 
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     _changeState(::NodeId target, uint buttonId, ::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void addEdge(
+    MCNAPI void addEdge(
         ::NodeId                                                                  source,
         ::NodeId                                                                  target,
         ::std::function<bool(uint, ::ButtonEventType, ::std::string const&, int)> requirement,
         int                                                                       priority
     );
 
-    MCAPI void addEdge(
+    MCNAPI void addEdge(
         ::NodeId                                                                              source,
         ::NodeId                                                                              target,
         ::std::function<bool(::PointerHeldScreenEventData const&, ::std::string const&, int)> requirement,
         int                                                                                   priority
     );
 
-    MCAPI void addNode(
+    MCNAPI void addNode(
         ::NodeId                                                            id,
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onEnter,
         ::std::function<::ui::ViewRequest(uint, ::std::string const&, int)> onExit,
         bool                                                                defaultNode
     );
 
-    MCAPI ::ui::ViewRequest receiveEvent(
+    MCNAPI ::ui::ViewRequest receiveEvent(
         ::PointerHeldScreenEventData const& pointerHeldEvent,
         ::std::string const&                collectionName,
         int                                 collectionIndex
     );
 
-    MCAPI ::ui::ViewRequest
+    MCNAPI ::ui::ViewRequest
     receiveEvent(uint buttonId, ::ButtonEventType buttonType, ::std::string const& collectionName, int collectionIndex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

@@ -41,21 +41,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InBedScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player& player);
+    MCNAPI InBedScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player& player);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player& player);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Player& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 
 public:

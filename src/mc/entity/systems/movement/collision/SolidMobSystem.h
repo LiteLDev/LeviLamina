@@ -28,9 +28,9 @@ struct TickingSystemWithInfo;
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
+MCNAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
 
-MCAPI void flagNearbyMobsForServerMovementCatchup(
+MCNAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,
     ::ServerCatchupMovementTrackerComponent const& tracker,
@@ -47,7 +47,7 @@ MCAPI void flagNearbyMobsForServerMovementCatchup(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void flagSolidMobsFromNearbyEntity(
+MCNAPI void flagSolidMobsFromNearbyEntity(
     ::StrictEntityContext const&                                                                   entity,
     ::AABBShapeComponent const&                                                                    shape,
     ::Optional<::MobFlagComponent const>                                                           isMob,
@@ -58,9 +58,9 @@ MCAPI void flagSolidMobsFromNearbyEntity(
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
 
-MCAPI void storeNearbyMobsOnMoveRequest(
+MCNAPI void storeNearbyMobsOnMoveRequest(
     ::IsSolidMobNearbyComponent const& nearby,
     ::DepenetrationComponent&          depenetration,
     ::MoveRequestComponent&            request

@@ -60,13 +60,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start(bool allowed);
+    MCNAPI void $start(bool allowed);
 
-    MCAPI bool $exhausted() const;
+    MCNAPI bool $exhausted() const;
 
-    MCAPI ::HandleRangeResult $handleRange(int, int end);
+    MCNAPI ::HandleRangeResult $handleRange(int, int end);
 
-    MCAPI void $collect(
+    MCNAPI void $collect(
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entMgr,
         ::PersonaClient&                                     skinRepo,
         ::std::vector<::std::shared_ptr<::SkinPackModel>>&   skinPacks,

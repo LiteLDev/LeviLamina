@@ -44,55 +44,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsMembershipFacet(::std::shared_ptr<::Realms::RealmsMembership> realmsJoinRealm);
+    MCNAPI explicit RealmsMembershipFacet(::std::shared_ptr<::Realms::RealmsMembership> realmsJoinRealm);
 
-    MCAPI void clearFetchRealm();
+    MCNAPI void clearFetchRealm();
 
-    MCAPI void clearJoinRealm();
+    MCNAPI void clearJoinRealm();
 
-    MCAPI void clearLeaveRealm();
+    MCNAPI void clearLeaveRealm();
 
-    MCAPI void fetchRealm(::std::string const& inviteCode);
+    MCNAPI void fetchRealm(::std::string const& inviteCode);
 
-    MCFOLD ::std::optional<::Realms::RealmsMembership::FetchRealmError> const& getFetchRealmError() const;
+    MCNAPI ::std::optional<::Realms::RealmsMembership::FetchRealmError> const& getFetchRealmError() const;
 
-    MCFOLD ::std::optional<::Realms::World> const& getFetchRealmResult() const;
+    MCNAPI ::std::optional<::Realms::World> const& getFetchRealmResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState const getFetchRealmTaskProgress() const;
+    MCNAPI ::OreUI::FacetTaskState const getFetchRealmTaskProgress() const;
 
-    MCAPI ::std::optional<::Realms::RealmsMembership::JoinRealmError> const& getJoinRealmError() const;
+    MCNAPI ::std::optional<::Realms::RealmsMembership::JoinRealmError> const& getJoinRealmError() const;
 
-    MCAPI ::OreUI::FacetTaskState getJoinRealmTaskProgress() const;
+    MCNAPI ::OreUI::FacetTaskState getJoinRealmTaskProgress() const;
 
-    MCAPI ::std::string const& getJoinedRealmId() const;
+    MCNAPI ::std::string const& getJoinedRealmId() const;
 
-    MCAPI ::std::string const& getJoinedRealmName() const;
+    MCNAPI ::std::string const& getJoinedRealmName() const;
 
-    MCAPI ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
+    MCNAPI ::Realms::RealmsMembership::LeaveRealmResult const& getLeaveRealmResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getLeaveRealmTaskProgress() const;
+    MCNAPI ::OreUI::FacetTaskState getLeaveRealmTaskProgress() const;
 
-    MCAPI void joinRealm(::std::string const& inviteCode);
+    MCNAPI void joinRealm(::std::string const& inviteCode);
 
-    MCAPI void leaveRealm(int64 worldId);
+    MCNAPI void leaveRealm(int64 worldId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsMembership> realmsJoinRealm);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsMembership> realmsJoinRealm);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

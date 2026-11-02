@@ -51,35 +51,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
+    MCNAPI TradeItem(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCAPI TradeItem(::SharedTypes::v1_21_30::TradeItem const&);
+    MCNAPI TradeItem(::SharedTypes::v1_21_30::TradeItem const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_21_30::TradeItem const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_30::TradeItem const&) const;
 
-    MCAPI ~TradeItem();
+    MCNAPI ~TradeItem();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
+    MCNAPI static ::std::string_view const& DEPRECATED_FILTERS_FIELD();
 
-    MCAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
+    MCNAPI static ::std::string_view const& DEPRECATED_FUNCTIONS_FIELD();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_30::TradeItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

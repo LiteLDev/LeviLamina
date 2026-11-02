@@ -25,9 +25,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::SharedTypes::v1_26_30::PushableByEntityComponentDefinition const& oldDef,
         ::SharedTypes::v1_26_40::PushableByEntityComponentDefinition&       newDef
     );
@@ -36,7 +36,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

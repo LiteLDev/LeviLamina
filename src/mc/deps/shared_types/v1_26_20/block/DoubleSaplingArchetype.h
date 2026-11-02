@@ -21,18 +21,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::DoubleSaplingArchetype&
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::DoubleSaplingArchetype&
     operator=(::SharedTypes::v1_26_20::BlockDefinition::DoubleSaplingArchetype const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_26_20::BlockDefinition::DoubleSaplingArchetype const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::DoubleSaplingArchetype const&) const;
 
-    MCAPI ~DoubleSaplingArchetype();
+    MCNAPI ~DoubleSaplingArchetype();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

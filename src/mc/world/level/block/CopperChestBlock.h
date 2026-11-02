@@ -29,23 +29,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CopperChestBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    MCNAPI CopperChestBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
 
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND
@@ -53,6 +53,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

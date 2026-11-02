@@ -61,35 +61,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
+    MCNAPI ::Scripting::Result_deprecated<::BoundingBox> getBoundingBox() const;
 
-    MCAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
+    MCNAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
     getClosest(uint count, ::Vec3 const& location) const;
 
-    MCAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
+    MCNAPI ::Scripting::Result<::std::vector<::Vec3>, ::Scripting::ArgumentOutOfBoundsError>
     getFarthest(uint count, ::Vec3 const& location) const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMax() const;
 
-    MCAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
+    MCNAPI ::Scripting::Result_deprecated<::Vec3> getMin() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::Vec3> $getFoundBlocks(
+    MCNAPI ::std::vector<::Vec3> $getFoundBlocks(
         ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
         ::BlockSource const&                                 region,
         ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter
     ) const;
 
-    MCAPI bool $containsBlock(
+    MCNAPI bool $containsBlock(
         ::ScriptModuleMinecraft::ScriptChunkValidator const& chunkValidator,
         ::BlockSource const&                                 region,
         ::ScriptModuleMinecraft::ScriptBlockFilter const&    filter

@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRule();
+    MCNAPI GameRule();
 
     MCAPI GameRule(::GameRule&&);
 
@@ -91,7 +91,7 @@ public:
 
     MCAPI GameRule(::std::string const& name, bool canBeModifiedByPlayer);
 
-    MCAPI GameRule(
+    MCNAPI GameRule(
         ::std::string const& name,
         bool                 value,
         bool                 shouldSave,
@@ -100,27 +100,27 @@ public:
         bool                 canBeModifiedByPlayer
     );
 
-    MCAPI bool _set(
+    MCNAPI bool _set(
         ::std::variant<::cereal::NullType, bool, int, float> const& v,
         bool*                                                       pValidated,
         ::GameRule::ValidationError*                                errorOutput
     );
 
 #ifdef LL_PLAT_C
-    MCAPI bool compareValue(::std::variant<::cereal::NullType, bool, int, float> const& v) const;
+    MCNAPI bool compareValue(::std::variant<::cereal::NullType, bool, int, float> const& v) const;
 
-    MCAPI bool getBool() const;
+    MCNAPI bool getBool() const;
 
-    MCAPI int getInt() const;
+    MCNAPI int getInt() const;
 #endif
 
-    MCAPI ::GameRule& operator=(::GameRule&&);
+    MCNAPI ::GameRule& operator=(::GameRule&&);
 
-    MCAPI ::GameRule& operator=(::GameRule const&);
+    MCNAPI ::GameRule& operator=(::GameRule const&);
 
-    MCAPI bool operator==(::GameRule const& other) const;
+    MCNAPI bool operator==(::GameRule const& other) const;
 
-    MCAPI ::GameRule& setName(::std::string const& name);
+    MCNAPI ::GameRule& setName(::std::string const& name);
 
     MCAPI ~GameRule();
     // NOLINTEND
@@ -128,7 +128,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
     MCAPI void* $ctor(::GameRule&&);
 
@@ -136,7 +136,7 @@ public:
 
     MCAPI void* $ctor(::std::string const& name, bool canBeModifiedByPlayer);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& name,
         bool                 value,
         bool                 shouldSave,

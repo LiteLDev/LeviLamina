@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI BlockItem(::std::string const& name, int id, ::HashedString const& blockName);
 
-    MCAPI void _displayHeightLimitErrorMessages(::Actor& actor, int y, bool displayClientSideOnly) const;
+    MCNAPI void _displayHeightLimitErrorMessages(::Actor& actor, int y, bool displayClientSideOnly) const;
     // NOLINTEND
 
 public:
@@ -82,7 +82,7 @@ public:
 
     MCAPI bool $isDestructive(int) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -91,7 +91,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 

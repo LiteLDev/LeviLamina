@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptPlaceJigsawError(::std::string message);
+    MCNAPI explicit ScriptPlaceJigsawError(::std::string message);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string message);
+    MCNAPI void* $ctor(::std::string message);
     // NOLINTEND
 };
 

@@ -71,7 +71,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI PillagerOutpostPiece(
+        MCNAPI PillagerOutpostPiece(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -85,7 +85,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void _addMobsFromPositions(
+        MCNAPI static void _addMobsFromPositions(
             ::BoundingBox const&               chunkBB,
             ::ActorDefinitionIdentifier const& definition,
             ::BlockSource&                     region,
@@ -96,7 +96,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
             ::std::string                                     templateName,
             ::BlockPos const&                                 origin,
@@ -110,13 +110,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+        MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
-        MCAPI void $_handleDataMarker(
+        MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,
             ::BlockPos const&    position,
             ::BlockSource&       region,
@@ -131,6 +131,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
+    MCNAPI static ::std::array<::std::string_view, 7>& MSC_FEATURES();
     // NOLINTEND
 };

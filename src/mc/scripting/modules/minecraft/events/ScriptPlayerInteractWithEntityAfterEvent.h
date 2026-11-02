@@ -43,33 +43,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptPlayerInteractWithEntityAfterEvent(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
-    MCAPI ScriptPlayerInteractWithEntityAfterEvent(
+    MCNAPI ScriptPlayerInteractWithEntityAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope&                                                                   scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope&                                                                   scope
     );

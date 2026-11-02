@@ -602,7 +602,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void queueHandleWorldChangePacket(
+    MCNAPI void queueHandleWorldChangePacket(
         ::NetworkIdentifier const&              source,
         ::BlockPos const&                       requiredPos,
         ::std::function<void(::BlockSource&)>&& handler
@@ -612,7 +612,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _handleUnlockedRecipesByTag(
+    MCNAPI static void _handleUnlockedRecipesByTag(
         ::UnlockedRecipesClientComponent const&                                                   component,
         ::std::map<::HashedString, ::std::map<::std::string, ::std::shared_ptr<::Recipe>>> const& allRecipes,
         ::std::string const&                                                                      recipeId,
@@ -620,7 +620,7 @@ public:
         ::std::vector<::ToastIconData>&                                                           newRecipeToastDataRef
     );
 
-    MCAPI static ::ClientNetworkHandler::SubscribedHostPacks
+    MCNAPI static ::ClientNetworkHandler::SubscribedHostPacks
     createHostPacks(::PackDownloadManager& downloadMaager, ::IContentManager& contentManager);
     // NOLINTEND
 
@@ -629,277 +629,277 @@ public:
     // NOLINTBEGIN
     MCAPI void $handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AddBehaviorTreePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AnimateEntityPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AnimateEntityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AvailableActorIdentifiersPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::AvailableCommandsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AutomationClientConnectPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::BiomeDefinitionListPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::BiomeDefinitionListPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::BossEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::BossEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistPresetsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraAimAssistActorPriorityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraInstructionPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraPresetsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraShakePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CameraSplinePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ChunkRadiusUpdatedPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundControlSchemeSetPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundMatchmakingStatePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ClientboundMapItemDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundStonecutterSetRecipePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::CommandOutputPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CompletedUsingItemPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CraftingDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CraftingDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::EmoteListPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::DebugInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::DebugInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::EmotePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::EmotePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::LegacyTelemetryEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::FeatureRegistryPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LessonProgressPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::LessonProgressPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::LabTablePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::LevelEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::LevelEventGenericPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::LevelSoundEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ModalFormRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ToastRequestPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ToastRequestPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::OnScreenTextureAnimationPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::NetworkChunkPublisherUpdatePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PhotoTransferPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PhotoTransferPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerArmorDamagePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerStartItemCooldownPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlaySoundPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PlaySoundPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayStatusPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerFogPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerFogPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PositionTrackingDBServerBroadcastPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::RemoveObjectivePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ResourcePackChunkDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackDataInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackDataInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePacksInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackStackPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ResourcePackStackPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ServerSettingsResponsePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ServerToClientHandshakePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetDisplayObjectivePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetLastHurtByPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetPlayerGameTypePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::UpdatePlayerGameTypePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::SetScoreboardIdentityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::SetScorePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetTitlePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowCreditsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ShowCreditsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowProfilePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ShowProfilePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ShowStoreOfferPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::SimpleEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::StopSoundPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::StopSoundPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::SubChunkPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::SubChunkPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TakeItemActorPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::TakeItemActorPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::TextPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::TickingAreasLoadStatusPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TransferPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::TransferPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket> packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::UpdateAttributesPacket> packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateEquipPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::UpdateEquipPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::UpdateSoftEnumPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UpdateTradePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::UpdateTradePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::StructureTemplateDataResponsePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EducationSettingsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::EducationSettingsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EduUriResourcePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::EduUriResourcePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::MultiplayerSettingsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerEnchantOptionsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CodeBuilderPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CodeBuilderPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CorrectPlayerMovePredictionPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SyncActorPropertyPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::NpcDialoguePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::NpcDialoguePacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ClientboundDebugRendererPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AddVolumeEntityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::RemoveVolumeEntityPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SimulationTypePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SimulationTypePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AgentActionEventPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AgentActionEventPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateSubChunkBlocksPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::UpdateSubChunkBlocksPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::DeathInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::DeathInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::EditorNetworkPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::EditorNetworkPacket const& packet);
 
-    MCFOLD void $handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::GameTestResultsPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::UpdateClientInputLocksPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PlayerActionPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerActionPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::UnlockedRecipesPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::TrimDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::TrimDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::OpenSignPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::OpenSignPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AgentAnimationPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AgentAnimationPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::RefreshEntitlementsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetPlayerInventoryOptionsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SetPlayerFurnaceOptionsPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SetPlayerFurnaceOptionsPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::AwardAchievementPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::ClientboundCloseFormPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::JigsawStructureDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::CurrentStructureFeaturePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerVideoCapturePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::GraphicsOverrideParameterPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUICloseScreenPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIReloadPacket const&);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataDrivenUIShowScreenPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundTextureShiftPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::VoxelShapesPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::LocatorBarPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SyncWorldClocksPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundAttributeLayerSyncPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerStoreInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ServerStoreInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ServerPresenceInfoPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::SendPartyDestinationCookiePacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundUpdateSoundDataPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundPlayAudioContentPacket const& packet);
 
-    MCAPI void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet);
+    MCNAPI void $handle(::NetworkIdentifier const&, ::RecordStartedPacket const& packet);
 
-    MCAPI void $onOutgoingPacket(
+    MCNAPI void $onOutgoingPacket(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
         ::SubClientId,
         ::SubClientId recipientSubId
     );
 
-    MCAPI void $onValidPacketReceived(
+    MCNAPI void $onValidPacketReceived(
         ::NetworkIdentifier const& netId,
         ::MinecraftPacketIds       packetId,
         ::SubClientId,
         ::SubClientId recipientSubId
     );
 
-    MCAPI void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
+    MCNAPI void $onStoreOfferReceive(::ShowStoreOfferRedirectType const redirectType, ::std::string const& offerID);
 
     MCAPI void $onDisconnect(
         ::NetworkIdentifier const&               source,
@@ -911,13 +911,13 @@ public:
         ::std::string const&                     telemetryOverride
     );
 
-    MCAPI ::IncomingPacketFilterResult
+    MCNAPI ::IncomingPacketFilterResult
     $allowIncomingPacketId(::NetworkIdentifierWithSubId const& id, ::MinecraftPacketIds packetId, uint64 packetSize);
 
-    MCFOLD ::OutgoingPacketFilterResult
+    MCNAPI ::OutgoingPacketFilterResult
     $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
-    MCAPI void $handlePacketViolation(
+    MCNAPI void $handlePacketViolation(
         ::std::shared_ptr<::IPacketSecurityController> const& packetSecurityController,
         ::std::error_code const&                              errorCode,
         ::PacketViolationResponse const                       response,
@@ -929,7 +929,7 @@ public:
         uint const                                            packetSize
     );
 
-    MCAPI void $sendPacketViolationWarningPacket(
+    MCNAPI void $sendPacketViolationWarningPacket(
         ::std::error_code const&   errorCode,
         ::PacketViolationResponse  violationResponse,
         ::MinecraftPacketIds       violatingPacketId,
@@ -938,6 +938,6 @@ public:
         ::SubClientId              clientSubId
     );
 
-    MCAPI void $onSuccessfulLogin(::NetworkIdentifier const& id);
+    MCNAPI void $onSuccessfulLogin(::NetworkIdentifier const& id);
     // NOLINTEND
 };

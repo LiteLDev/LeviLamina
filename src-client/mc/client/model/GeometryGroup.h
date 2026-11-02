@@ -48,12 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeometryGroup();
+    MCNAPI GeometryGroup();
 
-    MCAPI ::std::shared_ptr<::GeometryInfo>
+    MCNAPI ::std::shared_ptr<::GeometryInfo>
     _findOrAddGeometryInfo(::HashedString const& name, ::Bedrock::Threading::UniqueLock<::std::mutex>& geometryLock);
 
-    MCAPI void _loadModelsAsync(
+    MCNAPI void _loadModelsAsync(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::std::shared_ptr<::GeometryInheritanceTree>         inheritance,
         ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)>
@@ -61,7 +61,7 @@ public:
         ::std::function<void()> mainThreadCallback
     );
 
-    MCAPI void addGeometries(
+    MCNAPI void addGeometries(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::Json::Value&                                       geometryData,
         ::MinEngineVersion const&                            minEngineVersion,
@@ -69,7 +69,7 @@ public:
         bool                                                 isAsync
     );
 
-    MCAPI void loadGeometriesAsync(
+    MCNAPI void loadGeometriesAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)>
@@ -87,13 +87,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
+    MCNAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
     _buildGeometryFileSchema_v1_21();
 
-    MCAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
+    MCNAPI static ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeometryGroup>>
     _buildGeometryFileSchema_v1_26_40();
 
-    MCAPI static void _buildInheritanceTree(
+    MCNAPI static void _buildInheritanceTree(
         ::std::string const&,
         ::std::string const&                  sourceFilePathWithExtension,
         ::Json::Value&                        value,
@@ -104,7 +104,7 @@ public:
         ::std::function<void(::Json::Value&)> postLoadFixup
     );
 
-    MCAPI static void _buildInheritanceTree(
+    MCNAPI static void _buildInheritanceTree(
         ::std::string const&                  fileName,
         ::std::string const&                  sourceFilePathWithExtension,
         ::std::string const&                  fileContent,
@@ -115,19 +115,19 @@ public:
         ::std::function<void(::Json::Value&)> postLoadFixup
     );
 
-    MCAPI static bool checkVersionlessName(::std::string_view name, ::std::string_view versionlessGeoName);
+    MCNAPI static bool checkVersionlessName(::std::string_view name, ::std::string_view versionlessGeoName);
 
-    MCAPI static bool isValidGeometryIdentifier(::Json::Value const& name);
+    MCNAPI static bool isValidGeometryIdentifier(::Json::Value const& name);
 
-    MCAPI static bool isValidOptionalNamespaceGeometryIdentifier(::Json::Value const& name);
+    MCNAPI static bool isValidOptionalNamespaceGeometryIdentifier(::Json::Value const& name);
 
-    MCAPI static void loadModel(
+    MCNAPI static void loadModel(
         ::std::weak_ptr<::GeometryGroup> weakGeometryGroup,
         ::std::string const&             pascalCaseName,
         ::ModelParent const&             mp
     );
 
-    MCAPI static void loadModelExt(
+    MCNAPI static void loadModelExt(
         ::std::weak_ptr<::GeometryGroup> weakGeometryGroup,
         ::std::string const&             pascalCaseName,
         ::ModelParent const&             mp,
@@ -137,23 +137,23 @@ public:
         bool                             clearSkinAdjustmentsBitmask
     );
 
-    MCAPI static void upgradeMirrorMemberToV1_12(::Json::Value& bone);
+    MCNAPI static void upgradeMirrorMemberToV1_12(::Json::Value& bone);
 
-    MCAPI static bool upgradeToV1_19_30(
+    MCNAPI static bool upgradeToV1_19_30(
         ::Json::Value&            root,
         ::SemVersion const&       fileVersion,
         ::MinEngineVersion const& minEngineVersion,
         bool&                     hasBeenValidated
     );
 
-    MCAPI static bool upgradeToV1_21(
+    MCNAPI static bool upgradeToV1_21(
         ::Json::Value&            root,
         ::SemVersion const&       fileVersion,
         ::MinEngineVersion const& minEngineVersion,
         bool&                     hasBeenValidated
     );
 
-    MCAPI static bool upgradeToV1_26_40(
+    MCNAPI static bool upgradeToV1_26_40(
         ::Json::Value&            root,
         ::SemVersion const&       fileVersion,
         ::MinEngineVersion const& minEngineVersion,
@@ -164,29 +164,29 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_12();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_12();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_14();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_14();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_16();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_16();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_19_30();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_19_30();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_21();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_21();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_26_40();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_26_40();
 
-    MCAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_8();
+    MCNAPI static ::SemVersionConstant const& GEOMETRY_SCHEMA_V1_8();
 
-    MCAPI static ::std::string const& ITEM_DISPLAY_TRANSFORMS_ID();
+    MCNAPI static ::std::string const& ITEM_DISPLAY_TRANSFORMS_ID();
 
-    MCAPI static ::std::string const& UV_ROTATION_DOC();
+    MCNAPI static ::std::string const& UV_ROTATION_DOC();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

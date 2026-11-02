@@ -68,15 +68,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ItemStackRequestCereal::RequestData const&) const;
+    MCNAPI bool operator==(::ItemStackRequestCereal::RequestData const&) const;
 
-    MCAPI ~RequestData();
+    MCNAPI ~RequestData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

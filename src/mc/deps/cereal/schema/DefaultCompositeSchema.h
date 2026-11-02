@@ -19,16 +19,16 @@ class DefaultCompositeSchema : public ::cereal::internal::BasicSchema {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void constraintDescriptionIfAny(
+    MCNAPI void constraintDescriptionIfAny(
         ::cereal::SchemaDescription& description,
         ::cereal::Constraint const*  constraint,
         ::cereal::DescriptionConfig  config
     ) const;
 
-    MCAPI ::cereal::internal::VariantPriorityLevel
+    MCNAPI ::cereal::internal::VariantPriorityLevel
     findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
-    MCAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
+    MCNAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
     // NOLINTEND
 };
 

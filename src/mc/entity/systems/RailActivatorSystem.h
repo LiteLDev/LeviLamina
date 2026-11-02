@@ -23,7 +23,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickComponent(
+    MCNAPI static void _tickComponent(
         ::EntityContext&          entity,
         ::ActorOwnerComponent&    actorOwnerComponent,
         ::RailActivatorComponent& railActivatorComponent
@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

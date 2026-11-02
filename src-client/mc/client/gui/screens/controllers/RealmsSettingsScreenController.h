@@ -174,13 +174,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsSettingsScreenController(
+    MCNAPI RealmsSettingsScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::std::string const&                     initialPackId
     );
 
-    MCAPI void _addContentToBeAppliedAndUploadIfNeeded(
+    MCNAPI void _addContentToBeAppliedAndUploadIfNeeded(
         ::std::vector<::std::shared_ptr<::PackContentItem>>                             contentToUpload,
         ::std::shared_ptr<::std::vector<::Realms::Content>>                             contentToApply,
         int                                                                             index,
@@ -188,11 +188,11 @@ public:
         ::std::function<void(::std::vector<::std::shared_ptr<::PackContentItem>>, int)> failedUploadCallback
     );
 
-    MCAPI void _applyPacks(::std::function<void()> packsApplyCallback);
+    MCNAPI void _applyPacks(::std::function<void()> packsApplyCallback);
 
-    MCAPI bool _canChangeCheatGameRules() const;
+    MCNAPI bool _canChangeCheatGameRules() const;
 
-    MCAPI void _displayModalPopup(
+    MCNAPI void _displayModalPopup(
         ::std::string const&                         title,
         ::std::string const&                         message,
         ::std::function<void(::ModalScreenButtonId)> callback,
@@ -203,50 +203,50 @@ public:
         ::std::string const&                         telemetryOverride
     );
 
-    MCAPI void _fetchAppliedContent();
+    MCNAPI void _fetchAppliedContent();
 
-    MCAPI void _fetchInviteLinks();
+    MCNAPI void _fetchInviteLinks();
 
-    MCAPI bool _hasGameRulesChanged();
+    MCNAPI bool _hasGameRulesChanged();
 
-    MCAPI bool _hasSingleGameRuleChanged(::GameRuleId const& rule);
+    MCNAPI bool _hasSingleGameRuleChanged(::GameRuleId const& rule);
 
-    MCAPI bool _hasSlotInfoChanged();
+    MCNAPI bool _hasSlotInfoChanged();
 
-    MCAPI bool _hasWorldInfoChanged();
+    MCNAPI bool _hasWorldInfoChanged();
 
-    MCAPI bool _isStoreMismatch() const;
+    MCNAPI bool _isStoreMismatch() const;
 
-    MCAPI void _openCloseRealm(bool isRequestToOpen);
+    MCNAPI void _openCloseRealm(bool isRequestToOpen);
 
-    MCAPI void _querySubscriptionInfo();
+    MCNAPI void _querySubscriptionInfo();
 
-    MCAPI void _refreshWorldInfo(bool refreshSubscriptionInfo);
+    MCNAPI void _refreshWorldInfo(bool refreshSubscriptionInfo);
 
-    MCAPI void _registerEventHandlers();
+    MCNAPI void _registerEventHandlers();
 
-    MCAPI void _renewRealmHandler();
+    MCNAPI void _renewRealmHandler();
 
-    MCAPI void _saveSettings(bool showRealmsLoadingLevelProgressHandler, ::std::function<void(bool)> actionAfterSave);
+    MCNAPI void _saveSettings(bool showRealmsLoadingLevelProgressHandler, ::std::function<void(bool)> actionAfterSave);
 
-    MCAPI void _setUpCallbacksBooleanGameRuleSettings(
+    MCNAPI void _setUpCallbacksBooleanGameRuleSettings(
         ::std::vector<::std::pair<::std::string, ::GameRuleId>> const& rules,
         ::std::function<bool()>                                        enabledFunction
     );
 
-    MCAPI void _showErrorPopup(::std::string titleId, ::std::string contentId, ::std::function<void(bool)> action);
+    MCNAPI void _showErrorPopup(::std::string titleId, ::std::string contentId, ::std::function<void(bool)> action);
 
-    MCAPI void _updateRealmBranchConfig(::std::string const& ref);
+    MCNAPI void _updateRealmBranchConfig(::std::string const& ref);
 
-    MCAPI void _updateVersionsModel(::std::string const& filter, bool forceUpdate);
+    MCNAPI void _updateVersionsModel(::std::string const& filter, bool forceUpdate);
 
-    MCAPI void activateInitialPack();
+    MCNAPI void activateInitialPack();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::Realms::World const&                   world,
         ::std::string const&                     initialPackId
@@ -256,14 +256,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
     // NOLINTEND
 };

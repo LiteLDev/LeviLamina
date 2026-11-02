@@ -39,10 +39,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearVanishEnchantedItemsOnDeath();
+    MCNAPI void clearVanishEnchantedItemsOnDeath();
 
 #ifdef LL_PLAT_C
-    MCAPI bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
+    MCNAPI bool dropSlot(int slot, bool onlyClearContainer, bool dropAll, ::ContainerID containerId, bool randomly);
 #endif
 
     MCAPI bool selectSlot(int slot, ::ContainerID containerId);
@@ -51,9 +51,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $containerSizeChanged(int size);
+    MCNAPI void $containerSizeChanged(int size);
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
 
     // NOLINTEND

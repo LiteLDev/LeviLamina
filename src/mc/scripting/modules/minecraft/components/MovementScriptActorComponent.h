@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
+    MCNAPI ::Scripting::Result_deprecated<float> $getMaxTurn() const;
 
 
     // NOLINTEND

@@ -30,20 +30,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::OreUI::Prompt& operator=(::OreUI::Prompt&&);
+    MCNAPI ::OreUI::Prompt& operator=(::OreUI::Prompt&&);
 
-    MCAPI void
+    MCNAPI void
     show(::std::string id, ::std::string title, ::std::string body, ::std::vector<::OreUI::PromptAction> actions);
 
-    MCAPI void storeChosenAction(int action);
+    MCNAPI void storeChosenAction(int action);
 
-    MCAPI ~Prompt();
+    MCNAPI ~Prompt();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

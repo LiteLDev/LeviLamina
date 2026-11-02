@@ -90,13 +90,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
+    MCNAPI static ::TickingSystemWithInfo createSystem(::std::string&& message);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent>,
             ::Read<::StateVectorComponent>,

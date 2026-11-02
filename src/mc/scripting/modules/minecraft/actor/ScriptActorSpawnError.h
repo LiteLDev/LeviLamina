@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptActorSpawnError(::ActorValidationError error);
+    MCNAPI explicit ScriptActorSpawnError(::ActorValidationError error);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorValidationError error);
+    MCNAPI void* $ctor(::ActorValidationError error);
     // NOLINTEND
 };
 

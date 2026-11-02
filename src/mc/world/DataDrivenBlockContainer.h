@@ -44,25 +44,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::CompoundTag const& tag, ::ILevel& level);
+    MCNAPI void load(::CompoundTag const& tag, ::ILevel& level);
 
-    MCAPI void save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI void save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $startOpen(::Actor&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

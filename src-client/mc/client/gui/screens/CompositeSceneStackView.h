@@ -37,22 +37,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompositeSceneStackView(
+    MCNAPI CompositeSceneStackView(
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );
 
-    MCAPI void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
+    MCNAPI void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
 
-    MCAPI void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
+    MCNAPI void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
 
-    MCAPI void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
+    MCNAPI void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );

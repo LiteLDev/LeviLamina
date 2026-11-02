@@ -29,9 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void deinitializeAPI();
+    MCNAPI void deinitializeAPI();
 
-    MCAPI void initializeAPI(::IClientInstance& client);
+    MCNAPI void initializeAPI(::IClientInstance& client);
     // NOLINTEND
 };
 

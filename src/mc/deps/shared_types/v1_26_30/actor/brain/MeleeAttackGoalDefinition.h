@@ -34,43 +34,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeleeAttackGoalDefinition();
+    MCNAPI MeleeAttackGoalDefinition();
 
-    MCAPI MeleeAttackGoalDefinition(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition const&);
+    MCNAPI MeleeAttackGoalDefinition(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition const&);
 
-    MCAPI ~MeleeAttackGoalDefinition();
+    MCNAPI ~MeleeAttackGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemoryGoals::MeleeAttackGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

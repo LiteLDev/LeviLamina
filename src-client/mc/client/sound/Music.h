@@ -45,29 +45,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Music(::Category category, ::std::string const& name);
+    MCNAPI Music(::Category category, ::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Category category, ::std::string const& name);
+    MCNAPI void* $ctor(::Category category, ::std::string const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $hasTracks() const;
+    MCNAPI bool $hasTracks() const;
 
-    MCFOLD void $nextTrack();
+    MCNAPI void $nextTrack();
 
-    MCFOLD void $setActive(bool active);
+    MCNAPI void $setActive(bool active);
     // NOLINTEND
 
 public:

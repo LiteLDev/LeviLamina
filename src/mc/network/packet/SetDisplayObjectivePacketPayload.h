@@ -22,7 +22,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SetDisplayObjectivePacketPayload(
+    MCNAPI SetDisplayObjectivePacketPayload(
         ::std::string const& displaySlotName,
         ::std::string const& objectiveName,
         ::std::string const& displayName,
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& displaySlotName,
         ::std::string const& objectiveName,
         ::std::string const& displayName,

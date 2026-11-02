@@ -57,19 +57,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimulationDistanceDataProvider(
+    MCNAPI SimulationDistanceDataProvider(
         ::LevelDataWrapper& levelData,
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback
     );
 
-    MCAPI void _updateData();
+    MCNAPI void _updateData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelDataWrapper& levelData,
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback
@@ -79,15 +79,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+    MCNAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
-    MCAPI int $getValue() const;
+    MCNAPI int $getValue() const;
 
-    MCAPI void $setValue(int index);
+    MCNAPI void $setValue(int index);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
     // NOLINTEND

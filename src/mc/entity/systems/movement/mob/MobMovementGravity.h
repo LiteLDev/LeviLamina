@@ -23,9 +23,9 @@ struct TickingSystemWithInfo;
 namespace MobMovementGravity {
 // functions
 // NOLINTBEGIN
-MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void tickDefaultGravity(
+MCNAPI void tickDefaultGravity(
     ::StrictEntityContext const&                     context,
     ::ActorDataFlagComponent const&                  synchedActorData,
     ::MobEffectsComponent const&                     mobEffects,
@@ -33,7 +33,7 @@ MCAPI void tickDefaultGravity(
     ::EntityModifier<::ApplyGravityComponent> const& modifier
 );
 
-MCAPI void tickLavaGravity(
+MCNAPI void tickLavaGravity(
     ::StrictEntityContext const&                     context,
     ::Optional<::NavigationComponent const>          navigation,
     ::Optional<::PhysicsComponent const>             physics,
@@ -44,7 +44,7 @@ MCAPI void tickLavaGravity(
     ::IConstBlockSource const&                       region
 );
 
-MCAPI void tickMobWaterGravity(
+MCNAPI void tickMobWaterGravity(
     ::StrictEntityContext const&                     context,
     ::Optional<::NavigationComponent const>          navigation,
     ::Optional<::PhysicsComponent const>             physics,

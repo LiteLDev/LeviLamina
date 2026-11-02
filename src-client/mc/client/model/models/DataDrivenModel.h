@@ -47,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCNAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
 
-    MCAPI bool _setArmorTrim(
+    MCNAPI bool _setArmorTrim(
         ::ItemStack const&                   itemInstance,
         ::std::shared_ptr<::DataDrivenModel> model,
         ::Actor&                             actor,
@@ -57,20 +57,20 @@ public:
         ::RenderParams&                      childRenderParams
     );
 
-    MCAPI ::AABB calculateDefaultPoseAABB() const;
+    MCNAPI ::AABB calculateDefaultPoseAABB() const;
 
-    MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
+    MCNAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
 
-    MCAPI ::std::weak_ptr<::DataDrivenRenderer>
+    MCNAPI ::std::weak_ptr<::DataDrivenRenderer>
     getDataDrivenRenderer(::RenderParams& renderParams, ::ItemStack const& itemInstance);
 
-    MCAPI ::AABB getOrCalculateDefaultPoseAABB(::BaseActorRenderContext& renderContext);
+    MCNAPI ::AABB getOrCalculateDefaultPoseAABB(::BaseActorRenderContext& renderContext);
 
-    MCAPI ::std::string getResourceDefinitionName() const;
+    MCNAPI ::std::string getResourceDefinitionName() const;
 
-    MCAPI bool hasScript(::HashedString const& name) const;
+    MCNAPI bool hasScript(::HashedString const& name) const;
 
-    MCAPI void render(
+    MCNAPI void render(
         ::std::shared_ptr<::DataDrivenRenderer> renderer,
         ::ActorRenderData&                      actorRenderData,
         ::Vec3 const&                           modelTranslationWithWorldRotation,
@@ -91,7 +91,7 @@ public:
         ::Actor&                     actor
     );
 
-    MCAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
+    MCNAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
 
     MCAPI void setupAttachable(
         ::ItemStack const&           itemInstance,
@@ -100,7 +100,7 @@ public:
         ::Actor&                     actor
     );
 
-    MCAPI void setupAttachableNoChecks(
+    MCNAPI void setupAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
@@ -109,13 +109,13 @@ public:
         bool                         runParentSetup
     );
 
-    MCAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
+    MCNAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool shouldRenderAttachableOnActor(
+    MCNAPI static bool shouldRenderAttachableOnActor(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         bool                         isSpectator,
@@ -129,12 +129,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::GameVersion& Version_1_16_210();
+    MCNAPI static ::GameVersion& Version_1_16_210();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCNAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
     // NOLINTEND
 };

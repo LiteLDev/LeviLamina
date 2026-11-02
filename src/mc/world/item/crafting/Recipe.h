@@ -59,7 +59,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Results(::std::vector<::ItemInstance> const& results);
+        MCNAPI explicit Results(::std::vector<::ItemInstance> const& results);
 
 #ifdef LL_PLAT_C
         MCAPI void load(::BlockPalette const& blockPalette) const;
@@ -71,7 +71,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::vector<::ItemInstance> const& results);
+        MCNAPI void* $ctor(::std::vector<::ItemInstance> const& results);
         // NOLINTEND
 
     public:
@@ -184,29 +184,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
+    MCNAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
 #ifdef LL_PLAT_C
-    MCAPI ::IngredientSearchResults checkContainerItemsForUsability(
+    MCNAPI ::IngredientSearchResults checkContainerItemsForUsability(
         ::std::vector<::ContainerModel*> const& containers,
         ::CraftingContext const*                craftingContext,
         ::Recipe::IngredientSearchMode          searchMode
     ) const;
 #endif
 
-    MCAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
+    MCNAPI int countQuantityOfIngredient(::ItemInstance const& ingredient) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
+    MCNAPI static bool isAnyAuxValue(::ItemDescriptor const& ii);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    MCNAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:
@@ -241,6 +241,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

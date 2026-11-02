@@ -88,15 +88,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
+    MCNAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
     generateDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
+    MCNAPI static ::std::vector<::std::pair<::std::string, ::SharedTypes::Legacy::ActorDamageCause>>
     generateNewDamageCauseCommandEnum(::std::optional<::Scripting::Version> scriptVersion);
 
-    MCAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
+    MCNAPI static ::std::vector<::VersionedActorDamageCause> generateVersionedDamageCauseCommandEnum();
 
-    MCAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
+    MCNAPI static ::SharedTypes::Legacy::ActorDamageCause lookupCause(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -154,7 +154,7 @@ public:
 
     MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 

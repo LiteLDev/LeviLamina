@@ -46,24 +46,24 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidTag(::CompoundTag const& tag);
+    MCNAPI static bool isValidTag(::CompoundTag const& tag);
 
-    MCAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
+    MCNAPI static ::std::unique_ptr<::JigsawStructurePostprocessAction>
     load(::CompoundTag const& tag, ::JigsawStructureElementRegistry const& elementReg);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
+    MCNAPI static ::std::unique_ptr<::cereal::ReflectionCtx>& mCerealContext();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

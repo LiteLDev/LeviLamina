@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void WriteEventData(::Social::Events::Event& event) const;
+    MCNAPI void WriteEventData(::Social::Events::Event& event) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& mEventName();
+    MCNAPI static ::std::string const& mEventName();
     // NOLINTEND
 };

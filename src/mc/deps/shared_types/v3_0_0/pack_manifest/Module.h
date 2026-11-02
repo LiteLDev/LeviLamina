@@ -27,24 +27,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Module(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
+    MCNAPI Module(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::Module&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
 
-    MCAPI ~Module();
+    MCNAPI ~Module();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Module const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

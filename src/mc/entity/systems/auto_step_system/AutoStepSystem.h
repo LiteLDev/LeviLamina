@@ -13,9 +13,9 @@ struct TickingSystemWithInfo;
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 
-MCAPI ::AABB
+MCNAPI ::AABB
 getMaxCollisionVolume(::Vec3 const& preMoveSpeed, ::MaxAutoStepComponent const& step, ::AABB const& preMoveShape);
 // NOLINTEND
 

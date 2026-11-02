@@ -40,21 +40,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
+    MCNAPI static void addGoatHornVarationSaveData(::Goat& goat, ::ItemStack& instance);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCFOLD bool $canBeCharged() const;
+    MCNAPI bool $canBeCharged() const;
 
-    MCAPI ::HashedString const& $getCooldownCategory() const;
+    MCNAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownDuration() const;
+    MCNAPI int $getCooldownDuration() const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               instance,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -67,6 +67,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _startRecordSound(::BlockSource& region, ::MusicDiscPlaybackInfo const& playback);
+    MCNAPI void _startRecordSound(::BlockSource& region, ::MusicDiscPlaybackInfo const& playback);
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
@@ -91,44 +91,40 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int, int, ::ItemStack const& item) const;
 
-    MCAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
+    MCNAPI bool $canPullOutItem(int, int, ::ItemStack const&) const;
 
-#ifdef LL_PLAT_S
-    MCFOLD ::ItemStack const& $getItem(int) const;
-#else // LL_PLAT_C
-    MCAPI ::ItemStack const& $getItem(int) const;
-#endif
+    MCNAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD void $startOpen(::Actor& actor);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCFOLD void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI void
+    MCNAPI void
     $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

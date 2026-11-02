@@ -11,6 +11,6 @@ class KnockbackRoarGoalMinEngineVersionUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool shouldDoFilterEvaluateFix(::MinEngineVersion const& minEngineVersion);
+    MCNAPI static bool shouldDoFilterEvaluateFix(::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 };

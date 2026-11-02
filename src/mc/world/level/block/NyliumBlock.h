@@ -43,29 +43,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isGrowthBlockingHalfSlabBlock(::Block const& block);
+    MCNAPI static bool _isGrowthBlockingHalfSlabBlock(::Block const& block);
 
-    MCAPI static bool _isGrowthBlockingStairBlock(::Block const& block);
+    MCNAPI static bool _isGrowthBlockingStairBlock(::Block const& block);
 
-    MCAPI static ::Block const& crimsonBlockProvider(::IRandom& random);
+    MCNAPI static ::Block const& crimsonBlockProvider(::IRandom& random);
 
-    MCAPI static ::Block const& netherSproutBlockProvider(::IRandom& random);
+    MCNAPI static ::Block const& netherSproutBlockProvider(::IRandom& random);
 
-    MCAPI static ::Block const& warpedBlockProvider(::IRandom& random);
+    MCNAPI static ::Block const& warpedBlockProvider(::IRandom& random);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* entity, ::FertilizerType fType) const;
 
 
@@ -74,6 +74,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

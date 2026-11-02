@@ -32,19 +32,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCFOLD int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
-    MCAPI void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
+    MCNAPI void $doPostPiercingAttack(::Actor& attacker, int enchantLevel) const;
 
-    MCFOLD bool $isTreasureOnly() const;
+    MCNAPI bool $isTreasureOnly() const;
 
-    MCFOLD bool $isDiscoverable() const;
+    MCNAPI bool $isDiscoverable() const;
 
 
     // NOLINTEND

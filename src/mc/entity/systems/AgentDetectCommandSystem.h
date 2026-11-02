@@ -23,15 +23,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initializeObstacle(::EntityContext& entity, ::AgentComponents::DetectObstacle& detectComponent);
+    MCNAPI static void initializeObstacle(::EntityContext& entity, ::AgentComponents::DetectObstacle& detectComponent);
 
-    MCAPI static void initializeRedstone(::EntityContext& entity, ::AgentComponents::DetectRedstone& detectComponent);
+    MCNAPI static void initializeRedstone(::EntityContext& entity, ::AgentComponents::DetectRedstone& detectComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

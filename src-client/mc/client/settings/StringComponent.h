@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string> getPlaceholder() const;
+    MCNAPI ::std::optional<::std::string> getPlaceholder() const;
 
-    MCAPI bool updateValue(::std::string const& value);
+    MCNAPI bool updateValue(::std::string const& value);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCNAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

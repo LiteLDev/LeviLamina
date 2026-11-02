@@ -44,36 +44,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeaturedWorldTemplateListFacet(
+    MCNAPI FeaturedWorldTemplateListFacet(
         ::World::FeaturedWorldTemplateManager&                     featuredWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> _getFeaturedWorldTemplates() const;
+    MCNAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> _getFeaturedWorldTemplates() const;
 
-    MCAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
+    MCNAPI ::OreUI::SeeMoreRouteData _getSeeMoreRouteData() const;
 
-    MCAPI void clearRefreshTaskState();
+    MCNAPI void clearRefreshTaskState();
 
-    MCFOLD ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getFeaturedWorldTemplates() const;
+    MCNAPI ::std::vector<::OreUI::MarketplaceWorldTemplateDataBindings> const& getFeaturedWorldTemplates() const;
 
-    MCFOLD ::OreUI::FacetTaskState getRefreshTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getRefreshTaskState() const;
 
-    MCFOLD ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData() const;
+    MCNAPI ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData() const;
 
-    MCAPI void refreshOffers();
+    MCNAPI void refreshOffers();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::FeaturedWorldTemplateManager&                     featuredWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -82,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

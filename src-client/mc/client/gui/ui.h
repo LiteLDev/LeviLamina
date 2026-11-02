@@ -15,9 +15,9 @@ namespace ui { struct AxisOffsetContainer; }
 namespace ui {
 // functions
 // NOLINTBEGIN
-MCAPI ::ui::TextAlignment getTextAlignmentFromString(::std::string const& alignment);
+MCNAPI ::ui::TextAlignment getTextAlignmentFromString(::std::string const& alignment);
 
-MCAPI ::ui::AxisOffsetContainer
+MCNAPI ::ui::AxisOffsetContainer
 parseLayoutAxis(::Json::Value const& val, int index, ::ui::LayoutAxisType defaultRelativeAxis);
 // NOLINTEND
 

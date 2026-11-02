@@ -35,26 +35,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerCraftRecipeEventFilter(
+    MCNAPI ScriptPlayerCraftRecipeEventFilter(
         ::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter const&
     );
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter const&);
 
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilterData const& data);
+    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilterData const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptPlayerCraftRecipeEventFilter const&);
     // NOLINTEND
 };
 

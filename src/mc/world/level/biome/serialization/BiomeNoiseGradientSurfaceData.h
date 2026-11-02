@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::BiomeNoiseGradientSurfaceData const& other) const;
+    MCNAPI bool operator==(::BiomeNoiseGradientSurfaceData const& other) const;
 
-    MCAPI ~BiomeNoiseGradientSurfaceData();
+    MCNAPI ~BiomeNoiseGradientSurfaceData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

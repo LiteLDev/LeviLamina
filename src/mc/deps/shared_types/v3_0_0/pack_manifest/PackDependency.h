@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::PackDependency const& other) const;
+    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::PackDependency const& other) const;
     // NOLINTEND
 };
 

@@ -40,14 +40,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _add(::UIControl& control);
+    MCNAPI void _add(::UIControl& control);
 
-    MCAPI void _solve(::ui::DirtyFlag& dirty, ::LayoutSolvePass pass);
+    MCNAPI void _solve(::ui::DirtyFlag& dirty, ::LayoutSolvePass pass);
 
-    MCAPI void invalidate(::VariableRef& variableRef, bool forceInvalidation);
+    MCNAPI void invalidate(::VariableRef& variableRef, bool forceInvalidation);
 
-    MCAPI void invalidateDependencies(::VariableRef& variableRef, bool forceInvalidation);
+    MCNAPI void invalidateDependencies(::VariableRef& variableRef, bool forceInvalidation);
 
-    MCAPI ::ui::DirtyFlag solve();
+    MCNAPI ::ui::DirtyFlag solve();
     // NOLINTEND
 };

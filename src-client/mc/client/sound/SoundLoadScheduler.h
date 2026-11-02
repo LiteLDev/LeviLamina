@@ -23,6 +23,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _runCanceledLoads();
+    MCNAPI void _runCanceledLoads();
     // NOLINTEND
 };

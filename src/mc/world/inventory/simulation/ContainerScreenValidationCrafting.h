@@ -28,10 +28,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ContainerValidationResult
+    MCNAPI ::ContainerValidationResult
     $tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
-    MCAPI ::ContainerValidationCraftResult
+    MCNAPI ::ContainerValidationCraftResult
     $getCraftResults(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar const numCrafts);
 
 

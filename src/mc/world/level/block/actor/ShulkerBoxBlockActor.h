@@ -68,45 +68,45 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
+    MCNAPI static ::std::unique_ptr<::ShulkerBoxBlockActor> createShulkerBoxBlockEntity(::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
-    MCAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
+    MCNAPI static bool itemAllowedInSlot(int, ::ItemStackBase const& item, int);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI void $onPlace(::BlockSource& region);
+    MCNAPI void $onPlace(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCAPI void $startOpen(::Actor& actor);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCAPI void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getCloseSound() const;
 
-    MCAPI ::AABB $getObstructionAABB() const;
+    MCNAPI ::AABB $getObstructionAABB() const;
 
-    MCFOLD bool $_detectEntityObstruction(::BlockSource& region) const;
+    MCNAPI bool $_detectEntityObstruction(::BlockSource& region) const;
 
 
     // NOLINTEND

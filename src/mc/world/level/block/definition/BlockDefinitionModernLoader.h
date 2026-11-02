@@ -24,7 +24,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockDefinition blockDefinitionDocumentToBlockDefinitionTransformer(
+    MCNAPI static ::BlockDefinition blockDefinitionDocumentToBlockDefinitionTransformer(
         ::cereal::ReflectionCtx const&                                      ctx,
         ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument&& source,
         ::SemVersion                                                        originalJsonVersion

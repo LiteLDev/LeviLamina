@@ -32,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Json::Value _serialize() const;
+    MCNAPI ::Json::Value _serialize() const;
 
-    MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
+    MCNAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
+    MCNAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
 
-    MCAPI bool
+    MCNAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
     // NOLINTEND
 };

@@ -28,21 +28,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $spawnAfterBreak(
+    MCNAPI void $spawnAfterBreak(
         ::BlockSource& region,
         ::Block const&,
         ::BlockPos const&             pos,
         ::ResourceDropsContext const& resourceDropsContext
     ) const;
-#else // LL_PLAT_C
-    MCFOLD void $spawnAfterBreak(
-        ::BlockSource& region,
-        ::Block const&,
-        ::BlockPos const&             pos,
-        ::ResourceDropsContext const& resourceDropsContext
-    ) const;
-#endif
 
 
     // NOLINTEND

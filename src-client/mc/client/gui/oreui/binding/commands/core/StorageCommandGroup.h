@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageCommandGroup(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit StorageCommandGroup(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

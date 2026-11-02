@@ -43,31 +43,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptActorHurtAfterEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
 
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData const& data);
+    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilterData const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptActorHurtAfterEventFilter const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
+    MCNAPI bool $shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorEventFilterData const& filterData);
 
 
     // NOLINTEND

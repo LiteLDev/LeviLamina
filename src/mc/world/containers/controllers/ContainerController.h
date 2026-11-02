@@ -59,13 +59,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD bool canConsume(int modelSlot, int removeCount) const;
+    MCNAPI bool canConsume(int modelSlot, int removeCount) const;
 
-    MCFOLD bool canDestroy(int modelSlot, int removeCount) const;
+    MCNAPI bool canDestroy(int modelSlot, int removeCount) const;
 
-    MCFOLD bool canDrop(int modelSlot, int removeCount) const;
+    MCNAPI bool canDrop(int modelSlot, int removeCount) const;
 
-    MCAPI ::ItemSetType canSet(
+    MCNAPI ::ItemSetType canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,
         ::ItemStackBase const&          item,
@@ -73,21 +73,21 @@ public:
         bool                            allowSwap
     ) const;
 
-    MCAPI int
+    MCNAPI int
     getAvailableAddCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& fillItem) const;
 
-    MCAPI int getAvailableAutoPlaceCount(
+    MCNAPI int getAvailableAutoPlaceCount(
         ::ContainerScreenContext const& context,
         int                             slot,
         ::ItemStackBase const&          fillItem,
         bool                            allowClobber
     ) const;
 
-    MCAPI ::ItemStack const& getItemStack(int slot) const;
+    MCNAPI ::ItemStack const& getItemStack(int slot) const;
 
-    MCAPI ::ItemStack removeItem(int slot, int removeCount);
+    MCNAPI ::ItemStack removeItem(int slot, int removeCount);
 
-    MCAPI bool setItem(
+    MCNAPI bool setItem(
         ::ContainerScreenContext const& context,
         int                             slot,
         ::ItemStack&                    stack,
@@ -101,29 +101,29 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getRecipeItem(int index) const;
+    MCNAPI ::ItemInstance const& $getRecipeItem(int index) const;
 
-    MCFOLD bool $canRemove(int slot, int removeCount) const;
+    MCNAPI bool $canRemove(int slot, int removeCount) const;
 
-    MCFOLD bool $isItemAllowed(::ItemStackBase const& item) const;
+    MCNAPI bool $isItemAllowed(::ItemStackBase const& item) const;
 
-    MCAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
+    MCNAPI bool $isItemFiltered(::Recipes const& recipes, ::ItemStackBase const& item) const;
 
-    MCFOLD int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
+    MCNAPI int $getBackgroundStyle(int slot, bool inventoryContainsItem) const;
 
-    MCAPI ::ItemSetType $_canSet(
+    MCNAPI ::ItemSetType $_canSet(
         ::ContainerScreenContext const& context,
         int                             modelSlot,
         ::ItemStackBase const&          item,
         ::ItemTransferAmount            transferAmount
     ) const;
 
-    MCAPI int
+    MCNAPI int
     $_getAvailableSetCount(::ContainerScreenContext const& context, int modelSlot, ::ItemStackBase const& item) const;
 
-    MCAPI bool $_canRemove(int modelSlot, int removeCount) const;
+    MCNAPI bool $_canRemove(int modelSlot, int removeCount) const;
 
-    MCFOLD void $_onItemChanged(int modelSlot);
+    MCNAPI void $_onItemChanged(int modelSlot);
 #endif
 
 

@@ -11,7 +11,7 @@ struct EntitySystemTickingMode;
 namespace ClientAcceptanceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
+MCNAPI void registerSystems(::EntitySystems& systems, ::EntitySystemTickingMode const& mode);
 // NOLINTEND
 
 } // namespace ClientAcceptanceSystem

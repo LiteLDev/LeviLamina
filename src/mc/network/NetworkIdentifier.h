@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
+    MCNAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string getAddress() const;
 
-    MCAPI ::std::string getCorrelationId() const;
+    MCNAPI ::std::string getCorrelationId() const;
 
     MCAPI uint64 getHash() const;
 
-    MCAPI bool isUnassigned() const;
+    MCNAPI bool isUnassigned() const;
 
     MCAPI ::std::string toString() const;
     // NOLINTEND
@@ -55,7 +55,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string calculateCorrelationId(::RakNet::RakNetGUID const& rakId);
+    MCNAPI static ::std::string calculateCorrelationId(::RakNet::RakNetGUID const& rakId);
     // NOLINTEND
 
 public:

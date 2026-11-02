@@ -28,30 +28,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AdmireItemGoalDefinition(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
+    MCNAPI AdmireItemGoalDefinition(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_20::AdmireItemGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::AdmireItemGoalDefinition&
     operator=(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
 
-    MCAPI ~AdmireItemGoalDefinition();
+    MCNAPI ~AdmireItemGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::AdmireItemGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

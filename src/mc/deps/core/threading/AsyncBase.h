@@ -33,7 +33,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Bedrock::Threading::AsyncBase::DiagnosticInfo $getAsyncDiagnosticInfo() const;
+    MCNAPI ::Bedrock::Threading::AsyncBase::DiagnosticInfo $getAsyncDiagnosticInfo() const;
 
 
     // NOLINTEND

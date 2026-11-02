@@ -16,20 +16,21 @@ namespace SculkUtils {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void addChargeEffects(::BlockSource& region, ::CompoundTag const& data, ::Random& random);
+MCNAPI void addChargeEffects(::BlockSource& region, ::CompoundTag const& data, ::Random& random);
 
-MCAPI void addChargeEffects(::BlockSource& region, ::BlockPos const& pos, int charge, int facingData, ::Random& random);
+MCNAPI void
+addChargeEffects(::BlockSource& region, ::BlockPos const& pos, int charge, int facingData, ::Random& random);
 
-MCAPI void addChargePopEffects(::BlockSource& region, ::CompoundTag const& data, ::Random& random);
+MCNAPI void addChargePopEffects(::BlockSource& region, ::CompoundTag const& data, ::Random& random);
 
-MCAPI void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
+MCNAPI void addChargePopEffects(::BlockSource& region, ::BlockPos const& pos, ::Random& random);
 #endif
 
-MCAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
+MCNAPI bool canSpreadIntoBlock(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos);
 
-MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocks();
+MCNAPI ::std::set<::Block const*> generateSculkReplaceableBlocks();
 
-MCAPI ::std::set<::Block const*> generateSculkReplaceableBlocksWorldgen();
+MCNAPI ::std::set<::Block const*> generateSculkReplaceableBlocksWorldgen();
 // NOLINTEND
 
 } // namespace SculkUtils

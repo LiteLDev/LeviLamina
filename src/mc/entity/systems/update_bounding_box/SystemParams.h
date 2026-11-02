@@ -139,7 +139,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SystemParams(
+    MCNAPI SystemParams(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,
@@ -161,7 +161,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,

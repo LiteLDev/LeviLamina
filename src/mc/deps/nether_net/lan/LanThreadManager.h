@@ -88,54 +88,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void BroadcastTask();
+    MCNAPI void BroadcastTask();
 
-    MCAPI void CreateEncryptedBroadcastSocket();
+    MCNAPI void CreateEncryptedBroadcastSocket();
 
-    MCAPI void OnNetworkDiscoveryComplete();
+    MCNAPI void OnNetworkDiscoveryComplete();
 
-    MCAPI ::std::error_code SendToHelper(
+    MCNAPI ::std::error_code SendToHelper(
         ::std::unique_ptr<::webrtc::AsyncPacketSocket>& socket,
         void const*                                     data,
         uint64                                          size,
         ::webrtc::SocketAddress const&                  addr
     );
 
-    MCAPI void Shutdown();
+    MCNAPI void Shutdown();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
 
-    MCAPI bool $IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
+    MCNAPI bool $IsBroadcastDiscoveryEnabled(::NetherNet::NetworkID id);
 
-    MCAPI void $EnableBroadcastDiscovery(::NetherNet::NetworkID id);
+    MCNAPI void $EnableBroadcastDiscovery(::NetherNet::NetworkID id);
 
-    MCAPI void $DisableBroadcastDiscovery(::NetherNet::NetworkID id);
+    MCNAPI void $DisableBroadcastDiscovery(::NetherNet::NetworkID id);
 
-    MCAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port);
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ipStr, int port);
 
-    MCAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
 
-    MCAPI void $SendLanBroadcastResponse(
+    MCNAPI void $SendLanBroadcastResponse(
         ::webrtc::SocketAddress const& destination,
         ::NetherNet::NetworkID         from,
         ::std::string                  data
     );
 
-    MCAPI void $SendSignalingMessageTo(
+    MCNAPI void $SendSignalingMessageTo(
         ::NetherNet::NetworkID networkIdFrom,
         ::NetherNet::NetworkID networkIdTo,
         ::std::string          data
     );
 
-    MCAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);
+    MCNAPI bool $IsNetworkIdOnLan(::NetherNet::NetworkID networkId);
 
-    MCAPI void $Suspend();
+    MCNAPI void $Suspend();
 
-    MCAPI void $Resume();
+    MCNAPI void $Resume();
 
 
     // NOLINTEND

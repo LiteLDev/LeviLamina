@@ -81,30 +81,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LevelSummary& _addLevelSummary(::World::WorldID const& worldID);
+    MCNAPI ::LevelSummary& _addLevelSummary(::World::WorldID const& worldID);
 
-    MCAPI void _addWorldEditorEntry(
+    MCNAPI void _addWorldEditorEntry(
         ::World::WorldID const&                               worldID,
         ::World::IWorldStorageHandler::CachedWorldData const& cachedWorldData
     );
 
-    MCAPI bool _closeWorld(::World::WorldID const& worldID);
+    MCNAPI bool _closeWorld(::World::WorldID const& worldID);
 
-    MCAPI void _onWorldIconUpdated(::World::WorldID const& worldID);
+    MCNAPI void _onWorldIconUpdated(::World::WorldID const& worldID);
 
-    MCAPI bool _refreshWorldData(::World::WorldID const& worldID);
+    MCNAPI bool _refreshWorldData(::World::WorldID const& worldID);
 
-    MCAPI ::std::optional<::World::PackActionError>
+    MCNAPI ::std::optional<::World::PackActionError>
     activatePack(::World::WorldID const& worldID, ::ContentType contentType, ::std::string const& packId, bool force);
 
-    MCAPI ::World::WorldID addWorld();
+    MCNAPI ::World::WorldID addWorld();
 
-    MCAPI void addWorldFromTemplate(
+    MCNAPI void addWorldFromTemplate(
         ::std::string const&                                                                        templateId,
         ::std::function<void(::std::variant<::World::AddWorldFromTemplateError, ::World::WorldID>)> onComplete
     );
 
-    MCAPI ::std::optional<::World::PackActionError> changePackPriority(
+    MCNAPI ::std::optional<::World::PackActionError> changePackPriority(
         ::World::WorldID const& worldID,
         ::ContentType           contentType,
         ::std::string const&    packId,
@@ -112,66 +112,66 @@ public:
         int                     toIndex
     );
 
-    MCAPI ::Bedrock::Threading::Async<void> clearPlayerData(
+    MCNAPI ::Bedrock::Threading::Async<void> clearPlayerData(
         ::World::WorldID const&                                                    worldID,
         ::World::ClearPlayerDataType                                               type,
         ::std::optional<::World::IWorldStorageHandler::StartClearPlayerDataError>& error
     ) const;
 
-    MCAPI ::std::optional<::World::PackActionError> continuePackActivation(::World::WorldID const& worldID);
+    MCNAPI ::std::optional<::World::PackActionError> continuePackActivation(::World::WorldID const& worldID);
 
-    MCAPI ::std::optional<::World::PackActionError> continuePackDeactivation(::World::WorldID const& worldID);
+    MCNAPI ::std::optional<::World::PackActionError> continuePackDeactivation(::World::WorldID const& worldID);
 
-    MCAPI ::std::optional<::World::PackActionError>
+    MCNAPI ::std::optional<::World::PackActionError>
     deactivatePack(::World::WorldID const& worldID, ::ContentType contentType, ::std::string const& packId, bool force);
 
-    MCAPI ::std::optional<::World::DeleteWorldError> deleteWorld(::World::WorldID const& worldID);
+    MCNAPI ::std::optional<::World::DeleteWorldError> deleteWorld(::World::WorldID const& worldID);
 
-    MCAPI void downloadPacks(
+    MCNAPI void downloadPacks(
         ::World::WorldID const&                           worldID,
         ::std::vector<::std::string> const&               packIds,
         ::std::function<void()>                           onCompleteCallback,
         ::std::function<void(::World::PackDownloadError)> onErrorCallback
     );
 
-    MCAPI void duplicateWorld(
+    MCNAPI void duplicateWorld(
         ::World::WorldID const&                                                    worldID,
         ::std::function<void()>                                                    onCompleteCallback,
         ::std::function<void()>                                                    onCancelCallback,
         ::std::function<void(::World::IWorldStorageHandler::DuplicateWorldResult)> onErrorCallback
     );
 
-    MCAPI void exportWorld(
+    MCNAPI void exportWorld(
         ::World::WorldID const&                                                 worldID,
         ::World::ExportWorldFlags                                               flags,
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) const;
 
-    MCAPI void exportWorldAsTemplate(
+    MCNAPI void exportWorldAsTemplate(
         ::World::WorldID const&                                                 worldID,
         ::World::ExportWorldFlags                                               flags,
         ::std::function<void(::World::IWorldStorageHandler::ExportWorldResult)> onComplete
     ) const;
 
-    MCAPI ::World::WorldData* getWorld(::World::WorldID const& worldID);
+    MCNAPI ::World::WorldData* getWorld(::World::WorldID const& worldID);
 
-    MCAPI ::World::WorldPacksData getWorldPacksData(::World::WorldID const& worldID);
+    MCNAPI ::World::WorldPacksData getWorldPacksData(::World::WorldID const& worldID);
 
-    MCAPI bool hasNonAddonBehaviorPacks(::World::WorldID const& id) const;
+    MCNAPI bool hasNonAddonBehaviorPacks(::World::WorldID const& id) const;
 
-    MCAPI bool isAchievementsDisabled(::World::WorldID const& id, bool isTrial) const;
+    MCNAPI bool isAchievementsDisabled(::World::WorldID const& id, bool isTrial) const;
 
-    MCAPI bool isWorldPlatformLocked(::World::WorldID const& id) const;
+    MCNAPI bool isWorldPlatformLocked(::World::WorldID const& id) const;
 
-    MCAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::World::WorldID const& worldID);
+    MCNAPI ::std::optional<::World::IWorldStorageHandler::ReadWorldError> loadWorld(::World::WorldID const& worldID);
 
-    MCAPI void saveScreenshotAsWorldIcon(
+    MCNAPI void saveScreenshotAsWorldIcon(
         ::World::WorldID const&           worldID,
         ::Core::PathBuffer<::std::string> screenshotPath,
         ::std::string const&              id
     );
 
-    MCAPI void saveWorld(
+    MCNAPI void saveWorld(
         ::World::WorldID const&                        worldID,
         ::std::function<void()>                        onCompleteCallback,
         ::std::function<void(::World::SaveWorldError)> onErrorCallback,
@@ -182,9 +182,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLevelDeleted(::std::string const& levelId);
+    MCNAPI void $onLevelDeleted(::std::string const& levelId);
 
-    MCAPI void $onLevelUpdated(::std::string const& levelId);
+    MCNAPI void $onLevelUpdated(::std::string const& levelId);
     // NOLINTEND
 };
 

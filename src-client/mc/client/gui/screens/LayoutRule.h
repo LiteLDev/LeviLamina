@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAnchorTerm(
+    MCNAPI void addAnchorTerm(
         ::UIControl&               relativeTo,
         ::LayoutVariableType const type,
         ::ui::AnchorPoint const    anchorPoint,
@@ -34,24 +34,24 @@ public:
         ::LayoutRuleTermType       termType
     );
 
-    MCAPI void
+    MCNAPI void
     addAxisOffsetTerms(::UIControl& relativeTo, ::UIControl& control, ::std::vector<::ui::AxisOffset> const& offsets);
 
-    MCAPI void addDependsOnMeEntriesForInvalidation(::VariableRef const& variable, bool checkForDuplicates);
+    MCNAPI void addDependsOnMeEntriesForInvalidation(::VariableRef const& variable, bool checkForDuplicates);
 
-    MCAPI void addFillGridDimensionTerm(
+    MCNAPI void addFillGridDimensionTerm(
         ::UIControl&          control,
         ::UIControl&          itemTemplate,
         ::LayoutVariableType  dimensionType,
         ::ui::OrientationType rescalingType
     );
 
-    MCAPI void
+    MCNAPI void
     addGridSizeTerms(::UIControl& control, ::UIControl& gridItemTemplate, ::LayoutVariableType sizeType, float scale);
 
-    MCAPI void addOffsetDeltaTerm(::UIControl& control, ::LayoutVariableType type);
+    MCNAPI void addOffsetDeltaTerm(::UIControl& control, ::LayoutVariableType type);
 
-    MCAPI void addRescalingGridDimensionTerm(
+    MCNAPI void addRescalingGridDimensionTerm(
         ::UIControl&          control,
         ::UIControl&          itemTemplate,
         ::LayoutVariableType  dimensionType,

@@ -42,11 +42,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConcretePowderBlock(::std::string const& nameId, int id);
+    MCNAPI ConcretePowderBlock(::std::string const& nameId, int id);
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& event) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& event) const;
     // NOLINTEND
 
 public:
@@ -61,21 +61,21 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::mce::Color $getDustColor(::Block const& block) const;
+    MCNAPI ::mce::Color $getDustColor(::Block const& block) const;
 
-    MCAPI ::std::string $getDustParticleName(::Block const& block) const;
+    MCNAPI ::std::string $getDustParticleName(::Block const& block) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $shouldStopFalling(::Actor& entity) const;
+    MCNAPI bool $shouldStopFalling(::Actor& entity) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
 
     // NOLINTEND
@@ -83,6 +83,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

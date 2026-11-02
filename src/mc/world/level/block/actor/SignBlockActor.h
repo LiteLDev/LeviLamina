@@ -74,11 +74,11 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI CachedMessageData(::SignBlockActor::CachedMessageData const&);
+        MCNAPI CachedMessageData(::SignBlockActor::CachedMessageData const&);
 
-        MCAPI ::SignBlockActor::CachedMessageData& operator=(::SignBlockActor::CachedMessageData&&);
+        MCNAPI ::SignBlockActor::CachedMessageData& operator=(::SignBlockActor::CachedMessageData&&);
 
-        MCAPI ~CachedMessageData();
+        MCNAPI ~CachedMessageData();
 #endif
         // NOLINTEND
 
@@ -86,7 +86,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void* $ctor(::SignBlockActor::CachedMessageData const&);
+        MCNAPI void* $ctor(::SignBlockActor::CachedMessageData const&);
 #endif
         // NOLINTEND
 
@@ -94,7 +94,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -137,27 +137,27 @@ public:
         // NOLINTBEGIN
         MCAPI ::std::string const& getMessage() const;
 
-        MCAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
+        MCNAPI void load(::CompoundTag const& tag, ::SignBlockActor::Text::LoadMode load);
 
-        MCAPI bool save(::CompoundTag& tag) const;
+        MCNAPI bool save(::CompoundTag& tag) const;
 
-        MCAPI void setMessage(::std::string message);
+        MCNAPI void setMessage(::std::string message);
 
-        MCAPI void setMessage(::TextObjectRoot message);
+        MCNAPI void setMessage(::TextObjectRoot message);
 
-        MCAPI ~Text();
+        MCNAPI ~Text();
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[18]> SIGN_PERSIST_FORMATTING_TAG();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[18]> SIGN_PERSIST_FORMATTING_TAG();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -216,70 +216,70 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    MCNAPI SignBlockActor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
 
     MCAPI ::std::string const& getMessage(::SignTextSide side) const;
 
-    MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
+    MCNAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
-    MCAPI void
+    MCNAPI void
     requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
 
 #ifdef LL_PLAT_C
-    MCAPI void setMessage(::SignTextSide side, ::std::string message);
+    MCNAPI void setMessage(::SignTextSide side, ::std::string message);
 
-    MCAPI void setMessage(::SignTextSide side, ::TextObjectRoot message);
+    MCNAPI void setMessage(::SignTextSide side, ::TextObjectRoot message);
 #endif
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
+    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
-    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
+    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
+    MCNAPI void* $ctor(::BlockPos const& pos, ::BlockActorType blockActorType, ::BlockActorRendererId rendererId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+    MCNAPI bool $isTypeOrDerived(::BlockActorType type) const;
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCFOLD void $onChanged(::BlockSource& region);
+    MCNAPI void $onChanged(::BlockSource& region);
 
-    MCAPI float $getShadowRadius(::BlockSource& region) const;
+    MCNAPI float $getShadowRadius(::BlockSource& region) const;
 
-    MCAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
+    MCNAPI ::std::string $getImmersiveReaderText(::BlockSource& region);
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
+    MCNAPI ::std::vector<::std::string> $getUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
+    MCNAPI ::std::vector<::std::string> $getFilteredUgcStrings(::CompoundTag const& tag) const;
 
-    MCAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCNAPI void $setUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
+    MCNAPI void $setFilteredUgcStrings(::CompoundTag& tag, ::std::vector<::std::string> const& list) const;
 
-    MCAPI bool $validateData(::CompoundTag const& tag) const;
+    MCNAPI bool $validateData(::CompoundTag const& tag) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
+    MCNAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
 
 
     // NOLINTEND

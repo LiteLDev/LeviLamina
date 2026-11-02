@@ -45,9 +45,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD ::GeometryAtlas::TileDefinition const& $getDefinition() const;
+        MCNAPI ::GeometryAtlas::TileDefinition const& $getDefinition() const;
 
-        MCAPI void
+        MCNAPI void
         $submitUpdate(::GeometryAtlas::IAtlasTile& tile, ::GeometryAtlas::InitializeCallbackPayload init) const;
         // NOLINTEND
     };
@@ -71,10 +71,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::IAtlasTile>
     $createTile(::GeometryAtlas::IGeometryAtlas& atlas, ::GeometryAtlas::TileDefinition const& definition);
 
-    MCAPI ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
+    MCNAPI ::std::unique_ptr<::OreUI::ITileResourceResolver::ITileResourceRequest>
     $tryResolveRequest(::std::string_view url);
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ArmorTrimIconGenerationInfo(
+    MCNAPI ArmorTrimIconGenerationInfo(
         ::std::string const&      armorName,
         ::std::string const&      armorType,
         ::ResourceLocation const& armorTextureLocation,
@@ -45,14 +45,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
+    MCNAPI static ::std::string
+    buildTrimmedArmorName(::std::string const& trimMaterial, ::std::string const& armorName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&      armorName,
         ::std::string const&      armorType,
         ::ResourceLocation const& armorTextureLocation,

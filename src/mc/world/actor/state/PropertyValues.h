@@ -20,22 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertyValues(::PropertyValues const&);
+    MCNAPI PropertyValues(::PropertyValues const&);
 
-    MCAPI ::PropertyValues& operator=(::PropertyValues&&);
+    MCNAPI ::PropertyValues& operator=(::PropertyValues&&);
 
-    MCAPI ~PropertyValues();
+    MCNAPI ~PropertyValues();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PropertyValues const&);
+    MCNAPI void* $ctor(::PropertyValues const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

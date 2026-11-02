@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     UpdateVersionScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::UpdateVersionScreenContext context);
     // NOLINTEND
 };

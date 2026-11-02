@@ -18,9 +18,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AgentActionEventPacketPayload();
+    MCNAPI AgentActionEventPacketPayload();
 
-    MCAPI AgentActionEventPacketPayload(
+    MCNAPI AgentActionEventPacketPayload(
         ::std::string const& requestId,
         ::AgentActionType    action,
         ::Json::Value const& response
@@ -30,8 +30,8 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
+    MCNAPI void* $ctor(::std::string const& requestId, ::AgentActionType action, ::Json::Value const& response);
     // NOLINTEND
 };

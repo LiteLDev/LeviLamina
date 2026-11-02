@@ -27,13 +27,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ContainerId();
+    MCNAPI static ::std::string_view const& ContainerId();
 
-    MCAPI static ::std::string_view const& DynamicPropertiesId();
+    MCNAPI static ::std::string_view const& DynamicPropertiesId();
 
-    MCAPI static ::std::string_view const& EntityStorageId();
+    MCNAPI static ::std::string_view const& EntityStorageId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

@@ -16,9 +16,9 @@ class Dimension;
 namespace LocateCommandUtil {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getBiomeName(::BiomeRegistry const& biomeRegistry, ::LocateCommandUtil::Biomes biomeId);
+MCNAPI ::std::string getBiomeName(::BiomeRegistry const& biomeRegistry, ::LocateCommandUtil::Biomes biomeId);
 
-MCAPI ::std::optional<::BlockPos> locateNearbyBiomeByPredicate(
+MCNAPI ::std::optional<::BlockPos> locateNearbyBiomeByPredicate(
     ::BlockPos                                   position,
     ::Dimension*                                 dimension,
     ::std::function<bool(::Biome const&)> const& predicate

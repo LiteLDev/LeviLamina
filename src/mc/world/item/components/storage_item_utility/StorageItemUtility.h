@@ -23,7 +23,7 @@ MCAPI int getItemWeightInStorageItem(::ItemStackBase const& item, ::std::optiona
 #ifdef LL_PLAT_C
 MCAPI ::std::optional<::FullContainerName> getStorageItemID(::ItemStackBase const& storageItem);
 
-MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
+MCNAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataClient(::ItemStackBase const& item, ::ContainerManagerController& containerManagerController);
 #endif
 
@@ -31,16 +31,16 @@ MCAPI ::std::optional<::StorageItemUtility::StorageItemWeightData>
 getStorageItemWeightDataServer(::ItemStackBase const& item);
 
 #ifdef LL_PLAT_S
-MCAPI bool isStorageItemEmpty(::ItemStackBase const& storageItem, ::IContainerRegistryAccess& containerRegistryAccess);
+MCNAPI bool isStorageItemEmpty(::ItemStackBase const& storageItem, ::IContainerRegistryAccess& containerRegistryAccess);
 #endif
 
-MCAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
+MCNAPI ::std::unique_ptr<::CompoundTag> saveDataFixupBySaveContext(
     ::std::unique_ptr<::CompoundTag> tag,
     ::SaveContext const&             saveContext,
     ::ItemStackBase const&           item
 );
 
-MCAPI void tryFlattenStorageItem(::ItemStackBase& item);
+MCNAPI void tryFlattenStorageItem(::ItemStackBase& item);
 // NOLINTEND
 
 } // namespace StorageItemUtility

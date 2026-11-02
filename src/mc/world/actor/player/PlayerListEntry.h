@@ -41,14 +41,14 @@ public:
     // NOLINTBEGIN
     MCAPI PlayerListEntry();
 
-    MCAPI PlayerListEntry(::PlayerListEntry const&);
+    MCNAPI PlayerListEntry(::PlayerListEntry const&);
 
     MCAPI explicit PlayerListEntry(::Player const& player);
 
 #ifdef LL_PLAT_C
-    MCAPI ::PlayerListEntry cloneExceptSkin() const;
+    MCNAPI ::PlayerListEntry cloneExceptSkin() const;
 
-    MCAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
+    MCNAPI ::PlayerListEntry& operator=(::PlayerListEntry&&);
 #endif
 
     MCAPI ~PlayerListEntry();
@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::PlayerListEntry const&);
+    MCNAPI void* $ctor(::PlayerListEntry const&);
 
     MCAPI void* $ctor(::Player const& player);
     // NOLINTEND

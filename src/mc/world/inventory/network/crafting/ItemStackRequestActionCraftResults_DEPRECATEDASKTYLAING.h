@@ -44,21 +44,21 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(::ItemInstance craftResult);
+    MCNAPI explicit ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(::ItemInstance craftResult);
 
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+    MCNAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
         ::std::vector<::ItemInstance> const& craftResults,
         uchar                                numCrafts
     );
 #endif
 
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
+    MCNAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING(
         ::std::vector<::NetworkItemInstanceDescriptor> craftResults,
         uchar                                          numCrafts
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
+    MCNAPI void _updateCraftResults(::std::vector<::ItemInstance> const& craftResults);
 #endif
     // NOLINTEND
 
@@ -66,22 +66,22 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ItemInstance craftResult);
+    MCNAPI void* $ctor(::ItemInstance craftResult);
 
-    MCAPI void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
+    MCNAPI void* $ctor(::std::vector<::ItemInstance> const& craftResults, uchar numCrafts);
 #endif
 
-    MCAPI void* $ctor(::std::vector<::NetworkItemInstanceDescriptor> craftResults, uchar numCrafts);
+    MCNAPI void* $ctor(::std::vector<::NetworkItemInstanceDescriptor> craftResults, uchar numCrafts);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCAPI void $_write(::BinaryStream& stream) const;
+    MCNAPI void $_write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
 
     // NOLINTEND

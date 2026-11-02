@@ -33,6 +33,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScoreboardIdentityRef const& Undefined();
+    MCNAPI static ::ScoreboardIdentityRef const& Undefined();
     // NOLINTEND
 };

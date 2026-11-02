@@ -39,18 +39,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CreativeGroupInfo* addAnonymousGroup();
+    MCNAPI ::CreativeGroupInfo* addAnonymousGroup();
 
-    MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
+    MCNAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
 
-    MCAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
+    MCNAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

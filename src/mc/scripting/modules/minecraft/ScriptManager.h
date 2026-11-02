@@ -27,9 +27,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::Poi::ScriptManager>>
+    MCNAPI static ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::Poi::ScriptManager>>
     create(::Dimension& dim, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

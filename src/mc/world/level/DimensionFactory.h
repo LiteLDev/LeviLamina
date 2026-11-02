@@ -39,11 +39,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
+    MCNAPI ::OwnerPtr<::Dimension> $create(::std::string const& dimensionName) const;
 
-    MCAPI void $initializeDimension(::Dimension& dimension) const;
+    MCNAPI void $initializeDimension(::Dimension& dimension) const;
 
-    MCFOLD ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& $getDimensionOwnerPtrFactory();
+    MCNAPI ::OwnerPtrFactory<::Dimension, ::DerivedDimensionArguments&&>& $getDimensionOwnerPtrFactory();
 
 
     // NOLINTEND

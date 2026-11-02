@@ -34,27 +34,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MarketplaceSuggestionsFacet(::std::shared_ptr<::SuggestedContentOffersProvider> offersProvider);
+    MCNAPI explicit MarketplaceSuggestionsFacet(::std::shared_ptr<::SuggestedContentOffersProvider> offersProvider);
 
-    MCAPI ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData();
+    MCNAPI ::std::optional<::OreUI::SeeMoreRouteData> const& getSeeMoreRouteData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::SuggestedContentOffersProvider> offersProvider);
+    MCNAPI void* $ctor(::std::shared_ptr<::SuggestedContentOffersProvider> offersProvider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

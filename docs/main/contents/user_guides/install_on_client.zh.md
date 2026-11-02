@@ -1,5 +1,9 @@
 # 在Windows上安装客户端
 
+LeviLamina 通过 [LeviLauncher](https://docs.levimc.org/LeviLauncher/zh-CN/guide/quick-start?platform=windows)
+运行在 Windows 版 Minecraft 基岩版客户端中，LeviLauncher 会为你安装客户端版本、LeviLamina 和客户端模组。（lip
+只管理服务端目录；对于客户端，LeviLauncher 会在后台调用它。）
+
 ## 前提条件
 
 您需要安装一个Minecraft基岩版支持的操作系统：
@@ -7,35 +11,22 @@
 - Windows 10(64位)
 - Windows 11(64位)
 
-要将LeviLamina安装到Minecraft基岩版客户端上，您还需要安装：
+您还需要：
 
 - [Microsoft Visual C++ 可再发行程序包（x64）](https://aka.ms/vc14/vc_redist.x64.exe)
-- [LeviLauncher](https://github.com/LiteLDev/LeviLauncher/releases)
-- [lip](https://github.com/LiteLDev/lip/releases)
+- [LeviLauncher](https://docs.levimc.org/LeviLauncher/zh-CN/download)，参见其
+  [系统要求与安装](https://docs.levimc.org/LeviLauncher/zh-CN/guide/requirements-installation?platform=windows)
 
-## 使用LeviLauncher自动安装
+## 安装
 
-1. 点击启动器导航栏的"设置"按钮，向下滚动找到lip，点击"安装"。
-2. 点击启动器导航栏的"下载"按钮，安装LeviLamina支持的Minecraft基岩版客户端版本。在安装页面中打开"安装 LeviLamina"，并选择"LeviLamina 版本"。
-3. 如果要为已经安装的实例添加LeviLamina，打开"实例列表"，进入该实例的"实例设置"，切换到"加载器"选项卡，点击"安装"。
-4. 在启动器的"启动"页面切换到该实例。它的"模组"卡片会列出已安装的模组，点击"管理模组"即可管理。
+1. 在 LeviLauncher 的 **设置** 中安装 lip（LeviLauncher 需要它来安装 LeviLamina）。
+2. 安装一个 LeviLamina 支持的客户端版本（参见[支持的版本](../versions.md)），安装时打开 **安装 LeviLamina**。
+   对于已经安装的版本，可以在该实例设置的 **加载器** 选项卡中安装 LeviLamina。
+3. 启动该实例。它的 **模组** 卡片会列出已安装的模组。
 
-## 使用lip安装
+LeviLauncher 的文档介绍了这些界面：[版本管理](https://docs.levimc.org/LeviLauncher/zh-CN/guide/version-management?platform=windows)
+和[模组与集成](https://docs.levimc.org/LeviLauncher/zh-CN/guide/mods-integrations?platform=windows)。
 
-1. 通过LeviLauncher将LeviLamina支持的客户端版本安装为一个实例，具体版本可以参考[支持的版本](../versions.md)。
-2. 通过LeviLauncher打开实例所在目录，然后打开命令行终端（可以在地址栏输入`cmd`并回车）。
-3. 运行`lip install github.com/LiteLDev/LeviLamina#client@版本号`命令来安装LeviLamina。
+## 升级LeviLamina版本
 
-例如，要安装26.51.8版本，可以运行以下命令：
-
-```shell
-lip install github.com/LiteLDev/LeviLamina#client@26.51.8
-```
-
-### 升级LeviLamina版本
-
-例如，要升级到26.51.8版本并同时更新它所需的游戏数据，可以运行以下命令：
-
-```shell
-lip update github.com/LiteLDev/LeviLamina#client@26.51.8 github.com/LiteLDev/bedrock-runtime-data@26.51.1-client.11
-```
+在 LeviLauncher 中，从该实例设置的 **加载器** 选项卡更新 LeviLamina。

@@ -44,7 +44,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerMessagingToastSubController(
+    MCNAPI PlayerMessagingToastSubController(
         ::std::shared_ptr<::MinecraftScreenModel>              minecraftScreenModel,
         ::Bedrock::NonOwnerPointer<::ToastAnnouncementSurface> toastSurface,
         ::ToastManager&                                        toastManager
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>              minecraftScreenModel,
         ::Bedrock::NonOwnerPointer<::ToastAnnouncementSurface> toastSurface,
         ::ToastManager&                                        toastManager
@@ -64,8 +64,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
+    MCNAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
     // NOLINTEND
 };

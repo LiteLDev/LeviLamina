@@ -19,7 +19,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>
+    MCNAPI static ::std::unique_ptr<::ContainerScreenValidatorBase>
     createContainerScreenValidator(::ContainerScreenContext const& screenContext);
 #endif
 
@@ -30,7 +30,7 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI static ::Container*
+    MCNAPI static ::Container*
     getBackingContainer(::FullContainerName const& containerEnumName, ::ContainerScreenContext const& screenContext);
 #endif
     // NOLINTEND

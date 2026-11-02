@@ -29,10 +29,10 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
+    MCNAPI ResolvedItemIconInfo(::std::string const& name, int frame, ::ItemIconInfoType type);
 #endif
 
-    MCAPI ResolvedItemIconInfo(
+    MCNAPI ResolvedItemIconInfo(
         ::std::string const& name,
         float                u0,
         float                u1,
@@ -49,10 +49,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
+    MCNAPI void* $ctor(::std::string const& name, int frame, ::ItemIconInfoType type);
 #endif
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::string const& name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH);
     // NOLINTEND
 

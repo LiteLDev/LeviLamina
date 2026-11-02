@@ -71,7 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGlobalEventListeners(
+    MCNAPI ScriptGlobalEventListeners(
         ::ActorEventCoordinator&         actorEventCoordinator,
         ::BlockEventCoordinator&         blockEventCoordinator,
         ::ItemEventCoordinator&          itemEventCoordinator,
@@ -81,13 +81,13 @@ public:
         ::LevelEventCoordinator&         levelEventCoordinator
     );
 
-    MCAPI ~ScriptGlobalEventListeners();
+    MCNAPI ~ScriptGlobalEventListeners();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorEventCoordinator&         actorEventCoordinator,
         ::BlockEventCoordinator&         blockEventCoordinator,
         ::ItemEventCoordinator&          itemEventCoordinator,
@@ -101,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

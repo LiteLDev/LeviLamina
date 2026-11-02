@@ -47,7 +47,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FinishedRequest(
+        MCNAPI FinishedRequest(
             ::Gameface::ResourceResponse         response,
             ::std::string const&                 requestUrl,
             ::Social::ProfileImageOptions const& imageOptions,
@@ -58,7 +58,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Gameface::ResourceResponse         response,
             ::std::string const&                 requestUrl,
             ::Social::ProfileImageOptions const& imageOptions,
@@ -104,7 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProfileImageResourceHandler(
+    MCNAPI ProfileImageResourceHandler(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
         ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
@@ -114,7 +114,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::ResourceAllowList> const& resourceAllowList,
         ::Gameface::TemporaryTextureHolder&                              temporaryTextureHolder,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>            userManager
@@ -124,13 +124,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse&);
 
-    MCAPI void $update();
+    MCNAPI void $update();
     // NOLINTEND
 };
 

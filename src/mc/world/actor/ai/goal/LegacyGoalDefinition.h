@@ -278,33 +278,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LegacyGoalDefinition();
+    MCNAPI LegacyGoalDefinition();
 
-    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
+    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition&&);
 
-    MCAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
+    MCNAPI LegacyGoalDefinition(::LegacyGoalDefinition const&);
 
 #ifdef LL_PLAT_S
-    MCAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
+    MCNAPI ::LegacyGoalDefinition& operator=(::LegacyGoalDefinition const&);
 #endif
 
-    MCAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
+    MCNAPI bool parse(::ConstDeserializeDataParams const& deserializeDataParams, int priority);
 
-    MCAPI ~LegacyGoalDefinition();
+    MCNAPI ~LegacyGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::BaseGoal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
+    MCNAPI static ::std::unique_ptr<::BaseGoal> createGoal(::Mob& mob, ::LegacyGoalDefinition const& def);
 
-    MCAPI static bool goalExists(::std::string const& name);
+    MCNAPI static bool goalExists(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::std::string,
         ::std::function<::std::unique_ptr<::BaseGoal>(::Mob&, ::LegacyGoalDefinition const&)>>&
     mGoalMap();
@@ -313,16 +313,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::LegacyGoalDefinition&&);
+    MCNAPI void* $ctor(::LegacyGoalDefinition&&);
 
-    MCAPI void* $ctor(::LegacyGoalDefinition const&);
+    MCNAPI void* $ctor(::LegacyGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

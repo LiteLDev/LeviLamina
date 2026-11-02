@@ -55,31 +55,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseAttributeMap(::BaseAttributeMap const&);
+    MCNAPI BaseAttributeMap(::BaseAttributeMap const&);
 
-    MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
+    MCNAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
 #ifdef LL_PLAT_C
-    MCFOLD void _onAttributeModifiedDisabled(::AttributeInstance const&);
+    MCNAPI void _onAttributeModifiedDisabled(::AttributeInstance const&);
 #endif
 
-    MCAPI ::AttributeInstanceConstRef getInstance(::Attribute const& attribute) const;
+    MCNAPI ::AttributeInstanceConstRef getInstance(::Attribute const& attribute) const;
 
-    MCAPI ::AttributeInstanceConstRef getInstance(uint idValue) const;
+    MCNAPI ::AttributeInstanceConstRef getInstance(uint idValue) const;
 
     MCAPI ::AttributeInstanceRef getMutableInstance(::Attribute const& attribute);
 
-    MCAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
+    MCNAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
 
     MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
 
-    MCAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
+    MCNAPI ::AttributeInstanceRef registerAttribute(::Attribute const& baseAttribute);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void updateAttribute(
+    MCNAPI static void updateAttribute(
         ::AttributeData const&          attributeData,
         ::AttributeInstanceRef          attributeRef,
         ::AttributeModificationContext& context
@@ -89,20 +89,20 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DIFF_ATTRIBUTES_SIZE();
+    MCNAPI static ::std::string const& DIFF_ATTRIBUTES_SIZE();
 
-    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES();
+    MCNAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES();
 
-    MCAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
+    MCNAPI static ::std::string const& DIFF_DIRTY_ATTRIBUTES_SIZE();
 
-    MCAPI static ::std::string const& DIFF_NO_ATTRIBUTES();
+    MCNAPI static ::std::string const& DIFF_NO_ATTRIBUTES();
 
-    MCAPI static ::AttributeInstance& mInvalidInstance();
+    MCNAPI static ::AttributeInstance& mInvalidInstance();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseAttributeMap const&);
+    MCNAPI void* $ctor(::BaseAttributeMap const&);
     // NOLINTEND
 };

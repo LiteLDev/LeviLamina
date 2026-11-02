@@ -25,7 +25,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ClientCameraAimAssistPacketPayload(::std::string const& cameraPresetId, bool allowAimAssist);
+    MCNAPI ClientCameraAimAssistPacketPayload(::std::string const& cameraPresetId, bool allowAimAssist);
 #endif
     // NOLINTEND
 
@@ -33,7 +33,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::string const& cameraPresetId, bool allowAimAssist);
+    MCNAPI void* $ctor(::std::string const& cameraPresetId, bool allowAimAssist);
 #endif
     // NOLINTEND
 };

@@ -23,20 +23,20 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& ANCHOR_SWITCH_COOLDOWN();
+    MCNAPI static ::std::string_view const& ANCHOR_SWITCH_COOLDOWN();
 
-    MCAPI static ::std::string_view const& BACKUP_ANCHOR_OFFSETS();
+    MCNAPI static ::std::string_view const& BACKUP_ANCHOR_OFFSETS();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::std::string_view const& REQUIRE_HIDDEN_BEFORE_FALLBACK();
+    MCNAPI static ::std::string_view const& REQUIRE_HIDDEN_BEFORE_FALLBACK();
     // NOLINTEND
 };
 

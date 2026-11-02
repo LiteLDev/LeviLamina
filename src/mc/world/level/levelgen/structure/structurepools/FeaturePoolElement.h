@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeaturePoolElement(
+    MCNAPI FeaturePoolElement(
         ::FeatureRegistry&                                         featureRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
         ::std::string const&                                       name
@@ -93,7 +93,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FeatureRegistry&                                         featureRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> structureManager,
         ::std::string const&                                       name
@@ -103,12 +103,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
+    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCAPI ::std::vector<::JigsawBlockInfo>
+    MCNAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI bool $place(
+    MCNAPI bool $place(
         ::BlockSource&                                                                  region,
         ::BlockPos                                                                      position,
         ::Rotation                                                                      rotation,
@@ -118,7 +118,7 @@ public:
         ::BlockPos                                                                      refPos
     ) const;
 
-    MCAPI bool $place(
+    MCNAPI bool $place(
         ::BlockSource&                    region,
         ::BlockPos                        position,
         ::BlockPos                        sectionOrigin,
@@ -129,14 +129,14 @@ public:
         ::br::worldgen::LiquidSettings    liquidSettings
     ) const;
 
-    MCFOLD void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;
+    MCNAPI void $placeActors(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::Random& random) const;
 
-    MCFOLD void
+    MCNAPI void
     $placeEntities(::BlockSource& region, ::BlockPos position, ::Rotation rotation, ::BoundingBox overlapBB) const;
 
-    MCFOLD ::StructurePoolElementType $type() const;
+    MCNAPI ::StructurePoolElementType $type() const;
 
-    MCAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
+    MCNAPI ::std::shared_ptr<::SharedTypes::v1_21_80::JigsawStructureMetadata> $createMetadata() const;
 
 
     // NOLINTEND

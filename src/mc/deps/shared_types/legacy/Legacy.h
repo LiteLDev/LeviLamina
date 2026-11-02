@@ -14,17 +14,17 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::Legacy {
 // functions
 // NOLINTBEGIN
-MCAPI void bindActorDamageCause(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindActorDamageCause(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindEquipmentSlot(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindEquipmentSlot(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindFilterSubject(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindFilterSubject(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindLevelSoundEventType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindLevelSoundEventType(::cereal::ReflectionCtx& ctx);
 
-MCAPI ::std::string const& getLevelSoundEventName(::SharedTypes::Legacy::LevelSoundEvent event);
+MCNAPI ::std::string const& getLevelSoundEventName(::SharedTypes::Legacy::LevelSoundEvent event);
 
-MCAPI bool
+MCNAPI bool
 operator==(::SharedTypes::Legacy::ExpressionNode const& lhs, ::SharedTypes::Legacy::ExpressionNode const& rhs);
 // NOLINTEND
 

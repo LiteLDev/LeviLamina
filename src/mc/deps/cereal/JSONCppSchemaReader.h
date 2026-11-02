@@ -37,27 +37,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_allowAsBool();
+    MCNAPI bool $_allowAsBool();
 
-    MCFOLD bool $_allowAsInt8();
+    MCNAPI bool $_allowAsInt8();
 
-    MCFOLD bool $_allowAsUInt8();
+    MCNAPI bool $_allowAsUInt8();
 
-    MCFOLD bool $_allowAsInt16();
+    MCNAPI bool $_allowAsInt16();
 
-    MCFOLD bool $_allowAsUInt16();
+    MCNAPI bool $_allowAsUInt16();
 
-    MCFOLD bool $_allowAsInt32();
+    MCNAPI bool $_allowAsInt32();
 
-    MCFOLD bool $_allowAsUInt32();
+    MCNAPI bool $_allowAsUInt32();
 
-    MCFOLD bool $_allowAsInt64();
+    MCNAPI bool $_allowAsInt64();
 
-    MCFOLD bool $_allowAsUInt64();
+    MCNAPI bool $_allowAsUInt64();
 
-    MCFOLD bool $_allowAsFloat();
+    MCNAPI bool $_allowAsFloat();
 
-    MCFOLD bool $_allowAsDouble();
+    MCNAPI bool $_allowAsDouble();
 
 
     // NOLINTEND

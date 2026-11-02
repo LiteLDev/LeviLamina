@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _importWorldWindows(::std::function<void(::World::TransferResult)> onImportComplete);
+    MCNAPI void _importWorldWindows(::std::function<void(::World::TransferResult)> onImportComplete);
 
-    MCAPI float getProgress();
+    MCNAPI float getProgress();
 
-    MCAPI void importWorld(::std::function<void(::World::TransferResult)> onImportComplete);
+    MCNAPI void importWorld(::std::function<void(::World::TransferResult)> onImportComplete);
     // NOLINTEND
 };
 

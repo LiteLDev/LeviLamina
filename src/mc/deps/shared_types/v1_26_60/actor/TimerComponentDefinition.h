@@ -49,42 +49,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerComponentDefinition(::SharedTypes::v1_26_60::TimerComponentDefinition&&);
+    MCNAPI TimerComponentDefinition(::SharedTypes::v1_26_60::TimerComponentDefinition&&);
 
-    MCAPI void
+    MCNAPI void
     addWeightedChoiceEntry(::SharedTypes::v1_26_60::TimerComponentDefinition::WeightChoiceEntry const& entry);
 
-    MCAPI ::SharedTypes::v1_26_60::TimerComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TimerComponentDefinition&
     operator=(::SharedTypes::v1_26_60::TimerComponentDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_60::TimerComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TimerComponentDefinition&
     operator=(::SharedTypes::v1_26_60::TimerComponentDefinition const&);
 
-    MCAPI ~TimerComponentDefinition();
+    MCNAPI ~TimerComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::TimerComponentDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::TimerComponentDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

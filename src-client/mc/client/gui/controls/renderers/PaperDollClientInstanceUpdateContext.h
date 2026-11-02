@@ -66,33 +66,33 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::brstd::move_only_function<void(::std::string_view) const> $getRemoveSkinFunction();
+    MCNAPI ::brstd::move_only_function<void(::std::string_view) const> $getRemoveSkinFunction();
 
-    MCAPI ::Skin const* $getSelectedSkin();
+    MCNAPI ::Skin const* $getSelectedSkin();
 
-    MCAPI ::Skin const* $getSkinFromPack(uint64 packHash, int packIndex);
+    MCNAPI ::Skin const* $getSkinFromPack(uint64 packHash, int packIndex);
 
-    MCAPI ::SkinPackPin $pinSkinPack(::mce::UUID const& packId);
+    MCNAPI ::SkinPackPin $pinSkinPack(::mce::UUID const& packId);
 
-    MCAPI bool $isValidSelectedSkin(::mce::UUID const& packId, int skinIndex) const;
+    MCNAPI bool $isValidSelectedSkin(::mce::UUID const& packId, int skinIndex) const;
 
-    MCAPI void $createOrUpdateSkin(
+    MCNAPI void $createOrUpdateSkin(
         ::AnimationComponent&      animationComponent,
         ::SerializedSkinRef const& skin,
         ::SkinImages const&        images
     );
 
-    MCAPI ::SkinImages $getSkinImages(::Skin const& skin, bool isPlayer);
+    MCNAPI ::SkinImages $getSkinImages(::Skin const& skin, bool isPlayer);
 
-    MCAPI bool $isSkinReadyToRender(::std::string_view skin) const;
+    MCNAPI bool $isSkinReadyToRender(::std::string_view skin) const;
 
-    MCAPI void $markLocalPlayerAsDirty();
+    MCNAPI void $markLocalPlayerAsDirty();
 
-    MCAPI bool $shouldAllSkinsRotate() const;
+    MCNAPI bool $shouldAllSkinsRotate() const;
 
-    MCAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup();
+    MCNAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup();
 
-    MCAPI void $playUI(::std::string const& name, float volume, float pitch);
+    MCNAPI void $playUI(::std::string const& name, float volume, float pitch);
     // NOLINTEND
 
 public:

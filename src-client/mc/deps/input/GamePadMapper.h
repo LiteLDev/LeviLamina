@@ -28,11 +28,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::InputMode $getInputMode() const;
+    MCNAPI ::InputMode $getInputMode() const;
 
-    MCAPI ::std::vector<::std::weak_ptr<::IGameController>> $_getGameControllers();
+    MCNAPI ::std::vector<::std::weak_ptr<::IGameController>> $_getGameControllers();
 
-    MCAPI ::GameControllerInputMapping const& $getGameControllerMapping(::InputMapping const& inputMapping);
+    MCNAPI ::GameControllerInputMapping const& $getGameControllerMapping(::InputMapping const& inputMapping);
     // NOLINTEND
 
 public:

@@ -24,7 +24,7 @@ namespace Settings { class TextComponent; }
 namespace Settings::FactoryUtil {
 // functions
 // NOLINTBEGIN
-MCAPI void addBoolean(
+MCNAPI void addBoolean(
     ::std::vector<::std::unique_ptr<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,
@@ -41,7 +41,7 @@ MCAPI void addBoolean(
     ::std::optional<::std::unique_ptr<::Settings::IBooleanDataProvider>> dataProvider
 );
 
-MCAPI void addInputBoolean(
+MCNAPI void addInputBoolean(
     ::std::vector<::std::unique_ptr<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,
@@ -58,7 +58,7 @@ MCAPI void addInputBoolean(
     ::IOptionRegistry&                  options
 );
 
-MCAPI void addInputFloatComponent(
+MCNAPI void addInputFloatComponent(
     ::std::vector<::std::unique_ptr<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,
@@ -77,7 +77,7 @@ MCAPI void addInputFloatComponent(
     ::std::optional<::std::string>      optFormat
 );
 
-MCAPI void addOption(
+MCNAPI void addOption(
     ::std::vector<::std::unique_ptr<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,
@@ -93,11 +93,11 @@ MCAPI void addOption(
     ::IOptionRegistry&                  options
 );
 
-MCAPI ::std::string getOptionName(::Option const& option);
+MCNAPI ::std::string getOptionName(::Option const& option);
 
-MCAPI ::std::optional<::std::string> getOptionalDescription(::Option const& option);
+MCNAPI ::std::optional<::std::string> getOptionalDescription(::Option const& option);
 
-MCAPI bool isDuplicate(
+MCNAPI bool isDuplicate(
     ::gsl::span<::std::unique_ptr<::std::variant<
         ::Settings::BooleanComponent,
         ::Settings::NumberComponent<int>,

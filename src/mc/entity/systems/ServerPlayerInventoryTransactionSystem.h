@@ -20,7 +20,7 @@ MCAPI void transactInventoryPacket(
     ::BlockPalette&                     blockPalette
 );
 
-MCAPI void
+MCNAPI void
 transferInventoryTransactionPackets(::ServerPlayerMovementComponent const& movementComponent, ::EntityContext& entity);
 // NOLINTEND
 

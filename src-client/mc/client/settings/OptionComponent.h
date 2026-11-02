@@ -44,20 +44,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OptionComponent(
+    MCNAPI OptionComponent(
         ::std::string_view                                  id,
         ::std::string_view                                  name,
         ::std::optional<::std::string>                      description,
         ::std::unique_ptr<::Settings::IOptionsDataProvider> dataProvider
     );
 
-    MCAPI ::std::optional<::std::string> getInfo() const;
+    MCNAPI ::std::optional<::std::string> getInfo() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view                                  id,
         ::std::string_view                                  name,
         ::std::optional<::std::string>                      description,
@@ -68,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCNAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

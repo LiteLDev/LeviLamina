@@ -11,7 +11,7 @@ struct DeprecatedPlayerPlacingComponent : public ::SharedTypes::v1_26_20::BlockD
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

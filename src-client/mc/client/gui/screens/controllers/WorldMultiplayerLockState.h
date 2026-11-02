@@ -38,10 +38,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isLocked() const;
+    MCNAPI bool $isLocked() const;
 
-    MCAPI void $setLockedByBehaviorPack(bool isLocked);
+    MCNAPI void $setLockedByBehaviorPack(bool isLocked);
 
-    MCAPI void $setLockedByResourcePack(bool isLocked);
+    MCNAPI void $setLockedByResourcePack(bool isLocked);
     // NOLINTEND
 };

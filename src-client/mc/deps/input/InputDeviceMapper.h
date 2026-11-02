@@ -64,21 +64,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $clearInputDeviceQueue();
+    MCNAPI void $clearInputDeviceQueue();
 
-    MCFOLD void $clearInputDeviceQueueForFrame();
+    MCNAPI void $clearInputDeviceQueueForFrame();
 
-    MCAPI void $getCursorPos(float& xCursor, float& yCursor) const;
+    MCNAPI void $getCursorPos(float& xCursor, float& yCursor) const;
 
-    MCFOLD void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
 
-    MCAPI void $setWindowSize(int width, int height);
+    MCNAPI void $setWindowSize(int width, int height);
 
-    MCAPI void $setBindingMode(::InputBindingMode mode, int controllerId);
+    MCNAPI void $setBindingMode(::InputBindingMode mode, int controllerId);
 
-    MCAPI ::InputBindingMode $getBindingMode(int controllerId);
+    MCNAPI ::InputBindingMode $getBindingMode(int controllerId);
 
-    MCFOLD void $changeControllerId(int oldId, int newId);
+    MCNAPI void $changeControllerId(int oldId, int newId);
     // NOLINTEND
 
 public:

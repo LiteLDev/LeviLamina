@@ -19,13 +19,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PromptAction();
+    MCNAPI ~PromptAction();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

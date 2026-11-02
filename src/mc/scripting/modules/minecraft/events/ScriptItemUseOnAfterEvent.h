@@ -40,12 +40,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptItemUseOnAfterEvent(
+    MCNAPI ScriptItemUseOnAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                              scope
     );
 
-    MCAPI ScriptItemUseOnAfterEvent(
+    MCNAPI ScriptItemUseOnAfterEvent(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,
@@ -56,20 +56,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptItemUseOnIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                              scope
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ItemUseOnEvent const&                                                        itemEvent,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemStack> item,
         ::Player const&                                                                player,

@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace UpdateAbilitiesSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createClientProcessRequestSystem();
+MCNAPI ::TickingSystemWithInfo createClientProcessRequestSystem();
 
-MCAPI ::TickingSystemWithInfo createProcessRequestSystem();
+MCNAPI ::TickingSystemWithInfo createProcessRequestSystem();
 // NOLINTEND
 
 } // namespace UpdateAbilitiesSystem

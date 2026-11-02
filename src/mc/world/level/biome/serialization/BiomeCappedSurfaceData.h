@@ -31,12 +31,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BiomeCappedSurfaceData& operator=(::BiomeCappedSurfaceData&&);
+    MCNAPI ::BiomeCappedSurfaceData& operator=(::BiomeCappedSurfaceData&&);
 
-    MCAPI bool operator==(::BiomeCappedSurfaceData const& other) const;
+    MCNAPI bool operator==(::BiomeCappedSurfaceData const& other) const;
 
 #ifdef LL_PLAT_S
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 #endif
     // NOLINTEND
 
@@ -44,7 +44,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeCappedSurfaceData> read(::ReadOnlyBinaryStream& stream);
 #endif
     // NOLINTEND
 };

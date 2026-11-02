@@ -33,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit XALEnvironmentQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit XALEnvironmentQuery(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _refresh();
+    MCNAPI void _refresh();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

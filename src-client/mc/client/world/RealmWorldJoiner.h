@@ -76,9 +76,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isUserWorldOwner(::Realms::World const& world) const;
+    MCNAPI bool _isUserWorldOwner(::Realms::World const& world) const;
 
-    MCAPI void _joinRealm(
+    MCNAPI void _joinRealm(
         ::IMinecraftEventing::RealmConnectionFlow fromFlow,
         ::Realms::World&                          world,
         ::std::function<void(::std::unique_ptr<::ProgressHandler>, ::std::unique_ptr<::ProgressHandler>)>
@@ -90,7 +90,7 @@ public:
         )>  onRealmJoinedCallback
     );
 
-    MCAPI void _joinRealmsWorld(
+    MCNAPI void _joinRealmsWorld(
         ::Realms::World                                                  world,
         ::std::function<void(::Social::GameConnectionInfo const&, bool)> successCallback,
         ::std::function<void(::Realms::GenericStatus, ::RealmsAPI::JoinStatus, ::Realms::FailureReason)> failCallback,
@@ -101,19 +101,20 @@ public:
             broadcastConnectionEventRealmsResponseFunction
     );
 
-    MCAPI bool _shouldShowRealmWarning(::OptionID optionID) const;
+    MCNAPI bool _shouldShowRealmWarning(::OptionID optionID) const;
 
-    MCAPI void joinRealmWorldV2(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
+    MCNAPI void
+    joinRealmWorldV2(::std::string const& realmIdString, ::IMinecraftEventing::RealmConnectionFlow fromFlow);
 
-    MCAPI void resetJoinRealmWarningModals();
+    MCNAPI void resetJoinRealmWarningModals();
 
-    MCAPI ~RealmWorldJoiner();
+    MCNAPI ~RealmWorldJoiner();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

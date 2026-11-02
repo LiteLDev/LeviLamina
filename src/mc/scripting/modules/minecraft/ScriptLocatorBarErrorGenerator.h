@@ -13,11 +13,11 @@ struct ScriptLocatorBarErrorGenerator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointAlreadyExistsError();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointAlreadyExistsError();
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointLimitExceededError(int limit);
+    MCNAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointLimitExceededError(int limit);
 
-    MCAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointNotFoundError();
+    MCNAPI static ::ScriptModuleMinecraft::ScriptLocatorBarError createWaypointNotFoundError();
     // NOLINTEND
 };
 

@@ -82,7 +82,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnedWorldTemplateManager(
+    MCNAPI OwnedWorldTemplateManager(
         ::IStoreCatalogRepository&                              storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver>           fileArchiver,
         ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> contentManager,
@@ -96,29 +96,29 @@ public:
         ::IContentAcquisition&                                  contentAquisition
     );
 
-    MCAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
+    MCNAPI void _localWorldUpdateCallback(::std::pair<::std::string, bool> const& updatedTemplateData);
 
-    MCAPI ::std::vector<::std::string> _populateListWithLocalTemplates();
+    MCNAPI ::std::vector<::std::string> _populateListWithLocalTemplates();
 
-    MCAPI void _populateListWithOwnedNonLocalTemplates(::std::vector<::std::string> const& localPremiumTemplates);
+    MCNAPI void _populateListWithOwnedNonLocalTemplates(::std::vector<::std::string> const& localPremiumTemplates);
 
-    MCAPI void getMarketplaceIdFromLocalId(
+    MCNAPI void getMarketplaceIdFromLocalId(
         ::std::string const&                                        localId,
         ::std::function<void(::std::optional<::std::string const>)> callback
     );
 
-    MCAPI void
+    MCNAPI void
     importWorldTemplate(::std::function<void(::std::optional<::ImportFailure>, ::std::string const&)> callback);
 
-    MCAPI void isTemplateOwned(::std::string const& templateId, ::std::function<void(bool)> callback);
+    MCNAPI void isTemplateOwned(::std::string const& templateId, ::std::function<void(bool)> callback);
 
-    MCAPI void refresh();
+    MCNAPI void refresh();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IStoreCatalogRepository&                              storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::FileArchiver>           fileArchiver,
         ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> contentManager,
@@ -136,12 +136,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
+    MCNAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
         ::std::string const&                                                        id,
         ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     );
 
-    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
+    MCNAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

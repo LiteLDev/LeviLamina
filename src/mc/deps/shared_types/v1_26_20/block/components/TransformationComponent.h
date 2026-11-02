@@ -26,29 +26,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::TransformationComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::TransformationComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& RotationId();
+    MCNAPI static ::std::string_view const& RotationId();
 
-    MCAPI static ::std::string_view const& RotationPivotId();
+    MCNAPI static ::std::string_view const& RotationPivotId();
 
-    MCAPI static ::std::string_view const& ScaleId();
+    MCNAPI static ::std::string_view const& ScaleId();
 
-    MCAPI static ::std::string_view const& ScalePivotId();
+    MCNAPI static ::std::string_view const& ScalePivotId();
 
-    MCAPI static ::std::string_view const& TranslationId();
+    MCNAPI static ::std::string_view const& TranslationId();
     // NOLINTEND
 };
 

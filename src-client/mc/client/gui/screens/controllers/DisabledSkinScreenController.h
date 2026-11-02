@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DisabledSkinScreenController(
+    MCNAPI DisabledSkinScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         bool                                      twoButtonWithCallback,
         ::std::function<void()>                   callback
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         bool                                      twoButtonWithCallback,
         ::std::function<void()>                   callback
@@ -55,9 +55,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getTelemetryOverride() const;
+    MCNAPI ::std::string $getTelemetryOverride() const;
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
     // NOLINTEND
 
 public:

@@ -37,14 +37,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WorldsClipboardCallbacks& operator=(::WorldsClipboardCallbacks&&);
+    MCNAPI ::WorldsClipboardCallbacks& operator=(::WorldsClipboardCallbacks&&);
 
-    MCAPI ~WorldsClipboardCallbacks();
+    MCNAPI ~WorldsClipboardCallbacks();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

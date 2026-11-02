@@ -22,9 +22,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::EntityRegistry&);
+    MCNAPI void $tick(::EntityRegistry&);
 
-    MCAPI void $registerEvents(::entt::dispatcher& eventDispatcher);
+    MCNAPI void $registerEvents(::entt::dispatcher& eventDispatcher);
 
 
     // NOLINTEND

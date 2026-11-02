@@ -34,7 +34,7 @@ public:
     // NOLINTBEGIN
     MCAPI CommandRequestPacketPayload(::CommandContext& context, bool internalSource);
 
-    MCAPI ::std::unique_ptr<::CommandContext> createCommandContext(
+    MCNAPI ::std::unique_ptr<::CommandContext> createCommandContext(
         ::NetworkIdentifier const&                  source,
         ::Bedrock::NonOwnerPointer<::ILevel> const& level,
         ::SubClientId                               senderSubId

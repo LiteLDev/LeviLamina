@@ -44,9 +44,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _populateAllDependencies(::std::vector<::std::shared_ptr<::PackContentItem const>> const& dependentContent);
 
-    MCAPI void _populateDependencies();
+    MCNAPI void _populateDependencies();
     // NOLINTEND
 };

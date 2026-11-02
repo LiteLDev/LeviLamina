@@ -39,19 +39,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion::MatchType
+    MCNAPI static ::SemVersion::MatchType
     fromJson(::Json::Value const& json, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
 
-    MCAPI static ::SemVersion::MatchType fromJsonArray(::Json::Value const& jsonArray, ::SemVersion& output);
+    MCNAPI static ::SemVersion::MatchType fromJsonArray(::Json::Value const& jsonArray, ::SemVersion& output);
 
-    MCAPI static ::SemVersion::MatchType
+    MCNAPI static ::SemVersion::MatchType
     fromString(::std::string const& src, ::SemVersion& output, ::SemVersion::ParseOption parseOption);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& SemVerRegexStr();
+    MCNAPI static ::std::string_view const& SemVerRegexStr();
     // NOLINTEND
 
 public:

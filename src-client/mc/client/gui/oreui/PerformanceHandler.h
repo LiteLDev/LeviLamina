@@ -36,7 +36,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $WriteLog(char const* message, uint64 length);
+    MCNAPI void $WriteLog(char const* message, uint64 length);
     // NOLINTEND
 
 public:

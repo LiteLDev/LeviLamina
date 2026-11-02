@@ -58,7 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _calculateRailMovementSystem(
+    MCNAPI static void _calculateRailMovementSystem(
         ::StrictEntityContext const&         context,
         ::RailMovementComponent const&       railMovementComponent,
         ::SnapOnRailComponent&               snapOnRailComponent,
@@ -72,7 +72,7 @@ public:
         ::EntityModifier<::MoveRequestComponent> const& mod
     );
 
-    MCAPI static void _postRailMovementCalculateMinecartPositionSystem(
+    MCNAPI static void _postRailMovementCalculateMinecartPositionSystem(
         ::StrictEntityContext const&                                context,
         ::SnapOnRailComponent const&                                snapOnRailComponent,
         ::StateVectorComponent&                                     stateVectorComponent,
@@ -80,7 +80,7 @@ public:
         ::IConstBlockSource const&                                  constBlockSource
     );
 
-    MCAPI static void _preRailMovementCalculateMinecartPositionSystem(
+    MCNAPI static void _preRailMovementCalculateMinecartPositionSystem(
         ::StrictEntityContext const&                                context,
         ::OffsetsComponent const&                                   offsetsComponent,
         ::StateVectorComponent const&                               stateVectorComponent,

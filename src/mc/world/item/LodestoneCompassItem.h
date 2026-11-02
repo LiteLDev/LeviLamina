@@ -44,12 +44,12 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
+    MCNAPI static ::LodestoneCompassComponent* _tryGetOrAddComponent(
         ::PositionTrackingDB::TrackingRecord*                                            record,
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& calcId
     );
 
-    MCAPI static int getCompassFrame(
+    MCNAPI static int getCompassFrame(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>>& calcId,
         ::ItemStack const&                                                         item,
         ::Level const&                                                             level,
@@ -57,18 +57,18 @@ public:
         ::DimensionType const&                                                     itemDimension
     );
 
-    MCAPI static ::PositionTrackingId getPositionTrackingId(::ItemStackBase const& item);
+    MCNAPI static ::PositionTrackingId getPositionTrackingId(::ItemStackBase const& item);
 #endif
 
-    MCAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI static bool linkCompassToLodestone(::ItemStack& item, ::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
+    MCNAPI int $getAnimationFrameFor(::Mob* holder, bool, ::ItemStack const* item, bool) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  item,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -83,6 +83,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -35,13 +35,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Key();
+        MCNAPI ~Key();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -54,21 +54,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
+    MCNAPI ::Scripting::Result_deprecated<void> addDynamicPropertiesDefinition(
         ::ScriptModuleMinecraft::ScriptDynamicPropertiesDefinition const& dynamicPropertiesDefinition
     );
 
-    MCAPI ::std::string getId() const;
+    MCNAPI ::std::string getId() const;
 
-    MCAPI ::std::string getLocalizationKey() const;
+    MCNAPI ::std::string getLocalizationKey() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorType>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ActorDefinition& actorDef);
     // NOLINTEND
 };

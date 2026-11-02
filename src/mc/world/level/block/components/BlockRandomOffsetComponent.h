@@ -26,6 +26,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 getRandomOffset(::BlockPos const& blockPos) const;
+    MCNAPI ::Vec3 getRandomOffset(::BlockPos const& blockPos) const;
     // NOLINTEND
 };

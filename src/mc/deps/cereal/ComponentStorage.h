@@ -51,21 +51,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool eraseComponent(::std::string_view name);
+    MCNAPI bool eraseComponent(::std::string_view name);
 
-    MCAPI ::entt::meta_any getComponent(::std::string_view name);
+    MCNAPI ::entt::meta_any getComponent(::std::string_view name);
 
     MCAPI ::entt::meta_any getComponent(::std::string_view name) const;
 
-    MCAPI bool operator==(::cereal::ComponentStorage const& other) const;
+    MCNAPI bool operator==(::cereal::ComponentStorage const& other) const;
 
-    MCAPI ~ComponentStorage();
+    MCNAPI ~ComponentStorage();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

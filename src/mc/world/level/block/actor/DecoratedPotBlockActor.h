@@ -78,41 +78,41 @@ public:
     // NOLINTBEGIN
     MCAPI explicit DecoratedPotBlockActor(::BlockPos const& pos);
 
-    MCAPI void _setContainedItem(::ItemStack const& item);
+    MCNAPI void _setContainedItem(::ItemStack const& item);
 
 #ifdef LL_PLAT_C
-    MCAPI void fromItem(::ItemStack const& item);
+    MCNAPI void fromItem(::ItemStack const& item);
 #endif
 
-    MCAPI void tryAddItem(::Player& player);
+    MCNAPI void tryAddItem(::Player& player);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _areDefaultSherds(::std::array<::std::string, 4> const& sherds);
+    MCNAPI static bool _areDefaultSherds(::std::array<::std::string, 4> const& sherds);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
+    MCNAPI static ::std::string getDelimitedConcatenatedSherdNames(::CompoundTag const* userData);
 #endif
 
-    MCAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
+    MCNAPI static void removeDefaultSherdsFromUserData(::ItemStackBase& itemInstance);
 
 #ifdef LL_PLAT_C
-    MCAPI static void
+    MCNAPI static void
     saveSherdsToItemForInventoryRendering(::ItemStack& itemInstance, ::std::string const& screenSherdNames);
 #endif
 
-    MCAPI static void
+    MCNAPI static void
     saveSherdsToTag(::CompoundTag& tag, ::std::array<::std::string, 4> const& sherds, bool forceSaveDefaultSherds);
 
-    MCAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
+    MCNAPI static ::std::optional<::std::array<::std::string, 4>> tryGetSherdsFromTag(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string, 4> const& DEFAULT_SHERD_LIST();
+    MCNAPI static ::std::array<::std::string, 4> const& DEFAULT_SHERD_LIST();
     // NOLINTEND
 
 public:
@@ -124,26 +124,26 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
     MCAPI void
     $serverInitItemStackIds(int containerSlot, int, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCAPI ::ItemStack const& $getItem(int) const;
+    MCNAPI ::ItemStack const& $getItem(int) const;
 
-    MCAPI void $setItem(int, ::ItemStack const& item);
+    MCNAPI void $setItem(int, ::ItemStack const& item);
 
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

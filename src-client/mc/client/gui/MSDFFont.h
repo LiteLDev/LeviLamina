@@ -97,19 +97,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MSDFFont(
+    MCNAPI MSDFFont(
         ::Core::Path const&                    fontPagePrefix,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         bool                                   uploadOnConstruction
     );
 
-    MCAPI void _loadMsdfFontInformation(::Core::Path const& fontName, uchar const page);
+    MCNAPI void _loadMsdfFontInformation(::Core::Path const& fontName, uchar const page);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::Path const&                    fontPagePrefix,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         bool                                   uploadOnConstruction
@@ -119,21 +119,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
+    MCNAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
-    MCAPI bool $supportsChar(int const& character);
+    MCNAPI bool $supportsChar(int const& character);
 
-    MCAPI float $getWrapHeight() const;
+    MCNAPI float $getWrapHeight() const;
 
-    MCAPI float $getScaleFactor() const;
+    MCNAPI float $getScaleFactor() const;
 
-    MCFOLD bool $isScreenPixelAligned() const;
+    MCNAPI bool $isScreenPixelAligned() const;
 
-    MCFOLD bool $materialCanBeOverridden() const;
+    MCNAPI bool $materialCanBeOverridden() const;
 
-    MCFOLD void $uploadTextureToGPU();
+    MCNAPI void $uploadTextureToGPU();
 
-    MCAPI void $setTextConstantsInScreenContext(
+    MCNAPI void $setTextConstantsInScreenContext(
         ::ScreenContext& screenContext,
         int,
         float               guiScale,
@@ -141,21 +141,21 @@ public:
         bool                hasShadow
     ) const;
 
-    MCAPI ::Vec2 $getTranslationFactor() const;
+    MCNAPI ::Vec2 $getTranslationFactor() const;
 
-    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+    MCNAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD bool $_supportsShadowInSingleDraw();
+    MCNAPI bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+    MCNAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCNAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
-    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+    MCNAPI ::mce::Font::Type $getType(int glyphSheet) const;
 
-    MCAPI void $loadFontData(bool);
+    MCNAPI void $loadFontData(bool);
 
-    MCAPI float $buildChar(
+    MCNAPI float $buildChar(
         ::std::vector<::Font::GlyphQuad>& quads,
         int                               i,
         ::mce::Color const&               color,
@@ -165,16 +165,16 @@ public:
         bool                              unicode
     );
 
-    MCAPI ::Core::PathBuffer<::std::string>
+    MCNAPI ::Core::PathBuffer<::std::string>
     $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
-    MCFOLD int $_getReplacementCharacter();
+    MCNAPI int $_getReplacementCharacter();
 
-    MCAPI ::std::string $_remapString(::std::string_view str) const;
+    MCNAPI ::std::string $_remapString(::std::string_view str) const;
 
-    MCAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+    MCNAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
 
-    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    MCNAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
     // NOLINTEND
 };

@@ -29,19 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NapGoalDefinition(::SharedTypes::v1_26_40::NapGoalDefinition&&);
+    MCNAPI NapGoalDefinition(::SharedTypes::v1_26_40::NapGoalDefinition&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::NapGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::NapGoalDefinition&&);
     // NOLINTEND
 };
 

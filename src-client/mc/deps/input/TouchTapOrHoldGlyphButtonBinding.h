@@ -31,20 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchTapOrHoldGlyphButtonBinding(::TouchTapOrHoldGlyphButtonBinding const&);
+    MCNAPI TouchTapOrHoldGlyphButtonBinding(::TouchTapOrHoldGlyphButtonBinding const&);
 
-    MCAPI ~TouchTapOrHoldGlyphButtonBinding();
+    MCNAPI ~TouchTapOrHoldGlyphButtonBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TouchTapOrHoldGlyphButtonBinding const&);
+    MCNAPI void* $ctor(::TouchTapOrHoldGlyphButtonBinding const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

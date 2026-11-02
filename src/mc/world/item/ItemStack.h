@@ -64,17 +64,17 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCAPI ::ItemStack clone() const;
+    MCNAPI ::ItemStack clone() const;
 
 #ifdef LL_PLAT_C
-    MCAPI float getDestroySpeed(::Block const& block) const;
+    MCNAPI float getDestroySpeed(::Block const& block) const;
 
-    MCAPI ::Brightness getLightEmission() const;
+    MCNAPI ::Brightness getLightEmission() const;
 #endif
 
-    MCAPI ::ItemStack getStrippedNetworkItem() const;
+    MCNAPI ::ItemStack getStrippedNetworkItem() const;
 
-    MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
+    MCNAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
     MCAPI ::ItemStack& operator=(::ItemStack const& rhs);
 
@@ -98,7 +98,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::ItemStack
+    MCNAPI static ::ItemStack
     fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
 #endif
 
@@ -150,6 +150,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -92,9 +92,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
+    MCNAPI ItemRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
 
-    MCAPI void _renderBannerItem(
+    MCNAPI void _renderBannerItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
@@ -102,14 +102,14 @@ public:
         float                     actorFrameAlpha
     );
 
-    MCAPI void _renderDecoratedPotItem(
+    MCNAPI void _renderDecoratedPotItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
         bool                      isItem
     );
 
-    MCAPI void _renderGuiBlockTypeItem(
+    MCNAPI void _renderGuiBlockTypeItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::BlockGraphics const*    blockGraphics,
@@ -123,7 +123,7 @@ public:
         int const                 zOrder
     );
 
-    MCAPI void _renderGuiDataDrivenBlockItem(
+    MCNAPI void _renderGuiDataDrivenBlockItem(
         ::BaseActorRenderContext& renderContext,
         ::Block const*            block,
         float                     x,
@@ -133,7 +133,7 @@ public:
         int const                 zOrder
     );
 
-    MCAPI void _renderItemGroup(
+    MCNAPI void _renderItemGroup(
         ::BaseActorRenderContext& renderContext,
         ::ItemActor&              itemEntity,
         int                       itemCount,
@@ -142,9 +142,9 @@ public:
         bool const                useMatrixAsIs
     ) const;
 
-    MCAPI void forceGraphicsLoad();
+    MCNAPI void forceGraphicsLoad();
 
-    MCAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
+    MCNAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
 
     MCAPI void iconBlit(
         ::BaseActorRenderContext&       renderContext,
@@ -197,7 +197,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _renderShieldItem(
+    MCNAPI static void _renderShieldItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
@@ -208,12 +208,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
     // NOLINTEND
 };

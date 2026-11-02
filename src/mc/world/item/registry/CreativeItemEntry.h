@@ -35,7 +35,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CreativeItemEntry(
+    MCNAPI CreativeItemEntry(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,
@@ -48,7 +48,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CreativeItemRegistry*    registry,
         ::CreativeItemNetId const& creativeNetId,
         ::ItemInstance const&      item,

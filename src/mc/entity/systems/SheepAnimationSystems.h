@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace SheepAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createEatAnimationSystem();
+MCNAPI ::TickingSystemWithInfo createEatAnimationSystem();
 
-MCAPI ::TickingSystemWithInfo createJebificationSystem();
+MCNAPI ::TickingSystemWithInfo createJebificationSystem();
 // NOLINTEND
 
 } // namespace SheepAnimationSystems

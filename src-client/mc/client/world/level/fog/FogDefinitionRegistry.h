@@ -39,31 +39,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FogDefinitionRegistry();
+    MCNAPI FogDefinitionRegistry();
 
-    MCAPI void load(
+    MCNAPI void load(
         ::cereal::ReflectionCtx&                           ctx,
         ::ResourcePackManager&                             rpm,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI ::WeakRef<::FogDefinition const>
+    MCNAPI ::WeakRef<::FogDefinition const>
     registerBackCompatFogDefinition(::OwnerPtr<::FogDefinition const> definition);
 
-    MCAPI ::WeakRef<::FogDefinition const> registerMergedFogDefinition(
+    MCNAPI ::WeakRef<::FogDefinition const> registerMergedFogDefinition(
         ::std::vector<::WeakRef<::FogDefinition const>> fogReferences,
         ::std::string const&                            biome
     );
 
-    MCAPI void setDefaultFogDefinition(::HashedString const& name, bool useBackCompatMap);
+    MCNAPI void setDefaultFogDefinition(::HashedString const& name, bool useBackCompatMap);
 
-    MCAPI ::WeakRef<::FogDefinition const> tryGetFogDefinition(::HashedString const& name) const;
+    MCNAPI ::WeakRef<::FogDefinition const> tryGetFogDefinition(::HashedString const& name) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

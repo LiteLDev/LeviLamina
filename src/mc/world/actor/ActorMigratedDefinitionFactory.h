@@ -170,24 +170,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorMigratedDefinitionFactory(::Experiments const& experiments);
+    MCNAPI explicit ActorMigratedDefinitionFactory(::Experiments const& experiments);
 
-    MCAPI void _initialize();
+    MCNAPI void _initialize();
 
-    MCAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
+    MCNAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
 
-    MCAPI void resetLoader();
+    MCNAPI void resetLoader();
 
-    MCAPI void
+    MCNAPI void
     setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
 
-    MCAPI ~ActorMigratedDefinitionFactory();
+    MCNAPI ~ActorMigratedDefinitionFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
+    MCNAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
         ::std::string                    name,
         ::cereal::DynamicValue const&    def,
         ::DeserializeDataSettings const& settings
@@ -197,12 +197,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Experiments const& experiments);
+    MCNAPI void* $ctor(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -16,6 +16,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string toUiString() const;
+    MCNAPI ::std::string toUiString() const;
     // NOLINTEND
 };

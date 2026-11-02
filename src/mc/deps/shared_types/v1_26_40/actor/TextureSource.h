@@ -27,12 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TextureSource&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::TextureSource&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TextureSource const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TextureSource const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::TextureSource const&) const;
 
-    MCAPI ~TextureSource();
+    MCNAPI ~TextureSource();
 #endif
     // NOLINTEND
 
@@ -40,7 +40,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

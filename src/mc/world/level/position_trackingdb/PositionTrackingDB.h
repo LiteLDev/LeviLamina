@@ -10,7 +10,7 @@ class PositionTrackingId;
 namespace PositionTrackingDB {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string makeStorageKeyFromId(::PositionTrackingId const& id);
+MCNAPI ::std::string makeStorageKeyFromId(::PositionTrackingId const& id);
 // NOLINTEND
 
 } // namespace PositionTrackingDB

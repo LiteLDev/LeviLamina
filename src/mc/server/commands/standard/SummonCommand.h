@@ -53,9 +53,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
-    MCFOLD void $postExecute(::Actor&) const;
+    MCNAPI void $postExecute(::Actor&) const;
 
 
     // NOLINTEND

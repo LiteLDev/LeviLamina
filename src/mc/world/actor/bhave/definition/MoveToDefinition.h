@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
+    MCNAPI void $load(::Json::Value value, ::BehaviorFactory const& factory);
 
 
     // NOLINTEND

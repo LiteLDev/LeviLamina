@@ -29,7 +29,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void parse(::Json::Value& root, ::MolangVersion molangVersion);
+    MCNAPI void parse(::Json::Value& root, ::MolangVersion molangVersion);
 #endif
     // NOLINTEND
 
@@ -37,14 +37,14 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
 
     // NOLINTEND
@@ -52,6 +52,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

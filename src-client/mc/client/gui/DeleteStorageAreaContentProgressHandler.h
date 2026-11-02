@@ -82,12 +82,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeleteStorageAreaContentProgressHandler(
+    MCNAPI DeleteStorageAreaContentProgressHandler(
         ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
         ::std::function<void()> const&&                             onCompleteCallback
     );
 
-    MCAPI void deleteDirectoryContentsRecursively(
+    MCNAPI void deleteDirectoryContentsRecursively(
         ::Core::PathBuffer<::Core::BasicStackString<char, 1024>>& rootPath,
         ::std::string const&                                      dirToDelete
     );
@@ -96,7 +96,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DeleteStorageAreaContentProgressHandler::CancelTimeInfo&& cancelTimeInfo,
         ::std::function<void()> const&&                             onCompleteCallback
     );
@@ -105,21 +105,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
+    MCNAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel&);
+    MCNAPI void $onExit(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

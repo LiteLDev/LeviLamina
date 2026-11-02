@@ -34,35 +34,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCNAPI ScatterParamsData(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
-    MCAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCNAPI ::SharedTypes::v1_21_10::ScatterParamsData& operator=(::SharedTypes::v1_21_10::ScatterParamsData const&);
 
-    MCAPI ~ScatterParamsData();
+    MCNAPI ~ScatterParamsData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_10::ScatterParamsData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

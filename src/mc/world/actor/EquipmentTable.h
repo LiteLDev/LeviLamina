@@ -24,18 +24,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EquipmentTable(::EquipmentTable const&);
+    MCNAPI EquipmentTable(::EquipmentTable const&);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCFOLD ::EquipmentTable& operator=(::EquipmentTable&&);
+    MCNAPI ::EquipmentTable& operator=(::EquipmentTable&&);
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::EquipmentTable const&);
+    MCNAPI void* $ctor(::EquipmentTable const&);
     // NOLINTEND
 };

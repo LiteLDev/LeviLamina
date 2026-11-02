@@ -10,39 +10,39 @@ struct TerrainLayer;
 namespace TerrainLayers {
 // static variables
 // NOLINTBEGIN
-MCAPI ::TerrainLayer const& Alpha();
+MCNAPI ::TerrainLayer const& Alpha();
 
-MCAPI ::TerrainLayer const& AlphaSeasons();
+MCNAPI ::TerrainLayer const& AlphaSeasons();
 
-MCAPI ::TerrainLayer const& AlphaShifts();
+MCNAPI ::TerrainLayer const& AlphaShifts();
 
-MCAPI ::TerrainLayer const& AlphaSingleSide();
+MCNAPI ::TerrainLayer const& AlphaSingleSide();
 
-MCAPI ::TerrainLayer const& AlphaSingleSideShifts();
+MCNAPI ::TerrainLayer const& AlphaSingleSideShifts();
 
-MCAPI ::TerrainLayer const& Barrier();
+MCNAPI ::TerrainLayer const& Barrier();
 
-MCAPI ::TerrainLayer const& Blend();
+MCNAPI ::TerrainLayer const& Blend();
 
-MCAPI ::TerrainLayer const& DeferredWater();
+MCNAPI ::TerrainLayer const& DeferredWater();
 
-MCAPI ::TerrainLayer const& DoubleSide();
+MCNAPI ::TerrainLayer const& DoubleSide();
 
-MCAPI ::TerrainLayer const& EndPortal();
+MCNAPI ::TerrainLayer const& EndPortal();
 
-MCAPI ::TerrainLayer const& Light();
+MCNAPI ::TerrainLayer const& Light();
 
-MCAPI ::TerrainLayer const& LightSource();
+MCNAPI ::TerrainLayer const& LightSource();
 
-MCAPI ::TerrainLayer const& Opaque();
+MCNAPI ::TerrainLayer const& Opaque();
 
-MCAPI ::TerrainLayer const& OpaqueSeasons();
+MCNAPI ::TerrainLayer const& OpaqueSeasons();
 
-MCAPI ::TerrainLayer const& OpaqueShifts();
+MCNAPI ::TerrainLayer const& OpaqueShifts();
 
-MCAPI ::TerrainLayer const& RayTracedWater();
+MCNAPI ::TerrainLayer const& RayTracedWater();
 
-MCAPI ::TerrainLayer const& StructureVoid();
+MCNAPI ::TerrainLayer const& StructureVoid();
 // NOLINTEND
 
 } // namespace TerrainLayers

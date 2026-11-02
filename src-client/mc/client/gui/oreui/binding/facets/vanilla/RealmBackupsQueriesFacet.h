@@ -46,28 +46,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmBackupsQueriesFacet(
+    MCNAPI RealmBackupsQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsBackups>                 realmsBackups,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCFOLD ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
+    MCNAPI ::OreUI::LevelSummaryBindings& getCurrentWorldSummary();
 
-    MCAPI ::Realms::RealmsBackupsState getRealmBackupsState();
+    MCNAPI ::Realms::RealmsBackupsState getRealmBackupsState();
 
-    MCAPI ::Realms::RealmsBackupsDownloadState getRealmsBackupsDownloadState();
+    MCNAPI ::Realms::RealmsBackupsDownloadState getRealmsBackupsDownloadState();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::RealmsBackups>                 realmsBackups,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

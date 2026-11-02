@@ -23,13 +23,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void load(::CompoundTag const& data);
+    MCNAPI void load(::CompoundTag const& data);
 #endif
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> save() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ~ParticlesBlockExplosionEvent();
+    MCNAPI ~ParticlesBlockExplosionEvent();
 #endif
     // NOLINTEND
 
@@ -37,7 +37,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

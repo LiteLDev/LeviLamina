@@ -20,8 +20,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
+    MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
 
-    MCAPI void initializeServer();
+    MCNAPI void initializeServer();
     // NOLINTEND
 };

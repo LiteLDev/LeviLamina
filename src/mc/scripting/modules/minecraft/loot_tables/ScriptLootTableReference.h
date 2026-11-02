@@ -36,13 +36,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LootPoolEntry const& $_getEntry() const;
+    MCNAPI ::LootPoolEntry const& $_getEntry() const;
 
 
     // NOLINTEND

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _exitQueue();
+    MCNAPI void _exitQueue();
     // NOLINTEND
 
 public:

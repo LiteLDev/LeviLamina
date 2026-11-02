@@ -73,7 +73,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI PredictiveContainer(
+        MCNAPI PredictiveContainer(
             ::Container&                                     backingContainer,
             ::SparseContainerBackingSetType                  backingSetType,
             bool                                             isItemStackNetManagerEnabled,
@@ -87,7 +87,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::Container&                                     backingContainer,
             ::SparseContainerBackingSetType                  backingSetType,
             bool                                             isItemStackNetManagerEnabled,
@@ -149,9 +149,10 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
+        MCNAPI ClientScreenData(::ItemStackNetManagerClient::ClientScreenData&&);
 
-        MCAPI ::ItemStackNetManagerClient::ClientScreenData& operator=(::ItemStackNetManagerClient::ClientScreenData&&);
+        MCNAPI ::ItemStackNetManagerClient::ClientScreenData&
+        operator=(::ItemStackNetManagerClient::ClientScreenData&&);
 #endif
         // NOLINTEND
 
@@ -159,7 +160,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void* $ctor(::ItemStackNetManagerClient::ClientScreenData&&);
+        MCNAPI void* $ctor(::ItemStackNetManagerClient::ClientScreenData&&);
 #endif
         // NOLINTEND
     };
@@ -228,43 +229,43 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _beginRequest(::ItemStackRequestScreen screen);
+    MCNAPI void _beginRequest(::ItemStackRequestScreen screen);
 
-    MCAPI void _clearPredictiveContainerRequest(
+    MCNAPI void _clearPredictiveContainerRequest(
         ::ItemStackRequestId const&                       requestId,
         ::ItemStackNetManagerClient::PredictiveContainer& predictiveContainer,
         bool                                              shouldBeEmpty
     );
 
-    MCAPI void _endRequest();
+    MCNAPI void _endRequest();
 
-    MCAPI ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
+    MCNAPI ::std::unique_ptr<::ItemStackRequestData> _endTakeRequest();
 
-    MCAPI ::ItemStackNetManagerClient::ClientScreenData const* _tryGetCurrentClientScreen() const;
+    MCNAPI ::ItemStackNetManagerClient::ClientScreenData const* _tryGetCurrentClientScreen() const;
 
-    MCFOLD ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
+    MCNAPI ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
 
-    MCAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
+    MCNAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
 
-    MCAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction);
+    MCNAPI void addRequestAction(::std::unique_ptr<::ItemStackRequestAction> requestAction);
 
-    MCAPI void cacheHistoricPrediction(
+    MCNAPI void cacheHistoricPrediction(
         ::Container*                container,
         ::ItemStackRequestId const& requestId,
         int                         slot,
         ::ItemStack&&               item
     );
 
-    MCAPI void
+    MCNAPI void
     cacheZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot, ::ItemStack&& item);
 
-    MCAPI void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
+    MCNAPI void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
 
-    MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
+    MCNAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
 
-    MCAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
+    MCNAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
 
-    MCAPI void trySendBatch();
+    MCNAPI void trySendBatch();
 #endif
     // NOLINTEND
 
@@ -272,29 +273,29 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::SparseContainer* $initOpenContainer(
+    MCNAPI ::SparseContainer* $initOpenContainer(
         ::BlockSource&             region,
         ::FullContainerName const& openContainerId,
         ::ContainerWeakRef const&  containerWeakRef
     );
 
-    MCAPI ::ItemStackRequestId $getRequestId() const;
+    MCNAPI ::ItemStackRequestId $getRequestId() const;
 
-    MCAPI bool $allowInventoryTransactionManager() const;
+    MCNAPI bool $allowInventoryTransactionManager() const;
 
-    MCAPI void $beginCursorItemDrag();
+    MCNAPI void $beginCursorItemDrag();
 
-    MCAPI void $endCursorItemDrag();
+    MCNAPI void $endCursorItemDrag();
 
-    MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
+    MCNAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
-    MCAPI void $_addLegacyTransactionRequestSetItemSlot(
+    MCNAPI void $_addLegacyTransactionRequestSetItemSlot(
         ::ItemStackNetManagerScreen&         screen,
         ::SharedTypes::Legacy::ContainerType containerType,
         int                                  slot
     );
 
-    MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
+    MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 #endif
 
 

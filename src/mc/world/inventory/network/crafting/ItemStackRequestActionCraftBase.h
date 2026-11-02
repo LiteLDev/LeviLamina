@@ -35,9 +35,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
+    MCNAPI ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
 
-    MCFOLD void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
 
     // NOLINTEND

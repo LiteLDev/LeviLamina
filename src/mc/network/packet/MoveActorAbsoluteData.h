@@ -46,14 +46,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MoveActorAbsoluteData(::Actor const& entity);
+    MCNAPI explicit MoveActorAbsoluteData(::Actor const& entity);
 
-    MCAPI bool isDifferenceSignificant(::MoveActorAbsoluteData const& old, ::Vec3 const& velocity) const;
+    MCNAPI bool isDifferenceSignificant(::MoveActorAbsoluteData const& old, ::Vec3 const& velocity) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor const& entity);
+    MCNAPI void* $ctor(::Actor const& entity);
     // NOLINTEND
 };

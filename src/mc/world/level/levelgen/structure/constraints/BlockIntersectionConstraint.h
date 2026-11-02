@@ -44,25 +44,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockIntersectionConstraint(::StructureTemplate& structure);
+    MCNAPI explicit BlockIntersectionConstraint(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplate& structure);
+    MCNAPI void* $ctor(::StructureTemplate& structure);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isSatisfied(
+    MCNAPI bool $isSatisfied(
         ::IBlockWorldGenAPI const& target,
         ::BlockPos const&          structurePos,
         ::Rotation const&          structureRot,

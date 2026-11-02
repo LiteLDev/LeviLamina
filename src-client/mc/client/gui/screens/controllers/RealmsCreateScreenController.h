@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsCreateScreenController(
+    MCNAPI RealmsCreateScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         ::RealmsCreateParams const&                          createParams,
@@ -91,29 +91,29 @@ public:
         ::ScreenExitBehavior                                 exitBehavior
     );
 
-    MCAPI void _checkUnfulfilledPurchase();
+    MCNAPI void _checkUnfulfilledPurchase();
 
-    MCAPI void _errorDialogCreateRealmFail();
+    MCNAPI void _errorDialogCreateRealmFail();
 
-    MCAPI void _errorDialogFailedConditions();
+    MCNAPI void _errorDialogFailedConditions();
 
-    MCAPI void _errorDialogInvalidName(::std::string realmName, bool genericError);
+    MCNAPI void _errorDialogInvalidName(::std::string realmName, bool genericError);
 
-    MCAPI void _fulfillPriorRealmPurchase(::std::weak_ptr<::Purchase> purchase);
+    MCNAPI void _fulfillPriorRealmPurchase(::std::weak_ptr<::Purchase> purchase);
 
-    MCAPI ::ProductSku const& _getProductSku() const;
+    MCNAPI ::ProductSku const& _getProductSku() const;
 
-    MCAPI void _openPurchaseInProgress();
+    MCNAPI void _openPurchaseInProgress();
 
-    MCAPI void _promptForIntentMismatchOverride(::std::string const& contentId);
+    MCNAPI void _promptForIntentMismatchOverride(::std::string const& contentId);
 
-    MCAPI void _verifyAppStoreReady(::std::function<void()> readyCallback);
+    MCNAPI void _verifyAppStoreReady(::std::function<void()> readyCallback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager,
         ::RealmsCreateParams const&                          createParams,
@@ -125,14 +125,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

@@ -23,22 +23,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
+    MCNAPI ::CompoundTag getActorPropertyDataTag(::HashedString const& actorCanonicalName) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void ingestActorPropertyDataTag(::CompoundTag const& propertyData);
+    MCNAPI void ingestActorPropertyDataTag(::CompoundTag const& propertyData);
 #endif
 
-    MCAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
+    MCNAPI void registerGroup(::HashedString const& id, ::std::shared_ptr<::PropertyGroup const> group);
 
-    MCAPI void tryInitPropertiesOnActor(::Actor& actor) const;
+    MCNAPI void tryInitPropertiesOnActor(::Actor& actor) const;
 
-    MCAPI ~PropertyGroupManager();
+    MCNAPI ~PropertyGroupManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

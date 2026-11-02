@@ -20,19 +20,19 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void digestInfoFromServer(::std::vector<::ActorInfo> const& infoList);
+    MCNAPI void digestInfoFromServer(::std::vector<::ActorInfo> const& infoList);
 #endif
 
-    MCAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
+    MCNAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
 
-    MCAPI uint getActorInfoId(::std::string const& name) const;
+    MCNAPI uint getActorInfoId(::std::string const& name) const;
 
     MCAPI ::std::vector<::ActorInfo> getActorInfoList() const;
 
-    MCAPI bool isSpawnEggAvailable(::std::string identifier);
+    MCNAPI bool isSpawnEggAvailable(::std::string identifier);
 
-    MCAPI void registerActorInfo(::ActorInfo const& info);
+    MCNAPI void registerActorInfo(::ActorInfo const& info);
 
-    MCAPI void setSpawnEggAvailable(::std::string identifier, bool val);
+    MCNAPI void setSpawnEggAvailable(::std::string identifier, bool val);
     // NOLINTEND
 };

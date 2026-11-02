@@ -33,33 +33,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Win10TrialConversionScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit Win10TrialConversionScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> const& mMasterPackTitle();
+    MCNAPI static ::std::vector<::std::string> const& mMasterPackTitle();
 
-    MCAPI static ::std::map<::std::string, ::std::string> const& mPacksImages();
+    MCNAPI static ::std::map<::std::string, ::std::string> const& mPacksImages();
 
-    MCAPI static ::std::map<::std::string, ::std::string> const& mPacksInfo();
+    MCNAPI static ::std::map<::std::string, ::std::string> const& mPacksInfo();
 
-    MCAPI static ::std::vector<::std::string> const& mStarterPackTitle();
+    MCNAPI static ::std::vector<::std::string> const& mStarterPackTitle();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

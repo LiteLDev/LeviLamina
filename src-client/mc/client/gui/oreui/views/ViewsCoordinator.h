@@ -85,7 +85,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewsCoordinator(
+    MCNAPI ViewsCoordinator(
         ::cohtml::System*                                                          system,
         ::cohtml::SystemRenderer*                                                  systemRenderer,
         ::cohtml::ITimeZoneProvider*                                               timeZoneProvider,
@@ -94,13 +94,13 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
-    MCAPI void _destroyView(::OreUI::ViewId viewId);
+    MCNAPI void _destroyView(::OreUI::ViewId viewId);
 
-    MCAPI ::std::vector<::OreUI::ViewId> _getViewIds();
+    MCNAPI ::std::vector<::OreUI::ViewId> _getViewIds();
 
-    MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
+    MCNAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
-    MCAPI ::OreUI::ViewId createView(
+    MCNAPI ::OreUI::ViewId createView(
         ::OreUI::Detail::BindingRegistryFactory&   bindingRegistryFactory,
         ::OreUI::Router&                           router,
         ::std::string const&                       viewPath,
@@ -109,19 +109,19 @@ public:
         ::OreUI::ViewCacheMode                     viewCacheMode
     );
 
-    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy();
+    MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy();
 
-    MCAPI void onKeyboardDismissed();
+    MCNAPI void onKeyboardDismissed();
 
-    MCAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
+    MCNAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
 
-    MCAPI void update(double time);
+    MCNAPI void update(double time);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cohtml::System*                                                          system,
         ::cohtml::SystemRenderer*                                                  systemRenderer,
         ::cohtml::ITimeZoneProvider*                                               timeZoneProvider,
@@ -134,17 +134,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NonOwnerPointer<::OreUI::IView> $get(::OreUI::ViewId viewId) const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::IView> $get(::OreUI::ViewId viewId) const;
 
-    MCAPI void $discard(::OreUI::ViewId viewId);
+    MCNAPI void $discard(::OreUI::ViewId viewId);
 
-    MCAPI void $renderOffscreen(::ScreenContext& screenContext);
+    MCNAPI void $renderOffscreen(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:

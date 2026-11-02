@@ -32,15 +32,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::FolderSizeAndModifyDateSnapshotMetrics getCurrentSnapshotMetrics() const;
+    MCNAPI ::FolderSizeAndModifyDateSnapshotMetrics getCurrentSnapshotMetrics() const;
 
-    MCAPI ::FolderSizeAndModifyDateSnapshotMetrics
+    MCNAPI ::FolderSizeAndModifyDateSnapshotMetrics
     getCurrentSnapshotMetrics(::Core::PathView relativeSubdirectory) const;
 
-    MCAPI void pushSnapshot();
+    MCNAPI void pushSnapshot();
 
 #ifdef LL_PLAT_C
-    MCAPI void toTelemetryEvent(
+    MCNAPI void toTelemetryEvent(
         ::Social::Events::Event&               event,
         ::DBStorageFolderWatcherSnapshotKind   kind,
         ::Social::Events::PrivacyTagEnterprise privacyTag

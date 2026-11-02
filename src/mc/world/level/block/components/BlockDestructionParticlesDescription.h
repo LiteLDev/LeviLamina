@@ -37,35 +37,35 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
 
-    MCAPI static ::std::string const& ParticleCountID();
+    MCNAPI static ::std::string const& ParticleCountID();
 
-    MCAPI static ::std::string const& SchemaID();
+    MCNAPI static ::std::string const& SchemaID();
 
-    MCAPI static ::std::string const& TextureID();
+    MCNAPI static ::std::string const& TextureID();
 
-    MCAPI static ::std::string const& TintMethodID();
+    MCNAPI static ::std::string const& TintMethodID();
 
-    MCAPI static ::SemVersion const& Version1_21_70();
+    MCNAPI static ::SemVersion const& Version1_21_70();
 
-    MCAPI static ::SemVersion const& Version1_21_90();
+    MCNAPI static ::SemVersion const& Version1_21_90();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
 
     // NOLINTEND

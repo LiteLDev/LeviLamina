@@ -124,28 +124,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI void $prepareHeights(
+    MCNAPI void $prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>* ZXheights,
         bool                  factorInBeardsAndShavers
     );
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCFOLD ::BiomeSource const& $getBiomeSource() const;
+    MCNAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCAPI ::BlockPos $findSpawnPosition() const;
+    MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI void $decorateWorldGenLoadChunk(
+    MCNAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -153,7 +153,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI void
+    MCNAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
 

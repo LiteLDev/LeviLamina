@@ -114,57 +114,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PackSource(::PackSourceOptions options);
+    MCNAPI explicit PackSource(::PackSourceOptions options);
 
-    MCAPI void _addPack(::std::shared_ptr<::Pack> pack);
+    MCNAPI void _addPack(::std::shared_ptr<::Pack> pack);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Threading::Async<void>
+    MCNAPI ::Bedrock::Threading::Async<void>
     _addPacks(::std::vector<::gsl::not_null<::std::shared_ptr<::Pack>>>&& packs);
 #endif
 
-    MCAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackTaskData> task);
+    MCNAPI ::PackSourceLoadResult _applyAndFinishLoadTask(::std::shared_ptr<::PackTaskData> task);
 
-    MCAPI ::PackSourceLoadResult _createImmediateLoadResult();
+    MCNAPI ::PackSourceLoadResult _createImmediateLoadResult();
 
-    MCAPI ::PackSourceLoadResult
+    MCNAPI ::PackSourceLoadResult
     _getTaskData(::brstd::function_ref<::PackSourceLoadResult(::std::shared_ptr<::PackTaskData>)> task);
 
 #ifdef LL_PLAT_C
-    MCAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);
+    MCNAPI bool _removePack(::brstd::function_ref<bool(::Pack const&)> predicate);
 
-    MCAPI ::Bedrock::Threading::Async<::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>> getPacks();
+    MCNAPI ::Bedrock::Threading::Async<::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>> getPacks();
 #endif
 
-    MCAPI ::PackSourceReport load(
+    MCNAPI ::PackSourceReport load(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI ::PackSourceLoadResult loadImmediate(
+    MCNAPI ::PackSourceLoadResult loadImmediate(
         ::IPackManifestFactory&                                           manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider
     );
 
-    MCAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
+    MCNAPI ::PackSourceLoadResult requestLoad(::PackSourceLoadOptions&& options);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackSourceOptions options);
+    MCNAPI void* $ctor(::PackSourceOptions options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
+    MCNAPI void $forEachPackShared(::brstd::function_ref<void(::gsl::not_null<::std::shared_ptr<::Pack>>)> callback);
 
-    MCFOLD ::PackOrigin $getPackOrigin() const;
+    MCNAPI ::PackOrigin $getPackOrigin() const;
 
-    MCFOLD ::PackType $getPackType() const;
+    MCNAPI ::PackType $getPackType() const;
 
-    MCAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
+    MCNAPI void $_buildSourcesForLoad(::std::vector<::gsl::not_null<::PackSource*>>& sources);
 
 
     // NOLINTEND

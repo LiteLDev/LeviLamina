@@ -41,14 +41,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BundleTooltipLayoutData const& getBundleTooltipLayoutData(
+    MCNAPI ::BundleTooltipLayoutData const& getBundleTooltipLayoutData(
         ::ItemStackBase const&        bundleItem,
         ::ContainerManagerController& containerManagerController
     ) const;
 
-    MCAPI ::std::pair<::std::string, int> getCollectionNameAndIndex() const;
+    MCNAPI ::std::pair<::std::string, int> getCollectionNameAndIndex() const;
 
-    MCAPI int
+    MCNAPI int
     getContainerIndexFromCollectionIndex(::BundleTooltipLayoutData const& tooltipLayoutData, int collectionIndex) const;
     // NOLINTEND
 };

@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomizableBlockActorContainer(
+    MCNAPI RandomizableBlockActorContainer(
         ::BlockActorType  blockEntityType,
         ::BlockPos const& pos,
         ::SharedTypes::Legacy::ContainerType,
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BlockActorType  blockEntityType,
         ::BlockPos const& pos,
         ::SharedTypes::Legacy::ContainerType,
@@ -65,7 +65,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
     MCAPI void $startOpen(::Actor& actor);
 
@@ -73,7 +73,7 @@ public:
 
     MCFOLD void $dropContents(::BlockSource& region, ::Vec3 const& pos, bool randomizeDrop);
 
-    MCFOLD void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
     MCFOLD void $initializeContainerContents(::BlockSource& region);
 

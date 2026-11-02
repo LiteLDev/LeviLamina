@@ -133,40 +133,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DlcBatchModel(::DlcBatchModel const&);
+    MCNAPI DlcBatchModel(::DlcBatchModel const&);
 
-    MCAPI explicit DlcBatchModel(::IDlcBatchModel const& ref);
+    MCNAPI explicit DlcBatchModel(::IDlcBatchModel const& ref);
 
-    MCAPI DlcBatchModel(
+    MCNAPI DlcBatchModel(
         ::IContentAcquisition&              contentAcquisition,
         ::IStoreCatalogRepository&          storeCatalog,
         ::std::vector<::std::string> const& productIds
     );
 
-    MCAPI DlcBatchModel(
+    MCNAPI DlcBatchModel(
         ::IContentAcquisition&         contentAcquisition,
         ::IStoreCatalogRepository&     storeCatalog,
         ::std::vector<::DlcId>         dlcIds,
         ::std::vector<::PackIdVersion> packIds
     );
 
-    MCAPI bool _canBeginDownload() const;
+    MCNAPI bool _canBeginDownload() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DlcBatchModel const&);
+    MCNAPI void* $ctor(::DlcBatchModel const&);
 
-    MCAPI void* $ctor(::IDlcBatchModel const& ref);
+    MCNAPI void* $ctor(::IDlcBatchModel const& ref);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IContentAcquisition&              contentAcquisition,
         ::IStoreCatalogRepository&          storeCatalog,
         ::std::vector<::std::string> const& productIds
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IContentAcquisition&         contentAcquisition,
         ::IStoreCatalogRepository&     storeCatalog,
         ::std::vector<::DlcId>         dlcIds,
@@ -177,91 +177,91 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $containsProductId(::std::string const& productId) const;
+    MCNAPI bool $containsProductId(::std::string const& productId) const;
 
-    MCAPI void $searchForProductIds(::std::function<void()> searchCompleteCallback);
+    MCNAPI void $searchForProductIds(::std::function<void()> searchCompleteCallback);
 
-    MCAPI void $beginExclusiveDownload();
+    MCNAPI void $beginExclusiveDownload();
 
-    MCAPI void $beginPackDownload();
+    MCNAPI void $beginPackDownload();
 
-    MCAPI void $beginPackDownloadWithPossibleThrottleWarning();
+    MCNAPI void $beginPackDownloadWithPossibleThrottleWarning();
 
-    MCAPI void $beginAutoDownload();
+    MCNAPI void $beginAutoDownload();
 
-    MCAPI void $beginWorldPackDownload();
+    MCNAPI void $beginWorldPackDownload();
 
-    MCAPI void $cancelInactiveDownloads();
+    MCNAPI void $cancelInactiveDownloads();
 
-    MCAPI void $cancelDownload();
+    MCNAPI void $cancelDownload();
 
-    MCAPI void $cancelPendingDownload();
+    MCNAPI void $cancelPendingDownload();
 
-    MCAPI void $cancelPendingImport();
+    MCNAPI void $cancelPendingImport();
 
-    MCAPI void $pauseDownload();
+    MCNAPI void $pauseDownload();
 
-    MCAPI void $resumeDownload();
+    MCNAPI void $resumeDownload();
 
-    MCAPI bool $isDownloadingOrImporting() const;
+    MCNAPI bool $isDownloadingOrImporting() const;
 
-    MCAPI bool $isDownloading() const;
+    MCNAPI bool $isDownloading() const;
 
-    MCAPI bool $isDownloadComplete() const;
+    MCNAPI bool $isDownloadComplete() const;
 
-    MCAPI uint64 $getDownloadSize() const;
+    MCNAPI uint64 $getDownloadSize() const;
 
-    MCAPI uint64 $getDownloadedBytes() const;
+    MCNAPI uint64 $getDownloadedBytes() const;
 
-    MCAPI float $getDownloadProgress() const;
+    MCNAPI float $getDownloadProgress() const;
 
-    MCAPI uint64 $getDownloadedCount() const;
+    MCNAPI uint64 $getDownloadedCount() const;
 
-    MCAPI ::std::optional<int> $getIndexOfActiveDownload() const;
+    MCNAPI ::std::optional<int> $getIndexOfActiveDownload() const;
 
-    MCAPI bool $isImporting() const;
+    MCNAPI bool $isImporting() const;
 
-    MCAPI bool $isImportComplete() const;
+    MCNAPI bool $isImportComplete() const;
 
-    MCAPI bool $isImportWaiting() const;
+    MCNAPI bool $isImportWaiting() const;
 
-    MCAPI uint64 $getImportTotal() const;
+    MCNAPI uint64 $getImportTotal() const;
 
-    MCAPI uint64 $getImportedCount() const;
+    MCNAPI uint64 $getImportedCount() const;
 
-    MCAPI float $getImportProgress() const;
+    MCNAPI float $getImportProgress() const;
 
-    MCAPI ::std::optional<int> $getIndexOfActiveImport() const;
+    MCNAPI ::std::optional<int> $getIndexOfActiveImport() const;
 
-    MCFOLD ::std::vector<::DlcId> const& $getDlcIds() const;
+    MCNAPI ::std::vector<::DlcId> const& $getDlcIds() const;
 
-    MCFOLD ::std::vector<::PackIdVersion> const& $getPackIds() const;
+    MCNAPI ::std::vector<::PackIdVersion> const& $getPackIds() const;
 
-    MCAPI ::std::vector<::std::string> $getProductIdList() const;
+    MCNAPI ::std::vector<::std::string> $getProductIdList() const;
 
-    MCAPI ::ItemInstallState $getDlcInstalledState() const;
+    MCNAPI ::ItemInstallState $getDlcInstalledState() const;
 
-    MCFOLD bool $isContentSearchComplete();
+    MCNAPI bool $isContentSearchComplete();
 
-    MCAPI bool $isContentSearchInProgress() const;
+    MCNAPI bool $isContentSearchInProgress() const;
 
-    MCAPI bool $isFailed() const;
+    MCNAPI bool $isFailed() const;
 
-    MCAPI bool $isCancelled() const;
+    MCNAPI bool $isCancelled() const;
 
-    MCAPI void $setSilent(bool newSilent);
+    MCNAPI void $setSilent(bool newSilent);
 
-    MCFOLD bool $isSilent() const;
+    MCNAPI bool $isSilent() const;
 
-    MCFOLD ::IContentAcquisition& $contentAcquisition() const;
+    MCNAPI ::IContentAcquisition& $contentAcquisition() const;
 
-    MCFOLD ::IStoreCatalogRepository& $storeCatalog() const;
+    MCNAPI ::IStoreCatalogRepository& $storeCatalog() const;
     // NOLINTEND
 
 public:

@@ -53,25 +53,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSeedCatalogModel(
+    MCNAPI WorldSeedCatalogModel(
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>                dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&      userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
 
-    MCAPI void _filterWorldSeedModels();
+    MCNAPI void _filterWorldSeedModels();
 
-    MCAPI void fetch();
+    MCNAPI void fetch();
 
-    MCAPI void setWorldSeedsNameFilter(::std::string const& filter);
+    MCNAPI void setWorldSeedsNameFilter(::std::string const& filter);
 
-    MCAPI ~WorldSeedCatalogModel();
+    MCNAPI ~WorldSeedCatalogModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>                dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> const&      userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
@@ -81,6 +81,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

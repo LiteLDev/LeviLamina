@@ -30,7 +30,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _calculateLoadingProgressView(
+    MCNAPI static void _calculateLoadingProgressView(
         ::ActorOwnerComponent&     actorOwnerComponent,
         ::BlockSourceComponent&    blockSourceComponent,
         ::DimensionStateComponent& dimensionStateComponent,
@@ -39,27 +39,27 @@ public:
         bool                       isTextureGroupReloading
     );
 
-    MCAPI static float getLoadingProgress(::WeakRef<::EntityContext> entityRef);
+    MCNAPI static float getLoadingProgress(::WeakRef<::EntityContext> entityRef);
 
-    MCAPI static ::LoadingState getLoadingState(::WeakRef<::EntityContext> entityRef);
+    MCNAPI static ::LoadingState getLoadingState(::WeakRef<::EntityContext> entityRef);
 
-    MCAPI static bool hasFinishedLoading(::EntityContext const& entity);
+    MCNAPI static bool hasFinishedLoading(::EntityContext const& entity);
 
-    MCAPI static bool hasFinishedLoading(::WeakRef<::EntityContext> entityRef);
+    MCNAPI static bool hasFinishedLoading(::WeakRef<::EntityContext> entityRef);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
+    MCNAPI static ::std::vector<::ChunkPos> const& mChunksNeededForLoadOffsets();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

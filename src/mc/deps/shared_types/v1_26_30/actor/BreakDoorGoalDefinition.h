@@ -11,7 +11,7 @@ struct BreakDoorGoalDefinition : public ::SharedTypes::v1_26_30::DoorInteractGoa
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

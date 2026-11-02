@@ -23,26 +23,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleEffectDescription(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
+    MCNAPI ParticleEffectDescription(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
 
-    MCAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
+    MCNAPI ::SharedTypes::v1_20_80::ParticleEffectDescription&
     operator=(::SharedTypes::v1_20_80::ParticleEffectDescription&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectDescription const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectDescription const&) const;
 
-    MCAPI ~ParticleEffectDescription();
+    MCNAPI ~ParticleEffectDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleEffectDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -40,26 +40,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::nonstd::expected<
+    MCNAPI ::nonstd::expected<
         ::Bedrock::NotNullNonOwnerPtr<::TimeMarker const>,
         ::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerNotFoundError>
     _getTimeMarkerFromParam(
         ::std::variant<::ScriptModuleMinecraft::ScriptTimeMarker, ::std::string> const& timeMarkerOrName
     ) const;
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerNotFoundError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerNotFoundError>
     set(::std::variant<::ScriptModuleMinecraft::ScriptTimeMarker, ::std::string> const& timeMarkerOrName);
 
-    MCAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerNotFoundError>
+    MCNAPI ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptWorldClockTimeMarkerNotFoundError>
     skipTo(::std::variant<::ScriptModuleMinecraft::ScriptTimeMarker, ::std::string> const& timeMarkerOrName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClock>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClock>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::gsl::not_null<::WorldClock*> clock);
     // NOLINTEND
 };

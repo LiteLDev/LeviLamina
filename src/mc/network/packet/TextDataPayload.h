@@ -21,6 +21,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::TextDataPayload const&) const;
+    MCNAPI bool operator==(::TextDataPayload const&) const;
     // NOLINTEND
 };

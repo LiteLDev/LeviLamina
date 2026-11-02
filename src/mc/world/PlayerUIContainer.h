@@ -16,14 +16,14 @@ class PlayerUIContainer : public ::SimpleContainer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
+    MCNAPI void load(::ListTag const& inventoryList, ::SemVersion const& version);
 
-    MCAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
+    MCNAPI ::std::unique_ptr<::ListTag> save(::SaveContext const& saveContext) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

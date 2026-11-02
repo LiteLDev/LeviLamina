@@ -36,23 +36,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CommonDirection _mirror(::CommonDirection direction, ::Mirror mirror);
+    MCNAPI static ::CommonDirection _mirror(::CommonDirection direction, ::Mirror mirror);
 
-    MCAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
+    MCNAPI static ::CommonDirection _rotate(::CommonDirection direction, ::Rotation rotation);
 
-    MCAPI static bool hasTransformableConnectionStates(::Block const& block);
+    MCNAPI static bool hasTransformableConnectionStates(::Block const& block);
 
-    MCAPI static bool hasTransformableWallStates(::Block const& block);
+    MCNAPI static bool hasTransformableWallStates(::Block const& block);
 
-    MCAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
+    MCNAPI static ::Block const* transformBlock(::Block const& block, ::CommonDirection targetDirection);
 
-    MCAPI static ::Block const* transformBlock(::Block const& block, ::Facing::Name targetDirection);
+    MCNAPI static ::Block const* transformBlock(::Block const& block, ::Facing::Name targetDirection);
 
     MCAPI static ::Block const* transformBlock(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
-    MCAPI static ::Block const* transformConnectionStates(::Block const& block, ::Rotation rotation, ::Mirror mirror);
+    MCNAPI static ::Block const* transformConnectionStates(::Block const& block, ::Rotation rotation, ::Mirror mirror);
 
-    MCAPI static ::Block const*
+    MCNAPI static ::Block const*
     transformWallConnectionTypes(::Block const& block, ::Rotation rotation, ::Mirror mirror);
     // NOLINTEND
 };

@@ -84,42 +84,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkStatistics(
+    MCNAPI NetworkStatistics(
         ::ClientOrServerNetworkSystemRef&&                   network,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI NetworkStatistics(
+    MCNAPI NetworkStatistics(
         ::ServerNetworkSystem&                               server,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI ::std::unordered_map<int, ::PacketObserver::PacketStats> getAndResetDebuggerStats();
+    MCNAPI ::std::unordered_map<int, ::PacketObserver::PacketStats> getAndResetDebuggerStats();
 
 #ifdef LL_PLAT_S
-    MCAPI ::std::string getVerboseInfo() const;
+    MCNAPI ::std::string getVerboseInfo() const;
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void updateCSV(double time);
+    MCNAPI void updateCSV(double time);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClientOrServerNetworkSystemRef&&                   network,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
         ::Bedrock::NotNullNonOwnerPtr<::NetworkDebugManager> networkDebugManager
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerNetworkSystem&                               server,
         ::TrackerType                                        type,
         ::std::function<bool(::RakNet::RakNetStatistics&)>&& getRakNetStatsReading,
@@ -130,15 +130,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
+    MCNAPI void $packetSentTo(::NetworkIdentifier const& target, ::Packet const& packet, uint size);
 
-    MCAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
+    MCNAPI void $packetReceivedFrom(::NetworkIdentifier const& source, ::Packet const& packet, uint size);
 
-    MCAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
+    MCNAPI void $dataSentTo(::NetworkIdentifier const& target, ::std::string_view data);
 
-    MCAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
+    MCNAPI void $dataReceivedFrom(::NetworkIdentifier const& source, ::std::string const& data);
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
 
     // NOLINTEND

@@ -11,8 +11,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Packets can declare a compile-time `CustomPacketId` instead of relying on their type name, and a `PacketVersion`
 - `Packet::canSendTo` and `Packet::canSendToServer` tell whether the other side handles an optional packet
+- `PacketBase<T>::canSendTo` / `canSendToServer` are static, and `Packet` has overloads taking a `PacketRuntimeId`, so the check needs no packet instance; `getPacketRuntimeId<T>` gives the runtime id of a packet type
 - Packets declare the side that handles them with `Side`, and are required unless they declare `Optional`; a client or server lacking a required packet is disconnected during login with a message listing it
 - `PacketRegistrar` can unregister packets and handlers at runtime, and drops those of a mod when it is unloaded
+- Added `ll::coro::ConditionVariable`, supporting multiple waiters, predicates, timeouts and `notifyOne` / `notifyAll`
+- Added `ll::data::IntrusiveList`
 
 ### Changed
 
@@ -21,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - `ll/api/network/packet/runtime/RuntimePacket.h` is internal now; send and handle packets through `ll::network::Packet`
+- Removed `ll::coro::InterruptableSleep`, use `ll::coro::ConditionVariable` instead
 
 ## [26.51.9] - 2026-10-27
 

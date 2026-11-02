@@ -51,14 +51,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCallback(
+    MCNAPI void addCallback(
         ::BlockType&                                               blockType,
         ::NeighborBlockDirections const&                           neighborBlockDirections,
         ::std::unique_ptr<::BlockTrait::IConnectionUpdateCallback> callback,
         int                                                        updateFlags
     );
 
-    MCAPI ::Block const& handleConnectionUpdate(
+    MCNAPI ::Block const& handleConnectionUpdate(
         ::BlockSource&                   region,
         ::Block const&                   block,
         ::BlockPos const&                pos,

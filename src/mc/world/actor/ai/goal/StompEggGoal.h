@@ -38,29 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StompEggGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI StompEggGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCFOLD void $setInterval(int const interval);
+    MCNAPI void $setInterval(int const interval);
 
-    MCAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createBreakProgressParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_createDestroyParticles(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_playBreakProgressSound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
-    MCAPI void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
+    MCNAPI void $_playDestroySound(::Level& level, ::BlockSource& region, ::BlockPos pos);
 
 
     // NOLINTEND

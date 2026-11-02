@@ -29,7 +29,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getMessageForDisplay(bool profanityFilterEnabled) const;
+    MCNAPI ::std::string getMessageForDisplay(bool profanityFilterEnabled) const;
 #endif
     // NOLINTEND
 

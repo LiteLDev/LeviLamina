@@ -59,33 +59,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AABB(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
+    MCNAPI AABB(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
+    MCNAPI void* $ctor(::ChunkViewSource& viewSource, ::BlockPos aabbWorldMin, ::BlockPos aabbWorldMax);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::WorldView::LocalInfo $getLocalInfo(::BlockPos const& relativePos) const;
+    MCNAPI ::ClientBlockPipeline::WorldView::LocalInfo $getLocalInfo(::BlockPos const& relativePos) const;
 
-    MCAPI ::Block const& $getBlock(::BlockPos const& relativePos) const;
+    MCNAPI ::Block const& $getBlock(::BlockPos const& relativePos) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& relativePos) const;
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& relativePos) const;
 
-    MCAPI ::BlockActor const* $getBlockActor(::BlockPos const& relativePos) const;
+    MCNAPI ::BlockActor const* $getBlockActor(::BlockPos const& relativePos) const;
 
-    MCAPI void $offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const;
+    MCNAPI void $offsetBlockVolumeArea(::ClientBlockPipeline::BlockVolumeArea& localArea) const;
 
-    MCAPI ::BlockPos $getRelativeMin(::BlockPos const& worldMin) const;
+    MCNAPI ::BlockPos $getRelativeMin(::BlockPos const& worldMin) const;
 
-    MCAPI ::BlockPos $getRelativeMax(::BlockPos const& worldMin) const;
+    MCNAPI ::BlockPos $getRelativeMax(::BlockPos const& worldMin) const;
 
-    MCAPI bool $isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const;
+    MCNAPI bool $isInBounds(::BlockPos const& relativePos, ::BlockPos const&) const;
     // NOLINTEND
 
 public:

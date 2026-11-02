@@ -48,7 +48,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _getMousePosition(
+    MCNAPI static void _getMousePosition(
         float&                                                xMouse,
         float&                                                yMouse,
         float                                                 xo,
@@ -62,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

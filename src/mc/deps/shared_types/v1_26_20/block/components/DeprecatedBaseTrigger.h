@@ -34,27 +34,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeprecatedBaseTrigger(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedBaseTrigger const&);
+    MCNAPI DeprecatedBaseTrigger(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedBaseTrigger const&);
 
-    MCAPI ~DeprecatedBaseTrigger();
+    MCNAPI ~DeprecatedBaseTrigger();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindAllTriggersType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindAllTriggersType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedBaseTrigger const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedBaseTrigger const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

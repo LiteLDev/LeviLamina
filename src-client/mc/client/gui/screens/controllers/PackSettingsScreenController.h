@@ -39,21 +39,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PackSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::PackSettingsInfo packSettingsInfo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::PackSettingsInfo packSettingsInfo);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::PackSettingsInfo packSettingsInfo);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
     // NOLINTEND
 };

@@ -32,18 +32,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updatePlatformStoreIcon();
+    MCNAPI void _updatePlatformStoreIcon();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& sIsIconVisible();
+    MCNAPI static bool& sIsIconVisible();
 
-    MCAPI static ::std::
+    MCNAPI static ::std::
         unordered_map<::SubClientId, ::std::vector<::PlatformStoreIconModel::PlatformStoreIconVisibility*>>&
         sPlatformStoreIconVisibilityStacks();
 
-    MCAPI static ::std::mutex& sStacksMutex();
+    MCNAPI static ::std::mutex& sStacksMutex();
     // NOLINTEND
 };

@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileUploadScreenController(
+    MCNAPI FileUploadScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>              model,
         ::std::string const&                                  realmID,
         ::std::string const&                                  fileID,
@@ -64,15 +64,15 @@ public:
         ::std::function<void(::UploadState, ::Realms::World)> callback
     );
 
-    MCAPI void _displayPostUploadErrorPopup();
+    MCNAPI void _displayPostUploadErrorPopup();
 
-    MCAPI void _startUpload();
+    MCNAPI void _startUpload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>              model,
         ::std::string const&                                  realmID,
         ::std::string const&                                  fileID,
@@ -86,10 +86,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
     // NOLINTEND
 };

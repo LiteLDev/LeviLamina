@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefaultPlusEmbeddedSchematicsMapper(
+    MCNAPI DefaultPlusEmbeddedSchematicsMapper(
         ::ClientBlockPipeline::
             VectorCache<::ClientBlockPipeline::BlockLookupData, ::ClientBlockPipeline::BlockLookupId>& blockLookupCache,
         ::ClientBlockPipeline::WorldView::Interface const&                                             worldView,
@@ -80,7 +80,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClientBlockPipeline::
             VectorCache<::ClientBlockPipeline::BlockLookupData, ::ClientBlockPipeline::BlockLookupId>& blockLookupCache,
         ::ClientBlockPipeline::WorldView::Interface const&                                             worldView,
@@ -94,7 +94,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(
+    MCNAPI void $execute(
         ::std::vector<::ClientBlockPipeline::CustomGeometryBox>&  customBoxes,
         ::std::vector<::ClientBlockPipeline::CustomGeometryFace>& customFaces,
         ::ClientBlockPipeline::BlockVolumeArea const&             area,

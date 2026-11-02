@@ -45,7 +45,8 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void onCompleted(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> result, bool canceled);
+        MCNAPI void
+        onCompleted(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>> result, bool canceled);
         // NOLINTEND
     };
 
@@ -95,7 +96,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RemoteStorageProviderSyncProgressHandler(
+    MCNAPI RemoteStorageProviderSyncProgressHandler(
         ::std::function<
             ::CallbackToken(::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>)>
                                                                                                  actionCallback,
@@ -109,7 +110,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<
             ::CallbackToken(::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)>)>
                                                                                                  actionCallback,
@@ -123,20 +124,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel&);
+    MCNAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel&);
+    MCNAPI void $onCancel(::MinecraftScreenModel&);
 
-    MCAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

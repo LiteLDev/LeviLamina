@@ -48,22 +48,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DayOneExperienceModel(::MinecraftScreenModelContext context);
+    MCNAPI explicit DayOneExperienceModel(::MinecraftScreenModelContext context);
 
-    MCAPI void _fetchWorlds();
+    MCNAPI void _fetchWorlds();
 
-    MCAPI bool _initOptionsParser();
+    MCNAPI bool _initOptionsParser();
 
-    MCAPI void convertLegacyWorld(uint worldIndex, ::std::function<void()> failureCallback);
+    MCNAPI void convertLegacyWorld(uint worldIndex, ::std::function<void()> failureCallback);
 
-    MCAPI void fetchLegacySkin();
+    MCNAPI void fetchLegacySkin();
 
-    MCAPI void onWizardComplete();
+    MCNAPI void onWizardComplete();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModelContext context);
+    MCNAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 };

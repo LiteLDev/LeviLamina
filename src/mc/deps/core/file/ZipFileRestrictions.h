@@ -21,28 +21,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ZipFileRestrictions();
+    MCNAPI ZipFileRestrictions();
 
-    MCAPI void addRestrictedExtensions(::std::vector<::std::string> const& extensions);
+    MCNAPI void addRestrictedExtensions(::std::vector<::std::string> const& extensions);
 
-    MCAPI bool allowFile(::Core::PathView file) const;
+    MCNAPI bool allowFile(::Core::PathView file) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ~ZipFileRestrictions();
+    MCNAPI ~ZipFileRestrictions();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

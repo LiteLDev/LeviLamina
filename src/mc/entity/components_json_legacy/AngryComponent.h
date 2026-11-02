@@ -39,24 +39,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AngryComponent(::AngryComponent&&);
+    MCNAPI AngryComponent(::AngryComponent&&);
 
-    MCAPI AngryComponent(::AngryComponent const&);
+    MCNAPI AngryComponent(::AngryComponent const&);
 
-    MCAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
+    MCNAPI bool canGetAngry(::Mob& owner, ::Mob* testMob, ::Actor* target, bool allowInvulnerable, bool mustSee) const;
 
-    MCAPI ::SharedTypes::Legacy::LevelSoundEvent const getAngrySound(::Mob const& mob) const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent const getAngrySound(::Mob const& mob) const;
 
-    MCAPI void restartTimer(::Mob& owner);
+    MCNAPI void restartTimer(::Mob& owner);
 
-    MCAPI void setNextSoundEventTick(::Mob const& mob);
+    MCNAPI void setNextSoundEventTick(::Mob const& mob);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::AngryComponent&&);
+    MCNAPI void* $ctor(::AngryComponent&&);
 
-    MCFOLD void* $ctor(::AngryComponent const&);
+    MCNAPI void* $ctor(::AngryComponent const&);
     // NOLINTEND
 };

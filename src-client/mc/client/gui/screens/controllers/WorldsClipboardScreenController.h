@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldsClipboardScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit WorldsClipboardScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

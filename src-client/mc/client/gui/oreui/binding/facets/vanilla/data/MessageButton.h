@@ -32,25 +32,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MessageButton(::ButtonData const& button);
+    MCNAPI explicit MessageButton(::ButtonData const& button);
 
-    MCAPI void openExternalLink();
+    MCNAPI void openExternalLink();
 
-    MCAPI ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
+    MCNAPI ::OreUI::MessageButton& operator=(::OreUI::MessageButton&&);
 
-    MCAPI ~MessageButton();
+    MCNAPI ~MessageButton();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ButtonData const& button);
+    MCNAPI void* $ctor(::ButtonData const& button);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

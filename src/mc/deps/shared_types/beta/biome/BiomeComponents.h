@@ -20,7 +20,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
     // NOLINTEND
 };
 

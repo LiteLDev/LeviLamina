@@ -26,11 +26,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& entityTag) const;
 
-    MCAPI void initFromDefinition(::Actor& owner);
+    MCNAPI void initFromDefinition(::Actor& owner);
 
-    MCAPI void onCommandBlockUpdate(
+    MCNAPI void onCommandBlockUpdate(
         ::Actor&                                   owner,
         ::std::string const&                       command,
         bool                                       trackOutput,
@@ -39,12 +39,13 @@ public:
         bool                                       executeOnFirstTick
     );
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void
+    readAdditionalSaveData(::Actor& owner, ::CompoundTag const& entityTag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setLastOutput(::Actor& owner, ::std::string const& lastOutput);
+    MCNAPI void setLastOutput(::Actor& owner, ::std::string const& lastOutput);
 
 #ifdef LL_PLAT_C
-    MCAPI void setTrackOutput(::Actor& owner, bool trackOutput);
+    MCNAPI void setTrackOutput(::Actor& owner, bool trackOutput);
 #endif
     // NOLINTEND
 };

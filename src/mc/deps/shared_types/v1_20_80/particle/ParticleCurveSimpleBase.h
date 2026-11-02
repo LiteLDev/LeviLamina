@@ -37,27 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    MCNAPI ParticleCurveSimpleBase(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveSimpleBase const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD uint64 $_getMinCurveNodesAllowed();
+    MCNAPI uint64 $_getMinCurveNodesAllowed();
 
-    MCFOLD uint64 $_getMaxCurveNodesAllowed();
+    MCNAPI uint64 $_getMaxCurveNodesAllowed();
 
 
     // NOLINTEND

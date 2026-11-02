@@ -25,10 +25,10 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::Vec3 const& MAX_BOUNDS();
+    MCNAPI static ::Vec3 const& MAX_BOUNDS();
 #endif
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

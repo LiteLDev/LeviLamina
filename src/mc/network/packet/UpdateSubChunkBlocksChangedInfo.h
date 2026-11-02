@@ -33,7 +33,7 @@ public:
         ::std::vector<::UpdateSubChunkNetworkBlockInfo> const& extraBlocksChanged
     );
 
-    MCAPI void
+    MCNAPI void
     add(::BlockPos const&              pos,
         uint                           layer,
         ::Block const&                 block,

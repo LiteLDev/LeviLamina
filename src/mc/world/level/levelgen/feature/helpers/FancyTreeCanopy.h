@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _fillLayer(
+    MCNAPI ::std::optional<::BlockPos> _fillLayer(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Block const&                  leavesBlock,
@@ -57,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI&             target,
         ::BlockPos const&                pos,
         ::ITreeCanopy::BranchSize const& trunkSize,

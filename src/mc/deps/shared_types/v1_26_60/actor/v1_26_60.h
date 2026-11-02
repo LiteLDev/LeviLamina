@@ -26,72 +26,72 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_60 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::AmphibiousMoveControlComponentDefinition& desc,
     ::DeserializeDataParams                                            deserializeDataParams
 );
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::GenericMoveControlComponentDefinition& desc,
     ::DeserializeDataParams                                         deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::GlideMoveControlComponentDefinition& desc,
     ::DeserializeDataParams                                       deserializeDataParams
 );
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::MoveControlBasicComponentDefinition& desc,
     ::DeserializeDataParams                                       deserializeDataParams
 );
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::MoveControlFlyComponentDefinition& desc,
     ::DeserializeDataParams                                     deserializeDataParams
 );
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::MoveControlHoverComponentDefinition& desc,
     ::DeserializeDataParams                                       deserializeDataParams
 );
 
-MCFOLD void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::MoveControlSkipComponentDefinition& desc,
     ::DeserializeDataParams                                      deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::MoveControlSwayComponentDefinition& desc,
     ::DeserializeDataParams                                      deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::SlimeMoveControlComponentDefinition& desc,
     ::DeserializeDataParams                                       deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::TrailComponentDefinition& desc,
     ::DeserializeDataParams                            deserializeDataParams
 );
 
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_26_60::TransformationComponentDefinition& desc,
     ::DeserializeDataParams                                     deserializeDataParams
 );
 
-MCFOLD void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                           legacyGoal,
     ::SharedTypes::v1_26_60::FloatTemptGoalDefinition& sharedGoal
 );
 
-MCAPI void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_60::SendEventGoalDefinition& sharedGoal);
 
-MCFOLD void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_60::TemptGoalDefinition& sharedGoal);
 // NOLINTEND
 

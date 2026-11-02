@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $show(::std::shared_ptr<::Social::User> const, ::std::function<void(bool)>);
+    MCNAPI void $show(::std::shared_ptr<::Social::User> const, ::std::function<void(bool)>);
     // NOLINTEND
 
 public:

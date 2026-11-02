@@ -33,20 +33,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptBlockEvent(::Dimension& dimension, ::BlockPos const& location, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension, ::BlockPos const& location, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::Dimension& dimension, ::BlockPos const& location, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

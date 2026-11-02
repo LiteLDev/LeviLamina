@@ -363,7 +363,7 @@ public:
         bool           markChangedBlocksForSaving
     );
 
-    MCAPI void _blockChanged(
+    MCNAPI void _blockChanged(
         ::BlockPos const&              pos,
         uint                           layer,
         ::Block const&                 block,
@@ -374,7 +374,7 @@ public:
         ::BlockChangeContext const&    changeContext
     );
 
-    MCAPI void _fetchEntityHelper(
+    MCNAPI void _fetchEntityHelper(
         ::WeakEntityRef const&                              entityRef,
         ::gsl::span<::gsl::not_null<::Actor const*>> const& ignoredEntities,
         ::AABB const&                                       bb,
@@ -382,16 +382,16 @@ public:
         ::std::function<bool(::Actor*)>                     selector
     );
 
-    MCAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
+    MCNAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
 
-    MCAPI void _tryRecordNeighborChange(
+    MCNAPI void _tryRecordNeighborChange(
         ::BlockPos const&              notifiedPos,
         ::BlockPos const&              changedPos,
         ::Block const&                 notifiedBlock,
         ::NeighborChangeHistory const& history
     );
 
-    MCAPI void addToRandomTickingQueue(
+    MCNAPI void addToRandomTickingQueue(
         ::BlockPos const& pos,
         ::Block const&    block,
         int               tickDelay,
@@ -399,7 +399,7 @@ public:
         bool              skipOverrides
     );
 
-    MCAPI void addToRandomTickingQueuePercentChance(
+    MCNAPI void addToRandomTickingQueuePercentChance(
         ::BlockPos const& pos,
         ::Block const&    block,
         float             percentChance,
@@ -409,28 +409,28 @@ public:
 
     MCAPI bool areChunksFullyLoaded(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI bool biomeAtPosHasTag(::BlockPos const& pos, ::IDType<::BiomeTagIDType> const& tagId) const;
+    MCNAPI bool biomeAtPosHasTag(::BlockPos const& pos, ::IDType<::BiomeTagIDType> const& tagId) const;
 
-    MCAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool canProvideSupport(::BlockPos const& pos, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool canSeeSky(::BlockPos const& pos) const;
 
-    MCAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
+    MCNAPI bool canSeeSkyFromBelowWater(::BlockPos const& pos);
 
-    MCAPI void connectionUpdate(::BlockPos const& neighPos, ::BlockPos const& myPos);
+    MCNAPI void connectionUpdate(::BlockPos const& neighPos, ::BlockPos const& myPos);
 
-    MCAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
+    MCNAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
 
-    MCAPI bool containsAnySolidBlocking(::AABB const& box) const;
+    MCNAPI bool containsAnySolidBlocking(::AABB const& box) const;
 
-    MCAPI uint64 countBlocksOfType(
+    MCNAPI uint64 countBlocksOfType(
         ::BlockDescriptor const& blockDescriptor,
         ::BlockPos const&        min,
         ::BlockPos const&        max,
         uint64                   maxCount
     ) const;
 
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    MCNAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchActors(::ActorDefinitionIdentifier const& actorId, ::AABB const& bb);
 
     MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType blockActorTypeId, ::AABB const& bb) const;
@@ -438,10 +438,10 @@ public:
     MCAPI void
     fetchBlockEntities(::AABB const& bb, ::std::vector<::BlockActor*>& blockEntityList, bool withPreservedEntities);
 
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     fetchBlocksInBox(::BoundingBox const& box, ::brstd::function_ref<bool(::Block const&)> predicate);
 
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
+    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
         ::BlockPos const&                           centerPos,
         uint                                        radius,
         uint                                        height,
@@ -456,27 +456,27 @@ public:
         ::std::function<bool(::Actor*)>              selector
     );
 
-    MCAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
+    MCNAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
 
-    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    MCNAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
 #ifdef LL_PLAT_C
-    MCAPI void fetchRenderBlockActorComponents(
+    MCNAPI void fetchRenderBlockActorComponents(
         ::AABB const&                                                         bb,
         ::std::vector<::gsl::not_null<::IVanillaRenderBlockActorComponent*>>& blockEntityList,
         bool                                                                  withPreservedEntities
     );
 #endif
 
-    MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
+    MCNAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
-    MCAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
+    MCNAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
 
     MCAPI ::Biome const& getBiome(::BlockPos const& pos) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::BiomeIdLatticeBatch getBiomeIdsInBatch(::BlockPos const& centerPos, int areaOffset, int gridOffset) const;
+    MCNAPI ::BiomeIdLatticeBatch getBiomeIdsInBatch(::BlockPos const& centerPos, int areaOffset, int gridOffset) const;
 #endif
 
     MCFOLD ::BlockActor* getBlockEntity(::BlockPos const& pos);
@@ -494,20 +494,20 @@ public:
     MCAPI int getSkylightBrightness(::BlockPos const& pos) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::Biome const& getSurfaceBiome(::BlockPos const& pos) const;
+    MCNAPI ::Biome const& getSurfaceBiome(::BlockPos const& pos) const;
 #endif
 
-    MCAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
+    MCNAPI ::std::pair<bool, ::std::optional<::SubChunkPos>>
     hasSubChunksAt(::BlockPos const& min, ::BlockPos const& max) const;
 
-    MCAPI bool hasTickInCurrentTick(::BlockPos const& pos) const;
+    MCNAPI bool hasTickInCurrentTick(::BlockPos const& pos) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
+    MCNAPI bool hasTickInPendingTicks(::BlockPos const& pos) const;
 
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block) const;
+    MCNAPI bool hasTickInPendingTicks(::BlockPos const& pos, ::BlockType const& block) const;
 #endif
 
 #ifdef LL_PLAT_S
@@ -520,12 +520,12 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI bool isPositionUnderSnow(::Vec3 const& p);
+    MCNAPI bool isPositionUnderSnow(::Vec3 const& p);
 #endif
 
-    MCAPI bool isTouchingMaterial(::BlockPos const& pos, ::SharedTypes::v1_26_20::MaterialType type) const;
+    MCNAPI bool isTouchingMaterial(::BlockPos const& pos, ::SharedTypes::v1_26_20::MaterialType type) const;
 
-    MCAPI void
+    MCNAPI void
     neighborChanged(::BlockPos const& neighPos, ::BlockPos const& myPos, ::NeighborChangeHistory const& history);
 
     MCAPI bool setBlock(
@@ -542,21 +542,21 @@ public:
     MCAPI bool setExtraBlockSimple(::BlockPos const& pos, ::Block const& block);
 
 #ifdef LL_PLAT_C
-    MCAPI void setGrassColor(int grassColor, ::BlockPos const& pos, int flags);
+    MCNAPI void setGrassColor(int grassColor, ::BlockPos const& pos, int flags);
 #endif
 
-    MCAPI void tickPreservedBlockEntities();
+    MCNAPI void tickPreservedBlockEntities();
 
     MCAPI void updateNeighborsAt(::BlockPos const& pos, ::NeighborChangeHistory const& history);
 
-    MCAPI void
+    MCNAPI void
     updateNeighborsAtExceptFromFacing(::BlockPos const& pos, int skipFacing, ::NeighborChangeHistory const& history);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
+    MCNAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
     // NOLINTEND
 
 public:

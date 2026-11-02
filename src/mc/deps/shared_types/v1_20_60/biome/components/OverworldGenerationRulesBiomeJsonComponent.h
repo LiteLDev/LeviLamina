@@ -52,7 +52,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -72,7 +72,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
     };
 
@@ -120,38 +120,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OverworldGenerationRulesBiomeJsonComponent(
+    MCNAPI OverworldGenerationRulesBiomeJsonComponent(
         ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&
     );
 
-    MCAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
+    MCNAPI ::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent&
     operator=(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_60::OverworldGenerationRulesBiomeJsonComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

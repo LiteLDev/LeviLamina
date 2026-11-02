@@ -79,38 +79,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmWorldUploaderFacet(
+    MCNAPI RealmWorldUploaderFacet(
         ::World::WorldEditor&                    worldEditor,
         ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel,
         ::std::shared_ptr<::PlayScreenModel>     playScreenModel,
         ::OreUI::Router&                         uiRouter
     );
 
-    MCAPI bool choosePreviewRealm() const;
+    MCNAPI bool choosePreviewRealm() const;
 
-    MCAPI void clearUploadWorldToRealmTaskState();
+    MCNAPI void clearUploadWorldToRealmTaskState();
 
-    MCAPI ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
+    MCNAPI ::std::optional<::OreUI::UploadToRealmsError> const& getUploadWorldToRealmError() const;
 
-    MCAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
 
-    MCFOLD int64 getUploadedRealmWorldId() const;
+    MCNAPI int64 getUploadedRealmWorldId() const;
 
-    MCAPI void setPreviewRealmForUpload(::std::string const& realmIdStr);
+    MCNAPI void setPreviewRealmForUpload(::std::string const& realmIdStr);
 
-    MCAPI void uploadWorldToRealm(::std::string const& worldID);
+    MCNAPI void uploadWorldToRealm(::std::string const& worldID);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::WorldEditor&                    worldEditor,
         ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel,
         ::std::shared_ptr<::PlayScreenModel>     playScreenModel,
@@ -121,7 +121,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -21,9 +21,9 @@ namespace LevelDataHelper {
 MCAPI ::Bedrock::UniqueOwnerPointer<::LevelData>
 createLevelDataFromLevelSettings(::LevelSettings const& levelSettings, ::std::string const& levelName);
 
-MCAPI void setDefaultGameType(::LevelData& levelData, ::GameType gameType, ::IMinecraftEventing* eventing);
+MCNAPI void setDefaultGameType(::LevelData& levelData, ::GameType gameType, ::IMinecraftEventing* eventing);
 
-MCAPI void setDifficulty(
+MCNAPI void setDifficulty(
     ::LevelData&                      levelData,
     ::SharedTypes::Legacy::Difficulty difficulty,
     ::IMinecraftEventing*             eventing,

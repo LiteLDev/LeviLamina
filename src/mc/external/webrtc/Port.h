@@ -70,13 +70,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PortParametersRef();
+        MCNAPI ~PortParametersRef();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -227,7 +227,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddAddress(
+    MCNAPI void AddAddress(
         ::webrtc::SocketAddress const& address,
         ::webrtc::SocketAddress const& base_address,
         ::webrtc::SocketAddress const& related_address,
@@ -241,40 +241,40 @@ public:
         bool                           is_final
     );
 
-    MCAPI void AddOrReplaceConnection(::webrtc::Connection* conn);
+    MCNAPI void AddOrReplaceConnection(::webrtc::Connection* conn);
 
-    MCAPI void CopyPortInformationToPacketInfo(::webrtc::PacketInfo* info) const;
+    MCNAPI void CopyPortInformationToPacketInfo(::webrtc::PacketInfo* info) const;
 
-    MCAPI void Destroy();
+    MCNAPI void Destroy();
 
-    MCAPI void DestroyAllConnections();
+    MCNAPI void DestroyAllConnections();
 
-    MCAPI void DestroyConnectionInternal(::webrtc::Connection* conn, bool async);
+    MCNAPI void DestroyConnectionInternal(::webrtc::Connection* conn, bool async);
 
-    MCAPI void FinishAddingAddress(::webrtc::Candidate const& c, bool is_final);
+    MCNAPI void FinishAddingAddress(::webrtc::Candidate const& c, bool is_final);
 
-    MCAPI bool IsCompatibleAddress(::webrtc::SocketAddress const& addr);
+    MCNAPI bool IsCompatibleAddress(::webrtc::SocketAddress const& addr);
 
-    MCAPI void KeepAliveUntilPruned();
+    MCNAPI void KeepAliveUntilPruned();
 
-    MCAPI bool MaybeObfuscateAddress(::webrtc::Candidate const& c, bool is_final);
+    MCNAPI bool MaybeObfuscateAddress(::webrtc::Candidate const& c, bool is_final);
 
-    MCAPI void MaybeRequestLocalNetworkAccessPermission(
+    MCNAPI void MaybeRequestLocalNetworkAccessPermission(
         ::webrtc::SocketAddress const&                                           address,
         ::absl::AnyInvocable<void(::webrtc::LocalNetworkAccessPermissionStatus)> callback
     );
 
-    MCAPI ::webrtc::WeakPtr<::webrtc::Port> NewWeakPtr();
+    MCNAPI ::webrtc::WeakPtr<::webrtc::Port> NewWeakPtr();
 
-    MCAPI void OnNetworkTypeChanged(::webrtc::Network const* network);
+    MCNAPI void OnNetworkTypeChanged(::webrtc::Network const* network);
 
-    MCAPI void OnReadPacket(::webrtc::ReceivedIpPacket const& packet, ::webrtc::ProtocolType proto);
+    MCNAPI void OnReadPacket(::webrtc::ReceivedIpPacket const& packet, ::webrtc::ProtocolType proto);
 
-    MCAPI void OnReadyToSend();
+    MCNAPI void OnReadyToSend();
 
-    MCAPI Port(::webrtc::Port::PortParametersRef const& args, ::webrtc::IceCandidateType type);
+    MCNAPI Port(::webrtc::Port::PortParametersRef const& args, ::webrtc::IceCandidateType type);
 
-    MCAPI Port(
+    MCNAPI Port(
         ::webrtc::Port::PortParametersRef const& args,
         ::webrtc::IceCandidateType               type,
         ushort                                   min_port,
@@ -282,39 +282,39 @@ public:
         bool                                     shared_socket
     );
 
-    MCAPI void PostDestroyIfDead(bool delayed);
+    MCNAPI void PostDestroyIfDead(bool delayed);
 
-    MCAPI void Prune();
+    MCNAPI void Prune();
 
-    MCAPI void SendCandidateError(::webrtc::IceCandidateErrorEvent const& event);
+    MCNAPI void SendCandidateError(::webrtc::IceCandidateErrorEvent const& event);
 
-    MCAPI void SendCandidateReady(::webrtc::Candidate const& candidate);
+    MCNAPI void SendCandidateReady(::webrtc::Candidate const& candidate);
 
-    MCAPI void SendCandidateReadyCallbackList(::webrtc::Port*, ::webrtc::Candidate const& candidate);
+    MCNAPI void SendCandidateReadyCallbackList(::webrtc::Port*, ::webrtc::Candidate const& candidate);
 
-    MCAPI void SendUnknownAttributesErrorResponse(
+    MCNAPI void SendUnknownAttributesErrorResponse(
         ::webrtc::StunMessage*         message,
         ::webrtc::SocketAddress const& addr,
         ::std::vector<ushort> const&   unknown_types
     );
 
-    MCAPI void SetIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
+    MCNAPI void SetIceParameters(int component, ::std::string_view username_fragment, ::std::string_view password);
 
-    MCAPI void
+    MCNAPI void
     SubscribeCandidateError(::std::function<void(::webrtc::Port*, ::webrtc::IceCandidateErrorEvent const&)> callback);
 
-    MCAPI void
+    MCNAPI void
     SubscribeCandidateReadyCallback(::absl::AnyInvocable<void(::webrtc::Port*, ::webrtc::Candidate const&)> callback);
 
-    MCAPI void set_content_name(::std::string_view content_name);
+    MCNAPI void set_content_name(::std::string_view content_name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::webrtc::Port::PortParametersRef const& args, ::webrtc::IceCandidateType type);
+    MCNAPI void* $ctor(::webrtc::Port::PortParametersRef const& args, ::webrtc::IceCandidateType type);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::webrtc::Port::PortParametersRef const& args,
         ::webrtc::IceCandidateType               type,
         ushort                                   min_port,
@@ -326,92 +326,92 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::webrtc::IceCandidateType $Type() const;
+    MCNAPI ::webrtc::IceCandidateType $Type() const;
 
-    MCAPI ::webrtc::Network const* $Network() const;
+    MCNAPI ::webrtc::Network const* $Network() const;
 
-    MCAPI ::webrtc::IceRole $GetIceRole() const;
+    MCNAPI ::webrtc::IceRole $GetIceRole() const;
 
-    MCAPI void $SetIceRole(::webrtc::IceRole role);
+    MCNAPI void $SetIceRole(::webrtc::IceRole role);
 
-    MCAPI void $SetIceTiebreaker(uint64 tiebreaker);
+    MCNAPI void $SetIceTiebreaker(uint64 tiebreaker);
 
-    MCAPI uint64 $IceTiebreaker() const;
+    MCNAPI uint64 $IceTiebreaker() const;
 
-    MCAPI bool $SharedSocket() const;
+    MCNAPI bool $SharedSocket() const;
 
-    MCAPI ::webrtc::TaskQueueBase* $thread();
+    MCNAPI ::webrtc::TaskQueueBase* $thread();
 
-    MCAPI ::webrtc::PacketSocketFactory* $socket_factory() const;
+    MCNAPI ::webrtc::PacketSocketFactory* $socket_factory() const;
 
-    MCAPI ::std::string const& $content_name() const;
+    MCNAPI ::std::string const& $content_name() const;
 
-    MCAPI bool $send_retransmit_count_attribute() const;
+    MCNAPI bool $send_retransmit_count_attribute() const;
 
-    MCAPI uint $generation() const;
+    MCNAPI uint $generation() const;
 
-    MCAPI void $set_generation(uint generation);
+    MCNAPI void $set_generation(uint generation);
 
-    MCAPI ::std::vector<::webrtc::Candidate> const& $Candidates() const;
+    MCNAPI ::std::vector<::webrtc::Candidate> const& $Candidates() const;
 
-    MCAPI void $SubscribePortDestroyed(::std::function<void(::webrtc::PortInterface*)> callback);
+    MCNAPI void $SubscribePortDestroyed(::std::function<void(::webrtc::PortInterface*)> callback);
 
-    MCAPI ::webrtc::Connection* $GetConnection(::webrtc::SocketAddress const& remote_addr);
+    MCNAPI ::webrtc::Connection* $GetConnection(::webrtc::SocketAddress const& remote_addr);
 
-    MCAPI void $DestroyConnection(::webrtc::Connection* conn);
+    MCNAPI void $DestroyConnection(::webrtc::Connection* conn);
 
-    MCAPI void $DestroyConnectionAsync(::webrtc::Connection* conn);
+    MCNAPI void $DestroyConnectionAsync(::webrtc::Connection* conn);
 
-    MCFOLD bool $HandleIncomingPacket(::webrtc::AsyncPacketSocket* socket, ::webrtc::ReceivedIpPacket const& packet);
+    MCNAPI bool $HandleIncomingPacket(::webrtc::AsyncPacketSocket* socket, ::webrtc::ReceivedIpPacket const& packet);
 
-    MCFOLD bool $CanHandleIncomingPacketsFrom(::webrtc::SocketAddress const& addr) const;
+    MCNAPI bool $CanHandleIncomingPacketsFrom(::webrtc::SocketAddress const& addr) const;
 
-    MCAPI void $SendBindingErrorResponse(
+    MCNAPI void $SendBindingErrorResponse(
         ::webrtc::StunMessage*         message,
         ::webrtc::SocketAddress const& addr,
         int                            error_code,
         ::std::string_view             reason
     );
 
-    MCAPI void $EnablePortPackets();
+    MCNAPI void $EnablePortPackets();
 
-    MCAPI ::std::string $ToString() const;
+    MCNAPI ::std::string $ToString() const;
 
-    MCAPI bool $ParseStunUsername(
+    MCNAPI bool $ParseStunUsername(
         ::webrtc::StunMessage const* stun_msg,
         ::std::string*               local_ufrag,
         ::std::string*               remote_ufrag
     ) const;
 
-    MCAPI ::std::string $CreateStunUsername(::std::string_view remote_username) const;
+    MCNAPI ::std::string $CreateStunUsername(::std::string_view remote_username) const;
 
-    MCAPI bool $MaybeIceRoleConflict(
+    MCNAPI bool $MaybeIceRoleConflict(
         ::webrtc::SocketAddress const& addr,
         ::webrtc::IceMessage*          stun_msg,
         ::std::string_view             remote_ufrag
     );
 
-    MCAPI void $AddPrflxCandidate(::webrtc::Candidate const& local);
+    MCNAPI void $AddPrflxCandidate(::webrtc::Candidate const& local);
 
-    MCAPI short $network_cost() const;
+    MCNAPI short $network_cost() const;
 
-    MCFOLD void $GetStunStats(::std::optional<::webrtc::StunStats>* stats);
+    MCNAPI void $GetStunStats(::std::optional<::webrtc::StunStats>* stats);
 
-    MCAPI void $SubscribeRoleConflict(::absl::AnyInvocable<void()> callback);
+    MCNAPI void $SubscribeRoleConflict(::absl::AnyInvocable<void()> callback);
 
-    MCAPI void $NotifyRoleConflict();
+    MCNAPI void $NotifyRoleConflict();
 
-    MCAPI void $UpdateNetworkCost();
+    MCNAPI void $UpdateNetworkCost();
 
-    MCAPI void $PostAddAddress(bool is_final);
+    MCNAPI void $PostAddAddress(bool is_final);
 
-    MCAPI bool $GetStunMessage(
+    MCNAPI bool $GetStunMessage(
         char const*                              data,
         uint64                                   size,
         ::webrtc::SocketAddress const&           addr,
@@ -419,9 +419,9 @@ public:
         ::std::string*                           out_username
     );
 
-    MCFOLD ::webrtc::DiffServCodePoint $StunDscpValue() const;
+    MCNAPI ::webrtc::DiffServCodePoint $StunDscpValue() const;
 
-    MCFOLD void $HandleConnectionDestroyed(::webrtc::Connection* conn);
+    MCNAPI void $HandleConnectionDestroyed(::webrtc::Connection* conn);
 
 
     // NOLINTEND

@@ -239,7 +239,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void drawRectangleArea(
+    MCNAPI static void drawRectangleArea(
         ::ScreenContext&       screenContext,
         ::RectangleArea const& a,
         int                    ux,
@@ -369,7 +369,7 @@ public:
 
     MCFOLD ::std::string $getRawScreenName() const;
 
-    MCAPI bool $equalsRawScreenName(::std::string_view comparison) const;
+    MCNAPI bool $equalsRawScreenName(::std::string_view comparison) const;
 
     MCAPI ::std::string $getRoute() const;
 

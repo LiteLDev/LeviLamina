@@ -65,46 +65,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockManager(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
+    MCNAPI CommandBlockManager(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
 
-    MCAPI void _loadFromEntity();
+    MCNAPI void _loadFromEntity();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
+    MCNAPI void* $ctor(::Player& player, ::BlockPos pos, ::ActorUniqueID entityUniqueID);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
 
-    MCAPI bool $setBlockTypeMode(::CommandBlockMode mode);
+    MCNAPI bool $setBlockTypeMode(::CommandBlockMode mode);
 
-    MCAPI bool $setConditional(bool mode);
+    MCNAPI bool $setConditional(bool mode);
 
-    MCAPI bool $setRedstone(bool mode);
+    MCNAPI bool $setRedstone(bool mode);
 
-    MCAPI void $saveAndExit();
+    MCNAPI void $saveAndExit();
 
-    MCAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
+    MCNAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
 
-    MCAPI bool $isConditionalMode() const;
+    MCNAPI bool $isConditionalMode() const;
 
-    MCAPI bool $isRedstoneMode() const;
+    MCNAPI bool $isRedstoneMode() const;
 
-    MCAPI bool $getLastPerformedConditionalMode();
+    MCNAPI bool $getLastPerformedConditionalMode();
 
-    MCAPI bool $getLastPerformedRedstoneMode();
+    MCNAPI bool $getLastPerformedRedstoneMode();
 
-    MCAPI ::CommandBlockMode $getLastPerformedCBMode();
+    MCNAPI ::CommandBlockMode $getLastPerformedCBMode();
 
-    MCAPI ::BaseCommandBlock* $getBaseCommandBlock();
+    MCNAPI ::BaseCommandBlock* $getBaseCommandBlock();
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $getCommandOrigin() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $getCommandOrigin() const;
 
-    MCFOLD bool $isMinecartCommandBlock() const;
+    MCNAPI bool $isMinecartCommandBlock() const;
     // NOLINTEND
 };

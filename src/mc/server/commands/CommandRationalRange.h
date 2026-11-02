@@ -34,12 +34,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CommandRationalRange changeToValueType(::CommandRationalRange::ValueType const& valueType);
+    MCNAPI ::CommandRationalRange changeToValueType(::CommandRationalRange::ValueType const& valueType);
 
-    MCAPI bool isWithinRange(::std::variant<int, float> const& value) const;
+    MCNAPI bool isWithinRange(::std::variant<int, float> const& value) const;
 
-    MCAPI void setInvert(bool val);
+    MCNAPI void setInvert(bool val);
 
-    MCAPI void setValue(::std::variant<int, float> const& value, ::CommandRationalRange::BoundType const& type);
+    MCNAPI void setValue(::std::variant<int, float> const& value, ::CommandRationalRange::BoundType const& type);
     // NOLINTEND
 };

@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
+    MCNAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
     // NOLINTEND
 
 public:

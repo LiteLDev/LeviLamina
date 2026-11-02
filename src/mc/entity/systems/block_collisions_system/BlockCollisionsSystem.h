@@ -10,7 +10,7 @@ class EntitySystems;
 namespace BlockCollisionsSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 // NOLINTEND
 
 } // namespace BlockCollisionsSystem

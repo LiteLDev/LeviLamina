@@ -61,7 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     Npc(::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext);
@@ -70,15 +70,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& SKIN_ID_TAG();
+    MCNAPI static ::std::string const& SKIN_ID_TAG();
 
-    MCAPI static ::std::vector<::std::pair<::std::string, ::std::string>> const& Skins();
+    MCNAPI static ::std::vector<::std::pair<::std::string, ::std::string>> const& Skins();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -88,31 +88,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $newServerAiStep();
+    MCNAPI void $newServerAiStep();
 
-    MCFOLD void $die(::ActorDamageSource const& source);
+    MCNAPI void $die(::ActorDamageSource const& source);
 
-    MCFOLD bool $canBeAffected(uint id) const;
+    MCNAPI bool $canBeAffected(uint id) const;
 
-    MCAPI ::mce::Color $getNameTagTextColor() const;
+    MCNAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCFOLD bool $canShowNameTag() const;
+    MCNAPI bool $canShowNameTag() const;
 
-    MCFOLD bool $isTargetable() const;
+    MCNAPI bool $isTargetable() const;
 
-    MCAPI void $buildDebugInfo(::std::string& out) const;
+    MCNAPI void $buildDebugInfo(::std::string& out) const;
 
-    MCFOLD void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
-    MCFOLD bool $canBePulledIntoVehicle() const;
+    MCNAPI bool $canBePulledIntoVehicle() const;
 
-    MCFOLD bool $canExistWhenDisallowMob() const;
+    MCNAPI bool $canExistWhenDisallowMob() const;
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 

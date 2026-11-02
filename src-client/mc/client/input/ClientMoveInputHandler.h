@@ -25,36 +25,36 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _registerButtonDownTracking(
+    MCNAPI static void _registerButtonDownTracking(
         ::InputHandler&        inputHandler,
         ::std::string const&   buttonName,
         ::MoveInputState::Flag setting
     );
 
-    MCAPI static void _registerButtonStateTracking(
+    MCNAPI static void _registerButtonStateTracking(
         ::InputHandler&        inputHandler,
         ::std::string const&   buttonName,
         ::MoveInputState::Flag setting
     );
 
-    MCAPI static void _registerButtonStateTracking(
+    MCNAPI static void _registerButtonStateTracking(
         ::InputHandler&      inputHandler,
         ::std::string const& buttonName,
         uchar MoveInputState::* bitfield,
         uchar                   bitmask
     );
 
-    MCAPI static void _registerButtonUpTracking(
+    MCNAPI static void _registerButtonUpTracking(
         ::InputHandler&        inputHandler,
         ::std::string const&   buttonName,
         ::MoveInputState::Flag setting
     );
 
-    MCAPI static void _toggleClientSneak(::FocusImpact, ::IClientInstance& client);
+    MCNAPI static void _toggleClientSneak(::FocusImpact, ::IClientInstance& client);
 
-    MCAPI static void _toggleClientSprint(::FocusImpact, ::IClientInstance& client);
+    MCNAPI static void _toggleClientSprint(::FocusImpact, ::IClientInstance& client);
 
-    MCAPI static void _updateClientMoveVector(float x, float y, ::FocusImpact, ::IClientInstance& client);
+    MCNAPI static void _updateClientMoveVector(float x, float y, ::FocusImpact, ::IClientInstance& client);
 
     MCAPI static ::MoveInputComponent* getMoveInput(::IClientInstance& client);
     // NOLINTEND

@@ -22,7 +22,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _tickEntity(
+    MCNAPI static void _tickEntity(
         ::StrictEntityContext const&,
         ::VehicleComponent const&                                          vehicleComponent,
         ::ActorOwnerComponent&                                             actorOwnerComponent,
@@ -31,9 +31,9 @@ public:
         ::EntityModifier<::PassengerRenderingRidingOffsetComponent> const& modifier
     );
 
-    MCAPI static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
+    MCNAPI static ::Vec3 getInterpolatedRenderingRidingOffset(::Actor const& actor, float frameAlpha);
 
-    MCAPI static void onActorStartRiding(::Actor& actor, ::Actor& vehicle);
+    MCNAPI static void onActorStartRiding(::Actor& actor, ::Actor& vehicle);
 #endif
     // NOLINTEND
 };

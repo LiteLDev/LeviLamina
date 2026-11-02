@@ -188,7 +188,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelRenderer(
+    MCNAPI LevelRenderer(
         ::IClientInstance&                                                         clientInstance,
         ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
@@ -205,33 +205,33 @@ public:
         ::AtomicClientEntityDefinitionGroup&                                       atomicClientEntityDefinitionGroup
     );
 
-    MCAPI void _createMeshes(::Tessellator& tessellator);
+    MCNAPI void _createMeshes(::Tessellator& tessellator);
 
-    MCAPI void _initDataDrivenRendererResources(
+    MCNAPI void _initDataDrivenRendererResources(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources
     );
 
-    MCAPI void _setLevelRendererCameras();
+    MCNAPI void _setLevelRendererCameras();
 
-    MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCNAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI ::BlockTessellator& getBlockRenderer();
+    MCNAPI ::BlockTessellator& getBlockRenderer();
 
-    MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
+    MCNAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
-    MCAPI void onDimensionChanged();
+    MCNAPI void onDimensionChanged();
 
-    MCAPI void onOptionsChanged();
+    MCNAPI void onOptionsChanged();
 
     MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCAPI void rebuildAllDDRv2Geometry();
+    MCNAPI void rebuildAllDDRv2Geometry();
 
-    MCAPI void reinit(
+    MCNAPI void reinit(
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup
@@ -239,19 +239,19 @@ public:
 
     MCAPI void renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCAPI void resetLightVolumeManager(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
+    MCNAPI void resetLightVolumeManager(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
-    MCAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
+    MCNAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
-    MCAPI void resetPointLighting(::std::weak_ptr<::dragon::atlas::IAtlasUserOperations> atlasUserOps);
+    MCNAPI void resetPointLighting(::std::weak_ptr<::dragon::atlas::IAtlasUserOperations> atlasUserOps);
 
-    MCAPI void tickLevelRenderer();
+    MCNAPI void tickLevelRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                                         clientInstance,
         ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
@@ -272,15 +272,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              blockPosition,
         uint                           layer,
@@ -292,9 +292,9 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
+    MCNAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
 
-    MCAPI void $takePicture(
+    MCNAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,
         ::Actor*                                                        target,

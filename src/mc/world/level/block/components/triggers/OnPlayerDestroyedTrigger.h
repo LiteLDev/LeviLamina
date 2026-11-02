@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onEvent(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
+    MCNAPI void onEvent(::BlockEvents::BlockPlayerDestroyEvent const& eventData) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

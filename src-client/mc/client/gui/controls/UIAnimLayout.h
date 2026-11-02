@@ -46,22 +46,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIAnimLayout(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
+    MCNAPI UIAnimLayout(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
+    MCNAPI void* $ctor(::UIResolvedDef const& def, ::UIAnimLayout::ApplyTo applyTo);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UIAnim> $clone();
+    MCNAPI ::std::shared_ptr<::UIAnim> $clone();
 
-    MCAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
+    MCNAPI bool $tick(::UIControl& ownerControl, float const deltaTime);
 
-    MCAPI void $_reset(::UIControl& ownerControl);
+    MCNAPI void $_reset(::UIControl& ownerControl);
     // NOLINTEND
 };

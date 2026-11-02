@@ -5,7 +5,7 @@
 namespace TemptBase::Defaults {
 // static variables
 // NOLINTBEGIN
-MCAPI float const& STOP_DISTANCE();
+MCNAPI float const& STOP_DISTANCE();
 // NOLINTEND
 
 } // namespace TemptBase::Defaults

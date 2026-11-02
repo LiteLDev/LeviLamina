@@ -64,7 +64,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
+        MCNAPI bool operator==(::TextPacketPayload::MessageAndParams const& other) const;
         // NOLINTEND
     };
 
@@ -103,7 +103,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::TextPacketPayload& operator=(::TextPacketPayload&&);
+    MCNAPI ::TextPacketPayload& operator=(::TextPacketPayload&&);
 
     MCAPI ~TextPacketPayload();
     // NOLINTEND
@@ -111,7 +111,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TextPacket createAnnouncement(
+    MCNAPI static ::TextPacket createAnnouncement(
         ::std::string const&           author,
         ::std::string const&           message,
         ::std::optional<::std::string> filteredMessage,
@@ -131,49 +131,49 @@ public:
     createJukeboxPopup(::std::string const& message, ::std::vector<::std::string> const& params);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::TextPacket createRaw(::std::string const& raw);
+    MCNAPI static ::TextPacket createRaw(::std::string const& raw);
 #endif
 
     MCAPI static ::TextPacket createRawJsonObjectMessage(::std::string const& rawJson);
 
     MCAPI static ::TextPacket createSystemMessage(::std::string const& message);
 
-    MCAPI static ::TextPacket createTextObjectMessage(
+    MCNAPI static ::TextPacket createTextObjectMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string               fromXuid,
         ::std::string               fromPlatformId
     );
 
-    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+    MCNAPI static ::TextPacket createTextObjectWhisperMessage(
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI static ::TextPacket createTextObjectWhisperMessage(
+    MCNAPI static ::TextPacket createTextObjectWhisperMessage(
         ::ResolvedTextObject const& resolvedTextObject,
         ::std::string const&        xuid,
         ::std::string const&        platformId
     );
 
-    MCAPI static ::TextPacket
+    MCNAPI static ::TextPacket
     createTranslated(::std::string const& message, ::std::vector<::std::string> const& params);
 
-    MCAPI static ::TextPacket createTranslatedAnnouncement(
+    MCNAPI static ::TextPacket createTranslatedAnnouncement(
         ::std::string const& author,
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI static ::TextPacket createTranslatedChat(
+    MCNAPI static ::TextPacket createTranslatedChat(
         ::std::string const& author,
         ::std::string const& message,
         ::std::string const& xuid,
         ::std::string const& platformId
     );
 
-    MCAPI static ::TextPacket createWhisper(
+    MCNAPI static ::TextPacket createWhisper(
         ::std::string const&           author,
         ::std::string const&           message,
         ::std::optional<::std::string> filteredMessage,

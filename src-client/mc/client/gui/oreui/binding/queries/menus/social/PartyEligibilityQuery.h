@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyEligibilityQuery(
+    MCNAPI PartyEligibilityQuery(
         ::OreUI::GameDependencies const& game,
         ::std::string                    experienceId,
         ::std::string                    partyId,
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::GameDependencies const& game,
         ::std::string                    experienceId,
         ::std::string                    partyId,

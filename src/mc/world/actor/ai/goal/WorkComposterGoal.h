@@ -42,23 +42,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorkComposterGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI WorkComposterGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI ::std::pair<int, int> _findCompostableItemSlot(::ContainerComponent& inventory);
+    MCNAPI ::std::pair<int, int> _findCompostableItemSlot(::ContainerComponent& inventory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $useWorkstation();
+    MCNAPI void $useWorkstation();
 
 
     // NOLINTEND

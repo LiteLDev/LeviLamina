@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isEquivalent(::BatchClippingState const& batchClippingState) const;
+    MCNAPI bool isEquivalent(::BatchClippingState const& batchClippingState) const;
     // NOLINTEND
 };

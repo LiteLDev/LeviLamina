@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MarketplacePassPurchaseAmazonDeviceWarningScreenController(
+    MCNAPI explicit MarketplacePassPurchaseAmazonDeviceWarningScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model
     );
     // NOLINTEND
@@ -32,7 +32,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

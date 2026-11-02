@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _editorLoad(
+    MCNAPI void _editorLoad(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
         ::Level&               level,
@@ -63,17 +63,17 @@ public:
         ::StructureEditorData& settings
     ) const;
 
-    MCAPI uint _generateSeed() const;
+    MCNAPI uint _generateSeed() const;
 
-    MCAPI ::std::string _getFullName() const;
+    MCNAPI ::std::string _getFullName() const;
 
-    MCAPI ::ActorUniqueID _getPlayerId(::CommandOrigin const& origin) const;
+    MCNAPI ::ActorUniqueID _getPlayerId(::CommandOrigin const& origin) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _editorSave(
+    MCNAPI static void _editorSave(
         ::CommandOrigin const&     origin,
         ::CommandOutput&           output,
         ::BlockSource&             region,
@@ -83,13 +83,13 @@ public:
         ::StructureSettings const& settings
     );
 
-    MCAPI static void setup(::CommandRegistry& registry, bool isEditorWorld);
+    MCNAPI static void setup(::CommandRegistry& registry, bool isEditorWorld);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

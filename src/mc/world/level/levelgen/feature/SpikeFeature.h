@@ -57,17 +57,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool place(::BlockSource& region, ::BlockPos const& pos, bool clearAirAbove) const;
+    MCNAPI bool place(::BlockSource& region, ::BlockPos const& pos, bool clearAirAbove) const;
 
-    MCAPI void postProcessMobsAt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI void postProcessMobsAt(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI bool wasClippedDuringDecoration(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool wasClippedDuringDecoration(::BlockSource& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

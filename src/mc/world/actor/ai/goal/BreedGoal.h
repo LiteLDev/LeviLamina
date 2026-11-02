@@ -48,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BreedGoal(::Mob& animal, ::std::string name, ::GoalId const& goalId);
+    MCNAPI BreedGoal(::Mob& animal, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
+    MCNAPI bool _isCloseEnoughToBreed(::Vec3 pos1, ::Vec2 size1, ::Vec3 pos2, ::Vec2 size2) const;
 
-    MCAPI ::Mob* _moveToFreePartner() const;
+    MCNAPI ::Mob* _moveToFreePartner() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& animal, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& animal, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

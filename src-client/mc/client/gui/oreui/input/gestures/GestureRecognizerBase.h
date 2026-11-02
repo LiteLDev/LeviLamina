@@ -81,21 +81,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool filterOnlyTrackedTouchesAndUpdate(::std::vector<::OreUI::TouchEventData> const& touches);
+    MCNAPI bool filterOnlyTrackedTouchesAndUpdate(::std::vector<::OreUI::TouchEventData> const& touches);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
+    MCNAPI void $onTouchesBegan(::std::vector<::OreUI::TouchEventData> const& touches);
 
-    MCFOLD void
+    MCNAPI void
     $onTouchesMoved(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
-    MCFOLD void
+    MCNAPI void
     $onTouchesEnded(::std::vector<::OreUI::GestureRecognizerBase::TouchEventDataWithCurrentPos> const& touches);
 
-    MCFOLD void $onGestureRecognized();
+    MCNAPI void $onGestureRecognized();
     // NOLINTEND
 };
 

@@ -45,9 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void despawnSpawnedCreaking(::Level& level);
+    MCNAPI void despawnSpawnedCreaking(::Level& level);
 
-    MCAPI void executeEvent(
+    MCNAPI void executeEvent(
         ::BlockSource& region,
         ::BlockPos const&,
         ::Block const&       block,
@@ -55,21 +55,21 @@ public:
         ::Actor&             actor
     );
 
-    MCAPI void onSpawnedCreakingDamaged(::BlockSource& region, ::Actor& creaking);
+    MCNAPI void onSpawnedCreakingDamaged(::BlockSource& region, ::Actor& creaking);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCFOLD bool $saveItemInstanceData(::CompoundTag& tag) const;
+    MCNAPI bool $saveItemInstanceData(::CompoundTag& tag) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
 
     // NOLINTEND

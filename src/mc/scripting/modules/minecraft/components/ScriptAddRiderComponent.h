@@ -20,9 +20,9 @@ class ScriptAddRiderComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getEntityType() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::string> getSpawnEvent() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::string> getSpawnEvent() const;
     // NOLINTEND
 };
 

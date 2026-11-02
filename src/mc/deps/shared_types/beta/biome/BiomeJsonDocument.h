@@ -42,30 +42,30 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BiomeJsonObject(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI BiomeJsonObject(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject const&);
 
-        MCAPI ::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject&
+        MCNAPI ::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject&
         operator=(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject&&);
 
-        MCAPI ~BiomeJsonObject();
+        MCNAPI ~BiomeJsonObject();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI void* $ctor(::SharedTypes::Beta::BiomeJsonDocument::BiomeJsonObject const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,13 +79,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::set<::std::string> const& activeExperiments);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

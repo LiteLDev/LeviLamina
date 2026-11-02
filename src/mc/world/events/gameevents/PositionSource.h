@@ -31,14 +31,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void serializeTo(::CompoundTag& tag) const;
+    MCNAPI void serializeTo(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::Vec3>
+    MCNAPI static ::std::optional<::Vec3>
     extractPosition(::CompoundTag const& data, char const* tagName, ::BlockSource const& region);
 #endif
     // NOLINTEND

@@ -30,30 +30,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerPersonaPiece(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
+    MCNAPI ScriptPlayerPersonaPiece(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
 
-    MCAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
+    MCNAPI ::ScriptModuleGameTest::ScriptPlayerPersonaPiece&
     operator=(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
 
-    MCAPI ~ScriptPlayerPersonaPiece();
+    MCNAPI ~ScriptPlayerPersonaPiece();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
+    MCNAPI void* $ctor(::ScriptModuleGameTest::ScriptPlayerPersonaPiece const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

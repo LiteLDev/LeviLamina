@@ -47,13 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
+    MCNAPI explicit ScriptEngine(::Scripting::RegistryManager* registryManager);
 
-    MCAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactoryByName(::std::string const& name) const;
+    MCNAPI ::Scripting::IModuleBindingFactory* _getModuleBindingFactoryByName(::std::string const& name) const;
 
-    MCAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
+    MCNAPI void addModuleBindingFactory(::std::unique_ptr<::Scripting::IModuleBindingFactory> moduleBindingFactory);
 
-    MCAPI ::Scripting::ScriptContextResult createScriptingContext(
+    MCNAPI ::Scripting::ScriptContextResult createScriptingContext(
         ::Scripting::ContextConfig const&                   config,
         ::Scripting::ModuleDescriptor const&                forModule,
         ::std::vector<::Scripting::ModuleDescriptor> const& dependencies,
@@ -61,26 +61,26 @@ public:
         ::Scripting::IPrinter*                              printer
     );
 
-    MCAPI ::std::optional<::Scripting::Version>
+    MCNAPI ::std::optional<::Scripting::Version>
     getLatestVersionOfModuleWithPreRelease(::std::string const& name, ::std::string_view preRelease) const;
 
-    MCAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
+    MCNAPI ::std::optional<::Scripting::ModuleDescriptor> getModuleDescriptorByName(::std::string const& name) const;
 
-    MCAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
+    MCNAPI ::std::vector<::Scripting::SupportedBindingModule> getSupportedBindingModules() const;
 
-    MCAPI ~ScriptEngine();
+    MCNAPI ~ScriptEngine();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Scripting::RegistryManager* registryManager);
+    MCNAPI void* $ctor(::Scripting::RegistryManager* registryManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

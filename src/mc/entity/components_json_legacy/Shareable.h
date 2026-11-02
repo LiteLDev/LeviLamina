@@ -28,6 +28,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setCraftInto(::std::string const& name);
+    MCNAPI void setCraftInto(::std::string const& name);
     // NOLINTEND
 };

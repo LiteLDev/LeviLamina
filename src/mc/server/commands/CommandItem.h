@@ -26,7 +26,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::ItemInstance createInstance(int count) const;
+    MCNAPI ::ItemInstance createInstance(int count) const;
 #endif
 
     MCAPI ::std::optional<::ItemInstance>

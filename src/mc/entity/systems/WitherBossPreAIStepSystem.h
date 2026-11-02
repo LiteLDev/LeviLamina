@@ -30,12 +30,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doWitherBossPreAIStepSystem(
+    MCNAPI static void _doWitherBossPreAIStepSystem(
         ::StrictEntityContext&                                        context,
         ::ActorOwnerComponent&                                        actorOwnerComponent,
         ::EntityModifier<::WitherBossPreAIStepResultComponent> const& mod
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

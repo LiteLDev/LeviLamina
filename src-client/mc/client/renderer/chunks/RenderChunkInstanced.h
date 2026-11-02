@@ -75,13 +75,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderChunkInstanced();
+    MCNAPI RenderChunkInstanced();
 
-    MCAPI void _startSortCommon(::RenderChunkSorter& sorter);
+    MCNAPI void _startSortCommon(::RenderChunkSorter& sorter);
 
-    MCAPI void clearMeshData();
+    MCNAPI void clearMeshData();
 
-    MCAPI ::ChunkLayerRenderObject createLayerRenderObject(
+    MCNAPI ::ChunkLayerRenderObject createLayerRenderObject(
         ::TerrainLayer const&     layer,
         ::TerrainLayerLOD         layerLOD,
         ::mce::MaterialPtr const& material,
@@ -90,36 +90,36 @@ public:
         ::RangeIndices            indices
     ) const;
 
-    MCAPI void endSort(::RenderChunkSorter& sorter, ::mce::BufferResourceService& bufferResourceService);
+    MCNAPI void endSort(::RenderChunkSorter& sorter, ::mce::BufferResourceService& bufferResourceService);
 
-    MCAPI void onOrthographicCameraMoved(::Vec3 const& currentCameraForward);
+    MCNAPI void onOrthographicCameraMoved(::Vec3 const& currentCameraForward);
 
-    MCAPI void onPerspectiveCameraMoved(::Vec3 const& currentCameraPos, bool forceAccurateSort);
+    MCNAPI void onPerspectiveCameraMoved(::Vec3 const& currentCameraPos, bool forceAccurateSort);
 
-    MCAPI void promoteSortedGeometry();
+    MCNAPI void promoteSortedGeometry();
 
-    MCFOLD void setRenderChunkShared(::std::shared_ptr<::RenderChunkShared> renderChunkShared);
+    MCNAPI void setRenderChunkShared(::std::shared_ptr<::RenderChunkShared> renderChunkShared);
 
-    MCAPI ~RenderChunkInstanced();
+    MCNAPI ~RenderChunkInstanced();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _resetIndices(
+    MCNAPI static void _resetIndices(
         ::std::variant<
             ::std::monostate,
             ::std::shared_ptr<::RenderChunkDirectIndexData>,
             ::std::shared_ptr<::RenderChunkLayerGroupIndexData>>& indices
     );
 
-    MCAPI static void garbageCollectIndexBuffers();
+    MCNAPI static void garbageCollectIndexBuffers();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MPMCQueue<::std::variant<
+    MCNAPI static ::MPMCQueue<::std::variant<
         ::std::monostate,
         ::std::shared_ptr<::RenderChunkDirectIndexData>,
         ::std::shared_ptr<::RenderChunkLayerGroupIndexData>>>&
@@ -129,12 +129,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

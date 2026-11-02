@@ -129,6 +129,17 @@ if (packet.canSendToServer()) {   // 客户端
 
 两者都会保持最新：加载或卸载模组时，只把它处理的数据包告诉对端。
 
+这些检查只是本地查找，不会发送任何数据。它们在 `PacketBase` 上也是静态函数，不必为了检查而先构造数据包，适合在同一数据包的多个版本之间选择。
+运行时注册的数据包可以把运行时 ID 传给 `Packet::canSendTo(id, player)` 和 `Packet::canSendToServer(id)`：
+
+```cpp
+if (SetLabelPacketV2::canSendToServer()) {
+    SetLabelPacketV2{/* ... */}.sendToServer();
+} else {
+    SetLabelPacket{/* ... */}.sendToServer();
+}
+```
+
 ### 运行时注册
 
 脚本引擎以及在运行时定义数据包的模组可以直接使用 `PacketRegistrar`。请传入拥有该注册的模组，这样它被卸载时注册会被移除；处理器的变化会立即告诉对端。

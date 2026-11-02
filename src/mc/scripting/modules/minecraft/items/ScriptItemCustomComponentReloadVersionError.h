@@ -16,7 +16,7 @@ struct ScriptItemCustomComponentReloadVersionError : public ::Scripting::BaseErr
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 };
 

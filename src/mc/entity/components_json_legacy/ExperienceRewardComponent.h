@@ -22,24 +22,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getOnBredExperience(::Actor& owner) const;
+    MCNAPI int getOnBredExperience(::Actor& owner) const;
 
-    MCAPI int getOnDeathExperience(::Actor& owner) const;
+    MCNAPI int getOnDeathExperience(::Actor& owner) const;
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI ~ExperienceRewardComponent();
+    MCNAPI ~ExperienceRewardComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& mIsExperienceDropEnabledTag();
+    MCNAPI static ::std::string const& mIsExperienceDropEnabledTag();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

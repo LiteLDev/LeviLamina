@@ -12,6 +12,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MolangMatrix const& getDefaultErrorValue();
+    MCNAPI static ::MolangMatrix const& getDefaultErrorValue();
     // NOLINTEND
 };

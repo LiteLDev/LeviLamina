@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ScriptModuleMinecraft::Poi::Block::ScriptInstance> getInRange(
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::Poi::Block::ScriptInstance> getInRange(
         ::std::variant<
             ::ScriptModuleMinecraft::Poi::Block::ScriptNameFilter,
             ::ScriptModuleMinecraft::Poi::Block::ScriptTagFilter,
@@ -45,7 +45,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::Poi::Block::OccupancyFilter> occupancyFilter
     );
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::Poi::Block::ScriptInstance> getInSquare(
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::Poi::Block::ScriptInstance> getInSquare(
         ::std::variant<
             ::ScriptModuleMinecraft::Poi::Block::ScriptNameFilter,
             ::ScriptModuleMinecraft::Poi::Block::ScriptTagFilter,
@@ -60,7 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

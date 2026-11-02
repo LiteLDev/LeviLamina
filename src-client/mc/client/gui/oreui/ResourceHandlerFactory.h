@@ -91,13 +91,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceHandlerFactory(::OreUI::ResourceHandlerFactory&&);
+    MCNAPI ResourceHandlerFactory(::OreUI::ResourceHandlerFactory&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Gameface::ResourceHandlerBroker> createResourceHandlerBroker(
+    MCNAPI static ::std::unique_ptr<::Gameface::ResourceHandlerBroker> createResourceHandlerBroker(
         ::OreUI::ResourceHandlerFactory const&            factory,
         ::OreUI::RegisterResourceHandlersArguments const& args
     );
@@ -106,7 +106,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ResourceHandlerFactory&&);
+    MCNAPI void* $ctor(::OreUI::ResourceHandlerFactory&&);
     // NOLINTEND
 };
 

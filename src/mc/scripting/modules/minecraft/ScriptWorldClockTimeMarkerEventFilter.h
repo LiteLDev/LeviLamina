@@ -30,25 +30,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::ScriptModuleMinecraft::EventFilters::ScriptWorldClockTimeMarkerEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptWorldClockTimeMarkerEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptWorldClockTimeMarkerEventFilter const&);
 
-    MCAPI bool
+    MCNAPI bool
     shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptWorldClockTimeMarkerEventFilterData const& filterData);
 
-    MCAPI ~ScriptWorldClockTimeMarkerEventFilter();
+    MCNAPI ~ScriptWorldClockTimeMarkerEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

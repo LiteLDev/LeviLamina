@@ -45,38 +45,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreatePreviewRealmFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+    MCNAPI explicit CreatePreviewRealmFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
 
-    MCAPI void activateNewPreviewRealm(bool inWorldCreation);
+    MCNAPI void activateNewPreviewRealm(bool inWorldCreation);
 
-    MCAPI void createPreviewRealmFromSubscriptionId(::std::string const& realmId);
+    MCNAPI void createPreviewRealmFromSubscriptionId(::std::string const& realmId);
 
-    MCAPI ::std::optional<::OreUI::CreatePreviewRealmFromSubscriptionResult> const&
+    MCNAPI ::std::optional<::OreUI::CreatePreviewRealmFromSubscriptionResult> const&
     getCreatePreviewRealmFromSubscriptionResult() const;
 
-    MCAPI ::OreUI::FacetTaskState const getCreatePreviewRealmFromSubscriptionTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState const getCreatePreviewRealmFromSubscriptionTaskState() const;
 
-    MCAPI ::std::string getCreatedPreviewRealmId() const;
+    MCNAPI ::std::string getCreatedPreviewRealmId() const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> playScreenModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

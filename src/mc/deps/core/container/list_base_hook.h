@@ -2,13 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+#include "ll/api/data/IntrusiveList.h"
+
 namespace Bedrock::Intrusive {
 
 template <typename T0>
-class list_base_hook {
-public:
-    ::Bedrock::Intrusive::list_base_hook<T0>* mNext;
-    ::Bedrock::Intrusive::list_base_hook<T0>* mPrev;
-};
+class list_base_hook : public ::ll::data::IntrusiveListNode<T0> {};
 
 } // namespace Bedrock::Intrusive

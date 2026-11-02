@@ -73,13 +73,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~PendingRegistrations();
+        MCNAPI ~PendingRegistrations();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -118,29 +118,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
+    MCNAPI CustomCommandRegistry(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
 
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptCustomCommandError> _checkNamespaceConsistency(
         ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations const& registrations,
         ::std::string_view const                                                    newNamespace
     ) const;
 
-    MCAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
+    MCNAPI ::ScriptModuleMinecraft::CustomCommandRegistry::PendingRegistrations&
     _getOrCreatePendingRegistrationsForPack(::std::string const& packUUID, ::std::string_view const newNamespace);
 
-    MCAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
+    MCNAPI ::std::optional<::std::string> _tryClaimAlias(::std::string const& commandName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
+    MCNAPI void* $ctor(::ServerScriptManagerEvents& events, ::CommandRegistry& commandRegistry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onScriptInitializationComplete();
+    MCNAPI void $_onScriptInitializationComplete();
 
 
     // NOLINTEND

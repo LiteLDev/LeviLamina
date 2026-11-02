@@ -35,7 +35,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::IStyleTextureInfoProvider::Info> $getStyleTextureInfo(::std::string_view texturePath) const;
+    MCNAPI ::std::optional<::IStyleTextureInfoProvider::Info>
+    $getStyleTextureInfo(::std::string_view texturePath) const;
     // NOLINTEND
 
 public:

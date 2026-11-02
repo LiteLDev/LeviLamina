@@ -32,12 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
+    MCNAPI ~SurfaceMaterialAdjustmentEvaluated();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

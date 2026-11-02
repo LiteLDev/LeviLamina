@@ -140,7 +140,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceScreenController(
+    MCNAPI FurnaceScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -148,33 +148,33 @@ public:
         ::HashedString const&                          recipeTag
     );
 
-    MCAPI int _findNextLeftSideTab(int dir) const;
+    MCNAPI int _findNextLeftSideTab(int dir) const;
 
-    MCAPI void _handleClearGrid();
+    MCNAPI void _handleClearGrid();
 
-    MCAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI bool _isRecipeIngredientSelected(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void _refreshFilters(int tabIndex, bool forceRefresh);
+    MCNAPI void _refreshFilters(int tabIndex, bool forceRefresh);
 
-    MCAPI void _savePlayerOptions();
+    MCNAPI void _savePlayerOptions();
 
-    MCAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void _selectRecipe(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void _setLeftSideTab(int tabIndex);
+    MCNAPI void _setLeftSideTab(int tabIndex);
 
-    MCAPI void _tryAddTTSMessageForFurnaceAction(::ItemStack const& ingredientItem, ::ItemStack const& resultItem);
+    MCNAPI void _tryAddTTSMessageForFurnaceAction(::ItemStack const& ingredientItem, ::ItemStack const& resultItem);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, ::FurnaceScreenController::CategoryTabInfo> const& mCategoryTabs();
+    MCNAPI static ::std::unordered_map<int, ::FurnaceScreenController::CategoryTabInfo> const& mCategoryTabs();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -186,53 +186,53 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
 
-    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
+    MCNAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
 
-    MCAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
+    MCNAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI bool $_shouldSwap(
+    MCNAPI bool $_shouldSwap(
         ::std::string const& collectionName,
         int                  collectionIndex,
         ::std::string const& otherCollectionName,
         int                  otherCollectionIndex
     ) const;
 
-    MCAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonBDescription();
+    MCNAPI ::std::string $_getButtonBDescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
-    MCAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
+    MCNAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
 
-    MCAPI void $_sendFlyingItem(
+    MCNAPI void $_sendFlyingItem(
         ::ItemStackBase const& item,
         ::std::string const&   fromName,
         int                    fromIndex,

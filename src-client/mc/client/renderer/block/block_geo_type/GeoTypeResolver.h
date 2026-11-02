@@ -18,13 +18,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GeoTypeResolver();
+    MCNAPI GeoTypeResolver();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

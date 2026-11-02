@@ -87,46 +87,46 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::Vec3> $tryGetActorRelativeLocation(
+    MCNAPI ::std::optional<::Vec3> $tryGetActorRelativeLocation(
         ::WeakRef<::EntityContext> const     actorRef,
         ::SharedTypes::Legacy::ActorLocation actorLoc
     ) const;
 
-    MCAPI ::std::optional<::Vec3>
+    MCNAPI ::std::optional<::Vec3>
     $tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> const actorRef, float interpolationFactor) const;
 
-    MCAPI ::std::optional<::Vec2> $tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const;
+    MCNAPI ::std::optional<::Vec2> $tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const;
 
-    MCAPI ::std::optional<::Vec3> $tryGetActorPositionDelta(::WeakRef<::EntityContext> const actorRef) const;
+    MCNAPI ::std::optional<::Vec3> $tryGetActorPositionDelta(::WeakRef<::EntityContext> const actorRef) const;
 
-    MCAPI ::std::vector<::ICameraAPI::ShakeParameters> $tryGetShakeParameters(
+    MCNAPI ::std::vector<::ICameraAPI::ShakeParameters> $tryGetShakeParameters(
         ::WeakRef<::EntityContext> actorRef,
         float                      noiseMultiplier,
         float                      frequency,
         float                      amplitude
     ) const;
 
-    MCAPI ::std::optional<float> $tryGetFOV() const;
+    MCNAPI ::std::optional<float> $tryGetFOV() const;
 
-    MCAPI ::ICameraAPI::CameraMovementData $getCameraMovementVector() const;
+    MCNAPI ::ICameraAPI::CameraMovementData $getCameraMovementVector() const;
 
-    MCFOLD float $getSecondsSinceProgramStart() const;
+    MCNAPI float $getSecondsSinceProgramStart() const;
 
-    MCAPI ::WeakRef<::EntityContext> $getDefaultCameraTarget() const;
+    MCNAPI ::WeakRef<::EntityContext> $getDefaultCameraTarget() const;
 
-    MCAPI ::WeakRef<::EntityContext> $getWeakEntity(int64 actorId) const;
+    MCNAPI ::WeakRef<::EntityContext> $getWeakEntity(int64 actorId) const;
 
-    MCAPI ::WeakRef<::EntityRegistry> $getRegistryWeakEntity_DONOTUSE() const;
+    MCNAPI ::WeakRef<::EntityRegistry> $getRegistryWeakEntity_DONOTUSE() const;
 
-    MCFOLD float $getFrameAlpha() const;
+    MCNAPI float $getFrameAlpha() const;
 
-    MCAPI ::glm::vec2 $getViewportSize() const;
+    MCNAPI ::glm::vec2 $getViewportSize() const;
 
-    MCAPI ::std::optional<::Vec3> $clip(::glm::vec3 const& A, ::glm::vec3 const& B);
+    MCNAPI ::std::optional<::Vec3> $clip(::glm::vec3 const& A, ::glm::vec3 const& B);
 
-    MCAPI bool $isInWall(::Vec3 const& pos) const;
+    MCNAPI bool $isInWall(::Vec3 const& pos) const;
 
-    MCAPI bool $isAlive(::WeakRef<::EntityContext> const actorRef) const;
+    MCNAPI bool $isAlive(::WeakRef<::EntityContext> const actorRef) const;
     // NOLINTEND
 
 public:

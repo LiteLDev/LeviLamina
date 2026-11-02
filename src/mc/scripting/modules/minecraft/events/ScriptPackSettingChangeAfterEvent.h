@@ -31,28 +31,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPackSettingChangeAfterEvent(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
+    MCNAPI ScriptPackSettingChangeAfterEvent(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
 
-    MCAPI ScriptPackSettingChangeAfterEvent(
+    MCNAPI ScriptPackSettingChangeAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&
     );
 
-    MCAPI ~ScriptPackSettingChangeAfterEvent();
+    MCNAPI ~ScriptPackSettingChangeAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPackSettingChangeAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPackSettingChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&
     );
@@ -61,7 +61,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

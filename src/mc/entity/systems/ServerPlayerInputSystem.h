@@ -20,7 +20,7 @@ struct ServerPlayerMovementComponent;
 namespace ServerPlayerInputSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickPlayerMovement(
+MCNAPI void _tickPlayerMovement(
     ::StrictEntityContext&           entity,
     ::ServerPlayerMovementComponent& serverPlayerMovement,
     ::EntityModifier<
@@ -29,9 +29,9 @@ MCAPI void _tickPlayerMovement(
         ::ServerPlayerInteractComponent> const& modifier
 );
 
-MCAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
+MCNAPI bool onInteractPacket(::ServerPlayerMovementComponent& component, ::InteractPacket const& packet);
 
-MCAPI bool onInventoryTransactionPacket(::ServerPlayerMovementComponent& component, ::InventoryPacketHandler packet);
+MCNAPI bool onInventoryTransactionPacket(::ServerPlayerMovementComponent& component, ::InventoryPacketHandler packet);
 
 MCAPI void transferInteractPackets(::ServerPlayerMovementComponent& movementComponent, ::EntityContext& entity);
 // NOLINTEND

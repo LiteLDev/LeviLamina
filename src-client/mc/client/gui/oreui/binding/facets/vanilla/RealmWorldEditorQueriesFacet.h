@@ -61,41 +61,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmWorldEditorQueriesFacet(
+    MCNAPI RealmWorldEditorQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor>                 worldEditor,
         ::TrialManager const&                                          trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
     );
 
-    MCAPI void _updateDataBindings();
+    MCNAPI void _updateDataBindings();
 
-    MCAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
+    MCNAPI ::OreUI::LevelDataBindings& getCurrentWorldData();
 
-    MCAPI ::Realms::RealmsWorldEditorFetchState getRealmWorldEditorFetchState();
+    MCNAPI ::Realms::RealmsWorldEditorFetchState getRealmWorldEditorFetchState();
 
-    MCAPI ::Realms::RealmsWorldEditorStateStatus getRealmWorldEditorFetchStateStatus();
+    MCNAPI ::Realms::RealmsWorldEditorStateStatus getRealmWorldEditorFetchStateStatus();
 
-    MCAPI ::Realms::RealmsWorldEditorState getRealmWorldEditorState();
+    MCNAPI ::Realms::RealmsWorldEditorState getRealmWorldEditorState();
 
-    MCAPI ::std::optional<::Realms::RealmsWorldEditorStateError> const& getRealmWorldEditorStateError();
+    MCNAPI ::std::optional<::Realms::RealmsWorldEditorStateError> const& getRealmWorldEditorStateError();
 
-    MCAPI ::Realms::RealmsWorldEditorStateStatus getRealmWorldEditorStateStatus();
+    MCNAPI ::Realms::RealmsWorldEditorStateStatus getRealmWorldEditorStateStatus();
 
-    MCAPI bool getUseRealmsWorldBackend() const;
+    MCNAPI bool getUseRealmsWorldBackend() const;
 
-    MCAPI bool realmWorldHasBeenModified();
+    MCNAPI bool realmWorldHasBeenModified();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::RealmsWorldEditor>                 worldEditor,
         ::TrialManager const&                                          trialManager,
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
@@ -105,7 +105,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -62,13 +62,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SpellStage(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellStage const&);
+        MCNAPI SpellStage(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellStage const&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellStage const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellStage const&);
         // NOLINTEND
     };
 
@@ -97,29 +97,29 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI SpellData(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&);
+        MCNAPI SpellData(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&);
 
-        MCAPI bool operator==(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&) const;
 
-        MCAPI ~SpellData();
+        MCNAPI ~SpellData();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_40::SummonActorGoalDefinition::SpellData const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -133,13 +133,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

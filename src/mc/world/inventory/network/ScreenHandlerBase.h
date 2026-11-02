@@ -41,11 +41,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStackNetResult $endRequest();
+    MCNAPI ::ItemStackNetResult $endRequest();
 
-    MCFOLD void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
 
-    MCFOLD void $postRequest(bool const wasSuccess);
+    MCNAPI void $postRequest(bool const wasSuccess);
 
 
     // NOLINTEND

@@ -17,7 +17,7 @@ struct ActorMovementTickNeededComponent;
 namespace UpdateAbilitiesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickProcessRequests(
+MCNAPI void tickProcessRequests(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
     ::StrictEntityContext const&                         entity,
     ::AbilitiesComponent&                                abilities,

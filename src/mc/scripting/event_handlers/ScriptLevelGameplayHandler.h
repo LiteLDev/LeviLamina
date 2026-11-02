@@ -33,11 +33,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::LevelWeatherChangedEvent& event);
 
-    MCAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
+    MCNAPI ::HandlerResult $handleEvent(::ScriptingWorldInitializeEvent const& event);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::WorldClockRestartEvent& event);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::WorldClockRestartEvent& event);
 
 
     // NOLINTEND

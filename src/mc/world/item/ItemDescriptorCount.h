@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ItemDescriptorCount(::ReadOnlyBinaryStream& stream);
+    MCNAPI explicit ItemDescriptorCount(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ReadOnlyBinaryStream& stream);
+    MCNAPI void* $ctor(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -51,6 +51,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -66,25 +66,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
+    MCNAPI PhotoManager(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
 
-    MCAPI ::Core::PathBuffer<::std::string> _getPhotoStoragePath();
+    MCNAPI ::Core::PathBuffer<::std::string> _getPhotoStoragePath();
 
-    MCAPI void createPhotoStorage();
+    MCNAPI void createPhotoStorage();
 
-    MCAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
+    MCNAPI void createScreenshotsFolder(::std::string const& levelId, ::AppPlatform& appPlatform);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LevelStorage> levelStorage, bool isClientSide);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(
+    MCNAPI ::Bedrock::PubSub::Connector<void(
         ::cg::ImageBuffer&,
         ::Actor*,
         ::Actor*,

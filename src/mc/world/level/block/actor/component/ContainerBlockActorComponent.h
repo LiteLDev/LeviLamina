@@ -35,15 +35,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ContainerBlockActorComponent> tryCreateFor(::BlockType const& blockType);
+    MCNAPI static ::std::unique_ptr<::ContainerBlockActorComponent> tryCreateFor(::BlockType const& blockType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::CompoundTag& parentTag, ::SaveContext const& saveContext) const;
+    MCNAPI void $save(::CompoundTag& parentTag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $load(::CompoundTag const& parentTag, ::ILevel& level, ::BlockActorVersion version);
+    MCNAPI void $load(::CompoundTag const& parentTag, ::ILevel& level, ::BlockActorVersion version);
 
 
     // NOLINTEND

@@ -65,32 +65,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourceAllowList(::Core::Path const& packagePath);
+    MCNAPI explicit ResourceAllowList(::Core::Path const& packagePath);
 
-    MCAPI ::std::optional<::OreUI::ResourcePath> getResourcePath(::std::string const& id) const;
+    MCNAPI ::std::optional<::OreUI::ResourcePath> getResourcePath(::std::string const& id) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& packagePath);
+    MCNAPI void* $ctor(::Core::Path const& packagePath);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::AllowListPath $getOrAddPath(::Core::Path path);
+    MCNAPI ::OreUI::AllowListPath $getOrAddPath(::Core::Path path);
 
-    MCAPI ::OreUI::AllowListQRCode $getOrAddQRCode(::std::string target);
+    MCNAPI ::OreUI::AllowListQRCode $getOrAddQRCode(::std::string target);
 
-    MCAPI ::OreUI::AllowListProfileImage $getOrAddProfileImage(::Social::ProfileImageOptions const& options);
+    MCNAPI ::OreUI::AllowListProfileImage $getOrAddProfileImage(::Social::ProfileImageOptions const& options);
 
-    MCAPI ::Bedrock::PubSub::Subscription $addProfileImageStateSubscriber(::std::function<void()> const& callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $addProfileImageStateSubscriber(::std::function<void()> const& callback);
 
-    MCAPI void
+    MCNAPI void
     $setProfileImageStatus(::Social::ProfileImageOptions const& options, ::Gameface::ResourceHandlerStatus status);
 
-    MCAPI ::OreUI::ProfileImageState $getProfileImageState(::Social::ProfileImageOptions const& options);
+    MCNAPI ::OreUI::ProfileImageState $getProfileImageState(::Social::ProfileImageOptions const& options);
     // NOLINTEND
 
 public:

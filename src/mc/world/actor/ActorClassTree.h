@@ -13,9 +13,9 @@ class Actor;
 namespace ActorClassTree {
 // functions
 // NOLINTBEGIN
-MCAPI bool isHangingEntity(::Actor const& inEntity);
+MCNAPI bool isHangingEntity(::Actor const& inEntity);
 
-MCAPI bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
+MCNAPI bool isInstanceOf(::Actor const& inEntity, ::ActorType type);
 // NOLINTEND
 
 } // namespace ActorClassTree

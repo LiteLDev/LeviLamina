@@ -52,16 +52,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MatrixStack();
+    MCNAPI MatrixStack();
 
     MCAPI ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
-    MCAPI ::MatrixStack::MatrixStackRef pushIdentity(bool isSortOrigin);
+    MCNAPI ::MatrixStack::MatrixStackRef pushIdentity(bool isSortOrigin);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

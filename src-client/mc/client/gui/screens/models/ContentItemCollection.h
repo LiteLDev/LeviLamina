@@ -44,13 +44,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ItemCollection();
+        MCNAPI ~ItemCollection();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -79,32 +79,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ContentItemCollection(::ContentCollectionOptions&& options);
+    MCNAPI explicit ContentItemCollection(::ContentCollectionOptions&& options);
 
-    MCAPI void createItemCollection(
+    MCNAPI void createItemCollection(
         ::gsl::not_null<::std::shared_ptr<::ContentItem>>       itemProxy,
         ::brstd::move_only_function<bool(::ContentItem const&)> predicate
     );
 
-    MCAPI void forceReload();
+    MCNAPI void forceReload();
 
-    MCAPI ::std::shared_ptr<::ContentItem const>
+    MCNAPI ::std::shared_ptr<::ContentItem const>
     getItem(::brstd::move_only_function<bool(::ContentItem const&)> predicate);
 
-    MCAPI bool tryReload();
+    MCNAPI bool tryReload();
 
-    MCAPI ~ContentItemCollection();
+    MCNAPI ~ContentItemCollection();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContentCollectionOptions&& options);
+    MCNAPI void* $ctor(::ContentCollectionOptions&& options);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

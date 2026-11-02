@@ -13,14 +13,14 @@ class Random;
 namespace SaplingUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void setBlockNoUpdate(
+MCNAPI void setBlockNoUpdate(
     ::BlockSource&                     region,
     ::BlockPos const&                  pos,
     ::std::optional<::BlockPos> const& quadrupleSaplingOffset,
     ::Block const&                     block
 );
 
-MCAPI bool tryAgeSapling(::BlockSource& region, ::BlockPos const& pos);
+MCNAPI bool tryAgeSapling(::BlockSource& region, ::BlockPos const& pos);
 
 MCAPI bool tryPlaceFeature(
     ::BlockSource&                     region,

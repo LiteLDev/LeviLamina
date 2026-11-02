@@ -67,13 +67,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI ::std::shared_ptr<::FillingContainer>
+    MCNAPI ::std::shared_ptr<::FillingContainer>
     getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
 #endif
 
-    MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
+    MCNAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
 
-    MCAPI void setContainerRegistryHandlers(
+    MCNAPI void setContainerRegistryHandlers(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
         ::WeakRef<::IContainerRegistryAccess>       containerAccess,
         ::WeakRef<::IContainerRegistryTracker>      containerTracker
@@ -83,29 +83,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
 #ifdef LL_PLAT_C
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
 #endif
 
-    MCAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player, ::HandSlot handSlot);
+    MCNAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

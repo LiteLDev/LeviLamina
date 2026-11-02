@@ -71,31 +71,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ImmersiveReaderScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
 
-    MCAPI void _launchReader();
+    MCNAPI void _launchReader();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ImmersiveReaderToken>& mReaderToken();
+    MCNAPI static ::std::unique_ptr<::ImmersiveReaderToken>& mReaderToken();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::std::string readerText);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

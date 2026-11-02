@@ -29,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemEnchantOption(::ItemEnchantOption const&);
+    MCNAPI ItemEnchantOption(::ItemEnchantOption const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemEnchantOption const&);
+    MCNAPI void* $ctor(::ItemEnchantOption const&);
     // NOLINTEND
 };

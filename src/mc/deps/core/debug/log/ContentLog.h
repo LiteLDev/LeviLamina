@@ -146,25 +146,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContentLog();
+    MCNAPI ContentLog();
 
-    MCAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
+    MCNAPI void _writeToLog(bool logOnlyOnce, ::LogArea area, ::LogLevel level, char*& args);
 
 #ifdef LL_PLAT_C
-    MCAPI void flush();
+    MCNAPI void flush();
 #endif
 
     MCAPI void log(bool logOnlyOnce, ::LogLevel level, ::LogArea area, ...);
 
-    MCAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
+    MCNAPI void registerEndPoint(::Bedrock::typeid_t<::ContentLog> id, ::gsl::not_null<::ContentLogEndPoint*> endPoint);
 
-    MCAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
+    MCNAPI void unregisterEndPoint(::gsl::not_null<::ContentLogEndPoint*> endPoint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSeedModel(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
+    MCNAPI WorldSeedModel(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
 
-    MCAPI void setImagePath(
+    MCNAPI void setImagePath(
         ::Core::Path const&                                               fullpath,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList
     );
@@ -42,6 +42,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
+    MCNAPI void* $ctor(::std::string const& productId, ::std::string const& title, ::std::string const& seed);
     // NOLINTEND
 };

@@ -60,40 +60,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PermissionsScreenController(
+    MCNAPI PermissionsScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::ActorUniqueID                                defaultPlayerId,
         ::std::weak_ptr<::UserDataScreenController>    userDataScreenController,
         ::ScreenExitBehavior                           exitBehavior
     );
 
-    MCAPI void _closeEduPermissionsPopup();
+    MCNAPI void _closeEduPermissionsPopup();
 
-    MCAPI void _confirmationDeoppingOtherDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void _confirmationDeoppingOtherDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _confirmationDeoppingSelfDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void _confirmationDeoppingSelfDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _confirmationNoCheatsDialog(::std::function<void(::ModalScreenButtonId)> callback);
+    MCNAPI void _confirmationNoCheatsDialog(::std::function<void(::ModalScreenButtonId)> callback);
 
-    MCAPI void _decidePermissions();
+    MCNAPI void _decidePermissions();
 
-    MCAPI void _evaluateCanEdit();
+    MCNAPI void _evaluateCanEdit();
 
-    MCAPI bool _isLocalPlayerSelected() const;
+    MCNAPI bool _isLocalPlayerSelected() const;
 
-    MCAPI bool _isNonXboxLivePlayerSelected() const;
+    MCNAPI bool _isNonXboxLivePlayerSelected() const;
 
-    MCAPI void _populateClientIds();
+    MCNAPI void _populateClientIds();
 
-    MCAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
+    MCNAPI void _setCurrentPermissionLevel(::PlayerPermissionLevel permissionLevel, bool checkDefaultCustomAbilities);
 
-    MCAPI void _syncAbilities();
+    MCNAPI void _syncAbilities();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::ActorUniqueID                                defaultPlayerId,
         ::std::weak_ptr<::UserDataScreenController>    userDataScreenController,
@@ -104,14 +104,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
     // NOLINTEND
 };

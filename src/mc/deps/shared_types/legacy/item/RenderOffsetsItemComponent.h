@@ -47,13 +47,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::Legacy::RenderOffsetsItemComponent const& other) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::RenderOffsetsItemComponent const& other) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

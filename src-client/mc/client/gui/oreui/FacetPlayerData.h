@@ -28,33 +28,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Realms::Stories::FetchStatus getFetchProfileStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getFetchProfileStatus() const;
 
-    MCAPI ::std::string const& getGamerTag() const;
+    MCNAPI ::std::string const& getGamerTag() const;
 
-    MCAPI bool getHasAccepted() const;
+    MCNAPI bool getHasAccepted() const;
 
-    MCAPI bool getHasOptedIn() const;
+    MCNAPI bool getHasOptedIn() const;
 
-    MCAPI bool getIsPlayingOnRealm() const;
+    MCNAPI bool getIsPlayingOnRealm() const;
 
-    MCAPI int64 getLastSeenTime() const;
+    MCNAPI int64 getLastSeenTime() const;
 
-    MCAPI bool getOnlineStatus() const;
+    MCNAPI bool getOnlineStatus() const;
 
-    MCAPI ::OreUI::AllowListProfileImage const& getProfileImage() const;
+    MCNAPI ::OreUI::AllowListProfileImage const& getProfileImage() const;
 
-    MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
+    MCNAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
 
-    MCFOLD ::Realms::PlayerRole getRealmsRole() const;
+    MCNAPI ::Realms::PlayerRole getRealmsRole() const;
 
-    MCFOLD ::std::string const& getXuid() const;
+    MCNAPI ::std::string const& getXuid() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
     // NOLINTEND
 };
 

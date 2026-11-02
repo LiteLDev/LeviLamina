@@ -56,7 +56,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::std::shared_ptr<::AnimationComponent>&
+        MCNAPI ::std::shared_ptr<::AnimationComponent>&
         getAnimationComponent(::Actor& owner, ::SubClientId subClientId, ::AttachableSlotIndex attachableIndex);
 #endif
         // NOLINTEND
@@ -149,24 +149,24 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
+    MCNAPI explicit AnimationComponent(::AnimationComponentArguments&& args);
 
-    MCAPI void _addAnimationToStatePlayer(
+    MCNAPI void _addAnimationToStatePlayer(
         ::HashedString const&                                    friendlyName,
         ::std::shared_ptr<::ActorAnimationControllerStatePlayer> player
     );
 #endif
 
-    MCAPI ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
+    MCNAPI ::RenderParams& _prepRenderParamsForActor(::Actor& actor);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
+    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> createAnimationPlayer(
         ::HashedString const&                                      friendlyName,
         ::ExpressionNode const&                                    blendExpression,
         ::std::set<::HashedString, ::Util::HashStringHashGreater>& animationControllerNameStack
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> editGlobalAnimationData(
         ::HashedString const& friendlyName,
         float                 blendOutTime,
         ::std::string const&  stopExpression,
@@ -175,40 +175,40 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
+    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
     getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
 
-    MCAPI ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
+    MCNAPI ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
 
-    MCAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
+    MCNAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
 
-    MCAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
+    MCNAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 #endif
 
-    MCAPI void initializeServerAnimationComponent(
+    MCNAPI void initializeServerAnimationComponent(
         ::Actor&                                         actor,
         ::std::shared_ptr<::CommonResourceDefinitionMap> animationResourceDefinition,
         ::std::function<void(::ActorAnimationPlayer&)>   animationComponentInitFunction
     );
 
 #ifdef LL_PLAT_C
-    MCAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
+    MCNAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
         ::HashedString const& friendlyName,
         ::HashedString const& owningStateName,
         ::std::string const&  runtimeController
     );
 #endif
 
-    MCAPI void serverUpdate(::Actor& actor);
+    MCNAPI void serverUpdate(::Actor& actor);
 
 #ifdef LL_PLAT_C
-    MCAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
+    MCNAPI void setupDeltaTimeAndLifeTimeParams(bool incrementLifetime);
 
-    MCAPI bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
+    MCNAPI bool tryRegisterAnimation(::HashedString const& friendlyName, ::ActorSkeletalAnimationPtr animation);
 #endif
     // NOLINTEND
 
@@ -216,25 +216,25 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::ApplyAnimationCache createBase(::Actor const* actor);
+    MCNAPI static ::ApplyAnimationCache createBase(::Actor const* actor);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::atomic<int64>& mClientFrameIndex();
+    MCNAPI static ::std::atomic<int64>& mClientFrameIndex();
 
-    MCAPI static ::std::atomic<int64>& mReloadTimeStampClient();
+    MCNAPI static ::std::atomic<int64>& mReloadTimeStampClient();
 
-    MCAPI static ::std::atomic<int64>& mServerFrameIndex();
+    MCNAPI static ::std::atomic<int64>& mServerFrameIndex();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::AnimationComponentArguments&& args);
+    MCNAPI void* $ctor(::AnimationComponentArguments&& args);
 #endif
     // NOLINTEND
 
@@ -242,44 +242,44 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientAnimationComponent* $tryGetClient();
+    MCNAPI ::ClientAnimationComponent* $tryGetClient();
 
-    MCAPI void $visitApplyContext(
+    MCNAPI void $visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
 #ifdef LL_PLAT_S
-    MCFOLD void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
+    MCNAPI void $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)>);
 #else // LL_PLAT_C
-    MCFOLD void
+    MCNAPI void
     $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 #endif
 
-    MCFOLD void $ensureClientAnimationComponentIsInitialized();
+    MCNAPI void $ensureClientAnimationComponentIsInitialized();
 
-    MCAPI void $setDirty();
+    MCNAPI void $setDirty();
 
-    MCFOLD void $updateQueryableGeometryBoneOrientations();
+    MCNAPI void $updateQueryableGeometryBoneOrientations();
 
 #ifdef LL_PLAT_S
-    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64) const;
+    MCNAPI ::Matrix const* $getQueryableBoneOrientation(uint64) const;
 #else // LL_PLAT_C
-    MCFOLD ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
+    MCNAPI ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
 #endif
 
-    MCFOLD ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
+    MCNAPI ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
 #ifdef LL_PLAT_S
-    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
+    MCNAPI float $_getActorRenderDeltaTime(::ActorRenderData const&) const;
 #else // LL_PLAT_C
-    MCFOLD float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
+    MCNAPI float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
 #endif
 
 

@@ -104,20 +104,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _generateCumulativeOutput(
+    MCNAPI void _generateCumulativeOutput(
         ::ScoreboardCommand::SetScoreOutput const& cumulativeOutput,
         ::Objective const&                         objective,
         ::CommandOutput&                           output
     ) const;
 
-    MCAPI ::Objective* _getObjective(
+    MCNAPI ::Objective* _getObjective(
         ::Scoreboard const&  scoreboard,
         ::std::string const& name,
         bool                 forWrite,
         ::CommandOutput&     output
     ) const;
 
-    MCAPI ::std::vector<::ScoreboardId> _getScoreboardIdsForSelector(
+    MCNAPI ::std::vector<::ScoreboardId> _getScoreboardIdsForSelector(
         ::Scoreboard&                             scoreboard,
         ::WildcardCommandSelector<::Actor> const& selector,
         ::CommandOrigin const&                    origin,
@@ -125,7 +125,7 @@ public:
         bool                                      shouldCreateMissingId
     ) const;
 
-    MCAPI void addPlayerScore(
+    MCNAPI void addPlayerScore(
         ::Scoreboard&                                                 scoreboard,
         ::PlayerScoreSetFunction                                      fn,
         ::ScoreboardId const&                                         targetId,
@@ -135,13 +135,13 @@ public:
         ::ScoreboardCommand::SetScoreOutput&                          cumulativeOutput
     ) const;
 
-    MCAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void players(::Scoreboard& scoreboard, ::CommandOrigin const& origin, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard& scoreboard);
+    MCNAPI static ::std::vector<::std::string> _getNonSortableDisplaySlots(::Scoreboard& scoreboard);
 
     MCAPI static void setup(::CommandRegistry& registry, ::ScoreboardCommand::InitProxy&& dependencies);
     // NOLINTEND
@@ -149,7 +149,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

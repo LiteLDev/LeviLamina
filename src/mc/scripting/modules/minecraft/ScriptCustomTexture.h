@@ -23,15 +23,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setIconHeight(float height);
+    MCNAPI void setIconHeight(float height);
 
-    MCAPI void setIconWidth(float width);
+    MCNAPI void setIconWidth(float width);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

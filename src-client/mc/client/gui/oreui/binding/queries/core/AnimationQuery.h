@@ -36,15 +36,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimationQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI AnimationQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateProperty();
+    MCNAPI void _updateProperty();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

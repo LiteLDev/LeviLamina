@@ -61,21 +61,22 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getNumRenderPasses();
+    MCNAPI int $getNumRenderPasses();
 
-    MCAPI ::BatchKey $createBatchKey(int pass);
+    MCNAPI ::BatchKey $createBatchKey(int pass);
 
-    MCAPI void $tryPreRenderSetup(int pass);
+    MCNAPI void $tryPreRenderSetup(int pass);
 
-    MCAPI ::std::unique_ptr<::MinecraftUIPersistentMeshItem> $createPersistentMesh(::ComponentRenderBatch const& batch);
+    MCNAPI ::std::unique_ptr<::MinecraftUIPersistentMeshItem>
+    $createPersistentMesh(::ComponentRenderBatch const& batch);
 
-    MCAPI void $configureUnbatchedRenderContext(::OffscreenCaptureDescription const& capture, bool isDrawingUI);
+    MCNAPI void $configureUnbatchedRenderContext(::OffscreenCaptureDescription const& capture, bool isDrawingUI);
 
-    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch const& batch);
+    MCNAPI void $beginSharedMeshBatch(::ComponentRenderBatch const& batch);
 
-    MCAPI void $render(::InventoryItemRenderOwnerData const& data, int pass, float alpha);
+    MCNAPI void $render(::InventoryItemRenderOwnerData const& data, int pass, float alpha);
 
-    MCAPI bool $endSharedMeshBatch(
+    MCNAPI bool $endSharedMeshBatch(
         ::ComponentRenderBatch&              renderBatch,
         ::MinecraftUIPersistentMeshItem&     persistentMeshItem,
         ::OffscreenCaptureDescription const& capture

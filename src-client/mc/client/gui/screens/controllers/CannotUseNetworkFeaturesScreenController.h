@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CannotUseNetworkFeaturesScreenController(
+    MCNAPI CannotUseNetworkFeaturesScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void(bool)>               callback
     );
@@ -41,13 +41,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(bool)> callback);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(bool)> callback);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

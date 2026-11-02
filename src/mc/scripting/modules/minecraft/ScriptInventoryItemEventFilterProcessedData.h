@@ -27,29 +27,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryItemEventFilterProcessedData(
+    MCNAPI ScriptInventoryItemEventFilterProcessedData(
         ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&
     );
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
 
-    MCAPI ~ScriptInventoryItemEventFilterProcessedData();
+    MCNAPI ~ScriptInventoryItemEventFilterProcessedData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterProcessedData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -41,20 +41,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenshotOptions(::ScreenshotOptions const&);
+    MCNAPI ScreenshotOptions(::ScreenshotOptions const&);
 
-    MCAPI ~ScreenshotOptions();
+    MCNAPI ~ScreenshotOptions();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScreenshotOptions const&);
+    MCNAPI void* $ctor(::ScreenshotOptions const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

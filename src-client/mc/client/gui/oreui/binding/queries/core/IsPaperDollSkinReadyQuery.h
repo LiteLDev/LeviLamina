@@ -39,19 +39,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IsPaperDollSkinReadyQuery(::OreUI::ClientDependencies const& client, ::std::optional<::std::string> skinName);
+    MCNAPI
+    IsPaperDollSkinReadyQuery(::OreUI::ClientDependencies const& client, ::std::optional<::std::string> skinName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::optional<::std::string> skinName);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::optional<::std::string> skinName);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

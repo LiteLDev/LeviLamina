@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PersonaTextureBuilder(
+    MCNAPI PersonaTextureBuilder(
         ::IPersonaImageProvider&                                  imageProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
@@ -48,20 +48,20 @@ public:
         ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
     );
 
-    MCAPI ~PersonaTextureBuilder();
+    MCNAPI ~PersonaTextureBuilder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addClothingMap(
+    MCNAPI static void _addClothingMap(
         ::PersonaTextureResources&      textureResources,
         ::std::shared_ptr<::Pack const> clothingSourcePack,
         ::std::string const&            mapId,
         ::std::string                   clothingMapPath
     );
 
-    MCAPI static void _addPieceTextureToMap(
+    MCNAPI static void _addPieceTextureToMap(
         ::PersonaTextureResources& textureResources,
         ::std::string const&       pieceId,
         ::persona::TextureTint     texture,
@@ -69,14 +69,14 @@ public:
         ::std::optional<uint>      sampledTexelWidth
     );
 
-    MCAPI static void _addTextureToConfiguration(
+    MCNAPI static void _addTextureToConfiguration(
         ::mce::TextureGroup&          textureGroup,
         ::persona::TextureTint const& texture,
         ::Json::Value&                pieceTextureData,
         bool                          validateFileExists
     );
 
-    MCAPI static void _ensureCPUImageDataIsLoaded(
+    MCNAPI static void _ensureCPUImageDataIsLoaded(
         ::mce::TextureGroup&             textureGroup,
         ::persona::TextureTint const&    texture,
         ::persona::TextureTint::PathType pathType,
@@ -87,19 +87,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BASE_FACE_TEXTURE_ID();
+    MCNAPI static ::std::string const& BASE_FACE_TEXTURE_ID();
 
-    MCAPI static ::std::string const& BASE_TEXTURE_ID();
+    MCNAPI static ::std::string const& BASE_TEXTURE_ID();
 
-    MCAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
+    MCNAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
 
-    MCAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
+    MCNAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IPersonaImageProvider&                                  imageProvider,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
@@ -111,6 +111,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

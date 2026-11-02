@@ -20,7 +20,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _eventingRequestSystem(
+    MCNAPI static void _eventingRequestSystem(
         ::StrictEntityContext const&,
         ::EventingRequestQueueComponent& eventingRequestQueueComponent,
         ::LevelComponent&                levelComponent

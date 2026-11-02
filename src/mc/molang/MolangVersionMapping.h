@@ -15,9 +15,9 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::SemVersion getSemVersion(::MolangVersion molangVersion);
+    MCNAPI static ::SemVersion getSemVersion(::MolangVersion molangVersion);
 #endif
 
-    MCAPI static ::MolangVersion getVersion(::SemVersion const& semVersion);
+    MCNAPI static ::MolangVersion getVersion(::SemVersion const& semVersion);
     // NOLINTEND
 };

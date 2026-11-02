@@ -59,112 +59,112 @@
 namespace StateSerializationUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::WallConnectionType fromJavaNbtString(::std::string_view tag);
+MCNAPI ::WallConnectionType fromJavaNbtString(::std::string_view tag);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::StateSerializationUtils::EnumStateMapper<::AnvilDamage> const& ANVIL_DAMAGE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::AnvilDamage> const& ANVIL_DAMAGE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::AttachmentType> const& ATTACHMENT_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::AttachmentType> const& ATTACHMENT_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::BigDripleafTilt> const& BIG_DRIPLEAF_TILT_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::BigDripleafTilt> const& BIG_DRIPLEAF_TILT_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::BlockColor> const& BLOCK_COLOR_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::BlockColor> const& BLOCK_COLOR_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::CauldronLiquidType> const& CAULDRON_LIQUID_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::CauldronLiquidType> const& CAULDRON_LIQUID_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::ChemistryTableType> const& CHEMISTRY_TABLE_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::ChemistryTableType> const& CHEMISTRY_TABLE_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::ChiselType> const& CHISEL_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::ChiselType> const& CHISEL_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::CoralColor> const& CORAL_COLOR_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::CoralColor> const& CORAL_COLOR_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::CornerShape> const& CORNER_SHAPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::CornerShape> const& CORNER_SHAPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::CreakingHeartState> const& CREAKING_HEART_STATE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::CreakingHeartState> const& CREAKING_HEART_STATE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::DirtType> const& DIRT_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::DirtType> const& DIRT_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::DoublePlantType> const& DOUBLE_PLANT_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::DoublePlantType> const& DOUBLE_PLANT_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::EggCount> const& EGG_COUNT_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::EggCount> const& EGG_COUNT_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::FlowerType> const& FLOWER_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::FlowerType> const& FLOWER_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::FrontAndTop> const& FRONT_AND_TOP_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::FrontAndTop> const& FRONT_AND_TOP_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::HatchLevel> const& HATCH_LEVEL_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::HatchLevel> const& HATCH_LEVEL_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::LeafSize> const& LEAF_SIZE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::LeafSize> const& LEAF_SIZE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::LeverDirection> const& LEVER_DIRECTION_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::LeverDirection> const& LEVER_DIRECTION_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::MonsterEggStoneType> const& MONSTER_EGG_STONE_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::MonsterEggStoneType> const& MONSTER_EGG_STONE_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::NewLeavesType> const& NEW_LEAVES_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::NewLeavesType> const& NEW_LEAVES_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::NewLogType> const& NEW_LOG_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::NewLogType> const& NEW_LOG_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::OldLeavesType> const& OLD_LEAVES_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::OldLeavesType> const& OLD_LEAVES_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::OldLogType> const& OLD_LOG_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::OldLogType> const& OLD_LOG_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::PaleMossCarpetSide> const& PALE_MOSS_CARPET_SIDE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::PaleMossCarpetSide> const& PALE_MOSS_CARPET_SIDE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::PillarAxis> const& PILLAR_AXIS_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::PillarAxis> const& PILLAR_AXIS_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::PortalAxis> const& PORTAL_AXIS_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::PortalAxis> const& PORTAL_AXIS_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::PotentSulfurState> const& POTENT_SULFUR_STATE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::PotentSulfurState> const& POTENT_SULFUR_STATE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::PrismarineBlockType> const& PRISMARINE_BLOCK_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::PrismarineBlockType> const& PRISMARINE_BLOCK_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::RedstoneSide> const& REDSTONE_SIDE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::RedstoneSide> const& REDSTONE_SIDE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SandstoneType> const& SANDSTONE_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SandstoneType> const& SANDSTONE_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SandType> const& SAND_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SandType> const& SAND_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SaplingType_DEPRECATED> const& SAPLING_TYPE_DEPRECATED_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SaplingType_DEPRECATED> const& SAPLING_TYPE_DEPRECATED_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SeagrassType> const& SEAGRASS_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SeagrassType> const& SEAGRASS_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SpeleothemThickness> const& SPELEOTHEM_THICKNESS_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SpeleothemThickness> const& SPELEOTHEM_THICKNESS_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::SpongeType> const& SPONGE_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::SpongeType> const& SPONGE_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StalkThickness> const& STALK_THICKNESS_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StalkThickness> const& STALK_THICKNESS_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneBrickType> const& STONE_BRICK_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneBrickType> const& STONE_BRICK_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType2> const& STONE_SLAB_TYPE_2_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType2> const& STONE_SLAB_TYPE_2_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType3> const& STONE_SLAB_TYPE_3_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType3> const& STONE_SLAB_TYPE_3_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType4> const& STONE_SLAB_TYPE_4_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType4> const& STONE_SLAB_TYPE_4_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType> const& STONE_SLAB_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneSlabType> const& STONE_SLAB_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StoneType> const& STONE_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StoneType> const& STONE_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StructureBlockType> const& STRUCTURE_BLOCK_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StructureBlockType> const& STRUCTURE_BLOCK_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::StructureVoidType> const& STRUCTURE_VOID_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::StructureVoidType> const& STRUCTURE_VOID_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::TallGrassType> const& TALL_GRASS_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::TallGrassType> const& TALL_GRASS_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::TorchFacing> const& TORCH_FACING_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::TorchFacing> const& TORCH_FACING_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::VaultBlockState> const& VAULT_BLOCK_STATE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::VaultBlockState> const& VAULT_BLOCK_STATE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::VerticalHalfEnum> const& VERTICAL_HALF_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::VerticalHalfEnum> const& VERTICAL_HALF_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::WallBlockType> const& WALL_BLOCK_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::WallBlockType> const& WALL_BLOCK_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::WallConnectionType> const& WALL_CONNECTION_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::WallConnectionType> const& WALL_CONNECTION_TYPE_MAPPER();
 
-MCAPI ::StateSerializationUtils::EnumStateMapper<::WoodType> const& WOOD_TYPE_MAPPER();
+MCNAPI ::StateSerializationUtils::EnumStateMapper<::WoodType> const& WOOD_TYPE_MAPPER();
 // NOLINTEND
 
 } // namespace StateSerializationUtils

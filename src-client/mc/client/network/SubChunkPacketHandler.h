@@ -53,7 +53,7 @@ public:
         ::SubChunkPos const&                               packetCenter
     );
 
-    MCAPI void _compareHeightMapsForLightingFixup(
+    MCNAPI void _compareHeightMapsForLightingFixup(
         ::std::array<::ChunkLocalHeight, 256>& oldHeights,
         ::std::array<::ChunkLocalHeight, 256>& newHeights
     );

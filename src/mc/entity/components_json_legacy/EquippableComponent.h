@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::UpdateEquipPacket createDataPacket(::Actor& owner, ::ContainerID containerID) const;
+    MCNAPI ::UpdateEquipPacket createDataPacket(::Actor& owner, ::ContainerID containerID) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> createTag(::Actor& owner) const;
 
-    MCAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
+    MCNAPI bool onItemChanged(::Actor& owner, uint64 slotIdx, ::ItemStack const& item) const;
 
-    MCAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
+    MCNAPI ::EquippableComponent& operator=(::EquippableComponent&& other);
 
 #ifdef LL_PLAT_C
-    MCAPI void setDataFromPacket(::UpdateEquipPacket const& packet);
+    MCNAPI void setDataFromPacket(::UpdateEquipPacket const& packet);
 #endif
     // NOLINTEND
 };

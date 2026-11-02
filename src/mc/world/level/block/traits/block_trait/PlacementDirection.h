@@ -67,7 +67,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&,
@@ -75,7 +75,7 @@ public:
             ::Vec3 const&
         ) const;
 
-        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+        MCNAPI ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -105,7 +105,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&               pos,
@@ -113,7 +113,7 @@ public:
             ::Vec3 const&
         ) const;
 
-        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+        MCNAPI ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -143,7 +143,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
+        MCNAPI ::gsl::not_null<::Block const*> $getPlacementBlock(
             ::gsl::not_null<::Block const*> block,
             ::Actor const&                  by,
             ::BlockPos const&,
@@ -151,7 +151,7 @@ public:
             ::Vec3 const&
         ) const;
 
-        MCFOLD ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
+        MCNAPI ::BlockTrait::PlacementCallbackOrder $getCallbackOrder() const;
 
 
         // NOLINTEND
@@ -182,19 +182,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI ::std::string const& $_getName() const;
+    MCNAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

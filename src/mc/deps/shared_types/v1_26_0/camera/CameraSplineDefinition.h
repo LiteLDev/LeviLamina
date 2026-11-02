@@ -33,34 +33,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraSplineDefinition(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
+    MCNAPI CameraSplineDefinition(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_0::CameraSplineDefinition& operator=(::SharedTypes::v1_26_0::CameraSplineDefinition&&);
+    MCNAPI ::SharedTypes::v1_26_0::CameraSplineDefinition& operator=(::SharedTypes::v1_26_0::CameraSplineDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_0::CameraSplineDefinition&
+    MCNAPI ::SharedTypes::v1_26_0::CameraSplineDefinition&
     operator=(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_0::CameraSplineDefinition const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_0::CameraSplineDefinition const& rhs) const;
 
-    MCAPI ~CameraSplineDefinition();
+    MCNAPI ~CameraSplineDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_0::CameraSplineDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

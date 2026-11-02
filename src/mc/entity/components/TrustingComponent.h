@@ -28,8 +28,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canTrust(::ItemStack const& instance) const;
+    MCNAPI bool _canTrust(::ItemStack const& instance) const;
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 };

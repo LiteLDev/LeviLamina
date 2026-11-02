@@ -24,21 +24,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessagePatchnote(::OreUI::MessagePatchnote const&);
+    MCNAPI MessagePatchnote(::OreUI::MessagePatchnote const&);
 
-    MCAPI ~MessagePatchnote();
+    MCNAPI ~MessagePatchnote();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessagePatchnote const&);
+    MCNAPI void* $ctor(::OreUI::MessagePatchnote const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

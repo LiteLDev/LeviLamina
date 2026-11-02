@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionTrigger(::ActorDefinitionTrigger const&);
+    MCNAPI ActorDefinitionTrigger(::ActorDefinitionTrigger const&);
 
-    MCAPI explicit ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
+    MCNAPI explicit ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
 
-    MCAPI void convertToSharedTypeActorDefinitionTrigger(
+    MCNAPI void convertToSharedTypeActorDefinitionTrigger(
         ::SharedTypes::v1_21_120::ActorDefinitionTrigger& outputSharedTypeTrigger
     ) const;
 
-    MCAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
+    MCNAPI ::ActorDefinitionTrigger& operator=(::ActorDefinitionTrigger&&);
 
     MCAPI ~ActorDefinitionTrigger();
     // NOLINTEND
@@ -44,9 +44,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionTrigger const&);
+    MCNAPI void* $ctor(::ActorDefinitionTrigger const&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
     // NOLINTEND
 
 public:

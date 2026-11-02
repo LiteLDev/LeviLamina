@@ -21,25 +21,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Placement(::SharedTypes::v1_21_60::Spawn::Placement const&);
+    MCNAPI Placement(::SharedTypes::v1_21_60::Spawn::Placement const&);
 
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement&&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement&&);
 
-    MCFOLD ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement const&);
+    MCNAPI ::SharedTypes::v1_21_60::Spawn::Placement& operator=(::SharedTypes::v1_21_60::Spawn::Placement const&);
 
-    MCAPI ~Placement();
+    MCNAPI ~Placement();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_60::Spawn::Placement const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_60::Spawn::Placement const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

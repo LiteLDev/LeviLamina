@@ -68,49 +68,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DimensionManager(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory);
+    MCNAPI explicit DimensionManager(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory);
 
 #ifdef LL_PLAT_C
-    MCAPI DimensionManager(
+    MCNAPI DimensionManager(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::DimensionDefinitionGroup                         dimensionDefinitions
     );
 #endif
 
-    MCAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
+    MCNAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
 
-    MCAPI bool _registerDimensionWithDimensionDefinitionGroup(
+    MCNAPI bool _registerDimensionWithDimensionDefinitionGroup(
         ::std::string_view                                     name,
         ::DimensionDefinitionGroup::DimensionDefinition const& jsonDef
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void _registerFixedVanillaDimensionIds();
+    MCNAPI void _registerFixedVanillaDimensionIds();
 #endif
 
-    MCFOLD void forEachDimension(::std::function<bool(::Dimension&)> callback);
+    MCNAPI void forEachDimension(::std::function<bool(::Dimension&)> callback);
 
-    MCFOLD void forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
+    MCNAPI void forEachDimension(::std::function<bool(::Dimension const&)> callback) const;
 
     MCAPI ::WeakRef<::Dimension> getDimension(::DimensionType dimensionType) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    MCNAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
     getDimensionDefinition(::DimensionType dimensionType) const;
 #endif
 
-    MCAPI ::std::string getDimensionIdentifier(::DimensionType type) const;
+    MCNAPI ::std::string getDimensionIdentifier(::DimensionType type) const;
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::std::string_view dimensionName);
 
     MCAPI ::WeakRef<::Dimension> getOrCreateDimension(::DimensionType dimensionType);
 
-    MCAPI void serverInitialize(
+    MCNAPI void serverInitialize(
         ::ILevelStorageManagerConnector& levelStorageManagerConnector,
         ::DimensionDefinitionGroup       jsonDefinitionGroup
     );
 
-    MCAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
+    MCNAPI void serverSaveDimensionNameIdStoreTable(::LevelStorage& levelStorage) const;
 
     MCAPI ::std::optional<::DimensionType> tryGetDimensionType(::std::string_view identifier) const;
     // NOLINTEND
@@ -118,10 +118,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IDimensionFactory> dimensionFactory,
         ::DimensionDefinitionGroup                         dimensionDefinitions
     );
@@ -131,14 +131,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>& $getOnReadyForCustomDimensionRegistrationConnector();
-#else // LL_PLAT_C
-    MCFOLD ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::DimensionManager&)>&
     $getOnReadyForCustomDimensionRegistrationConnector();
-#endif
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Dimension&)>& $getOnNewDimensionCreatedConnector();
 
 
     // NOLINTEND

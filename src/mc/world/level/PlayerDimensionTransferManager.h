@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerDimensionTransferManager(
+    MCNAPI PlayerDimensionTransferManager(
         ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
         ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
@@ -52,25 +52,25 @@ public:
         ::std::unique_ptr<::ILevelCrashDumpManager>                levelCrashDumpManager
     );
 
-    MCAPI bool _isPlayerSuspended(::Player const& player) const;
+    MCNAPI bool _isPlayerSuspended(::Player const& player) const;
 
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
-    MCAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
+    MCNAPI bool _playerChangeDimension(::Player& player, ::ChangeDimensionRequest& changeRequest);
 
-    MCAPI void handleChangeDimensionRequests();
+    MCNAPI void handleChangeDimensionRequests();
 
-    MCAPI bool isAnyPlayerChangingDimension();
+    MCNAPI bool isAnyPlayerChangingDimension();
 
     MCAPI void requestPlayerChangeDimension(::Player const& player, ::ChangeDimensionRequest&& changeRequest);
 
-    MCAPI ~PlayerDimensionTransferManager();
+    MCNAPI ~PlayerDimensionTransferManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::PlayerLimboActorManager>               playerLimboActorManager,
         ::std::unique_ptr<::IPlayerDimensionTransferer>            playerDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>          dimensionManager,
@@ -83,6 +83,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

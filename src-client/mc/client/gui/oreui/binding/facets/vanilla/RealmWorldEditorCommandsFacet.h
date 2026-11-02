@@ -34,33 +34,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmWorldEditorCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
+    MCNAPI explicit RealmWorldEditorCommandsFacet(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
 
-    MCAPI void clearRealmWorldEditorState();
+    MCNAPI void clearRealmWorldEditorState();
 
-    MCAPI void resetRealmWorld(::std::string const& realmId);
+    MCNAPI void resetRealmWorld(::std::string const& realmId);
 
-    MCAPI void saveRealmWorld(::std::string const& realmId);
+    MCNAPI void saveRealmWorld(::std::string const& realmId);
 
-    MCAPI void setUseRealmWorldBackend(bool const shouldUseRealmWorldBackend);
+    MCNAPI void setUseRealmWorldBackend(bool const shouldUseRealmWorldBackend);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> worldEditor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

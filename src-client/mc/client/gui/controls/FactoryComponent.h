@@ -44,33 +44,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FactoryComponent(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
+    MCNAPI FactoryComponent(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
 
-    MCAPI void _prepareControlForDestruction(::std::shared_ptr<::UIControl> control);
+    MCNAPI void _prepareControlForDestruction(::std::shared_ptr<::UIControl> control);
 
-    MCAPI void addVariable(::std::string const& varName, ::Json::Value const& var);
+    MCNAPI void addVariable(::std::string const& varName, ::Json::Value const& var);
 
-    MCAPI ::std::weak_ptr<::UIControl> create(::UIPropertyBag const& properties, bool ensureCreation);
+    MCNAPI ::std::weak_ptr<::UIControl> create(::UIPropertyBag const& properties, bool ensureCreation);
 
-    MCAPI void destroy(::std::string const& name);
+    MCNAPI void destroy(::std::string const& name);
 
-    MCAPI void destroyAll();
+    MCNAPI void destroyAll();
 
-    MCAPI void destroyAllStartingAtIndex(uint const index);
+    MCNAPI void destroyAllStartingAtIndex(uint const index);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
+    MCNAPI void* $ctor(::UIControl& owner, ::std::weak_ptr<::UIControlFactory> factoryPtr);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:

@@ -5,12 +5,12 @@
 namespace OreUI::EntryPoints::Inbox {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::std::string const& tab);
+MCNAPI ::std::string composeRoute(::std::string const& tab);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::Inbox

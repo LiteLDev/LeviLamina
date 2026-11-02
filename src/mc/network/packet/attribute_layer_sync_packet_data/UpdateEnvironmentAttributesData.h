@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::AttributeLayerSyncPacketData::UpdateEnvironmentAttributesData const& rhs) const;
+    MCNAPI bool operator==(::AttributeLayerSyncPacketData::UpdateEnvironmentAttributesData const& rhs) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bind(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

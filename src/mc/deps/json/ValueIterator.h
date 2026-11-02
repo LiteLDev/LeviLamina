@@ -44,20 +44,20 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ValueIterator(::Json::ValueIterator const& other);
+    MCNAPI ValueIterator(::Json::ValueIterator const& other);
 #endif
 
-    MCAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
+    MCNAPI explicit ValueIterator(::Json::ValueConstIterator const& other);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::Json::ValueIterator const& other);
+    MCNAPI void* $ctor(::Json::ValueIterator const& other);
 #endif
 
-    MCFOLD void* $ctor(::Json::ValueConstIterator const& other);
+    MCNAPI void* $ctor(::Json::ValueConstIterator const& other);
     // NOLINTEND
 };
 

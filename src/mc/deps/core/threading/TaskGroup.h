@@ -152,35 +152,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
+    MCNAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
 
-    MCAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
+    MCNAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
 
-    MCAPI void _forAllTasks(
+    MCNAPI void _forAllTasks(
         ::Bedrock::Threading::UniqueLock<::std::mutex>&                       lock,
         ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
     );
 
-    MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
+    MCNAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
 #ifdef LL_PLAT_C
-    MCAPI uint64 count() const;
+    MCNAPI uint64 count() const;
 #endif
 
-    MCAPI void flush(::std::function<void()> waitFn);
+    MCNAPI void flush(::std::function<void()> waitFn);
 
     MCAPI bool isEmpty() const;
 
-    MCAPI void resume();
+    MCNAPI void resume();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Threading::Async<void>
+    MCNAPI static ::Bedrock::Threading::Async<void>
     queueChildSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
-    MCAPI static ::Bedrock::Threading::Async<void> queueChild_DEPRECATED(
+    MCNAPI static ::Bedrock::Threading::Async<void> queueChild_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
         ::brstd::move_only_function<void()>&&         callback
@@ -190,38 +190,38 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
+    MCNAPI void* $ctor(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
+    MCNAPI ::Bedrock::Threading::Async<void> $queue_DEPRECATED(
         ::TaskStartInfo const&                        startInfo,
         ::brstd::move_only_function<::TaskResult()>&& task,
         ::brstd::move_only_function<void()>&&         callback
     );
 
-    MCAPI ::Bedrock::Threading::Async<void>
+    MCNAPI ::Bedrock::Threading::Async<void>
     $queueSync_DEPRECATED(::TaskStartInfo const& startInfo, ::brstd::move_only_function<::TaskResult()>&& task);
 
-    MCAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase> task);
+    MCNAPI void $taskRegister(::std::shared_ptr<::BackgroundTaskBase> task);
 
-    MCAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
+    MCNAPI void $requeueTask(::std::shared_ptr<::BackgroundTaskBase> task, bool queueImmediate);
 
-    MCFOLD ::TaskGroupState $getState() const;
+    MCNAPI ::TaskGroupState $getState() const;
 
-    MCAPI void $processCoroutines();
+    MCNAPI void $processCoroutines();
 
-    MCAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
+    MCNAPI void $taskComplete(::gsl::not_null<::BackgroundTaskBase*> task);
 
-    MCAPI bool $_workerPoolIsAsync() const;
+    MCNAPI bool $_workerPoolIsAsync() const;
 
 
     // NOLINTEND

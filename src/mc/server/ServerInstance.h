@@ -290,45 +290,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
+    MCNAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
-    MCAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
+    MCNAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
 
 #ifdef LL_PLAT_C
-    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
+    MCNAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getLevelId() const;
+    MCNAPI ::std::string getLevelId() const;
 #endif
 
     MCAPI ::ServerInitialization::ServerInitResult initializeServer(::ServerInstanceInitArguments&& args);
 
     MCAPI void leaveGameSync();
 
-    MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
+    MCNAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
 
-    MCAPI void queueForServerThread(::std::function<void()> command);
+    MCNAPI void queueForServerThread(::std::function<void()> command);
 
 #ifdef LL_PLAT_C
-    MCAPI bool requestInGamePause(bool status);
+    MCNAPI bool requestInGamePause(bool status);
 
-    MCAPI void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
+    MCNAPI void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
 #endif
 
     MCAPI void startLeaveGame();
 
-    MCAPI void startServerThread();
+    MCNAPI void startServerThread();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
+    MCNAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
 
-    MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
+    MCNAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
     createHostMultiplayerCallback(
         ::ServerInstance&                  instance,
         ::NetworkServerConfig              networkServerConfig,
@@ -338,73 +338,73 @@ public:
         ::ServerNetworkHandlerDependencies serverNetworkOptions
     );
 
-    MCAPI static ::brstd::move_only_function<
+    MCNAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);
 
 #ifdef LL_PLAT_S
-    MCAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
+    MCNAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ASSET_EXTRACTION_ERROR();
+    MCNAPI static ::std::string const& ASSET_EXTRACTION_ERROR();
 
-    MCAPI static ::std::string const& ENTITY_REGISTRY_CREATION_ERROR();
+    MCNAPI static ::std::string const& ENTITY_REGISTRY_CREATION_ERROR();
 
-    MCAPI static ::std::string const& FINAL_LEVEL_STORAGE_STATE_ERROR();
+    MCNAPI static ::std::string const& FINAL_LEVEL_STORAGE_STATE_ERROR();
 
-    MCAPI static ::std::string const& HOST_MULTIPLAYER_ERROR();
+    MCNAPI static ::std::string const& HOST_MULTIPLAYER_ERROR();
 
-    MCAPI static ::std::string const& INITIAL_LEVEL_STORAGE_STATE_ERROR();
+    MCNAPI static ::std::string const& INITIAL_LEVEL_STORAGE_STATE_ERROR();
 
-    MCAPI static ::std::string const& LEVEL_STORAGE_CREATION_ERROR();
+    MCNAPI static ::std::string const& LEVEL_STORAGE_CREATION_ERROR();
 
-    MCAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
+    MCNAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& POST_INIT_ERROR();
+    MCNAPI static ::std::string const& POST_INIT_ERROR();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerInstanceArguments&& args);
+    MCNAPI void* $ctor(::ServerInstanceArguments&& args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onLevelCorrupt();
+    MCNAPI void $onLevelCorrupt();
 
-    MCFOLD void $onGameModeChanged();
+    MCNAPI void $onGameModeChanged();
 
-    MCFOLD void $onTick(int nTick, int maxTick);
+    MCNAPI void $onTick(int nTick, int maxTick);
 
-    MCFOLD void $onInternetUpdate();
+    MCNAPI void $onInternetUpdate();
 
-    MCFOLD void $onGameSessionReset();
+    MCNAPI void $onGameSessionReset();
 
-    MCFOLD void $onLevelExit();
+    MCNAPI void $onLevelExit();
 
-    MCAPI void $onRequestResourceReload();
+    MCNAPI void $onRequestResourceReload();
 
-    MCAPI void $onLowDiskSpace(bool const bSet, uint64);
+    MCNAPI void $onLowDiskSpace(bool const bSet, uint64);
 
-    MCAPI void $onOutOfDiskSpace(bool const bSet, uint64);
+    MCNAPI void $onOutOfDiskSpace(bool const bSet, uint64);
 
-    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCFOLD void $updateScreens();
+    MCNAPI void $updateScreens();
 
 
     // NOLINTEND

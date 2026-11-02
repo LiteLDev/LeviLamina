@@ -53,19 +53,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GuardianModel(::GeometryPtr source, bool bIsGhost);
+    MCNAPI GuardianModel(::GeometryPtr source, bool bIsGhost);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source, bool bIsGhost);
+    MCNAPI void* $ctor(::GeometryPtr source, bool bIsGhost);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         entity,
         float            time,
@@ -76,6 +76,6 @@ public:
         float            scale
     );
 
-    MCAPI void $setupAnim(::Actor& entity, float time, float r, float bob, float yRot, float xRot, float scale);
+    MCNAPI void $setupAnim(::Actor& entity, float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 };

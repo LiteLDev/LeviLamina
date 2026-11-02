@@ -196,7 +196,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $showKeyboard(
+    MCNAPI void $showKeyboard(
         ::std::string const& currentText,
         int                  maxLength,
         bool                 limitInput,
@@ -208,130 +208,130 @@ public:
         ::InputMode          inputMode
     );
 
-    MCAPI void $hideKeyboard();
+    MCNAPI void $hideKeyboard();
 
-    MCAPI void
+    MCNAPI void
     $updateTextEditBoxPosition(::RectangleArea const&, ::RectangleArea const& selectionPosition, float const guiScale);
 
-    MCAPI float $getKeyboardHeight() const;
+    MCNAPI float $getKeyboardHeight() const;
 
-    MCAPI bool $isMouseInsideClient() const;
+    MCNAPI bool $isMouseInsideClient() const;
 
-    MCAPI bool $canScroll() const;
+    MCNAPI bool $canScroll() const;
 
-    MCAPI bool $isRemoteSession() const;
+    MCNAPI bool $isRemoteSession() const;
 
-    MCAPI bool $isMouseClickLockEnabled() const;
+    MCNAPI bool $isMouseClickLockEnabled() const;
 
-    MCAPI bool $isMouseSonarEnabled() const;
+    MCNAPI bool $isMouseSonarEnabled() const;
 
-    MCAPI uint $getMouseClickLockTime() const;
+    MCNAPI uint $getMouseClickLockTime() const;
 
-    MCAPI void $hideMousePointer();
+    MCNAPI void $hideMousePointer();
 
-    MCAPI void $showMousePointer();
+    MCNAPI void $showMousePointer();
 
-    MCAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
+    MCNAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
-    MCAPI void $toggleSimulateTouchWithMouse();
+    MCNAPI void $toggleSimulateTouchWithMouse();
 
-    MCAPI int $getDisplayWidth();
+    MCNAPI int $getDisplayWidth();
 
-    MCAPI int $getDisplayHeight();
+    MCNAPI int $getDisplayHeight();
 
-    MCAPI void $screenToClient(int& x, int& y) const;
+    MCNAPI void $screenToClient(int& x, int& y) const;
 
-    MCAPI ::std::string $getTextBoxBackend() const;
+    MCNAPI ::std::string $getTextBoxBackend() const;
 
-    MCAPI void $setTextBoxBackend(::std::string const& newText);
+    MCNAPI void $setTextBoxBackend(::std::string const& newText);
 
-    MCAPI int $getCaretPosition() const;
+    MCNAPI int $getCaretPosition() const;
 
-    MCAPI void $setCaretPosition(int position);
+    MCNAPI void $setCaretPosition(int position);
 
-    MCFOLD ::ClipboardFeatureFlags $getClipboardFeatures() const;
+    MCNAPI ::ClipboardFeatureFlags $getClipboardFeatures() const;
 
-    MCAPI void $setClipboard(::std::string const& value) const;
+    MCNAPI void $setClipboard(::std::string const& value) const;
 
-    MCAPI ::std::wstring $getClipboardText() const;
+    MCNAPI ::std::wstring $getClipboardText() const;
 
-    MCFOLD bool $allowSplitScreen();
+    MCNAPI bool $allowSplitScreen();
 
-    MCFOLD bool $allowsResourcePackDevelopment() const;
+    MCNAPI bool $allowsResourcePackDevelopment() const;
 
-    MCFOLD bool $supportsFilePicking() const;
+    MCNAPI bool $supportsFilePicking() const;
 
-    MCAPI bool $supportsShare() const;
+    MCNAPI bool $supportsShare() const;
 
-    MCAPI void $share() const;
+    MCNAPI void $share() const;
 
-    MCAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)>);
+    MCNAPI void $shareFile(::Core::Path const& path, ::std::function<void(bool)>);
 
-    MCAPI void $pickImage(::std::shared_ptr<::ImagePickingCallback> callback);
+    MCNAPI void $pickImage(::std::shared_ptr<::ImagePickingCallback> callback);
 
-    MCAPI void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
+    MCNAPI void $pickFile(::std::shared_ptr<::FilePickerSettings> settings);
 
-    MCFOLD auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
+    MCNAPI auto $getModalErrorMessageProc() -> ::AssertDialogResponse (*)(::std::string const&, ::std::string const&);
 
-    MCFOLD ::OsVersion $getOSVersion() const;
+    MCNAPI ::OsVersion $getOSVersion() const;
 
-    MCFOLD ::PlatformType $getPlatformType() const;
+    MCNAPI ::PlatformType $getPlatformType() const;
 
-    MCFOLD ::BuildPlatform $getBuildPlatform() const;
+    MCNAPI ::BuildPlatform $getBuildPlatform() const;
 
-    MCAPI ::std::string $getPlatformString() const;
+    MCNAPI ::std::string $getPlatformString() const;
 
-    MCAPI ::std::string $getClientUpdateUrl() const;
+    MCNAPI ::std::string $getClientUpdateUrl() const;
 
-    MCAPI ::std::string $getEdition() const;
+    MCNAPI ::std::string $getEdition() const;
 
-    MCAPI ::std::string $getModelName();
+    MCNAPI ::std::string $getModelName();
 
-    MCFOLD bool $devHotReloadRenderResources() const;
+    MCNAPI bool $devHotReloadRenderResources() const;
 
-    MCFOLD bool $delayOptionSaveUntilCloudSync() const;
+    MCNAPI bool $delayOptionSaveUntilCloudSync() const;
 
-    MCFOLD bool $requiresXboxLiveSigninToPlay() const;
+    MCNAPI bool $requiresXboxLiveSigninToPlay() const;
 
-    MCFOLD bool $requiresLiveGoldForMultiplayer() const;
+    MCNAPI bool $requiresLiveGoldForMultiplayer() const;
 
-    MCAPI void $onMinecraftGameInitComplete();
+    MCNAPI void $onMinecraftGameInitComplete();
 
-    MCAPI bool $isHandheldDevice() const;
+    MCNAPI bool $isHandheldDevice() const;
 
-    MCAPI bool $getSimulateTouchWithMouse() const;
+    MCNAPI bool $getSimulateTouchWithMouse() const;
 
-    MCAPI float $getDefaultSafeZoneScaleX() const;
+    MCNAPI float $getDefaultSafeZoneScaleX() const;
 
-    MCAPI float $getDefaultSafeZoneScaleY() const;
+    MCNAPI float $getDefaultSafeZoneScaleY() const;
 
-    MCAPI float $getDefaultSafeZoneScaleAll() const;
+    MCNAPI float $getDefaultSafeZoneScaleAll() const;
 
-    MCFOLD float $getDefaultScreenPositionX() const;
+    MCNAPI float $getDefaultScreenPositionX() const;
 
-    MCFOLD float $getDefaultScreenPositionY() const;
+    MCNAPI float $getDefaultScreenPositionY() const;
 
-    MCAPI void $showXboxLiveUserSettings();
+    MCNAPI void $showXboxLiveUserSettings();
 
-    MCAPI bool $canLaunchUri(::std::string const& uri);
+    MCNAPI bool $canLaunchUri(::std::string const& uri);
 
-    MCAPI void $setStorageDirectory(
+    MCNAPI void $setStorageDirectory(
         ::FileStorageDirectory      dir,
         bool                        isCallback,
         ::PropertyBag const&        extraData,
         ::std::function<void(bool)> onComplete
     );
 
-    MCAPI void $_initializeFileStorageAreas();
+    MCNAPI void $_initializeFileStorageAreas();
 
-    MCAPI ::Core::PathBuffer<::std::string> $_getUserFolderFromXUID(::std::string_view xuid);
+    MCNAPI ::Core::PathBuffer<::std::string> $_getUserFolderFromXUID(::std::string_view xuid);
 
-    MCAPI void $_retrieveSavedWindowSize(::tagRECT& size);
+    MCNAPI void $_retrieveSavedWindowSize(::tagRECT& size);
 
-    MCAPI void $_onInitialize();
+    MCNAPI void $_onInitialize();
 
-    MCAPI bool $isInvertScrollEnabled() const;
+    MCNAPI bool $isInvertScrollEnabled() const;
 
-    MCFOLD ::UIScalingRules $getPlatformUIScalingRules() const;
+    MCNAPI ::UIScalingRules $getPlatformUIScalingRules() const;
     // NOLINTEND
 };

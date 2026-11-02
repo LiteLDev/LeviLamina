@@ -13,12 +13,12 @@ class TagsComponentBase {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadhelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadhelper);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _writeAdditionalSaveData(::CompoundTag& tag, ::std::vector<::std::string> const& componentTags);
+    MCNAPI static void _writeAdditionalSaveData(::CompoundTag& tag, ::std::vector<::std::string> const& componentTags);
     // NOLINTEND
 };

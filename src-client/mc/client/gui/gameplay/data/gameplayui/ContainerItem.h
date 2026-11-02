@@ -37,33 +37,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerItem(::GameplayUI::ContainerItem const&);
+    MCNAPI ContainerItem(::GameplayUI::ContainerItem const&);
 
-    MCAPI ::std::string getIconUrl() const;
+    MCNAPI ::std::string getIconUrl() const;
 
-    MCAPI bool isDisabled() const;
+    MCNAPI bool isDisabled() const;
 
-    MCAPI bool isGhost() const;
+    MCNAPI bool isGhost() const;
 
-    MCAPI bool operator==(::GameplayUI::ContainerItem const&) const;
+    MCNAPI bool operator==(::GameplayUI::ContainerItem const&) const;
 
-    MCAPI bool shouldShowAmount() const;
+    MCNAPI bool shouldShowAmount() const;
 
-    MCFOLD bool shouldShowImage() const;
+    MCNAPI bool shouldShowImage() const;
 
-    MCAPI ~ContainerItem();
+    MCNAPI ~ContainerItem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameplayUI::ContainerItem const&);
+    MCNAPI void* $ctor(::GameplayUI::ContainerItem const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

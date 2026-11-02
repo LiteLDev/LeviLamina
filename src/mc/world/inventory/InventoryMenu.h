@@ -53,39 +53,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InventoryMenu(::Player& player, ::Container* container);
+    MCNAPI InventoryMenu(::Player& player, ::Container* container);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player& player, ::Container* container);
+    MCNAPI void* $ctor(::Player& player, ::Container* container);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $removeSlot(int slot, int count);
+    MCNAPI void $removeSlot(int slot, int count);
 
-    MCAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
+    MCNAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
 
-    MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
+    MCNAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
-    MCAPI void $serverInitItemStackIds();
+    MCNAPI void $serverInitItemStackIds();
 
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCFOLD ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
 
     // NOLINTEND
@@ -93,8 +93,8 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftableForContainerContentChangeListener();
+    MCNAPI static void** $vftableForContainerContentChangeListener();
 
-    MCAPI static void** $vftableForIContainerManager();
+    MCNAPI static void** $vftableForIContainerManager();
     // NOLINTEND
 };

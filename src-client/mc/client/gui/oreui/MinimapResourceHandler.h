@@ -64,26 +64,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinimapResourceHandler(::std::shared_ptr<::OreUI::IMinimapResourceProvider> minimapResourceProvider);
+    MCNAPI explicit MinimapResourceHandler(
+        ::std::shared_ptr<::OreUI::IMinimapResourceProvider> minimapResourceProvider
+    );
 
-    MCAPI void _failQueuedRequests();
+    MCNAPI void _failQueuedRequests();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::OreUI::IMinimapResourceProvider> minimapResourceProvider);
+    MCNAPI void* $ctor(::std::shared_ptr<::OreUI::IMinimapResourceProvider> minimapResourceProvider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
     // NOLINTEND
 

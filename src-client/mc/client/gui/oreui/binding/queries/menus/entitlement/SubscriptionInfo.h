@@ -35,14 +35,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     SubscriptionInfo(::SubscriptionOffer const& info, ::OreUI::Detail::IPropertyObject* parent, ::std::string name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubscriptionOffer const& info, ::OreUI::Detail::IPropertyObject* parent, ::std::string name);
+    MCNAPI void* $ctor(::SubscriptionOffer const& info, ::OreUI::Detail::IPropertyObject* parent, ::std::string name);
     // NOLINTEND
 };
 

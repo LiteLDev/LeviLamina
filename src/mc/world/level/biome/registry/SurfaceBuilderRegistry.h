@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void forEachSurfaceBuilder(::std::function<bool(::ISurfaceBuilder&)> callback) const;
+    MCNAPI void forEachSurfaceBuilder(::std::function<bool(::ISurfaceBuilder&)> callback) const;
     // NOLINTEND
 };

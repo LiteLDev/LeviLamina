@@ -12,13 +12,13 @@ class Vec3;
 namespace ActorOffset {
 // functions
 // NOLINTBEGIN
-MCAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
+MCNAPI ::Vec3 getEyeOffset(::EntityContext const& entity);
 
-MCAPI ::Vec3 getHeadOffset(::EntityContext const& entity);
+MCNAPI ::Vec3 getHeadOffset(::EntityContext const& entity);
 
-MCAPI float getHeightOffset(::EntityContext const& entity);
+MCNAPI float getHeightOffset(::EntityContext const& entity);
 
-MCAPI void setAABBRelativeScaling(
+MCNAPI void setAABBRelativeScaling(
     ::EntityContext&        entity,
     ::std::optional<::Vec2> headScalar,
     ::std::optional<::Vec2> eyeScalar,
@@ -26,7 +26,7 @@ MCAPI void setAABBRelativeScaling(
     ::std::optional<::Vec2> mouthScalar
 );
 
-MCAPI void setAABBRelativeScalingAndScaleNow(
+MCNAPI void setAABBRelativeScalingAndScaleNow(
     ::EntityContext&        entity,
     ::std::optional<::Vec2> headScalar,
     ::std::optional<::Vec2> eyeScalar,
@@ -34,7 +34,7 @@ MCAPI void setAABBRelativeScalingAndScaleNow(
     ::std::optional<::Vec2> mouthScalar
 );
 
-MCAPI void setAbsoluteScaling(
+MCNAPI void setAbsoluteScaling(
     ::EntityContext&        entity,
     ::std::optional<::Vec3> headOffset,
     ::std::optional<::Vec3> eyeOffset,
@@ -42,18 +42,18 @@ MCAPI void setAbsoluteScaling(
     ::std::optional<::Vec3> mouthOffset
 );
 
-MCAPI void setBreathingOffset(::EntityContext& entity, ::Vec3 const& breathingOffset);
+MCNAPI void setBreathingOffset(::EntityContext& entity, ::Vec3 const& breathingOffset);
 
-MCAPI void setExplosionOffset(::EntityContext& entity, float explosionOffset);
+MCNAPI void setExplosionOffset(::EntityContext& entity, float explosionOffset);
 
-MCAPI void setEyeOffset(::EntityContext& entity, ::Vec3 const& eyeOffset);
+MCNAPI void setEyeOffset(::EntityContext& entity, ::Vec3 const& eyeOffset);
 
-MCAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
+MCNAPI void setHeightOffset(::EntityContext& entity, float heightOffset);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
+MCNAPI ::Vec3 const& DEFAULT_DROP_OFFSET();
 // NOLINTEND
 
 } // namespace ActorOffset

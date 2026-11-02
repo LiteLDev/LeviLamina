@@ -13,9 +13,9 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static bool isValidComponent(::std::string const& name);
+    MCNAPI static bool isValidComponent(::std::string const& name);
 
-    MCAPI static bool updateComponent(::ItemStackBase& item, ::std::string const& name, ::Json::Value const& data);
+    MCNAPI static bool updateComponent(::ItemStackBase& item, ::std::string const& name, ::Json::Value const& data);
 #endif
     // NOLINTEND
 };

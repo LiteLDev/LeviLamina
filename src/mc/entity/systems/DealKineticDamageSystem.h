@@ -13,10 +13,10 @@ namespace DealKineticDamageSystem {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void registerClientSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerClientSystems(::EntitySystems& systemRegistry);
 #endif
 
-MCAPI void registerServerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerServerSystems(::EntitySystems& systemRegistry);
 
 MCAPI void tryApplyDamageOrEffects(
     ::ActorOwnerComponent&        actorOwnerComponent,

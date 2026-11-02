@@ -5,11 +5,11 @@
 namespace StorageItemComponentTags {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> bundleContentTag();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> bundleContentTag();
 
 MCAPI ::std::add_lvalue_reference_t<char const[]> bundleIDTag();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> bundleWeightTag();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> bundleWeightTag();
 // NOLINTEND
 
 } // namespace StorageItemComponentTags

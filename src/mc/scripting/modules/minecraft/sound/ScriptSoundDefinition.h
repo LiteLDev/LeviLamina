@@ -35,13 +35,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Key();
+        MCNAPI ~Key();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -62,30 +62,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSoundDefinition(::ScriptModuleMinecraft::ScriptSoundDefinition const&);
+    MCNAPI ScriptSoundDefinition(::ScriptModuleMinecraft::ScriptSoundDefinition const&);
 
-    MCAPI ~ScriptSoundDefinition();
+    MCNAPI ~ScriptSoundDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundDefinition>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundDefinition>
     getOrCreateHandle(::Scripting::WeakLifetimeScope const& scope, ::ServerSoundRuntime::Definition const& definition);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundDefinition const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

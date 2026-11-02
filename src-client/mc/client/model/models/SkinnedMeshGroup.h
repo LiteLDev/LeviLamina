@@ -37,14 +37,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkinnedMeshGroup(
+    MCNAPI SkinnedMeshGroup(
         ::ModelPart& modelPart,
         int          skinnedMeshGroupIdentifier,
         bool         isUniqueGroup,
         uint64       skinnedMeshGroupIndex
     );
 
-    MCAPI void copyBoneMatrixToSkinnedMesh(
+    MCNAPI void copyBoneMatrixToSkinnedMesh(
         int                                                       meshIndex,
         int                                                       partIndex,
         bool                                                      isVisible,
@@ -53,7 +53,7 @@ public:
         ::std::optional<::std::reference_wrapper<::Matrix const>> previousMatrix
     );
 
-    MCAPI void dataDrivenDraw(
+    MCNAPI void dataDrivenDraw(
         ::RenderParams&                            renderParams,
         ::dragon::RenderMetadata const&            renderMetadata,
         ::gsl::not_null<::RenderController const*> renderController,
@@ -61,7 +61,7 @@ public:
         ::std::optional<::MERSUniformData> const&  mersUniforms
     );
 
-    MCAPI void draw(
+    MCNAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::MaterialVariants const&                 modelMaterialVariants,
@@ -69,21 +69,21 @@ public:
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
-    MCAPI void registerPart(::ModelPart& part, int groupIndex);
+    MCNAPI void registerPart(::ModelPart& part, int groupIndex);
 
-    MCAPI ~SkinnedMeshGroup();
+    MCNAPI ~SkinnedMeshGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ModelPart& modelPart, int skinnedMeshGroupIdentifier, bool isUniqueGroup, uint64 skinnedMeshGroupIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

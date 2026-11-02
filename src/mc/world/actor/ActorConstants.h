@@ -10,7 +10,7 @@ class Vec3;
 namespace ActorConstants {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& LAVA_AABB_SHRINK_AMOUNT();
+MCNAPI ::Vec3 const& LAVA_AABB_SHRINK_AMOUNT();
 // NOLINTEND
 
 } // namespace ActorConstants

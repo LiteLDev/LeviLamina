@@ -5,7 +5,7 @@
 namespace MobEffectDefaults {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& COOLDOWN_DELTA_KEY();
+MCNAPI ::std::string const& COOLDOWN_DELTA_KEY();
 // NOLINTEND
 
 } // namespace MobEffectDefaults

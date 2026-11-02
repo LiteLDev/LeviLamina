@@ -60,15 +60,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::ButtonChordTracker::TrackerMappingAndState& operator=(::ButtonChordTracker::TrackerMappingAndState&&);
+        MCNAPI ::ButtonChordTracker::TrackerMappingAndState& operator=(::ButtonChordTracker::TrackerMappingAndState&&);
 
-        MCAPI ~TrackerMappingAndState();
+        MCNAPI ~TrackerMappingAndState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -99,10 +99,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _raiseLongestChordSequences(::ButtonChordTracker::TrackerMappingAndState& trackerData, int controllerId);
+    MCNAPI void
+    _raiseLongestChordSequences(::ButtonChordTracker::TrackerMappingAndState& trackerData, int controllerId);
 
-    MCAPI void clearMapping(int controllerId);
+    MCNAPI void clearMapping(int controllerId);
 
-    MCAPI void setMapping(::std::vector<::ChordButtonMapping> const& inputMapping, int controllerId);
+    MCNAPI void setMapping(::std::vector<::ChordButtonMapping> const& inputMapping, int controllerId);
     // NOLINTEND
 };

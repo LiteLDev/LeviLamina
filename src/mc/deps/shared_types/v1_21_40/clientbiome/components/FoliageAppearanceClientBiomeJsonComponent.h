@@ -28,7 +28,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::add_lvalue_reference_t<char const[18]> SCHEMA_NAME();
+        MCNAPI static ::std::add_lvalue_reference_t<char const[18]> SCHEMA_NAME();
         // NOLINTEND
     };
 
@@ -54,18 +54,18 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::add_lvalue_reference_t<char const[29]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[29]> SCHEMA_NAME();
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientBiomeComponentVersion $getType() const;
+    MCNAPI ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

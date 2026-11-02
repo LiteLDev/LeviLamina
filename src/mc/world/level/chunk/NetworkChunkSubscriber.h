@@ -27,9 +27,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
+    MCNAPI bool moveRegion(::BlockPos const& position, uint blockRadius, ::Vec3 const& direction, float minDistance);
 
-    MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos& center);
+    MCNAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos& center);
 #endif
     // NOLINTEND
 };

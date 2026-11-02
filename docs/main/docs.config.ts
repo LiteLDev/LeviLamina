@@ -38,7 +38,6 @@ export default defineDocsConfig({
     {
       'User Guides': [
         'user_guides/install.md',
-        'user_guides/install_on_docker.md',
         'user_guides/install_on_client.md',
         'user_guides/troubleshooting.md',
         'common_guides/usage_guidelines.md',
@@ -66,13 +65,31 @@ export default defineDocsConfig({
             'developer_guides/how_to_guides/build_guide.md',
           ],
         },
+        // Native mods for Minecraft on Android: loaded by LeviLauncher's Android version through the Preloader SDK
+        // (moved here from LeviLauncher's docs); titles are the pages' own.
+        {
+          text: 'Android Native Mods',
+          collapsed: true,
+          items: [
+            'developer_guides/android/index.md',
+            'developer_guides/android/api/mod.md',
+            'developer_guides/android/api/mod_menu.md',
+            'developer_guides/android/api/config.md',
+            'developer_guides/android/api/input.md',
+            'developer_guides/android/api/hook.md',
+            'developer_guides/android/api/signature.md',
+            'developer_guides/android/api/patch.md',
+            'developer_guides/android/api/memory_hook_macros.md',
+            'developer_guides/android/api/types_and_macros.md',
+          ],
+        },
         { FAQ: 'developer_guides/faq.md' },
         { Architecture: 'developer_guides/architecture.md' },
         {
-          text: 'API Reference',
+          text: 'API Guides',
           collapsed: true,
           items: [
-            'api_reference/index.md',
+            { Overview: 'api_reference/index.md' },
             { Base: 'api_reference/base.md' },
             { Chrono: 'api_reference/chrono.md' },
             { Command: 'api_reference/command.md' },
@@ -96,15 +113,20 @@ export default defineDocsConfig({
             { 'Input (Client)': 'api_reference/input.md' },
           ],
         },
-        // The Doxygen reference is built by the build-doxygen CI job and merged into dist/api/.
-        { 'Doxygen API 🔗': 'https://docs.levimc.org/LeviLamina/api/' },
       ],
     },
+    // The Doxygen API reference, a page of this site (opened in place, not a new tab): built by the build-doxygen CI
+    // job and merged into dist/api/; its header is this docs header with this tab current.
+    { 'API Reference': 'https://docs.levimc.org/LeviLamina/api/' },
     { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
     { 'Supported Versions': 'versions.md' },
-    { LegacyScriptEngine: 'https://docs.levimc.org/LegacyScriptEngine/' },
-    { About: 'https://levimc.org/about/' },
   ],
+  // The Docker install page became a section of the one server install page.
+  redirects: {
+    'user_guides/install_on_docker/': 'user_guides/install/#install-with-docker',
+    'zh/user_guides/install_on_docker/': 'zh/user_guides/install/#通过-docker-安装',
+    'zh-Hant/user_guides/install_on_docker/': 'zh-Hant/user_guides/install/#通過-docker-安裝',
+  },
   navTranslations: {
     zh: {
       Home: '主页',
@@ -113,8 +135,11 @@ export default defineDocsConfig({
       'Developer Guides': '开发者指南',
       Tutorials: '教程',
       'How-to Guides': '如何做到······',
+      'Android Native Mods': 'Android 原生模组',
       Architecture: '项目架构',
       'API Reference': 'API 参考',
+      'API Guides': 'API 指南',
+      Overview: '概览',
       Base: '基础类型',
       Chrono: '游戏时间',
       Command: '命令系统',
@@ -136,10 +161,8 @@ export default defineDocsConfig({
       Thread: '线程工具',
       Utils: '工具函数',
       'Input (Client)': '输入系统（客户端）',
-      'Doxygen API 🔗': 'Doxygen API 🔗',
       'Maintainer Guides': '维护者指南',
       'Supported Versions': '支持的版本',
-      About: '关于我们',
     },
   },
 });

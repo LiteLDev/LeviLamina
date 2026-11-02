@@ -28,9 +28,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
+    MCNAPI void parsePacket(::NpcDialoguePacket const& packet, ::NpcComponent* component);
 
-    MCAPI ~NPCDialogueData();
+    MCNAPI ~NPCDialogueData();
 #endif
     // NOLINTEND
 
@@ -38,7 +38,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

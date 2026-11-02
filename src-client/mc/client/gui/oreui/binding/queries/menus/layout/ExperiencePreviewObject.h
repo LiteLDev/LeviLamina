@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExperiencePreviewObject(
+    MCNAPI ExperiencePreviewObject(
         ::std::string const&                                         name,
         ::OreUI::Detail::IPropertyObject*                            parent,
         ::Bedrock::Services::layout::model::ExperiencePreview const& src
@@ -68,7 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                         name,
         ::OreUI::Detail::IPropertyObject*                            parent,
         ::Bedrock::Services::layout::model::ExperiencePreview const& src

@@ -33,30 +33,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptHotbarEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
+    MCNAPI ScriptHotbarEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
 
-    MCAPI ~ScriptHotbarEventFilter();
+    MCNAPI ~ScriptHotbarEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptHotbarEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

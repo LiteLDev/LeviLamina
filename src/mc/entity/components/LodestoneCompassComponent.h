@@ -38,11 +38,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::LodestoneCompassComponentCalculator*
+    MCNAPI ::LodestoneCompassComponentCalculator*
     _createCalculator(::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId);
 
 #ifdef LL_PLAT_S
-    MCAPI int getAnimationFrame(
+    MCNAPI int getAnimationFrame(
         ::std::variant<::ActorUniqueID, ::std::pair<::BlockPos, ::DimensionType>> const& compassId,
         ::BlockPos const&                                                                lookFromPosition,
         ::DimensionType const&                                                           lookFromDimension
@@ -50,13 +50,13 @@ public:
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI bool tick(::Level& level);
+    MCNAPI bool tick(::Level& level);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::CompassSpriteCalculator& mSpinningLodestone();
+    MCNAPI static ::CompassSpriteCalculator& mSpinningLodestone();
     // NOLINTEND
 };

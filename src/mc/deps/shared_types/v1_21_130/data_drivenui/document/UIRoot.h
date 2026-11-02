@@ -32,40 +32,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIRoot(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
+    MCNAPI UIRoot(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
 
-    MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot& operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&&);
+    MCNAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot& operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&&);
 
-    MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&
+    MCNAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIRoot&
     operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
 
-    MCAPI ~UIRoot();
+    MCNAPI ~UIRoot();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& UI_ROOT_PAYLOAD_KEY();
+    MCNAPI static ::std::string_view const& UI_ROOT_PAYLOAD_KEY();
 
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIRoot const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

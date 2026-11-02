@@ -20,18 +20,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Json::Value evaluate(::UIPropertyBag* bag) const;
+    MCNAPI ::Json::Value evaluate(::UIPropertyBag* bag) const;
 
-    MCAPI uint64 forEachPropertyName(::std::function<void(::std::string const&)> callback) const;
+    MCNAPI uint64 forEachPropertyName(::std::function<void(::std::string const&)> callback) const;
 
-    MCAPI uint64 forEachPropertyToken(::std::function<void(::ExprToken&)> callback);
+    MCNAPI uint64 forEachPropertyToken(::std::function<void(::ExprToken&)> callback);
 
-    MCAPI ~UiExpression();
+    MCNAPI ~UiExpression();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

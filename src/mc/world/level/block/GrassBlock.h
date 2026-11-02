@@ -37,27 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GrassBlock(::std::string const& nameId, int id);
+    MCNAPI GrassBlock(::std::string const& nameId, int id);
 
 #ifdef LL_PLAT_C
-    MCAPI int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
+    MCNAPI int calcVariant(::BlockSource& region, ::BlockPos const& pos, ::mce::Color const& baseColor) const;
 
-    MCAPI void initSideColorsFromAtlas(::std::vector<::mce::Color> colors) const;
+    MCNAPI void initSideColorsFromAtlas(::std::vector<::mce::Color> colors) const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const;
+    MCNAPI bool $_plantGrass(::BlockSource& region, ::BlockPos const& abovePos, ::IRandom& random) const;
 
-    MCAPI bool $_shouldStopRandomWalk(::BlockSource& region, ::BlockPos& pos) const;
+    MCNAPI bool $_shouldStopRandomWalk(::BlockSource& region, ::BlockPos& pos) const;
 
 
     // NOLINTEND
@@ -65,6 +65,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

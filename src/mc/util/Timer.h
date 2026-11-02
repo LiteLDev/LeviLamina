@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
+    MCNAPI Timer(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
 
     MCAPI void advanceTime(float preferredFrameStep, bool forceOnlySingleTick);
     // NOLINTEND
@@ -37,12 +37,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int64 getMillisecondsSinceLaunch();
+    MCNAPI static int64 getMillisecondsSinceLaunch();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
+    MCNAPI void* $ctor(float ticksPerSecond, ::std::function<int64()> getTimeMSCallback);
     // NOLINTEND
 };

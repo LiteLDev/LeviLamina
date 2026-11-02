@@ -17,21 +17,21 @@ class ScriptMovementGlideComponent : public ::ScriptModuleMinecraft::DerivedMove
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> getSpeedWhenTurning() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getSpeedWhenTurning() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getStartSpeed() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getStartSpeed() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 };
 

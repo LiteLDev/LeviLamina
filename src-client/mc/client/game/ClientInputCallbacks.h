@@ -24,111 +24,112 @@ class ClientInputCallbacks {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void destroyVibrate(::IClientInstance& client, int milliSeconds);
+    MCNAPI static void destroyVibrate(::IClientInstance& client, int milliSeconds);
 
-    MCAPI static bool handleBuildAction(
+    MCNAPI static bool handleBuildAction(
         ::IClientInstance&      client,
         ::BuildActionIntention& bai,
         ::HitResult const&      solidHitResult,
         ::HitResult const&      liquidHitResult
     );
 
-    MCAPI static void handleBuildOrAttackOrBlockSelectButtonPress(::IClientInstance& client);
+    MCNAPI static void handleBuildOrAttackOrBlockSelectButtonPress(::IClientInstance& client);
 
-    MCAPI static void
+    MCNAPI static void
     handleChangeUserRequest(::IMinecraftGame* mg, int controllerId, bool restrictToControllerIdChange);
 
-    MCAPI static void handleChatButtonRelease(::IClientInstance& client);
+    MCNAPI static void handleChatButtonRelease(::IClientInstance& client);
 
-    MCAPI static void handleCodeBuilderButtonRelease(::IClientInstance& client);
+    MCNAPI static void handleCodeBuilderButtonRelease(::IClientInstance& client);
 
-    MCAPI static void handleCommandMacroPress(::IClientInstance& client, ::OptionID commandOption);
+    MCNAPI static void handleCommandMacroPress(::IClientInstance& client, ::OptionID commandOption);
 
-    MCAPI static void handleConsoleButtonRelease(::IClientInstance& client);
+    MCNAPI static void handleConsoleButtonRelease(::IClientInstance& client);
 
-    MCAPI static void handleControllerConnectionStateChange(::IClientInstance& client, bool controllerIsConnected, int);
+    MCNAPI static void
+    handleControllerConnectionStateChange(::IClientInstance& client, bool controllerIsConnected, int);
 
-    MCAPI static void handleCopyCurrentButtonPress(::IClientInstance& client);
+    MCNAPI static void handleCopyCurrentButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleCopyFacingButtonPress(::IClientInstance& client);
+    MCNAPI static void handleCopyFacingButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleDebugHotkeyChatEcho(::IClientInstance& client, ::std::string const& label, bool enabled);
+    MCNAPI static void handleDebugHotkeyChatEcho(::IClientInstance& client, ::std::string const& label, bool enabled);
 
-    MCAPI static void handleDismountButtonPress(::IClientInstance& client);
+    MCNAPI static void handleDismountButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleDropAllButtonPress(::IClientInstance& client);
+    MCNAPI static void handleDropAllButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleDropButtonPress(::IClientInstance& client);
+    MCNAPI static void handleDropButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleEmoteButtonEntered(::IClientInstance& client);
+    MCNAPI static void handleEmoteButtonEntered(::IClientInstance& client);
 
-    MCAPI static void handleEmoteButtonHeld(::IClientInstance& client);
+    MCNAPI static void handleEmoteButtonHeld(::IClientInstance& client);
 
-    MCAPI static void handleEmoteButtonPress(::IClientInstance& client);
+    MCNAPI static void handleEmoteButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleEmoteSlotButtonPress(::IClientInstance& client, int slot);
+    MCNAPI static void handleEmoteSlotButtonPress(::IClientInstance& client, int slot);
 
-    MCAPI static bool handleImmersiveReaderButtonRelease(::IClientInstance& client);
+    MCNAPI static bool handleImmersiveReaderButtonRelease(::IClientInstance& client);
 
-    MCAPI static void handleInputModeChanged(::IClientInstance& client, ::InputMode inputMode);
+    MCNAPI static void handleInputModeChanged(::IClientInstance& client, ::InputMode inputMode);
 
-    MCAPI static void handleInventoryButtonPress(::IClientInstance& client, ::CraftingType craftType);
+    MCNAPI static void handleInventoryButtonPress(::IClientInstance& client, ::CraftingType craftType);
 
-    MCAPI static void handleInventoryMoveButtonPress(::IClientInstance& client, int offset);
+    MCNAPI static void handleInventoryMoveButtonPress(::IClientInstance& client, int offset);
 
-    MCAPI static void handleMobEffectsButtonPress(::IClientInstance& client);
+    MCNAPI static void handleMobEffectsButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleOpenSocialDrawer(::IClientInstance& client);
+    MCNAPI static void handleOpenSocialDrawer(::IClientInstance& client);
 
-    MCAPI static void handleOverlappingControls(
+    MCNAPI static void handleOverlappingControls(
         ::IClientInstance&                    client,
         ::OverlappingControlsEventData const& overlappingControlsEventData
     );
 
-    MCAPI static void handlePauseButtonPress(::IClientInstance& client);
+    MCNAPI static void handlePauseButtonPress(::IClientInstance& client);
 
-    MCAPI static bool handlePointerLocation(
+    MCNAPI static bool handlePointerLocation(
         ::IClientInstance&                client,
         ::PointerLocationEventData const& pointerLocationData,
         ::FocusImpact                     focusImpact
     );
 
-    MCAPI static void
+    MCNAPI static void
     handlePointerLocationWithId(::IClientInstance& client, ::PointerLocationWithIdEventData const& pointerLocationData);
 
-    MCAPI static void handlePointerPressedButtonPress(::IClientInstance& client);
+    MCNAPI static void handlePointerPressedButtonPress(::IClientInstance& client);
 
-    MCAPI static void handlePointerPressedButtonRelease(::IClientInstance& client);
+    MCNAPI static void handlePointerPressedButtonRelease(::IClientInstance& client);
 
-    MCAPI static void handlePotentialOverlappingControls(::IClientInstance& client);
+    MCNAPI static void handlePotentialOverlappingControls(::IClientInstance& client);
 
-    MCAPI static void handleReloadUIDefinitions(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI static void handleReloadUIDefinitions(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI static void handleScreenshotButtonPress(::IClientInstance& client);
+    MCNAPI static void handleScreenshotButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleSlotSelectButtonPress(::IClientInstance& client, int slot);
+    MCNAPI static void handleSlotSelectButtonPress(::IClientInstance& client, int slot);
 
-    MCAPI static void handleSocialDrawerMobEffectsAndToastInteractButtonRelease(::IClientInstance& client);
+    MCNAPI static void handleSocialDrawerMobEffectsAndToastInteractButtonRelease(::IClientInstance& client);
 
     MCAPI static void
     handleTextChar(::IClientInstance& client, ::std::string const& utf8text, ::FocusImpact focusImpact);
 
-    MCAPI static void handleToggleChatTextToSpeechButtonPress(::IClientInstance& client);
+    MCNAPI static void handleToggleChatTextToSpeechButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleToggleControlTipsButtonPress(::IClientInstance& client);
+    MCNAPI static void handleToggleControlTipsButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleToggleEnableFocusDebugButtonPress(::IClientInstance& client);
+    MCNAPI static void handleToggleEnableFocusDebugButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleToggleEnableNewScreensDebugButtonPress(::IClientInstance& client);
+    MCNAPI static void handleToggleEnableNewScreensDebugButtonPress(::IClientInstance& client);
 
     MCAPI static void handleTogglePerspectiveButtonPress(::IClientInstance& client);
 
-    MCAPI static void handleToggleSimulateTouchButtonPress(::IClientInstance&);
+    MCNAPI static void handleToggleSimulateTouchButtonPress(::IClientInstance&);
 
-    MCAPI static void handleToggleUIProfile(::IClientInstance& client);
+    MCNAPI static void handleToggleUIProfile(::IClientInstance& client);
 
-    MCAPI static void handleUIScalingRuleChange(::IClientInstance&);
+    MCNAPI static void handleUIScalingRuleChange(::IClientInstance&);
 
-    MCAPI static void splitVibrate(::IClientInstance& client, int milliSeconds);
+    MCNAPI static void splitVibrate(::IClientInstance& client, int milliSeconds);
     // NOLINTEND
 };

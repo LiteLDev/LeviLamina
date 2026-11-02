@@ -11,11 +11,11 @@ class BlockType;
 namespace br::worldgen::processors::JigsawReplacementHelpers {
 // static variables
 // NOLINTBEGIN
-MCAPI ::Block const*& AIR();
+MCNAPI ::Block const*& AIR();
 
-MCAPI ::BlockType const*& JIGSAW_BLOCK();
+MCNAPI ::BlockType const*& JIGSAW_BLOCK();
 
-MCAPI ::BlockType const*& STRUCTURE_VOID();
+MCNAPI ::BlockType const*& STRUCTURE_VOID();
 // NOLINTEND
 
 } // namespace br::worldgen::processors::JigsawReplacementHelpers

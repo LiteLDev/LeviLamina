@@ -50,25 +50,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
+    MCNAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel&);
+    MCNAPI void $tick(::MinecraftScreenModel&);
 
-    MCAPI void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onComplete(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel&);
+    MCNAPI void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel&);
+    MCNAPI void $onExit(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

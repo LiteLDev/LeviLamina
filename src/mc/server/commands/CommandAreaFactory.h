@@ -26,16 +26,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CommandArea> _getArea(
+    MCNAPI ::std::unique_ptr<::CommandArea> _getArea(
         ::Bounds const& requiredArea,
         bool            allowNonTickingPlayerAndTickingAreaChunks,
         bool            allowUnloadedChunks,
         bool            allowPlayerChunks
     ) const;
 
-    MCAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
+    MCNAPI ::std::unique_ptr<::CommandArea> _getNewCommandArea(::Bounds const& requiredArea) const;
 
-    MCAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
+    MCNAPI ::std::unique_ptr<::CommandArea> findAreaWithBuffer(
         ::BlockPos const& min,
         ::BlockPos const& max,
         int               commandVersion,

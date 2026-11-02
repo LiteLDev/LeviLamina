@@ -13,7 +13,7 @@ namespace Settings::RegistryBuilder { class IBuilderContext; }
 namespace Settings::InputControlsSettingsHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::Settings::InputControlsSettingsHelper::InputBindingGroup createInputBindingGroup(
+MCNAPI ::Settings::InputControlsSettingsHelper::InputBindingGroup createInputBindingGroup(
     ::Settings::InputControlsSettingsHelper::InputBindingGroupData const& inputData,
     ::Settings::RegistryBuilder::IBuilderContext&                         context,
     ::RemappingLayout&                                                    layout,

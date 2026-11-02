@@ -33,11 +33,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidVibration(::GameEvent const& gameEvent);
+    MCNAPI bool $isValidVibration(::GameEvent const& gameEvent);
 
-    MCFOLD void $onSerializableDataChanged(::BlockSource& region);
+    MCNAPI void $onSerializableDataChanged(::BlockSource& region);
 
-    MCFOLD bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
+    MCNAPI bool $canReceiveOnlyIfAdjacentChunksAreTicking() const;
 
 
     // NOLINTEND

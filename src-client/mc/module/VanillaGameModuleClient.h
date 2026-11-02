@@ -120,13 +120,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
+    MCNAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void $init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
     MCAPI void $initializeResourceStack(
         ::Experiments const*                                            experiments,
@@ -138,44 +138,44 @@ public:
         ::IEducationOptions const*                                      educationOptions
     );
 
-    MCAPI void $configureLevel(
+    MCNAPI void $configureLevel(
         ::IClientInstance&                                  client,
         ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const& level,
         ::Experiments const&                                experiments,
         ::BaseGameVersion const&                            baseGameVersion
     );
 
-    MCAPI void $deconfigureLevel(::IClientInstance& client);
+    MCNAPI void $deconfigureLevel(::IClientInstance& client);
 
-    MCAPI void $onLeaveWorld();
+    MCNAPI void $onLeaveWorld();
 
-    MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
+    MCNAPI void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
 
-    MCAPI void $tick(::IClientInstance const& client);
+    MCNAPI void $tick(::IClientInstance const& client);
 
-    MCAPI void $setupStandardCommands(
+    MCNAPI void $setupStandardCommands(
         ::CommandRegistry&           commandRegistry,
         ::AtomicClientEntityFactory& atomicClientEntityFactory,
         ::IEducationOptions const&   educationOptions
     );
 
-    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry&);
+    MCNAPI void $setupStartMenuScreenCommands(::CommandRegistry&);
 
-    MCAPI void $setupUI();
+    MCNAPI void $setupUI();
 
-    MCAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
+    MCNAPI ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
 
-    MCAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
+    MCNAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
         ::Experiments const&              experiments,
         ::BaseGameVersion const&          baseGameVersion,
         ::ItemRegistryRef const           itemRegistryRef,
         ::ActorMigratedDefinitionFactory& migratedFactory
     ) const;
 
-    MCAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
+    MCNAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
 
-    MCAPI ::std::shared_ptr<void const> $getWorldSystemsScope();
+    MCNAPI ::std::shared_ptr<void const> $getWorldSystemsScope();
     // NOLINTEND
 };

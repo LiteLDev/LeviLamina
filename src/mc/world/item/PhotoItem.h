@@ -10,11 +10,11 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& TAG_PHOTO_NAME();
+    MCNAPI static ::std::string const& TAG_PHOTO_NAME();
 
-    MCAPI static ::std::string const& TAG_PHOTO_OWNER();
+    MCNAPI static ::std::string const& TAG_PHOTO_OWNER();
 
-    MCAPI static ::std::string const& TAG_PHOTO_UUID();
+    MCNAPI static ::std::string const& TAG_PHOTO_UUID();
 #endif
     // NOLINTEND
 

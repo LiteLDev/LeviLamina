@@ -19,6 +19,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FogTransitionSetting const& ZERO_SETTING();
+    MCNAPI static ::FogTransitionSetting const& ZERO_SETTING();
     // NOLINTEND
 };

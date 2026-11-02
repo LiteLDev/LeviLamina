@@ -10,31 +10,31 @@ struct BiomeIdType;
 namespace VanillaBiomeIds {
 // static variables
 // NOLINTBEGIN
-MCAPI ::BiomeIdType const& BasaltDeltas();
+MCNAPI ::BiomeIdType const& BasaltDeltas();
 
-MCAPI ::BiomeIdType const& Beach();
+MCNAPI ::BiomeIdType const& Beach();
 
-MCAPI ::BiomeIdType const& ColdBeach();
+MCNAPI ::BiomeIdType const& ColdBeach();
 
-MCAPI ::BiomeIdType const& CrimsonForest();
+MCNAPI ::BiomeIdType const& CrimsonForest();
 
-MCAPI ::BiomeIdType const& DeepDark();
+MCNAPI ::BiomeIdType const& DeepDark();
 
-MCAPI ::BiomeIdType const& Hell();
+MCNAPI ::BiomeIdType const& Hell();
 
-MCAPI ::BiomeIdType const& MushroomIslandShore();
+MCNAPI ::BiomeIdType const& MushroomIslandShore();
 
-MCAPI ::BiomeIdType const& PaleGarden();
+MCNAPI ::BiomeIdType const& PaleGarden();
 
-MCAPI ::BiomeIdType const& RoofedForest();
+MCNAPI ::BiomeIdType const& RoofedForest();
 
-MCAPI ::BiomeIdType const& RoofedForestMutated();
+MCNAPI ::BiomeIdType const& RoofedForestMutated();
 
-MCAPI ::BiomeIdType const& SoulsandValley();
+MCNAPI ::BiomeIdType const& SoulsandValley();
 
-MCAPI ::BiomeIdType const& StoneBeach();
+MCNAPI ::BiomeIdType const& StoneBeach();
 
-MCAPI ::BiomeIdType const& WarpedForest();
+MCNAPI ::BiomeIdType const& WarpedForest();
 // NOLINTEND
 
 } // namespace VanillaBiomeIds

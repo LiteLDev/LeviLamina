@@ -27,13 +27,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ResourceLocationPair(::ResourceLocationPair&&);
+    MCNAPI ResourceLocationPair(::ResourceLocationPair&&);
 
-    MCAPI ResourceLocationPair(::ResourceLocationPair const&);
+    MCNAPI ResourceLocationPair(::ResourceLocationPair const&);
 
-    MCAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    MCNAPI ResourceLocationPair(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
 
-    MCAPI ~ResourceLocationPair();
+    MCNAPI ~ResourceLocationPair();
 #endif
     // NOLINTEND
 
@@ -41,11 +41,11 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ResourceLocationPair&&);
+    MCNAPI void* $ctor(::ResourceLocationPair&&);
 
-    MCAPI void* $ctor(::ResourceLocationPair const&);
+    MCNAPI void* $ctor(::ResourceLocationPair const&);
 
-    MCAPI void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
+    MCNAPI void* $ctor(::ResourceLocation const& location, ::PackIdVersion const& packId, int packPosition);
 #endif
     // NOLINTEND
 
@@ -53,7 +53,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

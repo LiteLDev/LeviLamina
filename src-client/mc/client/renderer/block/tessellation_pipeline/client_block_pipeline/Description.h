@@ -43,20 +43,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
+    MCNAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
 
-    MCAPI ::ClientBlockPipeline::Status addDependency(
+    MCNAPI ::ClientBlockPipeline::Status addDependency(
         ::std::shared_ptr<::ClientBlockPipeline::Step const> step,
         ::std::shared_ptr<::ClientBlockPipeline::Step const> dependency
     );
 
-    MCAPI ~Description();
+    MCNAPI ~Description();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

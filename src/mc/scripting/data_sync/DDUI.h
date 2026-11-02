@@ -24,14 +24,14 @@ MCAPI T const* getNestedMapValueConst(
     std::string const&                                                         property
 );
 
-MCAPI void sendDataStorePacketsToClient(
+MCNAPI void sendDataStorePacketsToClient(
     ::Bedrock::DDUI::DataStoreSyncServer&  dataSync,
     ::PacketSender&                        packetSender,
     ::UserEntityIdentifierComponent const* id
 );
 
 #ifdef LL_PLAT_C
-MCAPI void sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
+MCNAPI void sendDataStorePacketsToServer(::Bedrock::DDUI::DataStoreSyncClient& dataSync, ::PacketSender& packetSender);
 #endif
 // NOLINTEND
 

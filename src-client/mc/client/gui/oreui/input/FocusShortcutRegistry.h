@@ -48,11 +48,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI uint findOwner(::OreUI::GamepadButton button) const;
+    MCNAPI uint findOwner(::OreUI::GamepadButton button) const;
 
-    MCAPI void setShortcuts(uint id, ::std::vector<::OreUI::FocusShortcutRegistry::Shortcut> shortcuts);
+    MCNAPI void setShortcuts(uint id, ::std::vector<::OreUI::FocusShortcutRegistry::Shortcut> shortcuts);
     // NOLINTEND
 };
 

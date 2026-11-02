@@ -42,31 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerProfileData();
+    MCNAPI PlayerProfileData();
 
-    MCAPI PlayerProfileData(::Social::PlayerProfileData&&);
+    MCNAPI PlayerProfileData(::Social::PlayerProfileData&&);
 
-    MCAPI PlayerProfileData(::Social::PlayerProfileData const&);
+    MCNAPI PlayerProfileData(::Social::PlayerProfileData const&);
 
-    MCAPI ::Social::PlayerProfileData& operator=(::Social::PlayerProfileData const&);
+    MCNAPI ::Social::PlayerProfileData& operator=(::Social::PlayerProfileData const&);
 
-    MCAPI ~PlayerProfileData();
+    MCNAPI ~PlayerProfileData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Social::PlayerProfileData&&);
+    MCNAPI void* $ctor(::Social::PlayerProfileData&&);
 
-    MCAPI void* $ctor(::Social::PlayerProfileData const&);
+    MCNAPI void* $ctor(::Social::PlayerProfileData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

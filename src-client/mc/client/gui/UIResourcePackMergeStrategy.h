@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $mergeFiles(::std::vector<::LoadedResourceData> const& fileStack);
+    MCNAPI void $mergeFiles(::std::vector<::LoadedResourceData> const& fileStack);
     // NOLINTEND
 
 public:

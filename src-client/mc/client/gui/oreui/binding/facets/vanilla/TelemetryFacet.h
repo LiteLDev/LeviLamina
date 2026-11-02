@@ -38,49 +38,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void discardTrackedOptions();
+    MCNAPI void discardTrackedOptions();
 
-    MCAPI void fireEvent(
+    MCNAPI void fireEvent(
         ::std::string const&                                                                   eventName,
         ::std::unordered_map<::std::string, ::OreUI::EventProperty> const&                     eventProperties,
         ::std::optional<::std::unordered_map<::std::string, ::OreUI::EventMeasurement>> const& eventMeasurements,
         ::std::optional<bool>                                                                  shouldAggregate
     );
 
-    MCAPI void fireEventButtonPressed(
+    MCNAPI void fireEventButtonPressed(
         ::std::string const&                                      buttonName,
         ::std::unordered_map<::std::string, ::std::string> const& details
     );
 
-    MCAPI void fireEventModalShown(
+    MCNAPI void fireEventModalShown(
         ::std::string const&                                      modalName,
         ::std::unordered_map<::std::string, ::std::string> const& details
     );
 
-    MCAPI void fireEventOptionsChanged(::std::string const& optionsGroup);
+    MCNAPI void fireEventOptionsChanged(::std::string const& optionsGroup);
 
-    MCAPI void fireEventRealmsStoriesOptIn(
+    MCNAPI void fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,
         ::std::string const& action,
         ::std::string const& realmId,
         bool                 isOwner
     );
 
-    MCAPI void fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
+    MCNAPI void fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
 
-    MCAPI void trackOptionChanged(::std::string const& optionName, int oldOption, int newOption);
+    MCNAPI void trackOptionChanged(::std::string const& optionName, int oldOption, int newOption);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

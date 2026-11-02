@@ -36,7 +36,7 @@ public:
     MCAPI explicit ActorSoundIdentifier(::Actor const& actor);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
+    MCNAPI ::std::optional<::RenderParams> tryCreateRenderParamsForVariants() const;
 #endif
 
     MCAPI ~ActorSoundIdentifier();

@@ -40,9 +40,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void hidePlayer(::ActorUniqueID const& id);
+    MCNAPI void hidePlayer(::ActorUniqueID const& id);
 
-    MCAPI void updatePlayer(::ActorUniqueID const& id, ::Vec3 const& pos);
+    MCNAPI void updatePlayer(::ActorUniqueID const& id, ::Vec3 const& pos);
 #endif
     // NOLINTEND
 };

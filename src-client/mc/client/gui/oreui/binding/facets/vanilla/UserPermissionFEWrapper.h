@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UserPermissionFEWrapper(::Social::PermissionCheckResult userPermission);
+    MCNAPI explicit UserPermissionFEWrapper(::Social::PermissionCheckResult userPermission);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Social::PermissionCheckResult userPermission);
+    MCNAPI void* $ctor(::Social::PermissionCheckResult userPermission);
     // NOLINTEND
 };
 

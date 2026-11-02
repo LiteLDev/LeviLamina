@@ -42,21 +42,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::unordered_set<::std::string> keys);
+    MCNAPI ::cereal::ComponentStorageConstraint& rejectKeys(::std::unordered_set<::std::string> keys);
 
-    MCAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::cereal::ComponentStorage const& storage, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
     // NOLINTEND

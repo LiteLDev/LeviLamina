@@ -57,42 +57,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Shulker(
+    MCNAPI Shulker(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _calculateBB();
+    MCNAPI void _calculateBB();
 
-    MCAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
+    MCNAPI bool _isPosOccupiedByOtherShulker(::BlockPos blockPos) const;
 
-    MCAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
+    MCNAPI bool _isValidAttach(::BlockPos attachPos, uchar direction);
 
-    MCAPI void _peekAmountTick();
+    MCNAPI void _peekAmountTick();
 
-    MCAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
+    MCNAPI bool _tryAttachingToNeighbouringFaces(::BlockPos currentPos);
 
-    MCAPI bool _trySetNewAttachPosition(::BlockPos pos);
+    MCNAPI bool _trySetNewAttachPosition(::BlockPos pos);
 
-    MCAPI bool _tryTeleportSomewhere();
+    MCNAPI bool _tryTeleportSomewhere();
 
-    MCAPI void postNormalTick();
+    MCNAPI void postNormalTick();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     postSetPosSetShulkerAttachPosAndPeekAmount(::SynchedActorDataWriter data, ::BlockPos const& newAttachPos);
 
-    MCAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
+    MCNAPI static void setShulkerAttachPos(::SynchedActorDataWriter data, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -102,27 +102,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCAPI bool $checkSpawnRules(bool);
+    MCNAPI bool $checkSpawnRules(bool);
 
-    MCAPI int $getArmorValue() const;
+    MCNAPI int $getArmorValue() const;
 
-    MCFOLD void $_doInitialMove();
+    MCNAPI void $_doInitialMove();
 
-    MCFOLD ::std::unique_ptr<::BodyControl> $initBodyControl();
+    MCNAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCAPI float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI float $getMaxHeadXRot();
+    MCNAPI float $getMaxHeadXRot();
 
-    MCAPI ::ActorHurtResult
+    MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
 

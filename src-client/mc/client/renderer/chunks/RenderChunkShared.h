@@ -96,41 +96,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RenderChunkShared(::SubChunkPos const& rcp);
+    MCNAPI explicit RenderChunkShared(::SubChunkPos const& rcp);
 
-    MCAPI void addBlockEntityBlockSyncMessages(::buffer_span<::BlockActorBlockSyncMessage> syncMsgList);
+    MCNAPI void addBlockEntityBlockSyncMessages(::buffer_span<::BlockActorBlockSyncMessage> syncMsgList);
 
-    MCAPI void addEntityBlockSyncMessages(::buffer_span<::ActorBlockSyncMessage> syncMsgList);
+    MCNAPI void addEntityBlockSyncMessages(::buffer_span<::ActorBlockSyncMessage> syncMsgList);
 
-    MCAPI void endRebuild(
+    MCNAPI void endRebuild(
         ::RenderChunkBuilder&                                                    builder,
         ::mce::BufferResourceService&                                            bufferResourceService,
         ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const& renderChunkVertexStreamPlanRegistry,
         bool                                                                     useSplitStream
     );
 
-    MCAPI ::std::vector<::BlockActorBlockSyncMessage> getAndPruneBlockEntityBlockSyncMessages(uchar version);
+    MCNAPI ::std::vector<::BlockActorBlockSyncMessage> getAndPruneBlockEntityBlockSyncMessages(uchar version);
 
-    MCAPI ::std::vector<::ActorBlockSyncMessage> getAndPruneEntityBlockSyncMessages(uchar version);
+    MCNAPI ::std::vector<::ActorBlockSyncMessage> getAndPruneEntityBlockSyncMessages(uchar version);
 
-    MCAPI void rebuildVisbility(::BlockSource& region);
+    MCNAPI void rebuildVisbility(::BlockSource& region);
 
-    MCAPI void setVisibilityToEmptyAndSkyLit();
+    MCNAPI void setVisibilityToEmptyAndSkyLit();
 
-    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
+    MCNAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 
-    MCAPI ~RenderChunkShared();
+    MCNAPI ~RenderChunkShared();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubChunkPos const& rcp);
+    MCNAPI void* $ctor(::SubChunkPos const& rcp);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

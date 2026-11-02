@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit KineticDamageSettings(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
+    MCNAPI explicit KineticDamageSettings(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_90::KineticWeaponItemComponent const& data);
     // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
-MCFOLD bool operator==(::KineticDamageSettings const&, ::KineticDamageSettings const&);
+MCNAPI bool operator==(::KineticDamageSettings const&, ::KineticDamageSettings const&);
 // NOLINTEND

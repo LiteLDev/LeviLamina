@@ -61,12 +61,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SchematicsRepository();
+    MCNAPI SchematicsRepository();
 
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>
+    MCNAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic>
     _createUnitCube(::Matrix const& postModelSpaceTransform, uchar rotX, uchar rotY, uchar rotZ, bool isV1);
 
-    MCAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> _loadSchematic(
+    MCNAPI ::std::shared_ptr<::ClientBlockPipeline::BlockSchematic> _loadSchematic(
         ::GeometryPtr const                                     geoPtr,
         ::BlockCullingData const*                               cullingDataPtr,
         ::HashedString const&                                   cullingLayer,
@@ -77,9 +77,9 @@ public:
         ::Experiments const*
     );
 
-    MCAPI void initialize();
+    MCNAPI void initialize();
 
-    MCAPI void initializeBlockGeometryComponent(
+    MCNAPI void initializeBlockGeometryComponent(
         ::BlockGeometryComponent&             blockGeometryComponent,
         ::BlockTransformationComponent const* blockTransformComponent,
         ::GeometryGroup&                      geometryGroup,
@@ -87,13 +87,13 @@ public:
         ::Experiments const*                  experiments
     );
 
-    MCAPI bool validateTransformedBounds(::Block const& block) const;
+    MCNAPI bool validateTransformedBounds(::Block const& block) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _hasAllPartsWithinBufferLimit(
+    MCNAPI static bool _hasAllPartsWithinBufferLimit(
         ::Vec3 const&                 schematicMin,
         ::Vec3 const&                 schematicMax,
         ::HashedString const&         schematicName,
@@ -104,7 +104,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

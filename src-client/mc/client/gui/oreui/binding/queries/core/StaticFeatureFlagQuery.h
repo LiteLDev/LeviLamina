@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StaticFeatureFlagQuery(
+    MCNAPI StaticFeatureFlagQuery(
         ::OreUI::ClientDependencies const& client,
         ::OreUI::GameDependencies const&   game,
         ::std::string const&               flag
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game, ::std::string const& flag);
     // NOLINTEND
 };

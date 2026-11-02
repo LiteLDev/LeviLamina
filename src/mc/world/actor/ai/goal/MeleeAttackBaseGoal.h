@@ -101,45 +101,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeleeAttackBaseGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI MeleeAttackBaseGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
+    MCNAPI void _attemptAttackTarget(::Actor& target, bool canReachTarget, bool hasLineOfSight);
 
-    MCAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
+    MCNAPI void _attemptMoveToTargetPosition(::Actor const& target, bool canReachTarget, float targetDistanceSq);
 
-    MCAPI ::Mob& _getNavigatingMob() const;
+    MCNAPI ::Mob& _getNavigatingMob() const;
 
-    MCAPI ::NavigationComponent* _getNavigationComponent() const;
+    MCNAPI ::NavigationComponent* _getNavigationComponent() const;
 
-    MCAPI bool _isNavigationDoneOrStuck() const;
+    MCNAPI bool _isNavigationDoneOrStuck() const;
 
-    MCAPI bool _targetPositionPutsMobInSun();
+    MCNAPI bool _targetPositionPutsMobInSun();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI int $getAttackTicksResetValue() const;
+    MCNAPI int $getAttackTicksResetValue() const;
 
 
     // NOLINTEND

@@ -52,17 +52,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>
+    MCNAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>
     _registerClock(::HashedString const& name, ::std::vector<::TimeMarker> const& timeMarkers, bool isVanilla);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
+    MCNAPI ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
 
-    MCAPI int getTime(::HashedString const& clockName) const;
+    MCNAPI int getTime(::HashedString const& clockName) const;
 
-    MCAPI void setTime(::HashedString const& clockName, int time);
+    MCNAPI void setTime(::HashedString const& clockName, int time);
 
-    MCAPI ::std::vector<::WorldClockData> toData() const;
+    MCNAPI ::std::vector<::WorldClockData> toData() const;
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
     // NOLINTEND
 };

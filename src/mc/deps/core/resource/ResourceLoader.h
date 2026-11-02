@@ -95,13 +95,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ResourceLoader(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+    MCNAPI explicit ResourceLoader(::std::function<::Core::PathBuffer<::std::string>()> getPath);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
+    MCNAPI void* $ctor(::std::function<::Core::PathBuffer<::std::string>()> getPath);
     // NOLINTEND
 
 public:

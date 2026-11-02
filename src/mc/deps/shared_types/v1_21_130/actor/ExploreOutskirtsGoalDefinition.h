@@ -33,15 +33,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_DISTANCE_FROM_BOUNDARY();
+    MCNAPI static ::Vec3 const& DEFAULT_DISTANCE_FROM_BOUNDARY();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

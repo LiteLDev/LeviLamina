@@ -27,19 +27,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptFogSettingsError(::ScriptModuleMinecraft::ScriptFogSettingsError::Reason reason);
+    MCNAPI explicit ScriptFogSettingsError(::ScriptModuleMinecraft::ScriptFogSettingsError::Reason reason);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptFogSettingsError::Reason reason);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptFogSettingsError::Reason reason);
     // NOLINTEND
 };
 

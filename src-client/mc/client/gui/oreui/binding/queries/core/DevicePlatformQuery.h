@@ -68,21 +68,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DevicePlatformQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI DevicePlatformQuery(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
 
-    MCAPI void _updateInputMethods();
+    MCNAPI void _updateInputMethods();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onOperationModeChanged(::OperationMode operationMode);
+    MCNAPI void $onOperationModeChanged(::OperationMode operationMode);
     // NOLINTEND
 
 public:

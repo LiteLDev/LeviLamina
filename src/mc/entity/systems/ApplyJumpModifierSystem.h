@@ -40,7 +40,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickApplyJumpModifierSystem(
+    MCNAPI static void tickApplyJumpModifierSystem(
         ::StrictEntityContext const&,
         ::TriggerJumpRequestComponent const& triggerJumpRequestComponent,
         ::ActorRotationComponent const&      actorRotationComponent,

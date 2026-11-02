@@ -41,10 +41,10 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+    MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
 #endif
 
-    MCAPI void setSkinImage(::SkinImage const& image);
+    MCNAPI void setSkinImage(::SkinImage const& image);
     // NOLINTEND
 
 public:

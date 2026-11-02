@@ -15,6 +15,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FogVolumetricHenyeyGreensteinGSetting const& ZERO_SETTING();
+    MCNAPI static ::FogVolumetricHenyeyGreensteinGSetting const& ZERO_SETTING();
     // NOLINTEND
 };

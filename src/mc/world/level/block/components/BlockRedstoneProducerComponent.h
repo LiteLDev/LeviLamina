@@ -34,13 +34,13 @@ public:
     // NOLINTBEGIN
     MCAPI void finalize(::BlockTransformationComponent const* transformationComponent);
 
-    MCAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
+    MCNAPI void onEvent(::BlockEvents::BlockStateChangeEvent const& ev) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI static void setRedstoneSignal(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
 
     MCAPI static void setupRedstoneComponent(::Block const& block, ::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND

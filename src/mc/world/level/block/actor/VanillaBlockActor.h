@@ -174,17 +174,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VanillaBlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
+    MCNAPI VanillaBlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
 
-    MCAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
+    MCNAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
 
-    MCAPI void _saveCustomNameToUpdatePacket(::CompoundTag& tag) const;
+    MCNAPI void _saveCustomNameToUpdatePacket(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
+    MCNAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
     // NOLINTEND
 
 public:
@@ -232,7 +232,7 @@ public:
 
     MCFOLD ::ActorTerrainInterlockData const& $getEntityTerrainInterlockDataConst() const;
 
-    MCFOLD void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
     MCFOLD int $getTickCount() const;
 
@@ -240,7 +240,7 @@ public:
 
     MCFOLD ::Container const* $getContainer() const;
 
-    MCFOLD void $eraseLootTable();
+    MCNAPI void $eraseLootTable();
 
     MCFOLD ::std::string $getName() const;
 
@@ -282,23 +282,23 @@ public:
 
     MCFOLD void $onChanged(::BlockSource& region);
 
-    MCAPI void $_resetAABB();
+    MCNAPI void $_resetAABB();
 
-    MCAPI void $_setCanRenderCustomName(bool value);
+    MCNAPI void $_setCanRenderCustomName(bool value);
 
-    MCAPI void $_setCustomNameSaved(bool saveCustomName);
+    MCNAPI void $_setCustomNameSaved(bool saveCustomName);
 
-    MCFOLD ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
+    MCNAPI ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
 
-    MCFOLD ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
+    MCNAPI ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
 
-    MCFOLD ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
+    MCNAPI ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
 
-    MCFOLD ::IVanillaTickBlockActorComponent* $_getTickComponent();
+    MCNAPI ::IVanillaTickBlockActorComponent* $_getTickComponent();
 
-    MCFOLD ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
+    MCNAPI ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
 
-    MCFOLD ::IVanillaMainBlockActorComponent* $_getMainComponent();
+    MCNAPI ::IVanillaMainBlockActorComponent* $_getMainComponent();
 
 
     // NOLINTEND
@@ -310,7 +310,7 @@ public:
 
     MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
 
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
     MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
     // NOLINTEND

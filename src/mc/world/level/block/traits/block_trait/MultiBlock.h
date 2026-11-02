@@ -55,13 +55,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const&);
 
-    MCAPI void $applyToBlockType(::BlockType& blockType) const;
+    MCNAPI void $applyToBlockType(::BlockType& blockType) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $_buildNetworkTag(::cereal::ReflectionCtx const&) const;
 
-    MCAPI ::std::string const& $_getName() const;
+    MCNAPI ::std::string const& $_getName() const;
 
 
     // NOLINTEND

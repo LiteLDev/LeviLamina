@@ -83,42 +83,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onJoinWorld(::IClientInstance& client);
+    MCNAPI void onJoinWorld(::IClientInstance& client);
 
-    MCAPI void onLeaveWorld();
+    MCNAPI void onLeaveWorld();
 
-    MCAPI void setupGameServerConnectionListener(::GameConnectionConnector const& gameConnectionConnector);
+    MCNAPI void setupGameServerConnectionListener(::GameConnectionConnector const& gameConnectionConnector);
 
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onPlayerCreated(::LocalPlayer& player, ::persona::ProfileType, ::std::string const&, bool, ::NetworkType);
 
-    MCAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::PlayerNotificationEvent const& event);
 
-    MCAPI ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
+    MCNAPI ::EventResult $onLocalPlayerDeath(::IClientInstance& client, ::LocalPlayer& player);
 
-    MCAPI ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
+    MCNAPI ::EventResult $onLocalPlayerRespawn(::IClientInstance& client, ::LocalPlayer& player);
 
-    MCAPI ::EventResult $onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer& localPlayer);
+    MCNAPI ::EventResult $onLocalPlayerOpenInventory(::IClientInstance&, ::LocalPlayer& localPlayer);
 
-    MCAPI ::EventResult
+    MCNAPI ::EventResult
     $onLocalPlayerOpenTrading(::IClientInstance&, ::LocalPlayer&, ::ActorUniqueID const& uniqueID, bool);
 
-    MCAPI ::EventResult $onShowDataDrivenScreen(
+    MCNAPI ::EventResult $onShowDataDrivenScreen(
         ::LocalPlayer&,
         ::std::string const&  screenId,
         uint                  formId,
         ::std::optional<uint> dataInstanceId
     );
 
-    MCAPI ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint formId);
+    MCNAPI ::EventResult $onCloseDataDrivenScreen(::LocalPlayer&, uint formId);
 
-    MCAPI ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
+    MCNAPI ::EventResult $onCloseAllDataDrivenScreens(::LocalPlayer&);
     // NOLINTEND
 
 public:

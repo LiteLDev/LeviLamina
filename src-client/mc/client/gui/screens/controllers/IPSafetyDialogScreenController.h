@@ -34,21 +34,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IPSafetyDialogScreenController(::std::shared_ptr<::MinecraftScreenModel> model, int externalServerId);
+    MCNAPI IPSafetyDialogScreenController(::std::shared_ptr<::MinecraftScreenModel> model, int externalServerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, int externalServerId);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, int externalServerId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $_registerSafetyEventHandlers();
+    MCNAPI void $_registerSafetyEventHandlers();
     // NOLINTEND
 
 public:

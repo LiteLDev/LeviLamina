@@ -36,7 +36,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void setLocation(::std::string const& str);
+        MCNAPI void setLocation(::std::string const& str);
         // NOLINTEND
     };
 
@@ -66,17 +66,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setFieldOfView(float const& fieldOfViewInDegrees);
+    MCNAPI void setFieldOfView(float const& fieldOfViewInDegrees);
 
-    MCAPI void setLineOfSightObstructionType(::std::string const& str);
+    MCNAPI void setLineOfSightObstructionType(::std::string const& str);
 
-    MCAPI void setSetTargetMode(::std::string const& str);
+    MCNAPI void setSetTargetMode(::std::string const& str);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::LookedAtDefinition>>& root
     );
     // NOLINTEND

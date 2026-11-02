@@ -197,7 +197,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
+        MCNAPI static bool _checkVersioningRequirements(::SemVersion const& removedSupportVersion);
         // NOLINTEND
     };
 
@@ -260,7 +260,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
+        MCNAPI static void
         add(::BlockType&                                                   blockType,
             ::BlockState const&                                            stateRef,
             ::std::function<::std::optional<int>(::BlockType const&, int)> getter,
@@ -271,9 +271,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
+        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int blockData) const;
 
-        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
 
 
         // NOLINTEND
@@ -313,7 +313,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void
+        MCNAPI static void
         add(::BlockState const&                                              stateRef,
             ::std::vector<::BlockType::RemovedStateCollection::SplitBlock>&& splitBlocks,
             ::SemVersion const&                                              removedSupportVersion);
@@ -322,9 +322,9 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
+        MCNAPI ::std::optional<int> $getState(::BlockType const& blockType, int) const;
 
-        MCAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
+        MCNAPI ::Block const* $setState(::BlockType const& blockType, int blockData, int stateData) const;
 
 
         // NOLINTEND
@@ -755,17 +755,17 @@ public:
     // NOLINTBEGIN
     MCAPI BlockType(::std::string const& nameId, int id, ::Material const& material);
 
-    MCAPI ::std::optional<int> _tryLookupAlteredStateCollection(uint64 stateId, ushort blockData) const;
+    MCNAPI ::std::optional<int> _tryLookupAlteredStateCollection(uint64 stateId, ushort blockData) const;
 
-    MCAPI ::Block const* _trySetStateFromAlteredStateCollection(uint64 stateId, int val, ushort blockData) const;
+    MCNAPI ::Block const* _trySetStateFromAlteredStateCollection(uint64 stateId, int val, ushort blockData) const;
 
-    MCAPI void addGetPlacementBlockCallback(::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback> callback);
+    MCNAPI void addGetPlacementBlockCallback(::std::unique_ptr<::BlockTrait::IGetPlacementBlockCallback> callback);
 
     MCAPI ::BlockType& addState(::BlockState const& state, uint64 variationCount);
 
     MCAPI ::BlockType& addTag(::HashedString const& tag);
 
-    MCAPI ::std::string buildDescriptionName(::Block const& block) const;
+    MCNAPI ::std::string buildDescriptionName(::Block const& block) const;
 
     MCAPI bool canProvideFullSupport(::Block const& block, uchar face) const;
 
@@ -782,47 +782,47 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
+    MCNAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
 
 #ifdef LL_PLAT_C
-    MCAPI void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
+    MCNAPI void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
 #endif
 
     MCAPI ::BlockActorType getBlockEntityType() const;
 
     MCAPI ::BlockState const* getBlockState(::HashedString const& name) const;
 
-    MCAPI ::std::vector<::CommandName> getCommandNames() const;
+    MCNAPI ::std::vector<::CommandName> getCommandNames() const;
 
-    MCAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
+    MCNAPI void getDebugText(::std::vector<::std::string>& outputInfo, ::BlockPos const& debugPos) const;
 
     MCAPI ::ResourceDrops
     getResourceDrops(::Block const& block, ::IRandom& random, ::ResourceDropsContext const& resourceDropsContext) const;
 
-    MCAPI bool hasNonLegacyState(::HashedString const& name) const;
+    MCNAPI bool hasNonLegacyState(::HashedString const& name) const;
 
-    MCAPI bool hasState(::HashedString const& name) const;
+    MCNAPI bool hasState(::HashedString const& name) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCAPI bool isValidSpawn(
+    MCNAPI bool isValidSpawn(
         ::BlockSource&                 region,
         ::Block const&                 state,
         ::BlockPos                     pos,
         ::br::spawn::EntityType const& entityType
     ) const;
 
-    MCAPI bool matchesStates(::BlockType const& blockType) const;
+    MCNAPI bool matchesStates(::BlockType const& blockType) const;
 
-    MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCNAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
-    MCAPI ::BlockType& setNameId(::std::string const& id);
+    MCNAPI ::BlockType& setNameId(::std::string const& id);
 
-    MCAPI void setPreFlatteningName(::std::string preFlattenName);
+    MCNAPI void setPreFlatteningName(::std::string preFlattenName);
 
-    MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
+    MCNAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
     MCAPI void spawnResources(
         ::BlockSource&                region,
@@ -835,7 +835,7 @@ public:
 
     MCAPI ::Block const* tryGetStateFromLegacyData(ushort data) const;
 
-    MCAPI bool updateTallestCollisionShape(
+    MCNAPI bool updateTallestCollisionShape(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -850,7 +850,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string buildDescriptionIdFromNameInfo(::BlockType::NameInfo const& nameInfo);
+    MCNAPI static ::std::string buildDescriptionIdFromNameInfo(::BlockType::NameInfo const& nameInfo);
 
     MCAPI static ::BlockType::NameInfo extractBlockNameInfo(::std::string const& name);
 
@@ -861,7 +861,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& BLOCK_DESCRIPTION_PREFIX();
+    MCNAPI static ::std::string_view const& BLOCK_DESCRIPTION_PREFIX();
     // NOLINTEND
 
 public:
@@ -1173,7 +1173,7 @@ public:
 
     MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCFOLD ::Block const* $tryLegacyUpgrade(ushort extraData) const;
 
@@ -1185,39 +1185,39 @@ public:
 
     MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCFOLD bool $shouldTickOnSetBlock() const;
+    MCNAPI bool $shouldTickOnSetBlock() const;
 
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
+    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    MCFOLD int $getExtraRenderLayers() const;
+    MCNAPI int $getExtraRenderLayers() const;
 
-    MCAPI ::HashedString const& $getCullingLayer() const;
+    MCNAPI ::HashedString const& $getCullingLayer() const;
 
-    MCFOLD float $getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI float $getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Brightness $getLight(::Block const& block) const;
+    MCNAPI ::Brightness $getLight(::Block const& block) const;
 
-    MCFOLD ::Brightness $getEmissiveBrightness(::Block const& block) const;
+    MCNAPI ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
-    MCFOLD ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI ::Block const& $getInitialDefaultState();
+    MCNAPI ::Block const& $getInitialDefaultState();
 
-    MCFOLD void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    MCNAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
-    MCFOLD void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
 
     // NOLINTEND

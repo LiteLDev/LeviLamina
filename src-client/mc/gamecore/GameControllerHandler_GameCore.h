@@ -54,7 +54,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _onDeviceStatusChangedCallback(
+    MCNAPI static void _onDeviceStatusChangedCallback(
         uint64,
         void*                              context,
         ::GameInput::v2::IGameInputDevice* device,
@@ -63,16 +63,16 @@ public:
         ::GameInput::v2::GameInputDeviceStatus
     );
 
-    MCAPI static void _taskSubmittedCallback(void* context, ::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
+    MCNAPI static void _taskSubmittedCallback(void* context, ::XTaskQueueObject* taskQueue, ::XTaskQueuePort port);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $refresh();
+    MCNAPI void $refresh();
 
-    MCAPI float $normalizeAxis(float raw, float deadzone);
+    MCNAPI float $normalizeAxis(float raw, float deadzone);
 
-    MCAPI void $normalizeAxes(float& ioX, float& ioY, float deadzone);
+    MCNAPI void $normalizeAxes(float& ioX, float& ioY, float deadzone);
     // NOLINTEND
 };

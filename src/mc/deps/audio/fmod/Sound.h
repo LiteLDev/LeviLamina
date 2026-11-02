@@ -4,6 +4,6 @@
 
 namespace FMOD {
 
-class System {};
+class Sound {};
 
 } // namespace FMOD

@@ -14,7 +14,7 @@ namespace Puv { class Logger; }
 namespace ParticleSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::ParticleSystem::ParticleEffectData_Legacy parseParticleEffect(
+MCNAPI ::ParticleSystem::ParticleEffectData_Legacy parseParticleEffect(
     ::Puv::Input const&                                      input,
     ::Puv::Logger&                                           logger,
     ::MinEngineVersion                                       minEngineVersion,

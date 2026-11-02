@@ -26,9 +26,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI double $calculateDeltaTimeAndReset();
+    MCNAPI double $calculateDeltaTimeAndReset();
 
 
     // NOLINTEND

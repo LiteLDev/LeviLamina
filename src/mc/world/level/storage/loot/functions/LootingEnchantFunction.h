@@ -35,10 +35,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getLootingEnchantLevel(::LootTableContext& context);
+    MCNAPI static int _getLootingEnchantLevel(::LootTableContext& context);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::unique_ptr<::LootItemFunction>
+    MCNAPI static ::std::unique_ptr<::LootItemFunction>
     deserialize(::Json::Value object, ::std::vector<::std::unique_ptr<::LootItemCondition>>& predicates);
 #endif
     // NOLINTEND
@@ -46,11 +46,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LootItemFunction::FunctionType $getFunctionType() const;
+    MCNAPI ::LootItemFunction::FunctionType $getFunctionType() const;
 
-    MCAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCNAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
 
     // NOLINTEND

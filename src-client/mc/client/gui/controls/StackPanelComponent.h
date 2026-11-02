@@ -36,10 +36,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $onNotifyChildRemoved();
+    MCNAPI void $onNotifyChildRemoved();
     // NOLINTEND
 };

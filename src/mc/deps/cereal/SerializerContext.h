@@ -39,15 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
+    MCNAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
 
-    MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
+    MCNAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 
-    MCAPI void popContext();
+    MCNAPI void popContext();
 
-    MCAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
+    MCNAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
 
-    MCAPI ::cereal::SerializerContext&
+    MCNAPI ::cereal::SerializerContext&
     pushContext(::Bedrock::StaticOptimizedString propertyName, ::std::optional<uint> propertyId);
     // NOLINTEND
 };

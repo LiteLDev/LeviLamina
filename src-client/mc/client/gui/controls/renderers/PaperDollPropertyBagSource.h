@@ -38,13 +38,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $getAsBool(::std::string_view key, bool defaultValue) const;
+    MCNAPI bool $getAsBool(::std::string_view key, bool defaultValue) const;
 
-    MCAPI float $getAsFloat(::std::string_view key, float defaultValue) const;
+    MCNAPI float $getAsFloat(::std::string_view key, float defaultValue) const;
 
-    MCAPI ::std::string $getAsString(::std::string_view key, ::std::string_view defaultValue) const;
+    MCNAPI ::std::string $getAsString(::std::string_view key, ::std::string_view defaultValue) const;
 
-    MCFOLD void $markUnused(::std::string_view) const;
+    MCNAPI void $markUnused(::std::string_view) const;
     // NOLINTEND
 
 public:

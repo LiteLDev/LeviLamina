@@ -10,7 +10,7 @@ namespace br::spawn { class PlacementType; }
 namespace br::spawn::PlacementTypes {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::tuple<::std::string, ::std::unique_ptr<::br::spawn::PlacementType>>> defaults();
+MCNAPI ::std::vector<::std::tuple<::std::string, ::std::unique_ptr<::br::spawn::PlacementType>>> defaults();
 // NOLINTEND
 
 } // namespace br::spawn::PlacementTypes

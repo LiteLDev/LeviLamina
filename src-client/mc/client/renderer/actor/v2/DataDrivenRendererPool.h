@@ -36,12 +36,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~DataDrivenRendererPool();
+    MCNAPI ~DataDrivenRendererPool();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

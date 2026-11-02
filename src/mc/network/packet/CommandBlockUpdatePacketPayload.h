@@ -73,36 +73,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockUpdatePacketPayload(::CommandBlockUpdatePacketPayload const&);
+    MCNAPI CommandBlockUpdatePacketPayload(::CommandBlockUpdatePacketPayload const&);
 
 #ifdef LL_PLAT_C
-    MCAPI CommandBlockUpdatePacketPayload(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
+    MCNAPI CommandBlockUpdatePacketPayload(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
 
-    MCAPI CommandBlockUpdatePacketPayload(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
+    MCNAPI CommandBlockUpdatePacketPayload(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
 #endif
 
-    MCAPI ::std::string getRedactedName() const;
+    MCNAPI ::std::string getRedactedName() const;
 
-    MCAPI ::std::string getUnredactedName() const;
+    MCNAPI ::std::string getUnredactedName() const;
 
-    MCAPI ~CommandBlockUpdatePacketPayload();
+    MCNAPI ~CommandBlockUpdatePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CommandBlockUpdatePacketPayload const&);
+    MCNAPI void* $ctor(::CommandBlockUpdatePacketPayload const&);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
+    MCNAPI void* $ctor(::ActorRuntimeID entityId, ::BaseCommandBlock const& baseCmdBlock);
 
-    MCAPI void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
+    MCNAPI void* $ctor(::BlockSource& region, ::CommandBlockActor const& cmdBlock);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

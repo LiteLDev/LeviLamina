@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RatingPromptController(
+    MCNAPI RatingPromptController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleId,
         ::std::string const&                      image,
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleId,
         ::std::string const&                      image,

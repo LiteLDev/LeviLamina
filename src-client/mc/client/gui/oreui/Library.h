@@ -90,7 +90,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Library(
+    MCNAPI Library(
         ::cohtml::PlatformSpecificParams const&                                    platformParams,
         ::std::unique_ptr<::cohtml::IAllocator>                                    allocator,
         ::std::unique_ptr<::cohtml::IFileSystemReader>                             fileSystemReader,
@@ -107,9 +107,9 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
-    MCAPI void _loadICUData(::TaskGroup& taskGroup, ::Core::Path const& packagePath);
+    MCNAPI void _loadICUData(::TaskGroup& taskGroup, ::Core::Path const& packagePath);
 
-    MCAPI ::OreUI::ViewId createView(
+    MCNAPI ::OreUI::ViewId createView(
         ::OreUI::Detail::BindingRegistryFactory&   bindingRegistryFactory,
         ::OreUI::Router&                           router,
         ::std::string const&                       viewPath,
@@ -118,21 +118,21 @@ public:
         ::OreUI::ViewCacheMode                     viewCacheMode
     );
 
-    MCAPI void update(double time);
+    MCNAPI void update(double time);
 
-    MCAPI ~Library();
+    MCNAPI ~Library();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::cohtml::IVirtualAllocator>& mVirtualAllocator();
+    MCNAPI static ::std::unique_ptr<::cohtml::IVirtualAllocator>& mVirtualAllocator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cohtml::PlatformSpecificParams const&                                    platformParams,
         ::std::unique_ptr<::cohtml::IAllocator>                                    allocator,
         ::std::unique_ptr<::cohtml::IFileSystemReader>                             fileSystemReader,
@@ -153,7 +153,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

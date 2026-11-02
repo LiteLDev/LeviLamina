@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SettingsGroupQuery(::OreUI::ClientDependencies const& client, ::std::string const& groupId);
+    MCNAPI SettingsGroupQuery(::OreUI::ClientDependencies const& client, ::std::string const& groupId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& groupId);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::std::string const& groupId);
     // NOLINTEND
 };
 

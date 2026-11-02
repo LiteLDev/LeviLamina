@@ -23,14 +23,14 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string getStringFromType(::SharedTypes::persona::BodySizeType bodySizeType);
+    MCNAPI static ::std::string getStringFromType(::SharedTypes::persona::BodySizeType bodySizeType);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::SharedTypes::persona::BodySizeType, ::persona::SizeInfo> const& mInfoList();
+    MCNAPI static ::std::unordered_map<::SharedTypes::persona::BodySizeType, ::persona::SizeInfo> const& mInfoList();
     // NOLINTEND
 };
 

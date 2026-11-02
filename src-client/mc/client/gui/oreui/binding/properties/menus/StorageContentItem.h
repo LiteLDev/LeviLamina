@@ -54,13 +54,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageContentItem(::OreUI::StorageContentItemData data);
+    MCNAPI explicit StorageContentItem(::OreUI::StorageContentItemData data);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::StorageContentItemData data);
+    MCNAPI void* $ctor(::OreUI::StorageContentItemData data);
     // NOLINTEND
 };
 

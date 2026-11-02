@@ -34,7 +34,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
+    MCNAPI static ::std::unique_ptr<::FlushableEnv> createFlushableEnv(
         ::leveldb::Env*                            currentEnv,
         ::std::shared_ptr<::Core::FileStorageArea> storageAreaForLevel,
         ::Core::Path const&                        dbPath

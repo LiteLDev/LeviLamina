@@ -29,14 +29,14 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ~ItemComprehensiveLoadResult();
+    MCNAPI ~ItemComprehensiveLoadResult();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemComprehensiveLoadResult parse(
+    MCNAPI static ::ItemComprehensiveLoadResult parse(
         ::Puv::Input const&            input,
         ::Puv::Logger&                 logger,
         bool                           isComponentBased,
@@ -46,14 +46,14 @@ public:
         ::cereal::ReflectionCtx const* ctx
     );
 
-    MCAPI static ::SharedTypes::v1_26_30::ItemDocument upgrade(::ItemComprehensiveLoadResult&& oldData);
+    MCNAPI static ::SharedTypes::v1_26_30::ItemDocument upgrade(::ItemComprehensiveLoadResult&& oldData);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

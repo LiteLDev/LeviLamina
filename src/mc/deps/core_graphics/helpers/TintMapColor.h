@@ -15,6 +15,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::TintMapColor const& rhs) const;
+    MCNAPI bool operator==(::TintMapColor const& rhs) const;
     // NOLINTEND
 };

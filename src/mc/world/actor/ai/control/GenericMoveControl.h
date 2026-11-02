@@ -29,10 +29,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void
+    MCNAPI void
     $initializeInternal(::Mob& mob, ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* description);
 
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
 
     // NOLINTEND

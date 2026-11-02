@@ -33,30 +33,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockDefinition();
+    MCNAPI BlockDefinition();
 
 #ifdef LL_PLAT_C
-    MCAPI BlockDefinition(::BlockDefinition&&);
+    MCNAPI BlockDefinition(::BlockDefinition&&);
 #endif
 
-    MCAPI BlockDefinition(::BlockDefinition const&);
+    MCNAPI BlockDefinition(::BlockDefinition const&);
 
-    MCAPI ::BlockDefinition& operator=(::BlockDefinition&&);
+    MCNAPI ::BlockDefinition& operator=(::BlockDefinition&&);
 
-    MCAPI ::BlockDefinition& operator=(::BlockDefinition const&);
+    MCNAPI ::BlockDefinition& operator=(::BlockDefinition const&);
 
-    MCAPI ~BlockDefinition();
+    MCNAPI ~BlockDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
+    MCNAPI static ::CerealDocumentUpgrader& initCerealDocumentUpgrader(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerBlockDefinitionTypes(::cereal::ReflectionCtx& ctx);
 
 #ifdef LL_PLAT_S
-    MCAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
+    MCNAPI static ::std::pair<bool, ::SemVersion> upgradeJson(
         ::cereal::ReflectionCtx const& ctx,
         ::std::string&                 json,
         ::Core::Path const&            resourceName,
@@ -69,18 +69,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::BlockDefinition&&);
+    MCNAPI void* $ctor(::BlockDefinition&&);
 #endif
 
-    MCAPI void* $ctor(::BlockDefinition const&);
+    MCNAPI void* $ctor(::BlockDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

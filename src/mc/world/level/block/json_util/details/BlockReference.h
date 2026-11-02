@@ -18,13 +18,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BlockReference();
+    MCNAPI ~BlockReference();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

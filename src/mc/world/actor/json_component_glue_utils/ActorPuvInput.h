@@ -31,9 +31,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::SemVersion $version() const;
+    MCNAPI ::SemVersion $version() const;
 
-    MCFOLD ::Puv::Input::Data $data() const;
+    MCNAPI ::Puv::Input::Data $data() const;
 
 
     // NOLINTEND

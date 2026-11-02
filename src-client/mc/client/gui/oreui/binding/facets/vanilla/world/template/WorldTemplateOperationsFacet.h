@@ -55,56 +55,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldTemplateOperationsFacet(
+    MCNAPI WorldTemplateOperationsFacet(
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager>           ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::World::MarketplacePassWorldTemplateManager> marketplacePassWorldTemplateManager
     );
 
-    MCAPI void _updateDownloadProgress();
+    MCNAPI void _updateDownloadProgress();
 
-    MCAPI bool canDownloadBeCancelled();
+    MCNAPI bool canDownloadBeCancelled();
 
-    MCAPI void cancelDownload();
+    MCNAPI void cancelDownload();
 
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(::std::string const& templateId);
+    MCNAPI ::std::optional<::World::DownloadWorldTemplateError> downloadWorldTemplate(::std::string const& templateId);
 
-    MCFOLD ::std::string const& getDownloadTotalBytes();
+    MCNAPI ::std::string const& getDownloadTotalBytes();
 
-    MCFOLD ::std::string const& getDownloadingProgressBytes();
+    MCNAPI ::std::string const& getDownloadingProgressBytes();
 
-    MCAPI float getDownloadingProgressPercent();
+    MCNAPI float getDownloadingProgressPercent();
 
-    MCAPI ::std::optional<::OreUI::DownloadWorldTemplateStatus> const& getDownloadingStatus();
+    MCNAPI ::std::optional<::OreUI::DownloadWorldTemplateStatus> const& getDownloadingStatus();
 
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> const& getDownloadingTaskResult();
+    MCNAPI ::std::optional<::World::DownloadWorldTemplateError> const& getDownloadingTaskResult();
 
-    MCFOLD ::OreUI::FacetTaskState getDownloadingTaskState();
+    MCNAPI ::OreUI::FacetTaskState getDownloadingTaskState();
 
-    MCFOLD ::std::string const& getImportedPackName();
+    MCNAPI ::std::string const& getImportedPackName();
 
-    MCAPI ::std::optional<::ImportFailure> const& getImportingTaskResult();
+    MCNAPI ::std::optional<::ImportFailure> const& getImportingTaskResult();
 
-    MCFOLD ::OreUI::FacetTaskState getImportingTaskState();
+    MCNAPI ::OreUI::FacetTaskState getImportingTaskState();
 
-    MCFOLD bool getIsTemplateScreenAvailable() const;
+    MCNAPI bool getIsTemplateScreenAvailable() const;
 
-    MCAPI void importWorldTemplate();
+    MCNAPI void importWorldTemplate();
 
-    MCAPI void resetDownloadTask();
+    MCNAPI void resetDownloadTask();
 
-    MCAPI void resetImportTask();
+    MCNAPI void resetImportTask();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::World::OwnedWorldTemplateManager>           ownedWorldTemplateManager,
         ::Bedrock::NotNullNonOwnerPtr<::World::MarketplacePassWorldTemplateManager> marketplacePassWorldTemplateManager
     );
@@ -113,7 +113,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -35,24 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeashableComponent(::LeashableComponent&&);
+    MCNAPI LeashableComponent(::LeashableComponent&&);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::LeashableComponent& operator=(::LeashableComponent&&);
+    MCNAPI ::LeashableComponent& operator=(::LeashableComponent&&);
 
-    MCAPI ~LeashableComponent();
+    MCNAPI ~LeashableComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LeashableComponent&&);
+    MCNAPI void* $ctor(::LeashableComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

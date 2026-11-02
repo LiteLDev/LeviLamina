@@ -32,7 +32,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD bool operator==(::SharedTypes::v1_26_60::TransformationComponentDefinition::AddComponents const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_60::TransformationComponentDefinition::AddComponents const&) const;
         // NOLINTEND
     };
 
@@ -53,7 +53,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool
+        MCNAPI bool
         operator==(::SharedTypes::v1_26_60::TransformationComponentDefinition::TransformationDelay const&) const;
         // NOLINTEND
     };
@@ -80,41 +80,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransformationComponentDefinition(::SharedTypes::v1_26_60::TransformationComponentDefinition const&);
+    MCNAPI TransformationComponentDefinition(::SharedTypes::v1_26_60::TransformationComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_60::TransformationComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TransformationComponentDefinition&
     operator=(::SharedTypes::v1_26_60::TransformationComponentDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_60::TransformationComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_60::TransformationComponentDefinition&
     operator=(::SharedTypes::v1_26_60::TransformationComponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::TransformationComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::TransformationComponentDefinition const&) const;
 
-    MCAPI ~TransformationComponentDefinition();
+    MCNAPI ~TransformationComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::TransformationComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::TransformationComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

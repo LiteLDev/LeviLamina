@@ -46,16 +46,16 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ChainedSubcommandData(::AvailableCommandsPacketPayload::ChainedSubcommandData const&);
+        MCNAPI ChainedSubcommandData(::AvailableCommandsPacketPayload::ChainedSubcommandData const&);
 
-        MCFOLD ::AvailableCommandsPacketPayload::ChainedSubcommandData&
+        MCNAPI ::AvailableCommandsPacketPayload::ChainedSubcommandData&
         operator=(::AvailableCommandsPacketPayload::ChainedSubcommandData&&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::AvailableCommandsPacketPayload::ChainedSubcommandData const&);
+        MCNAPI void* $ctor(::AvailableCommandsPacketPayload::ChainedSubcommandData const&);
         // NOLINTEND
     };
 
@@ -85,15 +85,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI EnumData(::AvailableCommandsPacketPayload::EnumData const&);
+        MCNAPI EnumData(::AvailableCommandsPacketPayload::EnumData const&);
 
-        MCFOLD ::AvailableCommandsPacketPayload::EnumData& operator=(::AvailableCommandsPacketPayload::EnumData&&);
+        MCNAPI ::AvailableCommandsPacketPayload::EnumData& operator=(::AvailableCommandsPacketPayload::EnumData&&);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::AvailableCommandsPacketPayload::EnumData const&);
+        MCNAPI void* $ctor(::AvailableCommandsPacketPayload::EnumData const&);
         // NOLINTEND
     };
 
@@ -119,7 +119,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::OverloadData const& other) const;
+        MCNAPI bool operator==(::AvailableCommandsPacketPayload::OverloadData const& other) const;
         // NOLINTEND
     };
 
@@ -147,10 +147,10 @@ public:
 
         MCAPI ::AvailableCommandsPacketPayload::CommandData& operator=(::AvailableCommandsPacketPayload::CommandData&&);
 
-        MCAPI ::AvailableCommandsPacketPayload::CommandData&
+        MCNAPI ::AvailableCommandsPacketPayload::CommandData&
         operator=(::AvailableCommandsPacketPayload::CommandData const&);
 
-        MCAPI bool operator==(::AvailableCommandsPacketPayload::CommandData const& other) const;
+        MCNAPI bool operator==(::AvailableCommandsPacketPayload::CommandData const& other) const;
 
         MCAPI ~CommandData();
         // NOLINTEND
@@ -179,7 +179,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD bool operator==(::AvailableCommandsPacketPayload::SoftEnumData const& other) const;
+        MCNAPI bool operator==(::AvailableCommandsPacketPayload::SoftEnumData const& other) const;
         // NOLINTEND
     };
 
@@ -207,7 +207,7 @@ public:
     // NOLINTBEGIN
     MCAPI AvailableCommandsPacketPayload(::AvailableCommandsPacketPayload const&);
 
-    MCAPI AvailableCommandsPacketPayload(
+    MCNAPI AvailableCommandsPacketPayload(
         ::std::vector<::std::string> const&                                      enumValues,
         ::std::vector<::std::string> const&                                      chainedSubcommandValues,
         ::std::vector<::std::string> const&                                      postfixes,
@@ -226,7 +226,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::AvailableCommandsPacketPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::std::string> const&                                      enumValues,
         ::std::vector<::std::string> const&                                      chainedSubcommandValues,
         ::std::vector<::std::string> const&                                      postfixes,

@@ -15,13 +15,13 @@ class ShulkerPostAiStepSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doShulkerPostAiStepSystem(
+    MCNAPI static void _doShulkerPostAiStepSystem(
         ::StrictEntityContext const&,
         ::ActorRotationComponent&   actorRotationComponent,
         ::MobBodyRotationComponent& mobBodyRotationComponent,
         ::StateVectorComponent&     stateVectorComponent
     );
 
-    MCAPI static ::TickingSystemWithInfo createSystem();
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -21,9 +21,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
+    MCNAPI uint64 _getSum(::std::function<uint(::std::shared_ptr<::Core::ZipUtils::ZipProgress>)> getNumCallback);
 
-    MCAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
+    MCNAPI ::std::shared_ptr<::Core::ZipUtils::ZipProgress> createProgress();
 #endif
     // NOLINTEND
 };

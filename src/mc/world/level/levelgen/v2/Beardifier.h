@@ -26,13 +26,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI double compute(::BlockPos pos) const;
+    MCNAPI double compute(::BlockPos pos) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::Beardifier
+    MCNAPI static ::br::worldgen::Beardifier
     forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
     // NOLINTEND
 };

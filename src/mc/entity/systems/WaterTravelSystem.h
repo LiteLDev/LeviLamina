@@ -24,9 +24,9 @@ struct WaterWalkSpeedEnchantComponent;
 namespace WaterTravelSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createWaterTravelSystem();
+MCNAPI ::TickingSystemWithInfo createWaterTravelSystem();
 
-MCAPI void doTickWaterTravelSystem(
+MCNAPI void doTickWaterTravelSystem(
     ::StrictEntityContext&                                              entity,
     ::MovementAttributesComponent const&                                attributesComponent,
     ::MovementSpeedComponent const&                                     movementSpeedComponent,

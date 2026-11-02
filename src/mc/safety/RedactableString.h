@@ -27,30 +27,30 @@ public:
     MCAPI explicit RedactableString(::std::string const& unredactedString);
 
 #ifdef LL_PLAT_C
-    MCAPI void clear();
+    MCNAPI void clear();
 #endif
 
-    MCAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
+    MCNAPI ::Bedrock::Result<void> erase(uint64 offset, uint64 count);
 
     MCAPI ::Bedrock::Safety::RedactableString& operator+=(::std::string const& unredactedSuffix);
 
-    MCAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
+    MCNAPI void operator+=(::Bedrock::Safety::RedactableString const& rhs);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
+    MCNAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
 #endif
 
-    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
+    MCNAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
 
-    MCAPI ::Bedrock::Safety::RedactableString& operator=(char const* unredactedCString);
+    MCNAPI ::Bedrock::Safety::RedactableString& operator=(char const* unredactedCString);
 
     MCAPI ::Bedrock::Safety::RedactableString& operator=(::std::string&& unredactedString);
 
-    MCAPI bool operator==(::Bedrock::Safety::RedactableString const& rhs) const;
+    MCNAPI bool operator==(::Bedrock::Safety::RedactableString const& rhs) const;
 
-    MCAPI void set(::std::string&& unredactedString);
+    MCNAPI void set(::std::string&& unredactedString);
 
-    MCAPI void set(::std::string const& unredactedString);
+    MCNAPI void set(::std::string const& unredactedString);
 
     MCAPI ~RedactableString();
     // NOLINTEND

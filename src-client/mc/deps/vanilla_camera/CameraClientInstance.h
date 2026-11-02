@@ -48,18 +48,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Actor* $getCameraActor();
+    MCNAPI ::Actor* $getCameraActor();
 
-    MCAPI ::std::optional<::StrictEntityContext> $getCameraEntity();
+    MCNAPI ::std::optional<::StrictEntityContext> $getCameraEntity();
 
-    MCAPI ::std::optional<bool> $isUnderLiquid();
+    MCNAPI ::std::optional<bool> $isUnderLiquid();
 
-    MCFOLD float $getFrameAlpha();
+    MCNAPI float $getFrameAlpha();
 
-    MCAPI ::LocalPlayer* $getLocalPlayer();
+    MCNAPI ::LocalPlayer* $getLocalPlayer();
 
-    MCAPI ::Vec2 $getLookDelta();
+    MCNAPI ::Vec2 $getLookDelta();
 
-    MCFOLD float $getSecondsSinceProgramStart();
+    MCNAPI float $getSecondsSinceProgramStart();
     // NOLINTEND
 };

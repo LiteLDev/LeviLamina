@@ -35,31 +35,31 @@ class Actor;
 namespace CommandUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Actor* addToLevel(::OwnerPtr<::EntityContext> entity, ::BlockSource& region);
+MCNAPI ::Actor* addToLevel(::OwnerPtr<::EntityContext> entity, ::BlockSource& region);
 
-MCAPI void addtoCSVList(::std::string& list, ::std::string const& newItem);
+MCNAPI void addtoCSVList(::std::string& list, ::std::string const& newItem);
 
-MCAPI void alterSpawnableEntities(
+MCNAPI void alterSpawnableEntities(
     ::LevelData&                       levelData,
     ::ActorDefinitionIdentifier const& type,
     ::ActorDefinitionIdentifier&       definition
 );
 
-MCAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
+MCNAPI void broadcastPlayerSpawnedMobEvent(::Actor const& entity, ::Actor& summoner);
 
-MCAPI void clearBlockEntityContents(::BlockSource& region, ::BlockPos const& pos);
+MCNAPI void clearBlockEntityContents(::BlockSource& region, ::BlockPos const& pos);
 
-MCAPI void clearBlockEntityLootTable(::BlockSource& region, ::BlockPos const& pos);
+MCNAPI void clearBlockEntityLootTable(::BlockSource& region, ::BlockPos const& pos);
 
-MCAPI void convertBlockEntityTag(::CompoundTag& tag, ::BlockActor const& entity, ::BlockPos const& offset);
+MCNAPI void convertBlockEntityTag(::CompoundTag& tag, ::BlockActor const& entity, ::BlockPos const& offset);
 
-MCAPI ::ItemStack createItemStack(::std::string const& itemName, int amount, int data);
+MCNAPI ::ItemStack createItemStack(::std::string const& itemName, int amount, int data);
 
-MCAPI ::std::vector<::ItemStack> createItemStacks(::ItemInstance const& item, int amount, int& given);
+MCNAPI ::std::vector<::ItemStack> createItemStacks(::ItemInstance const& item, int amount, int& given);
 
-MCAPI bool createMapData(::Actor& entity, ::ItemInstance& itemInstance, ::CommandOutput& output);
+MCNAPI bool createMapData(::Actor& entity, ::ItemInstance& itemInstance, ::CommandOutput& output);
 
-MCAPI void displayLocalizableMessage(
+MCNAPI void displayLocalizableMessage(
     bool                                feedbackRuleDisables,
     ::Player&                           player,
     ::std::string const&                message,
@@ -68,11 +68,11 @@ MCAPI void displayLocalizableMessage(
 
 MCAPI ::std::string getActorName(::Actor const& actor);
 
-MCAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
+MCNAPI ::std::vector<::ActorType> getInvalidCommandEntities(bool isChemistryEnabled, bool isCodeBuilderEnabled);
 
-MCAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
+MCNAPI bool isFunctionValid(::CommandOutput& output, ::FunctionEntry& functionEntry, ::std::string const& resolvedPath);
 
-MCAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
+MCNAPI void nameEntity(::Actor& actor, bool nameSet, ::Bedrock::Safety::RedactableString const& actorName);
 
 MCAPI ::Actor* spawnEntityAt(
     ::BlockSource&                     region,
@@ -82,15 +82,15 @@ MCAPI ::Actor* spawnEntityAt(
     ::Actor*                           summoner
 );
 
-MCAPI ::std::string toJsonResult(::std::string const& commandName, ::Json::Value const& rawData);
+MCNAPI ::std::string toJsonResult(::std::string const& commandName, ::Json::Value const& rawData);
 
-MCAPI ::std::string const validatePath(::CommandOutput& output, ::CommandFilePath const& filePath);
+MCNAPI ::std::string const validatePath(::CommandOutput& output, ::CommandFilePath const& filePath);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI ::std::vector<::std::pair<::std::string, char>> const& CMD_INPUT_UNICODE_TRANSLATE_MAP();
+MCNAPI ::std::vector<::std::pair<::std::string, char>> const& CMD_INPUT_UNICODE_TRANSLATE_MAP();
 #endif
 // NOLINTEND
 

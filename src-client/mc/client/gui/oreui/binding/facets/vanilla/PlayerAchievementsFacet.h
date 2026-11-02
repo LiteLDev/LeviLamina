@@ -51,29 +51,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerAchievementsFacet(
+    MCNAPI PlayerAchievementsFacet(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::persona::AchievementOfferCollectionManager&              achievementOfferCollectionManager
     );
 
-    MCFOLD ::OreUI::FacetPlayerAchievementData const& getData();
+    MCNAPI ::OreUI::FacetPlayerAchievementData const& getData();
 
-    MCFOLD ::OreUI::AchievementsFacet::AchievementFacetStatus const& getStatus();
+    MCNAPI ::OreUI::AchievementsFacet::AchievementFacetStatus const& getStatus();
 
-    MCAPI void load(::std::string const& id);
+    MCNAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager>      userManager,
         ::persona::AchievementOfferCollectionManager&              achievementOfferCollectionManager
@@ -83,7 +83,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

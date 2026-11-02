@@ -157,7 +157,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::ItemInstance getTierItem() const;
+    MCNAPI ::ItemInstance getTierItem() const;
 #endif
     // NOLINTEND
 
@@ -168,7 +168,7 @@ public:
 
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& COPPER();
 
-    MCAPI static ::mce::Color& DEFAULT_LEATHER_COLOR();
+    MCNAPI static ::mce::Color& DEFAULT_LEATHER_COLOR();
 
     MCAPI static ::HumanoidArmorItem::ArmorMaterial const& DIAMOND();
 
@@ -248,6 +248,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

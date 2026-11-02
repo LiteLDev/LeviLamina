@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MovePlayerPacketPayload(::Player const& player, ::Vec3 const& pos);
+    MCNAPI MovePlayerPacketPayload(::Player const& player, ::Vec3 const& pos);
 
-    MCAPI MovePlayerPacketPayload(
+    MCNAPI MovePlayerPacketPayload(
         ::Player const&                             player,
         ::PlayerPositionModeComponent::PositionMode resetPosition,
         int                                         cause,
@@ -50,9 +50,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
+    MCNAPI void* $ctor(::Player const& player, ::Vec3 const& pos);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player const&                             player,
         ::PlayerPositionModeComponent::PositionMode resetPosition,
         int                                         cause,

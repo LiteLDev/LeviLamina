@@ -18,12 +18,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTestResultsPacketPayload(::std::string const& testName, ::std::string const& error, bool succeeded);
+    MCNAPI GameTestResultsPacketPayload(::std::string const& testName, ::std::string const& error, bool succeeded);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& testName, ::std::string const& error, bool succeeded);
+    MCNAPI void* $ctor(::std::string const& testName, ::std::string const& error, bool succeeded);
     // NOLINTEND
 };

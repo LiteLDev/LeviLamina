@@ -83,11 +83,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockGeometryDescription();
+    MCNAPI BlockGeometryDescription();
 
-    MCAPI BlockGeometryDescription(::BlockGeometryDescription const&);
+    MCNAPI BlockGeometryDescription(::BlockGeometryDescription const&);
 
-    MCAPI BlockGeometryDescription(
+    MCNAPI BlockGeometryDescription(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
         ::HashedString const&                                   cullingShapeName,
@@ -97,61 +97,61 @@ public:
         bool                                                    isFullBlockV1
     );
 
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
+    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription&&);
 
-    MCAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
+    MCNAPI ::BlockGeometryDescription& operator=(::BlockGeometryDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
+    MCNAPI static ::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode>
     getBoneVisibility(::std::map<::std::string, ::ExpressionNode> const& boneVisibilities);
 
-    MCAPI static ::std::map<::std::string, ::ExpressionNode>
+    MCNAPI static ::std::map<::std::string, ::ExpressionNode>
     setBoneVisibility(::std::map<::std::string, ::SharedTypes::Legacy::ExpressionNode> const& boneVisibilities);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& CROSS_GEO_NAME();
+    MCNAPI static ::HashedString const& CROSS_GEO_NAME();
 
-    MCAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
+    MCNAPI static ::std::string const& CULLING_LAYER_DOCUMENTATION();
 
-    MCAPI static ::HashedString const& CULLING_LAYER_LEAVES();
+    MCNAPI static ::HashedString const& CULLING_LAYER_LEAVES();
 
-    MCAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
+    MCNAPI static ::std::string const& CULLING_LAYER_NAME_CONSTRAINT();
 
-    MCAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
+    MCNAPI static ::HashedString const& CULLING_LAYER_UNDEFINED();
 
-    MCAPI static ::HashedString const& CULLING_SHAPE_DEFAULT();
+    MCNAPI static ::HashedString const& CULLING_SHAPE_DEFAULT();
 
-    MCAPI static ::std::string const& CULLING_SHAPE_DOCUMENTATION();
+    MCNAPI static ::std::string const& CULLING_SHAPE_DOCUMENTATION();
 
-    MCAPI static ::std::string const& CULLING_SHAPE_NAME_CONSTRAINT();
+    MCNAPI static ::std::string const& CULLING_SHAPE_NAME_CONSTRAINT();
 
-    MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
+    MCNAPI static ::HashedString const& FULL_BLOCK_GEO_NAME();
 
-    MCAPI static ::HashedString const& FULL_BLOCK_GEO_NAME_V1();
+    MCNAPI static ::HashedString const& FULL_BLOCK_GEO_NAME_V1();
 
-    MCAPI static ::std::string const& GEO_NAME_CONSTRAINT();
+    MCNAPI static ::std::string const& GEO_NAME_CONSTRAINT();
 
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
 
-    MCAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
+    MCNAPI static ::std::string const& UV_LOCKING_CONSTRAINT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::BlockGeometryDescription const&);
+    MCNAPI void* $ctor(::BlockGeometryDescription const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&                                   geometryName,
         ::HashedString const&                                   cullingName,
         ::HashedString const&                                   cullingShapeName,
@@ -165,27 +165,27 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponent(::BlockComponentStorage&) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage&) const;
 
-    MCAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
+    MCNAPI void $initializeComponent(::BlockComponentDescription::InitializationContext& context) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage&) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage&) const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentDescription::InitializationContext& context) const;
 
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
+    MCNAPI ::CompoundTag $buildUnboundDataNetworkTag() const;
 
-    MCAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
+    MCNAPI void $initializeUnboundDataFromNetwork(::CompoundTag const& tag);
 
 
     // NOLINTEND

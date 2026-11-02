@@ -42,7 +42,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RouteEntry(
+        MCNAPI RouteEntry(
             ::std::string const&                                                     baseScreenId,
             ::std::string const&                                                     pattern,
             ::OreUI::RouteType                                                       type,
@@ -56,7 +56,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string const&                                                     baseScreenId,
             ::std::string const&                                                     pattern,
             ::OreUI::RouteType                                                       type,
@@ -83,13 +83,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DefaultRouteEntry(::std::string const& baseScreenId, ::std::string const& route);
+        MCNAPI DefaultRouteEntry(::std::string const& baseScreenId, ::std::string const& route);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::std::string const& baseScreenId, ::std::string const& route);
+        MCNAPI void* $ctor(::std::string const& baseScreenId, ::std::string const& route);
         // NOLINTEND
     };
 
@@ -109,7 +109,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI RedirectEntry(
+        MCNAPI RedirectEntry(
             ::std::string const&                                 pattern,
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
@@ -119,7 +119,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::std::string const&                                 pattern,
             ::std::function<bool()>                              isActiveCallback,
             ::std::function<::std::string(::std::string const&)> composer
@@ -164,11 +164,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::OreUI::RouteMatcher::RedirectEntry> _matchRedirect(::std::string const& route) const;
+    MCNAPI ::std::optional<::OreUI::RouteMatcher::RedirectEntry> _matchRedirect(::std::string const& route) const;
 
-    MCAPI ::std::optional<::OreUI::RouteMatcher::RouteEntry> _matchRoute(::std::string const& route) const;
+    MCNAPI ::std::optional<::OreUI::RouteMatcher::RouteEntry> _matchRoute(::std::string const& route) const;
 
-    MCAPI void addRedirect(
+    MCNAPI void addRedirect(
         ::std::string const&                                 path,
         ::std::function<bool()>                              isActiveCallback,
         ::std::function<::std::string(::std::string const&)> composer
@@ -188,21 +188,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $navigateTo(::std::string const& route, ::OreUI::RouteHistoryAction action) const;
+    MCNAPI void $navigateTo(::std::string const& route, ::OreUI::RouteHistoryAction action) const;
 
-    MCAPI ::std::string $redirectIfNeeded(::std::string const& route) const;
+    MCNAPI ::std::string $redirectIfNeeded(::std::string const& route) const;
 
-    MCAPI bool $isSupported(::std::string const& route) const;
+    MCNAPI bool $isSupported(::std::string const& route) const;
 
-    MCAPI bool $areCompatible(::std::string const& routeA, ::std::string const& routeB) const;
+    MCNAPI bool $areCompatible(::std::string const& routeA, ::std::string const& routeB) const;
 
-    MCAPI ::std::optional<::std::string> $getDefaultRouteForFile(::std::string const& file) const;
+    MCNAPI ::std::optional<::std::string> $getDefaultRouteForFile(::std::string const& file) const;
 
-    MCAPI ::OreUI::RouteType $getRouteType(::std::string const& route) const;
+    MCNAPI ::OreUI::RouteType $getRouteType(::std::string const& route) const;
 
-    MCAPI ::OreUI::RouteMode $getRouteMode(::std::string const& route) const;
+    MCNAPI ::OreUI::RouteMode $getRouteMode(::std::string const& route) const;
 
-    MCAPI ::OreUI::RoutePrerequisite $getRoutePrerequisite(::std::string const& route) const;
+    MCNAPI ::OreUI::RoutePrerequisite $getRoutePrerequisite(::std::string const& route) const;
     // NOLINTEND
 };
 

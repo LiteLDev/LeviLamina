@@ -20,15 +20,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getName_V1() const;
+    MCNAPI ::std::string getName_V1() const;
 
-    MCAPI ::std::string getName_V2() const;
+    MCNAPI ::std::string getName_V2() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

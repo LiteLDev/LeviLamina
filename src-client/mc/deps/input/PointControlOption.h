@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PointControlOption(
+    MCNAPI PointControlOption(
         uint                         controlOptionId,
         ::std::function<void(float)> xSetter,
         ::std::function<void(float)> ySetter,
@@ -38,7 +38,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         uint                         controlOptionId,
         ::std::function<void(float)> xSetter,
         ::std::function<void(float)> ySetter,

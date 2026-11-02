@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsWorldPackManagerContentSource(
+    MCNAPI RealmsWorldPackManagerContentSource(
         ::PackManagerContentSourceArgs&&                          args,
         ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
         ::Realms::RealmId                                         realmId,
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::PackManagerContentSourceArgs&&                          args,
         ::Bedrock::NotNullNonOwnerPtr<::IContentSourceRepository> contentSourceRepository,
         ::Realms::RealmId                                         realmId,
@@ -62,9 +62,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load();
+    MCNAPI void $load();
 
-    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+    MCNAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
     // NOLINTEND
 
 public:

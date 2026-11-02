@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getIdentityName() const;
+    MCNAPI ::std::string getIdentityName() const;
 
-    MCAPI ::std::string getMessUserId() const;
+    MCNAPI ::std::string getMessUserId() const;
 
-    MCAPI ::std::string getPlayFabId() const;
+    MCNAPI ::std::string getPlayFabId() const;
 
-    MCFOLD ::std::string getTenantId() const;
+    MCNAPI ::std::string getTenantId() const;
 
-    MCAPI ::std::string getXuid() const;
+    MCNAPI ::std::string getXuid() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::UserEntityIdentifierComponent* tryGetFromEntity(::EntityContext& entity);
+    MCNAPI static ::UserEntityIdentifierComponent* tryGetFromEntity(::EntityContext& entity);
     // NOLINTEND
 };

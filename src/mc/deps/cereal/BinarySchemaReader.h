@@ -87,58 +87,58 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::std::optional<uint64> $remainingInputBytes() const;
+    MCNAPI ::std::optional<uint64> $remainingInputBytes() const;
 
-    MCFOLD ::cereal::SchemaRWType $expectedType() const;
+    MCNAPI ::cereal::SchemaRWType $expectedType() const;
 
-    MCFOLD ::Bedrock::Result<void> $asNull();
+    MCNAPI ::Bedrock::Result<void> $asNull();
 
-    MCFOLD ::Bedrock::Result<bool> $asBool();
+    MCNAPI ::Bedrock::Result<bool> $asBool();
 
-    MCFOLD ::Bedrock::Result<schar> $asInt8();
+    MCNAPI ::Bedrock::Result<schar> $asInt8();
 
-    MCFOLD ::Bedrock::Result<uchar> $asUInt8();
+    MCNAPI ::Bedrock::Result<uchar> $asUInt8();
 
-    MCFOLD ::Bedrock::Result<short> $asInt16();
+    MCNAPI ::Bedrock::Result<short> $asInt16();
 
-    MCFOLD ::Bedrock::Result<ushort> $asUInt16();
+    MCNAPI ::Bedrock::Result<ushort> $asUInt16();
 
-    MCFOLD ::Bedrock::Result<int> $asInt32();
+    MCNAPI ::Bedrock::Result<int> $asInt32();
 
-    MCFOLD ::Bedrock::Result<uint> $asUInt32();
+    MCNAPI ::Bedrock::Result<uint> $asUInt32();
 
-    MCFOLD ::Bedrock::Result<int64> $asInt64();
+    MCNAPI ::Bedrock::Result<int64> $asInt64();
 
-    MCFOLD ::Bedrock::Result<uint64> $asUInt64();
+    MCNAPI ::Bedrock::Result<uint64> $asUInt64();
 
-    MCFOLD ::Bedrock::Result<float> $asFloat();
+    MCNAPI ::Bedrock::Result<float> $asFloat();
 
-    MCFOLD ::Bedrock::Result<double> $asDouble();
+    MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCFOLD ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCFOLD ::std::optional<bool> $additionalDataAsBool();
+    MCNAPI ::std::optional<bool> $additionalDataAsBool();
 
-    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
+    MCNAPI ::std::optional<uint> $additionalDataAsUInt32();
 
-    MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64 maxInputLength);
+    MCNAPI ::std::optional<::std::string> $additionalDataAsString(uint64 maxInputLength);
 
-    MCFOLD uint64 $members();
+    MCNAPI uint64 $members();
 
-    MCAPI uint64 $length(uint64 expectedSize);
+    MCNAPI uint64 $length(uint64 expectedSize);
 
-    MCFOLD bool $pushMember(::std::string_view const);
+    MCNAPI bool $pushMember(::std::string_view const);
 
-    MCFOLD ::std::string_view $pushNextMember();
+    MCNAPI ::std::string_view $pushNextMember();
 
-    MCFOLD void $pushElement(uint64);
+    MCNAPI void $pushElement(uint64);
 
-    MCFOLD void $pop();
+    MCNAPI void $pop();
 
 
     // NOLINTEND

@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ScriptActorItemDropEventFilterData();
+    MCNAPI ~ScriptActorItemDropEventFilterData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData create(
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorItemDropEventFilterData create(
         ::Scripting::WeakLifetimeScope                          scope,
         ::ScriptModuleMinecraft::ScriptActorData                actorData,
         ::std::vector<::ScriptModuleMinecraft::ScriptActorData> items
@@ -41,7 +41,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

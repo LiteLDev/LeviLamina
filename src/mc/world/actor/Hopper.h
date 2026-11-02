@@ -29,14 +29,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
+    MCNAPI ::Container* _getContainerInBlock(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
+    MCNAPI ::std::vector<::Container*> _getContainersAt(::BlockSource& region, ::Vec3 const& pos);
 
-    MCAPI bool
+    MCNAPI bool
     _pushOutItems(::BlockSource& region, ::Container& fromContainer, ::Vec3 const& position, int attachedFace);
 
-    MCAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+    MCNAPI bool _tryAddItemsFromPos(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
     MCAPI bool _tryMoveInItem(
         ::BlockSource&                                                region,
@@ -48,7 +48,7 @@ public:
         int                                                           itemCount
     );
 
-    MCAPI bool _tryMoveItems(
+    MCNAPI bool _tryMoveItems(
         ::BlockSource& region,
         ::Container&   fromContainer,
         ::Vec3 const&  pos,
@@ -56,7 +56,7 @@ public:
         bool           canPushItems
     );
 
-    MCAPI bool _tryMoveItems(
+    MCNAPI bool _tryMoveItems(
         ::HopperCallbacks callbacks,
         ::BlockSource&    region,
         ::Container&      fromContainer,
@@ -65,8 +65,8 @@ public:
         bool              canPushItems
     );
 
-    MCAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+    MCNAPI bool _tryPullInItemsFromAboveContainer(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
 
-    MCAPI bool _tryPullInItemsFromWorld(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
+    MCNAPI bool _tryPullInItemsFromWorld(::BlockSource& region, ::Container& toContainer, ::Vec3 const& pos);
     // NOLINTEND
 };

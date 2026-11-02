@@ -37,33 +37,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerSoundDefinition(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition&&);
+    MCNAPI ServerSoundDefinition(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition&&);
 
-    MCAPI ServerSoundDefinition(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&);
+    MCNAPI ServerSoundDefinition(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&) const;
 
-    MCAPI ~ServerSoundDefinition();
+    MCNAPI ~ServerSoundDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::Sound::ServerSoundDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

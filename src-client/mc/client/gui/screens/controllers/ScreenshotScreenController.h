@@ -41,20 +41,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScreenshotScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit ScreenshotScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

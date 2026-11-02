@@ -25,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $commitValue();
+    MCNAPI void $commitValue();
 
-    MCFOLD bool $flush();
+    MCNAPI bool $flush();
     // NOLINTEND
 };
 

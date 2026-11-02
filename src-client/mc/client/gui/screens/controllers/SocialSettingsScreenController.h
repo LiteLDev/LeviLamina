@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SocialSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit SocialSettingsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI void _registerEventHandlers();
+    MCNAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

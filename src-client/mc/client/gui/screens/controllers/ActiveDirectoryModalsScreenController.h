@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActiveDirectoryModalsScreenController(
+    MCNAPI ActiveDirectoryModalsScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::ActiveDirectoryModalArgs                args
     );
@@ -45,14 +45,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::ActiveDirectoryModalArgs args);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::ActiveDirectoryModalArgs args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 };

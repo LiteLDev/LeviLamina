@@ -60,13 +60,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~InputHandlerState();
+        MCNAPI ~InputHandlerState();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -247,33 +247,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InputHandler(
+    MCNAPI InputHandler(
         ::BindingFactoryMap&                                                       bindingFactoryMap,
         ::InputMappingFactoryMap&                                                  mappingFactoryMap,
         ::InputMode                                                                startingInputMode,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
-    MCAPI void
+    MCNAPI void
     _handleMappingChange(::InputMapping const* newMapping, ::InputMapping const* oldMapping, int controllerId);
 
-    MCAPI void changeControllerId(int oldId, int newId);
+    MCNAPI void changeControllerId(int oldId, int newId);
 
-    MCAPI void clearInvalidDownKeys(int controllerId);
+    MCNAPI void clearInvalidDownKeys(int controllerId);
 
-    MCAPI ::InputMode getCurrentInputMode(int controllerId) const;
+    MCNAPI ::InputMode getCurrentInputMode(int controllerId) const;
 
-    MCAPI void initNewControllerIdOwner(int controllerId, ::InputMode initialInputMode);
+    MCNAPI void initNewControllerIdOwner(int controllerId, ::InputMode initialInputMode);
 
-    MCAPI void popInputMapping(int controllerId);
+    MCNAPI void popInputMapping(int controllerId);
 
-    MCAPI void pushInputMapping(::std::string const& mappingName, int controllerId);
+    MCNAPI void pushInputMapping(::std::string const& mappingName, int controllerId);
 
-    MCAPI void refreshInputMapping(int controllerId);
+    MCNAPI void refreshInputMapping(int controllerId);
 
-    MCAPI void registerAddClientHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
+    MCNAPI void registerAddClientHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
 
-    MCFOLD void registerAnyInputHandler(::std::function<void(::IClientInstance&)> handler);
+    MCNAPI void registerAnyInputHandler(::std::function<void(::IClientInstance&)> handler);
 
     MCAPI void registerButtonDownHandler(
         ::std::string                                            buttonName,
@@ -287,54 +287,54 @@ public:
         bool                                                     suspendable
     );
 
-    MCAPI void registerChangeUserHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
+    MCNAPI void registerChangeUserHandler(::std::function<void(::IMinecraftGame*, int, bool)> handler);
 
-    MCAPI void registerClearPointerLocationWithIdHandler(
+    MCNAPI void registerClearPointerLocationWithIdHandler(
         ::std::function<void(::ClearPointerLocationWithIdEventData const&, ::IClientInstance&)> handler
     );
 
-    MCAPI void registerClearPointerLocationsHandler(::std::function<void(::IClientInstance&)> handler);
+    MCNAPI void registerClearPointerLocationsHandler(::std::function<void(::IClientInstance&)> handler);
 
-    MCAPI void
+    MCNAPI void
     registerControlOptionHandler(::std::function<void(::ControlOptionEventData const&, ::IClientInstance&)> handler);
 
-    MCAPI void
+    MCNAPI void
     registerControllerConnectionStateChangeHandler(::std::function<void(::IClientInstance&, bool, int)> handler);
 
-    MCAPI void registerInputModeHandler(::std::function<void(::InputMode, ::IClientInstance&)> handler);
+    MCNAPI void registerInputModeHandler(::std::function<void(::InputMode, ::IClientInstance&)> handler);
 
-    MCAPI void registerNumberOfEnabledControlOptionsHandler(
+    MCNAPI void registerNumberOfEnabledControlOptionsHandler(
         ::std::function<void(::NumberOfEnabledControlOptionsEventData const&, ::IClientInstance&)> handler
     );
 
-    MCAPI void registerOverlappingControlsHandler(
+    MCNAPI void registerOverlappingControlsHandler(
         ::std::function<void(::OverlappingControlsEventData const&, ::IClientInstance&)> handler
     );
 
-    MCAPI void registerPointerLocationHandler(
+    MCNAPI void registerPointerLocationHandler(
         ::std::function<void(::PointerLocationEventData const&, ::FocusImpact, ::IClientInstance&)> handler
     );
 
-    MCAPI void registerPointerLocationWithIdHandler(
+    MCNAPI void registerPointerLocationWithIdHandler(
         ::std::function<void(::PointerLocationWithIdEventData const&, ::IClientInstance&)> handler
     );
 
-    MCAPI void registerPotentialOverlappingControlsHandler(::std::function<void(::IClientInstance&)> handler);
+    MCNAPI void registerPotentialOverlappingControlsHandler(::std::function<void(::IClientInstance&)> handler);
 
-    MCAPI void registerRawInputHandler(
+    MCNAPI void registerRawInputHandler(
         ::std::function<void(int, ::RawInputType, ::ButtonState, bool, ::IClientInstance&)> handler
     );
 
-    MCAPI void
+    MCNAPI void
     registerTextCharHandler(::std::function<void(::std::string const&, ::FocusImpact, ::IClientInstance&)> handler);
 
-    MCAPI void registerTouchPadTouchHandler(
+    MCNAPI void registerTouchPadTouchHandler(
         ::std::function<void(::TouchPadTouchEventData const&, ::FocusImpact, ::IClientInstance&)> handler
     );
 
-    MCAPI void releaseButtonsAndSticks(::std::string const& currentMappingName, int controllerId);
+    MCNAPI void releaseButtonsAndSticks(::std::string const& currentMappingName, int controllerId);
 
-    MCAPI void render(::InputRenderContext& renderContext) const;
+    MCNAPI void render(::InputRenderContext& renderContext) const;
 
     MCAPI void tick(
         ::IMinecraftGame*                                               mcGame,
@@ -343,15 +343,15 @@ public:
         bool                                                            allowMultipleClients
     );
 
-    MCAPI void updateInputMapping(::std::string const& mappingName, int controllerId);
+    MCNAPI void updateInputMapping(::std::string const& mappingName, int controllerId);
 
-    MCAPI ~InputHandler();
+    MCNAPI ~InputHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BindingFactoryMap&                                                       bindingFactoryMap,
         ::InputMappingFactoryMap&                                                  mappingFactoryMap,
         ::InputMode                                                                startingInputMode,
@@ -362,6 +362,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

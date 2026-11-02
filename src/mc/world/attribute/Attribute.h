@@ -23,18 +23,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Attribute(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
+    MCNAPI Attribute(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Attribute& getByName(::HashedString const& attribute);
+    MCNAPI static ::Attribute& getByName(::HashedString const& attribute);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
+    MCNAPI void* $ctor(::HashedString const& name, ::RedefinitionMode redefMode, bool isSyncable);
     // NOLINTEND
 };

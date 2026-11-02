@@ -155,78 +155,79 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     InGamePlayScreen(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void* $ctor(::IMinecraftGame& minecraftGame, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyInput(float a);
+    MCNAPI void $applyInput(float a);
 
-    MCAPI void $prepareFrame(::ScreenContext& screenContext);
+    MCNAPI void $prepareFrame(::ScreenContext& screenContext);
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD void $postRenderUpdate(::ScreenContext& screenContext);
+    MCNAPI void $postRenderUpdate(::ScreenContext& screenContext);
 
-    MCFOLD void $onFocusGained();
+    MCNAPI void $onFocusGained();
 
-    MCFOLD bool $renderGameBehind() const;
+    MCNAPI bool $renderGameBehind() const;
 
-    MCAPI void $tick(int nTick, int maxTick);
+    MCNAPI void $tick(int nTick, int maxTick);
 
-    MCFOLD bool $isShowingMenu() const;
+    MCNAPI bool $isShowingMenu() const;
 
-    MCFOLD bool $isModal() const;
+    MCNAPI bool $isModal() const;
 
-    MCFOLD bool $renderOnlyWhenTopMost() const;
+    MCNAPI bool $renderOnlyWhenTopMost() const;
 
-    MCAPI bool $shouldStealMouse() const;
+    MCNAPI bool $shouldStealMouse() const;
 
-    MCAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
+    MCNAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
-    MCAPI void $handlePointerPressed(bool pressed);
+    MCNAPI void $handlePointerPressed(bool pressed);
 
-    MCAPI void $init(::ScreenSizeData const& screenSizeData);
+    MCNAPI void $init(::ScreenSizeData const& screenSizeData);
 
-    MCAPI ::std::string $getScreenName() const;
+    MCNAPI ::std::string $getScreenName() const;
 
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+    MCNAPI bool $equalsScreenName(::std::string_view comparison) const;
 
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+    MCNAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
 
-    MCFOLD bool $isPlayScreen() const;
+    MCNAPI bool $isPlayScreen() const;
 
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
+    MCNAPI ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
 
-    MCFOLD bool $forceUpdateActiveSceneStackWhenPushed() const;
+    MCNAPI bool $forceUpdateActiveSceneStackWhenPushed() const;
 
-    MCAPI bool $_isPlayerSuspended() const;
+    MCNAPI bool $_isPlayerSuspended() const;
 
-    MCAPI void $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
+    MCNAPI void
+    $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
 
-    MCAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCNAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD void $_preLevelRender(::ScreenContext& screenContext);
+    MCNAPI void $_preLevelRender(::ScreenContext& screenContext);
 
-    MCAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+    MCNAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
+    MCNAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
-    MCAPI bool $_updateFreeformPickDirection(
+    MCNAPI bool $_updateFreeformPickDirection(
         float,
         ::Vec3&      outSrc,
         ::Vec3&      outDir,
@@ -234,20 +235,20 @@ public:
         ::HitResult& outLiquidHit
     );
 
-    MCAPI void $_saveMatrices(::mce::Camera& camera);
+    MCNAPI void $_saveMatrices(::mce::Camera& camera);
 
-    MCAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+    MCNAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    MCAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
+    MCNAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
 
-    MCAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
+    MCNAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
 
-    MCFOLD void $_localPlayerTurned(float yawDegrees);
+    MCNAPI void $_localPlayerTurned(float yawDegrees);
 
-    MCAPI float $_getPickRange();
+    MCNAPI float $_getPickRange();
 
-    MCFOLD bool $_shouldPushHUD();
+    MCNAPI bool $_shouldPushHUD();
 
-    MCFOLD void $_updateInGameCursor();
+    MCNAPI void $_updateInGameCursor();
     // NOLINTEND
 };

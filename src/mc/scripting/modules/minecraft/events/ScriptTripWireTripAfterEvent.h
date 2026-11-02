@@ -38,25 +38,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTripWireTripAfterEvent(
+    MCNAPI ScriptTripWireTripAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptTripWireTripAfterEvent&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptTripWireTripAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                           scope
     );

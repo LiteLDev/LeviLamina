@@ -70,9 +70,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent component);
+    MCNAPI explicit PlanterItemComponent(::SharedTypes::v1_26_0::PlanterItemComponent component);
 
-    MCAPI bool
+    MCNAPI bool
     calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
 #ifdef LL_PLAT_C
@@ -83,7 +83,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -95,19 +95,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_0::PlanterItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

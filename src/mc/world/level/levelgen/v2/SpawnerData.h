@@ -53,7 +53,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::SpawnerData
+    MCNAPI static ::br::worldgen::SpawnerData
     make(::std::string_view id, short probabilityWeight, short minCount, short maxCount);
     // NOLINTEND
 };

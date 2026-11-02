@@ -41,41 +41,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ExternalServerWorldListFacet(::World::ExternalServerWorldList& externalServerWorldList);
+    MCNAPI explicit ExternalServerWorldListFacet(::World::ExternalServerWorldList& externalServerWorldList);
 
-    MCAPI void _onWorldListUpdated();
+    MCNAPI void _onWorldListUpdated();
 
-    MCAPI void _refresh();
+    MCNAPI void _refresh();
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError>
+    MCNAPI ::std::optional<::World::ExternalServerWorldError>
     addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError>
+    MCNAPI ::std::optional<::World::ExternalServerWorldError>
     editExternalServerWorld(int id, ::std::string const& name, ::std::string const& address, int port);
 
-    MCFOLD int const getAddedServerId() const;
+    MCNAPI int const getAddedServerId() const;
 
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getExternalServerWorlds() const;
+    MCNAPI ::std::vector<::OreUI::NetworkWorldData> const& getExternalServerWorlds() const;
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
+    MCNAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::ExternalServerWorldList& externalServerWorldList);
+    MCNAPI void* $ctor(::World::ExternalServerWorldList& externalServerWorldList);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

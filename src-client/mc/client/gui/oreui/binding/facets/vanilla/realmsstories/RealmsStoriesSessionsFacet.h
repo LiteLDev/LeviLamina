@@ -39,29 +39,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsStoriesSessionsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI explicit RealmsStoriesSessionsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
 
-    MCAPI ::Realms::Stories::FetchStatus _getFetchSessionsState() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getFetchSessionsState() const;
 
-    MCAPI void _regenerateView();
+    MCNAPI void _regenerateView();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

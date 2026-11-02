@@ -42,9 +42,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWarningScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI explicit RealmsWarningScreenController(::std::shared_ptr<::MinecraftScreenModel> model);
 
-    MCAPI RealmsWarningScreenController(
+    MCNAPI RealmsWarningScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::Realms::World const&                    world,
         ::std::string const&                      ip,
@@ -57,9 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::Realms::World const&                    world,
         ::std::string const&                      ip,
@@ -72,8 +72,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::ViewRequest $_processLeaveScreen();
+    MCNAPI ::ui::ViewRequest $_processLeaveScreen();
     // NOLINTEND
 };

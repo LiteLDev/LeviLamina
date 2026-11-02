@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderParentedItemInHand(
+    MCNAPI void _renderParentedItemInHand(
         ::Mob&                                  mob,
         ::HashedString const&                   boneName,
         ::ItemStack const&                      item,
@@ -60,9 +60,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
     // NOLINTEND
 };

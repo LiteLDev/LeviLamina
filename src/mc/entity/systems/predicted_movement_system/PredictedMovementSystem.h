@@ -22,7 +22,7 @@ namespace PredictedMovementSystem { struct SystemUniforms; }
 namespace PredictedMovementSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickPredictedMovement(
+MCNAPI void _tickPredictedMovement(
     ::PredictedMovementComponent&                    predictedMovement,
     ::StateVectorComponent&                          stateVector,
     ::ActorOwnerComponent&                           actorOwnerComponent,
@@ -36,7 +36,7 @@ MCAPI void _tickPredictedMovement(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void _updateRuntimeData(::PredictedMovementComponent& component);
+MCNAPI void _updateRuntimeData(::PredictedMovementComponent& component);
 #endif
 // NOLINTEND
 

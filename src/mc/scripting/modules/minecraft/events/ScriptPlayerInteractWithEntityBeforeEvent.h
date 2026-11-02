@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithEntityBeforeEvent(
+    MCNAPI ScriptPlayerInteractWithEntityBeforeEvent(
         ::Player&                                    player,
         ::Actor&                                     target,
         ::PlayerInteractWithEntityBeforeEvent const& eventData,
@@ -48,13 +48,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player&                                    player,
         ::Actor&                                     target,
         ::PlayerInteractWithEntityBeforeEvent const& eventData,

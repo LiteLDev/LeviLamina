@@ -23,9 +23,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
+    MCNAPI void $applyEffects(::Actor& target, ::EffectDuration durationTicks, int amplification) const;
 
-    MCAPI void $onEffectExpired(::Actor& target) const;
+    MCNAPI void $onEffectExpired(::Actor& target) const;
 
 
     // NOLINTEND

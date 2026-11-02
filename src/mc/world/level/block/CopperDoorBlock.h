@@ -21,7 +21,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void $_useDoor(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
 
 
     // NOLINTEND
@@ -29,6 +29,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -48,7 +48,7 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static uint& mSequenceIdGenerator();
+        MCNAPI static uint& mSequenceIdGenerator();
         // NOLINTEND
     };
 
@@ -100,7 +100,7 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::std::string $toString() const;
+        MCNAPI ::std::string $toString() const;
 
 
         // NOLINTEND
@@ -205,7 +205,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void reset();
+        MCNAPI void reset();
         // NOLINTEND
 
     public:
@@ -234,9 +234,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _clearHistory();
+        MCNAPI void _clearHistory();
 
-        MCAPI void addHistory(
+        MCNAPI void addHistory(
             ::MoveActorAbsoluteData const&                 moveData,
             ::std::chrono::steady_clock::time_point const& receiveTimepoint
         );
@@ -321,19 +321,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCFOLD bool $isValidStartItem() const;
+        MCNAPI bool $isValidStartItem() const;
 
-        MCFOLD bool $isAddedActorItem() const;
+        MCNAPI bool $isAddedActorItem() const;
 
-        MCFOLD bool $isMotionHintItem() const;
+        MCNAPI bool $isMotionHintItem() const;
 
-        MCFOLD ::Vec3 const& $getPos() const;
+        MCNAPI ::Vec3 const& $getPos() const;
 
-        MCAPI ::Vec2 const& $getRot() const;
+        MCNAPI ::Vec2 const& $getRot() const;
 
-        MCAPI float $getYHeadRot() const;
+        MCNAPI float $getYHeadRot() const;
 
-        MCFOLD bool $isOnGround() const;
+        MCNAPI bool $isOnGround() const;
 
 
         // NOLINTEND
@@ -366,36 +366,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PredictedMovementComponent();
+    MCNAPI PredictedMovementComponent();
 
-    MCAPI void _debugLog(
+    MCNAPI void _debugLog(
         ::PredictedMovementSystemParams&                       params,
         ::PredictedMovementComponent::PredictionDbgData const& debugData
     ) const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void
+    MCNAPI void
     tickNextPosition(::PredictedMovementSystemParams& params, ::std::chrono::steady_clock::time_point const& timepoint);
 
-    MCAPI ~PredictedMovementComponent();
+    MCNAPI ~PredictedMovementComponent();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>& mGlobalRuntimePredictionData();
+    MCNAPI static ::std::unique_ptr<::PredictedMovementComponent::RuntimePredictionData>&
+    mGlobalRuntimePredictionData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

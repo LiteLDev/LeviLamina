@@ -98,7 +98,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Subscription $onChange(
+    MCNAPI ::Bedrock::PubSub::Subscription $onChange(
         ::OreUI::Detail::IdType const& id,
         ::std::function<void(
             ::OreUI::Detail::IdType const&,
@@ -106,15 +106,15 @@ public:
         )>                             observer
     );
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $onRemove(::OreUI::Detail::IdType const& id, ::std::function<void(::OreUI::Detail::IdType const&)> observer);
 
-    MCAPI void $setState(
+    MCNAPI void $setState(
         ::OreUI::Detail::IdType const&                                         id,
         ::OreUI::Detail::IInvocationStateTracker::InvocationInformation const& information
     );
 
-    MCAPI void $setState(
+    MCNAPI void $setState(
         ::OreUI::Detail::IdType const& id,
         ::OreUI::InvocationState       state,
         ::OreUI::InvocationResult      result,
@@ -122,7 +122,7 @@ public:
         ::std::optional<int>           error
     );
 
-    MCAPI void $remove(::OreUI::Detail::IdType const& id);
+    MCNAPI void $remove(::OreUI::Detail::IdType const& id);
     // NOLINTEND
 
 public:

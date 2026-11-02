@@ -10,9 +10,9 @@ struct TickingSystemWithInfo;
 namespace CatLieDownAnimationSystems {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createQueuePurrSoundSystem();
+MCNAPI ::TickingSystemWithInfo createQueuePurrSoundSystem();
 
-MCAPI ::TickingSystemWithInfo createUpdateLieDownAmountSystem();
+MCNAPI ::TickingSystemWithInfo createUpdateLieDownAmountSystem();
 // NOLINTEND
 
 } // namespace CatLieDownAnimationSystems

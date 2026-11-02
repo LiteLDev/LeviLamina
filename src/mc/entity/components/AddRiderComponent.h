@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reloadComponent(::Actor& owner);
+    MCNAPI void reloadComponent(::Actor& owner);
     // NOLINTEND
 };

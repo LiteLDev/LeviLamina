@@ -42,19 +42,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CloudSyncFlowQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit CloudSyncFlowQuery(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

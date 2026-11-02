@@ -84,75 +84,71 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HopperBlockActor(::BlockPos const& pos);
+    MCNAPI explicit HopperBlockActor(::BlockPos const& pos);
 
-    MCAPI int _countItems() const;
+    MCNAPI int _countItems() const;
 
-    MCAPI void _tick(::BlockSource& region, int maxRecursion);
+    MCNAPI void _tick(::BlockSource& region, int maxRecursion);
 
-    MCAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
+    MCNAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 
-    MCAPI bool isAttachedToChestAndFurnace(::BlockSource& region);
+    MCNAPI bool isAttachedToChestAndFurnace(::BlockSource& region);
 
-    MCAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
+    MCNAPI bool isAttachedToContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
 
-    MCAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
+    MCNAPI bool isSourceOfContainerType(::BlockSource& region, ::SharedTypes::Legacy::ContainerType containerType);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD void $startOpen(::Actor&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCFOLD void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCFOLD void $setContainerChanged(int slot);
+    MCNAPI void $setContainerChanged(int slot);
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCNAPI void $onRemoved(::BlockSource&);
 
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
+    MCNAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const&);
 
-    MCFOLD void $onMove();
+    MCNAPI void $onMove();
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-#ifdef LL_PLAT_S
-    MCFOLD ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-#else // LL_PLAT_C
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
-#endif
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource&);
 
 
     // NOLINTEND

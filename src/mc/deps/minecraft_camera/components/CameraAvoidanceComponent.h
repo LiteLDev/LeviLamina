@@ -37,9 +37,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CameraAvoidanceComponent(::MinecraftCamera::CameraAvoidanceComponent const&);
+    MCNAPI CameraAvoidanceComponent(::MinecraftCamera::CameraAvoidanceComponent const&);
 
-    MCAPI ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
+    MCNAPI ::MinecraftCamera::CameraAvoidanceComponent& operator=(::MinecraftCamera::CameraAvoidanceComponent&&);
 #endif
     // NOLINTEND
 
@@ -47,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::MinecraftCamera::CameraAvoidanceComponent const&);
+    MCNAPI void* $ctor(::MinecraftCamera::CameraAvoidanceComponent const&);
 #endif
     // NOLINTEND
 };

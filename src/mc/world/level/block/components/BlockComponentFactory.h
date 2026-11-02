@@ -62,15 +62,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
+        MCNAPI ::BlockComponentFactory::ComponentMetadata& operator=(::BlockComponentFactory::ComponentMetadata&&);
 
-        MCAPI ~ComponentMetadata();
+        MCNAPI ~ComponentMetadata();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -95,33 +95,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _buildBlockComponentsSchema();
+    MCNAPI void _buildBlockComponentsSchema();
 
-    MCAPI void _registerLegacyDescriptions(::PackLoadContext const* packLoadContext);
+    MCNAPI void _registerLegacyDescriptions(::PackLoadContext const* packLoadContext);
 
-    MCAPI ::std::unique_ptr<::BlockComponentDescription>
+    MCNAPI ::std::unique_ptr<::BlockComponentDescription>
     createDescription(::std::string const& name, ::cereal::ReflectionCtx const& ctx) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     addAllComponentUpgrades(::CerealDocumentUpgrader& documentUpgrader, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void registerAllCerealDescriptions(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata> const*
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata> const*
     registeredCerealComponents(::cereal::ReflectionCtx const& ctx);
 
-    MCAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
+    MCNAPI static ::std::unordered_map<::std::string, ::BlockComponentFactory::ComponentMetadata>&
     setupContextInstanceIfRequired(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

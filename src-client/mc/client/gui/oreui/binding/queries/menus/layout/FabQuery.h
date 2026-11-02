@@ -59,16 +59,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FabQuery(
+    MCNAPI FabQuery(
         ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> localHydratingLayoutServiceCache,
         ::std::string const&                                               fabId
     );
 
-    MCAPI void _continueFab(::std::string const& fabId, ::std::string const& continuationToken);
+    MCNAPI void _continueFab(::std::string const& fabId, ::std::string const& continuationToken);
 
-    MCAPI void _fetchFab(::std::string const& fabId);
+    MCNAPI void _fetchFab(::std::string const& fabId);
 
-    MCAPI void _publishFab(
+    MCNAPI void _publishFab(
         ::std::variant<::std::variant<
             ::Bedrock::Services::Discriminated<::Bedrock::Services::layout::model::FabBase, 0>,
             ::Bedrock::Services::Discriminated<::Bedrock::Services::layout::model::ExperienceFab, 1>,
@@ -91,7 +91,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache> localHydratingLayoutServiceCache,
         ::std::string const&                                               fabId
     );

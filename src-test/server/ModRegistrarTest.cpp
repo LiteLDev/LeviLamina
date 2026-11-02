@@ -48,24 +48,16 @@ constexpr std::string_view ConflictTarget   = "LLTestConflictTarget";
 constexpr std::string_view ExistingTarget   = "LLTestExistingTarget";
 constexpr std::string_view ConflictConsumer = "LLTestConflictConsumer";
 constexpr std::string_view ClientOnly       = "LLTestClientOnly";
+constexpr std::string_view CascadeProvider  = "LLTestCascadeProvider";
+constexpr std::string_view CascadeBranchB   = "LLTestCascadeBranchB";
+constexpr std::string_view CascadeBranchC   = "LLTestCascadeBranchC";
+constexpr std::string_view CascadeConsumer  = "LLTestCascadeConsumer";
 
 constexpr std::array TestModNames{
-    LoadBeforeTarget,
-    LoadBeforeSource,
-    Provider,
-    RequiredConsumer,
-    OptionalConsumer,
-    LateProvider,
-    LateConsumer,
-    MissingProvider,
-    MissingConsumer,
-    LoadFailure,
-    UnloadFailure,
-    ConflictSource,
-    ConflictTarget,
-    ExistingTarget,
-    ConflictConsumer,
-    ClientOnly,
+    LoadBeforeTarget, LoadBeforeSource, Provider,        RequiredConsumer, OptionalConsumer,
+    LateProvider,     LateConsumer,     MissingProvider, MissingConsumer,  LoadFailure,
+    UnloadFailure,    ConflictSource,   ConflictTarget,  ExistingTarget,   ConflictConsumer,
+    ClientOnly,       CascadeProvider,  CascadeBranchB,  CascadeBranchC,   CascadeConsumer,
 };
 
 class TestMod final : public Mod {
@@ -299,6 +291,107 @@ TEST_F(ModRegistrarLifecycleTest, BoundRequiredAndOptionalDependenciesProtectLif
     EXPECT_FALSE(registrar.unloadMod(Provider));
     EXPECT_TRUE(registrar.unloadMod(OptionalConsumer));
     EXPECT_TRUE(registrar.unloadMod(Provider));
+}
+
+TEST_F(ModRegistrarLifecycleTest, CascadeLoadsDependentsWithSharedDependencies) {
+    writeManifest(CascadeProvider);
+    writeManifest(
+        CascadeBranchB,
+        {
+            {"dependencies", nlohmann::json::array({dependency(CascadeProvider)})}
+    }
+    );
+    writeManifest(
+        CascadeBranchC,
+        {
+            {"dependencies", nlohmann::json::array({dependency(CascadeProvider)})}
+    }
+    );
+    writeManifest(
+        CascadeConsumer,
+        {
+            {"dependencies", nlohmann::json::array({dependency(CascadeBranchB), dependency(CascadeBranchC)})}
+    }
+    );
+
+    auto& registrar = ModRegistrar::getInstance();
+    auto  output    = executeLlCommand("ll load LLTestCascadeProvider cascade");
+    ASSERT_GT(output.mSuccessCount, 0);
+
+    auto const order = registrar.getSortedModNames();
+    for (auto const name : {CascadeProvider, CascadeBranchB, CascadeBranchC, CascadeConsumer}) {
+        EXPECT_TRUE(ModManagerRegistry::getInstance().hasMod(name));
+        EXPECT_NE(std::ranges::find(order, name), order.end());
+    }
+
+    auto const providerPosition = std::ranges::find(order, CascadeProvider);
+    auto const branchBPosition  = std::ranges::find(order, CascadeBranchB);
+    auto const branchCPosition  = std::ranges::find(order, CascadeBranchC);
+    auto const consumerPosition = std::ranges::find(order, CascadeConsumer);
+    EXPECT_LT(providerPosition, branchBPosition);
+    EXPECT_LT(providerPosition, branchCPosition);
+    EXPECT_LT(branchBPosition, consumerPosition);
+    EXPECT_LT(branchCPosition, consumerPosition);
+
+    EXPECT_EQ(
+        registrar.getDependencies(CascadeConsumer),
+        (std::vector<std::string>{"LLTestCascadeBranchB", "LLTestCascadeBranchC"})
+    );
+    EXPECT_EQ(
+        registrar.getDependents(CascadeProvider),
+        (std::vector<std::string>{"LLTestCascadeBranchB", "LLTestCascadeBranchC"})
+    );
+
+    output = executeLlCommand("ll show LLTestCascadeBranchB cascade");
+    std::vector<std::string> lines;
+    for (auto const& message : output.mMessages) {
+        lines.emplace_back(message.mMessageId);
+    }
+    auto const dependencies = std::ranges::find(lines, "Dependencies:");
+    auto const dependents   = std::ranges::find(lines, "Dependents:");
+    ASSERT_NE(dependencies, lines.end());
+    ASSERT_NE(dependents, lines.end());
+    EXPECT_EQ(
+        std::vector<std::string>(dependencies + 1, dependents),
+        (std::vector<std::string>{"  LLTestCascadeProvider"})
+    );
+    EXPECT_EQ(
+        std::vector<std::string>(dependents + 1, lines.end()),
+        (std::vector<std::string>{"  LLTestCascadeConsumer"})
+    );
+}
+
+TEST_F(ModRegistrarLifecycleTest, CascadeReloadAndUnloadHandleMissingLifecycleCallbacks) {
+    writeManifest(Provider);
+    writeManifest(
+        RequiredConsumer,
+        {
+            {"dependencies", nlohmann::json::array({dependency(Provider)})}
+    }
+    );
+
+    auto& registrar = ModRegistrar::getInstance();
+    auto  result    = registrar.loadMod(Provider);
+    ASSERT_TRUE(result) << result.error().message();
+    result = registrar.loadMod(RequiredConsumer);
+    ASSERT_TRUE(result) << result.error().message();
+
+    auto const loadedOrder = registrar.getSortedModNames();
+    auto       p           = std::ranges::find(loadedOrder, Provider);
+    auto       c           = std::ranges::find(loadedOrder, RequiredConsumer);
+    EXPECT_NE(p, loadedOrder.end());
+    EXPECT_NE(c, loadedOrder.end());
+    EXPECT_LT(p, c);
+
+    // TestMod does not register disable or unload callbacks.
+    EXPECT_TRUE(registrar.reloadMod(Provider, true));
+    EXPECT_TRUE(ModManagerRegistry::getInstance().hasMod(Provider));
+    EXPECT_TRUE(ModManagerRegistry::getInstance().hasMod(RequiredConsumer));
+    EXPECT_EQ(registrar.getSortedModNames(), loadedOrder);
+
+    EXPECT_TRUE(registrar.unloadMod(Provider, true));
+    EXPECT_FALSE(ModManagerRegistry::getInstance().hasMod(Provider));
+    EXPECT_FALSE(ModManagerRegistry::getInstance().hasMod(RequiredConsumer));
 }
 
 TEST_F(ModRegistrarLifecycleTest, OptionalDependencyFailuresDoNotBlockOrRetroactivelyBind) {

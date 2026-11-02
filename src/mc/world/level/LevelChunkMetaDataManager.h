@@ -32,17 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _consolidateLevelChunkMetaData(::LevelChunk& levelChunk);
+    MCNAPI void _consolidateLevelChunkMetaData(::LevelChunk& levelChunk);
 
-    MCAPI void _onNewDimensionCreated(::Dimension& dimension);
+    MCNAPI void _onNewDimensionCreated(::Dimension& dimension);
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
+    MCNAPI void registerOnNewDimensionCreated(::IDimensionManagerConnector& dimensionManagerConnector);
 
-    MCAPI void tick();
+    MCNAPI void tick();
 
-    MCAPI void updateLevelChunkMetaDataForSaving(
+    MCNAPI void updateLevelChunkMetaDataForSaving(
         ::LevelChunk&                                     lc,
         ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
         ::DimensionHeightRange const&                     dimensionHeightRange
@@ -52,7 +52,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void inferInitialMetaDataAfterDeserialization(
+    MCNAPI static void inferInitialMetaDataAfterDeserialization(
         ::LevelChunk&                                     lc,
         ::LevelSeed64                                     generationSeed,
         ::GeneratorType                                   generatorType,
@@ -63,13 +63,13 @@ public:
         ::LevelChunkMetaData&                             metaData
     );
 
-    MCAPI static void inferTargetMetaData(
+    MCNAPI static void inferTargetMetaData(
         ::LevelChunkMetaDataBaseGameVersionWrapper const& levelChunkMetaDataBaseGameVersionWrapper,
         ::DimensionType                                   dimensionID,
         ::LevelChunkMetaData&                             metaData
     );
 
-    MCAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
+    MCNAPI static ::std::shared_ptr<::LevelChunkMetaData> initializeLevelChunkMetaData(
         ::DimensionType                                   dimensionId,
         ::std::string const&                              dimensionName,
         ::DimensionHeightRange const&                     dimensionHeightRange,

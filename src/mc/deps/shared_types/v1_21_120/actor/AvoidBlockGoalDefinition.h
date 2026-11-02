@@ -40,22 +40,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&
     operator=(::SharedTypes::v1_21_120::AvoidBlockGoalDefinition&&);
 
-    MCAPI ~AvoidBlockGoalDefinition();
+    MCNAPI ~AvoidBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

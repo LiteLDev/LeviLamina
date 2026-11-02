@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToLiquidGoal(
+    MCNAPI MoveToLiquidGoal(
         ::Mob&                                mob,
         ::std::string                         name,
         ::GoalId const&                       goalId,
@@ -53,22 +53,22 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::SharedTypes::v1_26_20::MaterialType materialType);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
 
     // NOLINTEND

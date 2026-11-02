@@ -27,6 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setGiftRecipientError(::Marketplace::GiftRecipientErrorState errorState, ::std::string message);
+    MCNAPI void setGiftRecipientError(::Marketplace::GiftRecipientErrorState errorState, ::std::string message);
     // NOLINTEND
 };

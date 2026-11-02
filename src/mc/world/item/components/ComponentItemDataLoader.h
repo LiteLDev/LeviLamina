@@ -38,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ComponentItemDataLoader(
+    MCNAPI ComponentItemDataLoader(
         ::BedrockLoadContext const&                                              bedrockLoadContext,
         ::PackLoadInfo const&                                                    packLoadInfo,
         ::cereal::ReflectionCtx const&                                           ctx,
         ::std::function<void(::Puv::LoadResult<::ComponentItemDataAll_Latest>&)> validatorFn
     );
 
-    MCAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
+    MCNAPI ::Puv::LoadResult<::ComponentItemDataAll_Latest>
     load(::Json::Value const& input, ::SemVersion const& documentVersion) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::BedrockLoadContext const&                                              bedrockLoadContext,
         ::PackLoadInfo const&                                                    packLoadInfo,
         ::cereal::ReflectionCtx const&                                           ctx,

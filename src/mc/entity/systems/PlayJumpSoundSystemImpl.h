@@ -87,7 +87,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Views(
+        MCNAPI explicit Views(
             ::StrictExecutionContext<
                 ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
                 ::Read<
@@ -109,7 +109,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::StrictExecutionContext<
                 ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
                 ::Read<
@@ -180,7 +180,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doPlayJumpSoundSystem(
+    MCNAPI static void doPlayJumpSoundSystem(
         ::StrictEntityContext const&                                             entity,
         ::ActorDataFlagComponent const&                                          actorFlags,
         ::ActorDefinitionIdentifierComponent const&                              actorIdentifier,
@@ -198,7 +198,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
             ::Read<
@@ -216,7 +216,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::TriggerJumpRequestComponent, ::LavaSlimeFlagComponent>,
             ::Read<

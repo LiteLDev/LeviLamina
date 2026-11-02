@@ -20,6 +20,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setActorDefByName(::std::string const& name);
+    MCNAPI void setActorDefByName(::std::string const& name);
     // NOLINTEND
 };

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModelParent(
+    MCNAPI ModelParent(
         ::HashedString const&     parentName,
         ::Json::Value&            value,
         ::SemVersion const&       fileVersion,
@@ -39,13 +39,13 @@ public:
         bool                      isFromBaseGamePack
     );
 
-    MCAPI ~ModelParent();
+    MCNAPI ~ModelParent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&     parentName,
         ::Json::Value&            value,
         ::SemVersion const&       fileVersion,
@@ -58,6 +58,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

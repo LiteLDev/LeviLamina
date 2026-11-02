@@ -33,8 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Sound getSound(::SharedTypes::Legacy::LevelSoundEvent eventType, ::std::string const& blockType) const;
+    MCNAPI ::Sound getSound(::SharedTypes::Legacy::LevelSoundEvent eventType, ::std::string const& blockType) const;
 
-    MCAPI void parse(::Json::Value const& root);
+    MCNAPI void parse(::Json::Value const& root);
     // NOLINTEND
 };

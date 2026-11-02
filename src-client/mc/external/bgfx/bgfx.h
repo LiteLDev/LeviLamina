@@ -55,19 +55,19 @@ namespace bx { struct ReaderSeekerI; }
 namespace bgfx {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 blit(::bgfx::RendererContextI* _renderCtx, ::bgfx::TextVideoMemBlitter& _blitter, ::bgfx::TextVideoMem const& _mem);
 
-MCAPI void charsetFillTexture(uchar const* _charset, uchar* _rgba, uint _height, uint _pitch, uint _bpp);
+MCNAPI void charsetFillTexture(uchar const* _charset, uchar* _rgba, uint _height, uint _pitch, uint _bpp);
 
-MCAPI int compareDescending(void const* _lhs, void const* _rhs);
+MCNAPI int compareDescending(void const* _lhs, void const* _rhs);
 
-MCAPI ::bgfx::InitResult continueInit(::bgfx::Init const& _init, bool async);
+MCNAPI ::bgfx::InitResult continueInit(::bgfx::Init const& _init, bool async);
 
-MCAPI ::bgfx::ShaderHandle
+MCNAPI ::bgfx::ShaderHandle
 createEmbeddedShader(::bgfx::EmbeddedShader const* _es, ::bgfx::RendererType::Enum _type, char const* _name);
 
-MCAPI ::bgfx::TextureHandle createTexture2D(
+MCNAPI ::bgfx::TextureHandle createTexture2D(
     ::bgfx::BackbufferRatio::Enum _ratio,
     ushort                        _width,
     ushort                        _height,
@@ -79,7 +79,7 @@ MCAPI ::bgfx::TextureHandle createTexture2D(
     uchar                         _numMips
 );
 
-MCAPI ::bgfx::TextureHandle createTexture3D(
+MCNAPI ::bgfx::TextureHandle createTexture3D(
     ushort                      _width,
     ushort                      _height,
     ushort                      _depth,
@@ -89,7 +89,7 @@ MCAPI ::bgfx::TextureHandle createTexture3D(
     ::bgfx::Memory const*       _mem
 );
 
-MCAPI ::bgfx::TextureHandle createTextureCube(
+MCNAPI ::bgfx::TextureHandle createTextureCube(
     ushort                      _size,
     bool                        _hasMips,
     ushort                      _numLayers,
@@ -99,17 +99,17 @@ MCAPI ::bgfx::TextureHandle createTextureCube(
     uchar                       _numMips
 );
 
-MCAPI void fatal(::bgfx::Fatal::Enum _code, char const* _format, ...);
+MCNAPI void fatal(::bgfx::Fatal::Enum _code, char const* _format, ...);
 
-MCAPI uchar getSupportedRenderers(uchar max, ::bgfx::RendererType::Enum* _enum);
+MCNAPI uchar getSupportedRenderers(uchar max, ::bgfx::RendererType::Enum* _enum);
 
-MCAPI void handleErrorState(::bgfx::ErrorState::Enum errorState);
+MCNAPI void handleErrorState(::bgfx::ErrorState::Enum errorState);
 
-MCAPI ::bgfx::Attrib::Enum idToAttrib(ushort id);
+MCNAPI ::bgfx::Attrib::Enum idToAttrib(ushort id);
 
-MCAPI ::bgfx::InitResult initBegin(::bgfx::Init const& _init, ::bgfx::ErrorState::Enum& errorState);
+MCNAPI ::bgfx::InitResult initBegin(::bgfx::Init const& _init, ::bgfx::ErrorState::Enum& errorState);
 
-MCAPI void isTextureValid(
+MCNAPI void isTextureValid(
     ushort                      _depth,
     bool                        _cubeMap,
     ushort                      _numLayers,
@@ -118,27 +118,27 @@ MCAPI void isTextureValid(
     ::bx::Error*                _err
 );
 
-MCAPI ::bgfx::PredefinedUniform::Enum nameToPredefinedUniformEnum(char const* _name);
+MCNAPI ::bgfx::PredefinedUniform::Enum nameToPredefinedUniformEnum(char const* _name);
 
-MCAPI uchar parseAttr(char*& _ptr, uchar _default);
+MCNAPI uchar parseAttr(char*& _ptr, uchar _default);
 
-MCAPI uchar parseAttrTo(char*& _ptr, char _to, uchar _default);
+MCNAPI uchar parseAttrTo(char*& _ptr, char _to, uchar _default);
 
-MCAPI int read(::bx::ReaderSeekerI* _reader, ::bgfx::DxbcContext& _dxbc, ::bx::Error* _err);
+MCNAPI int read(::bx::ReaderSeekerI* _reader, ::bgfx::DxbcContext& _dxbc, ::bx::Error* _err);
 
-MCAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcInstruction& _instruction, ::bx::Error* _err);
+MCNAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcInstruction& _instruction, ::bx::Error* _err);
 
-MCAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcOperand& _operand, ::bx::Error* _err);
+MCNAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcOperand& _operand, ::bx::Error* _err);
 
-MCAPI int read(::bx::ReaderSeekerI* _reader, ::bgfx::DxbcSignature& _signature, ::bx::Error* _err);
+MCNAPI int read(::bx::ReaderSeekerI* _reader, ::bgfx::DxbcSignature& _signature, ::bx::Error* _err);
 
-MCAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcSubOperand& _subOperand, ::bx::Error* _err);
+MCNAPI int read(::bx::ReaderI* _reader, ::bgfx::DxbcSubOperand& _subOperand, ::bx::Error* _err);
 
-MCAPI ::bgfx::RenderFrame::Enum renderFrame(int _msecs);
+MCNAPI ::bgfx::RenderFrame::Enum renderFrame(int _msecs);
 
-MCAPI ::bgfx::RendererContextI* rendererCreate(::bgfx::Init const& _init, bool asyncInit, bool& syncOptional);
+MCNAPI ::bgfx::RendererContextI* rendererCreate(::bgfx::Init const& _init, bool asyncInit, bool& syncOptional);
 
-MCAPI void rendererUpdateUniforms(
+MCNAPI void rendererUpdateUniforms(
     ::bgfx::RendererContextI*                                              _renderCtx,
     ::bgfx::UniformBuffer const*                                           _uniformBuffer,
     uint                                                                   _begin,
@@ -147,7 +147,7 @@ MCAPI void rendererUpdateUniforms(
     void*                                                                  _scopeContext
 );
 
-MCAPI void schedulePreBlasSkinningDispatch(
+MCNAPI void schedulePreBlasSkinningDispatch(
     ::bgfx::DynamicVertexBufferHandle _preSkinVertexBufferHandle,
     uint                              _preSkinVertexOffset,
     ::bgfx::DynamicVertexBufferHandle _postSkinVertexBufferHandle,
@@ -158,73 +158,73 @@ MCAPI void schedulePreBlasSkinningDispatch(
     char const*                       _debugName
 );
 
-MCAPI void setPaletteColor(uchar _index, uint _rgba);
+MCNAPI void setPaletteColor(uchar _index, uint _rgba);
 
-MCAPI void shutdown();
+MCNAPI void shutdown();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::_GUID const& IID_IDXGIDevice3();
+MCNAPI ::_GUID const& IID_IDXGIDevice3();
 
-MCAPI ::_GUID const& IID_IDXGIFactory2();
+MCNAPI ::_GUID const& IID_IDXGIFactory2();
 
-MCAPI ::bgfx::DREDData& g_DREDData();
+MCNAPI ::bgfx::DREDData& g_DREDData();
 
-MCAPI ::bx::AllocatorI*& g_allocator();
+MCNAPI ::bx::AllocatorI*& g_allocator();
 
-MCAPI ::bgfx::CallbackI*& g_callback();
+MCNAPI ::bgfx::CallbackI*& g_callback();
 
-MCAPI ::bgfx::Caps& g_caps();
+MCNAPI ::bgfx::Caps& g_caps();
 
-MCAPI ::bgfx::InitStats& g_initStats();
+MCNAPI ::bgfx::InitStats& g_initStats();
 
-MCAPI ::bgfx::InternalData& g_internalData();
+MCNAPI ::bgfx::InternalData& g_internalData();
 
-MCAPI ::bgfx::PlatformData& g_platformData();
+MCNAPI ::bgfx::PlatformData& g_platformData();
 
-MCAPI bool& g_platformDataChangedSinceReset();
+MCNAPI bool& g_platformDataChangedSinceReset();
 
-MCAPI ::std::add_lvalue_reference_t<uint const[]> g_uniformTypeSize();
+MCNAPI ::std::add_lvalue_reference_t<uint const[]> g_uniformTypeSize();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle** const, uint*)>
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle** const, uint*)>
 nvApiEnumPhysicalGPUs();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(ulong*, char* const)> nvApiGetDriverAndBranchVersion();
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(ulong*, char* const)> nvApiGetDriverAndBranchVersion();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle*, char* const)>
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle*, char* const)>
 nvApiGpuGetFullName();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle*, ::bgfx::NvMemoryInfoV2*)>
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)(::bgfx::NvPhysicalGpuHandle*, ::bgfx::NvMemoryInfoV2*)>
 nvApiGpuGetMemoryInfo();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)()> nvApiInitialize();
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)()> nvApiInitialize();
 
-MCAPI ::std::add_lvalue_reference_t<void* (*)(uint)> nvApiQueryInterface();
+MCNAPI ::std::add_lvalue_reference_t<void* (*)(uint)> nvApiQueryInterface();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)()> nvApiUnload();
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::NvApiStatus (*)()> nvApiUnload();
 
-MCAPI ::bgfx::AllocatorStub*& s_allocatorStub();
+MCNAPI ::bgfx::AllocatorStub*& s_allocatorStub();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::AttribToId[]> s_attribToId();
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::AttribToId[]> s_attribToId();
 
-MCAPI ::std::add_lvalue_reference_t<uchar (*[])[4][7]> s_attribTypeSize();
+MCNAPI ::std::add_lvalue_reference_t<uchar (*[])[4][7]> s_attribTypeSize();
 
-MCAPI ::bgfx::CallbackStub*& s_callbackStub();
+MCNAPI ::bgfx::CallbackStub*& s_callbackStub();
 
 MCAPI ::bgfx::Context*& s_ctx();
 
-MCAPI ::std::add_lvalue_reference_t<::_GUID const[]> s_dxgiDeviceIIDs();
+MCNAPI ::std::add_lvalue_reference_t<::_GUID const[]> s_dxgiDeviceIIDs();
 
-MCAPI bool& s_graphicsDebuggerPresent();
+MCNAPI bool& s_graphicsDebuggerPresent();
 
-MCAPI bool& s_renderFrameCalled();
+MCNAPI bool& s_renderFrameCalled();
 
-MCAPI ::std::add_lvalue_reference_t<::bgfx::RendererCreator[]> s_rendererCreator();
+MCNAPI ::std::add_lvalue_reference_t<::bgfx::RendererCreator[]> s_rendererCreator();
 
-MCAPI uint& s_threadIndex();
+MCNAPI uint& s_threadIndex();
 
-MCAPI ::std::add_lvalue_reference_t<char const*[]> s_topologyName();
+MCNAPI ::std::add_lvalue_reference_t<char const*[]> s_topologyName();
 // NOLINTEND
 
 } // namespace bgfx

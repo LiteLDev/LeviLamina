@@ -19,25 +19,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefaultAllocator();
+    MCNAPI DefaultAllocator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $realloc(void* _ptr, uint64 _size, uint64 _align, char const* _file, uint _line);
+    MCNAPI void* $realloc(void* _ptr, uint64 _size, uint64 _align, char const* _file, uint _line);
     // NOLINTEND
 
 public:

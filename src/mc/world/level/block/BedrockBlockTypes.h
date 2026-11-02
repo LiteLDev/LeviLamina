@@ -12,7 +12,7 @@ namespace BedrockBlockTypes {
 // NOLINTBEGIN
 MCAPI void registerBlocks(::BaseGameVersion const& baseGameVersion);
 
-MCAPI void unregisterBlocks();
+MCNAPI void unregisterBlocks();
 // NOLINTEND
 
 } // namespace BedrockBlockTypes

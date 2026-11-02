@@ -16,9 +16,9 @@ struct ExperienceRewardComponentDefinition : public ::SharedTypes::v1_21_110::Ex
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void upgrade(
+    MCNAPI static void upgrade(
         ::SharedTypes::v1_21_110::ExperienceRewardComponentDefinition oldDef,
         ::SharedTypes::v1_26_0::ExperienceRewardComponentDefinition&  newDef
     );

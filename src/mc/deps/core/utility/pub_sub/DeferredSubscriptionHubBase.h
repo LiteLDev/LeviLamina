@@ -45,29 +45,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI uint64 $runDeferredEvents(uint64 maxToRun);
+    MCNAPI uint64 $runDeferredEvents(uint64 maxToRun);
 
-    MCAPI uint64 $runDeferredEventsForDuration(::std::chrono::milliseconds msec);
+    MCNAPI uint64 $runDeferredEventsForDuration(::std::chrono::milliseconds msec);
 
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI uint64 $erase(::Bedrock::PubSub::RawSubscription& subscription);
+    MCNAPI uint64 $erase(::Bedrock::PubSub::RawSubscription& subscription);
 
-    MCAPI uint64 $size() const;
+    MCNAPI uint64 $size() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $empty() const;
-#else // LL_PLAT_C
-    MCFOLD bool $empty() const;
-#endif
+    MCNAPI bool $empty() const;
 
-    MCAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
+    MCNAPI void $_join(::Bedrock::PubSub::DeferredSubscription&& subscription);
 
 
     // NOLINTEND

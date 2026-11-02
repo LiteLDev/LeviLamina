@@ -23,33 +23,33 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string composeHardcoreRoute(::Realms::World const& world);
+    MCNAPI static ::std::string composeHardcoreRoute(::Realms::World const& world);
 
-    MCAPI static ::std::string composeRoute(::OreUI::RealmsStoriesRouteHandler::Tab tab, ::Realms::World const& world);
+    MCNAPI static ::std::string composeRoute(::OreUI::RealmsStoriesRouteHandler::Tab tab, ::Realms::World const& world);
 
-    MCAPI static ::std::string composeShareLinkRoute(::Realms::World const& world);
+    MCNAPI static ::std::string composeShareLinkRoute(::Realms::World const& world);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[23]> COMMENTS_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[23]> COMMENTS_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[41]> HARDCORE_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[41]> HARDCORE_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[18]> NEW_STORY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[18]> NEW_STORY_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[33]> REPORT_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[33]> REPORT_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[25]> SETTINGS_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[25]> SETTINGS_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SHARELINK_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SHARELINK_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[16]> STORIES_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[16]> STORIES_ROUTE();
 
-    MCAPI static ::Realms::RealmId& mWorldId();
+    MCNAPI static ::Realms::RealmId& mWorldId();
     // NOLINTEND
 };
 

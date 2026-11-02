@@ -122,21 +122,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
+    MCNAPI void _onChunkLoaded(::ChunkSource&, ::LevelChunk& levelChunk, int);
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
+    MCNAPI void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)>);
 #else // LL_PLAT_C
-    MCFOLD void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
+    MCNAPI void $visit(::brstd::function_ref<void(::ClientChunkPerformanceData&)> visitor);
 #endif
 
-    MCAPI void $resetAll();
+    MCNAPI void $resetAll();
 
 
     // NOLINTEND

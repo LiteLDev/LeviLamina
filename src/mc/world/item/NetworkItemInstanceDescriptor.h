@@ -35,27 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
+    MCNAPI explicit NetworkItemInstanceDescriptor(::ItemInstance const& item);
 
-    MCAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
+    MCNAPI ::ItemInstance getItemInstance(::BlockPalette const& blockPalette) const;
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
 #ifdef LL_PLAT_C
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemInstance const& item);
+    MCNAPI void* $ctor(::ItemInstance const& item);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

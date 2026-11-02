@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SunsettingScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::std::string& title);
+    MCNAPI SunsettingScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::std::string& title);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::string& title);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::string& title);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCFOLD void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

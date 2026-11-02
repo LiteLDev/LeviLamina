@@ -23,26 +23,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationControllerPtr(::ActorAnimationControllerGroup& group, ::HashedString const& name);
+    MCNAPI ActorAnimationControllerPtr(::ActorAnimationControllerGroup& group, ::HashedString const& name);
 
-    MCAPI ~ActorAnimationControllerPtr();
+    MCNAPI ~ActorAnimationControllerPtr();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorAnimationControllerPtr const& NONE();
+    MCNAPI static ::ActorAnimationControllerPtr const& NONE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorAnimationControllerGroup& group, ::HashedString const& name);
+    MCNAPI void* $ctor(::ActorAnimationControllerGroup& group, ::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

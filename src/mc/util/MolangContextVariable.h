@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MolangContextVariable(::HashedString value);
+    MCNAPI explicit MolangContextVariable(::HashedString value);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::HashedString value);
+    MCNAPI void* $ctor(::HashedString value);
     // NOLINTEND
 };

@@ -54,20 +54,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void upgrade_v1_26_40(
+    MCNAPI static void upgrade_v1_26_40(
         ::Puv::CerealUpgrader<
             ::SharedTypes::v1_26_30::ActorDocument,
             ::SharedTypes::v1_26_40::ActorDocument,
             ::JsonComponentGlueUtils::CustomUpgradeData const&>& upgrader
     );
 
-    MCAPI static void validateFunction(::SharedTypes::v1_26_60::ActorDocument const& doc, ::Puv::Logger& logger);
+    MCNAPI static void validateFunction(::SharedTypes::v1_26_60::ActorDocument const& doc, ::Puv::Logger& logger);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ActorMigratedDefinitionFactory const*& mFactoryPtr();
+    MCNAPI static ::ActorMigratedDefinitionFactory const*& mFactoryPtr();
     // NOLINTEND
 };
 

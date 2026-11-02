@@ -26,25 +26,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Sound(::Json::Value const& root, ::std::string const& name, float vmin, float vmax, float pmin, float pmax);
+    MCNAPI Sound(::Json::Value const& root, ::std::string const& name, float vmin, float vmax, float pmin, float pmax);
 
-    MCAPI float getPitch(::Random& random) const;
+    MCNAPI float getPitch(::Random& random) const;
 
-    MCAPI float getVolume(::Random& random) const;
+    MCNAPI float getVolume(::Random& random) const;
 
-    MCAPI ~Sound();
+    MCNAPI ~Sound();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Json::Value const& root, ::std::string const& name, float vmin, float vmax, float pmin, float pmax);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

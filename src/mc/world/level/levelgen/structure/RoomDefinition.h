@@ -17,8 +17,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool findSource(int scanIndex);
+    MCNAPI bool findSource(int scanIndex);
 
-    MCAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
+    MCNAPI void setConnection(uchar const& direction, ::std::shared_ptr<::RoomDefinition> definition);
     // NOLINTEND
 };

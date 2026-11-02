@@ -51,13 +51,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
+        MCNAPI CreditsContent(::std::string const& text, int height, bool centered, int paddingAfter);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::std::string const& text, int height, bool centered, int paddingAfter);
+        MCNAPI void* $ctor(::std::string const& text, int height, bool centered, int paddingAfter);
         // NOLINTEND
     };
 
@@ -106,28 +106,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CreditsRenderer(::UIResolvedDef const& def);
+    MCNAPI explicit CreditsRenderer(::UIResolvedDef const& def);
 
-    MCAPI void
+    MCNAPI void
     _parseFiles(::IClientInstance& client, ::UIControl& owner, ::std::vector<::std::string> const& filePaths);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
+    MCNAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
+    MCNAPI void $collectScreenEvents(::std::queue<::ScreenEvent, ::std::deque<::ScreenEvent>>& screenEvents);
     // NOLINTEND
 
 public:

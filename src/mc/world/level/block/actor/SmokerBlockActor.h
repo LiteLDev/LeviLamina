@@ -24,19 +24,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SmokerBlockActor(::BlockPos const& blockPos);
+    MCNAPI explicit SmokerBlockActor(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& blockPos);
+    MCNAPI void* $ctor(::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
 
     // NOLINTEND
@@ -52,6 +52,6 @@ public:
 
     MCNAPI static void** $vftable();
 
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
     // NOLINTEND
 };

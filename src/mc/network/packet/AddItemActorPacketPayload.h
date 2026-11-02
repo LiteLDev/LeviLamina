@@ -36,22 +36,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AddItemActorPacketPayload(::ItemActor& itemEntity);
+    MCNAPI explicit AddItemActorPacketPayload(::ItemActor& itemEntity);
 
-    MCAPI ::AddItemActorPacketPayload& operator=(::AddItemActorPacketPayload&&);
+    MCNAPI ::AddItemActorPacketPayload& operator=(::AddItemActorPacketPayload&&);
 
-    MCAPI ~AddItemActorPacketPayload();
+    MCNAPI ~AddItemActorPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemActor& itemEntity);
+    MCNAPI void* $ctor(::ItemActor& itemEntity);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

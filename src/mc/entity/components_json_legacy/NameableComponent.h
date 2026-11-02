@@ -24,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND
 };

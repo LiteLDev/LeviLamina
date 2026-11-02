@@ -37,14 +37,15 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const& $RT1();
+        MCNAPI static ::std::initializer_list<::SharedTypes::v1_19_40::ItemCategory::CreativeItemCategory> const&
+        $RT1();
         // NOLINTEND
     };
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindCreativeItemCategoryType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

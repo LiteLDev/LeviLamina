@@ -49,27 +49,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit EnchantingContainerManagerController(
+    MCNAPI explicit EnchantingContainerManagerController(
         ::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel
     );
 
-    MCAPI ::std::string _getEnchantHint(int option);
+    MCNAPI ::std::string _getEnchantHint(int option);
 
-    MCAPI void _setupCallbacks();
+    MCNAPI void _setupCallbacks();
 
-    MCAPI void enchantResult(int option);
+    MCNAPI void enchantResult(int option);
 
-    MCAPI ::std::string getEnchantHint(int option);
+    MCNAPI ::std::string getEnchantHint(int option);
 
-    MCAPI ::std::string getHoverText(int option);
+    MCNAPI ::std::string getHoverText(int option);
 
-    MCAPI int getInputItemId();
+    MCNAPI int getInputItemId();
 
-    MCAPI int getPlayerLevels();
+    MCNAPI int getPlayerLevels();
 
-    MCAPI ::std::string getRunesForOption(int option);
+    MCNAPI ::std::string getRunesForOption(int option);
 
-    MCAPI ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
+    MCNAPI ::EnchantingContainerManagerController::OptionStatus getStatusForOption(int option);
 #endif
     // NOLINTEND
 
@@ -77,7 +77,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
+    MCNAPI void* $ctor(::std::weak_ptr<::EnchantingContainerManagerModel> containerManagerModel);
 #endif
     // NOLINTEND
 
@@ -85,9 +85,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
+    MCNAPI bool $handlePlaceAll(::SelectedSlotInfo const& selected, ::SlotData const& dstSlot);
 
-    MCAPI void $registerContainerCallbacks();
+    MCNAPI void $registerContainerCallbacks();
 #endif
 
 

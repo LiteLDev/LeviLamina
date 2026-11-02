@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
+    MCNAPI ::SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(
         ::RenderParams&             molangParams,
         ::PerlinSimplexNoise const& noise,
         ::BlockPos const&           pos,
@@ -58,7 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     parseExpressionNodeFloat(::ExpressionOp op, ::std::string const& data, ::ExpressionNode& node, float defaultValue);
     // NOLINTEND
 };

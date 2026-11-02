@@ -50,7 +50,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _sendTitlePacketTextObject(
+    MCNAPI bool _sendTitlePacketTextObject(
         ::SetTitlePacketPayload::TitleType        type,
         ::CommandOrigin const&                    origin,
         ::CommandOutput&                          output,
@@ -67,7 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

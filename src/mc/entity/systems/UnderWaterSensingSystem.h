@@ -106,7 +106,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Views(
+        MCNAPI explicit Views(
             ::StrictExecutionContext<
                 ::Filter<
                     ::HorseFlagComponent,
@@ -140,7 +140,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::StrictExecutionContext<
                 ::Filter<
                     ::HorseFlagComponent,
@@ -248,7 +248,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doUnderWaterSensing(
+    MCNAPI static void doUnderWaterSensing(
         ::StrictEntityContext const&                      entity,
         ::StateVectorComponent const&                     stateVectorComponent,
         ::UpdateWaterStateRequestComponent const&         request,
@@ -262,7 +262,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::HorseFlagComponent,
@@ -292,7 +292,7 @@ public:
             ::EntityFactoryT<>>& context
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::HorseFlagComponent,

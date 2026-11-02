@@ -27,9 +27,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
+    MCNAPI bool compare(::ModelPartLocator const& rhs, bool compareSkeletalHierarchyIndexAndBoneMapping) const;
 
-    MCAPI void setWorldAbsoluteTransform(::Matrix const& transform);
+    MCNAPI void setWorldAbsoluteTransform(::Matrix const& transform);
 #endif
     // NOLINTEND
 };

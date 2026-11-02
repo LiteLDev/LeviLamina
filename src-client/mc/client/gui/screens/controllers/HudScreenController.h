@@ -171,31 +171,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HudScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit HudScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _bindActionIconForGamepad(
+    MCNAPI void _bindActionIconForGamepad(
         ::Remapping::ActionEnum action,
         ::std::string const&    bindingNameOverride,
         ::UIPropertyBag&        bag
     ) const;
 
-    MCAPI void _bindInventoryPromptsFlyout(
+    MCNAPI void _bindInventoryPromptsFlyout(
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     ) const;
 
-    MCAPI bool _bindKeyboardTooltip(
+    MCNAPI bool _bindKeyboardTooltip(
         ::HudScreenController::Tooltip const& tip,
         uint                                  bindingNameHash,
         ::std::string const&                  bindingNameOverride,
         ::UIPropertyBag&                      bag
     ) const;
 
-    MCAPI void
+    MCNAPI void
     _bindMenuPromptsFlyout(uint bindingNameHash, ::std::string const& bindingNameOverride, ::UIPropertyBag& bag) const;
 
-    MCAPI void _bindTooltipCollection(
+    MCNAPI void _bindTooltipCollection(
         ::std::vector<::HudScreenController::Tooltip> const& tooltips,
         int                                                  collectionIndex,
         uint                                                 bindingNameHash,
@@ -204,126 +204,126 @@ public:
         ::HudScreenController::Tooltips                      tooltipType
     ) const;
 
-    MCAPI void
+    MCNAPI void
     _bindTooltipFlyout(uint bindingNameHash, ::std::string const& bindingNameOverride, ::UIPropertyBag& bag) const;
 
-    MCAPI void _fireInitialControlTipsActivationEvent() const;
+    MCNAPI void _fireInitialControlTipsActivationEvent() const;
 
-    MCAPI ::std::string _formatButtonList(::std::vector<::std::string> buttonList) const;
+    MCNAPI ::std::string _formatButtonList(::std::vector<::std::string> buttonList) const;
 
-    MCAPI ::mce::Color _getBossColorValue(::BossBarColor barColor) const;
+    MCNAPI ::mce::Color _getBossColorValue(::BossBarColor barColor) const;
 
-    MCAPI ::std::string _getContextAttackButton() const;
+    MCNAPI ::std::string _getContextAttackButton() const;
 
-    MCAPI ::std::string _getContextChat() const;
+    MCNAPI ::std::string _getContextChat() const;
 
-    MCAPI ::std::string _getContextCodeBuilder() const;
+    MCNAPI ::std::string _getContextCodeBuilder() const;
 
-    MCAPI ::std::string _getContextCraftingButton() const;
+    MCNAPI ::std::string _getContextCraftingButton() const;
 
-    MCAPI ::std::string _getContextDescendButton() const;
+    MCNAPI ::std::string _getContextDescendButton() const;
 
-    MCAPI ::std::string _getContextDismountButton() const;
+    MCNAPI ::std::string _getContextDismountButton() const;
 
-    MCAPI ::std::string _getContextDropItemButton() const;
+    MCNAPI ::std::string _getContextDropItemButton() const;
 
-    MCAPI ::std::string _getContextEmoteButton() const;
+    MCNAPI ::std::string _getContextEmoteButton() const;
 
-    MCAPI ::std::string _getContextImmersiveReader() const;
+    MCNAPI ::std::string _getContextImmersiveReader() const;
 
-    MCAPI ::std::string _getContextInventoryButton() const;
+    MCNAPI ::std::string _getContextInventoryButton() const;
 
-    MCAPI ::std::string _getContextJumpButton() const;
+    MCNAPI ::std::string _getContextJumpButton() const;
 
-    MCAPI ::std::string _getContextToggleFlight() const;
+    MCNAPI ::std::string _getContextToggleFlight() const;
 
-    MCAPI ::std::string _getContextUseButton() const;
+    MCNAPI ::std::string _getContextUseButton() const;
 
-    MCAPI ::std::string _getEmoteName(int slot);
+    MCNAPI ::std::string _getEmoteName(int slot);
 
-    MCAPI void _getFloatCustomizableOptionValue(::OptionID optionID);
+    MCNAPI void _getFloatCustomizableOptionValue(::OptionID optionID);
 
-    MCAPI float _getHudAlpha();
+    MCNAPI float _getHudAlpha();
 
-    MCAPI void _handleNewActionBarMessage();
+    MCNAPI void _handleNewActionBarMessage();
 
-    MCAPI void _handleSlotSelection(int slot, ::ContainerID containerId);
+    MCNAPI void _handleSlotSelection(int slot, ::ContainerID containerId);
 
-    MCAPI bool _isAutoSaveIconVisible();
+    MCNAPI bool _isAutoSaveIconVisible();
 
-    MCAPI bool
+    MCNAPI bool
     _isToolTipsHidden(::HudScreenController::Tooltips tooltipType, ::HudScreenController::Tooltip const* tip) const;
 
-    MCAPI bool _isTouchActive() const;
+    MCNAPI bool _isTouchActive() const;
 
-    MCAPI void _leaveControlCustomizationScreen();
+    MCNAPI void _leaveControlCustomizationScreen();
 
-    MCAPI void _pushNewChatMessage(::std::string const& message, float time);
+    MCNAPI void _pushNewChatMessage(::std::string const& message, float time);
 
-    MCAPI void _pushNewSubtitleMessage(
+    MCNAPI void _pushNewSubtitleMessage(
         ::std::string const& message,
         float                timeSec,
         ::SoundDirection     direction,
         bool                 isLocalPlayer
     );
 
-    MCAPI void _recreateSubtitleContainer();
+    MCNAPI void _recreateSubtitleContainer();
 
-    MCAPI void _refreshSubtitleMessages();
+    MCNAPI void _refreshSubtitleMessages();
 
-    MCAPI bool _shouldShowLocatorBar() const;
+    MCNAPI bool _shouldShowLocatorBar() const;
 
-    MCAPI bool _shouldShowTags() const;
+    MCNAPI bool _shouldShowTags() const;
 
-    MCAPI bool _showClassicUI() const;
+    MCNAPI bool _showClassicUI() const;
 
-    MCAPI bool _showPaperDoll() const;
+    MCNAPI bool _showPaperDoll() const;
 
-    MCAPI bool _showPocketUI() const;
+    MCNAPI bool _showPocketUI() const;
 
-    MCAPI bool _showSurvivalUI() const;
+    MCNAPI bool _showSurvivalUI() const;
 
-    MCAPI void displayOpenEmoteInstructions(::HudScreenController::ButtonLists const& buttonLists) const;
+    MCNAPI void displayOpenEmoteInstructions(::HudScreenController::ButtonLists const& buttonLists) const;
 
-    MCAPI ::HudScreenController::ButtonLists const getButtonLists() const;
+    MCNAPI ::HudScreenController::ButtonLists const getButtonLists() const;
 
-    MCAPI ::std::string const getFormattedOpenChatMessage(::std::vector<::std::string> const& buttonList) const;
+    MCNAPI ::std::string const getFormattedOpenChatMessage(::std::vector<::std::string> const& buttonList) const;
 
-    MCAPI ::std::string const getFormattedOpenEmoteMessage(::std::vector<::std::string> const& buttonList) const;
+    MCNAPI ::std::string const getFormattedOpenEmoteMessage(::std::vector<::std::string> const& buttonList) const;
 
-    MCAPI ::HudScreenController::ButtonLists const getGamepadEmoteButtonLists() const;
+    MCNAPI ::HudScreenController::ButtonLists const getGamepadEmoteButtonLists() const;
 
-    MCAPI ::HudScreenController::ButtonLists const getKeyboardEmoteButtonLists() const;
+    MCNAPI ::HudScreenController::ButtonLists const getKeyboardEmoteButtonLists() const;
 
-    MCAPI void setupControlCustomizationCallbacksForOptions(::ControlOptionType controlOptionType);
+    MCNAPI void setupControlCustomizationCallbacksForOptions(::ControlOptionType controlOptionType);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldShowDefaultUseTooltip(::Block const& block);
+    MCNAPI static bool _shouldShowDefaultUseTooltip(::Block const& block);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ROOT_CONTROL_NAME();
+    MCNAPI static char const*& ROOT_CONTROL_NAME();
 
-    MCAPI static char const*& ROOT_CONTROL_NAME_INCLUDING_NAMESPACE();
+    MCNAPI static char const*& ROOT_CONTROL_NAME_INCLUDING_NAMESPACE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& collectionName,
         uint                 collectionNameHash,
         int                  collectionIndex,
@@ -333,25 +333,25 @@ public:
         ::UIPropertyBag&     bag
     );
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onScreenPushedAbove();
+    MCNAPI void $onScreenPushedAbove();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 };

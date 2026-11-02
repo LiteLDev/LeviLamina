@@ -16,25 +16,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
+    MCNAPI explicit Result(::Bedrock::ErrorInfo<::std::error_code>&& error);
 
-    MCAPI explicit Result(bool success);
+    MCNAPI explicit Result(bool success);
 
-    MCAPI ~Result();
+    MCNAPI ~Result();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
+    MCNAPI void* $ctor(::Bedrock::ErrorInfo<::std::error_code>&& error);
 
-    MCAPI void* $ctor(bool success);
+    MCNAPI void* $ctor(bool success);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

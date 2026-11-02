@@ -14,9 +14,9 @@ class Block;
 namespace NeighborAwareBlockUpgrade {
 // functions
 // NOLINTBEGIN
-MCAPI ::NeighborAwareBlockUpdateType getLegacyStructureUpgradeType(::Block const& block, int dataVersion);
+MCNAPI ::NeighborAwareBlockUpdateType getLegacyStructureUpgradeType(::Block const& block, int dataVersion);
 
-MCAPI ::NeighborAwareBlockUpdateType
+MCNAPI ::NeighborAwareBlockUpdateType
 getUpgradeType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType version);
 // NOLINTEND
 

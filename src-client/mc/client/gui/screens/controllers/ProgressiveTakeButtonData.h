@@ -34,6 +34,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isActiveContainerSlot(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI bool isActiveContainerSlot(::std::string const& collectionName, int collectionIndex) const;
     // NOLINTEND
 };

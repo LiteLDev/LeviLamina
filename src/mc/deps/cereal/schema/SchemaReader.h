@@ -88,9 +88,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::optional<::cereal::ResultCode> $inputError() const;
+    MCNAPI ::std::optional<::cereal::ResultCode> $inputError() const;
 
-    MCFOLD ::std::optional<uint64> $remainingInputBytes() const;
+    MCNAPI ::std::optional<uint64> $remainingInputBytes() const;
 
 
     // NOLINTEND

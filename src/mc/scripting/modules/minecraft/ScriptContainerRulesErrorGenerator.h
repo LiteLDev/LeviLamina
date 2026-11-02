@@ -14,7 +14,7 @@ struct ScriptContainerRulesErrorGenerator {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptContainerRulesError
+    MCNAPI static ::ScriptModuleMinecraft::ScriptContainerRulesError
     createWeightOverLimitError(::ItemStack const& item, int maxWeightLimit, int weightOverLimit);
     // NOLINTEND
 };

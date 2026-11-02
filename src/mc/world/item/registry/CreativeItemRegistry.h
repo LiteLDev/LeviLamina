@@ -41,10 +41,10 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CreativeItemRegistry();
+    MCNAPI CreativeItemRegistry();
 #endif
 
-    MCAPI ::brstd::flat_map<
+    MCNAPI ::brstd::flat_map<
         ::SharedTypes::CreativeItemCategory,
         ::gsl::not_null<::CreativeItemGroupCategory*>,
         ::std::less<::SharedTypes::CreativeItemCategory>,
@@ -52,20 +52,20 @@ public:
         ::std::vector<::gsl::not_null<::CreativeItemGroupCategory*>>> createCategories();
 
 #ifdef LL_PLAT_C
-    MCAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
+    MCNAPI void forEachCreativeItemInstance(::brstd::function_ref<bool(::ItemInstance const&)> func) const;
 
-    MCAPI void initializeFromCreativeContentPacket(
+    MCNAPI void initializeFromCreativeContentPacket(
         ::CreativeContentPacket const& creativeContentPacket,
         ::BlockPalette const&          blockPalette
     );
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI ::CreativeItemEntry* newItemEntry(::CreativeItemNetId const& creativeNetId, ::ItemInstance const& item);
+    MCNAPI ::CreativeItemEntry* newItemEntry(::CreativeItemNetId const& creativeNetId, ::ItemInstance const& item);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void updateNetIdMap();
+    MCNAPI void updateNetIdMap();
 #endif
     // NOLINTEND
 
@@ -73,7 +73,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 

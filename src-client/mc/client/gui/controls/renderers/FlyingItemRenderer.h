@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _renderGuiIcon(
+    MCNAPI static void _renderGuiIcon(
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
         ::ui::FlyingItem&           item,
@@ -54,7 +54,7 @@ public:
         int                         zOrder
     );
 
-    MCAPI static void _renderMesh(
+    MCNAPI static void _renderMesh(
         ::MinecraftUIRenderContext& renderContext,
         ::BaseActorRenderContext&   entityRenderContext,
         ::UIItemRenderInfo const&   itemRenderInfo
@@ -64,13 +64,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance&, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCFOLD ::UIBatchType $getBatchType() const;
+    MCNAPI ::UIBatchType $getBatchType() const;
     // NOLINTEND
 
 public:

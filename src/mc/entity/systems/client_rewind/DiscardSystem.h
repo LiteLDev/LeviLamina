@@ -119,7 +119,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickEntity(
+    MCNAPI static void tickEntity(
         ::StrictEntityContext const&   entity,
         ::ReplayStateTrackerComponent& tracker,
         ::ViewT<
@@ -135,7 +135,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<

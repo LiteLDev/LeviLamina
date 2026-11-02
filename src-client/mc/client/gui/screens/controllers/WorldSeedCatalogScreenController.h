@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldSeedCatalogScreenController(
+    MCNAPI WorldSeedCatalogScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>                                               model,
         ::std::function<void(::std::string const&, ::std::string const&, ::Core::Path const&)> closeCallback
     );
@@ -43,7 +43,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>                                               model,
         ::std::function<void(::std::string const&, ::std::string const&, ::Core::Path const&)> closeCallback
     );
@@ -52,6 +52,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

@@ -24,9 +24,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerSkinPacketPayload(::PlayerSkinPacketPayload const&);
+    MCNAPI PlayerSkinPacketPayload(::PlayerSkinPacketPayload const&);
 
-    MCAPI PlayerSkinPacketPayload(
+    MCNAPI PlayerSkinPacketPayload(
         ::mce::UUID const&         uuid,
         ::SerializedSkinRef const& skin,
         ::std::string const&       newSkinName,
@@ -39,9 +39,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PlayerSkinPacketPayload const&);
+    MCNAPI void* $ctor(::PlayerSkinPacketPayload const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID const&         uuid,
         ::SerializedSkinRef const& skin,
         ::std::string const&       newSkinName,

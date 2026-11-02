@@ -28,9 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void* $more(uint _size);
+    MCNAPI void* $more(uint _size);
 
-    MCFOLD uint $getSize();
+    MCNAPI uint $getSize();
     // NOLINTEND
 
 public:

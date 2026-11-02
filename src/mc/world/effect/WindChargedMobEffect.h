@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    MCNAPI void $onActorDied(::Actor& target, int amplifier) const;
 
 
     // NOLINTEND

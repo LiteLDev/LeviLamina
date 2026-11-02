@@ -10,7 +10,7 @@ struct TickingSystemWithInfo;
 namespace HumanoidMonsterAttackStateSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createSystem();
+MCNAPI ::TickingSystemWithInfo createSystem();
 // NOLINTEND
 
 } // namespace HumanoidMonsterAttackStateSystem

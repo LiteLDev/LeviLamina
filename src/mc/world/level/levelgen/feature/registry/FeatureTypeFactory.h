@@ -34,15 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeatureTypeFactory();
+    MCNAPI FeatureTypeFactory();
 
-    MCAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
+    MCNAPI uint64 addSupportedSchema(::std::optional<::Puv::VersionRange> versionRange);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

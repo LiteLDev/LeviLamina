@@ -62,11 +62,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void discard();
+    MCNAPI void discard();
 
-    MCAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ);
+    MCNAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ);
 
-    MCAPI void doAllRayTracing(
+    MCNAPI void doAllRayTracing(
         ushort                                 _id,
         ::bgfx::RayTracingConfiguration const& rtConfig,
         ::bgfx::RayTracingResources const&     rtResources,
@@ -74,9 +74,9 @@ public:
         uint                                   _height
     );
 
-    MCAPI void native(ushort _id, void (*_callback)(void*, ::bgfx::NativeCommandListScope*), void* _userData);
+    MCNAPI void native(ushort _id, void (*_callback)(void*, ::bgfx::NativeCommandListScope*), void* _userData);
 
-    MCAPI void setBuffersAsRanged(
+    MCNAPI void setBuffersAsRanged(
         uchar                             _stage,
         ::bgfx::ShaderBufferHandle const* _shaderBufferHandles,
         uint64                            _shaderBufferHandleStride,
@@ -88,7 +88,7 @@ public:
         uint                              _arrayIndexOffset
     );
 
-    MCAPI void setImagesAsRanged(
+    MCNAPI void setImagesAsRanged(
         uchar                              _stage,
         ::bgfx::TextureHandle const*       _textureHandles,
         uint64                             _textureHandleStride,
@@ -102,7 +102,7 @@ public:
         uint                               _offset
     );
 
-    MCAPI void setTexturesAsRanged(
+    MCNAPI void setTexturesAsRanged(
         uchar                        _stage,
         ::bgfx::TextureHandle const* _textureHandles,
         uint64                       _textureHandleStride,
@@ -112,10 +112,10 @@ public:
         uint                         _offset
     );
 
-    MCAPI void
+    MCNAPI void
     setUniform(::bgfx::UniformType::Enum _type, ::bgfx::UniformHandle _handle, void const* _value, ushort _num);
 
-    MCAPI void submit(
+    MCNAPI void submit(
         ushort                       _id,
         ::bgfx::ProgramHandle        _program,
         ::bgfx::OcclusionQueryHandle _occlusionQuery,

@@ -46,19 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeleteProgressScreenController(
+    MCNAPI DeleteProgressScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressHandlerList
     );
 
-    MCAPI ::std::string const _getProgressMessage() const;
+    MCNAPI ::std::string const _getProgressMessage() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>          model,
         ::std::string const&                               calledFrom,
         ::std::deque<::std::unique_ptr<::ProgressHandler>> progressHandlerList
@@ -68,12 +68,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

@@ -28,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _storePreviousRideStats(
+    MCNAPI static void _storePreviousRideStats(
         ::StrictEntityContext const&,
         ::StateVectorComponent const&     stateVectorComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent

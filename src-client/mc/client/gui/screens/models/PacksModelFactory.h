@@ -11,6 +11,6 @@ class PacksModelFactory {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::PackInstanceId> deserializeFile(::std::istream& file);
+    MCNAPI static ::std::vector<::PackInstanceId> deserializeFile(::std::istream& file);
     // NOLINTEND
 };

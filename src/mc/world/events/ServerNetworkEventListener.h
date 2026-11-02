@@ -41,17 +41,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 
-    MCFOLD ::EventResult $onMessage(::MessageEvent const& messageEvent);
+    MCNAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
 
-    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
+    MCNAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
-    MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
+    MCNAPI ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
 
-    MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+    MCNAPI ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
 
-    MCFOLD ::EventResult $onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
+    MCNAPI ::EventResult $onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
 
 
     // NOLINTEND

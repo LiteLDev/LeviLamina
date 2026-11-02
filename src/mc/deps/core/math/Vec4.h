@@ -15,10 +15,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec4 const& MAX();
+    MCNAPI static ::Vec4 const& MAX();
 
-    MCAPI static ::Vec4 const& MIN();
+    MCNAPI static ::Vec4 const& MIN();
 
-    MCAPI static ::Vec4 const& ONE();
+    MCNAPI static ::Vec4 const& ONE();
     // NOLINTEND
 };

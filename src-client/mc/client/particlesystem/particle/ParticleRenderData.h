@@ -77,6 +77,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reset();
+    MCNAPI void reset();
     // NOLINTEND
 };

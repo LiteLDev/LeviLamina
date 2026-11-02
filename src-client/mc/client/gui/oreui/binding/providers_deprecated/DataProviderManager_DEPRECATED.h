@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataProviderManager_DEPRECATED(
+    MCNAPI DataProviderManager_DEPRECATED(
         ::IMinecraftGame&                        minecraftGame,
         ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel
     );
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraftGame, ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel);
+    MCNAPI void* $ctor(::IMinecraftGame& minecraftGame, ::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel);
     // NOLINTEND
 };
 

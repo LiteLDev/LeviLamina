@@ -61,23 +61,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCustomDimensionRegistry(::ServerScriptManagerEvents& events, ::DimensionManager& dimensionManager);
+    MCNAPI ScriptCustomDimensionRegistry(::ServerScriptManagerEvents& events, ::DimensionManager& dimensionManager);
 
-    MCAPI void _onReadyForCustomDimensionRegistration(::DimensionManager& dimensionManager);
+    MCNAPI void _onReadyForCustomDimensionRegistration(::DimensionManager& dimensionManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerScriptManagerEvents& events, ::DimensionManager& dimensionManager);
+    MCNAPI void* $ctor(::ServerScriptManagerEvents& events, ::DimensionManager& dimensionManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onReload();
+    MCNAPI void $_onReload();
 
-    MCAPI void $_onScriptModuleStartupComplete();
+    MCNAPI void $_onScriptModuleStartupComplete();
 
 
     // NOLINTEND

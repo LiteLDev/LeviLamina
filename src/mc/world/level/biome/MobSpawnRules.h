@@ -75,39 +75,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MobSpawnRules(::MobSpawnRules&&);
+    MCNAPI MobSpawnRules(::MobSpawnRules&&);
 
-    MCAPI MobSpawnRules(::MobSpawnRules const&);
+    MCNAPI MobSpawnRules(::MobSpawnRules const&);
 
-    MCAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
+    MCNAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
 
-    MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
+    MCNAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
-    MCAPI ::std::string const getMobToDelayId() const;
+    MCNAPI ::std::string const getMobToDelayId() const;
 
-    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
+    MCNAPI ::MobSpawnRules& operator=(::MobSpawnRules&&);
 
-    MCAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
+    MCNAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
-    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
+    MCNAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
-    MCAPI ::MobSpawnRules&
+    MCNAPI ::MobSpawnRules&
     setHardcodedSpawnRuleCallback(::std::function<bool(::SpawnConditions const&, ::BlockSource&)> callback);
 
-    MCAPI ~MobSpawnRules();
+    MCNAPI ~MobSpawnRules();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MobSpawnRules&&);
+    MCNAPI void* $ctor(::MobSpawnRules&&);
 
-    MCAPI void* $ctor(::MobSpawnRules const&);
+    MCNAPI void* $ctor(::MobSpawnRules const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

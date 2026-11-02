@@ -11,8 +11,8 @@ class DeviceButtons {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& _index();
+    MCNAPI static int& _index();
 
-    MCAPI static ::std::vector<::DeviceButtonEvent>& _inputs();
+    MCNAPI static ::std::vector<::DeviceButtonEvent>& _inputs();
     // NOLINTEND
 };

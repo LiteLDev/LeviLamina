@@ -53,29 +53,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Mob* _getMob(::WeakRef<::EntityContext> const actorRef) const;
+    MCNAPI ::Mob* _getMob(::WeakRef<::EntityContext> const actorRef) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::IVanillaCameraAPI::DamageBobParameters>
+    MCNAPI ::std::optional<::IVanillaCameraAPI::DamageBobParameters>
     $tryGetDamageBobParameters(::WeakRef<::EntityContext> const actorRef, float frameInterpolation) const;
 
-    MCAPI ::std::optional<::IVanillaCameraAPI::MovementBobParameters>
+    MCNAPI ::std::optional<::IVanillaCameraAPI::MovementBobParameters>
     $tryGetMovementBobParameters(::WeakRef<::EntityContext> const actorRef, float frameInterpolation) const;
 
-    MCAPI ::std::optional<::IVanillaCameraAPI::VehicleRotationInformation>
+    MCNAPI ::std::optional<::IVanillaCameraAPI::VehicleRotationInformation>
     $tryGetVehicleRotationInformation(::WeakRef<::EntityContext> const actorId) const;
 
-    MCAPI ::IVanillaCameraAPI::VehicleSeatCameraOptions
+    MCNAPI ::IVanillaCameraAPI::VehicleSeatCameraOptions
     $getVehicleSeatCameraOptions(::WeakRef<::EntityContext> const actorId) const;
 
-    MCAPI ::std::optional<::IVanillaCameraAPI::PortalData> $tryGetPortalData() const;
+    MCNAPI ::std::optional<::IVanillaCameraAPI::PortalData> $tryGetPortalData() const;
 
-    MCAPI ::SharedTypes::v1_21_100::PlayerViewMode $getPlayerViewPerspectiveOption() const;
+    MCNAPI ::SharedTypes::v1_21_100::PlayerViewMode $getPlayerViewPerspectiveOption() const;
 
-    MCAPI ::std::optional<bool> $isPlayerSleeping() const;
+    MCNAPI ::std::optional<bool> $isPlayerSleeping() const;
     // NOLINTEND
 
 public:

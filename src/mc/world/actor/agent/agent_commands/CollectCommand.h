@@ -28,9 +28,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute();
+    MCNAPI void $execute();
 
-    MCAPI bool $isDone();
+    MCNAPI bool $isDone();
 
 
     // NOLINTEND

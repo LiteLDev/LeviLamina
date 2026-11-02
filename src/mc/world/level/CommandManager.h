@@ -33,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _collectScriptStats(
+    MCNAPI void _collectScriptStats(
         ::DebuggerStat& commandRunCounts,
         uint64          currentTick,
         uint64          lastCollectedTick,
         uint64          collectionFrequency
     );
 
-    MCAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);
+    MCNAPI void initialize(::std::unique_ptr<::FunctionManager> functionManager);
 
-    MCAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
+    MCNAPI void runCommand(::Command& command, ::CommandOrigin& origin, ::CommandOriginSystem originSystem);
     // NOLINTEND
 };

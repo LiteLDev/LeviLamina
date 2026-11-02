@@ -104,17 +104,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
+    MCNAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

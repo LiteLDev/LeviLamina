@@ -38,43 +38,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerSocialManagerFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+    MCNAPI explicit PlayerSocialManagerFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
 
-    MCAPI void addFriend(::std::string xuid, ::IMinecraftEventing::AddedFriendLocation addedLocation);
+    MCNAPI void addFriend(::std::string xuid, ::IMinecraftEventing::AddedFriendLocation addedLocation);
 
-    MCAPI void block(::std::string xuid);
+    MCNAPI void block(::std::string xuid);
 
-    MCAPI void favorite(::std::string xuid);
+    MCNAPI void favorite(::std::string xuid);
 
-    MCAPI void mute(::std::string xuid);
+    MCNAPI void mute(::std::string xuid);
 
-    MCAPI void removeFriend(::std::string xuid);
+    MCNAPI void removeFriend(::std::string xuid);
 
-    MCAPI void showXboxProfileCard(::std::string xuid);
+    MCNAPI void showXboxProfileCard(::std::string xuid);
 
-    MCAPI void unblock(::std::string xuid);
+    MCNAPI void unblock(::std::string xuid);
 
-    MCAPI void unfavorite(::std::string xuid);
+    MCNAPI void unfavorite(::std::string xuid);
 
-    MCAPI void unmute(::std::string xuid);
+    MCNAPI void unmute(::std::string xuid);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

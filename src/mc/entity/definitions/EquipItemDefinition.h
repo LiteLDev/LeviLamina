@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addExcludeItemByName(::ItemDescriptor const& itemDescriptor);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::EquipItemDefinition>>& root
     );
     // NOLINTEND

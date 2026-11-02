@@ -16,7 +16,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType packType) const;
+    MCNAPI ::std::vector<::IInPackagePacks::MetaData> $getPacks(::PackType packType) const;
 
 
     // NOLINTEND

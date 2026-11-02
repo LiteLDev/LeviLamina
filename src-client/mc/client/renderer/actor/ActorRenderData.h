@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _Level_setupShading(
+    MCNAPI void _Level_setupShading(
         ::BaseActorRenderContext& renderContext,
         ::mce::Color const&       overlayColor,
         ::mce::Color const&       changeColor,
@@ -58,7 +58,7 @@ public:
         bool                      isEnchanted
     ) const;
 
-    MCAPI void _UI_setupShading(
+    MCNAPI void _UI_setupShading(
         ::BaseActorRenderContext& renderContext,
         ::mce::Color const&,
         ::mce::Color const&,
@@ -76,6 +76,6 @@ public:
     MCAPI static ::std::optional<::std::pair<float, float>>
     getDamageOrGlidingXYRotation(::Mob const& mob, float actorFrameAlpha, bool isFirstPersonPlayer);
 
-    MCAPI static ::std::optional<::std::pair<float, float>> getNamedRotationAndOffset(::Mob const& mob);
+    MCNAPI static ::std::optional<::std::pair<float, float>> getNamedRotationAndOffset(::Mob const& mob);
     // NOLINTEND
 };

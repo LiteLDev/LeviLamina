@@ -35,12 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptCustomWorldClockRegistry(
+    MCNAPI ScriptCustomWorldClockRegistry(
         ::ServerScriptManagerEvents&                              events,
         ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> worldClockRegistry
     );
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptWorldClockRegistrationError,
         ::ScriptModuleMinecraft::ScriptWorldClockReloadNewWorldClockError,
@@ -56,7 +56,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerScriptManagerEvents&                              events,
         ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistryServer> worldClockRegistry
     );

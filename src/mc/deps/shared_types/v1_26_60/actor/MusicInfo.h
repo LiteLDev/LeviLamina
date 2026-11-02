@@ -21,25 +21,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MusicInfo(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
+    MCNAPI MusicInfo(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
 
-    MCFOLD ::SharedTypes::v1_26_60::Sound::MusicInfo& operator=(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
+    MCNAPI ::SharedTypes::v1_26_60::Sound::MusicInfo& operator=(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_60::Sound::MusicInfo const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_60::Sound::MusicInfo const&) const;
 
-    MCAPI ~MusicInfo();
+    MCNAPI ~MusicInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_60::Sound::MusicInfo const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

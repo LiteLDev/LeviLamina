@@ -21,10 +21,10 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static bool
+    MCNAPI static bool
     extendAmbientSoundRemainingTimeIfBelow(::Actor& owner, float newRemainingTimeSeconds, float belowTimeSeconds);
 #endif
 
-    MCAPI static void setAmbientSoundRemainingTime(::Actor& owner, float seconds);
+    MCNAPI static void setAmbientSoundRemainingTime(::Actor& owner, float seconds);
     // NOLINTEND
 };

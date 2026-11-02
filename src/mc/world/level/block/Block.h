@@ -132,38 +132,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
+    MCNAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
 
-    MCAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
+    MCNAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
-    MCAPI bool _isSolid() const;
+    MCNAPI bool _isSolid() const;
 
 #ifdef LL_PLAT_C
-    MCAPI void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
 #endif
 
-    MCAPI void _queueForTickBasedOnComponentConfiguration(
+    MCNAPI void _queueForTickBasedOnComponentConfiguration(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Random&         random,
         bool              placingBlock
     ) const;
 
-    MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block& addTag(::HashedString const& tag);
+    MCNAPI ::Block& addTag(::HashedString const& tag);
 
     MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& position, bool withData) const;
 
-    MCAPI bool breaksFallingBlocks(::BaseGameVersion version) const;
+    MCNAPI bool breaksFallingBlocks(::BaseGameVersion version) const;
 
-    MCAPI ::std::string buildDescriptionId() const;
+    MCNAPI ::std::string buildDescriptionId() const;
 
     MCAPI ::std::string buildDescriptionName() const;
 
-    MCAPI void buildSerializationId(uint latestUpdaterVersion);
+    MCNAPI void buildSerializationId(uint latestUpdaterVersion);
 
-    MCAPI bool canConnect(::Block const& connectionBlock, uchar toOther) const;
+    MCNAPI bool canConnect(::Block const& connectionBlock, uchar toOther) const;
 
     MCAPI bool canProvideFullSupport(uchar face) const;
 
@@ -171,7 +171,7 @@ public:
 
     MCAPI bool canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb) const;
+    MCNAPI ::HitResult clip(::BlockPos const& pos, ::Vec3 const& A, ::Vec3 const& B, ::AABB const& aabb) const;
 
     MCAPI ::HitResult clip(
         ::BlockSource const&                               region,
@@ -182,11 +182,11 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI uint computeRawSerializationIdHashForNetwork() const;
+    MCNAPI uint computeRawSerializationIdHashForNetwork() const;
 
-    MCAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
+    MCNAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
 
-    MCAPI void executeItemEvent(
+    MCNAPI void executeItemEvent(
         ::ItemStackBase&     item,
         ::std::string const& eventName,
         ::BlockSource&       region,
@@ -197,10 +197,10 @@ public:
 
     MCAPI void finalizeBlockComponentStorage();
 
-    MCAPI ::std::optional<::ConnectionID> getConnectionID() const;
+    MCNAPI ::std::optional<::ConnectionID> getConnectionID() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getCraftingLabelText() const;
+    MCNAPI ::std::string getCraftingLabelText() const;
 #endif
 
     MCAPI ::std::string getDescriptionId() const;
@@ -213,25 +213,26 @@ public:
 
     MCAPI bool isCropBlock() const;
 
-    MCAPI bool isPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool isPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI bool isPreservingMediumWhenPlaced(::Block const& medium) const;
+    MCNAPI bool isPreservingMediumWhenPlaced(::Block const& medium) const;
 
-    MCAPI bool isTopPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCNAPI bool isTopPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
+    MCNAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
 
     MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor const* placer) const;
 
     MCAPI void neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI void onActorEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
+    MCNAPI void onActorEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
-    MCAPI void onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
+    MCNAPI void
+    onActorInternalEvent(::BlockPos const& pos, ::std::string const& eventName, ::Actor& sourceEntity) const;
 
-    MCAPI void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void onStateChange(
+    MCNAPI void onStateChange(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::Block const&              previousBlock,
@@ -244,7 +245,7 @@ public:
 
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void spawnResources(
+    MCNAPI void spawnResources(
         ::BlockSource&                region,
         ::BlockPos const&             pos,
         ::IRandom&                    random,
@@ -267,14 +268,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
+    MCNAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock);
 
-    MCAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
+    MCNAPI void* $ctor(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

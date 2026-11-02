@@ -11,13 +11,13 @@ struct InterpolationPair;
 namespace MobAnimation {
 // functions
 // NOLINTBEGIN
-MCAPI float getStandAnim(::EntityContext const& provider);
+MCNAPI float getStandAnim(::EntityContext const& provider);
 
-MCAPI ::InterpolationPair getStandAnimNewOld(::EntityContext const& provider);
+MCNAPI ::InterpolationPair getStandAnimNewOld(::EntityContext const& provider);
 
-MCAPI void setStandAnim(::EntityContext& provider, float standAnim);
+MCNAPI void setStandAnim(::EntityContext& provider, float standAnim);
 
-MCAPI void setStandAnimO(::EntityContext& provider, float standAnimO);
+MCNAPI void setStandAnimO(::EntityContext& provider, float standAnimO);
 // NOLINTEND
 
 } // namespace MobAnimation

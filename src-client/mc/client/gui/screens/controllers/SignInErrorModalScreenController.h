@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignInErrorModalScreenController(
+    MCNAPI SignInErrorModalScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string                             errorMessage,
         ::std::function<void()>                   onDismiss
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string                             errorMessage,
         ::std::function<void()>                   onDismiss
@@ -54,6 +54,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

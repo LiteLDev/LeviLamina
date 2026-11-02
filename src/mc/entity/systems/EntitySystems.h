@@ -103,56 +103,56 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySystems(
+    MCNAPI EntitySystems(
         ::std::unique_ptr<::IEntitySystemsCollection> systems,
         ::std::string_view                            name,
         bool                                          useVariableTicks
     );
 
-    MCAPI void realTick(::EntityRegistry& registry);
+    MCNAPI void realTick(::EntityRegistry& registry);
 
-    MCAPI void registerEvents(::EntityRegistry& registry);
+    MCNAPI void registerEvents(::EntityRegistry& registry);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
+    MCNAPI ::std::pair<::std::function<void(::TickingSystemId)>, ::std::function<void(::TickingSystemId)>>
     setSystemInvokeCallbacks(
         ::std::function<void(::TickingSystemId)>&& preInvoke,
         ::std::function<void(::TickingSystemId)>&& postInvoke
     );
 
-    MCAPI ::std::pair<::std::function<void()>, ::std::function<void()>>
+    MCNAPI ::std::pair<::std::function<void()>, ::std::function<void()>>
     setTotalTickCallbacks(::std::function<void()>&& preTick, ::std::function<void()>&& postTick);
 #endif
 
-    MCAPI void tick(::EntityRegistry& registry);
+    MCNAPI void tick(::EntityRegistry& registry);
 
-    MCAPI void tickEditor(::EntityRegistry& registry);
+    MCNAPI void tickEditor(::EntityRegistry& registry);
 
-    MCAPI void tickInitialize(::EntityRegistry& registry);
+    MCNAPI void tickInitialize(::EntityRegistry& registry);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::unique_ptr<::IEntitySystemsCollection> systems, ::std::string_view name, bool useVariableTicks);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tickMovementCatchup(::EntityRegistry& registry);
+    MCNAPI void $tickMovementCatchup(::EntityRegistry& registry);
 
-    MCAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
+    MCNAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
 
-    MCAPI void $registerTickingSystem(
+    MCNAPI void $registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
         ::std::unique_ptr<::ITickingSystem>                      system,
         ::SystemInfo const&                                      info,
         ::EntitySystemTickingMode                                tickingMode
     );
 
-    MCAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
+    MCNAPI bool $_hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const;
 
 
     // NOLINTEND

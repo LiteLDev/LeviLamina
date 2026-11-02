@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileDownloadScreenController(
+    MCNAPI FileDownloadScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string const&                     realmID,
         int                                      slotIndex,
@@ -74,13 +74,13 @@ public:
         ::std::function<void(bool)>              callback
     );
 
-    MCAPI void _startDownload();
+    MCNAPI void _startDownload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string const&                     realmID,
         int                                      slotIndex,
@@ -94,8 +94,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
     // NOLINTEND
 };

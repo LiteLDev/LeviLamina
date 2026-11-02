@@ -31,17 +31,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CurrentRealmQuery(::OreUI::GameDependencies const& game, ::std::string xuid);
+    MCNAPI CurrentRealmQuery(::OreUI::GameDependencies const& game, ::std::string xuid);
 
-    MCAPI void _clearRealmProperties();
+    MCNAPI void _clearRealmProperties();
 
-    MCAPI void _setRealmProperties(::Social::RealmWorldPublisherData const& realmData, ::std::string xuid);
+    MCNAPI void _setRealmProperties(::Social::RealmWorldPublisherData const& realmData, ::std::string xuid);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string xuid);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, ::std::string xuid);
     // NOLINTEND
 };
 

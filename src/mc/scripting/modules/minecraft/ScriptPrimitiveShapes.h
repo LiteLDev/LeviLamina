@@ -10,7 +10,7 @@ namespace Scripting { class ModuleBindingBuilder; }
 namespace ScriptModuleMinecraft::ScriptPrimitiveShapes {
 // functions
 // NOLINTBEGIN
-MCAPI void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+MCNAPI void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::ScriptPrimitiveShapes

@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _renderBuckets(
+    MCNAPI void _renderBuckets(
         ::ScreenContext&            screenContext,
         ::Vec3 const&               cameraTargetPos,
         ::Vec3 const&               cameraPos,
@@ -70,8 +70,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int64& mParticleRenderBucketCount();
+    MCNAPI static int64& mParticleRenderBucketCount();
 
-    MCAPI static int64& mParticleRenderParticleCount();
+    MCNAPI static int64& mParticleRenderParticleCount();
     // NOLINTEND
 };

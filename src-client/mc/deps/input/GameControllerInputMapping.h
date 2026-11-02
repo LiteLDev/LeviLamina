@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameControllerInputMapping(::GameControllerInputMapping const&);
+    MCNAPI GameControllerInputMapping(::GameControllerInputMapping const&);
 
-    MCAPI ~GameControllerInputMapping();
+    MCNAPI ~GameControllerInputMapping();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameControllerInputMapping const&);
+    MCNAPI void* $ctor(::GameControllerInputMapping const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

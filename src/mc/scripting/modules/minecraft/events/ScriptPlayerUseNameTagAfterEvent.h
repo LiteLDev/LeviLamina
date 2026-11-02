@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
+    MCNAPI ScriptPlayerUseNameTagAfterEvent(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCAPI ScriptPlayerUseNameTagAfterEvent(
+    MCNAPI ScriptPlayerUseNameTagAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                     scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCAPI ~ScriptPlayerUseNameTagAfterEvent();
+    MCNAPI ~ScriptPlayerUseNameTagAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerUseNameTagAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerUseNameTagIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                     scope
     );
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI Mesh(::mce::Mesh&& c);
 
-    MCAPI Mesh(::mce::Mesh const& rhs);
+    MCNAPI Mesh(::mce::Mesh const& rhs);
 
     MCAPI Mesh(
         ::std::shared_ptr<::mce::BufferResourceService>& bufferResourceService,
@@ -89,13 +89,13 @@ public:
         ::std::string_view                               debugName
     );
 
-    MCAPI bool _loadBlankData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
+    MCNAPI bool _loadBlankData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
 
-    MCAPI bool _loadRawData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
+    MCNAPI bool _loadRawData(::mce::BufferResourceService& bufferResourceService, ::std::string_view debugName) const;
 
-    MCAPI void _move(::mce::Mesh& rhs);
+    MCNAPI void _move(::mce::Mesh& rhs);
 
-    MCAPI void _renderMesh(
+    MCNAPI void _renderMesh(
         ::mce::MeshContext&       meshContext,
         ::mce::MaterialPtr const& materialPtr,
         ::brstd::static_vector<
@@ -108,21 +108,21 @@ public:
         ::std::optional<::dragon::RenderMetadata> renderMetadata
     ) const;
 
-    MCAPI bool areBuffersValid() const;
+    MCNAPI bool areBuffersValid() const;
 
-    MCAPI void generateHALData(::mce::VertexLayout const* forcedLayout, bool splitStream) const;
+    MCNAPI void generateHALData(::mce::VertexLayout const* forcedLayout, bool splitStream) const;
 
-    MCAPI ::gsl::span<uchar const> getRawData() const;
+    MCNAPI ::gsl::span<uchar const> getRawData() const;
 
     MCAPI bool isValid() const;
 
-    MCAPI void load(::mce::BufferResourceService& bufferResourceService);
+    MCNAPI void load(::mce::BufferResourceService& bufferResourceService);
 
-    MCAPI explicit operator ::dragon::mesh::Mesh() const;
+    MCNAPI explicit operator ::dragon::mesh::Mesh() const;
 
-    MCAPI void prepareAsEmptyData(::mce::VertexLayout const& forcedLayout) const;
+    MCNAPI void prepareAsEmptyData(::mce::VertexLayout const& forcedLayout) const;
 
-    MCAPI void prepareRenderData(::mce::VertexLayout const& forcedLayout) const;
+    MCNAPI void prepareRenderData(::mce::VertexLayout const& forcedLayout) const;
 
     MCAPI void renderMesh(
         ::mce::MeshContext&       meshContext,
@@ -154,7 +154,7 @@ public:
         ::mce::IndexBufferContainer const* overrideIndexBuffer
     ) const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
     MCAPI ~Mesh();
     // NOLINTEND
@@ -164,7 +164,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::mce::Mesh&& c);
 
-    MCAPI void* $ctor(::mce::Mesh const& rhs);
+    MCNAPI void* $ctor(::mce::Mesh const& rhs);
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::mce::BufferResourceService>& bufferResourceService,

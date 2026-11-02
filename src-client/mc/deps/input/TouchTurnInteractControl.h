@@ -42,12 +42,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
+    MCNAPI void switchState(::InputEventQueue& eventQueue, ::TouchTurnState newState);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCNAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
     // NOLINTEND
 };

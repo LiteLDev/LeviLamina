@@ -36,14 +36,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
+    MCNAPI ::BehaviorTreeDefinitionPtr tryGetDefinition(::std::string const& defId);
 
-    MCAPI ~AutomationBehaviorTreeGroup();
+    MCNAPI ~AutomationBehaviorTreeGroup();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

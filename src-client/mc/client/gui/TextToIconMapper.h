@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TextToIconMapper();
+    MCNAPI TextToIconMapper();
 
-    MCAPI void _init();
+    MCNAPI void _init();
 
-    MCAPI bool
+    MCNAPI bool
     _trySwapGamepadButtonInPlace(::std::string& button, int gamepadButton1, int gamepadButton2, bool isGameTip) const;
 
-    MCAPI void preprocessText(
+    MCNAPI void preprocessText(
         ::std::string&        text,
         ::RemappingLayout*    layout,
         ::InputMode           mode,
@@ -45,13 +45,13 @@ public:
         bool                  isGameTip
     );
 
-    MCAPI ::std::string remapGamepadIcon(int key, bool isGameTip) const;
+    MCNAPI ::std::string remapGamepadIcon(int key, bool isGameTip) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

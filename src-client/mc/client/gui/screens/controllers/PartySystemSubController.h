@@ -71,19 +71,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartySystemSubController(
+    MCNAPI PartySystemSubController(
         ::std::shared_ptr<::MinecraftScreenModel>             minecraftScreenModel,
         ::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem> partySystem,
         ::ToastManager&                                       toastManager
     );
 
-    MCAPI void _handleTravelToastDeclined();
+    MCNAPI void _handleTravelToastDeclined();
 
-    MCAPI void _showDestinationCookieToast(::PartySystemSubController::DestinationCookieToastRequest const& request);
+    MCNAPI void _showDestinationCookieToast(::PartySystemSubController::DestinationCookieToastRequest const& request);
 
-    MCAPI void _showSnackbar(::std::string const locStringKey, ::std::string const localizationString);
+    MCNAPI void _showSnackbar(::std::string const locStringKey, ::std::string const localizationString);
 
-    MCAPI void _showTravelToast(
+    MCNAPI void _showTravelToast(
         ::ToastMessageType   toastType,
         ::std::string const& toastTitle,
         ::std::string const& toastSubtitle,
@@ -94,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>             minecraftScreenModel,
         ::Bedrock::NotNullNonOwnerPtr<::Parties::PartySystem> partySystem,
         ::ToastManager&                                       toastManager
@@ -104,6 +104,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
+    MCNAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
     // NOLINTEND
 };

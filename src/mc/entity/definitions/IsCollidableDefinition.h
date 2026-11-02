@@ -11,6 +11,6 @@ struct IsCollidableDefinition {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initialize(::EntityContext& entity) const;
+    MCNAPI void initialize(::EntityContext& entity) const;
     // NOLINTEND
 };

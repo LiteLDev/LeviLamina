@@ -140,7 +140,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tickEntity(
+    MCNAPI static void tickEntity(
         ::StrictEntityContext const&                             entity,
         ::ClientRewind::ApplyReplayStateTrackerRequestComponent& request,
         ::ActorDataDirtyFlagsComponent&                          dirtyFlags,
@@ -157,7 +157,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,
@@ -174,7 +174,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::InterpolateMovementNeededComponent>,
             ::Read<::ClientRewind::ApplyReplayStateTrackerRequestComponent>,

@@ -9,6 +9,6 @@ class RecoveryCompassItem : public ::AbstractCompassItem {
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

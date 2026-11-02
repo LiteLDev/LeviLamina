@@ -88,17 +88,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void applyToLevelData(::LevelData& levelData) const;
+    MCNAPI void applyToLevelData(::LevelData& levelData) const;
 
-    MCAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
+    MCNAPI ::Editor::GameOptions& operator=(::Editor::GameOptions const&);
 
-    MCAPI ~GameOptions();
+    MCNAPI ~GameOptions();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

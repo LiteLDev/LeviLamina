@@ -56,26 +56,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     _waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSystem& operator=(::ScriptModuleMinecraft::ScriptSystem&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSystem& operator=(::ScriptModuleMinecraft::ScriptSystem&&);
 
-    MCAPI uint runInterval(::Scripting::Closure<void()> closure, ::std::optional<uint> interval);
+    MCNAPI uint runInterval(::Scripting::Closure<void()> closure, ::std::optional<uint> interval);
 
-    MCAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
+    MCNAPI uint runTimeout(::Scripting::Closure<void()> closure, ::std::optional<uint> delay);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     waitTicks(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
 
-    MCAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
+    MCNAPI ::Scripting::Result<::Scripting::Promise<void, ::Scripting::Error>, ::Scripting::EngineError>
     waitTicksV1(::Scripting::ScriptObjectFactory& factory, uint numberOfTicks);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

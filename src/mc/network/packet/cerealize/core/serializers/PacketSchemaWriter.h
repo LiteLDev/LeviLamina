@@ -76,49 +76,49 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $write(::cereal::NullType);
+    MCNAPI bool $write(::cereal::NullType);
 
-    MCFOLD bool $write(bool value);
+    MCNAPI bool $write(bool value);
 
-    MCFOLD bool $write(schar value);
+    MCNAPI bool $write(schar value);
 
-    MCFOLD bool $write(uchar value);
+    MCNAPI bool $write(uchar value);
 
-    MCFOLD bool $write(short value);
+    MCNAPI bool $write(short value);
 
-    MCFOLD bool $write(ushort value);
+    MCNAPI bool $write(ushort value);
 
-    MCFOLD bool $write(int value);
+    MCNAPI bool $write(int value);
 
-    MCFOLD bool $write(uint value);
+    MCNAPI bool $write(uint value);
 
-    MCFOLD bool $write(int64 value);
+    MCNAPI bool $write(int64 value);
 
-    MCFOLD bool $write(uint64 value);
+    MCNAPI bool $write(uint64 value);
 
-    MCFOLD bool $write(float value);
+    MCNAPI bool $write(float value);
 
-    MCFOLD bool $write(double value);
+    MCNAPI bool $write(double value);
 
-    MCFOLD bool $write(::std::string_view const value);
+    MCNAPI bool $write(::std::string_view const value);
 
-    MCFOLD bool $write(::gsl::span<uchar const> view);
+    MCNAPI bool $write(::gsl::span<uchar const> view);
 
-    MCFOLD void $writeAdditionalData(bool value);
+    MCNAPI void $writeAdditionalData(bool value);
 
-    MCFOLD void $writeAdditionalData(uint value);
+    MCNAPI void $writeAdditionalData(uint value);
 
-    MCFOLD void $writeAdditionalData(::std::string_view const value);
+    MCNAPI void $writeAdditionalData(::std::string_view const value);
 
-    MCFOLD bool $pushMember(::std::string_view const);
+    MCNAPI bool $pushMember(::std::string_view const);
 
-    MCFOLD void $popMember();
+    MCNAPI void $popMember();
 
-    MCFOLD ::cereal::SchemaRWType $openObject();
+    MCNAPI ::cereal::SchemaRWType $openObject();
 
-    MCFOLD ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
+    MCNAPI ::cereal::SchemaRWType $openArray(bool isDynamicExtent, uint64 length);
 
-    MCFOLD void $close();
+    MCNAPI void $close();
 
 
     // NOLINTEND

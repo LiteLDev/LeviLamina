@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SentimentOption(::SentimentOptionData const& option);
+    MCNAPI explicit SentimentOption(::SentimentOptionData const& option);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SentimentOptionData const& option);
+    MCNAPI void* $ctor(::SentimentOptionData const& option);
     // NOLINTEND
 };
 

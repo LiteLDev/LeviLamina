@@ -50,11 +50,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
+    MCNAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&
     );
 
-    MCAPI ScriptPlayerInventoryItemChangeAfterEvent(
+    MCNAPI ScriptPlayerInventoryItemChangeAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                              scope
     );
@@ -63,15 +63,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerInventoryItemChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                              scope
     );

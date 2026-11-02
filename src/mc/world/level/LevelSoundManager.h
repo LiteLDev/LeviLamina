@@ -171,7 +171,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSoundManager(
+    MCNAPI LevelSoundManager(
         ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface>  soundPlayer,
         bool                                                   isClientSide,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
@@ -179,7 +179,7 @@ public:
         bool                                                   isServerAuthSoundEnabled
     );
 
-    MCAPI void _queueSoundPacket(
+    MCNAPI void _queueSoundPacket(
         ::std::variant<
             ::LevelSoundManager::QueuedSoundSendPacket,
             ::LevelSoundManager::QueuedSoundBroadcastPacket,
@@ -187,10 +187,10 @@ public:
             ::LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket> packet
     );
 
-    MCAPI void
+    MCNAPI void
     _stopBroadcastsForPlayer(::NetworkIdentifierWithSubId const& player, ::std::optional<::DimensionType> dimension);
 
-    MCAPI void broadcastSoundEvent(
+    MCNAPI void broadcastSoundEvent(
         ::IDimension&                  dimension,
         ::SoundEventIdentifier const&  soundEvent,
         ::Vec3 const&                  pos,
@@ -201,7 +201,7 @@ public:
         ::std::optional<::Vec3> const& fireAtPosition
     );
 
-    MCAPI void broadcastSoundEvent(
+    MCNAPI void broadcastSoundEvent(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -212,21 +212,21 @@ public:
         ::std::optional<::Vec3> const&         fireAtPosition
     );
 
-    MCAPI ::std::optional<::ServerSoundInstance> createServerSoundInstance(
+    MCNAPI ::std::optional<::ServerSoundInstance> createServerSoundInstance(
         ::std::string const&                          soundEventName,
         int                                           loopCount,
         ::std::optional<::NetworkIdentifierWithSubId> recipient,
         ::std::optional<::BroadcastOptions>           broadcast
     );
 
-    MCAPI void onViewRegionMoved(
+    MCNAPI void onViewRegionMoved(
         ::NetworkIdentifierWithSubId const& player,
         ::BlockPos const&                   position,
         uint                                radius,
         ::DimensionType                     dimension
     );
 
-    MCAPI void playPredictiveSynchronizedSound(
+    MCNAPI void playPredictiveSynchronizedSound(
         ::IDimension&                  dimension,
         ::SoundEventIdentifier const&  soundEvent,
         ::Vec3 const&                  pos,
@@ -237,7 +237,7 @@ public:
         ::std::optional<::Vec3> const& fireAtPosition
     );
 
-    MCAPI void playPredictiveSynchronizedSound(
+    MCNAPI void playPredictiveSynchronizedSound(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -249,9 +249,9 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float volume, float pitch);
+    MCNAPI void playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float volume, float pitch);
 
-    MCAPI void playSound(
+    MCNAPI void playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int                                    data,
@@ -259,7 +259,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCAPI void playSoundForPlayerInDimension(
+    MCNAPI void playSoundForPlayerInDimension(
         ::DimensionType                        dimensionType,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -270,7 +270,7 @@ public:
     );
 #endif
 
-    MCAPI void playSynchronizedSound_DEPRECATED(
+    MCNAPI void playSynchronizedSound_DEPRECATED(
         ::IDimension&                          dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -282,20 +282,20 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void processQueuedSoundPackets();
+    MCNAPI void processQueuedSoundPackets();
 #endif
 
-    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
-    MCAPI void subscribeToPlayerConnectionEvents(::IPlayerConnectionConnector& connector);
+    MCNAPI void subscribeToPlayerConnectionEvents(::IPlayerConnectionConnector& connector);
 
-    MCAPI void subscribeToPlayerDimensionTransfers(::IPlayerDimensionTransferConnector& connector);
+    MCNAPI void subscribeToPlayerDimensionTransfers(::IPlayerDimensionTransferConnector& connector);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface>  soundPlayer,
         bool                                                   isClientSide,
         ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator,
@@ -307,18 +307,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<
+    MCNAPI ::Bedrock::PubSub::Connector<
         void(::SoundEventIdentifier const&, ::Vec3 const&, int, ::ActorSoundIdentifier const&, bool)>&
     $getOnLevelSoundEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::PlaySoundOptions const&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::PlaySoundOptions const&)>&
     $getOnLevelSoundEventWithVolumeAndPitchConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::std::string const&)>& $getOnStopLevelSoundEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopAllLevelSoundsEventConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnStopMusicEventConnector();
 
 
     // NOLINTEND

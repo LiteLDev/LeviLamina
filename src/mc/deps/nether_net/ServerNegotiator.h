@@ -71,7 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerNegotiator(
+    MCNAPI ServerNegotiator(
         ::NetherNet::ContextProxy const&                                           ctx,
         ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
         ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
@@ -83,15 +83,15 @@ public:
         uint64                                                                     sessionId
     );
 
-    MCAPI void _completeWithError(::Bedrock::ErrorInfo<::NetherNet::ESessionError> error);
+    MCNAPI void _completeWithError(::Bedrock::ErrorInfo<::NetherNet::ESessionError> error);
 
-    MCAPI void _onIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
+    MCNAPI void _onIceConnectionChange(::webrtc::PeerConnectionInterface::IceConnectionState newState);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::NetherNet::ContextProxy const&                                           ctx,
         ::webrtc::scoped_refptr<::webrtc::PeerConnectionFactory>                   factory,
         ::webrtc::scoped_refptr<::NetherNet::PeerConnectionObserver>               observer,
@@ -107,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $createAnswer(
+    MCNAPI void $createAnswer(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
         ::NetherNet::ConnectRequest const&                         offer,
         ::brstd::move_only_function<void(
@@ -115,15 +115,15 @@ public:
         )>&&                                                       onComplete
     );
 
-    MCAPI void $_onSetRemoteDescription(::webrtc::RTCError result);
+    MCNAPI void $_onSetRemoteDescription(::webrtc::RTCError result);
 
-    MCAPI void $_onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& answerOrError);
+    MCNAPI void $_onCreateSession(::webrtc::RTCErrorOr<::webrtc::SessionDescriptionInterface*> const& answerOrError);
 
-    MCAPI void $_onSetLocalDescription(::webrtc::RTCError result);
+    MCNAPI void $_onSetLocalDescription(::webrtc::RTCError result);
 
-    MCAPI void $_onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
+    MCNAPI void $_onLocalIceCandidate(::webrtc::IceCandidate const* iceCandidate);
 
-    MCAPI void $onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate);
+    MCNAPI void $onRemoteIceCandidate(::NetherNet::CandidateAdd const& candidate);
 
 
     // NOLINTEND

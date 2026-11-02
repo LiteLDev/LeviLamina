@@ -23,23 +23,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI UnlockedRecipesClientComponent();
+    MCNAPI UnlockedRecipesClientComponent();
 
-    MCAPI void addUnlockedRecipes(
+    MCNAPI void addUnlockedRecipes(
         ::Recipes const&                    recipes,
         ::std::vector<::std::string> const& unlockedRecipeIds,
         bool                                newlyUnlocked
     );
 #endif
 
-    MCAPI bool isRecipeUnlocked(::Recipe const& recipe) const;
+    MCNAPI bool isRecipeUnlocked(::Recipe const& recipe) const;
 
-    MCAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
+    MCNAPI bool isRecipeUnlocked(::std::string const& recipeId) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void removeAllRecipes();
+    MCNAPI void removeAllRecipes();
 
-    MCAPI void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
+    MCNAPI void removeRecipes(::Recipes const& recipes, ::std::vector<::std::string> const& unlockedRecipeIds);
 #endif
     // NOLINTEND
 
@@ -47,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 };

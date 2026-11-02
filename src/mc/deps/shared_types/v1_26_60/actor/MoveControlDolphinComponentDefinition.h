@@ -11,7 +11,7 @@ struct MoveControlDolphinComponentDefinition : public ::SharedTypes::v1_26_60::M
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

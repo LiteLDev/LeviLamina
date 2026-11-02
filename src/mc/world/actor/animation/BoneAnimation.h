@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BoneAnimation(::std::string const& name);
+    MCNAPI explicit BoneAnimation(::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name);
+    MCNAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 };

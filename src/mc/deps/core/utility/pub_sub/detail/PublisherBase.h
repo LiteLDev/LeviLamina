@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/container/list.h"
+#include "mc/deps/core/container/list_base_hook.h"
 #include "mc/deps/core/utility/pub_sub/ConnectPosition.h"
 #include "mc/deps/core/utility/pub_sub/detail/PublisherDisconnector.h"
-#include "mc/platform/container/list.h"
-#include "mc/platform/container/list_base_hook.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _insertConnection(
+    MCNAPI void _insertConnection(
         ::std::shared_ptr<::Bedrock::PubSub::Detail::SubscriptionBodyBase> const& body,
         ::Bedrock::PubSub::ConnectPosition                                        at,
         ::std::optional<int>                                                      group

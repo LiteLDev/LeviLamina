@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clientTick(::Mob& mob);
+    MCNAPI void $clientTick(::Mob& mob);
 
 
     // NOLINTEND

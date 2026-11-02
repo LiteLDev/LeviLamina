@@ -19,9 +19,9 @@ struct StateVectorComponent;
 namespace GeyserBoostSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systems);
+MCNAPI void registerSystems(::EntitySystems& systems);
 
-MCAPI void tick(
+MCNAPI void tick(
     ::StrictEntityContext const&,
     ::Optional<::MovementAbilitiesComponent const> const maybeMovementAbilitiesComponent,
     ::MovementEffectsComponent const&                    movementEffectsComponent,

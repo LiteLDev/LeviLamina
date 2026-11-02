@@ -34,15 +34,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& CARDINAL_ID();
+    MCNAPI static ::std::string_view const& CARDINAL_ID();
 
-    MCAPI static ::std::string_view const& CORNER_AND_CARDINAL_ID();
+    MCNAPI static ::std::string_view const& CORNER_AND_CARDINAL_ID();
 
-    MCAPI static ::std::string_view const& ENABLED_STATES_ID();
+    MCNAPI static ::std::string_view const& ENABLED_STATES_ID();
 
-    MCAPI static ::std::string_view const& FACING_ID();
+    MCNAPI static ::std::string_view const& FACING_ID();
 
-    MCAPI static ::std::string_view const& SIXTEEN_WAY_ROTATION_ID();
+    MCNAPI static ::std::string_view const& SIXTEEN_WAY_ROTATION_ID();
     // NOLINTEND
 };
 

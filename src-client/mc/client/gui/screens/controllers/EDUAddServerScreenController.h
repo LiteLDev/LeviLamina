@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduAddServerScreenController(
+    MCNAPI EduAddServerScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>   model,
         ::std::function<void(::std::string const&)> onAddServer
     );
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(::std::string const&)> onAddServer);
     // NOLINTEND
 };

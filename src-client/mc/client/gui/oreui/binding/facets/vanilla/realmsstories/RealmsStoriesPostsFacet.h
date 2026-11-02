@@ -50,40 +50,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesPostsFacet(
+    MCNAPI RealmsStoriesPostsFacet(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager>    provider,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI bool _getMostRecentStoriesViewed() const;
+    MCNAPI bool _getMostRecentStoriesViewed() const;
 
-    MCFOLD int _getPageLength() const;
+    MCNAPI int _getPageLength() const;
 
-    MCAPI ::Realms::Stories::PostStatus _getPostStoryStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus _getPostStoryStatus() const;
 
-    MCAPI bool _getStoryFeedFirstPageReady() const;
+    MCNAPI bool _getStoryFeedFirstPageReady() const;
 
-    MCAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getStoryFeedStatus() const;
 
-    MCAPI int _getStoryFeedTotalStories() const;
+    MCNAPI int _getStoryFeedTotalStories() const;
 
-    MCAPI int _getUnreadStoryCount() const;
+    MCNAPI int _getUnreadStoryCount() const;
 
-    MCAPI void _regenerateView();
+    MCNAPI void _regenerateView();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager>    provider,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>          profanityContext,
@@ -94,7 +94,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

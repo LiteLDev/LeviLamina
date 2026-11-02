@@ -57,80 +57,80 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EconomyTradeableComponent(::Actor& owner);
+    MCNAPI explicit EconomyTradeableComponent(::Actor& owner);
 
-    MCAPI bool _generateTrades();
+    MCNAPI bool _generateTrades();
 
-    MCAPI ::TradeTable* _getTradeTable();
+    MCNAPI ::TradeTable* _getTradeTable();
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
+    MCNAPI ::UpdateTradePacket createDataPacket(::ContainerID containerID);
 
-    MCAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
+    MCNAPI void fixVillagerTierToMatchTradeList(::MerchantRecipeList* oldOffers);
 
-    MCAPI ::IntRange getCurrentCuredDiscount() const;
+    MCNAPI ::IntRange getCurrentCuredDiscount() const;
 
-    MCAPI ::Interaction getInteraction(::Player& player);
+    MCNAPI ::Interaction getInteraction(::Player& player);
 
     MCAPI ::MerchantRecipeList* getOffers();
 
-    MCAPI uint getTradeExpForCurrentLevel() const;
+    MCNAPI uint getTradeExpForCurrentLevel() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<uint> getTradeExpRequirements() const;
+    MCNAPI ::std::vector<uint> getTradeExpRequirements() const;
 #endif
 
-    MCAPI uint getTradeTier() const;
+    MCNAPI uint getTradeTier() const;
 
-    MCAPI bool hasSupplyRemaining() const;
+    MCNAPI bool hasSupplyRemaining() const;
 
-    MCAPI void initFromDefinition();
+    MCNAPI void initFromDefinition();
 
-    MCAPI void initFromDefinition(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const& definition);
+    MCNAPI void initFromDefinition(::SharedTypes::v1_26_60::EconomyTradeableComponentDefinition const& definition);
 
-    MCAPI ::std::string const& loadDisplayName();
+    MCNAPI ::std::string const& loadDisplayName();
 
-    MCAPI void matchExpAndTier();
+    MCNAPI void matchExpAndTier();
 
-    MCAPI void newServerAiStep();
+    MCNAPI void newServerAiStep();
 
     MCAPI void notifyTrade(int recipeIndex, int numTrades);
 
-    MCAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void reloadComponent();
+    MCNAPI void reloadComponent();
 
     MCAPI void resupplyTrades();
 
 #ifdef LL_PLAT_C
-    MCAPI void setDataFromPacket(::UpdateTradePacket const& packet);
+    MCNAPI void setDataFromPacket(::UpdateTradePacket const& packet);
 #endif
 
-    MCAPI void setNearbyCuredDiscount(int discount);
+    MCNAPI void setNearbyCuredDiscount(int discount);
 
-    MCAPI void setOffers(::MerchantRecipeList& offers);
+    MCNAPI void setOffers(::MerchantRecipeList& offers);
 
-    MCAPI void tickDiscountDegradationTimer(::Tick currentTick);
+    MCNAPI void tickDiscountDegradationTimer(::Tick currentTick);
 
-    MCAPI void tryIncrementCuredDiscount();
+    MCNAPI void tryIncrementCuredDiscount();
 
-    MCAPI void tryIncrementNearbyCuredDiscount();
+    MCNAPI void tryIncrementNearbyCuredDiscount();
 
-    MCAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
+    MCNAPI void tryToTransferOldOffers(::MerchantRecipeList* oldOffers);
 
-    MCAPI ~EconomyTradeableComponent();
+    MCNAPI ~EconomyTradeableComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Actor& owner);
+    MCNAPI void* $ctor(::Actor& owner);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

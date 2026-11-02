@@ -33,35 +33,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PhotoStorage(::Core::Path const& baseDir);
+    MCNAPI explicit PhotoStorage(::Core::Path const& baseDir);
 
 #ifdef LL_PLAT_C
-    MCAPI bool _addValidFile(::Core::Path path);
+    MCNAPI bool _addValidFile(::Core::Path path);
 
-    MCAPI bool _isValidFile(::Core::Path file);
+    MCNAPI bool _isValidFile(::Core::Path file);
 
-    MCAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
+    MCNAPI void getLoosePhotos(::Player& owner, ::std::vector<::Core::PathBuffer<::std::string>>& result);
 
-    MCAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
+    MCNAPI ::Core::PathBuffer<::std::string> getPath(::PhotoStorageContainer const& container);
 
-    MCAPI void
+    MCNAPI void
     getPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName, ::std::string& resultData);
 
-    MCAPI ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
+    MCNAPI ::Core::PathBuffer<::std::string> getPhotoPath(::Actor const& owner) const;
 
-    MCAPI ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
+    MCNAPI ::Core::PathBuffer<::std::string> getPhotoPathRelative(::Actor& owner);
 
-    MCAPI bool isValidPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
+    MCNAPI bool isValidPhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
-    MCAPI void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
+    MCNAPI void setValidLoosePhoto(::PhotoStorageContainer const& container, ::std::string const& photoName);
 
-    MCAPI void storePhoto(
+    MCNAPI void storePhoto(
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
         ::std::string const&           photoData
     );
 
-    MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
+    MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> storePhotoFront(
         ::Player&                      owner,
         ::PhotoStorageContainer const& container,
         ::std::string const&           photoName,
@@ -69,30 +69,30 @@ public:
     );
 #endif
 
-    MCAPI ~PhotoStorage();
+    MCNAPI ~PhotoStorage();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BOOKS_DIR();
+    MCNAPI static ::std::string const& BOOKS_DIR();
 
-    MCAPI static ::std::string const& MANIFEST_NAME();
+    MCNAPI static ::std::string const& MANIFEST_NAME();
 
-    MCAPI static ::std::string const& PHOTOITEM_DIR();
+    MCNAPI static ::std::string const& PHOTOITEM_DIR();
 
-    MCAPI static ::std::string const& PHOTO_DIR();
+    MCNAPI static ::std::string const& PHOTO_DIR();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Core::Path const& baseDir);
+    MCNAPI void* $ctor(::Core::Path const& baseDir);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -30,34 +30,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
+    MCNAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
-    MCAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
-    MCAPI bool operator!=(::BaseGameVersion const& rhs) const;
+    MCNAPI bool operator!=(::BaseGameVersion const& rhs) const;
 
-    MCAPI bool operator==(::BaseGameVersion const& rhs) const;
+    MCNAPI bool operator==(::BaseGameVersion const& rhs) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
+    MCNAPI static ::SemVersion::MatchType fromString(::std::string const& source, ::BaseGameVersion& output);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& ANY();
+    MCNAPI static ::BaseGameVersion const& ANY();
 
-    MCAPI static ::BaseGameVersion const& EMPTY();
+    MCNAPI static ::BaseGameVersion const& EMPTY();
 
-    MCAPI static ::BaseGameVersion const& INCOMPATIBLE();
+    MCNAPI static ::BaseGameVersion const& INCOMPATIBLE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseGameVersion const& rhs);
+    MCNAPI void* $ctor(::BaseGameVersion const& rhs);
     // NOLINTEND
 };

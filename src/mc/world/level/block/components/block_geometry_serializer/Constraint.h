@@ -23,13 +23,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
+    MCNAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
     // NOLINTEND

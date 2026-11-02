@@ -15,17 +15,17 @@ struct SurfaceMaterialAttributes;
 namespace VanillaSurfaceBuilders::Utils {
 // functions
 // NOLINTBEGIN
-MCAPI void buildSurface(
+MCNAPI void buildSurface(
     ::ISurfaceBuilder::GlobalParameters const&         globalParams,
     ::ISurfaceBuilder::SurfaceBuilderParameters const& surfaceBuilderParams,
     ::ISurfaceBuilder::PerColumnParameters const&      columnParams
 );
 
-MCAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
+MCNAPI void ensureValidSurfaceMaterials(::SurfaceMaterialAttributes& surfaceMaterials);
 
-MCAPI void placeBedrockCeilingInChunk(::Random& random, ::BlockVolume& blocks);
+MCNAPI void placeBedrockCeilingInChunk(::Random& random, ::BlockVolume& blocks);
 
-MCAPI void placeBedrockFloorInChunk(::Random& random, ::BlockVolume& blocks);
+MCNAPI void placeBedrockFloorInChunk(::Random& random, ::BlockVolume& blocks);
 // NOLINTEND
 
 } // namespace VanillaSurfaceBuilders::Utils

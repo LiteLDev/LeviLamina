@@ -47,22 +47,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit CatalogPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
+    MCNAPI explicit CatalogPackCollector(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> const& catalog);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $start(bool allowed);
+    MCNAPI void $start(bool allowed);
 
-    MCAPI bool $exhausted() const;
+    MCNAPI bool $exhausted() const;
 
-    MCAPI ::HandleRangeResult $handleRange(int, int end);
+    MCNAPI ::HandleRangeResult $handleRange(int, int end);
     // NOLINTEND
 };

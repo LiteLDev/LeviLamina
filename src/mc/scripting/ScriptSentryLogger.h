@@ -38,9 +38,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
+    MCNAPI void
+    $onException(::Scripting::ContextId, ::Scripting::BaseError const& error, ::entt::meta_any const&) const;
 
-    MCAPI void $onPromiseRejection(
+    MCNAPI void $onPromiseRejection(
         ::Scripting::ContextId,
         ::Scripting::BaseError const& error,
         ::entt::meta_any const&,

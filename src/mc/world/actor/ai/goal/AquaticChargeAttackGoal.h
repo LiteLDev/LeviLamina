@@ -56,27 +56,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isCloseEnoughToAttack() const;
+    MCNAPI bool _isCloseEnoughToAttack() const;
 
-    MCAPI void _performKnockbackAttack(::Actor& target);
+    MCNAPI void _performKnockbackAttack(::Actor& target);
 
-    MCAPI void _transitionToCooldown(bool hasAttacked);
+    MCNAPI void _transitionToCooldown(bool hasAttacked);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

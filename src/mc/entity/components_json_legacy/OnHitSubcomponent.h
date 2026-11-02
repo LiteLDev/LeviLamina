@@ -28,6 +28,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor);
+    MCNAPI static bool _canAttack(::Actor* projectileOwnerActor, ::Actor* hitActor);
     // NOLINTEND
 };

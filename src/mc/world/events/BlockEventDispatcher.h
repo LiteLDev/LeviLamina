@@ -31,10 +31,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     dispatchEvent(::BlockPos const& pos, uint layer, ::Block const& block, ::Block const& oldBlock, ::Actor* source);
 
-    MCAPI ::BlockEventDispatcherToken registerListener(
+    MCNAPI ::BlockEventDispatcherToken registerListener(
         ::Vec3 const&                                                            shapePos,
         float                                                                    shapeRadius,
         ::std::function<void(::BlockPos const&, uint, ::Block const&, ::Actor*)> callback

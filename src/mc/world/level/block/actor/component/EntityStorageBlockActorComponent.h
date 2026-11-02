@@ -88,26 +88,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::EntityStorageBlockActorComponent::EntityStorageInfo>
+    MCNAPI ::std::vector<::EntityStorageBlockActorComponent::EntityStorageInfo>
     getEntities(::std::string const& bucket) const;
 
-    MCAPI ::EntityStorageBlockActorComponent::EntityStorageResult release(
+    MCNAPI ::EntityStorageBlockActorComponent::EntityStorageResult release(
         ::std::string const&                               bucket,
         ::ActorUniqueID                                    entityId,
         ::Actor*&                                          outActor,
         ::EntityStorageBlockActorComponent::Context const& context
     );
 
-    MCAPI int size(::std::string const& bucket) const;
+    MCNAPI int size(::std::string const& bucket) const;
 
-    MCAPI ::EntityStorageBlockActorComponent::EntityStorageResult store(
+    MCNAPI ::EntityStorageBlockActorComponent::EntityStorageResult store(
         ::std::string const&                               bucket,
         ::Actor&                                           actor,
         ::ActorUniqueID&                                   outEntityId,
         ::EntityStorageBlockActorComponent::Context const& context
     );
 
-    MCAPI ::EntityStorageBlockActorComponent::EntityStorageResult transfer(
+    MCNAPI ::EntityStorageBlockActorComponent::EntityStorageResult transfer(
         ::std::string const&                               bucket,
         ::ActorUniqueID                                    entityId,
         ::BlockActor&                                      targetBlockActor,
@@ -119,16 +119,16 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::EntityStorageBlockActorComponent> tryCreateFor(::BlockType const& blockType);
+    MCNAPI static ::std::unique_ptr<::EntityStorageBlockActorComponent> tryCreateFor(::BlockType const& blockType);
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $save(::CompoundTag& parentTag, ::SaveContext const&) const;
+    MCNAPI void $save(::CompoundTag& parentTag, ::SaveContext const&) const;
 
-    MCAPI void $load(::CompoundTag const& parentTag, ::ILevel& level, ::BlockActorVersion version);
+    MCNAPI void $load(::CompoundTag const& parentTag, ::ILevel& level, ::BlockActorVersion version);
 
 
     // NOLINTEND

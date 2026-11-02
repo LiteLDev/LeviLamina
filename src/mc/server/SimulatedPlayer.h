@@ -144,7 +144,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SimulatedPlayer(
+    MCNAPI SimulatedPlayer(
         ::Level&                                           level,
         ::PacketSender&                                    packetSender,
         ::ServerNetworkSystem&                             network,
@@ -162,20 +162,20 @@ public:
         ::EntityContext&                                   entityContext
     );
 
-    MCAPI void _addMoveComponent();
+    MCNAPI void _addMoveComponent();
 
-    MCAPI ::ScriptModuleGameTest::ScriptNavigationResult
+    MCNAPI ::ScriptModuleGameTest::ScriptNavigationResult
     _createNavigationResult(::NavigationComponent* navigation) const;
 
-    MCAPI void _updateDestroyBlock();
+    MCNAPI void _updateDestroyBlock();
 
-    MCAPI void _updateMovement();
+    MCNAPI void _updateMovement();
 
-    MCAPI void _updateRidingComponents();
+    MCNAPI void _updateRidingComponents();
 
-    MCAPI void postAiStep();
+    MCNAPI void postAiStep();
 
-    MCAPI void preAiStep();
+    MCNAPI void preAiStep();
 
     MCAPI void setGameTestHelper(::Bedrock::NonOwnerPointer<::gametest::BaseGameTestHelper> gameTestHelper);
 
@@ -220,7 +220,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SimulatedPlayer* create(
+    MCNAPI static ::SimulatedPlayer* create(
         ::std::string const&                                  name,
         ::Vec3 const&                                         spawnPos,
         ::DimensionType                                       dimensionId,
@@ -245,7 +245,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Level&                                           level,
         ::PacketSender&                                    packetSender,
         ::ServerNetworkSystem&                             network,
@@ -267,24 +267,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCFOLD bool $isSimulated() const;
+    MCNAPI bool $isSimulated() const;
 
-    MCAPI ::std::string $getXuid() const;
+    MCNAPI ::std::string $getXuid() const;
 
-    MCAPI ::PlayerMovementSettings const& $getMovementSettings() const;
+    MCNAPI ::PlayerMovementSettings const& $getMovementSettings() const;
 
-    MCAPI void
+    MCNAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCFOLD int $_getSpawnChunkLimit() const;
+    MCNAPI int $_getSpawnChunkLimit() const;
 
-    MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
+    MCNAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
-    MCFOLD void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+    MCNAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
 
     // NOLINTEND

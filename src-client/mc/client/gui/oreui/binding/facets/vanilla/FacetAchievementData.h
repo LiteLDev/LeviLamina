@@ -41,25 +41,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetAchievementData();
+    MCNAPI FacetAchievementData();
 
-    MCAPI FacetAchievementData(::OreUI::FacetAchievementData const&);
+    MCNAPI FacetAchievementData(::OreUI::FacetAchievementData const&);
 
-    MCAPI ~FacetAchievementData();
+    MCNAPI ~FacetAchievementData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::OreUI::FacetAchievementData const&);
+    MCNAPI void* $ctor(::OreUI::FacetAchievementData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

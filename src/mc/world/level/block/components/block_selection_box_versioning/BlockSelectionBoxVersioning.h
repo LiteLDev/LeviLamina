@@ -5,7 +5,7 @@
 namespace BlockSelectionBoxVersioning {
 // functions
 // NOLINTBEGIN
-MCAPI bool checkPreviousSchema(
+MCNAPI bool checkPreviousSchema(
     ::rapidjson::GenericValue<
         ::rapidjson::UTF8<char>,
         ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& component

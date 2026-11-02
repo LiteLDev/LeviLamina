@@ -33,15 +33,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool* getParamStorageIsSet(::Command* cmd, int index);
+    MCNAPI static bool* getParamStorageIsSet(::Command* cmd, int index);
 
-    MCAPI static void* getParamStorageValue(::Command* cmd, int index);
+    MCNAPI static void* getParamStorageValue(::Command* cmd, int index);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

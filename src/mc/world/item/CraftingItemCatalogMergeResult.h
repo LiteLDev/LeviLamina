@@ -79,24 +79,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void insertAfterGroup(
+    MCNAPI void insertAfterGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   groupName,
         ::CraftingItemCatalogMergeResult::Group              insertGroup
     );
 
-    MCAPI void insertAfterItemsGroup(
+    MCNAPI void insertAfterItemsGroup(
         ::SharedTypes::v1_21_60::CraftingCatalogItemCategory itemCategory,
         ::std::string_view                                   itemName,
         ::CraftingItemCatalogMergeResult::Group              insertGroup
     );
 
-    MCAPI ~CraftingItemCatalogMergeResult();
+    MCNAPI ~CraftingItemCatalogMergeResult();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

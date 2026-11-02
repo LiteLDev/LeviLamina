@@ -18,6 +18,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setArmorSlot(::std::string const& slot);
+    MCNAPI void _setArmorSlot(::std::string const& slot);
     // NOLINTEND
 };

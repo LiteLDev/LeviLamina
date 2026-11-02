@@ -5,9 +5,9 @@
 namespace OreUI::EntryPoints::RealmsStoriesTimeline {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string const& ROUTE();
+MCNAPI ::std::string const& ROUTE();
 
-MCAPI ::std::string const& SCREEN_ID();
+MCNAPI ::std::string const& SCREEN_ID();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::RealmsStoriesTimeline

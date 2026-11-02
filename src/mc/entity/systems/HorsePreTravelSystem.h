@@ -41,6 +41,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();
+    MCNAPI static ::TickingSystemWithInfo createHorsePreTravelSystem();
     // NOLINTEND
 };

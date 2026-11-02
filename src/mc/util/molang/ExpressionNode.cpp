@@ -47,15 +47,7 @@ ExpressionNode::queryFunctionAccessorFromString(
         bool experimentsEnabled = true;
 
         if (!queryFunction.mExperiments->empty()) {
-#ifdef LL_PLAT_C
-            auto experiments =
-                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x11AC57C3@@3VExperimentStorage@@A.llvm.13271481743649403461"_sym
-                    .resolve();
-#else
-            auto experiments =
-                (Experiments*)"?mExperiments@ExpressionNodeAnon@?A0x1FF8E18A@@3VExperimentStorage@@A.llvm.16085123331980427291"_sym
-                    .resolve();
-#endif
+            auto experiments = (Experiments*)"`anonymous namespace'::ExpressionNodeAnon::mExperiments"_sym.resolve();
 
             for (auto const experiment : queryFunction.mExperiments.get()) {
                 if (!experiments->isExperimentEnabled(static_cast<AllExperiments>(experiment))) {

@@ -32,14 +32,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::BiomeSurfaceBuilderData const& other) const;
+    MCNAPI bool operator==(::BiomeSurfaceBuilderData const& other) const;
 
-    MCAPI void write(::BinaryStream& stream) const;
+    MCNAPI void write(::BinaryStream& stream) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Result<::BiomeSurfaceBuilderData> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI static ::Bedrock::Result<::BiomeSurfaceBuilderData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 };

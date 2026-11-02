@@ -52,53 +52,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWorldContextQueriesFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
+    MCNAPI explicit RealmsWorldContextQueriesFacet(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
 
-    MCAPI void _setFacetState(::Realms::RealmsWorldContextState realmsWorldContextState);
+    MCNAPI void _setFacetState(::Realms::RealmsWorldContextState realmsWorldContextState);
 
-    MCFOLD int getActiveSlotIndex() const;
+    MCNAPI int getActiveSlotIndex() const;
 
-    MCFOLD int getDaysLeft() const;
+    MCNAPI int getDaysLeft() const;
 
-    MCAPI ::Realms::PlayerPermission getDefaultPermission() const;
+    MCNAPI ::Realms::PlayerPermission getDefaultPermission() const;
 
-    MCFOLD ::std::string const& getFriendlyId() const;
+    MCNAPI ::std::string const& getFriendlyId() const;
 
-    MCAPI bool getIsClosed() const;
+    MCNAPI bool getIsClosed() const;
 
-    MCAPI bool getIsExpired() const;
+    MCNAPI bool getIsExpired() const;
 
-    MCAPI bool getIsFull() const;
+    MCNAPI bool getIsFull() const;
 
-    MCAPI int getMaxPlayers() const;
+    MCNAPI int getMaxPlayers() const;
 
-    MCAPI int getOnlinePlayerCount() const;
+    MCNAPI int getOnlinePlayerCount() const;
 
-    MCFOLD ::std::string const& getRealmId() const;
+    MCNAPI ::std::string const& getRealmId() const;
 
-    MCFOLD ::std::string const& getRealmName() const;
+    MCNAPI ::std::string const& getRealmName() const;
 
-    MCFOLD ::std::string const& getRealmOwnerId() const;
+    MCNAPI ::std::string const& getRealmOwnerId() const;
 
-    MCFOLD ::Realms::RealmsWorldContextState getState() const;
+    MCNAPI ::Realms::RealmsWorldContextState getState() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldContext> realmsWorldContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

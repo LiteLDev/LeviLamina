@@ -44,15 +44,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
+    MCNAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
-    MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
+    MCNAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

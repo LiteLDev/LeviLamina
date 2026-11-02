@@ -23,29 +23,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ScriptActorHealEventFilterData(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
 
-    MCAPI ~ScriptActorHealEventFilterData();
+    MCNAPI ~ScriptActorHealEventFilterData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilterData
+    MCNAPI static ::ScriptModuleMinecraft::EventFilters::ScriptActorHealEventFilterData
     create(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorData actorData, ::ActorHealCause healCause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

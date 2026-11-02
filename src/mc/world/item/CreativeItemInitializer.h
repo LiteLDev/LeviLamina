@@ -41,9 +41,9 @@ public:
 
     MCAPI void _addLooseCreativeItem(::ItemInstance const& itemInstance);
 
-    MCAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
+    MCNAPI void _addLooseCreativeItemsServer(::BaseGameVersion const& worldVersion);
 
-    MCAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
+    MCNAPI void addLooseBlocks(::std::vector<::BlockDefinition const*> const& blockDefinitions);
 
     MCAPI void
     initializeFromCraftingItemCatalog(::CraftingItemCatalogMergeResult const& craftingItemCatalogMergeResult);

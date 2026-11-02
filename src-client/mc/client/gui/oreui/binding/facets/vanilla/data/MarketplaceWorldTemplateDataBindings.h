@@ -30,43 +30,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string const& getCreator() const;
+    MCNAPI ::std::string const& getCreator() const;
 
-    MCAPI ::std::string const& getDiscountText() const;
+    MCNAPI ::std::string const& getDiscountText() const;
 
-    MCFOLD bool getHasDiscount() const;
+    MCNAPI bool getHasDiscount() const;
 
-    MCFOLD ::std::string const& getId() const;
+    MCNAPI ::std::string const& getId() const;
 
-    MCFOLD bool getIsExpired() const;
+    MCNAPI bool getIsExpired() const;
 
-    MCFOLD bool getIsFree() const;
+    MCNAPI bool getIsFree() const;
 
-    MCAPI bool getIsInstalled() const;
+    MCNAPI bool getIsInstalled() const;
 
-    MCAPI bool getIsUpdateAvailable() const;
+    MCNAPI bool getIsUpdateAvailable() const;
 
-    MCFOLD ::std::string const& getName() const;
+    MCNAPI ::std::string const& getName() const;
 
-    MCAPI int getNonDiscountedPrice() const;
+    MCNAPI int getNonDiscountedPrice() const;
 
-    MCAPI ::std::string const& getPackId() const;
+    MCNAPI ::std::string const& getPackId() const;
 
-    MCAPI int getPrice() const;
+    MCNAPI int getPrice() const;
 
-    MCAPI ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
+    MCNAPI ::OreUI::RatingDataBindings const& getRatingDataBinding() const;
 
-    MCAPI ::StoreCatalogCategory const& getStoreCatalogCategory() const;
+    MCNAPI ::StoreCatalogCategory const& getStoreCatalogCategory() const;
 
-    MCAPI ::OreUI::AllowListPath const& getThumbnailPath() const;
+    MCNAPI ::OreUI::AllowListPath const& getThumbnailPath() const;
 
-    MCAPI ~MarketplaceWorldTemplateDataBindings();
+    MCNAPI ~MarketplaceWorldTemplateDataBindings();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreUI::MarketplaceWorldTemplateDataBindings fromMarketplaceWorldTemplateData(
+    MCNAPI static ::OreUI::MarketplaceWorldTemplateDataBindings fromMarketplaceWorldTemplateData(
         ::World::MarketplaceWorldTemplateData const&                      worldTemplateInfo,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> const& resourceAllowList,
         ::std::vector<::std::shared_ptr<::SDL::ScreenLayoutQuery>> const& upsellLayoutList,
@@ -77,7 +77,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

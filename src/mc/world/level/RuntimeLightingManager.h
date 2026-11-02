@@ -69,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _getListOfChunksWithPlayerDistance();
+    MCNAPI void _getListOfChunksWithPlayerDistance();
 
-    MCAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
+    MCNAPI void _relightChunks(::std::chrono::nanoseconds timeLimit);
 
-    MCAPI void _removeProcessedSubchunks();
+    MCNAPI void _removeProcessedSubchunks();
 
-    MCAPI void updateBlockLight(
+    MCNAPI void updateBlockLight(
         ::BlockPos const& blockPos,
         ::Brightness      oldBrightness,
         ::Brightness      newBrightness,

@@ -13,13 +13,13 @@
 #include "mc/client/gui/oreui/Scene.h"
 #include "mc/client/gui/oreui/routing/Router.h"
 #include "mc/client/gui/oreui/views/View.h"
-#include "mc/client/services/Response.h"
 #include "mc/client/world/NetworkWorldInfo.h"
 #include "mc/client/world/WorldSystem.h"
 #include "mc/client/world/lists/ExternalServerWorldList.h"
 #include "mc/deps/core/http/HeaderCollection.h"
 #include "mc/deps/core/http/LibHttpClientImpl.h"
 #include "mc/deps/core/http/Request.h"
+#include "mc/deps/core/http/Response.h"
 #include "mc/deps/core/http/Url.h"
 #include <cpr/cpr.h>
 #include <ctre/ctre-unicode.hpp>
@@ -391,15 +391,10 @@ LL_TYPE_INSTANCE_HOOK(
     Bedrock::Threading::Async<Bedrock::Http::Response>,
     Bedrock::Http::Request&& request
 ) {
-    auto match = ctre::search<R"(^[^:]+://(?:[^/@?#]*@)?([^/?#]+)/v1/join(?:[?#]|$))">(
-        request.mUnkcb7d93.as<Bedrock::Http::Url>()
-    );
+    auto match = ctre::search<R"(^[^:]+://(?:[^/@?#]*@)?([^/?#]+)/v1/join(?:[?#]|$))">(*request.mUrl);
     if (!match) return origin(std::move(request));
 
-    request.mUnk3aa28a.as<Bedrock::Http::HeaderCollection>().set(
-        "Accept-Language",
-        std::string{ll::i18n::getDefaultLocaleCode()}
-    );
+    (*request.mHeaders->mData)["accept-language"] = ll::i18n::getDefaultLocaleCode();
 
     auto result = origin(std::move(request));
 
@@ -408,7 +403,7 @@ LL_TYPE_INSTANCE_HOOK(
             if (completed.getStatus() != Bedrock::Threading::AsyncStatus::Completed) return;
 
             auto response = completed.getResult();
-            if (response.mStatus.mValue < 200 || response.mStatus.mValue >= 300) return;
+            if (response.mStatus->mValue < 200 || response.mStatus->mValue >= 300) return;
 
             auto body = response.getBodyAsUtf8String();
             if (body.find("\"levilamina\"") == std::string::npos) return;

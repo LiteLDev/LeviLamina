@@ -45,15 +45,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerReportOptionsQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit PlayerReportOptionsQuery(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _updateProperties();
+    MCNAPI void _updateProperties();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

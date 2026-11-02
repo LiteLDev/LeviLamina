@@ -102,28 +102,28 @@ public:
     // NOLINTBEGIN
     MCAPI ::AABBHitResult clip(::Vec3 const& a, ::Vec3 const& b) const;
 
-    MCAPI ::AABB cloneAndFloor(float offsetMin, float offsetMax) const;
+    MCNAPI ::AABB cloneAndFloor(float offsetMin, float offsetMax) const;
 
     MCAPI ::AABB cloneAndGrow(::Vec3 const& distance) const;
 
     MCAPI ::AABB cloneAndGrow(float radius) const;
 
-    MCAPI ::AABB cloneAndShrink(::Vec3 const& offset) const;
+    MCNAPI ::AABB cloneAndShrink(::Vec3 const& offset) const;
 
-    MCAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
+    MCNAPI ::AABB cloneAndTransformByMatrix(::Matrix const& transform) const;
 
-    MCAPI ::AABB cloneAndTranslate(::Vec3 const& offset) const;
+    MCNAPI ::AABB cloneAndTranslate(::Vec3 const& offset) const;
 
     MCAPI float distanceTo(::AABB const& aabb) const;
 
-    MCAPI bool intersectSegment(
+    MCNAPI bool intersectSegment(
         ::Vec3 const& segmentBegin,
         ::Vec3 const& segmentEnd,
         ::Vec3&       intersectPoint,
         ::Vec3&       intersectNorm
     ) const;
 
-    MCAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
+    MCNAPI bool intersects(::Vec3 const& segmentBegin, ::Vec3 const& segmentEnd) const;
 
 #ifdef LL_PLAT_C
     MCAPI bool operator!=(::AABB const& rhs) const;
@@ -133,16 +133,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AABB aroundRadius(::Vec3 const& point, float radius);
+    MCNAPI static ::AABB aroundRadius(::Vec3 const& point, float radius);
 
-    MCAPI static ::ClipCollideResult
+    MCNAPI static ::ClipCollideResult
     clipCollide(::AABB const& stationary, ::AABB const& moving, ::Vec3 const& velocity);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::AABB const& BLOCK_SHAPE();
+    MCNAPI static ::AABB const& BLOCK_SHAPE();
 
     MCAPI static ::AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
     // NOLINTEND
@@ -150,6 +150,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& min, ::Vec3 const& max);
+    MCNAPI void* $ctor(::Vec3 const& min, ::Vec3 const& max);
     // NOLINTEND
 };

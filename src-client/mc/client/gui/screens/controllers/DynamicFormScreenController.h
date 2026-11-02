@@ -35,29 +35,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DynamicFormScreenController(
+    MCNAPI DynamicFormScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>              model,
         ::JsonValidator::Property const&                      validator,
         ::std::shared_ptr<::DynamicContentBindingInformation> bindingData
     );
 
-    MCAPI void _handleValidationErrors(::Json::Reader const& reader, ::std::vector<::std::string> validationErrors);
+    MCNAPI void _handleValidationErrors(::Json::Reader const& reader, ::std::vector<::std::string> validationErrors);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI bool _resolveControlEnabled(::Json::Value const& formJson) const;
+    MCNAPI bool _resolveControlEnabled(::Json::Value const& formJson) const;
 
-    MCAPI ::Json::Value getContentValues() const;
+    MCNAPI ::Json::Value getContentValues() const;
 
-    MCAPI bool parseJson(::std::string const& formJSON, ::Json::Value& outValue);
+    MCNAPI bool parseJson(::std::string const& formJSON, ::Json::Value& outValue);
 
-    MCAPI bool validateAndBind(::Json::Value const& formJSON);
+    MCNAPI bool validateAndBind(::Json::Value const& formJSON);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>              model,
         ::JsonValidator::Property const&                      validator,
         ::std::shared_ptr<::DynamicContentBindingInformation> bindingData

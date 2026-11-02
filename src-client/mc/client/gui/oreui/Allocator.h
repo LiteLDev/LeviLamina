@@ -32,19 +32,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void* $Allocate(uint size, ::cohtml::MemTags::MemTagsType tag);
+    MCNAPI void* $Allocate(uint size, ::cohtml::MemTags::MemTagsType tag);
 
-    MCAPI void* $Reallocate(void* oldPtr, uint size, ::cohtml::MemTags::MemTagsType tag);
+    MCNAPI void* $Reallocate(void* oldPtr, uint size, ::cohtml::MemTags::MemTagsType tag);
 
-    MCAPI void $Deallocate(void* ptr, ::cohtml::MemTags::MemTagsType);
+    MCNAPI void $Deallocate(void* ptr, ::cohtml::MemTags::MemTagsType);
 
-    MCAPI void* $AlignedAllocate(uint size, uint alignment, ::cohtml::MemTags::MemTagsType tag);
+    MCNAPI void* $AlignedAllocate(uint size, uint alignment, ::cohtml::MemTags::MemTagsType tag);
 
-    MCAPI void $AlignedDeallocate(void* ptr, ::cohtml::MemTags::MemTagsType);
+    MCNAPI void $AlignedDeallocate(void* ptr, ::cohtml::MemTags::MemTagsType);
 
-    MCFOLD void* $VirtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType);
+    MCNAPI void* $VirtualAllocate(void*, uint, int, int, ::cohtml::MemTags::MemTagsType);
 
-    MCFOLD bool $VirtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType);
+    MCNAPI bool $VirtualFree(void*, uint, int, ::cohtml::MemTags::MemTagsType);
     // NOLINTEND
 
 public:

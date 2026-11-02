@@ -104,49 +104,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FocusNavigationController(::OreUI::FocusNavigationBinding& binding);
+    MCNAPI explicit FocusNavigationController(::OreUI::FocusNavigationBinding& binding);
 
-    MCAPI ::std::vector<::OreUI::FocusNavigationController::Placement> _computePlacements(uint gridId) const;
+    MCNAPI ::std::vector<::OreUI::FocusNavigationController::Placement> _computePlacements(uint gridId) const;
 
-    MCAPI uint _descendToLeaf(uint nodeId, ::OreUI::FocusDirection enterDirection) const;
+    MCNAPI uint _descendToLeaf(uint nodeId, ::OreUI::FocusDirection enterDirection) const;
 
-    MCAPI bool _isValidFocusPath(uint id) const;
+    MCNAPI bool _isValidFocusPath(uint id) const;
 
-    MCAPI void _linkToParent(uint id);
+    MCNAPI void _linkToParent(uint id);
 
-    MCAPI uint _navigate(::OreUI::FocusDirection direction);
+    MCNAPI uint _navigate(::OreUI::FocusDirection direction);
 
-    MCAPI void _restoreReleasedFocus(::OreUI::FocusNavigationController::FocusBinding const& previous);
+    MCNAPI void _restoreReleasedFocus(::OreUI::FocusNavigationController::FocusBinding const& previous);
 
-    MCAPI void _unlinkFromParent(uint id);
+    MCNAPI void _unlinkFromParent(uint id);
 
-    MCAPI void _updateFocusBinding(uint id, bool shouldBindFocus);
+    MCNAPI void _updateFocusBinding(uint id, bool shouldBindFocus);
 
-    MCAPI void activate(::OreUI::GamepadButton button);
+    MCNAPI void activate(::OreUI::GamepadButton button);
 
-    MCAPI void addNode(::OreUI::FocusNavigationController::FocusNodeDesc const& desc);
+    MCNAPI void addNode(::OreUI::FocusNavigationController::FocusNodeDesc const& desc);
 
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI uint focusFirst();
+    MCNAPI uint focusFirst();
 
-    MCAPI bool isWithinFocusBinding(uint id) const;
+    MCNAPI bool isWithinFocusBinding(uint id) const;
 
-    MCAPI uint navigate(::OreUI::FocusDirection direction);
+    MCNAPI uint navigate(::OreUI::FocusDirection direction);
 
-    MCAPI void removeNode(uint id);
+    MCNAPI void removeNode(uint id);
 
-    MCAPI void requestFocus(uint id);
+    MCNAPI void requestFocus(uint id);
 
-    MCAPI uint setFocus(uint id);
+    MCNAPI uint setFocus(uint id);
 
-    MCAPI void updateNode(::OreUI::FocusNavigationController::FocusNodeDesc const& desc);
+    MCNAPI void updateNode(::OreUI::FocusNavigationController::FocusNodeDesc const& desc);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::FocusNavigationBinding& binding);
+    MCNAPI void* $ctor(::OreUI::FocusNavigationBinding& binding);
     // NOLINTEND
 
 public:

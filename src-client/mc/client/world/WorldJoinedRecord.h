@@ -42,13 +42,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
+    MCNAPI WorldJoinedRecord(::std::string const& name, ::GameType gameType, bool isEditorWorld);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::GameType gameType, bool isEditorWorld);
+    MCNAPI void* $ctor(::std::string const& name, ::GameType gameType, bool isEditorWorld);
     // NOLINTEND
 };
 

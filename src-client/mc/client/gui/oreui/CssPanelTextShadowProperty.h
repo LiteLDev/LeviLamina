@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $convertToCss(
+    MCNAPI ::std::string $convertToCss(
         ::OreUI::Styling::CssParsingOptions const& options,
         ::std::unordered_set<::std::string>&       addedProperties
     );

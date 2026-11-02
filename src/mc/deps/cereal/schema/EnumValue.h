@@ -31,23 +31,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnumValue(::cereal::internal::EnumValue const&);
+    MCNAPI EnumValue(::cereal::internal::EnumValue const&);
 
-    MCAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
+    MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
 
-    MCAPI ~EnumValue();
+    MCNAPI ~EnumValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::EnumValue const&);
+    MCNAPI void* $ctor(::cereal::internal::EnumValue const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

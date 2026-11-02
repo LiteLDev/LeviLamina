@@ -31,20 +31,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+    MCNAPI ChatEvent(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
 
-    MCAPI ~ChatEvent();
+    MCNAPI ~ChatEvent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
+    MCNAPI void* $ctor(::WeakRef<::EntityContext> sender, ::TextPacket const& packet);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

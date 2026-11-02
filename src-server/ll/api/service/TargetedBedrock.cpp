@@ -86,8 +86,8 @@ LL_TYPE_INSTANCE_HOOK(
     bool               a2
 ) {
     serverNetworkHandler = this;
-    unhook();
     origin(a1, a2);
+    unhook();
 }
 LL_TYPE_INSTANCE_HOOK(
     ServerNetworkHandlerShutdown,
@@ -143,9 +143,9 @@ LL_TYPE_INSTANCE_HOOK(LevelDestructor, HookPriority::High, Level, &Level::$dtor,
 static std::atomic<RakNet::RakPeer*> rakPeer;
 
 LL_TYPE_INSTANCE_HOOK(RakNetRakPeerConstructor, HookPriority::High, RakNet::RakPeer, &RakNet::RakPeer::$ctor, void*) {
-    unhook();
     auto res = origin();
     rakPeer  = this;
+    unhook();
     return res;
 }
 LL_TYPE_INSTANCE_HOOK(

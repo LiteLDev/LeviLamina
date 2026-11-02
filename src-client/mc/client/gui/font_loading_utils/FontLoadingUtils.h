@@ -15,16 +15,16 @@ namespace mce { class TextureGroup; }
 namespace FontLoadingUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::shared_ptr<::BitmapFont>
+MCNAPI ::std::shared_ptr<::BitmapFont>
 loadBitmapFont(::Json::Value const& fontMetaData, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-MCAPI ::std::shared_ptr<::MSDFFont>
+MCNAPI ::std::shared_ptr<::MSDFFont>
 loadMsdfFont(::Json::Value const& fontMetaData, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-MCAPI ::std::shared_ptr<::TrueTypeFont>
+MCNAPI ::std::shared_ptr<::TrueTypeFont>
 loadTrueTypeFont(::Json::Value const& fontMetaData, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-MCAPI ::std::shared_ptr<::TrueTypeMsdfFont>
+MCNAPI ::std::shared_ptr<::TrueTypeMsdfFont>
 loadTrueTypeMsdfFont(::Json::Value const& fontMetaData, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 // NOLINTEND
 

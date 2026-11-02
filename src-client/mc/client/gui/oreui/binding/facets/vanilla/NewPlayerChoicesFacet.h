@@ -55,39 +55,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NewPlayerChoicesFacet(
+    MCNAPI NewPlayerChoicesFacet(
         ::PersonaClient&                                        personaClient,
         ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const& newPlayerSystem
     );
 
-    MCAPI void _populateCharacterSkinData();
+    MCNAPI void _populateCharacterSkinData();
 
-    MCAPI void applySelectedCharacterSkin() const;
+    MCNAPI void applySelectedCharacterSkin() const;
 
-    MCAPI ::std::string const& getSelectedCharacterId() const;
+    MCNAPI ::std::string const& getSelectedCharacterId() const;
 
-    MCAPI void setIsCreative(bool creative);
+    MCNAPI void setIsCreative(bool creative);
 
-    MCAPI void setSelectedCharacter(::std::string const& selectedId);
+    MCNAPI void setSelectedCharacter(::std::string const& selectedId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::PersonaClient& personaClient, ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> const& newPlayerSystem);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

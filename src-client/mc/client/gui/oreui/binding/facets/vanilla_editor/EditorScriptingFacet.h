@@ -61,51 +61,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorScriptingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
+    MCNAPI explicit EditorScriptingFacet(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
 
-    MCAPI void _handleDataStoreEvent(
+    MCNAPI void _handleDataStoreEvent(
         ::HashedString const&                          dataTag,
         ::Editor::DataStore::EventType                 eventType,
         ::Json::Value const&                           payload,
         ::Editor::DataStore::PayloadDescription const& desc
     );
 
-    MCAPI void addCleanupMessage(::std::string const& id, ::std::string const& payload);
+    MCNAPI void addCleanupMessage(::std::string const& id, ::std::string const& payload);
 
-    MCAPI void attachDebugger();
+    MCNAPI void attachDebugger();
 
-    MCAPI void dispatchDataStoreEvent(
+    MCNAPI void dispatchDataStoreEvent(
         ::std::string const&                                     dataTag,
         ::Editor::DataStore::EventType                           eventType,
         ::std::optional<::std::string>                           payload,
         ::std::optional<::Editor::DataStore::PayloadDescription> desc
     );
 
-    MCAPI ::OreUI::EditorScriptingFacet::EditorRay getMouseRayCastActionPayload() const;
+    MCNAPI ::OreUI::EditorScriptingFacet::EditorRay getMouseRayCastActionPayload() const;
 
-    MCAPI void reload();
+    MCNAPI void reload();
 
-    MCAPI void sendLifecycleEvent();
+    MCNAPI void sendLifecycleEvent();
 
-    MCAPI void sendMessage(::std::string const& id, ::std::string const& payload);
+    MCNAPI void sendMessage(::std::string const& id, ::std::string const& payload);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -53,7 +53,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FacetMessage(
+        MCNAPI FacetMessage(
             ::MessageData const&                                       message,
             ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
         );
@@ -62,7 +62,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::MessageData const&                                       message,
             ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
         );
@@ -102,27 +102,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reportClick(
+    MCNAPI void reportClick(
         ::std::string const& messageID,
         ::std::string const& instanceID,
         ::std::string const& surface,
         ::std::string const& buttonID
     );
 
-    MCAPI void
+    MCNAPI void
     reportDismiss(::std::string const& messageID, ::std::string const& instanceID, ::std::string const& surface);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

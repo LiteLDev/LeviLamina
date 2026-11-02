@@ -55,13 +55,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _doorBlocksPath() const;
+    MCNAPI bool _doorBlocksPath() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::DoorBlock const* _findBlockingDoorAtPos(
+    MCNAPI static ::DoorBlock const* _findBlockingDoorAtPos(
         ::BlockPos const&  bpos,
         ::Mob const&       mob,
         ::Path*            path,
@@ -73,15 +73,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

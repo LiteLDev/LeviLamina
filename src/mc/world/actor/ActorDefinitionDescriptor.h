@@ -143,23 +143,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionDescriptor();
+    MCNAPI ActorDefinitionDescriptor();
 
-    MCAPI ActorDefinitionDescriptor(::ActorDefinitionDescriptor&&);
+    MCNAPI ActorDefinitionDescriptor(::ActorDefinitionDescriptor&&);
 
-    MCAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
+    MCNAPI ::ActorDefinitionDescriptor& combine(::ActorDefinitionDescriptor const& rhs);
 
-    MCAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
+    MCNAPI ::std::optional<::ActorDefinitionAttribute> findAttributeByName(::std::string const& attributeName) const;
 
 #ifdef LL_PLAT_C
-    MCFOLD bool hasComponent(::HashedString const& name) const;
+    MCNAPI bool hasComponent(::HashedString const& name) const;
 
-    MCAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
+    MCNAPI ::ActorDefinitionDescriptor& operator=(::ActorDefinitionDescriptor&&);
 #endif
 
-    MCAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
+    MCNAPI ::ActorDefinitionDescriptor& subtract(::ActorDefinitionDescriptor const& rhs);
 
-    MCAPI ~ActorDefinitionDescriptor();
+    MCNAPI ~ActorDefinitionDescriptor();
     // NOLINTEND
 
 public:
@@ -171,24 +171,24 @@ public:
     executeTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
 
 #ifdef LL_PLAT_C
-    MCAPI static bool executeUpgrade(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
+    MCNAPI static bool executeUpgrade(::Actor& entity, ::std::string const& name, ::VariantParameterList const& list);
 #endif
 
-    MCAPI static void
+    MCNAPI static void
     forceExecuteTrigger(::Actor& entity, ::ActorDefinitionTrigger const& trigger, ::VariantParameterList const& list);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::ActorDefinitionDescriptor&&);
+    MCNAPI void* $ctor(::ActorDefinitionDescriptor&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

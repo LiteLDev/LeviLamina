@@ -34,26 +34,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockLocationIterator(
+    MCNAPI ScriptBlockLocationIterator(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockLocationIterator&
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockLocationIterator&
     operator=(::ScriptModuleMinecraft::ScriptBlockLocationIterator&& it);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::BaseBlockLocationIterator> nativeIterator,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockVolumeIterable>
             strongTypedIterableHandle

@@ -52,29 +52,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::IScriptBlockProperty>>>
     _createPropertyV010(::std::string const& propertyName);
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     canBeDestroyedByLiquidSpread(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> canContainLiquid(::SharedTypes::v1_26_0::LiquidType liquidType) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> canContainLiquid(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> isLiquidBlocking(::SharedTypes::v1_26_0::LiquidType liquidType) const;
+    MCNAPI ::Scripting::Result_deprecated<bool> isLiquidBlocking(::SharedTypes::v1_26_0::LiquidType liquidType) const;
 
-    MCAPI ::Scripting::Result_deprecated<bool>
+    MCNAPI ::Scripting::Result_deprecated<bool>
     liquidSpreadCausesSpawn(::SharedTypes::v1_26_0::LiquidType liquidType) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>
     getOrCreateHandle(::Block const& block, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };

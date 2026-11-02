@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);
+    MCNAPI explicit SynchedActorDataEntityWrapper(::EntityContext& entity);
 
 #ifdef LL_PLAT_C
     MCAPI void assignValues(
@@ -49,28 +49,28 @@ public:
     );
 #endif
 
-    MCAPI float getFloat(ushort id) const;
+    MCNAPI float getFloat(ushort id) const;
 
     MCAPI int getInt(ushort id) const;
 
     MCAPI schar getInt8(ushort id) const;
 
-    MCAPI ::BlockPos getPosition(ushort id) const;
+    MCNAPI ::BlockPos getPosition(ushort id) const;
 
-    MCAPI short getShort(ushort id) const;
+    MCNAPI short getShort(ushort id) const;
 
-    MCAPI ::std::string const& getString(ushort id) const;
+    MCNAPI ::std::string const& getString(ushort id) const;
 
-    MCAPI ::Vec3 getVec3(ushort id) const;
+    MCNAPI ::Vec3 getVec3(ushort id) const;
 
     MCAPI bool hasData(ushort id) const;
 
-    MCAPI void markDirty(ushort id);
+    MCNAPI void markDirty(ushort id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntityContext& entity);
+    MCNAPI void* $ctor(::EntityContext& entity);
     // NOLINTEND
 };

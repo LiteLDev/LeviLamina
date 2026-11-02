@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DimensionDefinitionGroup(
+    MCNAPI DimensionDefinitionGroup(
         ::cereal::ReflectionCtx const& ctx,
         ::ResourcePackManager* const   rpm,
         ::IMinecraftEventing&          eventing
@@ -73,22 +73,22 @@ public:
         ::std::function<void(::std::string const&, ::DimensionDefinitionGroup::DimensionDefinition const&)> callback
     ) const;
 
-    MCAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
+    MCNAPI ::std::optional<::DimensionDefinitionGroup::DimensionDefinition>
     getDimensionDefinition(::std::string const& dimensionName) const;
 
-    MCAPI ~DimensionDefinitionGroup();
+    MCNAPI ~DimensionDefinitionGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager* const rpm, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -22,14 +22,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::CommandPermissionLevel> getCommandPermissionLevel(::std::string const& command) const;
+    MCNAPI ::std::optional<::CommandPermissionLevel> getCommandPermissionLevel(::std::string const& command) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 

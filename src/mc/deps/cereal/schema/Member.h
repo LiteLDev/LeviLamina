@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Member(::cereal::internal::Member const&);
+    MCNAPI Member(::cereal::internal::Member const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::Member const&);
+    MCNAPI void* $ctor(::cereal::internal::Member const&);
     // NOLINTEND
 };
 

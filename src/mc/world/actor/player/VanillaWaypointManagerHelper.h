@@ -8,7 +8,7 @@
 namespace VanillaWaypointManagerHelper {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string getPathFromPlayerDotImageType(::VanillaWaypointManagerConstants::ImageType imageType);
+MCNAPI ::std::string getPathFromPlayerDotImageType(::VanillaWaypointManagerConstants::ImageType imageType);
 // NOLINTEND
 
 } // namespace VanillaWaypointManagerHelper

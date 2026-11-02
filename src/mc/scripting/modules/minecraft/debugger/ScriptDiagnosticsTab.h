@@ -39,18 +39,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addView(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDiagnosticsView> view);
+    MCNAPI void addView(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDiagnosticsView> view);
 
-    MCAPI ::std::vector<::ScriptModuleDebugUtilities::ScriptStat> getAndClearPendingStats();
+    MCNAPI ::std::vector<::ScriptModuleDebugUtilities::ScriptStat> getAndClearPendingStats();
 
-    MCAPI void
+    MCNAPI void
     removeView(::Scripting::StrongTypedObjectHandle<::ScriptModuleDebugUtilities::ScriptDiagnosticsView> view);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

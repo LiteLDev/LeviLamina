@@ -73,12 +73,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _forEachClientPlayerPair(
+    MCNAPI void _forEachClientPlayerPair(
         ::std::vector<::WeakEntityRef> const&                                                           gameplayUsers,
         ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
     );
 
-    MCAPI bool _shouldSendPositionPacket(
+    MCNAPI bool _shouldSendPositionPacket(
         ::Vec3 const&                                     viewingPlayerPosition,
         ::DimensionType const&                            viewingPlayerDimension,
         bool                                              viewingPlayerIsSpectator,
@@ -86,12 +86,12 @@ public:
         ::PlayerLocationSender::PlayerLocationData const& observedPlayerPositionNew
     ) const;
 
-    MCAPI void _updatePlayerData(::Player const& player);
+    MCNAPI void _updatePlayerData(::Player const& player);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
+    MCNAPI static ::PlayerLocationSender::PlayerLocationData const& NULL_PLAYER_LOCATION_DATA();
     // NOLINTEND
 };

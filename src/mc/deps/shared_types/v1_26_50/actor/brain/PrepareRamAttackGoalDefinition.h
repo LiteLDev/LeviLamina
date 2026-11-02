@@ -38,37 +38,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     PrepareRamAttackGoalDefinition(::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition&
     operator=(::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition&&);
 
-    MCAPI ~PrepareRamAttackGoalDefinition();
+    MCNAPI ~PrepareRamAttackGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::Brain::MemoryGoals::PrepareRamAttackGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

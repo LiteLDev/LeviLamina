@@ -26,13 +26,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void validate(::ItemStackBase& stack, bool isChemistryEnabled);
+    MCNAPI static void validate(::ItemStackBase& stack, bool isChemistryEnabled);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $fixupCommon(::ItemStackBase& stack) const;
+    MCNAPI void $fixupCommon(::ItemStackBase& stack) const;
 
 
     // NOLINTEND

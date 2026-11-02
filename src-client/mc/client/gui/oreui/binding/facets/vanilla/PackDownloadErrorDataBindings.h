@@ -15,7 +15,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::string> const& getPackTitles() const;
+    MCNAPI ::std::vector<::std::string> const& getPackTitles() const;
     // NOLINTEND
 };
 

@@ -49,17 +49,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ScreenController> $createScreenController(
+    MCNAPI ::std::shared_ptr<::ScreenController> $createScreenController(
         ::IScreenControllerFactory::ControllerType<::ToastScreenController>,
         ::std::shared_ptr<::MinecraftScreenModel> model
     );
 
-    MCAPI ::std::shared_ptr<::ScreenController> $createScreenController(
+    MCNAPI ::std::shared_ptr<::ScreenController> $createScreenController(
         ::IScreenControllerFactory::ControllerType<::InviteScreenController>,
         ::std::shared_ptr<::MinecraftScreenModel> model
     );
 
-    MCAPI ::std::shared_ptr<::ScreenController> $createScreenController(
+    MCNAPI ::std::shared_ptr<::ScreenController> $createScreenController(
         ::IScreenControllerFactory::ControllerType<::StoreDataDrivenScreenController>,
         ::std::shared_ptr<::PersonaScreenModel> model,
         ::StoreDataDrivenScreenParams const&    params

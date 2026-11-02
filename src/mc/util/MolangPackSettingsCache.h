@@ -32,9 +32,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _initFromPackStack(::std::vector<::PackInstance> const& stack);
+    MCNAPI void _initFromPackStack(::std::vector<::PackInstance> const& stack);
 
-    MCAPI void updatePackSetting(
+    MCNAPI void updatePackSetting(
         ::std::string const&                                                            name,
         ::std::variant<float, bool, ::std::string, ::std::vector<::std::string>> const& value
     );

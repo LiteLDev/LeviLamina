@@ -74,51 +74,51 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ProjectileComponentDefinition();
+    MCNAPI ProjectileComponentDefinition();
 
-    MCAPI ProjectileComponentDefinition(::SharedTypes::v1_26_50::ProjectileComponentDefinition&&);
+    MCNAPI ProjectileComponentDefinition(::SharedTypes::v1_26_50::ProjectileComponentDefinition&&);
 
-    MCAPI ProjectileComponentDefinition(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&);
+    MCNAPI ProjectileComponentDefinition(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_50::ProjectileComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::ProjectileComponentDefinition&
     operator=(::SharedTypes::v1_26_50::ProjectileComponentDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_50::ProjectileComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::ProjectileComponentDefinition&
     operator=(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&) const;
 
-    MCAPI ~ProjectileComponentDefinition();
+    MCNAPI ~ProjectileComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_OFFSET();
+    MCNAPI static ::Vec3 const& DEFAULT_OFFSET();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::ProjectileComponentDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::ProjectileComponentDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::ProjectileComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

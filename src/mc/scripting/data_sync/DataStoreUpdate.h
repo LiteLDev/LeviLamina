@@ -25,11 +25,11 @@ public:
     // NOLINTBEGIN
     MCAPI DataStoreUpdate(::Bedrock::DDUI::DataStoreUpdate const&);
 
-    MCAPI ::Bedrock::DDUI::DataStoreUpdate& operator=(::Bedrock::DDUI::DataStoreUpdate&&);
+    MCNAPI ::Bedrock::DDUI::DataStoreUpdate& operator=(::Bedrock::DDUI::DataStoreUpdate&&);
 
-    MCAPI ::Bedrock::DDUI::DataStoreUpdate& operator=(::Bedrock::DDUI::DataStoreUpdate const&);
+    MCNAPI ::Bedrock::DDUI::DataStoreUpdate& operator=(::Bedrock::DDUI::DataStoreUpdate const&);
 
-    MCAPI bool operator==(::Bedrock::DDUI::DataStoreUpdate const& rhs) const;
+    MCNAPI bool operator==(::Bedrock::DDUI::DataStoreUpdate const& rhs) const;
 
     MCAPI ~DataStoreUpdate();
     // NOLINTEND

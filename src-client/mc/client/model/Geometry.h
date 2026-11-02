@@ -54,7 +54,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void _boxFaceUVToJson(
+        MCNAPI void _boxFaceUVToJson(
             ::Json::Value&                      uvNode,
             uchar                               facing,
             ::std::string const&                faceName,
@@ -75,7 +75,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void toJson(::Json::Value& root) const;
+        MCNAPI void toJson(::Json::Value& root) const;
         // NOLINTEND
     };
 
@@ -99,21 +99,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI NodePolyMesh(::Geometry::NodePolyMesh const&);
+        MCNAPI NodePolyMesh(::Geometry::NodePolyMesh const&);
 
-        MCAPI ~NodePolyMesh();
+        MCNAPI ~NodePolyMesh();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Geometry::NodePolyMesh const&);
+        MCNAPI void* $ctor(::Geometry::NodePolyMesh const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -163,9 +163,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Node(::Geometry::Node const&);
+        MCNAPI Node(::Geometry::Node const&);
 
-        MCAPI void addLocator(
+        MCNAPI void addLocator(
             ::std::string const& name,
             ::std::string const& boneName,
             ::Vec3 const&        localOffset,
@@ -173,19 +173,19 @@ public:
             bool                 errorIfIdenticalLocatorAlreadyExists
         );
 
-        MCAPI ~Node();
+        MCNAPI ~Node();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Geometry::Node const&);
+        MCNAPI void* $ctor(::Geometry::Node const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -213,10 +213,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     _parseBones(::JsonValueHierarchy const& root, bool applyBindPoseRotation, ::TextureUVCoordinateSet const& uvOffset);
 
-    MCAPI void _parseBoxFaceUV(
+    MCNAPI void _parseBoxFaceUV(
         ::Geometry::Box&                box,
         ::Json::Value const&            uvNode,
         uchar                           facing,
@@ -225,20 +225,20 @@ public:
         ::TextureUVCoordinateSet const& uvOffset
     );
 
-    MCAPI ::Geometry::Node const* getNode(::std::string_view name) const;
+    MCNAPI ::Geometry::Node const* getNode(::std::string_view name) const;
 
-    MCAPI void toJson(::Json::Value& root) const;
+    MCNAPI void toJson(::Json::Value& root) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& mDataDrivenEnderDragonSupportedVersion();
+    MCNAPI static ::SemVersionConstant const& mDataDrivenEnderDragonSupportedVersion();
 
-    MCAPI static ::SemVersionConstant const& mDataDrivenRenderingSupportedVersion();
+    MCNAPI static ::SemVersionConstant const& mDataDrivenRenderingSupportedVersion();
 
-    MCAPI static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
+    MCNAPI static ::SemVersionConstant const& mDrownedParentFieldSupportedVersion();
 
-    MCAPI static ::SemVersionConstant const& mParentFieldSupportedVersion();
+    MCNAPI static ::SemVersionConstant const& mParentFieldSupportedVersion();
     // NOLINTEND
 };

@@ -53,28 +53,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DownloadableTemplateManagerBase(
+    MCNAPI DownloadableTemplateManagerBase(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::IContentAcquisition&                                   contentAquisition
     );
 
-    MCAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
+    MCNAPI bool canDownloadBeCancelled(::std::string const& templateId) const;
 
-    MCAPI void cancelDownload(::std::string const& templateId);
+    MCNAPI void cancelDownload(::std::string const& templateId);
 
-    MCAPI float getDownloadProgress(::std::string const& templateId) const;
+    MCNAPI float getDownloadProgress(::std::string const& templateId) const;
 
-    MCAPI ::std::string getDownloadTotalBytes(::std::string const& templateId) const;
+    MCNAPI ::std::string getDownloadTotalBytes(::std::string const& templateId) const;
 
-    MCAPI ::std::string getDownloadingProgressBytes(::std::string const& templateId) const;
+    MCNAPI ::std::string getDownloadingProgressBytes(::std::string const& templateId) const;
 
-    MCAPI bool isDownloadingStep2Started(::std::string const& templateId) const;
+    MCNAPI bool isDownloadingStep2Started(::std::string const& templateId) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::IContentAcquisition&                                   contentAquisition
     );
@@ -83,12 +83,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
+    MCNAPI ::std::optional<::World::DownloadWorldTemplateError> $downloadWorldTemplate(
         ::std::string const&                                                        templateId,
         ::std::function<void(::std::optional<::World::DownloadWorldTemplateError>)> callback
     );
 
-    MCAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
+    MCNAPI void $_templateDownloadedCallback(::std::string const& templateId, bool success);
     // NOLINTEND
 };
 

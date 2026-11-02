@@ -22,35 +22,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefaultSurfaceSettings();
+    MCNAPI DefaultSurfaceSettings();
 
-    MCAPI DefaultSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&&);
+    MCNAPI DefaultSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&&);
 
-    MCAPI DefaultSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
+    MCNAPI DefaultSurfaceSettings(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&&);
 
-    MCAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&
+    MCNAPI ::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&
     operator=(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
 
-    MCAPI ~DefaultSurfaceSettings();
+    MCNAPI ~DefaultSurfaceSettings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_100::SurfaceBuilder::DefaultSurfaceSettings const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

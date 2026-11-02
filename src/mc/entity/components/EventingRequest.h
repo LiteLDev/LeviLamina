@@ -97,11 +97,11 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::EventingRequest
+    MCNAPI static ::EventingRequest
     addActorMovementCorrectionDivergence(::ActorType actorType, ::std::vector<float> const& divergences);
 #endif
 
-    MCAPI static ::EventingRequest
+    MCNAPI static ::EventingRequest
     addPersonaEmotePlayed(::std::string const& emoteProductId, bool isEmoteEndedEarly, int emoteSlotId);
     // NOLINTEND
 };

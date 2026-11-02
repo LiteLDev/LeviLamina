@@ -40,11 +40,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorThumbnailRenderer(::IClientInstance& clientInstance);
+    MCNAPI explicit EditorThumbnailRenderer(::IClientInstance& clientInstance);
 
-    MCAPI void _initialize(::IClientInstance& clientInstance);
+    MCNAPI void _initialize(::IClientInstance& clientInstance);
 
-    MCAPI void capture(
+    MCNAPI void capture(
         uint                                       screenshotWidth,
         uint                                       screenshotHeight,
         ::IClientInstance&                         clientInstance,
@@ -53,18 +53,18 @@ public:
         ::Vec2                                     rotation
     );
 
-    MCAPI ~EditorThumbnailRenderer();
+    MCNAPI ~EditorThumbnailRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& clientInstance);
+    MCNAPI void* $ctor(::IClientInstance& clientInstance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

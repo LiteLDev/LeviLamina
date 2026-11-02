@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD float $getShadowRadius(::BlockSource& region) const;
+    MCNAPI float $getShadowRadius(::BlockSource& region) const;
 
 
     // NOLINTEND

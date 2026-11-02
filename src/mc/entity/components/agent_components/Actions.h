@@ -26,39 +26,40 @@ namespace AgentComponents::Actions { struct Turn; }
 namespace AgentComponents::Actions {
 // functions
 // NOLINTBEGIN
-MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Attack const& action);
+MCNAPI void
+_startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Attack const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Collect const& action);
 
-MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Drop const& action);
+MCNAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Drop const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::DropAll const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectData const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemCount const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemDetail const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::InspectItemSpace const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::PlaceBlock const& action);
 
-MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Till const& action);
+MCNAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Till const& action);
 
-MCAPI void
+MCNAPI void
 _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::TransferItemTo const& action);
 
-MCAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Turn const& action);
+MCNAPI void _startAction(::EntityContext& entity, ::CurrentCmdVersion, ::AgentComponents::Actions::Turn const& action);
 
-MCAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
+MCNAPI void startAction(::EntityContext& entity, ::AgentComponents::Actions::QueueItem const& item);
 // NOLINTEND
 
 } // namespace AgentComponents::Actions

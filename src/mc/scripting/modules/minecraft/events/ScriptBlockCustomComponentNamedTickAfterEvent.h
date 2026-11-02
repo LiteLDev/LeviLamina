@@ -36,33 +36,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentNamedTickAfterEvent(
+    MCNAPI ScriptBlockCustomComponentNamedTickAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent const&
     );
 
-    MCAPI ScriptBlockCustomComponentNamedTickAfterEvent(
+    MCNAPI ScriptBlockCustomComponentNamedTickAfterEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent&
+    MCNAPI ::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent&
     operator=(::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent&&);
 
-    MCAPI ~ScriptBlockCustomComponentNamedTickAfterEvent();
+    MCNAPI ~ScriptBlockCustomComponentNamedTickAfterEvent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentNamedTickIntermediateStorage const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                  scope
     );
@@ -71,7 +71,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

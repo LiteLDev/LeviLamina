@@ -44,18 +44,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
 
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidReaction> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidReaction> const&
     liquidReactionNameBiMap();
 
-    MCAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidType> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::std::string, ::SharedTypes::v1_26_0::LiquidType> const&
     liquidTypeNameBiMap();
     // NOLINTEND
 

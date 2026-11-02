@@ -37,43 +37,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsStoriesSettingsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI explicit RealmsStoriesSettingsFacet(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
 
-    MCAPI ::Realms::Stories::FetchStatus _getFetchState() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getFetchState() const;
 
-    MCAPI ::Realms::OptInState _getPlayerOptInStatus() const;
+    MCNAPI ::Realms::OptInState _getPlayerOptInStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus _getPostState() const;
+    MCNAPI ::Realms::Stories::PostStatus _getPostState() const;
 
-    MCAPI bool _getRealmCoordinatesStatus() const;
+    MCNAPI bool _getRealmCoordinatesStatus() const;
 
-    MCAPI bool _getRealmEventsStatus() const;
+    MCNAPI bool _getRealmEventsStatus() const;
 
-    MCAPI bool _getRealmNotificationsStatus() const;
+    MCNAPI bool _getRealmNotificationsStatus() const;
 
-    MCAPI ::Realms::OptInState _getRealmOptInStatus() const;
+    MCNAPI ::Realms::OptInState _getRealmOptInStatus() const;
 
-    MCAPI bool _getRealmTimelineRequired() const;
+    MCNAPI bool _getRealmTimelineRequired() const;
 
-    MCAPI bool _getRealmTimelineStatus() const;
+    MCNAPI bool _getRealmTimelineStatus() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::Stories::FacetStateManager> provider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

@@ -47,20 +47,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CrafterScreenController(
+    MCNAPI CrafterScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
         ::ActorUniqueID                                uniqueId
     );
 
-    MCAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
+    MCNAPI void _setToggledStateForSlot(int slot, bool shouldEnable);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&                                      player,
         ::BlockPos const&                              pos,
@@ -71,8 +71,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+    MCNAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

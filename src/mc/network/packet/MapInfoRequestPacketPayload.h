@@ -25,12 +25,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
+    MCNAPI MapInfoRequestPacketPayload(::ActorUniqueID mapId, ::MapItemSavedData& map);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
+    MCNAPI void* $ctor(::ActorUniqueID mapId, ::MapItemSavedData& map);
     // NOLINTEND
 };

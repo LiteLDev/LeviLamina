@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinEngineVersion(::SemVersion const& version);
+    MCNAPI explicit MinEngineVersion(::SemVersion const& version);
 
-    MCAPI ::Json::Value createJsonValue() const;
+    MCNAPI ::Json::Value createJsonValue() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::SemVersion getSemVersion() const;
+    MCNAPI ::SemVersion getSemVersion() const;
 #endif
 
-    MCAPI bool operator==(::MinEngineVersion const& rhs) const;
+    MCNAPI bool operator==(::MinEngineVersion const& rhs) const;
     // NOLINTEND
 
 public:
@@ -48,6 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SemVersion const& version);
+    MCNAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 };

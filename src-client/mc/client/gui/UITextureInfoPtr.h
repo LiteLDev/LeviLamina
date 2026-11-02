@@ -30,13 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::UITextureInfoPtr& _move(::UITextureInfoPtr&& moved);
+    MCNAPI ::UITextureInfoPtr& _move(::UITextureInfoPtr&& moved);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::mce::DepthStencilStateDescription const&) const;
+    MCNAPI bool operator==(::mce::DepthStencilStateDescription const&) const;
     // NOLINTEND
 };
 

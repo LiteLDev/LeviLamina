@@ -41,7 +41,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
+    MCNAPI ::std::optional<::BlockPos> _placeBlockIfPossible(
         ::BlockSource&                 region,
         ::BlockPos const&              pos,
         ::Random&                      random,
@@ -52,7 +52,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
 
     // NOLINTEND

@@ -45,28 +45,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesPlayersFacet(
+    MCNAPI RealmsStoriesPlayersFacet(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::Realms::Stories::FetchStatus _getFetchMembersStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getFetchMembersStatus() const;
 
-    MCAPI ::Realms::Stories::FetchStatus _getFetchOnlineMembersStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus _getFetchOnlineMembersStatus() const;
 
-    MCAPI void _regenerateView();
+    MCNAPI void _regenerateView();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NonOwnerPointer<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

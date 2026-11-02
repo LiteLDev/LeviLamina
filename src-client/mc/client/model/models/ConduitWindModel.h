@@ -35,18 +35,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConduitWindModel(int u, int v, int tw, int th);
+    MCNAPI ConduitWindModel(int u, int v, int tw, int th);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int u, int v, int tw, int th);
+    MCNAPI void* $ctor(int u, int v, int tw, int th);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 };

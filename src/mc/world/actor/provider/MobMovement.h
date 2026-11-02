@@ -11,21 +11,21 @@ class Vec3;
 namespace MobMovement {
 // functions
 // NOLINTBEGIN
-MCAPI float getAirSpeed(::EntityContext const& provider);
+MCNAPI float getAirSpeed(::EntityContext const& provider);
 
-MCAPI ::Vec3 const& getLocalMoveVelocity(::EntityContext const& provider);
+MCNAPI ::Vec3 const& getLocalMoveVelocity(::EntityContext const& provider);
 
-MCAPI float getMobRotation(::EntityContext const& provider);
+MCNAPI float getMobRotation(::EntityContext const& provider);
 
-MCAPI float getMovementSpeed(::EntityContext const& provider);
+MCNAPI float getMovementSpeed(::EntityContext const& provider);
 
-MCAPI void initializeMob(::EntityContext& provider);
+MCNAPI void initializeMob(::EntityContext& provider);
 
-MCAPI void resetLocalMoveVelocity(::EntityContext& provider);
+MCNAPI void resetLocalMoveVelocity(::EntityContext& provider);
 
-MCAPI void setAirSpeed(::EntityContext& provider, float flySpeed);
+MCNAPI void setAirSpeed(::EntityContext& provider, float flySpeed);
 
-MCAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
+MCNAPI void setLocalMoveVelocity(::EntityContext& provider, ::Vec3 const& localMoveVelocity);
 
 MCAPI void setLocalMoveVelocity(
     ::EntityContext&       provider,
@@ -34,9 +34,9 @@ MCAPI void setLocalMoveVelocity(
     ::std::optional<float> z
 );
 
-MCAPI void setMobRotation(::EntityContext& provider, float rotation);
+MCNAPI void setMobRotation(::EntityContext& provider, float rotation);
 
-MCAPI void setMovementSpeed(::EntityContext& provider, float speed);
+MCNAPI void setMovementSpeed(::EntityContext& provider, float speed);
 // NOLINTEND
 
 } // namespace MobMovement

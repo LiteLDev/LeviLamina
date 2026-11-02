@@ -19,6 +19,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void closeCurrentModal(bool openNextModal);
+    MCNAPI void closeCurrentModal(bool openNextModal);
     // NOLINTEND
 };

@@ -48,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DeferredScriptCommand(
+    MCNAPI DeferredScriptCommand(
         ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
         ::std::unique_ptr<::CommandContext>      commandContext,
         ::Scripting::WeakLifetimeScope           scope,
@@ -61,7 +61,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ScriptCommandOutput> scriptCommandOutput,
         ::std::unique_ptr<::CommandContext>      commandContext,
         ::Scripting::WeakLifetimeScope           scope,
@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::MinecraftCommands& commands);
+    MCNAPI void $execute(::MinecraftCommands& commands);
 
 
     // NOLINTEND

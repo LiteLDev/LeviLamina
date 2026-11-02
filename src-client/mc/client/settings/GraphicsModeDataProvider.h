@@ -62,31 +62,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GraphicsModeDataProvider(::OptionID optionId, ::Settings::RegistryBuilder::IBuilderContext& context);
+    MCNAPI GraphicsModeDataProvider(::OptionID optionId, ::Settings::RegistryBuilder::IBuilderContext& context);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OptionID optionId, ::Settings::RegistryBuilder::IBuilderContext& context);
+    MCNAPI void* $ctor(::OptionID optionId, ::Settings::RegistryBuilder::IBuilderContext& context);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+    MCNAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
-    MCAPI int $getValue() const;
+    MCNAPI int $getValue() const;
 
-    MCAPI void $setValue(int value);
+    MCNAPI void $setValue(int value);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
 
-    MCAPI bool $flush();
+    MCNAPI bool $flush();
     // NOLINTEND
 };
 

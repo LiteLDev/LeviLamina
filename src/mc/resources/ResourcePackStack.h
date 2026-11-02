@@ -52,43 +52,43 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ResourcePackStack(
+    MCNAPI ResourcePackStack(
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
 #endif
 
-    MCAPI ResourcePackStack(
+    MCNAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
+    MCNAPI void _setLoadingReport(::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
+    MCNAPI void ensureSupportedSubpacks(::ContentTierInfo const& contentInfoTier);
 #endif
 
-    MCAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::I18n& loc, ::PackType type) const;
+    MCNAPI ::std::vector<::std::string> getPackTelemetryNamesWithVersion(::I18n& loc, ::PackType type) const;
 
-    MCAPI ::UnextractablePacks
+    MCNAPI ::UnextractablePacks
     getPacksWhereAssetExtractionNotViable(::std::function<::std::string(::ContentIdentity const&)> getContentKey) const;
 
-    MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
+    MCNAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
+    MCNAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;
 
-    MCAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
+    MCNAPI bool isOnStack(::PackIdVersion const& packIdentity) const;
 
-    MCAPI void mergePackReports(::std::unordered_map<::PackInstanceId, ::PackReport>& packReports);
+    MCNAPI void mergePackReports(::std::unordered_map<::PackInstanceId, ::PackReport>& packReports);
 
-    MCAPI void serialize(::std::ostream& fileStream) const;
+    MCNAPI void serialize(::std::ostream& fileStream) const;
 
-    MCAPI bool supportsVibrantVisuals() const;
+    MCNAPI bool supportsVibrantVisuals() const;
 #endif
     // NOLINTEND
 
@@ -110,7 +110,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
+    MCNAPI static ::std::unique_ptr<::ResourcePackStack> deserialize(
         ::std::vector<::PackInstanceId> const&                                ids,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         ::std::optional<::std::string>                                        levelId
@@ -122,13 +122,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::PackInstance> const&                                  packs,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo
     );
 #endif
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion
@@ -138,7 +138,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

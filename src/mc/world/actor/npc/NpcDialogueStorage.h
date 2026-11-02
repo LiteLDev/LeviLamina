@@ -18,8 +18,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
+    MCNAPI ::NpcDialogueScene const* getScene(::std::string const& sceneName) const;
 
-    MCAPI void init(::ResourcePackManager& resourcePackManager);
+    MCNAPI void init(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 };

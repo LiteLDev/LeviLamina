@@ -36,7 +36,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerInteractWithBlockBeforeEvent(
+    MCNAPI ScriptPlayerInteractWithBlockBeforeEvent(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope
@@ -46,13 +46,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Player&                                   player,
         ::PlayerInteractWithBlockBeforeEvent const& eventData,
         ::Scripting::WeakLifetimeScope&             scope

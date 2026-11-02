@@ -36,14 +36,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::glm::vec2
+    MCNAPI ::glm::vec2
     _getNewCursorPosition(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -31,15 +31,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string composeRoute(::std::string const& itemId);
+    MCNAPI static ::std::string composeRoute(::std::string const& itemId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

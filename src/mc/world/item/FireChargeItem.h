@@ -54,7 +54,7 @@ public:
 
     MCFOLD bool $isDestructive(int) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -63,7 +63,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND
@@ -71,6 +71,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

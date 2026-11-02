@@ -398,7 +398,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addToRenderChunkQueue(
+    MCNAPI void _addToRenderChunkQueue(
         ::ChunkRenderObjectCollection&           collection,
         ::TerrainMaterialVariationManager const& terrainVariationMgr,
         ::TerrainLayer const&                    layer,
@@ -408,53 +408,53 @@ public:
         ::BlockPos const&                        chunkPos
     );
 
-    MCAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
+    MCNAPI ::std::shared_ptr<::LevelCullerBase> _createCuller(
         ::LevelCullerType                      type,
         ::std::weak_ptr<::LevelRendererCamera> levelRendererCamera,
         ::LevelBuilder&                        levelBuilder
     );
 
-    MCAPI ::ResolvedFogVolumetricCoefficientSetting
+    MCNAPI ::ResolvedFogVolumetricCoefficientSetting
     _getCurrentCoefficientFogSetting(::FogDefinition::CoefficientSettingType settingType) const;
 
-    MCAPI ::ResolvedFogVolumetricHenyeyGreensteinGSetting
+    MCNAPI ::ResolvedFogVolumetricHenyeyGreensteinGSetting
     _getCurrentHenyeyGreensteinGFogSetting(::FogDefinition::HenyeyGreensteinGSettingType settingType) const;
 
-    MCAPI void _initCubemapTextures(::Dimension const& dimension);
+    MCNAPI void _initCubemapTextures(::Dimension const& dimension);
 
-    MCAPI void _resortNearbyChunks(
+    MCNAPI void _resortNearbyChunks(
         ::Vec3 const&                                                                        viewPos,
         ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox> const& viewArea
     );
 
-    MCAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
+    MCNAPI bool _shouldRenderLeashedEntity(::Actor* actor, ::Vec3 cameraPos);
 
-    MCAPI void _tryInsertBlockEntityIntoRenderQueues(
+    MCNAPI void _tryInsertBlockEntityIntoRenderQueues(
         ::IVanillaRenderBlockActorComponent*                            renderComponent,
         ::std::map<::ChunkPos, ::std::unordered_set<::BlockPos>> const& skipList
     );
 
-    MCAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>& _viewAreaMutable();
+    MCNAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>& _viewAreaMutable();
 
-    MCAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
+    MCNAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
 
-    MCAPI ::LevelRendererCamera::RainState doRainUpdate();
+    MCNAPI ::LevelRendererCamera::RainState doRainUpdate();
 
-    MCAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
+    MCNAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
 
-    MCAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
+    MCNAPI ::std::shared_ptr<::RenderChunkInstanced> getRenderChunkInstancedAtShared(::SubChunkPos const& rcp) const;
 
-    MCAPI uint64 getRenderChunkInstancedDifferentGeoCount();
+    MCNAPI uint64 getRenderChunkInstancedDifferentGeoCount();
 
-    MCAPI uint64 getRenderChunkInstancedEstimatedIndexMemoryUsed();
+    MCNAPI uint64 getRenderChunkInstancedEstimatedIndexMemoryUsed();
 
-    MCAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
+    MCNAPI bool isAABBVisible(::AABB const& bb, bool useFastCulling) const;
 
-    MCAPI void onViewRadiusChanged(bool resetAll);
+    MCNAPI void onViewRadiusChanged(bool resetAll);
 
-    MCAPI void preDimensionChanged(::Player& player);
+    MCNAPI void preDimensionChanged(::Player& player);
 
-    MCAPI void queueChunk(
+    MCNAPI void queueChunk(
         ::ChunkRenderObjectCollection&                          collection,
         ::RenderChunkInstanced const&                           renderChunkInstanced,
         float                                                   farDistance2,
@@ -463,91 +463,91 @@ public:
         ::optional_ref<::TerrainMaterialVariationManager const> fadeVariationMgr
     );
 
-    MCAPI void recaptureViewAreaDimensions();
+    MCNAPI void recaptureViewAreaDimensions();
 
-    MCAPI void renderChunkVisibilityChanged(::RenderChunkShared& renderChunkShared, bool visibilityMatrixChanged);
+    MCNAPI void renderChunkVisibilityChanged(::RenderChunkShared& renderChunkShared, bool visibilityMatrixChanged);
 
-    MCAPI void renderSky(
+    MCNAPI void renderSky(
         ::ScreenContext&                             screenContext,
         ::ViewRenderObject const&                    renderObj,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData
     ) const;
 
-    MCAPI void resetChunkCullingData(::ChunkPos const& cp);
+    MCNAPI void resetChunkCullingData(::ChunkPos const& cp);
 
-    MCAPI void updateFarChunksDistance();
+    MCNAPI void updateFarChunksDistance();
 
-    MCAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
+    MCNAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LevelRendererCameraType $getCameraType() const;
+    MCNAPI ::LevelRendererCameraType $getCameraType() const;
 
-    MCAPI void $addCameraListenerToRenderChunkCoordinator();
+    MCNAPI void $addCameraListenerToRenderChunkCoordinator();
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCFOLD void $onLowMemory();
+    MCNAPI void $onLowMemory();
 
-    MCFOLD void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCNAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI void $tickLevelRendererCamera();
+    MCNAPI void $tickLevelRendererCamera();
 
-    MCAPI void $tickRain();
+    MCNAPI void $tickRain();
 
-    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCNAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCFOLD void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+    MCNAPI void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
 
-    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+    MCNAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
 
-    MCFOLD void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+    MCNAPI void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
 
-    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+    MCNAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
 
-    MCFOLD void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+    MCNAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
 
-    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
-    MCAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCNAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCFOLD bool $getForceFog(::Actor const& cameraActor) const;
+    MCNAPI bool $getForceFog(::Actor const& cameraActor) const;
 
-    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+    MCNAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
-    MCAPI float $getAmbientBrightness() const;
+    MCNAPI float $getAmbientBrightness() const;
 
-    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+    MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
-    MCAPI void $preRenderUpdate(
+    MCNAPI void $preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCAPI void $render(
+    MCNAPI void $render(
         ::BaseActorRenderContext& baseEntityRenderContext,
         ::ViewRenderObject const& renderObj,
         ::IClientInstance&        ci
     );
 
-    MCFOLD void $postRenderUpdate();
+    MCNAPI void $postRenderUpdate();
 
-    MCFOLD void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
+    MCNAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 
-    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& preRenderUpdateParameters);
+    MCNAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& preRenderUpdateParameters);
 
-    MCFOLD void $_releaseRespectiveResources();
+    MCNAPI void $_releaseRespectiveResources();
 
-    MCAPI void $setupViewArea();
+    MCNAPI void $setupViewArea();
 
-    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+    MCNAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
 
-    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
+    MCNAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
     // NOLINTEND
 };

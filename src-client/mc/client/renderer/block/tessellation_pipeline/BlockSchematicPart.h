@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockSchematicPart(::ClientBlockPipeline::BlockSchematicPart const&);
+    MCNAPI BlockSchematicPart(::ClientBlockPipeline::BlockSchematicPart const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientBlockPipeline::BlockSchematicPart const&);
+    MCNAPI void* $ctor(::ClientBlockPipeline::BlockSchematicPart const&);
     // NOLINTEND
 };
 

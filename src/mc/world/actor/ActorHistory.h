@@ -54,23 +54,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ActorHistory(uint64 historyWindow);
+    MCNAPI explicit ActorHistory(uint64 historyWindow);
 #endif
 
-    MCAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
+    MCNAPI void addCorrectionToFrame(::std::shared_ptr<::IMovementCorrection> correction, uint64 frame);
 
 #ifdef LL_PLAT_C
-    MCAPI void addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
+    MCNAPI void addFrame(::EntityContext& entity, uint64 frame, ::EntityRegistry& registry);
 #endif
 
-    MCAPI ~ActorHistory();
+    MCNAPI ~ActorHistory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void prepareEntityForRewindFromCapture(
+    MCNAPI static void prepareEntityForRewindFromCapture(
         ::EntityContext const& fromCapture,
         ::EntityContext const& fromLive,
         ::EntityContext&       toRewind
@@ -82,13 +82,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(uint64 historyWindow);
+    MCNAPI void* $ctor(uint64 historyWindow);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

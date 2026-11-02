@@ -300,28 +300,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void commit(::bgfx::UniformBuffer& _uniformBuffer);
+    MCNAPI void commit(::bgfx::UniformBuffer& _uniformBuffer);
 
-    MCAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* _rgba);
+    MCNAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* _rgba);
 
-    MCAPI void postReset();
+    MCNAPI void postReset();
 
-    MCAPI void preReset();
+    MCNAPI void preReset();
 
-    MCAPI void setBlendState(uint64 _state, uint _rgba);
+    MCNAPI void setBlendState(uint64 _state, uint _rgba);
 
-    MCAPI void setDepthStencilState(uint64 _state, uint64 _stencil);
+    MCNAPI void setDepthStencilState(uint64 _state, uint64 _stencil);
 
-    MCAPI void setFrameBuffer(::bgfx::FrameBufferHandle _fbh, bool _msaa, bool _needPresent);
+    MCNAPI void setFrameBuffer(::bgfx::FrameBufferHandle _fbh, bool _msaa, bool _needPresent);
 
-    MCAPI void setInputLayout(
+    MCNAPI void setInputLayout(
         uchar                              _numStreams,
         ::bgfx::VertexDecl const**         _vertexDecls,
         ::bgfx::d3d11::ProgramD3D11 const& _program,
         ushort                             _numInstanceData
     );
 
-    MCAPI void setRasterizerState(
+    MCNAPI void setRasterizerState(
         uint64 _state,
         int    _biasConst,
         float  _biasSlope,
@@ -330,66 +330,66 @@ public:
         bool   _scissor
     );
 
-    MCAPI void submitBlit(::bgfx::BlitState& _bs, ushort _view);
+    MCNAPI void submitBlit(::bgfx::BlitState& _bs, ushort _view);
 
-    MCAPI void updateMsaa(::DXGI_FORMAT _format) const;
+    MCNAPI void updateMsaa(::DXGI_FORMAT _format) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::bgfx::RendererType::Enum $getRendererType() const;
+    MCNAPI ::bgfx::RendererType::Enum $getRendererType() const;
 
-    MCAPI uint64 $getRendererVersion() const;
+    MCNAPI uint64 $getRendererVersion() const;
 
-    MCFOLD uint64 $getShaderVersion() const;
+    MCNAPI uint64 $getShaderVersion() const;
 
-    MCAPI char const* $getRendererName() const;
+    MCNAPI char const* $getRendererName() const;
 
-    MCAPI void $createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags);
+    MCNAPI void $createIndexBuffer(::bgfx::IndexBufferHandle _handle, ::bgfx::Memory const* _mem, ushort _flags);
 
-    MCAPI void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
+    MCNAPI void $destroyIndexBuffer(::bgfx::IndexBufferHandle _handle);
 
-    MCAPI void $createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl);
+    MCNAPI void $createVertexDecl(::bgfx::VertexDeclHandle _handle, ::bgfx::VertexDecl const& _decl);
 
-    MCFOLD void $destroyVertexDecl(::bgfx::VertexDeclHandle);
+    MCNAPI void $destroyVertexDecl(::bgfx::VertexDeclHandle);
 
-    MCAPI void $createVertexBuffer(
+    MCNAPI void $createVertexBuffer(
         ::bgfx::VertexBufferHandle _handle,
         ::bgfx::Memory const*      _mem,
         ::bgfx::VertexDeclHandle   _declHandle,
         ushort                     _flags
     );
 
-    MCAPI void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
+    MCNAPI void $destroyVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
-    MCAPI void $createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags);
+    MCNAPI void $createDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _size, ushort _flags);
 
-    MCAPI void
+    MCNAPI void
     $updateDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle, uint _offset, uint _size, ::bgfx::Memory const* _mem);
 
-    MCAPI void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
+    MCNAPI void $destroyDynamicIndexBuffer(::bgfx::IndexBufferHandle _handle);
 
-    MCAPI void $createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags);
+    MCNAPI void $createDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle, uint _size, ushort _flags);
 
-    MCAPI void $updateDynamicVertexBuffer(
+    MCNAPI void $updateDynamicVertexBuffer(
         ::bgfx::VertexBufferHandle _handle,
         uint                       _offset,
         uint                       _size,
         ::bgfx::Memory const*      _mem
     );
 
-    MCAPI void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
+    MCNAPI void $destroyDynamicVertexBuffer(::bgfx::VertexBufferHandle _handle);
 
-    MCAPI void $createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem);
+    MCNAPI void $createShader(::bgfx::ShaderHandle _handle, ::bgfx::Memory const* _mem);
 
-    MCAPI void $destroyShader(::bgfx::ShaderHandle _handle);
+    MCNAPI void $destroyShader(::bgfx::ShaderHandle _handle);
 
-    MCAPI void $createProgram(::bgfx::ProgramHandle _handle, ::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh);
+    MCNAPI void $createProgram(::bgfx::ProgramHandle _handle, ::bgfx::ShaderHandle _vsh, ::bgfx::ShaderHandle _fsh);
 
-    MCAPI void $destroyProgram(::bgfx::ProgramHandle _handle);
+    MCNAPI void $destroyProgram(::bgfx::ProgramHandle _handle);
 
-    MCAPI void* $createTexture(
+    MCNAPI void* $createTexture(
         ::bgfx::TextureHandle _handle,
         ::bgfx::Memory const* _mem,
         uint                  _flags,
@@ -397,16 +397,16 @@ public:
         ::bgfx::Memory const**
     );
 
-    MCAPI void $wrapExternalTexture(
+    MCNAPI void $wrapExternalTexture(
         ::bgfx::TextureHandle      _handle,
         ::bgfx::RendererType::Enum _type,
         void*                      _texturePtr,
         void*                      _deferredRef
     );
 
-    MCFOLD void $updateTextureBegin(::bgfx::TextureHandle, uchar, uchar);
+    MCNAPI void $updateTextureBegin(::bgfx::TextureHandle, uchar, uchar);
 
-    MCAPI void $updateTexture(
+    MCNAPI void $updateTexture(
         ::bgfx::TextureHandle _handle,
         uchar                 _side,
         uchar                 _mip,
@@ -417,28 +417,29 @@ public:
         ::bgfx::Memory const* _mem
     );
 
-    MCFOLD void $updateTextureEnd();
+    MCNAPI void $updateTextureEnd();
 
-    MCAPI void $readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
+    MCNAPI void $readTexture(::bgfx::TextureHandle _handle, void* _data, uchar _mip);
 
-    MCAPI void
+    MCNAPI void
     $resizeTexture(::bgfx::TextureHandle _handle, ushort _width, ushort _height, uchar _numMips, ushort _numLayers);
 
-    MCAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
+    MCNAPI void $overrideInternal(::bgfx::TextureHandle _handle, uint64 _ptr, uint _flags);
 
-    MCAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
+    MCNAPI uint64 $getInternal(::bgfx::TextureHandle _handle);
 
-    MCAPI void $destroyTexture(::bgfx::TextureHandle _handle);
+    MCNAPI void $destroyTexture(::bgfx::TextureHandle _handle);
 
-    MCAPI void $createShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _size, uint _stride, ushort _flags);
+    MCNAPI void $createShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _size, uint _stride, ushort _flags);
 
-    MCAPI void $updateShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
+    MCNAPI void $updateShaderBuffer(::bgfx::ShaderBufferHandle _handle, uint _offset, ::bgfx::Memory const* _mem);
 
-    MCAPI void $destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle);
+    MCNAPI void $destroyShaderBuffer(::bgfx::ShaderBufferHandle _handle);
 
-    MCAPI void $createFrameBuffer(::bgfx::FrameBufferHandle _handle, uchar _num, ::bgfx::Attachment const* _attachment);
+    MCNAPI void
+    $createFrameBuffer(::bgfx::FrameBufferHandle _handle, uchar _num, ::bgfx::Attachment const* _attachment);
 
-    MCAPI void $createFrameBuffer(
+    MCNAPI void $createFrameBuffer(
         ::bgfx::FrameBufferHandle   _handle,
         void*                       _nwh,
         uint                        _width,
@@ -446,43 +447,43 @@ public:
         ::bgfx::TextureFormat::Enum _depthFormat
     );
 
-    MCAPI void $destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
+    MCNAPI void $destroyFrameBuffer(::bgfx::FrameBufferHandle _handle);
 
-    MCAPI void
+    MCNAPI void
     $createUniform(::bgfx::UniformHandle _handle, ::bgfx::UniformType::Enum _type, ushort _num, char const* _name);
 
-    MCAPI void $destroyUniform(::bgfx::UniformHandle _handle);
+    MCNAPI void $destroyUniform(::bgfx::UniformHandle _handle);
 
-    MCAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
+    MCNAPI void $requestScreenShot(::bgfx::FrameBufferHandle _handle, char const* _filePath);
 
-    MCAPI void $updateViewName(ushort _id, char const* _name);
+    MCNAPI void $updateViewName(ushort _id, char const* _name);
 
-    MCAPI void $updateUniform(void*, ushort _loc, void const* _data, uint _size);
+    MCNAPI void $updateUniform(void*, ushort _loc, void const* _data, uint _size);
 
-    MCFOLD void $setMarker(void*, char const* _marker, uint _size);
+    MCNAPI void $setMarker(void*, char const* _marker, uint _size);
 
-    MCAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
+    MCNAPI void $invalidateOcclusionQuery(::bgfx::OcclusionQueryHandle _handle);
 
-    MCAPI void $setName(::bgfx::Handle _handle, char const* _name);
+    MCNAPI void $setName(::bgfx::Handle _handle, char const* _name);
 
-    MCAPI void
+    MCNAPI void
     $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
 
-    MCAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);
+    MCNAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);
 
-    MCAPI void $blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices);
+    MCNAPI void $blitRender(::bgfx::TextVideoMemBlitter& _blitter, uint _numIndices);
 
-    MCAPI bool $isDeviceRemoved();
+    MCNAPI bool $isDeviceRemoved();
 
-    MCAPI void $suspend();
+    MCNAPI void $suspend();
 
-    MCFOLD void $resume();
+    MCNAPI void $resume();
 
-    MCAPI void $advanceToNextFrame();
+    MCNAPI void $advanceToNextFrame();
 
-    MCAPI void $flip();
+    MCNAPI void $flip();
 
-    MCFOLD void $waitForFlipQueue();
+    MCNAPI void $waitForFlipQueue();
     // NOLINTEND
 };
 

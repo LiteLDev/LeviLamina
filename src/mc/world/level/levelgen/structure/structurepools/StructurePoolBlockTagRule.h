@@ -26,25 +26,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockTagRule(
+    MCNAPI StructurePoolBlockTagRule(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void appendMetadataKey(::Util::XXHash& hash) const;
 
-    MCAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
+    MCNAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
 #endif
 
-    MCAPI ~StructurePoolBlockTagRule();
+    MCNAPI ~StructurePoolBlockTagRule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
@@ -54,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

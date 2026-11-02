@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenUIDefinitionQuery(
+    MCNAPI DataDrivenUIDefinitionQuery(
         ::OreUI::GameDependencies const& game,
         ::OreUI::DefinitionType          definitionType,
         ::std::string const&             definitionId
     );
 
-    MCAPI void _updateState(
+    MCNAPI void _updateState(
         ::IDataDrivenUIRepository& dataDrivenUIRepository,
         ::OreUI::DefinitionType    definitionType,
         ::std::string const&       definitionId
@@ -54,7 +54,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::GameDependencies const& game,
         ::OreUI::DefinitionType          definitionType,
         ::std::string const&             definitionId

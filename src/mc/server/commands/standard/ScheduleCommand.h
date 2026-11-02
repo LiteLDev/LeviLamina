@@ -83,7 +83,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScheduleCommand::FunctionInfo
+    MCNAPI ::ScheduleCommand::FunctionInfo
     _tryGetFunction(::FunctionManager& functionManager, ::CommandOutput& output) const;
     // NOLINTEND
 
@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

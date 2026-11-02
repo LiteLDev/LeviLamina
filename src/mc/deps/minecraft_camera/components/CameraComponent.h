@@ -32,27 +32,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraComponent(::MinecraftCamera::CameraComponent&&);
+    MCNAPI CameraComponent(::MinecraftCamera::CameraComponent&&);
 
-    MCAPI CameraComponent(::MinecraftCamera::CameraComponent const&);
+    MCNAPI CameraComponent(::MinecraftCamera::CameraComponent const&);
 
-    MCAPI ::MinecraftCamera::CameraComponent& operator=(::MinecraftCamera::CameraComponent&&);
+    MCNAPI ::MinecraftCamera::CameraComponent& operator=(::MinecraftCamera::CameraComponent&&);
 
-    MCAPI ~CameraComponent();
+    MCNAPI ~CameraComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftCamera::CameraComponent&&);
+    MCNAPI void* $ctor(::MinecraftCamera::CameraComponent&&);
 
-    MCAPI void* $ctor(::MinecraftCamera::CameraComponent const&);
+    MCNAPI void* $ctor(::MinecraftCamera::CameraComponent const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -18,20 +18,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandOriginIdentity(::CommandOriginIdentity const&);
+    MCNAPI CommandOriginIdentity(::CommandOriginIdentity const&);
 
-    MCAPI ~CommandOriginIdentity();
+    MCNAPI ~CommandOriginIdentity();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::CommandOriginIdentity const&);
+    MCNAPI void* $ctor(::CommandOriginIdentity const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -43,55 +43,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getAuthorXuid() const;
+    MCNAPI ::std::string const& getAuthorXuid() const;
 
-    MCAPI ::Realms::Stories::FetchStatus getCommentsStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getCommentsStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
 
-    MCAPI bool getEventHasCoordinates() const;
+    MCNAPI bool getEventHasCoordinates() const;
 
-    MCAPI ::std::string const& getEventMetadata() const;
+    MCNAPI ::std::string const& getEventMetadata() const;
 
-    MCAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
+    MCNAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
 
-    MCAPI int getEventXCoordinate() const;
+    MCNAPI int getEventXCoordinate() const;
 
-    MCAPI int getEventYCoordinate() const;
+    MCNAPI int getEventYCoordinate() const;
 
-    MCAPI int getEventZCoordinate() const;
+    MCNAPI int getEventZCoordinate() const;
 
-    MCAPI bool getHasLiked() const;
+    MCNAPI bool getHasLiked() const;
 
-    MCAPI bool getHasViewed() const;
+    MCNAPI bool getHasViewed() const;
 
-    MCAPI ::std::string const& getId() const;
+    MCNAPI ::std::string const& getId() const;
 
-    MCAPI ::Realms::Stories::FetchStatus getImageStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getImageStatus() const;
 
-    MCAPI bool getIsEvent() const;
+    MCNAPI bool getIsEvent() const;
 
-    MCAPI bool getIsEventLoaded() const;
+    MCNAPI bool getIsEventLoaded() const;
 
-    MCAPI int getNumComments() const;
+    MCNAPI int getNumComments() const;
 
-    MCAPI ::Realms::Stories::PostStatus getReportToClubOwnerStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getReportToClubOwnerStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus getSetViewedStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getSetViewedStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus getToggleLikeStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getToggleLikeStatus() const;
 
-    MCAPI int getTotalLikes() const;
+    MCNAPI int getTotalLikes() const;
 
-    MCAPI void setHasViewed(bool value);
+    MCNAPI void setHasViewed(bool value);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[28]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[28]> NAME();
     // NOLINTEND
 };
 

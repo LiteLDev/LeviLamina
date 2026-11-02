@@ -46,31 +46,31 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     composeRoute(::PlayScreenDefaultTab tab, bool isEditorMode, ::std::string const& dirtyLevelId);
 
-    MCAPI static ::std::vector<::std::string>
+    MCNAPI static ::std::vector<::std::string>
     getPlayScreenRoutes(::std::vector<::OreUI::RouterLocation> const& routerHistory, bool isEditorMode);
 
-    MCAPI static ::PlayScreenDefaultTab resolveEditorTabFromRoute(::std::string const& route);
+    MCNAPI static ::PlayScreenDefaultTab resolveEditorTabFromRoute(::std::string const& route);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> EDITOR_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[13]> LEGACY_ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[13]> LEGACY_ROUTE();
 
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> ROUTE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $shouldAddToConfiguration() const;
+    MCNAPI bool $shouldAddToConfiguration() const;
 
-    MCAPI void $addToMatcher(
+    MCNAPI void $addToMatcher(
         ::OreUI::RouteMatcher&                              routeMatcher,
         ::SceneFactory&                                     sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& sceneStack

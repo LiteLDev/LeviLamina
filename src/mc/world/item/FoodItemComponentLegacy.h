@@ -98,37 +98,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+    MCNAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI int $getNutrition() const;
-#else // LL_PLAT_C
-    MCFOLD int $getNutrition() const;
-#endif
+    MCNAPI int $getNutrition() const;
 
-    MCFOLD float $getSaturationModifier() const;
+    MCNAPI float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCNAPI bool $canAlwaysEat() const;
 
-    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
+    MCNAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::Item const* $useTimeDepleted(
+    MCNAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
         ::ItemStack const&,
         ::ItemStack& instance,

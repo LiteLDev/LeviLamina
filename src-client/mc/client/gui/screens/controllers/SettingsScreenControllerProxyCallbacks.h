@@ -29,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SettingsScreenControllerProxyCallbacks(::SettingsScreenControllerProxyCallbacks const&);
+    MCNAPI SettingsScreenControllerProxyCallbacks(::SettingsScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SettingsScreenControllerProxyCallbacks const&);
+    MCNAPI void* $ctor(::SettingsScreenControllerProxyCallbacks const&);
     // NOLINTEND
 };

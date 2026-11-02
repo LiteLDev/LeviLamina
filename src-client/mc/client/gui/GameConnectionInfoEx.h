@@ -24,22 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameConnectionInfoEx(::GameConnectionInfoEx const&);
+    MCNAPI GameConnectionInfoEx(::GameConnectionInfoEx const&);
 
-    MCAPI ::GameConnectionInfoEx& operator=(::GameConnectionInfoEx&&);
+    MCNAPI ::GameConnectionInfoEx& operator=(::GameConnectionInfoEx&&);
 
-    MCAPI ~GameConnectionInfoEx();
+    MCNAPI ~GameConnectionInfoEx();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameConnectionInfoEx const&);
+    MCNAPI void* $ctor(::GameConnectionInfoEx const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

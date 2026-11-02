@@ -33,15 +33,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LocalPlayerRespawnCommand(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit LocalPlayerRespawnCommand(::OreUI::ClientDependencies const& client);
 
-    MCAPI void respawn();
+    MCNAPI void respawn();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 };
 

@@ -35,11 +35,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setupScreen(::ScreenContext& screenContext);
+    MCNAPI void $setupScreen(::ScreenContext& screenContext);
 
-    MCAPI void $cleanupScreen(::ScreenContext& screenContext);
+    MCNAPI void $cleanupScreen(::ScreenContext& screenContext);
 
-    MCAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
+    MCNAPI ::EyeRenderingModeBit $getEyeRenderingMode() const;
     // NOLINTEND
 
 public:

@@ -37,54 +37,54 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWorldPackEditorCommandsFacet(
+    MCNAPI explicit RealmsWorldPackEditorCommandsFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor
     );
 
-    MCAPI void activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
+    MCNAPI void activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
 
-    MCAPI void changePackPriority(
+    MCNAPI void changePackPriority(
         ::std::string const& packIdVersion,
         ::ContentType        packType,
         int                  fromPosition,
         int                  toPosition
     ) const;
 
-    MCAPI void clearChangePackPriorityError() const;
+    MCNAPI void clearChangePackPriorityError() const;
 
-    MCAPI void clearPackApplicationError() const;
+    MCNAPI void clearPackApplicationError() const;
 
-    MCAPI void clearPendingPackAction() const;
+    MCNAPI void clearPendingPackAction() const;
 
-    MCAPI void clearSavePackSettingsState() const;
+    MCNAPI void clearSavePackSettingsState() const;
 
-    MCAPI void continuePendingPackAction() const;
+    MCNAPI void continuePendingPackAction() const;
 
-    MCAPI void deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
+    MCNAPI void deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings) const;
 
-    MCAPI void reloadPacks() const;
+    MCNAPI void reloadPacks() const;
 
-    MCAPI void savePackSettings() const;
+    MCNAPI void savePackSettings() const;
 
-    MCAPI void setEditorEnabled(bool isEditorEnabled) const;
+    MCNAPI void setEditorEnabled(bool isEditorEnabled) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsWorldPackEditor> realmsWorldPackEditor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

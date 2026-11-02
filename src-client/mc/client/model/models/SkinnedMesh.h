@@ -38,12 +38,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void constructMesh(::ScreenContext& screenContext);
+    MCNAPI void constructMesh(::ScreenContext& screenContext);
 
-    MCAPI void
+    MCNAPI void
     constructMesh(::BaseActorRenderContext& baseActorRenderContext, ::MaterialVariants const& defaultMaterialVariants);
 
-    MCAPI void draw(
+    MCNAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::RenderController const*                 renderController,
@@ -57,12 +57,12 @@ public:
         bool                                      isDitheringEnabled
     );
 
-    MCAPI ~SkinnedMesh();
+    MCNAPI ~SkinnedMesh();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

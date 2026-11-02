@@ -37,14 +37,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandBlockNameResult(
+    MCNAPI CommandBlockNameResult(
         ::HashedString const&              originalName,
         ::Block const*                     block,
         bool                               isComplexAlias,
         ::std::vector<::BlockState const*> statesToCompare
     );
 
-    MCAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockType, bool compareWithComplexAlias) const;
+    MCNAPI bool isSameBlock(::Block const& rhs, bool onlyCompareBlockType, bool compareWithComplexAlias) const;
 
     MCAPI ~CommandBlockNameResult();
     // NOLINTEND
@@ -52,7 +52,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::HashedString const&              originalName,
         ::Block const*                     block,
         bool                               isComplexAlias,

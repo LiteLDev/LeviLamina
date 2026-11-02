@@ -58,31 +58,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AreaEffectCloud(
+    MCNAPI AreaEffectCloud(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void addAreaEffect(::MobEffectInstance effect);
+    MCNAPI void addAreaEffect(::MobEffectInstance effect);
 
-    MCAPI void calculateAndSetRadiusPerTick();
+    MCNAPI void calculateAndSetRadiusPerTick();
 
-    MCAPI float getEffectiveRadius() const;
+    MCNAPI float getEffectiveRadius() const;
 
-    MCAPI void notifyPickup();
+    MCNAPI void notifyPickup();
 
-    MCAPI void setDuration(::EffectDuration duration);
+    MCNAPI void setDuration(::EffectDuration duration);
 
-    MCAPI void setInitialRadius(float radius);
+    MCNAPI void setInitialRadius(float radius);
 
-    MCAPI void setParticleColor(::mce::Color& c);
+    MCNAPI void setParticleColor(::mce::Color& c);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -92,17 +92,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCAPI void $setOwner(::ActorUniqueID const ownerID);
+    MCNAPI void $setOwner(::ActorUniqueID const ownerID);
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

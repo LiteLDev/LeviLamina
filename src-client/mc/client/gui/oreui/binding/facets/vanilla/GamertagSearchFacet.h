@@ -44,30 +44,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GamertagSearchFacet(
+    MCNAPI GamertagSearchFacet(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
 
-    MCFOLD ::std::vector<::OreUI::AddFriendUserItem> const& getDisplayableResults() const;
+    MCNAPI ::std::vector<::OreUI::AddFriendUserItem> const& getDisplayableResults() const;
 
-    MCAPI ::XboxAPICallResult const getXboxAPICallResult() const;
+    MCNAPI ::XboxAPICallResult const getXboxAPICallResult() const;
 
-    MCAPI bool isDataLoading() const;
+    MCNAPI bool isDataLoading() const;
 
-    MCAPI void search(::std::string const& query) const;
+    MCNAPI void search(::std::string const& query) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager const> userManager,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList>  resourceAllowList
     );
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -48,9 +48,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $init(::Dimension* d);
+    MCNAPI void $init(::Dimension* d);
 
-    MCAPI bool $buildImage(
+    MCNAPI bool $buildImage(
         ::BaseLightData const& lightData,
         ::mce::Image*          targetImage,
         uint                   imageLength,
@@ -59,7 +59,7 @@ public:
         bool                   clampToMinimum
     );
 
-    MCAPI bool $buildImageSplit(
+    MCNAPI bool $buildImageSplit(
         ::BaseLightData const& lightData,
         ::mce::Image*          targetImage,
         uint                   imageLength,
@@ -67,7 +67,7 @@ public:
         bool                   clampToMinimum
     );
 
-    MCAPI ::std::unique_ptr<::BaseLightData>
+    MCNAPI ::std::unique_ptr<::BaseLightData>
     $createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
     // NOLINTEND
 };

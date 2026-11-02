@@ -17,8 +17,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& PASSENGER_BLOCK_DATA_ID();
+    MCNAPI static ::std::string_view const& PASSENGER_BLOCK_DATA_ID();
 
-    MCAPI static ::std::string_view const& PASSENGER_ID();
+    MCNAPI static ::std::string_view const& PASSENGER_ID();
     // NOLINTEND
 };

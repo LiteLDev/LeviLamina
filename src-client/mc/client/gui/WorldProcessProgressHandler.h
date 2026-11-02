@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldProcessProgressHandler(
+    MCNAPI WorldProcessProgressHandler(
         ::WorldProcessProgressHandler::Type worldProcessType,
         ::std::function<float()>            tickCallback,
         ::std::function<::LoadingState()>   getLoadingStateCallback,
@@ -68,7 +68,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::WorldProcessProgressHandler::Type worldProcessType,
         ::std::function<float()>            tickCallback,
         ::std::function<::LoadingState()>   getLoadingStateCallback,
@@ -79,18 +79,18 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTTSProgressMessage() const;
+    MCNAPI ::std::string $getTTSProgressMessage() const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

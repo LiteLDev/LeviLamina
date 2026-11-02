@@ -30,27 +30,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockPermutation(::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation const&);
+    MCNAPI BlockPermutation(::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation const&);
 
-    MCAPI ~BlockPermutation();
+    MCNAPI ~BlockPermutation();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::BlockPermutation const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

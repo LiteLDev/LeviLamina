@@ -79,13 +79,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit InboxMessageData(::Invites::Invite const& invite);
+        MCNAPI explicit InboxMessageData(::Invites::Invite const& invite);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Invites::Invite const& invite);
+        MCNAPI void* $ctor(::Invites::Invite const& invite);
         // NOLINTEND
     };
 
@@ -114,11 +114,11 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void toggleInvitesBadges();
+        MCNAPI void toggleInvitesBadges();
 
-        MCAPI void toggleMessageBadges();
+        MCNAPI void toggleMessageBadges();
 
-        MCAPI void toggleOnlyFriendInvites();
+        MCNAPI void toggleOnlyFriendInvites();
         // NOLINTEND
     };
 
@@ -144,7 +144,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InboxFacet(
+    MCNAPI InboxFacet(
         ::IClientInstance&                                         client,
         ::std::weak_ptr<::RealmsAPI>                               realmsApi,
         ::std::shared_ptr<::Realms::RealmsList>                    realmsList,
@@ -154,50 +154,50 @@ public:
         ::Bedrock::NotNullNonOwnerPtr<::Realms::InvitesService>    invitesService
     );
 
-    MCAPI void acceptInvitation(::std::string const& instanceId);
+    MCNAPI void acceptInvitation(::std::string const& instanceId);
 
-    MCAPI void deleteAllRead();
+    MCNAPI void deleteAllRead();
 
-    MCAPI void deleteNotification(::std::string const& messageId, ::std::string const& instanceId);
+    MCNAPI void deleteNotification(::std::string const& messageId, ::std::string const& instanceId);
 
-    MCAPI ::std::vector<::OreUI::InboxFacet::FacetInboxCategoryData> const& getCategoryData();
+    MCNAPI ::std::vector<::OreUI::InboxFacet::FacetInboxCategoryData> const& getCategoryData();
 
-    MCAPI ::std::vector<::OreUI::InboxFacet::InboxMessageData> const& getData() const;
+    MCNAPI ::std::vector<::OreUI::InboxFacet::InboxMessageData> const& getData() const;
 
-    MCAPI bool getRealmsSubscriber() const;
+    MCNAPI bool getRealmsSubscriber() const;
 
-    MCAPI ::OreUI::InboxFacet::InboxSettings const& getSettings() const;
+    MCNAPI ::OreUI::InboxFacet::InboxSettings const& getSettings() const;
 
-    MCAPI bool isMarketplacePassSubscriber();
+    MCNAPI bool isMarketplacePassSubscriber();
 
-    MCAPI void markAllRead();
+    MCNAPI void markAllRead();
 
-    MCAPI bool messagingServiceFailed() const;
+    MCNAPI bool messagingServiceFailed() const;
 
-    MCAPI void rejectInvitation(::std::string const& instanceId);
+    MCNAPI void rejectInvitation(::std::string const& instanceId);
 
-    MCAPI void reloadInvites();
+    MCNAPI void reloadInvites();
 
-    MCAPI void
+    MCNAPI void
     reportClick(::std::string const& messageId, ::std::string const& instanceId, ::std::string const& buttonId);
 
-    MCAPI void requestMessages(::std::string const& categoryId);
+    MCNAPI void requestMessages(::std::string const& categoryId);
 
-    MCAPI void saveSettings();
+    MCNAPI void saveSettings();
 
-    MCAPI void setNotificationRead(::std::string const& instanceId);
+    MCNAPI void setNotificationRead(::std::string const& instanceId);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                         client,
         ::std::weak_ptr<::RealmsAPI>                               realmsApi,
         ::std::shared_ptr<::Realms::RealmsList>                    realmsList,
@@ -211,7 +211,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

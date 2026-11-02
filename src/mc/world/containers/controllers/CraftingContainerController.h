@@ -51,7 +51,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CraftingContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+    MCNAPI CraftingContainerController(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
 #endif
     // NOLINTEND
 
@@ -59,7 +59,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
+    MCNAPI void* $ctor(::std::shared_ptr<::ContainerModel> containerModel, bool dropOnDelete);
 #endif
     // NOLINTEND
 
@@ -67,15 +67,15 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
+    MCNAPI void $onRecipeSelected(::Recipe const* recipe, uint64 gridSize, bool displayGhostItems);
 
-    MCAPI void $clearSelectedRecipe();
+    MCNAPI void $clearSelectedRecipe();
 
-    MCFOLD ::Recipe const* $getSelectedRecipe() const;
+    MCNAPI ::Recipe const* $getSelectedRecipe() const;
 
-    MCAPI void $setGhostItem(::ItemInstance const& item, int slot, bool showStackSize);
+    MCNAPI void $setGhostItem(::ItemInstance const& item, int slot, bool showStackSize);
 
-    MCAPI ::ItemInstance const& $getGhostItem(int slot) const;
+    MCNAPI ::ItemInstance const& $getGhostItem(int slot) const;
 #endif
 
 

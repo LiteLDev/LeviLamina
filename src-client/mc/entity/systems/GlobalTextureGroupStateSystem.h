@@ -11,8 +11,8 @@ class GlobalTextureGroupStateSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isReloading(::EntityRegistry& registry);
+    MCNAPI static bool isReloading(::EntityRegistry& registry);
 
-    MCAPI static void setIsReloading(::EntityRegistry& registry, bool isReloading);
+    MCNAPI static void setIsReloading(::EntityRegistry& registry, bool isReloading);
     // NOLINTEND
 };

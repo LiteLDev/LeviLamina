@@ -36,7 +36,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit operator ::std::string_view() const;
+        MCNAPI explicit operator ::std::string_view() const;
         // NOLINTEND
     };
 
@@ -76,20 +76,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _getContextString(uint index) const;
+    MCNAPI ::std::string _getContextString(uint index) const;
 
-    MCAPI ::std::vector<::cereal::BasicSerializerContext::Context>
+    MCNAPI ::std::vector<::cereal::BasicSerializerContext::Context>
     contextFor(::cereal::BasicSerializerContext::LogEntry const& entry) const;
 
-    MCAPI ::std::vector<::std::string> errors() const;
+    MCNAPI ::std::vector<::std::string> errors() const;
 
-    MCAPI ~BasicSerializerContext();
+    MCNAPI ~BasicSerializerContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

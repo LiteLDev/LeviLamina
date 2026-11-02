@@ -38,53 +38,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OptionsFacet_DEPRECATED(::std::shared_ptr<::OptionRegistry> options);
+    MCNAPI explicit OptionsFacet_DEPRECATED(::std::shared_ptr<::OptionRegistry> options);
 
-    MCAPI void _registerOptionObserver(::OptionID optionId);
+    MCNAPI void _registerOptionObserver(::OptionID optionId);
 
-    MCAPI int getDefaultRenderDistance() const;
+    MCNAPI int getDefaultRenderDistance() const;
 
-    MCAPI int getInteractionModel() const;
+    MCNAPI int getInteractionModel() const;
 
-    MCAPI int getMaxRenderDistance() const;
+    MCNAPI int getMaxRenderDistance() const;
 
-    MCAPI bool getPlayOnceWithMobileData() const;
+    MCNAPI bool getPlayOnceWithMobileData() const;
 
-    MCFOLD bool getPlayVideoInTouchControlSelectionScreen() const;
+    MCNAPI bool getPlayVideoInTouchControlSelectionScreen() const;
 
-    MCAPI int getRenderDistance() const;
+    MCNAPI int getRenderDistance() const;
 
-    MCAPI bool getShowRenderDistanceWarningModal() const;
+    MCNAPI bool getShowRenderDistanceWarningModal() const;
 
-    MCFOLD bool getShowTouchControlSelectionScreen() const;
+    MCNAPI bool getShowTouchControlSelectionScreen() const;
 
-    MCAPI void setInteractionModel(int newValue);
+    MCNAPI void setInteractionModel(int newValue);
 
-    MCAPI void setPlayOnceWithMobileData(bool newValue);
+    MCNAPI void setPlayOnceWithMobileData(bool newValue);
 
-    MCAPI void setRenderDistance(int newValue);
+    MCNAPI void setRenderDistance(int newValue);
 
-    MCAPI void setShowRenderDistanceWarningModal(bool newValue);
+    MCNAPI void setShowRenderDistanceWarningModal(bool newValue);
 
-    MCAPI void setShowTouchControlSelectionScreen(bool newValue);
+    MCNAPI void setShowTouchControlSelectionScreen(bool newValue);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::OptionRegistry> options);
+    MCNAPI void* $ctor(::std::shared_ptr<::OptionRegistry> options);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

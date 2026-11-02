@@ -44,11 +44,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EduWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI explicit EduWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EduScreenHelpers::InstanceType instanceType);
+    MCNAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EduScreenHelpers::InstanceType instanceType);
 
-    MCAPI void _useTemplate(
+    MCNAPI void _useTemplate(
         ::PackManifest const&            manifest,
         ::EduScreenHelpers::InstanceType type,
         ::std::string_view               templateName
@@ -58,20 +58,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
+    MCNAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

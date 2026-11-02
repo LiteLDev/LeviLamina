@@ -40,17 +40,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SeedItemComponentLegacy(::Item& owner);
+    MCNAPI explicit SeedItemComponentLegacy(::Item& owner);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool canUseOn(::Actor& entity, ::BlockPos const& blockPos, uchar face) const;
+    MCNAPI bool canUseOn(::Actor& entity, ::BlockPos const& blockPos, uchar face) const;
 #endif
 
     MCAPI bool init(::Json::Value const& data, ::MolangVersion molangVersion);
 
-    MCAPI bool useOn(
+    MCNAPI bool useOn(
         ::ItemStack&      instance,
         ::Actor&          actor,
         ::BlockPos const& blockPos,
@@ -63,12 +63,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Item& owner);
+    MCNAPI void* $ctor(::Item& owner);
     // NOLINTEND
 };

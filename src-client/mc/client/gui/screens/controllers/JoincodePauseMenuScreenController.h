@@ -52,35 +52,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JoincodePauseMenuScreenController(
+    MCNAPI JoincodePauseMenuScreenController(
         ::std::shared_ptr<::PauseScreenModel> model,
         ::std::vector<::ActorUniqueID> const& clientIds
     );
 
-    MCAPI ::std::string _getJoincodeUri();
+    MCNAPI ::std::string _getJoincodeUri();
 
-    MCAPI ::std::string _getNetworkId();
+    MCNAPI ::std::string _getNetworkId();
 
-    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
+    MCNAPI void
+    _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
+    MCNAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, ::std::vector<::ActorUniqueID> const& clientIds);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onServerInvalidated(::EduDiscovery::ServerInvalidationDetails const&);
+    MCNAPI void $onServerInvalidated(::EduDiscovery::ServerInvalidationDetails const&);
 
-    MCAPI void $onJoinCodeGenerated(::EduDiscovery::JoinCode const&);
+    MCNAPI void $onJoinCodeGenerated(::EduDiscovery::JoinCode const&);
 
-    MCAPI void $onCredentialsInvalidated();
+    MCNAPI void $onCredentialsInvalidated();
     // NOLINTEND
 };

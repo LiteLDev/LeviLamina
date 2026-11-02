@@ -45,9 +45,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _createGamefaceTexture(::ScreenContext& screenContext);
+    MCNAPI void _createGamefaceTexture(::ScreenContext& screenContext);
 
-    MCAPI void _paintPendingFrames(::ScreenContext& screenContext);
+    MCNAPI void _paintPendingFrames(::ScreenContext& screenContext);
     // NOLINTEND
 };
 

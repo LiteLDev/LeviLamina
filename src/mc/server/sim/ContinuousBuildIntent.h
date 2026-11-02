@@ -17,7 +17,7 @@ struct ContinuousBuildIntent {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player, ::BlockSource& region);
+    MCNAPI ::sim::ExecutionResult execute(::SimulatedPlayer& player, ::BlockSource& region);
     // NOLINTEND
 };
 

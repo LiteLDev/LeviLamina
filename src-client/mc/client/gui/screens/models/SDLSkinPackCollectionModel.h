@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SDLSkinPackCollectionModel(
+    MCNAPI SDLSkinPackCollectionModel(
         ::Bedrock::NotNullNonOwnerPtr<::IContentAcquisition>     contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
@@ -57,29 +57,29 @@ public:
         ::IPersonaClient&                                        personaClient
     );
 
-    MCAPI bool _canCollect(::mce::UUID const& packId) const;
+    MCNAPI bool _canCollect(::mce::UUID const& packId) const;
 
-    MCAPI void _collectAndLoadSkinPack(::PackManifest const& packManifest);
+    MCNAPI void _collectAndLoadSkinPack(::PackManifest const& packManifest);
 
-    MCAPI uint64 _collectBuiltInSkinPacks(bool isEduMode);
+    MCNAPI uint64 _collectBuiltInSkinPacks(bool isEduMode);
 
-    MCAPI uint64 _collectUserSkinPacks();
+    MCNAPI uint64 _collectUserSkinPacks();
 
-    MCAPI void addBuiltInSkinPackModel(::std::shared_ptr<::SkinPackModel> skinPackModel);
+    MCNAPI void addBuiltInSkinPackModel(::std::shared_ptr<::SkinPackModel> skinPackModel);
 
-    MCAPI void collectOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>> const& offers);
+    MCNAPI void collectOffers(::std::vector<::gsl::not_null<::IStoreCatalogItem*>> const& offers);
 
-    MCAPI uint64 collectSkinsForOffline(bool collectOwnedSkins, ::mce::UUID const& packId);
+    MCNAPI uint64 collectSkinsForOffline(bool collectOwnedSkins, ::mce::UUID const& packId);
 
-    MCAPI void tick(::ui::DirtyFlag& dirtyFlags);
+    MCNAPI void tick(::ui::DirtyFlag& dirtyFlags);
 
-    MCAPI ~SDLSkinPackCollectionModel();
+    MCNAPI ~SDLSkinPackCollectionModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IContentAcquisition>     contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
@@ -91,6 +91,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

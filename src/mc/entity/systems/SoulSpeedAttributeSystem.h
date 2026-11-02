@@ -12,6 +12,6 @@ struct SoulSpeedAttributeSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryProcessSoulSpeed(::StrictEntityContext&, ::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void _tryProcessSoulSpeed(::StrictEntityContext&, ::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };
