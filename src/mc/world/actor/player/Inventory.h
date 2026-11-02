@@ -60,9 +60,9 @@ public:
 
     MCNAPI void $setContainerSize(int size);
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCFOLD void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
 
     // NOLINTEND

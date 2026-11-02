@@ -318,7 +318,7 @@ public:
 
     MCNAPI void setInitialized();
 
-    MCNAPI ~ScreenView();
+    MCAPI ~ScreenView();
     // NOLINTEND
 
 public:
@@ -348,6 +348,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -89,10 +89,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $registerFacet(::std::string const& name, ::std::function<::std::unique_ptr<::OreUI::IFacet>()> const& constructor);
 
-    MCNAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
+    MCAPI ::std::optional<::OreUI::IFacetRegistry::Error> $activateFacet(
         ::OreUI::FacetBinder&                                                                   binder,
         ::std::string const&                                                                    name,
         ::std::string const&                                                                    id,

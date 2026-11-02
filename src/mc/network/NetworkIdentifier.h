@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
+    MCAPI bool equalsTypeData(::NetworkIdentifier const& other) const;
 
     MCAPI ::std::string getAddress() const;
 

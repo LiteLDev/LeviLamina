@@ -120,11 +120,11 @@ public:
     MCNAPI explicit Recipes(::ILevel* level);
 
 #ifdef LL_PLAT_C
-    MCNAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
+    MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
+    MCNAPI void _addItemRecipe(::std::unique_ptr<::Recipe> recipe);
 #endif
 
     MCAPI void _loadHardcodedRecipes(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
@@ -397,7 +397,7 @@ public:
     MCNAPI void removeRecipeListener(::std::weak_ptr<bool> lifePtr);
 #endif
 
-    MCNAPI ~Recipes();
+    MCAPI ~Recipes();
     // NOLINTEND
 
 public:
@@ -409,6 +409,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

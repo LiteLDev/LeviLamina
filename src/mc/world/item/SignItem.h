@@ -85,7 +85,7 @@ public:
 
     MCNAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCNAPI ::InteractionResult $_useOn(
+    MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,

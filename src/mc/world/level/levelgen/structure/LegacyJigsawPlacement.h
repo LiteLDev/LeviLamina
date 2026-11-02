@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI LegacyJigsawPlacement(
+    MCAPI LegacyJigsawPlacement(
         int maxDepth,
         ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
             ::StructurePoolElement const&,
@@ -117,7 +117,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         int maxDepth,
         ::std::function<::std::unique_ptr<::PoolElementStructurePiece>(
             ::StructurePoolElement const&,

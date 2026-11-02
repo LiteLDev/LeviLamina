@@ -30,7 +30,7 @@ public:
     // NOLINTBEGIN
     MCAPI StaticOptimizedString(::Bedrock::StaticOptimizedString const& other);
 
-    MCNAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
+    MCAPI void _set(char const* data, uint64 length, ::Bedrock::StaticOptimizedString::StorageType storageType);
 
     MCAPI ::Bedrock::StaticOptimizedString& operator=(::Bedrock::StaticOptimizedString const& other);
 

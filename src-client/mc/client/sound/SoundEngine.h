@@ -298,7 +298,7 @@ public:
 
     MCNAPI void $stopMusic();
 
-    MCNAPI uint64 $registerLoop(
+    MCAPI uint64 $registerLoop(
         ::std::string const&                        name,
         ::std::function<void(::LoopingSoundState&)> getSoundState,
         float                                       fadeInDuration,

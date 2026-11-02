@@ -54,11 +54,11 @@ public:
     // NOLINTBEGIN
     MCNAPI ValueIteratorBase(::Json::ValueIteratorBase const& other);
 
-    MCNAPI ::Json::Value& deref() const;
+    MCAPI ::Json::Value& deref() const;
 
-    MCNAPI void increment();
+    MCAPI void increment();
 
-    MCNAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
+    MCAPI bool isEqual(::Json::ValueIteratorBase const& other) const;
 
     MCNAPI char const* memberName() const;
     // NOLINTEND

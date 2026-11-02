@@ -100,7 +100,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
 
-    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 

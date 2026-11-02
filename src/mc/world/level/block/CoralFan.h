@@ -95,13 +95,13 @@ public:
 
     MCNAPI bool $isLavaBlocking() const;
 
-    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
     MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
     MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $checkAlive(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND

@@ -108,7 +108,7 @@ public:
     )>>&
     _gameplayModelStorage();
 
-    MCNAPI static ::std::vector<::std::function<void(
+    MCAPI static ::std::vector<::std::function<void(
         ::OreUI::Detail::QueryRegistry&,
         ::OreUI::Detail::BindingRegistryFactory&,
         ::OreUI::FocusShortcutRegistry&

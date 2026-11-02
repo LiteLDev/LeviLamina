@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI FurnaceContainerManagerModel(
+    MCAPI FurnaceContainerManagerModel(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,
@@ -117,7 +117,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::HashedString const&                recipeTag,
         ::SharedTypes::Legacy::ContainerType containerType,
         ::BlockActorType                     blockActorType,

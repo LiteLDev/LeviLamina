@@ -46,13 +46,13 @@ public:
     MCNAPI ::Bedrock::Http::Response& operator=(::Bedrock::Http::Response const&);
 #endif
 
-    MCNAPI ~Response();
+    MCAPI ~Response();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

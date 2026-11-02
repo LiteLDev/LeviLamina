@@ -755,7 +755,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit CommandRegistry(::CommandRegistryArguments args);
+    MCAPI explicit CommandRegistry(::CommandRegistryArguments args);
 
     MCNAPI ::CommandRegistry::Symbol _addChainedSubcommandValuesInternal(
         ::std::string const&                                   name,
@@ -789,7 +789,7 @@ public:
     );
 #endif
 
-    MCNAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
+    MCAPI ::CommandRegistry::Symbol _addEnumValuesInternal(
         ::std::string const&                                     name,
         ::std::vector<::std::pair<::std::string, uint64>> const& strings,
         ::Bedrock::typeid_t<::CommandRegistry>                   type,
@@ -942,7 +942,7 @@ public:
 
     MCNAPI ::CommandRegistry::Signature const* findCommand(::std::string const& name) const;
 
-    MCNAPI ::CommandRegistry::Signature* findCommand(::std::string const& name);
+    MCFOLD ::CommandRegistry::Signature* findCommand(::std::string const& name);
 
     MCNAPI void fireCommandParseTableTelemetry(::IMinecraftEventing const& eventing, bool isServer) const;
 
@@ -1051,8 +1051,7 @@ public:
         ::std::vector<::CommandParameterData>           params
     );
 
-    MCNAPI void
-    registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);
+    MCAPI void registerOverloadInternal(::CommandRegistry::Signature& signature, ::CommandRegistry::Overload& overload);
 
     MCAPI void removeSoftEnumValues(::std::string const& enumName, ::std::vector<::std::string> values);
 
@@ -1070,9 +1069,9 @@ public:
     MCNAPI void setupOverloadRules(::CommandRegistry::Signature& signature);
 #endif
 
-    MCNAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
+    MCAPI ::std::string symbolToString(::CommandRegistry::Symbol symbol) const;
 
-    MCNAPI ~CommandRegistry();
+    MCAPI ~CommandRegistry();
     // NOLINTEND
 
 public:
@@ -1163,13 +1162,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::CommandRegistryArguments args);
+    MCAPI void* $ctor(::CommandRegistryArguments args);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

@@ -207,7 +207,7 @@ public:
         bool  isToporLeft
     ) const;
 
-    MCNAPI ::std::shared_ptr<::AbstractScene> _createScreen(::std::shared_ptr<::BaseScreen> newScreen);
+    MCAPI ::std::shared_ptr<::AbstractScene> _createScreen(::std::shared_ptr<::BaseScreen> newScreen);
 
     MCNAPI void _preCacheScreen(::Json::Value const& globalVars, ::std::string const& screenName);
 

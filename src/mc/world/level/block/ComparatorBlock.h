@@ -75,7 +75,7 @@ public:
 
     MCNAPI void _installCircuit(::BlockSource& region, ::BlockPos const& pos, bool loading) const;
 
-    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCNAPI void _onStateChange(::BlockEvents::BlockStateChangeEvent const& eventData) const;
 

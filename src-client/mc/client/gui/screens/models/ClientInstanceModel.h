@@ -95,7 +95,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $hasCommandsEnabled() const;
 
-    MCNAPI ::std::string $getFormattedHoverText(::ItemStackBase const& item, bool const showCategory);
+    MCAPI ::std::string $getFormattedHoverText(::ItemStackBase const& item, bool const showCategory);
 
     MCNAPI ::std::string $getFilteredItemName(::ItemStackBase const& item);
 

@@ -277,12 +277,12 @@ public:
 
     MCNAPI ::PlayerMovementSettings const& $getMovementSettings() const;
 
-    MCNAPI void
+    MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCNAPI int $_getSpawnChunkLimit() const;
 
-    MCNAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
+    MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
     MCNAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
 

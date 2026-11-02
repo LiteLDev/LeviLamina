@@ -147,7 +147,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
+    MCAPI static bool
     _isDoorToggled(::IConstBlockSource const& region, ::BlockType const& blockType, ::BlockPos const& pos);
 
     MCNAPI static void _onSetupRedstoneComponent(::BlockSource& region, ::BlockPos const& pos);
@@ -228,6 +228,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

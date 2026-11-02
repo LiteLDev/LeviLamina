@@ -41,7 +41,7 @@ public:
     // NOLINTBEGIN
     MCAPI PlayerListEntry();
 
-    MCNAPI PlayerListEntry(::PlayerListEntry const&);
+    MCAPI PlayerListEntry(::PlayerListEntry const&);
 
     MCAPI explicit PlayerListEntry(::Player const& player);
 
@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::PlayerListEntry const&);
+    MCAPI void* $ctor(::PlayerListEntry const&);
 
     MCAPI void* $ctor(::Player const& player);
     // NOLINTEND

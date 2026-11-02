@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RedStoneWireBlock(::std::string const& nameId, int id, int connectionUpdateFlags);
 
-    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCNAPI void
     _updateIndirectConnectionShapes(::BlockSource& region, ::BlockPos const& pos, bool isBeingRemoved) const;

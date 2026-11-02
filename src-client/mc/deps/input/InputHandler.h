@@ -345,7 +345,7 @@ public:
 
     MCNAPI void updateInputMapping(::std::string const& mappingName, int controllerId);
 
-    MCNAPI ~InputHandler();
+    MCAPI ~InputHandler();
     // NOLINTEND
 
 public:
@@ -362,6 +362,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

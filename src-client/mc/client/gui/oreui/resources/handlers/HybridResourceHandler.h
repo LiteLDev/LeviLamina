@@ -91,7 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Gameface::ResourceHandlerStatus
+    MCAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
     MCNAPI ::Gameface::ResourceHandlerStatus

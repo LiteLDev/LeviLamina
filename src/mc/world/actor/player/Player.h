@@ -1110,15 +1110,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Attribute const& EXHAUSTION();
+    MCNAPI static ::Attribute const& EXHAUSTION();
 
-    MCAPI static ::Attribute const& EXPERIENCE();
+    MCNAPI static ::Attribute const& EXPERIENCE();
 
-    MCAPI static ::Attribute const& HUNGER();
+    MCNAPI static ::Attribute const& HUNGER();
 
-    MCAPI static ::Attribute const& LEVEL();
+    MCNAPI static ::Attribute const& LEVEL();
 
-    MCAPI static ::Attribute const& SATURATION();
+    MCNAPI static ::Attribute const& SATURATION();
     // NOLINTEND
 
 public:
@@ -1196,11 +1196,11 @@ public:
 
     MCNAPI void $passengerTick();
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCNAPI void $remove();
 
-    MCNAPI void $respawn();
+    MCAPI void $respawn();
 
     MCNAPI bool $shouldDropDeathLoot() const;
 
@@ -1210,7 +1210,7 @@ public:
 
     MCNAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCNAPI bool $drop(::ItemStack const& item, bool const randomly);
+    MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
     MCNAPI void $resetRot();
 
@@ -1236,11 +1236,11 @@ public:
 
     MCNAPI ::std::vector<::ItemStack const*> $getAllEquipment() const;
 
-    MCNAPI bool $add(::ItemStack& item);
+    MCAPI bool $add(::ItemStack& item);
 
     MCNAPI ::CommandPermissionLevel $getCommandPermissionLevel() const;
 
-    MCNAPI ::ActorHurtResult $attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCAPI ::ActorHurtResult $attack(::Actor& actor, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCNAPI ::ItemStack const& $getCarriedItem() const;
 
@@ -1309,9 +1309,9 @@ public:
 
     MCNAPI void $setSleeping(bool val);
 
-    MCNAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedPos, bool setsRespawn, float sleepOffset);
+    MCAPI ::BedSleepingResult $startSleepInBed(::BlockPos const& bedPos, bool setsRespawn, float sleepOffset);
 
-    MCNAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
+    MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
     MCNAPI bool $canStartSleepInBed();
 
@@ -1327,7 +1327,7 @@ public:
 
     MCNAPI bool $isSilentObserver() const;
 
-    MCNAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& instance, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCNAPI bool $isLoading() const;
 
@@ -1343,7 +1343,7 @@ public:
 
     MCNAPI void $emitCriticalHitParticles(::Actor const& target, int particleCount);
 
-    MCNAPI bool $isImmobile() const;
+    MCAPI bool $isImmobile() const;
 
     MCNAPI void $sendMotionPacketIfNeeded();
 
@@ -1351,7 +1351,7 @@ public:
 
     MCNAPI uint $getUserId() const;
 
-    MCNAPI void $addExperience(int xp);
+    MCAPI void $addExperience(int xp);
 
     MCNAPI void $addLevels(int levels);
 
@@ -1367,16 +1367,16 @@ public:
 
     MCNAPI ::ItemStack const& $getEquippedTotem() const;
 
-    MCNAPI bool $consumeTotem();
+    MCAPI bool $consumeTotem();
 
     MCNAPI bool $isActorRelevant(::Actor const& actor);
 
     MCNAPI float $getMapDecorationRotation() const;
 
-    MCNAPI void
+    MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
-    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCNAPI void $startSwimming();
 
@@ -1396,11 +1396,11 @@ public:
 
     MCNAPI ::mce::Color $getNameTagTextColor() const;
 
-    MCNAPI bool $canAddPassenger(::Actor& passenger) const;
+    MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
     MCNAPI bool $isSimulated() const;
 
-    MCNAPI ::std::string $getXuid() const;
+    MCAPI ::std::string $getXuid() const;
 
     MCNAPI ::std::string $getPlayFabId() const;
 
@@ -1430,7 +1430,7 @@ public:
 
     MCNAPI uchar $getMaxChunkBuildRadius() const;
 
-    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
 #ifdef LL_PLAT_S
     MCNAPI void $setBehaviorCommandStatus(::std::string const&, ::BehaviorStatus);
@@ -1448,10 +1448,10 @@ public:
 
     MCNAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
-    MCNAPI ::ActorHurtResult
+    MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
@@ -1461,7 +1461,7 @@ public:
 
     MCNAPI bool $_shouldProvideFeedbackOnArmorSet(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item) const;
 
-    MCNAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
+    MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
     MCNAPI void $setAbilities(::LayeredAbilities const& newAbilities);
 

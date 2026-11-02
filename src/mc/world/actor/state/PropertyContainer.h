@@ -31,7 +31,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void _addDataToCompoundTag(::CompoundTag& compoundTag, ::PropertyMetadata const& propertyMetadata) const;
 
-    MCNAPI ::std::optional<uint64>
+    MCAPI ::std::optional<uint64>
     _getPropertyTypeArrayIndex(uint64 propertyNameHash, ::PropertyMetadata::ContainedType propertyType) const;
 
     MCNAPI bool _readValueFromTag(::PropertyMetadata const& propertyMetadata, ::Tag const& tag);

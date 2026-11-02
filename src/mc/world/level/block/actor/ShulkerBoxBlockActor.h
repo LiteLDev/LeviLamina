@@ -90,7 +90,7 @@ public:
 
     MCNAPI void $tick(::BlockSource& region);
 
-    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCNAPI void $startOpen(::Actor& actor);
 

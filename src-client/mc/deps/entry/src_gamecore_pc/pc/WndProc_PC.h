@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::optional<int64> $onClose(::MainGameCore::WndProc::WndProcParams params);
 
-    MCNAPI ::std::optional<int64> $onDestroy(::MainGameCore::WndProc::WndProcParams params);
+    MCAPI ::std::optional<int64> $onDestroy(::MainGameCore::WndProc::WndProcParams params);
 
     MCNAPI ::std::optional<int64> $onSize(::MainGameCore::WndProc::WndProcParams params);
 

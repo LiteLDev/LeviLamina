@@ -41,9 +41,9 @@ public:
         ::OreUI::RouteType               routeType
     );
 
-    MCNAPI ::std::string getTelemetryId() const;
+    MCAPI ::std::string getTelemetryId() const;
 
-    MCNAPI bool isValid() const;
+    MCAPI bool isValid() const;
 
     MCNAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation const&);
 

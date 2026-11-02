@@ -156,7 +156,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::mce::MaterialPtr[]> mScreenMaterials();
+    MCNAPI static ::std::add_lvalue_reference_t<::mce::MaterialPtr[]> mScreenMaterials();
 
     MCNAPI static ::std::unique_ptr<::ScreenRenderer>& singletonPtr();
     // NOLINTEND

@@ -219,9 +219,9 @@ public:
     MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasSplitNames(::HashedString const& oldName) const;
 
-    MCNAPI ::WeakPtr<::Item> getItem(::HashedString const& id);
+    MCFOLD ::WeakPtr<::Item> getItem(::HashedString const& id);
 
-    MCNAPI ::WeakPtr<::Item> getItem(short id);
+    MCAPI ::WeakPtr<::Item> getItem(short id);
 
     MCNAPI ::std::pair<::HashedString, int> getNameFromAlias(::HashedString const& name, int aux) const;
 
@@ -231,7 +231,7 @@ public:
 
     MCNAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& inOutItemAux, ::std::string_view inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
     MCNAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
@@ -251,7 +251,7 @@ public:
     MCNAPI ::WeakPtr<::Item>
     registerComplexAlias(::HashedString const& alias, ::ItemRegistryComplexAlias const& complexAlias);
 
-    MCNAPI void registerItem(::SharedPtr<::Item> item);
+    MCAPI void registerItem(::SharedPtr<::Item> item);
 
     MCNAPI void registerLegacyMapping(
         ::HashedString const&    alias,
@@ -267,7 +267,7 @@ public:
 
     MCNAPI void shutdown();
 
-    MCNAPI void unregisterItem(::HashedString const& itemName);
+    MCAPI void unregisterItem(::HashedString const& itemName);
 
     MCNAPI ::std::vector<::std::string> validateServerItemComponents(::std::vector<::ItemData> const& items);
 

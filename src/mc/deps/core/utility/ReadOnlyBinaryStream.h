@@ -96,7 +96,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Bedrock::Result<void> $read(void* target, uint64 num);
+    MCAPI ::Bedrock::Result<void> $read(void* target, uint64 num);
 
 
     // NOLINTEND

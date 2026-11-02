@@ -97,7 +97,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    lc,

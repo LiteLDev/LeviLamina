@@ -50,7 +50,7 @@ public:
     MCNAPI ::BlockPos getDistanceToMultiBlockEnd(::Block const& part) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::BlockPos getDistanceToMultiBlockStart(::Block const& part) const;
+    MCAPI ::BlockPos getDistanceToMultiBlockStart(::Block const& part) const;
 
     MCNAPI ::AABB getOutlineShape(::Block const& part, ::BlockPos const& partWorldPos) const;
 #endif
@@ -65,7 +65,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SharedTypes::v1_26_20::MultiBlockPart getMultiBlockPartId(::Block const& part);
+    MCAPI static ::SharedTypes::v1_26_20::MultiBlockPart getMultiBlockPartId(::Block const& part);
 
     MCNAPI static ::BlockPos
     getSnowLoggablePosition(::Block const& part, ::BlockSource const& region, ::BlockPos const& snowLayerPosition);

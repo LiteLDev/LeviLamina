@@ -212,7 +212,7 @@ public:
 
     MCFOLD void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
-    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 

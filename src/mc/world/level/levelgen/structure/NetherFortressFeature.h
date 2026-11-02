@@ -72,7 +72,7 @@ public:
 
     MCNAPI bool $shouldAddHardcodedSpawnAreas() const;
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    chunkPos,

@@ -71,7 +71,7 @@ public:
 
     MCNAPI void $clearMapping(int controllerId);
 
-    MCNAPI bool
+    MCAPI bool
     $tick(::InputEventQueue& eventQueue, ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map);
 
     MCNAPI void $clearInputDeviceQueue();

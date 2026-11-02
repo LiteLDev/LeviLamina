@@ -63,7 +63,7 @@ public:
 
     MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCNAPI void
+    MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
     MCNAPI ::GameEvents::PositionSource const& $getPositionSource() const;

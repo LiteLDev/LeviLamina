@@ -155,7 +155,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static float _getXPRewardMultiplier(::ItemStackBase const& item);
+    MCAPI static float _getXPRewardMultiplier(::ItemStackBase const& item);
 
     MCNAPI static int getAvailableFuelSetCount(int slot, ::ItemStackBase const& item);
 
@@ -246,7 +246,7 @@ public:
 
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCNAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 

@@ -429,7 +429,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $fetchPage(int page);
 
-    MCNAPI void $drawCached(
+    MCAPI void $drawCached(
         ::ScreenContext&                     screenContext,
         ::std::string_view                   str,
         float                                x,

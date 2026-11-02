@@ -123,8 +123,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockComponentStorage::ComponentBase*
-    _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
+    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
 
     MCNAPI ~BlockComponentStorage();
     // NOLINTEND

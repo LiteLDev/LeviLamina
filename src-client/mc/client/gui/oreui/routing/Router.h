@@ -93,7 +93,7 @@ public:
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCNAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
+    MCAPI bool _pushRoute(::std::string const& route, ::OreUI::Router::RouterPushMode mode);
 
     MCNAPI void _replaceCurrentRouteInHistory(
         ::std::string const&                      newRoute,
@@ -111,7 +111,7 @@ public:
 
     MCNAPI void replaceRouteMatcher(::std::unique_ptr<::OreUI::IRouteMatcher> newRouteMatcher);
 
-    MCNAPI ~Router();
+    MCAPI ~Router();
     // NOLINTEND
 
 public:
@@ -134,7 +134,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

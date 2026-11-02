@@ -151,7 +151,7 @@ public:
 
     MCNAPI void $onObjectiveRemoved(::Objective& objective);
 
-    MCNAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
+    MCAPI void $onScoreChanged(::ScoreboardId const& id, ::Objective const& obj);
 
     MCNAPI void $onPlayerScoreRemoved(::ScoreboardId const& id, ::Objective const& objective);
 

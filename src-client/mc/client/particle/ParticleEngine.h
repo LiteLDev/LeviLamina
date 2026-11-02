@@ -85,7 +85,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::Particle> _create(::ParticleType type);
 
-    MCNAPI void _emitParticleNew(
+    MCAPI void _emitParticleNew(
         ::ParticleSystemEngine& particleSystemEngine,
         ::ParticleType          type,
         ::Vec3 const&           pos,

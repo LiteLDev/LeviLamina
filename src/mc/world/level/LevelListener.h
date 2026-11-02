@@ -270,9 +270,9 @@ public:
     MCFOLD void $onChunkUnloaded(::LevelChunk& lc);
 
 #ifdef LL_PLAT_S
-    MCNAPI void $onLevelDestruction(::std::string const&);
+    MCFOLD void $onLevelDestruction(::std::string const&);
 #else // LL_PLAT_C
-    MCNAPI void $onLevelDestruction(::std::string const& levelId);
+    MCFOLD void $onLevelDestruction(::std::string const& levelId);
 #endif
 
 #ifdef LL_PLAT_S

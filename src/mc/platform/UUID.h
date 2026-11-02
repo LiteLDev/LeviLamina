@@ -53,7 +53,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID& EMPTY();
+    MCNAPI static ::mce::UUID& EMPTY();
 
     MCNAPI static uint64& STRING_LENGTH();
     // NOLINTEND

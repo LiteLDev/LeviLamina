@@ -208,7 +208,7 @@ public:
         ::std::vector<::AutoPlaceResult>&    destinations
     ) const;
 
-    MCNAPI int _appendAutoPlaceOutputs(
+    MCAPI int _appendAutoPlaceOutputs(
         ::ItemTransferRequest&                request,
         ::ItemStackBase const&                itemToPlace,
         int                                   requestAmount,
@@ -413,14 +413,14 @@ public:
 
     MCNAPI bool $handlePlaceAmount(::SlotData const& srcSlot, int amount, ::SlotData const& dstSlot);
 
-    MCNAPI int $handleAutoPlace(
+    MCAPI int $handleAutoPlace(
         ::SlotData const&                     srcSlot,
         int                                   amount,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,
         ::std::vector<::AutoPlaceResult>&     destinations
     );
 
-    MCNAPI int $handleAutoPlaceStack(
+    MCAPI int $handleAutoPlaceStack(
         ::SlotData const&                     srcSlot,
         ::ItemTakeType                        takeType,
         ::std::vector<::AutoPlaceItem> const& autoPlaceOrder,

@@ -22,7 +22,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScoreboardId& INVALID();
+    MCNAPI static ::ScoreboardId& INVALID();
     // NOLINTEND
 };
 

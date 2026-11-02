@@ -47,7 +47,7 @@ public:
 
     MCNAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
 
-    MCNAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
+    MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 
     MCAPI ::OptionalString _getSimple(::std::string const& id) const;
 

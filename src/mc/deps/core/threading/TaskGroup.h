@@ -152,7 +152,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
+    MCAPI TaskGroup(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
 
     MCNAPI void _doWorkUntil(::Bedrock::Threading::SharedAsync<void> task, ::brstd::promise<void>* workStarted);
 
@@ -161,7 +161,7 @@ public:
         ::std::function<void(::std::shared_ptr<::BackgroundTaskBase> const&)> callback
     );
 
-    MCNAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
+    MCAPI void _queueInternal(::std::shared_ptr<::BackgroundTaskBase> bgtask);
 
 #ifdef LL_PLAT_C
     MCNAPI uint64 count() const;
@@ -190,7 +190,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
+    MCAPI void* $ctor(::WorkerPool& workers, ::Scheduler& context, ::std::string name);
     // NOLINTEND
 
 public:

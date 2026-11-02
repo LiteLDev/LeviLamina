@@ -303,7 +303,7 @@ public:
 
     MCNAPI void $prepareFrame(::ScreenContext&);
 
-    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const&);
 
     MCNAPI void $postRenderUpdate(::ScreenContext&);
 
@@ -419,7 +419,7 @@ public:
 
     MCNAPI bool $canBeTransitioned() const;
 
-    MCNAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
+    MCAPI void $onScreenExit(bool, bool, ::std::shared_ptr<::AbstractScene>);
 
     MCNAPI void $onScreenEntrance(bool, bool);
 

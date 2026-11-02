@@ -161,11 +161,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
     MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCNAPI void $onLeave();
+    MCAPI void $onLeave();
 
     MCNAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 

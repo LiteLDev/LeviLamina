@@ -43,7 +43,7 @@ MCNAPI ::std::array<uchar, 6> const& ALL_FACES();
 
 MCNAPI ::std::array<::Facing::Name, 4> const& BY2DDATA();
 
-MCAPI ::std::array<::BlockPos, 6> const& DIRECTION();
+MCNAPI ::std::array<::BlockPos, 6> const& DIRECTION();
 
 MCNAPI ::std::array<::Facing::Name, 6> const& DIRECTIONS();
 
@@ -53,7 +53,7 @@ MCNAPI ::Facing::StringMap const& FROM_STRING_MAP();
 
 MCNAPI ::std::array<::Vec3, 6> const& NORMAL();
 
-MCAPI ::std::add_lvalue_reference_t<uchar const[]> OPPOSITE_FACING();
+MCNAPI ::std::add_lvalue_reference_t<uchar const[]> OPPOSITE_FACING();
 
 MCNAPI ::std::array<schar, 6> const& STEP_X();
 

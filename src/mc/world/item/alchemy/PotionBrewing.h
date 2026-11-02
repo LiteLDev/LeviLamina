@@ -71,7 +71,7 @@ public:
 
     MCNAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 
     MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
 

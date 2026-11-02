@@ -175,7 +175,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $update();
+    MCAPI bool $update();
 
     MCNAPI void $onStorageChanged();
     // NOLINTEND

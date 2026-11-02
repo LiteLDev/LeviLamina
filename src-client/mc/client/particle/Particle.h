@@ -116,7 +116,7 @@ public:
 
     MCNAPI void $normalTick();
 
-    MCNAPI void $tessellate(::ParticleRenderContext const& renderContext);
+    MCAPI void $tessellate(::ParticleRenderContext const& renderContext);
 
     MCNAPI ::mce::TexturePtr const& $getParticleTexture() const;
 

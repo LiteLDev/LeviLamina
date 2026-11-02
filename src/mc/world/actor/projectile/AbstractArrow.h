@@ -82,7 +82,7 @@ public:
 
     MCNAPI void $shoot(::Vec3 const& dir, float pow, float uncertainty, ::Vec3 const& baseSpeed);
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
     MCNAPI float $getShadowRadius() const;
 

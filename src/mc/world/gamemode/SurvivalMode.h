@@ -95,23 +95,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
+    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
-    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot const handSlot);
 
-    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot);
 
-    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot const handSlot, bool const isSimTick);
 
-    MCNAPI bool $useItem(::ItemStack& item, ::HandSlot const handSlot);
+    MCAPI bool $useItem(::ItemStack& item, ::HandSlot const handSlot);
 
-    MCNAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
 
-    MCNAPI ::InteractionResult $useItemOn(
+    MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,

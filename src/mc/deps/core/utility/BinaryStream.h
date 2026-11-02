@@ -219,13 +219,13 @@ public:
         char const*
     );
 
-    MCNAPI bool $writeTypeBegin_DocHelper(char const*, char const*, char const*);
+    MCFOLD bool $writeTypeBegin_DocHelper(char const*, char const*, char const*);
 
-    MCNAPI void $writeTypeEnd_DocHelper();
+    MCFOLD void $writeTypeEnd_DocHelper();
 
-    MCNAPI void $writeEnum_DocHelper(char const*, char const*);
+    MCFOLD void $writeEnum_DocHelper(char const*, char const*);
 
-    MCNAPI void $_writeArray(
+    MCAPI void $_writeArray(
         ::std::function<void(::BinaryStream&)>&& sizeWriter,
         ::std::function<void(::BinaryStream&)>&& writer,
         char const*,

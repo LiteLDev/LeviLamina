@@ -17,7 +17,7 @@ MCNAPI void clearMappings();
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<uint, ::BlockType const*>& mBlockIdToVanillaBlockTypesMap();
+MCNAPI ::std::unordered_map<uint, ::BlockType const*>& mBlockIdToVanillaBlockTypesMap();
 
 MCNAPI ::std::unordered_map<::std::string, int>& mBlockNameToBlockIdMap();
 // NOLINTEND

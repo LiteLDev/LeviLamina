@@ -35,30 +35,30 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Attribute const& ABSORPTION();
+    MCNAPI static ::Attribute const& ABSORPTION();
 
     MCNAPI static ::Attribute const& AIR_DRAG_MODIFIER();
 
-    MCAPI static ::Attribute const& ATTACK_DAMAGE();
+    MCNAPI static ::Attribute const& ATTACK_DAMAGE();
 
     MCNAPI static ::Attribute const& BOUNCINESS();
 
-    MCAPI static ::Attribute const& FOLLOW_RANGE();
+    MCNAPI static ::Attribute const& FOLLOW_RANGE();
 
     MCNAPI static ::Attribute const& FRICTION_MODIFIER();
 
-    MCAPI static ::Attribute const& HEALTH();
+    MCNAPI static ::Attribute const& HEALTH();
 
-    MCAPI static ::Attribute const& JUMP_STRENGTH();
+    MCNAPI static ::Attribute const& JUMP_STRENGTH();
 
-    MCAPI static ::Attribute const& KNOCKBACK_RESISTANCE();
+    MCNAPI static ::Attribute const& KNOCKBACK_RESISTANCE();
 
-    MCAPI static ::Attribute const& LAVA_MOVEMENT_SPEED();
+    MCNAPI static ::Attribute const& LAVA_MOVEMENT_SPEED();
 
-    MCAPI static ::Attribute const& LUCK();
+    MCNAPI static ::Attribute const& LUCK();
 
-    MCAPI static ::Attribute const& MOVEMENT_SPEED();
+    MCNAPI static ::Attribute const& MOVEMENT_SPEED();
 
-    MCAPI static ::Attribute const& UNDERWATER_MOVEMENT_SPEED();
+    MCNAPI static ::Attribute const& UNDERWATER_MOVEMENT_SPEED();
     // NOLINTEND
 };

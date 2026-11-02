@@ -100,11 +100,11 @@ public:
 
     MCNAPI void $normalTick();
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
     MCNAPI void $setAuxValue(int aux);
 
-    MCNAPI ::ItemStack $_getPickupItem() const;
+    MCAPI ::ItemStack $_getPickupItem() const;
 
     MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

@@ -87,11 +87,11 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
+    MCNAPI void _createPluginContext(::ScriptPlugin& plugin, ::ScriptPluginResult& pluginResult);
 #endif
 
     MCNAPI void _disableHandleCounter();

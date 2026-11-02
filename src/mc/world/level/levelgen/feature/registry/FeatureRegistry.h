@@ -82,9 +82,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit FeatureRegistry(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI explicit FeatureRegistry(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
-    MCNAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
+    MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
 #ifdef LL_PLAT_C
     MCNAPI bool _setupFeature(
@@ -145,7 +145,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& AFTER_SKY_PASS();
 
-    MCAPI static ::std::string const& AFTER_SURFACE_PASS();
+    MCNAPI static ::std::string const& AFTER_SURFACE_PASS();
 
     MCNAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
 
@@ -171,6 +171,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 };

@@ -78,7 +78,7 @@ public:
 
     MCNAPI bool $shouldPostProcessMobs() const;
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&,
         ::Random&                            random,
         ::ChunkPos const&                    pos,

@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::MobEffectInstance const& NO_EFFECT();
 
-    MCAPI static float& splashDurationMultiplier();
+    MCNAPI static float& splashDurationMultiplier();
     // NOLINTEND
 
 public:

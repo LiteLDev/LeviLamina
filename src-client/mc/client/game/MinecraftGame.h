@@ -1662,7 +1662,7 @@ public:
 
     MCNAPI void $audioEngineOff();
 
-    MCNAPI void $update();
+    MCAPI void $update();
 
     MCNAPI void $play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
@@ -1714,7 +1714,7 @@ public:
 
     MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCNAPI void $onAppFocusLost();
+    MCAPI void $onAppFocusLost();
 
     MCNAPI void $onAppFocusGained();
 
@@ -2292,7 +2292,7 @@ public:
 
     MCNAPI ::AppSystemRegistry& $getAppSystemRegistry();
 
-    MCNAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
+    MCAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
 
     MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
 

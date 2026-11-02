@@ -36,12 +36,12 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI static bool
+    MCAPI static bool
     _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI static bool
+    MCNAPI static bool
     _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
 #endif
 

@@ -459,7 +459,7 @@ public:
 
     MCNAPI void $tickRain();
 
-    MCNAPI void $onWillChangeDimension(::Player& player);
+    MCAPI void $onWillChangeDimension(::Player& player);
 
     MCNAPI void $onDimensionChanged(::Player& player);
 
@@ -470,7 +470,7 @@ public:
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
     MCNAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
@@ -484,7 +484,7 @@ public:
 
     MCNAPI bool $getForceFog(::Actor const& cameraActor) const;
 
-    MCNAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
     MCNAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
@@ -533,9 +533,8 @@ public:
 
     MCNAPI void $_releaseRespectiveResources();
 
-    MCNAPI void
-    $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCNAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+    MCAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
     // NOLINTEND
 };

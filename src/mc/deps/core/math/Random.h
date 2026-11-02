@@ -58,7 +58,7 @@ public:
     // NOLINTBEGIN
     MCNAPI Random();
 
-    MCNAPI uint _genRandInt32(bool allowUnitTestDeterministicOverride);
+    MCAPI uint _genRandInt32(bool allowUnitTestDeterministicOverride);
 
 #ifdef LL_PLAT_C
     MCNAPI float nextGaussianFloat();

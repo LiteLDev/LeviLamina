@@ -270,7 +270,7 @@ public:
 
     MCNAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
-    MCNAPI void $_subTick();
+    MCAPI void $_subTick();
 
     MCNAPI ::TickTimeManager const& $_getTickTimeManager() const;
 

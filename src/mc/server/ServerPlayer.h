@@ -424,11 +424,11 @@ public:
 
     MCNAPI void $aiStep();
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCNAPI void $moveView();
 
@@ -454,7 +454,7 @@ public:
 
     MCNAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
 
-    MCNAPI void $sendNetworkPacket(::Packet& packet) const;
+    MCAPI void $sendNetworkPacket(::Packet& packet) const;
 
     MCNAPI void $displayTextObjectMessage(
         ::TextObjectRoot const& textObject,
@@ -482,13 +482,13 @@ public:
         ::std::string const&                 platformId
     );
 
-    MCNAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
+    MCAPI void $openTrading(::ActorUniqueID const& uniqueID, bool useNewScreen);
 
     MCNAPI void $openPortfolio();
 
     MCNAPI void $openNpcInteractScreen(::std::shared_ptr<::INpcDialogueData> npc);
 
-    MCNAPI void $openInventory();
+    MCAPI void $openInventory();
 
     MCNAPI void $openBook(int, bool, int, ::BlockActor* lectern);
 
@@ -517,19 +517,19 @@ public:
 
     MCNAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot const armorSlot, ::ItemStack const& item);
 
-    MCNAPI void $setOffhandSlot(::ItemStack const& item);
+    MCAPI void $setOffhandSlot(::ItemStack const& item);
 
     MCNAPI void $clearVanishEnchantedItemsOnDeath();
 
-    MCNAPI bool $canChangeDimensionsUsingPortal() const;
+    MCAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCNAPI void $changeDimension(::DimensionType toId);
+    MCAPI void $changeDimension(::DimensionType toId);
 
     MCNAPI void $changeDimensionWithCredits(::DimensionType dimension);
 
-    MCNAPI void $setPlayerGameType(::GameType gameType);
+    MCAPI void $setPlayerGameType(::GameType gameType);
 
-    MCNAPI void $prepareRegion(::ChunkSource& mainChunkSource);
+    MCAPI void $prepareRegion(::ChunkSource& mainChunkSource);
 
     MCNAPI bool $isActorRelevant(::Actor const& actor);
 
@@ -547,7 +547,7 @@ public:
 
     MCNAPI bool $isLoading() const;
 
-    MCNAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI bool $isPlayerInitialized() const;
 
@@ -565,9 +565,9 @@ public:
 
     MCNAPI void $addChunksToQueue(::std::vector<::ChunkPos> const& chunkPostions, bool isBiomeUpdate);
 
-    MCNAPI int $_getSpawnChunkLimit() const;
+    MCAPI int $_getSpawnChunkLimit() const;
 
-    MCNAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
+    MCAPI void $_updateChunkPublisherView(::Vec3 const& position, float minDistance);
 
     MCNAPI void $_serverInitItemStackIds();
 

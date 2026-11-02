@@ -56,7 +56,7 @@ public:
 
     MCNAPI ::EventResult $onEvent(::PlayerDamageEvent const& playerDamageEvent);
 
-    MCNAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
+    MCAPI ::EventResult $onEvent(::PlayerOpenContainerEvent const& playerOpenContainerEvent);
 
     MCNAPI ::EventResult $onActorCreationAttemptFailed(::Actor& actor, ::std::string_view message);
 

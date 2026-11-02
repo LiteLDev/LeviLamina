@@ -77,7 +77,7 @@ public:
 
     MCNAPI int $getEnchantValue() const;
 
-    MCNAPI bool $isValidRepairItem(
+    MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
@@ -90,7 +90,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCNAPI bool $canDestroySpecial(::Block const& block) const;
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
 
     MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 

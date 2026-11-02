@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::mce::Color
+    MCAPI ::mce::Color
     $get(::Block const&, ::BlockSource& region, ::BlockPos const& pos, ::BiomeTintCache const* biomeTintCache) const;
 
     MCNAPI ::mce::Color $get(::Block const&) const;

@@ -316,7 +316,7 @@ public:
         ::CaretMeasureData const& caretData
     );
 
-    MCNAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
+    MCAPI void $flushText(float deltaTime, ::std::optional<float> obfuscateSwitchTime);
 
     MCNAPI void $drawImage(
         ::mce::ClientTexture const& texture,
@@ -345,9 +345,9 @@ public:
 
     MCNAPI void $touchTexture(::ResourceLocation const& resourceLocation);
 
-    MCNAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+    MCAPI void $beginSharedMeshBatch(::ComponentRenderBatch& renderBatch);
 
-    MCNAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
+    MCAPI void $endSharedMeshBatch(::ComponentRenderBatch& renderBatch);
 
     MCNAPI void $reserveSharedMeshBatch(uint64 vertexCount);
 

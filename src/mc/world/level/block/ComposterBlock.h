@@ -107,7 +107,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
+    MCAPI static ::std::unordered_map<uint64, schar> const& _getCompostableItems();
 
     MCNAPI static bool addItems(
         ::Container&      fromContainer,

@@ -94,7 +94,7 @@ public:
 
     MCNAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
     MCNAPI ::BiomeIdType $getDefaultBiomeId() const;
 

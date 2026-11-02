@@ -513,7 +513,7 @@ public:
 
     MCNAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
 
-    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
     MCNAPI void $setViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
@@ -525,7 +525,7 @@ public:
 
     MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
-    MCNAPI void $preRenderUpdate(
+    MCAPI void $preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );

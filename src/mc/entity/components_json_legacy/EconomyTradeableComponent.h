@@ -59,7 +59,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit EconomyTradeableComponent(::Actor& owner);
 
-    MCNAPI bool _generateTrades();
+    MCAPI bool _generateTrades();
 
     MCNAPI ::TradeTable* _getTradeTable();
 

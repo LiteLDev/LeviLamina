@@ -121,7 +121,7 @@ public:
 
     MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 
-    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
 
     // NOLINTEND

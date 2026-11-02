@@ -61,7 +61,7 @@ public:
 
     MCNAPI ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 

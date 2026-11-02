@@ -384,11 +384,11 @@ public:
 
     MCNAPI bool $getAreParticlesFromActorButWorldRelative() const;
 
-    MCNAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
+    MCAPI void $tick(::std::chrono::nanoseconds const& dtIn, float const a);
 
     MCNAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCNAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
+    MCAPI void $extractForRendering(::ParticleRenderData& particleRenderData, float a);
 
     MCNAPI void $setManualParticleEmission(bool manualParticleEmission);
 

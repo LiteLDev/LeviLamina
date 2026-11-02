@@ -141,7 +141,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 

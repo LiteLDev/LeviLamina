@@ -1336,7 +1336,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ClientInstance(::ClientInstanceArguments&& args);
+    MCAPI explicit ClientInstance(::ClientInstanceArguments&& args);
 
     MCNAPI void _fireOnDisconnect(
         ::Connection::DisconnectFailReason failReason,
@@ -1392,7 +1392,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ClientInstanceArguments&& args);
+    MCAPI void* $ctor(::ClientInstanceArguments&& args);
     // NOLINTEND
 
 public:
@@ -1421,7 +1421,7 @@ public:
 
     MCNAPI ::std::optional<::Social::GameConnectionInfo> $getGameConnectionInfo();
 
-    MCNAPI void $onStartJoinGame(
+    MCAPI void $onStartJoinGame(
         bool                                   isLocalServer,
         ::std::string const&                   multiplayerCorrelationId,
         ::std::string const&                   serverName,
@@ -1433,7 +1433,7 @@ public:
 
     MCNAPI void $onStartLocalServer(::std::string const& worldName);
 
-    MCNAPI void $onCancelJoinGame();
+    MCAPI void $onCancelJoinGame();
 
     MCNAPI void $requestLeaveGameAsync();
 
@@ -1573,7 +1573,7 @@ public:
 
     MCNAPI void $quit(::std::string const& src, ::std::string const& reason);
 
-    MCNAPI ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
+    MCFOLD ::IMinecraftGame& $getMinecraftGame_DEPRECATED() const;
 
     MCNAPI ::IClientInstances& $getClientInstances() const;
 
@@ -1591,7 +1591,7 @@ public:
 
     MCNAPI ::IConnectionEventing& $getConnectionEventing() const;
 
-    MCNAPI ::FontHandle $getFontHandle() const;
+    MCAPI ::FontHandle $getFontHandle() const;
 
     MCNAPI ::FontHandle $getRuneFontHandle() const;
 
@@ -1850,7 +1850,7 @@ public:
 
     MCNAPI void $renderImGui(::ScreenContext& screenContext, bool drawMenuBar);
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getGuiData();
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> $getGuiData() const;
 
@@ -1875,7 +1875,7 @@ public:
 
     MCNAPI ::AbstractScene const* $getActiveScene() const;
 
-    MCNAPI ::SceneFactory& $getSceneFactory() const;
+    MCAPI ::SceneFactory& $getSceneFactory() const;
 
     MCNAPI ::OreUI::SceneProvider& $getSceneProvider() const;
 
@@ -1895,9 +1895,9 @@ public:
 
     MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getCurrentSceneStack() const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getCurrentSceneStack();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getCurrentSceneStack();
 
-    MCNAPI ::OreUI::Router& $getCurrentUIRouter();
+    MCAPI ::OreUI::Router& $getCurrentUIRouter();
 
     MCNAPI ::OreUI::Router const& $getCurrentUIRouter() const;
 
@@ -2042,7 +2042,7 @@ public:
 
     MCNAPI void $setDisableInput(bool disableInput);
 
-    MCNAPI void $grabMouse();
+    MCAPI void $grabMouse();
 
     MCNAPI void $releaseMouse();
 
@@ -2076,7 +2076,7 @@ public:
 
     MCNAPI bool $isFullVanillaPackOnStack() const;
 
-    MCNAPI void $onPlayerLoaded(::Player& player);
+    MCAPI void $onPlayerLoaded(::Player& player);
 
     MCNAPI void $setClientGameMode(::GameType gameType);
 
@@ -2145,7 +2145,7 @@ public:
 
     MCNAPI void $onGameSessionReset();
 
-    MCNAPI void $onLevelExit();
+    MCAPI void $onLevelExit();
 
     MCNAPI void $onRequestResourceReload();
 
@@ -2177,7 +2177,7 @@ public:
 
     MCNAPI ::ItemInHandRenderer* $getItemInHandRenderer();
 
-    MCNAPI ::ItemRenderer* $getItemRenderer();
+    MCFOLD ::ItemRenderer* $getItemRenderer();
 
     MCNAPI ::HudIconActorRenderer* $getHudIconActorRenderer();
 
@@ -2248,7 +2248,7 @@ public:
 
     MCNAPI bool $isPlaying() const;
 
-    MCNAPI ::ClientInstanceState $getClientInstanceState() const;
+    MCFOLD ::ClientInstanceState $getClientInstanceState() const;
 
     MCNAPI ::LatencyGraphDisplay* $getLatencyGraphDisplay() const;
 

@@ -35,7 +35,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isReadOnly(::LevelChunk const& levelChunk) const;
 
-    MCNAPI bool $setOnChunkLoadedCalled(::LevelChunk& levelChunk);
+    MCAPI bool $setOnChunkLoadedCalled(::LevelChunk& levelChunk);
 
     MCNAPI void $onTickingStarted(::LevelChunk& levelChunk);
 

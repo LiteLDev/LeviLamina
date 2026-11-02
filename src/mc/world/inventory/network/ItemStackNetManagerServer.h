@@ -125,7 +125,7 @@ public:
 
     MCNAPI bool $allowInventoryTransactionManager() const;
 
-    MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
     MCNAPI void $beginCursorItemDrag();
 

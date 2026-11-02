@@ -29,7 +29,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
+    MCAPI void $destroy(::ActorDamageSource const& source, bool dropMinecartComponents);
 
     MCNAPI void $applyNaturalSlowdown(::BlockSource& region);
 
