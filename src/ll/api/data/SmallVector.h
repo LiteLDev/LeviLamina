@@ -15,6 +15,7 @@
 #include <utility>
 
 #include "ll/api/memory/Memory.h"
+#include "mc/deps/core/memory/IMemoryAllocator.h"
 
 namespace ll::data {
 class SmallVectorHeader {
