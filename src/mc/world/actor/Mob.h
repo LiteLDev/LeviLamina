@@ -301,7 +301,7 @@ public:
 
     MCNAPI float calcMoveRelativeSpeed(::TravelType travelType);
 
-    MCNAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
+    MCAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
 
     MCNAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
 

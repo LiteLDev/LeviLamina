@@ -30,13 +30,13 @@ public:
     MCNAPI void setNoSafetyChecks(::std::string const& headerName, ::std::string const& headerValue);
 #endif
 
-    MCNAPI ~HeaderCollection();
+    MCAPI ~HeaderCollection();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };
 
