@@ -721,33 +721,6 @@ struct ll::reflection::Serializer<mce::Blob> {
 };
 
 template <>
-struct ll::reflection::Serializer<mce::Color> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(mce::Color const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::r>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::g>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::b>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::a>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<mce::Color> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        mce::Color value{};
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::r>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::g>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::b>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::a>(value, j, keyFormatter));
-        return value;
-    }
-};
-
-template <>
 struct ll::reflection::Serializer<mce::Image> {
     template <typename J, typename F>
     static ll::Expected<J> serialize(mce::Image const& value, F const& keyFormatter) {
@@ -1718,7 +1691,7 @@ TEST(ReflectionTest, SerializedSkinImplSpecializationSupportsTypedStorageFields)
     auto const& tintColors = json->at("piece_tint_colors").at("Hair").at("colors");
     ASSERT_EQ(tintColors.size(), 4);
     EXPECT_TRUE(tintColors.at(0).contains("r"));
-    EXPECT_FLOAT_EQ(json->at("skin_color").at("a").get<float>(), 0.4f);
+    EXPECT_EQ(json->at("skin_color").at("a").get<int>(), static_cast<int>(std::lround(0.4f * 255.0f)));
 
     SerializedSkinImpl parsed;
     auto               result = ll::reflection::deserialize(parsed, *json, camelToSnakeWithoutM);
