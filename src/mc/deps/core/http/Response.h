@@ -46,7 +46,7 @@ public:
     MCNAPI ::Bedrock::Http::Response& operator=(::Bedrock::Http::Response const&);
 #endif
 
-    ~Response() = default;
+    MCNAPI ~Response();
     // NOLINTEND
 
 public:
