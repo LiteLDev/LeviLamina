@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `PacketRegistrar` can unregister packets and handlers at runtime, and drops those of a mod when it is unloaded
 - Added `ll::coro::ConditionVariable`, supporting multiple waiters, predicates, timeouts and `notifyOne` / `notifyAll`
 - Added `ll::data::IntrusiveList`
+- Implemented `Bedrock::Threading::InstancedThreadLocal` and `InstancedThreadLocalValue`
 
 ### Changed
 

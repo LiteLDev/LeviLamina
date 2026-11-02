@@ -28,7 +28,10 @@ Generated regions are fenced and belong to the tool:
 - `// auto generated inclusion list` and `// auto generated forward declare list`
 - anything between `// NOLINTBEGIN` and `// NOLINTEND`
 - declarations marked `MCAPI`, `MCFOLD`, `MCTAPI`, `MCNAPI`
-- `::ll::TypedStorage<...>` member layouts and the `// prevent constructor by default` block
+- `::ll::TypedStorage<...>` member layouts
+
+The `// prevent constructor by default` block is merged too: turning its declarations into
+`= default` or `= delete` survives regeneration.
 
 Hand-written code goes *outside* those fences and is marked with LeviLamina's own export macros:
 `LLNDAPI` for functions with a return value worth checking, `LLAPI` otherwise. A typical addition
@@ -49,6 +52,9 @@ declarations, and declarations alike. Manual `#include`s go at the very top, abo
 `// auto generated inclusion list`, with `mc/_HeaderOutputPredefine.h` first. Manual forward
 declarations sit in a block of their own, outside the generated declare list and its
 `// clang-format off` / `on` fence. Never add to or reorder the generated lists themselves.
+
+`mc/_HeaderOutputPredefine.h` already pulls in the standard library, so headers under `mc/` do not
+include `<...>` standard headers themselves.
 
 ```cpp
 #pragma once
@@ -115,6 +121,9 @@ Do not use `std::map`, `std::set`, `std::unordered_map` or `std::unordered_set`;
 
 Prefer `Expected<T>` for recoverable errors over exceptions; the Windows build sets
 `set_exceptions("none")` in xmake.
+
+Do not pin Bedrock layouts with `static_assert` on `sizeof`, `alignof` or `offsetof`, in sources or
+tests. Layouts change with every game version and the asserts cannot follow.
 
 ## Changelog and commits
 

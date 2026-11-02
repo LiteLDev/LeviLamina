@@ -24,7 +24,6 @@ public:
         EnumSet const* set_;
         size_type      index_;
     };
-    static_assert(sizeof(iterator) == 16);
 
     using const_iterator = iterator;
 
