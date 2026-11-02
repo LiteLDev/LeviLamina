@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDimensionTransferManager(
+    MCNAPI ActorDimensionTransferManager(
         ::std::unique_ptr<::IActorDimensionTransferer>    actorDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>     portalForcer
@@ -42,13 +42,13 @@ public:
 
     MCAPI bool canChangeDimension(::Actor const& actor, ::DimensionType toId);
 
-    MCAPI ~ActorDimensionTransferManager();
+    MCNAPI ~ActorDimensionTransferManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::IActorDimensionTransferer>    actorDimensionTransferer,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager> dimensionManager,
         ::Bedrock::NotNullNonOwnerPtr<::PortalForcer>     portalForcer
@@ -58,6 +58,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

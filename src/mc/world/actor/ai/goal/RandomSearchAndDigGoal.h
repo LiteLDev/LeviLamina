@@ -96,33 +96,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RandomSearchAndDigGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI RandomSearchAndDigGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
+    MCNAPI ::std::optional<::BlockPos> _findWantedTargetPos() const;
 
-    MCAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos const pos) const;
+    MCNAPI bool _isValidTarget(::BlockSource const& region, ::BlockPos const pos) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

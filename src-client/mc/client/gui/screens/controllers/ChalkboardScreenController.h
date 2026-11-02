@@ -10,7 +10,6 @@
 // auto generated forward declare list
 // clang-format off
 class ClientInstanceScreenModel;
-class DeferredTextObject;
 namespace Json { class Value; }
 // clang-format on
 
@@ -18,9 +17,9 @@ class ChalkboardScreenController : public ::ClientInstanceScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DeferredTextObject>> mDeferredTextObject;
-    ::ll::TypedStorage<4, 12, ::BlockPos>                             mBlockPosition;
-    ::ll::TypedStorage<1, 1, bool>                                    mLockVisible;
+    ::ll::TypedStorage<8, 32, ::std::string> mMessage;
+    ::ll::TypedStorage<4, 12, ::BlockPos>    mBlockPosition;
+    ::ll::TypedStorage<1, 1, bool>           mLockVisible;
     // NOLINTEND
 
 public:
@@ -48,35 +47,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChalkboardScreenController(
+    MCNAPI ChalkboardScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::BlockPos const&                              blockPos,
         bool                                           lockVisible
     );
-
-    MCAPI void _checkForTextObjectMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::BlockPos const& blockPos, bool lockVisible);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 };

@@ -11,7 +11,6 @@
 // clang-format off
 class SemVersionConstant;
 struct ComponentItemData_v1_20_30;
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 struct ComponentItemData_v1_20_40 {
@@ -26,17 +25,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-#endif
-
-    MCAPI static void
+    MCNAPI static void
     upgrade(::Puv::CerealUpgrader<::ComponentItemData_v1_20_30, ::ComponentItemData_v1_20_40, nullptr_t>& upgrader);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };

@@ -10,9 +10,9 @@
 class MinecraftScreenModel;
 // clang-format on
 
-class EDUAddServerScreenController : public ::MinecraftScreenController {
+class EduAddServerScreenController : public ::MinecraftScreenController {
 public:
-    // EDUAddServerScreenController inner types define
+    // EduAddServerScreenController inner types define
     using OnAddServer = ::std::function<void(::std::string const&)>;
 
 public:
@@ -25,18 +25,18 @@ public:
 
 public:
     // prevent constructor by default
-    EDUAddServerScreenController();
+    EduAddServerScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUAddServerScreenController() /*override*/ = default;
+    virtual ~EduAddServerScreenController() /*override*/ = default;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDUAddServerScreenController(
+    MCNAPI EduAddServerScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>   model,
         ::std::function<void(::std::string const&)> onAddServer
     );
@@ -45,7 +45,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::function<void(::std::string const&)> onAddServer);
     // NOLINTEND
 };

@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool findNearestStructureFeature(
+    MCNAPI bool findNearestStructureFeature(
         ::Dimension&                    dimension,
         ::IPreliminarySurfaceProvider&  surfaceProvider,
         ::HashedString                  feature,
@@ -40,23 +40,24 @@ public:
         ::BlockPos&                     pos,
         ::BiomeSource const&            biomeSource,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
-    MCAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCNAPI ::HashedString findStructureFeatureTypeAt(::BlockPos const& pos);
 
     MCAPI ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
 
-    MCAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+    MCNAPI bool isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
-    MCAPI void waitForBlueprints() const;
+    MCNAPI void waitForBlueprints() const;
 
-    MCAPI ~StructureFeatureRegistry();
+    MCNAPI ~StructureFeatureRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

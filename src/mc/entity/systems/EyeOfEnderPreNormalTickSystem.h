@@ -12,6 +12,7 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct EyeOfEnderFlagComponent;
 struct InterpolateMovementNeededComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class EyeOfEnderPreNormalTickSystem {
@@ -25,7 +26,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doEyeOfEnderPreNormalTickSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

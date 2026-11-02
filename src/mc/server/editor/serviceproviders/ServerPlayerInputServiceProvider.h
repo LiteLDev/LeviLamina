@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/MouseCursorIconType.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/MouseCursorIconType.h"
 
 // auto generated forward declare list
 // clang-format off

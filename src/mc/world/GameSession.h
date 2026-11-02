@@ -42,45 +42,47 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI GameSession(
+    MCNAPI GameSession(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
         ::SubClientId                         subid
     );
+#endif
 
-    MCAPI GameSession(
+#ifdef LL_PLAT_S
+    MCNAPI GameSession(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
         ::SubClientId                                                        subid
     );
-
-    MCAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
-
-    MCAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 #endif
-
-    MCAPI void tick();
 
 #ifdef LL_PLAT_C
-    MCAPI ~GameSession();
+    MCNAPI ::Bedrock::NonOwnerPointer<::NetEventCallback> getNetEventCallback();
 #endif
+
+    MCNAPI void setLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+
+    MCNAPI ~GameSession();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ClientNetworkSystem&                network,
         ::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler,
         ::LoopbackPacketSender&               loopbackPacketSender,
         ::SubClientId                         subid
     );
+#endif
 
-    MCAPI void* $ctor(
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(
         ::ServerNetworkSystem&                                               network,
         ::std::unique_ptr<::ServerNetworkHandler>                            serverNetworkHandler,
         ::LoopbackPacketSender&                                              loopbackPacketSender,
@@ -93,8 +95,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 };

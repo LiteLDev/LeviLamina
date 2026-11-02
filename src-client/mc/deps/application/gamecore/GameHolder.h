@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $createApp();
+    MCNAPI bool $createApp();
     // NOLINTEND
 };
 

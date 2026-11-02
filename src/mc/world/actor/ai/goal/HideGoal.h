@@ -39,25 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _sendSoundTheAlarmAchievement() const;
+    MCNAPI void _sendSoundTheAlarmAchievement() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
+    MCNAPI ::std::weak_ptr<::POIInstance> $_getOwnedPOI(::POIType type) const;
 
-    MCFOLD uint64 $_getRepathTime() const;
+    MCNAPI uint64 $_getRepathTime() const;
 
 
     // NOLINTEND

@@ -66,17 +66,17 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI PersonaPieceMeta(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
+    MCNAPI PersonaPieceMeta(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
 
-    MCAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&&);
 
-    MCAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&) const;
 
-    MCAPI ~PersonaPieceMeta();
+    MCNAPI ~PersonaPieceMeta();
 #endif
     // NOLINTEND
 
@@ -84,7 +84,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 #endif
     // NOLINTEND
 
@@ -92,9 +92,9 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
 
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
 #endif
     // NOLINTEND
 
@@ -102,7 +102,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::PersonaPieceMeta const&);
 #endif
     // NOLINTEND
 
@@ -110,7 +110,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

@@ -76,13 +76,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UpdateAbilitiesPacket(::UpdateAbilitiesPacketPayload payload);
+    MCNAPI explicit UpdateAbilitiesPacket(::UpdateAbilitiesPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UpdateAbilitiesPacketPayload payload);
+    MCNAPI void* $ctor(::UpdateAbilitiesPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -123,9 +123,9 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

@@ -5,12 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
 class ComponentItem;
+class FillingContainer;
 class HashedString;
 class IContainerRegistryAccess;
 class IContainerRegistryTracker;
@@ -19,6 +21,7 @@ class ItemDescriptor;
 class ItemStack;
 class Player;
 class SemVersion;
+struct FullContainerName;
 struct ItemOnUseResult;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -63,9 +66,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
+#ifdef LL_PLAT_S
+    MCNAPI ::std::shared_ptr<::FillingContainer>
+    getBackingContainer(::FullContainerName id, ::StorageItemComponent::ContainerRegistryWriteAccess writeAccess) const;
+#endif
 
-    MCAPI void setContainerRegistryHandlers(
+    MCNAPI ::StorageItemComponent& operator=(::StorageItemComponent&&);
+
+    MCNAPI void setContainerRegistryHandlers(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
         ::WeakRef<::IContainerRegistryAccess>       containerAccess,
         ::WeakRef<::IContainerRegistryTracker>      containerTracker
@@ -75,29 +83,29 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
 
 #ifdef LL_PLAT_C
-    MCAPI static ::HashedString const& getIdentifier();
+    MCNAPI static ::HashedString const& getIdentifier();
 #endif
 
-    MCAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player);
+    MCNAPI static void use(::ItemOnUseResult& result, ::ItemStack const& item, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

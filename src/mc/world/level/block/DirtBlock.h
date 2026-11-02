@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/item/FertilizerType.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/BlockDescriptor.h"
 #include "mc/world/level/block/BlockType.h"
 
@@ -48,8 +49,13 @@ public:
 
     virtual bool canBeOriginalSurface(bool) const /*override*/;
 
-    virtual bool tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const
-        /*override*/;
+    virtual bool tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const /*override*/;
 
     virtual ::mce::Color getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const
         /*override*/;
@@ -62,7 +68,7 @@ public:
     // NOLINTBEGIN
     MCAPI DirtBlock(::std::string const& nameId, int id, ::BlockDescriptor blockToTillInto);
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -74,18 +80,24 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
-    MCFOLD bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCFOLD bool $mayConsumeFertilizer(::BlockSource& region) const;
+    MCNAPI bool $mayConsumeFertilizer(::BlockSource& region) const;
 
-    MCFOLD bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
     MCFOLD bool $canBeOriginalSurface(bool) const;
 
-    MCFOLD bool $tryToTill(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity, ::ItemStack& item) const;
+    MCNAPI bool $tryToTill(
+        ::BlockSource&    region,
+        ::BlockPos const& pos,
+        ::Actor&          entity,
+        ::ItemStack&      item,
+        ::HandSlot        handSlot
+    ) const;
 
     MCFOLD ::mce::Color $getMapColor(::BlockSource& region, ::BlockPos const& pos, ::Block const& block) const;
 
@@ -97,6 +109,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

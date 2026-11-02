@@ -94,23 +94,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData const> _getGuiData() const;
 
-    MCAPI float _getGuiScale() const;
+    MCNAPI float _getGuiScale() const;
 
-    MCAPI float _getInvGuiScale() const;
+    MCNAPI float _getInvGuiScale() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int& mGlobalKeyboardOwnerId();
+    MCNAPI static int& mGlobalKeyboardOwnerId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $tryEnableKeyboard(
+    MCNAPI bool $tryEnableKeyboard(
         ::std::string const& currentText,
         int                  maxLength,
         bool                 limitInput,
@@ -120,39 +120,39 @@ public:
         float                controlHeight
     );
 
-    MCAPI bool $isFullScreenKeyboard() const;
+    MCNAPI bool $isFullScreenKeyboard() const;
 
-    MCAPI void $disableKeyboard();
+    MCNAPI void $disableKeyboard();
 
-    MCAPI bool $canActivateKeyboard();
+    MCNAPI bool $canActivateKeyboard();
 
-    MCFOLD bool $isKeyboardEnabled() const;
+    MCNAPI bool $isKeyboardEnabled() const;
 
-    MCFOLD bool $isKeyboardActive() const;
+    MCNAPI bool $isKeyboardActive() const;
 
-    MCAPI bool $wasEnabledWithMultiline() const;
+    MCNAPI bool $wasEnabledWithMultiline() const;
 
-    MCAPI bool $isNumbersOnly() const;
+    MCNAPI bool $isNumbersOnly() const;
 
-    MCAPI int $getMaxLength() const;
+    MCNAPI int $getMaxLength() const;
 
-    MCAPI void $setResumeInputCallback(::std::function<void()> callback);
+    MCNAPI void $setResumeInputCallback(::std::function<void()> callback);
 
-    MCAPI void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
+    MCNAPI void $setDisableInputToOtherClientsCallback(::std::function<void(int)> callback);
 
-    MCAPI bool $tryClaimKeyboardOwnership();
+    MCNAPI bool $tryClaimKeyboardOwnership();
 
-    MCAPI void $releaseKeyboardOwnership();
+    MCNAPI void $releaseKeyboardOwnership();
 
-    MCAPI void $setForcedHeight(float height);
+    MCNAPI void $setForcedHeight(float height);
 
-    MCAPI float $getKeyboardHeight() const;
+    MCNAPI float $getKeyboardHeight() const;
 
-    MCFOLD bool $getKeyboardClosedEvent();
+    MCNAPI bool $getKeyboardClosedEvent();
 
-    MCAPI void $clearKeyboardClosedEvent();
+    MCNAPI void $clearKeyboardClosedEvent();
 
-    MCAPI void $updateTextEditBoxPosition(
+    MCNAPI void $updateTextEditBoxPosition(
         ::RectangleArea const& controlPosition,
         ::Vec2 const&          caretPosition,
         ::Vec2 const&          caretSize

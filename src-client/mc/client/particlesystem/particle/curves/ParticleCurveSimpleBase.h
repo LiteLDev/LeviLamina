@@ -46,10 +46,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $parseJson(::ConstDeserializeDataParams const& deserializeDataParams, ::HashedString const& molangVariableName);
 
-    MCAPI void $evaluateCurve(::RenderParams& renderParams);
+    MCNAPI void $evaluateCurve(::RenderParams& renderParams);
     // NOLINTEND
 };
 

@@ -3,18 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakLifetimeScope.h"
-#include "mc/deps/script_core/runtime/scripting/Result.h"
 
 // auto generated forward declare list
 // clang-format off
 class ServerLevel;
-namespace ScriptModuleMinecraft { class ScriptSoundDefinition; }
-namespace ScriptModuleMinecraft { struct ScriptSoundDefinitionFilter; }
 namespace Scripting { struct ClassBinding; }
-namespace Scripting { struct InvalidArgumentError; }
 // clang-format on
 
 namespace ScriptModuleMinecraft {
@@ -29,18 +24,9 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Scripting::Result<
-        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptSoundDefinition>>,
-        ::Scripting::InvalidArgumentError>
-    getDefinitions(::std::optional<::ScriptModuleMinecraft::ScriptSoundDefinitionFilter> const& filter) const;
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

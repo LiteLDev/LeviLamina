@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorHurtBeforeEvent(::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent const&);
+    MCNAPI ScriptActorHurtBeforeEvent(::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent const&);
 
-    MCAPI ScriptActorHurtBeforeEvent(
+    MCNAPI ScriptActorHurtBeforeEvent(
         ::Actor const&                                   actor,
         ::ScriptModuleMinecraft::ScriptActorDamageSource actorDamageSource,
         float                                            damage,
@@ -48,15 +48,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Actor const&                                   actor,
         ::ScriptModuleMinecraft::ScriptActorDamageSource actorDamageSource,
         float                                            damage,

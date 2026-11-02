@@ -54,20 +54,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isCrossPlatformPlayEnabled() const;
+    MCNAPI bool _isCrossPlatformPlayEnabled() const;
 
-    MCAPI bool _isPlatformServiceMultiplayerConnected() const;
+    MCNAPI bool _isPlatformServiceMultiplayerConnected() const;
 
-    MCAPI bool isMultiplayerSupported() const;
+    MCNAPI bool isLanMultiplayerAvailable() const;
 
-    MCAPI bool isPlatformBroadcastFriendsOfFriendsOptionSupported() const;
+    MCNAPI bool isMultiplayerSupported() const;
 
-    MCAPI ~WorldSettingsRules();
+    MCNAPI ~WorldSettingsRules();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

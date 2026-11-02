@@ -12,4 +12,16 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string> message;
     ::ll::TypedStorage<4, 4, ::LogLevel>     level;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~ContentLogMessage();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };

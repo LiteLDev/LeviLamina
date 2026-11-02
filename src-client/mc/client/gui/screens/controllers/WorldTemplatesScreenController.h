@@ -65,31 +65,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldTemplatesScreenController(
+    MCNAPI WorldTemplatesScreenController(
         ::std::shared_ptr<::PlayScreenModel> model,
         ::ui::ScreenTechStackSelector const& screenTechStackSelector,
         bool                                 hideTopBar
     );
 
-    MCAPI void _createWorldTemplate(::PackIdVersion const& packId, ::std::function<void(bool)> successCallback);
+    MCNAPI void _createWorldTemplate(::PackIdVersion const& packId, ::std::function<void(bool)> successCallback);
 
-    MCAPI void _fetchDownloadedWorldTemplates();
+    MCNAPI void _fetchDownloadedWorldTemplates();
 
-    MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
+    MCNAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& DEFAULT_WORLD_SCREENSHOT();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& DEFAULT_WORLD_SCREENSHOT();
 
-    MCAPI static ::std::string const& INVALID_WORLD_SCREENSHOT();
+    MCNAPI static ::std::string const& INVALID_WORLD_SCREENSHOT();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::PlayScreenModel> model,
         ::ui::ScreenTechStackSelector const& screenTechStackSelector,
         bool                                 hideTopBar
@@ -99,12 +99,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD int $getScreenVersion() const;
+    MCNAPI int $getScreenVersion() const;
     // NOLINTEND
 };

@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void onEvent(::BlockEvents::BlockStepOffEvent const& eventData) const;
+    MCNAPI void onEvent(::BlockEvents::BlockStepOffEvent const& eventData) const;
     // NOLINTEND
 
 public:

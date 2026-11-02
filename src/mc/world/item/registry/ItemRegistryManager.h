@@ -35,11 +35,17 @@ public:
         // NOLINTBEGIN
         MCAPI explicit ScopedItemRegistry(::std::weak_ptr<::ItemRegistry> registry);
 
-        MCAPI void _reset();
+        MCNAPI void _reset();
 
-        MCAPI void construct(::ItemRegistryRef registryRef);
+        MCNAPI void construct(::ItemRegistryRef registryRef);
 
         MCAPI ~ScopedItemRegistry();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static ::std::shared_ptr<void> create(::ItemRegistryRef registryRef);
         // NOLINTEND
 
     public:
@@ -64,6 +70,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
+    MCNAPI static ::std::weak_ptr<::ItemRegistry>& mThreadLocalRegistry();
     // NOLINTEND
 };

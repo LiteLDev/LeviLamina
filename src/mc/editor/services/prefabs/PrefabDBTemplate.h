@@ -3,10 +3,10 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PrefabSource.h"
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
+#include "mc/editor/PrefabSource.h"
 #include "mc/util/Mirror.h"
 #include "mc/util/Rotation.h"
 
@@ -91,6 +91,8 @@ public:
     MCNAPI void setDisplayName(::std::string const& displayName);
 
     MCNAPI void setName(::std::string const& name);
+
+    MCNAPI bool setStructureOrder(::std::vector<::mce::UUID> const& structureIds);
     // NOLINTEND
 
 public:

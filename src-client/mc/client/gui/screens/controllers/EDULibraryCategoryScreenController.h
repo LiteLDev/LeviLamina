@@ -10,11 +10,11 @@
 class LibrarySearchBarScreenController;
 class MainMenuScreenModel;
 class UIPropertyBag;
-struct EDULibraryCategory;
+struct EduLibraryCategory;
 namespace Json { class Value; }
 // clang-format on
 
-class EDULibraryCategoryScreenController : public ::MainMenuScreenController {
+class EduLibraryCategoryScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
@@ -24,13 +24,13 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                         mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                                         mScreenshotRatio;
     ::ll::TypedStorage<4, 4, int>                                                    mColumnCount;
-    ::ll::TypedStorage<8, 24, ::std::vector<::EDULibraryCategory>>                   mLibraryCategories;
+    ::ll::TypedStorage<8, 24, ::std::vector<::EduLibraryCategory>>                   mLibraryCategories;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LibrarySearchBarScreenController>> mSearchBarSubController;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EDULibraryCategoryScreenController();
+    EduLibraryCategoryScreenController();
 
 public:
     // virtual functions
@@ -43,31 +43,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDULibraryCategoryScreenController(
+    MCNAPI EduLibraryCategoryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string                            title,
         ::std::string                            icon,
         ::std::string                            description,
         ::std::string                            screenshotRatio,
         int                                      columnCount,
-        ::std::vector<::EDULibraryCategory>      libraryCategories,
+        ::std::vector<::EduLibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
 
-    MCAPI ::EDULibraryCategory* _getCategory(::UIPropertyBag const& bag);
+    MCNAPI ::EduLibraryCategory* _getCategory(::UIPropertyBag const& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::string                            title,
         ::std::string                            icon,
         ::std::string                            description,
         ::std::string                            screenshotRatio,
         int                                      columnCount,
-        ::std::vector<::EDULibraryCategory>      libraryCategories,
+        ::std::vector<::EduLibraryCategory>      libraryCategories,
         bool                                     firstPage
     );
     // NOLINTEND
@@ -75,8 +75,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

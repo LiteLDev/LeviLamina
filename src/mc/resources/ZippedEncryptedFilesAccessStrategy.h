@@ -16,6 +16,7 @@ class IContentKeyProvider;
 class IPackIOProvider;
 class PackAccessStrategy;
 class ResourceLocation;
+struct EncryptedAssetInfo;
 struct StreamableAssetSource;
 namespace Bedrock::Resources { class PreloadedPathHandle; }
 namespace Core { class Path; }
@@ -28,6 +29,7 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnk8b98ee;
     ::ll::UntypedStorage<8, 8>  mUnk75a4be;
+    ::ll::UntypedStorage<8, 72> mUnk2ceea3;
     // NOLINTEND
 
 public:
@@ -67,7 +69,15 @@ public:
 
     virtual ::std::string _getRawContentsFile() const /*override*/;
 
-    virtual ::std::string _getEncryptedAssetStream(::Core::Path const& packRelativePath) const /*override*/;
+    virtual void _getEncryptedAssetStream(::Core::PathView const& packRelativePath, ::std::string& result) const
+        /*override*/;
+
+    virtual bool _getArchiveAssetFallback(
+        ::Core::PathView const&     packRelativePath,
+        ::Core::PathView const&     packRelativeArchivePath,
+        ::EncryptedAssetInfo const& entryInfo,
+        ::std::string&              result
+    ) const /*override*/;
 
     virtual ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     _preloadSubFolders(::Core::Path const& packRelativePath) const /*override*/;
@@ -140,7 +150,14 @@ public:
 
     MCNAPI ::std::string $_getRawContentsFile() const;
 
-    MCNAPI ::std::string $_getEncryptedAssetStream(::Core::Path const& packRelativePath) const;
+    MCNAPI void $_getEncryptedAssetStream(::Core::PathView const& packRelativePath, ::std::string& result) const;
+
+    MCNAPI bool $_getArchiveAssetFallback(
+        ::Core::PathView const&     packRelativePath,
+        ::Core::PathView const&     packRelativeArchivePath,
+        ::EncryptedAssetInfo const& entryInfo,
+        ::std::string&              result
+    ) const;
 
     MCNAPI ::std::vector<::Bedrock::Resources::PreloadedPathHandle>
     $_preloadSubFolders(::Core::Path const& packRelativePath) const;

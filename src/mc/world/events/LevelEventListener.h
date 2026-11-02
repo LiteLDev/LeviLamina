@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/events/EventResult.h"
 
 // auto generated forward declare list
@@ -49,16 +48,14 @@ public:
 
     virtual ::EventResult onRealmsStory(::std::string const& storyData);
 
-    virtual ::EventResult onWorldClockTimeModified(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockPaused(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockResumed(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    virtual ::EventResult onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    virtual ::EventResult onWorldClockTimeMarker(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock,
-        ::std::string const&                              timeMarkerName
-    );
+    virtual ::EventResult
+    onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
     virtual ::EventResult onEvent(::LevelNotificationEvent const& event);
     // NOLINTEND
@@ -66,21 +63,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onLevelInitialized(::Level& level);
+    MCNAPI ::EventResult $onLevelInitialized(::Level& level);
 
-    MCFOLD ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCFOLD ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCFOLD ::EventResult $onLevelRemovedActor(::Actor& actor);
+    MCNAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
-    MCFOLD ::EventResult $onLevelTick(::Level& level);
+    MCNAPI ::EventResult $onLevelTick(::Level& level);
 
-    MCFOLD ::EventResult $onLevelTickStart(::Level& level);
+    MCNAPI ::EventResult $onLevelTickStart(::Level& level);
 
-    MCFOLD ::EventResult $onLevelTickEnd(::Level&);
+    MCNAPI ::EventResult $onLevelTickEnd(::Level&);
 
-    MCFOLD ::EventResult $onLevelWeatherChange(
+    MCNAPI ::EventResult $onLevelWeatherChange(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -88,20 +85,18 @@ public:
         bool                 isLightning
     );
 
-    MCFOLD ::EventResult $onRealmsStory(::std::string const& storyData);
+    MCNAPI ::EventResult $onRealmsStory(::std::string const& storyData);
 
-    MCFOLD ::EventResult $onWorldClockTimeModified(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCNAPI ::EventResult $onWorldClockTimeModified(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockPaused(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCNAPI ::EventResult $onWorldClockPaused(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockResumed(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
+    MCNAPI ::EventResult $onWorldClockResumed(::gsl::not_null<::WorldClock*> clock);
 
-    MCFOLD ::EventResult $onWorldClockTimeMarker(
-        ::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock,
-        ::std::string const&                              timeMarkerName
-    );
+    MCNAPI ::EventResult
+    $onWorldClockTimeMarker(::gsl::not_null<::WorldClock*> clock, ::std::string const& timeMarkerName);
 
-    MCFOLD ::EventResult $onEvent(::LevelNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelNotificationEvent const& event);
 
 
     // NOLINTEND

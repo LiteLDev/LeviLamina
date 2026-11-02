@@ -29,7 +29,6 @@ public:
     // prevent constructor by default
     OceanFrozenSurfaceBuilder& operator=(OceanFrozenSurfaceBuilder const&);
     OceanFrozenSurfaceBuilder(OceanFrozenSurfaceBuilder const&);
-    OceanFrozenSurfaceBuilder();
 
 public:
     // virtual functions
@@ -50,21 +49,33 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI OceanFrozenSurfaceBuilder();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initBuilder(::LevelSeed64 levelSeed);
+    MCNAPI void $initBuilder(::LevelSeed64 levelSeed);
 
-    MCFOLD void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
+    MCNAPI void $initBiomeSurface(::SurfaceBuilderData& surfaceBuilderData) const;
 
-    MCAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
+    MCNAPI bool $isBestBuilder(::SurfaceBuilderData const& surfaceBuilderData) const;
 
-    MCAPI void $buildSurfaceAt(
+    MCNAPI void $buildSurfaceAt(
         ::ISurfaceBuilder::GlobalParameters const&         globalParams,
         ::ISurfaceBuilder::SurfaceBuilderParameters const& surfaceBuilderParams,
         ::ISurfaceBuilder::PerColumnParameters const&      columnParams
     ) const;
 
-    MCFOLD bool $getUsesDepthValue() const;
+    MCNAPI bool $getUsesDepthValue() const;
 
 
     // NOLINTEND

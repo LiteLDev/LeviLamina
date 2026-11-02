@@ -10,7 +10,7 @@ class EntityContext;
 namespace ActorStatus {
 // functions
 // NOLINTBEGIN
-MCAPI bool hasDashCooldown(::EntityContext const& entity);
+MCNAPI bool hasDashCooldown(::EntityContext const& entity);
 // NOLINTEND
 
 } // namespace ActorStatus

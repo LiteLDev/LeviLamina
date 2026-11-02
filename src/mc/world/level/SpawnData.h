@@ -31,18 +31,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnData(::SpawnData&& rhs);
+    MCNAPI SpawnData(::SpawnData&& rhs);
 
-    MCAPI explicit SpawnData(::CompoundTag const& tag);
+    MCNAPI explicit SpawnData(::CompoundTag const& tag);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save();
+    MCNAPI ::std::unique_ptr<::CompoundTag> save();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SpawnData&& rhs);
+    MCNAPI void* $ctor(::SpawnData&& rhs);
 
-    MCAPI void* $ctor(::CompoundTag const& tag);
+    MCNAPI void* $ctor(::CompoundTag const& tag);
     // NOLINTEND
 };

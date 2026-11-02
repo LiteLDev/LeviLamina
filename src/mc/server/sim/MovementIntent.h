@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MovementIntent(
+    MCNAPI explicit MovementIntent(
         ::std::variant<
             ::sim::VoidMoveIntent,
             ::sim::MoveInDirectionIntent,
@@ -43,13 +43,13 @@ public:
             ::sim::NavigateToEntityIntent> type
     );
 
-    MCAPI ~MovementIntent();
+    MCNAPI ~MovementIntent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::variant<
             ::sim::VoidMoveIntent,
             ::sim::MoveInDirectionIntent,
@@ -62,7 +62,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

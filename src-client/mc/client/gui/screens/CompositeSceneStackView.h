@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/client/gui/GameEventNotification.h"
 #include "mc/client/gui/screens/ConstCompositeSceneStackView.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/brstd/function_ref.h"
@@ -38,41 +37,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CompositeSceneStackView(
+    MCNAPI CompositeSceneStackView(
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );
 
-    MCAPI void forEachAlwaysAcceptInputScreen(
-        ::brstd::function_ref<void(::AbstractScene&)> callback,
-        ::AbstractScene const*                        ignoreScreen
-    );
+    MCNAPI void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
 
-    MCAPI void forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
+    MCNAPI void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
 
-    MCAPI void forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
-
-    MCAPI void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
-
-    MCAPI void forEachVisibleScreen(
-        ::brstd::function_ref<void(::AbstractScene&)> callback,
-        bool                                          tickedLastFrame,
-        bool                                          splitscreenRenderBypassThisFrame
-    );
-
-    MCAPI ::AbstractScene* getActiveScene();
-
-    MCAPI bool hasScheduledScreens() const;
-
-    MCAPI void onGameEventNotification(::ui::GameEventNotification notification);
-
-    MCAPI bool update();
+    MCNAPI void forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& mainStack,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const& clientInstanceStack
     );

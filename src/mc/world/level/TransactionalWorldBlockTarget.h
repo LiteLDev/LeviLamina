@@ -94,64 +94,60 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getBlockNoBoundsCheck(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-    MCFOLD ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const* $tryGetLiquidBlock(::BlockPos const& pos) const;
 
-    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     $fetchBlocksInBox(::BoundingBox const& box, ::std::function<bool(::Block const&)> predicate);
 
-    MCAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
+    MCNAPI bool $hasBiomeTag(uint64 tagNameHash, ::BlockPos const& pos) const;
 
-    MCAPI bool $hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
+    MCNAPI bool $hasAnyBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
 
-    MCAPI bool $hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
+    MCNAPI bool $hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
 
-    MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
+    MCNAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
-    MCFOLD bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
+    MCNAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 
-    MCAPI bool $apply() const;
+    MCNAPI bool $apply() const;
 
-    MCAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
+    MCNAPI bool $placeStructure(::BlockPos const& pos, ::StructureTemplate& structure, ::StructureSettings& settings);
 
-    MCAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool $mayPlace(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool $mayPlacePlacementFilterComponent(::BlockPos const& pos, ::Block const& block) const;
 
-    MCFOLD bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool $canSurvive(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
+    MCNAPI bool $canBeBuiltOver(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI short $getMaxHeight() const;
+    MCNAPI short $getMaxHeight() const;
 
-    MCFOLD short $getMinHeight() const;
+    MCNAPI short $getMinHeight() const;
 
-    MCFOLD bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
+    MCNAPI bool $shimPlaceForOldFeatures(::Feature const&, ::BlockPos const&, ::Random&) const;
 
-    MCAPI short $getHeightmap(int x, int z);
+    MCNAPI short $getHeightmap(int x, int z);
 
-    MCAPI bool $isLegacyLevel();
+    MCNAPI bool $isLegacyLevel();
 
-    MCAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
+    MCNAPI ::Biome const* $getBiome(::BlockPos const& pos) const;
 
-    MCAPI bool $isInBounds(::Pos const& pos) const;
+    MCNAPI bool $isInBounds(::Pos const& pos) const;
 
-    MCAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
+    MCNAPI short $getLocalWaterLevel(::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::LevelData const& $getLevelData() const;
-#else // LL_PLAT_C
-    MCFOLD ::LevelData const& $getLevelData() const;
-#endif
+    MCNAPI ::LevelData const& $getLevelData() const;
 
-    MCFOLD ::WorldGenContext const& $getContext();
+    MCNAPI ::WorldGenContext const& $getContext();
 
-    MCFOLD void $disableBlockSimple();
+    MCNAPI void $disableBlockSimple();
 
 
     // NOLINTEND

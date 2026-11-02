@@ -3,9 +3,20 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/containers/ContainerEnumName.h"
+#include "mc/world/containers/models/ContainerCategory.h"
 #include "mc/world/containers/models/PlayerUIContainerModelBase.h"
 
+// auto generated forward declare list
+// clang-format off
+class Player;
+// clang-format on
+
 class PlayerUIContainerModel : public ::PlayerUIContainerModelBase {
+public:
+    // prevent constructor by default
+    PlayerUIContainerModel();
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -15,9 +26,29 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI PlayerUIContainerModel(::ContainerEnumName containerName, ::Player& player);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::ContainerCategory _getContainerCategory(::ContainerEnumName containerName);
+
+    MCNAPI static int _getContainerSize(::ContainerEnumName containerName);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 
 
     // NOLINTEND
@@ -25,6 +56,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

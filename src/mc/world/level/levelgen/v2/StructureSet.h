@@ -32,13 +32,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Entry();
+        MCNAPI ~Entry();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -50,37 +50,37 @@ public:
     // NOLINTEND
 
 #ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     StructureSet();
 
-#else // LL_PLAT_C
 #endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI StructureSet(
+#ifdef LL_PLAT_C
+    MCNAPI StructureSet(
         ::std::vector<::br::worldgen::StructureSet::Entry> entries,
         ::br::worldgen::StructurePlacement                 placement
     );
 #endif
 
-    MCAPI bool contains(::HashedString type) const;
+    MCNAPI bool contains(::HashedString type) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
+    MCNAPI static ::std::shared_ptr<::br::worldgen::StructureSet>
     create(::std::shared_ptr<::br::worldgen::Structure const> structure, ::br::worldgen::StructurePlacement placement);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void*
+#ifdef LL_PLAT_C
+    MCNAPI void*
     $ctor(::std::vector<::br::worldgen::StructureSet::Entry> entries, ::br::worldgen::StructurePlacement placement);
 #endif
     // NOLINTEND

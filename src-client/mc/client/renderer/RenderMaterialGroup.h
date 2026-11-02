@@ -50,12 +50,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderMaterialGroup();
+    MCNAPI RenderMaterialGroup();
 
-    MCAPI bool
+    MCNAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
 
-    MCAPI bool loadList(
+    MCNAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
         ::ResourceLocation const&                            listPath,
         ::ResourcePackManager&                               resourcePacks,
@@ -63,7 +63,7 @@ public:
         bool                                                 cleanReload
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
     // NOLINTEND
 
 public:
@@ -77,17 +77,17 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI ::std::shared_ptr<::mce::RenderMaterialInfo> $getMaterialInfo(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::mce::RenderMaterialInfo> $getMaterialInfo(::HashedString const& name);
 
-    MCAPI void $clearMaterial(::HashedString const& name);
+    MCNAPI void $clearMaterial(::HashedString const& name);
     // NOLINTEND
 };
 

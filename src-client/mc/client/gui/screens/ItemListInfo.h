@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemListInfo(
+    MCNAPI ItemListInfo(
         ::std::string const&                             title,
         ::std::function<bool(::StoreCatalogItem const&)> filterFunction,
         bool                                             allowSeeMoreBy,
@@ -43,13 +43,13 @@ public:
         bool                                             hideNonSaleList
     );
 
-    MCAPI ~ItemListInfo();
+    MCNAPI ~ItemListInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                             title,
         ::std::function<bool(::StoreCatalogItem const&)> filterFunction,
         bool                                             allowSeeMoreBy,
@@ -64,6 +64,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

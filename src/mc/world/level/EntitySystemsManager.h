@@ -32,18 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySystemsManager(
+    MCNAPI EntitySystemsManager(
         bool                                                       isClientSide,
         ::SubClientId                                              subClientId,
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::gsl::not_null<::StackRefResult<::PauseManager>> const&   pauseManager
     );
+
+    MCNAPI void tickEntitySystems();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         bool                                                       isClientSide,
         ::SubClientId                                              subClientId,
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,

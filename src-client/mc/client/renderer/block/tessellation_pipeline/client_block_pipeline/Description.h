@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace ClientBlockPipeline { class Instance; }
 namespace ClientBlockPipeline { class Step; }
 // clang-format on
 
@@ -44,22 +43,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
+    MCNAPI ::ClientBlockPipeline::Status _checkForCycles(uint64 stepId) const;
 
-    MCAPI ::ClientBlockPipeline::Status addDependency(
+    MCNAPI ::ClientBlockPipeline::Status addDependency(
         ::std::shared_ptr<::ClientBlockPipeline::Step const> step,
         ::std::shared_ptr<::ClientBlockPipeline::Step const> dependency
     );
 
-    MCAPI ::std::unique_ptr<::ClientBlockPipeline::Instance> makeInstance() const;
-
-    MCAPI ~Description();
+    MCNAPI ~Description();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

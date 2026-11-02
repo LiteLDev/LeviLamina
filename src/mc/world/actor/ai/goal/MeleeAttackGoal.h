@@ -51,13 +51,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeleeAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI MeleeAttackGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canReachTarget(
+    MCNAPI static bool _canReachTarget(
         ::Mob const&  mob,
         ::Vec3 const& targetPosition,
         float         attackReachSq,
@@ -67,7 +67,7 @@ public:
         int           attackTicks
     );
 
-    MCAPI static bool _canReachTargetLegacy(
+    MCNAPI static bool _canReachTargetLegacy(
         ::Mob const& mob,
         ::Vec3 const&,
         float attackReachSq,
@@ -77,31 +77,31 @@ public:
         int   attackTicks
     );
 
-    MCAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
+    MCNAPI static bool _isTargetInLineOfSight(::Mob const& mob, ::Actor const& target);
 
-    MCAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
+    MCNAPI static bool _isTargetInLineOfSightLegacy(::Mob const& mob, ::Actor const& target);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& MIN_3D_ATTACK_VERSION();
+    MCNAPI static ::BaseGameVersion const& MIN_3D_ATTACK_VERSION();
 
-    MCAPI static ::BaseGameVersion const& MIN_HIT_THROUGH_WALL_FIX_VERSION();
+    MCNAPI static ::BaseGameVersion const& MIN_HIT_THROUGH_WALL_FIX_VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

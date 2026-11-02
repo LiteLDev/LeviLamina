@@ -18,28 +18,32 @@ class LogSettingsUpdater;
 namespace BedrockLog {
 // functions
 // NOLINTBEGIN
-MCAPI bool
+MCNAPI bool
 _constructAreaFilterFromString(::std::string const& filterString, ::BedrockLog::LogAreaFilter& logAreaFilter);
 
 #ifdef LL_PLAT_S
-MCAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
+MCNAPI ::std::string _constructAreaFilterStringFromFilter(::BedrockLog::LogAreaFilter const& filter);
 #endif
 
-MCAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
+MCNAPI bool _constructPriorityFilterFromString(::std::string const& filterString, uint& logPriority);
 
 #ifdef LL_PLAT_S
-MCAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
+MCNAPI ::std::string _constructPriorityFilterStringFromFilter(uint filter);
 #endif
 
-MCAPI void _initAreaFilterMap();
+MCNAPI void _initAreaFilterMap();
 
-MCAPI void _initPriorityFilterMap();
+MCNAPI void _initPriorityFilterMap();
 
-MCAPI void closeAndResetAllLogs();
+#ifdef LL_PLAT_S
+MCNAPI void closeAllLogs();
+#endif
 
-MCAPI void closeAndResetLog(::BedrockLog::LogCategory category);
+MCNAPI void closeAndResetAllLogs();
 
-MCAPI void createLog(
+MCNAPI void closeAndResetLog(::BedrockLog::LogCategory category);
+
+MCNAPI void createLog(
     ::Core::Path const&       _path,
     ::std::string const&      _labelDescription,
     ::std::string const&      _debugLogTimestamp,
@@ -48,6 +52,18 @@ MCAPI void createLog(
     bool                      _createLogFile,
     ::LogSettingsUpdater*     _settings,
     double                    _logCycleInS
+);
+
+MCNAPI void log_fmt(
+    ::BedrockLog::LogCategory                          category,
+    ::std::bitset<3>                                   channelMask,
+    ::BedrockLog::LogRule                              rule,
+    ::LogAreaID                                        area,
+    uint                                               priority,
+    char const*                                        function,
+    int                                                line,
+    ::fmt::v11::basic_string_view<char>                format,
+    ::fmt::v11::basic_format_args<::fmt::v11::context> args
 );
 
 MCAPI void log_va(
@@ -62,14 +78,14 @@ MCAPI void log_va(
     char*                     argptr
 );
 
-MCFOLD int rakDebugLog(char const* fstr, ...);
+MCNAPI int rakDebugLog(char const* fstr, ...);
 
-MCAPI void update();
+MCNAPI void update();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::BedrockLog::CategoryLogs& sCategory();
+MCNAPI ::BedrockLog::CategoryLogs& sCategory();
 // NOLINTEND
 
 } // namespace BedrockLog

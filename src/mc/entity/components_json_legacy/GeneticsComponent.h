@@ -39,24 +39,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void buildDebugInfo(::std::string& out) const;
+    MCNAPI void buildDebugInfo(::std::string& out) const;
 
-    MCAPI void fireGeneEvents(::Actor& owner) const;
+    MCNAPI void fireGeneEvents(::Actor& owner) const;
 
-    MCAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
+    MCNAPI void initializeGenesFromParents(::Actor& owner, ::Actor& parentalUnit1, ::Actor& parentalUnit2);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& GENE_ARRAY();
+    MCNAPI static ::std::string const& GENE_ARRAY();
 
-    MCAPI static ::std::string const& HIDDEN_ALLELE();
+    MCNAPI static ::std::string const& HIDDEN_ALLELE();
 
-    MCAPI static ::std::string const& MAIN_ALLELE();
+    MCNAPI static ::std::string const& MAIN_ALLELE();
     // NOLINTEND
 };

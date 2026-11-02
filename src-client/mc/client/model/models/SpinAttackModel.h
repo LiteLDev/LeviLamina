@@ -30,18 +30,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpinAttackModel();
+    MCNAPI SpinAttackModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $renderSpin(::BaseActorRenderContext& renderContext, ::Actor& e, float bob, float scale);
+    MCNAPI void $renderSpin(::BaseActorRenderContext& renderContext, ::Actor& e, float bob, float scale);
     // NOLINTEND
 };

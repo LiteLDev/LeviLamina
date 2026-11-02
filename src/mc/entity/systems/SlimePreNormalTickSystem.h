@@ -16,6 +16,7 @@ struct InterpolateMovementNeededComponent;
 struct OnGroundFlagComponent;
 struct SlimeFlagComponent;
 struct SlimeWasOnGroundPreNormalTickComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class SlimePreNormalTickSystem {
@@ -32,11 +33,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doSlimePreNormalTickSystem(
-        ::StrictEntityContext&                                     context,
-        ::ActorOwnerComponent&                                     actorOwnerComponent,
-        ::Optional<::OnGroundFlagComponent const>                  onGround,
-        ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> mod
+    MCNAPI static void _doSlimePreNormalTickSystem(
+        ::StrictEntityContext&                                            context,
+        ::ActorOwnerComponent&                                            actorOwnerComponent,
+        ::Optional<::OnGroundFlagComponent const>                         onGround,
+        ::EntityModifier<::SlimeWasOnGroundPreNormalTickComponent> const& mod
     );
+
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -27,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyChatMessageByOrderQuery(::OreUI::GameDependencies const& game, uint order);
+    MCNAPI PartyChatMessageByOrderQuery(::OreUI::GameDependencies const& game, uint order);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, uint order);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, uint order);
     // NOLINTEND
 };
 

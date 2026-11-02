@@ -58,6 +58,8 @@ public:
 
     virtual ::std::string getPlatformString() const = 0;
 
+    virtual ::std::string getEdition() const = 0;
+
     virtual uint64 getLowPhysicalMemoryThreshold() const = 0;
 
     virtual uint64 getTotalPhysicalMemory() const = 0;

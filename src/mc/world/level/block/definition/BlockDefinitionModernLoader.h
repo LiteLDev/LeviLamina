@@ -9,7 +9,7 @@
 // clang-format off
 class SemVersion;
 struct BlockDefinition;
-namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocument; }
+namespace SharedTypes::v1_26_60::BlockDefinition { struct BlockDefinitionDocument; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -24,9 +24,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BlockDefinition blockDefinitionDocumentToBlockDefinitionTransformer(
+    MCNAPI static ::BlockDefinition blockDefinitionDocumentToBlockDefinitionTransformer(
         ::cereal::ReflectionCtx const&                                      ctx,
-        ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument&& source,
+        ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument&& source,
         ::SemVersion                                                        originalJsonVersion
     );
     // NOLINTEND

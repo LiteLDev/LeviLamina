@@ -22,10 +22,10 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Vec3 directionFromRotation(::Vec2 const& rot);
 
-    MCAPI static ::Vec3 directionFromRotation(float rotX, float rotY);
+    MCNAPI static ::Vec3 directionFromRotation(float rotX, float rotY);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::Vec3> getIntersection(
+    MCNAPI static ::std::optional<::Vec3> getIntersection(
         ::Vec3 const& lineOrigin,
         ::Vec3 const& lineDirectionUnit,
         ::Vec3 const& pointOnPlane,
@@ -39,30 +39,30 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::Vec3 const& HALF();
+    MCNAPI static ::Vec3 const& HALF();
 #endif
 
-    MCAPI static ::Vec3 const& MAX();
+    MCNAPI static ::Vec3 const& MAX();
 
-    MCAPI static ::Vec3 const& MIN();
+    MCNAPI static ::Vec3 const& MIN();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::Vec3 const& NEG_UNIT_X();
+    MCNAPI static ::Vec3 const& NEG_UNIT_X();
 #endif
 
-    MCAPI static ::Vec3 const& NEG_UNIT_Y();
+    MCNAPI static ::Vec3 const& NEG_UNIT_Y();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::Vec3 const& NEG_UNIT_Z();
+    MCNAPI static ::Vec3 const& NEG_UNIT_Z();
 #endif
 
-    MCAPI static ::Vec3 const& ONE();
+    MCNAPI static ::Vec3 const& ONE();
 
-    MCAPI static ::Vec3 const& UNIT_X();
+    MCNAPI static ::Vec3 const& UNIT_X();
 
-    MCAPI static ::Vec3 const& UNIT_Y();
+    MCNAPI static ::Vec3 const& UNIT_Y();
 
-    MCAPI static ::Vec3 const& UNIT_Z();
+    MCNAPI static ::Vec3 const& UNIT_Z();
 
     MCAPI static ::Vec3 const& ZERO();
     // NOLINTEND

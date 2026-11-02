@@ -38,35 +38,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IdentityDefinition(::IdentityDefinition const& o);
+    MCNAPI IdentityDefinition(::IdentityDefinition const& o);
 
-    MCAPI ::std::string const&
+    MCNAPI ::std::string const&
     getName(::std::function<::std::string const&(::ActorUniqueID)> const& playerNameResolver) const;
 
-    MCAPI ::IdentityDefinition& operator=(::IdentityDefinition&& o);
+    MCNAPI ::IdentityDefinition& operator=(::IdentityDefinition&& o);
 
 #ifdef LL_PLAT_C
-    MCAPI ~IdentityDefinition();
+    MCNAPI ~IdentityDefinition();
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::IdentityDefinition const& Invalid();
+    MCNAPI static ::IdentityDefinition const& Invalid();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IdentityDefinition const& o);
+    MCNAPI void* $ctor(::IdentityDefinition const& o);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

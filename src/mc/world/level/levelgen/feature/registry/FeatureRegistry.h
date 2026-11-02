@@ -42,23 +42,23 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat const&);
+        MCNAPI FeatureBinaryJsonFormat(::FeatureRegistry::FeatureBinaryJsonFormat const&);
 
-        MCFOLD ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
+        MCNAPI ::FeatureRegistry::FeatureBinaryJsonFormat& operator=(::FeatureRegistry::FeatureBinaryJsonFormat&&);
 
-        MCAPI ~FeatureBinaryJsonFormat();
+        MCNAPI ~FeatureBinaryJsonFormat();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat const&);
+        MCNAPI void* $ctor(::FeatureRegistry::FeatureBinaryJsonFormat const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -82,12 +82,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FeatureRegistry(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI explicit FeatureRegistry(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
 
-    MCAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
+    MCNAPI void _registerFeature(::std::string const& name, ::std::unique_ptr<::IFeature> featurePtr);
 
 #ifdef LL_PLAT_C
-    MCAPI bool _setupFeature(
+    MCNAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -98,7 +98,7 @@ public:
     );
 #endif
 
-    MCAPI bool _setupFeature(
+    MCNAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,
@@ -108,16 +108,16 @@ public:
         bool                         serializeFeatures
     );
 
-    MCAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
+    MCNAPI bool isFeaturePassDefined(::std::string const& featurePass) const;
 
-    MCAPI void loadFromDefinitions(
+    MCNAPI void loadFromDefinitions(
         ::IWorldRegistriesProvider&  worldRegistries,
         ::ResourcePackManager const& rpm,
         bool                         clientSideGenEnabled
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void loadFromJsonData(
+    MCNAPI void loadFromJsonData(
         ::IWorldRegistriesProvider&                                      worldRegistries,
         ::ResourcePackManager const&                                     rpm,
         ::std::vector<::FeatureRegistry::FeatureBinaryJsonFormat> const& jsonData
@@ -126,51 +126,51 @@ public:
 
     MCAPI ::WeakRef<::IFeature> lookupByName(::std::string const& name) const;
 
-    MCAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
+    MCNAPI ::WeakRef<::IFeature> reserveFeature(::std::string const& name);
 
-    MCAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
+    MCNAPI void setLargeFeaturePasses(::std::vector<::std::string> largeFeaturePasses);
 
-    MCAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
+    MCNAPI void setSmallFeaturePasses(::std::vector<::std::string> smallFeaturePasses);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     _featureIdentifierFromInput(::std::string_view filePath, ::Json::Value const& jsonDefinition);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& AFTER_SKY_PASS();
+    MCNAPI static ::std::string const& AFTER_SKY_PASS();
 
     MCAPI static ::std::string const& AFTER_SURFACE_PASS();
 
-    MCAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
 
-    MCAPI static ::std::string const& BEFORE_SKY_PASS();
+    MCNAPI static ::std::string const& BEFORE_SKY_PASS();
 
-    MCAPI static ::std::string const& BEFORE_SURFACE_PASS();
+    MCNAPI static ::std::string const& BEFORE_SURFACE_PASS();
 
-    MCAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& BEFORE_UNDERGROUND_PASS();
 
-    MCAPI static ::std::string const& FINAL_PASS();
+    MCNAPI static ::std::string const& FINAL_PASS();
 
-    MCAPI static ::std::string const& FIRST_PASS();
+    MCNAPI static ::std::string const& FIRST_PASS();
 
-    MCAPI static ::std::string const& PREGENERATION_PASS();
+    MCNAPI static ::std::string const& PREGENERATION_PASS();
 
-    MCAPI static ::std::string const& SKY_PASS();
+    MCNAPI static ::std::string const& SKY_PASS();
 
-    MCAPI static ::std::string const& SURFACE_PASS();
+    MCNAPI static ::std::string const& SURFACE_PASS();
 
-    MCAPI static ::std::string const& UNDERGROUND_PASS();
+    MCNAPI static ::std::string const& UNDERGROUND_PASS();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 };

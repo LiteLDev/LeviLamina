@@ -32,6 +32,18 @@ public:
         DeleteFileEntry& operator=(DeleteFileEntry const&);
         DeleteFileEntry(DeleteFileEntry const&);
         DeleteFileEntry();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI DeleteFileEntry(::Core::PathBuffer<::std::string> fileName, bool wasRename);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::Core::PathBuffer<::std::string> fileName, bool wasRename);
+        // NOLINTEND
     };
 
 public:
@@ -39,10 +51,10 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnk953b73;
     ::ll::UntypedStorage<8, 80> mUnkcecc5a;
-    ::ll::UntypedStorage<8, 8>  mUnkfaff08;
+    ::ll::UntypedStorage<8, 8>  mUnk4f336e;
     ::ll::UntypedStorage<8, 80> mUnkbc386b;
     ::ll::UntypedStorage<8, 80> mUnk17f475;
-    ::ll::UntypedStorage<1, 1>  mUnk270131;
+    ::ll::UntypedStorage<1, 1>  mUnk7ef456;
     ::ll::UntypedStorage<8, 24> mUnk7f224d;
     ::ll::UntypedStorage<8, 80> mUnk7b1f17;
     // NOLINTEND
@@ -73,6 +85,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool _isQueuedForRemoval(::Core::PathBuffer<::std::string> const& file);
+
+    MCNAPI void _queueFileForRemoval(::Core::PathBuffer<::std::string> const& file);
 
     MCNAPI ::std::vector<::SnapshotFilenameAndLength> createSnapshot(::Core::Path const& dir);
 

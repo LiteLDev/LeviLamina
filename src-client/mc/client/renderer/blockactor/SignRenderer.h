@@ -53,8 +53,6 @@ public:
     virtual float _zTextOffset() const;
 
     virtual int _getSignWidth() const;
-
-    virtual ~SignRenderer() /*override*/;
     // NOLINTEND
 
 public:
@@ -62,23 +60,23 @@ public:
     // NOLINTBEGIN
     MCAPI explicit SignRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _renderSign(
+    MCNAPI void _renderSign(
         ::BaseActorRenderContext&                               renderContext,
         ::Block const&                                          block,
-        float                                                   size,
-        int                                                     breakingAmount,
-        float                                                   frameAlpha,
+        float const                                             size,
+        int const                                               breakingAmount,
+        float const                                             frameAlpha,
         ::ScreenContext&                                        screenContext,
         ::BlockSource&                                          renderSource,
         ::IVanillaRenderBlockActorComponent&                    renderComponent,
         ::BlockPos const&                                       worldPos,
         ::mce::MaterialPtr const&                               forcedMat,
-        ::mce::ClientTexture                                    forcedTex,
+        ::mce::ClientTexture const&                             forcedTex,
         ::Model&                                                model,
         ::mce::framebuilder::CustomSurfaceShaderMetadata const& cssMetadata
     );
 
-    MCAPI void _renderText(
+    MCNAPI void _renderText(
         ::BaseActorRenderContext&            renderContext,
         ::IVanillaRenderBlockActorComponent& renderComponent,
         float                                size,
@@ -94,12 +92,6 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
@@ -111,11 +103,5 @@ public:
     MCAPI float $_zTextOffset() const;
 
     MCFOLD int $_getSignWidth() const;
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

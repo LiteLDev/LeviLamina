@@ -2,4 +2,29 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-class OffsetDensityCalculator {};
+// auto generated inclusion list
+#include "mc/world/level/levelgen/density/calculators/IDensityCalculator.h"
+
+// auto generated forward declare list
+// clang-format off
+class DensityAllocator;
+class DensityCalculators;
+class DensityVolume;
+// clang-format on
+
+class OffsetDensityCalculator : public ::IDensityCalculator {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<2, 2, ushort const> mInput;
+    ::ll::TypedStorage<4, 4, float const>  mOffset;
+    // NOLINTEND
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~OffsetDensityCalculator() /*override*/ = default;
+
+    virtual void fill(::DensityVolume&, ::DensityAllocator&, ::DensityCalculators const&) const /*override*/;
+    // NOLINTEND
+};

@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DisconnectScreenController(
+    MCNAPI DisconnectScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleMessage,
         ::std::string const&                      displayMessage,
@@ -58,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      titleMessage,
         ::std::string const&                      displayMessage,
@@ -69,23 +69,23 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI ::std::string $getTelemetryOverride() const;
+    MCNAPI ::std::string $getTelemetryOverride() const;
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::ui::ViewRequest $_processLeaveScreen();
+    MCNAPI ::ui::ViewRequest $_processLeaveScreen();
     // NOLINTEND
 
 public:

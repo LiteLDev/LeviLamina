@@ -10,7 +10,9 @@ struct TickingSystemWithInfo;
 namespace MovementInterpolatorSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
+MCNAPI ::TickingSystemWithInfo createHandleQueuedMovementInterpolationSystem();
+
+MCNAPI ::TickingSystemWithInfo createTickSystem(bool isClientSide);
 // NOLINTEND
 
 } // namespace MovementInterpolatorSystem

@@ -35,12 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ShapedRecipePayload();
+    MCNAPI ~ShapedRecipePayload();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

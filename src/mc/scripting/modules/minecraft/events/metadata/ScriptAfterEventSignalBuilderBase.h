@@ -50,23 +50,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptAfterEventSignalBuilderBase(::ScriptModuleMinecraft::ScriptAfterEventSignalBuilderBase const&);
+    MCNAPI ScriptAfterEventSignalBuilderBase(::ScriptModuleMinecraft::ScriptAfterEventSignalBuilderBase const&);
 
-    MCAPI ScriptAfterEventSignalBuilderBase(
+    MCNAPI ScriptAfterEventSignalBuilderBase(
         ::ScriptModuleMinecraft::ScriptAfterEventBindingInfo&& bindingData,
         ::Scripting::ClassBinding (*maybeOverrideBindFunction)(),
         ::gsl::not_null<::Scripting::ClassBinding (*)()> rawBindFunction
     );
 
-    MCAPI uint64 calculateHash(uint64 typeHash) const;
+    MCNAPI uint64 calculateHash(uint64 typeHash) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptAfterEventSignalBuilderBase const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptAfterEventSignalBuilderBase const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptAfterEventBindingInfo&& bindingData,
         ::Scripting::ClassBinding (*maybeOverrideBindFunction)(),
         ::gsl::not_null<::Scripting::ClassBinding (*)()> rawBindFunction
@@ -76,19 +76,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::Scripting::Release> $getEventDataReleases() const;
+    MCNAPI ::std::vector<::Scripting::Release> $getEventDataReleases() const;
 
-    MCAPI ::std::vector<::Scripting::Release> $getSignalReleases() const;
+    MCNAPI ::std::vector<::Scripting::Release> $getSignalReleases() const;
 
-    MCAPI ::std::vector<::Scripting::Release> $getPropertyReleases() const;
+    MCNAPI ::std::vector<::Scripting::Release> $getPropertyReleases() const;
 
-    MCAPI ::std::string $getEventDataName() const;
+    MCNAPI ::std::string $getEventDataName() const;
 
 
     // NOLINTEND

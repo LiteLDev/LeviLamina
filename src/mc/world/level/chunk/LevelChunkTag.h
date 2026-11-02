@@ -29,4 +29,6 @@ enum class LevelChunkTag : schar {
     LegacyVersion                      = 118,
     AabbVolumes                        = 119,
     JigsawStructureBlueprint           = 120,
+    NeighborChanges                    = 121,
+    NamedTicks                         = 122,
 };

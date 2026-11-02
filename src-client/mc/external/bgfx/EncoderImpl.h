@@ -6,6 +6,7 @@
 #include "mc/external/bgfx/RenderBind.h"
 #include "mc/external/bgfx/RenderCompute.h"
 #include "mc/external/bgfx/RenderDraw.h"
+#include "mc/external/bgfx/RenderNative.h"
 #include "mc/external/bgfx/SortKey.h"
 #include "mc/external/bgfx/access/Enum.h"
 #include "mc/external/bgfx/texture_format/Enum.h"
@@ -15,6 +16,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace bgfx { struct Frame; }
+namespace bgfx { struct NativeCommandListScope; }
 namespace bgfx { struct OcclusionQueryHandle; }
 namespace bgfx { struct ProgramHandle; }
 namespace bgfx { struct RangedBindings; }
@@ -40,7 +42,8 @@ public:
     ::ll::TypedStorage<4, 56, ::bgfx::SortKey>                                            m_key;
     ::ll::TypedStorage<8, 128, ::bgfx::RenderDraw>                                        m_draw;
     ::ll::TypedStorage<4, 64, ::bgfx::RenderCompute>                                      m_compute;
-    ::ll::TypedStorage<4, 1088, ::bgfx::RenderBind>                                       m_bind;
+    ::ll::TypedStorage<8, 64, ::bgfx::RenderNative>                                       m_native;
+    ::ll::TypedStorage<4, 1344, ::bgfx::RenderBind>                                       m_bind;
     ::ll::TypedStorage<8, 8, ::bgfx::RangedBindings*>                                     m_rangedBindings;
     ::ll::TypedStorage<1, 1, bool>                                                        m_isDirty;
     ::ll::TypedStorage<4, 4, uint>                                                        m_numSubmitted;
@@ -59,11 +62,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void discard();
+    MCNAPI void discard();
 
-    MCAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ, uchar _flags);
+    MCNAPI void dispatch(ushort _id, ::bgfx::ProgramHandle _handle, uint _numX, uint _numY, uint _numZ);
 
-    MCAPI void doAllRayTracing(
+    MCNAPI void doAllRayTracing(
         ushort                                 _id,
         ::bgfx::RayTracingConfiguration const& rtConfig,
         ::bgfx::RayTracingResources const&     rtResources,
@@ -71,7 +74,9 @@ public:
         uint                                   _height
     );
 
-    MCAPI void setBuffersAsRanged(
+    MCNAPI void native(ushort _id, void (*_callback)(void*, ::bgfx::NativeCommandListScope*), void* _userData);
+
+    MCNAPI void setBuffersAsRanged(
         uchar                             _stage,
         ::bgfx::ShaderBufferHandle const* _shaderBufferHandles,
         uint64                            _shaderBufferHandleStride,
@@ -83,7 +88,7 @@ public:
         uint                              _arrayIndexOffset
     );
 
-    MCAPI void setImagesAsRanged(
+    MCNAPI void setImagesAsRanged(
         uchar                              _stage,
         ::bgfx::TextureHandle const*       _textureHandles,
         uint64                             _textureHandleStride,
@@ -97,7 +102,7 @@ public:
         uint                               _offset
     );
 
-    MCAPI void setTexturesAsRanged(
+    MCNAPI void setTexturesAsRanged(
         uchar                        _stage,
         ::bgfx::TextureHandle const* _textureHandles,
         uint64                       _textureHandleStride,
@@ -107,10 +112,10 @@ public:
         uint                         _offset
     );
 
-    MCAPI void
+    MCNAPI void
     setUniform(::bgfx::UniformType::Enum _type, ::bgfx::UniformHandle _handle, void const* _value, ushort _num);
 
-    MCAPI void submit(
+    MCNAPI void submit(
         ushort                       _id,
         ::bgfx::ProgramHandle        _program,
         ::bgfx::OcclusionQueryHandle _occlusionQuery,

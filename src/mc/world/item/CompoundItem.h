@@ -36,47 +36,43 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string _getName(::CompoundType type);
+    MCNAPI static ::std::string _getName(::CompoundType type);
+
+    MCNAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
 #endif
 
-    MCAPI static void _registerSpecialCompound(::ItemInstance const& item, ::CompoundType type);
+    MCNAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
 
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string getCompoundFormula(::ItemInstance const& instance);
-#endif
+    MCNAPI static ::RecipeIngredient getIngredientForCompound(::CompoundType type);
 
-    MCAPI static ::CompoundType getCompoundType(::ItemDescriptor const& itemDescriptor);
+    MCNAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
 
-    MCAPI static ::RecipeIngredient getIngredientForCompound(::CompoundType type);
+    MCNAPI static bool isCompoundItem(::ItemStackBase const& instance);
 
-    MCAPI static ::ItemInstance getItemForCompound(::CompoundType type, int stackCount);
+    MCNAPI static void registerSpecialCompounds();
 
-    MCAPI static bool isCompoundItem(::ItemStackBase const& instance);
-
-    MCAPI static void registerSpecialCompounds();
-
-    MCAPI static void unregisterSpecialCompounds();
+    MCNAPI static void unregisterSpecialCompounds();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<int, int>& mIdToSpecialCompound();
+    MCNAPI static ::std::unordered_map<int, int>& mIdToSpecialCompound();
 
-    MCAPI static ::std::unordered_map<int, ::ItemInstance>& mTypeToSpecialCompound();
+    MCNAPI static ::std::unordered_map<int, ::ItemInstance>& mTypeToSpecialCompound();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCFOLD ::Item& $setIconInfo(::std::string const& name, int id);
+    MCNAPI ::Item& $setIconInfo(::std::string const& name, int id);
 
-    MCAPI ::ResolvedItemIconInfo
+    MCNAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
 
@@ -85,6 +81,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

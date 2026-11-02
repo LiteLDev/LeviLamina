@@ -8,7 +8,7 @@
 namespace BlockActorFactory {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unordered_map<::BlockActorType, ::std::string> const& getClassIdMap();
+MCNAPI ::std::unordered_map<::BlockActorType, ::std::string> const& getClassIdMap();
 // NOLINTEND
 
 } // namespace BlockActorFactory

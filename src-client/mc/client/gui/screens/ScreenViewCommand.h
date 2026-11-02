@@ -60,6 +60,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScreenViewCommand& operator=(::ScreenViewCommand const&);
+    MCNAPI ::ScreenViewCommand& operator=(::ScreenViewCommand const&);
+
+    MCNAPI ~ScreenViewCommand();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

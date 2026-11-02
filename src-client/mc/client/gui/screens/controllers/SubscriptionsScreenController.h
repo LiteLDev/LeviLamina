@@ -35,29 +35,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SubscriptionsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit SubscriptionsScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI bool _isCsbSubscribed();
+    MCNAPI bool _isCsbSubscribed();
 
-    MCAPI bool _platformMatches();
+    MCNAPI bool _platformMatches();
 
-    MCAPI void _registerBindings();
-
-    MCAPI bool shouldShowSubscriptionsTab() const;
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

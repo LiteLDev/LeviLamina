@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/screens/realms_screen_utils/RealmsSubscriptionsLoadingState.h"
+#include "mc/client/network/realms/RealmsTier.h"
 #include "mc/client/store/iap/RealmsOfferTier.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -14,6 +15,7 @@ class IEntitlement;
 class IEntitlementManager;
 class MainMenuScreenModel;
 struct RealmsWorldInfo;
+namespace Json { class Value; }
 namespace Realms { class SubscriptionService; }
 namespace Realms { struct SubscriptionInfo; }
 namespace Realms { struct World; }
@@ -24,27 +26,29 @@ namespace RealmsScreenUtils { struct RealmsWorldLoadingDetailsGroup; }
 namespace RealmsScreenUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::std::string_view> getManageSubscriptionsLinkForStore(::std::string_view store);
+MCNAPI ::std::optional<::std::string_view> getManageSubscriptionsLinkForStore(::std::string_view store);
 
-MCAPI ::std::string const
+MCNAPI ::std::string const
 getPlayerCountAsString(bool canUserManageSubscription, bool canUserJoinWhenFull, ::RealmsWorldInfo worldInfo);
 
-MCAPI ::Realms::SubscriptionInfo getRealmSubscriptionFromWorld(
+MCNAPI ::Realms::SubscriptionInfo getRealmSubscriptionFromWorld(
     ::Realms::World const&                                                            realmsWorld,
     ::std::weak_ptr<::std::vector<::RealmsScreenUtils::RealmsWorldLoadingDetails>>    worldList,
     ::Bedrock::NotNullNonOwnerPtr<::Realms::SubscriptionService> const&               subscriptionService,
     ::std::function<void(::RealmsScreenUtils::RealmsSubscriptionsLoadingState, bool)> callback
 );
 
-MCAPI ::IEntitlement const&
+MCNAPI ::IEntitlement const&
 getRealmsPlusEntitlement(::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager);
 
-MCAPI bool isRealmsPlusSubscriptionActive(
+MCNAPI bool isRealmsPlusSubscriptionActive(
     ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> const& entitlementManager,
     ::Bedrock::NonOwnerPointer<::DateManager const> const&      dateManager
 );
 
-MCAPI void populateRealmsWorldLoadingDetailsGroup(
+MCNAPI ::Realms::RealmsTier parseRealmsTierFromJson(::Json::Value const& json, ::std::string const& fieldName);
+
+MCNAPI void populateRealmsWorldLoadingDetailsGroup(
     ::std::weak_ptr<::RealmsScreenUtils::RealmsWorldLoadingDetailsGroup> weakGroup,
     ::std::shared_ptr<::MainMenuScreenModel>                             mainMenuScreenModel,
     ::std::function<void(bool)>                                          callback,
@@ -54,7 +58,7 @@ MCAPI void populateRealmsWorldLoadingDetailsGroup(
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::array<::std::pair<::std::string_view, ::std::string_view>, 7> const& STORE_LINKS();
+MCNAPI ::std::array<::std::pair<::std::string_view, ::std::string_view>, 7> const& STORE_LINKS();
 // NOLINTEND
 
 } // namespace RealmsScreenUtils

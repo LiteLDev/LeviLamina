@@ -15,10 +15,6 @@ namespace BlockEvents { class BlockPlayerInteractEvent; }
 
 class SmokerBlock : public ::FurnaceBlock {
 public:
-    // prevent constructor by default
-    SmokerBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ItemInstance asItemInstance(::Block const&, ::BlockActor const*) const /*override*/;
@@ -27,21 +23,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SmokerBlock(::std::string const& nameId, int id, bool lit);
-
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool lit);
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const&, ::BlockActor const*) const;
 
 
     // NOLINTEND
@@ -49,6 +37,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

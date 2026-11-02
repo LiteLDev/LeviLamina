@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _buildPlantArm(
+    MCNAPI void _buildPlantArm(
         ::BlockSource&                                 region,
         ::Random&                                      random,
         ::BlockPos const&                              pos,
@@ -34,7 +34,7 @@ public:
         bool                                           notTall
     ) const;
 
-    MCAPI void _placeCoral(
+    MCNAPI void _placeCoral(
         ::BlockSource&                                 region,
         ::BlockPos const&                              pos,
         ::Random&                                      random,
@@ -43,7 +43,7 @@ public:
         int                                            color
     ) const;
 
-    MCAPI void _starFormation(
+    MCNAPI void _starFormation(
         ::BlockSource&                  region,
         ::Random&                       random,
         ::BlockPos const&               pos,
@@ -57,15 +57,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color);
+    MCNAPI static bool _canOverwrite(::BlockSource const& region, ::BlockPos const& pos, int color);
 
-    MCAPI static int _getColor(::Block const& block);
+    MCNAPI static int _getColor(::Block const& block);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
     // NOLINTEND

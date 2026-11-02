@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/legacy/EquipmentSlot.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -24,14 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction _runInteraction(::Actor& owner, ::InteractionDescription const& desc, ::Player& player);
+    MCNAPI ::Interaction
+    _runInteraction(::Actor& owner, ::InteractionDescription const& desc, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _trySendEquipmentSlot(::Actor& owner, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
+    MCNAPI static void _trySendEquipmentSlot(::Actor& owner, ::SharedTypes::Legacy::EquipmentSlot equipmentSlot);
     // NOLINTEND
 };

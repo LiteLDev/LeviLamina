@@ -27,13 +27,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Error();
+        MCNAPI ~Error();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -47,13 +47,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Info();
+        MCNAPI ~Info();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -88,12 +88,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void logError(::std::string const& error);
+    MCNAPI void logError(::std::string const& error);
 
-    MCAPI void logInfo(::std::string const& info);
+    MCNAPI void logInfo(::std::string const& info);
 
 #ifdef LL_PLAT_C
-    MCAPI ~ScriptPluginResult();
+    MCNAPI ~ScriptPluginResult();
 #endif
     // NOLINTEND
 
@@ -101,7 +101,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

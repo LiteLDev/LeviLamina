@@ -19,9 +19,7 @@ MCNAPI void log(::ItemStack const& item, ::std::string const& message);
 
 MCNAPI void log(::InventoryTransactionPacket const& packet, ::std::string const& message);
 
-#ifdef LL_PLAT_S
 MCNAPI void log(::ItemStackResponsePacket const& packet, ::std::string const& message);
-#endif
 // NOLINTEND
 
 } // namespace ItemTransactionLogger

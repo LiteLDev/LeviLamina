@@ -226,6 +226,8 @@ public:
 
     virtual bool isNaturalDimension() const /*override*/;
 
+    virtual bool shouldRenderClouds() const /*override*/;
+
     virtual bool isValidSpawn(int x, int z) const;
 
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
@@ -329,7 +331,7 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Dimension(::DimensionArguments&& args);
 
-    MCAPI void _addActorUnloadedChunkTransferToQueue(
+    MCNAPI void _addActorUnloadedChunkTransferToQueue(
         ::ChunkPos const&                fromChunkPos,
         ::ChunkPos const&                toChunkPos,
         ::DimensionType                  dimId,
@@ -337,48 +339,44 @@ public:
         ::std::unique_ptr<::CompoundTag> entityTag
     );
 
-    MCAPI void _completeEntityTransfer(::OwnerPtr<::EntityContext> entity);
+    MCNAPI void _completeEntityTransfer(::OwnerPtr<::EntityContext> entity);
 
-    MCAPI void _tickEntityChunkMoves();
+    MCNAPI void _tickEntityChunkMoves();
 
-    MCAPI void addWither(::ActorUniqueID const& id);
+    MCNAPI void addWither(::ActorUniqueID const& id);
 
-    MCAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
+    MCNAPI ::Player* fetchNearestInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
-#ifdef LL_PLAT_C
-    MCAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
-#endif
+    MCNAPI ::Player* findPlayer(::brstd::function_ref<bool(::Player const&)> pred) const;
 
-    MCAPI void flagEntityforChunkMove(::Actor& e);
+    MCNAPI void flagEntityforChunkMove(::Actor& e);
 
-    MCAPI void flushRunTimeLighting();
-
-    MCAPI ::ChunkSource& getChunkSource() const;
+    MCNAPI void flushRunTimeLighting();
 
 #ifdef LL_PLAT_C
-    MCAPI float getSkyDarken(float a) const;
+    MCNAPI float getSkyDarken(float a) const;
 
-    MCAPI float getSunAngle(float a) const;
+    MCNAPI float getSunAngle(float a) const;
 
-    MCAPI float getTimeOfDay(float a) const;
+    MCNAPI float getTimeOfDay(float a) const;
 
-    MCAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
+    MCNAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
 #endif
 
-    MCAPI void removeActorByID(::ActorUniqueID const& id);
+    MCNAPI void removeActorByID(::ActorUniqueID const& id);
 
-    MCAPI void
+    MCNAPI void
     transferEntity(::ChunkPos const& fromChunkPos, ::Vec3 const& spawnPos, ::std::unique_ptr<::CompoundTag> entityTag);
 
-    MCAPI void tryLoadLimboEntities(::ChunkPos const& loadPos);
+    MCNAPI void tryLoadLimboEntities(::ChunkPos const& loadPos);
 
-    MCAPI void unregisterDisplayEntity(::WeakRef<::EntityContext> entityRef);
+    MCNAPI void unregisterDisplayEntity(::WeakRef<::EntityContext> entityRef);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<float const[]> MOON_BRIGHTNESS_PER_PHASE();
+    MCNAPI static ::std::add_lvalue_reference_t<float const[]> MOON_BRIGHTNESS_PER_PHASE();
     // NOLINTEND
 
 public:
@@ -407,11 +405,13 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
+    MCNAPI bool $shouldRenderClouds() const;
+
     MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCNAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
-    MCAPI short $getCloudHeight() const;
+    MCNAPI short $getCloudHeight() const;
 
 #ifdef LL_PLAT_S
     MCAPI ::BiomeIdType $getDefaultBiomeId() const;
@@ -427,7 +427,7 @@ public:
 
     MCFOLD bool $showSky() const;
 
-    MCAPI float $getTimeOfDay(int time, float a) const;
+    MCNAPI float $getTimeOfDay(int time, float a) const;
 
     MCFOLD void $setDimensionDirectionalLightControls(
         ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
@@ -443,7 +443,7 @@ public:
 
     MCFOLD ::BiomeRegistry const& $getBiomeRegistry() const;
 
-    MCFOLD ::BlockSource& $getBlockSourceFromMainChunkSource() const;
+    MCAPI ::BlockSource& $getBlockSourceFromMainChunkSource() const;
 
     MCAPI ::Actor* $fetchEntity(::ActorUniqueID actorID, bool getRemoved) const;
 
@@ -497,7 +497,7 @@ public:
 
     MCAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
-    MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
+    MCNAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
 
 
     // NOLINTEND

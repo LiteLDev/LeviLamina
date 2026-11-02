@@ -5,6 +5,8 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/CommandGroupBase.h"
 #include "mc/client/gui/oreui/binding/methods/CallableImpl.h"
+#include "mc/client/gui/oreui/input/GamepadButton.h"
+#include "mc/client/gui/oreui/input/MouseButton.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/InventoryLeftTabIndex.h"
@@ -22,44 +24,42 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GameplayUI::GameplayUIContext>> mContext;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                           mCloseContainer;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int, bool, bool>>
-        mHandleSlotMousePress;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int>>
-        mHandleSlotMouseRelease;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, ::ContainerEnumName, int>> mHandleSlotMouseDrag;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>      mHandlePanelMouseRelease;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int>> mHandleBackgroundMouseRelease;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mTakeAllItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mTakeOneItem;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mTakeHalfItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mPlaceAllItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mPlaceOneItem;
     ::ll::TypedStorage<
         8,
         168,
-        ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int, int>>
-                                                                                              mPlaceAmountOfItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropAllItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mDropOneItem;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName>>
-                                                                                              mCoalesceItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mCoalesceOrAutoPlaceItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mAutoPlaceItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mSplitMultipleItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-        mSplitMultipleItemsTouch;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, ::ContainerEnumName, int>>
-                                                                                              mSplitSingleItem;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                           mResetSplitStack;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mSetDistributeAllSource;
+        ::OreUI::Detail::CallableImpl<void, ::OreUI::MouseButton, ::ContainerEnumName, int, bool, bool>>
+        mHandleSlotMousePress;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::MouseButton, ::ContainerEnumName, int>>
+        mHandleSlotMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::MouseButton, ::ContainerEnumName, int>>
+                                                                                          mHandleSlotMouseDrag;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                       mHandlePanelMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::MouseButton>> mHandleBackgroundMouseRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, bool>>
+                                                                                              mHandleSlotTouchRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mHandleSlotTouchDrag;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>>
+        mHandleSlotTouchLongPressStart;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int, float>>
+                                                                              mHandleSlotTouchLongPressMove;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, int>> mHandleBundleSlotTouchTap;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>           mHandleBackgroundTouchTap;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>           mHandleTouchEnd;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::OreUI::Detail::CallableImpl<void, ::OreUI::GamepadButton, ::ContainerEnumName, int, bool>>
+        mHandleSlotGamepadPress;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::GamepadButton, ::ContainerEnumName, int>>
+                                                                                            mHandleSlotGamepadLongPress;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::GamepadButton>> mHandleGamepadRelease;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::OreUI::GamepadButton, ::ContainerEnumName, int>>
+                                                                                              mHandleSlotGamepadDrag;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::ContainerEnumName, int>> mHandleFocusedSlotChanged;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                           mHandleFocusedSlotNone;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>           mSetRecipeBookSearchString;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>                    mSetRecipeBookFiltering;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, bool>>                    mSetRecipeBookVisibility;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::InventoryLeftTabIndex>> mSetRecipeBookTab;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, int, int>>                mSelectTrade;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                mPullInIngredientsForSelectedTrade;
@@ -70,116 +70,72 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void autoPlaceItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+    MCNAPI void closeContainer();
 
-    MCAPI void closeContainer();
+    MCNAPI void handleBackgroundMouseRelease(::OreUI::MouseButton button);
 
-    MCAPI void coalesceItems(::ContainerEnumName destinationName, int destinationIndex, ::ContainerEnumName sourceName);
+    MCNAPI void handleBackgroundTouchTap();
 
-    MCAPI void coalesceOrAutoPlaceItems_DEPRECATED(::ContainerEnumName destinationName, int destinationIndex);
+    MCNAPI void handleBundleSlotTouchTap(int bundleID, int index);
 
-    MCAPI void dropAllItems_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+    MCNAPI void handleFocusedSlotChanged(::ContainerEnumName container, int slot);
 
-    MCAPI void dropOneItem_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+    MCNAPI void handleFocusedSlotNone();
 
-    MCAPI void handleBackgroundMouseRelease(int button);
+    MCNAPI void handleGamepadRelease(::OreUI::GamepadButton button);
 
-    MCAPI void handlePanelMouseRelease();
+    MCNAPI void handlePanelMouseRelease();
 
-    MCAPI void handleSlotMouseDrag(int button, ::ContainerEnumName container, int slot);
+    MCNAPI void handleSlotGamepadDrag(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void
-    handleSlotMousePress(int button, ::ContainerEnumName container, int slot, bool isDoubleClick, bool isShiftClick);
+    MCNAPI void handleSlotGamepadLongPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void handleSlotMouseRelease(int button, ::ContainerEnumName container, int slot);
+    MCNAPI void
+    handleSlotGamepadPress(::OreUI::GamepadButton button, ::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void performAutoTrade(int tradeTier, int tradeIndex);
+    MCNAPI void handleSlotMouseDrag(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void placeAllItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
+    MCNAPI void handleSlotMousePress(
+        ::OreUI::MouseButton button,
+        ::ContainerEnumName  container,
+        int                  slot,
+        bool                 isDoubleClick,
+        bool                 isShiftClick
     );
 
-    MCAPI void placeAmountOfItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        int                 amount
-    );
+    MCNAPI void handleSlotMouseRelease(::OreUI::MouseButton button, ::ContainerEnumName container, int slot);
 
-    MCAPI void placeOneItem_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
+    MCNAPI void handleSlotTouchDrag(::ContainerEnumName container, int slot);
 
-    MCAPI void pullInIngredientsForSelectedTrade();
+    MCNAPI void handleSlotTouchLongPressMove(::ContainerEnumName container, int slot, float normalizedValue);
 
-    MCAPI void resetSplitStack_DEPRECATED();
+    MCNAPI void handleSlotTouchLongPressStart(::ContainerEnumName container, int slot);
 
-    MCAPI void selectTrade(int tradeTier, int tradeIndex);
+    MCNAPI void handleSlotTouchRelease(::ContainerEnumName container, int slot, bool isDoubleClick);
 
-    MCAPI void setDistributeAllSource_DEPRECATED(::ContainerEnumName sourceName, int sourceIndex);
+    MCNAPI void handleTouchEnd();
 
-    MCAPI void setPreviewItemName(::std::string name);
+    MCNAPI void performAutoTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void setRecipeBookFiltering(bool filtering);
+    MCNAPI void pullInIngredientsForSelectedTrade();
 
-    MCAPI void setRecipeBookSearchString(::std::string searchText);
+    MCNAPI void selectTrade(int tradeTier, int tradeIndex);
 
-    MCAPI void setRecipeBookTab(::InventoryLeftTabIndex tabIndex);
+    MCNAPI void setPreviewItemName(::std::string name);
 
-    MCAPI void splitMultipleItemsTouch_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
+    MCNAPI void setRecipeBookFiltering(bool filtering);
 
-    MCAPI void splitMultipleItems_DEPRECATED(
-        ::ContainerEnumName selectedName,
-        int                 selectedIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
+    MCNAPI void setRecipeBookSearchString(::std::string searchText);
 
-    MCAPI void splitSingleItem_DEPRECATED(
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex,
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex
-    );
+    MCNAPI void setRecipeBookTab(::InventoryLeftTabIndex tabIndex);
 
-    MCAPI void takeAllItems_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
-
-    MCAPI void takeHalfItems_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
-
-    MCAPI void takeOneItem_DEPRECATED(
-        ::ContainerEnumName destinationName,
-        int                 destinationIndex,
-        ::ContainerEnumName sourceName,
-        int                 sourceIndex
-    );
+    MCNAPI void setRecipeBookVisibility(bool visible);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[36]> NAME();
     // NOLINTEND
 };
 

@@ -13,11 +13,7 @@ public:
     // NOLINTBEGIN
     virtual ~ResourcePackListener() = default;
 
-#ifdef LL_PLAT_S
-    virtual void onActiveResourcePacksChanged(::ResourcePackManager& manager) = 0;
-#else // LL_PLAT_C
     virtual void onActiveResourcePacksChanged(::ResourcePackManager& mgr) = 0;
-#endif
 
     virtual bool onFullPackStackInvalid();
 
@@ -27,17 +23,13 @@ public:
 
     virtual void onResourceManagerDestroyed(::ResourcePackManager&);
 
-#ifdef LL_PLAT_S
-    virtual void onJsonResourcesChanged(::ResourcePackManager&);
-#else // LL_PLAT_C
     virtual void onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
-#endif
-
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_C
     MCNAPI bool $onFullPackStackInvalid();
 
     MCNAPI void $onBaseGamePackDownloadComplete();
@@ -46,9 +38,6 @@ public:
 
     MCNAPI void $onResourceManagerDestroyed(::ResourcePackManager&);
 
-#ifdef LL_PLAT_S
-    MCNAPI void $onJsonResourcesChanged(::ResourcePackManager&);
-#else // LL_PLAT_C
     MCNAPI void $onJsonResourcesChanged(::ResourcePackManager& resourcePackManager);
 #endif
 

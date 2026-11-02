@@ -16,6 +16,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addNameFilterByName(::std::string const& name);
+    MCNAPI void addNameFilterByName(::std::string const& name);
     // NOLINTEND
 };

@@ -57,9 +57,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
+    MCNAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
 
-    MCAPI void clearEntityRenderers();
+    MCNAPI void cleanupIndependentRenderer(::HashedString const& name);
+
+    MCNAPI void clearEntityRenderers();
 
     MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Font&              font,
@@ -75,7 +77,7 @@ public:
 
     MCAPI ::std::shared_ptr<::ActorRenderer> getRenderer(::HashedString const& rendererName) const;
 
-    MCAPI void initializeEntityRenderers(
+    MCNAPI void initializeEntityRenderers(
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                geometryGroup,
         ::std::shared_ptr<::mce::TextureGroup>                               textureGroup,
         ::BlockTessellator&                                                  commonBlockRenderer,
@@ -85,12 +87,12 @@ public:
         bool                                                                 supportsNewVertexFormat
     );
 
-    MCAPI bool initializePlayerRenderer(
+    MCNAPI bool initializeIndependentRenderer(
         ::std::shared_ptr<::ActorResourceDefinition> resources,
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );
 
-    MCAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
+    MCNAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
 
     MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,
@@ -101,9 +103,9 @@ public:
         bool                      ignoreLighting
     );
 
-    MCAPI void renderEffects(::BaseActorRenderContext& actorRenderContext, ::Actor& actor);
+    MCNAPI void renderEffects(::BaseActorRenderContext& actorRenderContext, ::Actor& actor);
 
-    MCAPI void
+    MCNAPI void
     renderWaterHole(::BaseActorRenderContext& actorRenderContext, ::Actor& actor, ::Vec3 const& cameraTargetPos);
     // NOLINTEND
 

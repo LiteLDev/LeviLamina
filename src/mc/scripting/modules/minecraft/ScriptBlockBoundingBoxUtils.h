@@ -15,15 +15,15 @@ class ScriptBlockBoundingBoxUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
+    MCNAPI static ::BoundingBox dilate(::BoundingBox const& box, ::Vec3 const& size);
 
-    MCAPI static ::Vec3 getCenter(::BoundingBox const& box);
+    MCNAPI static ::Vec3 getCenter(::BoundingBox const& box);
 
-    MCAPI static ::Vec3 getSpan(::BoundingBox const& box);
+    MCNAPI static ::Vec3 getSpan(::BoundingBox const& box);
 
-    MCAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
+    MCNAPI static ::BoundingBox translate(::BoundingBox const& box, ::Vec3 const& delta);
     // NOLINTEND
 };
 

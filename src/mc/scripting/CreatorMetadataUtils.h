@@ -31,46 +31,46 @@ namespace CreatorMetadataUtils {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_S
-MCAPI ::Json::Value CreateDefaultTypeJson();
+MCNAPI ::Json::Value CreateDefaultTypeJson();
 
-MCAPI ::Json::Value MetaAnyToJSON(::entt::meta_any value);
+MCNAPI ::Json::Value MetaAnyToJSON(::entt::meta_any value);
 
-MCAPI ::std::optional<::Json::Value> MetaClassTypeToJSON(
+MCNAPI ::std::optional<::Json::Value> MetaClassTypeToJSON(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::entt::meta_type const&                type,
     ::Scripting::ModuleBindingBundle const& loadedModules
 );
 
-MCAPI ::Json::Value MetaTypeToJSON(
+MCNAPI ::Json::Value MetaTypeToJSON(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::entt::meta_type const&                type,
     ::Scripting::ModuleBindingBundle const& loadedModules,
     ::std::string const&                    bindingName
 );
 
-MCAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
+MCNAPI void _addCommonEngineMetadata(::Json::Value& root, char const* type);
 
-MCAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
+MCNAPI void _addCommonVanillaMetadata(::Json::Value& jsonRoot, char const* type);
 
-MCAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
+MCNAPI void _addPrivilegeToArray(::Json::Value& arr, ::Scripting::Privilege privilege);
 
-MCAPI ::Json::Value _generateScriptingModuleMetadataJson(
+MCNAPI ::Json::Value _generateScriptingModuleMetadataJson(
     ::Scripting::ModuleBinding const&          moduleToBind,
     ::Scripting::SupportedBindingModule const& moduleDescriptor,
     ::Scripting::ModuleBindingBundle const&    loadedModules
 );
 
-MCAPI ::std::optional<::Scripting::Privilege> _tryGetPrivilegeTypeOfClosureTemplateType(::entt::meta_type const& type);
+MCNAPI ::std::optional<::Scripting::Privilege> _tryGetPrivilegeTypeOfClosureTemplateType(::entt::meta_type const& type);
 
-MCAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
+MCNAPI void generateCommandsDocumentation(::CommandRegistry& commandRegistry, ::Core::Path const& docsFolder);
 
-MCAPI ::Json::Value generateConstantDocumentation(
+MCNAPI ::Json::Value generateConstantDocumentation(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::Scripting::ConstantFactory const&     constantBinding,
     ::Scripting::ModuleBindingBundle const& loadedModules
 );
 
-MCAPI void generateCreatorScriptingMetadata(
+MCNAPI void generateCreatorScriptingMetadata(
     ::Scripting::ScriptEngine&                                                       scriptEngine,
     ::CreatorMetadataUtils::ServerMetadataOutputPaths const&                         outputPaths,
     ::ItemRegistryRef                                                                itemRegistry,
@@ -79,20 +79,20 @@ MCAPI void generateCreatorScriptingMetadata(
     ::BiomeRegistry const&                                                           biomes
 );
 
-MCAPI ::Json::Value generateFunctionDocumentation(
+MCNAPI ::Json::Value generateFunctionDocumentation(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::Scripting::FunctionBinding const&     functionBinding,
     bool                                    isConstructor,
     ::Scripting::ModuleBindingBundle const& loadedModules
 );
 
-MCAPI ::Json::Value generateModuleDependencyJson(::Scripting::ModuleDependency const& dependency);
+MCNAPI ::Json::Value generateModuleDependencyJson(::Scripting::ModuleDependency const& dependency);
 
-MCAPI ::Json::Value generateModuleDescriptionJson(::Scripting::ModuleDescriptor const& descriptor);
+MCNAPI ::Json::Value generateModuleDescriptionJson(::Scripting::ModuleDescriptor const& descriptor);
 
-MCAPI void generateMolangQueriesDocumentation(::Core::Path const& docsFolder);
+MCNAPI void generateMolangQueriesDocumentation(::Core::Path const& docsFolder);
 
-MCAPI ::Json::Value generatePropertiesDocumentation(
+MCNAPI ::Json::Value generatePropertiesDocumentation(
     ::Scripting::ModuleBinding const&                  moduleToBind,
     ::std::vector<::Scripting::PropertyBinding> const& properties,
     ::Scripting::ModuleBindingBundle const&            loadedModules,
@@ -101,7 +101,7 @@ MCAPI ::Json::Value generatePropertiesDocumentation(
     bool                                               allowSettableProperties
 );
 
-MCAPI void generateVanillaDataDocumentation(
+MCNAPI void generateVanillaDataDocumentation(
     ::Core::Path const&                                                              docsFolder,
     ::ItemRegistryRef const                                                          itemRegistry,
     ::std::unordered_map<::std::string, ::std::unique_ptr<::ActorDefinition>> const& actorDefinitionList,
@@ -109,24 +109,26 @@ MCAPI void generateVanillaDataDocumentation(
     ::BiomeRegistry const&                                                           biomes
 );
 
-MCAPI ::CreatorMetadataUtils::ServerMetadataOutputPaths getAndCleanServerMetadataPaths();
+MCNAPI ::CreatorMetadataUtils::ServerMetadataOutputPaths getAndCleanServerMetadataPaths();
+
+MCNAPI ::std::string getGameSemVersionAsString();
 #endif
 
-MCAPI ::std::string getGameSemVersionAsString();
+MCNAPI ::CreatorMetadataUtils::ServerMetadataOutputPaths getServerMetadataPaths();
 
 #ifdef LL_PLAT_S
-MCAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
+MCNAPI ::std::string scriptingVersionToString(::Scripting::Version const& version);
 
-MCAPI void sortJsonElementsByName(::Json::Value& jsonArray, bool const removeDuplicates);
+MCNAPI void sortJsonElementsByName(::Json::Value& jsonArray, bool const removeDuplicates);
 
-MCAPI bool validateVariantResolution(
+MCNAPI bool validateVariantResolution(
     ::Scripting::ModuleBinding const&       moduleToBind,
     ::entt::meta_type const&                variantType,
     ::Scripting::ModuleBindingBundle const& loadedModules,
     ::std::string const&                    bindingName
 );
 
-MCAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
+MCNAPI bool writeJsonMetadataToFile(::Json::Value const& json, ::Core::Path const& filepath);
 #endif
 // NOLINTEND
 

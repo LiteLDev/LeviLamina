@@ -37,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NinePatchLayer>>     mBackgroundTexture;
     ::ll::TypedStorage<1, 1, bool>                                    mHasLoadedIconTextures;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>>    mTextures;
-    ::ll::TypedStorage<8, 3792, ::std::array<::mce::Mesh, 6>>         mMeshes;
+    ::ll::TypedStorage<8, 3648, ::std::array<::mce::Mesh, 6>>         mMeshes;
     ::ll::TypedStorage<4, 8, ::Vec2>                                  mBackgroundSize;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastRenderCall;
     // NOLINTEND
@@ -58,23 +58,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudLocatorBarRenderer();
+    MCNAPI HudLocatorBarRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
     // NOLINTEND
 
 public:

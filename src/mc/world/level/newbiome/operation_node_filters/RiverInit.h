@@ -31,7 +31,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit RiverInit(::BiomeRegistry const& biomeRegistry);
+    MCNAPI explicit RiverInit(::BiomeRegistry const& biomeRegistry);
 #endif
     // NOLINTEND
 
@@ -39,7 +39,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::BiomeRegistry const& biomeRegistry);
+    MCNAPI void* $ctor(::BiomeRegistry const& biomeRegistry);
 #endif
     // NOLINTEND
 };

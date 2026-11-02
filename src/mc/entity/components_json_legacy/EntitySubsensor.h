@@ -30,12 +30,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EntitySubsensor(::EntitySubsensor const&);
+    MCNAPI EntitySubsensor(::EntitySubsensor const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::EntitySubsensor const&);
+    MCNAPI void* $ctor(::EntitySubsensor const&);
     // NOLINTEND
 };

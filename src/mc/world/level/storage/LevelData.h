@@ -24,10 +24,12 @@
 #include "mc/world/level/DaylightCycle.h"
 #include "mc/world/level/GameType.h"
 #include "mc/world/level/GeneratorType.h"
+#include "mc/world/level/IEducationOptions.h"
 #include "mc/world/level/NetherWorldType.h"
 #include "mc/world/level/SpawnSettings.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/WorldVersion.h"
+#include "mc/world/level/editor/EditorLevelMigrationVersion.h"
 #include "mc/world/level/levelgen/flat/FlatWorldPresetID.h"
 #include "mc/world/level/storage/AdventureSettings.h"
 #include "mc/world/level/storage/CloudSaveLevelInfo.h"
@@ -52,7 +54,7 @@ namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 namespace RakNet { class BitStream; }
 // clang-format on
 
-class LevelData {
+class LevelData : public ::IEducationOptions {
 public:
     // LevelData inner types define
     using LevelDataPublisher = ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>;
@@ -101,6 +103,7 @@ public:
     ::ll::TypedStorage<4, 4, ::ServerEditorConnectionPolicy>          mServerEditorConnectionPolicy;
     ::ll::TypedStorage<1, 1, bool>                                    mIsCreatedInEditor;
     ::ll::TypedStorage<1, 1, bool>                                    mIsExportedFromEditor;
+    ::ll::TypedStorage<1, 1, ::Editor::EditorLevelMigrationVersion>   mEditorLevelMigrationVersion;
     ::ll::TypedStorage<4, 4, ::EducationEditionOfferValue>            mEducationEditionOffer;
     ::ll::TypedStorage<8, 176, ::std::optional<::CloudSaveLevelInfo>> mCloudSaveInfo;
     ::ll::TypedStorage<1, 1, bool>                                    mEducationFeaturesEnabled;
@@ -170,171 +173,207 @@ public:
     LevelData();
 
 public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~LevelData() /*override*/;
+
+    virtual bool educationFeaturesEnabled() const /*override*/;
+
+    virtual void setEducationFeaturesEnabled(bool educationEnabled) /*override*/;
+
+    virtual bool isCodeBuilderEnabled() const /*override*/;
+
+    virtual void setCodeBuilderEnabled(bool codeBuilderEnabled) /*override*/;
+
+    virtual ::EducationEditionOffer getEducationEditionOffer() const /*override*/;
+
+    virtual void setEducationEditionOffer(::EducationEditionOffer eduOffer) /*override*/;
+    // NOLINTEND
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelData(::LevelData&& rhs);
+    MCNAPI LevelData(::LevelData&& rhs);
 
-    MCAPI explicit LevelData(::CompoundTag const& tag);
+    MCNAPI explicit LevelData(::CompoundTag const& tag);
 
-    MCAPI LevelData(bool isEduMode, ::LevelDataType levelDataType);
+    MCNAPI LevelData(bool isEduMode, ::LevelDataType levelDataType);
 
-    MCAPI LevelData(
-        ::LevelSettings const&  settings,
-        ::std::string const&    levelName,
-        ::GeneratorType         generatorVersion,
-        ::BlockPos const&       defaultSpawn,
-        bool                    achievementsDisabled,
-        ::EducationEditionOffer eduOffer,
-        float                   rainLevel,
-        float                   lightningLevel
+    MCNAPI LevelData(
+        ::LevelSettings const& settings,
+        ::std::string const&   levelName,
+        ::GeneratorType        generatorVersion,
+        ::BlockPos const&      defaultSpawn,
+        bool                   achievementsDisabled,
+        float                  rainLevel,
+        float                  lightningLevel
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::optional<::std::reference_wrapper<
+    MCNAPI ::std::optional<::std::reference_wrapper<
         ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::SingleThreaded, 0>>>
     _getLevelDataPropertyPublisher(::LevelDataProperty property) const;
 #endif
 
-    MCFOLD ::LevelDataValue const* _getValue(::HashedString const& key) const;
+    MCAPI ::LevelDataValue const* _getValue(::HashedString const& key) const;
 
-    MCFOLD ::LevelDataValue* _getValue(::HashedString const& key);
-
-    MCAPI void _initLevelDataPropertyPublishers();
+#ifdef LL_PLAT_S
+    MCNAPI ::LevelDataValue* _getValue(::HashedString const& key);
+#endif
 
 #ifdef LL_PLAT_C
-    MCAPI void _resetDefaultAdvancedSettingsData(bool isTrial);
+    MCNAPI ::LevelDataValue* _getValue(::HashedString const& key);
+#endif
 
-    MCAPI void _resetDefaultGeneralSettingsData();
+    MCNAPI void _initLevelDataPropertyPublishers();
 
-    MCAPI void _resetDefaultMultiplayerSettingsData(bool isTrial);
+#ifdef LL_PLAT_C
+    MCNAPI void _resetDefaultAdvancedSettingsData(bool isTrial);
 
-    MCAPI void _resetDefaultScriptingCodingSettingsData();
+    MCNAPI void _resetDefaultGeneralSettingsData();
 
-    MCAPI void applyPolicyBasedSettings(bool hasBehaviourPack);
+    MCNAPI void _resetDefaultMultiplayerSettingsData(bool isTrial);
+
+    MCNAPI void _resetDefaultScriptingCodingSettingsData();
+
+    MCNAPI void applyPolicyBasedSettings(bool isTrialMode, bool hasBehaviourPack);
 #endif
 
     MCAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
-    MCAPI void disableAchievements();
+    MCNAPI void disableAchievements();
 
     MCAPI ::BaseGameVersion const& getBaseGameVersion() const;
 
-    MCAPI ::std::string const getBiomeOverride() const;
+    MCNAPI ::std::string const getBiomeOverride() const;
 
-    MCAPI ::CompoundTag const& getEduSharedUriResource() const;
+    MCNAPI ::CompoundTag const& getEduSharedUriResource() const;
 
     MCAPI ::GeneratorType getGenerator() const;
 
-    MCAPI void getTagData(::CompoundTag const& tag);
+    MCNAPI void getTagData(::CompoundTag const& tag);
 
-    MCAPI bool hasCloudSaveAssociation() const;
+    MCNAPI ::WorldVersion getWorldVersion() const;
+
+    MCNAPI bool hasCloudSaveAssociation() const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool isCloudSaveActiveForWorld() const;
+    MCNAPI bool isCloudSaveActiveForWorld() const;
+#endif
 
-    MCAPI bool isEditionCompatible() const;
+    MCNAPI ::LevelData& operator=(::LevelData&& rhs);
 
-    MCAPI ::LevelData& operator=(::LevelData&& rhs);
+#ifdef LL_PLAT_C
+    MCNAPI ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
 
-    MCAPI ::Bedrock::PubSub::Subscription registerIsHardcoreListener(::std::function<void(bool)> callback) const;
-
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     registerLevelDataPropertyListener(::LevelDataProperty property, ::std::function<void()> callback) const;
 #endif
 
-    MCAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerWithLevelStorageManagerEvents(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
 #ifdef LL_PLAT_C
-    MCAPI void resetDefaultCheatSettingsData();
+    MCNAPI void resetDefaultCheatSettingsData();
 
-    MCAPI void resetSettingsForRandomSeed();
+    MCNAPI void resetSettingsForRandomSeed();
 #endif
 
-    MCAPI void setBiomeOverride(::std::string const& biomeName);
+    MCNAPI void setBiomeOverride(::std::string const& biomeName);
 
-    MCAPI void setCheatsEnabled(bool cheatsEnabled);
+    MCNAPI void setCheatsEnabled(bool cheatsEnabled);
 
 #ifdef LL_PLAT_C
-    MCAPI void setCloudSaveInfo(::CloudSaveLevelInfo const& cloudSaveInfo);
+    MCNAPI void setCloudSaveInfo(::CloudSaveLevelInfo const& cloudSaveInfo);
 #endif
 
-    MCAPI void setCommandsEnabled(bool commandsEnabled);
+    MCNAPI void setCommandsEnabled(bool commandsEnabled);
 
-    MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
+    MCNAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 
-    MCAPI void setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
-
-    MCAPI void setEducationFeaturesEnabled(bool educationEnabled);
+    MCNAPI void setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
 
 #ifdef LL_PLAT_C
-    MCAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
+    MCNAPI void setFlatWorldPreset(::FlatWorldPresetID preset);
 #endif
 
     MCAPI void setGameDifficulty(::SharedTypes::Legacy::Difficulty difficulty);
 
     MCAPI void setGameType(::GameType type);
 
-    MCAPI void setGenerator(::GeneratorType version);
+    MCNAPI void setGenerator(::GeneratorType version);
 
-    MCAPI void setIsHardcore(bool value);
+    MCNAPI void setIsHardcore(bool value);
 
-    MCAPI void setLevelName(::std::string const& levelName);
+    MCNAPI void setLevelName(::std::string const& levelName);
 
-    MCAPI void setMessUserId(::std::string const& messUserId);
+    MCNAPI void setMessUserId(::std::string const& messUserId);
 
-    MCAPI void setOverworldTimeSetting(int time);
+    MCNAPI void setOverworldTimeSetting(int time);
 
-    MCAPI void setSeed(::LevelSeed64 seed);
+    MCNAPI void setSeed(::LevelSeed64 seed);
 
-    MCAPI void setServerChunkTickRange(uint newRange);
+    MCNAPI void setServerChunkTickRange(uint newRange);
 
     MCAPI void setSpawnPos(::BlockPos const& spawn);
 
-    MCAPI void setTagData(::CompoundTag& tag) const;
+    MCNAPI void setTagData(::CompoundTag& tag) const;
 
-    MCAPI void setWorldClockRegistry(::Bedrock::NonOwnerPointer<::WorldClockRegistry const> registry);
+    MCNAPI void setWorldClockRegistry(::Bedrock::NonOwnerPointer<::WorldClockRegistry const> registry);
 
-    MCAPI void setWorldTemplateOptionLocked(bool isLocked);
+    MCNAPI void setWorldTemplateOptionLocked(bool isLocked);
 
-    MCAPI void setWorldVersion(::WorldVersion version);
+    MCNAPI void setWorldVersion(::WorldVersion version);
+
+    MCNAPI bool shouldAttemptOneTimeAchievementsRepair() const;
+
+    MCNAPI void touchLastLoadedWithVersion();
 
 #ifdef LL_PLAT_C
-    MCAPI bool shouldAchievementsBeDisabled(bool isTrialMode, bool hasBehaviourPack) const;
+    MCNAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
 #endif
-
-    MCAPI void touchLastLoadedWithVersion();
-
-#ifdef LL_PLAT_S
-    MCAPI void v1_read(::RakNet::BitStream& bitStream, ::StorageVersion storageVersion);
-#endif
-
-    MCAPI ~LevelData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelData&& rhs);
+    MCNAPI void* $ctor(::LevelData&& rhs);
 
-    MCAPI void* $ctor(::CompoundTag const& tag);
+    MCNAPI void* $ctor(::CompoundTag const& tag);
 
-    MCAPI void* $ctor(bool isEduMode, ::LevelDataType levelDataType);
+    MCNAPI void* $ctor(bool isEduMode, ::LevelDataType levelDataType);
 
-    MCAPI void* $ctor(
-        ::LevelSettings const&  settings,
-        ::std::string const&    levelName,
-        ::GeneratorType         generatorVersion,
-        ::BlockPos const&       defaultSpawn,
-        bool                    achievementsDisabled,
-        ::EducationEditionOffer eduOffer,
-        float                   rainLevel,
-        float                   lightningLevel
+    MCNAPI void* $ctor(
+        ::LevelSettings const& settings,
+        ::std::string const&   levelName,
+        ::GeneratorType        generatorVersion,
+        ::BlockPos const&      defaultSpawn,
+        bool                   achievementsDisabled,
+        float                  rainLevel,
+        float                  lightningLevel
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI bool $educationFeaturesEnabled() const;
+
+    MCNAPI void $setEducationFeaturesEnabled(bool educationEnabled);
+
+    MCNAPI bool $isCodeBuilderEnabled() const;
+
+    MCNAPI void $setCodeBuilderEnabled(bool codeBuilderEnabled);
+
+    MCNAPI ::EducationEditionOffer $getEducationEditionOffer() const;
+
+    MCNAPI void $setEducationEditionOffer(::EducationEditionOffer eduOffer);
+
+
     // NOLINTEND
 };

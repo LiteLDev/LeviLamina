@@ -4,7 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct EDUConfigData;
+struct EduConfigData;
 struct ServicePack;
 namespace Json { class Value; }
 namespace WebServices::EduSignin { struct SigninError; }

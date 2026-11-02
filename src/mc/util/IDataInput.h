@@ -37,16 +37,16 @@ public:
     // NOLINTBEGIN
     MCAPI uchar readByte();
 
-    MCAPI bool readBytes(void* data, uint64 bytes);
+    MCNAPI bool readBytes(void* data, uint64 bytes);
 
-    MCAPI int readInt();
+    MCNAPI int readInt();
 
-    MCAPI int64 readLongLong();
+    MCNAPI int64 readLongLong();
 
-    MCAPI ::std::string readLongString();
+    MCNAPI ::std::string readLongString();
 
-    MCAPI short readShort();
+    MCNAPI short readShort();
 
-    MCAPI ::std::string readString();
+    MCNAPI ::std::string readString();
     // NOLINTEND
 };

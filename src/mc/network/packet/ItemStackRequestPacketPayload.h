@@ -27,13 +27,13 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ItemStackRequestPacketPayload(::ItemStackRequestBatch const& batch);
+    MCNAPI explicit ItemStackRequestPacketPayload(::ItemStackRequestBatch const& batch);
 #endif
 
-    MCAPI ::std::unique_ptr<::ItemStackRequestBatch> toRequestBatch() const;
+    MCNAPI ::std::unique_ptr<::ItemStackRequestBatch> toRequestBatch() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ~ItemStackRequestPacketPayload();
+    MCNAPI ~ItemStackRequestPacketPayload();
 #endif
     // NOLINTEND
 
@@ -41,7 +41,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ItemStackRequestBatch const& batch);
+    MCNAPI void* $ctor(::ItemStackRequestBatch const& batch);
 #endif
     // NOLINTEND
 
@@ -49,7 +49,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

@@ -69,7 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptItemCustomComponentSignalCollection(
+    MCNAPI explicit ScriptItemCustomComponentSignalCollection(
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache
     );
     // NOLINTEND
@@ -77,13 +77,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
+    MCNAPI static ::ScriptModuleMinecraft::ScriptCustomComponentEventMetadata<
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface> const
     _getEventMetadata();
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
 
-    MCAPI static void generateOrderDocumentationForVersion(
+    MCNAPI static void generateOrderDocumentationForVersion(
         ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
         ::Json::Value&                       eventOrderArray
     );
@@ -92,27 +92,27 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptCustomComponentParameterCache& parameterCache);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $registerClosures(
+    MCNAPI void $registerClosures(
         ::HashedString const&                                         componentName,
         ::ScriptModuleMinecraft::ScriptItemCustomComponentInterface&& closures
     );
 
-    MCAPI void
+    MCNAPI void
     $subscribeToItemForComponent(::ComponentItem& item, ::std::vector<::ItemCustomComponentData> const& components);
 
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI void $onPreFlushAfterEvents();
+    MCNAPI void $onPreFlushAfterEvents();
 
-    MCAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
+    MCNAPI void $onFlushItemCustomComponentAfterEvents(::ScriptDeferredFlushTracker& deferredTracker);
 
-    MCAPI void $onPostFlushAfterEvents();
+    MCNAPI void $onPostFlushAfterEvents();
 
 
     // NOLINTEND

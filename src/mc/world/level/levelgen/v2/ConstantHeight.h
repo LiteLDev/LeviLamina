@@ -31,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;
+    MCNAPI int $sample(::IRandom&, ::br::worldgen::WorldGenContext const& heightAccessor) const;
 
 
     // NOLINTEND

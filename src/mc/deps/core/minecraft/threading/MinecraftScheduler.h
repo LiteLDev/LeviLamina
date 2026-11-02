@@ -9,12 +9,6 @@ class Scheduler;
 
 class MinecraftScheduler {
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scheduler& client();
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::unique_ptr<::Scheduler>& mInstance();

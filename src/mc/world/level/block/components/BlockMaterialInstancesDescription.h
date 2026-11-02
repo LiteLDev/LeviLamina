@@ -50,28 +50,29 @@ public:
         ::ll::TypedStorage<8, 40, ::BlockMaterialInstancesDescription::BlockMaterialInstanceData> materialInstanceData;
         // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
     public:
         // prevent constructor by default
         BlockMaterialData& operator=(BlockMaterialData const&);
         BlockMaterialData();
 
-#endif
     public:
         // member functions
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI BlockMaterialData(::BlockMaterialInstancesDescription::BlockMaterialData const&);
-#endif
+        MCNAPI BlockMaterialData(::BlockMaterialInstancesDescription::BlockMaterialData const&);
+
+        MCNAPI ~BlockMaterialData();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-#ifdef LL_PLAT_C
-        MCAPI void* $ctor(::BlockMaterialInstancesDescription::BlockMaterialData const&);
-#endif
+        MCNAPI void* $ctor(::BlockMaterialInstancesDescription::BlockMaterialData const&);
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -110,7 +111,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockMaterialInstancesDescription(
+    MCNAPI explicit BlockMaterialInstancesDescription(
         ::std::vector<::BlockMaterialInstancesDescription::BlockMaterialData> const& materialDatas
     );
 
@@ -126,30 +127,30 @@ public:
         bool                 dithering
     );
 
-    MCAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
+    MCNAPI ::BlockMaterialInstancesDescription& operator=(::BlockMaterialInstancesDescription const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static bool
+    MCNAPI static bool
     postParseConstraint(::Experiments const&, ::Json::Value const& componentJson, ::SemVersion const& jsonVersion);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& NameID();
+    MCNAPI static ::std::string const& NameID();
 
-    MCAPI static ::SemVersionConstant const& VARIATIONS_TEXTURE_SUPPORT_MIN_VERSION();
+    MCNAPI static ::SemVersionConstant const& VARIATIONS_TEXTURE_SUPPORT_MIN_VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::BlockMaterialInstancesDescription::BlockMaterialData> const& materialDatas);
+    MCNAPI void* $ctor(::std::vector<::BlockMaterialInstancesDescription::BlockMaterialData> const& materialDatas);
 
     MCAPI void* $ctor(
         ::std::string const& textureName,
@@ -173,19 +174,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string const& $getName() const;
+    MCNAPI ::std::string const& $getName() const;
 
-    MCFOLD void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponentFromCode(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
+    MCNAPI void $initializeComponent(::BlockComponentStorage& blockComponentStorage) const;
 
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
 
     // NOLINTEND

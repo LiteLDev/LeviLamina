@@ -6,9 +6,12 @@ class LevelCullerManhattan {
 public:
     // LevelCullerManhattan inner types declare
     // clang-format off
+    struct CullingContext;
     struct ManhattanQueueEntry;
     // clang-format on
 
     // LevelCullerManhattan inner types define
+    struct CullingContext {};
+
     struct ManhattanQueueEntry {};
 };

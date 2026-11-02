@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorMigratedDefinitionFactory;
+class AtomicClientEntityFactory;
 class BaseGameVersion;
 class BiomeRegistry;
 class ClientInputMappingFactory;
@@ -17,6 +18,7 @@ class CommandRegistry;
 class Experiments;
 class GameModuleDocumentation;
 class IClientInstance;
+class IEducationOptions;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
@@ -42,6 +44,7 @@ public:
     ::ll::UntypedStorage<8, 24> mUnk31c50a;
     ::ll::UntypedStorage<8, 16> mUnkc9162e;
     ::ll::UntypedStorage<8, 24> mUnkeda6d9;
+    ::ll::UntypedStorage<8, 64> mUnk31c75f;
     ::ll::UntypedStorage<8, 8>  mUnkd23d66;
     ::ll::UntypedStorage<8, 16> mUnkd24109;
     ::ll::UntypedStorage<8, 16> mUnk852403;
@@ -67,7 +70,8 @@ public:
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
         ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::IEducationOptions const*                                      educationOptions
     ) /*override*/;
 
     virtual void configureLevel(
@@ -86,9 +90,13 @@ public:
 
     virtual void tick(::IClientInstance const& client) /*override*/;
 
-    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) /*override*/;
+    virtual void setupStandardCommands(
+        ::CommandRegistry&           commandRegistry,
+        ::AtomicClientEntityFactory& atomicClientEntityFactory,
+        ::IEducationOptions const&   educationOptions
+    ) /*override*/;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) /*override*/;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry&) /*override*/;
 
     virtual void setupUI() /*override*/;
 
@@ -105,18 +113,20 @@ public:
     ) const /*override*/;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() /*override*/;
+
+    virtual ::std::shared_ptr<void const> getWorldSystemsScope() /*override*/;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
+    MCNAPI static void _onLevelBiomesRegistered(::BiomeRegistry& biomeRegistry);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void $init(::IClientInstance& client, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
     MCAPI void $initializeResourceStack(
         ::Experiments const*                                            experiments,
@@ -124,41 +134,48 @@ public:
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
         ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::IEducationOptions const*                                      educationOptions
     );
 
-    MCAPI void $configureLevel(
+    MCNAPI void $configureLevel(
         ::IClientInstance&                                  client,
         ::Bedrock::NotNullNonOwnerPtr<::ClientLevel> const& level,
         ::Experiments const&                                experiments,
         ::BaseGameVersion const&                            baseGameVersion
     );
 
-    MCAPI void $deconfigureLevel(::IClientInstance& client);
+    MCNAPI void $deconfigureLevel(::IClientInstance& client);
 
-    MCAPI void $onLeaveWorld();
+    MCNAPI void $onLeaveWorld();
 
-    MCFOLD void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
+    MCNAPI void $configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const docItemRegistry);
 
-    MCAPI void $tick(::IClientInstance const& client);
+    MCNAPI void $tick(::IClientInstance const& client);
 
-    MCAPI void $setupStandardCommands(::CommandRegistry& commandRegistry);
+    MCNAPI void $setupStandardCommands(
+        ::CommandRegistry&           commandRegistry,
+        ::AtomicClientEntityFactory& atomicClientEntityFactory,
+        ::IEducationOptions const&   educationOptions
+    );
 
-    MCFOLD void $setupStartMenuScreenCommands(::CommandRegistry& commandRegistry);
+    MCNAPI void $setupStartMenuScreenCommands(::CommandRegistry&);
 
-    MCAPI void $setupUI();
+    MCNAPI void $setupUI();
 
-    MCAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
+    MCNAPI void $registerActorRenderers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
+    MCNAPI ::std::unique_ptr<::ClientInputMappingFactory> $createInputMappingFactory(::IClientInstance& client);
 
-    MCAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
+    MCNAPI ::std::shared_ptr<void> $registerVanillaGoalsForUpgrader(
         ::Experiments const&              experiments,
         ::BaseGameVersion const&          baseGameVersion,
         ::ItemRegistryRef const           itemRegistryRef,
         ::ActorMigratedDefinitionFactory& migratedFactory
     ) const;
 
-    MCAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
+    MCNAPI ::ServerboundDiagnosticsPacket $createServerboundDiagnosticsPacket();
+
+    MCNAPI ::std::shared_ptr<void const> $getWorldSystemsScope();
     // NOLINTEND
 };

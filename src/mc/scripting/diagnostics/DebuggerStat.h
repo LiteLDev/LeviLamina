@@ -19,7 +19,6 @@ public:
 
 public:
     // prevent constructor by default
-    DebuggerStat& operator=(DebuggerStat const&);
     DebuggerStat();
 
 public:
@@ -40,6 +39,8 @@ public:
     );
 
     MCNAPI ::DebuggerStat& addChild(::DebuggerStat&& child);
+
+    MCNAPI ::DebuggerStat& operator=(::DebuggerStat const&);
 
     MCNAPI ~DebuggerStat();
     // NOLINTEND
@@ -74,3 +75,8 @@ public:
     MCNAPI void $dtor();
     // NOLINTEND
 };
+
+// free functions
+// NOLINTBEGIN
+MCNAPI bool operator==(::DebuggerStat const&, ::DebuggerStat const&);
+// NOLINTEND

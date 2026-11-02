@@ -6,6 +6,7 @@
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/gamemode/entity_attack/ValidationMode.h"
 #include "mc/world/inventory/transaction/IItemUseTransactionSubject.h"
 #include "mc/world/item/HandSlot.h"
 
@@ -102,42 +103,44 @@ public:
     virtual ::DepenetrationComponent& getDepenetrationComponent() /*override*/;
 
     virtual ::Experiments const& getExperiments() const /*override*/;
+
+    virtual ::EntityAttack::ValidationMode getEntityAttackRequestCompatibilityMode() const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
+    MCNAPI void $setSelectedSlot(int slot, ::ContainerID containerId);
 
-    MCFOLD bool $isAlive() const;
+    MCNAPI bool $isAlive() const;
 
-    MCAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
+    MCNAPI ::ItemStack $unwrapItem(::NetworkItemStackDescriptor const& item) const;
 
-    MCAPI ::ItemStack const& $getItemInHandSlot(::HandSlot const slot) const;
+    MCNAPI ::ItemStack const& $getItemInHandSlot(::HandSlot const slot) const;
 
-    MCAPI void $setItemInHandSlot(::HandSlot const slot, ::ItemStack const& item);
+    MCNAPI void $setItemInHandSlot(::HandSlot const slot, ::ItemStack const& item);
 
-    MCAPI ::PlayerInventorySlotData $getSelectedSlot() const;
+    MCNAPI ::PlayerInventorySlotData $getSelectedSlot() const;
 
-    MCAPI float $getMaxPickRange() const;
+    MCNAPI float $getMaxPickRange() const;
 
-    MCAPI ::Vec3 $getPosition() const;
+    MCNAPI ::Vec3 $getPosition() const;
 
-    MCAPI void $setPosition(::Vec3 const& position);
+    MCNAPI void $setPosition(::Vec3 const& position);
 
-    MCAPI void $createTransactionContext(
+    MCNAPI void $createTransactionContext(
         ::HandSlot                                                                                  handSlot,
         ::brstd::copyable_function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::brstd::function_ref<void()>                                                               execute
     );
 
-    MCAPI void $addExpectedAction(::InventoryAction const& action);
+    MCNAPI void $addExpectedAction(::InventoryAction const& action);
 
-    MCAPI bool $baseUseItem(::ItemStack& item, ::HandSlot const handSlot);
+    MCNAPI bool $baseUseItem(::ItemStack& item, ::HandSlot const handSlot);
 
-    MCAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
+    MCNAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
 
-    MCAPI ::InteractionResult $useItemOn(
+    MCNAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -147,27 +150,29 @@ public:
         bool              isFirstEvent
     );
 
-    MCAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
+    MCNAPI void $resendBlocksAroundArea(::BlockPos const& pos, uchar facing) const;
 
-    MCAPI void $resendPlayerState() const;
+    MCNAPI void $resendPlayerState() const;
 
-    MCAPI void $sendPlayerInventory() const;
+    MCNAPI void $sendPlayerInventory() const;
 
-    MCAPI bool $isSneaking() const;
+    MCNAPI bool $isSneaking() const;
 
-    MCAPI ::Block const& $unwrapBlock(uint const& block) const;
+    MCNAPI ::Block const& $unwrapBlock(uint const& block) const;
 
-    MCAPI ::Block const& $getBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getBlock(::BlockPos const& pos) const;
 
-    MCAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
+    MCNAPI ::Block const& $getExtraBlock(::BlockPos const& pos) const;
 
-    MCAPI bool $isLastBuildBlockInteractive() const;
+    MCNAPI bool $isLastBuildBlockInteractive() const;
 
-    MCAPI void $sendBlockInteractedWith(::BlockPos const& pos);
+    MCNAPI void $sendBlockInteractedWith(::BlockPos const& pos);
 
-    MCAPI ::DepenetrationComponent& $getDepenetrationComponent();
+    MCNAPI ::DepenetrationComponent& $getDepenetrationComponent();
 
-    MCAPI ::Experiments const& $getExperiments() const;
+    MCNAPI ::Experiments const& $getExperiments() const;
+
+    MCNAPI ::EntityAttack::ValidationMode $getEntityAttackRequestCompatibilityMode() const;
 
 
     // NOLINTEND

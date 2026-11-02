@@ -25,13 +25,13 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updateSleepingPlayerList();
+    MCNAPI void $updateSleepingPlayerList();
 
 
     // NOLINTEND

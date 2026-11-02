@@ -29,16 +29,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addGoal(int priority, ::std::unique_ptr<::BaseGoal> goal);
+    MCNAPI void addGoal(int priority, ::std::unique_ptr<::BaseGoal> goal);
 
-    MCAPI void buildDebugInfo(::std::string& out) const;
+    MCNAPI void buildDebugInfo(::std::string& out) const;
 
-    MCAPI void clearAllGoals();
+    MCNAPI void clearAllGoals();
 
-    MCAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCAPI bool removeGoal(::GoalId typeId);
+    MCNAPI bool removeGoal(::GoalId typeId);
 
-    MCAPI void stopNonTargetedGoals();
+    MCNAPI void stopNonTargetedGoals();
     // NOLINTEND
 };

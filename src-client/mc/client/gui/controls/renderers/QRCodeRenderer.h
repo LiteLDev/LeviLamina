@@ -23,7 +23,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>        mQrCodeContent;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mForegroundColor;
     ::ll::TypedStorage<4, 16, ::mce::Color>         mBackgroundColor;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture> mTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture> mTexture;
     // NOLINTEND
 
 public:
@@ -44,19 +44,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCFOLD ::UIBatchType $getBatchType() const;
+    MCNAPI ::UIBatchType $getBatchType() const;
 
-    MCFOLD int $getCustomId() const;
+    MCNAPI int $getCustomId() const;
     // NOLINTEND
 
 public:

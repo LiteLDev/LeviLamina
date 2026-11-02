@@ -20,11 +20,11 @@ public:
     MCAPI SlotData(::std::string const& collectionName, int collectionIndex);
 
 #ifdef LL_PLAT_C
-    MCAPI bool matches(::SlotData const& other) const;
+    MCNAPI bool matches(::SlotData const& other) const;
 
-    MCAPI bool operator!=(::SlotData const& other) const;
+    MCNAPI bool operator!=(::SlotData const& other) const;
 
-    MCAPI void set(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void set(::std::string const& collectionName, int collectionIndex);
 #endif
 
     MCAPI ~SlotData();
@@ -33,7 +33,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SlotData& UNKNOWN_LOCATION();
+    MCNAPI static ::SlotData& UNKNOWN_LOCATION();
     // NOLINTEND
 
 public:

@@ -10,7 +10,7 @@ namespace FeatureLoading { struct VersionInfo; }
 namespace FeatureLoading {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<::FeatureLoading::VersionInfo const[]> FeatureVersionToFormatMap();
+MCNAPI ::std::add_lvalue_reference_t<::FeatureLoading::VersionInfo const[]> FeatureVersionToFormatMap();
 // NOLINTEND
 
 } // namespace FeatureLoading

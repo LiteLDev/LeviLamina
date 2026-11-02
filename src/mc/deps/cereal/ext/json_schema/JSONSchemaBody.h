@@ -45,25 +45,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI JSONSchemaBody(::cereal::ext::internal::JSONSchemaBody const&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody&&);
 
-    MCAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI ::cereal::ext::internal::JSONSchemaBody& operator=(::cereal::ext::internal::JSONSchemaBody const&);
 
-    MCAPI ~JSONSchemaBody();
+    MCNAPI ~JSONSchemaBody();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);
+    MCNAPI void* $ctor(::cereal::ext::internal::JSONSchemaBody const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

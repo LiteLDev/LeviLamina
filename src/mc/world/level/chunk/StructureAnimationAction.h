@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureAnimationAction(
+    MCNAPI StructureAnimationAction(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -54,18 +54,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::StructureAnimationAction>
-    load(::CompoundTag const& tag, ::std::string const& dimensionPrefix);
-#endif
-    // NOLINTEND
-
-public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StructureSettings const& structureSettings,
         ::DimensionType            dimensionType,
         ::BlockPos const&          loadPosition,
@@ -76,9 +67,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
+    MCNAPI void $execute(::ServerLevel& level, ::Dimension& dimension);
 
-    MCAPI void $serialize(::CompoundTag& tag);
+    MCNAPI void $serialize(::CompoundTag& tag);
 
 
     // NOLINTEND

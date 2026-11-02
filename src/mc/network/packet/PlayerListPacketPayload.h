@@ -34,6 +34,7 @@ public:
         ::ll::TypedStorage<8, 8, ::ActorUniqueID>        mId;
         ::ll::TypedStorage<8, 32, ::std::string>         mName;
         ::ll::TypedStorage<8, 32, ::std::string>         mXUID;
+        ::ll::TypedStorage<8, 32, ::std::string>         mPlayFabId;
         ::ll::TypedStorage<8, 32, ::std::string>         mPlatformOnlineId;
         ::ll::TypedStorage<4, 4, ::BuildPlatform>        mBuildPlatform;
         ::ll::TypedStorage<8, 16, ::SerializedSkinRef>   mSkin;
@@ -72,14 +73,14 @@ public:
         // NOLINTBEGIN
         MCAPI AddEntry(::PlayerListPacketPayload::AddEntry const&);
 
-        MCAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry&&);
+        MCNAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry&&);
 
-        MCAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry const&);
+        MCNAPI ::PlayerListPacketPayload::AddEntry& operator=(::PlayerListPacketPayload::AddEntry const&);
 
-        MCAPI bool operator==(::PlayerListPacketPayload::AddEntry const& other) const;
+        MCNAPI bool operator==(::PlayerListPacketPayload::AddEntry const& other) const;
 
 #ifdef LL_PLAT_C
-        MCAPI ::PlayerListEntry toPlayerListEntry() const;
+        MCNAPI ::PlayerListEntry toPlayerListEntry() const;
 #endif
 
         MCAPI ~AddEntry();

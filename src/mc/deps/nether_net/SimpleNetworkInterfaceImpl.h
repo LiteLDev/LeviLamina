@@ -11,6 +11,7 @@
 #include "mc/deps/nether_net/ISignalingEventHandler.h"
 #include "mc/deps/nether_net/SignalingChannelId.h"
 #include "mc/deps/nether_net/utils/ErrorOr.h"
+#include "mc/external/webrtc/PeerConnectionInterface.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -47,9 +48,10 @@ public:
     ::ll::UntypedStorage<8, 8>   mUnk407f9c;
     ::ll::UntypedStorage<8, 8>   mUnkb5d73e;
     ::ll::UntypedStorage<8, 80>  mUnka71ac8;
+    ::ll::UntypedStorage<8, 80>  mUnk56d4d8;
     ::ll::UntypedStorage<8, 416> mUnkcf1ee0;
-    ::ll::UntypedStorage<1, 1>   mUnk49643d;
-    ::ll::UntypedStorage<1, 1>   mUnkbea55f;
+    ::ll::UntypedStorage<1, 1>   mUnk2d030b;
+    ::ll::UntypedStorage<1, 1>   mUnk28957f;
     ::ll::UntypedStorage<8, 16>  mUnk6e9a1e;
     ::ll::UntypedStorage<8, 16>  mUnkd76d91;
     ::ll::UntypedStorage<8, 16>  mUnk9e7ad4;
@@ -143,9 +145,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Finalize();
+    MCNAPI ::webrtc::PeerConnectionInterface::RTCConfiguration GetRTCConfig(::NetherNet::NetworkID peerId) const;
 
-    MCAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
+    MCNAPI void Initialize(::NetherNet::INetherNetTransportInterfaceCallbacks* pCallbacks);
 
     MCAPI void ReceiveFromSignalingChannel(
         ::NetherNet::NetworkID          from,
@@ -153,7 +155,7 @@ public:
         ::NetherNet::SignalingChannelId sourceChannel
     );
 
-    MCAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
+    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
         ::NetherNet::NetworkID networkIDTo,
         ::std::variant<
             ::NetherNet::ConnectRequest,
@@ -163,7 +165,7 @@ public:
         ::std::optional<::NetherNet::SignalingChannelId> preference
     );
 
-    MCAPI SimpleNetworkInterfaceImpl(
+    MCNAPI SimpleNetworkInterfaceImpl(
         ::NetherNet::ContextProxy const&           ctx,
         ::NetherNet::NetworkID const&              networkID,
         ::NetherNet::TransportConfiguration const& configuration
@@ -173,7 +175,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::NetherNet::ContextProxy const&           ctx,
         ::NetherNet::NetworkID const&              networkID,
         ::NetherNet::TransportConfiguration const& configuration
@@ -183,67 +185,67 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $SendPacket(
+    MCNAPI bool $SendPacket(
         ::NetherNet::NetworkID remoteId,
         uint64                 connectionId,
         ::std::string const&   data,
         ::NetherNet::ESendType eSendType
     );
 
-    MCAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
+    MCNAPI bool $IsPacketAvailable(::NetherNet::NetworkID remoteId, uint64 connectionId, uint* pcbMessageSize);
 
-    MCAPI bool
+    MCNAPI bool
     $ReadPacket(::NetherNet::NetworkID remoteId, uint64 connectionId, void* pubDest, uint cbDest, uint* pcbMessageSize);
 
-    MCAPI bool $OpenSessionWithUser(
+    MCNAPI bool $OpenSessionWithUser(
         ::NetherNet::NetworkID                                      networkIDRemote,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     );
 
-    MCAPI void $SetIdentityGenerator(::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator);
+    MCNAPI void $SetIdentityGenerator(::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator);
 
-    MCAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
+    MCNAPI bool $CloseSessionWithUser(::NetherNet::NetworkID networkIDRemote, uint64 connectionId);
 
-    MCAPI bool $GetSessionState(
+    MCNAPI bool $GetSessionState(
         ::NetherNet::NetworkID     networkIDRemote,
         uint64                     connectionId,
         ::NetherNet::SessionState* pConnectionState
     );
 
-    MCAPI void
+    MCNAPI void
     $SetSignalingInterface(::std::shared_ptr<::NetherNet::ISignalingInterface> const& pWebRTCSignalingInterface);
 
-    MCAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
+    MCNAPI void $SetRelayConfig(::std::vector<::NetherNet::StunRelayServer> const& config);
 
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ILanEventHandler* handler);
 
-    MCAPI bool $IsBroadcastDiscoveryEnabled();
+    MCNAPI bool $IsBroadcastDiscoveryEnabled();
 
-    MCAPI void $EnableBroadcastDiscovery();
+    MCNAPI void $EnableBroadcastDiscovery();
 
-    MCAPI void $DisableBroadcastDiscovery();
+    MCNAPI void $DisableBroadcastDiscovery();
 
-    MCAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port);
+    MCNAPI void $AddLanHost(::NetherNet::NetworkID remote, ::std::string const& ip, int port);
 
-    MCAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
+    MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
 
-    MCAPI void $EnableLANSignaling();
+    MCNAPI void $EnableLANSignaling();
 
-    MCAPI void $DisableLANSignaling();
+    MCNAPI void $DisableLANSignaling();
 
-    MCAPI void $EnableTrickleIce();
+    MCNAPI void $EnableTrickleIce();
 
-    MCAPI void $DisableTrickleIce();
+    MCNAPI void $DisableTrickleIce();
 
-    MCAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
+    MCNAPI void $OnSignalingEvent(::NetherNet::SignalingEvents::MessageReceived const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::MessageReceived const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryRequest const& event);
 
-    MCAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
+    MCNAPI void $OnLanEvent(::NetherNet::LanEvents::DiscoveryResponse const& event);
 
 
     // NOLINTEND

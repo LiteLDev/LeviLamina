@@ -19,13 +19,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BezierChainNodeMap();
+    MCNAPI ~BezierChainNodeMap();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

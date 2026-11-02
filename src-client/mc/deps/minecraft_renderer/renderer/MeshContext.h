@@ -35,7 +35,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ShaderColor&>                                        currentShaderDarkColor;
     ::ll::TypedStorage<8, 8, ::mce::BufferResourceService&>                         bufferResourceService;
     ::ll::TypedStorage<8, 8, ::mce::QuadIndexBuffer&>                               currentQuadIndexBuffer;
-    ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::mce::ImmediateBuffer>> immediateBuffer;
+    ::ll::TypedStorage<8, 16, ::mce::ServerResourcePointer<::mce::ImmediateBuffer>> immediateBuffer;
     ::ll::TypedStorage<4, 20, ::std::optional<::glm::vec4>>                         normalizedClipRegion;
     ::ll::TypedStorage<1, 1, uchar>                                                 subClientId;
     ::ll::TypedStorage<1, 1, bool>                                                  isDrawingUI;

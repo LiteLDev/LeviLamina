@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/platform/brstd/flat_map.h"
+
 // auto generated forward declare list
 // clang-format off
 namespace Json { class Value; }
@@ -56,15 +59,21 @@ public:
         int                                                               eventTags
     );
 
-#ifdef LL_PLAT_C
     MCNAPI bool _areAllPropertiesEqual(::Social::Events::Event const& other) const;
-#endif
 
     MCNAPI bool _areUniquePropertiesEqual(::Social::Events::Event const& other) const;
 
     MCNAPI void addMeasurement(::Social::Events::Measurement const& measurement);
 
     MCNAPI void addProperty(::Social::Events::Property const& property, bool isUniqueProperty);
+
+    MCNAPI ::brstd::flat_map<
+        ::std::string,
+        ::std::vector<::Social::Events::Property>,
+        ::std::less<::std::string>,
+        ::std::vector<::std::string>,
+        ::std::vector<::std::vector<::Social::Events::Property>>>
+    getCompoundsAsDynamicProperties() const;
 
     MCNAPI ::std::optional<::std::reference_wrapper<::Social::Events::Property const>>
     getProperty(::std::string const& propertyName) const;

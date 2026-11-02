@@ -97,65 +97,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadFromBaseCommandBlock();
+    MCNAPI void _loadFromBaseCommandBlock();
 
-    MCAPI void _saveToBaseCommandBlock(::BaseCommandBlock& baseCommandBlock);
+    MCNAPI void _saveToBaseCommandBlock(::BaseCommandBlock& baseCommandBlock);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init();
+    MCNAPI void $init();
 
-    MCAPI bool $setCommand(::std::string const& command);
+    MCNAPI bool $setCommand(::std::string const& command);
 
-    MCAPI bool $setHoverName(::Bedrock::Safety::RedactableString const& name);
+    MCNAPI bool $setHoverName(::Bedrock::Safety::RedactableString const& name);
 
-    MCAPI bool $setTickDelay(uint delay);
+    MCNAPI bool $setTickDelay(uint delay);
 
-    MCAPI bool $setShouldExecuteOnFirstTick(bool shouldExecute);
+    MCNAPI bool $setShouldExecuteOnFirstTick(bool shouldExecute);
 
-    MCAPI bool $setLastOutput(::std::string const& lastOutput);
+    MCNAPI bool $setLastOutput(::std::string const& lastOutput);
 
-    MCAPI bool $setTrackOutput(bool trackOutput);
+    MCNAPI bool $setTrackOutput(bool trackOutput);
 
-    MCFOLD bool $setBlockTypeMode(::CommandBlockMode mode);
+    MCNAPI bool $setBlockTypeMode(::CommandBlockMode mode);
 
-    MCFOLD bool $setConditional(bool mode);
+    MCNAPI bool $setConditional(bool mode);
 
-    MCFOLD bool $setRedstone(bool mode);
+    MCNAPI bool $setRedstone(bool mode);
 
-    MCAPI void $saveAndExit();
+    MCNAPI void $saveAndExit();
 
-    MCFOLD ::std::string const& $getCommand() const;
+    MCNAPI ::std::string const& $getCommand() const;
 
-    MCFOLD ::std::string const& $getOutput() const;
+    MCNAPI ::std::string const& $getOutput() const;
 
-    MCAPI bool $getTrackOutput() const;
+    MCNAPI bool $getTrackOutput() const;
 
-    MCFOLD bool $isConditionalMode() const;
+    MCNAPI bool $isConditionalMode() const;
 
-    MCFOLD bool $isRedstoneMode() const;
+    MCNAPI bool $isRedstoneMode() const;
 
-    MCFOLD bool $isMinecartCommandBlock() const;
+    MCNAPI bool $isMinecartCommandBlock() const;
 
-    MCFOLD ::CommandBlockMode $getCommandBlockTypeMode() const;
+    MCNAPI ::CommandBlockMode $getCommandBlockTypeMode() const;
 
-    MCFOLD bool $getLastPerformedConditionalMode();
+    MCNAPI bool $getLastPerformedConditionalMode();
 
-    MCFOLD bool $getLastPerformedRedstoneMode();
+    MCNAPI bool $getLastPerformedRedstoneMode();
 
-    MCFOLD ::CommandBlockMode $getLastPerformedCBMode();
+    MCNAPI ::CommandBlockMode $getLastPerformedCBMode();
 
-    MCFOLD ::Bedrock::Safety::RedactableString const& $getHoverName() const;
+    MCNAPI ::Bedrock::Safety::RedactableString const& $getHoverName() const;
 
-    MCFOLD uint $getTickDelay() const;
+    MCNAPI uint $getTickDelay() const;
 
-    MCAPI bool $shouldExecuteOnFirstTick() const;
+    MCNAPI bool $shouldExecuteOnFirstTick() const;
 
-    MCAPI ::BaseCommandBlock* $getBaseCommandBlock();
+    MCNAPI ::BaseCommandBlock* $getBaseCommandBlock();
 
-    MCAPI ::std::unique_ptr<::CommandOrigin> $getCommandOrigin() const;
+    MCNAPI ::std::unique_ptr<::CommandOrigin> $getCommandOrigin() const;
     // NOLINTEND
 
 public:

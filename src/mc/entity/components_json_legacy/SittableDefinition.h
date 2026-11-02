@@ -24,13 +24,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void uninitialize(::EntityContext& entity, ::SitComponent&) const;
+    MCNAPI void uninitialize(::EntityContext& entity, ::SitComponent&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::SittableDefinition>>& root
     );
     // NOLINTEND

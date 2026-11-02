@@ -26,6 +26,11 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BaseScriptBlockLiquidContainerComponentV010& operator=(BaseScriptBlockLiquidContainerComponentV010 const&);
+    BaseScriptBlockLiquidContainerComponentV010();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::Scripting::Result_deprecated<void> setFillLevel(int level);
@@ -34,20 +39,40 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI BaseScriptBlockLiquidContainerComponentV010(
+        ::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&
+    );
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ScriptModuleMinecraft::ScriptFluidType
+    MCNAPI static ::ScriptModuleMinecraft::ScriptFluidType
     _getActualCauldronLiquidType(::BlockActor& blockActor, ::BlockSource& region, ::BlockPos position);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::BaseScriptBlockLiquidContainerComponentV010 const&);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
+    MCNAPI ::Scripting::Result_deprecated<void> $setFillLevel(int level);
 
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

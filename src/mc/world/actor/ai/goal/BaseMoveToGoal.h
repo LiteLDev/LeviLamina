@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseMoveToGoal(
+    MCNAPI BaseMoveToGoal(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -88,7 +88,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -101,27 +101,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI bool $hasReachedTarget() const;
+    MCNAPI bool $hasReachedTarget() const;
 
-    MCAPI int $_nextStartTick();
+    MCNAPI int $_nextStartTick();
 
-    MCAPI bool $_canReach(::BlockPos const& pos);
+    MCNAPI bool $_canReach(::BlockPos const& pos);
 
-    MCAPI ::Vec3 $_getTargetPosition() const;
+    MCNAPI ::Vec3 $_getTargetPosition() const;
 
-    MCFOLD uint64 $_getRepathTime() const;
+    MCNAPI uint64 $_getRepathTime() const;
 
-    MCFOLD void $setInterval(int const interval);
+    MCNAPI void $setInterval(int const interval);
 
 
     // NOLINTEND

@@ -3,11 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/FileBufferingMode.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/string/BasicStackString.h"
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class FileOpenMode; }
 namespace Core { class PathView; }
 namespace Core { class Result; }
 namespace brstd { struct source_location; }
@@ -33,6 +35,9 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Core::Result close();
+
+    MCNAPI ::Core::Result
+    open(::Core::PathView fileName, ::Core::FileOpenMode openMode, ::Core::FileBufferingMode bufferingMode);
 
     MCNAPI ~File();
     // NOLINTEND

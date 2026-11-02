@@ -5,7 +5,7 @@
 namespace OreUI::EntryPoints::SignInWorldsFriendsServers {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::std::string const& redirectTo);
+MCNAPI ::std::string composeRoute(::std::string const& redirectTo);
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::SignInWorldsFriendsServers

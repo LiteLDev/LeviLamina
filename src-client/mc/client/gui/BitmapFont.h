@@ -20,14 +20,18 @@ class BitmapFont : public ::Font {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mAsciiFontName;
-    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>> mUnicodeFontName;
-    ::ll::TypedStorage<4, 1024, float[256]>                      mCharWidths;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::Image>>   mBitmapFontImage;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodeWidths;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodeOffsets;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>  mUnicodePageGlyphWidths;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>>         mSheetScannedForWidthsAndOffsets;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                          mAsciiFontName;
+    ::ll::TypedStorage<8, 32, ::Core::PathBuffer<::std::string>>                          mUnicodeFontName;
+    ::ll::TypedStorage<1, 1, uchar>                                                       mAsciiSheetCount;
+    ::ll::TypedStorage<1, 1, uchar>                                                       mAsciiCharacterHeight;
+    ::ll::TypedStorage<4, 4, int>                                                         mAsciiCharacterYOffset;
+    ::ll::TypedStorage<1, 1, bool>                                                        mUseExtendedAscii;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::array<float, 256>>>        mCharWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::shared_ptr<::mce::Image>>> mBitmapFontImages;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodeWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodeOffsets;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<int, float>>                           mUnicodePageGlyphWidths;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<int>> mSheetScannedForWidthsAndOffsets;
     // NOLINTEND
 
 public:
@@ -64,6 +68,8 @@ public:
 
     virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const /*override*/;
 
+    virtual float getGlyphHeight(int glyphSheet, bool isUnicode) const /*override*/;
+
     virtual void loadFontData(bool uploadTextureImmediately) /*override*/;
 
     virtual float buildChar(
@@ -83,30 +89,40 @@ public:
 
     virtual ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     getFontSources() const /*override*/;
+
+    virtual uchar _getAsciiSheetCount() const /*override*/;
+
+    virtual int _getAsciiGlyphsPerPage() const /*override*/;
+
+    virtual bool _usesLegacyAsciiMapping() const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BitmapFont(::BitmapFont const& rhs);
+    MCNAPI BitmapFont(::BitmapFont const& rhs);
 
-    MCAPI BitmapFont(
+    MCNAPI BitmapFont(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        uchar                                  asciiSheetCount,
         bool                                   uploadOnConstruction
     );
+
+    MCNAPI ::Core::PathBuffer<::std::string> getAsciiFontNameWithPage(uchar const page) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BitmapFont const& rhs);
+    MCNAPI void* $ctor(::BitmapFont const& rhs);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::Path const&                    asciiName,
         ::Core::Path const&                    unicodeName,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
+        uchar                                  asciiSheetCount,
         bool                                   uploadOnConstruction
     );
     // NOLINTEND
@@ -114,33 +130,35 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $_getCharWidth(int uniChar, bool forceUnicode);
+    MCNAPI float $_getCharWidth(int uniChar, bool forceUnicode);
 
-    MCAPI bool $supportsChar(int const& character);
+    MCNAPI bool $supportsChar(int const& character);
 
-    MCAPI float $getWrapHeight() const;
+    MCNAPI float $getWrapHeight() const;
 
-    MCAPI float $getScaleFactor(int c) const;
+    MCNAPI float $getScaleFactor(int c) const;
 
-    MCAPI float $getScaleFactor() const;
+    MCNAPI float $getScaleFactor() const;
 
-    MCFOLD bool $isScreenPixelAligned() const;
+    MCNAPI bool $isScreenPixelAligned() const;
 
-    MCFOLD bool $materialCanBeOverridden() const;
+    MCNAPI bool $materialCanBeOverridden() const;
 
-    MCAPI void $uploadTextureToGPU();
+    MCNAPI void $uploadTextureToGPU();
 
-    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+    MCNAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD bool $_supportsShadowInSingleDraw();
+    MCNAPI bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
+    MCNAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool forceUnicode) const;
 
-    MCAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCNAPI ::mce::MaterialPtr const& $getMaterial(int sheet, bool isOddGuiScale) const;
 
-    MCAPI void $loadFontData(bool uploadTextureImmediately);
+    MCNAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
 
-    MCAPI float $buildChar(
+    MCNAPI void $loadFontData(bool uploadTextureImmediately);
+
+    MCNAPI float $buildChar(
         ::std::vector<::Font::GlyphQuad>& quads,
         int                               i,
         ::mce::Color const&               color,
@@ -150,12 +168,18 @@ public:
         bool                              unicode
     );
 
-    MCAPI ::Core::PathBuffer<::std::string>
+    MCNAPI ::Core::PathBuffer<::std::string>
     $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
-    MCAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
+    MCNAPI void $switchFontsource(::Core::Path const& asciiName, ::Core::Path const& unicodeName);
 
-    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    MCNAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
+
+    MCNAPI uchar $_getAsciiSheetCount() const;
+
+    MCNAPI int $_getAsciiGlyphsPerPage() const;
+
+    MCNAPI bool $_usesLegacyAsciiMapping() const;
     // NOLINTEND
 };

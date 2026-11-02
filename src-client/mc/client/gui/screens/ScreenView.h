@@ -152,6 +152,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mLastPointInTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mCurrentTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::nanoseconds>                                mTimeAccumulator;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::steady_clock::time_point>> mScreenEntranceTime;
+    ::ll::TypedStorage<8, 16, ::std::optional<::std::chrono::nanoseconds>>              mTimeToFirstRender;
     ::ll::TypedStorage<4, 4, ::std::chrono::duration<float, ::std::ratio<1, 1>> const>  mFixedAnimationUpdateRate;
     ::ll::TypedStorage<4, 4, float>                                                     mKeyboardHeight;
     ::ll::TypedStorage<1, 1, bool>                                                      mShouldShowKeyboard;
@@ -194,33 +196,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _adjustScrollToControl(::UIControl& control);
+    MCNAPI void _adjustScrollToControl(::UIControl& control);
 
-    MCAPI void
+    MCNAPI void
     _adjustScrollToFocusedControl(::UIControl& focusedControl, bool selectNearestControl, bool isRightStickScrolling);
 
-    MCAPI void _advanceToNextTab(bool right);
+    MCNAPI void _advanceToNextTab(bool right);
 
-    MCAPI void _bindData(bool doAllBinds);
+    MCNAPI void _bindData(bool doAllBinds);
 
-    MCAPI void
+    MCNAPI void
     _changeInputControlCollection(::UIControl& control, ::ControlCollectionChange change, bool const isRemoveCallback);
 
-    MCAPI void _debugRenderControl(::UIRenderContext& context, ::UIControl const& control) const;
+    MCNAPI void _debugRenderControl(::UIRenderContext& context, ::UIControl const& control) const;
 
-    MCAPI void _debugRenderFocusControl(
+    MCNAPI void _debugRenderFocusControl(
         ::UIRenderContext&                 context,
         ::UIControl const&                 control,
         ::std::vector<::UIControl const*>& visited
     ) const;
 
-    MCAPI void _deselectControl(bool forceDeselect, bool hoverAfterDeselect);
+    MCNAPI void _deselectControl(bool forceDeselect, bool hoverAfterDeselect);
 
-    MCAPI void _executeDelayedCommands(::ScreenView::DelayedCommandLocation location);
+    MCNAPI void _executeDelayedCommands(::ScreenView::DelayedCommandLocation location);
 
     MCAPI void _fireSelectedStateChangeEvent(::TextEditComponent const& textEditComponent, bool state);
 
-    MCAPI void _fireTextChangedEvent(
+    MCNAPI void _fireTextChangedEvent(
         bool                  finished,
         ::TextCharEventResult result,
         uint                  id,
@@ -228,18 +230,18 @@ public:
         ::UIPropertyBag*      propertyBag
     );
 
-    MCAPI void _focusChangeCallback(
+    MCNAPI void _focusChangeCallback(
         ::std::weak_ptr<::UIControl> previousFocusControl,
         ::std::weak_ptr<::UIControl> currentFocusControl
     );
 
-    MCAPI void _forwardEventToAnimationControls(::ScreenEvent const& screenEvent);
+    MCNAPI void _forwardEventToAnimationControls(::ScreenEvent const& screenEvent);
 
-    MCAPI ::std::shared_ptr<::UIControl> _getGamepadCursorFocusedControl() const;
+    MCNAPI ::std::shared_ptr<::UIControl> _getGamepadCursorFocusedControl() const;
 
-    MCAPI ::ScreenSettings const* _getScreenComponent() const;
+    MCNAPI ::ScreenSettings const* _getScreenComponent() const;
 
-    MCAPI void _handleDirtyVisualTree(bool overrideFocusControl, bool doAllBinds);
+    MCNAPI void _handleDirtyVisualTree(bool overrideFocusControl, bool doAllBinds);
 
     MCAPI void _handlePointerLocation(
         ::glm::vec2 const& position,
@@ -248,107 +250,104 @@ public:
         bool               isRightStickScrolling
     );
 
-    MCAPI void _handleStickScrolling(::DirectionId directionId);
+    MCNAPI void _handleStickScrolling(::DirectionId directionId);
 
-    MCAPI void _passViewCommand();
+    MCNAPI void _processControllerDirection(::DirectionId directionId);
 
-    MCAPI void _processControllerCursorMove(::DirectionId directionId);
+    MCNAPI void _processEvents(::ScreenInputContext& context);
 
-    MCAPI void _processControllerDirection(::DirectionId directionId);
-
-    MCAPI void _processEvents(::ScreenInputContext& context);
-
-    MCAPI void _queueTextToSpeechIfEnabled(
+    MCNAPI void _queueTextToSpeechIfEnabled(
         ::std::shared_ptr<::UIControl> focusedControl,
         bool                           excludeControlHeader,
         bool                           notInterruptible
     );
 
-    MCAPI void _queueTextToSpeechTextboxCharacter(::std::string const& inputStr);
+    MCNAPI void _queueTextToSpeechTextboxCharacter(::std::string const& inputStr);
 
-    MCAPI void _resetButtonState(::UIControl& control);
+    MCNAPI void _resetButtonState(::UIControl& control);
 
-    MCAPI void _resetFocusedControl();
+    MCNAPI void _resetFocusedControl();
 
-    MCAPI void
+    MCNAPI void
     _resetInputControl(::UIControl& control, ::InputComponent* const inputComponent, bool const handleModalChange);
 
-    MCAPI void _scrollToGridItem(::UIControl* gridControl, int itemIndex, int numItems);
+    MCNAPI void _scrollToGridItem(::UIControl* gridControl, int itemIndex, int numItems);
 
-    MCAPI void _selectControl(::UIControl& control, bool isHandlingTextChar);
+    MCNAPI void _selectControl(::UIControl& control, bool isHandlingTextChar);
 
-    MCAPI void _selectNextFocusObject(
+    MCNAPI void _selectNextFocusObject(
         ::ui::CardinalDirection direction,
         bool                    overrideOrigin,
         ::glm::vec2 const       overridePos,
         bool                    isRightStickScrolling
     );
 
-    MCAPI void _sendScrollEvent(::UIControl& parent, float delta) const;
+    MCNAPI void _sendScrollEvent(::UIControl& parent, float delta) const;
 
-    MCAPI void _setGamepadCursorFocusMode(bool focusModeEnabled);
+    MCNAPI void _setGamepadCursorFocusMode(bool focusModeEnabled);
 
-    MCAPI void _setKeyboardHeight(float height);
+    MCNAPI void _setKeyboardHeight(float height);
 
-    MCAPI void _setupControlFactoryCallbacks();
+    MCNAPI void _switchTabToTargetIndex(::std::vector<::std::shared_ptr<::UIControl>>& tabControls, int targetIndex);
 
-    MCAPI void _switchTabToTargetIndex(::std::vector<::std::shared_ptr<::UIControl>>& tabControls, int targetIndex);
+    MCNAPI bool _updateControlCollections(bool overrideFocusControl);
 
-    MCAPI bool _updateControlCollections(bool overrideFocusControl);
-
-    MCAPI void
+    MCNAPI void
     _updateFocusControl(bool forceUpdate, bool forceFocusToAdjust, bool isRightStickScrolling, bool isHandlingTextChar);
 
-    MCAPI void _updateInputAreas();
+    MCNAPI void _updateInputAreas();
 
-    MCAPI void _updateKeyboardVisibility();
+    MCNAPI void _updateKeyboardVisibility();
 
-    MCAPI void cleanInputComponents();
+    MCNAPI void cleanInputComponents();
 
-    MCAPI ::std::string getRoute() const;
+    MCNAPI ::std::string getRoute() const;
 
     MCAPI ::std::string getScreenName() const;
 
     MCAPI void handleButtonEvent(uint buttonId, ::ButtonState buttonState, ::FocusImpact focusImpact);
 
-    MCAPI bool
+    MCNAPI bool
     handlePointerLocation(::glm::vec2 const& position, bool forceMotionlessPointer, ::FocusImpact focusImpact);
 
-    MCAPI bool isGamepadDeflectionModeEnabled() const;
+    MCNAPI bool isGamepadDeflectionModeEnabled() const;
 
     MCAPI void render(::UIRenderContext& uiRenderContext);
 
-    MCAPI void resize();
+    MCNAPI void resize();
 
-    MCAPI void setInitialized();
+    MCNAPI void setInitialized();
 
-    MCAPI ~ScreenView();
+    MCNAPI ~ScreenView();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isFocusEnabled(::std::shared_ptr<::UIControl> const& control);
+    MCNAPI static bool _hasStateControlInDifferentTree(
+        ::UIControl const*                  currentVisualTreeRoot,
+        ::std::weak_ptr<::UIControl> const& stateControl
+    );
 
-    MCAPI static bool _isFocusMagnetEnabled(::std::shared_ptr<::UIControl> const& control);
+    MCNAPI static bool _isFocusMagnetEnabled(::std::shared_ptr<::UIControl> const& control);
 
-    MCAPI static bool _shouldBindChildren(bool doAllBinds, ::UIControl& control, ::DataBindingComponent& dataBinding);
+    MCNAPI static bool _shouldBindChildren(bool doAllBinds, ::UIControl& control, ::DataBindingComponent& dataBinding);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
+    MCNAPI static ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>&
     mDebugChangePublisher();
 
-    MCAPI static bool& sIsDebuggingFocus();
+    MCNAPI static bool& sIsDebuggingFocus();
 
-    MCAPI static bool& sRenderDebugControls();
+    MCNAPI static bool& sRenderDebugControls();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

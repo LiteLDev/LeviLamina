@@ -33,9 +33,8 @@ enum class ProgressHandlerType : int {
     CloudCommit           = 27,
     StorageMigration      = 28,
     SplitScreenAppearance = 29,
-    PartyEligibility      = 30,
-    WorldTransfer         = 31,
-    LegacyWorldsFetch     = 32,
-    ExperienceJoin        = 33,
-    Generic               = 34,
+    WorldTransfer         = 30,
+    LegacyWorldsFetch     = 31,
+    ExperienceJoin        = 32,
+    Generic               = 33,
 };

@@ -29,6 +29,8 @@ public:
 
     virtual bool isNaturalDimension() const = 0;
 
+    virtual bool shouldRenderClouds() const = 0;
+
     virtual ::DimensionType getDimensionId() const = 0;
 
     virtual void sendPacketForPosition(::BlockPos const& position, ::Packet const& packet, ::Player const* except) = 0;
@@ -64,7 +66,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
+    MCNAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
 
     // NOLINTEND

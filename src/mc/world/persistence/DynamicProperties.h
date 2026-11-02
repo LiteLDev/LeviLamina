@@ -46,44 +46,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::DynamicProperties::PropertyCollection const*
-    _getPropertyCollection(::std::string const& collectionName) const;
+    MCNAPI void clearCollection(::std::string const& collectionName);
 
-    MCFOLD ::DynamicProperties::PropertyCollection* _getPropertyCollection(::std::string const& collectionName);
+    MCNAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
 
-    MCAPI void clearCollection(::std::string const& collectionName);
-
-    MCAPI void deserialize(::CompoundTag const& root, ::cereal::ReflectionCtx const& ctx);
-
-    MCAPI ::std::variant<double, float, bool, ::std::string, ::Vec3> const*
+    MCNAPI ::std::variant<double, float, bool, ::std::string, ::Vec3> const*
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
-    MCAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
+    MCNAPI ::std::vector<::std::string> getDynamicPropertyIds(::std::string const& collectionName) const;
 
-    MCAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
+    MCNAPI uint64 getTotalByteCount(::std::string const& collectionName) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> serialize(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI bool removeDynamicProperty(::std::string const& key, ::std::string const& collectionName);
 
-    MCAPI void setDynamicProperty(
+    MCNAPI ::std::unique_ptr<::CompoundTag> serialize(::cereal::ReflectionCtx const& ctx) const;
+
+    MCNAPI void setDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
         ::std::string const&                                              collectionName
     );
 
-    MCAPI void updateCollectionName(::std::string const& from, ::std::string const& to);
+    MCNAPI void updateCollectionName(::std::string const& from, ::std::string const& to);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError> validateDynamicProperty(
+    MCNAPI static ::std::optional<::Scripting::ArgumentOutOfBoundsError> validateDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
     );
 
-    MCAPI static ::std::string validateDynamicProperty_V010(
+    MCNAPI static ::std::string validateDynamicProperty_V010(
         ::DynamicPropertyDefinition const*                                propertyDefinition,
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
@@ -93,6 +90,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& STORAGE_TAG();
+    MCNAPI static ::std::string const& STORAGE_TAG();
     // NOLINTEND
 };

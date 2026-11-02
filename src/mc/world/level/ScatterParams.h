@@ -110,30 +110,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScatterParams(::ScatterParams&&);
+    MCNAPI ScatterParams(::ScatterParams&&);
 
-    MCAPI ScatterParams(::ScatterParams const&);
+    MCNAPI ScatterParams(::ScatterParams const&);
 
-    MCAPI void fillFromData(
+    MCNAPI void fillFromData(
         ::SharedTypes::v1_21_10::ScatterParamsData const& data,
         ::MolangVersion                                   molangVersion,
         ::LogArea                                         logArea
     );
 
-    MCAPI void readSerializedScatterParamData(::BiomeScatterParamData const& data, ::BiomeStringList const& stringList);
+    MCNAPI void
+    readSerializedScatterParamData(::BiomeScatterParamData const& data, ::BiomeStringList const& stringList);
 
-    MCAPI ::ScatterParams::ScatteredPositions
+    MCNAPI ::ScatterParams::ScatteredPositions
     scatter(::RenderParams& molangParams, ::BlockPos const& pos, ::Random& random) const;
 
-    MCAPI void serializeScatterParamData(::BiomeScatterParamData& data, ::BiomeStringList& stringList) const;
+    MCNAPI void serializeScatterParamData(::BiomeScatterParamData& data, ::BiomeStringList& stringList) const;
 
-    MCAPI ~ScatterParams();
+    MCNAPI ~ScatterParams();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _fillCoordinateRangeFromData(
+    MCNAPI static void _fillCoordinateRangeFromData(
         ::std::string const&                                coordinateName,
         ::ScatterParams::CoordinateRange&                   coordinateRange,
         ::SharedTypes::v1_21_10::CoordinateRangeData const& coordinateRangeData,
@@ -141,29 +142,29 @@ public:
         ::LogArea                                           logArea
     );
 
-    MCAPI static void _parseExpressionNodeFloat(
+    MCNAPI static void _parseExpressionNodeFloat(
         ::ExpressionOp       op,
         ::std::string const& expression,
         ::ExpressionNode&    node,
         float                defaultValue
     );
 
-    MCAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::IRandom& random);
+    MCNAPI static void initMolangParams(::RenderParams& molangParams, ::BlockPos const& pos, ::IRandom& random);
 
-    MCAPI static void initScatterParamIndices();
+    MCNAPI static void initScatterParamIndices();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScatterParams&&);
+    MCNAPI void* $ctor(::ScatterParams&&);
 
-    MCAPI void* $ctor(::ScatterParams const&);
+    MCNAPI void* $ctor(::ScatterParams const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

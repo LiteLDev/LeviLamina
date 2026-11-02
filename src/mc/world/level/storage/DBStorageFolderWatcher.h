@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+struct FolderSizeAndModifyDateSnapshotMetrics;
+namespace Core { class PathView; }
 namespace Social::Events { class Event; }
 // clang-format on
 
@@ -24,13 +26,21 @@ public:
     ::ll::TypedStorage<8, 24, ::FolderSizeAndModifyDateSnapshot>                  mClosingSnapshot;
     ::ll::TypedStorage<8, 8, uint64>                                              mTelemetrySequence;
     ::ll::TypedStorage<8, 80, ::std::mutex>                                       mWriteMtx;
+    ::ll::TypedStorage<1, 1, bool>                                                mWorldExitSnapshotCaptureSucceeded;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::FolderSizeAndModifyDateSnapshotMetrics getCurrentSnapshotMetrics() const;
+
+    MCNAPI ::FolderSizeAndModifyDateSnapshotMetrics
+    getCurrentSnapshotMetrics(::Core::PathView relativeSubdirectory) const;
+
+    MCNAPI void pushSnapshot();
+
 #ifdef LL_PLAT_C
-    MCAPI void toTelemetryEvent(
+    MCNAPI void toTelemetryEvent(
         ::Social::Events::Event&               event,
         ::DBStorageFolderWatcherSnapshotKind   kind,
         ::Social::Events::PrivacyTagEnterprise privacyTag

@@ -26,6 +26,12 @@ public:
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::PlayerRole, ::Realms::PlayerRole>>             mRole;
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::FetchStatus, ::Realms::FetchStatus>> mFetchProfileStatus;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace OreUI

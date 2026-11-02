@@ -317,7 +317,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelRendererPlayer(
+    MCNAPI LevelRendererPlayer(
         ::IClientInstance&                                           clientInstance,
         ::std::shared_ptr<::OptionRegistry>                          options,
         ::Level&                                                     level,
@@ -328,7 +328,7 @@ public:
         ::SoundMapping const&                                        sounds
     );
 
-    MCAPI void _addTerrainEffect(
+    MCNAPI void _addTerrainEffect(
         ::HashedString const& effectName,
         ::BlockPos const&     pos,
         ::Block const&        block,
@@ -338,9 +338,9 @@ public:
         float                 emitterRadius
     );
 
-    MCAPI void _crack(::BlockSource& region, ::Block const& block, ::BlockPos const& inPos, uchar face);
+    MCNAPI void _crack(::BlockSource& region, ::Block const& block, ::BlockPos const& inPos, uchar face);
 
-    MCAPI void _renderHighlightSelection(
+    MCNAPI void _renderHighlightSelection(
         ::BaseActorRenderContext& renderContext,
         ::BlockSource&            region,
         ::Block const&            block,
@@ -349,24 +349,24 @@ public:
         bool                      fancyGraphics
     ) const;
 
-    MCAPI void _renderOutlineSelection(
+    MCNAPI void _renderOutlineSelection(
         ::BaseActorRenderContext& renderContext,
         ::Block const&            block,
         ::BlockSource&            region,
         ::BlockPos const&         pos
     ) const;
 
-    MCAPI void _spawnSmokeParticles(::ParticleType particleType, ::Vec3 const& pos, int data);
+    MCNAPI void _spawnSmokeParticles(::ParticleType particleType, ::Vec3 const& pos, int data);
 
-    MCAPI bool blockCanHaveCracksOverlay(::Block const& block) const;
+    MCNAPI bool blockCanHaveCracksOverlay(::Block const& block) const;
 
-    MCAPI bool blockCanHaveSelectionOverlay(::Block const& block) const;
+    MCNAPI bool blockCanHaveSelectionOverlay(::Block const& block) const;
 
-    MCAPI void bobHurt(::Matrix& mv, float a);
+    MCNAPI void bobHurt(::Matrix& mv, float a);
 
-    MCAPI void bobView(::Matrix& mv, float a);
+    MCNAPI void bobView(::Matrix& mv, float a);
 
-    MCAPI ::CrackRenderObject createCrackRenderObject(
+    MCNAPI ::CrackRenderObject createCrackRenderObject(
         ::ScreenContext&  screenContext,
         ::BlockSource&    region,
         ::Block const&    block,
@@ -376,15 +376,15 @@ public:
 
     MCAPI ::ViewRenderObject createViewRenderObject(::ScreenContext& screenContext, ::SubClientId clientSubId);
 
-    MCAPI void emitGrowthParticles(::Vec3 const& pos);
+    MCNAPI void emitGrowthParticles(::Vec3 const& pos);
 
-    MCAPI ::DirectionalLightRenderData getActiveDirectionalLight() const;
+    MCNAPI ::DirectionalLightRenderData getActiveDirectionalLight() const;
 
     MCAPI float getFov(float a, bool enableVariableFOV) const;
 
-    MCAPI void playDeferredSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+    MCNAPI void playDeferredSound(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
-    MCAPI void playSound(
+    MCNAPI void playSound(
         ::std::string const&                 name,
         ::Vec3 const&                        pos,
         float                                volume,
@@ -393,7 +393,7 @@ public:
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     ) const;
 
-    MCAPI void reinit(::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& terrainTexture);
+    MCNAPI void reinit(::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& terrainTexture);
 
     MCAPI void renderHitSelect(
         ::BaseActorRenderContext& renderContext,
@@ -404,15 +404,15 @@ public:
 
     MCAPI void setupCamera(::mce::Camera& camera, float);
 
-    MCAPI void stopMusic();
+    MCNAPI void stopMusic();
 
-    MCAPI void stopSound(::std::string const& name);
+    MCNAPI void stopSound(::std::string const& name);
 
-    MCAPI void stopSounds();
+    MCNAPI void stopSounds();
 
-    MCAPI void tryReassignSoundEventToVariant(::SharedTypes::Legacy::LevelSoundEvent& eventType, ::Vec3 const& pos);
+    MCNAPI void tryReassignSoundEventToVariant(::SharedTypes::Legacy::LevelSoundEvent& eventType, ::Vec3 const& pos);
 
-    MCAPI void tryReassignSoundToFallback(
+    MCNAPI void tryReassignSoundToFallback(
         ::SharedTypes::Legacy::LevelSoundEvent& eventType,
         ::Sound&                                sound,
         ::ActorSoundIdentifier const&           actorSoundIdentifier,
@@ -420,17 +420,15 @@ public:
         ::Random&                               random
     );
 
-    MCAPI void updateDestroyBlock(::BlockPos const& tp, float destroyRate);
+    MCNAPI void updateDestroyProgress();
 
-    MCAPI void updateDestroyProgress();
-
-    MCAPI void updateListenerState(float alpha);
+    MCNAPI void updateListenerState(float alpha);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float getActorShadowOffset(::EntityContext const& entity);
+    MCNAPI static float getActorShadowOffset(::EntityContext const& entity);
 
     MCAPI static ::TextureUVCoordinateSet getDestructionParticlesTexture(::IRandom& random, ::Block const& block);
     // NOLINTEND
@@ -438,7 +436,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                           clientInstance,
         ::std::shared_ptr<::OptionRegistry>                          options,
         ::Level&                                                     level,
@@ -453,50 +451,50 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::LevelRendererCameraType $getCameraType() const;
+    MCNAPI ::LevelRendererCameraType $getCameraType() const;
 
-    MCAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCNAPI void $frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI void $tickLevelRendererCamera();
+    MCNAPI void $tickLevelRendererCamera();
 
-    MCAPI void $tickRain();
+    MCNAPI void $tickRain();
 
-    MCAPI void $onWillChangeDimension(::Player& player);
+    MCNAPI void $onWillChangeDimension(::Player& player);
 
-    MCAPI void $onDimensionChanged(::Player& player);
+    MCNAPI void $onDimensionChanged(::Player& player);
 
-    MCAPI void $recalculateRenderDistance(float const renderDistanceScalar);
+    MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
-    MCAPI void $preRenderUpdate(
+    MCNAPI void $preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCFOLD void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
+    MCNAPI void $renderBlockEntities(::BaseActorRenderContext& renderContext, bool renderAlphaLayer);
 
-    MCAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCNAPI void $updateViewArea(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
+    MCNAPI ::NameTagRenderObjectCollection $extractNameTags(::ScreenContext& screenContext) const;
 
-    MCAPI void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
+    MCNAPI void $callRenderNameTags(::ScreenContext& screenContext, ::ViewRenderObject const& renderObj, ::Font& font);
 
-    MCAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
+    MCNAPI ::CrackRenderObjectCollection $extractCracks(::ScreenContext& screenContext) const;
 
-    MCAPI void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
+    MCNAPI void $callRenderCracks(::BaseActorRenderContext& renderContext, ::ViewRenderObject const& renderObj);
 
-    MCAPI bool $getForceFog(::Actor const& cameraActor) const;
+    MCNAPI bool $getForceFog(::Actor const& cameraActor) const;
 
-    MCAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
+    MCNAPI void $setupFog(::ScreenContext& screenContext, float const skyIntensityOverride);
 
-    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
+    MCNAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
 
-    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
+    MCNAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::CompoundTag const& data);
 
-    MCFOLD void $addCameraListenerToRenderChunkCoordinator();
+    MCNAPI void $addCameraListenerToRenderChunkCoordinator();
 
-    MCAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
+    MCNAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 
-    MCAPI void $addTerrainParticleEffect(
+    MCNAPI void $addTerrainParticleEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -505,7 +503,7 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void $addTerrainSlideEffect(
+    MCNAPI void $addTerrainSlideEffect(
         ::BlockPos const& pos,
         ::Block const&    block,
         ::Vec3 const&     emitterPosition,
@@ -514,29 +512,30 @@ public:
         float             emitterRadius
     );
 
-    MCAPI void $addBreakingItemParticleEffect(
+    MCNAPI void $addBreakingItemParticleEffect(
         ::Vec3 const&                     pos,
         ::BreakingItemParticleData const& data,
         ::ResolvedItemIconInfo const&     textureInfo
     );
 
-    MCAPI void $addBiomeTintedParticleEffect(
+    MCNAPI void $addBiomeTintedParticleEffect(
         ::HashedString const&         effect,
         ::BlockPos const&             pos,
         ::Block const&                block,
         ::std::optional<::mce::Color> overrideColor
     );
 
-    MCAPI float $getUnderwaterVisionClarity();
+    MCNAPI float $getUnderwaterVisionClarity();
 
-    MCAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
+    MCNAPI ::FogDefinition::DistanceSettingType $_getFogDistanceSettingType() const;
 
-    MCAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
+    MCNAPI ::FogDefinition::DensitySettingType $_getFogDensitySettingType() const;
 
-    MCAPI void $_releaseRespectiveResources();
+    MCNAPI void $_releaseRespectiveResources();
 
-    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
+    MCNAPI void
+    $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& levelRenderPreRenderUpdateParameters);
 
-    MCAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
+    MCNAPI void $renderEntityEffects(::BaseActorRenderContext& renderContext);
     // NOLINTEND
 };

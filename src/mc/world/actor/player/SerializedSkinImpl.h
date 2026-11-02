@@ -26,7 +26,6 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                                 mId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                 mPlayFabId;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mFullId;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mResourcePatch;
     ::ll::TypedStorage<8, 32, ::std::string>                                 mDefaultGeometryName;
@@ -56,13 +55,12 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinImpl();
 
-    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::ConnectionRequest const& request);
+    MCNAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
 
-    MCAPI SerializedSkinImpl(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCNAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
 
-    MCAPI SerializedSkinImpl(
+    MCNAPI SerializedSkinImpl(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,
@@ -82,26 +80,26 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCAPI bool operator==(::SerializedSkinImpl const& rhs) const;
+    MCNAPI bool operator==(::SerializedSkinImpl const& rhs) const;
 
-    MCAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
+    MCNAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
 
 #ifdef LL_PLAT_C
-    MCAPI void setCapeId(::std::string const& capeId);
+    MCNAPI void setCapeId(::std::string const& capeId);
 
-    MCAPI void setCapeImageData(::mce::Image const* image);
+    MCNAPI void setCapeImageData(::mce::Image const* image);
 
-    MCAPI void setImageData(::mce::Image const* image);
+    MCNAPI void setImageData(::mce::Image const* image);
 #endif
 
-    MCAPI void setPersonaAppearanceData(
+    MCNAPI void setPersonaAppearanceData(
         ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
         ::mce::Color const&                                                            skinColor,
         ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
         ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
 
-    MCAPI void updateGeometryName();
+    MCNAPI void updateGeometryName();
     // NOLINTEND
 
 public:
@@ -109,13 +107,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::ConnectionRequest const& request);
+    MCNAPI void* $ctor(::ConnectionRequest const& request);
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCNAPI void* $ctor(::SubClientConnectionRequest const& request);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,

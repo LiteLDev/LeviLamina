@@ -50,17 +50,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
-    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
+    MCNAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCAPI bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
+    MCNAPI bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
 
-    MCAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
 
 
     // NOLINTEND

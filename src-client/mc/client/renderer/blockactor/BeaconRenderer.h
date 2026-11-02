@@ -14,6 +14,7 @@ class Tessellator;
 class Vec3;
 struct BlockActorRenderData;
 namespace mce { class Color; }
+namespace mce { class TextureGroup; }
 // clang-format on
 
 class BeaconRenderer : public ::BlockActorRenderer {
@@ -26,6 +27,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    BeaconRenderer();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~BeaconRenderer() /*override*/ = default;
@@ -35,12 +40,18 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit BeaconRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     tessellateAlphaBeamSegment(::Tessellator& t, ::Vec3 const& pos, float height, ::mce::Color const& c, float time);
 
-    MCAPI static void tessellateOpaqueBeamSegment(
+    MCNAPI static void tessellateOpaqueBeamSegment(
         ::Tessellator&      t,
         ::Vec3 const&       pos,
         float               height,
@@ -52,8 +63,14 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

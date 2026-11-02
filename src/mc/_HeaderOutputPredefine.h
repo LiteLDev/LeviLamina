@@ -241,6 +241,15 @@ struct x509_st;
 struct evp_md_st;
 struct ssl_session_st;
 
+namespace CompoundTagUpdaterAnon {
+struct SingleUpdate;
+struct UpdateGroup;
+} 
+
+namespace AgentCommands {
+enum class SubCommand : int;
+}
+
 // Ungenerated cereal definitions
 namespace cereal {
 namespace internal {

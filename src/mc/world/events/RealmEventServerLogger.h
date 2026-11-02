@@ -32,7 +32,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $logEvent(::std::string const& message);
+    MCNAPI void $logEvent(::std::string const& message);
 
 
     // NOLINTEND

@@ -23,16 +23,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool initialize(::std::unique_ptr<::GameEventDynamicRegistration> registration);
+    MCNAPI bool initialize(::std::unique_ptr<::GameEventDynamicRegistration> registration);
 
-    MCAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&& other);
+    MCNAPI ::GameEventListenerComponent& operator=(::GameEventListenerComponent&& other);
 
-    MCAPI ~GameEventListenerComponent();
+    MCNAPI ~GameEventListenerComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

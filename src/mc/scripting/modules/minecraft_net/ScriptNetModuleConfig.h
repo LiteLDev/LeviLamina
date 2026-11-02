@@ -7,10 +7,10 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace Json { class Value; }
 namespace ScriptModuleMinecraftNet { class ScriptMalformedUriError; }
 namespace ScriptModuleMinecraftNet { class ScriptTLSOnlyError; }
 namespace ScriptModuleMinecraftNet { class ScriptUriNotAllowedError; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace ScriptModuleMinecraftNet {
@@ -63,8 +63,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::nonstd::expected<::ScriptModuleMinecraftNet::ScriptNetModuleConfig, ::std::string>
-    fromJson(::Json::Value data);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_BalloonAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
@@ -45,30 +41,16 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DataDrivenRenderer_tempComponent_BalloonAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    MCAPI void $renderEffects(
+    MCNAPI void $renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
+    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
     // NOLINTEND
 };

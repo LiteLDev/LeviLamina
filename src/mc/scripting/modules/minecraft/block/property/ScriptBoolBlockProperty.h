@@ -31,40 +31,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBoolBlockProperty(
+    MCNAPI ScriptBoolBlockProperty(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
+    MCNAPI ::ScriptModuleMinecraft::ScriptBoolBlockProperty&
     operator=(::ScriptModuleMinecraft::ScriptBoolBlockProperty&& rhs);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                                         name,
         ::BlockState const&                                                                   blockState,
         ::std::vector<bool>                                                                   validValues,
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation> blockPermutation
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 
 public:

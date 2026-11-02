@@ -30,16 +30,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
+    MCNAPI ::VoxelShapes::RegistryHandle _insertOrFindDuplicate(::VoxelShapes::VoxelShape&& shape, bool isVanillaShape);
 
-    MCAPI ::VoxelShapes::RegistryHandle getHandleByName(::HashedString const& name) const;
+    MCNAPI ::VoxelShapes::RegistryHandle getHandleByName(::HashedString const& name) const;
 
-    MCAPI bool hasName(::HashedString const& name) const;
+    MCNAPI bool hasName(::HashedString const& name) const;
 
     MCAPI void initialize();
 
 #ifdef LL_PLAT_C
-    MCAPI void initializeFromNetwork(
+    MCNAPI void initializeFromNetwork(
         ::std::vector<::VoxelShapes::VoxelShape> const&                            shapes,
         ::std::unordered_map<::HashedString, ::VoxelShapes::RegistryHandle> const& nameMap,
         ushort                                                                     customShapeCount
@@ -50,15 +50,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _computeIsCubeShapeEquivalent(::VoxelShapes::VoxelShape const& shape);
+    MCNAPI static bool _computeIsCubeShapeEquivalent(::VoxelShapes::VoxelShape const& shape);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::HashedString const& EMPTY_ID();
+    MCNAPI static ::HashedString const& EMPTY_ID();
 
-    MCAPI static ::HashedString const& UNIT_CUBE_ID();
+    MCNAPI static ::HashedString const& UNIT_CUBE_ID();
     // NOLINTEND
 };
 

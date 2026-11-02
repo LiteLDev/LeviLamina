@@ -14,11 +14,14 @@
 // auto generated forward declare list
 // clang-format off
 class BlockPos;
+class BlockSource;
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
 class Level;
 class StructureEditorData;
+class StructureSettings;
+struct ActorUniqueID;
 // clang-format on
 
 class StructureCommand : public ::Command {
@@ -51,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _editorLoad(
+    MCNAPI void _editorLoad(
         ::CommandOrigin const& origin,
         ::CommandOutput&       output,
         ::Level&               level,
@@ -60,19 +63,33 @@ public:
         ::StructureEditorData& settings
     ) const;
 
-    MCAPI ::std::string _getFullName() const;
+    MCNAPI uint _generateSeed() const;
+
+    MCNAPI ::std::string _getFullName() const;
+
+    MCNAPI ::ActorUniqueID _getPlayerId(::CommandOrigin const& origin) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, bool isEditorWorld);
+    MCNAPI static void _editorSave(
+        ::CommandOrigin const&     origin,
+        ::CommandOutput&           output,
+        ::BlockSource&             region,
+        ::std::string const&       fullName,
+        ::BlockPos                 from,
+        ::BlockPos                 to,
+        ::StructureSettings const& settings
+    );
+
+    MCNAPI static void setup(::CommandRegistry& registry, bool isEditorWorld);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

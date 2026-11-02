@@ -64,7 +64,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addBindings(
+    MCNAPI void _addBindings(
         ::BindingType        bindingType,
         ::std::string const& collectionName,
         ::UiExpression&      bindingExpression,
@@ -72,32 +72,32 @@ public:
         ::BindingCondition   bindingCondition
     );
 
-    MCAPI void
+    MCNAPI void
     _bind(::ScreenController& controller, bool visible, ::std::vector<::DataBindingComponent::DataBinding>& bindings);
 
-    MCAPI void
+    MCNAPI void
     _updateCustomComponentsPostBinding(::std::string_view propertyName, ::UIControl& owner, ::UiExpression expression);
 
-    MCAPI void addCollectionBinding(
+    MCNAPI void addCollectionBinding(
         ::std::string const& collectionName,
         ::UiExpression       bindingExpression,
         ::std::string const& bindingNameOverride,
         ::BindingCondition   bindingCondition
     );
 
-    MCAPI void addCollectionDetailsBinding(
+    MCNAPI void addCollectionDetailsBinding(
         ::std::string const& collectionName,
         ::std::string const& collectionPrefix,
         ::BindingCondition   bindingCondition
     );
 
-    MCAPI void addGlobalBinding(
+    MCNAPI void addGlobalBinding(
         ::UiExpression       bindingExpression,
         ::std::string const& bindingNameOverride,
         ::BindingCondition   bindingCondition
     );
 
-    MCAPI void addViewBinding(
+    MCNAPI void addViewBinding(
         ::std::shared_ptr<::UIControl>& sourceControl,
         ::UiExpression                  sourcePropertyName,
         ::std::string const&            targetPropertyName
@@ -107,9 +107,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 
 public:

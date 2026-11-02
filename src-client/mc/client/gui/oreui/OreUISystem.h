@@ -34,7 +34,9 @@ namespace OreUI { struct RegisterResourceHandlersArguments; }
 namespace OreUI { struct ResourceHandlerFactory; }
 namespace OreUI { struct ResourceHandlerFactoryArguments; }
 namespace OreUI::Debug { class DevServerListener; }
-namespace OreUI::Detail { class ViewContextFactory; }
+namespace OreUI::Detail { class BindingRegistryFactory; }
+namespace mce { class RenderContext; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace OreUI {
@@ -61,7 +63,7 @@ public:
         using SceneProviderFactory = ::brstd::move_only_function<::std::unique_ptr<::OreUI::SceneProvider>(
             ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&,
             ::std::unique_ptr<::OreUI::FacetRegistryFactory>,
-            ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>,
+            ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory>,
             ::OreUI::Library&
         ) const>;
 
@@ -85,16 +87,18 @@ public:
             ::brstd::move_only_function<::std::unique_ptr<::OreUI::SceneProvider>(
                 ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&,
                 ::std::unique_ptr<::OreUI::FacetRegistryFactory>,
-                ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>,
+                ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory>,
                 ::OreUI::Library&
             ) const>>
-                                                                                mSceneProviderFactory;
-        ::ll::TypedStorage<8, 208, ::OreUI::RouterConfiguration>                mRouterConfiguration;
-        ::ll::TypedStorage<8, 32, ::Core::Path>                                 mPackagePath;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ResourceAllowList>> mAllowList;
-        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::DebugData>>         mDebugData;
-        ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>    mShowDebugToast;
-        ::ll::TypedStorage<8, 24, ::OreUI::LiveViewCollection>                  mLiveViewCollection;
+                                                                                  mSceneProviderFactory;
+        ::ll::TypedStorage<8, 272, ::OreUI::RouterConfiguration>                  mRouterConfiguration;
+        ::ll::TypedStorage<8, 32, ::Core::Path>                                   mPackagePath;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ResourceAllowList>>   mAllowList;
+        ::ll::TypedStorage<8, 24, ::OreUI::LiveViewCollection>                    mLiveViewCollection;
+        ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>> mShaderGroup;
+        ::ll::TypedStorage<8, 8, ::gsl::not_null<::mce::RenderContext*>>          mRenderContext;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::DebugData>>           mDebugData;
+        ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>      mShowDebugToast;
         ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
             mDebugSplitscreenInputRedirect;
         // NOLINTEND
@@ -102,18 +106,18 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::brstd::move_only_function<::std::unique_ptr<::OreUI::Library>(::OreUI::LibraryFactoryArguments&&)
-                                                     const>
+        MCNAPI static ::brstd::move_only_function<
+            ::std::unique_ptr<::OreUI::Library>(::OreUI::LibraryFactoryArguments&&) const>
         createLibraryFactory(
             ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> fileSystem,
             ::Bedrock::NotNullNonOwnerPtr<::IFileAccess>      appPackageFileAccess
         );
 
-        MCAPI static ::brstd::move_only_function<::std::unique_ptr<
+        MCNAPI static ::brstd::move_only_function<::std::unique_ptr<
             ::Gameface::ResourceHandlerBroker>(::OreUI::RegisterResourceHandlersArguments const&) const>
         createResourceHandlerBrokerFactory(::OreUI::ResourceHandlerFactoryArguments const& args);
 
-        MCAPI static ::OreUI::ResourceHandlerFactory
+        MCNAPI static ::OreUI::ResourceHandlerFactory
         createResourceHandlerFactory(::OreUI::ResourceHandlerFactoryArguments const& args);
         // NOLINTEND
     };
@@ -129,11 +133,11 @@ public:
             ::brstd::move_only_function<::std::unique_ptr<::OreUI::SceneProvider>(
                 ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&,
                 ::std::unique_ptr<::OreUI::FacetRegistryFactory>,
-                ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>,
+                ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory>,
                 ::OreUI::Library&
             ) const>>
                                                                                          mCreateSceneProvider;
-        ::ll::TypedStorage<8, 208, ::OreUI::RouterConfiguration>                         mRouterConfiguration;
+        ::ll::TypedStorage<8, 272, ::OreUI::RouterConfiguration>                         mRouterConfiguration;
         ::ll::TypedStorage<8, 104, ::Gameface::TemporaryTextureHolder>                   mTemporaryTextureHolder;
         ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::OreUI::DebugData>>> mDebugData;
         ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>             mShowDebugToast;
@@ -161,6 +165,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                    mFlightingTogglesTrialMode;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesFriendsDrawerOnMultipleScreens;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesSettingsScreen;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesPartySettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesPreviewSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesStorageSettingsScreen;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mFlightingTogglesNewSettingsInGame;
@@ -175,49 +180,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OreUISystem(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
+    MCNAPI explicit OreUISystem(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
 
-    MCAPI ::std::unique_ptr<::OreUI::Router> createInGameRouter(
+    MCNAPI ::std::unique_ptr<::OreUI::Router> createInGameRouter(
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
         ::SceneFactory&                                       sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     ) const;
 
-    MCAPI ::std::unique_ptr<::OreUI::Router> createOutOfGameRouter(
+    MCNAPI ::std::unique_ptr<::OreUI::Router> createOutOfGameRouter(
         ::std::unique_ptr<::OreUI::IRoutePrerequisiteHandler> prerequisiteHandler,
         ::std::unique_ptr<::OreUI::RouterEventing>            routerEventing,
         ::SceneFactory&                                       sceneFactory,
         ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> const&   sceneStack
     ) const;
 
-    MCAPI ::std::unique_ptr<::OreUI::SceneProvider> createSceneProvider(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
-        ::std::unique_ptr<::OreUI::FacetRegistryFactory>        facetRegistryFactory,
-        ::std::unique_ptr<::OreUI::Detail::ViewContextFactory>  contextFactory
+    MCNAPI ::std::unique_ptr<::OreUI::SceneProvider> createSceneProvider(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&    clientInstance,
+        ::std::unique_ptr<::OreUI::FacetRegistryFactory>           facetRegistryFactory,
+        ::std::unique_ptr<::OreUI::Detail::BindingRegistryFactory> bindingRegistryFactory
     ) const;
 
-    MCAPI void registerOptionObservers(::IOptionRegistry& options);
+    MCNAPI void registerOptionObservers(::IOptionRegistry& options);
 
-    MCAPI void registerRouteConfigurationChangeCallback(void* token, ::std::function<void()> const& callback);
+    MCNAPI void registerRouteConfigurationChangeCallback(void* token, ::std::function<void()> const& callback);
 
-    MCAPI void unregisterRouteConfigurationChangeCallback(void* token);
+    MCNAPI void unregisterRouteConfigurationChangeCallback(void* token);
 
-    MCAPI void update(double time);
+    MCNAPI void update(double time);
 
-    MCAPI ~OreUISystem();
+    MCNAPI ~OreUISystem();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
+    MCNAPI void* $ctor(::OreUI::OreUISystem::OreUISystemDependencies&& deps);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

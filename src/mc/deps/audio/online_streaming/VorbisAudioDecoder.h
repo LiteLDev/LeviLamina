@@ -9,6 +9,10 @@
 // auto generated forward declare list
 // clang-format off
 namespace Audio { class AudioFrameBuffer; }
+namespace Audio { class OnlineAudioInitializationData; }
+namespace Audio { class OnlineStreamedAudioBuffer; }
+namespace Audio { struct EncodedByteOffset; }
+namespace Audio { struct PcmFramePosition; }
 // clang-format on
 
 namespace Audio {
@@ -58,11 +62,13 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 16> mUnkd0cc24;
+    ::ll::UntypedStorage<8, 24> mUnk3cbc1e;
     ::ll::UntypedStorage<8, 8>  mUnk27ddf1;
     ::ll::UntypedStorage<1, 1>  mUnk88909e;
     ::ll::UntypedStorage<4, 4>  mUnk7d022a;
     ::ll::UntypedStorage<8, 8>  mUnkfae57c;
     ::ll::UntypedStorage<8, 16> mUnk6d01f9;
+    ::ll::UntypedStorage<1, 1>  mUnkaf87d7;
     ::ll::UntypedStorage<8, 48> mUnkc49e58;
     ::ll::UntypedStorage<8, 32> mUnkd91a7b;
     ::ll::UntypedStorage<8, 8>  mUnk4e5e98;
@@ -83,6 +89,11 @@ public:
     virtual ::Bedrock::Result<void> initialize() /*override*/;
 
     virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer& outputBuffer) /*override*/;
+
+    virtual ::Bedrock::Result<void> repositionCompressedInput(
+        ::Audio::EncodedByteOffset encodedByteOffset,
+        ::Audio::PcmFramePosition  pcmFramePosition
+    ) /*override*/;
 
     virtual uchar getChannels() const /*override*/;
 
@@ -105,7 +116,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI VorbisAudioDecoder(
+        ::gsl::not_null<::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>> audioBuffer,
+        ::Audio::OnlineAudioInitializationData                                 initializationData,
+        uint64                                                                 inputChunkSize,
+        uint64                                                                 initialHeaderReadSize
+    );
+
     MCNAPI bool _feedDecoder();
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(
+        ::gsl::not_null<::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>> audioBuffer,
+        ::Audio::OnlineAudioInitializationData                                 initializationData,
+        uint64                                                                 inputChunkSize,
+        uint64                                                                 initialHeaderReadSize
+    );
 #endif
     // NOLINTEND
 
@@ -116,6 +147,11 @@ public:
     MCNAPI ::Bedrock::Result<void> $initialize();
 
     MCNAPI ::Bedrock::Result<::gsl::span<float>> $decodeInto(::Audio::AudioFrameBuffer& outputBuffer);
+
+    MCNAPI ::Bedrock::Result<void> $repositionCompressedInput(
+        ::Audio::EncodedByteOffset encodedByteOffset,
+        ::Audio::PcmFramePosition  pcmFramePosition
+    );
 
     MCNAPI uchar $getChannels() const;
 
@@ -135,6 +171,12 @@ public:
 #endif
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

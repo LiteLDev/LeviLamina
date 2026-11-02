@@ -57,12 +57,13 @@ public:
 
     virtual bool isTrusted() const /*override*/;
 
-    virtual bool hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
+    virtual bool hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const
         /*override*/;
 
     virtual bool hasFolder(::Core::Path const& packRelativePath) const /*override*/;
 
-    virtual bool getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
+    virtual bool
+    getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const
         /*override*/;
 
     virtual void
@@ -120,11 +121,12 @@ public:
 
     MCNAPI bool $isTrusted() const;
 
-    MCNAPI bool $hasAsset(::Core::Path const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
+    MCNAPI bool $hasAsset(::Core::PathView const& packRelativePath, bool trustedContentOnly, bool caseSensative) const;
 
     MCNAPI bool $hasFolder(::Core::Path const& packRelativePath) const;
 
-    MCNAPI bool $getAsset(::Core::Path const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
+    MCNAPI bool
+    $getAsset(::Core::PathView const& packRelativePath, ::std::string& result, bool trustedContentOnly) const;
 
     MCNAPI void
     $forEachIn(::Core::Path const& packRelativePath, ::std::function<void(::Core::Path const&)> callback, bool) const;

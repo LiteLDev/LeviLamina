@@ -34,21 +34,23 @@ public:
 
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
+    MCNAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
+
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const& other);
 
     MCAPI ActorDefinitionIdentifier(::ActorType type, ::std::string initEvent);
 
     MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
-    MCAPI void _initialize();
+    MCNAPI void _initialize();
 
-    MCAPI bool isVanilla() const;
+    MCNAPI bool isVanilla() const;
 
     MCAPI ::ActorDefinitionIdentifier& operator=(::ActorDefinitionIdentifier const& other);
 
-    MCAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
+    MCNAPI bool operator==(::ActorDefinitionIdentifier const& other) const;
 
-    MCAPI void setter(
+    MCNAPI void setter(
         ::std::string const&               str,
         ::BedrockLoadContext               context,
         ::cereal::SerializerContext const& serializerContext
@@ -60,7 +62,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _extractIdentifier(::std::string const& name, ::ActorDefinitionIdentifier& id);
+    MCNAPI static void _extractIdentifier(::std::string const& name, ::ActorDefinitionIdentifier& id);
     // NOLINTEND
 
 public:
@@ -69,6 +71,8 @@ public:
     MCAPI void* $ctor(::std::string const& fullName);
 
     MCAPI void* $ctor(char const* fullName);
+
+    MCNAPI void* $ctor(::std::string_view fullName);
 
     MCAPI void* $ctor(::ActorDefinitionIdentifier const& other);
 

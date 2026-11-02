@@ -17,6 +17,7 @@
 #include "mc/world/item/ItemAcquisitionMethod.h"
 #include "mc/world/item/ItemColor.h"
 #include "mc/world/item/ItemCommandVisibility.h"
+#include "mc/world/item/ItemTransformType.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/Rarity.h"
 #include "mc/world/item/registry/ItemVersion.h"
@@ -45,6 +46,7 @@ class ItemInstance;
 class ItemStack;
 class ItemStackBase;
 class Level;
+class Matrix;
 class Mob;
 class Player;
 class ReadOnlyBinaryStream;
@@ -64,7 +66,7 @@ struct LegacyEventItemComponentData;
 struct ResolvedItemIconInfo;
 struct SoundEventIdentifier;
 namespace Bedrock::Safety { class RedactableString; }
-namespace SharedTypes::v1_26_30 { struct ItemDocument; }
+namespace SharedTypes::v1_26_50 { struct ItemDocument; }
 namespace mce { class Color; }
 // clang-format on
 
@@ -136,7 +138,7 @@ public:
     virtual ~Item();
 
     virtual void initServer(
-        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::Experiments const&                            experiments,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData
@@ -154,7 +156,8 @@ public:
 
     virtual bool isMusicDisk() const;
 
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    virtual void
+    executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
     virtual bool isComponentBased() const;
 
@@ -281,7 +284,11 @@ public:
 
     virtual bool isComplex() const;
 
+#ifdef LL_PLAT_S
+    virtual bool isValidAuxValue(int value) const;
+#else // LL_PLAT_C
     virtual bool isValidAuxValue(int auxValue) const;
+#endif
 
     virtual int getDamageChance(int unbreaking) const;
 
@@ -372,11 +379,11 @@ public:
     virtual void fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
 
     virtual ::InHandUpdateType getInHandUpdateType(
-        ::Player const&    player,
+        ::Player const&,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const;
 
     virtual bool validFishInteraction(int) const;
@@ -392,7 +399,7 @@ public:
     virtual bool hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
     virtual void initClient(
-        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SharedTypes::v1_26_50::ItemDocument&& data,
         ::SemVersion const&,
         ::Experiments const&,
         ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
@@ -418,14 +425,18 @@ public:
 
     virtual float getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
-    virtual bool calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    virtual ::Matrix getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
+
+    virtual bool
+    calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
     virtual ::std::string _getHoverTextDescription() const;
 
     virtual bool
     _checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    virtual bool
+    _calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
     virtual bool _shouldAutoCalculatePlacePos() const;
 
@@ -444,16 +455,17 @@ public:
     // NOLINTBEGIN
     MCAPI Item(::std::string const& nameId, short id);
 
-    MCAPI bool _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
+    MCNAPI bool
+    _dispenseHoneycombItem(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos) const;
 
-    MCAPI void _helpChangeInventoryItemInPlace(
+    MCNAPI void _helpChangeInventoryItemInPlace(
         ::Actor&                actor,
         ::ItemStack&            startingItem,
         ::ItemStack&            replacementItem,
         ::ItemAcquisitionMethod acquisitionMethod
     ) const;
 
-    MCAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
+    MCNAPI ::CoordinatorResult _sendTryPlaceBlockEvent(
         ::Block const&       block,
         ::BlockSource const& region,
         ::Actor const&       actor,
@@ -462,17 +474,19 @@ public:
         ::Vec3 const&        clickPos
     ) const;
 
-    MCAPI void addOnResetBAICallback(::std::function<void()> callback);
+    MCNAPI void addOnResetBAICallback(::std::function<void()> callback);
 
     MCAPI ::Item& addTag(::ItemTag const& tag);
 
     MCAPI ::Item& addTag(::HashedString const& tag);
 
-    MCAPI void clearTags();
+    MCNAPI void clearTags();
 
-    MCAPI ::std::vector<::CommandName> getCommandNames() const;
+    MCNAPI ::std::vector<::CommandName> getCommandNames() const;
 
-    MCAPI short getDamageValue(::CompoundTag const* userData) const;
+#ifdef LL_PLAT_C
+    MCNAPI short getDamageValue(::CompoundTag const* userData) const;
+#endif
 
     MCAPI ::std::string getSerializedName() const;
 
@@ -482,7 +496,7 @@ public:
 
     MCAPI void setDamageValue(::ItemStackBase& stack, short newDamage) const;
 
-    MCAPI void
+    MCNAPI void
     updateCustomBlockEntityTag(::BlockSource& region, ::ItemStackBase& instance, ::BlockPos const& pos) const;
 
     MCAPI ::InteractionResult useOn(
@@ -501,19 +515,19 @@ public:
     // NOLINTBEGIN
     MCAPI static bool isElytra(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI static bool isFlyEnabled(::ItemInstance const& item);
+    MCNAPI static bool isFlyEnabled(::ItemInstance const& item);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
+    MCNAPI static ::SemVersionConstant const& DATA_DRIVEN_NEXT_VERSION();
 
-    MCAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
+    MCNAPI static ::SemVersionConstant const& DATA_DRIVEN_VERSION();
 
-    MCAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
+    MCNAPI static ::std::string const& ICON_DESCRIPTION_PREFIX();
 
-    MCAPI static ::std::string const& TAG_DAMAGE();
+    MCNAPI static ::std::string const& TAG_DAMAGE();
     // NOLINTEND
 
 public:
@@ -532,7 +546,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
     MCAPI void $initServer(
-        ::SharedTypes::v1_26_30::ItemDocument&&         data,
+        ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::Experiments const&                            experiments,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData
@@ -546,11 +560,12 @@ public:
 
     MCAPI int $getMaxUseDuration(::ItemStack const* instance) const;
 
-    MCAPI ::BlockType const* $getBlockTypeForRendering() const;
+    MCFOLD ::BlockType const* $getBlockTypeForRendering() const;
 
     MCFOLD bool $isMusicDisk() const;
 
-    MCFOLD void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCFOLD void
+    $executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
     MCFOLD bool $isComponentBased() const;
 
@@ -677,7 +692,11 @@ public:
 
     MCFOLD bool $isComplex() const;
 
+#ifdef LL_PLAT_S
+    MCFOLD bool $isValidAuxValue(int value) const;
+#else // LL_PLAT_C
     MCFOLD bool $isValidAuxValue(int auxValue) const;
+#endif
 
     MCAPI int $getDamageChance(int unbreaking) const;
 
@@ -768,11 +787,11 @@ public:
     MCAPI void $fixupCommon(::ItemStackBase& stack, ::ILevel& level) const;
 
     MCAPI ::InHandUpdateType $getInHandUpdateType(
-        ::Player const&    player,
+        ::Player const&,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const;
 
     MCFOLD bool $validFishInteraction(int) const;
@@ -788,7 +807,7 @@ public:
     MCFOLD bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
     MCAPI void $initClient(
-        ::SharedTypes::v1_26_30::ItemDocument&& data,
+        ::SharedTypes::v1_26_50::ItemDocument&& data,
         ::SemVersion const&,
         ::Experiments const&,
         ::std::optional<::ItemIconInfo> (*iconFactory)(::std::string const&, int)
@@ -814,18 +833,22 @@ public:
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
-    MCAPI bool $calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCNAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
 
-    MCAPI ::std::string $_getHoverTextDescription() const;
+    MCAPI bool
+    $calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool
+    MCNAPI ::std::string $_getHoverTextDescription() const;
+
+    MCNAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCFOLD bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool
+    $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCFOLD bool $_shouldAutoCalculatePlacePos() const;
+    MCNAPI bool $_shouldAutoCalculatePlacePos() const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,

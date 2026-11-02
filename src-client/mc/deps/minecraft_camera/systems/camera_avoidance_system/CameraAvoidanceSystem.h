@@ -6,12 +6,15 @@
 // clang-format off
 class EntityRegistry;
 struct CameraActivationEvent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace CameraAvoidanceSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void startAvoidance(::EntityRegistry&, ::CameraActivationEvent const& event);
+MCNAPI ::TickingSystemWithInfo createSystem(bool activeCamerasOnly);
+
+MCNAPI void startAvoidance(::EntityRegistry&, ::CameraActivationEvent const& event);
 // NOLINTEND
 
 } // namespace CameraAvoidanceSystem

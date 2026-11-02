@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
+#include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/SharedLock.h"
 
 // auto generated forward declare list
@@ -11,28 +12,30 @@
 class ItemRegistryRef;
 class PackReport;
 class ResourceLocation;
-class ResourcePackStack;
+class ResourcePackLoader;
+struct PackInstanceId;
 namespace Json { class Value; }
 // clang-format on
 
 class IUIDefRepository : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // IUIDefRepository inner types define
-    using PackReportsCallback = ::std::function<void(::std::vector<::PackReport>&)>;
+    using PackReportsCallback =
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const>;
 
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual void loadDefsList(
-        ::ResourceLocation const&                           defsListFile,
-        ::ResourcePackStack const&                          packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) = 0;
 
     virtual void validateDefEntries(
-        ::ResourceLocation const&                           defsListFile,
-        ::std::shared_ptr<::ResourcePackStack const>        packStack,
-        ::std::function<void(::std::vector<::PackReport>&)> onReportsReady
+        ::ResourceLocation const&                                                                      defsListFile,
+        ::ResourcePackLoader const&                                                                    packLoader,
+        ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) const = 0;
 
     virtual ::Json::Value const& findDef(::std::string const& defNamespace, ::std::string const& defName) const = 0;

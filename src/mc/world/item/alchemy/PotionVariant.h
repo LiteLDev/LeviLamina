@@ -33,5 +33,7 @@ enum class PotionVariant : int {
     Weaving        = 27,
     Oozing         = 28,
     Infested       = 29,
-    Base           = 30,
+    Freezing       = 30,
+    Base           = 31,
+    Count          = 32,
 };

@@ -36,16 +36,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isCraftingImplemented();
+    MCNAPI bool $isCraftingImplemented();
 
-    MCAPI ::ContainerValidationCraftResult $getCraftResult(
+    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,
         uchar const                                         numCrafts
     );
 
-    MCAPI ::std::shared_ptr<::ContainerValidationCommitObject>
+    MCNAPI ::std::shared_ptr<::ContainerValidationCommitObject>
     $postCommitItemRemoved(::ContainerEnumName const containerEnumName, int const slot, ::ItemStack const&);
 
 

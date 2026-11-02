@@ -45,13 +45,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Builder();
+        MCNAPI ~Builder();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -75,14 +75,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string getOriginalItemName() const;
+    MCNAPI ::std::string getOriginalItemName() const;
 
-    MCAPI ~LootTableContext();
+    MCNAPI ~LootTableContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

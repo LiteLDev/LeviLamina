@@ -7,6 +7,7 @@
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/BeaconPaymentActionData.h"
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/ConsumeActionData.h"
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/CraftCreativeActionData.h"
+#include "mc/network/packet/cerealize/types/item_stack_request_cereal/CraftDiscPressActionData.h"
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/CraftLoomActionData.h"
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/CraftNonImplementedActionData.h"
 #include "mc/network/packet/cerealize/types/item_stack_request_cereal/CraftRecipeActionData.h"
@@ -56,6 +57,7 @@ public:
             ::ItemStackRequestCereal::CraftRecipeOptionalActionData,
             ::ItemStackRequestCereal::CraftRepairAndDisenchantActionData,
             ::ItemStackRequestCereal::CraftLoomActionData,
+            ::ItemStackRequestCereal::CraftDiscPressActionData,
             ::ItemStackRequestCereal::CraftNonImplementedActionData,
             ::ItemStackRequestCereal::CraftResultsActionData>>>
                                                             mActions;
@@ -66,15 +68,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::ItemStackRequestCereal::RequestData const&) const;
+    MCNAPI bool operator==(::ItemStackRequestCereal::RequestData const&) const;
 
-    MCAPI ~RequestData();
+    MCNAPI ~RequestData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

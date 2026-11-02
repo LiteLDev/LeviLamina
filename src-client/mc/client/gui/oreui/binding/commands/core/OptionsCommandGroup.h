@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class IOptionRegistry;
+namespace OreUI { class ClientDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -34,15 +35,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _resetOption(::std::string const& name);
+    MCNAPI explicit OptionsCommandGroup(::OreUI::ClientDependencies const& client);
 
-    MCAPI void _setBoolOption(::std::string const& name, bool value);
+    MCNAPI void _resetOption(::std::string const& name);
 
-    MCAPI void _setFloatOption(::std::string const& name, float value);
+    MCNAPI void _setBoolOption(::std::string const& name, bool value);
 
-    MCAPI void _setIntOption(::std::string const& name, int value);
+    MCNAPI void _setFloatOption(::std::string const& name, float value);
 
-    MCAPI void _setStringOption(::std::string const& name, ::std::string const& value);
+    MCNAPI void _setIntOption(::std::string const& name, int value);
+
+    MCNAPI void _setStringOption(::std::string const& name, ::std::string const& value);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

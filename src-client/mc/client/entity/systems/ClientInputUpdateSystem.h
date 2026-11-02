@@ -47,7 +47,7 @@ public:
         ::Optional<::WasInWaterFlagComponent const> isInWater
     );
 
-    MCAPI static void inputHandlerUpdatePlayerState(
+    MCNAPI static void inputHandlerUpdatePlayerState(
         ::MovementAbilitiesComponent const&         abilities,
         ::MobEffectsComponent const&                mobEffects,
         ::ActorDataFlagComponent const&             synchedActorData,
@@ -57,14 +57,14 @@ public:
         ::Optional<::WasInWaterFlagComponent const> isInWater
     );
 
-    MCAPI static void updateStopEmotingRequest(
-        ::StrictEntityContext const&                           entity,
-        ::RawMoveInputComponent const&                         rawMoveInput,
-        ::ActorDataFlagComponent&                              actorDataFlag,
-        ::ActorDataDirtyFlagsComponent&                        actorDataDirtyFlags,
-        ::ClientInputLockComponent&                            clientInputLock,
-        ::VanillaClientGameplayComponent&                      vanillaClientGameplay,
-        ::EntityModifier<::ShouldStopEmotingRequestComponent>& modifier
+    MCNAPI static void updateStopEmotingRequest(
+        ::StrictEntityContext const&                                 entity,
+        ::RawMoveInputComponent const&                               rawMoveInput,
+        ::ActorDataFlagComponent&                                    actorDataFlag,
+        ::ActorDataDirtyFlagsComponent&                              actorDataDirtyFlags,
+        ::ClientInputLockComponent&                                  clientInputLock,
+        ::VanillaClientGameplayComponent&                            vanillaClientGameplay,
+        ::EntityModifier<::ShouldStopEmotingRequestComponent> const& modifier
     );
     // NOLINTEND
 };

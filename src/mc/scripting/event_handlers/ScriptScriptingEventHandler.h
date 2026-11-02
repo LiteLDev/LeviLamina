@@ -35,13 +35,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::BeforeWatchdogTerminateEvent& beforeWatchdogTerminateEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ScriptModuleStartupEvent const& moduleStartupEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ScriptModuleShutdownEvent const& moduleShutdownEvent);
 
 

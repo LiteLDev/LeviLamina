@@ -3,9 +3,11 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/cereal/ResultCode.h"
 #include "mc/deps/cereal/schema/SchemaRWType.h"
 #include "mc/deps/cereal/schema/SchemaReader.h"
 #include "mc/platform/Result.h"
+#include "mc/util/JsonDocumentParseResult.h"
 
 namespace cereal {
 
@@ -50,7 +52,8 @@ public:
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>,
             ::rapidjson::CrtAllocator>>
-        mDoc;
+                                                                        mDoc;
+    ::ll::TypedStorage<4, 4, ::Core::JsonUtil::JsonDocumentParseResult> mParseResult;
     // NOLINTEND
 
 public:
@@ -61,6 +64,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual bool isValid() const /*override*/;
+
+    virtual ::std::optional<::cereal::ResultCode> inputError() const /*override*/;
 
     virtual ::cereal::SchemaRWType expectedType() const /*override*/;
 
@@ -117,9 +122,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RapidJSONSchemaReader(::std::string const& data);
+    MCNAPI explicit RapidJSONSchemaReader(::std::string_view data);
 
-    MCAPI explicit RapidJSONSchemaReader(
+    MCNAPI explicit RapidJSONSchemaReader(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -129,9 +134,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& data);
+    MCNAPI void* $ctor(::std::string_view data);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::rapidjson::GenericValue<
             ::rapidjson::UTF8<char>,
             ::rapidjson::MemoryPoolAllocator<::rapidjson::CrtAllocator>> const& value
@@ -141,62 +146,64 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::cereal::SchemaRWType $expectedType() const;
+    MCNAPI ::std::optional<::cereal::ResultCode> $inputError() const;
 
-    MCAPI ::Bedrock::Result<void> $asNull();
+    MCNAPI ::cereal::SchemaRWType $expectedType() const;
 
-    MCAPI ::Bedrock::Result<bool> $asBool();
+    MCNAPI ::Bedrock::Result<void> $asNull();
 
-    MCAPI ::Bedrock::Result<schar> $asInt8();
+    MCNAPI ::Bedrock::Result<bool> $asBool();
 
-    MCAPI ::Bedrock::Result<uchar> $asUInt8();
+    MCNAPI ::Bedrock::Result<schar> $asInt8();
 
-    MCAPI ::Bedrock::Result<short> $asInt16();
+    MCNAPI ::Bedrock::Result<uchar> $asUInt8();
 
-    MCAPI ::Bedrock::Result<ushort> $asUInt16();
+    MCNAPI ::Bedrock::Result<short> $asInt16();
 
-    MCAPI ::Bedrock::Result<int> $asInt32();
+    MCNAPI ::Bedrock::Result<ushort> $asUInt16();
 
-    MCAPI ::Bedrock::Result<uint> $asUInt32();
+    MCNAPI ::Bedrock::Result<int> $asInt32();
 
-    MCAPI ::Bedrock::Result<int64> $asInt64();
+    MCNAPI ::Bedrock::Result<uint> $asUInt32();
 
-    MCAPI ::Bedrock::Result<uint64> $asUInt64();
+    MCNAPI ::Bedrock::Result<int64> $asInt64();
 
-    MCAPI ::Bedrock::Result<float> $asFloat();
+    MCNAPI ::Bedrock::Result<uint64> $asUInt64();
 
-    MCAPI ::Bedrock::Result<double> $asDouble();
+    MCNAPI ::Bedrock::Result<float> $asFloat();
 
-    MCAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+    MCNAPI ::Bedrock::Result<double> $asDouble();
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<::std::string> $asString(uint64 maxInputLength);
+
+    MCNAPI ::Bedrock::Result<void>
     $asRawBytes(::std::function<::gsl::span<uchar>(uint64)> storage, uint64 maxInputLength);
 
-    MCFOLD ::std::optional<bool> $additionalDataAsBool();
+    MCNAPI ::std::optional<bool> $additionalDataAsBool();
 
-    MCFOLD ::std::optional<uint> $additionalDataAsUInt32();
+    MCNAPI ::std::optional<uint> $additionalDataAsUInt32();
 
-    MCFOLD ::std::optional<::std::string> $additionalDataAsString(uint64);
+    MCNAPI ::std::optional<::std::string> $additionalDataAsString(uint64);
 
-    MCFOLD uint64 $members();
+    MCNAPI uint64 $members();
 
-    MCFOLD uint64 $length(uint64 expectedSize);
+    MCNAPI uint64 $length(uint64 expectedSize);
 
-    MCFOLD bool $pushMember(::std::string_view const name);
+    MCNAPI bool $pushMember(::std::string_view const name);
 
-    MCFOLD ::std::string_view $pushNextMember();
+    MCNAPI ::std::string_view $pushNextMember();
 
-    MCFOLD void $pushElement(uint64 index);
+    MCNAPI void $pushElement(uint64 index);
 
-    MCFOLD void $pop();
+    MCNAPI void $pop();
 
 
     // NOLINTEND

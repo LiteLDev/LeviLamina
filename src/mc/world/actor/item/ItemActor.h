@@ -111,20 +111,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemActor(
+    MCNAPI ItemActor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI void _addComponents();
+    MCNAPI void _addComponents();
 
-    MCAPI void _dropItemList(::ListTag* itemList);
+    MCNAPI void _dropItemList(::ListTag* itemList);
 
-    MCAPI void _validateItem();
+    MCNAPI void _validateItem();
 
 #ifdef LL_PLAT_C
-    MCAPI void clientInitialize(
+    MCNAPI void clientInitialize(
         ::BlockSource&     region,
         ::Vec3 const&      pos,
         ::ItemStack const& item,
@@ -135,14 +135,12 @@ public:
 #endif
 
     MCAPI void postNormalTick();
-
-    MCAPI void setSourceEntity(::Actor const* owner);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -152,27 +150,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCAPI void $playerTouch(::Player& player);
+    MCNAPI void $playerTouch(::Player& player);
 
-    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
+    MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
-    MCFOLD bool $canSynchronizeNewEntity() const;
+    MCNAPI bool $canSynchronizeNewEntity() const;
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCAPI bool $isFireImmune() const;
+    MCNAPI bool $isFireImmune() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
+    MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
 
-    MCAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
+    MCNAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 
-    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

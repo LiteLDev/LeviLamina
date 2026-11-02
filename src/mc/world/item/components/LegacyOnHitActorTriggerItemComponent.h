@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LegacyOnHitActorTriggerItemComponent(
+    MCNAPI explicit LegacyOnHitActorTriggerItemComponent(
         ::SharedTypes::Legacy::OnHitActorTriggerItemComponent&& componentData
     );
     // NOLINTEND
@@ -43,13 +43,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::OnHitActorTriggerItemComponent&& componentData);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::OnHitActorTriggerItemComponent&& componentData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

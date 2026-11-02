@@ -87,37 +87,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TransportItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI TransportItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
+    MCNAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
 
-    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
+    MCNAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
-    MCAPI void _reset();
+    MCNAPI void _reset();
 
-    MCAPI void _startCooldown();
+    MCNAPI void _startCooldown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

@@ -49,13 +49,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
+    MCNAPI ::Scripting::Result_deprecated<int> $getEmptySlotsCount() const;
 
-    MCAPI ::Container* $_tryGetContainer() const;
+    MCNAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    MCNAPI ::ItemContext $_getItemContext(int slot) const;
 
-    MCAPI void $_onContainerChanged() const;
+    MCNAPI void $_onContainerChanged() const;
 
 
     // NOLINTEND

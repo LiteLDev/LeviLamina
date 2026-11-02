@@ -21,16 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ~AliasInfoDescription();
-#endif
+    MCNAPI ~AliasInfoDescription();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 };

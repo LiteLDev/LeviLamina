@@ -14,6 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::std::string>                            mName;
     ::ll::TypedStorage<8, 32, ::std::string>                            mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                            mCreator;
     ::ll::TypedStorage<8, 32, ::std::string>                            mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                            mSize;
     ::ll::TypedStorage<8, 32, ::std::string>                            mId;
@@ -30,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~PackDetails();
+    MCNAPI ~PackDetails();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

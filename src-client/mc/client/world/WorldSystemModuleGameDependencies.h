@@ -12,9 +12,9 @@
 // clang-format off
 class CloudSaveSystemWrapper;
 class DateManager;
+class ExperienceSystemsManager;
 class ExternalContentManager;
 class FileArchiver;
-class GatheringManager;
 class IClientInstance;
 class IContentAcquisition;
 class IContentKeyProvider;
@@ -68,11 +68,12 @@ public:
     ::ll::TypedStorage<8, 8, ::IContentAcquisition&>                                            mContentAcquisition;
     ::ll::TypedStorage<8, 8, ::IStoreCatalogRepository&>                                        mStoreCatalogRepository;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>>             mEntitlementManager;
-    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                                mClientInstance;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>>         mResourcePackRepository;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const>>       mContentTierManager;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile>>             mExternalServerFile;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>>                mOfferRepository;
+    ::ll::TypedStorage<1, 1, bool const>                                                    mVibrantVisualsSupported;
+    ::ll::TypedStorage<8, 8, ::IClientInstance&>                                            mClientInstance;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository>>     mResourcePackRepository;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const>>   mContentTierManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile>>         mExternalServerFile;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>>            mOfferRepository;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository>> mThirdPartyServerRepository;
     ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager>()>>
                                                                              mGetMultiplayerServiceManager;
@@ -94,7 +95,7 @@ public:
     ::ll::TypedStorage<8, 8, ::ToastManager&>                                              mToastManager;
     ::ll::TypedStorage<8, 64, ::std::function<bool(::Realms::RealmId)>>                    mIsRealmJoinable;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                                     mIsEditorModeEnabled;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GatheringManager>>           mGatheringManager;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager>>   mExperienceSystemsManager;
     ::ll::TypedStorage<8, 104, ::ui::ProgressScreenNavigation>                             mProgressScreenNavigation;
     ::ll::TypedStorage<8, 8, ::OreUI::Router&>                                             mRouter;
     ::ll::TypedStorage<8, 64, ::std::function<::Bedrock::NonOwnerPointer<::Parties::IPartyProvider>()>>

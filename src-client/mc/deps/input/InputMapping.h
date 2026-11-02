@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InputMapping();
+    MCNAPI InputMapping();
 
-    MCAPI InputMapping(::InputMapping const&);
+    MCNAPI InputMapping(::InputMapping const&);
 
-    MCAPI InputMapping(
+    MCNAPI InputMapping(
         ::KeyboardInputMapping&               aKeyboardMapping,
         ::MouseInputMapping&                  mouseMapping,
         ::TouchInputMapping&                  aTouchMapping,
@@ -50,21 +50,21 @@ public:
         ::std::vector<::DeviceButtonMapping>& aDeviceButtonMapping
     );
 
-    MCAPI ::std::vector<::std::string> getButtonDifference(::InputMapping const* otherMapping) const;
+    MCNAPI ::std::vector<::std::string> getButtonDifference(::InputMapping const* otherMapping) const;
 
-    MCAPI ::std::vector<::DirectionId> getStickDifference(::InputMapping const* otherMapping) const;
+    MCNAPI ::std::vector<::DirectionId> getStickDifference(::InputMapping const* otherMapping) const;
 
-    MCAPI ~InputMapping();
+    MCNAPI ~InputMapping();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::InputMapping const&);
+    MCNAPI void* $ctor(::InputMapping const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::KeyboardInputMapping&               aKeyboardMapping,
         ::MouseInputMapping&                  mouseMapping,
         ::TouchInputMapping&                  aTouchMapping,
@@ -78,6 +78,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

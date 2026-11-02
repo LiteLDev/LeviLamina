@@ -57,13 +57,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ErrorInfo();
+        MCNAPI ~ErrorInfo();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -96,45 +96,45 @@ public:
     // NOLINTBEGIN
     MCAPI Reader();
 
-    MCAPI explicit Reader(::Json::Features const& features);
+    MCNAPI explicit Reader(::Json::Features const& features);
 
-    MCAPI bool addError(::std::string const& message, ::Json::Reader::Token& token, char const* extra);
+    MCNAPI bool addError(::std::string const& message, ::Json::Reader::Token& token, char const* extra);
 
-    MCAPI ::Json::Value decodeDouble(::Json::Reader::Token& token, bool& successful);
+    MCNAPI ::Json::Value decodeDouble(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI ::Json::Value decodeNumber(::Json::Reader::Token& token, bool& successful);
+    MCNAPI ::Json::Value decodeNumber(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool decodeString(::Json::Reader::Token& token, char* decoded);
+    MCNAPI bool decodeString(::Json::Reader::Token& token, char* decoded);
 
-    MCAPI ::Json::Value::CZString decodeString(::Json::Reader::Token& token, bool& successful);
+    MCNAPI ::Json::Value::CZString decodeString(::Json::Reader::Token& token, bool& successful);
 
-    MCAPI bool
+    MCNAPI bool
     decodeUnicodeCodePoint(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
-    MCAPI bool
+    MCNAPI bool
     decodeUnicodeEscapeSequence(::Json::Reader::Token& token, char const*& current, char const* end, uint& unicode);
 
     MCAPI ::std::string getFormattedErrorMessages() const;
 
-    MCAPI ::std::string getLocationLineAndColumn(char const* location) const;
+    MCNAPI ::std::string getLocationLineAndColumn(char const* location) const;
 
     MCAPI bool parse(::std::string const& document, ::Json::Value& root, bool collectComments);
 
-    MCAPI bool parse(::std::istream& sin, ::Json::Value& root, bool collectComments);
+    MCNAPI bool parse(::std::istream& sin, ::Json::Value& root, bool collectComments);
 
-    MCAPI bool parse(char const* beginDoc, char const* endDoc, ::Json::Value& root, bool);
+    MCNAPI bool parse(char const* beginDoc, char const* endDoc, ::Json::Value& root, bool);
 
-    MCAPI bool parse(char const* originalBegin, uint64 length, ::Json::Value& root, bool collectComments);
+    MCNAPI bool parse(char const* originalBegin, uint64 length, ::Json::Value& root, bool collectComments);
 
-    MCAPI ::Json::Value readArray(::Json::Reader::Token&, bool& ok);
+    MCNAPI ::Json::Value readArray(::Json::Reader::Token&, bool& ok);
 
-    MCAPI ::Json::Value readObject(::Json::Reader::Token&, bool& successful);
+    MCNAPI ::Json::Value readObject(::Json::Reader::Token&, bool& successful);
 
-    MCAPI bool readToken(::Json::Reader::Token& token);
+    MCNAPI bool readToken(::Json::Reader::Token& token);
 
-    MCAPI ::Json::Value readValue(bool& successful);
+    MCNAPI ::Json::Value readValue(bool& successful);
 
-    MCAPI bool recoverFromError(::Json::Reader::TokenType skipUntilToken);
+    MCNAPI bool recoverFromError(::Json::Reader::TokenType skipUntilToken);
 
     MCAPI ~Reader();
     // NOLINTEND
@@ -144,7 +144,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::Json::Features const& features);
+    MCNAPI void* $ctor(::Json::Features const& features);
     // NOLINTEND
 
 public:

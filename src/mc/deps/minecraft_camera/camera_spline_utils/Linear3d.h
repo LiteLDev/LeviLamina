@@ -29,9 +29,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::glm::vec3 $eval(float t) const;
+    MCNAPI ::glm::vec3 $eval(float t) const;
 
-    MCFOLD ::CameraSplineUtils::SplineType $getType() const;
+    MCNAPI ::CameraSplineUtils::SplineType $getType() const;
 #endif
 
 

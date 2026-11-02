@@ -27,7 +27,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void defaultStartWithDelay(
+    MCNAPI static void defaultStartWithDelay(
         ::TaskGroup&                        taskGroup,
         ::std::chrono::seconds              delay,
         ::brstd::move_only_function<void()> work

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class Scheduler;
+class TransportEndpointCache;
 class WorkerPool;
 namespace Bedrock::Http { class DispatcherInterface; }
 // clang-format on
@@ -21,6 +22,9 @@ public:
     ::ll::UntypedStorage<8, 24>  mUnk29e78d;
     ::ll::UntypedStorage<8, 24>  mUnk5c25fd;
     ::ll::UntypedStorage<8, 336> mUnk515969;
+    ::ll::UntypedStorage<8, 16>  mUnk53b114;
+    ::ll::UntypedStorage<8, 32>  mUnk63fb9c;
+    ::ll::UntypedStorage<4, 4>   mUnk5c56fe;
     // NOLINTEND
 
 public:
@@ -43,10 +47,13 @@ public:
         ::std::vector<::std::string>                                        urls,
         ::WorkerPool&                                                       workerPool,
         ::Scheduler&                                                        scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> dispatcher
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> dispatcher,
+        ::std::shared_ptr<::TransportEndpointCache>                         endpointCache,
+        ::std::string                                                       cacheHost,
+        int                                                                 cachePort
     );
 
-    MCNAPI void _tryNextUrl(uint64 index);
+    MCNAPI void _tryUrlBatch(::std::vector<::std::string> urls, ::std::vector<::std::string> fallbackUrls);
 
     MCNAPI void start();
 #endif
@@ -60,7 +67,10 @@ public:
         ::std::vector<::std::string>                                        urls,
         ::WorkerPool&                                                       workerPool,
         ::Scheduler&                                                        scheduler,
-        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> dispatcher
+        ::Bedrock::NotNullNonOwnerPtr<::Bedrock::Http::DispatcherInterface> dispatcher,
+        ::std::shared_ptr<::TransportEndpointCache>                         endpointCache,
+        ::std::string                                                       cacheHost,
+        int                                                                 cachePort
     );
 #endif
     // NOLINTEND

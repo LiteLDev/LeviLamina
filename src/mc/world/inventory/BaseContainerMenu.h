@@ -68,7 +68,11 @@ public:
 
     virtual ::ItemStack const& getSlot(int slot) const = 0;
 
-    virtual void setData(int id, int value) /*override*/;
+    virtual void setData(int, int) /*override*/;
+
+    virtual void setSelectedRecipeIndex(int, bool) /*override*/;
+
+    virtual ::std::optional<int> getSelectedRecipeIndex() const /*override*/;
 
     virtual ::ContainerID getContainerId() const /*override*/;
 
@@ -90,32 +94,36 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isSlotDirty(int slot);
+    MCNAPI bool $isSlotDirty(int slot);
 
-    MCFOLD bool $isResultSlot(int slot);
+    MCNAPI bool $isResultSlot(int slot);
 
-    MCFOLD void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD void $setData(int id, int value);
+    MCNAPI void $setData(int, int);
 
-    MCFOLD ::ContainerID $getContainerId() const;
+    MCNAPI void $setSelectedRecipeIndex(int, bool);
 
-    MCAPI void $setContainerId(::ContainerID id);
+    MCNAPI ::std::optional<int> $getSelectedRecipeIndex() const;
 
-    MCAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCNAPI ::ContainerID $getContainerId() const;
 
-    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+    MCNAPI void $setContainerId(::ContainerID id);
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+
+    MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
 
     // NOLINTEND

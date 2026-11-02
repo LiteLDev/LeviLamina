@@ -13,10 +13,4 @@ public:
     ::ll::TypedStorage<8, 56, ::DefinitionTrigger> mOnCompleteDefault;
     ::ll::TypedStorage<4, 4, float>                mMovementModifier;
     // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
-    // NOLINTEND
 };

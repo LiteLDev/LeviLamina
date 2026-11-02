@@ -55,6 +55,8 @@ public:
 
     MCNAPI void EndOfDay(::Player const& player);
 
+    MCNAPI void ItemNamed(::Player const& player, ::ItemDescriptor const& item);
+
     MCNAPI void ItemSmelted(::Player const& player, ::ItemDescriptor const& item, ::ItemDescriptor const& lastFuelItem);
 #endif
 

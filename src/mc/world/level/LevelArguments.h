@@ -9,7 +9,9 @@
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/world/gamemode/entity_attack/ValidationSettings.h"
 #include "mc/world/item/registry/ItemRegistryRef.h"
+#include "mc/world/level/ticking/TickingAreaLimitPolicy.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -55,9 +57,11 @@ public:
     ::ll::TypedStorage<8, 24, ::WeakRef<::EntityContext> const>                            mLevelEntity;
     ::ll::TypedStorage<1, 1, bool>                                                mClientSideChunkGenerationEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                mBlockNetworkIdsAreHashes;
+    ::ll::TypedStorage<4, 8, ::EntityAttack::ValidationSettings>                  mEntityAttackValidationSettings;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::BlockTypeRegistry>> mBlockRegistry;
     ::ll::TypedStorage<8, 16, ::ItemRegistryRef const>                            mItemRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelStorageManager>>            mLevelStorageManager;
+    ::ll::TypedStorage<4, 24, ::TickingAreaLimitPolicy>                           mTickingAreaLimitPolicy;
     ::ll::TypedStorage<8, 16, ::brstd::function_ref<::std::unique_ptr<::LevelCrashDumpManager>()>>
         mCreateLevelCrashDumpManager;
     ::ll::
@@ -77,6 +81,7 @@ public:
     ::ll::TypedStorage<1, 1, ::SubClientId>                                        mSubClientId;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>>  mValidator;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelData>>          mLevelData;
+    ::ll::TypedStorage<1, 1, bool>                                                 mIsTrialMode;
     ::ll::TypedStorage<1, 1, bool>                                                 mIsClientSide;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ParticleProvider>>                mParticles;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::VoxelShapes::VoxelShapeRegistry>> mShapeRegistry;
@@ -92,7 +97,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ~LevelArguments();
+    MCNAPI ~LevelArguments();
 #endif
     // NOLINTEND
 
@@ -100,7 +105,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

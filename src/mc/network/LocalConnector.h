@@ -51,11 +51,9 @@ public:
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
     MCNAPI bool connect(::NetworkIdentifier const& id);
-
-    MCNAPI void disconnect(bool skipMessage);
 #endif
 
-    MCNAPI void runEvents();
+    MCNAPI void disconnect(bool skipMessage);
     // NOLINTEND
 
 public:

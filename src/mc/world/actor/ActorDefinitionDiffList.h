@@ -39,24 +39,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
+    MCNAPI explicit ActorDefinitionDiffList(::ActorDefinitionGroup& definitions);
 
-    MCAPI ::std::unique_ptr<::ActorDefinitionDescriptor> _getDescriptionFrom(uint64 start, uint64 end);
+    MCNAPI ::std::unique_ptr<::ActorDefinitionDescriptor> _getDescriptionFrom(uint64 start, uint64 end);
 
-    MCAPI void _updateStack();
+    MCNAPI void _updateStack();
 
-    MCAPI void addDefinition(::std::string const& def);
+    MCNAPI void addDefinition(::std::string const& def);
 
-    MCAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);
+    MCNAPI void addPendingPropertyChange(uint64 overallPropertyIndex, ::std::variant<int, float, bool, uint64> value);
 
-    MCAPI void clearChangedDescription();
+    MCNAPI void clearChangedDescription();
 
-    MCAPI void removeDefinition(::std::string const& def);
+#ifdef LL_PLAT_C
+    MCNAPI ::std::string definitionListToString(::std::string const& delimiter) const;
+
+    MCNAPI ::std::unique_ptr<::ActorDefinitionDescriptor> getDescription(bool needsUpdate);
+
+    MCNAPI bool hasDefinition(::std::string const& def) const;
+#endif
+
+    MCNAPI void removeDefinition(::std::string const& def);
+
+#ifdef LL_PLAT_C
+    MCNAPI void setDefinitionStack(::std::vector<::DiffListPair>& stack);
+
+    MCNAPI void unlockChanges();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionGroup& definitions);
+    MCNAPI void* $ctor(::ActorDefinitionGroup& definitions);
     // NOLINTEND
 };

@@ -63,9 +63,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NetherFortressPiece(int genDepth);
+    MCNAPI explicit NetherFortressPiece(int genDepth);
 
-    MCAPI ::StructurePiece* generateChildForward(
+    MCNAPI ::StructurePiece* generateChildForward(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -74,7 +74,7 @@ public:
         bool                                                isCastle
     );
 
-    MCAPI ::StructurePiece* generateChildRight(
+    MCNAPI ::StructurePiece* generateChildRight(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -87,7 +87,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::StructurePiece* generateAndAddPiece(
+    MCNAPI static ::StructurePiece* generateAndAddPiece(
         ::NBStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -103,15 +103,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(int genDepth);
+    MCNAPI void* $ctor(int genDepth);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
+    MCNAPI void $addHardcodedSpawnAreas(::LevelChunk& chunk) const;
 
-    MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+    MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
 
     // NOLINTEND

@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 namespace Audio { class AudioFrameBuffer; }
+namespace Audio { struct EncodedByteOffset; }
+namespace Audio { struct PcmFramePosition; }
 // clang-format on
 
 namespace Audio {
@@ -21,6 +23,11 @@ public:
     virtual ::Bedrock::Result<void> initialize() = 0;
 
     virtual ::Bedrock::Result<::gsl::span<float>> decodeInto(::Audio::AudioFrameBuffer& outputBuffer) = 0;
+
+    virtual ::Bedrock::Result<void> repositionCompressedInput(
+        ::Audio::EncodedByteOffset encodedByteOffset,
+        ::Audio::PcmFramePosition  pcmFramePosition
+    ) = 0;
 
     virtual uchar getChannels() const = 0;
 

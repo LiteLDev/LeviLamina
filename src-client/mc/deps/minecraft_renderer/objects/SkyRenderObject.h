@@ -30,7 +30,7 @@ public:
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr>              mMoonTex;
             ::ll::TypedStorage<8, 40, ::std::vector<::mce::TexturePtr, ::LinearAllocator<::mce::TexturePtr>>>
                                                                 mCubemapTextures;
-            ::ll::TypedStorage<8, 24, ::mce::ServerTexture>     mCubemapTexture;
+            ::ll::TypedStorage<8, 16, ::mce::ServerTexture>     mCubemapTexture;
             ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*> mCubemapMaterial;
             ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*> mSkyMaterial;
             ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*> mStarsMaterial;
@@ -45,31 +45,5 @@ public:
         };
         ::ll::TypedStorage<1, 1, ::Bedrock::Detail::NonCopyableField> _;
     };
-    // NOLINTEND
-
-public:
-    // prevent constructor by default
-    SkyRenderObject& operator=(SkyRenderObject const&);
-    SkyRenderObject(SkyRenderObject const&);
-    SkyRenderObject();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SkyRenderObject(::SkyRenderObject&&);
-
-    MCAPI ~SkyRenderObject();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::SkyRenderObject&&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

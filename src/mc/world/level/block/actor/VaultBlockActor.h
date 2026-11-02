@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/ecs/WeakEntityRef.h"
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemStack.h"
 #include "mc/world/level/Tick.h"
 #include "mc/world/level/block/VaultBlockState.h"
@@ -90,18 +91,18 @@ public:
         // static functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI static void emitActivationParticles(::BlockSource& region, ::BlockPos pos);
+        MCNAPI static void emitActivationParticles(::BlockSource& region, ::BlockPos pos);
 
-        MCAPI static void emitConnectedParticles(
+        MCNAPI static void emitConnectedParticles(
             ::BlockSource&                            region,
             ::BlockPos                                pos,
             ::VaultBlockActor::VaultSharedData const& sharedData
         );
 
-        MCAPI static void emitDeactivationParticles(::BlockSource& region, ::BlockPos pos);
+        MCNAPI static void emitDeactivationParticles(::BlockSource& region, ::BlockPos pos);
 #endif
 
-        MCAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
+        MCNAPI static void removeDisplayEntity(::VaultBlockActor::VaultClientData& clientData);
         // NOLINTEND
     };
 
@@ -109,13 +110,13 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void cycleDisplayItemFromLootTable(
+        MCNAPI static void cycleDisplayItemFromLootTable(
             ::BlockSource&                        region,
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData
         );
 
-        MCAPI static void onTransitionBetweenStates(
+        MCNAPI static void onTransitionBetweenStates(
             ::BlockSource&                        region,
             ::BlockPos                            pos,
             ::VaultBlockActor::VaultConfig const& config,
@@ -124,23 +125,24 @@ public:
             ::VaultBlockState                     newState
         );
 
-        MCAPI static void playInsertFailSound(
+        MCNAPI static void playInsertFailSound(
             ::BlockSource&                         region,
             ::BlockPos                             pos,
             ::VaultBlockActor::VaultServerData&    serverData,
             ::SharedTypes::Legacy::LevelSoundEvent sound
         );
 
-        MCAPI static void tryInsertKey(
+        MCNAPI static void tryInsertKey(
             ::BlockSource&                        region,
             ::Player&                             player,
             ::BlockPos                            pos,
+            ::HandSlot                            handSlot,
             ::VaultBlockActor::VaultConfig const& config,
             ::VaultBlockActor::VaultSharedData&   sharedData,
             ::VaultBlockActor::VaultServerData&   serverData
         );
 
-        MCAPI static void updateConnectedPlayersWithinRange(
+        MCNAPI static void updateConnectedPlayersWithinRange(
             ::BlockSource&                            region,
             ::BlockPos                                pos,
             ::VaultBlockActor::VaultServerData const& serverData,
@@ -182,37 +184,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VaultBlockActor(::BlockPos const& pos);
+    MCNAPI explicit VaultBlockActor(::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
+    MCNAPI ::Actor* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource&);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
 
     // NOLINTEND

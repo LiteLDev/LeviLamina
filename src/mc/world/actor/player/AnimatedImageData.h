@@ -29,7 +29,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI AnimatedImageData(::AnimatedImageData const& rhs);
+#endif
 
     MCAPI AnimatedImageData(
         ::persona::AnimatedTextureType type,
@@ -38,15 +40,19 @@ public:
         float                          frames
     );
 
-    MCAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+#ifdef LL_PLAT_S
+    MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
+#endif
 
-    MCAPI void setSkinImage(::SkinImage const& image);
+    MCNAPI void setSkinImage(::SkinImage const& image);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor(::AnimatedImageData const& rhs);
+#endif
 
     MCAPI void* $ctor(
         ::persona::AnimatedTextureType type,

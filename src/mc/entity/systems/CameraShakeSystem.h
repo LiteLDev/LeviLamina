@@ -11,6 +11,7 @@ class ActorOwnerComponent;
 class CameraShakeComponent;
 class EntityContext;
 class EntityRegistry;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class CameraShakeSystem : public ::ITickingSystem {
@@ -24,11 +25,13 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void _tickComponent(
+    MCNAPI static void _tickComponent(
         ::EntityContext&        entity,
         ::ActorOwnerComponent&  actorOwnerComponent,
         ::CameraShakeComponent& cameraShakeComponent
     );
+
+    MCNAPI static ::TickingSystemWithInfo createSystem();
 #endif
     // NOLINTEND
 
@@ -36,7 +39,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 #endif
 
 

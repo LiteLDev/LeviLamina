@@ -16,9 +16,10 @@ struct MultiSelectSetting {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType>                    mType;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                                mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                                mText;
+    ::ll::TypedStorage<1, 1, ::SharedTypes::v3_0_0::PackManifestDefinition::SettingType> mType;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mText;
+    ::ll::TypedStorage<8, 32, ::std::string>                                             mSelectionText;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v3_0_0::PackManifestDefinition::DropdownOption>> mOptions;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                                                 mDefaults;
     // NOLINTEND
@@ -30,32 +31,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultiSelectSetting(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
+    MCNAPI MultiSelectSetting(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const& other) const;
+    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const& other) const;
 
-    MCAPI ~MultiSelectSetting();
+    MCNAPI ~MultiSelectSetting();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::MultiSelectSetting const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

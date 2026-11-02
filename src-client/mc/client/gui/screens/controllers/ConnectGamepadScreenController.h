@@ -17,7 +17,8 @@ class ConnectGamepadScreenController : public ::MinecraftScreenController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 64, ::std::function<void()>> mOnCompleteCallback;
+    ::ll::TypedStorage<8, 64, ::std::function<void()>>  mOnCompleteCallback;
+    ::ll::TypedStorage<1, 1, ::GameControllerErrorType> mControllerError;
     // NOLINTEND
 
 public:
@@ -43,19 +44,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectGamepadScreenController(
+    MCNAPI ConnectGamepadScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::GameControllerErrorType                 controllerError,
         ::std::function<void()>                   onCompleteCallback
     );
 
-    MCAPI void _showGamepadRequiredPopup();
+    MCNAPI void _showGamepadRequiredPopup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::GameControllerErrorType                 controllerError,
         ::std::function<void()>                   onCompleteCallback
@@ -65,15 +66,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onReload();
+    MCNAPI void $onReload();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
     // NOLINTEND
 
 public:

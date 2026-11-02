@@ -19,14 +19,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EditorNetworkPacketVariantPayload(::EditorNetworkPacketVariantPayload const&);
+    MCNAPI EditorNetworkPacketVariantPayload(::EditorNetworkPacketVariantPayload const&);
 
-    MCFOLD ::EditorNetworkPacketVariantPayload& operator=(::EditorNetworkPacketVariantPayload&&);
+    MCNAPI ::EditorNetworkPacketVariantPayload& operator=(::EditorNetworkPacketVariantPayload&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::EditorNetworkPacketVariantPayload const&);
+    MCNAPI void* $ctor(::EditorNetworkPacketVariantPayload const&);
     // NOLINTEND
 };

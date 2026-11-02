@@ -36,21 +36,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MobEffectScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit MobEffectScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

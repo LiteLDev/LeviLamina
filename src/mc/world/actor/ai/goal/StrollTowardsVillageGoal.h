@@ -36,23 +36,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StrollTowardsVillageGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI StrollTowardsVillageGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI ::BlockPos $_selectRandomPosInVillage();
+    MCNAPI ::BlockPos $_selectRandomPosInVillage();
 
 
     // NOLINTEND

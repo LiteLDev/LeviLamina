@@ -32,7 +32,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::StructurePiece> findAndCreatePieceFactory(
+    MCNAPI ::std::unique_ptr<::StructurePiece> findAndCreatePieceFactory(
         ::std::string const&                                pieceClass,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -43,7 +43,7 @@ public:
         int                                                 depth
     );
 
-    MCAPI void generateSmallDoor(
+    MCNAPI void generateSmallDoor(
         ::BlockSource& region,
         ::Random&,
         ::BoundingBox const&             chunkBB,
@@ -53,7 +53,7 @@ public:
         int                              footZ
     );
 
-    MCAPI ::StructurePiece* generateSmallDoorChildForward(
+    MCNAPI ::StructurePiece* generateSmallDoorChildForward(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -61,7 +61,7 @@ public:
         int                                                 yOff
     );
 
-    MCAPI ::StructurePiece* generateSmallDoorChildRight(
+    MCNAPI ::StructurePiece* generateSmallDoorChildRight(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,
@@ -73,13 +73,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void forceAddPortalRoom(
-        ::StructurePiece&                                   startPiece,
-        ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
-        ::Random&                                           random
-    );
-
-    MCAPI static ::StructurePiece* generateAndAddPiece(
+    MCNAPI static ::StructurePiece* generateAndAddPiece(
         ::SHStartPiece&                                     startPiece,
         ::std::vector<::std::unique_ptr<::StructurePiece>>& pieces,
         ::Random&                                           random,

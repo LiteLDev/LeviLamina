@@ -13,53 +13,55 @@ class RenderParams;
 namespace LegacyMolangVariableUpdate {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
+MCNAPI ::std::array<::HashedString, 24> getEnderDragonHistoricalFrameVariables();
 
-MCAPI void initializeAgent(::EntityContext& entityContext);
+MCNAPI void initializeAgent(::EntityContext& entityContext);
 
-MCAPI void initializeCat(::EntityContext& entityContext);
+MCNAPI void initializeArmorStand(::EntityContext& entityContext);
 
-MCAPI void initializeChicken(::EntityContext& entityContext);
+MCNAPI void initializeCat(::EntityContext& entityContext);
 
-MCAPI void initializeEnderDragon(::EntityContext& entityContext);
+MCNAPI void initializeChicken(::EntityContext& entityContext);
 
-MCAPI void initializeFish(::EntityContext& entityContext);
+MCNAPI void initializeEnderDragon(::EntityContext& entityContext);
 
-MCAPI void initializeGhast(::EntityContext& entityContext);
+MCNAPI void initializeFish(::EntityContext& entityContext);
 
-MCAPI void initializeGoat(::EntityContext& entityContext);
+MCNAPI void initializeGhast(::EntityContext& entityContext);
 
-MCAPI void initializeHorse(::EntityContext& entityContext);
+MCNAPI void initializeGoat(::EntityContext& entityContext);
 
-MCAPI void initializeIronGolem(::EntityContext& entityContext);
+MCNAPI void initializeHorse(::EntityContext& entityContext);
 
-MCAPI void initializeLlama(::EntityContext& entityContext);
+MCNAPI void initializeIronGolem(::EntityContext& entityContext);
 
-MCAPI void initializeOcelot(::EntityContext& entityContext);
+MCNAPI void initializeLlama(::EntityContext& entityContext);
 
-MCAPI void initializePiglin(::EntityContext& entityContext);
+MCNAPI void initializeOcelot(::EntityContext& entityContext);
 
-MCAPI void initializePillager(::EntityContext& entityContext);
+MCNAPI void initializePiglin(::EntityContext& entityContext);
 
-MCAPI void initializePufferfish(::EntityContext& entityContext);
+MCNAPI void initializePillager(::EntityContext& entityContext);
 
-MCAPI void initializeRabbit(::EntityContext& entityContext);
+MCNAPI void initializePufferfish(::EntityContext& entityContext);
 
-MCAPI void initializeShulker(::EntityContext& entityContext);
+MCNAPI void initializeRabbit(::EntityContext& entityContext);
 
-MCAPI void initializeSquid(::EntityContext& entityContext);
+MCNAPI void initializeShulker(::EntityContext& entityContext);
 
-MCAPI void initializeTripodCamera(::EntityContext& entityContext);
+MCNAPI void initializeSquid(::EntityContext& entityContext);
 
-MCAPI void initializeTropicalFish(::EntityContext& entityContext);
+MCNAPI void initializeTripodCamera(::EntityContext& entityContext);
 
-MCAPI void initializeVillager(::EntityContext& entityContext);
+MCNAPI void initializeTropicalFish(::EntityContext& entityContext);
 
-MCAPI void initializeWanderingTrader(::EntityContext& entityContext);
+MCNAPI void initializeVillager(::EntityContext& entityContext);
 
-MCAPI void initializeWitch(::EntityContext& entityContext);
+MCNAPI void initializeWanderingTrader(::EntityContext& entityContext);
 
-MCAPI void updateEntitySpecificMolangVariables(::Actor& actor, ::RenderParams& renderParams);
+MCNAPI void initializeWitch(::EntityContext& entityContext);
+
+MCNAPI void updateEntitySpecificMolangVariables(::Actor& actor, ::RenderParams& renderParams);
 // NOLINTEND
 
 } // namespace LegacyMolangVariableUpdate

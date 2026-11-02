@@ -2,7 +2,7 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 struct ServerInvalidationDetails {
 public:
@@ -12,4 +12,4 @@ public:
     enum class Source : uchar {};
 };
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

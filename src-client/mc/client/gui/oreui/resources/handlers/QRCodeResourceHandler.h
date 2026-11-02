@@ -52,7 +52,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::mce::Color> _getColorFromQueryParameter(
+    MCNAPI static ::std::optional<::mce::Color> _getColorFromQueryParameter(
         ::std::vector<::std::pair<::std::string_view, ::std::string_view>> const& queryParameters,
         ::std::string const&                                                      parameterName
     );
@@ -61,13 +61,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse&);
 
-    MCFOLD void $update();
+    MCNAPI void $update();
     // NOLINTEND
 
 public:

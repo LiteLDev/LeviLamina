@@ -64,7 +64,7 @@ public:
 
     virtual void render(
         ::ScreenContext& screenContext,
-        ::Actor&         entity,
+        ::Actor&         e,
         float            time,
         float            r,
         float            bob,
@@ -92,16 +92,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Model();
+    MCNAPI Model();
 
-    MCAPI void assignPartToGroup(
+    MCNAPI void assignPartToGroup(
         ::ModelPart&          part,
         bool                  forceToUniqueGroup,
         int                   skinnedMeshGroupIdentifier,
         ::DataDrivenGeometry* owningGeometry
     );
 
-    MCAPI void dataDrivenDraw(
+    MCNAPI void dataDrivenDraw(
         ::RenderParams&                            renderParams,
         ::dragon::RenderMetadata const&            renderMetadata,
         ::gsl::not_null<::RenderController const*> renderController,
@@ -110,13 +110,13 @@ public:
         ::std::optional<::MERSUniformData> const&  mersUniforms
     );
 
-    MCAPI void draw(
+    MCNAPI void draw(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::mce::ClientTexture const&     texture
     );
 
-    MCAPI void draw(
+    MCNAPI void draw(
         ::ScreenContext&                screenContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ActorTextureInfo const&       textureInfo
@@ -126,31 +126,31 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCFOLD void $preDraw(::ScreenContext&);
+    MCNAPI void $preDraw(::ScreenContext&);
 
-    MCFOLD void $postDraw(::ScreenContext&);
+    MCNAPI void $postDraw(::ScreenContext&);
 
-    MCFOLD void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
 
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
-        ::Actor&         entity,
+        ::Actor&         e,
         float            time,
         float            r,
         float            bob,
@@ -159,20 +159,20 @@ public:
         float            scale
     );
 
-    MCFOLD void $render(::BaseActorRenderContext&);
+    MCNAPI void $render(::BaseActorRenderContext&);
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& baseActorRenderContext, ::Actor&, float, float, float, float, float, float);
 
-    MCFOLD void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
+    MCNAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
 
-    MCFOLD void $setupAnim();
+    MCNAPI void $setupAnim();
 
-    MCFOLD void $prepareMobModel(::Mob&, float, float, float);
+    MCNAPI void $prepareMobModel(::Mob&, float, float, float);
 
-    MCAPI float $getHeightAdjustment() const;
+    MCNAPI float $getHeightAdjustment() const;
 
-    MCAPI ::AABB $buildAABB() const;
+    MCNAPI ::AABB $buildAABB() const;
     // NOLINTEND
 
 public:

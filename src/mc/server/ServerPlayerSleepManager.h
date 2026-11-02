@@ -58,17 +58,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void _onPlayerDeath();
+    MCNAPI void _onPlayerDeath();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateSleepingPlayerList();
+    MCNAPI void $updateSleepingPlayerList();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Player&)>& $getPlayerWakeUpConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getOnWakeUpAllPlayersConnector();
 
 
     // NOLINTEND

@@ -16,33 +16,33 @@ struct ActorUniqueID;
 namespace ActorCollision {
 // functions
 // NOLINTBEGIN
-MCAPI bool getDepenetrationComponentBit(::EntityContext const& provider, ::DepenetrationComponent::Bit bit);
+MCNAPI bool getDepenetrationComponentBit(::EntityContext const& provider, ::DepenetrationComponent::Bit bit);
 
-MCAPI ::std::vector<::AABB> const& getOnewayPhysicsBlocks(::EntityContext const& provider);
+MCNAPI ::std::vector<::AABB> const& getOnewayPhysicsBlocks(::EntityContext const& provider);
 
-MCAPI float getPickRadius(::EntityContext const& provider);
+MCNAPI float getPickRadius(::EntityContext const& provider);
 
-MCAPI ::std::vector<::AABB>& getSubAABBs(::EntityContext& provider);
+MCNAPI ::std::vector<::AABB>& getSubAABBs(::EntityContext& provider);
 
-MCAPI bool hasCollision(::EntityContext const& provider);
+MCNAPI bool hasCollision(::EntityContext const& provider);
 
-MCAPI bool hasHorizontalCollision(::EntityContext const& provider);
+MCNAPI bool hasHorizontalCollision(::EntityContext const& provider);
 
-MCAPI bool hasVerticalCollision(::EntityContext const& provider);
+MCNAPI bool hasVerticalCollision(::EntityContext const& provider);
 
-MCAPI void initializeActor(::EntityContext& provider);
+MCNAPI void initializeActor(::EntityContext& provider);
 
-MCAPI void initializePickable(::EntityContext& provider, float pickRadius);
+MCNAPI void initializePickable(::EntityContext& provider, float pickRadius);
 
-MCAPI bool isOnGround(::EntityContext const& provider);
+MCNAPI bool isOnGround(::EntityContext const& provider);
 
-MCAPI void setDepenetrationComponentBit(::EntityContext& provider, ::DepenetrationComponent::Bit bit, bool value);
+MCNAPI void setDepenetrationComponentBit(::EntityContext& provider, ::DepenetrationComponent::Bit bit, bool value);
 
-MCAPI void setPushedBy(::EntityContext& provider, ::StrictEntityContext context, ::ActorUniqueID const& id);
+MCNAPI void setPushedBy(::EntityContext& provider, ::StrictEntityContext context, ::ActorUniqueID const& id);
 
-MCAPI void setSubAABBs(::EntityContext& provider, ::std::vector<::AABB> const& bbs);
+MCNAPI void setSubAABBs(::EntityContext& provider, ::std::vector<::AABB> const& bbs);
 
-MCAPI bool wasOnGround(::EntityContext const& provider);
+MCNAPI bool wasOnGround(::EntityContext const& provider);
 // NOLINTEND
 
 } // namespace ActorCollision

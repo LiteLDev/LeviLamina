@@ -17,10 +17,6 @@ namespace BlockEvents { class BlockQueuedTickEvent; }
 
 class DriedGhastBlock : public ::BlockType {
 public:
-    // prevent constructor by default
-    DriedGhastBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void onRemove(::BlockSource& region, ::BlockPos const& position) const /*override*/;
@@ -33,27 +29,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DriedGhastBlock(::std::string const& nameId, int id);
+    MCNAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
 
-    MCAPI void onPlace(::BlockEvents::BlockPlaceEvent& eventData) const;
-
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& position) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& position) const;
 
-    MCAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
 
     // NOLINTEND
@@ -61,6 +49,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

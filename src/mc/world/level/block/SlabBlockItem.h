@@ -41,28 +41,30 @@ public:
         ::Vec3 const& clickPos
     ) const /*override*/;
 
-    virtual bool _calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const
+    virtual bool
+    _calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const
         /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCNAPI SlabBlockItem(::std::string const& name, int id, ::HashedString const& doubleSlabId);
 
-    MCAPI bool _canConvertToDoubleBlock(::ItemStackBase& instance, ::Actor&, uchar& face, ::Block const& block) const;
+    MCNAPI bool
+    _canConvertToDoubleBlock(::ItemStackBase const& instance, ::Actor const&, uchar& face, ::Block const& block) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
+    MCNAPI void* $ctor(::std::string const& name, int id, ::HashedString const& doubleSlabId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -71,7 +73,8 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase& instance, ::Actor& actor, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool
+    $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND
@@ -79,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

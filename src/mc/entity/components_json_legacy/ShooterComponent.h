@@ -27,8 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
+    MCNAPI void _shootProjectile(::Actor& owner, ::ActorDefinitionIdentifier const& actorDef, int auxVal);
 
-    MCAPI void onShoot(::Actor& owner);
+    MCNAPI void onShoot(::Actor& owner);
     // NOLINTEND
 };

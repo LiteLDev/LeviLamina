@@ -22,6 +22,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    GamePadRemappingLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~GamePadRemappingLayout() /*override*/ = default;
@@ -53,47 +57,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string _getKeySpriteLocationInternal(
+    MCNAPI GamePadRemappingLayout(bool swapAB, bool swapXY);
+
+    MCNAPI ::std::string _getKeySpriteLocationInternal(
         int        key,
         bool       checkUserConfiguredButtonSwapping,
         bool       checkPlatformButtonSwapping,
         ::IconSize iconSize
     ) const;
 
-    MCAPI ::std::string const _getMappedKeyNameInternal(int key, bool const checkUserConfiguredButtonSwapping) const;
+    MCNAPI ::std::string const _getMappedKeyNameInternal(int key, bool const checkUserConfiguredButtonSwapping) const;
 
-    MCAPI void _swapGamepadKeyBindings(int key1, int key2);
+    MCNAPI void _swapGamepadKeyBindings(int key1, int key2);
 
-    MCAPI ::std::string getKeySpriteName(int key, bool checkPlatformButtonSwapping) const;
+    MCNAPI ::std::string getKeySpriteName(int key, bool checkPlatformButtonSwapping) const;
 
-    MCAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
+    MCNAPI ::std::string getKeyTextName(int key, bool checkUserConfiguredButtonSwapping) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(bool swapAB, bool swapXY);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
+    MCNAPI void $setMappingWithRawInput(::std::string const& action, int key, ::RawInputType type);
 
-    MCAPI ::std::string $getMappedKeyName(int key) const;
+    MCNAPI ::std::string $getMappedKeyName(int key) const;
 
-    MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    MCAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
+    MCNAPI ::std::string $getMappedKeyName(::Keymapping const& keyMapping) const;
 
-    MCAPI ::std::string $getSaveString(::std::string const& action) const;
+    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
 
-    MCAPI int $getAdjustedKey(int key) const;
+    MCNAPI int $getAdjustedKey(int key) const;
 
-    MCAPI ::std::string $getKeySpriteLocation(
+    MCNAPI ::std::string $getKeySpriteLocation(
         int        key,
         bool       checkUserConfiguredSwap,
         bool       checkPlatformButtonSwapping,
         ::IconSize iconSize
     ) const;
 
-    MCAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
+    MCNAPI ::std::string $getKeySpriteLocation(::Keymapping const& keyMapping) const;
 
-    MCAPI int $_rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const;
+    MCNAPI int $_rawKeyToKey(int rawInputKey, ::RawInputType rawInputType) const;
     // NOLINTEND
 
 public:

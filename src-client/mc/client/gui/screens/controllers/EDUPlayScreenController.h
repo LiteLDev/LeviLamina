@@ -15,7 +15,7 @@ class JoincodeEntryScreenController;
 class PlayScreenModel;
 // clang-format on
 
-class EDUPlayScreenController : public ::MainMenuScreenController, public ::EduDeeplinkObserver {
+class EduPlayScreenController : public ::MainMenuScreenController, public ::EduDeeplinkObserver {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,12 +29,12 @@ public:
 
 public:
     // prevent constructor by default
-    EDUPlayScreenController();
+    EduPlayScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUPlayScreenController() /*override*/ = default;
+    virtual ~EduPlayScreenController() /*override*/ = default;
 
     virtual void onEntered() /*override*/;
 
@@ -50,26 +50,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDUPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
+    MCNAPI EduPlayScreenController(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::string encodedJoincode);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
+    MCNAPI bool $onJoincodeReceived(::std::string const& encodedJoincode);
     // NOLINTEND
 };

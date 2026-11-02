@@ -36,9 +36,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptActorDieAfterEvent(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
+    MCNAPI ScriptActorDieAfterEvent(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
 
-    MCAPI ScriptActorDieAfterEvent(
+    MCNAPI ScriptActorDieAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                       scope
     );
@@ -47,15 +47,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptActorDieAfterEvent const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptActorDieAfterEventIntermediateData> const& eventData,
         ::Scripting::WeakLifetimeScope const&                                                       scope
     );

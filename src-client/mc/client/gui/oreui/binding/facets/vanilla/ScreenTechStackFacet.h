@@ -35,17 +35,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
+    MCNAPI ::ui::TechStack getPreferredTechStackForScreen(::std::string const& screenName) const;
 
-    MCAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
+    MCNAPI ::ui::TechStack getTechStackForScreen(::std::string const& screenName) const;
 
-    MCAPI void selectTechStackForScreen(::std::string const& screenName, ::ui::TechStack stack);
+    MCNAPI void selectTechStackForScreen(::std::string const& screenName, ::ui::TechStack stack);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

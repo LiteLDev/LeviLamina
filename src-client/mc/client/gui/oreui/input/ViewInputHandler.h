@@ -16,10 +16,12 @@ class KeyboardManager;
 class MouseAction;
 struct ControllerIDtoClientMap;
 namespace Input::Debug { class ISplitscreenRedirect; }
+namespace OreUI { class FocusNavigationController; }
 namespace OreUI { class GamepadInputHandler; }
 namespace OreUI { class TextInputHandler; }
 namespace OreUI { class TouchInputHandler; }
 namespace cohtml { class View; }
+namespace cohtml { struct KeyEventData; }
 // clang-format on
 
 namespace OreUI {
@@ -51,6 +53,7 @@ public:
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mIsFullKeyboardSubscription;
     ::ll::TypedStorage<1, 1, bool>                             mInvertMouse;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription> mInvertMouseSubscription;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::OreUI::FocusNavigationController>> mFocusController;
     // NOLINTEND
 
 public:
@@ -62,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewInputHandler(
+    MCNAPI ViewInputHandler(
         ::SubClientId                                                              subClientId,
         ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
         ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,
@@ -75,11 +78,15 @@ public:
         ::IOptionRegistry&                                                         options
     );
 
-    MCAPI void handleKeyboardInput(::KeyboardAction const& keyboardAction);
+    MCNAPI bool _handleFocusNavigationKey(::cohtml::KeyEventData const& keyEvent) const;
 
-    MCAPI void handleMouseInput(::MouseAction const& mouseAction);
+    MCNAPI void handleKeyboardInput(::KeyboardAction const& keyboardAction);
 
-    MCAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
+    MCNAPI void handleMouseInput(::MouseAction const& mouseAction);
+
+    MCNAPI void setFocusController(::OreUI::FocusNavigationController* controller);
+
+    MCNAPI bool shouldHandleGamepad(::std::shared_ptr<::IGameController> gamePad);
 
     MCAPI ~ViewInputHandler();
     // NOLINTEND
@@ -87,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::SubClientId                                                              subClientId,
         ::std::unique_ptr<::OreUI::TextInputHandler>                               textInputHandler,
         ::std::unique_ptr<::OreUI::TouchInputHandler>                              touchInputHandler,

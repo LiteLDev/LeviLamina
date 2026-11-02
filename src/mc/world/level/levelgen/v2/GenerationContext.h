@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class JigsawStructureRegistry;
+struct BiomeIdType;
 namespace br::worldgen { class ChunkAccessor; }
 // clang-format on
 
@@ -18,11 +19,12 @@ struct GenerationContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::JigsawStructureRegistry const&> mPools;
-    ::ll::TypedStorage<8, 56, ::br::worldgen::WorldGenRandom>  mRandom;
-    ::ll::TypedStorage<8, 8, int64>                            mLevelSeed;
-    ::ll::TypedStorage<8, 8, ::ChunkPos>                       mChunkPos;
-    ::ll::TypedStorage<8, 8, ::br::worldgen::ChunkAccessor&>   mChunkAccessor;
+    ::ll::TypedStorage<8, 8, ::JigsawStructureRegistry const&>  mPools;
+    ::ll::TypedStorage<8, 56, ::br::worldgen::WorldGenRandom>   mRandom;
+    ::ll::TypedStorage<8, 8, int64>                             mLevelSeed;
+    ::ll::TypedStorage<8, 8, ::ChunkPos>                        mChunkPos;
+    ::ll::TypedStorage<8, 8, ::br::worldgen::ChunkAccessor&>    mChunkAccessor;
+    ::ll::TypedStorage<8, 16, ::gsl::span<::BiomeIdType const>> mValidBiomes;
     // NOLINTEND
 
 public:

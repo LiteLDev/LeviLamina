@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EDUSystems;
+class EduSystems;
 class FileArchiver;
 class IGameModuleShared;
 class Minecraft;
@@ -23,9 +23,9 @@ public:
     virtual ~IMinecraftApp() = default;
 
 #ifdef LL_PLAT_C
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() = 0;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const = 0;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const = 0;
 
     virtual ::std::shared_ptr<::OptionRegistry> getPrimaryUserOptions() = 0;
 

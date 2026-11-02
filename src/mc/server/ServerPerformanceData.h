@@ -41,29 +41,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerPerformanceData();
+    MCNAPI ServerPerformanceData();
 
-    MCAPI ::std::optional<::DebuggerStat>
-    _collectScriptStats(uint64 currentTick, uint64 lastCollectedTick, uint64 collectionFrequency) const;
+    MCNAPI void _collectScriptStats(
+        ::DebuggerStat& serverTickStats,
+        uint64          currentTick,
+        uint64          lastCollectedTick,
+        uint64          collectionFrequency
+    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::DebuggerStat
+    MCNAPI static ::DebuggerStat
     _perfDataToStats(::std::string const& name, uint64 tickCount, ::RollingAverageTracker const& tracker);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -17,9 +17,10 @@ public:
         Textures = 2,
         Mashups  = 3,
         Addons   = 4,
-        Total    = 5,
-        All      = 6,
-        None     = 7,
+        Audio    = 5,
+        Total    = 6,
+        All      = 7,
+        None     = 8,
     };
 
     struct CategoryInfo {};

@@ -53,32 +53,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onAnyGameplayUsersRemoved();
+    MCNAPI void _onAnyGameplayUsersRemoved();
 
-    MCAPI void _onGameplayUserAdded(::EntityContext& entity);
+    MCNAPI void _onGameplayUserAdded(::EntityContext& entity);
 
-    MCAPI void _onGameplayUserRemoved(::EntityContext& entity);
+    MCNAPI void _onGameplayUserRemoved(::EntityContext& entity);
 
 #ifdef LL_PLAT_C
-    MCAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
+    MCNAPI void addPlayerEntry(::mce::UUID const& uuid, ::PlayerListEntry&& playerListEntry);
 #endif
 
-    MCAPI void initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
+    MCNAPI void
+    initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCAPI void removeByUUID(::mce::UUID const& uuid);
+    MCNAPI void removeByUUID(::mce::UUID const& uuid);
 
-    MCAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
+    MCNAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
 
-    MCAPI void setPlayerLocationSender(::Bedrock::NonOwnerPointer<::PlayerLocationSender> playerLocationSender);
+    MCNAPI void setPlayerLocationSender(::Bedrock::NonOwnerPointer<::PlayerLocationSender> playerLocationSender);
 
-    MCAPI ::PlayerListEntry* tryGetPlayerEntry(::mce::UUID const& uuid);
+    MCNAPI ::PlayerListEntry* tryGetPlayerEntry(::mce::UUID const& uuid);
 
-    MCAPI ~PlayerListManager();
+    MCNAPI ~PlayerListManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

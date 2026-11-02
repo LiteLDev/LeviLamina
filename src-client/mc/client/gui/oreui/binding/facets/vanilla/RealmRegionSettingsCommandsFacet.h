@@ -31,29 +31,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void fetchRegions();
+    MCNAPI void fetchRegions();
 
-    MCAPI void resetLowPingWarning();
+    MCNAPI void resetLowPingWarning();
 
-    MCAPI void resetRegionStatus();
+    MCNAPI void resetRegionStatus();
 
-    MCAPI void saveSelectedServerRegion(::std::string const& realmId);
+    MCNAPI void saveSelectedServerRegion(::std::string const& realmId);
 
-    MCAPI void setDoNotShowPingWarning(bool doNotShow);
+    MCNAPI void setDoNotShowPingWarning(bool doNotShow);
 
-    MCAPI void setSelectedServerRegionIndex(int index);
+    MCNAPI void setSelectedServerRegionIndex(int index);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

@@ -11,6 +11,6 @@ class ArmorTrimUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void adjustLeatherTrimAlpha(::cg::ImageBuffer& trim);
+    MCNAPI static void adjustLeatherTrimAlpha(::cg::ImageBuffer& trim);
     // NOLINTEND
 };

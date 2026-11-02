@@ -28,9 +28,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CompressedImageBuffer(::cg::CompressedImageBuffer const& imageBuffer);
-
-    MCAPI CompressedImageBuffer(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+    MCNAPI CompressedImageBuffer(::cg::CompressedImageBuffer const& imageBuffer);
 #endif
     // NOLINTEND
 
@@ -38,9 +36,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::cg::CompressedImageBuffer const& imageBuffer);
-
-    MCAPI void* $ctor(uchar const* data, uint64 size, ::cg::CompressedImageDescription const& desc);
+    MCNAPI void* $ctor(::cg::CompressedImageBuffer const& imageBuffer);
 #endif
     // NOLINTEND
 };

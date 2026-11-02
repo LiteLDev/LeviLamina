@@ -34,24 +34,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RouterLocation(
+    MCNAPI RouterLocation(
         ::std::weak_ptr<::AbstractScene> scene,
         ::std::string const&             url,
         ::OreUI::RouteMode               mode,
         ::OreUI::RouteType               routeType
     );
 
-    MCFOLD ::std::string const& getFragment() const;
+    MCNAPI ::std::string getTelemetryId() const;
 
-    MCFOLD ::std::string const& getPath() const;
+    MCNAPI bool isValid() const;
 
-    MCFOLD ::std::string const& getQuery() const;
-
-    MCAPI ::std::string getTelemetryId() const;
-
-    MCAPI bool isValid() const;
-
-    MCAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation const&);
+    MCNAPI ::OreUI::RouterLocation& operator=(::OreUI::RouterLocation const&);
 
     MCAPI ~RouterLocation();
     // NOLINTEND
@@ -59,13 +53,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isRealmsStoriesScreen(::std::string const& routeName);
+    MCNAPI static bool _isRealmsStoriesScreen(::std::string const& routeName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::weak_ptr<::AbstractScene> scene,
         ::std::string const&             url,
         ::OreUI::RouteMode               mode,

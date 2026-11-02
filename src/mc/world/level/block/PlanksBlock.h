@@ -27,13 +27,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::std::string, 11> const& WOOD_NAMES();
+    MCNAPI static ::std::array<::std::string, 11> const& WOOD_NAMES();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $buildDescriptionId(::Block const&) const;
+    MCNAPI ::std::string $buildDescriptionId(::Block const&) const;
 
 
     // NOLINTEND
@@ -41,6 +41,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

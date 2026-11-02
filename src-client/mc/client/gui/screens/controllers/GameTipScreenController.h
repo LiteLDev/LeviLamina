@@ -67,32 +67,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameTipScreenController(
+    MCNAPI GameTipScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel>     model,
         ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
     );
 
-    MCAPI void _addInterruption(::GameTipConstants::Interruption interruption);
+    MCNAPI void _addInterruption(::GameTipConstants::Interruption interruption);
 
-    MCAPI void _destroyActiveTip();
+    MCNAPI void _destroyActiveTip();
 
-    MCAPI void _displayActiveTip(::GameTipConstants::Animation const animation);
+    MCNAPI void _displayActiveTip(::GameTipConstants::Animation const animation);
 
-    MCAPI void _displayNewTip(::std::shared_ptr<::GameTip> const& tip);
+    MCNAPI void _displayNewTip(::std::shared_ptr<::GameTip> const& tip);
 
-    MCAPI void _gametipOptionCallback(::Option const& gametipEnabled);
+    MCNAPI void _gametipOptionCallback(::Option const& gametipEnabled);
 
-    MCAPI void _instantiateTips();
+    MCNAPI void _instantiateTips();
 
-    MCAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
+    MCNAPI void _removeInterruption(::GameTipConstants::Interruption interruption);
 
-    MCAPI void _stopDisplayingActiveTip();
+    MCNAPI void _stopDisplayingActiveTip();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel>     model,
         ::std::shared_ptr<::HudContainerManagerController> mHudScreenManagerController
     );
@@ -101,14 +101,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCFOLD void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
+    MCNAPI void $handleToastEvent(::IToastEventListener::ToastEventType const eventType, ::ToastMessage const msg);
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

@@ -8,7 +8,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ClientInstanceScreenModel;
 struct ScreenViewCommand;
 // clang-format on
 
@@ -51,10 +50,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ChatSettingsScreenController();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void setViewCommand(::ScreenViewCommand const& callback) /*override*/;
@@ -63,26 +58,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatSettingsScreenController(
-        ::std::shared_ptr<::ClientInstanceScreenModel> clientModel,
-        ::std::function<void()>                        refreshChatCallback
-    );
+    MCNAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
 
-    MCAPI void _handleFontColorChanged(int fontColorIndex, ::ChatSettingsScreenController::ColorSubsection colorType);
-
-    MCAPI void _setInitialSettings();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::ClientInstanceScreenModel> clientModel, ::std::function<void()> refreshChatCallback);
+    MCNAPI void _setInitialSettings();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
+    MCNAPI void $setViewCommand(::ScreenViewCommand const& callback);
     // NOLINTEND
 };

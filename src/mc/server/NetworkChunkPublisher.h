@@ -68,45 +68,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkChunkPublisher(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCNAPI NetworkChunkPublisher(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
 
     MCAPI bool _sendQueuedChunk(
         ::ChunkPositionAndDimension const&          queuedChunk,
         ::ClientBlobCache::Server::TransferBuilder* cachedTransfer
     );
 
-    MCAPI void _serializeAndCache(
+    MCNAPI void _serializeAndCache(
         ::LevelChunkPacket&                          packet,
         ::ClientBlobCache::Server::TransferBuilder&  transfer,
         ::std::function<void(::VarIntDataOutput&)>&& serialize
     );
 
+    MCNAPI void addChunksToQueue(::std::vector<::ChunkPos> const& chunkPositions, bool isBiomeUpdate);
+
     MCAPI void clearRegion();
 
-    MCAPI void destroyRegion();
+    MCNAPI void destroyRegion();
 
 #ifdef LL_PLAT_C
-    MCAPI void handleGenerationRequests();
+    MCNAPI void handleGenerationRequests();
+#endif
 
-    MCAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
+    MCNAPI void moveRegion(
+        ::BlockPos const& position,
+        uint              blockRadius,
+        ::Vec3 const&     direction,
+        bool              notifyBroadcastSounds,
+        float             minDistance
+    );
 
-    MCAPI void queueChunkGenerationRequests(
+    MCNAPI void prepareRegion(::ChunkSource& mainChunkSource, ::ChunkPos const& center);
+
+#ifdef LL_PLAT_C
+    MCNAPI void queueChunkGenerationRequests(
         ::ChunkPos                       moveCenter,
         int                              chunkRadius,
         ::Vec3 const&                    direction,
         ::std::vector<::ChunkPos> const& serverChunks
     );
+#endif
 
-    MCAPI void sendQueuedChunks();
+    MCNAPI void sendQueuedChunks();
 
-    MCAPI void setClientsNetworkChunkSource(::std::shared_ptr<::ChunkSource> networkChunkSource);
+#ifdef LL_PLAT_C
+    MCNAPI void setClientsNetworkChunkSource(::std::shared_ptr<::ChunkSource> networkChunkSource);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
+    MCNAPI void* $ctor(::ILevel& level, ::NetworkIdentifier const& owner, ::SubClientId subClientId);
     // NOLINTEND
 
 public:

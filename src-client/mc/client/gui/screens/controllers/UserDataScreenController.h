@@ -45,26 +45,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UserDataScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI explicit UserDataScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
-    MCAPI void _updatePlayerList();
+    MCNAPI void _updatePlayerList();
 
-    MCAPI ::PlayerListInfo getLocalPlayer() const;
+    MCNAPI ::PlayerListInfo getLocalPlayer() const;
 
-    MCAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;
+    MCNAPI ::PlayerListInfo getPlayerByAUID(::ActorUniqueID auid) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
     // NOLINTEND
 };

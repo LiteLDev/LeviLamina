@@ -7,6 +7,7 @@ enum class UploadState : int {
     Initializing  = 1,
     Progress      = 2,
     Exporting     = 3,
-    Done          = 4,
-    Failed        = 5,
+    Processing    = 4,
+    Done          = 5,
+    Failed        = 6,
 };

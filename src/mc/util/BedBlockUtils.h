@@ -15,7 +15,6 @@ class BlockType;
 class ItemStackBase;
 class Player;
 class Vec3;
-namespace BlockEvents { class BlockPlayerInteractEvent; }
 // clang-format on
 
 namespace BedBlockUtils {
@@ -47,6 +46,9 @@ MCNAPI void handleNeighborChanged(
     ::BlockPos const&  neighborPos
 );
 
+MCNAPI bool
+isBedPlacementBlockedByEntities(::BlockSource& region, ::BlockPos const& feetPos, ::BlockPos const& headPos);
+
 MCNAPI void onFillBlock(::BlockType const& bedType, ::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
 
 MCNAPI ::Block const& sanitizeFillBlock(::Block const& block);
@@ -61,13 +63,7 @@ MCNAPI bool tryPlaceBedParts(
     ::Block const&    headBlock
 );
 
-MCNAPI void trySleepInBed(
-    ::Player&                                player,
-    ::BlockSource&                           region,
-    ::BlockPos const&                        headPos,
-    bool                                     setsRespawn,
-    ::BlockEvents::BlockPlayerInteractEvent& eventData
-);
+MCNAPI void trySleepInBed(::Player& player, ::BlockSource& region, ::BlockPos const& headPos, bool setsRespawn);
 // NOLINTEND
 
 } // namespace BedBlockUtils

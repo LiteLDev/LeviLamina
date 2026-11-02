@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TargetGoal(
+    MCNAPI TargetGoal(
         ::Mob&                                pathMob,
         ::std::string                         name,
         ::GoalId const&                       goalId,
@@ -83,9 +83,9 @@ public:
         int                                   persistTargetTicks
     );
 
-    MCAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
+    MCNAPI bool _canAttack(::Actor* target, bool allowInvulnerable, ::MobDescriptor const** outDescriptorMatch);
 
-    MCAPI bool _canReach(::Actor& target);
+    MCNAPI bool _canReach(::Actor& target);
 
     MCAPI bool
     _matchesTargetTypes(::Mob* testMob, ::Actor* target, bool mustSee, ::MobDescriptor const** outDescriptorMatch);
@@ -94,7 +94,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&                                pathMob,
         ::std::string                         name,
         ::GoalId const&                       goalId,
@@ -111,25 +111,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isTargetGoal() const;
+    MCNAPI bool $isTargetGoal() const;
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCFOLD void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $_canAttack(
+    MCNAPI bool $_canAttack(
         ::Mob*                  testMob,
         ::Actor*                target,
         bool                    allowInvulnerable,
@@ -143,6 +143,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

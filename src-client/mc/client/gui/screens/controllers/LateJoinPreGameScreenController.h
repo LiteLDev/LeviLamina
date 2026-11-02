@@ -51,25 +51,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LateJoinPreGameScreenController(
+    MCNAPI LateJoinPreGameScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()> const&            userReadyCallback,
         bool                                      hasXBLBroadcast
     );
 
-    MCAPI void _checkPremiumAccessAndShowUpsell(::std::function<void(bool)> callback);
+    MCNAPI void _checkPremiumAccessAndShowUpsell(::std::function<void(bool)> callback);
 
-    MCAPI void _handleUserReadyToJoinGame();
+    MCNAPI void _handleUserReadyToJoinGame();
 
-    MCAPI void _promptForPlatformConnection();
+    MCNAPI void _promptForPlatformConnection();
 
-    MCAPI void _warnRestrictedPlatformMultiplayer();
+    MCNAPI void _warnRestrictedPlatformMultiplayer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()> const&            userReadyCallback,
         bool                                      hasXBLBroadcast
@@ -79,10 +79,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::std::string $_getButtonBDescription();
+    MCNAPI ::std::string $_getButtonBDescription();
     // NOLINTEND
 };

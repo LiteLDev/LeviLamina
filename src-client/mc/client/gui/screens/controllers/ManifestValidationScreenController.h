@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ManifestValidationScreenController(
+    MCNAPI ManifestValidationScreenController(
         ::std::shared_ptr<::MinecraftScreenModel>                         model,
         ::PackManifestFactory&                                            manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
@@ -76,18 +76,18 @@ public:
         ::std::shared_ptr<::PackContentItem const> const&                 item
     );
 
-    MCAPI ::std::string
+    MCNAPI ::std::string
     _colorLocString(::ManifestValidationScreenController::IssueType issue, ::std::string const& str) const;
 
-    MCAPI void _finishValidation();
+    MCNAPI void _finishValidation();
 
-    MCAPI ::Core::PathBuffer<::std::string> const _generateBaseIconPath(::PackManifest const& manifest) const;
+    MCNAPI ::Core::PathBuffer<::std::string> const _generateBaseIconPath(::PackManifest const& manifest) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel>                         model,
         ::PackManifestFactory&                                            manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> const& keyProvider,
@@ -101,8 +101,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
     // NOLINTEND
 };

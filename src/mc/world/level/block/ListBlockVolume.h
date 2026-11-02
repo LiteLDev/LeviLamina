@@ -58,51 +58,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
+    MCNAPI explicit ListBlockVolume(::std::vector<::BlockPos> const& blockPositions);
 
-    MCAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
+    MCNAPI explicit ListBlockVolume(::std::vector<::Vec3> const& blockPositions);
 
-    MCAPI void erase(::std::vector<::Vec3> const& blockPositions);
+    MCNAPI void erase(::std::vector<::Vec3> const& blockPositions);
 
-    MCAPI void insert(::std::vector<::Vec3> const& blockPositions);
+    MCNAPI void insert(::std::vector<::Vec3> const& blockPositions);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
+    MCNAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions);
 
-    MCAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
+    MCNAPI void* $ctor(::std::vector<::Vec3> const& blockPositions);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BlockPos $getMin() const;
+    MCNAPI ::BlockPos $getMin() const;
 
-    MCAPI ::BlockPos $getMax() const;
+    MCNAPI ::BlockPos $getMax() const;
 
-    MCAPI ::BoundingBox $getBoundingBox() const;
+    MCNAPI ::BoundingBox $getBoundingBox() const;
 
-    MCAPI ::glm::ivec3 $getSpan() const;
+    MCNAPI ::glm::ivec3 $getSpan() const;
 
-    MCFOLD int $getCapacity() const;
+    MCNAPI int $getCapacity() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $isInside(::BlockPos const& pos) const;
-#else // LL_PLAT_C
-    MCFOLD bool $isInside(::BlockPos const& pos) const;
-#endif
+    MCNAPI bool $isInside(::BlockPos const& pos) const;
 
-    MCAPI void $translate(::BlockPos const& delta);
+    MCNAPI void $translate(::BlockPos const& delta);
 
-    MCAPI void $forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
+    MCNAPI void $forEach(::brstd::function_ref<bool(::BlockPos const&)> callback) const;
 
-    MCAPI ::std::set<::ChunkPos> $getChunks() const;
+    MCNAPI ::std::set<::ChunkPos> $getChunks() const;
 
-    MCAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
+    MCNAPI ::std::unordered_set<::BlockPos> $getFlattenedBlockPositions() const;
 
-    MCAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
+    MCNAPI ::std::unique_ptr<::BaseBlockLocationIterator> $getIterator() const;
 
 
     // NOLINTEND
@@ -110,6 +106,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

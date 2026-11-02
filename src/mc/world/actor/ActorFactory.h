@@ -58,25 +58,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
+    MCNAPI ActorFactory(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
 
-    MCAPI void _buildSummonableActorList(
+    MCNAPI void _buildSummonableActorList(
         ::Experiments const&                                                   experiments,
         ::std::function<void(::std::string const&, ::ActorFactoryData const&)> callback
     ) const;
 
-    MCAPI ::OwnerPtr<::EntityContext> _constructActor(
+    MCNAPI ::OwnerPtr<::EntityContext> _constructActor(
         ::ActorDefinitionIdentifier const&  identifier,
         ::Vec3 const&                       position,
         ::Vec2 const&                       rotation,
         ::std::vector<::std::string> const* previousDefinitions
     ) const;
 
-    MCAPI void _loadDefinitionGroups(::ActorDefinitionGroup* group);
+    MCNAPI void _loadDefinitionGroups(::ActorDefinitionGroup* group);
 
-    MCAPI void _loadDefinitionsHelper();
+    MCNAPI void _loadDefinitionsHelper();
 
-    MCAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
+    MCNAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
 
     MCAPI ::OwnerPtr<::EntityContext> clientCreateDisplayActor(
         ::ActorDefinitionIdentifier const& identifier,
@@ -85,7 +85,7 @@ public:
         ::Vec2 const&                      rotation
     );
 
-    MCAPI ::OwnerPtr<::EntityContext> createActor(
+    MCNAPI ::OwnerPtr<::EntityContext> createActor(
         ::std::string const&               method,
         ::ActorDefinitionIdentifier const& identifier,
         ::Actor*                           spawner,
@@ -93,9 +93,9 @@ public:
         ::Vec2 const&                      rotation
     );
 
-    MCAPI ::OwnerPtr<::EntityContext> createBornActor(::ActorDefinitionIdentifier const& identifier, ::Actor* parent);
+    MCNAPI ::OwnerPtr<::EntityContext> createBornActor(::ActorDefinitionIdentifier const& identifier, ::Actor* parent);
 
-    MCAPI ::OwnerPtr<::EntityContext>
+    MCNAPI ::OwnerPtr<::EntityContext>
     createBornActor(::ActorDefinitionIdentifier const& identifier, ::BlockPos const& pos);
 
     MCAPI ::OwnerPtr<::EntityContext> createSpawnedActor(
@@ -109,10 +109,10 @@ public:
     createTransformedActor(::ActorDefinitionIdentifier const& identifier, ::Actor* from);
 
 #ifdef LL_PLAT_C
-    MCAPI void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
+    MCNAPI void digestIdentifierListFromServer(::std::vector<::ActorInfo> const& identifierList);
 #endif
 
-    MCAPI void init(::Experiments const& experiments);
+    MCNAPI void init(::Experiments const& experiments);
 
     MCAPI ::OwnerPtr<::EntityContext> loadActor(
         ::CompoundTag*                tag,
@@ -121,14 +121,14 @@ public:
         ::LevelChunk const*           levelChunk
     );
 
-    MCAPI void setVanillaActors(::std::vector<::ActorFactoryData> vanillaActors);
+    MCNAPI void setVanillaActors(::std::vector<::ActorFactoryData> vanillaActors);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void fillFactoryData(
+    MCNAPI static void fillFactoryData(
         ::ActorDefinitionIdentifier const&                             identifier,
         ::ActorDefinitionIdentifier const&                             baseIdentifier,
         ::std::unordered_map<::std::string, ::ActorFactoryData> const& factoryFunctions,
@@ -136,12 +136,12 @@ public:
     );
 #endif
 
-    MCAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
+    MCNAPI static ::Actor* fixLegacyEntity(::BlockSource& region, ::CompoundTag const* tag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Level> level, ::Experiments const& experiments);
     // NOLINTEND
 };

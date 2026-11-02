@@ -19,7 +19,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $flush();
+    MCNAPI bool $flush();
     // NOLINTEND
 };
 

@@ -37,33 +37,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool isSlotInteractiveBundle(
+    MCNAPI bool isSlotInteractiveBundle(
         ::ContainerScreenController const& controller,
         ::std::string const&               collectionName,
         int                                collectionIndex
     ) const;
 
-    MCAPI ::ui::ViewRequest onBundleItemRightStick(
+    MCNAPI ::ui::ViewRequest onBundleItemRightStick(
         ::ContainerScreenController&                   controller,
         ::BundleHelper::BundleItemStickScrollDirection direction
     );
 
-    MCAPI ::ui::ViewRequest onBundleItemScrollWheel(
+    MCNAPI ::ui::ViewRequest onBundleItemScrollWheel(
         ::ContainerScreenController&                   controller,
         ::BundleHelper::BundleItemScrollWheelDirection direction
     );
-
-    MCAPI bool shouldHandleBundleIdlePlaceAll(
-        ::ContainerScreenController& controller,
-        ::std::string const&         collectionName,
-        int                          collectionIndex
-    ) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _shouldShowBundleOpen(
+    MCNAPI static bool _shouldShowBundleOpen(
         ::std::string const&      collectionName,
         int                       collectionIndex,
         bool                      usingTouchScheme,

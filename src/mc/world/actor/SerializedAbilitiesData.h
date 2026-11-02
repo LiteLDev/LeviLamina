@@ -70,7 +70,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 6> const& ABILITIES_LAYER_MAP();
+    MCNAPI static ::std::array<::SerializedAbilitiesData::SerializedAbilitiesLayer, 6> const& ABILITIES_LAYER_MAP();
     // NOLINTEND
 
 public:

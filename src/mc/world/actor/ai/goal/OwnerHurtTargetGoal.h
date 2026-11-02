@@ -38,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OwnerHurtTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI OwnerHurtTargetGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCFOLD void $start();
+    MCNAPI void $start();
 
 
     // NOLINTEND

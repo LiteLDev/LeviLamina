@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
+    MCNAPI explicit MetadataCache(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
 
-    MCAPI ::Block const* getOrCreateBlockCache(uint64 index);
+    MCNAPI ::Block const* getOrCreateBlockCache(uint64 index);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_80::JigsawStructureMetadata const& metadata);
     // NOLINTEND
 };
 

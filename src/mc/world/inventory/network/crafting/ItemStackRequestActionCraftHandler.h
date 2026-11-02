@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/inventory/network/ItemStackNetResult.h"
 #include "mc/world/inventory/network/ItemStackRequestActionType.h"
+#include "mc/world/item/ItemStack.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -14,7 +15,6 @@ class ItemInstance;
 class ItemStackRequestActionConsume;
 class ItemStackRequestActionCraftBase;
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING;
-class ItemStackRequestActionCreate;
 class ItemStackRequestActionHandler;
 class Player;
 class SimpleSparseContainer;
@@ -30,6 +30,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                              mIsCraftRequest;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::SimpleSparseContainer>>       mCreatedOutputSparseContainer;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemInstance, uint>>> mCraftResults;
+    ::ll::TypedStorage<8, 160, ::std::optional<::ItemStack>>                    mPendingCraftRecipeItem;
     // NOLINTEND
 
 public:
@@ -47,30 +48,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
+    MCNAPI ::ItemStackNetResult _initCraftResults(::std::vector<::ItemInstance> const& results, uchar numCrafts);
 
-    MCAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
+    MCNAPI ::ItemInstance* _initSingleCraftResult(::ItemInstance const& itemInstance);
 
-    MCAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
+    MCNAPI ::ItemStackNetResult _setCreatedItemOutputSlot(uchar resultsIndex);
 
-    MCAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
+    MCNAPI ::ItemStackNetResult endRequest(::ItemStackNetResult currentResult);
 
     MCAPI ::ItemStackNetResult handleConsume(::ItemStackRequestActionConsume const& requestAction);
 
-    MCAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::ItemStackNetResult
+    MCNAPI ::ItemStackNetResult
     handleCraftResults(::ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING const& requestAction);
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStackNetResult handleCreate(::ItemStackRequestActionCreate const& requestAction);
-#endif
+    MCNAPI bool isCraftRequest() const;
 
-    MCAPI bool isCraftRequest() const;
+    MCNAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCAPI void onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
 
-    MCAPI ::ItemStackNetResult preHandleAction(::ItemStackRequestActionType requestActionType);
+    MCNAPI void sendPlayerCraftRecipe();
     // NOLINTEND
 
 public:

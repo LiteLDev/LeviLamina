@@ -43,13 +43,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ParsedConnectionString();
+        MCNAPI ~ParsedConnectionString();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -77,115 +77,111 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseConnectionRequest(::BaseConnectionRequest const& other);
+    MCNAPI BaseConnectionRequest(::BaseConnectionRequest const& other);
 
-    MCAPI BaseConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI BaseConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
 
-    MCAPI bool _isSupportedPersonaData() const;
+    MCNAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCAPI bool _isUsingRestrictedIds() const;
+    MCNAPI ::std::string getArmSize() const;
 
-    MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
+    MCNAPI ::std::vector<uchar> getCapeData() const;
 
-    MCAPI ::std::string getArmSize() const;
+    MCNAPI ::std::string getCapeId() const;
 
-    MCAPI ::std::vector<uchar> getCapeData() const;
+    MCNAPI ushort getCapeImageHeight() const;
 
-    MCAPI ::std::string getCapeId() const;
+    MCNAPI ushort getCapeImageWidth() const;
 
-    MCAPI ushort getCapeImageHeight() const;
+    MCNAPI uint64 getClientRandomId() const;
 
-    MCAPI ushort getCapeImageWidth() const;
-
-    MCAPI uint64 getClientRandomId() const;
-
-    MCAPI ::InputMode getCurrentInputMode() const;
+    MCNAPI ::InputMode getCurrentInputMode() const;
 
     MCAPI ::std::string getDeviceId() const;
 
-    MCAPI ::BuildPlatform getDeviceOS() const;
+    MCNAPI ::BuildPlatform getDeviceOS() const;
 
-    MCAPI ::std::string getLanguageCode() const;
+    MCNAPI ::std::string getLanguageCode() const;
 
-    MCAPI ::std::optional<::Social::Nonce> getNonce() const;
+    MCNAPI ::std::optional<::Social::Nonce> getNonce() const;
 
-    MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCNAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCAPI ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCNAPI ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
-    MCAPI ::std::string getPlatformId() const;
+    MCNAPI ::std::string getPlatformId() const;
 
     MCAPI ::std::string getPlatformOfflineId() const;
 
     MCAPI ::std::string getPlatformOnlineId() const;
 
-    MCAPI ::PlatformType getPlatformType() const;
+    MCNAPI ::PlatformType getPlatformType() const;
 
-    MCAPI ::std::string getProfileHash() const;
+    MCNAPI ::std::string getProfileHash() const;
 
     MCAPI ::std::string getSelfSignedId() const;
 
-    MCAPI ::std::string getSkinAnimationData() const;
+    MCNAPI ::std::string getSkinAnimationData() const;
 
-    MCAPI ::mce::Color getSkinColor() const;
+    MCNAPI ::mce::Color getSkinColor() const;
 
-    MCAPI ::std::vector<uchar> getSkinData() const;
+    MCNAPI ::std::vector<uchar> getSkinData() const;
 
-    MCAPI ::std::string getSkinGeometry() const;
+    MCNAPI ::std::string getSkinGeometry() const;
 
-    MCAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+    MCNAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
 
-    MCAPI ::std::string getSkinId() const;
+    MCNAPI ::std::string getSkinId() const;
 
-    MCAPI ushort getSkinImageHeight() const;
+    MCNAPI ushort getSkinImageHeight() const;
 
-    MCAPI ushort getSkinImageWidth() const;
+    MCNAPI ushort getSkinImageWidth() const;
 
-    MCAPI ::std::string getSkinResourcePatch() const;
+    MCNAPI ::std::string getSkinResourcePatch() const;
 
     MCAPI ::std::string getThirdPartyName() const;
 
-    MCAPI bool isCapeOnClassicSkin() const;
+    MCNAPI bool isCapeOnClassicSkin() const;
 
-    MCAPI bool isCompatibleWithClientSideChunkGen() const;
+    MCNAPI bool isCompatibleWithClientSideChunkGen() const;
 
-    MCAPI bool isOverrideSkin() const;
+    MCNAPI bool isOverrideSkin() const;
 
-    MCAPI bool isPersonaSkin() const;
+    MCNAPI bool isPersonaSkin() const;
 
-    MCAPI bool isPremiumSkin() const;
+    MCNAPI bool isPremiumSkin() const;
 
-    MCAPI bool isTrustedSkin() const;
+    MCNAPI bool isTrustedSkin() const;
 
-    MCAPI bool isWellFormed() const;
+    MCNAPI bool isWellFormed() const;
 
-    MCAPI ::std::string toString();
+    MCNAPI ::std::string toString();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::Json::Value _createAuthJson(::ConnectionAuthInfo const& authInfo);
+    MCNAPI static ::Json::Value _createAuthJson(::ConnectionAuthInfo const& authInfo);
 
-    MCAPI static void _fillPersonaJson(::Json::Value& root, ::ConnectionSkinInfo const& skinInfo);
+    MCNAPI static void _fillPersonaJson(::Json::Value& root, ::ConnectionSkinInfo const& skinInfo);
 #endif
 
-    MCAPI static ::BaseConnectionRequest::ParsedConnectionString _parseConnectionString(::std::string const& str);
+    MCNAPI static ::BaseConnectionRequest::ParsedConnectionString _parseConnectionString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BaseConnectionRequest const& other);
+    MCNAPI void* $ctor(::BaseConnectionRequest const& other);
 
-    MCAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

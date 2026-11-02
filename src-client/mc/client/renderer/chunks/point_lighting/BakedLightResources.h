@@ -4,6 +4,12 @@
 
 namespace PointLighting {
 
-struct BakedLightResources {};
+struct BakedLightResources {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, int> mColorARGB;
+    // NOLINTEND
+};
 
 } // namespace PointLighting

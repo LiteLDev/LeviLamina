@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 class MinecraftScreenModel;
-namespace EDUDiscovery { struct JoinServerQueryState; }
+namespace EduDiscovery { struct JoinServerQueryState; }
 // clang-format on
 
 class JoincodeEntryScreenController : public ::MinecraftScreenController {
@@ -30,15 +30,15 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUDiscovery::QueryContext<::EDUDiscovery::JoinServerQueryState>>>
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduDiscovery::QueryContext<::EduDiscovery::JoinServerQueryState>>>
         mJoinContext;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUDiscovery::QueryContext<::EDUDiscovery::Availability>>>
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduDiscovery::QueryContext<::EduDiscovery::Availability>>>
                                                                             mAvailabilityContext;
-    ::ll::TypedStorage<8, 40, ::EDUDiscovery::Error>                        mJoinError;
+    ::ll::TypedStorage<8, 40, ::EduDiscovery::Error>                        mJoinError;
     ::ll::TypedStorage<8, 32, ::std::string>                                mHostUsername;
     ::ll::TypedStorage<8, 32, ::std::string>                                mWorldName;
     ::ll::TypedStorage<4, 4, ::JoincodeEntryScreenController::ActiveScreen> mActiveScreen;
-    ::ll::TypedStorage<8, 32, ::EDUDiscovery::JoinCode>                     mEnteredJoincode;
+    ::ll::TypedStorage<8, 32, ::EduDiscovery::JoinCode>                     mEnteredJoincode;
     ::ll::TypedStorage<4, 4, int>                                           mHoveredEntry;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string)>>         mUpdateIdHeaderText;
     ::ll::TypedStorage<8, 64, ::std::function<bool()>>                      mCheckForServiceDialog;
@@ -52,36 +52,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JoincodeEntryScreenController(
+    MCNAPI JoincodeEntryScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      popupButtonName
     );
 
-    MCAPI void _closeActiveScreen(bool fullClose);
+    MCNAPI void _closeActiveScreen(bool fullClose);
 
-    MCAPI void _closeScreen(::std::string const& popupControlId);
+    MCNAPI void _closeScreen(::std::string const& popupControlId);
 
-    MCAPI void _openEntryScreen();
+    MCNAPI void _openEntryScreen();
 
-    MCAPI void _openErrorScreen(::EDUDiscovery::Error const& error);
+    MCNAPI void _openErrorScreen(::EduDiscovery::Error const& error);
 
-    MCAPI void _openIPEntryScreen();
+    MCNAPI void _openIPEntryScreen();
 
-    MCAPI void
+    MCNAPI void
     _openScreen(::std::string const& popupControlId, ::std::string const& ttsTitle, ::std::string const& ttsContent);
 
-    MCAPI void _requestJoinServer(
+    MCNAPI void _requestJoinServer(
         ::std::function<
-            void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EDUDiscovery::JoinServerQueryState const&)>
+            void(::std::shared_ptr<::JoincodeEntryScreenController>, ::EduDiscovery::JoinServerQueryState const&)>
             joinCallback
     );
 
-    MCAPI void queryJoincode(::std::string const& encodedJoincode);
+    MCNAPI void queryJoincode(::std::string const& encodedJoincode);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& popupButtonName);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& popupButtonName);
     // NOLINTEND
 };

@@ -30,13 +30,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::std::string const[8]> STRUCTURE_LOCATION_FOSSIL();
+    MCNAPI static ::std::add_lvalue_reference_t<::std::string const[8]> STRUCTURE_LOCATION_FOSSIL();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& origin, ::Random& random) const;
 
 
     // NOLINTEND

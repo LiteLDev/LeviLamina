@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptNamespaceNameError(
+    MCNAPI ScriptNamespaceNameError(
         ::std::string const&                                      name,
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason
@@ -47,18 +47,18 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
 
-    MCAPI static ::Scripting::EnumBinding bindReasonEnum();
+    MCNAPI static ::Scripting::EnumBinding bindReasonEnum();
 
-    MCAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
+    MCNAPI static ::Scripting::Result<void, ::ScriptModuleMinecraft::ScriptNamespaceNameError, ::Scripting::EngineError>
     validate(::std::string const& name, bool allowMinecraftNamespace, bool allowMultipleNamespaces);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                                      name,
         ::std::string const&                                      message,
         ::ScriptModuleMinecraft::ScriptNamespaceNameError::Reason reason

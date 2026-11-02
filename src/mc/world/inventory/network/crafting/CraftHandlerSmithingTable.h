@@ -8,10 +8,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class CraftingContainer;
 class ItemStackRequestActionCraftBase;
 class Player;
-class Recipe;
 class Recipes;
 // clang-format on
 
@@ -40,17 +38,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI bool _recipeMatches(::Recipe const& recipe, ::CraftingContainer& currentCraftingItems) const;
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
-    MCAPI ::Recipes const* $_getLevelRecipes() const;
+    MCNAPI ::Recipes const* $_getLevelRecipes() const;
 
 
     // NOLINTEND

@@ -22,57 +22,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Clear();
+    MCNAPI void Clear();
 
-    MCAPI ::webrtc::IPAddressType GetIPAddressType() const;
+    MCNAPI ::webrtc::IPAddressType GetIPAddressType() const;
 
-    MCAPI ::std::string HostAsSensitiveURIString() const;
+    MCNAPI ::std::string HostAsSensitiveURIString() const;
 
     MCAPI ::std::string HostAsURIString() const;
 
-    MCAPI bool IsAnyIP() const;
+    MCNAPI bool IsAnyIP() const;
 
-    MCAPI bool IsLoopbackIP() const;
+    MCNAPI bool IsLoopbackIP() const;
 
-    MCAPI bool IsNil() const;
+    MCNAPI bool IsNil() const;
 
-    MCAPI bool IsPrivateIP() const;
+    MCNAPI bool IsPrivateIP() const;
 
-    MCAPI bool IsUnresolvedIP() const;
+    MCNAPI bool IsUnresolvedIP() const;
 
-    MCAPI ::std::string PortAsString() const;
+    MCNAPI ::std::string PortAsString() const;
 
-    MCAPI void SetIP(::std::string_view hostname);
+    MCNAPI void SetIP(::std::string_view hostname);
 
-    MCAPI void SetIP(::webrtc::IPAddress const& ip);
+    MCNAPI void SetIP(::webrtc::IPAddress const& ip);
 
-    MCAPI void SetPort(int port);
+    MCNAPI void SetPort(int port);
 
-    MCAPI void SetResolvedIP(::webrtc::IPAddress const& ip);
+    MCNAPI void SetResolvedIP(::webrtc::IPAddress const& ip);
 
-    MCAPI SocketAddress();
+    MCNAPI SocketAddress();
 
-    MCAPI SocketAddress(::webrtc::SocketAddress const& addr);
+    MCNAPI SocketAddress(::webrtc::SocketAddress const& addr);
 
-    MCAPI SocketAddress(::std::string_view hostname, int port);
+    MCNAPI SocketAddress(::std::string_view hostname, int port);
 
-    MCAPI SocketAddress(::webrtc::IPAddress const& ip, int port);
+    MCNAPI SocketAddress(::webrtc::IPAddress const& ip, int port);
 
-    MCAPI ::std::string ToSensitiveNameAndAddressString() const;
+    MCNAPI ::std::string ToSensitiveNameAndAddressString() const;
 
-    MCAPI ::std::string ToSensitiveString() const;
+    MCNAPI ::std::string ToSensitiveString() const;
 
-    MCAPI uint64 ToSockAddrStorage(::sockaddr_storage* addr) const;
+    MCNAPI uint64 ToSockAddrStorage(::sockaddr_storage* addr) const;
 
-    MCAPI ::std::string ToString() const;
+    MCNAPI ::std::string ToString() const;
 
-    MCAPI ::webrtc::IPAddress const& ipaddr() const;
+    MCNAPI ::webrtc::IPAddress const& ipaddr() const;
 
-    MCAPI bool operator<(::webrtc::SocketAddress const& addr) const;
+    MCNAPI bool operator<(::webrtc::SocketAddress const& addr) const;
 
-    MCAPI ::webrtc::SocketAddress& operator=(::webrtc::SocketAddress const& addr);
+    MCNAPI ::webrtc::SocketAddress& operator=(::webrtc::SocketAddress const& addr);
 
-    MCAPI bool operator==(::webrtc::SocketAddress const& addr) const;
+    MCNAPI bool operator==(::webrtc::SocketAddress const& addr) const;
 
     MCAPI ushort port() const;
 
@@ -82,13 +82,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::webrtc::SocketAddress const& addr);
+    MCNAPI void* $ctor(::webrtc::SocketAddress const& addr);
 
-    MCAPI void* $ctor(::std::string_view hostname, int port);
+    MCNAPI void* $ctor(::std::string_view hostname, int port);
 
-    MCAPI void* $ctor(::webrtc::IPAddress const& ip, int port);
+    MCNAPI void* $ctor(::webrtc::IPAddress const& ip, int port);
     // NOLINTEND
 
 public:

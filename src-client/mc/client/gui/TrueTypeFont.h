@@ -137,63 +137,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
+    MCNAPI void _loadSheetForGlyph(int codepoint, bool uploadTexture, bool forceReload);
 
-    MCAPI void
+    MCNAPI void
     _uploadTextureToGPU(::ResourceLocation const& resourceLocation, ::std::shared_ptr<::cg::ImageBuffer> imageBuffer);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static uint const& CACHE_VERSION();
+    MCNAPI static uint const& CACHE_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadFontData(bool uploadTextureImmediately);
+    MCNAPI void $loadFontData(bool uploadTextureImmediately);
 
-    MCFOLD bool $_supportsShadowInSingleDraw();
+    MCNAPI bool $_supportsShadowInSingleDraw();
 
-    MCAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
+    MCNAPI ::mce::MaterialPtr& $getMaterial(int sheet, bool isOddGuiScale) const;
 
-    MCAPI void $uploadTextureToGPU();
+    MCNAPI void $uploadTextureToGPU();
 
-    MCAPI void $unloadTextures();
+    MCNAPI void $unloadTextures();
 
-    MCFOLD int $_getReplacementCharacter();
+    MCNAPI int $_getReplacementCharacter();
 
-    MCAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
+    MCNAPI ::ResourceLocation $_getFontSheetLocation(int sheet, bool) const;
 
-    MCAPI float $_getCharWidth(int uniChar, bool);
+    MCNAPI float $_getCharWidth(int uniChar, bool);
 
-    MCAPI bool $supportsChar(int const& character);
+    MCNAPI bool $supportsChar(int const& character);
 
-    MCAPI float $getWrapHeight() const;
+    MCNAPI float $getWrapHeight() const;
 
-    MCFOLD float $getScaleFactor() const;
+    MCNAPI float $getScaleFactor() const;
 
-    MCFOLD bool $isScreenPixelAligned() const;
+    MCNAPI bool $isScreenPixelAligned() const;
 
-    MCFOLD bool $materialCanBeOverridden() const;
+    MCNAPI bool $materialCanBeOverridden() const;
 
-    MCFOLD void $setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const;
+    MCNAPI void $setTextConstantsInScreenContext(::ScreenContext&, int, float, ::mce::Color const&, bool) const;
 
-    MCAPI void $reloadFontTextures(
+    MCNAPI void $reloadFontTextures(
         ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
         bool                                                     blockingLoad
     );
 
-    MCFOLD bool $isReloadingTextures();
+    MCNAPI bool $isReloadingTextures();
 
-    MCAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
+    MCNAPI void $_scanUnicodeCharacterSize(int character, int sheet, bool forceUnicode);
 
-    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+    MCNAPI ::mce::Font::Type $getType(int glyphSheet) const;
 
-    MCAPI void $fetchPage(int page);
+    MCNAPI void $fetchPage(int page);
 
-    MCAPI float $buildChar(
+    MCNAPI float $buildChar(
         ::std::vector<::Font::GlyphQuad>& quads,
         int                               i,
         ::mce::Color const&               color,
@@ -203,12 +203,12 @@ public:
         bool                              unicode
     );
 
-    MCAPI ::Core::PathBuffer<::std::string>
+    MCNAPI ::Core::PathBuffer<::std::string>
     $getUnicodeFontNameWithPage(::Core::Path const& fontName, uchar const page) const;
 
-    MCFOLD void $switchFontsource(::Core::Path const&, ::Core::Path const&);
+    MCNAPI void $switchFontsource(::Core::Path const&, ::Core::Path const&);
 
-    MCAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
+    MCNAPI ::std::pair<::Core::PathBuffer<::std::string> const&, ::Core::PathBuffer<::std::string> const&>
     $getFontSources() const;
     // NOLINTEND
 };

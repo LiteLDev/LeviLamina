@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemDescriptor.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
@@ -69,7 +70,8 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void
+    use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,
@@ -83,13 +85,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCNAPI explicit FoodItemComponent(::SharedTypes::v1_20_50::FoodItemComponent component);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -99,25 +101,25 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::FoodItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
-    MCFOLD int $getNutrition() const;
+    MCNAPI int $getNutrition() const;
 
-    MCFOLD float $getSaturationModifier() const;
+    MCNAPI float $getSaturationModifier() const;
 
-    MCFOLD bool $canAlwaysEat() const;
+    MCNAPI bool $canAlwaysEat() const;
 
-    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
+    MCNAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::Item const* $useTimeDepleted(
+    MCNAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod&   itemUseMethod,
         ::ItemStack const& initialInstance,
         ::ItemStack&       instance,

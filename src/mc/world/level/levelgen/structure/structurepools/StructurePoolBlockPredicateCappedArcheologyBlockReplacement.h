@@ -37,11 +37,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $finalize(::BlockSource& region, ::IRandom& random);
+    MCNAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCAPI ::std::string $validate() const;
+    MCNAPI ::std::string $validate() const;
 
-    MCFOLD ::StructurePoolBlockPredicateType $getType() const;
+    MCNAPI ::StructurePoolBlockPredicateType $getType() const;
 
 
     // NOLINTEND

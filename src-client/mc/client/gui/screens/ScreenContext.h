@@ -20,23 +20,26 @@ namespace mce { class Clock; }
 namespace mce { class FrameBufferObject; }
 namespace mce { struct FrameDiscardContext; }
 namespace mce { struct ViewportInfo; }
+namespace mce::framebuilder { class FrameBuilder; }
 // clang-format on
 
 class ScreenContext : public ::UIScreenContext, public ::mce::MeshContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::mce::FrameBufferObject*>                           frameBufferObject;
-    ::ll::TypedStorage<8, 8, ::mce::ViewportInfo const&>                          viewport;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>           guiData;
-    ::ll::TypedStorage<8, 8, ::mce::Clock const&>                                 clock;
-    ::ll::TypedStorage<8, 8, ::Tessellator&>                                      tessellator;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics>> minecraftGraphics;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>>  profanityContext;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::FrameDiscardContext>>       frameDiscardContext;
-    ::ll::TypedStorage<1, 1, bool>                                                isCapturingPanorama;
-    ::ll::TypedStorage<8, 8, ::CommandListQueue&>                                 commandListQueue;
-    ::ll::TypedStorage<8, 8, ::LinearAllocator<::FrameRenderObject>&>             frameAllocator;
+    ::ll::TypedStorage<8, 8, ::mce::FrameBufferObject*>                                            frameBufferObject;
+    ::ll::TypedStorage<8, 8, ::mce::ViewportInfo const&>                                           viewport;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::GuiData>>                            guiData;
+    ::ll::TypedStorage<8, 8, ::mce::Clock const&>                                                  clock;
+    ::ll::TypedStorage<8, 8, ::Tessellator&>                                                       tessellator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics>>                  minecraftGraphics;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>>                   profanityContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::FrameDiscardContext>>                        frameDiscardContext;
+    ::ll::TypedStorage<1, 1, bool>                                                                 isCapturingPanorama;
+    ::ll::TypedStorage<8, 8, ::CommandListQueue&>                                                  commandListQueue;
+    ::ll::TypedStorage<8, 8, ::LinearAllocator<::FrameRenderObject>&>                              frameAllocator;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::mce::framebuilder::FrameBuilder> const> frameBuilder;
+    ::ll::TypedStorage<4, 16, ::std::array<float, 4>>                                              mFrameAlphas;
     // NOLINTEND
 
 public:
@@ -48,9 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenContext(::ScreenContext&&);
+    MCNAPI ScreenContext(::ScreenContext&&);
 
-    MCAPI ScreenContext(
+    MCNAPI ScreenContext(
         ::mce::ViewportInfo const&                                _vpInfo,
         ::Bedrock::NotNullNonOwnerPtr<::GuiData>                  _guiData,
         ::mce::Clock const&                                       _clock,
@@ -65,15 +68,15 @@ public:
         float                                                     a
     );
 
-    MCAPI ~ScreenContext();
+    MCNAPI ~ScreenContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScreenContext&&);
+    MCNAPI void* $ctor(::ScreenContext&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::ViewportInfo const&                                _vpInfo,
         ::Bedrock::NotNullNonOwnerPtr<::GuiData>                  _guiData,
         ::mce::Clock const&                                       _clock,
@@ -92,6 +95,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

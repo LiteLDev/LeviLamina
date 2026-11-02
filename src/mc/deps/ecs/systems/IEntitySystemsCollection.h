@@ -10,12 +10,12 @@
 class ITickingSystem;
 struct ComponentInfo;
 struct EntitySystemTickingMode;
-struct EntitySystemsFilter;
 struct ISystem;
 struct SystemCategory;
 struct SystemInfo;
 struct SystemTiming;
 struct TickingSystemId;
+struct TickingSystemIterator;
 // clang-format on
 
 struct IEntitySystemsCollection {
@@ -39,17 +39,9 @@ public:
 
     virtual void foreachSystem(::std::function<void(::ISystem&)> const& callback) = 0;
 
-    virtual void foreachTickingSystem(
-        ::EntitySystemsFilter const&                                       filter,
-        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const& callback,
-        bool                                                               captureTimings
-    ) = 0;
+    virtual void foreachTickingSystem(::TickingSystemIterator const& it) = 0;
 
-    virtual void foreachSingleTickingSystem(
-        ::EntitySystemsFilter const&                                       filter,
-        ::std::function<void(::ITickingSystem&, ::TickingSystemId)> const& callback,
-        bool                                                               captureTimings
-    ) = 0;
+    virtual void foreachSingleTickingSystem(::TickingSystemIterator const& it) = 0;
 
     virtual uint64 getLargestSystemIndex() const = 0;
 
@@ -64,6 +56,8 @@ public:
     virtual bool hasSingleTickCategory(::Bedrock::typeid_t<::SystemCategory> const category) const = 0;
 
     virtual ::std::vector<::SystemTiming> gatherSystemTimings() const = 0;
+
+    virtual void initPerfHints() = 0;
 
     virtual bool _isValidIndex(uint index) const = 0;
     // NOLINTEND

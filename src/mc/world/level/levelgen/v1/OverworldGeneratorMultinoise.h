@@ -81,7 +81,7 @@ public:
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static ::OverworldGeneratorMultinoise::Noises
+        MCNAPI static ::OverworldGeneratorMultinoise::Noises
         make(::XoroshiroPositionalRandomFactory const& randomFactory);
         // NOLINTEND
     };
@@ -160,7 +160,7 @@ public:
     // NOLINTBEGIN
     MCAPI OverworldGeneratorMultinoise(::Dimension& dimension, ::LevelSeed64 seed, ::Biome const* biomeOverride);
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(
         ::ChunkPos const&             chunkPos,
         ::ChunkLocalNoiseCache const& chunkLocalNoiseCache,
         ::NoodleCavifier*             noodleCavifier,
@@ -171,21 +171,21 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TerrainInfo _attenuateOffsetAndFactor(
+    MCNAPI static ::TerrainInfo _attenuateOffsetAndFactor(
         ::DividedPos2d<4>      worldQuartPos,
         ::TerrainInfo          defaultTerrainInfo,
         ::ChunkBlender const*  testFixedChunkBlender,
         ::ChunkBlenderFactory& chunkBlenderFactory
     );
 
-    MCAPI static ::ChunkLocalNoiseCache createNoiseCache(
+    MCNAPI static ::ChunkLocalNoiseCache createNoiseCache(
         ::ChunkPos                 chunkPos,
         ::OverworldNoises3d const& overworldNoises3d,
         ::ChunkBlender const*      testFixedChunkBlender,
         ::ChunkBlenderFactory&     chunkBlenderFactory
     );
 
-    MCAPI static ::std::unique_ptr<::BiomeSource> makeBiomeSource(
+    MCNAPI static ::std::unique_ptr<::BiomeSource> makeBiomeSource(
         ::XoroshiroPositionalRandomFactory const& random,
         ::BiomeRegistry const&                    biomeRegistry,
         ::Biome const*                            overrideBiome,
@@ -206,31 +206,31 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCNAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCAPI ::BlockPos $findSpawnPosition() const;
+    MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCNAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
-    MCFOLD int $getLevelGenHeight() const;
+    MCNAPI int $getLevelGenHeight() const;
 
-    MCAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
+    MCNAPI ::Util::MultidimensionalArray<float, 5, 5, 41>
     $generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
 
-    MCAPI void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
+    MCNAPI void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
-    MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
+    MCNAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 
-    MCAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
+    MCNAPI ::ChunkLocalNoiseCache $createNoiseCache(::ChunkPos chunkPos) const;
 
-    MCAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
+    MCNAPI ::PerlinSimplexNoise const& $getSurfaceNoise();
 
-    MCAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
+    MCNAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCAPI void
+    MCNAPI void
     $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
-    MCAPI void $_prepareHeights(
+    MCNAPI void $_prepareHeights(
         ::BlockVolume&                                                  box,
         ::ChunkPos const&                                               chunkPos,
         ::ChunkLocalNoiseCache const&                                   chunkLocalNoiseCache,
@@ -240,7 +240,7 @@ public:
         ::std::vector<short>*                                           ZXheights
     );
 
-    MCAPI ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
+    MCNAPI ::std::unique_ptr<::Aquifer> $tryMakeAquifer(
         ::ChunkPos const&          chunkPos,
         ::SurfaceLevelCache const& surfaceLevelCache,
         short                      minHeight,
@@ -248,9 +248,9 @@ public:
         short                      seaLevel
     ) const;
 
-    MCAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
+    MCNAPI ::std::optional<::XoroshiroPositionalRandomFactory> $getXoroshiroPositionalRandomFactory() const;
 
-    MCAPI void $_clearBlendingCache();
+    MCNAPI void $_clearBlendingCache();
 
 
     // NOLINTEND

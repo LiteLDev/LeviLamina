@@ -12,5 +12,6 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::ChunkPos>      mPos;
     ::ll::TypedStorage<4, 4, ::DimensionType> mType;
+    ::ll::TypedStorage<1, 1, bool>            mIsBiomeOverride;
     // NOLINTEND
 };

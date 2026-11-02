@@ -12,6 +12,7 @@
 #include "mc/deps/ecs/strict/Read.h"
 #include "mc/deps/ecs/strict/StrictExecutionContext.h"
 #include "mc/deps/ecs/strict/Write.h"
+#include "mc/entity/systems/update_bounding_box/SystemParams.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -61,8 +62,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, float const> mSneakHeight;
-    ::ll::TypedStorage<1, 1, bool const>  mIsClientSide;
+    ::ll::TypedStorage<4, 4, float const>                                          mSneakHeight;
+    ::ll::TypedStorage<1, 1, bool const>                                           mIsClientSide;
+    ::ll::TypedStorage<8, 632, ::std::optional<::UpdateBoundingBox::SystemParams>> mParams;
     // NOLINTEND
 
 public:
@@ -105,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,
@@ -121,7 +123,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::MinecartFlagComponent, ::ShulkerFlagComponent>,
             ::Read<>,

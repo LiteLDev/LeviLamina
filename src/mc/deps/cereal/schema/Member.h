@@ -14,6 +14,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                                     mRequired;
     ::ll::TypedStorage<1, 1, bool>                                     mDeprecated;
+    ::ll::TypedStorage<1, 1, bool>                                     mPatternMember;
     ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mDefaultValue;
     ::ll::TypedStorage<8, 80, ::std::optional<::cereal::DynamicValue>> mConstValue;
     // NOLINTEND
@@ -26,13 +27,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Member(::cereal::internal::Member const&);
+    MCNAPI Member(::cereal::internal::Member const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::Member const&);
+    MCNAPI void* $ctor(::cereal::internal::Member const&);
     // NOLINTEND
 };
 

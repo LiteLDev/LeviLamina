@@ -4,25 +4,20 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/debug/log/LogLevel.h"
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/scripting/debugger/IScriptDebugger.h"
 #include "mc/scripting/diagnostics/IDebuggerStatPublisher.h"
 
 // auto generated forward declare list
 // clang-format off
 class DebuggerStat;
-class IScriptDebuggerWatchdog;
-class IScriptTelemetryLogger;
-class LocalProfilerControlBroker;
-class MinecraftCommands;
-class ScriptPluginManager;
-class ServerLevel;
 struct ScriptDebuggerSettings;
 namespace Core { class Path; }
+namespace ScriptDebuggerMessages { struct CommandMessage; }
 namespace ScriptDebuggerMessages { struct DebuggerRequestMessage; }
-namespace Scripting { class ScriptEngine; }
+namespace ScriptDebuggerMessages { struct DiagnosticsSetActiveMessage; }
+namespace ScriptDebuggerMessages { struct StartProfilerMessage; }
+namespace ScriptDebuggerMessages { struct StopProfilerMessage; }
 namespace cereal { class DynamicValue; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class ScriptDebugger : public ::IScriptDebugger, public ::IDebuggerStatPublisher {
@@ -109,22 +104,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptDebugger(
-        ::ScriptDebuggerSettings                                        settings,
-        ::ServerLevel&                                                  serverLevel,
-        ::MinecraftCommands&                                            commands,
-        ::cereal::ReflectionCtx&                                        ctx,
-        ::Scripting::ScriptEngine&                                      scriptEngine,
-        ::ScriptPluginManager&                                          pluginManager,
-        ::IScriptDebuggerWatchdog&                                      watchdog,
-        ::IScriptTelemetryLogger&                                       telemetry,
-        ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> const& profilerControlBroker
-    );
-
     MCNAPI void _debuggerMessageHandler(::std::string_view message);
+
+    MCNAPI void _handleCommandMessage(::ScriptDebuggerMessages::CommandMessage const& commandMessage);
 
     MCNAPI void
     _handleDebuggerRequestMessage(::ScriptDebuggerMessages::DebuggerRequestMessage const& debuggerRequestPayload);
+
+    MCNAPI void _handleStartProfilerMessage(::ScriptDebuggerMessages::StartProfilerMessage const& profilerMessage);
+
+    MCNAPI void _handleStopProfilerMessage(::ScriptDebuggerMessages::StopProfilerMessage const& profilerMessage);
 
     MCNAPI ::std::string _sanitizeHostName(::std::string const& host) const;
 
@@ -149,26 +138,13 @@ public:
     MCNAPI void sendLog(::LogLevel logLevel, ::std::string_view message);
 
     MCNAPI void sendViews();
-
-    MCNAPI void update();
-
-    MCNAPI void waitAutoAttach(::std::chrono::seconds waitDuration);
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // static functions
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
-        ::ScriptDebuggerSettings                                        settings,
-        ::ServerLevel&                                                  serverLevel,
-        ::MinecraftCommands&                                            commands,
-        ::cereal::ReflectionCtx&                                        ctx,
-        ::Scripting::ScriptEngine&                                      scriptEngine,
-        ::ScriptPluginManager&                                          pluginManager,
-        ::IScriptDebuggerWatchdog&                                      watchdog,
-        ::IScriptTelemetryLogger&                                       telemetry,
-        ::Bedrock::NonOwnerPointer<::LocalProfilerControlBroker> const& profilerControlBroker
-    );
+    MCNAPI static void
+    _handleDiagnosticsSetActiveMessage(::ScriptDebuggerMessages::DiagnosticsSetActiveMessage const& payload);
     // NOLINTEND
 
 public:

@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/resources/interface/IWorldTemplateManager.h"
 
 // auto generated forward declare list
@@ -95,8 +94,6 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI void addKnownPackFromImport(::Pack const& pack);
-
-    MCNAPI ::Core::PathBuffer<::std::string> getWorldTemplatesPath() const;
 
     MCNAPI ::std::vector<::gsl::not_null<::std::shared_ptr<::Pack const>>>
     loadPacksForTemplate(::WorldTemplateInfo const& info);

@@ -78,6 +78,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                    mIsPlatformLocked;
     ::ll::TypedStorage<1, 1, bool>                                    mIsRandomSeedAllowed;
     ::ll::TypedStorage<1, 1, bool>                                    mHasClientScript;
+    ::ll::TypedStorage<1, 1, bool>                                    mHasAppScript;
     ::ll::TypedStorage<1, 1, bool>                                    mHasEducationMetadata;
     ::ll::TypedStorage<1, 1, bool>                                    mHasPlugins;
     ::ll::TypedStorage<1, 1, bool>                                    mHasValidUUID;
@@ -117,50 +118,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManifest(::PackManifest const&);
+    MCNAPI PackManifest(::PackManifest const&);
 
-    MCAPI explicit PackManifest(::ManifestType type);
+    MCNAPI explicit PackManifest(::ManifestType type);
 
-    MCAPI void _serializeDependencies(::Json::Value& destination) const;
+    MCNAPI void _serializeDependencies(::Json::Value& destination) const;
 
-    MCAPI void _serializeHeader(::Json::Value& destination) const;
+    MCNAPI void _serializeHeader(::Json::Value& destination) const;
 
-    MCAPI void _serializeLegacyModuleDependencies(::Json::Value& destination) const;
+    MCNAPI void _serializeLegacyModuleDependencies(::Json::Value& destination) const;
 
-    MCAPI void _serializeMeta(::Json::Value& destination) const;
+    MCNAPI void _serializeMeta(::Json::Value& destination) const;
 
-    MCAPI void _serializeModules(::Json::Value& destination) const;
-
-#ifdef LL_PLAT_C
-    MCAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
-
-    MCAPI ::Core::PathBuffer<::std::string> generateIconPath() const;
-#endif
-
-    MCAPI ::std::string getDescription(::I18n& loc) const;
-
-    MCAPI ::std::string getName(::I18n& loc) const;
-
-    MCAPI ::std::string getNameForTelemetry(::I18n& loc) const;
-
-    MCAPI ::std::string getNameWithVersionForTelemetry(::I18n& loc) const;
-
-    MCAPI bool hasPackCapability(::std::string_view capability) const;
+    MCNAPI void _serializeModules(::Json::Value& destination) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::PackManifest& operator=(::PackManifest&&);
+    MCNAPI ::Core::PathBuffer<::std::string> generateBaseIconPath() const;
+
+    MCNAPI ::Core::PathBuffer<::std::string> generateIconPath() const;
 #endif
 
-    MCAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
+    MCNAPI ::std::string getDescription(::I18n& loc) const;
 
-    MCAPI void setLastModifiedDate(int64 lastModifiedDate);
+    MCNAPI ::std::string getName(::I18n& loc) const;
 
-    MCAPI void setLocalizedNameKeywords(
+    MCNAPI ::std::string getNameForTelemetry(::I18n& loc) const;
+
+    MCNAPI ::std::string getNameWithVersionForTelemetry(::I18n& loc) const;
+
+    MCNAPI bool hasPackCapability(::std::string_view capability) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::PackManifest& operator=(::PackManifest&&);
+#endif
+
+    MCNAPI void serialize(::PackManifestFormat formatVersion, ::Json::Value& destination) const;
+
+    MCNAPI void setLastModifiedDate(int64 lastModifiedDate);
+
+    MCNAPI void setLocalizedNameKeywords(
         ::std::unordered_map<::std::string, ::std::string> const& localizationNameMap,
         ::I18n&                                                   loc
     );
 
-    MCAPI void setPackSettingsDef(
+    MCNAPI void setPackSettingsDef(
         ::std::vector<::std::variant<
             ::SharedTypes::v3_0_0::PackManifestDefinition::LabelSetting,
             ::SharedTypes::v3_0_0::PackManifestDefinition::SliderSetting,
@@ -173,35 +174,37 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::PackScope StringToPackScope(::std::string const& str);
-
-    MCAPI static void _serializeVersion(::Json::Value& destination, ::SemVersion const& version);
+    MCNAPI static void _serializeVersion(::Json::Value& destination, ::SemVersion const& version);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& MarioPackId();
+    MCNAPI static ::std::string const& MarioPackId();
+
+    MCNAPI static ::std::string const& MarioPackSkinsId();
+
+    MCNAPI static ::std::string const& MarioPackWorldId();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PackManifest const&);
+    MCNAPI void* $ctor(::PackManifest const&);
 
-    MCAPI void* $ctor(::ManifestType type);
+    MCNAPI void* $ctor(::ManifestType type);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::PackManifest> $clone() const;
+    MCNAPI ::std::unique_ptr<::PackManifest> $clone() const;
 
 
     // NOLINTEND

@@ -115,7 +115,7 @@ MCNAPI void serverWitherBossTickDeath(
     ::SynchedActorDataComponent&                                  synchedActorData,
     ::Optional<::ExperienceRewardComponent const>                 experienceReward,
     ::OptionalComponentWrapper<::SoundEventRequestQueueComponent> soundEventRequestQueue,
-    ::EntityModifier<::IsDeadFlagComponent>&                      modifier
+    ::EntityModifier<::IsDeadFlagComponent> const&                modifier
 );
 
 MCNAPI void tickDragonExplosionParticles(

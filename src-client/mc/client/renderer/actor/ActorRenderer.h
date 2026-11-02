@@ -74,7 +74,7 @@ public:
     // NOLINTBEGIN
     virtual ~ActorRenderer() /*override*/;
 
-    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData) = 0;
+    virtual void render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData) = 0;
 
     virtual void renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
@@ -109,14 +109,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorRenderer(
+    MCNAPI ActorRenderer(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Vec2 const&                          renderDim,
         ::Vec3 const&                          renderDimOffset,
         bool                                   hasWaterHole
     );
 
-    MCAPI ActorRenderer(
+    MCNAPI ActorRenderer(
         ::std::shared_ptr<::Model>             model,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Vec2 const&                          renderDim,
@@ -130,7 +130,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addLeashPinToOutput(
+    MCNAPI static void _addLeashPinToOutput(
         ::Vec3 const&                                             fromLeashes,
         ::Vec3 const&                                             toLeashes,
         ::Actor const&                                            actor,
@@ -141,7 +141,7 @@ public:
         ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& output
     );
 
-    MCAPI static void _drawRopeRange(
+    MCNAPI static void _drawRopeRange(
         ::BaseActorRenderContext& renderContext,
         int                       begin,
         int                       end,
@@ -155,7 +155,7 @@ public:
         ::Vec3*                   endPoint
     );
 
-    MCAPI static void _getLeashPins(
+    MCNAPI static void _getLeashPins(
         float                                                     actorFrameAlpha,
         ::BaseActorRenderContext&                                 renderContext,
         ::Actor&                                                  actor,
@@ -163,48 +163,48 @@ public:
         ::Bedrock::small_vector_base<::Vec3>&                     leashFromOffsets
     );
 
-    MCAPI static bool isDitheringEnabled(::BaseActorRenderContext const& renderContext, ::Actor const& actor);
+    MCNAPI static bool isDitheringEnabled(::BaseActorRenderContext const& renderContext, ::Actor const& actor);
 
-    MCAPI static void renderDebugAttachPos(int renderAttachPos, ::Actor const& mob);
+    MCNAPI static void renderDebugAttachPos(int renderAttachPos, ::Actor const& mob);
 
-    MCAPI static void renderFlame(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI static void renderFlame(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCAPI static void renderLeash(
+    MCNAPI static void renderLeash(
         ::BaseActorRenderContext&                                 renderContext,
         ::ActorRenderData&                                        entityRenderData,
         ::Bedrock::small_vector_base<::ActorRenderer::LeashPins>& allLeashPins
     );
 
-    MCAPI static void resetTextures();
+    MCNAPI static void resetTextures();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec2 const& DEFAULT_RENDER_BOUNDS();
+    MCNAPI static ::Vec2 const& DEFAULT_RENDER_BOUNDS();
 
-    MCAPI static ::mce::MaterialPtr& mFlameMaterial();
+    MCNAPI static ::mce::MaterialPtr& mFlameMaterial();
 
-    MCAPI static ::mce::Mesh& mFlameMesh();
+    MCNAPI static ::mce::Mesh& mFlameMesh();
 
-    MCAPI static ::ActorTextureInfo& mFlameTexture();
+    MCNAPI static ::ActorTextureInfo& mFlameTexture();
 
-    MCAPI static ::mce::MaterialPtr& mLeashMat();
+    MCNAPI static ::mce::MaterialPtr& mLeashMat();
 
-    MCAPI static ::mce::TexturePtr& mLeashTexture();
+    MCNAPI static ::mce::TexturePtr& mLeashTexture();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Vec2 const&                          renderDim,
         ::Vec3 const&                          renderDimOffset,
         bool                                   hasWaterHole
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Model>             model,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
         ::Vec2 const&                          renderDim,
@@ -216,25 +216,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCNAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
-    MCAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI void $renderWaterHole(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCFOLD void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void $addAdditionalRenderingIfNeeded(::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI ::AABB $getRenderBounds(::Actor const& entity) const;
+    MCNAPI ::AABB $getRenderBounds(::Actor const& entity) const;
 
-    MCAPI void $getLeashOffsets(
+    MCNAPI void $getLeashOffsets(
         ::Actor&,
         float                                 yRot,
         float                                 yRotPrev,
@@ -243,13 +243,13 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    MCFOLD void $setIsOnScreen(::Actor&, bool, float) const;
+    MCNAPI void $setIsOnScreen(::Actor&, bool, float) const;
 
-    MCFOLD bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldUpdateBonesAndEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCFOLD bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldUpdateEffectsIfOffScreen(::RenderParams& renderParams) const;
 
-    MCFOLD bool $shouldHideHeldItems(::RenderParams& renderParams) const;
+    MCNAPI bool $shouldHideHeldItems(::RenderParams& renderParams) const;
     // NOLINTEND
 
 public:

@@ -153,9 +153,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CaveFeature();
+    MCNAPI CaveFeature();
 
-    MCAPI bool carveEllipsoid(
+    MCNAPI bool carveEllipsoid(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&                                      random,
@@ -170,23 +170,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
+    MCNAPI ::std::optional<::BlockPos> $place(::IFeature::PlacementContext const& context) const;
 
-    MCAPI bool $isValidPlacement(::std::string const& pass);
+    MCNAPI bool $isValidPlacement(::std::string const& pass);
 
-    MCAPI void $addRoom(
+    MCNAPI void $addRoom(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -197,7 +197,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI void $addTunnel(
+    MCNAPI void $addTunnel(
         ::IBlockWorldGenAPI&                                                target,
         ::CaveFeatureUtils::CarverConfiguration const&                      configuration,
         ::Random&                                                           random,
@@ -214,7 +214,7 @@ public:
         ::std::vector<::CaveFeature::CachedMetaData::CarveEllipsoidParams>& carveParamsOperations
     ) const;
 
-    MCAPI bool $carveEllipsoidVolume(
+    MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI&                           target,
         ::CaveFeatureUtils::CarverConfiguration const& configuration,
         ::Random&,
@@ -226,7 +226,7 @@ public:
         ::CaveFeatureUtils::CarvingParameters const& carvingParameters
     ) const;
 
-    MCAPI void $addFeature(
+    MCNAPI void $addFeature(
         ::IBlockWorldGenAPI&                                                target,
         ::ChunkPos const&                                                   pos,
         ::Random&                                                           random,

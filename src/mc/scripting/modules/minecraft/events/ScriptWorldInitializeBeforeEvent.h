@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorldInitializeBeforeEvent(
+    MCNAPI ScriptWorldInitializeBeforeEvent(
         ::ScriptingWorldInitializeEvent const& eventData,
         ::Scripting::WeakLifetimeScope const&  scope
     );
@@ -44,13 +44,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptingWorldInitializeEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
+    MCNAPI void* $ctor(::ScriptingWorldInitializeEvent const& eventData, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 };
 

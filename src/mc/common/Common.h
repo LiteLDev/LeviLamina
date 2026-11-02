@@ -13,11 +13,11 @@ namespace Common {
 MCAPI ::Common::StringConstants _buildStringConstants();
 
 #ifdef LL_PLAT_C
-MCAPI ::std::optional<::std::string> getGameDevGitCommitKustoTimeString();
+MCNAPI ::std::optional<::std::string> getGameDevGitCommitKustoTimeString();
 
-MCAPI ::std::string getGameDevInfoString();
+MCNAPI ::std::string getGameDevInfoString();
 
-MCAPI ::std::string const& getGameVersionStringNet();
+MCNAPI ::std::string const& getGameVersionStringNet();
 #endif
 // NOLINTEND
 

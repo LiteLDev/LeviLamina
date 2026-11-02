@@ -40,7 +40,7 @@ public:
     ::ll::TypedStorage<8, 8, uint64>                               mNumFullIcons;
     ::ll::TypedStorage<8, 8, uint64>                               mNumHalfIcons;
     ::ll::TypedStorage<8, 192, ::std::array<::mce::TexturePtr, 6>> mHungerTextures;
-    ::ll::TypedStorage<8, 3792, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
+    ::ll::TypedStorage<8, 3648, ::std::array<::mce::Mesh, 6>>      mHungerMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>      mIconPosition;
     // NOLINTEND
 
@@ -60,22 +60,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudHungerRenderer();
+    MCNAPI HudHungerRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 };

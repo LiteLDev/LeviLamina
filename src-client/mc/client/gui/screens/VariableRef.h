@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI VariableRef(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
+    MCNAPI VariableRef(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
 
-    MCAPI bool operator==(::VariableRef const& rhs) const;
+    MCNAPI bool operator==(::VariableRef const& rhs) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
+    MCNAPI void* $ctor(::std::weak_ptr<::UIControl> control, ::LayoutVariableType type);
     // NOLINTEND
 };

@@ -29,29 +29,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AchievementCategoriesFacet();
+    MCNAPI AchievementCategoriesFacet();
 
-    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getReleaseCategoryData() const;
+    MCNAPI ::std::vector<::OreUI::FacetAchievementCategoryData> const& getReleaseCategoryData() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetAchievementCategoryData> const& getStandardCategoryData() const;
+    MCNAPI ::std::vector<::OreUI::FacetAchievementCategoryData> const& getStandardCategoryData() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

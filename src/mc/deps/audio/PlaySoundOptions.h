@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/audio/ServerSoundHandle.h"
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/core/sound/SoundPriority.h"
 
 struct PlaySoundOptions {
 public:
@@ -18,6 +19,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::optional<::ServerSoundHandle>> mServerSoundHandle;
     ::ll::TypedStorage<1, 1, bool>                                  mBypassListenerRangeCheck;
     ::ll::TypedStorage<4, 8, ::std::optional<float>>                mPlaybackPositionSeconds;
+    ::ll::TypedStorage<4, 4, ::SoundPriority>                       mPriority;
     // NOLINTEND
 
 public:

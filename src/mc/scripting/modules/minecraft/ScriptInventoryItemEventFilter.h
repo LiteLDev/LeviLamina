@@ -40,37 +40,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptInventoryItemEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
+    MCNAPI ScriptInventoryItemEventFilter(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&&);
 
-    MCAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&
+    MCNAPI ::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter&
     operator=(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
 
-    MCAPI void process();
+    MCNAPI void process();
 
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterData const& data) const;
+    MCNAPI bool
+    shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilterData const& data) const;
 
-    MCAPI ~ScriptInventoryItemEventFilter();
+    MCNAPI ~ScriptInventoryItemEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::EventFilters::ScriptInventoryItemEventFilter const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ChunkPos placementChunk(
+    MCNAPI ::ChunkPos placementChunk(
         ::br::worldgen::StructurePlacement const&           def,
         ::br::worldgen::ChunkGeneratorStructureState const& state,
         ::ChunkPos                                          chunkPos

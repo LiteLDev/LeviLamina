@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Core { class Path; }
 namespace Social::Events { class Event; }
 // clang-format on
 
@@ -30,6 +31,8 @@ public:
     ::ll::UntypedStorage<8, 8>  mUnk3f4db1;
     ::ll::UntypedStorage<8, 24> mUnk1cf268;
     ::ll::UntypedStorage<8, 8>  mUnk53c684;
+    ::ll::UntypedStorage<8, 32> mUnk14b661;
+    ::ll::UntypedStorage<8, 32> mUnk7d22a2;
     // NOLINTEND
 
 public:
@@ -43,7 +46,7 @@ public:
     // NOLINTBEGIN
     virtual ~LegacyEventingListener() /*override*/ = default;
 
-    virtual void sendEvent(::Social::Events::Event const&) /*override*/;
+    virtual void sendEvent(::Social::Events::Event const& event) /*override*/;
 
     virtual int getEventTagsFilter() const /*override*/;
 
@@ -53,9 +56,37 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit LegacyEventingListener(::Core::Path logFileName);
+
+    MCNAPI bool _sendBatch();
+    // NOLINTEND
+
+public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static ::std::string const& TELEMETRY_ENDPOINT();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Core::Path logFileName);
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI void $sendEvent(::Social::Events::Event const& event);
+
+    MCNAPI int $getEventTagsFilter() const;
+
+    MCNAPI bool $_checkAgainstEventAllowlist(::Social::Events::Event const& event) const;
+
+    MCNAPI void $_flushEventQueue();
+
+
     // NOLINTEND
 };
 

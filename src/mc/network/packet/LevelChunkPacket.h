@@ -68,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LevelChunkPacket(::LevelChunkPacketPayload payload);
+    MCNAPI explicit LevelChunkPacket(::LevelChunkPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelChunkPacketPayload payload);
+    MCNAPI void* $ctor(::LevelChunkPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -84,34 +84,34 @@ public:
 
     MCAPI ::std::string_view $getName() const;
 
-    MCFOLD ::SerializationMode $getSerializationMode() const;
+    MCNAPI ::SerializationMode $getSerializationMode() const;
 
-    MCFOLD void $setSerializationMode(::SerializationMode mode);
+    MCNAPI void $setSerializationMode(::SerializationMode mode);
 
-    MCAPI void $writeWithSerializationMode(
+    MCNAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCNAPI void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
     MCAPI void $write(::BinaryStream& stream) const;
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    MCFOLD bool $disallowBatching() const;
+    MCNAPI bool $disallowBatching() const;
 
-    MCAPI bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD uint64 $getMaxSize() const;
+    MCNAPI uint64 $getMaxSize() const;
 
-    MCAPI ::std::string $toString() const;
+    MCNAPI ::std::string $toString() const;
 
     MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

@@ -39,30 +39,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawEditorScreenController(
+    MCNAPI JigsawEditorScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&,
         ::BlockPos const& pos,
         ::ActorUniqueID   uniqueId
     );
 
-    MCAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
+    MCNAPI ::std::string _getTextEditValue(::TextEditScreenEventData& textEditEvent) const;
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _registerEventHandlers();
+    MCNAPI void _registerEventHandlers();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
+    MCNAPI static int _getTextEditValueAsInt(::TextEditScreenEventData& textEditEvent);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Player&,
         ::BlockPos const& pos,
@@ -73,7 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 
 public:

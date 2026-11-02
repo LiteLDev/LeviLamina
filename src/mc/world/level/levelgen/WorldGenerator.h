@@ -80,7 +80,8 @@ public:
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     virtual ::StructureFeature* getStructureFeatureOfType(::HashedString type) const;
@@ -135,47 +136,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldGenerator(::Dimension& dimension);
+    MCNAPI explicit WorldGenerator(::Dimension& dimension);
 
-    MCAPI
+    MCNAPI
     WorldGenerator(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
 
-    MCAPI bool _tryGenerateStructure(
+    MCNAPI bool _tryGenerateStructure(
         ::br::worldgen::Structure const&      structure,
         ::ChunkPos const&                     chunkPos,
         ::br::worldgen::ChunkStructureAccess& structureAccess
     );
 
-    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
+    MCNAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
-    MCAPI void postProcessStructureFeatures(::BlockSource& region, ::Random& random, uint seed, int chunkX, int chunkZ);
+    MCNAPI void
+    postProcessStructureFeatures(::BlockSource& region, ::Random& random, uint seed, int chunkX, int chunkZ);
 
-    MCAPI void postProcessStructures(::BlockSource& region, ::Random&, int chunkX, int chunkZ);
+    MCNAPI void postProcessStructures(::BlockSource& region, ::Random&, int chunkX, int chunkZ);
 
-    MCAPI void preProcessStructures(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource);
+    MCNAPI void preProcessStructures(::Dimension& dimension, ::ChunkPos const& cp, ::BiomeSource const& biomeSource);
 
-    MCAPI void prepareStructureFeatureBlueprints(
+    MCNAPI void prepareStructureFeatureBlueprints(
         ::Dimension&                         dimension,
         ::ChunkPos const&                    cp,
         ::BiomeSource const&                 biomeSource,
         ::IPreliminarySurfaceProvider const& preliminarySurfaceProvider
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void tick();
-#endif
-
-    MCAPI void waitForStructures();
+    MCNAPI void waitForStructures();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
+    MCNAPI void* $ctor(::Dimension& dimension);
 
-    MCAPI void* $ctor(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
+    MCNAPI void* $ctor(::Dimension& dimension, ::std::unique_ptr<::StructureFeatureRegistry> structureFeatureRegistry);
     // NOLINTEND
 
 public:
@@ -187,33 +185,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCNAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+    MCNAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
     MCAPI bool $findNearestStructureFeature(
         ::HashedString                  feature,
         ::BlockPos const&               origin,
         ::BlockPos&                     pos,
         bool                            mustBeInNewChunks,
-        ::std::optional<::HashedString> biomeTag
+        ::std::optional<::HashedString> biomeTag,
+        int                             searchRadiusCells
     );
 
     MCAPI ::StructureFeature* $getStructureFeatureOfType(::HashedString type) const;
 
-    MCAPI void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
+    MCNAPI void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, ::BoundingBox const& chunkBB) const;
 
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCFOLD ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
     MCFOLD void $debugRender();
 
     MCFOLD void $propagateCombinedChunkSource(::ChunkSource* chunkSource);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 

@@ -48,37 +48,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutonomousActorManager(
+    MCNAPI AutonomousActorManager(
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
 
-    MCAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
+    MCNAPI void _onChunkDiscarded(::LevelChunk& levelChunk);
 
-    MCAPI void _onRemoveActorEntityReferences(::Actor& actor);
+    MCNAPI void _onRemoveActorEntityReferences(::Actor& actor);
 
-    MCAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
+    MCNAPI void _saveAllAutonomousActors(::LevelStorage& levelStorage);
 
-    MCAPI ::Actor*
+    MCNAPI ::Actor*
     addAutonomousActorEntity(::IAddActorEntityProxy& addActorEntityProxy, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI ::Actor* addAutonomousActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
+    MCNAPI ::Actor* addAutonomousActorEntity(::Dimension& dimension, ::OwnerPtr<::EntityContext> entity);
 
-    MCAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(::ActorUniqueID actorUniqueID) const;
+    MCNAPI bool hasOwnedInactiveAutonomousActorWithUniqueID(::ActorUniqueID actorUniqueID) const;
 
-    MCAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
+    MCNAPI void loadAutonomousActorsFromDisk(::LevelStorage& levelStorage, ::ActorFactory& actorFactory);
 
-    MCAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
+    MCNAPI void registerForLevelChunkEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
+    MCNAPI void registerLevelStorageManagerListener(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-    MCAPI ~AutonomousActorManager();
+    MCNAPI ~AutonomousActorManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::gsl::not_null<::StackRefResult<::EntityRegistry>> const& entityRegistry,
         ::Bedrock::NotNullNonOwnerPtr<::ActorManager>              actorManager
     );
@@ -87,6 +87,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

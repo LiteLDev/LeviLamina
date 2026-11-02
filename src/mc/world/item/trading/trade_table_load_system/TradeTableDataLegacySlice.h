@@ -17,7 +17,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::v1_21_30::TradeTableData
+    MCNAPI static ::SharedTypes::v1_21_30::TradeTableData
     upgrade(::TradeTableLoadSystem::TradeTableDataLegacySlice&& legacySlice);
     // NOLINTEND
 };

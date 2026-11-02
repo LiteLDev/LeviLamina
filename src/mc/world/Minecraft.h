@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::GameCallbacks&>                                      mGameCallbacks;
     ::ll::TypedStorage<8, 8, ::IMinecraftEventing&>                                 mEventing;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackManager>>              mResourceLoader;
+    ::ll::TypedStorage<8, 16, ::OwnerPtr<::ResourcePackManager>>                    mResourceLoader;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::StructureManager>>                 mStructureManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameModuleServer>>                mGameModuleServer;
     ::ll::TypedStorage<8, 8, ::PermissionsFile*>                                    mPermissionsFile;
@@ -151,19 +151,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Minecraft(::MinecraftArguments&& args);
+    MCNAPI explicit Minecraft(::MinecraftArguments&& args);
 
-    MCAPI void _tryCatchupMovementTicks();
+    MCNAPI void _tryCatchupMovementTicks();
 
-    MCAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
+    MCNAPI void configureGameTest(::Level& level, ::Experiments const& experiments);
 
-    MCAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
+    MCNAPI void disconnectClient(::NetworkIdentifier const& id, ::Connection::DisconnectFailReason disconnectReason);
 
     MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StructureManager> getStructureManager();
 
-    MCAPI bool hostMultiplayer(
+    MCNAPI bool hostMultiplayer(
         ::std::string const&                                                 serverName,
         ::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity,
         ::KeyManager const&                                                  hostPublicKey,
@@ -180,21 +180,23 @@ public:
 
     MCFOLD void init();
 
-    MCFOLD void initAsDedicatedServer();
+    MCNAPI void initAsDedicatedServer();
 
-    MCAPI void initCommands();
+    MCNAPI void initCommands();
 
 #ifdef LL_PLAT_C
-    MCAPI void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
+    MCNAPI void onClientCreatedLevel(::std::pair<::std::unique_ptr<::Level>, ::OwnerPtr<::EntityContext>> levelEntity);
 
-    MCAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
+    MCNAPI ::Bedrock::PubSub::Subscription registerLevelListener(::std::function<void(::Level*)> callback) const;
 
-    MCAPI void resetGameSession();
+    MCNAPI bool requestInGamePause(bool status);
 
-    MCAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
+    MCNAPI void startClientGame(::std::unique_ptr<::NetEventCallback> legacyClientNetworkHandler);
 #endif
 
-    MCAPI void startLeaveGame(bool stopNetwork);
+    MCNAPI void startLeaveGame(bool stopNetwork);
+
+    MCNAPI void unpauseServerForDimensionTransfer();
 
     MCAPI bool update();
     // NOLINTEND
@@ -202,7 +204,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tryCatchupMovementTicks(
+    MCNAPI static void _tryCatchupMovementTicks(
         ::EntitySystems&                     entitySystems,
         ::EntityRegistry&                    registry,
         ::std::unique_ptr<::ITickingSystem>& addMovementTickForCatchup
@@ -212,23 +214,23 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftArguments&& args);
+    MCNAPI void* $ctor(::MinecraftArguments&& args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setSimTimePause(bool pause);
+    MCNAPI void $setSimTimePause(bool pause);
 
-    MCAPI void $setSimTimeScale(float scale);
+    MCNAPI void $setSimTimeScale(float scale);
 
-    MCAPI bool $getSimPaused() const;
+    MCNAPI bool $getSimPaused() const;
 
-    MCAPI bool $isOnlineClient() const;
+    MCNAPI bool $isOnlineClient() const;
 
-    MCAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
+    MCNAPI ::StackRefResult<::EntityRegistry> $getEntityRegistry();
 
-    MCAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
+    MCNAPI ::StackRefResult<::EntityRegistry const> $getEntityRegistry() const;
 
 
     // NOLINTEND

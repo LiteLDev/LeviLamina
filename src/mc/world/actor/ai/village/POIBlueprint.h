@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI POIBlueprint(
+    MCNAPI POIBlueprint(
         ::std::string name,
         ::POIType     type,
         float         radius,
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string name,
         ::POIType     type,
         float         radius,

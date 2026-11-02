@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/world/level/block/actor/component/EntityStorageBlockActorComponent.h"
 #include "mc/world/persistence/DynamicPropertyDefinePropertyError.h"
 
 // auto generated forward declare list
@@ -232,6 +233,15 @@ MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder
 createPlayerCancelBreakingBlockAfterEventMetadata();
 
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createPlayerCraftedRecipeCraftingBlockAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createPlayerCursorItemGrabAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
+createPlayerCursorItemReleaseAfterEventMetadata();
+
+MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder>
 createPlayerDimensionChangeAfterEventMetadata();
 
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createPlayerEmoteAfterEventMetadata();
@@ -315,6 +325,11 @@ MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder
 createWorldInitializeAfterEventMetadata();
 
 MCNAPI ::std::unique_ptr<::ScriptModuleMinecraft::IScriptAfterEventSignalBuilder> createWorldLoadAfterEventMetadata();
+
+MCNAPI ::Scripting::Error entityStorageBlockActorComponentError(
+    ::EntityStorageBlockActorComponent::EntityStorageResult result,
+    char const*                                             operation
+);
 
 MCNAPI ::Block const* extractBlockFromVariant(
     ::std::variant<

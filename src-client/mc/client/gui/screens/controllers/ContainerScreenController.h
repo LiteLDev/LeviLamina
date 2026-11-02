@@ -210,82 +210,78 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerScreenController(
+    MCNAPI ContainerScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::InteractionModel                             interactionModel
     );
 
-    MCAPI bool _canProgressiveTakeFromCollection() const;
+    MCNAPI bool _canProgressiveTakeFromCollection() const;
 
-    MCAPI void _compareStatesForFlyingItems();
+    MCNAPI void _compareStatesForFlyingItems();
 
-    MCAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     _getTakeableItemStackBase(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI ::ItemStackBase const& _getVisualItemStack(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI ::ItemStackBase const& _getVisualItemStack(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
+    MCNAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
 
     MCAPI void
     _handleDropItem(::std::string const& collectionName, int collectionIndex, ::ItemTransferAmount transferAmount);
 
     MCAPI void _handleDropSelectedItem(::ItemTransferAmount transferAmount);
 
-    MCAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI void _handleTakeAll(::std::string const& collectionName, int index);
+    MCNAPI void _handleTakeAll(::std::string const& collectionName, int index);
 
     MCAPI void _handleTakeAmount(int amount, ::std::string const& collectionName, int index);
 
-    MCAPI void _handleUnselectSlot();
+    MCNAPI void _handleUnselectSlot();
 
-    MCAPI bool _hasItems(::std::string const& collectionName, int collectionIndex) const;
+    MCNAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
 
-    MCAPI bool _isCursorSelectedActive() const;
+    MCNAPI void _loadLastSelectedSlot();
 
-    MCAPI bool _isInValidCraftingResultContainer(::std::string_view collectionName, int collectionIndex) const;
-
-    MCAPI void _loadLastSelectedSlot();
-
-    MCAPI bool _moveItemFromSlotIntoStorageItem(
+    MCNAPI bool _moveItemFromSlotIntoStorageItem(
         ::std::string const& collectionName,
         int                  collectionIndex,
         ::ItemStack const&   toStorageItem
     );
 
-    MCAPI bool _moveSelectedItemFromStorageItem(
+    MCNAPI bool _moveSelectedItemFromStorageItem(
         ::ItemStack const&   fromStorageItem,
         int                  selectedItemIdx,
         ::std::string const& collectionName,
         int                  collectionIndex
     );
 
-    MCAPI bool _moveTopItemFromStorageItem(
+    MCNAPI bool _moveTopItemFromStorageItem(
         ::ItemStack const&   fromStorageItem,
         ::std::string const& collectionName,
         int                  collectionIndex
     );
 
-    MCAPI void _playSound(::SharedTypes::Legacy::LevelSoundEvent type);
+    MCNAPI void _playSound(::SharedTypes::Legacy::LevelSoundEvent type);
 
-    MCAPI void _postSetSelectedSlot(
+    MCNAPI void _postSetSelectedSlot(
         ::SelectedSlotInfo const& selected,
         bool                      allowEmpty,
         bool                      unselect,
         ::ItemLockAction          actionOverride
     );
 
-    MCAPI void _registerEventHandlersForStateMachine(uint buttonId);
+    MCNAPI void _registerEventHandlersForStateMachine(uint buttonId);
 
-    MCAPI void _saveLastSelectedSlot();
+    MCNAPI void _saveLastSelectedSlot();
 
-    MCAPI void _showSelectedItemDetailsPopup(::ItemStackBase const& item);
+    MCNAPI void _showSelectedItemDetailsPopup(::ItemStackBase const& item);
 
-    MCAPI void _stopSplitting();
+    MCNAPI void _stopSplitting();
 
     MCAPI ::std::vector<::AutoPlaceItem> const* tryGetAutoPlaceOrder(::std::string const& collectionName) const;
     // NOLINTEND
@@ -293,7 +289,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isInRecipeContainer(::std::string const& collectionName);
+    MCNAPI static bool _isInRecipeContainer(::std::string const& collectionName);
     // NOLINTEND
 
 public:
@@ -305,80 +301,80 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::InteractionModel interactionModel);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::InteractionModel interactionModel);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $setAssociatedBlockPos(::BlockPos const& pos);
+    MCNAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
+    MCNAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
+    MCNAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
 
-    MCAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
 
-    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+    MCNAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
 
-    MCAPI int $_handleTakePlace(::std::string const& collectionName, int collectionIndex, bool allItems);
+    MCNAPI int $_handleTakePlace(::std::string const& collectionName, int collectionIndex, bool allItems);
 
-    MCAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
+    MCNAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
 
-    MCAPI ::SelectedSlotInfo const $_getSelectedSlotInfo() const;
+    MCNAPI ::SelectedSlotInfo const $_getSelectedSlotInfo() const;
 
-    MCAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
+    MCNAPI ::SlotData $_reevaluateSlotData(::SlotData&& slotData) const;
 
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
 
-    MCAPI ::std::string $_getButtonXDescription();
+    MCNAPI ::std::string $_getButtonXDescription();
 
-    MCAPI ::std::string $_getButtonYDescription();
+    MCNAPI ::std::string $_getButtonYDescription();
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotUnhovered(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotUnhovered(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
-    MCAPI ::ui::ViewRequest $_onHotbarSlotHotkeyUsed(::SlotData const& dstSlot);
+    MCNAPI ::ui::ViewRequest $_onHotbarSlotHotkeyUsed(::SlotData const& dstSlot);
 
-    MCFOLD bool $_onTouchScrollStartedWithSelectedSlot();
+    MCNAPI bool $_onTouchScrollStartedWithSelectedSlot();
 
-    MCAPI bool $_shouldSwap(
+    MCNAPI bool $_shouldSwap(
         ::std::string const& collectionName,
         int                  collectionIndex,
         ::std::string const& otherCollectionName,
         int                  otherCollectionIndex
     ) const;
 
-    MCAPI bool $_isTargetSwappable(::std::string const& otherCollectionName, int otherCollectionIndex) const;
+    MCNAPI bool $_isTargetSwappable(::std::string const& otherCollectionName, int otherCollectionIndex) const;
 
-    MCAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
+    MCNAPI ::std::string $_getCollectionName(::UIPropertyBag* bag) const;
 
-    MCAPI bool $_canSplit(::std::string const& collectionName) const;
+    MCNAPI bool $_canSplit(::std::string const& collectionName) const;
 
-    MCAPI void $_sendFlyingItem(
+    MCNAPI void $_sendFlyingItem(
         ::ItemStackBase const& item,
         ::std::string const&   fromName,
         int                    fromIndex,
@@ -387,20 +383,20 @@ public:
         ::FadeInIconBehavior   fadeInIconBehavior
     );
 
-    MCFOLD bool $_isContainerScreen() const;
+    MCNAPI bool $_isContainerScreen() const;
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void $_createItemLockNotification(::ItemLockAction const action);
+    MCNAPI void $_createItemLockNotification(::ItemLockAction const action);
 
-    MCAPI ::ProgressiveTakeBarLocation
+    MCNAPI ::ProgressiveTakeBarLocation
     $_getProgressiveBarDirection(::std::string const& collectionName, int collectionIndex) const;
 
-    MCFOLD bool $_isInCreativeContainer(::std::string const& containerName) const;
+    MCNAPI bool $_isInCreativeContainer(::std::string const& containerName) const;
 
-    MCAPI bool $_getGestureControlEnabled() const;
+    MCNAPI bool $_getGestureControlEnabled() const;
 
-    MCAPI void $_onInputModeChanged();
+    MCNAPI void $_onInputModeChanged();
     // NOLINTEND
 };

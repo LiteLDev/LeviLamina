@@ -37,9 +37,6 @@ public:
 
     MCNAPI explicit operator bool() const;
 
-    MCNAPI ::Editor::BlockUtils::Task::ProjectRegionLease&
-    operator=(::Editor::BlockUtils::Task::ProjectRegionLease&& other);
-
     MCNAPI ~ProjectRegionLease();
     // NOLINTEND
 

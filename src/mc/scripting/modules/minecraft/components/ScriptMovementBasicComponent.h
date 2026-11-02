@@ -16,17 +16,17 @@ class ScriptMovementBasicComponent : public ::ScriptModuleMinecraft::DerivedMove
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding _bind();
+    MCNAPI static ::Scripting::ClassBinding _bind();
 
-    MCAPI static ::Scripting::ClassBinding _bindV010();
+    MCNAPI static ::Scripting::ClassBinding _bindV010();
 
-    MCAPI static ::std::vector<::Scripting::ClassBinding> bind();
+    MCNAPI static ::std::vector<::Scripting::ClassBinding> bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 };
 

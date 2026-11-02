@@ -29,7 +29,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static void
+    MCNAPI static void
     startLerpTo(::EntityContext& entity, ::Vec3 const& pos, ::Vec2 const& rot, int steps, bool mustBeCompleted);
 #endif
     // NOLINTEND

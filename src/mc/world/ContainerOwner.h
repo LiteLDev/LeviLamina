@@ -25,13 +25,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~OwnedContainer();
+        MCNAPI ~OwnedContainer();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

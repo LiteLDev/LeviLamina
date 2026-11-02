@@ -45,4 +45,10 @@ public:
     ::ll::TypedStorage<8, 16, ::MountainAttributes::SteepMaterial>   mSteepMaterial;
     ::ll::TypedStorage<1, 1, ::MountainAttributes::TopSlideSettings> mTopSlideSettings;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };

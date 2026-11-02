@@ -27,12 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PossibleTransformation(::PossibleTransformation const&);
+    MCNAPI PossibleTransformation(::PossibleTransformation const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::PossibleTransformation const&);
+    MCNAPI void* $ctor(::PossibleTransformation const&);
     // NOLINTEND
 };

@@ -34,14 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubClientConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI SubClientConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+
+    MCNAPI ::std::string getPrimaryPlayFabId() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::SubClientConnectionRequest create(
+    MCNAPI static ::SubClientConnectionRequest create(
         ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
         ::ConnectionAuthInfo const&               authInfo,
         ::std::string const&                      deviceId,
@@ -55,29 +57,30 @@ public:
         ::std::string const&                      platformOfflineId,
         bool                                      compatibleWithClientSideChunkGen,
         ::SyncedClientOptionsComponent const&     options,
-        ::std::optional<::Social::Nonce> const&   nonce
+        ::std::optional<::Social::Nonce> const&   nonce,
+        ::std::string const&                      primaryPlayFabId
     );
 #endif
 
-    MCAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
+    MCNAPI static ::SubClientConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isAuthTypeWellFormed() const;
+    MCNAPI bool $_isAuthTypeWellFormed() const;
 
 
     // NOLINTEND

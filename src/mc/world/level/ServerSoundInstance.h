@@ -2,9 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
-
 // auto generated forward declare list
 // clang-format off
 class ServerSoundHandle;
@@ -22,7 +19,7 @@ public:
     ::ll::UntypedStorage<8, 192> mUnk596b51;
     ::ll::UntypedStorage<8, 24>  mUnk337e6c;
     ::ll::UntypedStorage<4, 4>   mUnkabe83e;
-    ::ll::UntypedStorage<8, 24>  mUnk133689;
+    ::ll::UntypedStorage<8, 16>  mUnk34c084;
     ::ll::UntypedStorage<1, 1>   mUnk2dc8a9;
     // NOLINTEND
 
@@ -36,12 +33,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ServerSoundInstance(
-        ::ServerSoundHandle                                                handle,
-        ::ServerSoundInstanceManager&                                      manager,
-        ::std::string                                                      soundEventId,
-        ::Bedrock::NonOwnerPointer<::ServerSoundRuntime::Definition const> definition,
-        int                                                                loopCount,
-        ::std::optional<::NetworkIdentifierWithSubId>                      recipient
+        ::ServerSoundHandle                                       handle,
+        ::ServerSoundInstanceManager&                             manager,
+        ::std::string                                             soundEventId,
+        ::std::shared_ptr<::ServerSoundRuntime::Definition const> definition,
+        int                                                       loopCount,
+        ::std::optional<::NetworkIdentifierWithSubId>             recipient
     );
 
     MCNAPI float getPlaybackPosition(::std::chrono::steady_clock::time_point now) const;
@@ -67,12 +64,12 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(
-        ::ServerSoundHandle                                                handle,
-        ::ServerSoundInstanceManager&                                      manager,
-        ::std::string                                                      soundEventId,
-        ::Bedrock::NonOwnerPointer<::ServerSoundRuntime::Definition const> definition,
-        int                                                                loopCount,
-        ::std::optional<::NetworkIdentifierWithSubId>                      recipient
+        ::ServerSoundHandle                                       handle,
+        ::ServerSoundInstanceManager&                             manager,
+        ::std::string                                             soundEventId,
+        ::std::shared_ptr<::ServerSoundRuntime::Definition const> definition,
+        int                                                       loopCount,
+        ::std::optional<::NetworkIdentifierWithSubId>             recipient
     );
     // NOLINTEND
 

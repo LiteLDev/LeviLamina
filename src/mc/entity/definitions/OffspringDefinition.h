@@ -97,13 +97,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setMutationStrategy(::std::string const& strategy);
+    MCNAPI void setMutationStrategy(::std::string const& strategy);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::OffspringDefinition>>& root
     );
     // NOLINTEND

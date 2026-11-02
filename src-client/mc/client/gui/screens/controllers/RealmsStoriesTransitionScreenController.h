@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesTransitionScreenController(
+    MCNAPI RealmsStoriesTransitionScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::Realms::World const&                         world
     );
@@ -44,15 +44,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Realms::World const& world);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::Realms::World const& world);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
     // NOLINTEND
 
 public:

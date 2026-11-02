@@ -53,12 +53,6 @@ public:
         64,
         ::brstd::move_only_function<
             ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&) const>>
-        mCreateBlockResourceHandler;
-    ::ll::TypedStorage<
-        8,
-        64,
-        ::brstd::move_only_function<
-            ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&) const>>
         mCreateStructureResourceHandler;
     ::ll::TypedStorage<
         8,
@@ -97,13 +91,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourceHandlerFactory(::OreUI::ResourceHandlerFactory&&);
+    MCNAPI ResourceHandlerFactory(::OreUI::ResourceHandlerFactory&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Gameface::ResourceHandlerBroker> createResourceHandlerBroker(
+    MCNAPI static ::std::unique_ptr<::Gameface::ResourceHandlerBroker> createResourceHandlerBroker(
         ::OreUI::ResourceHandlerFactory const&            factory,
         ::OreUI::RegisterResourceHandlersArguments const& args
     );
@@ -112,7 +106,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ResourceHandlerFactory&&);
+    MCNAPI void* $ctor(::OreUI::ResourceHandlerFactory&&);
     // NOLINTEND
 };
 

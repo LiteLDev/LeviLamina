@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClientTexture(
+    MCNAPI explicit ClientTexture(
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
@@ -41,18 +41,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::ClientResourcePointer<::std::variant<
             ::std::monostate,
             ::mce::Texture,
             ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>>>&& inner
     );
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -47,7 +47,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI IntOption(
+    MCNAPI IntOption(
         ::OptionID                id,
         ::OptionOwnerType         ownerType,
         ::OptionResetFlags        resetFlags,
@@ -59,7 +59,7 @@ public:
         ::GameVersion             version
     );
 
-    MCAPI IntOption(
+    MCNAPI IntOption(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -74,7 +74,7 @@ public:
 
     MCAPI void set(int value, bool saveOptionChange);
 
-    MCAPI void setValues(::std::vector<int> values);
+    MCNAPI void setValues(::std::vector<int> values);
 #endif
     // NOLINTEND
 
@@ -82,7 +82,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID                id,
         ::OptionOwnerType         ownerType,
         ::OptionResetFlags        resetFlags,
@@ -94,7 +94,7 @@ public:
         ::GameVersion             version
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -113,11 +113,17 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCAPI void $load(::std::string const& valueString);
+    MCNAPI void $load(::std::string const& valueString);
 #endif
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

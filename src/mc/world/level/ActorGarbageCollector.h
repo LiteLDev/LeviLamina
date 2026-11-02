@@ -26,8 +26,8 @@ public:
     MCAPI void garbageCollectEntity(::OwnerPtr<::EntityContext> entity);
 #endif
 
-    MCAPI void teardown();
+    MCNAPI void teardown();
 
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 };

@@ -19,12 +19,13 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::IClientInstance>> mClient;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>       mExit;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>       mNotifyStartupScreenReady;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void exit();
+    MCNAPI void exit();
     // NOLINTEND
 };
 

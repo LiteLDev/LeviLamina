@@ -21,12 +21,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int getItemCooldownLeft(::HashedString const& category) const;
+    MCNAPI int getItemCooldownLeft(::HashedString const& category) const;
 
 #ifdef LL_PLAT_C
-    MCAPI float getItemCooldownProgress(::HashedString const& category) const;
+    MCNAPI float getItemCooldownProgress(::HashedString const& category) const;
 #endif
 
-    MCAPI ::std::string startItemCooldown(::HashedString const& category, int tickDuration);
+    MCNAPI ::std::string startItemCooldown(::HashedString const& category, int tickDuration);
     // NOLINTEND
 };

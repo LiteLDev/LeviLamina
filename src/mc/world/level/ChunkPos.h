@@ -31,13 +31,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ChunkPos const& INVALID();
+    MCNAPI static ::ChunkPos const& INVALID();
 
-    MCAPI static ::ChunkPos const& MAX();
+    MCNAPI static ::ChunkPos const& MAX();
 
-    MCAPI static ::ChunkPos const& MIN();
+    MCNAPI static ::ChunkPos const& MIN();
 
-    MCAPI static ::ChunkPos const& ONE();
+    MCNAPI static ::ChunkPos const& ONE();
     // NOLINTEND
 };
 

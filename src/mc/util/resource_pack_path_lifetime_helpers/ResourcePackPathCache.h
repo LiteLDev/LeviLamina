@@ -15,18 +15,7 @@ public:
     // prevent constructor by default
     ResourcePackPathCache& operator=(ResourcePackPathCache const&);
     ResourcePackPathCache(ResourcePackPathCache const&);
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ResourcePackPathCache();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor();
-    // NOLINTEND
+    ResourcePackPathCache();
 };
 
 } // namespace ResourcePackPathLifetimeHelpers

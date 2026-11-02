@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace ScriptModuleMinecraft { struct ScriptActorData; }
 namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
@@ -20,9 +21,15 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool operator()(::std::optional<::ScriptModuleMinecraft::ScriptActorData> const& actorData) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 };
 

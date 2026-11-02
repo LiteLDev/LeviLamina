@@ -61,13 +61,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FishingHook(
+    MCNAPI FishingHook(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI float _getWaterPercentage();
+    MCNAPI float _getWaterPercentage();
 
     MCAPI void _pullCloser(::Actor& inEntity, float inSpeed);
 
@@ -79,7 +79,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -89,17 +89,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCAPI void $handleEntityEvent(::ActorEvent eventId, int data);
+    MCNAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCFOLD ::ActorUniqueID $getSourceUniqueID() const;
+    MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCFOLD bool $shouldDropDeathLoot() const;
+    MCNAPI bool $shouldDropDeathLoot() const;
 
-    MCAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
 
     // NOLINTEND
@@ -107,6 +107,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

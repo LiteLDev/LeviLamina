@@ -13,7 +13,6 @@
 // clang-format off
 class Container;
 class ContainerWeakRef;
-class ItemDescriptor;
 class ItemInstance;
 class ItemStack;
 class ItemStackBase;
@@ -108,34 +107,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ContainerModel(
+    MCNAPI ContainerModel(
         ::FullContainerName const& fullContainerName,
         int                        containerSize,
         ::ContainerCategory        containerCategory,
         bool                       isClientSide
     );
 
-    MCAPI void _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void
+    _onClientUIItemNetworkChanged(int containerSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-#ifdef LL_PLAT_C
-    MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
-#endif
+    MCNAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI void networkUpdateItem(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-
-    MCAPI void
+    MCNAPI void
     registerOnContainerChangedCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
-    MCAPI void
+    MCNAPI void
     registerPlayerNotificationCallback(::std::function<void(int, ::ItemStack const&, ::ItemStack const&)> callback);
 
-    MCAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
+    MCNAPI void setClientUIContainer(::SparseContainerClient* clientUIContainer);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FullContainerName const& fullContainerName,
         int                        containerSize,
         ::ContainerCategory        containerCategory,
@@ -146,65 +142,61 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $postInit();
+    MCNAPI void $postInit();
 
-    MCAPI void $releaseResources();
+    MCNAPI void $releaseResources();
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCAPI int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCAPI int $getFilteredContainerSize() const;
+    MCNAPI int $getFilteredContainerSize() const;
 
-    MCFOLD void $tick(int selectedSlot);
+    MCNAPI void $tick(int selectedSlot);
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCAPI ::ItemStack const& $getItemStack(int modelSlot) const;
+    MCNAPI ::ItemStack const& $getItemStack(int modelSlot) const;
 
-    MCFOLD ::std::vector<::ItemStack> const& $getItems() const;
+    MCNAPI ::std::vector<::ItemStack> const& $getItems() const;
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
-#else // LL_PLAT_C
-    MCFOLD ::ItemInstance const& $getItemInstance(int modelSlot) const;
-#endif
+    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
+    MCNAPI ::ItemStackBase const& $getItemStackBase(int modelSlot) const;
 
-    MCFOLD bool $isItemInstanceBased() const;
+    MCNAPI bool $isItemInstanceBased() const;
 
-    MCAPI void $setItem(int modelSlot, ::ItemStack const& item);
+    MCNAPI void $setItem(int modelSlot, ::ItemStack const& item);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCFOLD bool $isItemFiltered(::ItemStackBase const& item) const;
+    MCNAPI bool $isItemFiltered(::ItemStackBase const& item) const;
 
-    MCFOLD bool $isExpanableItemFiltered(int index) const;
+    MCNAPI bool $isExpanableItemFiltered(int index) const;
 
-    MCFOLD ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
+    MCNAPI ::ContainerExpandStatus $getItemExpandStatus(int itemId) const;
 
-    MCFOLD ::std::string const& $getItemGroupName(int itemId) const;
+    MCNAPI ::std::string const& $getItemGroupName(int itemId) const;
 
-    MCFOLD void $switchItemExpando(int itemId);
+    MCNAPI void $switchItemExpando(int itemId);
 
-    MCFOLD bool $isSlotDisabled(int slot) const;
+    MCNAPI bool $isSlotDisabled(int slot) const;
 
-    MCFOLD void $refreshContainer(bool fullRefresh);
+    MCNAPI void $refreshContainer(bool fullRefresh);
 
-    MCFOLD ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
-    MCFOLD int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 
-    MCAPI void $_init();
+    MCNAPI void $_init();
 
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
 
     // NOLINTEND

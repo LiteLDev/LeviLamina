@@ -29,12 +29,29 @@ public:
 
 public:
     // prevent constructor by default
+    MessageGamedrop& operator=(MessageGamedrop const&);
+    MessageGamedrop(MessageGamedrop const&);
     MessageGamedrop();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageGamedrop(
+    MCNAPI MessageGamedrop(
+        ::MessageGamedropData const&                               item,
+        ::std::function<::ButtonData(::std::string)>               buttonLookup,
+        ::std::function<::ImageData(::std::string)>                imageLookup,
+        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
+    );
+
+    MCNAPI ::OreUI::MessageGamedrop& operator=(::OreUI::MessageGamedrop&&);
+
+    MCNAPI ~MessageGamedrop();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
         ::MessageGamedropData const&                               item,
         ::std::function<::ButtonData(::std::string)>               buttonLookup,
         ::std::function<::ImageData(::std::string)>                imageLookup,
@@ -43,14 +60,9 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
+    // destructor thunk
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::MessageGamedropData const&                               item,
-        ::std::function<::ButtonData(::std::string)>               buttonLookup,
-        ::std::function<::ImageData(::std::string)>                imageLookup,
-        ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
-    );
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

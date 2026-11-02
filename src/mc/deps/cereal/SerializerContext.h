@@ -9,7 +9,6 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock { class StaticOptimizedString; }
-namespace cereal { class LogCheckpoint; }
 // clang-format on
 
 namespace cereal {
@@ -40,17 +39,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
+    MCNAPI void clearGenerations(uint from, uint to, ::cereal::ResultCode filter);
 
-    MCAPI ::cereal::LogCheckpoint getLogCheckpoint();
+    MCNAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
 
-    MCAPI void log(::cereal::ResultCode res, ::Bedrock::StaticOptimizedString msg);
+    MCNAPI void popContext();
 
-    MCAPI void popContext();
+    MCNAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
 
-    MCAPI ::cereal::SerializerContext& pushContext(uint containerIndex);
-
-    MCAPI ::cereal::SerializerContext&
+    MCNAPI ::cereal::SerializerContext&
     pushContext(::Bedrock::StaticOptimizedString propertyName, ::std::optional<uint> propertyId);
     // NOLINTEND
 };

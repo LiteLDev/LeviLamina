@@ -62,7 +62,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HybridResourceHandler(
+    MCNAPI HybridResourceHandler(
         ::ResourcePackManager const&                                                         packManager,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
@@ -71,14 +71,14 @@ public:
         ::Gameface::TemporaryTextureHolder&                                                  temporaryTextureHolder
     );
 
-    MCAPI ::std::optional<::OreUI::HybridResourceLocation>
+    MCNAPI ::std::optional<::OreUI::HybridResourceLocation>
     _getAssetResourceLocationFromResourcePackManager(::Gameface::ResourceRequest const& request) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ResourcePackManager const&                                                         packManager,
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
@@ -91,13 +91,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceStreamResponse& response);
 
-    MCFOLD void $update();
+    MCNAPI void $update();
     // NOLINTEND
 };
 

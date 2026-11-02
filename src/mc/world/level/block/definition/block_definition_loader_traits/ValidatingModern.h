@@ -9,7 +9,7 @@
 // clang-format off
 namespace BlockDefinitionValidate { struct ValidateContext; }
 namespace Puv { class Logger; }
-namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocument; }
+namespace SharedTypes::v1_26_60::BlockDefinition { struct BlockDefinitionDocument; }
 // clang-format on
 
 namespace BlockDefinitionLoaderTraits {
@@ -22,8 +22,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void validateFunction(
-        ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument const& document,
+    MCNAPI static void validateFunction(
+        ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument const& document,
         ::BlockDefinitionValidate::ValidateContext const&                        validateContext,
         ::Puv::Logger&                                                           logger
     );

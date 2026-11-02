@@ -231,7 +231,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ResourcePacksFacet_DEPRECATED(
+    MCNAPI ResourcePacksFacet_DEPRECATED(
         ::IContentManager&                                                contentManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>              entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
@@ -247,127 +247,128 @@ public:
         ::std::shared_ptr<::MainMenuScreenModel>                          mainMenuScreenModel
     );
 
-    MCAPI void _activatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
+    MCNAPI void _activatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
 
-    MCAPI ::std::unique_ptr<::ContentViews> _createContentViewsFor(::ContentType contentType, ::PackScope scope) const;
+    MCNAPI ::std::unique_ptr<::ContentViews> _createContentViewsFor(::ContentType contentType, ::PackScope scope) const;
 
-    MCAPI void _deactivatePack(::OreUI::FacetResourcePackId const& packId);
+    MCNAPI void _deactivatePack(::OreUI::FacetResourcePackId const& packId);
 
-    MCAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem> _findPackVectorInView(
+    MCNAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem> _findPackVectorInView(
         ::OreUI::FacetResourcePackId const& fromPackId,
         ::FindPackFlags                     findPackFlags,
         ::ContentViews*                     contentView
     );
 
-    MCAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem>
+    MCNAPI ::std::optional<::OreUI::ResourcePacksFacet_DEPRECATED::PackViewAndItem>
     _findPackViewAndContent(::OreUI::FacetResourcePackId const& fromPackId, ::FindPackFlags findPackFlags);
 
-    MCAPI ::std::vector<::OreUI::ResourcePacksFacet_DEPRECATED::SelectedPackState>
+    MCNAPI ::std::vector<::OreUI::ResourcePacksFacet_DEPRECATED::SelectedPackState>
     _getSelectedPackStates(::ContentViews* contentViews) const;
 
-    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus _handleDlcCheckError(::DlcCheckResult error);
+    MCNAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus
+    _handleDlcCheckError(::DlcCheckResult error);
 
-    MCAPI void _initialize(::LevelSummary& levelSummary);
+    MCNAPI void _initialize(::LevelSummary& levelSummary);
 
-    MCAPI void _movePackOnDataWarning();
+    MCNAPI void _movePackOnDataWarning();
 
-    MCAPI void _populatePackDetailsFromView(
+    MCNAPI void _populatePackDetailsFromView(
         ::std::vector<::OreUI::FacetResourcePack>& oldPackDetails,
         ::std::vector<::OreUI::FacetResourcePack>& packDetails,
         ::ContentView*                             view,
         ::ContentType                              contentType
     );
 
-    MCAPI bool _restoreSelectedPackStates(
+    MCNAPI bool _restoreSelectedPackStates(
         ::ContentViews&                                                                 contentViews,
         ::std::vector<::OreUI::ResourcePacksFacet_DEPRECATED::SelectedPackState> const& selectedPacks
     );
 
-    MCAPI void _showNoInternetPrompt();
+    MCNAPI void _showNoInternetPrompt();
 
-    MCAPI void _showPackActivationErrorPrompt();
+    MCNAPI void _showPackActivationErrorPrompt();
 
-    MCAPI void _showPackSelectErrorPrompt(::PackSelectResult const& result);
+    MCNAPI void _showPackSelectErrorPrompt(::PackSelectResult const& result);
 
-    MCAPI void _showPackSettings(::OreUI::FacetResourcePackId const& packId);
+    MCNAPI void _showPackSettings(::OreUI::FacetResourcePackId const& packId);
 
-    MCAPI void _showUnspecifiedErrorPrompt();
+    MCNAPI void _showUnspecifiedErrorPrompt();
 
-    MCAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
+    MCNAPI void _tryActivatePack(::OreUI::ResourcePacksFacet_DEPRECATED::PackActivationRequest request);
 
-    MCAPI void _updateContentView(
+    MCNAPI void _updateContentView(
         ::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& oldPackCollection,
         ::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection,
         ::ContentViews&                                         contentView
     );
 
-    MCAPI void changePackPriority(::std::string const& packId, int prevIndex, int newIndex);
+    MCNAPI void changePackPriority(::std::string const& packId, int prevIndex, int newIndex);
 
-    MCAPI void clearLastActivatedPackId();
+    MCNAPI void clearLastActivatedPackId();
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getActiveBehaviorPacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getActiveBehaviorPacks() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getActiveTexturePacks() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableBehaviorPacks() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getAvailableTexturePacks() const;
 
-    MCAPI float getDownloadProgress() const;
+    MCNAPI float getDownloadProgress() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getGlobalTexturePacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getGlobalTexturePacks() const;
 
-    MCAPI float getImportProgress() const;
+    MCNAPI float getImportProgress() const;
 
-    MCFOLD ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
+    MCNAPI ::OreUI::FacetResourcePackId const& getLastactivatedPackId() const;
 
-    MCFOLD ::OreUI::FacetResourcePackId const& getMarketplacePackId() const;
+    MCNAPI ::OreUI::FacetResourcePackId const& getMarketplacePackId() const;
 
-    MCAPI ::OreUI::Prompt const& getPrompt() const;
+    MCNAPI ::OreUI::Prompt const& getPrompt() const;
 
-    MCAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getRealmsTexturePacks() const;
 
-    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
+    MCNAPI ::OreUI::ResourcePacksFacet_DEPRECATED::FacetPromptDetails const& getResourcePackToDownload() const;
 
-    MCAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
+    MCNAPI ::OreUI::ResourcePacksFacet_DEPRECATED::ResourcePacksFacetStatus getStatus() const;
 
-    MCFOLD ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
+    MCNAPI ::std::vector<::OreUI::FacetResourcePack> const& getUnownedTexturePacks() const;
 
-    MCAPI bool isRealmsPlusSubscriptionActive() const;
+    MCNAPI bool isRealmsPlusSubscriptionActive() const;
 
-    MCAPI bool isRealmsPlusSupported() const;
+    MCNAPI bool isRealmsPlusSupported() const;
 
-    MCAPI void notifyDownloadCancellation();
+    MCNAPI void notifyDownloadCancellation();
 
-    MCAPI void requestPackActivation(::OreUI::FacetResourcePackId const& packId, bool force);
+    MCNAPI void requestPackActivation(::OreUI::FacetResourcePackId const& packId, bool force);
 
-    MCAPI void requestPackDeactivation(::OreUI::FacetResourcePackId const& packId);
+    MCNAPI void requestPackDeactivation(::OreUI::FacetResourcePackId const& packId);
 
-    MCAPI void requestToShowPackSettings(::OreUI::FacetResourcePackId const& packId);
+    MCNAPI void requestToShowPackSettings(::OreUI::FacetResourcePackId const& packId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OreUI::PromptAction _getActionForActionType(
+    MCNAPI static ::OreUI::PromptAction _getActionForActionType(
         ::OreUI::ResourcePacksFacet_DEPRECATED::PromptActionType type,
         ::OreUI::PromptActionVariant                             variant
     );
 
-    MCAPI static void
+    MCNAPI static void
     _reserveMemoryUpfrontOnPackCollection(::OreUI::ResourcePacksFacet_DEPRECATED::PackCollection& packCollection);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IContentManager&                                                contentManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>              entitlementManager,
         ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const& contentTierManager,
@@ -387,7 +388,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

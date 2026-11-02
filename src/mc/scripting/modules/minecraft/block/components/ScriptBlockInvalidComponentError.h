@@ -20,19 +20,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptBlockInvalidComponentError(::std::string_view blockComponentName);
+    MCNAPI explicit ScriptBlockInvalidComponentError(::std::string_view blockComponentName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view blockComponentName);
+    MCNAPI void* $ctor(::std::string_view blockComponentName);
     // NOLINTEND
 };
 

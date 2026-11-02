@@ -82,33 +82,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isEntitySource() const;
+    MCNAPI bool $isEntitySource() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $getIsCreative() const;
-#else // LL_PLAT_C
-    MCFOLD bool $getIsCreative() const;
-#endif
+    MCNAPI bool $getIsCreative() const;
 
-#ifdef LL_PLAT_S
-    MCAPI bool $getIsWorldBuilder() const;
-#else // LL_PLAT_C
-    MCFOLD bool $getIsWorldBuilder() const;
-#endif
+    MCNAPI bool $getIsWorldBuilder() const;
 
-    MCFOLD ::ActorUniqueID $getEntityUniqueID() const;
+    MCNAPI ::ActorUniqueID $getEntityUniqueID() const;
 
-    MCFOLD ::ActorType $getEntityType() const;
+    MCNAPI ::ActorType $getEntityType() const;
 
-    MCFOLD ::ActorCategory $getEntityCategories() const;
+    MCNAPI ::ActorCategory $getEntityCategories() const;
 
-    MCFOLD ::ActorUniqueID $getDamagingEntityUniqueID() const;
+    MCNAPI ::ActorUniqueID $getDamagingEntityUniqueID() const;
 
-    MCFOLD ::ActorType $getDamagingEntityType() const;
+    MCNAPI ::ActorType $getDamagingEntityType() const;
 
-    MCAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
+    MCNAPI ::std::unique_ptr<::ActorDamageSource> $clone() const;
 
-    MCAPI ::std::pair<::std::string, ::std::vector<::std::string>>
+    MCNAPI ::std::pair<::std::string, ::std::vector<::std::string>>
     $_getDeathMessageInternal(::std::string const& deadName, ::Actor* dead) const;
 
 

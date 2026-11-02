@@ -15,10 +15,10 @@ class ScoreboardEventCoordinator : public ::EventCoordinator<::ScoreboardEventLi
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void sendOnObjectiveAdded(::std::string const& objective);
+    MCNAPI void sendOnObjectiveAdded(::std::string const& objective);
 
-    MCAPI void sendOnObjectiveRemoved(::std::string const& objective);
+    MCNAPI void sendOnObjectiveRemoved(::std::string const& objective);
 
-    MCAPI void sendOnScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
+    MCNAPI void sendOnScoreChanged(::ScoreboardId const& id, ::std::string const& objective, int score);
     // NOLINTEND
 };

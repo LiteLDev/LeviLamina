@@ -36,19 +36,19 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ImageBuffer(::cg::ImageDescription const& imageDesc);
+    MCNAPI explicit ImageBuffer(::cg::ImageDescription const& imageDesc);
 
     MCAPI ImageBuffer(::cg::ImageBuffer&& other);
 
     MCAPI explicit ImageBuffer(::mce::Image&& rhs);
 
-    MCAPI explicit ImageBuffer(::mce::Image const& rhs);
+    MCNAPI explicit ImageBuffer(::mce::Image const& rhs);
 
     MCAPI ImageBuffer(::cg::ImageBuffer const& rhs);
 
-    MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
+    MCNAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer&& other);
 
-    MCAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);
+    MCNAPI ::cg::ImageBuffer& operator=(::cg::ImageBuffer const& other);
 #endif
     // NOLINTEND
 
@@ -56,13 +56,13 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::cg::ImageDescription const& imageDesc);
+    MCNAPI void* $ctor(::cg::ImageDescription const& imageDesc);
 
     MCAPI void* $ctor(::cg::ImageBuffer&& other);
 
     MCAPI void* $ctor(::mce::Image&& rhs);
 
-    MCAPI void* $ctor(::mce::Image const& rhs);
+    MCNAPI void* $ctor(::mce::Image const& rhs);
 
     MCAPI void* $ctor(::cg::ImageBuffer const& rhs);
 #endif

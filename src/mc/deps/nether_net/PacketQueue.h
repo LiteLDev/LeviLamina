@@ -37,7 +37,7 @@ public:
         ::ll::UntypedStorage<8, 40> mUnk8ff5a6;
         ::ll::UntypedStorage<4, 4>  mUnkea7403;
         ::ll::UntypedStorage<8, 8>  mUnk6efd8f;
-        ::ll::UntypedStorage<8, 8>  mUnk6bd75c;
+        ::ll::UntypedStorage<8, 8>  mUnk8d3950;
         // NOLINTEND
 
     public:
@@ -119,7 +119,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>   mUnkc5324e;
+    ::ll::UntypedStorage<8, 8>   mUnk6f25c6;
     ::ll::UntypedStorage<8, 120> mUnk15e8ff;
     ::ll::UntypedStorage<8, 64>  mUnk9b0d07;
     ::ll::UntypedStorage<8, 40>  mUnk901244;
@@ -132,6 +132,12 @@ public:
     PacketQueue& operator=(PacketQueue const&);
     PacketQueue(PacketQueue const&);
     PacketQueue();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~PacketQueue() /*override*/ = default;
+    // NOLINTEND
 
 public:
     // member functions

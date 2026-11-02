@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initSchema();
+    MCNAPI void initSchema();
 
-    MCAPI void initializeFactory(::PackLoadContext const& packLoadContext);
+    MCNAPI void initializeFactory(::PackLoadContext const& packLoadContext);
     // NOLINTEND
 
 public:

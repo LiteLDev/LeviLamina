@@ -32,8 +32,8 @@ public:
     // NOLINTBEGIN
     MCAPI void _replaceBaseBlockAt(::IBlockWorldGenAPI& target, ::BlockPos const& pos) const;
 
-#ifdef LL_PLAT_C
-    MCAPI void
+#ifdef LL_PLAT_S
+    MCNAPI void
     placeBaseCluster(::IBlockWorldGenAPI& target, ::BlockPos const& pos, ::Random& random, int trunkWidth) const;
 #endif
     // NOLINTEND

@@ -128,7 +128,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceBlockActor(
+    MCNAPI explicit FurnaceBlockActor(::BlockPos const& pos);
+
+    MCNAPI FurnaceBlockActor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
         ::HashedString const&                  recipeTag,
@@ -139,15 +141,13 @@ public:
         ::Block const&                         litFurnace
     );
 
-    MCAPI bool canBurn(::Recipes const& recipes);
+    MCNAPI bool canBurn(::Recipes const& recipes);
 
-    MCAPI void checkForAlternativeFuelAchievement(::BlockSource& region, ::ItemStack const& item);
+    MCNAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
 
-    MCAPI void checkForSmeltEverythingAchievement(::BlockSource& region);
+    MCNAPI bool isEmptiedByHopper(::BlockSource& region);
 
-    MCAPI bool isEmptiedByHopper(::BlockSource& region);
-
-    MCAPI void onFurnaceBlockRemoved(::BlockSource& region);
+    MCNAPI void onFurnaceBlockRemoved(::BlockSource& region);
 
     MCAPI int withdrawStoredXPReward();
     // NOLINTEND
@@ -155,15 +155,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float _getXPRewardMultiplier(::ItemStackBase const& item);
+    MCNAPI static float _getXPRewardMultiplier(::ItemStackBase const& item);
 
-    MCAPI static int getAvailableFuelSetCount(int slot, ::ItemStackBase const& item);
-
-    MCAPI static float getBurnDuration(::ItemStackBase const& itemInstance, float burnInterval);
+    MCNAPI static int getAvailableFuelSetCount(int slot, ::ItemStackBase const& item);
 
     MCAPI static float getItemBurnDuration(::Item const& item, float burnInterval);
 
-    MCAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
+    MCNAPI static int getXPRewardFromSmeltingItems(::ItemStackBase const& item, int numItemsSmelted);
 
     MCAPI static bool isItemAllowedInFuelSlot(int slot, ::ItemStackBase const& item, int amount);
     // NOLINTEND
@@ -171,29 +169,31 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BURN_DURATION_KEY();
+    MCNAPI static ::std::string const& BURN_DURATION_KEY();
 
-    MCAPI static ::std::string const& BURN_TIME_KEY();
+    MCNAPI static ::std::string const& BURN_TIME_KEY();
 
-    MCAPI static ::std::string const& COOK_TIME_KEY();
+    MCNAPI static ::std::string const& COOK_TIME_KEY();
 
-    MCAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
+    MCNAPI static ::std::string const& FILTERED_CUSTOM_NAME_KEY();
 
-    MCAPI static ::std::string const& ITEMS_LIST_KEY();
+    MCNAPI static ::std::string const& ITEMS_LIST_KEY();
 
-    MCAPI static ::std::string const& LAST_FUEL_KEY();
+    MCNAPI static ::std::string const& LAST_FUEL_KEY();
 
-    MCAPI static ::std::string const& SLOT_KEY();
+    MCNAPI static ::std::string const& SLOT_KEY();
 
-    MCAPI static ::std::string const& STORED_XP_DEPRECATED_KEY();
+    MCNAPI static ::std::string const& STORED_XP_DEPRECATED_KEY();
 
-    MCAPI static ::std::string const& STORED_XP_KEY();
+    MCNAPI static ::std::string const& STORED_XP_KEY();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(::BlockPos const& pos);
+
+    MCNAPI void* $ctor(
         ::BlockActorType                       blockActorType,
         ::BlockPos const&                      pos,
         ::HashedString const&                  recipeTag,
@@ -208,61 +208,61 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $isTypeOrDerived(::BlockActorType type) const;
+    MCNAPI bool $isTypeOrDerived(::BlockActorType type) const;
 
-    MCFOLD ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD void $onRemoved(::BlockSource&);
+    MCNAPI void $onRemoved(::BlockSource&);
 
-    MCAPI void $startOpen(::Actor& actor);
+    MCNAPI void $startOpen(::Actor& actor);
 
-    MCAPI void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCAPI bool $canPullOutItem(int slot, int face, ::ItemStack const& item) const;
+    MCNAPI bool $canPullOutItem(int slot, int face, ::ItemStack const& item) const;
 
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void $onCustomTagLoadDone(::BlockSource& region);
+    MCNAPI void $onCustomTagLoadDone(::BlockSource& region);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
+    MCNAPI void $onNeighborChanged(::BlockSource& region, ::BlockPos const& position);
 
-    MCFOLD void $onMove();
+    MCNAPI void $onMove();
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged
     );
 
-    MCAPI void $fixupOnLoad(::LevelChunk& lc);
+    MCNAPI void $fixupOnLoad(::LevelChunk& lc);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND
@@ -272,7 +272,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static void** $vftableForIVanillaTickBlockActorComponent();
 
-    MCAPI static void** $vftableForBlockActor();
+    MCNAPI static void** $vftableForBlockActor();
 
     MCNAPI static void** $vftableForIVanillaMainBlockActorComponent();
 

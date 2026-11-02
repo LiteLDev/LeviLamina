@@ -17,7 +17,6 @@ class TimeMarker;
 class WorldClock;
 struct WorldClockData;
 struct WorldClockRegistrationError;
-namespace Bedrock::PubSub { class Subscription; }
 // clang-format on
 
 class WorldClockRegistry {
@@ -38,16 +37,14 @@ public:
             ::std::less<uint64>,
             ::std::vector<uint64>,
             ::std::vector<::Bedrock::UniqueOwnerPointer<::WorldClock>>>>
-                                                                                      mClocks;
-    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator>> mLevelEventCoordinator;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::std::vector<::Bedrock::PubSub::Subscription>>>
-        mClockSubscriptions;
+                                                                                   mClocks;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelEventCoordinator>> mLevelEventCoordinator;
     // NOLINTEND
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~WorldClockRegistry();
+    virtual ~WorldClockRegistry() = default;
 
     virtual void tick(::PacketSender& packetSender, ::LevelData const& levelData) = 0;
     // NOLINTEND
@@ -55,33 +52,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>
+    MCNAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::WorldClock>, ::WorldClockRegistrationError>
     _registerClock(::HashedString const& name, ::std::vector<::TimeMarker> const& timeMarkers, bool isVanilla);
 
-#ifdef LL_PLAT_C
-    MCAPI void _registerEventListeners(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock);
-#endif
+    MCNAPI ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock> const _tryGetClock(::HashedString const& name);
+    MCNAPI int getTime(::HashedString const& clockName) const;
 
-    MCAPI int getTime(::HashedString const& clockName) const;
+    MCNAPI void setTime(::HashedString const& clockName, int time);
 
-    MCAPI void setTime(::HashedString const& clockName, int time);
+    MCNAPI ::std::vector<::WorldClockData> toData() const;
 
-    MCAPI ::std::vector<::WorldClockData> toData() const;
-
-    MCFOLD ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI ::Bedrock::NonOwnerPointer<::WorldClock const> const tryGetClock(::HashedString const& name) const;
     // NOLINTEND
 };

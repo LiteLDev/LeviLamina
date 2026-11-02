@@ -33,12 +33,6 @@ public:
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                   mOnChangeToken;
         ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                                   mOnRemoveToken;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI void _enableListeners();
-        // NOLINTEND
     };
 
 public:
@@ -46,7 +40,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::OreUI::Detail::IInvocationStateTracker>> mTracker;
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::OreUI::Detail::Binder>>                  mBinder;
-    ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::Detail::CommandRegistry::LiveCommands>>     mCommands;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::std::string, ::OreUI::Detail::CommandRegistry::LiveCommands>>
+        mCommands;
     ::ll::TypedStorage<
         8,
         64,
@@ -71,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void registerCommandTemplate(
+    MCNAPI void registerCommandTemplate(
         ::std::string                                                        name,
         ::std::function<::std::unique_ptr<::OreUI::Detail::ICommandGroup>()> constructor
     );
@@ -80,19 +75,19 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
+    MCNAPI void $onReadyForBindings();
 
-    MCFOLD void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCFOLD void $onBindingsReleased();
+    MCNAPI void $onBindingsReleased();
 
-    MCFOLD void $update(double const time);
+    MCNAPI void $update(double const time);
     // NOLINTEND
 };
 

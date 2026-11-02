@@ -30,23 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoiseBlockSpecifier(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
+    MCNAPI NoiseBlockSpecifier(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
 
-    MCAPI ::SharedTypes::v1_26_30::NoiseBlockSpecifier& operator=(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
+    MCNAPI ::SharedTypes::v1_26_30::NoiseBlockSpecifier& operator=(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::NoiseBlockSpecifier const&);
     // NOLINTEND
 };
 

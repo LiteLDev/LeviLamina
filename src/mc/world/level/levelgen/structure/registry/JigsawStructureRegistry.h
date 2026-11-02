@@ -33,7 +33,7 @@ public:
     ::ll::TypedStorage<8, 88, ::JigsawStructureBlockTagRulesRegistry> mJigsawBlockTagRulesRegistry;
     ::ll::TypedStorage<8, 88, ::JigsawStructureActorRulesRegistry>    mJigsawActorRulesRegistry;
     ::ll::TypedStorage<8, 64, ::JigsawStructureElementRegistry>       mJigsawElementRegistry;
-    ::ll::TypedStorage<8, 72, ::br::worldgen::StructureRegistry>      mStructureRegistry;
+    ::ll::TypedStorage<8, 168, ::br::worldgen::StructureRegistry>     mStructureRegistry;
     ::ll::TypedStorage<8, 72, ::br::worldgen::StructureSetRegistry>   mStructureSetRegistry;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::SharedTypes::v1_21_20::JigsawStructureData>> mJigsawStructureData;
     // NOLINTEND
@@ -41,28 +41,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureRegistry();
+    MCNAPI JigsawStructureRegistry();
 
-    MCAPI void initialize(
+    MCNAPI void initialize(
         ::StructureSpawnRegistry&   structureSpawnRegistry,
         ::BaseGameVersion const&    baseGameVersion,
         ::IWorldRegistriesProvider& registries
     );
 
-    MCAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
+    MCNAPI void registerPool(::std::unique_ptr<::StructureTemplatePool>&& pool);
 
-    MCAPI ~JigsawStructureRegistry();
+    MCNAPI ~JigsawStructureRegistry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

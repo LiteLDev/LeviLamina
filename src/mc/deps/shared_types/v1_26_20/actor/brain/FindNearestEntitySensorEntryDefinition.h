@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 struct WorldBlockPosition;
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<
         8,
         48,
-        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>
+        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>
         mFoundEntityMemory;
     ::ll::TypedStorage<
         8,
@@ -53,53 +53,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FindNearestEntitySensorEntryDefinition(
+    MCNAPI FindNearestEntitySensorEntryDefinition(
         ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition const&
     );
 
-    MCAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition&
     operator=(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition const&);
 
-    MCAPI ~FindNearestEntitySensorEntryDefinition();
+    MCNAPI ~FindNearestEntitySensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& FAILURE_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& FAILURE_RESPONSE_NAME();
 
-    MCAPI static ::std::string_view const& FOUND_ENTITY_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& FOUND_ENTITY_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& SEARCH_POS_MEMORY_NAME();
+    MCNAPI static ::std::string_view const& SEARCH_POS_MEMORY_NAME();
 
-    MCAPI static ::std::string_view const& SEARCH_RANGE_NAME();
+    MCNAPI static ::std::string_view const& SEARCH_RANGE_NAME();
 
-    MCAPI static ::std::string_view const& SUCCESS_RESPONSE_NAME();
+    MCNAPI static ::std::string_view const& SUCCESS_RESPONSE_NAME();
 
-    MCAPI static ::std::string_view const& TARGET_FILTERS();
+    MCNAPI static ::std::string_view const& TARGET_FILTERS();
 
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestEntitySensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

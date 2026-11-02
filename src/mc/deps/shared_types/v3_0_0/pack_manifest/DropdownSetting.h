@@ -30,32 +30,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropdownSetting(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
+    MCNAPI DropdownSetting(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
 
-    MCAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const& other) const;
+    MCNAPI bool operator==(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const& other) const;
 
-    MCAPI ~DropdownSetting();
+    MCNAPI ~DropdownSetting();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::DropdownSetting const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

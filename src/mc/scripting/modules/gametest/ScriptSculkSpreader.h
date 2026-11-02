@@ -27,17 +27,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getMaxCharge() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getNumberOfCursors() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getTotalCharge() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

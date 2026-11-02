@@ -8,10 +8,10 @@ class GamepadEventThrottler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 144, ::std::array<int, 36>> mButtonEventCounters;
-    ::ll::TypedStorage<8, 576, ::std::array<::std::optional<::std::chrono::steady_clock::time_point>, 36>>
+    ::ll::TypedStorage<4, 160, ::std::array<int, 40>> mButtonEventCounters;
+    ::ll::TypedStorage<8, 640, ::std::array<::std::optional<::std::chrono::steady_clock::time_point>, 40>>
         mButtonLongPressTimestamps;
-    ::ll::TypedStorage<8, 64, ::std::array<::std::chrono::steady_clock::time_point, 8>>
+    ::ll::TypedStorage<8, 96, ::std::array<::std::chrono::steady_clock::time_point, 12>>
         mNavigationalButtonEventTimestamps;
     // NOLINTEND
 };

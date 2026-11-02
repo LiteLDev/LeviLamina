@@ -39,8 +39,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI float compute(::UIControl& control, ::LayoutVariableType sizeType) const;
+    MCNAPI float compute(::UIControl& control, ::LayoutVariableType sizeType) const;
 
-    MCAPI void removeDependsOnMeEntries();
+    MCNAPI void removeDependsOnMeEntries();
     // NOLINTEND
 };

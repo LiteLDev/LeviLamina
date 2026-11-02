@@ -6,6 +6,11 @@
 #include "mc/deps/shared_types/legacy/LevelSoundEvent.h"
 #include "mc/deps/shared_types/v1_26_0/actor/MeleeAttackGoalDefinition.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace SharedTypes::v1_26_0 {
 
 struct DelayedAttackGoalDefinition : public ::SharedTypes::v1_26_0::MeleeAttackGoalDefinition {
@@ -20,19 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DelayedAttackGoalDefinition();
+    MCNAPI DelayedAttackGoalDefinition();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };
 

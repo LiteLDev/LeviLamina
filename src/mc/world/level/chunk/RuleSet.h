@@ -33,25 +33,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RuleSet(::br::worldgen::processors::RuleSet const&);
+    MCNAPI RuleSet(::br::worldgen::processors::RuleSet const&);
 
-    MCAPI ::br::worldgen::processors::RuleSet withModifier(::br::worldgen::processors::BlockEntity::Modifier modifier);
+    MCNAPI ::br::worldgen::processors::RuleSet withModifier(::br::worldgen::processors::BlockEntity::Modifier modifier);
 
-    MCAPI ::br::worldgen::processors::RuleSet withPos(::br::worldgen::processors::PosRules::Test pos);
+    MCNAPI ::br::worldgen::processors::RuleSet withPos(::br::worldgen::processors::PosRules::Test pos);
 
-    MCAPI ~RuleSet();
+    MCNAPI ~RuleSet();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
+    MCNAPI void* $ctor(::br::worldgen::processors::RuleSet const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

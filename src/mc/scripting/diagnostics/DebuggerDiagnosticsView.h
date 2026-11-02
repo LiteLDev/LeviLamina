@@ -46,7 +46,6 @@ public:
 
 public:
     // prevent constructor by default
-    DebuggerDiagnosticsView& operator=(DebuggerDiagnosticsView const&);
     DebuggerDiagnosticsView();
 
 public:
@@ -64,6 +63,8 @@ public:
     );
 
     MCNAPI ::DebuggerDiagnosticsView& operator=(::DebuggerDiagnosticsView&&);
+
+    MCNAPI ::DebuggerDiagnosticsView& operator=(::DebuggerDiagnosticsView const&);
 
     MCNAPI ~DebuggerDiagnosticsView();
     // NOLINTEND

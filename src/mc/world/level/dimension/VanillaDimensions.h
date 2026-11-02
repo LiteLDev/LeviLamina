@@ -44,7 +44,7 @@ public:
 
     MCAPI static ::DimensionType const& TheEnd();
 
-    MCAPI static ::Vec3 const& TheEndSpawnPoint();
+    MCNAPI static ::Vec3 const& TheEndSpawnPoint();
 
     MCAPI static ::DimensionType const& Undefined();
     // NOLINTEND

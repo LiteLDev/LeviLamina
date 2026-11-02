@@ -16,8 +16,7 @@ class BlockSource;
 
 class BushBlock : public ::FoliageBlock {
 public:
-    // prevent constructor by default
-    BushBlock();
+    LLAPI BushBlock(::std::string const& nameId, int id);
 
 public:
     // virtual functions
@@ -30,18 +29,6 @@ public:
     virtual bool
     onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const
         /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI BushBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
@@ -60,6 +47,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

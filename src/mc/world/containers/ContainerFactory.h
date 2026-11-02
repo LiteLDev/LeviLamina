@@ -14,7 +14,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::shared_ptr<::ContainerController>
+    MCNAPI static ::std::shared_ptr<::ContainerController>
     createController(::std::shared_ptr<::ContainerModel> containerModel);
 
     MCAPI static ::FullContainerName getContainerEnumName(::std::string const& collectionName);
@@ -24,6 +24,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FullContainerName const& INVALID_FULL_CONTAINER_ENUM_NAME();
+    MCNAPI static ::FullContainerName const& INVALID_FULL_CONTAINER_ENUM_NAME();
     // NOLINTEND
 };

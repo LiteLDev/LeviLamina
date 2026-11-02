@@ -21,14 +21,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
+    MCNAPI void addAcceptedItem(::ItemDescriptor const& itemDescriptor);
 
-    MCAPI ~SlotDescriptor();
+    MCNAPI ~SlotDescriptor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

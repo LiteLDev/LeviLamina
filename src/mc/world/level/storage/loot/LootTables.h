@@ -22,12 +22,12 @@ public:
     // NOLINTBEGIN
     MCAPI ::LootTable* lookupByName(::std::string const& dir, ::ResourcePackManager& resourceLoader);
 
-    MCAPI ~LootTables();
+    MCNAPI ~LootTables();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

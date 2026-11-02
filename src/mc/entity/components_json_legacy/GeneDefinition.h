@@ -24,6 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
+    MCNAPI void addGeneticVariant(::GeneticVariant const& geneticVariant);
     // NOLINTEND
 };

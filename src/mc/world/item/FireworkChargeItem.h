@@ -51,7 +51,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _initFireworkChargeItem(
+    MCNAPI static void _initFireworkChargeItem(
         ::ItemStackBase&            itemInstance,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -60,16 +60,16 @@ public:
         bool                        hasFlicker
     );
 
-    MCAPI static void
+    MCNAPI static void
     appendColors(::Bedrock::Safety::RedactableString& hovertext, ::std::vector<uchar> const& colorList);
 
-    MCAPI static void getFormattedHoverText(
+    MCNAPI static void getFormattedHoverText(
         ::CompoundTag const&                 explosion,
         ::Bedrock::Safety::RedactableString& hovertext,
         ::std::string const&                 indent
     );
 
-    MCFOLD static ::ItemInstance const& initFireworkChargeItem(
+    MCNAPI static ::ItemInstance const& initFireworkChargeItem(
         ::ItemInstance&             itemInstance,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -78,7 +78,7 @@ public:
         bool                        hasFlicker
     );
 
-    MCFOLD static ::ItemStack const& initFireworkChargeItem(
+    MCNAPI static ::ItemStack const& initFireworkChargeItem(
         ::ItemStack&                item,
         ::FireworkChargeItem::Shape shape,
         ::std::vector<uchar>        colors,
@@ -91,36 +91,36 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TAG_EXPLOSION();
+    MCNAPI static ::std::string const& TAG_EXPLOSION();
 
-    MCAPI static ::std::string const& TAG_E_COLORS();
+    MCNAPI static ::std::string const& TAG_E_COLORS();
 
-    MCAPI static ::std::string const& TAG_E_FADECOLORS();
+    MCNAPI static ::std::string const& TAG_E_FADECOLORS();
 
-    MCAPI static ::std::string const& TAG_E_FLICKER();
+    MCNAPI static ::std::string const& TAG_E_FLICKER();
 
-    MCAPI static ::std::string const& TAG_E_TRAIL();
+    MCNAPI static ::std::string const& TAG_E_TRAIL();
 
-    MCAPI static ::std::string const& TAG_E_TYPE();
+    MCNAPI static ::std::string const& TAG_E_TYPE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           advancedToolTips
     ) const;
 
-    MCAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
+    MCNAPI bool $hasSameRelevantUserData(::ItemStackBase const& stack, ::ItemStackBase const& other) const;
 
-    MCFOLD bool $isDyeable() const;
+    MCNAPI bool $isDyeable() const;
 
-    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
+    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const&) const;
 
-    MCFOLD bool $isValidAuxValue(int auxValue) const;
+    MCNAPI bool $isValidAuxValue(int auxValue) const;
 
 
     // NOLINTEND
@@ -128,6 +128,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

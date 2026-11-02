@@ -11,7 +11,7 @@ class EntitySystems;
 namespace ScaleByAgeSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 } // namespace ScaleByAgeSystem

@@ -22,9 +22,11 @@ class BlockSource;
 class MapDecoration;
 class MapItemSavedData;
 class Player;
+class ScreenContext;
 class Tessellator;
 class Vec3;
 struct Brightness;
+struct OffscreenCaptureDescription;
 namespace mce { class Color; }
 namespace mce { class TextureGroup; }
 // clang-format on
@@ -63,7 +65,14 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool _renderFaceIcon(
+        MCNAPI void _drawIconBackground(
+            ::ScreenContext&                     screenContext,
+            ::mce::Color const&                  color,
+            float                                zOffset,
+            ::OffscreenCaptureDescription const& offscreenCaptureDescription
+        );
+
+        MCNAPI bool _renderFaceIcon(
             ::Tessellator&,
             ::BaseActorRenderContext& renderContext,
             ::Player*                 holdingPlayer,
@@ -75,20 +84,20 @@ public:
             bool isEduWorld
         );
 
-        MCAPI void _renderLabel(
+        MCNAPI void _renderLabel(
             ::BaseActorRenderContext& renderContext,
             ::Vec3 const&             pos,
             ::std::string const&      label,
             ::mce::Color const&       labelColor
         );
 
-        MCAPI ~MapInstance();
+        MCNAPI ~MapInstance();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -106,9 +115,9 @@ public:
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                    mIconBackgroundTexture;
     ::ll::TypedStorage<8, 960, ::std::array<::mce::TexturePtr, 30>> mMarkerTextures;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                   mMapMaterial;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                         mBackgroundMesh;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                         mForegroundMesh;
-    ::ll::TypedStorage<8, 18960, ::mce::Mesh[30]>                   mDecorationMeshes;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                         mBackgroundMesh;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                         mForegroundMesh;
+    ::ll::TypedStorage<8, 18240, ::mce::Mesh[30]>                   mDecorationMeshes;
     // NOLINTEND
 
 public:
@@ -126,13 +135,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MapRenderer(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI MapRenderer(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
 
-    MCAPI void _generateMeshes(::BaseActorRenderContext& renderContext);
+    MCNAPI void _generateMeshes(::BaseActorRenderContext& renderContext);
 
-    MCAPI ::MapRenderer::MapInstance& _getMapInstance(::MapItemSavedData const& data);
+    MCNAPI ::MapRenderer::MapInstance& _getMapInstance(::MapItemSavedData const& data);
 
-    MCAPI void render(
+    MCNAPI void render(
         ::BaseActorRenderContext&           renderContext,
         ::Player*                           holdingPlayer,
         ::BlockPos const&                   pos,
@@ -148,14 +157,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void* $ctor(::SubClientId clientId, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&);
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&);
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
     // NOLINTEND
 };

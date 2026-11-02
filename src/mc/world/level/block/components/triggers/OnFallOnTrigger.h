@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onEvent(::BlockEvents::BlockEntityFallOnEvent const& eventData) const;
+    MCNAPI void onEvent(::BlockEvents::BlockEntityFallOnEvent const& eventData) const;
     // NOLINTEND
 
 public:

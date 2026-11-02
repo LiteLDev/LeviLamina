@@ -10,56 +10,66 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_130::DataDrivenUI {
 // functions
 // NOLINTBEGIN
-MCAPI void bindComponentTypeType(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindComponentTypeType(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::string_view const& COMPONENT_FIELD_NAME();
+MCNAPI ::std::string_view const& COMPONENT_FIELD_NAME();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerFixedGridLayoutName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContainerFixedGridLayoutName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerLayoutName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContainerLayoutName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerSlotName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContainerSlotName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContainerTextFieldName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContainerTextFieldName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContextListName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContextListName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ContextName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ContextName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ExtensionPointName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ExtensionPointName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormButtonName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormButtonName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormDividerName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormCloseButtonName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormDropdownName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormDividerName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormImageName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormDropdownName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormScrollViewName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormHorizontalStackName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormSliderName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormImageName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormSwitchName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormPanelName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> FormTextFieldName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormScrollViewName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> PanelCloseButtonName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormSliderName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> PanelDecorationName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormSpacingName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> PanelName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormSwitchName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> PanelSpacingName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormTextFieldName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> PanelTextName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> FormTextName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> ScrollableGridLayoutName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> PanelCloseButtonName();
 
-MCAPI ::std::add_lvalue_reference_t<char const[]> VisibilityName();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> PanelDecorationName();
+
+MCNAPI ::std::add_lvalue_reference_t<char const[]> PanelName();
+
+MCNAPI ::std::add_lvalue_reference_t<char const[]> PanelSpacingName();
+
+MCNAPI ::std::add_lvalue_reference_t<char const[]> PanelTextName();
+
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ScrollableGridLayoutName();
+
+MCNAPI ::std::add_lvalue_reference_t<char const[]> VisibilityName();
 // NOLINTEND
 
 } // namespace SharedTypes::v1_21_130::DataDrivenUI

@@ -19,7 +19,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 12, ::GeometryAtlas::TileDefinition>                                           mDefinition;
-    ::ll::TypedStorage<8, 40, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mInitialState;
+    ::ll::TypedStorage<8, 72, ::std::variant<::GeometryAtlas::ItemData, ::GeometryAtlas::PaperDollData>> mInitialState;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryAtlas::TileHandleSharedState>>                 mShared;
     // NOLINTEND
 };

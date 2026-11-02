@@ -30,9 +30,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _run(::ClientBlockPipeline::Description const& description, ::ClientBlockPipeline::Inputs& inputs);
+    MCNAPI void _run(::ClientBlockPipeline::Description const& description, ::ClientBlockPipeline::Inputs& inputs);
 
-    MCAPI void mergeStreams(
+    MCNAPI void mergeStreams(
         ::mce::MeshData&                            outputMesh,
         ::std::vector<::TessellatorQuadInfo>&       outputFaceInfo,
         ::mce::MeshData const&                      inputMesh,
@@ -40,43 +40,41 @@ public:
         bool                                        textureShiftsEnabled
     ) const;
 
-    MCAPI ~BlockTessellatorPipeline();
+    MCNAPI ~BlockTessellatorPipeline();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ClientBlockPipeline::Inputs setupFullChunkInputs(
+    MCNAPI static ::ClientBlockPipeline::Inputs setupFullChunkInputs(
         ::AABB&&                            aabb,
         ::ClientBlockPipeline::Transforms&& transforms,
         ::ChunkViewSource&                  source,
         bool                                inUI
     );
 
-    MCAPI static ::ClientBlockPipeline::Inputs setupSingleBlockInWorldInput(
+    MCNAPI static ::ClientBlockPipeline::Inputs setupSingleBlockInWorldInput(
         ::Block const&                      block,
         ::AABB&&                            aabb,
         ::ClientBlockPipeline::Transforms&& transforms,
         ::ChunkViewSource&                  source
     );
 
-    MCAPI static ::ClientBlockPipeline::Inputs setupSingleBlockInputs(
+    MCNAPI static ::ClientBlockPipeline::Inputs setupSingleBlockInputs(
         ::Block const&                         block,
         ::ClientBlockPipeline::Transforms&&    transforms,
         bool                                   shouldCheckIgnoreBlockTransforms,
         ::ClientBlockPipeline::VisualReference visualReference
     );
 
-    MCAPI static ::ClientBlockPipeline::Inputs
+    MCNAPI static ::ClientBlockPipeline::Inputs
     setupStandardInputs(::AABB&& aabb, ::ClientBlockPipeline::Transforms&& transforms, ::ChunkViewSource& source);
-
-    MCAPI static bool useNewTessellation(::Block const& block, bool onlyNew);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

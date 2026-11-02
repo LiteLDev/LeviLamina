@@ -26,10 +26,10 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::ShaderGroup>>                         mShaderGroup;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::QuadIndexBuffer>>                     mQuadBuffer;
-    ::ll::TypedStorage<8, 24, ::mce::ClientResourcePointer<::mce::ImmediateBuffer>>         mImmediateBuffer;
+    ::ll::TypedStorage<8, 16, ::mce::ClientResourcePointer<::mce::ImmediateBuffer>>         mImmediateBuffer;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::mce::framebuilder::PBRTextureDataManager>> mPBRTextureDataManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::mce::ImageResourceLoader>>                mImageResourceLoader;
-    ::ll::TypedStorage<8, 312, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
+    ::ll::TypedStorage<8, 1320, ::MinecraftGameplayGraphicsResources> mMinecraftGameplayGraphicsResources;
     // NOLINTEND
 
 public:
@@ -49,24 +49,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
+    MCNAPI explicit MinecraftGraphics(::mce::RenderContext& renderContext);
 
-    MCAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
+    MCNAPI void frameUpdate(::FrameUpdateContext& frameUpdateContext);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::mce::framebuilder::PBRTextureDataManager> getPBRTextureDataManager() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::mce::RenderContext& renderContext);
+    MCNAPI void* $ctor(::mce::RenderContext& renderContext);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCFOLD void $onAppTerminated();
+    MCNAPI void $onAppTerminated();
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftableForEnableNonOwnerReferences();
+
+    MCNAPI static void** $vftableForAppPlatformListener();
     // NOLINTEND
 };

@@ -30,12 +30,22 @@ public:
     };
 
     enum class UploadStreamResult : int {
-        Success             = 0,
-        Failure             = 1,
-        FailureForbidden    = 2,
-        FailureWorldName    = 3,
-        InvalidResponseBody = 4,
-        None                = 5,
+        Success                 = 0,
+        WaitingForServer        = 1,
+        BadInitialization       = 2,
+        Failure                 = 3,
+        FailureForbidden        = 4,
+        FailureWorldName        = 5,
+        FailureSingleFileUpload = 6,
+        FailureMultiUpload      = 7,
+        FailureBlockList        = 8,
+        FailureUploadComplete   = 9,
+        FailureRefreshSession   = 10,
+        FailureProcessing       = 11,
+        InvalidResponseBody     = 12,
+        Cancelled               = 13,
+        InProgress              = 14,
+        None                    = 15,
     };
 
 public:
@@ -81,6 +91,8 @@ public:
     virtual float getUploadProgress(::FileInfo const& file) const = 0;
 
     virtual ::FileChunkInfo getChunkInfo(::FileInfo const& file, int chunkID) const;
+
+    virtual bool useFileSizeLimit() const;
     // NOLINTEND
 
 public:
@@ -92,6 +104,8 @@ public:
         ::std::string const&                                            boundary,
         ::std::function<void(::IFileChunkUploader::UploadStreamResult)> onCompleteCallback
     );
+
+    MCNAPI bool $useFileSizeLimit() const;
 
 #ifdef LL_PLAT_C
     MCNAPI void $getServerMissingChunks(

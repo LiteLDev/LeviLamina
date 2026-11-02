@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/level/block/FaceDirectionalActorBlock.h"
 
 // auto generated forward declare list
@@ -46,23 +47,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _setBook(
+    MCNAPI void _setBook(
         ::Player&                      player,
         ::ItemStack                    heldItem,
         ::ChiseledBookshelfBlockActor& bookshelfActor,
-        int const                      hitSlot
+        int                            hitSlot,
+        ::HandSlot                     handSlot
     ) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
+    MCNAPI static bool
+    _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::ChiseledBookshelfBlock::SlotState
+    MCNAPI static ::ChiseledBookshelfBlock::SlotState
     getBlockSlotState(::BlockPos const& blockPos, ::Vec3 const& blockHit, uchar faceHit, ::BlockSource const& region);
 #endif
     // NOLINTEND
@@ -70,15 +73,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const*) const;
 
 
     // NOLINTEND
@@ -86,6 +90,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -15,6 +15,7 @@ class HashedString;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::DataStore { class IContentBadgeContainer; }
+namespace Editor::DataStore { class IModalToolContainer; }
 namespace Editor::DataStore { struct PayloadDescription; }
 namespace Editor::Network { class DataStoreEventPayload; }
 namespace Editor::Network { class ServerScriptTeardownRebuildPayload; }
@@ -57,6 +58,8 @@ public:
     virtual ::Scripting::Result_deprecated<void> quit() /*override*/;
 
     virtual ::Editor::DataStore::IContentBadgeContainer& getContentBadgeContainer() /*override*/;
+
+    virtual ::Editor::DataStore::IModalToolContainer& getModalToolContainer() /*override*/;
 
     virtual ::Scripting::Result_deprecated<void> dispatchEvent(
         ::HashedString const&                          dataTag,
@@ -142,6 +145,8 @@ public:
     MCNAPI ::Scripting::Result_deprecated<void> $quit();
 
     MCNAPI ::Editor::DataStore::IContentBadgeContainer& $getContentBadgeContainer();
+
+    MCNAPI ::Editor::DataStore::IModalToolContainer& $getModalToolContainer();
 
     MCNAPI ::Scripting::Result_deprecated<void> $dispatchEvent(
         ::HashedString const&                          dataTag,

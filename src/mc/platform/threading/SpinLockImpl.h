@@ -4,6 +4,9 @@
 
 class SpinLockImpl {
 public:
+    LLAPI void lock();
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, uint64 const>          mNoThreadId;
@@ -14,16 +17,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void lock();
-
     MCAPI void unlock();
-
-    MCAPI ~SpinLockImpl();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 };

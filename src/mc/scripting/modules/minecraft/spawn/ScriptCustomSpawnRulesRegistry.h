@@ -47,7 +47,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_onReload();
+    MCNAPI void $_onReload();
 
 
     // NOLINTEND

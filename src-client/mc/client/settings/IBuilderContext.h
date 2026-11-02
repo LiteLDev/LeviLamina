@@ -90,6 +90,8 @@ public:
 
     virtual ::std::optional<::std::string> getFeedbackUrl() const = 0;
 
+    virtual ::std::string getPrivacyAndOnlineSafetyURL() const = 0;
+
     virtual bool supportsFullScreen() const = 0;
 
     virtual bool supportsUserDefinedSafeZone() const = 0;
@@ -190,8 +192,6 @@ public:
     virtual bool isEduEdition() const = 0;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> getAdvancedGraphicsOptions() = 0;
-
-    virtual void navigateToGammaCalibrationScreen() = 0;
 
     virtual bool supportsAntiAliasing() const = 0;
 

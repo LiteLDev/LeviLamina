@@ -28,29 +28,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDescription(::SharedTypes::v1_20_20::ItemDescription const&);
+    MCNAPI ItemDescription(::SharedTypes::v1_20_20::ItemDescription const&);
 
-    MCAPI ::SharedTypes::v1_20_20::ItemDescription& operator=(::SharedTypes::v1_20_20::ItemDescription const&);
+    MCNAPI ::SharedTypes::v1_20_20::ItemDescription& operator=(::SharedTypes::v1_20_20::ItemDescription const&);
 
-    MCAPI ~ItemDescription();
+    MCNAPI ~ItemDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_20::ItemDescription const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_20::ItemDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

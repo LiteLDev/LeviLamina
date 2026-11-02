@@ -32,13 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~WorldData();
+    MCNAPI ~WorldData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

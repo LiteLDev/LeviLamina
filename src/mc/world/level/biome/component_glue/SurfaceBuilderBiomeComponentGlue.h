@@ -51,29 +51,15 @@ public:
     virtual bool resolveAndValidate(::entt::meta_any const& component, ::BiomeRegistry const&) /*override*/;
 
     virtual void applyToBiome(::Biome& biome, ::entt::meta_any const& component) const /*override*/;
-
-    virtual ~SurfaceBuilderBiomeComponentGlue() /*override*/;
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $resolveAndValidate(::entt::meta_any const& component, ::BiomeRegistry const&);
+    MCNAPI bool $resolveAndValidate(::entt::meta_any const& component, ::BiomeRegistry const&);
 
-    MCAPI void $applyToBiome(::Biome& biome, ::entt::meta_any const& component) const;
+    MCNAPI void $applyToBiome(::Biome& biome, ::entt::meta_any const& component) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

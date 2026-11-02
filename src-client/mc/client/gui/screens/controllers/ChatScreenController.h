@@ -88,44 +88,46 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ChatScreenController(
+    MCNAPI ChatScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel>                 model,
         bool                                                           openWithCommand,
         bool                                                           isDevConsole,
         ::std::unique_ptr<::AppExtensions::IDevConsoleScreenExtension> devConsoleScreenExtension
     );
 
-    MCAPI void _getBottomButtonFocusOverrideDown(::std::string& focusOverride);
+    MCNAPI void _getBottomButtonFocusOverrideDown(::std::string& focusOverride);
 
-    MCAPI void _getBottomButtonFocusOverrideUp(::std::string& focusOverride, uint64 lastIndex);
+    MCNAPI void _getBottomButtonFocusOverrideUp(::std::string& focusOverride, uint64 lastIndex);
 
-    MCAPI ::std::string _getExitMessage() const;
+    MCNAPI ::std::string _getExitMessage() const;
 
-    MCAPI ::std::string _getSendMessage() const;
+    MCNAPI ::std::string _getSendMessage() const;
 
-    MCAPI void _handleChatMessage(::std::string const& message, ::std::string const& ttsMessage);
+    MCNAPI void _handleChatMessage(::std::string const& message, ::std::string const& ttsMessage);
 
-    MCAPI void _handleSelectSentMessage(::ChatScreenController::SelectionDirection direction);
+    MCNAPI void _handleSelectSentMessage(::ChatScreenController::SelectionDirection direction);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _registerBindingsSubCommand(
+    MCNAPI void _registerBindingsSubCommand(
         ::std::vector<::HostOptionSubCommand>& subCommandButtons,
         ::StringHash const&                    gridName,
         ::StringHash const&                    collectionName
     );
 
-    MCAPI void _sendChatMessage();
+    MCNAPI void _registerSubControllers();
 
-    MCAPI void _teleportWhereHelper();
+    MCNAPI void _sendChatMessage();
 
-    MCAPI void _teleportWhoHelper();
+    MCNAPI void _teleportWhereHelper();
+
+    MCNAPI void _teleportWhoHelper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel>                 model,
         bool                                                           openWithCommand,
         bool                                                           isDevConsole,
@@ -136,16 +138,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onEntered();
+    MCNAPI void $onEntered();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

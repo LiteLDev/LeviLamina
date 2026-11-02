@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -21,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
+    MCNAPI void nameEntity(::Actor& owner, ::Bedrock::Safety::RedactableString const& name);
     // NOLINTEND
 };

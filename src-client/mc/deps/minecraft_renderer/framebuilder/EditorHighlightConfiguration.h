@@ -40,7 +40,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> const>
+    ::ll::TypedStorage<8, 16, ::mce::ServerResourcePointer<::dragon::ResolvedTextureResource> const>
                                                                                      mSelectedBlocksOverlayTex;
     ::ll::TypedStorage<4, 4, ::mce::framebuilder::gamecomponents::HighlightDrawMode> mDrawMode;
     ::ll::TypedStorage<4, 68, ::mce::framebuilder::gamecomponents::EditorHighlightConfiguration::Style> mStyle;

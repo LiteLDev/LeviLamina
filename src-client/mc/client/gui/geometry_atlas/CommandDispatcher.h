@@ -11,6 +11,8 @@ namespace GeometryAtlas { class InitializeCallbackPayload; }
 namespace GeometryAtlas { struct AllocateAtlasPayload; }
 namespace GeometryAtlas { struct AllocateBackendPayload; }
 namespace GeometryAtlas { struct InsertTilePayload; }
+namespace GeometryAtlas { struct PaperDollScreenBoundsPayload; }
+namespace GeometryAtlas { struct PaperDollSetBodyRotationPayload; }
 namespace GeometryAtlas { struct PaperDollTransformPayload; }
 namespace GeometryAtlas { struct RemoveTilePayload; }
 namespace GeometryAtlas { struct TileHandleSharedState; }
@@ -38,7 +40,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void tryDispatch(
+    MCNAPI void tryDispatch(
         ::std::variant<
             ::GeometryAtlas::AllocateAtlasPayload,
             ::GeometryAtlas::AllocateBackendPayload,
@@ -46,6 +48,8 @@ public:
             ::GeometryAtlas::InsertTilePayload,
             ::GeometryAtlas::RemoveTilePayload,
             ::GeometryAtlas::PaperDollTransformPayload,
+            ::GeometryAtlas::PaperDollScreenBoundsPayload,
+            ::GeometryAtlas::PaperDollSetBodyRotationPayload,
             ::GeometryAtlas::InitializeCallbackPayload>&& command
     );
     // NOLINTEND

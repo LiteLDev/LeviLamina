@@ -10,7 +10,6 @@ class GameVersion;
 class HashedString;
 class MinecraftGameplayGraphicsResources;
 struct DataDrivenRendererContinuousData;
-struct DataDrivenRendererPreprocessingContext;
 // clang-format on
 
 class DataDrivenRendererV2RequiredData {
@@ -20,7 +19,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererRegistry>>       mProcessedData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererContinuousData>> mContinuousData;
     ::ll::TypedStorage<1, 1, bool>                                                  mEnabled;
-    ::ll::TypedStorage<1, 1, bool> mActorsWithAttachablesEnabledAndPlayers;
+    ::ll::TypedStorage<1, 1, bool> mActorsWithAttachablesAndIndependentRenderersEnabled;
     // NOLINTEND
 
 public:
@@ -30,42 +29,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRendererV2RequiredData(
+    MCNAPI DataDrivenRendererV2RequiredData(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCAPI bool _addRendererToDedicatedPool(
+    MCNAPI bool _addRendererToDedicatedPool(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
         ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
 
-    MCAPI bool forceReinitialize(
+    MCNAPI bool forceReinitialize(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion
     );
 
-    MCAPI bool removeRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
-    // NOLINTEND
+    MCNAPI bool removeIndependentRenderer(::std::shared_ptr<::DataDrivenRenderer> const& renderer);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static bool _tryAddRenderer(
+    MCNAPI bool tryAddIndependentRenderer(
         ::HashedString const&                          name,
         ::std::shared_ptr<::DataDrivenRenderer> const& renderer,
-        ::DataDrivenRendererPreprocessingContext&      ctx,
-        bool                                           supportPlayers
+        ::MinecraftGameplayGraphicsResources&          graphicsResources
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources,
         ::GameVersion const&                                                                 gameVersion

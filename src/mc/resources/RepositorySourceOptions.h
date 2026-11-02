@@ -12,7 +12,7 @@ struct RepositorySourceOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 416> mUnk3b934b;
+    ::ll::UntypedStorage<8, 464> mUnk3b934b;
     ::ll::UntypedStorage<8, 32>  mUnk2c4b26;
     ::ll::UntypedStorage<8, 32>  mUnk70b3c8;
     ::ll::UntypedStorage<8, 32>  mUnka99df8;
@@ -35,20 +35,10 @@ public:
     RepositorySourceOptions();
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI RepositorySourceOptions(::RepositorySourceOptions&&);
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCNAPI static ::RepositorySourceOptions create(::IResourcePackRepository const& repo, ::AppPlatform& platform);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::RepositorySourceOptions&&);
+#endif
     // NOLINTEND
 };

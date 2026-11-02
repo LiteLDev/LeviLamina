@@ -22,35 +22,35 @@ class ScriptBreathableComponent
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getBreatheBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesAir() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesLava() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesSolids() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getBreathesWater() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCanBreathe() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getGeneratesBubbles() const;
 
-    MCAPI ::Scripting::Result_deprecated<
+    MCNAPI ::Scripting::Result_deprecated<
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPermutation>>>
     getNonBreatheBlocks() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getSuffocateTime() const;
 
-    MCAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
+    MCNAPI ::Scripting::Result_deprecated<int> getTotalSupply() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

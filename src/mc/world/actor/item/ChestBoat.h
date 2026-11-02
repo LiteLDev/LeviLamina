@@ -25,17 +25,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _dropChestContents(::Vec3 const& pos);
+    MCNAPI void _dropChestContents(::Vec3 const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $kill();
+    MCNAPI void $kill();
 
-    MCAPI void $destroy(::Actor* sourceActor);
+    MCNAPI void $destroy(::Actor* sourceActor);
 
-    MCAPI ::std::string $getEntityLocNameString() const;
+    MCNAPI ::std::string $getEntityLocNameString() const;
 
 
     // NOLINTEND
@@ -43,6 +43,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

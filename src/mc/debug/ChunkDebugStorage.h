@@ -52,6 +52,17 @@ public:
     getChunkMapServerData(::DimensionType dimensionID);
 
     MCNAPI void legacy_clearSomeDataSelectively();
+
+    MCNAPI void onChunkRebuildFinished(
+        ::ChunkPos const& pos,
+        ::std::chrono::time_point<
+            ::Bedrock::Profiling::PerfClock,
+            ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>> start,
+        ::std::chrono::time_point<
+            ::Bedrock::Profiling::PerfClock,
+            ::std::chrono::duration<int64, ::std::ratio<1, 1000000000000000000>>> stop,
+        bool                                                                      alreadyHadGeometry
+    );
 #endif
 
     MCNAPI void onLegacyUpdateMap(bool const* legacyMap);

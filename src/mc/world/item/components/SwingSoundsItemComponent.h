@@ -10,8 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
-namespace SharedTypes::Beta { struct SwingSoundsItemComponent; }
-namespace SharedTypes::v1_21_90 { struct SwingSoundsItemComponent; }
+namespace SharedTypes::v1_26_50 { struct SwingSoundsItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -31,15 +30,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SwingSoundsItemComponent(::SharedTypes::Beta::SwingSoundsItemComponent const& data);
-
-    MCAPI explicit SwingSoundsItemComponent(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
+    MCNAPI explicit SwingSoundsItemComponent(::SharedTypes::v1_26_50::SwingSoundsItemComponent const& data);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -49,9 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::SwingSoundsItemComponent const& data);
-
-    MCAPI void* $ctor(::SharedTypes::v1_21_90::SwingSoundsItemComponent const& data);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::SwingSoundsItemComponent const& data);
     // NOLINTEND
 
 public:

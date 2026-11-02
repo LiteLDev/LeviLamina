@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class EntityRegistry;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class GlobalActorLegacyTickSystem : public ::ITickingSystem {
@@ -18,9 +19,15 @@ public:
     // NOLINTEND
 
 public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

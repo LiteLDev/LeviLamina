@@ -45,37 +45,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EmptyPoolElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
+    MCNAPI explicit EmptyPoolElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPos $getSize(::Rotation rotation) const;
+    MCNAPI ::BlockPos $getSize(::Rotation rotation) const;
 
-    MCFOLD ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::std::vector<::JigsawBlockInfo> $getJigsawMarkers(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD ::std::vector<::JigsawBlockInfo>
+    MCNAPI ::std::vector<::JigsawBlockInfo>
     $getJigsawMarkers(::BlockPos position, ::LegacyStructureSettings& settings, ::BlockSource* region) const;
 
-    MCAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
+    MCNAPI ::BoundingBox $getBoundingBox(::BlockPos position, ::Rotation rotation) const;
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCFOLD ::StructurePoolElementType $type() const;
+    MCNAPI ::StructurePoolElementType $type() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

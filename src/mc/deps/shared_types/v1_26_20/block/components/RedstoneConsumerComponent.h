@@ -20,17 +20,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& MinPowerId();
+    MCNAPI static ::std::string_view const& MinPowerId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& PropagatesPowerId();
+    MCNAPI static ::std::string_view const& PropagatesPowerId();
     // NOLINTEND
 };
 

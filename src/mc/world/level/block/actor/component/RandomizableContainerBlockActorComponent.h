@@ -25,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $save(::CompoundTag&, ::SaveContext const&) const;
+    MCNAPI void $save(::CompoundTag&, ::SaveContext const&) const;
 
-    MCFOLD void $load(::CompoundTag const&, ::ILevel&, ::BlockActorVersion);
+    MCNAPI void $load(::CompoundTag const&, ::ILevel&, ::BlockActorVersion);
 
 
     // NOLINTEND

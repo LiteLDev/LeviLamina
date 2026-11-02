@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -37,10 +40,10 @@ public:
 
     virtual void registerCallbacks(::CameraCallbacks* callbacks) = 0;
 
-    virtual void use(::ItemStack& instance, ::Player& player) = 0;
+    virtual void use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) = 0;
 
     virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) = 0;
 
-    virtual bool useOn(::ItemStack&, ::Actor&, ::BlockPos const&, uchar, ::Vec3 const&) = 0;
+    virtual bool useOn(::ItemStack&, ::Actor&, ::BlockPos const&, uchar, ::Vec3 const&, ::HandSlot) = 0;
     // NOLINTEND
 };

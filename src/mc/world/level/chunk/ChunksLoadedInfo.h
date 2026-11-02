@@ -28,13 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::ChunkViewSource> getChunkViewSource() const;
+    MCNAPI ::std::unique_ptr<::ChunkViewSource> getChunkViewSource() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
+    MCNAPI static ::ChunksLoadedStatus areAllChunksLoadedAndTicking(
         ::Dimension const& dimension,
         ::ChunkSource&     source,
         ::Bounds const&    bounds,
@@ -43,7 +43,7 @@ public:
         bool               allowNonTickingPlayerAndTickingAreaChunks
     );
 
-    MCAPI static ::ChunksLoadedInfo calculateChunksLoadedInfo(
+    MCNAPI static ::ChunksLoadedInfo calculateChunksLoadedInfo(
         ::Dimension const& dimension,
         ::ChunkSource&     source,
         ::Bounds const&    bounds,

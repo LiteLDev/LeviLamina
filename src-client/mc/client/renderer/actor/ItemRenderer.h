@@ -7,7 +7,6 @@
 #include "mc/client/renderer/actor/IconBlitGlint.h"
 #include "mc/client/renderer/actor/ItemRenderChunkType.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
-#include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -17,7 +16,6 @@ class BaseActorRenderContext;
 class Block;
 class BlockGraphics;
 class BlockTessellator;
-class BlockType;
 class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class ItemActor;
@@ -26,7 +24,6 @@ class ItemStack;
 class ShulkerBoxBlockActor;
 class SkullBlockActor;
 struct TextureUVCoordinateSet;
-namespace dragon { struct RenderMetadata; }
 namespace mce { class TextureGroup; }
 namespace mce { class TexturePtr; }
 // clang-format on
@@ -95,9 +92,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
+    MCNAPI ItemRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
 
-    MCAPI void _renderBannerItem(
+    MCNAPI void _renderBannerItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
@@ -105,24 +102,14 @@ public:
         float                     actorFrameAlpha
     );
 
-    MCAPI void _renderBlockItem(
-        ::BaseActorRenderContext& renderContext,
-        ::ItemStack const&        item,
-        ::ItemActor&              itemEntity,
-        ::BlockType const*        blockType,
-        ::BlockShape const        shape,
-        float                     actorFrameAlpha,
-        int                       count
-    );
-
-    MCAPI void _renderDecoratedPotItem(
+    MCNAPI void _renderDecoratedPotItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
         bool                      isItem
     );
 
-    MCAPI void _renderGuiBlockTypeItem(
+    MCNAPI void _renderGuiBlockTypeItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::BlockGraphics const*    blockGraphics,
@@ -136,7 +123,7 @@ public:
         int const                 zOrder
     );
 
-    MCAPI void _renderGuiDataDrivenBlockItem(
+    MCNAPI void _renderGuiDataDrivenBlockItem(
         ::BaseActorRenderContext& renderContext,
         ::Block const*            block,
         float                     x,
@@ -146,18 +133,7 @@ public:
         int const                 zOrder
     );
 
-    MCAPI bool _renderGuiEntityBlockItem(
-        ::BaseActorRenderContext&      renderContext,
-        ::ItemRenderChunkType          itemRenderChunkType,
-        ::dragon::RenderMetadata const renderMetadata,
-        ::ItemStack const&             item,
-        float                          x,
-        float                          y,
-        float                          lightMultiplier,
-        float                          scale
-    );
-
-    MCAPI void _renderItemGroup(
+    MCNAPI void _renderItemGroup(
         ::BaseActorRenderContext& renderContext,
         ::ItemActor&              itemEntity,
         int                       itemCount,
@@ -166,9 +142,9 @@ public:
         bool const                useMatrixAsIs
     ) const;
 
-    MCAPI void forceGraphicsLoad();
+    MCNAPI void forceGraphicsLoad();
 
-    MCAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
+    MCNAPI ::ItemGraphics& getGraphics(::ItemStack const& item);
 
     MCAPI void iconBlit(
         ::BaseActorRenderContext&       renderContext,
@@ -221,27 +197,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _getGuiItemColors(::ItemStack const& item, int& color, int& secondaryColor);
-
-    MCAPI static void _renderShieldItem(
+    MCNAPI static void _renderShieldItem(
         ::BaseActorRenderContext& renderContext,
         ::ItemStack const&        item,
         ::ItemActor&              itemEntity,
         float                     actorFrameAlpha
     );
-
-    MCAPI static float getRenderYOffset(::ItemActor const& itemEntity, ::BlockType const* block, float ageInSeconds);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup, bool supportsNewVertexFormat);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
     // NOLINTEND
 };

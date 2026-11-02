@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IDataDrivenUIRepository;
 class IFileAccess;
 class ResourcePackManager;
 namespace Core { class FileSystem; }
@@ -42,7 +43,8 @@ public:
         64,
         ::std::function<
             ::std::unique_ptr<::Gameface::IResourceHandler>(::OreUI::RegisterResourceHandlersArguments const&)>>
-        mCreateMinimapResourceHandler;
+                                                                                        mCreateMinimapResourceHandler;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IDataDrivenUIRepository>> mDataDrivenUIRepository;
     // NOLINTEND
 
 public:
@@ -54,13 +56,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ResourceHandlerFactoryArguments();
+    MCNAPI ~ResourceHandlerFactoryArguments();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -33,13 +33,17 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SoundAddition();
+#ifdef LL_PLAT_C
+        MCNAPI ~SoundAddition();
+#endif
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+#ifdef LL_PLAT_C
+        MCNAPI void $dtor();
+#endif
         // NOLINTEND
     };
 
@@ -55,58 +59,67 @@ public:
     ::ll::TypedStorage<8, 32, ::SharedTypes::Reference<20>> mUnderwaterMood;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
+    AmbientSoundsClientBiomeJsonComponent& operator=(AmbientSoundsClientBiomeJsonComponent const&);
     AmbientSoundsClientBiomeJsonComponent();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::ClientBiomeComponentVersion getType() const /*override*/;
-
-    virtual ~AmbientSoundsClientBiomeJsonComponent() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
-
-    MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
-    operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&&);
-
-    MCAPI ::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent&
-    operator=(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#ifdef LL_PLAT_C
+    MCNAPI
+    AmbientSoundsClientBiomeJsonComponent(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+#ifdef LL_PLAT_S
+    MCNAPI static ::std::add_lvalue_reference_t<char const[25]> SCHEMA_NAME();
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> SCHEMA_NAME();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor(::SharedTypes::v1_21_120::AmbientSoundsClientBiomeJsonComponent const&);
+#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientBiomeComponentVersion $getType() const;
+    MCNAPI ::ClientBiomeComponentVersion $getType() const;
 
 
     // NOLINTEND

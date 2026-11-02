@@ -22,7 +22,7 @@ struct StandingVehiclePostPositionPassengerSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _impl(
+    MCNAPI static void _impl(
         ::StrictEntityContext&,
         ::PassengerComponent const&         passengerComponent,
         ::ActorSetPositionRequestComponent& setPositionRequest,
@@ -32,7 +32,7 @@ public:
             ::StandAnimationComponent const,
             ::RenderRotationComponent const,
             ::Include<::VehicleComponent>,
-            ::RenderPositionComponent const> horseView
+            ::RenderPositionComponent const> const& horseView
     );
     // NOLINTEND
 };

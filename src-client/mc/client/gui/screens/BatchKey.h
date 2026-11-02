@@ -33,23 +33,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BatchKey(::BatchKey&& rha);
+    MCNAPI BatchKey(::BatchKey&& rha);
 
-    MCAPI BatchKey(::BatchKey const& rha);
+    MCNAPI BatchKey(::BatchKey const& rha);
 
     MCAPI BatchKey(int depth, float alpha, ::BatchClippingState const& clippingState);
 
-    MCAPI bool operator==(::BatchKey const& rhs) const;
+    MCNAPI bool operator==(::BatchKey const& rhs) const;
 
-    MCAPI ~BatchKey();
+    MCNAPI ~BatchKey();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BatchKey&& rha);
+    MCNAPI void* $ctor(::BatchKey&& rha);
 
-    MCAPI void* $ctor(::BatchKey const& rha);
+    MCNAPI void* $ctor(::BatchKey const& rha);
 
     MCAPI void* $ctor(int depth, float alpha, ::BatchClippingState const& clippingState);
     // NOLINTEND
@@ -57,6 +57,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

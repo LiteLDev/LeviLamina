@@ -41,23 +41,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const getActionTypeName(::ItemStackRequestActionType type);
+    MCNAPI static ::std::string const getActionTypeName(::ItemStackRequestActionType type);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::ItemStackRequestActionType, ::std::string> const& actionTypeMap();
+    MCNAPI static ::BidirectionalUnorderedMap<::ItemStackRequestActionType, ::std::string> const& actionTypeMap();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
+    MCNAPI ::ItemStackRequestActionCraftBase const* $getCraftAction() const;
 
-    MCFOLD int $getFilteredStringIndex() const;
+    MCNAPI int $getFilteredStringIndex() const;
 
-    MCFOLD void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
+    MCNAPI void $postLoadItems_DEPRECATEDASKTYLAING(::BlockPalette& blockPalette, bool isClientSide);
 
 
     // NOLINTEND
@@ -65,6 +65,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -40,23 +40,29 @@ public:
         public:
             // member functions
             // NOLINTBEGIN
-            MCAPI ~ClientBiomeDescription();
+            MCNAPI ~ClientBiomeDescription();
             // NOLINTEND
 
         public:
             // static functions
             // NOLINTBEGIN
-            MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
             // NOLINTEND
 
         public:
             // destructor thunk
             // NOLINTBEGIN
-            MCFOLD void $dtor();
+            MCNAPI void $dtor();
             // NOLINTEND
         };
 
-        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {};
+        struct ComponentMap : public ::ClientBiomeJsonDocumentHelper::ComponentMap {
+        public:
+            // static functions
+            // NOLINTBEGIN
+            MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+            // NOLINTEND
+        };
 
     public:
         // member variables
@@ -82,24 +88,18 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
+        MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject&
         operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument::ClientBiomeJsonObject const&);
 
-        MCAPI ~ClientBiomeJsonObject();
+        MCNAPI ~ClientBiomeJsonObject();
 #endif
-        // NOLINTEND
-
-    public:
-        // static functions
-        // NOLINTBEGIN
-        MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -124,26 +124,26 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_40::ClientBiomeJsonDocument const&);
+    MCNAPI ClientBiomeJsonDocument(::SharedTypes::v1_21_40::ClientBiomeJsonDocument const&);
 
-    MCFOLD ::SharedTypes::v1_21_40::ClientBiomeJsonDocument&
+    MCNAPI ::SharedTypes::v1_21_40::ClientBiomeJsonDocument&
     operator=(::SharedTypes::v1_21_40::ClientBiomeJsonDocument&&);
 
-    MCAPI ~ClientBiomeJsonDocument();
+    MCNAPI ~ClientBiomeJsonDocument();
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
 #endif
     // NOLINTEND
 
@@ -151,7 +151,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::SharedTypes::v1_21_40::ClientBiomeJsonDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_40::ClientBiomeJsonDocument const&);
 #endif
     // NOLINTEND
 
@@ -159,7 +159,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

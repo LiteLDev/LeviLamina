@@ -21,13 +21,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickSaveSurroundingChunks(::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void _tickSaveSurroundingChunks(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
+    MCNAPI void $tick(::EntityRegistry& registry);
 
 
     // NOLINTEND

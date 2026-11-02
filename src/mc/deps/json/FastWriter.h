@@ -33,7 +33,7 @@ public:
     // NOLINTBEGIN
     MCAPI FastWriter();
 
-    MCAPI void writeValue(::Json::Value const& value);
+    MCNAPI void writeValue(::Json::Value const& value);
     // NOLINTEND
 
 public:

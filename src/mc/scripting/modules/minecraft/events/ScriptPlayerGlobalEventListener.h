@@ -15,6 +15,9 @@
 // clang-format off
 class Player;
 struct PlayerClosedContainerEvent;
+struct PlayerCraftRecipeAfterEvent;
+struct PlayerCursorItemGrabEvent;
+struct PlayerCursorItemReleaseEvent;
 struct PlayerDimensionChangeAfterEvent;
 struct PlayerEmoteEvent;
 struct PlayerGameModeChangeEvent;
@@ -70,6 +73,10 @@ public:
 
     virtual ::EventResult onEvent(::PlayerInventoryItemChangeEvent const& e) /*override*/;
 
+    virtual ::EventResult onEvent(::PlayerCursorItemGrabEvent const& e) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerCursorItemReleaseEvent const& e) /*override*/;
+
     virtual ::EventResult onEvent(::PlayerSwingStartEvent const& e) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerUseNameTagEvent const& nameTagEvent) /*override*/;
@@ -93,48 +100,56 @@ public:
     virtual ::EventResult onEvent(::PlayerOpenedContainerEvent const& e) /*override*/;
 
     virtual ::EventResult onEvent(::PlayerClosedContainerEvent const& e) /*override*/;
+
+    virtual ::EventResult onEvent(::PlayerCraftRecipeAfterEvent const& e) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void flushContainerCloseContext(::Player const& player);
+    MCNAPI void flushContainerCloseContext(::Player const& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::PlayerRespawnEvent const& respawnEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerRespawnEvent const& respawnEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerInitialSpawnEvent const& initialSpawnEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerInteractWithEntityAfterEvent const& playerInteractWithEntityEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerInventoryItemChangeEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerCursorItemGrabEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerCursorItemReleaseEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerSwingStartEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerUseNameTagEvent const& nameTagEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerInputPermissionCategoryChangeEvent const& event);
+    MCNAPI ::EventResult $onEvent(::PlayerHotbarSelectedSlotChangeEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerInputModeChangeEvent const& playerInputModeChangeEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerScriptInputEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerInputPermissionCategoryChangeEvent const& event);
 
-    MCAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerInteractWithBlockAfterEvent const& playerInteractWithBlockEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerEmoteEvent const& playerEmoteEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerScriptInputEvent const& e);
 
-    MCAPI ::EventResult $onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent);
+    MCNAPI ::EventResult $onEvent(::PlayerDimensionChangeAfterEvent const& playerDimensionChangeEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerOpenedContainerEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerEmoteEvent const& playerEmoteEvent);
 
-    MCAPI ::EventResult $onEvent(::PlayerClosedContainerEvent const& e);
+    MCNAPI ::EventResult $onEvent(::PlayerGameModeChangeEvent const& playerGameModeChangeEvent);
+
+    MCNAPI ::EventResult $onEvent(::PlayerOpenedContainerEvent const& e);
+
+    MCNAPI ::EventResult $onEvent(::PlayerClosedContainerEvent const& e);
+
+    MCNAPI ::EventResult $onEvent(::PlayerCraftRecipeAfterEvent const& e);
 
 
     // NOLINTEND

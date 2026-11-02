@@ -53,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ControlOptionEditorControl(
+    MCNAPI ControlOptionEditorControl(
         ::std::function<float()>                                 wysiwygState,
         ::std::function<::RectangleArea()>                       area,
         ::std::function<::RectangleArea()>                       mainPanelArea,
@@ -63,25 +63,25 @@ public:
         ::std::vector<::std::function<::RectangleArea()>> const& reservedAreas
     );
 
-    MCAPI int _getNumberOfActiveControlConfigurations() const;
+    MCNAPI int _getNumberOfActiveControlConfigurations() const;
 
-    MCAPI ::RectangleArea _getRectangleAreaOfConfiguration(::ControlConfiguration* cc) const;
+    MCNAPI ::RectangleArea _getRectangleAreaOfConfiguration(::ControlConfiguration* cc) const;
 
-    MCAPI bool _isColliding(::RectangleArea const& rect, uint excludedId) const;
+    MCNAPI bool _isColliding(::RectangleArea const& rect, uint excludedId) const;
 
-    MCAPI void _playBumpingSound(::InputEventQueue& eventQueue);
+    MCNAPI void _playBumpingSound(::InputEventQueue& eventQueue);
 
-    MCAPI void _pushControlsInsideSafeArea();
+    MCNAPI void _pushControlsInsideSafeArea();
 
-    MCAPI void _setControlConfigurationActive(::InputEventQueue& eventQueue, ::ControlConfiguration* cc, bool active);
+    MCNAPI void _setControlConfigurationActive(::InputEventQueue& eventQueue, ::ControlConfiguration* cc, bool active);
 
-    MCAPI void checkForOverlaps();
+    MCNAPI void checkForOverlaps();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<float()>                                 wysiwygState,
         ::std::function<::RectangleArea()>                       area,
         ::std::function<::RectangleArea()>                       mainPanelArea,
@@ -95,8 +95,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
+    MCNAPI void $tick(::InputEventQueue& eventQueue, ::TouchPointResults& touchPointResults, int yAxisInversionFactor);
 
-    MCAPI void $render(::InputRenderContext& context) const;
+    MCNAPI void $render(::InputRenderContext& context) const;
     // NOLINTEND
 };

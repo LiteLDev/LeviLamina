@@ -106,15 +106,13 @@ public:
 
     LLAPI MolangScriptArg const& evalGeneric(RenderParams& renderParams) const;
 
-#ifdef LL_PLAT_S
-    static std::function<::MolangScriptArg const&(RenderParams&, std::vector<::ExpressionNode> const&)> const*
+    LLAPI static std::function<::MolangScriptArg const&(RenderParams&, std::vector<::ExpressionNode> const&)> const*
     queryFunctionAccessorFromString(
         ::HashedString const&            functionName,
         ::MolangVersion                  molangVersion,
         ::MolangQueryFunctionReturnType& functionReturnType,
         bool                             missingIsOkay_returnNullIfSo
     );
-#endif
 
 public:
     // prevent constructor by default
@@ -125,43 +123,43 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI explicit ExpressionNode(::MaterialVariants const& materialVariants);
+    MCNAPI explicit ExpressionNode(::MaterialVariants const& materialVariants);
 #endif
 
-    MCAPI explicit ExpressionNode(::Molang::details::SourceTree root);
+    MCNAPI explicit ExpressionNode(::Molang::details::SourceTree root);
 
     MCAPI ExpressionNode(::std::string const& expression, ::MolangVersion molangVersion);
 
 #ifdef LL_PLAT_C
-    MCAPI ExpressionNode(char const* expression, ::MolangVersion molangVersion);
+    MCNAPI ExpressionNode(char const* expression, ::MolangVersion molangVersion);
 #endif
 
-    MCAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
+    MCNAPI ExpressionNode(::Json::Value const& value, ::MolangParseConfig const& config);
 
-    MCAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
+    MCNAPI ExpressionNode(::MolangScriptArg const& value, ::ExpressionOp op);
 
-    MCAPI ::std::optional<::MolangScriptArg> _getValueIfConstant() const;
+    MCNAPI ::std::optional<::MolangScriptArg> _getValueIfConstant() const;
 
     MCAPI ::std::string getExpressionString() const;
 
-    MCAPI ::MolangCompileResult link();
+    MCNAPI ::MolangCompileResult link();
 
 #ifdef LL_PLAT_C
-    MCAPI ::ExpressionNode& operator=(::MaterialVariants const& materialVariants);
+    MCNAPI ::ExpressionNode& operator=(::MaterialVariants const& materialVariants);
 #endif
 
-    MCAPI ::ExpressionNode& operator=(::ExpressionNode const& rhs);
+    MCNAPI ::ExpressionNode& operator=(::ExpressionNode const& rhs);
 
 #ifdef LL_PLAT_C
-    MCAPI ::ExpressionNode& operator=(float value);
+    MCNAPI ::ExpressionNode& operator=(float value);
 #endif
 
     MCAPI bool parse(::std::string_view expression, ::MolangParseConfig const& config);
 
 #ifdef LL_PLAT_C
-    MCAPI bool parse(::std::string_view expression, ::MolangVersion version, ::gsl::span<::HashedString const> idSet);
+    MCNAPI bool parse(::std::string_view expression, ::MolangVersion version, ::gsl::span<::HashedString const> idSet);
 
-    MCAPI void
+    MCNAPI void
     replaceArrayVariables(::std::unordered_map<::HashedString, ::ExpressionNode>& dataMap, bool compileProgram);
 #endif
     // NOLINTEND
@@ -169,20 +167,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _initializeMolangQueries(::ExpressionQueries&& queries);
+    MCNAPI static bool _initializeMolangQueries(::ExpressionQueries&& queries);
 
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::std::function<
-        ::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)> const*
-    queryFunctionAccessorFromString(
-        ::HashedString const&            functionName,
-        ::MolangVersion                  molangVersion,
-        ::MolangQueryFunctionReturnType& functionReturnType,
-        bool                             missingIsOkay_returnNullIfSo
-    );
-#endif
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
     MCAPI static ::MolangQueryFunction& registerQueryFunction(
         ::std::string_view queryFunctionName,
@@ -195,7 +182,7 @@ public:
         ::std::initializer_list<int> const& experiments
     );
 
-    MCAPI static void setExperiments(::Experiments const& experiments);
+    MCNAPI static void setExperiments(::Experiments const& experiments);
 
     MCAPI static void
     unregisterQueryFunction(::std::string const& queryFunctionName, ::HashedString querySetIdentifier);
@@ -207,36 +194,36 @@ public:
     MCAPI static ::std::function<::MolangScriptArg const&(::RenderParams&, ::std::vector<::ExpressionNode> const&)>&
     _defaultUnknownQueryFunction();
 
-    MCAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
+    MCNAPI static ::std::function<::mce::Color(::Block const&, ::BlockSource&, ::BlockPos const&)>&
     mGetParticleTintFunc();
 
     MCAPI static ::std::unordered_multimap<::HashedString, ::MolangQueryFunction>& mQueryFunctionAccessors();
 
-    MCAPI static ::std::unordered_map<::HashedString, ::std::unordered_set<::HashedString>>& mQuerySets();
+    MCNAPI static ::std::unordered_map<::HashedString, ::std::unordered_set<::HashedString>>& mQuerySets();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::MaterialVariants const& materialVariants);
+    MCNAPI void* $ctor(::MaterialVariants const& materialVariants);
 #endif
 
-    MCAPI void* $ctor(::Molang::details::SourceTree root);
+    MCNAPI void* $ctor(::Molang::details::SourceTree root);
 
     MCAPI void* $ctor(::std::string const& expression, ::MolangVersion molangVersion);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(char const* expression, ::MolangVersion molangVersion);
+    MCNAPI void* $ctor(char const* expression, ::MolangVersion molangVersion);
 #endif
 
-    MCAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
+    MCNAPI void* $ctor(::Json::Value const& value, ::MolangParseConfig const& config);
 
-    MCAPI void* $ctor(::MolangScriptArg const& value, ::ExpressionOp op);
+    MCNAPI void* $ctor(::MolangScriptArg const& value, ::ExpressionOp op);
     // NOLINTEND
 };
 
 // free functions
 // NOLINTBEGIN
-MCAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
+MCNAPI bool operator==(::ExpressionNode const& lhs, ::ExpressionNode const& rhs);
 // NOLINTEND

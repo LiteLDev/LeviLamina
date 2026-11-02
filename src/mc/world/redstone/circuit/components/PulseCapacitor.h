@@ -47,33 +47,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PulseCapacitor();
+#ifdef LL_PLAT_S
+    MCNAPI PulseCapacitor();
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor();
+#endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $canConsumePowerAnyDirection() const;
+    MCNAPI bool $canConsumePowerAnyDirection() const;
 
-    MCFOLD bool $canConsumerPower() const;
+    MCNAPI bool $canConsumerPower() const;
 
-    MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCFOLD uchar $getPoweroutDirection() const;
+    MCNAPI uchar $getPoweroutDirection() const;
 
-    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCAPI void $setStrength(int strength);
+    MCNAPI void $setStrength(int strength);
 
-    MCFOLD int $getStrength() const;
+    MCNAPI int $getStrength() const;
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
 
 
     // NOLINTEND
@@ -81,6 +85,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -52,7 +52,7 @@ public:
             biomeIdToResolvedData
     ) = 0;
 
-    virtual void configureNewPlayer(::Player& player) = 0;
+    virtual void configureNewPlayer(::Player&) = 0;
 
     virtual void configureDocumentation(
         ::IGameModuleDocumentation& moduleDocumentation,

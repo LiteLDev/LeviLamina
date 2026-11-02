@@ -29,21 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplatePool(
+    MCNAPI StructureTemplatePool(
         ::std::string                                                         name,
         ::std::string                                                         fallback,
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
     );
 
-    MCAPI ::std::vector<uint64> getShuffledTemplateIndexes(::Random& random) const;
+    MCNAPI ::std::vector<uint64> getShuffledTemplateIndexes(::Random& random) const;
 
-    MCAPI ~StructureTemplatePool();
+    MCNAPI ~StructureTemplatePool();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::StructureTemplatePool> create(
+    MCNAPI static ::std::unique_ptr<::StructureTemplatePool> create(
         ::StructureTemplateRegistrationContext                           context,
         ::std::string_view                                               name,
         ::std::string_view                                               fallback,
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string                                                         name,
         ::std::string                                                         fallback,
         ::std::vector<::std::pair<::StructurePoolElement const*, int>> const& templates
@@ -65,6 +65,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -12,6 +12,7 @@ class ContentIdentity;
 class LevelSettings;
 class TaskGroup;
 struct LevelSummary;
+namespace ServerInitialization { class IServerInitializer; }
 // clang-format on
 
 class IGameServerStartup {
@@ -22,12 +23,13 @@ public:
 
     virtual bool canStartLocalServer() const = 0;
 
-    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
-        ::std::string const&     levelId,
-        ::std::string const&     levelName,
-        ::ContentIdentity const& premiumTemplateContentIdentity,
-        ::LevelSettings const&   settings,
-        ::StartIntent            startIntent
+    virtual ::Bedrock::Threading::Async<void> _startLocalServerAsync(
+        ::std::string const&                                          levelId,
+        ::std::string const&                                          levelName,
+        ::ContentIdentity const&                                      premiumTemplateContentIdentity,
+        ::LevelSettings const&                                        settings,
+        ::std::unique_ptr<::ServerInitialization::IServerInitializer> initializer,
+        ::StartIntent                                                 startIntent
     ) = 0;
 
     virtual bool isHostingLocalDedicatedServer() const = 0;

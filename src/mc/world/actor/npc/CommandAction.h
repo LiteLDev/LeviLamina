@@ -27,15 +27,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator!=(::npc::CommandAction const& rhs) const;
+    MCNAPI bool operator!=(::npc::CommandAction const& rhs) const;
 
-    MCAPI ~CommandAction();
+    MCNAPI ~CommandAction();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

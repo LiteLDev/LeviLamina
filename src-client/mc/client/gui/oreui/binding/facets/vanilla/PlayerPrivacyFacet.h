@@ -59,31 +59,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+    MCNAPI explicit PlayerPrivacyFacet(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
 
-    MCAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
+    MCNAPI ::OreUI::PlayerPrivacyFacet::PrivacyData const& getData();
 
-    MCFOLD bool getLoaded();
+    MCNAPI bool getLoaded();
 
-    MCAPI void load(::std::string const& id);
+    MCNAPI void load(::std::string const& id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> userManager);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

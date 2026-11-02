@@ -439,7 +439,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 24> mUnk57ab7a;
+        ::ll::UntypedStorage<8, 16> mUnk57ab7a;
         ::ll::UntypedStorage<4, 4>  mUnkc7e6dd;
         // NOLINTEND
 
@@ -456,7 +456,7 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk1de33d;
     ::ll::UntypedStorage<8, 272> mUnkd0c7b7;
     ::ll::UntypedStorage<8, 64>  mUnk540034;
-    ::ll::UntypedStorage<8, 32>  mUnka1f463;
+    ::ll::UntypedStorage<8, 24>  mUnka1f463;
     // NOLINTEND
 
 public:
@@ -495,8 +495,6 @@ public:
     MCNAPI ::WaterConfig::WaterConfigSettingsV4 const& findWaterConfigSettings(::HashedString const& biomeID) const;
 
     MCNAPI ::mce::framebuilder::CausticsParameters getCausticsParameters() const;
-
-    MCNAPI ::dragon::framerenderer::modules::water::WaterParameters getWaterParameters() const;
 
     MCNAPI ::dragon::framerenderer::modules::water::WaterParameters
     getWaterParameters(::HashedString const& biomeID) const;

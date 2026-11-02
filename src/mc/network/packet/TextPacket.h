@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCAPI TextPacket();
 
-    MCAPI explicit TextPacket(::TextPacketPayload payload);
+    MCNAPI explicit TextPacket(::TextPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::TextPacketPayload payload);
+    MCNAPI void* $ctor(::TextPacketPayload payload);
     // NOLINTEND
 
 public:
@@ -121,9 +121,9 @@ public:
 
     MCAPI ::std::string $toString() const;
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 
-    MCAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
+    MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
     // NOLINTEND

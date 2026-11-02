@@ -12,13 +12,13 @@ class UIEval {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::UiExpression const evalExpression(
+    MCNAPI static ::UiExpression const evalExpression(
         ::std::string const&                 expressionString,
         ::std::vector<::Json::Value*> const& variablesStack,
         ::Json::Value const&                 localStack
     );
 
-    MCAPI static ::Json::Value const& evalVariable(
+    MCNAPI static ::Json::Value const& evalVariable(
         ::std::string const&                 valueStr,
         ::std::vector<::Json::Value*> const& variablesStack,
         ::Json::Value const&                 localStack

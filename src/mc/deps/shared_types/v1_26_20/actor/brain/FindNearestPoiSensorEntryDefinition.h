@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Brain { struct PoiMemory; }
+namespace SharedTypes::Brain { struct PoiRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -20,10 +20,7 @@ struct FindNearestPoiSensorEntryDefinition
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<
-        8,
-        56,
-        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::PoiMemory>>>
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::PoiRef>>
                                              mFoundPoiMemory;
     ::ll::TypedStorage<8, 32, ::std::string> mPoiName;
     ::ll::TypedStorage<4, 4, int>            mSearchRadius;
@@ -37,38 +34,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FindNearestPoiSensorEntryDefinition(
+    MCNAPI FindNearestPoiSensorEntryDefinition(
         ::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestPoiSensorEntryDefinition const&
     );
 
-    MCAPI bool
-    operator==(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestPoiSensorEntryDefinition const&) const;
-
-    MCAPI ~FindNearestPoiSensorEntryDefinition();
+    MCNAPI ~FindNearestPoiSensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestPoiSensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::FindNearestPoiSensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

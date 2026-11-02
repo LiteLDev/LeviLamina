@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -34,24 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LeashableComponent(::LeashableComponent&&);
+    MCNAPI LeashableComponent(::LeashableComponent&&);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::LeashableComponent& operator=(::LeashableComponent&&);
+    MCNAPI ::LeashableComponent& operator=(::LeashableComponent&&);
 
-    MCAPI ~LeashableComponent();
+    MCNAPI ~LeashableComponent();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LeashableComponent&&);
+    MCNAPI void* $ctor(::LeashableComponent&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

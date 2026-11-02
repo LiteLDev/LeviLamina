@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientInstance;
 class ScreenContext;
 struct FrameRenderObject;
 namespace mce { class RenderContext; }
@@ -20,6 +21,9 @@ public:
     ::ll::UntypedStorage<1, 1>  mUnkdc0098;
     ::ll::UntypedStorage<8, 8>  mUnkb0668a;
     ::ll::UntypedStorage<8, 32> mUnk31e8a2;
+    ::ll::UntypedStorage<8, 8>  mUnk565f17;
+    ::ll::UntypedStorage<8, 8>  mUnk6aa127;
+    ::ll::UntypedStorage<1, 1>  mUnk97eb7e;
     // NOLINTEND
 
 public:
@@ -43,11 +47,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI explicit TickingTextureStage(::IClientInstance& client);
+
     MCNAPI void _createRenderTarget(::mce::Texture& atlasTexture, ::mce::RenderContext& renderContext);
+
+    MCNAPI bool _isThrottleEnabled() const;
 
     MCNAPI void createRenderTarget(::mce::RenderContext& renderContext);
 
     MCNAPI void resetStage();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 
 public:

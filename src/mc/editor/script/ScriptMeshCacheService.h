@@ -4,12 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/Task.h"
 #include "mc/editor/services/PayloadStoreHelper.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace Editor { class EditorManager; }
 namespace Editor { class ServiceProviderCollection; }
+namespace Editor { struct CoroutineStatus; }
+namespace Editor::Coroutine { class CoroutineTaskContext; }
 namespace Editor::Services { class TransactionManagerServiceProvider; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
@@ -24,9 +27,18 @@ public:
     // clang-format off
     struct ActiveCommitState;
     struct PendingRevertState;
+    struct PlaceBatchTaskFactory;
+    struct PlacedBlockPos;
+    struct ActiveBatchProcess;
+    struct QueuedBatch;
     // clang-format on
 
     // ScriptMeshCacheService inner types define
+    enum class MeshTaskActivity : uint64 {
+        PlacingBlocks = 0,
+        Count         = 1,
+    };
+
     struct ActiveCommitState {
     public:
         // member variables
@@ -67,6 +79,75 @@ public:
         PendingRevertState();
     };
 
+    struct PlaceBatchTaskFactory {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8> mUnk1bcaca;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlaceBatchTaskFactory& operator=(PlaceBatchTaskFactory const&);
+        PlaceBatchTaskFactory(PlaceBatchTaskFactory const&);
+        PlaceBatchTaskFactory();
+    };
+
+    struct PlacedBlockPos {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkc733ae;
+        ::ll::UntypedStorage<8, 8>  mUnk8d6f47;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlacedBlockPos& operator=(PlacedBlockPos const&);
+        PlacedBlockPos(PlacedBlockPos const&);
+        PlacedBlockPos();
+    };
+
+    struct ActiveBatchProcess {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 24> mUnk443aa4;
+        ::ll::UntypedStorage<8, 24> mUnka05fe8;
+        ::ll::UntypedStorage<8, 24> mUnkccf96e;
+        ::ll::UntypedStorage<8, 8>  mUnk6208e4;
+        ::ll::UntypedStorage<8, 8>  mUnk970404;
+        ::ll::UntypedStorage<1, 1>  mUnkeca352;
+        ::ll::UntypedStorage<8, 32> mUnk454cef;
+        ::ll::UntypedStorage<8, 8>  mUnk1dfcae;
+        ::ll::UntypedStorage<8, 16> mUnkfabbbe;
+        ::ll::UntypedStorage<8, 40> mUnkbb3c9e;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ActiveBatchProcess& operator=(ActiveBatchProcess const&);
+        ActiveBatchProcess(ActiveBatchProcess const&);
+        ActiveBatchProcess();
+    };
+
+    struct QueuedBatch {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 32> mUnkc4c1fa;
+        ::ll::UntypedStorage<8, 24> mUnke44ab8;
+        ::ll::UntypedStorage<8, 24> mUnk94905c;
+        ::ll::UntypedStorage<1, 1>  mUnkacf3f4;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        QueuedBatch& operator=(QueuedBatch const&);
+        QueuedBatch(QueuedBatch const&);
+        QueuedBatch();
+    };
+
 public:
     // member variables
     // NOLINTBEGIN
@@ -79,6 +160,8 @@ public:
     ::ll::UntypedStorage<1, 1>   mUnka6f20d;
     ::ll::UntypedStorage<8, 136> mUnk2f73de;
     ::ll::UntypedStorage<8, 144> mUnk7465cf;
+    ::ll::UntypedStorage<8, 40>  mUnk788c4f;
+    ::ll::UntypedStorage<8, 8>   mUnkd79157;
     ::ll::UntypedStorage<8, 8>   mUnk588404;
     ::ll::UntypedStorage<8, 16>  mUnkfdc293;
     ::ll::UntypedStorage<8, 16>  mUnk545102;
@@ -98,8 +181,12 @@ public:
     // NOLINTBEGIN
     MCNAPI ScriptMeshCacheService(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const&);
 
+    MCNAPI void _cancelActivePlaceCoroutine();
+
     MCNAPI void
     _finishActiveCommit(::std::string const& requestId, bool clientSuccess, ::std::string const& clientError);
+
+    MCNAPI void _kickOffNextBatchIfNeeded();
 
     MCNAPI void _onLevelTick(::Editor::EditorManager&);
 

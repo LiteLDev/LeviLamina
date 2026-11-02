@@ -14,14 +14,6 @@ class BehaviorSystem : public ::ITickingSystem {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void tick(::EntityRegistry& registry) /*override*/;
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI void $tick(::EntityRegistry& registry);
-
-
+    virtual void tick(::EntityRegistry&) /*override*/;
     // NOLINTEND
 };

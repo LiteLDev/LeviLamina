@@ -16,6 +16,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ResolvedFogVolumetricCoefficientSetting const& ZERO_SETTING();
+    MCNAPI static ::ResolvedFogVolumetricCoefficientSetting const& ZERO_SETTING();
     // NOLINTEND
 };

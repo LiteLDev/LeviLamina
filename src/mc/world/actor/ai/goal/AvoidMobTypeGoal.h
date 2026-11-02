@@ -72,33 +72,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AvoidMobTypeGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI AvoidMobTypeGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI bool canFindAvoidPath(::Actor* actor);
+    MCNAPI bool canFindAvoidPath(::Actor* actor);
 
-    MCAPI ::Actor* findNearestEntityToAvoid(float dist);
+    MCNAPI ::Actor* findNearestEntityToAvoid(float dist);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

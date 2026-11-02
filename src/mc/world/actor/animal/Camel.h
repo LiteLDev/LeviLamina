@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Camel(
+    MCNAPI Camel(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -62,7 +62,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -72,13 +72,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $aiStep();
+    MCNAPI void $aiStep();
 
-    MCAPI void $normalTick();
+    MCNAPI void $normalTick();
 
-    MCAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
+    MCNAPI ::Vec3 $getInterpolatedRidingOffset(float, int const) const;
 
-    MCAPI float $_getWalkTargetValue(::BlockPos const& pos);
+    MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
 
 
     // NOLINTEND

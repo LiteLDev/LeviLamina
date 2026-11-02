@@ -40,13 +40,28 @@ public:
 
     MCNAPI int bake();
 
+    MCNAPI int bakeBrpak();
+
     MCNAPI int bakeFilesInFolder(::Core::PathView srcPath, ::Core::PathView dstPath, ::Core::PathView dstArchivePath);
 
     MCNAPI int bakeSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
 
     MCNAPI void copyLooseFiles(::Core::PathView packRoot, ::Core::PathView destPath);
 
+    MCNAPI ::Bedrock::Result<void>
+    copyManifestWithVersionStamp(::Core::PathView sourcePath, ::Core::PathView destPath, ::SemVersionConstant version);
+
     MCNAPI ::Bedrock::Result<void> copyRegularFile(::Core::PathView sourcePath, ::Core::PathView destPath);
+
+    MCNAPI ::std::vector<::Core::Path> gatherFilesRecursively(
+        ::Core::PathView                                                            srcPath,
+        ::Core::PathView                                                            dstPath,
+        ::Core::PathView                                                            dstArchivePath,
+        ::std::function<void(::Core::PathView, ::Core::PathView, ::Core::PathView)> processDirectoryFunc
+    );
+
+    MCNAPI int
+    optimizeFilesInFolder(::Core::PathView srcPath, ::Core::PathView dstPath, ::Core::PathView dstArchivePath);
 
     MCNAPI void optimizeFilesWithArchive(
         ::Bedrock::Resources::Archive::Builder* archive,
@@ -57,7 +72,24 @@ public:
         ::std::vector<::Core::Path>*            outFullyArchivedFiles
     );
 
+    MCNAPI int optimizeSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
+
     MCNAPI void outputLog() const;
+
+    MCNAPI int packageBrpakSinglePack(::Core::PathView packRoot, ::Core::PathView destPath);
+
+    MCNAPI void processFilesInFolder(
+        ::Core::PathView                                                            packRoot,
+        ::Core::PathView                                                            destPath,
+        ::Core::PathView                                                            archivesRoot,
+        ::std::function<void(::Core::PathView, ::Core::PathView, ::Core::PathView)> processDirectoryFunc
+    );
+
+    MCNAPI void processSubPacks(
+        ::Core::PathView                                          packRoot,
+        ::Core::PathView                                          destPath,
+        ::std::function<void(::Core::PathView, ::Core::PathView)> processSubPackFunc
+    );
 
     MCNAPI bool shouldCopyLooseSource(::Core::PathView filePath);
 
@@ -76,6 +108,10 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI static ::SemVersionConstant const& BRPAK_PACK_OPTIMIZATION_VERSION();
+#endif
+
     MCNAPI static ::SemVersionConstant const& PACK_OPTIMIZATION_VERSION();
     // NOLINTEND
 

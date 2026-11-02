@@ -3,9 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/Task.h"
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/Task.h"
 #include "mc/editor/block_utils/BlockUtilityTaskServiceProvider.h"
 #include "mc/editor/services/IEditorService.h"
 
@@ -18,6 +18,8 @@ class BoundingBox;
 namespace Editor { class ProjectRegion; }
 namespace Editor { class RelativeVolumeListBlockVolume; }
 namespace Editor { struct CoroutineStatus; }
+namespace Editor { struct ProbabilityBlockPaletteItem; }
+namespace Editor { struct SimpleBlockPaletteItem; }
 namespace Editor::BlockMask { class BlockMaskList; }
 namespace Editor::BlockUtils::Task { class BlockUtilityChunkedVolume; }
 namespace Editor::BlockUtils::Task { struct BlockUtilityExtrudeOptions; }
@@ -55,7 +57,9 @@ public:
         ::Editor::Coroutine::CoroutineTaskContext&            context,
         ::Editor::BlockUtils::Task::BlockUtilityChunkedVolume volume,
         ::std::optional<::Block const*>                       optBlock,
-        ::BlockSource*                                        expectedBlockSource
+        ::BlockSource*                                        expectedBlockSource,
+        ::std::optional<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
+            paletteItem
     ) /*override*/;
 
     virtual ::Editor::
@@ -159,8 +163,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::BlockSource& _getBlockSource() const;
 
-    MCNAPI ::BoundingBox _getWorldBounds() const;
-
     MCNAPI ::Scripting::Result_deprecated<void> _validateBoundsWithinWorld(::BoundingBox const& bounds) const;
     // NOLINTEND
 
@@ -186,7 +188,9 @@ public:
         ::Editor::Coroutine::CoroutineTaskContext&            context,
         ::Editor::BlockUtils::Task::BlockUtilityChunkedVolume volume,
         ::std::optional<::Block const*>                       optBlock,
-        ::BlockSource*                                        expectedBlockSource
+        ::BlockSource*                                        expectedBlockSource,
+        ::std::optional<::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>>
+            paletteItem
     );
 
     MCNAPI ::Editor::

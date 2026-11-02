@@ -25,40 +25,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PacketViolationWarningPacketPayload(
+    MCNAPI PacketViolationWarningPacketPayload(
         ::std::error_code const&  error_code,
         ::PacketViolationResponse violationResponse,
         ::MinecraftPacketIds      violatingPacketId,
         ::std::string const&      violationContext
     );
-
-#ifdef LL_PLAT_C
-    MCAPI PacketViolationWarningPacketPayload(
-        ::PacketViolationSeverity violationSeverity,
-        ::PacketViolationType     violationType,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
-#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::error_code const&  error_code,
         ::PacketViolationResponse violationResponse,
         ::MinecraftPacketIds      violatingPacketId,
         ::std::string const&      violationContext
     );
-
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
-        ::PacketViolationSeverity violationSeverity,
-        ::PacketViolationType     violationType,
-        ::MinecraftPacketIds      violatingPacketId,
-        ::std::string const&      violationContext
-    );
-#endif
     // NOLINTEND
 };

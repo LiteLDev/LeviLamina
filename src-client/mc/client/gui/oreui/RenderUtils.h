@@ -14,17 +14,17 @@ namespace mce { struct TextureResourceService; }
 namespace OreUI::RenderUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::cg::ImageBuffer> createZeroedImageBuffers(::mce::TextureDescription const& textureDescription);
+MCNAPI ::std::vector<::cg::ImageBuffer> createZeroedImageBuffers(::mce::TextureDescription const& textureDescription);
 
-MCAPI ::mce::TextureContainer createZeroedTextureContainer(::mce::TextureDescription const& textureDescription);
+MCNAPI ::mce::TextureContainer createZeroedTextureContainer(::mce::TextureDescription const& textureDescription);
 
-MCAPI void* prepareRenderDragonTexture(
+MCNAPI void* prepareRenderDragonTexture(
     ::mce::TextureResourceService& textureResourceService,
     ::mce::ClientTexture&          targetTexture,
     ::mce::TextureContainer&&      textureContainer
 );
 
-MCAPI bool shouldFlipTextureOrigin();
+MCNAPI bool shouldFlipTextureOrigin();
 // NOLINTEND
 
 } // namespace OreUI::RenderUtils

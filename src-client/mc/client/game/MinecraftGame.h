@@ -9,6 +9,7 @@
 #include "mc/client/game/DeferredTaskCategory.h"
 #include "mc/client/game/IMinecraftGame.h"
 #include "mc/client/game/IMultiPlayerServices.h"
+#include "mc/client/game/LeaveGameResourceBehavior.h"
 #include "mc/client/game/SerialWorkList.h"
 #include "mc/client/game/StartIntent.h"
 #include "mc/client/game/local_server_launcher/ILocalServerLauncherImpl.h"
@@ -59,16 +60,16 @@ class CubemapBackgroundResources;
 class DateManager;
 class DeferredLighting;
 class DevConsoleLogger;
-class EDUSystems;
+class EduSystems;
 class EmoticonManager;
 class EntityContext;
+class ExperienceSystemsManager;
 class ExternalContentManager;
 class FileArchiver;
 class FlightingService;
 class FontRepository;
 class GameModuleClient;
 class GameRenderer;
-class GatheringManager;
 class GeometryGroup;
 class GlobalResourcesCrashRecovery;
 class GuiData;
@@ -84,8 +85,8 @@ class IEntitlementManager;
 class IExternalServerFile;
 class IGameModuleApp;
 class IGameModuleShared;
-class ILayoutServiceCache;
 class ILevelListCache;
+class ILocalHydratingLayoutServiceCache;
 class IMinecraftEventing;
 class IOfferRepository;
 class IResourcePackRepository;
@@ -166,7 +167,6 @@ struct RealmTransferActionFunc;
 struct ScreenshotOptions;
 namespace Automation { class AutomationClient; }
 namespace Bedrock { class ActivationArguments; }
-namespace Bedrock::Profiling { class ProfilingOrchestrator; }
 namespace Bedrock::PubSub { class Subscription; }
 namespace ClientBlockPipeline { class SchematicsRepository; }
 namespace Core { class FilePathManager; }
@@ -188,6 +188,7 @@ namespace Realms { class RealmsSystem; }
 namespace Realms { class SubscriptionService; }
 namespace Realms { struct RealmId; }
 namespace Realms { struct World; }
+namespace ServerInitialization { class IServerInitializer; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { class IUserManager; }
 namespace Social { class MultiplayerGameInfo; }
@@ -195,6 +196,7 @@ namespace Social { class MultiplayerServiceManager; }
 namespace Social { class PresenceManager; }
 namespace Social { class SocialSystem; }
 namespace Social { class User; }
+namespace Social::ManagedChat { class ManagedChatClient; }
 namespace World { class WorldSystem; }
 namespace dragon::framerenderer { struct DebugParameters; }
 namespace edu::auth { struct CredentialsAcquired; }
@@ -253,6 +255,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 8>  mUnk4882be;
+        ::ll::UntypedStorage<8, 8>  mUnk78052f;
         ::ll::UntypedStorage<8, 16> mUnkf28199;
         // NOLINTEND
 
@@ -274,7 +277,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 32> mUnka8b3b6;
+        ::ll::UntypedStorage<8, 40> mUnka8b3b6;
         ::ll::UntypedStorage<8, 16> mUnkc9621b;
         // NOLINTEND
 
@@ -308,6 +311,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk707e20;
     ::ll::UntypedStorage<8, 8>    mUnk77bae9;
     ::ll::UntypedStorage<8, 8>    mUnk39dbf1;
+    ::ll::UntypedStorage<8, 24>   mUnk6dea75;
     ::ll::UntypedStorage<8, 8>    mUnkb9a1e2;
     ::ll::UntypedStorage<8, 8>    mUnka617fc;
     ::ll::UntypedStorage<8, 8>    mUnk847dc8;
@@ -410,6 +414,7 @@ public:
     ::ll::UntypedStorage<8, 16>   mUnk333c36;
     ::ll::UntypedStorage<8, 8>    mUnkab5b49;
     ::ll::UntypedStorage<8, 8>    mUnk2d070e;
+    ::ll::UntypedStorage<8, 8>    mUnke5aa79;
     ::ll::UntypedStorage<8, 8>    mUnkffc4a2;
     ::ll::UntypedStorage<8, 8>    mUnk87a54d;
     ::ll::UntypedStorage<8, 8>    mUnk80cd0e;
@@ -417,6 +422,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnkb8db74;
     ::ll::UntypedStorage<8, 16>   mUnkb87b62;
     ::ll::UntypedStorage<8, 8>    mUnkb69251;
+    ::ll::UntypedStorage<8, 16>   mUnk9aa48f;
     ::ll::UntypedStorage<8, 8>    mUnk138dbc;
     ::ll::UntypedStorage<8, 8>    mUnk125782;
     ::ll::UntypedStorage<8, 8>    mUnk6585d8;
@@ -466,16 +472,25 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk585275;
     ::ll::UntypedStorage<8, 16>   mUnk5f5935;
     ::ll::UntypedStorage<8, 8>    mUnkd12853;
-    ::ll::UntypedStorage<8, 8>    mUnk44d437;
     ::ll::UntypedStorage<8, 8>    mUnk98cc86;
-    ::ll::UntypedStorage<8, 8>    mUnk6725e8;
+    ::ll::UntypedStorage<8, 16>   mUnk9f4932;
+    ::ll::UntypedStorage<8, 8>    mUnk44d437;
+    ::ll::UntypedStorage<8, 8>    mUnkc35e69;
+    ::ll::UntypedStorage<8, 8>    mUnk4cf444;
+    ::ll::UntypedStorage<8, 8>    mUnk3c00e8;
+    ::ll::UntypedStorage<8, 8>    mUnk23314e;
+    ::ll::UntypedStorage<8, 16>   mUnk85603d;
     ::ll::UntypedStorage<8, 16>   mUnk7417c6;
+    ::ll::UntypedStorage<8, 16>   mUnk4f8e0c;
     ::ll::UntypedStorage<8, 8>    mUnkd72bcd;
+    ::ll::UntypedStorage<1, 1>    mUnkfa1924;
+    ::ll::UntypedStorage<1, 1>    mUnkfcac97;
     ::ll::UntypedStorage<8, 8>    mUnk6c5fec;
     ::ll::UntypedStorage<8, 16>   mUnk2b5c1a;
     ::ll::UntypedStorage<8, 16>   mUnkdaad93;
-    ::ll::UntypedStorage<8, 8>    mUnk2a83b2;
+    ::ll::UntypedStorage<8, 8>    mUnk2852bc;
     ::ll::UntypedStorage<8, 8>    mUnkd10826;
+    ::ll::UntypedStorage<8, 8>    mUnk39a871;
     ::ll::UntypedStorage<8, 8>    mUnk64ddee;
     ::ll::UntypedStorage<8, 64>   mUnkd24a7a;
     ::ll::UntypedStorage<8, 8>    mUnkec79fd;
@@ -483,7 +498,7 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk74222f;
     ::ll::UntypedStorage<8, 8>    mUnk468478;
     ::ll::UntypedStorage<8, 8>    mUnkea13b7;
-    ::ll::UntypedStorage<8, 936>  mUnk9947a0;
+    ::ll::UntypedStorage<8, 904>  mUnk9947a0;
     ::ll::UntypedStorage<8, 16>   mUnkbf42d0;
     ::ll::UntypedStorage<8, 16>   mUnk469d3c;
     ::ll::UntypedStorage<8, 8>    mUnkf245c7;
@@ -496,6 +511,7 @@ public:
     ::ll::UntypedStorage<8, 64>   mUnk6331f9;
     ::ll::UntypedStorage<8, 64>   mUnkfb3c1e;
     ::ll::UntypedStorage<8, 16>   mUnkc74988;
+    ::ll::UntypedStorage<8, 8>    mUnk4473f3;
     ::ll::UntypedStorage<8, 8>    mUnk4764de;
     ::ll::UntypedStorage<8, 8>    mUnk2db41b;
     ::ll::UntypedStorage<8, 64>   mUnk4282e8;
@@ -509,11 +525,11 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnk910337;
     ::ll::UntypedStorage<8, 8>    mUnkd6ff96;
     ::ll::UntypedStorage<8, 8>    mUnk51e772;
-    ::ll::UntypedStorage<8, 8>    mUnkf2c3d8;
+    ::ll::UntypedStorage<8, 8>    mUnkb96d1f;
     ::ll::UntypedStorage<8, 64>   mUnkc5fc6f;
     ::ll::UntypedStorage<8, 8>    mUnk7e94f8;
     ::ll::UntypedStorage<8, 8>    mUnkf60a71;
-    ::ll::UntypedStorage<8, 16>   mUnk9f4932;
+    ::ll::UntypedStorage<8, 8>    mUnk23be26;
     ::ll::UntypedStorage<8, 8>    mUnk93ccfd;
     ::ll::UntypedStorage<1, 1>    mUnk4d836f;
     ::ll::UntypedStorage<8, 16>   mUnk626810;
@@ -528,29 +544,34 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnka63939;
     ::ll::UntypedStorage<8, 8>    mUnkd68cd6;
     ::ll::UntypedStorage<8, 16>   mUnkd0c917;
-    ::ll::UntypedStorage<8, 8>    mUnka64c85;
+    ::ll::UntypedStorage<8, 8>    mUnk900af7;
     ::ll::UntypedStorage<8, 8>    mUnk31922c;
     ::ll::UntypedStorage<8, 8>    mUnkb92250;
+    ::ll::UntypedStorage<8, 8>    mUnkab832e;
     ::ll::UntypedStorage<8, 8>    mUnkc46d8a;
     ::ll::UntypedStorage<8, 8>    mUnk3dc5d4;
     ::ll::UntypedStorage<8, 8>    mUnk6622a0;
     ::ll::UntypedStorage<8, 16>   mUnke27718;
     ::ll::UntypedStorage<8, 16>   mUnk88d837;
+    ::ll::UntypedStorage<8, 16>   mUnk8c76bf;
     ::ll::UntypedStorage<8, 16>   mUnk9599c5;
     ::ll::UntypedStorage<8, 8>    mUnk1498bc;
     ::ll::UntypedStorage<8, 16>   mUnkc84d4d;
     ::ll::UntypedStorage<8, 8>    mUnkeee60b;
+    ::ll::UntypedStorage<8, 8>    mUnkf2c3d8;
     ::ll::UntypedStorage<8, 8>    mUnk7757ed;
     ::ll::UntypedStorage<8, 8>    mUnk8b5a69;
     ::ll::UntypedStorage<8, 16>   mUnk8a114f;
     ::ll::UntypedStorage<8, 8>    mUnk2c648f;
-    ::ll::UntypedStorage<8, 8>    mUnkef66f4;
+    ::ll::UntypedStorage<8, 8>    mUnkecb2c5;
     ::ll::UntypedStorage<8, 8>    mUnk5cb7cc;
     ::ll::UntypedStorage<8, 456>  mUnke5c301;
     ::ll::UntypedStorage<8, 8>    mUnkd18639;
     ::ll::UntypedStorage<8, 8>    mUnk67d5dd;
     ::ll::UntypedStorage<8, 8>    mUnkc0bd78;
     ::ll::UntypedStorage<8, 8>    mUnk8ac119;
+    ::ll::UntypedStorage<8, 8>    mUnkc00161;
+    ::ll::UntypedStorage<8, 8>    mUnkf6a92e;
     ::ll::UntypedStorage<8, 16>   mUnkddfaa0;
     ::ll::UntypedStorage<8, 8>    mUnk82663e;
     ::ll::UntypedStorage<8, 8>    mUnkb6a170;
@@ -600,7 +621,9 @@ public:
     ::ll::UntypedStorage<8, 8>    mUnkcd32cf;
     ::ll::UntypedStorage<8, 8>    mUnk32d240;
     ::ll::UntypedStorage<8, 16>   mUnkaa8c49;
-    ::ll::UntypedStorage<8, 872>  mUnk6546c2;
+    ::ll::UntypedStorage<8, 840>  mUnk6546c2;
+    ::ll::UntypedStorage<8, 8>    mUnk2481e4;
+    ::ll::UntypedStorage<8, 16>   mUnke67a32;
     ::ll::UntypedStorage<8, 16>   mUnka3a452;
     ::ll::UntypedStorage<8, 8>    mUnk7f0a19;
     ::ll::UntypedStorage<8, 8>    mUnk93ada3;
@@ -617,12 +640,16 @@ public:
     ::ll::UntypedStorage<8, 16>   mUnk3bcf80;
     ::ll::UntypedStorage<8, 16>   mUnka14281;
     ::ll::UntypedStorage<1, 1>    mUnkd46ea8;
+    ::ll::UntypedStorage<4, 4>    mUnk1e1225;
     ::ll::UntypedStorage<8, 8>    mUnk205ada;
     ::ll::UntypedStorage<8, 16>   mUnk41bdf3;
     ::ll::UntypedStorage<8, 16>   mUnkad2805;
     ::ll::UntypedStorage<8, 16>   mUnk6b22bf;
     ::ll::UntypedStorage<8, 64>   mUnkf160e9;
     ::ll::UntypedStorage<8, 64>   mUnk19d968;
+    ::ll::UntypedStorage<8, 64>   mUnkb3be1c;
+    ::ll::UntypedStorage<8, 64>   mUnk917e15;
+    ::ll::UntypedStorage<1, 1>    mUnk2bc3a4;
     // NOLINTEND
 
 public:
@@ -666,12 +693,13 @@ public:
 
     virtual void setUIFontStyle() /*override*/;
 
-    virtual ::Bedrock::Threading::Async<void> startLocalServerAsync(
-        ::std::string const&     levelId,
-        ::std::string const&     levelName,
-        ::ContentIdentity const& premiumTemplateContentIdentity,
-        ::LevelSettings const&   settings,
-        ::StartIntent            startIntent
+    virtual ::Bedrock::Threading::Async<void> _startLocalServerAsync(
+        ::std::string const&                                          levelId,
+        ::std::string const&                                          levelName,
+        ::ContentIdentity const&                                      premiumTemplateContentIdentity,
+        ::LevelSettings const&                                        settings,
+        ::std::unique_ptr<::ServerInitialization::IServerInitializer> initializer,
+        ::StartIntent                                                 startIntent
     ) /*override*/;
 
     virtual void createAndUploadWorldToRealm(
@@ -773,7 +801,8 @@ public:
 
     virtual void abortPendingGameJoin() /*override*/;
 
-    virtual void requestLeaveGame(bool switchScreen, bool sync) /*override*/;
+    virtual void
+    requestLeaveGame(bool switchScreen, bool sync, ::LeaveGameResourceBehavior resourceBehavior) /*override*/;
 
     virtual void requestLeaveThenJoinFriendsWorld(::std::string_view serverId) /*override*/;
 
@@ -917,7 +946,7 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::PersonaService> getPersonaService() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> getGatheringManager() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> getExperienceSystemsManager() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> getContentCatalogService() const /*override*/;
 
@@ -925,7 +954,8 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> getLayoutRefreshEventSource() const /*override*/;
 
-    virtual ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> getLayoutServiceCache() const /*override*/;
+    virtual ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache>
+    getLocalHydratingLayoutServiceCache() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> getStoreCatalog() const /*override*/;
 
@@ -1015,10 +1045,6 @@ public:
 
     virtual ::ClientNetworkSystem const& getClientNetworkSystem() const /*override*/;
 
-    virtual ::Bedrock::Profiling::ProfilingOrchestrator const* getProfilingOrchestrator() const /*override*/;
-
-    virtual ::Bedrock::Profiling::ProfilingOrchestrator* getMutableProfilingOrchestrator() /*override*/;
-
     virtual ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> getActiveDirectoryIdentity() /*override*/;
 
     virtual void clearCache() /*override*/;
@@ -1077,9 +1103,9 @@ public:
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> getPresenceManager() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems> getEDUSystems() /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems> getEduSystems() /*override*/;
 
-    virtual ::Bedrock::NonOwnerPointer<::EDUSystems const> getEDUSystems() const /*override*/;
+    virtual ::Bedrock::NonOwnerPointer<::EduSystems const> getEduSystems() const /*override*/;
 
     virtual ::Bedrock::NotNullNonOwnerPtr<::Minecraft> getPrimaryMinecraft() /*override*/;
 
@@ -1369,233 +1395,81 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MinecraftGame(::MinecraftGameArguments&& args);
+    MCNAPI explicit MinecraftGame(::MinecraftGameArguments&& args);
 
     MCAPI void _InitComplete();
 
-    MCAPI void _LoadRendererAssets();
+    MCNAPI void _LoadRendererAssets();
 
-    MCAPI void _addSubClientInstanceAndAssociateToUserInternal(int controllerId, bool isInitialCheck);
+    MCNAPI void _addSubClientInstanceAndAssociateToUserInternal(int controllerId, bool isInitialCheck);
 
-    MCAPI void _beginReloadingResources();
+    MCNAPI void _beginReloadingResources();
 
-    MCAPI void _buildClientStack();
+    MCNAPI void _buildClientStack();
 
-    MCAPI void _buildClientStartupStack();
+    MCNAPI void _buildClientStartupStack();
 
-    MCAPI bool _checkIfEduPreventsPlay();
+    MCNAPI bool _checkIfEduPreventsPlay();
 
-    MCAPI bool _clientUpdate();
+    MCNAPI bool _clientUpdate();
 
-    MCAPI void _configureLighting();
+    MCNAPI void _configureLighting();
 
-    MCAPI ::LocalServerLauncher::Impl::AllDependencies _createAllDependencies();
+    MCNAPI ::LocalServerLauncher::Impl::AllDependencies _createAllDependencies();
 
-    MCAPI ::std::shared_ptr<::ClientInstance>
+    MCNAPI ::std::shared_ptr<::ClientInstance>
     _createClientInstance(::SubClientId id, ::LatencyGraphDisplay* latencyDisplay, int controller);
 
-    MCAPI ::brstd::move_only_function<::std::unique_ptr<::IClientDimensionExtensions>(bool) const>
+    MCNAPI ::brstd::move_only_function<::std::unique_ptr<::IClientDimensionExtensions>(bool) const>
     _createDimensionExtensionsFactory(bool isClientSide);
 
-    MCAPI ::std::unique_ptr<::GameModuleClient> _createGameModuleClient(::SubClientId id);
+    MCNAPI ::std::unique_ptr<::GameModuleClient> _createGameModuleClient(::SubClientId id);
 
-    MCAPI void _createPartySystem();
+    MCNAPI void _createPartySystem();
 
-    MCAPI void _createSceneFactory(::IClientInstance& client);
+    MCNAPI void _createSceneFactory(::IClientInstance& client);
 
-    MCAPI void _cycleRoundRobinClientSubId();
+    MCNAPI void _cycleRoundRobinClientSubId();
 
-    MCAPI ::std::unique_ptr<::ResourcePackStack> _deserializeGlobalResourcePacks();
+    MCNAPI ::std::unique_ptr<::ResourcePackStack> _deserializeGlobalResourcePacks();
 
-    MCAPI void _deviceReinitialization(
+    MCNAPI void _deviceReinitialization(
         ::SerialWorkList&                                         workList,
         ::std::optional<::dragon::framerenderer::DebugParameters> initDebugOptions
     );
 
-    MCAPI void _finishReloadingResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+    MCNAPI void _finishReloadingResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
-    MCAPI ::Bedrock::Threading::Async<void> _handleMultiplayerServiceJoinResult(
+    MCNAPI ::Bedrock::Threading::Async<void> _handleMultiplayerServiceJoinResult(
         ::Social::MultiplayerServiceIdentifier const gameServiceProvider,
         ::Social::JoinGameStatus                     succeeded,
         ::Social::MultiplayerGameInfo const&         newGame,
         bool                                         isLan
     );
 
-    MCAPI ::SerialWorkList::WorkResult _initAudio();
+    MCNAPI ::SerialWorkList::WorkResult _initLogging();
 
-    MCAPI ::SerialWorkList::WorkResult _initCheckStorage();
+    MCNAPI void _initMinecraftGame();
 
-    MCAPI ::SerialWorkList::WorkResult _initClientNetworkSystem();
+    MCNAPI ::SerialWorkList::WorkResult _initOreUISystem(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
 
-    MCAPI ::SerialWorkList::WorkResult _initCrashReporting();
+    MCNAPI void _initPerMachineOptionObservers();
 
-    MCAPI ::SerialWorkList::WorkResult
-    _initCreatePrimaryClient(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
+    MCNAPI void _initPerUserOptionObservers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
 
-    MCAPI ::SerialWorkList::WorkResult _initDatabase();
+    MCNAPI void _initServicesManager();
 
-    MCAPI ::SerialWorkList::WorkResult _initDefaultFonts();
+    MCNAPI ::SerialWorkList::WorkResult _initStep2();
 
-    MCAPI ::SerialWorkList::WorkResult _initDeviceDebugConfig();
+    MCNAPI ::SerialWorkList::WorkResult _initStep3();
 
-    MCAPI ::SerialWorkList::WorkResult _initEventing();
+    MCNAPI ::SerialWorkList::WorkResult _initUserComplete();
 
-    MCAPI ::SerialWorkList::WorkResult _initFileSystemSpaceTracking();
+    MCNAPI ::SerialWorkList::WorkResult _initializeFrameBuilder();
 
-    MCAPI ::SerialWorkList::WorkResult _initFinish(::std::shared_ptr<::MinecraftGame::InitContext>& initContext);
+    MCNAPI bool _isGameplayPaused();
 
-    MCAPI ::SerialWorkList::WorkResult _initFontHandles();
-
-    MCAPI ::SerialWorkList::WorkResult _initFontMetadata();
-
-    MCAPI ::SerialWorkList::WorkResult _initHideSplashScreen();
-
-    MCAPI ::SerialWorkList::WorkResult _initHttp();
-
-    MCAPI ::SerialWorkList::WorkResult _initIssueHardwareCursorLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initLoadRendererAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _initLoadingBarMaterials();
-
-    MCAPI ::SerialWorkList::WorkResult _initLogging();
-
-    MCAPI void _initMinecraftGame();
-
-    MCAPI ::SerialWorkList::WorkResult _initMultiplayerMgr();
-
-    MCAPI ::SerialWorkList::WorkResult _initMultiplayerRequestHandler();
-
-    MCAPI ::SerialWorkList::WorkResult _initNetworkSessionOwner();
-
-    MCAPI ::SerialWorkList::WorkResult _initNewPlayerSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initNotifyOnActiveResourcePacksChanged();
-
-    MCAPI ::SerialWorkList::WorkResult _initOnGameSessionReset();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIDataProviderManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIRendering();
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUISystem(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initOreUIViewsCoordinator();
-
-    MCAPI ::SerialWorkList::WorkResult _initPacks();
-
-    MCAPI ::SerialWorkList::WorkResult _initPartySystem();
-
-    MCAPI void _initPerMachineOptionObservers();
-
-    MCAPI void _initPerUserOptionObservers(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client);
-
-    MCAPI ::SerialWorkList::WorkResult _initPostA();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostB();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostC();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostE();
-
-    MCAPI ::SerialWorkList::WorkResult _initPostFontAsync();
-
-    MCAPI ::SerialWorkList::WorkResult _initPreCacheOutOfGameViews();
-
-    MCAPI ::SerialWorkList::WorkResult
-    _initPrimaryClientComplete(::std::shared_ptr<::MinecraftGame::InitContext> initContext);
-
-    MCAPI ::SerialWorkList::WorkResult _initPrimaryIdentity();
-
-    MCAPI ::SerialWorkList::WorkResult _initProgressTips();
-
-    MCAPI ::SerialWorkList::WorkResult _initPushAlwaysActiveScreen();
-
-    MCAPI ::SerialWorkList::WorkResult _initRealmsSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initRepopulateLevelInfoCache();
-
-    MCAPI ::SerialWorkList::WorkResult _initResourceLoader();
-
-    MCAPI void _initServicesManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initSocialSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep1();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep2();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep2A();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep2B();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep3();
-
-    MCAPI ::SerialWorkList::WorkResult _initStep5();
-
-    MCFOLD ::SerialWorkList::WorkResult _initStorageMigration();
-
-    MCAPI ::SerialWorkList::WorkResult _initTTS();
-
-    MCAPI ::SerialWorkList::WorkResult _initTestClientInterface();
-
-    MCAPI ::SerialWorkList::WorkResult _initTimePlayedNotifier();
-
-    MCAPI ::SerialWorkList::WorkResult _initTriggerSignIn();
-
-    MCAPI ::SerialWorkList::WorkResult _initUILoadAsyncWait();
-
-    MCAPI ::SerialWorkList::WorkResult _initUpdateAppLaunchedCount();
-
-    MCAPI ::SerialWorkList::WorkResult _initUpdateFontsBasedOffOfOverrideEnable();
-
-    MCAPI ::SerialWorkList::WorkResult _initUser();
-
-    MCAPI ::SerialWorkList::WorkResult _initUserComplete();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForContentManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForDefaultFontsToLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForDiscoveryService();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForEntitlementCacheLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForFontMetadataToLoad();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForFrameBuilder();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForInitialServicePacks();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForLocalization();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForMainMenuResources();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOfferLicense();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOfferRepo();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForOreUIAssets() const;
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForPrimaryUser();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForRepopulateLevelInfoCache();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForResourceRepository();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForSkinRepo();
-
-    MCAPI ::SerialWorkList::WorkResult _initWaitForWorldTemplateManager();
-
-    MCAPI ::SerialWorkList::WorkResult _initWorldSystem();
-
-    MCAPI ::SerialWorkList::WorkResult _initializeFrameBuilder();
-
-    MCAPI bool _isGameplayPaused();
-
-    MCAPI void _joinMultiplayerAfterTransportLayerDetermined(
+    MCNAPI void _joinMultiplayerAfterTransportLayerDetermined(
         ::Social::GameConnectionInfo gameConnection,
         bool                         joiningLocalServer,
         ::std::string const&         serverName,
@@ -1605,178 +1479,166 @@ public:
         ::TransportLayer             serverTransportLayer
     );
 
-    MCAPI ::Bedrock::Threading::Async<void> _joinMultiplayerGame(
+    MCNAPI ::Bedrock::Threading::Async<void> _joinMultiplayerGame(
         ::Social::MultiplayerGameInfo const& gameToJoin,
         ::std::string const&                 multiplayerCorrelationId,
         ::PlayerJoinWorldContext             context,
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
-    MCAPI ::SerialWorkList::WorkResult _loadGlobalResourcePacks();
+    MCNAPI void _loadInitialPackResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
-    MCAPI void _loadInitialPackResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+    MCNAPI void _loadLanguageData();
 
-    MCAPI void _loadLanguageData();
+    MCNAPI void _loadLastGlobalResourcePacksFromFile(bool waitForUIReload);
 
-    MCAPI void _loadLastGlobalResourcePacksFromFile(bool waitForUIReload);
+    MCNAPI void _onActiveResourcePacksChanged(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
-    MCAPI ::SerialWorkList::WorkResult _notifyOnFullVanillaPackOnStack();
+    MCNAPI ::SerialWorkList::WorkResult _onDeviceRestoreFinish();
 
-    MCAPI void _onActiveResourcePacksChanged(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+    MCNAPI void _onEntitlementsChanged();
 
-    MCAPI ::SerialWorkList::WorkResult _onDeviceRestoreFinish();
+    MCNAPI void _onEntitlementsChangedNotifyUI();
 
-    MCAPI void _onEntitlementsChanged();
+    MCNAPI void _onItemAtlasReloaded();
 
-    MCAPI void _onEntitlementsChangedNotifyUI();
-
-    MCAPI void _onInitRemoteSystem(::std::function<void()> syncCompleteCallback);
-
-    MCAPI void _onItemAtlasReloaded();
-
-    MCAPI void _onPrimaryUserConnectComplete(
+    MCNAPI void _onPrimaryUserConnectComplete(
         ::Social::UserPlatformConnectionResult status,
         bool                                   runStartScreen,
         bool                                   userInitiated
     );
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeBegin();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeBegin();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeFinish();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeFinish();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeHttp();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeHttp();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumePrimaryClient();
+    MCNAPI ::SerialWorkList::WorkResult _onResumePrimaryClient();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueFontReloadTextures();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueFontReloadTextures();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueReloadActors();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueReloadActors();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueReloadAnimation();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueReloadAnimation();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueReloadParticleEffects();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueReloadParticleEffects();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueReloadTextures();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueReloadTextures();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeQueueReloadTexturesAtlas();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeQueueReloadTexturesAtlas();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeReloadDefaultLighting();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeReloadDefaultLighting();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeRestartServices();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeRestartServices();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitFontReloadTextures();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitFontReloadTextures();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitPreviousResourceLoads();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitPreviousResourceLoads();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitReloadActors();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitReloadActors();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitReloadAnimation();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitReloadAnimation();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitReloadParticleEffects();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitReloadParticleEffects();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitReloadTextures();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitReloadTextures();
 
-    MCAPI ::SerialWorkList::WorkResult _onResumeWaitReloadTexturesAtlas();
+    MCNAPI ::SerialWorkList::WorkResult _onResumeWaitReloadTexturesAtlas();
 
-    MCAPI void _onSplitScreenChanged();
+    MCNAPI void _onSplitScreenChanged();
 
-    MCAPI void _onTTSOptionChanged();
+    MCNAPI void _onTTSOptionChanged();
 
-    MCAPI void _onTTSOptionChanged(bool enabled);
+    MCNAPI void _onTTSOptionChanged(bool enabled);
 
-    MCAPI void _onTerrainAtlasReloaded();
+    MCNAPI void _onTerrainAtlasReloaded();
 
-    MCAPI void _onTextureAtlasStatus(::TextureAtlasStatus const& status);
+    MCNAPI void _onTextureAtlasStatus(::TextureAtlasStatus const& status);
 
-    MCAPI void _onUserSigninXboxLive(uint userId);
+    MCNAPI void _onUserSigninXboxLive(uint userId);
 
-    MCAPI void _performNetworkReadyActions();
+    MCNAPI void _performNetworkReadyActions();
 
-    MCAPI void _preCacheOutOfGameViews();
+    MCNAPI void _preCacheOutOfGameOreUIViews();
 
-    MCAPI void _recomputeResolution();
+    MCNAPI void _recomputeResolution();
 
-    MCAPI void _registerClientOptionObserver(
+    MCNAPI void _registerClientOptionObserver(
         ::SubClientId const                    clientId,
         ::Option*                              option,
         ::std::function<void(::Option const&)> onValueChangeCallback
     );
 
-    MCAPI void _registerPrimaryUserOptionLock(::Option* option, ::std::function<void(bool&)> isModifiableCondition);
+    MCNAPI void _registerPrimaryUserOptionLock(::Option* option, ::std::function<void(bool&)> isModifiableCondition);
 
-    MCAPI void
+    MCNAPI void
     _registerPrimaryUserOptionObserver(::Option* option, ::std::function<void(::Option const&)> onValueChangeCallback);
 
-    MCAPI void _reloadLightingTextures();
+    MCNAPI void _reloadLightingTextures();
 
-    MCAPI void _removePendingSubclients();
+    MCNAPI void _removePendingSubclients();
 
-    MCAPI void _setupFrameBuilderOptimizer();
+    MCNAPI void _setupFrameBuilderOptimizer();
 
-    MCAPI void _setupRenderer();
+    MCNAPI void _setupRenderer();
 
-    MCAPI void _terminateRenderer();
+    MCNAPI void _terminateRenderer();
 
-    MCAPI void _tryFireWorldLoadPerformance();
+    MCNAPI void _tryFireWorldLoadPerformance();
 
-    MCAPI void _unregisterOnInitUriListeners();
+    MCNAPI void _unregisterOnInitUriListeners();
 
-    MCAPI void _update();
+    MCNAPI void _update();
 
-    MCAPI void _updateBiomeBlendingAndAtmosphericScattering(
+    MCNAPI void _updateBiomeBlendingAndAtmosphericScattering(
         float           timeOfDay,
         float           intensityMultiplier,
         ::DimensionType dimensionId
     );
 
-    MCAPI void _updateDeferredLightingPresets();
+    MCNAPI void _updateDeferredLightingPresets();
 
-    MCAPI void _updateLightingModel();
+    MCNAPI void _updateLightingModel();
 
-    MCAPI void _updateProfilerLite();
+    MCNAPI void _updateProfilerLite();
 
-    MCAPI void _updateTextureAtlasPBRData(::TextureAtlas const& textureAtlas, bool terrain);
+    MCNAPI void _updateTextureAtlasPBRData(::TextureAtlas const& textureAtlas, bool terrain);
 
-    MCAPI ::SerialWorkList::WorkResult _waitForAudio();
+    MCNAPI void adjustClientsUISize();
 
-    MCAPI ::SerialWorkList::WorkResult _waitForFileSystemSpaceTracking();
+    MCNAPI void cleanReloadMaterials();
 
-    MCAPI ::SerialWorkList::WorkResult _waitForLoadRendererAssets();
-
-    MCAPI ::SerialWorkList::WorkResult _waitForStorageMigration();
-
-    MCAPI void adjustClientsUISize();
-
-    MCAPI void cleanReloadMaterials();
-
-    MCAPI void doInitializationCompleteWork(::std::function<void()> workFn);
+    MCNAPI void doInitializationCompleteWork(::std::function<void()> workFn);
 
     MCAPI void endFrame();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getClientInstance(::SubClientId subid);
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> getClientInstance(::SubClientId subid);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
+    MCNAPI ::Bedrock::NonOwnerPointer<::Social::ManagedChat::ManagedChatClient> getManagedChatClient();
 
-    MCAPI void handleShowUpsellScreen(bool timeExpired);
+    MCNAPI ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> getServerNetworkHandler();
 
-    MCAPI void initEventing();
+    MCNAPI void handleShowUpsellScreen(bool timeExpired);
 
-    MCAPI bool isInEDUMultiplayerSession();
+    MCNAPI void initEventing();
 
-    MCAPI bool isServerVisible();
+    MCNAPI bool isInEduMultiplayerSession();
 
-    MCAPI void onTick();
+    MCNAPI bool isServerVisible();
 
-    MCAPI bool primaryLevelExists() const;
+    MCNAPI void onTick();
 
-    MCAPI void startFrame();
+    MCNAPI bool primaryLevelExists() const;
 
-    MCAPI void tickInput();
+    MCNAPI void startFrame();
 
-    MCAPI bool
+    MCNAPI void tickInput();
+
+    MCNAPI bool
     tryGetIdForNewSubClient(int controllerId, ::SubClientId& outNewClientId, bool const isInitialCheck) const;
 
-    MCAPI void updateAudio(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::Timer const& timer);
+    MCNAPI void updateAudio(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::Timer const& timer);
 
     MCAPI void updateGraphics(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::Timer const& timer);
     // NOLINTEND
@@ -1784,51 +1646,52 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftGameArguments&& args);
+    MCNAPI void* $ctor(::MinecraftGameArguments&& args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initialize();
+    MCNAPI void $initialize();
 
-    MCAPI bool $stop();
+    MCNAPI bool $stop();
 
-    MCAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCNAPI void $processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCAPI void $audioEngineOn();
+    MCNAPI void $audioEngineOn();
 
-    MCAPI void $audioEngineOff();
+    MCNAPI void $audioEngineOff();
 
-    MCAPI void $update();
+    MCNAPI void $update();
 
-    MCAPI void $play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
+    MCNAPI void $play(::std::string const& name, ::Vec3 const& pos, float volume, float pitch);
 
-    MCAPI void $playUI(::std::string const& name, float volume, float pitch);
+    MCNAPI void $playUI(::std::string const& name, float volume, float pitch);
 
-    MCAPI void $stopSound(::std::string const& name);
+    MCNAPI void $stopSound(::std::string const& name);
 
-    MCAPI void $stopSounds();
+    MCNAPI void $stopSounds();
 
-    MCAPI void $setUISize(int w, int h);
+    MCNAPI void $setUISize(int w, int h);
 
-    MCAPI void $setRenderingSize(int w, int h);
+    MCNAPI void $setRenderingSize(int w, int h);
 
-    MCAPI void $recalculateScene();
+    MCNAPI void $recalculateScene();
 
-    MCAPI void $setSmoothFontStyle();
+    MCNAPI void $setSmoothFontStyle();
 
-    MCAPI void $setUIFontStyle();
+    MCNAPI void $setUIFontStyle();
 
-    MCAPI ::Bedrock::Threading::Async<void> $startLocalServerAsync(
-        ::std::string const&     levelId,
-        ::std::string const&     levelName,
-        ::ContentIdentity const& premiumTemplateContentIdentity,
-        ::LevelSettings const&   settings,
-        ::StartIntent            startIntent
+    MCNAPI ::Bedrock::Threading::Async<void> $_startLocalServerAsync(
+        ::std::string const&                                          levelId,
+        ::std::string const&                                          levelName,
+        ::ContentIdentity const&                                      premiumTemplateContentIdentity,
+        ::LevelSettings const&                                        settings,
+        ::std::unique_ptr<::ServerInitialization::IServerInitializer> initializer,
+        ::StartIntent                                                 startIntent
     );
 
-    MCAPI void $createAndUploadWorldToRealm(
+    MCNAPI void $createAndUploadWorldToRealm(
         ::std::string const&                   levelId,
         ::std::string const&                   levelName,
         ::ContentIdentity const&               premiumTemplateContentIdentity,
@@ -1837,29 +1700,29 @@ public:
         ::std::function<void(::Realms::World)> callback
     );
 
-    MCAPI bool $canStartLocalServer() const;
+    MCNAPI bool $canStartLocalServer() const;
 
-    MCAPI bool $isAudioInitialized() const;
+    MCNAPI bool $isAudioInitialized() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> $getSoundEngine() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::SoundEngine> $getSoundEngine() const;
 
-    MCAPI ::MusicManager const* $getMusicManager() const;
+    MCNAPI ::MusicManager const* $getMusicManager() const;
 
-    MCAPI ::MusicManager* $getMusicManagerNonConst() const;
+    MCNAPI ::MusicManager* $getMusicManagerNonConst() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> $getTextBoxController();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ITextBoxController> $getTextBoxController();
 
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onAppFocusLost();
+    MCNAPI void $onAppFocusLost();
 
-    MCAPI void $onAppFocusGained();
+    MCNAPI void $onAppFocusGained();
 
-    MCAPI void $onAppPaused();
+    MCNAPI void $onAppPaused();
 
-    MCAPI void $onAppUnpaused();
+    MCNAPI void $onAppUnpaused();
 
-    MCAPI void $setReconnectionCookie(
+    MCNAPI void $setReconnectionCookie(
         ::std::optional<::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
@@ -1867,42 +1730,42 @@ public:
             ::Realms::RealmId>> const& reconnectCookie
     );
 
-    MCAPI ::std::optional<::std::variant<
+    MCNAPI ::std::optional<::std::variant<
         ::GameConnectionInfoEx,
         ::Social::MultiplayerGameInfo,
         ::ExperienceJoinRequestInfo,
         ::Realms::RealmId>>
     $getReconnectionCookie();
 
-    MCAPI void $onAppPreSuspended();
+    MCNAPI void $onAppPreSuspended();
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCAPI void $onAppSurfaceCreated();
+    MCNAPI void $onAppSurfaceCreated();
 
-    MCAPI void $onAppSurfaceDestroyed();
+    MCNAPI void $onAppSurfaceDestroyed();
 
-    MCAPI void $onOperationModeChanged(::OperationMode newMode);
+    MCNAPI void $onOperationModeChanged(::OperationMode newMode);
 
-    MCAPI bool $hasNetworkPrivileges(bool onlyWifiAllowed);
+    MCNAPI bool $hasNetworkPrivileges(bool onlyWifiAllowed);
 
-    MCAPI void $onPlayerLoaded(::IClientInstance& client, ::Player& player);
+    MCNAPI void $onPlayerLoaded(::IClientInstance& client, ::Player& player);
 
-    MCAPI void $onDimensionChanged();
+    MCNAPI void $onDimensionChanged();
 
-    MCAPI void $setDisableInputForAllOtherClients(int id, bool disableStatus);
+    MCNAPI void $setDisableInputForAllOtherClients(int id, bool disableStatus);
 
-    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI void $onGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI void $playerListChanged();
+    MCNAPI void $playerListChanged();
 
-    MCAPI void $onLevelDestruction(::std::string const& levelId);
+    MCNAPI void $onLevelDestruction(::std::string const& levelId);
 
-    MCAPI void $setWorldTransferAction(
+    MCNAPI void $setWorldTransferAction(
         ::std::variant<
             ::LocalWorldTransferActionFunc,
             ::ExternalWorldTransferActionFunc,
@@ -1910,70 +1773,70 @@ public:
             ::std::monostate>&& worldTransferAction
     );
 
-    MCAPI ::std::variant<
+    MCNAPI ::std::variant<
         ::LocalWorldTransferActionFunc,
         ::ExternalWorldTransferActionFunc,
         ::RealmTransferActionFunc,
         ::std::monostate> const&
     $getWorldTransferAction() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const $getWorldTransferAgent() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::WorldTransferAgent> const $getWorldTransferAgent() const;
 
-    MCAPI void $setIsWorldTransferInProgress(bool isWorldTransferInProgress);
+    MCNAPI void $setIsWorldTransferInProgress(bool isWorldTransferInProgress);
 
-    MCAPI bool $isWorldTransferInProgress() const;
+    MCNAPI bool $isWorldTransferInProgress() const;
 
-    MCAPI void $setResetCallbackObject(::ResetCallbackObject* obj);
+    MCNAPI void $setResetCallbackObject(::ResetCallbackObject* obj);
 
-    MCAPI void $abortPendingGameJoin();
+    MCNAPI void $abortPendingGameJoin();
 
-    MCAPI void $requestLeaveGame(bool switchScreen, bool sync);
+    MCNAPI void $requestLeaveGame(bool switchScreen, bool sync, ::LeaveGameResourceBehavior resourceBehavior);
 
-    MCAPI void $requestLeaveThenJoinFriendsWorld(::std::string_view serverId);
+    MCNAPI void $requestLeaveThenJoinFriendsWorld(::std::string_view serverId);
 
-    MCAPI void $requestLeaveGameWithWorldThumbnail();
+    MCNAPI void $requestLeaveGameWithWorldThumbnail();
 
-    MCAPI void $requestLeaveGameWithWorldThumbnailThenJoinFriendsWorld(::std::string_view serverId);
+    MCNAPI void $requestLeaveGameWithWorldThumbnailThenJoinFriendsWorld(::std::string_view serverId);
 
-    MCAPI void $startLeaveGame();
+    MCNAPI void $startLeaveGame();
 
-    MCAPI bool $isLeaveGameDone() const;
+    MCNAPI bool $isLeaveGameDone() const;
 
-    MCAPI void $destroyGame();
+    MCNAPI void $destroyGame();
 
-    MCAPI void $setupCommandParser(::IClientInstance& client);
+    MCNAPI void $setupCommandParser(::IClientInstance& client);
 
-    MCAPI void $onClientCreatedLevel(::IClientInstance& client);
+    MCNAPI void $onClientCreatedLevel(::IClientInstance& client);
 
-    MCAPI ::GameRenderer& $getGameRenderer() const;
+    MCNAPI ::GameRenderer& $getGameRenderer() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> $getUIDefRepo() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IUIDefRepository> $getUIDefRepo() const;
 
-    MCAPI void $joinRealmsGame(
+    MCNAPI void $joinRealmsGame(
         ::Realms::World const&              realm,
         ::Social::GameConnectionInfo const& gameConnection,
         ::PlayerJoinWorldContext            context
     );
 
-    MCAPI void $joinRealmFromInvite(::Realms::World const& world);
+    MCNAPI void $joinRealmFromInvite(::Realms::World const& world);
 
-    MCAPI void $joinRealmFromConnectLink(::Realms::World const& world, ::PlayerJoinWorldContext context);
+    MCNAPI void $joinRealmFromConnectLink(::Realms::World const& world, ::PlayerJoinWorldContext context);
 
-    MCAPI void $setRealmsLoadingLink(bool state);
+    MCNAPI void $setRealmsLoadingLink(bool state);
 
-    MCAPI void $joinRealm(
+    MCNAPI void $joinRealm(
         ::Realms::World const&                    world,
         ::IMinecraftEventing::RealmConnectionFlow telemetryEventingConnectionFlow,
         ::PlayerJoinWorldContext                  context
     );
 
-    MCAPI ::Bedrock::Threading::Async<void> $joinMultiplayerGame(
+    MCNAPI ::Bedrock::Threading::Async<void> $joinMultiplayerGame(
         ::Social::MultiplayerGameInfo const& gameInfo,
         ::PlayerJoinWorldContext             context,
         ::OnlineSafetyDialogVisibility       onlineSafetyDialogVisibility
     );
 
-    MCAPI void $joinMultiplayerWithAddress(
+    MCNAPI void $joinMultiplayerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
         bool                         joiningLocalServer,
         ::std::string const&         serverName,
@@ -1983,7 +1846,7 @@ public:
         ::PlayerJoinWorldContext     context
     );
 
-    MCAPI void $joinRemoteServerWithAddress(
+    MCNAPI void $joinRemoteServerWithAddress(
         ::Social::GameConnectionInfo gameConnection,
         ::std::string const&         serverName,
         ::std::string const&         worldName,
@@ -1992,503 +1855,500 @@ public:
         ::PlayerJoinWorldContext     context
     );
 
-    MCAPI bool $isLocalPlayer(::ActorUniqueID const& id) const;
+    MCNAPI bool $isLocalPlayer(::ActorUniqueID const& id) const;
 
-    MCAPI void $setLeaveGameInProgressAsReadyToContinue();
+    MCNAPI void $setLeaveGameInProgressAsReadyToContinue();
 
-    MCAPI bool $isPrimaryClientInstanceReady() const;
+    MCNAPI bool $isPrimaryClientInstanceReady() const;
 
-    MCAPI void $ensureAllClientsAreLeaving() const;
+    MCNAPI void $ensureAllClientsAreLeaving() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> $getPrimaryClientInstance();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> $getPrimaryClientInstance();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance const> $getPrimaryClientInstance() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IClientInstance const> $getPrimaryClientInstance() const;
 
-    MCAPI ::ItemRegistryRef $getClientItemRegistry() const;
+    MCNAPI ::ItemRegistryRef $getClientItemRegistry() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> $getNewPlayerSystem();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem> $getNewPlayerSystem();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> $getNewPlayerSystem() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::NewPlayerSystem const> $getNewPlayerSystem() const;
 
-    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> $getClientInstanceMap();
+    MCNAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance>> $getClientInstanceMap();
 
-    MCAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance const>> $getClientInstanceMap() const;
+    MCNAPI ::std::map<::SubClientId, ::std::shared_ptr<::IClientInstance const>> $getClientInstanceMap() const;
 
-    MCAPI ::std::shared_ptr<::IClientInstance const>
+    MCNAPI ::std::shared_ptr<::IClientInstance const>
     $tryGetClientInstanceFromPlayerUUID(::mce::UUID const& playerId) const;
 
-    MCAPI uint $getUIRenderClientMask() const;
+    MCNAPI uint $getUIRenderClientMask() const;
 
-    MCAPI uint64 $getClientInstanceCount() const;
+    MCNAPI uint64 $getClientInstanceCount() const;
 
-    MCAPI void $forEachClientInstance(::std::function<void(::IClientInstance&)> callback);
+    MCNAPI void $forEachClientInstance(::std::function<void(::IClientInstance&)> callback);
 
-    MCAPI ::LocalPlayer* $getPrimaryLocalPlayer();
+    MCNAPI ::LocalPlayer* $getPrimaryLocalPlayer();
 
-    MCAPI ::LocalPlayer const* $getPrimaryLocalPlayer() const;
+    MCNAPI ::LocalPlayer const* $getPrimaryLocalPlayer() const;
 
-    MCAPI bool $isPrimaryLevelCrossPlatformMultiplayer() const;
+    MCNAPI bool $isPrimaryLevelCrossPlatformMultiplayer() const;
 
-    MCAPI bool $isPrimaryLevelMultiplayer() const;
+    MCNAPI bool $isPrimaryLevelMultiplayer() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getPrimaryGuiData();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GuiData> $getPrimaryGuiData();
 
-    MCAPI ::std::shared_ptr<::OptionRegistry> $getPrimaryUserOptions();
+    MCNAPI ::std::shared_ptr<::OptionRegistry> $getPrimaryUserOptions();
 
-    MCAPI ::std::shared_ptr<::OptionRegistry const> $getPrimaryUserOptions() const;
+    MCNAPI ::std::shared_ptr<::OptionRegistry const> $getPrimaryUserOptions() const;
 
-    MCAPI bool $isPrimaryUserSigninInProgress() const;
+    MCNAPI bool $isPrimaryUserSigninInProgress() const;
 
-    MCAPI void $resetInput();
+    MCNAPI void $resetInput();
 
-    MCFOLD ::PixelCalc const& $getDpadScale() const;
+    MCNAPI ::PixelCalc const& $getDpadScale() const;
 
-    MCAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
+    MCNAPI void $setKeyboardForcedHeight(float height, bool isShowSignal);
 
-    MCAPI bool $canActivateKeyboard();
+    MCNAPI bool $canActivateKeyboard();
 
-    MCAPI void $reloadAnimationAndGeometryData(bool sync);
+    MCNAPI void $reloadAnimationAndGeometryData(bool sync);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> $getGeometryGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> $getGeometryGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> $getBlockCullingGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::BlockCullingGroup> $getBlockCullingGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> $getSchematicsRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ClientBlockPipeline::SchematicsRepository> $getSchematicsRepository() const;
 
-    MCFOLD ::ParticleEffectGroup& $getParticleEffectGroup() const;
+    MCNAPI ::ParticleEffectGroup& $getParticleEffectGroup() const;
 
-    MCAPI ::DeferredLighting& $getDeferredLighting() const;
+    MCNAPI ::DeferredLighting& $getDeferredLighting() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition> $getContentAcquisition() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ContentAcquisition> $getContentAcquisition() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> $getOfferRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository> $getOfferRepository() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TrialManager> $getTrialManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TrialManager> $getTrialManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::PersonaService> $getPersonaService() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PersonaService> $getPersonaService() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GatheringManager> $getGatheringManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ExperienceSystemsManager> $getExperienceSystemsManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> $getContentCatalogService() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ContentCatalogService> $getContentCatalogService() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutService> $getLayoutService() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutService> $getLayoutService() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> $getLayoutRefreshEventSource() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LayoutRefreshEventSource> $getLayoutRefreshEventSource() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ILayoutServiceCache> $getLayoutServiceCache() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ILocalHydratingLayoutServiceCache>
+    $getLocalHydratingLayoutServiceCache() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalog() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::StoreCatalogRepository> $getStoreCatalog() const;
 
-    MCAPI ::ServiceDrivenImageRepository& $getServiceImageRepository() const;
+    MCNAPI ::ServiceDrivenImageRepository& $getServiceImageRepository() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LibraryRepository> $getLibraryRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LibraryRepository> $getLibraryRepository() const;
 
-    MCAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup() const;
+    MCNAPI ::std::shared_ptr<::ActorAnimationGroup> $getActorAnimationGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorAnimationControllerGroup> $getActorAnimationControllerGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const> $getThirdPartyServerRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository const> $getThirdPartyServerRepository() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> $getThirdPartyServerRepository();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> $getThirdPartyServerRepository();
 
-    MCAPI ::std::shared_ptr<::SkinRepository> $getSkinRepository() const;
+    MCNAPI ::std::shared_ptr<::SkinRepository> $getSkinRepository() const;
 
-    MCAPI ::PersonaRepository& $getPersonaRepository() const;
+    MCNAPI ::PersonaRepository& $getPersonaRepository() const;
 
-    MCAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
+    MCNAPI ::MarketplaceServicesManager& $getMarketplaceServicesManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> $getWorldTemplateManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::WorldTemplateManager> $getWorldTemplateManager() const;
 
-    MCAPI ::World::WorldSystem& $getWorldSystem() const;
+    MCNAPI ::World::WorldSystem& $getWorldSystem() const;
 
-    MCAPI bool $isWorldSystemReady() const;
+    MCNAPI bool $isWorldSystemReady() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSystem> $getRealmsSystem() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsSystem> $getRealmsSystem() const;
 
-    MCAPI ::Social::SocialSystem& $getSocialSystem() const;
+    MCNAPI ::Social::SocialSystem& $getSocialSystem() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Parties::PartySystem> $getPartySystem() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Parties::PartySystem> $getPartySystem() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> $getUIProgressTips() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Progress::ProgressTips> $getUIProgressTips() const;
 
-    MCAPI ::IResourcePackRepository& $getResourcePackRepository() const;
+    MCNAPI ::IResourcePackRepository& $getResourcePackRepository() const;
 
-    MCAPI ::ResourcePackManager& $getResourcePackManager() const;
+    MCNAPI ::ResourcePackManager& $getResourcePackManager() const;
 
-    MCAPI ::ResourcePackManager& $getServerResourcePackManager();
+    MCNAPI ::ResourcePackManager& $getServerResourcePackManager();
 
-    MCAPI ::PackManifestFactory& $getPackManifestFactory();
+    MCNAPI ::PackManifestFactory& $getPackManifestFactory();
 
-    MCAPI ::PlayerMessagingService& $getPlayerMessagingService();
+    MCNAPI ::PlayerMessagingService& $getPlayerMessagingService();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentKeyProvider const> $getKeyProvider() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> $getAccessibilityProvider() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider const> $getAccessibilityProvider() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> $getAccessibilityProvider();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> $getAccessibilityProvider();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> $getContentTierManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> $getContentTierManager() const;
 
-    MCAPI ::PackSourceFactory& $getPackSourceFactory() const;
+    MCNAPI ::PackSourceFactory& $getPackSourceFactory() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> $getResourceLoadManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> $getResourceLoadManager();
 
-    MCAPI ::ILevelListCache& $getLevelListCache();
+    MCNAPI ::ILevelListCache& $getLevelListCache();
 
-    MCAPI bool $hasAllValidCrossPlatformSkin() const;
+    MCNAPI bool $hasAllValidCrossPlatformSkin() const;
 
-    MCAPI ::PackDownloadManager& $getPackDownloadManager();
+    MCNAPI ::PackDownloadManager& $getPackDownloadManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> $getLinkedAssetValidator() const;
 
-    MCAPI bool $isMultiplayerServiceManagerReady() const;
+    MCNAPI bool $isMultiplayerServiceManagerReady() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> $getMultiplayerServiceManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::MultiplayerServiceManager> $getMultiplayerServiceManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::IUserManager> $getUserManager() const;
 
-    MCAPI ::IMinecraftEventing& $getEventing() const;
+    MCNAPI ::IMinecraftEventing& $getEventing() const;
 
-    MCAPI ::ServerInstance* $getServerInstance();
+    MCNAPI ::ServerInstance* $getServerInstance();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstance> $getServerInstanceNonOwnPtr();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstance> $getServerInstanceNonOwnPtr();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ClientNetworkSystem> $getClientNetworkSystemPtr();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ClientNetworkSystem> $getClientNetworkSystemPtr();
 
-    MCAPI ::ClientNetworkSystem& $getClientNetworkSystem();
+    MCNAPI ::ClientNetworkSystem& $getClientNetworkSystem();
 
-    MCAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
+    MCNAPI ::ClientNetworkSystem const& $getClientNetworkSystem() const;
 
-    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator const* $getProfilingOrchestrator() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
 
-    MCAPI ::Bedrock::Profiling::ProfilingOrchestrator* $getMutableProfilingOrchestrator();
+    MCNAPI void $clearCache();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> $getActiveDirectoryIdentity();
+    MCNAPI void $releaseClientSubId(::SubClientId subid);
 
-    MCAPI void $clearCache();
+    MCNAPI bool $isStartingGame() const;
 
-    MCAPI void $releaseClientSubId(::SubClientId subid);
+    MCNAPI bool $isSplitscreenJoinEnabled() const;
 
-    MCAPI bool $isStartingGame() const;
+    MCNAPI bool $canAddSplitscreenSubClient(int controllerId) const;
 
-    MCAPI bool $isSplitscreenJoinEnabled() const;
+    MCNAPI void $addSubClientInstanceAndAssociateToUser(int controllerId);
 
-    MCAPI bool $canAddSplitscreenSubClient(int controllerId) const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> $retrieveCIDToClientMap();
 
-    MCAPI void $addSubClientInstanceAndAssociateToUser(int controllerId);
-
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> $retrieveCIDToClientMap();
-
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $registerSplitScreenChangedListener(::std::function<void(uchar)> callback) const;
 
-    MCAPI uchar $getSplitScreenCount() const;
+    MCNAPI uchar $getSplitScreenCount() const;
 
-    MCAPI float $calculateScreenSizeToResolutionScalar(int const width, int const height) const;
+    MCNAPI float $calculateScreenSizeToResolutionScalar(int const width, int const height) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const> $GetGlobalResourcesCrashRecovery() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::GlobalResourcesCrashRecovery const> $GetGlobalResourcesCrashRecovery() const;
 
-    MCAPI bool $isReadyToRender() const;
+    MCNAPI bool $isReadyToRender() const;
 
-    MCAPI bool $isShowingLoadingScreen() const;
+    MCNAPI bool $isShowingLoadingScreen() const;
 
-    MCAPI bool $isRenderingLoadingScreen() const;
+    MCNAPI bool $isRenderingLoadingScreen() const;
 
-    MCAPI void $registerUpsellScreen();
+    MCNAPI void $registerUpsellScreen();
 
-    MCAPI ::SceneFactory& $getPrimarySceneFactory() const;
+    MCNAPI ::SceneFactory& $getPrimarySceneFactory() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getMainSceneStack() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack const> $getMainSceneStack() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getMainSceneStack();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> $getMainSceneStack();
 
-    MCAPI ::OreUI::Router& $getUIRouter();
+    MCNAPI ::OreUI::Router& $getUIRouter();
 
-    MCAPI ::OreUI::DataProviderManager_DEPRECATED& $getDataProviderManager();
+    MCNAPI ::OreUI::DataProviderManager_DEPRECATED& $getDataProviderManager();
 
-    MCAPI ::std::weak_ptr<::RealmsAPI> $getRealms();
+    MCNAPI ::std::weak_ptr<::RealmsAPI> $getRealms();
 
-    MCAPI ::Realms::ContentService& $getRealmsContentService();
+    MCNAPI ::Realms::ContentService& $getRealmsContentService();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServices> $getRealmsServices();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::RealmsServices> $getRealmsServices();
 
-    MCAPI ::std::weak_ptr<::ClubsService> $getClubsService();
+    MCNAPI ::std::weak_ptr<::ClubsService> $getClubsService();
 
-    MCAPI ::std::shared_ptr<::Realms::GenericRequestServiceHandler> $getGenericRealmsService();
+    MCNAPI ::std::shared_ptr<::Realms::GenericRequestServiceHandler> $getGenericRealmsService();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::SubscriptionService> $getRealmsSubscriptionService();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Realms::SubscriptionService> $getRealmsSubscriptionService();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> $getPresenceManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Social::PresenceManager> $getPresenceManager();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems> $getEDUSystems();
+    MCNAPI ::Bedrock::NonOwnerPointer<::EduSystems> $getEduSystems();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::EDUSystems const> $getEDUSystems() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::EduSystems const> $getEduSystems() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Minecraft> $getPrimaryMinecraft();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Automation::AutomationClient> $getAutomationClient() const;
 
-    MCFOLD bool $isDedicatedServer() const;
+    MCNAPI bool $isDedicatedServer() const;
 
-    MCFOLD bool $isEduMode() const;
+    MCNAPI bool $isEduMode() const;
 
-    MCAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
+    MCNAPI void $onNetworkMaxPlayersChanged(uint newMaxPlayerCount);
 
-    MCAPI ::IGameModuleApp& $getGameModule();
+    MCNAPI ::IGameModuleApp& $getGameModule();
 
-    MCAPI ::IGameModuleShared& $getGameModuleShared();
+    MCNAPI ::IGameModuleShared& $getGameModuleShared();
 
-    MCAPI void $requestServerShutdown();
+    MCNAPI void $requestServerShutdown();
 
-    MCAPI void $setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion);
+    MCNAPI void $setLaunchedFromLegacyVersion(bool launchedFromLegacyVersion);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FileArchiver> $getFileArchiver() const;
 
-    MCAPI bool $requestInGamePause(::SubClientId const& subClient, bool status);
+    MCNAPI bool $requestInGamePause(::SubClientId const& subClient, bool status);
 
-    MCAPI ::InputMode $getCurrentInputMode() const;
+    MCNAPI ::InputMode $getCurrentInputMode() const;
 
-    MCAPI void $handleInputPaneHidden();
+    MCNAPI void $handleInputPaneHidden();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelLoader> $getLevelLoader();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelLoader> $getLevelLoader();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> $getContentManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ExternalContentManager> $getContentManager();
 
-    MCAPI ::IContentManager& $getResourceContentManager();
+    MCNAPI ::IContentManager& $getResourceContentManager();
 
-    MCAPI ::std::string $getMultiplayerDisabledTextTitle(::MultiplayerLockedContext context) const;
+    MCNAPI ::std::string $getMultiplayerDisabledTextTitle(::MultiplayerLockedContext context) const;
 
-    MCAPI ::std::string $getMultiplayerDisabledTextBody(::MultiplayerLockedContext context) const;
+    MCNAPI ::std::string $getMultiplayerDisabledTextBody(::MultiplayerLockedContext context) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> $getExternalServer() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> $getExternalServer() const;
 
-    MCAPI ::std::shared_ptr<::mce::TextureGroup> $getTextureGroup() const;
+    MCNAPI ::std::shared_ptr<::mce::TextureGroup> $getTextureGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> $getStoreCacheTextures() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::mce::TextureGroup> $getStoreCacheTextures() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> $getMinecraftGraphics();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getTextureAtlas();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas> $getTextureAtlas();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IUIRepository> $getUIRepository() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> $getSeasonsRenderer();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> $getSeasonsRenderer();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> $getFilePathManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::Core::FilePathManager> $getFilePathManager();
 
-    MCAPI void $setUseFontOverrides(bool useOverrides);
+    MCNAPI void $setUseFontOverrides(bool useOverrides);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> $getFontRepository() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FontRepository const> $getFontRepository() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::EmoticonManager const> $getEmoticonManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::EmoticonManager const> $getEmoticonManager() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper const> $getTextToIconMapper() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper const> $getTextToIconMapper() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> $getTextToIconMapper();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TextToIconMapper> $getTextToIconMapper();
 
-    MCAPI bool $getMouseGrabbed() const;
+    MCNAPI bool $getMouseGrabbed() const;
 
-    MCAPI void $navigateToPlayScreenFriendsTab();
+    MCNAPI void $navigateToPlayScreenFriendsTab();
 
-    MCAPI bool $hasActorResourceDefinitionGroup() const;
+    MCNAPI bool $hasActorResourceDefinitionGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> $getActorResourceDefinitionGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> $getActorResourceDefinitionGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup const> $getRenderControllerGroup() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup const> $getRenderControllerGroup() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup> $getRenderControllerGroup();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup> $getRenderControllerGroup();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> $getActorResourceDefinitionGroupMutable();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> $getActorResourceDefinitionGroupMutable();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> $getOreUIResourceAllowList();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> $getOreUIResourceAllowList();
 
-    MCAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
+    MCNAPI ::Bedrock::Threading::Async<::Core::PathBuffer<::std::string>>
     $requestScreenshot(::ScreenshotOptions& screenshotOptions);
 
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
-    MCAPI bool $onFullPackStackInvalid();
+    MCNAPI bool $onFullPackStackInvalid();
 
-    MCAPI void $onLanguageSubpacksChanged();
+    MCNAPI void $onLanguageSubpacksChanged();
 
-    MCAPI void $onBaseGamePackDownloadComplete();
+    MCNAPI void $onBaseGamePackDownloadComplete();
 
-    MCAPI void $displayActiveDirectoryLoginDialog();
+    MCNAPI void $displayActiveDirectoryLoginDialog();
 
-    MCAPI void $handleReloadUIDefinitions();
+    MCNAPI void $handleReloadUIDefinitions();
 
-    MCAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
+    MCNAPI void $onPushNotificationReceived(::PushNotificationMessage const& msg);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FlightingService> $getFlightingService() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FlightingService> $getFlightingService() const;
 
-    MCAPI ::std::shared_ptr<::FlightingService> $getFlightingServicePtr() const;
+    MCNAPI ::std::shared_ptr<::FlightingService> $getFlightingServicePtr() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::TreatmentPackDownloadMonitor const> $getTreatmentPackDownloadMonitor() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::TreatmentPackDownloadMonitor const> $getTreatmentPackDownloadMonitor() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> $getEntitlementManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> $getEntitlementManager();
 
-    MCAPI ::IDlcValidation& $getDlcValidation();
+    MCNAPI ::IDlcValidation& $getDlcValidation();
 
-    MCAPI ::ServicesManager& $getServicesManager();
+    MCNAPI ::ServicesManager& $getServicesManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::SunsettingManager> $getSunsettingManager();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::SunsettingManager> $getSunsettingManager();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::DateManager> $getDateManager() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DateManager> $getDateManager() const;
 
-    MCAPI void $grabMouse();
+    MCNAPI void $grabMouse();
 
-    MCAPI void $releaseMouse();
+    MCNAPI void $releaseMouse();
 
-    MCAPI void $muteAudio();
+    MCNAPI void $muteAudio();
 
-    MCAPI void $unMuteAudio();
+    MCNAPI void $unMuteAudio();
 
-    MCAPI uint64 $generateClientId(
+    MCNAPI uint64 $generateClientId(
         bool                              forceReset,
         bool&                             generatedNewId,
         uint64                            clientIdModifier,
         ::std::shared_ptr<::Social::User> user
     );
 
-    MCAPI bool $isHostingLocalDedicatedServer() const;
+    MCNAPI bool $isHostingLocalDedicatedServer() const;
 
     MCAPI void $shutdownServer();
 
-    MCAPI void $pauseContentDownloads();
+    MCNAPI void $pauseContentDownloads();
 
-    MCAPI void $resumeContentDownloads();
+    MCNAPI void $resumeContentDownloads();
 
-    MCAPI ::UIMeasureStrategy& $getUIMeasureStrategy();
+    MCNAPI ::UIMeasureStrategy& $getUIMeasureStrategy();
 
-    MCFOLD void $copyInternalSettingsFolderToExternalLocation() const;
+    MCNAPI void $copyInternalSettingsFolderToExternalLocation() const;
 
-    MCAPI void $onClientLevelExit(::IClientInstance& exitClient, uint exitCode);
+    MCNAPI void $onClientLevelExit(::IClientInstance& exitClient, uint exitCode);
 
-    MCAPI void $resetThreadCallbacks();
+    MCNAPI void $resetThreadCallbacks();
 
-    MCAPI bool $isInGame() const;
+    MCNAPI bool $isInGame() const;
 
-    MCAPI bool $isInServer() const;
+    MCNAPI bool $isInServer() const;
 
-    MCAPI bool $isInRealm() const;
+    MCNAPI bool $isInRealm() const;
 
-    MCAPI void $fadeOutMusic();
+    MCNAPI void $fadeOutMusic();
 
-    MCAPI bool $isInitialized() const;
+    MCNAPI bool $isInitialized() const;
 
-    MCFOLD bool $useMinecraftVersionOfXBLUI() const;
+    MCNAPI bool $useMinecraftVersionOfXBLUI() const;
 
-    MCAPI int $getMaxPlayerCount() const;
+    MCNAPI int $getMaxPlayerCount() const;
 
-    MCAPI void $setProfilerIsOn(bool val);
+    MCNAPI void $setProfilerIsOn(bool val);
 
-    MCAPI void $onPrimaryUserReconnect(::Social::UserPlatformConnectionResult status, bool isUserInitiated);
+    MCNAPI void $onPrimaryUserReconnect(::Social::UserPlatformConnectionResult status, bool isUserInitiated);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> $getCubemapBackgroundResources();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> $getCubemapBackgroundResources();
 
-    MCAPI void $setAppWillTerminate(bool willTerminate);
+    MCNAPI void $setAppWillTerminate(bool willTerminate);
 
-    MCAPI ::DeferredTasksManager<::DeferredTaskCategory>& $getDeferredTasks();
+    MCNAPI ::DeferredTasksManager<::DeferredTaskCategory>& $getDeferredTasks();
 
-    MCFOLD void $onForceCloudSave();
+    MCNAPI void $onForceCloudSave();
 
-    MCAPI void $onOptionsLoadBegin();
+    MCNAPI void $onOptionsLoadBegin();
 
-    MCAPI void $onOptionsLoadComplete();
+    MCNAPI void $onOptionsLoadComplete();
 
-    MCAPI bool $shouldShowRatingsPrompt() const;
+    MCNAPI bool $shouldShowRatingsPrompt() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> $getServerInstanceEventCoordinator();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ServerInstanceEventCoordinator> $getServerInstanceEventCoordinator();
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::IApp> $getApp();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::IApp> $getApp();
 
-    MCAPI bool $getSuspended() const;
+    MCNAPI bool $getSuspended() const;
 
-    MCAPI bool $isResuming() const;
+    MCNAPI bool $isResuming() const;
 
-    MCAPI void $doPrimaryClientReadyWork(::std::function<void()> workFn);
+    MCNAPI void $doPrimaryClientReadyWork(::std::function<void()> workFn);
 
-    MCAPI void $doUserManagerReadyWork(::std::function<void()> workFn);
+    MCNAPI void $doUserManagerReadyWork(::std::function<void()> workFn);
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::ScreenshotRecorder> $getScreenshotRecorder();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ScreenshotRecorder> $getScreenshotRecorder();
 
-    MCAPI bool $isEditorModeEnabled() const;
+    MCNAPI bool $isEditorModeEnabled() const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const $getContentFileLogEndPoint() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::ContentLogFileEndPoint> const $getContentFileLogEndPoint() const;
 
-    MCAPI bool $isMusicEnabled() const;
+    MCNAPI bool $isMusicEnabled() const;
 
-    MCAPI void
+    MCNAPI void
     $queueCustomMusic(::std::string const& eventName, float volume, float fadeoutSeconds, ::MusicRepeatMode playMode);
 
-    MCAPI void
+    MCNAPI void
     $playCustomMusic(::std::string const& eventName, float volume, float fadeoutSeconds, ::MusicRepeatMode playMode);
 
-    MCAPI void $setMusicCommandVolumeMultiplier(float volumeMultiplier);
+    MCNAPI void $setMusicCommandVolumeMultiplier(float volumeMultiplier);
 
-    MCAPI void $stopCustomMusic(float fadeoutSeconds);
+    MCNAPI void $stopCustomMusic(float fadeoutSeconds);
 
-    MCAPI ::EntityContext& $getEntity() const;
+    MCNAPI ::EntityContext& $getEntity() const;
 
-    MCAPI ::AppSystemRegistry& $getAppSystemRegistry();
+    MCNAPI ::AppSystemRegistry& $getAppSystemRegistry();
 
-    MCAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
+    MCNAPI void $onLanguageChanged(::std::string const& code, bool languageSystemInitializing);
 
-    MCFOLD void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
+    MCNAPI void $onLanguageKeywordsLoadedFromPack(::PackManifest const& manifest);
 
-    MCFOLD void $onLanguagesLoaded();
+    MCNAPI void $onLanguagesLoaded();
 
-    MCAPI void $buildTreatmentPackStack(bool fireEvents) const;
+    MCNAPI void $buildTreatmentPackStack(bool fireEvents) const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> $getLevelDbEnv();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> $getLevelDbEnv();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::ChunkSource> $getClientGenChunkSource(::DimensionType const& dimensionType);
+    MCNAPI ::Bedrock::NonOwnerPointer<::ChunkSource> $getClientGenChunkSource(::DimensionType const& dimensionType);
 
-    MCFOLD ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext> $getProfanityContext();
 
-    MCAPI double $getGameUpdateDurationInSeconds() const;
+    MCNAPI double $getGameUpdateDurationInSeconds() const;
 
-    MCAPI void $queueSubclientRemoval(::SubClientId subid);
+    MCNAPI void $queueSubclientRemoval(::SubClientId subid);
 
-    MCAPI void $logoffAllSubclients();
+    MCNAPI void $logoffAllSubclients();
 
-    MCAPI void $setIsInGame(bool isInGame);
+    MCNAPI void $setIsInGame(bool isInGame);
 
-    MCAPI void $createClientItemRegistry();
+    MCNAPI void $createClientItemRegistry();
 
-    MCAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getInput() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::MinecraftInputHandler> $getInput() const;
 
-    MCAPI ::std::unique_ptr<::LocalServerLauncher::IGameInterface> $createGameInterface();
+    MCNAPI ::std::unique_ptr<::LocalServerLauncher::IGameInterface> $createGameInterface();
 
-    MCAPI ::std::unique_ptr<::LocalServerLauncher::IServerInstanceBuilder> $createServerBuilder();
+    MCNAPI ::std::unique_ptr<::LocalServerLauncher::IServerInstanceBuilder> $createServerBuilder();
 
-    MCAPI ::std::unique_ptr<::LocalServerLauncher::GameDependencies> $createGameDependencies();
+    MCNAPI ::std::unique_ptr<::LocalServerLauncher::GameDependencies> $createGameDependencies();
 
-    MCAPI ::TaskGroup& $_getServerInitTaskGroup();
+    MCNAPI ::TaskGroup& $_getServerInitTaskGroup();
 
-    MCAPI bool $isMultiPlayerInitialized() const;
+    MCNAPI bool $isMultiPlayerInitialized() const;
 
-    MCAPI bool $checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service);
+    MCNAPI bool $checkMultiPlayerPermission(::std::optional<::Social::MultiplayerServiceIdentifier> service);
 
-    MCAPI bool $isPlayingLevel() const;
+    MCNAPI bool $isPlayingLevel() const;
 
-    MCAPI void $initImpl();
+    MCNAPI void $initImpl();
 
-    MCAPI void $refocusMouse(bool lostMouse);
+    MCNAPI void $refocusMouse(bool lostMouse);
 
-    MCAPI void $setMouseType(::Bedrock::Input::PointerType type);
+    MCNAPI void $setMouseType(::Bedrock::Input::PointerType type);
 
-    MCAPI void $onNotify(::edu::auth::CredentialsAcquired const& state);
+    MCNAPI void $onNotify(::edu::auth::CredentialsAcquired const& state);
 
-    MCFOLD void $onNotify(::edu::auth::CredentialsRefreshSuccess const& state);
+    MCNAPI void $onNotify(::edu::auth::CredentialsRefreshSuccess const& state);
 
-    MCFOLD void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
+    MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsLost> const& state);
 
-    MCAPI bool $checkForPiracy() const;
+    MCNAPI bool $checkForPiracy() const;
 
-    MCAPI ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> $getDevConsoleLogger() const;
+    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::DevConsoleLogger> $getDevConsoleLogger() const;
 
-    MCAPI void $completeServerStartup(
+    MCNAPI void $completeServerStartup(
         ::std::shared_ptr<::LocalServerLauncher::ServerInitData> serverInitData,
         ::LocalServerLauncher::ServerLaunchResult&&              result
     );

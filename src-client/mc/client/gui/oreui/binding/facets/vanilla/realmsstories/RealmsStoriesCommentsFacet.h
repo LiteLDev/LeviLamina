@@ -45,27 +45,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesCommentsFacet(
+    MCNAPI RealmsStoriesCommentsFacet(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>      dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
     );
 
-    MCAPI ::Realms::Stories::PostStatus _getPostCommentStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus _getPostCommentStatus() const;
 
-    MCAPI void _regenerateView();
+    MCNAPI void _regenerateView();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> provider,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>      dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>       profanityContext
@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

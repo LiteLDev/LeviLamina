@@ -16,25 +16,13 @@ struct MoveOutdoorsGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDef
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_COOLDOWN_TIMEOUT();
-
-    MCAPI static float const& DEFAULT_GOAL_RADIUS();
-
-    MCAPI static int const& DEFAULT_SEARCH_COUNT();
-
-    MCAPI static int const& DEFAULT_SEARCH_HEIGHT();
-
-    MCAPI static int const& DEFAULT_SEARCH_RANGE();
-
-    MCAPI static float const& DEFAULT_SPEED_MULTIPLIER();
-
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

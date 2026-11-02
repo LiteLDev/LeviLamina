@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/chunks/render_chunk_vertex_streaming/RenderChunkVertexStreamPlanRegistry.h"
 #include "mc/client/renderer/debug/DebugRenderer.h"
 #include "mc/client/renderer/game/LevelBuilder.h"
 #include "mc/client/renderer/game/ShadowCascadeState.h"
@@ -25,6 +26,7 @@
 // clang-format off
 class Actor;
 class ActorResourceDefinitionGroup;
+class AtomicClientEntityDefinitionGroup;
 class Block;
 class BlockActorRenderDispatcher;
 class BlockPos;
@@ -66,6 +68,7 @@ namespace LightPropagation { class LightPropagationCoordinator; }
 namespace LightPropagation { class LightVolumeManager; }
 namespace PointLighting { class PointLightCoordinator; }
 namespace PointLighting { class PointLightShadowProbeManager; }
+namespace PointLighting { class StaticLightTransitionManager; }
 namespace cg { class ImageBuffer; }
 namespace dragon::atlas { class IAtlasUserOperations; }
 namespace mce { class Mesh; }
@@ -83,7 +86,9 @@ public:
                                                                                         mRenderChunkCoordinators;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PointLighting::PointLightCoordinator>> mPointLightCoordinator;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::PointLightShadowProbeManager>>
-                                                                                         mPointLightShadowProbeManager;
+        mPointLightShadowProbeManager;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::PointLighting::StaticLightTransitionManager>>
+                                                                                         mStaticLightTransitionManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightVolumeManager>> mLightVolumeManager;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LightPropagation::LightPropagationCoordinator>>
                                                                                   mLightPropagationCoordinator;
@@ -120,17 +125,20 @@ public:
     ::ll::TypedStorage<8, 8, ::ClientLevel&>                                      mLevel;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OptionRegistry>>                mOptions;
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                  mClientInstance;
+    ::ll::TypedStorage<8, 8, ::AtomicClientEntityDefinitionGroup&>                mAtomicClientEntityDefinitionGroup;
     ::ll::TypedStorage<8, 24, ::WeakEntityRef>                                    mLocalUser;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                  mReleaseParticleSystemInterfaceProxyCallback;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererPlayer>> mLevelRendererPlayer;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererShadowCamera;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>>       mLevelRendererCloudShadowCamera;
-    ::ll::TypedStorage<4, 4, ::ShadowCascadeState>                                  mShadowCascadeState;
-    ::ll::TypedStorage<1, 1, bool>                                                  mTextureShiftsEnabled;
-    ::ll::TypedStorage<8, 1456, ::LevelBuilder>                                     mLevelBuilder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererProxy>>               mProxy;
-    ::ll::TypedStorage<4, 16, ::mce::Color>                                         mClearBufferColor;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>                  mPlayerView;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>> mLevelRendererShadowCamera;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::LevelRendererShadowCamera>> mLevelRendererCloudShadowCamera;
+    ::ll::TypedStorage<4, 4, ::ShadowCascadeState>                            mShadowCascadeState;
+    ::ll::TypedStorage<1, 1, bool>                                            mTextureShiftsEnabled;
+    ::ll::TypedStorage<8, 152, ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry>
+                                                                      mRenderChunkVertexStreamPlanRegistry;
+    ::ll::TypedStorage<8, 1456, ::LevelBuilder>                       mLevelBuilder;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::LevelRendererProxy>> mProxy;
+    ::ll::TypedStorage<4, 16, ::mce::Color>                           mClearBufferColor;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::PlayerRenderView>>    mPlayerView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::DataDrivenRendererV2RequiredData>> mDataDrivenRendererV2RequiredData;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::UniversalEntityRenderer>>          mUniversalEntityRenderer;
     // NOLINTEND
@@ -180,7 +188,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelRenderer(
+    MCNAPI LevelRenderer(
         ::IClientInstance&                                                         clientInstance,
         ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
@@ -193,40 +201,37 @@ public:
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
-        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps,
+        ::AtomicClientEntityDefinitionGroup&                                       atomicClientEntityDefinitionGroup
     );
 
-    MCAPI void _createMeshes(::Tessellator& tessellator);
+    MCNAPI void _createMeshes(::Tessellator& tessellator);
 
-    MCAPI void _initDataDrivenRendererResources(
+    MCNAPI void _initDataDrivenRendererResources(
         ::std::unordered_map<::HashedString, ::std::shared_ptr<::DataDrivenRenderer>> const& renderers,
         ::MinecraftGameplayGraphicsResources&                                                graphicsResources
     );
 
-    MCAPI void _setLevelRendererCameras();
+    MCNAPI void _setLevelRendererCameras();
 
-    MCAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
+    MCNAPI void frameUpdate(::ClientFrameUpdateContext& clientFrameUpdateContext);
 
-    MCAPI ::BlockTessellator& getBlockRenderer();
+    MCNAPI ::BlockTessellator& getBlockRenderer();
 
-    MCAPI ::ParticleEngine& getParticleEngine() const;
+    MCNAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
-    MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
+    MCNAPI void onDimensionChanged();
 
-    MCAPI void onDimensionChanged();
-
-    MCAPI void onOptionsChanged();
-
-    MCAPI void onWillChangeDimension();
+    MCNAPI void onOptionsChanged();
 
     MCAPI void preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCAPI void rebuildAllDDRv2Geometry();
+    MCNAPI void rebuildAllDDRv2Geometry();
 
-    MCAPI void reinit(
+    MCNAPI void reinit(
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const&                 terrainTexture,
         ::Bedrock::NotNullNonOwnerPtr<::GeometryGroup> const&                      geometryGroup,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup
@@ -234,19 +239,19 @@ public:
 
     MCAPI void renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCAPI void resetLightVolumeManager(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
+    MCNAPI void resetLightVolumeManager(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
-    MCAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
+    MCNAPI void resetLightingConfig(::std::weak_ptr<::RuntimeLocalLightingConfig const> runtimeLocalLightingConfig);
 
-    MCAPI void resetPointLighting(::std::weak_ptr<::dragon::atlas::IAtlasUserOperations> atlasUserOps);
+    MCNAPI void resetPointLighting(::std::weak_ptr<::dragon::atlas::IAtlasUserOperations> atlasUserOps);
 
-    MCAPI void tickLevelRenderer();
+    MCNAPI void tickLevelRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                                         clientInstance,
         ::ClientLevel&                                                             level,
         ::std::shared_ptr<::OptionRegistry>                                        options,
@@ -259,22 +264,23 @@ public:
         ::SoundMapping const&                                                      sounds,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const& actorResourceDefinitionGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureShiftManager const>&                textureShiftManager,
-        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps
+        ::std::weak_ptr<::dragon::atlas::IAtlasUserOperations>                     atlasOps,
+        ::AtomicClientEntityDefinitionGroup&                                       atomicClientEntityDefinitionGroup
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCAPI void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onBlockChanged(
+    MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,
         ::BlockPos const&              blockPosition,
         uint                           layer,
@@ -286,9 +292,9 @@ public:
         ::Actor*                       blockChangeSource
     );
 
-    MCAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
+    MCNAPI void $onChunkUnloaded(::LevelChunk& levelChunk);
 
-    MCAPI void $takePicture(
+    MCNAPI void $takePicture(
         ::cg::ImageBuffer&                                              outImage,
         ::Actor*                                                        camera,
         ::Actor*                                                        target,

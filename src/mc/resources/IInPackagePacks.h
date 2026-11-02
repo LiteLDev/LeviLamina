@@ -38,13 +38,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI MetaData(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
+        MCNAPI MetaData(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
+        MCNAPI void* $ctor(::Core::Path const& path, bool isHidden, ::PackCategory packCategory);
         // NOLINTEND
     };
 

@@ -21,6 +21,7 @@
 #include "mc/client/util/edu_cloud_utils/Operation.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/application/storage_migration/StorageMigrationType.h"
+#include "mc/deps/core/file/FileStorageArea.h"
 #include "mc/deps/core/file/LevelStorageState.h"
 #include "mc/deps/core/resource/PackOrigin.h"
 #include "mc/deps/core/resource/PackType.h"
@@ -109,9 +110,12 @@ struct ResourceProcessingPerfData;
 struct SplitScreenUpdatedEventData;
 struct StackStats;
 struct WebviewDownloadInfo;
+struct WorldSaveAndExitPackTelemetryData;
+struct WorldSaveAndExitStorageTelemetryData;
 namespace Bedrock { class CrashTelemetryProcessor; }
 namespace Bedrock { struct DeviceIdContext; }
 namespace Bedrock { struct DirectoryEntry; }
+namespace Bedrock::ChunkDiag { struct CombinedChunkHealthScores; }
 namespace Bedrock::Http { class Status; }
 namespace Bedrock::Profiling::Orchestrator { struct ProfilerCaptureParams; }
 namespace Bedrock::Profiling::Orchestrator { struct ProfilerMetadataParams; }
@@ -127,6 +131,7 @@ namespace Social::Events { class IEventListener; }
 namespace Social::Events { class Measurement; }
 namespace Social::Events { class OptionChange; }
 namespace Social::Events { class Property; }
+namespace Social::Events { struct OreUIScreenTrackingData; }
 namespace Social::Events { struct ServerTelemetryData; }
 namespace Webview { struct TelemetryCommonProperties; }
 namespace dragon::texturestreaming { struct TextureStreamingPerformanceTelemetryData; }
@@ -163,6 +168,7 @@ public:
         ProfileFollowersList         = 7,
         SocialDrawerOpenParty        = 8,
         SocialDrawerFriendRequests   = 9,
+        RealmInvite                  = 10,
     };
 
     enum class AuthenticationOutcome : int {
@@ -420,6 +426,12 @@ public:
         No  = 1,
     };
 
+    enum class UserStorageAreaSpaceInfoStatus : int {
+        Startup         = 0,
+        DownloadStarted = 1,
+        ImportStarted   = 2,
+    };
+
     enum class WorldClassroomCustomization : int {
         ResourceUri = 0,
     };
@@ -456,6 +468,8 @@ public:
     using SignInErrorDetails = ::std::vector<::std::pair<::std::string, ::std::string>>;
 
     using TestBuildIdType = char const*;
+
+    using WorldsSizeOnDiskFn = ::std::function<uint64()>;
 
 public:
     // virtual functions
@@ -684,11 +698,22 @@ public:
 
     virtual void fireEventRenderingSizeChanged() = 0;
 
-    virtual void fireEventDiskStatus(::DiskStatus status, ::Core::LevelStorageState errorCode, uint64 freeSpace) = 0;
+    virtual void fireEventDiskStatus(
+        ::DiskStatus              status,
+        ::Core::LevelStorageState errorCode,
+        uint64                    freeSpace,
+        int64 const               remoteRemainingStorageB
+    ) = 0;
 
     virtual void fireEventStorageAreaFull(
         ::std::string const&                            areaPath,
         ::std::vector<::Bedrock::DirectoryEntry> const& diskSizeData
+    ) = 0;
+
+    virtual void fireEventUserStorageAreaSpaceInfo(
+        ::IMinecraftEventing::UserStorageAreaSpaceInfoStatus spaceInfoStatus,
+        ::std::function<uint64()>                            worldsSizeOnDiskFn,
+        ::Core::FileStorageArea::StorageAreaSpaceInfo        storageAreaSpaceInfo
     ) = 0;
 
     virtual void fireEventOptionsUpdated(
@@ -715,10 +740,14 @@ public:
         int                                                                                         fpsThrottle
     ) = 0;
 
+    virtual void fireEventProfilerUsed(::std::string_view const profilerName) = 0;
+
     virtual void
     fireEventProfilerMetadata(::Bedrock::Profiling::Orchestrator::ProfilerMetadataParams const& params) = 0;
 
     virtual void fireEventProfilerCapture(::Bedrock::Profiling::Orchestrator::ProfilerCaptureParams const& params) = 0;
+
+    virtual void fireEventChunkProfilerCapture(::Bedrock::ChunkDiag::CombinedChunkHealthScores const& scores) = 0;
 
     virtual void
     fireTextureStreamingPerf(::dragon::texturestreaming::TextureStreamingPerformanceTelemetryData const& perfData) = 0;
@@ -1366,8 +1395,14 @@ public:
 
     virtual void fireEventAndroidHelpRequest() = 0;
 
-    virtual void
-    fireEventWorldFilesListed(uint64 numLevels, uint64 totalSizeMB, uint64 largestLevelMB, uint64 smallestLevelMB) = 0;
+    virtual void fireEventWorldFilesListed(
+        uint64 numLevels,
+        uint64 totalSizeMB,
+        uint64 largestLevelMB,
+        uint64 smallestLevelMB,
+        uint64 totalRemoteStorageMB,
+        uint64 avgRemoteStorageMB
+    ) = 0;
 
     virtual void fireEventLabTableCreated(int reactionId, int productId, int productAux) = 0;
 
@@ -1454,6 +1489,15 @@ public:
         ::std::string const& appRecognitionVerdict,
         ::std::string const& deviceIntegrity,
         ::std::string const& appLicensingVerdict
+    ) = 0;
+
+    virtual void fireEventCloudSpoAuthenticationEdu(
+        ::std::string const&             cloudWorldCorrelationId,
+        ::EduCloudUtils::Operation const spoTokenAcquisitionOperation,
+        bool const                       spoTokenAcquisitionSucceeded,
+        ::std::optional<int64>           spoTokenTimeToExpiry,
+        ::std::optional<int64>           spoTokenAge,
+        ::std::optional<bool>            spoTokenAcquiredIsNew
     ) = 0;
 
     virtual void fireEventCloudOperationStartedEdu(
@@ -1701,6 +1745,12 @@ public:
         ::DBStorageFolderWatcherSnapshotKind kind
     ) = 0;
 
+    virtual void fireEventWorldSaveAndExit(
+        ::LevelStorageEventingContext const&                      context,
+        ::WorldSaveAndExitStorageTelemetryData const&             storageData,
+        ::std::vector<::WorldSaveAndExitPackTelemetryData> const& packs
+    ) = 0;
+
     virtual void fireEventLevelDBPerformanceData(
         ::LevelStorageEventingContext const&       context,
         ::DBStoragePerformanceTelemetryData const& perfData
@@ -1842,6 +1892,9 @@ public:
         uint const&                                                                                 userId,
         ::brstd::function_ref<void(::Social::Events::Event&) const, void(::Social::Events::Event&)> writer
     ) = 0;
+
+    virtual void
+    fireEventOreUIScreenTracking(uint const& userId, ::Social::Events::OreUIScreenTrackingData const& trackingData) = 0;
 
     virtual void fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,

@@ -6,11 +6,6 @@
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_40 {
 
 struct NapGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -28,36 +23,25 @@ public:
 public:
     // prevent constructor by default
     NapGoalDefinition& operator=(NapGoalDefinition const&);
+    NapGoalDefinition(NapGoalDefinition const&);
     NapGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NapGoalDefinition(::SharedTypes::v1_26_40::NapGoalDefinition&&);
-
-    MCAPI NapGoalDefinition(::SharedTypes::v1_26_40::NapGoalDefinition const&);
-
-    MCAPI bool operator==(::SharedTypes::v1_26_40::NapGoalDefinition const&) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI NapGoalDefinition(::SharedTypes::v1_26_40::NapGoalDefinition&&);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::NapGoalDefinition&&);
-
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::NapGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::NapGoalDefinition&&);
     // NOLINTEND
 };
 

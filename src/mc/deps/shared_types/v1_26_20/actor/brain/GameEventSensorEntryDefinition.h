@@ -12,7 +12,7 @@
 // auto generated forward declare list
 // clang-format off
 struct WorldBlockPosition;
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -27,8 +27,7 @@ public:
     ::ll::TypedStorage<
         8,
         56,
-        ::std::optional<
-            ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>>
+        ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>>
         mSourceEntityMemory;
     ::ll::TypedStorage<
         8,
@@ -50,37 +49,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameEventSensorEntryDefinition(
+    MCNAPI GameEventSensorEntryDefinition(
         ::SharedTypes::v1_26_20::Brain::MemorySensors::GameEventSensorEntryDefinition const&
     );
 
-    MCAPI bool operator==(::SharedTypes::v1_26_20::Brain::MemorySensors::GameEventSensorEntryDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::Brain::MemorySensors::GameEventSensorEntryDefinition const&) const;
 
-    MCAPI ~GameEventSensorEntryDefinition();
+    MCNAPI ~GameEventSensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::GameEventSensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_20::Brain::MemorySensors::GameEventSensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

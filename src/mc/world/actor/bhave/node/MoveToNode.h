@@ -32,9 +32,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
 
 
     // NOLINTEND

@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPlayerDimensionChangeAfterEvent(
+    MCNAPI ScriptPlayerDimensionChangeAfterEvent(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                          scope
     );
@@ -51,13 +51,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ScriptModuleMinecraft::ScriptPlayerDimensionChangeIntermediateData> const& evtData,
         ::Scripting::WeakLifetimeScope const&                                                          scope
     );

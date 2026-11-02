@@ -35,22 +35,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PoolElementStructureSection(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
+    MCNAPI PoolElementStructureSection(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
 
-    MCAPI ::SharedTypes::v1_21_50::PoolElementStructureSection&
+    MCNAPI ::SharedTypes::v1_21_50::PoolElementStructureSection&
     operator=(::SharedTypes::v1_21_50::PoolElementStructureSection&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_50::PoolElementStructureSection const&);
     // NOLINTEND
 };
 

@@ -31,7 +31,12 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     virtual ~ContainerScreenActionScope() = default;
+#else // LL_PLAT_C
+    virtual ~ContainerScreenActionScope();
+#endif
+
     // NOLINTEND
 
 public:
@@ -49,5 +54,19 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::ContainerScreenSimulation& simulation, ::ContainerScreenActionScope* parentScope);
 #endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

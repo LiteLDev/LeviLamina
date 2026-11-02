@@ -16,10 +16,10 @@ struct InLavaSensingSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doInLavaSensing(
-        ::StrictEntityContext const&               entity,
-        ::UpdateWaterStateRequestComponent const&  updateWaterStateRequestComponent,
-        ::EntityModifier<::WasInLavaFlagComponent> mod
+    MCNAPI static void doInLavaSensing(
+        ::StrictEntityContext const&                      entity,
+        ::UpdateWaterStateRequestComponent const&         updateWaterStateRequestComponent,
+        ::EntityModifier<::WasInLavaFlagComponent> const& mod
     );
     // NOLINTEND
 };

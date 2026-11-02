@@ -10,6 +10,7 @@
 #include "mc/network/Connector.h"
 #include "mc/network/RemoteConnector.h"
 #include "mc/network/TransportLayer.h"
+#include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/move_only_function.h"
 #include "mc/platform/threading/UniqueLock.h"
 
@@ -20,7 +21,6 @@ class NetworkIdentifier;
 class PrivateKeyManager;
 class WebRTCNetworkPeer;
 struct ConnectionDefinition;
-namespace Bedrock::Http { class LibHttpClientInstance; }
 namespace Json { class Value; }
 namespace NetherNet { class IIdentityAssertionGenerator; }
 namespace NetherNet { class INetherNetTransportInterface; }
@@ -60,6 +60,7 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::UntypedStorage<8, 16> mUnk7e0875;
+        ::ll::UntypedStorage<8, 48> mUnkd149c4;
         // NOLINTEND
 
     public:
@@ -93,13 +94,15 @@ public:
         ::NetherNetConnector::NewOutgoingConnectionEvent,
         ::NetherNetConnector::DisconnectEvent>;
 
+    using HttpLibraryToken = ::std::shared_ptr<void>;
+
     using UniqueLock = ::Bedrock::Threading::UniqueLock<::std::recursive_mutex>;
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Bedrock::Http::LibHttpClientInstance> const> mHttpLibrary;
-    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>                                    mNetworkID;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<void> const> mHttpLibrary;
+    ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID const>  mNetworkID;
     ::ll::TypedStorage<
         8,
         72,
@@ -194,16 +197,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetherNetConnector(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
+    MCNAPI NetherNetConnector(
+        ::NetherNetTransportFactory const&       factory,
+        ::Connector::ConnectionCallbacks&        callbacks,
+        ::std::shared_ptr<void>                  httpLibrary,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::std::optional<::NetherNet::NetworkID>  networkId
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void _createEventQueue();
+    MCNAPI void _createEventQueue();
 
-    MCAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
+    MCNAPI ::gsl::not_null<::std::shared_ptr<::WebRTCNetworkPeer>> _getOrCreatePeer(
         ::NetherNet::NetworkID const& remoteId,
         uint64                        sessionId,
         bool                          isLan,
@@ -211,7 +216,9 @@ public:
     );
 #endif
 
-    MCAPI void setBroadcastResponseCallback(
+    MCNAPI void _resetEventQueue();
+
+    MCNAPI void setBroadcastResponseCallback(
         ::std::function<void(::NetherNet::NetworkID const&, void const*, int)>&& broadcastResponseCallback
     );
     // NOLINTEND
@@ -219,72 +226,74 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::NetherNetTransportFactory const&      factory,
-        ::Connector::ConnectionCallbacks&       callbacks,
-        ::std::optional<::NetherNet::NetworkID> networkId
+    MCNAPI void* $ctor(
+        ::NetherNetTransportFactory const&       factory,
+        ::Connector::ConnectionCallbacks&        callbacks,
+        ::std::shared_ptr<void>                  httpLibrary,
+        ::brstd::copyable_function<bool() const> isNetworkAllowed,
+        ::std::optional<::NetherNet::NetworkID>  networkId
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
+    MCNAPI bool $closeSessionWithUser(::NetherNet::NetworkID remoteId, uint64 sessionId);
 
-    MCAPI void $setDisableLanSignaling(bool disableLanSignaling);
+    MCNAPI void $setDisableLanSignaling(bool disableLanSignaling);
 
-    MCFOLD bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
+    MCNAPI bool $host(::ConnectionDefinition const& definition, ::PrivateKeyManager const& keys);
 
 #ifdef LL_PLAT_S
-    MCAPI bool $connect(
+    MCNAPI bool $connect(
         ::Social::GameConnectionInfo const&,
         ::Social::GameConnectionInfo const&,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator>
     );
 #else // LL_PLAT_C
-    MCAPI bool $connect(
+    MCNAPI bool $connect(
         ::Social::GameConnectionInfo const&                         primaryConnection,
         ::Social::GameConnectionInfo const&                         backupConnection,
         ::std::shared_ptr<::NetherNet::IIdentityAssertionGenerator> identityGenerator
     );
 #endif
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $runEvents();
+    MCNAPI void $runEvents();
 
-    MCAPI ::NetworkIdentifier $getNetworkIdentifier() const;
+    MCNAPI ::NetworkIdentifier $getNetworkIdentifier() const;
 
-    MCFOLD void $closeNetworkConnection(::NetworkIdentifier const&);
+    MCNAPI void $closeNetworkConnection(::NetworkIdentifier const&);
 
-    MCFOLD bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
+    MCNAPI bool $setApplicationHandshakeCompleted(::NetworkIdentifier const&);
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
 
-    MCFOLD void $_onDisable();
+    MCNAPI void $_onDisable();
 
-    MCFOLD void $_onEnable();
+    MCNAPI void $_onEnable();
 
-    MCFOLD void $OnSpopViolation();
+    MCNAPI void $OnSpopViolation();
 
-    MCAPI void $OnSessionClose(
+    MCNAPI void $OnSessionClose(
         ::NetherNet::NetworkID     networkID,
         uint64                     sessionId,
         ::NetherNet::ESessionError sessionError,
         ::Json::Value              summary
     );
 
-    MCAPI void $OnDiscoveryResponse(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
+    MCNAPI void $OnDiscoveryResponse(::NetherNet::NetworkID networkID, void const* pApplicationData, int size);
 
-    MCAPI ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)> $OnDiscoveryRequest();
+    MCNAPI ::brstd::move_only_function<bool(::cereal::SchemaWriter&, ::cereal::ContextArea)> $OnDiscoveryRequest();
 
-    MCAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
+    MCNAPI void $OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint* flags);
 
 
     // NOLINTEND

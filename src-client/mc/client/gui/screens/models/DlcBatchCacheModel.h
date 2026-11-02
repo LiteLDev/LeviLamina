@@ -30,28 +30,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DlcBatchCacheModel(::IMinecraftGame& minecraft);
+    MCNAPI explicit DlcBatchCacheModel(::IMinecraftGame& minecraft);
 
-    MCAPI DlcBatchCacheModel(
+    MCNAPI DlcBatchCacheModel(
         ::Bedrock::NotNullNonOwnerPtr<::IContentAcquisition>     contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog
     );
 
-    MCAPI ::DlcBatchModel& getDlcBatchModel(::std::vector<::DlcId> const& dlcIds);
+    MCNAPI ::DlcBatchModel& getDlcBatchModel(::std::vector<::DlcId> const& dlcIds);
 
-    MCAPI ::DlcBatchModel& getDlcBatchModel(::std::string const& productId);
+    MCNAPI ::DlcBatchModel& getDlcBatchModel(::std::string const& productId);
 
-    MCAPI ::DlcBatchModel& getDlcBatchModel(::std::vector<::std::string> const& productIds);
+    MCNAPI ::DlcBatchModel& getDlcBatchModel(::std::vector<::std::string> const& productIds);
 
-    MCAPI ~DlcBatchCacheModel();
+    MCNAPI ~DlcBatchCacheModel();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IMinecraftGame& minecraft);
+    MCNAPI void* $ctor(::IMinecraftGame& minecraft);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IContentAcquisition>     contentAcquisition,
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalog
     );
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

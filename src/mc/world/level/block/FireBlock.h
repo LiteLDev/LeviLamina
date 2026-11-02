@@ -16,6 +16,7 @@ class BlockSource;
 class GetCollisionShapeInterface;
 class IConstBlockSource;
 class IRandom;
+class NeighborBlockDirections;
 struct BlockAnimateTickData;
 namespace BlockEvents { class BlockPlaceEvent; }
 namespace BlockEvents { class BlockQueuedTickEvent; }
@@ -72,33 +73,44 @@ public:
     // NOLINTBEGIN
     MCAPI static bool _trySpawnSoulFire(::BlockSource& region, ::BlockPos const& pos);
 
+    MCNAPI static ::Block const& getConnectedBlock(
+        ::IConstBlockSource const& region,
+        ::Block const&             block,
+        ::BlockPos const&          pos,
+        ::NeighborBlockDirections  directionsToCheck
+    );
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::NeighborBlockDirections getConnectionsFromState(::Block const& block);
+#endif
+
     MCAPI static bool isValidFireLocation(::BlockSource& region, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD ::AABB const&
+    MCNAPI ::AABB const&
     $getOutline(::Block const&, ::IConstBlockSource const&, ::BlockPos const&, ::AABB& bufferValue) const;
 
-    MCAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
+    MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 
-    MCFOLD bool $mayPick() const;
+    MCNAPI bool $mayPick() const;
 
-    MCAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
+    MCNAPI void $entityInside(::BlockSource&, ::BlockPos const&, ::Actor& entity) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
+    MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
 
     // NOLINTEND
@@ -106,6 +118,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

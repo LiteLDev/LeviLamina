@@ -82,13 +82,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~Data();
+        MCNAPI ~Data();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -107,55 +107,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
+    MCNAPI ::std::vector<::TrialSpawner::WeightedItemStack>& _getDispensingItems(::BlockSource& region);
 
-    MCAPI ::std::optional<::Vec3>
+    MCNAPI ::std::optional<::Vec3>
     _getPositionToSpawnItemSpawner(::BlockSource& region, ::std::vector<::ActorUniqueID> const& eligibleActorIds) const;
 
-    MCAPI bool
+    MCNAPI bool
     _hasLineOfSight(::BlockSource const& region, ::Vec3 const from, ::Vec3 const to, float const maxRange) const;
 
-    MCAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 const center);
+    MCNAPI void _sendSmallFlame(::BlockSource& region, ::Vec3 const center);
 
-    MCAPI void _setUpdated(::BlockSource& region);
+    MCNAPI void _setUpdated(::BlockSource& region);
 
-    MCAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
+    MCNAPI void _spawnItemSpawner(::BlockSource& region, ::Vec3 pos, ::ItemStack const& itemToSpawn);
 
-    MCAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos);
+    MCNAPI ::std::optional<::ActorUniqueID> _spawnMob(::BlockSource& region, ::BlockPos blockActorPos);
 
-    MCAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
+    MCNAPI void _tryRegisterNewPlayers(::BlockSource& region, ::TrialSpawner::SpawningLogicState currentState);
 
-    MCAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
+    MCNAPI void applyUpdatePacket(::CompoundTag const& tag, ::BlockSource& region);
 
-    MCAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
+    MCNAPI ::Mob* createAndAddDisplayEntity(::BlockSource& region);
 
-    MCAPI ::CompoundTag createUpdatePacket();
+    MCNAPI ::CompoundTag createUpdatePacket();
 
-    MCAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
+    MCNAPI ::SpawnData const* getOrCreateNextSpawnData(::Random& random);
 
-    MCAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
+    MCNAPI ::TrialSpawner::SpawningLogicState getSpawningLogicState(::BlockSource& region) const;
 
-    MCAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
+    MCNAPI void load(::CompoundTag const& data, ::TrialSpawnerConfigRegistry const& configRegistry);
 
-    MCAPI void removeDisplayEntity();
+    MCNAPI void removeDisplayEntity();
 
-    MCAPI void save(::CompoundTag& tag);
+    MCNAPI void save(::CompoundTag& tag);
 
-    MCAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
+    MCNAPI void setEntityId(::ActorDefinitionIdentifier const& actorDefId, ::BlockSource& region);
 
-    MCAPI void tick(::BlockSource& region);
+    MCNAPI void tick(::BlockSource& region);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
-
-    MCAPI ~TrialSpawner();
+    MCNAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
+    MCNAPI static ::std::vector<::ItemStack> _getRandomLootTableItems(
         ::Level&             level,
         ::Random&            random,
         ::DimensionType      dimensionType,
@@ -163,17 +161,9 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
+    MCNAPI static void addSpawnParticles(::Level& level, ::Vec3 pos, bool isOminous);
 
-    MCAPI static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI static void sendEjectItemParticles(::Level& level, ::BlockPos pos, bool isOminous);
 #endif
     // NOLINTEND
 };

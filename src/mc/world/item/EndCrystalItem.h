@@ -26,7 +26,7 @@ public:
 
     virtual ::InteractionResult _useOn(
         ::ItemStack&  instance,
-        ::Actor&      usingActor,
+        ::Actor&      entity,
         ::BlockPos    pos,
         uchar         face,
         ::HandSlot    handSlot,
@@ -37,13 +37,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
+    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCFOLD bool $isDestructive(int auxValue) const;
+    MCNAPI bool $isDestructive(int auxValue) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
-        ::Actor&      usingActor,
+        ::Actor&      entity,
         ::BlockPos    pos,
         uchar         face,
         ::HandSlot    handSlot,
@@ -56,6 +56,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -29,32 +29,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ShareFacet();
+    MCNAPI ShareFacet();
 
-    MCAPI bool isShareSupported() const;
+    MCNAPI bool isShareSupported() const;
 
-    MCAPI void share(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& shareUri);
+    MCNAPI void share(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& shareUri);
 
-    MCAPI void
+    MCNAPI void
     shareFile(::std::string const& shareTitle, ::std::string const& shareText, ::std::string const& filePath);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

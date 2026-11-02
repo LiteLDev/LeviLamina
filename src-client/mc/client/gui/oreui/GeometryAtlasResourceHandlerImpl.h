@@ -8,12 +8,16 @@
 
 // auto generated forward declare list
 // clang-format off
+class IClientInstance;
 namespace Gameface { class ResourceResponse; }
 namespace Gameface { class ResourceStreamResponse; }
 namespace Gameface { class TemporaryTextureHolder; }
 namespace Gameface { struct ResourceRequest; }
+namespace GeometryAtlas { class IAtlasTile; }
+namespace GeometryAtlas { struct TileDefinition; }
 namespace OreUI { class IGeometryAtlasKnownTilesWriter; }
 namespace OreUI { class ITileResourceResolver; }
+namespace OreUI { class ItemTileCache; }
 // clang-format on
 
 namespace OreUI {
@@ -24,7 +28,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::OreUI::ITileResourceResolver>>> mTileResolver;
     ::ll::TypedStorage<8, 16, ::gsl::not_null<::std::shared_ptr<::OreUI::IGeometryAtlasKnownTilesWriter>>> mKnownTiles;
-    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&> mTextureHolder;
+    ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>        mTextureHolder;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::OreUI::ItemTileCache>> mCachedItems;
     // NOLINTEND
 
 public:
@@ -43,18 +48,36 @@ public:
     onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&) /*override*/;
 
     virtual void update() /*override*/;
+
+    virtual void onViewCreate(::IClientInstance&) /*override*/;
+
+    virtual void onAppPreSuspend() /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI void _receiveTile(
+        ::GeometryAtlas::TileDefinition const&                definition,
+        ::std::shared_ptr<::GeometryAtlas::IAtlasTile> const& tile,
+        ::Gameface::ResourceResponse&                         response
+    );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceRequest(::Gameface::ResourceRequest const& request, ::Gameface::ResourceResponse& response);
 
-    MCFOLD ::Gameface::ResourceHandlerStatus
+    MCNAPI ::Gameface::ResourceHandlerStatus
     $onResourceStreamRequest(::Gameface::ResourceRequest const&, ::Gameface::ResourceStreamResponse&);
 
-    MCAPI void $update();
+    MCNAPI void $update();
+
+    MCNAPI void $onViewCreate(::IClientInstance&);
+
+    MCNAPI void $onAppPreSuspend();
     // NOLINTEND
 };
 

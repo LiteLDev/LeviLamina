@@ -168,6 +168,8 @@ public:
 
     virtual ::std::string getRawScreenName() const /*override*/;
 
+    virtual bool equalsRawScreenName(::std::string_view comparison) const /*override*/;
+
     virtual ::std::string getRoute() const /*override*/;
 
     virtual ::std::string getScreenTelemetryName() const /*override*/;
@@ -237,7 +239,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void drawRectangleArea(
+    MCNAPI static void drawRectangleArea(
         ::ScreenContext&       screenContext,
         ::RectangleArea const& a,
         int                    ux,
@@ -366,6 +368,8 @@ public:
     MCFOLD ::ui::SceneType $getSceneType() const;
 
     MCFOLD ::std::string $getRawScreenName() const;
+
+    MCNAPI bool $equalsRawScreenName(::std::string_view comparison) const;
 
     MCAPI ::std::string $getRoute() const;
 

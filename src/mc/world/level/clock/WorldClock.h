@@ -12,12 +12,12 @@
 
 // auto generated forward declare list
 // clang-format off
+class LevelEventCoordinator;
 class PacketSender;
 class TimeMarker;
 struct TimeMarkerError;
 struct WorldClockData;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class WorldClock {
@@ -57,10 +57,11 @@ public:
             ::std::less<uint64>,
             ::std::vector<uint64>,
             ::std::vector<::Bedrock::UniqueOwnerPointer<::TimeMarker>>>>
-                                                                              mTimeMarkers;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToAdd;
-    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                          mTimeMarkersToRemove;
-    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::WorldClock::DirtyFlags, 3>> mDirtyFlags;
+                                                                                   mTimeMarkers;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::LevelEventCoordinator>> mLevelEventCoordinator;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                               mTimeMarkersToAdd;
+    ::ll::TypedStorage<8, 24, ::std::vector<uint64>>                               mTimeMarkersToRemove;
+    ::ll::TypedStorage<1, 1, ::Bedrock::EnumSet<::WorldClock::DirtyFlags, 3>>      mDirtyFlags;
     ::ll::TypedStorage<
         8,
         128,
@@ -96,54 +97,57 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClock();
+    MCNAPI WorldClock();
 
 #ifdef LL_PLAT_C
-    MCAPI explicit WorldClock(::WorldClockData const& data);
+    MCNAPI explicit WorldClock(::WorldClockData const& data);
 #endif
 
-    MCAPI WorldClock(::WorldClock const& rhs);
+    MCNAPI WorldClock(::WorldClock const& rhs);
 
-    MCAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
+    MCNAPI void _fireTimeMarkerEvents();
 
-    MCAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
+    MCNAPI void _sendAddTimeMarker(::PacketSender& packetSender) const;
 
-    MCAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
+    MCNAPI void _sendRemoveTimeMarker(::PacketSender& packetSender) const;
 
-    MCAPI void addTime(int time);
+    MCNAPI void _sendSyncWorldClockState(::PacketSender& packetSender) const;
 
-    MCAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
+    MCNAPI void addTime(int time);
+
+    MCNAPI ::nonstd::expected<::Bedrock::NotNullNonOwnerPtr<::TimeMarker>, ::TimeMarkerError>
     addTimeMarker(::TimeMarker const& timeMarker, bool isVanilla);
 
-    MCAPI ::WorldClock& operator=(::WorldClock const& rhs);
-
-    MCAPI ::std::optional<::TimeMarkerError>
-    serverReloadCreatorTimeMarkers(::std::vector<::TimeMarker> const& timeMarkers);
-
 #ifdef LL_PLAT_C
-    MCAPI void tick();
+    MCNAPI void
+    initializeLevelEventCoordinator(::Bedrock::NonOwnerPointer<::LevelEventCoordinator> const eventCoordinator);
 #endif
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
+    MCNAPI ::WorldClock& operator=(::WorldClock const& rhs);
 
-    MCFOLD ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
-    // NOLINTEND
+    MCNAPI ::std::optional<::TimeMarkerError>
+    serverReloadCreatorTimeMarkers(::std::vector<::TimeMarker> const& timeMarkers);
 
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI void setIsPaused(bool isPaused);
+
+#ifdef LL_PLAT_C
+    MCNAPI void tick();
+#endif
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::TimeMarker const> const tryGetTimeMarker(uint64 timeMarkerId) const;
+
+    MCNAPI ::Bedrock::NonOwnerPointer<::TimeMarker> const tryGetTimeMarker(uint64 timeMarkerId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::WorldClockData const& data);
+    MCNAPI void* $ctor(::WorldClockData const& data);
 #endif
 
-    MCAPI void* $ctor(::WorldClock const& rhs);
+    MCNAPI void* $ctor(::WorldClock const& rhs);
     // NOLINTEND
 };

@@ -10,10 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
-class IAdvancedGraphicsOptions;
 class IAppPlatform;
 class IClientInstance;
-class ILayoutServiceProvider;
 class IMinecraftGame;
 namespace OreUI { class IFacet; }
 namespace OreUI { class IFacetRegistry; }
@@ -49,7 +47,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI FacetData(
+        MCNAPI FacetData(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
             ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
@@ -59,7 +57,7 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             char const*                                                                         name,
             ::OreUI::FacetAvailability                                                          availability,
             ::std::function<::std::unique_ptr<::OreUI::IFacet>(::OreUI::FacetRegistryLocation)> constructor
@@ -76,7 +74,7 @@ public:
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>        mClientInstance;
     ::ll::TypedStorage<8, 8, ::IMinecraftGame&>                                        mMinecraft;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::IAppPlatform>>              mAppPlatform;
-    ::ll::TypedStorage<8, 96, ::OreUI::ScreenModelProvider>                            mScreenModelProvider;
+    ::ll::TypedStorage<8, 160, ::OreUI::ScreenModelProvider>                           mScreenModelProvider;
     // NOLINTEND
 
 public:
@@ -88,35 +86,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FacetRegistryFactory(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
-        ::ILayoutServiceProvider&                                        layoutServiceProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                appPlatform
+    MCNAPI FacetRegistryFactory(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&       appPlatform,
+        ::OreUI::ScreenModelProvider::FactoryFunctions          screenModelFactoryFunctions
     );
 
-    MCAPI void _registerVanillaFacets();
+    MCNAPI void _registerVanillaFacets();
 
     MCAPI ::std::unique_ptr<::OreUI::IFacetRegistry> createFacetRegistry(::OreUI::FacetRegistryLocation location);
 
-    MCAPI ~FacetRegistryFactory();
+    MCNAPI ~FacetRegistryFactory();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&          clientInstance,
-        ::ILayoutServiceProvider&                                        layoutServiceProvider,
-        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const& advancedGraphicsOptions,
-        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&                appPlatform
+    MCNAPI void* $ctor(
+        ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& clientInstance,
+        ::Bedrock::NonOwnerPointer<::IAppPlatform> const&       appPlatform,
+        ::OreUI::ScreenModelProvider::FactoryFunctions          screenModelFactoryFunctions
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

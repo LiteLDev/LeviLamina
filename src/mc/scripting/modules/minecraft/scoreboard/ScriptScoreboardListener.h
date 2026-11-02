@@ -34,9 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
+    MCNAPI ::EventResult $onObjectiveRemoved(::std::string const& objective);
 
-    MCAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
+    MCNAPI ::EventResult $onScoreboardIdentityRemoved(::ScoreboardId const& id);
 
 
     // NOLINTEND

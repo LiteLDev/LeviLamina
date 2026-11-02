@@ -9,11 +9,6 @@
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/deps/shared_types/v1_21_120/actor/EntityTypes.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_10 {
 
 struct DropItemForGoalDefinition : public ::SharedTypes::BaseMoveToBlockGoalDefinition {
@@ -43,40 +38,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DropItemForGoalDefinition(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
+    MCNAPI DropItemForGoalDefinition(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_10::DropItemForGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_10::DropItemForGoalDefinition&
     operator=(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
 
-    MCAPI ~DropItemForGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI ~DropItemForGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_TARGET_RANGE();
+    MCNAPI static ::Vec3 const& DEFAULT_TARGET_RANGE();
 
-    MCAPI static ::Vec3 const& DEFAULT_TELEPORT_DISTANCE_FROM_TARGET();
+    MCNAPI static ::Vec3 const& DEFAULT_TELEPORT_DISTANCE_FROM_TARGET();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_10::DropItemForGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

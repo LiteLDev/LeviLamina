@@ -12,32 +12,36 @@
 namespace BuiltInBlockStates {
 // functions
 // NOLINTBEGIN
-MCAPI void registerBlockStates();
+MCNAPI void registerBlockStates();
 
-MCAPI void unregisterBlockStates();
+MCNAPI void unregisterBlockStates();
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
+MCNAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
 MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
-MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionEast();
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionDown();
 
-MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionNorth();
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionEast();
 
-MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionSouth();
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionNorth();
 
-MCAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionSouth();
 
-MCAPI ::BuiltInBlockStateVariant<::CornerShape> const& Corner();
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionUp();
+
+MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
+
+MCNAPI ::BuiltInBlockStateVariant<::CornerShape> const& Corner();
 
 MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 
-MCAPI ::BuiltInBlockStateVariant<::SharedTypes::v1_26_20::MultiBlockPart> const& MultiBlock();
+MCNAPI ::BuiltInBlockStateVariant<::SharedTypes::v1_26_20::MultiBlockPart> const& MultiBlock();
 
-MCAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
+MCNAPI ::BuiltInBlockStateVariant<::VerticalHalfEnum> const& VerticalHalf();
 // NOLINTEND
 
 } // namespace BuiltInBlockStates

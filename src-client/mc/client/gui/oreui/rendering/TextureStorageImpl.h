@@ -65,7 +65,7 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<
             8,
-            32,
+            24,
             ::std::variant<
                 ::std::monostate,
                 ::mce::ClientResourcePointer<::dragon::ResolvedTextureResource>,
@@ -73,6 +73,18 @@ public:
                 ::std::shared_ptr<::GeometryAtlas::IAtlasTile>>>
                                                                 mTexture;
         ::ll::TypedStorage<8, 64, ::dragon::TextureDescription> mDesc;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~TextureStorage();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -176,37 +188,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit TextureStorageImpl(::Gameface::BackendTextureStorageDependencies&& deps);
+    MCNAPI explicit TextureStorageImpl(::Gameface::BackendTextureStorageDependencies&& deps);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Gameface::BackendTextureStorageDependencies&& deps);
+    MCNAPI void* $ctor(::Gameface::BackendTextureStorageDependencies&& deps);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $wrapUserRenderTarget(
+    MCNAPI void $wrapUserRenderTarget(
         ::mce::ClientTexture             texture,
         ::renoir::Texture2D const&       description,
         ::renoir::Texture2DObject const& object
     );
 
-    MCAPI void
+    MCNAPI void
     $wrapUserTexture(uint64 id, ::renoir::Texture2D const& description, ::renoir::Texture2DObject const object);
 
-    MCAPI void $createTexture(
+    MCNAPI void $createTexture(
         ::renoir::Texture2DObject const object,
         ::renoir::Texture2D const&      description,
         void const*                     data,
         uint const                      dataLen
     );
 
-    MCAPI void $destroyTexture(::renoir::Texture2DObject const object);
+    MCNAPI void $destroyTexture(::renoir::Texture2DObject const object);
 
-    MCAPI void $updateTexture(
+    MCNAPI void $updateTexture(
         ::renoir::Texture2DObject const object,
         ::renoir::Texture2D const&      description,
         ::renoir::UpdateBox*            boxes,
@@ -214,34 +226,34 @@ public:
         uint const                      count
     );
 
-    MCAPI void $createDepthStencilTexture(
+    MCNAPI void $createDepthStencilTexture(
         ::renoir::DepthStencilTextureObject const object,
         ::renoir::DepthStencilTexture const&      description
     );
 
-    MCAPI void $destroyDepthStencilTexture(::renoir::DepthStencilTextureObject const object);
+    MCNAPI void $destroyDepthStencilTexture(::renoir::DepthStencilTextureObject const object);
 
-    MCAPI void $createSampler2D(::renoir::Sampler2DObject const object, ::renoir::Sampler2D const& description);
+    MCNAPI void $createSampler2D(::renoir::Sampler2DObject const object, ::renoir::Sampler2D const& description);
 
-    MCAPI void $destroySampler2D(::renoir::Sampler2DObject const object);
+    MCNAPI void $destroySampler2D(::renoir::Sampler2DObject const object);
 
-    MCAPI void $visitRenderTarget(
+    MCNAPI void $visitRenderTarget(
         ::renoir::SetRenderTargetCmd const& cmd,
         ::brstd::function_ref<
             void(::Gameface::VisitedRenderTarget const&) const,
             void(::Gameface::VisitedRenderTarget const&)> visitor
     );
 
-    MCAPI void $setPSSamplers(::renoir::SetPSSamplersCmd const& cmd, ::renoir::Sampler2DObject const* samplers);
+    MCNAPI void $setPSSamplers(::renoir::SetPSSamplersCmd const& cmd, ::renoir::Sampler2DObject const* samplers);
 
-    MCAPI void $setPSTextures(::renoir::SetPSTexturesCmd const& cmd, ::renoir::Texture2DObject const* textures);
+    MCNAPI void $setPSTextures(::renoir::SetPSTexturesCmd const& cmd, ::renoir::Texture2DObject const* textures);
 
-    MCAPI void $visitMeshTextures(
+    MCNAPI void $visitMeshTextures(
         ::brstd::function_ref<void(::Gameface::VisitedTexture const&) const, void(::Gameface::VisitedTexture const&)>
             visitor
     );
 
-    MCAPI void $visitMeshSamplers(
+    MCNAPI void $visitMeshSamplers(
         ::brstd::function_ref<void(::Gameface::VisitedSampler const&) const, void(::Gameface::VisitedSampler const&)>
             visitor
     );

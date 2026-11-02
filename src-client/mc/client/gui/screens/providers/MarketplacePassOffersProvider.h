@@ -17,6 +17,12 @@ class StoreCatalogItem;
 
 class MarketplacePassOffersProvider : public ::MarketplaceContentOffersProvider {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<1, 1, bool const> mVibrantVisualsSupported;
+    // NOLINTEND
+
+public:
     // prevent constructor by default
     MarketplacePassOffersProvider();
 
@@ -29,9 +35,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MarketplacePassOffersProvider(
+    MCNAPI MarketplacePassOffersProvider(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
@@ -40,9 +47,10 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
@@ -51,6 +59,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::function<bool(::StoreCatalogItem const&)> $_getFilterFunction();
+    MCNAPI ::std::function<bool(::StoreCatalogItem const&)> $_getFilterFunction();
     // NOLINTEND
 };

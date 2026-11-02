@@ -30,7 +30,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doRaidTriggerSystem(
+    MCNAPI static void _doRaidTriggerSystem(
         ::DimensionTypeComponent const&  dimensionTypeComponent,
         ::StateVectorComponent const&    stateVectorComponent,
         ::ActorOwnerComponent&           actorOwnerComponent,

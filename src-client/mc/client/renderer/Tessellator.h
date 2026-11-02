@@ -12,7 +12,6 @@
 // clang-format off
 class Vec2;
 struct TessellatorQuadInfo;
-namespace mce { class Color; }
 namespace mce { class MaterialPtr; }
 namespace mce { class Mesh; }
 namespace mce { class TexturePtr; }
@@ -86,9 +85,9 @@ public:
     // NOLINTBEGIN
     MCAPI explicit Tessellator(::std::weak_ptr<::mce::BufferResourceService> bufferResourceService);
 
-    MCAPI void addRotation(float angle, ::Vec3 const& axis);
+    MCNAPI void addRotation(float angle, ::Vec3 const& axis);
 
-    MCAPI void addTranslation(::Vec3 const& offset);
+    MCNAPI void addTranslation(::Vec3 const& offset);
 
     MCAPI void begin(
         ::Tessellator::DebugContextCallback debugContextCallback,
@@ -97,11 +96,9 @@ public:
         bool                                buildFaceData
     );
 
-    MCAPI void beginOverride(::Tessellator::DebugContextCallback debugContextCallback);
+    MCNAPI void beginOverride(::Tessellator::DebugContextCallback debugContextCallback);
 
-    MCAPI void clear();
-
-    MCAPI void color(::mce::Color const& c);
+    MCNAPI void clear();
 
     MCAPI void color(float r, float g, float b, float a);
 
@@ -110,17 +107,18 @@ public:
         ::std::string_view                     debugName,
         ::SupplementaryFieldAutoGenerationMode supplementaryFieldGenerationMode);
 
-    MCAPI void quad(uint i1, uint i2, uint i3, uint i4);
+    MCNAPI void quad(uint i1, uint i2, uint i3, uint i4);
 
     MCAPI void resetTransform(bool setToIdentity);
 
-    MCAPI void rotateAroundPivot(::Vec3 const& pivotOffset, float angle, ::Vec3 const& rotationAxis, bool preTransform);
+    MCNAPI void
+    rotateAroundPivot(::Vec3 const& pivotOffset, float angle, ::Vec3 const& rotationAxis, bool preTransform);
 
-    MCAPI void setTessellateIntercept(
+    MCNAPI void setTessellateIntercept(
         ::std::function<void(::Tessellator const&, ::mce::MaterialPtr const&, ::mce::TexturePtr const&)> callback
     );
 
-    MCAPI void simpleQuad(
+    MCNAPI void simpleQuad(
         ::Vec3 const& pos0,
         ::Vec2 const& uv0,
         ::Vec3 const& pos1,
@@ -133,7 +131,7 @@ public:
 
     MCAPI void tex2(::Vec2 const& v);
 
-    MCAPI void triggerIntercept(::mce::MaterialPtr const& material, ::mce::TexturePtr const& texture);
+    MCNAPI void triggerIntercept(::mce::MaterialPtr const& material, ::mce::TexturePtr const& texture);
 
     MCAPI void vertex(float x, float y, float z);
 

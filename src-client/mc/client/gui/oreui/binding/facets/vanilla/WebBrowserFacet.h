@@ -5,6 +5,11 @@
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
 
+// auto generated forward declare list
+// clang-format off
+class IOptionRegistry;
+// clang-format on
+
 namespace OreUI {
 
 class WebBrowserFacet : public ::OreUI::FacetBase_DEPRECATED<::OreUI::WebBrowserFacet> {
@@ -51,6 +56,8 @@ public:
         StoreTermsOfSalePage                = 39,
         MicrosoftGiftTermsAndConditionsPage = 40,
         UsageRulesForDigitalGoodsPage       = 41,
+        RealmsServerPerformance             = 42,
+        MinecraftHelpCenter                 = 43,
     };
 
     using LaunchUri = ::std::function<void(::std::string const&)>;
@@ -63,12 +70,15 @@ public:
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string const&)>> mLaunchUri;
     ::ll::TypedStorage<8, 64, ::std::function<void()>>                     mLaunchBetaFeedbackQr;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::OreUI::WebBrowserFacet::WebBrowserLink, ::std::string>>
-                                   mAllowedURLs;
-    ::ll::TypedStorage<1, 1, bool> mUseBetaFeedbackQr;
+                                                 mAllowedURLs;
+    ::ll::TypedStorage<1, 1, bool>               mUseBetaFeedbackQr;
+    ::ll::TypedStorage<8, 8, ::IOptionRegistry&> mOptions;
     // NOLINTEND
 
 public:
     // prevent constructor by default
+    WebBrowserFacet& operator=(WebBrowserFacet const&);
+    WebBrowserFacet(WebBrowserFacet const&);
     WebBrowserFacet();
 
 public:
@@ -80,35 +90,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WebBrowserFacet(
+    MCNAPI WebBrowserFacet(
         ::std::function<void(::std::string const&)> launchUri,
         ::std::function<void()>                     launchBetaFeedbackQr,
-        bool                                        useBetaFeedbackQr
+        bool                                        useBetaFeedbackQr,
+        ::IOptionRegistry&                          options
     );
 
-    MCAPI void openBetaFeedbackQr();
+    MCNAPI void openBetaFeedbackQr();
 
-    MCAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
+    MCNAPI void openLink(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle);
 
-    MCAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
+    MCNAPI void openLinkWithParams(::OreUI::WebBrowserFacet::WebBrowserLink linkHandle, ::std::string const& params);
 
-    MCAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
+    MCNAPI void openManageSubscriptionsStoreLink(::std::string const& storeId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<void(::std::string const&)> launchUri,
         ::std::function<void()>                     launchBetaFeedbackQr,
-        bool                                        useBetaFeedbackQr
+        bool                                        useBetaFeedbackQr,
+        ::IOptionRegistry&                          options
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
+    MCNAPI ::Scripting::Result<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageError> _getJsonString(
         ::Player& player,
         ::std::variant<
             ::std::string,
@@ -39,7 +39,7 @@ public:
             text
     ) const;
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
         setActionBar(
             ::std::variant<
@@ -49,7 +49,7 @@ public:
                 text
         ) const;
 
-    MCAPI ::Scripting::Result_deprecated<void> setActionBar_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> setActionBar_V010(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -57,7 +57,7 @@ public:
             text
     ) const;
 
-    MCAPI ::Scripting::Result<
+    MCNAPI ::Scripting::Result<
         void,
         ::ScriptModuleMinecraft::ScriptRawMessageError,
         ::ScriptModuleMinecraft::ScriptInvalidActorError,
@@ -71,7 +71,7 @@ public:
         ::std::optional<::ScriptModuleMinecraft::ScriptTitleDisplayOptions> options
     ) const;
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::ScriptModuleMinecraft::ScriptInvalidActorError>
         updateSubtitle(
             ::std::variant<
@@ -81,7 +81,7 @@ public:
                 subtitle
         ) const;
 
-    MCAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(
+    MCNAPI ::Scripting::Result_deprecated<void> updateSubtitle_V010(
         ::std::variant<
             ::std::string,
             ::ScriptModuleMinecraft::ScriptRawMessageInterface,
@@ -93,7 +93,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

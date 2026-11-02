@@ -95,13 +95,13 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
+        MCNAPI void $onLevelAdded(::std::string const& levelId, ::LevelListCacheObserver::LevelAddedType type);
 
-        MCAPI void $onLevelUpdated(::std::string const& levelId);
+        MCNAPI void $onLevelUpdated(::std::string const& levelId);
 
-        MCAPI void $onLevelDeleted(::std::string const& levelId);
+        MCNAPI void $onLevelDeleted(::std::string const& levelId);
 
-        MCAPI void $onStorageChanged();
+        MCNAPI void $onStorageChanged();
         // NOLINTEND
     };
 
@@ -119,6 +119,8 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::pair<::NetworkWorldInfo const, ::NetworkWorldType>>>
                                                                   mLastNetworkSelection;
     ::ll::TypedStorage<1, 1, bool>                                mIsDirty;
+    ::ll::TypedStorage<1, 1, bool>                                mServerDetailsRequested;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>    mHttpProbePermission;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalWorldInfo>>    mLocalWorldList;
     ::ll::TypedStorage<8, 24, ::std::vector<::LocalWorldInfo>>    mBetaRetailLocalWorldList;
     ::ll::TypedStorage<8, 24, ::std::vector<::WorldTemplateInfo>> mWorldTemplates;
@@ -215,13 +217,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayScreenModel(::MinecraftScreenModelContext context);
+    MCNAPI explicit PlayScreenModel(::MinecraftScreenModelContext context);
 
-    MCAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
+    MCNAPI void _navigateToEditWorldScreen(::LocalWorldInfo const& info);
 
-    MCAPI void _populateAdditionalRealmsWorldsInfo();
+    MCNAPI void _populateAdditionalRealmsWorldsInfo();
 
-    MCAPI void _populateLocalWorldsFromStorageSource(
+    MCNAPI void _populateLocalWorldsFromStorageSource(
         ::ILevelListCache&               levelListCache,
         ::std::vector<::LocalWorldInfo>& localWorlds,
         ::std::vector<::LocalWorldInfo>& betaRetailWorlds,
@@ -229,94 +231,98 @@ public:
         bool                             fireTelemetry
     );
 
-    MCAPI void _populateNetworkWorlds();
+    MCNAPI void _populateNetworkWorlds();
 
-    MCAPI void _populateRealmsWorldsInternal(bool ofUnpairedParentRealms);
+    MCNAPI void _populateRealmsWorldsInternal(bool ofUnpairedParentRealms);
 
-    MCAPI void _remove3PServersMismatchingEditorMode();
+    MCNAPI void _remove3PServersMismatchingEditorMode();
 
-    MCAPI void _sortRealmsWorlds(::std::string const currentUserXUID, ::std::vector<::Realms::World>& worlds);
+    MCNAPI void _sortRealmsWorlds(::std::string const currentUserXUID, ::std::vector<::Realms::World>& worlds);
 
-    MCAPI void _start3PNetworkWorld(::NetworkWorldInfo& world);
+    MCNAPI void _start3PNetworkWorld(::NetworkWorldInfo& world);
 
-    MCAPI void _startFriendNetworkWorld(::NetworkWorldInfo const& world);
+    MCNAPI void _startFriendNetworkWorld(::NetworkWorldInfo const& world);
 
-    MCAPI void _startRemoteNetworkWorld(::NetworkWorldInfo const& world);
+    MCNAPI void _startRemoteNetworkWorld(::NetworkWorldInfo const& world);
 
-    MCAPI bool areExternalAndRemoteServerSame(::ExternalServer& externalServer, ::PingedCompatibleServer remoteServer);
+    MCNAPI bool areExternalAndRemoteServerSame(::ExternalServer& externalServer, ::PingedCompatibleServer remoteServer);
 
-    MCAPI void convertLegacyWorld(
+    MCNAPI void convertLegacyWorld(
         ::LegacyWorldInfo                                                                       worldInfo,
         ::std::string const&                                                                    newWorldDir,
         ::std::function<void(::Legacy::ImportStatus, float, ::std::shared_ptr<::ImportResult>)> callback
     );
 
-    MCAPI ::Core::PathBuffer<::std::string> const createUniquePathForWorld() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const createUniquePathForWorld() const;
 
-    MCAPI void deleteLegacyWorld(uint legacyWorldIndex);
+    MCNAPI void deleteLegacyWorld(uint legacyWorldIndex);
 
-    MCAPI void fetchEduCloudWorlds();
+    MCNAPI void fetchEduCloudWorlds();
 
-    MCAPI void fetchRealmsPlayerCounts();
+    MCNAPI void fetchRealmsPlayerCounts();
 
-    MCAPI void fetchRealmsWorldsForPlayScreen();
+    MCNAPI void fetchRealmsWorldsForPlayScreen();
 
-    MCAPI void fetchThirdPartyServerWorlds(bool forceFetch);
+    MCNAPI void fetchThirdPartyServerWorlds(bool forceFetch);
 
-    MCAPI void fireIgnoredNotificationsEvent(
+    MCNAPI void fireIgnoredNotificationsEvent(
         ::IMinecraftEventing::IgnoredNotificationsType              notificationType,
         int                                                         notificationCount,
         ::std::set<::IMinecraftEventing::IgnoredNotificationSource> notificationSources
     );
 
-    MCAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForImport();
+    MCNAPI ::std::shared_ptr<::FilePickerSettings> generateFilePickerSettingsForImport();
 
-    MCAPI bool getFetchingThirdPartyWorldsInProgress() const;
+    MCNAPI bool getFetchingThirdPartyWorldsInProgress() const;
 
-    MCAPI ::std::vector<::ResourceLocation> getLoadingPacks(::PackType type) const;
+    MCNAPI ::std::vector<::ResourceLocation> getLoadingPacks(::PackType type) const;
 
-    MCAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
+    MCNAPI int getOwnedActiveUnpairedParentRealmWorldCount() const;
 
-    MCAPI bool hasLocalWorldWithId(::std::string const& levelId);
+    MCNAPI int getRealmWorldCount() const;
 
-    MCAPI void initializeRealmsWorlds();
+    MCNAPI void handleLegacyWorldConversionComplete(::ImportResult const& result);
 
-    MCAPI bool isEditorPlaytestRoundtrip() const;
+    MCNAPI bool hasLocalWorldWithId(::std::string const& levelId);
 
-    MCAPI bool isLocalWorldRealmsPlus(::LocalWorldInfo const& world);
+    MCNAPI void initializeRealmsWorlds();
 
-    MCAPI void navigateToAddEditExternalScreen(int id);
+    MCNAPI bool isEditorPlaytestRoundtrip() const;
 
-    MCAPI void navigateToEditWorldScreen(int index, ::std::function<void(::Core::Path const&)> onErrorCallback);
+    MCNAPI bool isLocalWorldRealmsPlus(::LocalWorldInfo const& world);
 
-    MCAPI void
+    MCNAPI void navigateToAddEditExternalScreen(int id);
+
+    MCNAPI void navigateToEditWorldScreen(int index, ::std::function<void(::Core::Path const&)> onErrorCallback);
+
+    MCNAPI void
     navigateToEditWorldScreen(::LocalWorldInfo* info, ::std::function<void(::Core::Path const&)> onErrorCallback);
 
-    MCAPI void
+    MCNAPI void
     navigateToEditWorldScreen(::std::string const& levelId, ::std::function<void(::Core::Path const&)> onErrorCallback);
 
-    MCAPI void navigateToRealmsSharingLauncherScreen(::std::string const& realmsInvite);
-
-    MCAPI void navigateToWorldSyncModalScreen(
+    MCNAPI void navigateToWorldSyncModalScreen(
         ::std::string const&                                                                     levelId,
         ::std::function<void(::nonstd::expected<void, ::Bedrock::ErrorInfo<::std::error_code>>)> onCompleteCallback
     );
 
-    MCAPI ::LocalWorldInfo refreshLocalWorldInfo(::LocalWorldInfo const& worldInfo);
+    MCNAPI ::LocalWorldInfo refreshLocalWorldInfo(::LocalWorldInfo const& worldInfo);
 
-    MCAPI void repopulateLocalWorlds();
+    MCNAPI void repopulateLocalWorlds();
 
-    MCAPI void startNetworkWorld(::NetworkWorldInfo worldInfo, ::NetworkWorldType worldType);
+    MCNAPI void setServerDetailsRequested(bool requested);
 
-    MCAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
+    MCNAPI void startNetworkWorld(::NetworkWorldInfo worldInfo, ::NetworkWorldType worldType);
 
-    MCAPI bool supportsEduCloudWorlds() const;
+    MCNAPI ::Bedrock::PubSub::Subscription subscribeToBuildGameList();
 
-    MCAPI void triggerMultiplayerGameRefresh(bool tryToReconnect);
+    MCNAPI bool supportsEduCloudWorlds() const;
 
-    MCAPI void updateWorldTimestamp(::NetworkWorldInfo const& worldInfo);
+    MCNAPI void triggerMultiplayerGameRefresh(bool tryToReconnect);
 
-    MCAPI void uploadLocalWorldFileAtIndex(
+    MCNAPI void updateWorldTimestamp(::NetworkWorldInfo const& worldInfo);
+
+    MCNAPI void uploadLocalWorldFileAtIndex(
         ::std::string const&                                  realmID,
         int                                                   slotIndex,
         int                                                   index,
@@ -327,24 +333,24 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::MinecraftScreenModelContext context);
+    MCNAPI void* $ctor(::MinecraftScreenModelContext context);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const;
+    MCNAPI int $getWorldCount(::WorldType worldType, ::NetworkWorldType networkType) const;
 
-    MCAPI ::LocalWorldInfo const* $getLocalWorldAtIndex(int const index) const;
+    MCNAPI ::LocalWorldInfo const* $getLocalWorldAtIndex(int const index) const;
 
-    MCAPI ::LocalWorldInfo const* $getLocalWorldById(::std::string const& id) const;
+    MCNAPI ::LocalWorldInfo const* $getLocalWorldById(::std::string const& id) const;
 
-    MCAPI bool $refresh(::WorldType tabType);
+    MCNAPI bool $refresh(::WorldType tabType);
 
-    MCAPI void $startLocalWorld(::LocalWorldInfo worldInfo, ::LevelSettings const* settings);
+    MCNAPI void $startLocalWorld(::LocalWorldInfo worldInfo, ::LevelSettings const* settings);
 
-    MCAPI bool $isDirty() const;
+    MCNAPI bool $isDirty() const;
 
-    MCFOLD ::IMinecraftEventing& $getMinecraftEventing() const;
+    MCNAPI ::IMinecraftEventing& $getMinecraftEventing() const;
     // NOLINTEND
 };

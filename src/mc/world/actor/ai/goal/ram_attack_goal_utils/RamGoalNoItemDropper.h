@@ -26,11 +26,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tryDropHorn(::Vec3 dropPos) const;
+    MCNAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCFOLD void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCNAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-    MCFOLD void $dontDropHorn();
+    MCNAPI void $dontDropHorn();
 
 
     // NOLINTEND

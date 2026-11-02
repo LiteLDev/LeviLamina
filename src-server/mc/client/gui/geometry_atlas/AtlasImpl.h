@@ -10,6 +10,7 @@ public:
     // clang-format off
     class TileEntry;
     struct CommandArgs;
+    struct AtlasEntry;
     struct Data;
     struct TileDirtyUpdate;
     // clang-format on
@@ -24,6 +25,8 @@ public:
     };
 
     struct CommandArgs {};
+
+    struct AtlasEntry {};
 
     struct Data {};
 

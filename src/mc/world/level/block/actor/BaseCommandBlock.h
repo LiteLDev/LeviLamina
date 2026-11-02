@@ -43,46 +43,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
+    MCNAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
 
-    MCAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
+    MCNAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
 
-    MCAPI void compile(::CommandOrigin const& origin, ::Level& level);
+    MCNAPI void compile(::CommandOrigin const& origin, ::Level& level);
 
-    MCAPI ::std::string getLastOutput() const;
+    MCNAPI ::std::string getLastOutput() const;
 
-    MCAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
+    MCNAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
-    MCAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCNAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
 
-#ifdef LL_PLAT_C
-    MCAPI bool performCommand(::BlockSource& region, ::BlockPos const& pos, bool& markForSaving);
-#endif
+    MCNAPI bool save(::CompoundTag& tag) const;
 
-    MCAPI bool save(::CompoundTag& tag) const;
+    MCNAPI void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
 
-    MCAPI void setCommand(::BlockSource& region, ::ActorUniqueID const& entityId, ::std::string const& command);
+    MCNAPI void setCommand(::BlockSource& region, ::BlockPos const& pos, ::std::string const& command);
 
-    MCAPI void setCommand(::BlockSource& region, ::BlockPos const& pos, ::std::string const& command);
+    MCNAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
 
-    MCAPI void setLastOutput(::std::string const& lastOutput, ::std::vector<::std::string> const& params);
-
-    MCAPI void setTrackOutput(bool trackOutput);
-
-    MCAPI ~BaseCommandBlock();
+    MCNAPI ~BaseCommandBlock();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Safety::RedactableString const& DefaultCommandBlockName();
+    MCNAPI static ::Bedrock::Safety::RedactableString const& DefaultCommandBlockName();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

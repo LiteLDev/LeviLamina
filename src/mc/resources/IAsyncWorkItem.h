@@ -13,6 +13,6 @@ public:
     // NOLINTBEGIN
     virtual ~IAsyncWorkItem() = default;
 
-    virtual void process(::IWorkProducer&) = 0;
+    virtual void process(::IWorkProducer& producer) = 0;
     // NOLINTEND
 };

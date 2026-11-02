@@ -14,7 +14,7 @@ namespace JigsawStructureUtils { struct JigsawBlockMetadataCacheHandle; }
 namespace JigsawStructureUtils {
 // functions
 // NOLINTBEGIN
-MCAPI bool canAttach(
+MCNAPI bool canAttach(
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle,
     ::JigsawStructureUtils::JigsawBlockMetadataCacheHandle rhsCacheHandle,
     ::Rotation                                             rotation,
@@ -22,9 +22,9 @@ MCAPI bool canAttach(
     bool                                                   ignoreNameCheck
 );
 
-MCAPI uchar getFrontFacing(::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle, ::Rotation rotation);
+MCNAPI uchar getFrontFacing(::JigsawStructureUtils::JigsawBlockMetadataCacheHandle cacheHandle, ::Rotation rotation);
 
-MCAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
+MCNAPI ::std::string getSerializationIdString(::CompoundTag const& blockIdTag);
 // NOLINTEND
 
 } // namespace JigsawStructureUtils

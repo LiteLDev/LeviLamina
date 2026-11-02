@@ -1,0 +1,16 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/ecs/WeakEntityRef.h"
+#include "mc/world/item/ItemStack.h"
+
+struct PlayerCursorItemReleaseEvent {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 24, ::WeakEntityRef> mPlayer;
+    ::ll::TypedStorage<8, 152, ::ItemStack>    mItem;
+    // NOLINTEND
+};

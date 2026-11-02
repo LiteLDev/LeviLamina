@@ -13,7 +13,7 @@ class IndexBufferContainer {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk4020f2;
+    ::ll::UntypedStorage<8, 16> mUnk4020f2;
     ::ll::UntypedStorage<4, 4>  mUnke8c3a1;
     ::ll::UntypedStorage<4, 4>  mUnkcdebe6;
     ::ll::UntypedStorage<4, 4>  mUnk22efce;

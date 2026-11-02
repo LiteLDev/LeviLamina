@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void triggerCreated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
+    MCNAPI void triggerCreated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
 
-    MCAPI void triggerUpdated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
+    MCNAPI void triggerUpdated(::OreUI::Detail::IdType id, ::OreUI::Detail::IPropertyObject const& object) const;
     // NOLINTEND
 };
 

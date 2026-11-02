@@ -51,29 +51,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit();
+    MCNAPI void $postInit();
 
-    MCAPI void $releaseResources();
+    MCNAPI void $releaseResources();
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-#ifdef LL_PLAT_S
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
-#else // LL_PLAT_C
-    MCFOLD ::ContainerWeakRef $getContainerWeakRef() const;
-#endif
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCAPI int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-#ifdef LL_PLAT_S
-    MCAPI ::Container* $_getContainer() const;
-#else // LL_PLAT_C
-    MCFOLD ::Container* $_getContainer() const;
-#endif
+    MCNAPI ::Container* $_getContainer() const;
 
 
     // NOLINTEND
@@ -81,6 +73,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -43,11 +43,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Vec3 currentPos(::Actor const* actor) const;
+    MCNAPI ::Vec3 currentPos(::Actor const* actor) const;
 
-    MCAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
+    MCNAPI ::Vec3 getPos(::Actor const* actor, uint64 index) const;
 
-    MCAPI void setSize(uint64 length);
+    MCNAPI void setSize(uint64 length);
 
     MCAPI ~Path();
     // NOLINTEND

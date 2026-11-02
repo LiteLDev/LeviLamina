@@ -10,7 +10,7 @@ class HashedString;
 namespace GoatHornInternal {
 // static variables
 // NOLINTBEGIN
-MCAPI ::HashedString const& COOLDOWN_CATEGORY();
+MCNAPI ::HashedString const& COOLDOWN_CATEGORY();
 // NOLINTEND
 
 } // namespace GoatHornInternal

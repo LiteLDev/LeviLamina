@@ -12,15 +12,13 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_21_100 {
 // functions
 // NOLINTBEGIN
-MCAPI void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindLookMode(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindPlayerViewMode(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
 
-MCAPI void bindRotationSpace(::cereal::ReflectionCtx& ctx);
-
-MCAPI void deserializeLegacyDescription(
+MCNAPI void deserializeLegacyDescription(
     ::SharedTypes::v1_21_100::TickWorldDefinition& desc,
     ::DeserializeDataParams                        deserializeDataParams
 );

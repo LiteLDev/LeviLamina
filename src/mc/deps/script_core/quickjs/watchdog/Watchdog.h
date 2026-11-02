@@ -65,6 +65,8 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Scripting::QuickJS::ContextTimings& _getOrCreateContextTime(::Scripting::ContextId contextId);
+
+    MCNAPI void _sendWatchdogEvent(::Scripting::WatchdogEvent watchdogEvent);
     // NOLINTEND
 
 public:

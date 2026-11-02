@@ -87,23 +87,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MinecraftInputHandler(
+    MCNAPI MinecraftInputHandler(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&           advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
-    MCAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
+    MCNAPI void _registerMenuButton(::std::string const& buttonName, bool suspendable);
 
-    MCAPI void
+    MCNAPI void
     getCursorPos(float& xCursor, float& yCursor, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client) const;
 
-    MCAPI void init(::IGameModuleApp& gameModuleApp);
+    MCNAPI void init(::IGameModuleApp& gameModuleApp);
 
-    MCAPI ::ClientMoveInputHandler*
+    MCNAPI ::ClientMoveInputHandler*
     initClientInput(::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const& client, ::IGameModuleApp& gameModuleApp);
 
-    MCAPI void tick(
+    MCNAPI void tick(
         ::IMinecraftGame&                                               mcGame,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&         primaryClient,
         ::Bedrock::NotNullNonOwnerPtr<::ControllerIDtoClientMap> const& map,
@@ -114,7 +114,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> const&           advancedGraphicsOptions,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
@@ -124,16 +124,16 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onConfigChanged(::Config const& c);
+    MCNAPI void $onConfigChanged(::Config const& c);
 
-    MCAPI void $_registerInputHandlers();
+    MCNAPI void $_registerInputHandlers();
 
-    MCAPI void $_registerDebugInputHandlers();
+    MCNAPI void $_registerDebugInputHandlers();
     // NOLINTEND
 };

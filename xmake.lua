@@ -21,7 +21,7 @@ add_requires("magic_enum v0.9.7")
 add_requires("nlohmann_json v3.12.0")
 add_requires("rapidjson 2025.02.05")
 add_requires("type_safe v0.2.4")
-add_requires("mimalloc v3.5.0")
+add_requires("mimalloc v3.5.3")
 add_requires("cpr[ssl=y] 1.11.1")
 add_requires("parallel-hashmap v2.0.0")
 add_requires("concurrentqueue v1.0.4")
@@ -52,11 +52,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.51.1-server.12")
+        add_requires("bedrockdata v26.60.6-server.1")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.51.1-client.12")
+        add_requires("bedrockdata v26.60.5-client.1")
     end
 end
 

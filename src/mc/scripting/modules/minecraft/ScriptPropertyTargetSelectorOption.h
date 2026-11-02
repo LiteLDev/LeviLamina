@@ -59,22 +59,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPropertyTargetSelectorOption(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
+    MCNAPI ScriptPropertyTargetSelectorOption(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
+    MCNAPI ::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption&
     operator=(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPropertyTargetSelectorOption const&);
     // NOLINTEND
 };
 

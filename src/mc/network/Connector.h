@@ -10,6 +10,7 @@
 // clang-format off
 class NetworkIdentifier;
 class NetworkPeer;
+class WebKey;
 namespace Json { class Value; }
 namespace Social { class GameConnectionInfo; }
 namespace Social { struct ResolvedExperienceInfo; }
@@ -29,8 +30,11 @@ public:
         // NOLINTBEGIN
         virtual ~ConnectionCallbacks() = default;
 
-        virtual bool
-        onNewIncomingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
+        virtual bool onNewIncomingConnection(
+            ::NetworkIdentifier const&         id,
+            ::std::shared_ptr<::NetworkPeer>&& peer,
+            ::std::optional<::WebKey>          identityPublicKey
+        ) = 0;
 
         virtual bool
         onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer) = 0;
@@ -86,25 +90,25 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::string $getLocalIp();
+    MCNAPI ::std::string $getLocalIp();
 
-    MCFOLD ushort $getPort() const;
+    MCNAPI ushort $getPort() const;
 
-    MCFOLD ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
+    MCNAPI ::Social::GameConnectionInfo const& $getConnectedGameInfo() const;
 
-    MCFOLD void $setConnectedResolvedExperienceInfo(
+    MCNAPI void $setConnectedResolvedExperienceInfo(
         ::std::optional<::Social::ResolvedExperienceInfo> const& resolvedExperienceInfo
     );
 
-    MCFOLD bool $isIPv4Supported() const;
+    MCNAPI bool $isIPv4Supported() const;
 
-    MCFOLD bool $isIPv6Supported() const;
+    MCNAPI bool $isIPv6Supported() const;
 
-    MCFOLD ushort $getIPv4Port() const;
+    MCNAPI ushort $getIPv4Port() const;
 
-    MCFOLD ushort $getIPv6Port() const;
+    MCNAPI ushort $getIPv6Port() const;
 
-    MCFOLD ::TransportLayer $getNetworkType() const;
+    MCNAPI ::TransportLayer $getNetworkType() const;
 
 
     // NOLINTEND

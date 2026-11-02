@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::OreUI::SeeMoreRouteData& operator=(::OreUI::SeeMoreRouteData&&);
+    MCNAPI ::OreUI::SeeMoreRouteData& operator=(::OreUI::SeeMoreRouteData&&);
     // NOLINTEND
 };
 

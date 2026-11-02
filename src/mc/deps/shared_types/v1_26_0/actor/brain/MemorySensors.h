@@ -10,7 +10,7 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_0::Brain::MemorySensors {
 // functions
 // NOLINTBEGIN
-MCAPI void bindSensorRunMethod(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindSensorRunMethod(::cereal::ReflectionCtx& ctx);
 // NOLINTEND
 
 } // namespace SharedTypes::v1_26_0::Brain::MemorySensors

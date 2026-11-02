@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-namespace SharedTypes::Brain { struct EntityRefMemory; }
+namespace SharedTypes::Brain { struct EntityRef; }
 namespace SharedTypes::v1_21_120 { struct ActorDefinitionTrigger; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -22,7 +22,7 @@ public:
     ::ll::TypedStorage<
         8,
         48,
-        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRefMemory>>
+        ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::SharedTypes::Brain::EntityRef>>
                                                                                                mTargetMemory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::v1_21_120::ActorDefinitionTrigger>> mOnReachTriggers;
     ::ll::TypedStorage<4, 4, float>                                                            mSpeedMod;
@@ -36,19 +36,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MoveToEntityGoalDefinition(::SharedTypes::v1_26_30::Brain::MemoryGoals::MoveToEntityGoalDefinition const&);
+    MCNAPI MoveToEntityGoalDefinition(::SharedTypes::v1_26_30::Brain::MemoryGoals::MoveToEntityGoalDefinition const&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemoryGoals::MoveToEntityGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemoryGoals::MoveToEntityGoalDefinition const&);
     // NOLINTEND
 };
 

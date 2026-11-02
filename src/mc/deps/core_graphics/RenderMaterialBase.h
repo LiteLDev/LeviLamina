@@ -74,23 +74,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI RenderMaterialBase();
+    MCNAPI RenderMaterialBase();
 
-    MCAPI void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
+    MCNAPI void modifyDefines(::cg::RenderFeaturesConfiguration const& features);
 
-    MCAPI void parseDefines(::Json::Value const& root);
+    MCNAPI void parseDefines(::Json::Value const& root);
 
-    MCAPI void parseMaterial(::Json::Value const& root);
+    MCNAPI void parseMaterial(::Json::Value const& root);
 
-    MCAPI void parseStates(::Json::Value const& root);
+    MCNAPI void parseStates(::Json::Value const& root);
 
-    MCAPI bool parseVariantWithInheritance(
+    MCNAPI bool parseVariantWithInheritance(
         ::Json::Value const&   root,
         ::std::string_view     key,
         ::mce::InheritanceType inheritanceType
     );
 
-    MCAPI void parseVersion(::Json::Value const& root);
+    MCNAPI void parseVersion(::Json::Value const& root);
 #endif
     // NOLINTEND
 
@@ -98,7 +98,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 #endif
     // NOLINTEND
 
@@ -106,7 +106,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
@@ -114,9 +114,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
+    MCNAPI ::std::string $buildHeader(::std::set<::std::string> const& defines);
 
-    MCAPI void $parseShader(::Json::Value const& root);
+    MCNAPI void $parseShader(::Json::Value const& root);
 #endif
 
 

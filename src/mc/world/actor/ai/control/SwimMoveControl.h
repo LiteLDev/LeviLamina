@@ -9,14 +9,17 @@
 // clang-format off
 class Mob;
 class MoveControlComponent;
-struct MoveControlDescription;
+namespace SharedTypes::v1_26_60 { struct MoveControlComponentDefinition; }
 // clang-format on
 
 class SwimMoveControl : public ::MoveControl {
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual void initializeInternal(::Mob& mob, ::MoveControlDescription const* description) /*override*/;
+    virtual void initializeInternal(
+        ::Mob&                                                         mob,
+        ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* description
+    ) /*override*/;
 
     virtual void tick(::MoveControlComponent& parent, ::Mob& mob) /*override*/;
     // NOLINTEND
@@ -24,9 +27,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::MoveControlDescription const* description);
+    MCNAPI void
+    $initializeInternal(::Mob& mob, ::SharedTypes::v1_26_60::MoveControlComponentDefinition const* description);
 
-    MCAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::MoveControlComponent& parent, ::Mob& mob);
 
 
     // NOLINTEND

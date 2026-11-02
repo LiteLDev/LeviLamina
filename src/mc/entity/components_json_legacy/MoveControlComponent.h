@@ -27,8 +27,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initMultiTypeMovementComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCNAPI void initMultiTypeMovementComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
 
-    MCAPI void setInternalType(::std::unique_ptr<::MoveControl> type);
+    MCNAPI void setInternalType(::std::unique_ptr<::MoveControl> type);
     // NOLINTEND
 };

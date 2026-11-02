@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 class Player;
+namespace Social::Events::PlayerTelemetryItemUtilities { class ItemData; }
 // clang-format on
 
 namespace Social::Events {
@@ -50,6 +51,8 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
+    MCNAPI void ItemNamed(::Social::Events::PlayerTelemetryItemUtilities::ItemData const& itemData);
+
     MCNAPI void UpdatePlayerLoadout(::Player& player);
 #endif
     // NOLINTEND

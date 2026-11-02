@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
 #include "mc/world/containers/models/ContainerModel.h"
 
 // auto generated forward declare list
@@ -13,6 +14,7 @@ class ItemStack;
 class StorageItemComponent;
 class StorageWeightLimitItemComponent;
 struct FullContainerName;
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 // clang-format on
 
 class StorageItemContainerModel : public ::ContainerModel {
@@ -22,6 +24,14 @@ public:
     ::ll::TypedStorage<8, 8, ::StorageItemComponent const*>            mStorageItemComponent;
     ::ll::TypedStorage<8, 8, ::StorageWeightLimitItemComponent const*> mStorageWeightLimitComponent;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Container>>            mContainer;
+    ::ll::TypedStorage<
+        8,
+        128,
+        ::Bedrock::PubSub::Publisher<
+            void(int, ::ItemStack const&, ::ItemStack const&),
+            ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+            0>>
+        mContainerChangedPublisher;
     // NOLINTEND
 
 public:
@@ -51,7 +61,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StorageItemContainerModel(
+    MCNAPI StorageItemContainerModel(
         ::FullContainerName const&         name,
         ::std::shared_ptr<::Container>     container,
         bool                               isClientSide,
@@ -63,7 +73,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FullContainerName const&         name,
         ::std::shared_ptr<::Container>     container,
         bool                               isClientSide,
@@ -75,23 +85,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $postInit();
+    MCNAPI void $postInit();
 
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCFOLD bool $isValid();
+    MCNAPI bool $isValid();
 
-    MCAPI ::ContainerWeakRef $getContainerWeakRef() const;
+    MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 
-    MCFOLD int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 
-#ifdef LL_PLAT_S
-    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-#else // LL_PLAT_C
-    MCFOLD void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
-#endif
+    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
-    MCAPI ::Container* $_getContainer() const;
+    MCNAPI ::Container* $_getContainer() const;
 
 
     // NOLINTEND

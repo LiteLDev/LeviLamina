@@ -44,6 +44,7 @@ public:
     ::ll::UntypedStorage<4, 24> mUnk9c4d1d;
     ::ll::UntypedStorage<8, 8>  mUnk57d268;
     ::ll::UntypedStorage<1, 1>  mUnk5073fb;
+    ::ll::UntypedStorage<1, 1>  mUnkfef6ce;
     ::ll::UntypedStorage<1, 1>  mUnkd958f0;
     ::ll::UntypedStorage<1, 1>  mUnk6c7340;
     // NOLINTEND
@@ -59,7 +60,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Editor::BlockUtils::Task::BlockUtilitySubChunkBatch& _getOrCreateSubChunk(::SubChunkPos const& subChunk);
 
-    MCNAPI void addPosition(::BlockPos const& position, ::Block const* payload);
+    MCNAPI void addPosition(::BlockPos const& position, ::Block const* payload, ::Block const* previousBlock);
 
     MCNAPI void addVolume(::SimpleBlockVolume const& volume);
 

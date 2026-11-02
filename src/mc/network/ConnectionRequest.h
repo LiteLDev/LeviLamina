@@ -39,25 +39,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI ConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
 
-    MCAPI bool clientIsEditorCapable() const;
+    MCNAPI bool clientIsEditorCapable() const;
 
-    MCAPI ::EditorConnectionJoinIntent getClientEditorConnectionIntent() const;
+    MCNAPI ::EditorConnectionJoinIntent getClientEditorConnectionIntent() const;
 
     MCAPI ::std::string getDeviceModel() const;
 
-    MCAPI ::std::string getEduJoinerToHostNonce() const;
+    MCNAPI ::std::string getEduJoinerToHostNonce() const;
 
-    MCAPI ::std::string getEduSessionToken() const;
+    MCNAPI ::std::string getEduSessionToken() const;
 
-    MCAPI ::std::string getEduTokenChain() const;
+    MCNAPI ::std::string getEduTokenChain() const;
 
-    MCAPI ::std::optional<::PlayerPartyInfo> getPartyInfo() const;
+    MCNAPI ::std::optional<::PlayerPartyInfo> getPartyInfo() const;
 
-    MCAPI bool isEduMode() const;
+    MCNAPI bool isEduMode() const;
 
-    MCAPI ::Bedrock::Result<::EditorConnectionJoinIntent>
+    MCNAPI ::Bedrock::Result<::EditorConnectionJoinIntent>
     validateEditorConnectionJoinIntentAgainstServerPolicy(::gsl::not_null<::ILevel*> level) const;
     // NOLINTEND
 
@@ -65,7 +65,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::ConnectionRequest create(
+    MCNAPI static ::ConnectionRequest create(
         ::Bedrock::NonOwnerPointer<::AppPlatform> appPlatform,
         ::ConnectionAuthInfo const&               authInfo,
         ::std::string const&                      selfSignedId,
@@ -94,13 +94,13 @@ public:
     );
 #endif
 
-    MCAPI static ::ConnectionRequest fromString(::std::string const& str);
+    MCNAPI static ::ConnectionRequest fromString(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
+    MCNAPI void* $ctor(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
     // NOLINTEND
 
 public:
@@ -112,7 +112,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isAuthTypeWellFormed() const;
+    MCNAPI bool $_isAuthTypeWellFormed() const;
 
 
     // NOLINTEND

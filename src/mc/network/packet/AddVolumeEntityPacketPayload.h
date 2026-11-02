@@ -35,33 +35,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
+    MCNAPI AddVolumeEntityPacketPayload(::AddVolumeEntityPacketPayload const& other);
 
-    MCAPI AddVolumeEntityPacketPayload(
+    MCNAPI AddVolumeEntityPacketPayload(
         ::EntityContext const&    entity,
         ::CompoundTag             components,
         ::MinEngineVersion const& minEngineVersion
     );
 
-    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&& other);
+    MCNAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload&& other);
 
-    MCAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload const& other);
+    MCNAPI ::AddVolumeEntityPacketPayload& operator=(::AddVolumeEntityPacketPayload const& other);
 
-    MCAPI ~AddVolumeEntityPacketPayload();
+    MCNAPI ~AddVolumeEntityPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AddVolumeEntityPacketPayload const& other);
+    MCNAPI void* $ctor(::AddVolumeEntityPacketPayload const& other);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::EntityContext const& entity, ::CompoundTag components, ::MinEngineVersion const& minEngineVersion);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

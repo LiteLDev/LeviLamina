@@ -15,11 +15,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_HEIGHT();
-
-    MCAPI static float const& DEFAULT_WIDTH();
-
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

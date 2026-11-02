@@ -45,16 +45,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameEventDynamicRegistration(::std::shared_ptr<::IGameEventListener> listener);
+    MCNAPI explicit GameEventDynamicRegistration(::std::shared_ptr<::IGameEventListener> listener);
 
-    MCAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
+    MCNAPI void _onActorChangedChunk(::BlockSource const& region, ::ChunkPos toChunkPos, ::DimensionType toDimensionId);
 
-    MCAPI void onActorRemoved();
+    MCNAPI void onActorRemoved();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::IGameEventListener> listener);
+    MCNAPI void* $ctor(::std::shared_ptr<::IGameEventListener> listener);
     // NOLINTEND
 };

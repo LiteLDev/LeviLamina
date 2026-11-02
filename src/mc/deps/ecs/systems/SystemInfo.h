@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/ecs/systems/Dependencies.h"
+#include "mc/deps/ecs/systems/SystemPerfHints.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,6 +21,7 @@ public:
     // NOLINTBEGIN
     ::std::string                                                  mName;
     uchar                                                          mDisplayCategoryIndex;
+    ::SystemPerfHints                                              mPerfHints;
     ::Dependencies                                                 mDependencies;
     ::ll::TypedStorage<8, 8, ::std::vector<::ComponentInfo> (*)()> mGenerateDetailedInfo;
     // NOLINTEND

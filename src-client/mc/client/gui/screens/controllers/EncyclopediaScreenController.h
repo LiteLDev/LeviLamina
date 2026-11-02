@@ -49,32 +49,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EncyclopediaScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
+    MCNAPI EncyclopediaScreenController(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::EncyclopediaTopicIndex topic);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI bool $bind(
+    MCNAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 
 public:

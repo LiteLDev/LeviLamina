@@ -59,7 +59,7 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::TypedStorage<8, 632, ::mce::Mesh>      mMesh;
+            ::ll::TypedStorage<8, 608, ::mce::Mesh>      mMesh;
             ::ll::TypedStorage<8, 32, ::mce::TexturePtr> mTexture;
             ::ll::TypedStorage<4, 4, int>                mSheet;
             // NOLINTEND
@@ -77,7 +77,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI void render(
+        MCNAPI void render(
             ::ScreenContext&                     screenContext,
             ::Font const&                        font,
             ::mce::MaterialPtr const*            optionalMat,
@@ -141,6 +141,7 @@ public:
 
 public:
     // prevent constructor by default
+    Font& operator=(Font const&);
     Font();
 
 public:
@@ -184,7 +185,7 @@ public:
 
     virtual float getScaleFactor() const = 0;
 
-    virtual float getScaleFactor(int c) const;
+    virtual float getScaleFactor(int uniChar) const;
 
     virtual ::Vec2 getTranslationFactor() const;
 
@@ -211,7 +212,8 @@ public:
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const;
 
     virtual void onAppSuspended();
@@ -239,6 +241,8 @@ public:
 
     virtual ::mce::MaterialPtr const& getMaterial(int sheet, bool isOddGuiScale) const = 0;
 
+    virtual float getGlyphHeight(int glyphSheet, bool isUnicode) const;
+
     virtual void loadFontData(bool uploadTextureImmediately) = 0;
 
     virtual int _getReplacementCharacter();
@@ -252,14 +256,22 @@ public:
     virtual ::ResourceLocation _getFontSheetLocation(int sheet, bool forceUnicode) const = 0;
 
     virtual ::std::string _remapString(::std::string_view str) const;
+
+    virtual uchar _getAsciiSheetCount() const;
+
+    virtual int _getAsciiGlyphsPerPage() const;
+
+    virtual bool _usesLegacyAsciiMapping() const;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI Font(::Font const& rhs);
 
-    MCAPI bool _chopString(
+    MCNAPI explicit Font(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+
+    MCNAPI bool _chopString(
         ::std::string&                                                                       currentLine,
         ::std::string&                                                                       activeFormatting,
         float&                                                                               totalHeight,
@@ -268,10 +280,11 @@ public:
         bool                                                                                 showColorSymbol,
         bool                                                                                 centered,
         float                                                                                fontSize,
-        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const currentLineCallback
+        ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> const currentLineCallback,
+        int&                                                                                 outRemainingCharacterCount
     );
 
-    MCAPI int _drawWordWrap(
+    MCNAPI int _drawWordWrap(
         ::ScreenContext&    screenContext,
         ::std::string_view  str,
         float               x,
@@ -286,7 +299,12 @@ public:
         ::mce::MaterialPtr* optionalMat
     );
 
-    MCAPI ::std::shared_ptr<::Font::TextObject> _makeTextObject(
+    MCNAPI int _getSheet(int uniChar, int& replacementC, bool forceUnicode);
+
+    MCNAPI int
+    _getStringChopAmount(::std::string_view currentLine, bool showColorSymbol, float maxWidth, bool reserveHyphenWidth);
+
+    MCNAPI ::std::shared_ptr<::Font::TextObject> _makeTextObject(
         ::Tessellator&      tessellator,
         ::std::string_view  str,
         ::mce::Color const& ccolor,
@@ -303,7 +321,7 @@ public:
         bool                autoGenNormalsAndTangents
     );
 
-    MCAPI int _processHeightWrap(
+    MCNAPI int _processHeightWrap(
         ::std::string_view                                                             str,
         float                                                                          startX,
         float                                                                          startY,
@@ -317,7 +335,9 @@ public:
 
     MCAPI void calculateTextWidths(::std::string_view text, ::std::vector<int>& widths);
 
-    MCAPI void drawShadow(
+    MCNAPI bool containsWideChar(::std::string_view str);
+
+    MCNAPI void drawShadow(
         ::ScreenContext&    screenContext,
         ::std::string_view  str,
         float               x,
@@ -328,7 +348,7 @@ public:
         float               linePadding
     );
 
-    MCAPI void drawTransformed(
+    MCNAPI void drawTransformed(
         ::ScreenContext&    screenContext,
         ::std::string_view  str,
         float               x,
@@ -341,7 +361,7 @@ public:
         bool                shadow
     );
 
-    MCAPI void drawWithColorResetOverride(
+    MCNAPI void drawWithColorResetOverride(
         ::ScreenContext&    screenContext,
         ::std::string_view  str,
         float               x,
@@ -355,11 +375,11 @@ public:
         float               yCaretOffset
     );
 
-    MCAPI ::std::unordered_set<::ResourceLocation> const& getGlyphLocations() const;
+    MCNAPI ::std::unordered_set<::ResourceLocation> const& getGlyphLocations() const;
 
-    MCAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
+    MCNAPI ::std::vector<::ResourceLocation> getReloadFontTextures() const;
 
-    MCAPI int processLinesInBox(
+    MCNAPI int processLinesInBox(
         ::std::string_view                                                             str,
         float                                                                          maxWidth,
         uint                                                                           maxLines,
@@ -367,37 +387,49 @@ public:
         ::std::function<bool(::std::string_view const&, ::std::string&, float, uint&)> currentLineCallback
     );
 
-    MCAPI void resetFontData(bool uploadTextureImmediately);
+    MCNAPI void resetFontData(bool uploadTextureImmediately);
 
-    MCAPI bool supportsString(::std::string_view str);
+    MCNAPI bool supportsString(::std::string_view str);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static bool shouldInsertHyphenAtLineBreak(
+        ::std::string_view textBeforeBreak,
+        ::std::string_view textAfterBreak,
+        bool               languageSupportsHyphenSplitting
+    );
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& NOT_FOUND_PAGE();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& NOT_FOUND_PAGE();
 
-    MCAPI static int const& UNICODE_REPLACEMENT_CHARACTER_CODE();
+    MCNAPI static int const& UNICODE_REPLACEMENT_CHARACTER_CODE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI void* $ctor(::Font const& rhs);
+
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $fetchPage(int page);
+    MCNAPI void $fetchPage(int page);
 
-    MCAPI void $drawCached(
+    MCNAPI void $drawCached(
         ::ScreenContext&                     screenContext,
         ::std::string_view                   str,
         float                                x,
@@ -418,13 +450,13 @@ public:
         bool                                 autoGenNormalsAndTangents
     );
 
-    MCAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
+    MCNAPI int $getLineLength(::std::string_view str, float fontSize, bool showColorSymbol);
 
-    MCAPI float $getScaleFactor(int c) const;
+    MCNAPI float $getScaleFactor(int uniChar) const;
 
-    MCFOLD ::Vec2 $getTranslationFactor() const;
+    MCNAPI ::Vec2 $getTranslationFactor() const;
 
-    MCFOLD void $setTextConstantsInScreenContext(
+    MCNAPI void $setTextConstantsInScreenContext(
         ::ScreenContext&    screenContext,
         int                 glyphSheet,
         float               guiScale,
@@ -432,36 +464,45 @@ public:
         bool                hasShadow
     ) const;
 
-    MCFOLD ::mce::Font::Type $getType(int glyphSheet) const;
+    MCNAPI ::mce::Font::Type $getType(int glyphSheet) const;
 
-    MCAPI ::std::optional<::mce::Font::RenderingParameters> $tryGetRenderingParameters(
+    MCNAPI ::std::optional<::mce::Font::RenderingParameters> $tryGetRenderingParameters(
         ::ScreenContext const& screenContext,
         int                    glyphSheet,
         float                  guiScale,
         ::mce::Color const&    textColor,
         bool                   hasShadow,
         uint                   textureWidth,
-        uint                   textureHeight
+        uint                   textureHeight,
+        bool                   isUnicode
     ) const;
 
-    MCFOLD void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCFOLD void $onDeviceLost();
+    MCNAPI void $onDeviceLost();
 
-    MCAPI void $reloadFontTextures(
+    MCNAPI void $reloadFontTextures(
         ::Bedrock::NonOwnerPointer<::ResourceLoadManager> const& resourceLoadManager,
         bool                                                     blockingLoad
     );
 
-    MCAPI bool $isReloadingTextures();
+    MCNAPI bool $isReloadingTextures();
 
-    MCFOLD void $unloadTextures();
+    MCNAPI void $unloadTextures();
 
-    MCFOLD void $onLanguageChanged(::std::string_view languageCode);
+    MCNAPI void $onLanguageChanged(::std::string_view languageCode);
 
-    MCAPI int $_getReplacementCharacter();
+    MCNAPI float $getGlyphHeight(int glyphSheet, bool isUnicode) const;
 
-    MCAPI ::std::string $_remapString(::std::string_view str) const;
+    MCNAPI int $_getReplacementCharacter();
+
+    MCNAPI ::std::string $_remapString(::std::string_view str) const;
+
+    MCNAPI uchar $_getAsciiSheetCount() const;
+
+    MCNAPI int $_getAsciiGlyphsPerPage() const;
+
+    MCNAPI bool $_usesLegacyAsciiMapping() const;
     // NOLINTEND
 
 public:

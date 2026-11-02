@@ -7,6 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class PackAccessStrategy;
 class ResourcePackManager;
 struct OptionalString;
 // clang-format on
@@ -38,25 +39,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit Localization(::std::string const& code);
+    MCNAPI explicit Localization(::std::string const& code);
 
-    MCAPI Localization(::Localization&& rhs);
+    MCNAPI Localization(::Localization&& rhs);
 
-    MCAPI Localization(::Localization const& rhs);
+    MCNAPI Localization(::Localization const& rhs);
 
-    MCAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
+    MCNAPI Localization(::std::string const& code, ::Localization const* fallbackLocale);
 
-#ifdef LL_PLAT_C
-    MCAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
-#endif
+    MCNAPI ::OptionalString _get(::std::string const& id, ::std::vector<::std::string> const& params) const;
 
     MCAPI ::OptionalString _getSimple(::std::string const& id) const;
 
-    MCAPI void addKeys(::Localization&& from);
+    MCNAPI void addKeys(::Localization&& from);
 
-    MCAPI void appendTranslations(::Localization const& other);
+    MCNAPI void appendTranslations(
+        ::std::unordered_multimap<::std::string, ::std::pair<::std::string, ::std::string>> const& locStrings
+    );
 
-    MCAPI void appendTranslations(
+    MCNAPI void appendTranslations(::Localization const& other);
+
+    MCNAPI void appendTranslations(
         ::std::string const&                fileContent,
         ::std::vector<::std::string> const& blockedKeys,
         ::std::vector<::std::string> const& allowedKeys,
@@ -66,68 +69,64 @@ public:
     MCAPI bool get(::std::string const& id, ::std::string& out, ::std::vector<::std::string> const& params) const;
 
 #ifdef LL_PLAT_C
-    MCFOLD ::std::string const getDigitGroupSeparator() const;
+    MCNAPI ::std::string const getDigitGroupSeparator() const;
 #endif
 
     MCFOLD ::std::string getFullLanguageCode() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getIETFLanguageCode() const;
+    MCNAPI ::std::string getIETFLanguageCode() const;
 #endif
 
-    MCAPI void loadFromResourcePackManager(
+    MCNAPI void loadFromPack(
+        ::std::string const&                keyPrefix,
+        ::PackAccessStrategy const&         accessStrategy,
+        ::std::vector<::std::string> const& allowedKeys
+    );
+
+    MCNAPI void loadFromResourcePackManager(
         ::ResourcePackManager&              resourcePackManager,
         ::std::vector<::std::string> const& blockedKeys
     );
 
-    MCAPI ~Localization();
+    MCNAPI void replaceIdentifiers();
+
+    MCNAPI ~Localization();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
-#endif
+    MCNAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
 
-#ifdef LL_PLAT_S
-    MCAPI static ::std::string _getDigitGroupSeparator(::std::string const& langCode);
-#endif
+    MCNAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
 
-#ifdef LL_PLAT_C
-    MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
-#endif
+    MCNAPI static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
 
-#ifdef LL_PLAT_S
-    MCAPI static bool _isCommaSeperatedLanguage(::std::string const& langCode);
-#endif
-
-    MCAPI static ::Core::PathBuffer<::std::string> getLangFilePath(::std::string const& langCode);
+    MCNAPI static ::std::string getLanguageCode(::std::string const& fullCode);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string getLanguageCode(::std::string const& fullCode);
+    MCNAPI static ::std::string getRegionCode(::std::string const& fullCode);
 
-    MCAPI static ::std::string getRegionCode(::std::string const& fullCode);
-
-    MCAPI static void replaceTokens(::std::string& string, ::std::vector<::std::string> const& params);
+    MCNAPI static void replaceTokens(::std::string& string, ::std::vector<::std::string> const& params);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& code);
+    MCNAPI void* $ctor(::std::string const& code);
 
-    MCAPI void* $ctor(::Localization&& rhs);
+    MCNAPI void* $ctor(::Localization&& rhs);
 
-    MCAPI void* $ctor(::Localization const& rhs);
+    MCNAPI void* $ctor(::Localization const& rhs);
 
-    MCAPI void* $ctor(::std::string const& code, ::Localization const* fallbackLocale);
+    MCNAPI void* $ctor(::std::string const& code, ::Localization const* fallbackLocale);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

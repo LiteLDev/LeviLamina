@@ -100,9 +100,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RenderParams(::RenderParams const&);
+    MCNAPI RenderParams(::RenderParams const&);
 
-    MCAPI ::RenderParams& init(
+    MCNAPI ::RenderParams& init(
         ::BaseActorRenderContext*            baseActorRenderContext,
         ::Actor*                             actor,
         ::AnimationComponent*                animationComponent,
@@ -114,7 +114,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::RenderParams& operator=(::RenderParams const&);
+    MCNAPI ::RenderParams& operator=(::RenderParams const&);
 #endif
 
     MCAPI ~RenderParams();
@@ -123,7 +123,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::RenderParams const&);
+    MCNAPI void* $ctor(::RenderParams const&);
     // NOLINTEND
 
 public:

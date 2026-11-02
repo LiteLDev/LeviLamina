@@ -12,7 +12,7 @@ namespace BlockTessellatorCustomExtraData { class Map; }
 namespace BlockTessellatorCustomExtraData {
 // functions
 // NOLINTBEGIN
-MCAPI ::BlockTessellatorCustomExtraData::Map
+MCNAPI ::BlockTessellatorCustomExtraData::Map
 extract(::BlockSource& region, ::BlockPos const& min, ::BlockPos const& max);
 // NOLINTEND
 

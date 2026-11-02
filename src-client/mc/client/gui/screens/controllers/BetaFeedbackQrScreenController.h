@@ -33,21 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     BetaFeedbackQrScreenController(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& feedbackUrl);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& feedbackUrl);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& feedbackUrl);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ui::SceneType $getSceneType() const;
+    MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

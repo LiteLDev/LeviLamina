@@ -43,11 +43,7 @@ public:
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::vector<uint> _getComponentIdsOfEntity(::EntityId const& context) const;
-#endif
 
-    MCNAPI void postViewEachCount(uint64 count);
-
-#ifdef LL_PLAT_C
     MCNAPI ::std::pair<::std::function<void(::EntityId)>, ::std::function<void(::EntityId)>> setEntityInvokeCallbacks(
         ::std::function<void(::EntityId)>&& preInvoke,
         ::std::function<void(::EntityId)>&& postInvoke

@@ -11,6 +11,7 @@
 #include "mc/client/gui/controls/UIMaterialType.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/math/Color.h"
+#include "mc/deps/core/resource/BackwardsCompatTextureInfo.h"
 #include "mc/deps/core/resource/ResourceLocation.h"
 #include "mc/deps/core_graphics/ImageDescription.h"
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
@@ -32,6 +33,7 @@ public:
     ::ll::TypedStorage<8, 96, ::UITextureInfoPtr>                mBackCompatUITexture;
     ::ll::TypedStorage<8, 32, ::mce::TexturePtr>                 mTexture;
     ::ll::TypedStorage<4, 20, ::cg::ImageDescription>            mCachedImageDescription;
+    ::ll::TypedStorage<8, 64, ::BackwardsCompatTextureInfo>      mCachedBackwardsCompatTextureInfo;
     ::ll::TypedStorage<4, 4, ::UIMaterialType>                   mUIMaterialType;
     ::ll::TypedStorage<4, 8, ::glm::vec2>                        mUV;
     ::ll::TypedStorage<4, 8, ::glm::vec2>                        mUVSize;
@@ -74,9 +76,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SpriteComponent(::UIControl& owner);
+    MCNAPI explicit SpriteComponent(::UIControl& owner);
 
-    MCAPI void _drawClipped(
+    MCNAPI void _drawClipped(
         ::glm::vec2 const&                                                                                    pos,
         ::glm::vec2 const&                                                                                    size,
         ::glm::vec2 const&                                                                                    startUV,
@@ -84,7 +86,7 @@ public:
         ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
     ) const;
 
-    MCAPI void _drawFilled(
+    MCNAPI void _drawFilled(
         ::UIRenderContext& context,
         ::glm::vec2 const& startPos,
         ::glm::vec2 const& size,
@@ -92,7 +94,7 @@ public:
         ::glm::vec2 const& uvSize
     ) const;
 
-    MCAPI void _drawKeepRatio(
+    MCNAPI void _drawKeepRatio(
         ::UIRenderContext& context,
         ::glm::vec2 const& startPos,
         ::glm::vec2 const& size,
@@ -100,7 +102,7 @@ public:
         ::glm::vec2 const& uvSize
     ) const;
 
-    MCAPI void _drawTiled(
+    MCNAPI void _drawTiled(
         ::glm::vec2 const&                                                                                    startPos,
         ::glm::vec2 const&                                                                                    size,
         ::glm::vec2 const&                                                                                    startUV,
@@ -108,7 +110,7 @@ public:
         ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
     ) const;
 
-    MCAPI void _drawTiledClipped(
+    MCNAPI void _drawTiledClipped(
         ::glm::vec2 const&                                                                                    startPos,
         ::glm::vec2 const&                                                                                    size,
         ::glm::vec2 const&                                                                                    startUV,
@@ -116,27 +118,27 @@ public:
         ::std::function<void(::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&, ::glm::vec2 const&)> callback
     );
 
-    MCAPI void
+    MCNAPI void
     _getClippedInfo(::glm::vec2& clipPos, ::glm::vec2& clipSize, ::glm::vec2& clipUV, ::glm::vec2& clipUVSize) const;
 
     MCAPI void render(::UIRenderContext& context);
 
-    MCAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
+    MCNAPI void setResourceLocation(::ResourceLocation const& resourceLocation);
 
-    MCAPI void setZipFolder(::Core::PathView zipFolder);
+    MCNAPI void setZipFolder(::Core::PathView zipFolder);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 };

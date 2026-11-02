@@ -6,6 +6,7 @@
 #include "mc/platform/brstd/copyable_function.h"
 #include "mc/platform/brstd/function_ref.h"
 #include "mc/world/ContainerID.h"
+#include "mc/world/gamemode/entity_attack/ValidationMode.h"
 #include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
@@ -83,5 +84,7 @@ public:
     virtual ::DepenetrationComponent& getDepenetrationComponent() = 0;
 
     virtual ::Experiments const& getExperiments() const = 0;
+
+    virtual ::EntityAttack::ValidationMode getEntityAttackRequestCompatibilityMode() const = 0;
     // NOLINTEND
 };

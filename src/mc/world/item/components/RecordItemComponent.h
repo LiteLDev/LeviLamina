@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class SemVersion;
 namespace Bedrock::Safety { class RedactableString; }
 namespace SharedTypes::Beta { struct RecordItemComponent; }
@@ -32,29 +31,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RecordItemComponent(::SharedTypes::Beta::RecordItemComponent component);
+    MCNAPI explicit RecordItemComponent(::SharedTypes::Beta::RecordItemComponent component);
 
-    MCAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
+    MCNAPI void appendFormattedHovertext(::Bedrock::Safety::RedactableString& hovertext) const;
 
-    MCAPI ::std::string getRecordDescription() const;
+    MCNAPI ::std::string getRecordDescription() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
-
-    MCAPI static ::HashedString const& getIdentifier();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::RecordItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::Beta::RecordItemComponent component);
     // NOLINTEND
 
 public:

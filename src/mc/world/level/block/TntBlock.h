@@ -12,6 +12,7 @@ class Block;
 class BlockPos;
 class BlockSource;
 class Container;
+class ItemStack;
 class Player;
 class Vec3;
 namespace BlockEvents { class BlockPlayerInteractEvent; }
@@ -37,30 +38,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setAllowUnderwater(::Actor* e);
+    MCNAPI static void _setAllowUnderwater(::Actor* e);
 
-    MCAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos);
+    MCNAPI static bool tryLightTnt(::Player& player, ::BlockPos const& pos, ::ItemStack const& item);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCAPI void
+    MCNAPI void
     $destroy(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::Actor* entitySource) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCAPI bool $shouldDispense(::BlockSource& region, ::Container& container) const;
+    MCNAPI bool $shouldDispense(::BlockSource& region, ::Container& container) const;
 
 
     // NOLINTEND
@@ -68,6 +69,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

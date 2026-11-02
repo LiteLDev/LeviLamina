@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IDataInput;
 class StructureSpawnRegistry;
 class StructureStart;
 namespace br::worldgen { class StructureInstance; }
@@ -42,21 +41,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
+    MCNAPI void addStructure(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCFOLD void addStructure(::StructureStart const& start);
+    MCNAPI void addStructure(::StructureStart const& start);
 
-    MCAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
+    MCNAPI void addStructureReference(::std::shared_ptr<::br::worldgen::StructureInstance const> instance);
 
-    MCFOLD void addStructureReference(::StructureStart const& start);
+    MCNAPI void addStructureReference(::StructureStart const& start);
 
-#ifdef LL_PLAT_S
-    MCAPI void deserializeAabbVolumes(::IDataInput& stream);
-
-    MCAPI void deserializeHardcodedSpawners(::IDataInput& stream);
-#endif
-
-    MCAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
+    MCNAPI ::std::vector<::std::shared_ptr<::br::worldgen::StructureInstance const>> getOverlappingStructures() const;
 
     MCAPI ::std::vector<::BlockPos> structureSpawnPos() const;
     // NOLINTEND

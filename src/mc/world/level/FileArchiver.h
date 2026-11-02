@@ -89,9 +89,9 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI CopyWorldResult(::FileArchiver::CopyWorldResult const&);
+        MCNAPI CopyWorldResult(::FileArchiver::CopyWorldResult const&);
 
-        MCAPI ~CopyWorldResult();
+        MCNAPI ~CopyWorldResult();
 #endif
         // NOLINTEND
 
@@ -99,7 +99,7 @@ public:
         // constructor thunks
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void* $ctor(::FileArchiver::CopyWorldResult const&);
+        MCNAPI void* $ctor(::FileArchiver::CopyWorldResult const&);
 #endif
         // NOLINTEND
 
@@ -107,7 +107,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -170,18 +170,18 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::std::string getProgressMessage();
+        MCNAPI ::std::string getProgressMessage();
 
-        MCAPI ::std::string getProgressTitle();
+        MCNAPI ::std::string getProgressTitle();
 #endif
 
-        MCAPI void setProgressMessage(::std::string const& message);
+        MCNAPI void setProgressMessage(::std::string const& message);
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI void $clear();
+        MCNAPI void $clear();
 
 
         // NOLINTEND
@@ -205,21 +205,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI Result(::FileArchiver::Result const&);
+        MCNAPI Result(::FileArchiver::Result const&);
 
-        MCAPI ~Result();
+        MCNAPI ~Result();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::FileArchiver::Result const&);
+        MCNAPI void* $ctor(::FileArchiver::Result const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -357,13 +357,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI InterventionPublishers();
+        MCNAPI InterventionPublishers();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor();
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -408,7 +408,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileArchiver(
+    MCNAPI FileArchiver(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
         ::LevelStorageSource&                                           levelStorageSource,
@@ -421,12 +421,12 @@ public:
         ::std::function<void(::std::string const&)>                     displayMessageFunction
     );
 
-    MCAPI void _clearArchiverState();
+    MCNAPI void _clearArchiverState();
 
-    MCAPI void
+    MCNAPI void
     _copyPackToTemp(::PackInstance const& packInstance, ::Core::Path const& tempPath, ::FileArchiver::Result& result);
 
-    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> _enqueueExportWorldTasks(
+    MCNAPI ::Bedrock::Threading::Async<::FileArchiver::Result> _enqueueExportWorldTasks(
         ::Core::Path const&                                                        outputFilePath,
         ::std::string const&                                                       worldId,
         bool                                                                       isBundle,
@@ -440,36 +440,36 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI bool _importWorld(
+    MCNAPI bool _importWorld(
         ::Core::Path const&     archivedWorldFile,
         ::FileArchiver::Result& currentResult,
         ::std::string const&    importLevelId
     );
 #endif
 
-    MCAPI void _printLevelResultMessage(::FileArchiver::Result const& result);
+    MCNAPI void _printLevelResultMessage(::FileArchiver::Result const& result);
 
 #ifdef LL_PLAT_C
-    MCAPI void _printLevelStartMessage();
+    MCNAPI void _printLevelStartMessage();
 #endif
 
-    MCAPI void _printMessage(::std::string const& message);
+    MCNAPI void _printMessage(::std::string const& message);
 
-    MCAPI ::FileArchiver::Result _tryBeginExportLevel(
+    MCNAPI ::FileArchiver::Result _tryBeginExportLevel(
         ::std::string const&            levelId,
         ::Core::Path const&             exportFilePath,
         ::FileArchiver::ShowToast const showToast
     );
 
-    MCAPI bool _validatePremiumUpgradePacks(::Core::Path const& filePath);
+    MCNAPI bool _validatePremiumUpgradePacks(::Core::Path const& filePath);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string copyLevel(::std::string const& worldId, ::Core::Path const& targetFolder);
+    MCNAPI ::std::string copyLevel(::std::string const& worldId, ::Core::Path const& targetFolder);
 
-    MCAPI ::Bedrock::Threading::Async<::FileArchiver::CopyWorldResult> copyLevelAsync(::std::string const& worldId);
+    MCNAPI ::Bedrock::Threading::Async<::FileArchiver::CopyWorldResult> copyLevelAsync(::std::string const& worldId);
 #endif
 
-    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentEditorLevel(
+    MCNAPI ::Bedrock::Threading::Async<::FileArchiver::Result> exportCurrentEditorLevel(
         ::Level*                                                                   level,
         ::Core::Path const&                                                        exportFilePath,
         ::gsl::not_null<::std::shared_ptr<::FileArchiver::InterventionPublishers>> interventionPublishers,
@@ -478,7 +478,7 @@ public:
         ::FileArchiver::ShowToast                                                  toast
     );
 
-    MCAPI void exportCurrentLevel(
+    MCNAPI void exportCurrentLevel(
         ::Level*                                                                   level,
         bool                                                                       isBundle,
         ::FileArchiver::ExportType                                                 exportType,
@@ -488,7 +488,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void exportLevel(
+    MCNAPI void exportLevel(
         ::std::string const&                                                       worldId,
         bool                                                                       isBundle,
         ::FileArchiver::ExportType                                                 exportType,
@@ -499,21 +499,21 @@ public:
     );
 #endif
 
-    MCAPI void exportPack(
+    MCNAPI void exportPack(
         ::Core::Path const&                            path,
         ::Core::Path const&                            exportFilePath,
         ::std::function<void(::FileArchiver::Result&)> exportCallback
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::Bedrock::Threading::Async<::FileArchiver::Result> importLevel(
+    MCNAPI ::Bedrock::Threading::Async<::FileArchiver::Result> importLevel(
         ::Core::Path const&  archivedWorldFile,
         bool                 suppressStartMessage,
         bool                 suppressEndMessage,
         ::std::string const& levelId
     );
 
-    MCAPI void importLevel(
+    MCNAPI void importLevel(
         ::Core::Path const&                            archivedWorldFile,
         ::std::function<void(::FileArchiver::Result&)> importCallback,
         bool                                           suppressStartMessage,
@@ -521,7 +521,7 @@ public:
         ::std::string const&                           levelId
     );
 
-    MCAPI void setEduCloudImportInfo(
+    MCNAPI void setEduCloudImportInfo(
         ::std::string const& worldId,
         ::std::string const& cTag,
         ::std::string const& name,
@@ -534,10 +534,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _revertPremiumUpgradePacks(::Core::Path const& filePath);
+    MCNAPI static void _revertPremiumUpgradePacks(::Core::Path const& filePath);
 
 #ifdef LL_PLAT_C
-    MCAPI static void _sanitizeWorld(::Core::Path const& newWorldPath);
+    MCNAPI static void _sanitizeWorld(::Core::Path const& newWorldPath);
 #endif
     // NOLINTEND
 
@@ -545,24 +545,24 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& EXTENSION_ADDON();
+    MCNAPI static ::std::string const& EXTENSION_ADDON();
 #endif
 
-    MCAPI static ::std::string const& EXTENSION_PROJECT();
+    MCNAPI static ::std::string const& EXTENSION_PROJECT();
 
-    MCAPI static ::std::string const& EXTENSION_RESOURCEPACK();
+    MCNAPI static ::std::string const& EXTENSION_RESOURCEPACK();
 
-    MCAPI static ::std::string const& EXTENSION_TEMPLATE();
+    MCNAPI static ::std::string const& EXTENSION_TEMPLATE();
 
-    MCAPI static ::std::string const& EXTENSION_VANILLA();
+    MCNAPI static ::std::string const& EXTENSION_VANILLA();
 
-    MCAPI static ::std::string const& IMPORT_LOCK_FILE();
+    MCNAPI static ::std::string const& IMPORT_LOCK_FILE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scheduler&                                                    scheduler,
         ::ILevelListCache&                                              levelListCache,
         ::LevelStorageSource&                                           levelStorageSource,
@@ -579,7 +579,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::FilePickerSettings>
+    MCNAPI ::std::shared_ptr<::FilePickerSettings>
     $generateFilePickerSettings(::std::vector<::FileArchiver::ExportType> const& types, ::std::string const&) const;
 
 

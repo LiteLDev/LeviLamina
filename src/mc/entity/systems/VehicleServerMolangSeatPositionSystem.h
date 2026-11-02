@@ -19,12 +19,12 @@ class VehicleServerMolangSeatPositionSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _tickActor(
+    MCNAPI static void _tickActor(
         ::StrictEntityContext&,
         ::PassengerComponent const&          passengerComponent,
         ::ActorOwnerComponent&               actorComponent,
         ::PositionPassengerRequestComponent& positionPassengerRequestComponent,
-        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> vehicleView
+        ::ViewT<::StrictEntityContext, ::RideableComponent const, ::VehicleComponent const> const& vehicleView
     );
     // NOLINTEND
 };

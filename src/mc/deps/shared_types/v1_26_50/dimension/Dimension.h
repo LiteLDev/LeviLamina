@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_60::DimensionDefinition::Description> mDescription;
-    ::ll::TypedStorage<8, 80, ::SharedTypes::v1_26_50::DimensionDefinition::Components>  mComponents;
+    ::ll::TypedStorage<8, 88, ::SharedTypes::v1_26_50::DimensionDefinition::Components>  mComponents;
     // NOLINTEND
 
 public:
@@ -24,16 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Dimension(::SharedTypes::v1_26_50::DimensionDefinition::Dimension const&);
+    MCNAPI Dimension(::SharedTypes::v1_26_50::DimensionDefinition::Dimension const&);
 
-    MCAPI ::SharedTypes::v1_26_50::DimensionDefinition::Dimension&
+    MCNAPI ::SharedTypes::v1_26_50::DimensionDefinition::Dimension&
     operator=(::SharedTypes::v1_26_50::DimensionDefinition::Dimension&&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::DimensionDefinition::Dimension const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::DimensionDefinition::Dimension const&);
     // NOLINTEND
 };
 

@@ -30,29 +30,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger const&);
+    MCNAPI DefinitionTrigger(::SharedTypes::Legacy::DefinitionTrigger const&);
 
-    MCAPI bool operator==(::SharedTypes::Legacy::DefinitionTrigger const&) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::DefinitionTrigger const&) const;
 
-    MCAPI ~DefinitionTrigger();
+    MCNAPI ~DefinitionTrigger();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Legacy::DefinitionTrigger const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::DefinitionTrigger const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

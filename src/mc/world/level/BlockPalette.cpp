@@ -3,11 +3,10 @@
 #include "mc/world/level/block/registry/BlockTypeRegistry.h"
 
 void BlockPalette::initFromBlockDefinitions() {
-    ::BlockTypeRegistry::get().forEachBlockType([this](::BlockType const& blockType) {
-        blockType.forEachBlockPermutation([this](::Block const& block) {
+    for (auto& [name, blockType] : *BlockTypeRegistry::get().mBlockLookupMap) {
+        blockType->forEachBlockPermutation([this](::Block const& block) {
             appendBlock(block);
             return true;
         });
-        return true;
-    });
+    }
 }

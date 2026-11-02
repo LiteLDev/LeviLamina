@@ -64,11 +64,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StartGamePacketPayload();
+    MCNAPI StartGamePacketPayload();
 
-    MCAPI StartGamePacketPayload(::StartGamePacketPayload&&);
+    MCNAPI StartGamePacketPayload(::StartGamePacketPayload&&);
 
-    MCAPI StartGamePacketPayload(
+    MCNAPI StartGamePacketPayload(
         ::LevelSettings const&                                                     settings,
         ::ActorUniqueID                                                            entityId,
         ::ActorRuntimeID                                                           runtimeId,
@@ -94,20 +94,20 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getMultiplayerCorrelationId() const;
+    MCNAPI ::std::string getMultiplayerCorrelationId() const;
 #endif
 
-    MCAPI ~StartGamePacketPayload();
+    MCNAPI ~StartGamePacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::StartGamePacketPayload&&);
+    MCNAPI void* $ctor(::StartGamePacketPayload&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelSettings const&                                                     settings,
         ::ActorUniqueID                                                            entityId,
         ::ActorRuntimeID                                                           runtimeId,
@@ -136,6 +136,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

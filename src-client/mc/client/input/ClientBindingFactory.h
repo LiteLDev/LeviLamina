@@ -110,53 +110,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
+    MCNAPI ClientBindingFactory(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
 
-    MCAPI ::RectangleArea
+    MCNAPI bool _blockSelectEnabled() const;
+
+    MCNAPI ::RectangleArea
     _calculateClassicButtonRectangleWithOptionIDs(::OptionID posX, ::OptionID posY, ::OptionID scale) const;
 
-    MCAPI ::RectangleArea _calculateClassicDpadRectangle() const;
+    MCNAPI ::RectangleArea _calculateClassicDpadRectangle() const;
 
-    MCAPI ::RectangleArea _fitToScreen(::RectangleArea const& rectangle) const;
+    MCNAPI ::RectangleArea _fitToScreen(::RectangleArea const& rectangle) const;
 
-    MCAPI bool _isInputSprinting() const;
+    MCNAPI bool _isInputSprinting() const;
 
-    MCAPI bool _touchButtonsVisible() const;
+    MCNAPI bool _touchButtonsVisible() const;
 
-    MCAPI void setupAreaBindings();
+    MCNAPI void setupAreaBindings();
 
-    MCAPI void setupBoolBindings();
+    MCNAPI void setupBoolBindings();
 
-    MCAPI void setupFloatBindings();
+    MCNAPI void setupFloatBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
+    MCNAPI void* $ctor(::ClientInputHandler const& clientInputHandler, ::IClientInstance& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
+    MCNAPI ::std::function<bool()> $getBooleanBinding(uint name) const;
 
-    MCAPI ::std::function<float()> $getFloatBinding(uint name) const;
+    MCNAPI ::std::function<float()> $getFloatBinding(uint name) const;
 
-    MCAPI ::std::function<::std::string()> $getStringBinding(uint name) const;
+    MCNAPI ::std::function<::std::string()> $getStringBinding(uint name) const;
 
-    MCAPI ::std::function<::glm::vec2()> $getPointBinding(uint name) const;
+    MCNAPI ::std::function<::glm::vec2()> $getPointBinding(uint name) const;
 
-    MCAPI ::std::function<::RectangleArea()> $getAreaBinding(uint name) const;
+    MCNAPI ::std::function<::RectangleArea()> $getAreaBinding(uint name) const;
 
-    MCAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint name) const;
+    MCNAPI ::std::function<void(::RectangleArea)> $getDynamicAreaBinding(uint name) const;
 
-    MCAPI ::std::function<void(float)> $getFloatSetter(uint name) const;
+    MCNAPI ::std::function<void(float)> $getFloatSetter(uint name) const;
 
-    MCAPI void $setCustomAreaBinding(::std::string const& name, ::RectangleArea area);
+    MCNAPI void $setCustomAreaBinding(::std::string const& name, ::RectangleArea area);
 
-    MCAPI void $removeCustomAreaBinding(::std::string const& name);
+    MCNAPI void $removeCustomAreaBinding(::std::string const& name);
 
-    MCAPI ::std::vector<uint> $getCustomAreaBindingNames() const;
+    MCNAPI ::std::vector<uint> $getCustomAreaBindingNames() const;
     // NOLINTEND
 };

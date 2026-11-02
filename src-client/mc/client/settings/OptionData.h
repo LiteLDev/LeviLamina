@@ -32,23 +32,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OptionData(::Settings::OptionData&&);
+    MCNAPI OptionData(::Settings::OptionData&&);
 
-    MCAPI ::Settings::OptionData& operator=(::Settings::OptionData&&);
+    MCNAPI ::Settings::OptionData& operator=(::Settings::OptionData&&);
 
-    MCAPI ~OptionData();
+    MCNAPI ~OptionData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Settings::OptionData&&);
+    MCNAPI void* $ctor(::Settings::OptionData&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

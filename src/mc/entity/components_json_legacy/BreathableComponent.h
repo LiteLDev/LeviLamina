@@ -49,18 +49,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canBreathe(::Actor const& owner) const;
+    MCNAPI bool canBreathe(::Actor const& owner) const;
 
-    MCAPI ::BreathableComponent& operator=(::BreathableComponent&&);
+    MCNAPI ::BreathableComponent& operator=(::BreathableComponent&&);
 
-    MCAPI void updateBreathableState(::Actor& owner);
+    MCNAPI void updateBreathableState(::Actor& owner);
 
-    MCAPI ~BreathableComponent();
+    MCNAPI ~BreathableComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

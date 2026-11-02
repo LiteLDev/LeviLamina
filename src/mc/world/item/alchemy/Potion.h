@@ -34,23 +34,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Potion(::std::string_view const nameId, ::std::string_view const prefix);
+    MCNAPI Potion(::std::string_view const nameId, ::std::string_view const prefix);
 
-    MCAPI Potion(
+    MCNAPI Potion(
         ::std::string_view const   nameId,
         ::std::string_view const   descriptionID,
         ::MobEffectInstance const& mobEffect,
         ::PotionVariant            var
     );
 
-    MCAPI Potion(
+    MCNAPI Potion(
         ::std::string_view const           nameId,
         ::std::vector<::std::string>       descriptionIDs,
         ::std::vector<::MobEffectInstance> mobEffects,
         ::PotionVariant                    var
     );
 
-    MCAPI void appendFormattedPotionText(
+    MCNAPI void appendFormattedPotionText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::PotionType                         potionType,
         ::PotionVariant                      potionVariant,
@@ -58,23 +58,23 @@ public:
         float                                timeMod
     ) const;
 
-    MCAPI ::std::string getDescriptionId() const;
+    MCNAPI ::std::string getDescriptionId() const;
 
-    MCAPI ::std::string getDescriptionId(::PotionType potionType) const;
+    MCNAPI ::std::string getDescriptionId(::PotionType potionType) const;
 
-    MCFOLD ::std::string getNameId() const;
+    MCNAPI ::std::string getNameId() const;
 
-    MCAPI ::std::string getPotencyDescription(::PotionType potionType, float timeMod) const;
+    MCNAPI ::std::string getPotencyDescription(::PotionType potionType, float timeMod) const;
 
-    MCFOLD ::std::string getPrefix() const;
+    MCNAPI ::std::string getPrefix() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addPotion(::std::shared_ptr<::Potion const> const potion);
+    MCNAPI static void addPotion(::std::shared_ptr<::Potion const> const potion);
 
-    MCAPI static void appendMobEffectText(
+    MCNAPI static void appendMobEffectText(
         ::Bedrock::Safety::RedactableString& inOutHovertext,
         ::PotionVariant                      potionVariant,
         uint                                 mobEffectId,
@@ -82,66 +82,66 @@ public:
         ::Player const&                      player
     );
 
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     effectDurationToString(::PotionType potionType, float timeMod, ::MobEffectInstance const& effect);
 
-    MCAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);
+    MCNAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);
 
-    MCAPI static ::std::string getBasePotion(::PotionType type);
+    MCNAPI static ::std::string getBasePotion(::PotionType type);
 
-    MCAPI static ::std::string getPotencyDescription(
+    MCNAPI static ::std::string getPotencyDescription(
         ::PotionType               potionType,
         float                      timeMod,
         ::std::string_view const   descID,
         ::MobEffectInstance const& effect
     );
 
-    MCAPI static ::std::shared_ptr<::Potion const> getPotion(::std::string_view potionNameId);
+    MCNAPI static ::std::shared_ptr<::Potion const> getPotion(::std::string_view potionNameId);
 
-    MCAPI static void initPotions(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
+    MCNAPI static void initPotions(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::Potion const> const& Awkward();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Awkward();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& FireResistance();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& FireResistance();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Healing();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Healing();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Poison();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Poison();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Slowness();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Slowness();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Swiftness();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Swiftness();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Water();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Water();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& WaterBreathing();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& WaterBreathing();
 
-    MCAPI static ::std::shared_ptr<::Potion const> const& Weakness();
+    MCNAPI static ::std::shared_ptr<::Potion const> const& Weakness();
 
-    MCAPI static int& mLastId();
+    MCNAPI static int& mLastId();
 
     MCAPI static ::std::array<::std::shared_ptr<::Potion const>, 64>& mPotionsById();
 
-    MCAPI static ::std::unordered_map<::std::string, int>& mPotionsByName();
+    MCNAPI static ::std::unordered_map<::std::string, int>& mPotionsByName();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string_view const nameId, ::std::string_view const prefix);
+    MCNAPI void* $ctor(::std::string_view const nameId, ::std::string_view const prefix);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view const   nameId,
         ::std::string_view const   descriptionID,
         ::MobEffectInstance const& mobEffect,
         ::PotionVariant            var
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string_view const           nameId,
         ::std::vector<::std::string>       descriptionIDs,
         ::std::vector<::MobEffectInstance> mobEffects,

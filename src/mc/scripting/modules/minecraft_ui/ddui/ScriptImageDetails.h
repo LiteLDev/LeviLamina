@@ -27,20 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI bool operator==(::ScriptModuleMinecraftServerUI::ScriptImageDetails const& other) const;
-
-    MCNAPI ~ScriptImageDetails();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::InterfaceBinding bind();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

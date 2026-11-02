@@ -67,14 +67,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     MCNAPI ::PuvLoadData::LoadResultWithTiming _parseAndLoadCameraPreset(
         ::std::string const&                                     fileData,
         ::MolangVersion                                          molangVersion,
         ::cereal::ReflectionCtx const&                           ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> const validator
     );
-#endif
 
     MCNAPI void _storeCameraList(::CameraPresets::CameraList&& list);
 

@@ -5,11 +5,9 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/input/InputBindingMode.h"
-#include "mc/deps/input/InputMode.h"
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class ClientBindingFactory;
 class ClientInputHandlerProxy;
 class ClientInputMappingFactory;
@@ -17,7 +15,6 @@ class Config;
 class IClientInstance;
 class IGameModuleApp;
 class InputHandler;
-class ItemStack;
 class ScreenContext;
 struct ActorDataFlagComponent;
 struct MobEffectsComponent;
@@ -62,66 +59,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientInputHandler(
+    MCNAPI ClientInputHandler(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::InputHandler&                                                            inputHandler,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
         ::IGameModuleApp&                                                          gameModuleApp
     );
 
-    MCAPI ::Actor* _interactWithEntity() const;
+    MCNAPI ::std::string _interactWithImmersiveReader() const;
 
-    MCAPI ::std::string _interactWithImmersiveReader() const;
+    MCNAPI bool allowPicking() const;
 
-    MCAPI ::ItemStack const& _interactWithItem() const;
+    MCNAPI bool canInteract() const;
 
-    MCAPI bool _shouldUseGameInputMapping() const;
+    MCNAPI ::std::string getBoatExitText() const;
 
-    MCAPI bool canInteract() const;
+    MCNAPI void getCursorPos(float& xCursor, float& yCursor) const;
 
-    MCAPI bool canPaddle() const;
+    MCNAPI ::std::string getInteractText() const;
 
-    MCAPI ::std::string getBoatExitText() const;
+    MCNAPI bool getSplitscreenJoinPromptVisible() const;
 
-    MCAPI ::InputMode getCurrentInputMode() const;
+    MCNAPI bool isBlockSelectToggled() const;
 
-    MCAPI void getCursorPos(float& xCursor, float& yCursor) const;
+    MCNAPI bool isTouchGameplayAllowed() const;
 
-    MCAPI ::std::string getInteractText() const;
+    MCNAPI void onConfigChanged(::Config const& c);
 
-    MCAPI bool getSplitscreenJoinPromptVisible() const;
+    MCNAPI void pushInputMapping(bool inGame);
 
-    MCAPI bool isBlockSelectToggled() const;
+    MCNAPI void releaseButtonsAndSticks();
 
-    MCAPI bool isTouchGameplayAllowed() const;
+    MCNAPI void render(::ScreenContext& screenContext);
 
-    MCAPI void onConfigChanged(::Config const& c);
+    MCNAPI void resetPlayerState();
 
-    MCAPI void popInputMapping(bool inGame);
+    MCNAPI void setBlockSelectToggle(bool value);
 
-    MCAPI void pushInputMapping(bool inGame);
+    MCNAPI bool showImmersiveReader() const;
 
-    MCAPI void releaseButtonsAndSticks();
+    MCNAPI void updateInputMapping();
 
-    MCAPI void render(::ScreenContext& screenContext);
+    MCNAPI bool updateInputMode(::std::string const& mode);
 
-    MCAPI void resetPlayerState();
-
-    MCAPI void setBlockSelectToggle(bool value);
-
-    MCAPI void setDisableInput(bool disable);
-
-    MCAPI void setSuspendDirectionalInput(bool suspendDirectionalInput);
-
-    MCAPI void setSuspendInput(bool suspendInput);
-
-    MCAPI bool showBoatExit() const;
-
-    MCAPI void updateInputMapping();
-
-    MCAPI bool updateInputMode(::std::string const& mode);
-
-    MCAPI void updatePlayerState(
+    MCNAPI void updatePlayerState(
         ::gsl::not_null<::IClientInstance const*> client,
         ::MovementAbilitiesComponent const&       abilities,
         ::MobEffectsComponent const&              mobEffects,
@@ -131,15 +112,15 @@ public:
         bool                                      isInWater
     );
 
-    MCAPI bool useFreeformPickDirection() const;
+    MCNAPI bool useFreeformPickDirection() const;
 
-    MCAPI ~ClientInputHandler();
+    MCNAPI ~ClientInputHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&                    client,
         ::InputHandler&                                                            inputHandler,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect,
@@ -150,6 +131,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

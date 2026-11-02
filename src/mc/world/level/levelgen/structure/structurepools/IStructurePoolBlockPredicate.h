@@ -36,9 +36,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $finalize(::BlockSource& region, ::IRandom& random);
+    MCNAPI bool $finalize(::BlockSource& region, ::IRandom& random);
 
-    MCFOLD ::std::string $validate() const;
+    MCNAPI ::std::string $validate() const;
 
 
     // NOLINTEND

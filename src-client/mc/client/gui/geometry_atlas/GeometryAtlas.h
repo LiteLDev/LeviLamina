@@ -13,7 +13,7 @@ namespace GeometryAtlas { class IPaperDollHandleFactory; }
 namespace GeometryAtlas {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::GeometryAtlas::IOffscreenPaperDollRenderer> createOffscreenPaperDollRenderer(
+MCNAPI ::std::unique_ptr<::GeometryAtlas::IOffscreenPaperDollRenderer> createOffscreenPaperDollRenderer(
     ::std::weak_ptr<::GeometryAtlas::IGeometryAtlas>               atlas,
     ::std::weak_ptr<::GeometryAtlas::IGeometryAtlasCaptureService> capture,
     ::std::unique_ptr<::GeometryAtlas::IPaperDollHandleFactory>    dollFactory

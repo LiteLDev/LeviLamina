@@ -55,44 +55,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldClockRegistryServer(
-        ::cereal::ReflectionCtx&                                      cerealContext,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
+    MCNAPI WorldClockRegistryServer(
+        ::cereal::ReflectionCtx&                            cerealContext,
+        ::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator
     );
 
-    MCAPI bool loadData(::LevelStorage const& levelStorage);
+    MCNAPI bool loadData(::LevelStorage const& levelStorage);
 
-    MCAPI void saveData(::LevelStorage& levelStorage) const;
+    MCNAPI void saveData(::LevelStorage& levelStorage) const;
 
-    MCAPI void sendInitializationToClient(
+    MCNAPI void sendInitializationToClient(
         ::NetworkIdentifier const& source,
         ::SubClientId              subClientId,
         ::PacketSender&            packetSender
     ) const;
 
-    MCAPI void syncClocksWithClients(::PacketSender& packetSender) const;
+    MCNAPI void syncClocksWithClients(::PacketSender& packetSender) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::cereal::ReflectionCtx&                                      cerealContext,
-        ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> const& levelEventCoordinator
-    );
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx& cerealContext, ::Bedrock::NonOwnerPointer<::LevelEventCoordinator> eventCoordinator);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::PacketSender& packetSender, ::LevelData const& levelData);
+    MCNAPI void $tick(::PacketSender& packetSender, ::LevelData const& levelData);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

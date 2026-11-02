@@ -4,8 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BlockSource;
-class BoundingBox;
 class Level;
 namespace gametest { class BaseGameTestInstance; }
 namespace gametest { class GameTestTicker; }
@@ -15,12 +13,6 @@ class GameTestRunner {
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void clearAllTests(
-        ::BlockSource&                      region,
-        ::gametest::GameTestTicker&         testTicker,
-        ::std::vector<::BoundingBox> const& gameTestInstanceBounds
-    );
-
     MCNAPI static void clearMarkers(::Level& level);
 
     MCNAPI static void

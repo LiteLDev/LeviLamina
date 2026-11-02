@@ -13,6 +13,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::JoinCodeIconData> const& gData();
+    MCNAPI static ::std::vector<::JoinCodeIconData> const& gData();
     // NOLINTEND
 };

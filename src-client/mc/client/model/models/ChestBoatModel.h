@@ -61,9 +61,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChestBoatModel(::GeometryPtr source);
+    MCNAPI explicit ChestBoatModel(::GeometryPtr source);
 
-    MCAPI void _animatePaddle(
+    MCNAPI void _animatePaddle(
         ::ModelPart&        paddle,
         ::ScreenContext&    screenContext,
         ::Boat const&       boat,
@@ -76,19 +76,19 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr source);
+    MCNAPI void* $ctor(::GeometryPtr source);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         entity,
         float            time,
@@ -99,9 +99,9 @@ public:
         float            scale
     );
 
-    MCFOLD void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
+    MCNAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
 
-    MCFOLD ::ModelPart $_makePaddle(bool flip, ::ModelPart paddle);
+    MCNAPI ::ModelPart $_makePaddle(bool flip, ::ModelPart paddle);
     // NOLINTEND
 
 public:

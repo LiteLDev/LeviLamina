@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/block/BakedBlockLightType.h"
+#include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/UvGenerationType.h"
 #include "mc/client/renderer/block/tessellation_pipeline/client_block_pipeline/VisualReference.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -27,18 +28,18 @@ namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
 namespace VanillaBlockTessellation {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::unique_ptr<::ClientBlockPipeline::Description> _createMaterialOverridePipelineDescription(
+MCNAPI ::std::unique_ptr<::ClientBlockPipeline::Description> _createMaterialOverridePipelineDescription(
     ::VanillaBlockTessellation::Config const&                         config,
     ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride
 );
 
-MCAPI ::std::unique_ptr<::ClientBlockPipeline::Description>
+MCNAPI ::std::unique_ptr<::ClientBlockPipeline::Description>
 _createSingleBlockPipelineDescription(::VanillaBlockTessellation::Config const& config);
 
-MCAPI ::std::unique_ptr<::ClientBlockPipeline::Description>
+MCNAPI ::std::unique_ptr<::ClientBlockPipeline::Description>
 _createWorldPipelineDescription(::VanillaBlockTessellation::Config const& config);
 
-MCAPI void _tessellateBlockWithPipeline(
+MCNAPI void _tessellateBlockWithPipeline(
     ::Tessellator&                               tessellator,
     ::Block const&                               block,
     ::VanillaBlockTessellation::Config&&         config,
@@ -48,12 +49,13 @@ MCAPI void _tessellateBlockWithPipeline(
     ::BlockPos const&                            blockPos
 );
 
-MCAPI ::VanillaBlockTessellation::Config createCrackPipelineConfig(
+MCNAPI ::VanillaBlockTessellation::Config createCrackPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository>      materialRepository,
-    ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride
+    ::Bedrock::NonOwnerPointer<::ClientBlockPipeline::Material const> materialOverride,
+    ::ClientBlockPipeline::UvGenerationType                           uvGenerationType
 );
 
-MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
+MCNAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
     ::std::shared_ptr<::ClientBlockPipeline::MaterialRepository> materialRepository,
     ::DimensionType const&                                       dimension,
     ::BakedBlockLightType                                        lightingType,
@@ -61,14 +63,14 @@ MCAPI ::VanillaBlockTessellation::Config createWorldPipelineConfig(
     bool                                                         textureShiftsEnabled
 );
 
-MCAPI void tessellateBlockAsItem(
+MCNAPI void tessellateBlockAsItem(
     ::ClientBlockPipeline::TessellatorContext const&           pipelineContext,
     ::Tessellator&                                             tessellator,
     ::Block const&                                             block,
     ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCaps
 );
 
-MCAPI void tessellateBlockInWorld(
+MCNAPI void tessellateBlockInWorld(
     ::ClientBlockPipeline::TessellatorContext const&           pipelineContext,
     ::Tessellator&                                             tessellator,
     ::Block const&                                             block,
@@ -81,7 +83,7 @@ MCAPI void tessellateBlockInWorld(
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::Vec3 const& DEFAULT_POST_TRANSFORM_OFFSET();
+MCNAPI ::Vec3 const& DEFAULT_POST_TRANSFORM_OFFSET();
 // NOLINTEND
 
 } // namespace VanillaBlockTessellation

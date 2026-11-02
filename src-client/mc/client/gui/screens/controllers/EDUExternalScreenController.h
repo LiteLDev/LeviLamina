@@ -10,9 +10,9 @@
 class MinecraftScreenModel;
 // clang-format on
 
-class EDUExternalScreenController : public ::MinecraftScreenController {
+class EduExternalScreenController : public ::MinecraftScreenController {
 public:
-    // EDUExternalScreenController inner types define
+    // EduExternalScreenController inner types define
     using StorageLocationChangedCallback = ::std::function<void()>;
 
     using WorldCountCallback = ::std::function<uint64()>;
@@ -26,12 +26,12 @@ public:
 
 public:
     // prevent constructor by default
-    EDUExternalScreenController();
+    EduExternalScreenController();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EDUExternalScreenController(
+    MCNAPI EduExternalScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback
@@ -41,7 +41,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::function<void()>                   storageLocationChangedCallback,
         ::std::function<uint64()>                 worldCountCallback

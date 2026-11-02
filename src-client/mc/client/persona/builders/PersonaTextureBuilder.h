@@ -4,19 +4,15 @@
 
 // auto generated inclusion list
 #include "mc/client/persona/builders/TextureTint.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
 // auto generated forward declare list
 // clang-format off
 class IAdvancedGraphicsOptions;
 class IPersonaImageProvider;
-class IPersonaPieceProvider;
 class Pack;
 class ResourceLoadManager;
 class ResourcePackManager;
-class TaskGroup;
-struct PersonaCharacter;
 struct PersonaTextureResources;
 struct TextureHotReloader;
 namespace Json { class Value; }
@@ -44,30 +40,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<bool> parseTextures(
-        ::std::string const&                      characterName,
-        ::TaskGroup&                              taskGroup,
-        ::IPersonaPieceProvider&                  pieceProvider,
-        ::std::unordered_map<::std::string, uint> sampledTexelWidths
+    MCNAPI PersonaTextureBuilder(
+        ::IPersonaImageProvider&                                  imageProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
     );
 
-    MCAPI void registerTexturesForHotReload(
-        ::PersonaCharacter&                        character,
-        ::std::function<void(::PersonaCharacter&)> onTextureReloaded
-    );
+    MCNAPI ~PersonaTextureBuilder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _addClothingMap(
+    MCNAPI static void _addClothingMap(
         ::PersonaTextureResources&      textureResources,
         ::std::shared_ptr<::Pack const> clothingSourcePack,
         ::std::string const&            mapId,
         ::std::string                   clothingMapPath
     );
 
-    MCAPI static void _addPieceTextureToMap(
+    MCNAPI static void _addPieceTextureToMap(
         ::PersonaTextureResources& textureResources,
         ::std::string const&       pieceId,
         ::persona::TextureTint     texture,
@@ -75,14 +69,14 @@ public:
         ::std::optional<uint>      sampledTexelWidth
     );
 
-    MCAPI static void _addTextureToConfiguration(
+    MCNAPI static void _addTextureToConfiguration(
         ::mce::TextureGroup&          textureGroup,
         ::persona::TextureTint const& texture,
         ::Json::Value&                pieceTextureData,
         bool                          validateFileExists
     );
 
-    MCAPI static void _ensureCPUImageDataIsLoaded(
+    MCNAPI static void _ensureCPUImageDataIsLoaded(
         ::mce::TextureGroup&             textureGroup,
         ::persona::TextureTint const&    texture,
         ::persona::TextureTint::PathType pathType,
@@ -93,12 +87,30 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BASE_FACE_TEXTURE_ID();
+    MCNAPI static ::std::string const& BASE_FACE_TEXTURE_ID();
 
-    MCAPI static ::std::string const& BASE_TEXTURE_ID();
+    MCNAPI static ::std::string const& BASE_TEXTURE_ID();
 
-    MCAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
+    MCNAPI static ::std::string const& PERSONA_ANIMATED_ATLAS_TEST_PATH();
 
-    MCAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
+    MCNAPI static ::std::string const& PERSONA_ATLAS_TEST_PATH();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::IPersonaImageProvider&                                  imageProvider,
+        ::Bedrock::NotNullNonOwnerPtr<::IAdvancedGraphicsOptions> advancedGraphicsOptions,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>      resourceLoadManager,
+        ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>      resourcePackManager,
+        ::Bedrock::NonOwnerPointer<::TextureHotReloader>          textureHotReloader
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

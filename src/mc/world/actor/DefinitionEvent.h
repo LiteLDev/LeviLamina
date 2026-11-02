@@ -36,14 +36,14 @@ public:
     // NOLINTBEGIN
     MCAPI DefinitionEvent(::DefinitionEvent const&);
 
-    MCAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
+    MCNAPI void evaluateEvent(::RenderParams& params, ::std::vector<::DefinitionModifier>& modifications) const;
 
-    MCAPI ::DefinitionEvent&
+    MCNAPI ::DefinitionEvent&
     fromSharedType(::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent const& definitionEvent);
 
-    MCAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent getSharedType() const;
+    MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent getSharedType() const;
 
-    MCAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
+    MCNAPI ::DefinitionEvent& operator=(::DefinitionEvent const&);
 
     MCAPI ~DefinitionEvent();
     // NOLINTEND

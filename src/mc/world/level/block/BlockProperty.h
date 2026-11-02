@@ -43,4 +43,5 @@ enum class BlockProperty : uint64 {
     CanDamperVibrations              = 1ull << 35,
     CanOccludeVibrations             = 1ull << 36,
     LegacyComparatorReadThrough      = 1ull << 37,
+    HasAlignedPlacement              = 1ull << 38,
 };

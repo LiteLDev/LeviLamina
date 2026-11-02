@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
+    MCNAPI ::Block const& $getUnknownBlock(::CompoundTag const& serId);
 
 
     // NOLINTEND

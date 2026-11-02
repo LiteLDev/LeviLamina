@@ -48,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addHighSlice(
+    MCNAPI void _addHighSlice(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void _addLowSlice(
+    MCNAPI void _addLowSlice(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void _addMidSlice(
+    MCNAPI void _addMidSlice(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void _addPeaks(
+    MCNAPI void _addPeaks(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   weirdness,
         ::BiomeRegistry const&             biomeRegistry
     ) const;
 
-    MCAPI void _addSurfaceBiome(
+    MCNAPI void _addSurfaceBiome(
         ::std::vector<::BiomeNoiseTarget>& biomes,
         ::ClimateUtils::Parameter const&   temperature,
         ::ClimateUtils::Parameter const&   humidity,
@@ -83,44 +83,56 @@ public:
         ::Biome const*                     second
     ) const;
 
-    MCAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
+    MCNAPI void _populateBiomeArrays(::BiomeRegistry const& biomeRegistry) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> EROSIONS();
+    MCNAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> EROSIONS();
 
-    MCAPI static ::ClimateUtils::Parameter const& FULL_RANGE();
+    MCNAPI static ::ClimateUtils::Parameter const& FULL_RANGE();
 
-    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> HUMIDITIES();
+    MCNAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> HUMIDITIES();
 
-    MCAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> TEMPERATURES();
+    MCNAPI static ::std::add_lvalue_reference_t<::ClimateUtils::Parameter const[]> TEMPERATURES();
 
-    MCAPI static ::ClimateUtils::Parameter const& coastContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& coastContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& deepOceanContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& deepOceanContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& dripstoneCavesContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& dripstoneCavesContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& farInlandContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& dripstoneCavesHumidity();
 
-    MCAPI static ::ClimateUtils::Parameter const& inlandContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& farInlandContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& lushCavesHumidity();
+    MCNAPI static ::ClimateUtils::Parameter const& iceCavesContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& midInlandContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& iceCavesHumidity();
 
-    MCAPI static ::ClimateUtils::Parameter const& mushroomFieldsContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& iceCavesTemperature();
 
-    MCAPI static ::ClimateUtils::Parameter const& nearInlandContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& iceCavesWeirdness();
 
-    MCAPI static ::ClimateUtils::Parameter const& oceanContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& inlandContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesContinentalness();
+    MCNAPI static ::ClimateUtils::Parameter const& lushCavesHumidity();
 
-    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesErosion();
+    MCNAPI static ::ClimateUtils::Parameter const& midInlandContinentalness();
 
-    MCAPI static ::ClimateUtils::Parameter const& sulfurCavesWeirdness();
+    MCNAPI static ::ClimateUtils::Parameter const& mushroomFieldsContinentalness();
+
+    MCNAPI static ::ClimateUtils::Parameter const& nearInlandContinentalness();
+
+    MCNAPI static ::ClimateUtils::Parameter const& oceanContinentalness();
+
+    MCNAPI static ::ClimateUtils::Parameter const& sulfurCavesContinentalness();
+
+    MCNAPI static ::ClimateUtils::Parameter const& sulfurCavesErosion();
+
+    MCNAPI static ::ClimateUtils::Parameter const& sulfurCavesHumidity();
+
+    MCNAPI static ::ClimateUtils::Parameter const& sulfurCavesWeirdness();
     // NOLINTEND
 };

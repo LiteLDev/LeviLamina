@@ -11,9 +11,11 @@
 // auto generated forward declare list
 // clang-format off
 class AsynchronousIPResolver;
+class TransportEndpointCache;
 struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Social { struct Nonce; }
 // clang-format on
 
@@ -23,6 +25,9 @@ public:
     // NOLINTBEGIN
     virtual ~ServerLocator() /*override*/ = default;
 
+    virtual ::std::shared_ptr<::TransportEndpointCache> getTransportEndpointCache() const;
+
+#ifdef LL_PLAT_S
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
         ::std::string const&                 worldName,
@@ -35,6 +40,20 @@ public:
         ::ServerSupportedAuthenticationTypes supportedAuth,
         ::Social::Nonce const&               nonce
     ) = 0;
+#else // LL_PLAT_C
+    virtual void startAnnouncingServer(
+        ::std::string const&                 playerName,
+        ::std::string const&                 worldName,
+        ::GameType                           worldGameType,
+        int                                  numPlayers,
+        int                                  maxNumPlayers,
+        bool                                 isJoinableThroughServerScreen,
+        bool                                 isEditorWorld,
+        bool                                 isHardcore,
+        ::ServerSupportedAuthenticationTypes supportedAuth,
+        ::Social::Nonce const&               nonce
+    ) = 0;
+#endif
 
     virtual void stopAnnouncingServer() = 0;
 
@@ -43,6 +62,8 @@ public:
     virtual void stopServerDiscovery() = 0;
 
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) = 0;
+
+    virtual ::Bedrock::PubSub::Subscription acquireHttpProbePermission();
 
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const = 0;
 
@@ -73,6 +94,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::TransportEndpointCache> $getTransportEndpointCache() const;
+
+    MCNAPI ::Bedrock::PubSub::Subscription $acquireHttpProbePermission();
+
     MCNAPI void $_onDisable();
 
     MCNAPI void $_onEnable();

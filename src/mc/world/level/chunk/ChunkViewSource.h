@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/level/chunk/ChunkSource.h"
 #include "mc/world/level/chunk/ChunkSourceViewGenerateMode.h"
@@ -23,9 +24,9 @@ class ChunkViewSource : public ::ChunkSource {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode>                       mParentLoadMode;
-    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>> mArea;
-    ::ll::TypedStorage<8, 8, ::ChunkSource&>                                mMainSource;
+    ::ll::TypedStorage<4, 4, ::ChunkSource::LoadMode> mParentLoadMode;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox>> mArea;
+    ::ll::TypedStorage<8, 8, ::ChunkSource&> mMainSource;
     // NOLINTEND
 
 public:
@@ -60,7 +61,7 @@ public:
     // NOLINTBEGIN
     MCAPI ChunkViewSource(::ChunkViewSource const& otherChunkViewSource);
 
-    MCAPI void move(
+    MCNAPI void move(
         ::Bounds const&                                                     bounds,
         bool                                                                isCircle,
         ::ChunkSourceViewGenerateMode                                       chunkViewGenerateMode,
@@ -77,7 +78,7 @@ public:
         float const*                                                        serverBuildRatio
     );
 
-    MCAPI void move(
+    MCNAPI void move(
         ::BlockPos const&                                                   center,
         int                                                                 radius,
         bool                                                                isCircle,
@@ -86,7 +87,7 @@ public:
         float const*                                                        serverBuildRatio
     );
 
-    MCAPI void rebuildSpecificArea(
+    MCNAPI void rebuildSpecificArea(
         ::Bounds const& bounds,
         bool,
         ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)>
@@ -108,20 +109,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
+    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
 
     MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
     MCAPI void $acquireDiscarded(::std::unique_ptr<::LevelChunk, ::LevelChunkFinalDeleter> ptr);
 
-    MCFOLD ::std::shared_ptr<::LevelChunk>
+    MCNAPI ::std::shared_ptr<::LevelChunk>
     $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);
 
     MCAPI bool $isWithinWorldLimit(::ChunkPos const& cp) const;
 
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 

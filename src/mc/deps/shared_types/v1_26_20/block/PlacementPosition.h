@@ -29,9 +29,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& BLOCK_FACE_ID();
+    MCNAPI static ::std::string_view const& BLOCK_FACE_ID();
 
-    MCAPI static ::std::string_view const& VERTICAL_HALF_ID();
+    MCNAPI static ::std::string_view const& VERTICAL_HALF_ID();
     // NOLINTEND
 };
 

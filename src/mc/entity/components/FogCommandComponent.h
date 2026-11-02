@@ -20,22 +20,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI ::std::vector<::std::string> getFogSettingsStack() const;
+    MCNAPI ::std::vector<::std::string> getFogSettingsStack() const;
 
-    MCAPI ::std::vector<::std::string> getUserProvidedIds() const;
+    MCNAPI ::std::vector<::std::string> getUserProvidedIds() const;
 
-    MCAPI ::std::optional<::std::string> popFogSetting(::std::optional<::std::string> const& userProvidedId);
+    MCNAPI ::std::optional<::std::string> popFogSetting(::std::optional<::std::string> const& userProvidedId);
 
-    MCAPI ::std::optional<uchar>
+    MCNAPI ::std::optional<uchar>
     pushFogSetting(::std::string const& fogId, ::std::optional<::std::string> const& userProvidedId);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool removeFogSettings(::std::optional<::std::string> const& userProvidedId);
+    MCNAPI bool removeFogSettings(::std::optional<::std::string> const& userProvidedId);
 
-    MCAPI bool setFogSettingsStack(
+    MCNAPI bool setFogSettingsStack(
         ::std::vector<::std::string> const&   fogIds,
         ::std::optional<::std::string> const& userProvidedId
     );
@@ -44,6 +44,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidIdentifier(::std::string const& format);
+    MCNAPI static bool isValidIdentifier(::std::string const& format);
     // NOLINTEND
 };

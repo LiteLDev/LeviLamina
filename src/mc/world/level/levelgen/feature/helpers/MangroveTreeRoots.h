@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _simulateRoots(
+    MCNAPI bool _simulateRoots(
         ::IBlockWorldGenAPI&            target,
         ::Random&                       random,
         ::BlockPos const&               rootPos,
@@ -67,7 +67,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeRoots(
+    MCNAPI ::std::optional<::BlockPos> $placeRoots(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&    pos,
         ::Random&            random,

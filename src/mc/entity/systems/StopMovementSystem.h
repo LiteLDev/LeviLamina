@@ -10,7 +10,7 @@ class EntitySystems;
 namespace StopMovementSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace StopMovementSystem

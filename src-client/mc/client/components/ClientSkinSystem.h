@@ -33,20 +33,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setupPersonaLodRenderControllers(
-        ::ClientSkin const&                                           skin,
+    MCNAPI static void _setupPersonaLodRenderControllers(
+        bool                                                          lodReady,
         ::std::shared_ptr<::ActorResourceDefinition> const&           resourceDef,
         ::Bedrock::NotNullNonOwnerPtr<::RenderControllerGroup> const& renderControllerGroup
     );
 
-    MCAPI static void _setupPersonaLodTextureAndGeometry(
+    MCNAPI static bool _setupPersonaLodTextureAndGeometry(
         ::ClientSkin const&                                                  skin,
         ::SerializedSkinRef const&                                           serializedSkin,
         ::std::shared_ptr<::ActorResourceDefinition> const&                  resourceDef,
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& resourceDefinitions
     );
 
-    MCAPI static void _updateClientSkin(
+    MCNAPI static void _updateClientSkin(
         ::IClientInstance&                                   client,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::ClientSkin&                                        clientSkin,
@@ -57,9 +57,11 @@ public:
         ::std::function<void()>                              geoFinishedCallback
     );
 
-    MCAPI static void addPlayerToFireEvent(::HashedString identifier, ::Player const* player);
+    MCNAPI static void addPlayerToFireEvent(::HashedString identifier, ::Player const* player);
 
-    MCAPI static void createOrUpdate(
+    MCNAPI static void applySkinToPlayer(::IClientInstance& client, ::Player& player, ::SerializedSkinRef const& skin);
+
+    MCNAPI static void createOrUpdate(
         ::IClientInstance&         client,
         ::AnimationComponent&      animationComponent,
         ::SerializedSkinRef const& skin,
@@ -69,31 +71,31 @@ public:
         ::std::function<void()>    geoFinishedCallback
     );
 
-    MCAPI static bool doesRenderControllerListHaveRenderer(
+    MCNAPI static bool doesRenderControllerListHaveRenderer(
         ::std::vector<::std::pair<::RenderControllerPtr, ::ExpressionNode>> const& renderControllerList,
         ::HashedString                                                             renderControllerName
     );
 
-    MCAPI static void fireEventToPlayers(::HashedString const identifier, ::ClientLevel* level);
+    MCNAPI static void fireEventToPlayers(::HashedString const identifier, ::ClientLevel* level);
 
-    MCAPI static void frameUpdate(::FrameUpdateContext& frameUpdateContext, ::IClientInstance& client);
+    MCNAPI static void frameUpdate(::FrameUpdateContext& frameUpdateContext, ::IClientInstance& client);
 
-    MCAPI static bool isAnySkinOfNameInitialized(::IClientInstance& client, ::std::string_view skinName);
+    MCNAPI static bool isAnySkinOfNameInitialized(::IClientInstance& client, ::std::string_view skinName);
 
-    MCAPI static void reload(::IClientInstance& client);
+    MCNAPI static void reload(::IClientInstance& client);
 
-    MCAPI static void remove(::IClientInstance& client, ::std::string const& skinName);
+    MCNAPI static void remove(::IClientInstance& client, ::std::string const& skinName);
 
-    MCAPI static void shutdown(::IClientInstance& client);
+    MCNAPI static void shutdown(::IClientInstance& client);
 
-    MCAPI static void tick(::IClientInstance& client);
+    MCNAPI static void tick(::IClientInstance& client);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::map<::HashedString, ::std::vector<::WeakEntityRef>>& mSkinIdToPlayersMap();
+    MCNAPI static ::std::map<::HashedString, ::std::vector<::WeakEntityRef>>& mSkinIdToPlayersMap();
 
-    MCAPI static int& sPersonaSkinLodDistance();
+    MCNAPI static int& sPersonaSkinLodDistance();
     // NOLINTEND
 };

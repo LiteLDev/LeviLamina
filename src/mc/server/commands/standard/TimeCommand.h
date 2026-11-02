@@ -5,13 +5,14 @@
 // auto generated inclusion list
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/server/commands/Command.h"
+#include "mc/server/commands/standard/ClockTimeMarkerNameCommandParam.h"
 
 // auto generated forward declare list
 // clang-format off
 class CommandOrigin;
 class CommandOutput;
 class CommandRegistry;
-class Experiments;
+class WorldClock;
 class WorldClockRegistry;
 // clang-format on
 
@@ -24,15 +25,24 @@ public:
 
     // TimeCommand inner types define
     enum class Mode : int {
-        Set   = 0,
-        Add   = 1,
-        Query = 2,
+        Set    = 0,
+        Add    = 1,
+        Query  = 2,
+        Pause  = 3,
+        Resume = 4,
     };
 
     enum class Query : int {
         DayTime  = 0,
         GameTime = 1,
         Day      = 2,
+        Time     = 3,
+    };
+
+    enum class TimeMarkerOccurrence : int {
+        Next     = 0,
+        Previous = 1,
+        Stay     = 2,
     };
 
     enum class TimeSpec : int {
@@ -50,17 +60,18 @@ public:
         // member variables
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::WorldClockRegistry const>> mWorldClockRegistry;
-        ::ll::TypedStorage<8, 8, ::gsl::not_null<::Experiments const*>>                      mExperiments;
         // NOLINTEND
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::TimeCommand::Mode>     mMode;
-    ::ll::TypedStorage<4, 4, ::TimeCommand::Query>    mQuery;
-    ::ll::TypedStorage<4, 4, ::TimeCommand::TimeSpec> mSpec;
-    ::ll::TypedStorage<4, 4, int>                     mValue;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::Mode>                 mMode;
+    ::ll::TypedStorage<4, 4, int>                                 mValue;
+    ::ll::TypedStorage<8, 32, ::ClockTimeMarkerNameCommandParam>  mTimeMarkerName;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::TimeMarkerOccurrence> mTimeMarkerOccurrence;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::Query>                mQuery;
+    ::ll::TypedStorage<4, 4, ::TimeCommand::TimeSpec>             mSpec;
     // NOLINTEND
 
 public:
@@ -70,15 +81,25 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::optional<int> _tryGetTimeFromTimeMarker(
+        ::WorldClock const&  clock,
+        ::std::string const& timeMarkerName,
+        ::CommandOutput&     output
+    ) const;
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::TimeCommand::InitProxy&& dependencies);
+    MCNAPI static void setup(::CommandRegistry& registry, ::TimeCommand::InitProxy&& dependencies);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void AddChannel(::BedrockLog::LogChannel channel);
+    MCNAPI void AddChannel(::BedrockLog::LogChannel channel);
     // NOLINTEND
 };
 

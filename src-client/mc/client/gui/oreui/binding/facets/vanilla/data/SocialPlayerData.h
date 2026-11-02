@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                           gamerTag;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>          playingOnServerId;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>          playingOnRealmId;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>         profileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage>         profileImage;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                  platformProfileImage;
     ::ll::TypedStorage<4, 4, ::OreUI::SocialPresence>                  presence;
     ::ll::TypedStorage<4, 4, ::OreUI::PartyPresence>                   partyPresence;
@@ -49,25 +49,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SocialPlayerData(::OreUI::SocialPlayerData&&);
+    MCNAPI SocialPlayerData(::OreUI::SocialPlayerData&&);
 
-    MCAPI SocialPlayerData(::OreUI::SocialPlayerData const& data);
+    MCNAPI SocialPlayerData(::OreUI::SocialPlayerData const& data);
 
-    MCAPI ~SocialPlayerData();
+    MCNAPI ~SocialPlayerData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::SocialPlayerData&&);
+    MCNAPI void* $ctor(::OreUI::SocialPlayerData&&);
 
-    MCAPI void* $ctor(::OreUI::SocialPlayerData const& data);
+    MCNAPI void* $ctor(::OreUI::SocialPlayerData const& data);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

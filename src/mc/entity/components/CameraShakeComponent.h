@@ -35,16 +35,16 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::vector<::CameraShakeType> getActiveShakeTypes() const;
+    MCNAPI ::std::vector<::CameraShakeType> getActiveShakeTypes() const;
 
-    MCAPI ::Vec3
+    MCNAPI ::Vec3
     getShakeVector(::CameraShakeType shakeType, float noiseMultiplier, float frequency, float amplitude) const;
 
-    MCAPI void initialize(::Random& random);
+    MCNAPI void initialize(::Random& random);
 
-    MCAPI bool queueShakeEvent(::CameraShakeType shakeType, float intensity, float duration);
+    MCNAPI bool queueShakeEvent(::CameraShakeType shakeType, float intensity, float duration);
 
-    MCAPI ~CameraShakeComponent();
+    MCNAPI ~CameraShakeComponent();
 #endif
     // NOLINTEND
 
@@ -52,7 +52,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

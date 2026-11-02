@@ -24,6 +24,7 @@ public:
     class ComponentStateBoundingBox;
     class ComponentStateClipboard;
     class ComponentStateEntity;
+    class ComponentStateGizmoRotationInteraction;
     class ComponentStateGizmo;
     class ComponentStateGrid;
     class ComponentStateNULL;
@@ -142,6 +143,23 @@ public:
         ComponentStateEntity();
     };
 
+    class ComponentStateGizmoRotationInteraction {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk2b448f;
+        ::ll::UntypedStorage<4, 4> mUnk7eec75;
+        ::ll::UntypedStorage<4, 4> mUnk96b93e;
+        ::ll::UntypedStorage<4, 4> mUnk826734;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ComponentStateGizmoRotationInteraction& operator=(ComponentStateGizmoRotationInteraction const&);
+        ComponentStateGizmoRotationInteraction(ComponentStateGizmoRotationInteraction const&);
+        ComponentStateGizmoRotationInteraction();
+    };
+
     class ComponentStateGizmo {
     public:
         // member variables
@@ -153,6 +171,11 @@ public:
         ::ll::UntypedStorage<4, 8>  mUnk4f9560;
         ::ll::UntypedStorage<4, 8>  mUnkf77100;
         ::ll::UntypedStorage<4, 8>  mUnk249b38;
+        ::ll::UntypedStorage<4, 8>  mUnka14dda;
+        ::ll::UntypedStorage<4, 16> mUnk411773;
+        ::ll::UntypedStorage<4, 8>  mUnkd88e19;
+        ::ll::UntypedStorage<4, 8>  mUnkb16549;
+        ::ll::UntypedStorage<4, 20> mUnk603366;
         // NOLINTEND
 
     public:

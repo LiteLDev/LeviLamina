@@ -46,23 +46,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const _convertString(
+    MCNAPI ::std::string const _convertString(
         ::std::string const& value,
         ::std::function<::std::string(::std::string const&, ::std::optional<::std::vector<::std::string>>)> const&
             localizationCallback
     ) const;
 
-    MCAPI int _getControlIndex(::std::shared_ptr<::UIControl> ancestor);
+    MCNAPI int _getControlIndex(::std::shared_ptr<::UIControl> ancestor);
 
-    MCAPI int _getMaximumContainerSize(::std::shared_ptr<::UIControl> ancestor);
+    MCNAPI int _getMaximumContainerSize(::std::shared_ptr<::UIControl> ancestor);
 
-    MCAPI int getControlIndex();
+    MCNAPI int getControlIndex();
 
-    MCAPI int getSectionCount();
+    MCNAPI int getSectionCount();
 
-    MCFOLD ::std::string getTTSMessageInterruptibleId() const;
+    MCNAPI ::std::string getTTSMessageInterruptibleId() const;
 
-    MCAPI void populateMessageQueue(
+    MCNAPI void populateMessageQueue(
         ::std::multimap<int, ::std::string>& messageQueue,
         bool                                 excludeHeader,
         ::std::string&                       sectionHeader,
@@ -74,8 +74,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
     // NOLINTEND
 };

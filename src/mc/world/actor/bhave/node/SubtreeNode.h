@@ -33,21 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubtreeNode();
+    MCNAPI SubtreeNode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::BehaviorStatus $tick(::Actor& owner);
+    MCNAPI ::BehaviorStatus $tick(::Actor& owner);
 
-    MCAPI void $initializeFromDefinition(::Actor& owner);
+    MCNAPI void $initializeFromDefinition(::Actor& owner);
 
 
     // NOLINTEND

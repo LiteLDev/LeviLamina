@@ -17,7 +17,7 @@ struct TickingSystemWithInfo;
 namespace MobMovementFriction {
 // functions
 // NOLINTBEGIN
-MCAPI void applyFrictionAndDrag(
+MCNAPI void applyFrictionAndDrag(
     ::ActorDataFlagComponent const&            actorDataFlagComponent,
     ::MovementAttributesComponent const&       movementAttributesComponent,
     ::FrictionModifierOverrideComponent const* frictionModifierOverrideComponent,
@@ -29,7 +29,7 @@ MCAPI void applyFrictionAndDrag(
     ::StateVectorComponent&                    stateVectorComponent
 );
 
-MCAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 // NOLINTEND
 
 } // namespace MobMovementFriction

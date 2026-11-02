@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void handleRepeatCraft(
+    MCNAPI void handleRepeatCraft(
         ::ContainerScreenController&                    containerScreenController,
         ::std::shared_ptr<::ContainerManagerController> containerManagerController,
         ::std::string const&                            collectionName,

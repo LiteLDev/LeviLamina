@@ -58,27 +58,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
+    MCNAPI explicit ClientInputMappingFactory(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
 
-    MCAPI void _activateMapping(::std::string const& mappingName);
+    MCNAPI void _activateMapping(::std::string const& mappingName);
 
-    MCAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
+    MCNAPI ::InputMapping* _getMappingInternal(::std::string const& mappingName);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
+    MCNAPI void* $ctor(::std::weak_ptr<::KeyboardRemappingLayout> currentKeyboardLayout);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::InputMapping const* $getMapping(::std::string const& mappingName);
+    MCNAPI ::InputMapping const* $getMapping(::std::string const& mappingName);
 
-    MCAPI ::TouchInputMapping $_createScreenTouchMapping() const;
+    MCNAPI ::TouchInputMapping $_createScreenTouchMapping() const;
 
-    MCAPI ::std::vector<::DeviceButtonMapping> $_createScreenDeviceButtonMapping() const;
+    MCNAPI ::std::vector<::DeviceButtonMapping> $_createScreenDeviceButtonMapping() const;
     // NOLINTEND
 
 public:

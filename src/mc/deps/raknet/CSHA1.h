@@ -33,12 +33,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void Final();
+    MCNAPI void Final();
 
 #ifdef LL_PLAT_C
-    MCAPI bool ReportHash_a(char* tszReport, ::CSHA1::REPORT_TYPE rtReportType) const;
+    MCNAPI bool ReportHash_a(char* tszReport, ::CSHA1::REPORT_TYPE rtReportType) const;
 #endif
 
-    MCAPI void Transform(uint* pState, uchar const* pBuffer);
+    MCNAPI void Transform(uint* pState, uchar const* pBuffer);
     // NOLINTEND
 };

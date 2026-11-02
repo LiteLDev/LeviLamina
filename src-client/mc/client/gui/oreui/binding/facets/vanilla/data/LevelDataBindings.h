@@ -43,27 +43,27 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI int getDifficulty() const;
+        MCNAPI int getDifficulty() const;
 
-        MCAPI int getGameMode() const;
+        MCNAPI int getGameMode() const;
 
-        MCAPI bool getPlayerHasDied() const;
+        MCNAPI bool getPlayerHasDied() const;
 
         MCAPI ::std::string const& getWorldName() const;
 
-        MCAPI bool isHardcore() const;
+        MCNAPI bool isHardcore() const;
 
-        MCAPI ::OreUI::LevelDataBindings::General& operator=(::OreUI::LevelDataBindings::General const& rhs);
+        MCNAPI ::OreUI::LevelDataBindings::General& operator=(::OreUI::LevelDataBindings::General const& rhs);
 
-        MCAPI bool operator==(::OreUI::LevelDataBindings::General const& rhs) const;
+        MCNAPI bool operator==(::OreUI::LevelDataBindings::General const& rhs) const;
 
-        MCAPI void setDifficulty(int intDifficulty);
+        MCNAPI void setDifficulty(int intDifficulty);
 
-        MCAPI void setGameMode(int mode);
+        MCNAPI void setGameMode(int mode);
 
-        MCAPI void setIsHardcore(bool isHardcore);
+        MCNAPI void setIsHardcore(bool isHardcore);
 
-        MCAPI void setWorldName(::std::string const& name);
+        MCNAPI void setWorldName(::std::string const& name);
         // NOLINTEND
     };
 
@@ -90,101 +90,101 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ::std::optional<::std::string> const& getFlatWorldPreset();
+        MCNAPI ::std::optional<::std::string> const& getFlatWorldPreset();
 
         MCAPI ::GeneratorType getGeneratorType() const;
 
-        MCAPI bool getRecipesUnlock() const;
+        MCNAPI bool getRecipesUnlock() const;
 
-        MCFOLD ::std::string const& getRespawnRadius() const;
+        MCNAPI ::std::string const& getRespawnRadius() const;
 
-        MCAPI bool getShowCoordinates() const;
+        MCNAPI bool getShowCoordinates() const;
 
-        MCAPI bool getShowDaysPlayed() const;
+        MCNAPI bool getShowDaysPlayed() const;
 
-        MCAPI int getSimulationDistance() const;
+        MCNAPI int getSimulationDistance() const;
 
-        MCAPI bool const getSleepSkipNight() const;
+        MCNAPI bool const getSleepSkipNight() const;
 
-        MCAPI int const getSleepSkipNightPercent() const;
+        MCNAPI int const getSleepSkipNightPercent() const;
 
-        MCAPI bool getStartWithMap() const;
+        MCNAPI bool getStartWithMap() const;
 
-        MCAPI bool getUseBonusChest() const;
+        MCNAPI bool getUseBonusChest() const;
 
-        MCAPI bool getUseExplodingTnt() const;
+        MCNAPI bool getUseExplodingTnt() const;
 
-        MCAPI bool getUseFlatWorld() const;
+        MCNAPI bool getUseFlatWorld() const;
 
-        MCAPI bool getUseFriendlyFire() const;
+        MCNAPI bool getUseFriendlyFire() const;
 
-        MCAPI bool getUseImmediateRespawn() const;
+        MCNAPI bool getUseImmediateRespawn() const;
 
-        MCAPI bool getUseMobLoot() const;
+        MCNAPI bool getUseMobLoot() const;
 
-        MCAPI bool getUseNaturalRegeneration() const;
+        MCNAPI bool getUseNaturalRegeneration() const;
 
-        MCAPI bool getUseRespawnBlocksExplode() const;
+        MCNAPI bool getUseRespawnBlocksExplode() const;
 
-        MCAPI bool getUseSpreadingFire() const;
+        MCNAPI bool getUseSpreadingFire() const;
 
-        MCAPI bool getUseTileDrops() const;
+        MCNAPI bool getUseTileDrops() const;
 
         MCFOLD ::std::string const& getWorldSeed() const;
 
-        MCAPI ::OreUI::LevelDataBindings::Advanced& operator=(::OreUI::LevelDataBindings::Advanced const& rhs);
+        MCNAPI ::OreUI::LevelDataBindings::Advanced& operator=(::OreUI::LevelDataBindings::Advanced const& rhs);
 
-        MCAPI bool operator==(::OreUI::LevelDataBindings::Advanced const& rhs) const;
+        MCNAPI bool operator==(::OreUI::LevelDataBindings::Advanced const& rhs) const;
 
         MCAPI void setFlatWorldPreset(::std::string const& idStr);
 
         MCAPI void setGeneratorType(::GeneratorType generatorType);
 
-        MCAPI void setRecipesUnlock(bool recipesUnlock);
+        MCNAPI void setRecipesUnlock(bool recipesUnlock);
 
-        MCAPI void setRespawnRadius(::std::string const& respawnRadiusStr);
+        MCNAPI void setRespawnRadius(::std::string const& respawnRadiusStr);
 
-        MCAPI void setShowCoordinates(bool showCoordinates);
+        MCNAPI void setShowCoordinates(bool showCoordinates);
 
-        MCAPI void setShowDaysPlayed(bool showDaysPlayed);
+        MCNAPI void setShowDaysPlayed(bool showDaysPlayed);
 
-        MCAPI void setSimulationDistance(int distance);
+        MCNAPI void setSimulationDistance(int distance);
 
-        MCAPI void setSleepSkipNight(bool sleepSkipNight);
+        MCNAPI void setSleepSkipNight(bool sleepSkipNight);
 
-        MCAPI void setSleepSkipNightPercent(int sleepSkipNightPercent);
+        MCNAPI void setSleepSkipNightPercent(int sleepSkipNightPercent);
 
-        MCAPI void setStartWithMap(bool startWithMap);
+        MCNAPI void setStartWithMap(bool startWithMap);
 
-        MCAPI void setUseBonusChest(bool useBonusChest);
+        MCNAPI void setUseBonusChest(bool useBonusChest);
 
-        MCAPI void setUseExplodingTnt(bool useExplodingTnt);
+        MCNAPI void setUseExplodingTnt(bool useExplodingTnt);
 
-        MCAPI void setUseFlatWorld(bool useFlatWorld);
+        MCNAPI void setUseFlatWorld(bool useFlatWorld);
 
-        MCAPI void setUseFriendlyFire(bool useFriendlyFire);
+        MCNAPI void setUseFriendlyFire(bool useFriendlyFire);
 
-        MCAPI void setUseImmediateRespawn(bool useImmediateRespawn);
+        MCNAPI void setUseImmediateRespawn(bool useImmediateRespawn);
 
-        MCAPI void setUseMobLoot(bool useMobLoot);
+        MCNAPI void setUseMobLoot(bool useMobLoot);
 
-        MCAPI void setUseNaturalRegeneration(bool useNaturalRegeneration);
+        MCNAPI void setUseNaturalRegeneration(bool useNaturalRegeneration);
 
-        MCAPI void setUseRespawnBlocksExplode(bool useRespawnBlocksExplode);
+        MCNAPI void setUseRespawnBlocksExplode(bool useRespawnBlocksExplode);
 
-        MCAPI void setUseSpreadingFire(bool useSpreadingFire);
+        MCNAPI void setUseSpreadingFire(bool useSpreadingFire);
 
-        MCAPI void setUseTileDrops(bool useTileDrops);
+        MCNAPI void setUseTileDrops(bool useTileDrops);
 
         MCAPI void setWorldSeed(::std::string const& worldSeedString);
 
-        MCAPI ~Advanced();
+        MCNAPI ~Advanced();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -210,49 +210,49 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCFOLD ::WorldSettingsRules::GeneralMultiplayerWarningState getGeneralMultiplayerWarningState() const;
+        MCNAPI ::WorldSettingsRules::GeneralMultiplayerWarningState getGeneralMultiplayerWarningState() const;
 
-        MCAPI int getMsPlayerAccess() const;
+        MCNAPI int getMsPlayerAccess() const;
 
-        MCAPI bool getMultiplayerGameEnabled() const;
+        MCNAPI bool getMultiplayerGameEnabled() const;
 
-        MCFOLD bool getMultiplayerSupported() const;
+        MCNAPI bool getMultiplayerSupported() const;
 
-        MCAPI int getPlatformPlayerAccess() const;
+        MCNAPI int getPlatformPlayerAccess() const;
 
-        MCAPI bool getPlatformPlayerAccessEnabled() const;
+        MCNAPI bool getPlatformPlayerAccessEnabled() const;
 
-        MCAPI bool getPlatformPlayerAccessSupported() const;
+        MCNAPI bool getPlatformPlayerAccessSupported() const;
 
-        MCAPI bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
+        MCNAPI bool getPlatformPlayerFriendsOfFriendsAccessSupported() const;
 
-        MCAPI bool getPlatformPlayerInviteAccessSupported() const;
+        MCNAPI bool getPlatformPlayerInviteAccessSupported() const;
 
-        MCAPI int getPlayerPermissions() const;
+        MCNAPI int getPlayerPermissions() const;
 
-        MCAPI int getPlayerWaypointsMode() const;
+        MCNAPI int getPlayerWaypointsMode() const;
 
-        MCAPI bool getUseFriendlyFire() const;
+        MCNAPI bool getUseFriendlyFire() const;
 
-        MCAPI bool getVisibleToLanPlayers() const;
+        MCNAPI bool getVisibleToLanPlayers() const;
 
-        MCAPI ::OreUI::LevelDataBindings::Multiplayer& operator=(::OreUI::LevelDataBindings::Multiplayer const& rhs);
+        MCNAPI ::OreUI::LevelDataBindings::Multiplayer& operator=(::OreUI::LevelDataBindings::Multiplayer const& rhs);
 
-        MCAPI bool operator==(::OreUI::LevelDataBindings::Multiplayer const& rhs) const;
+        MCNAPI bool operator==(::OreUI::LevelDataBindings::Multiplayer const& rhs) const;
 
-        MCAPI void setMsPlayerAccess(int intMsPlayerAccess);
+        MCNAPI void setMsPlayerAccess(int intMsPlayerAccess);
 
-        MCAPI void setMultiplayerGameEnabled(bool useMultiplayerGame);
+        MCNAPI void setMultiplayerGameEnabled(bool useMultiplayerGame);
 
-        MCAPI void setPlatformPlayerAccess(int intPlatformPlayerAccess);
+        MCNAPI void setPlatformPlayerAccess(int intPlatformPlayerAccess);
 
-        MCAPI void setPlayerPermissions(int intPlayerPermissionLevel);
+        MCNAPI void setPlayerPermissions(int intPlayerPermissionLevel);
 
-        MCAPI void setPlayerWaypointsMode(int playerWaypointsMode);
+        MCNAPI void setPlayerWaypointsMode(int playerWaypointsMode);
 
-        MCAPI void setUseFriendlyFire(bool useFriendlyFire);
+        MCNAPI void setUseFriendlyFire(bool useFriendlyFire);
 
-        MCAPI void setVisibleToLanPlayers(bool useVisibleToLanPlayers);
+        MCNAPI void setVisibleToLanPlayers(bool useVisibleToLanPlayers);
         // NOLINTEND
     };
 
@@ -274,57 +274,57 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool getCheatsEnabled() const;
+        MCNAPI bool getCheatsEnabled() const;
 
-        MCAPI int getDaylightCycle() const;
+        MCNAPI int getDaylightCycle() const;
 
-        MCAPI bool getEducationEdition() const;
+        MCNAPI bool getEducationEdition() const;
 
-        MCAPI bool getEntitiesDropLoot() const;
+        MCNAPI bool getEntitiesDropLoot() const;
 
-        MCAPI bool getKeepInventory() const;
+        MCNAPI bool getKeepInventory() const;
 
-        MCAPI bool getMobGriefing() const;
+        MCNAPI bool getMobGriefing() const;
 
-        MCAPI bool getMobSpawning() const;
+        MCNAPI bool getMobSpawning() const;
 
-        MCFOLD ::std::string const& getRandomTickSpeed() const;
+        MCNAPI ::std::string const& getRandomTickSpeed() const;
 
-        MCAPI bool getUseCommandBlocks() const;
+        MCNAPI bool getUseCommandBlocks() const;
 
-        MCAPI bool getUseWeatherCycle() const;
+        MCNAPI bool getUseWeatherCycle() const;
 
-        MCAPI ::OreUI::LevelDataBindings::Cheats& operator=(::OreUI::LevelDataBindings::Cheats const& rhs);
+        MCNAPI ::OreUI::LevelDataBindings::Cheats& operator=(::OreUI::LevelDataBindings::Cheats const& rhs);
 
-        MCAPI bool operator==(::OreUI::LevelDataBindings::Cheats const& rhs) const;
+        MCNAPI bool operator==(::OreUI::LevelDataBindings::Cheats const& rhs) const;
 
-        MCAPI void setCheatsEnabled(bool cheatsEnabled);
+        MCNAPI void setCheatsEnabled(bool cheatsEnabled);
 
-        MCAPI void setDaylightCycle(int cycle);
+        MCNAPI void setDaylightCycle(int cycle);
 
-        MCAPI void setEducationEdition(bool educationEdition);
+        MCNAPI void setEducationEdition(bool educationEdition);
 
-        MCAPI void setEntitiesDropLoot(bool entitiesDropLoot);
+        MCNAPI void setEntitiesDropLoot(bool entitiesDropLoot);
 
-        MCAPI void setKeepInventory(bool keepInventory);
+        MCNAPI void setKeepInventory(bool keepInventory);
 
-        MCAPI void setMobGriefing(bool mobGriefing);
+        MCNAPI void setMobGriefing(bool mobGriefing);
 
-        MCAPI void setMobSpawning(bool mobSpawning);
+        MCNAPI void setMobSpawning(bool mobSpawning);
 
-        MCAPI void setRandomTickSpeed(::std::string const& tickSpeedStr);
+        MCNAPI void setRandomTickSpeed(::std::string const& tickSpeedStr);
 
-        MCAPI void setUseCommandBlocks(bool useCommandBlocks);
+        MCNAPI void setUseCommandBlocks(bool useCommandBlocks);
 
-        MCAPI void setUseWeatherCycle(bool useCycles);
+        MCNAPI void setUseWeatherCycle(bool useCycles);
 
-        MCAPI ~Cheats();
+        MCNAPI ~Cheats();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -345,9 +345,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool getUseSharedPacks() const;
+        MCNAPI bool getUseSharedPacks() const;
 
-        MCAPI void setUseSharedPacks(bool value);
+        MCNAPI void setUseSharedPacks(bool value);
         // NOLINTEND
     };
 
@@ -373,41 +373,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelDataBindings(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
+    MCNAPI LevelDataBindings(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
 
-    MCAPI ::std::string getInitialTemplateLoadID() const;
+    MCNAPI ::std::string getInitialTemplateLoadID() const;
 
-    MCAPI bool getWorldTemplateOptionLocked();
+    MCNAPI bool getWorldTemplateOptionLocked();
 
-    MCAPI bool isAchievementsDisabled() const;
+    MCNAPI bool isAchievementsDisabled() const;
 
-    MCAPI bool isAchievementsPermanentlyDisabled() const;
+    MCNAPI bool isAchievementsPermanentlyDisabled() const;
 
-    MCAPI bool isUsingTemplate() const;
+    MCNAPI bool isUsingTemplate() const;
 
-    MCAPI ::OreUI::LevelDataBindings& operator=(::OreUI::LevelDataBindings const& rhs);
+    MCNAPI ::OreUI::LevelDataBindings& operator=(::OreUI::LevelDataBindings const& rhs);
 
-    MCAPI bool operator==(::OreUI::LevelDataBindings const& rhs) const;
+    MCNAPI bool operator==(::OreUI::LevelDataBindings const& rhs) const;
 
-    MCAPI void reset(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
+    MCNAPI void reset(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
 
-    MCAPI void setWorldTemplateOptionLocked(bool worldTemplateOptionLocked);
+    MCNAPI void setWorldTemplateOptionLocked(bool worldTemplateOptionLocked);
 
-    MCAPI void updateCheatsForLevelDataChange();
+    MCNAPI void updateCheatsForLevelDataChange();
 
-    MCAPI ~LevelDataBindings();
+    MCNAPI ~LevelDataBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
+    MCNAPI void* $ctor(::LevelDataWrapper& levelData, ::TrialManager const& trialManager);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

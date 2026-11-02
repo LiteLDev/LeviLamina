@@ -25,6 +25,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, ::FertilizerType> mType;
+    ::ll::TypedStorage<1, 1, bool>             mIsChemistryEnabled;
     // NOLINTEND
 
 public:
@@ -35,7 +36,8 @@ public:
 
     virtual bool isFertilizer() const /*override*/;
 
-    virtual void executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const
+    virtual void
+    executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const
         /*override*/;
 
     virtual ::InteractionResult _useOn(
@@ -51,13 +53,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCFOLD bool $isFertilizer() const;
+    MCNAPI bool $isFertilizer() const;
 
-    MCAPI void $executeEvent(::ItemStackBase& item, ::std::string const& name, ::RenderParams& params) const;
+    MCNAPI void
+    $executeEvent(::ItemStackBase& item, ::std::string const& name, ::HandSlot handSlot, ::RenderParams& params) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,

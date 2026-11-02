@@ -368,7 +368,7 @@ public:
 
     virtual bool isScreenReplaceable() const /*override*/;
 
-    virtual void handleTextChar(::std::string const& inputUtf8) /*override*/;
+    virtual void handleTextChar(::std::string_view inputUtf8) /*override*/;
 
     virtual void setBufferTextCharEvents(bool pushTextCharEvents) /*override*/;
 
@@ -376,7 +376,7 @@ public:
 
     virtual bool isOnSceneStack(::ui::SceneType sceneType) const /*override*/;
 
-    virtual bool isOnSceneStack(::std::string const& screenName) const /*override*/;
+    virtual bool isOnSceneStack(::std::string_view screenName) const /*override*/;
 
     virtual ::SceneStackProxy* getProxy() /*override*/;
 
@@ -393,29 +393,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SceneStack(
+    MCNAPI SceneStack(
         ::CachedScenes&                                                       cachedScenes,
         ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const&            uiEventCoordinator,
         ::std::function<bool()> const&                                        getSuspended,
         ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
     );
 
-    MCAPI bool _animationsEnabled() const;
+    MCNAPI bool _animationsEnabled() const;
 
-    MCAPI bool _popScreens(
+    MCNAPI bool _popScreens(
         int&                                  popCount,
         bool                                  ignoreTransitions,
         ::std::optional<::OreUI::RouteAction> routeAction,
         ::std::vector<::std::string> const&   expectedScreenNames
     );
 
-    MCAPI void _schedulePopScreen(
+    MCNAPI void _schedulePopScreen(
         int                                   totalPopNumber,
         ::std::optional<::OreUI::RouteAction> routeAction,
         ::std::vector<::std::string> const&   expectedScreenNames
     );
 
-    MCAPI void _schedulePushScreen(
+    MCNAPI void _schedulePushScreen(
         ::std::shared_ptr<::AbstractScene>    newScreen,
         bool                                  flush,
         ::std::optional<::OreUI::RouteAction> routeAction
@@ -425,7 +425,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _forEachVisibleScreen(
+    MCNAPI static void _forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         ::std::function<::AbstractScene*(int)>        getScreen,
         bool,
@@ -436,7 +436,7 @@ public:
         bool   renderDrawLastScreens
     );
 
-    MCAPI static void forEachVisibleScreen(
+    MCNAPI static void forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         ::std::function<::AbstractScene*(int)>        getScreen,
         bool                                          tickedLastFrame,
@@ -448,7 +448,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::CachedScenes&                                                       cachedScenes,
         ::Bedrock::NotNullNonOwnerPtr<::UIEventCoordinator> const&            uiEventCoordinator,
         ::std::function<bool()> const&                                        getSuspended,
@@ -459,168 +459,169 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $reload();
+    MCNAPI void $reload();
 
-    MCAPI void $setOptions(::std::weak_ptr<::OptionRegistry> options);
+    MCNAPI void $setOptions(::std::weak_ptr<::OptionRegistry> options);
 
-    MCAPI void $registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback);
+    MCNAPI void $registerSceneChangeCallback(void* token, ::std::function<void(::AbstractScene&)> sceneChangeCallback);
 
-    MCAPI void $unregisterSceneChangeCallback(void* token);
+    MCNAPI void $unregisterSceneChangeCallback(void* token);
 
-    MCAPI void $registerPrePushSceneCallback(void* token, ::std::function<void(::AbstractScene&)> prePushSceneCallback);
+    MCNAPI void
+    $registerPrePushSceneCallback(void* token, ::std::function<void(::AbstractScene&)> prePushSceneCallback);
 
-    MCAPI void $unregisterPrePushSceneCallback(void* token);
+    MCNAPI void $unregisterPrePushSceneCallback(void* token);
 
-    MCAPI void $registerPushSceneCallback(
+    MCNAPI void $registerPushSceneCallback(
         void* token,
         ::std::function<void(::std::shared_ptr<::AbstractScene>, ::std::optional<::OreUI::RouteAction>)>
             pushSceneCallback
     );
 
-    MCAPI void $unregisterPushSceneCallback(void* token);
+    MCNAPI void $unregisterPushSceneCallback(void* token);
 
-    MCAPI void $registerPrePopSceneCallback(void* token, ::std::function<void(::AbstractScene*)> prePopSceneCallback);
+    MCNAPI void $registerPrePopSceneCallback(void* token, ::std::function<void(::AbstractScene*)> prePopSceneCallback);
 
-    MCAPI void $unregisterPrePopSceneCallback(void* token);
+    MCNAPI void $unregisterPrePopSceneCallback(void* token);
 
-    MCAPI void $registerPopSceneCallback(
+    MCNAPI void $registerPopSceneCallback(
         void* token,
         ::std::function<void(::std::shared_ptr<::AbstractScene>, bool, ::std::optional<::OreUI::RouteAction>)>
             popSceneCallback
     );
 
-    MCAPI void $unregisterPopSceneCallback(void* token);
+    MCNAPI void $unregisterPopSceneCallback(void* token);
 
-    MCAPI void $registerPopRangeSceneCallback(
+    MCNAPI void $registerPopRangeSceneCallback(
         void*                                                                           token,
         ::std::function<void(::std::vector<::std::shared_ptr<::AbstractScene>> const&)> popRangeSceneCallback
     );
 
-    MCAPI void $unregisterPopRangeSceneCallback(void* token);
+    MCNAPI void $unregisterPopRangeSceneCallback(void* token);
 
-    MCAPI void
+    MCNAPI void
     $registerRouteActionCallback(void* token, ::std::function<void(::OreUI::RouteAction const&)> routeActionCallback);
 
-    MCAPI void $unregisterRouteActionCallback(void* token);
+    MCNAPI void $unregisterRouteActionCallback(void* token);
 
-    MCAPI void $forEachVisibleScreen(
+    MCNAPI void $forEachVisibleScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         bool                                          tickedLastFrame,
         bool                                          splitscreenRenderBypassThisFrame
     );
 
-    MCAPI void $forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
+    MCNAPI void $forEachScreen(::brstd::function_ref<bool(::AbstractScene&)> callback, bool topDown);
 
-    MCAPI void $forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
+    MCNAPI void $forEachScreenConst(::brstd::function_ref<bool(::AbstractScene const&)> callback, bool topDown) const;
 
-    MCAPI void $forEachAlwaysAcceptInputScreen(
+    MCNAPI void $forEachAlwaysAcceptInputScreen(
         ::brstd::function_ref<void(::AbstractScene&)> callback,
         ::AbstractScene const*                        ignoreScreen
     );
 
-    MCAPI void $forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
+    MCNAPI void $forEachAlwaysAcceptInputScreenWithTop(::brstd::function_ref<void(::AbstractScene&)> callback);
 
-    MCAPI void
+    MCNAPI void
     $pushScreenWithRouteAction(::std::shared_ptr<::AbstractScene> newScreen, ::OreUI::RouteAction const& routeAction);
 
-    MCAPI void $popScreenWithRouteAction(::OreUI::RouteAction const& routeAction);
+    MCNAPI void $popScreenWithRouteAction(::OreUI::RouteAction const& routeAction);
 
-    MCAPI void $scheduleRouteAction(::OreUI::RouteAction const& routeAction);
+    MCNAPI void $scheduleRouteAction(::OreUI::RouteAction const& routeAction);
 
-    MCAPI void $pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush);
+    MCNAPI void $pushScreen(::std::shared_ptr<::AbstractScene> newScreen, bool flush);
 
-    MCAPI void $schedulePopScreen(int totalPopNumber);
+    MCNAPI void $schedulePopScreen(int totalPopNumber);
 
-    MCAPI void $schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames);
+    MCNAPI void $schedulePopScreenWithExpectedNames(::std::vector<::std::string> const& expectedScreenNames);
 
-    MCAPI void $flushStack(::ISceneStack::FlushMode mode, ::std::function<void()> postFlushCallback);
+    MCNAPI void $flushStack(::ISceneStack::FlushMode mode, ::std::function<void()> postFlushCallback);
 
-    MCAPI void $deferUpdatesUntilNextTick();
+    MCNAPI void $deferUpdatesUntilNextTick();
 
-    MCAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
+    MCNAPI ::std::optional<uint64> $getFirstSceneIndexOfSceneType(::ui::SceneType sceneType) const;
 
-    MCAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
+    MCNAPI bool $popScreensBackTo(::ui::SceneType const sceneType);
 
-    MCAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
+    MCNAPI bool $popScreensBackToFirstInstanceOf(::ui::SceneType const sceneType);
 
-    MCAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
+    MCNAPI bool $popTopScreensOfType(::ui::SceneType const sceneType);
 
-    MCAPI bool $update();
+    MCNAPI bool $update();
 
-    MCAPI void $resetScreenChangeDirtyFlag();
+    MCNAPI void $resetScreenChangeDirtyFlag();
 
-    MCFOLD bool $hasChangedThisFrame() const;
+    MCNAPI bool $hasChangedThisFrame() const;
 
-    MCAPI bool $isEmpty() const;
+    MCNAPI bool $isEmpty() const;
 
-    MCAPI uint64 $getSize() const;
+    MCNAPI uint64 $getSize() const;
 
-    MCAPI void $setScreenTickingFlag(bool screenIsTicking);
+    MCNAPI void $setScreenTickingFlag(bool screenIsTicking);
 
-    MCAPI bool $getScreenTickingFlag() const;
+    MCNAPI bool $getScreenTickingFlag() const;
 
-    MCAPI ::ui::SceneType $getNonTerminatingSceneType() const;
+    MCNAPI ::ui::SceneType $getNonTerminatingSceneType() const;
 
-    MCAPI ::std::vector<::std::string> $getScreenNames() const;
+    MCNAPI ::std::vector<::std::string> $getScreenNames() const;
 
-    MCAPI ::std::vector<::std::string> $getScreenTelemetryNames() const;
+    MCNAPI ::std::vector<::std::string> $getScreenTelemetryNames() const;
 
-    MCAPI ::std::string $getScreenName() const;
+    MCNAPI ::std::string $getScreenName() const;
 
-    MCAPI ::std::string $getScreenTelemetry() const;
+    MCNAPI ::std::string $getScreenTelemetry() const;
 
-    MCAPI ::std::string const& $getLastPoppedScreenName() const;
+    MCNAPI ::std::string const& $getLastPoppedScreenName() const;
 
-    MCAPI void $handleLicenseChanged();
+    MCNAPI void $handleLicenseChanged();
 
-    MCAPI void $onGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI void $onGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::AbstractScene* $getTopScene();
+    MCNAPI ::AbstractScene* $getTopScene();
 
-    MCAPI ::AbstractScene const* $getTopScene() const;
+    MCNAPI ::AbstractScene const* $getTopScene() const;
 
-    MCAPI ::std::shared_ptr<::AbstractScene> $getTopSceneShared() const;
+    MCNAPI ::std::shared_ptr<::AbstractScene> $getTopSceneShared() const;
 
-    MCAPI ::AbstractScene* $getActiveScene();
+    MCNAPI ::AbstractScene* $getActiveScene();
 
-    MCAPI ::AbstractScene const* $getActiveScene() const;
+    MCNAPI ::AbstractScene const* $getActiveScene() const;
 
-    MCAPI ::std::shared_ptr<::AbstractScene> $getSharedNonTerminatingActiveScene();
+    MCNAPI ::std::shared_ptr<::AbstractScene> $getSharedNonTerminatingActiveScene();
 
-    MCAPI ::std::shared_ptr<::AbstractScene const> const $getSharedNonTerminatingActiveScene() const;
+    MCNAPI ::std::shared_ptr<::AbstractScene const> const $getSharedNonTerminatingActiveScene() const;
 
-    MCAPI ::gsl::span<::ISceneStack::SceneElement const> $getScreenStackView() const;
+    MCNAPI ::gsl::span<::ISceneStack::SceneElement const> $getScreenStackView() const;
 
-    MCAPI ::std::vector<::ISceneStack::PendingSceneStackChange> $getPendingSceneStackChanges() const;
+    MCNAPI ::std::vector<::ISceneStack::PendingSceneStackChange> $getPendingSceneStackChanges() const;
 
-    MCFOLD int $getScheduledPopCount() const;
+    MCNAPI int $getScheduledPopCount() const;
 
-    MCAPI bool $isScreenReplaceable() const;
+    MCNAPI bool $isScreenReplaceable() const;
 
-    MCAPI void $handleTextChar(::std::string const& inputUtf8);
+    MCNAPI void $handleTextChar(::std::string_view inputUtf8);
 
-    MCAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
+    MCNAPI void $setBufferTextCharEvents(bool pushTextCharEvents);
 
-    MCAPI bool $isBufferingTextCharEvents() const;
+    MCNAPI bool $isBufferingTextCharEvents() const;
 
-    MCAPI bool $isOnSceneStack(::ui::SceneType sceneType) const;
+    MCNAPI bool $isOnSceneStack(::ui::SceneType sceneType) const;
 
-    MCAPI bool $isOnSceneStack(::std::string const& screenName) const;
+    MCNAPI bool $isOnSceneStack(::std::string_view screenName) const;
 
-    MCAPI ::SceneStackProxy* $getProxy();
+    MCNAPI ::SceneStackProxy* $getProxy();
 
-    MCAPI bool $hasScheduledScreens() const;
+    MCNAPI bool $hasScheduledScreens() const;
 
-    MCAPI bool $hasScheduledEvents() const;
+    MCNAPI bool $hasScheduledEvents() const;
 
-    MCAPI void $setScreenThreshold(::ScreenThreshold const& screenThreshold);
+    MCNAPI void $setScreenThreshold(::ScreenThreshold const& screenThreshold);
 
-    MCAPI ::Bedrock::PubSub::Subscription $registerSceneStackDestroyedListener(::std::function<void()> callback);
+    MCNAPI ::Bedrock::PubSub::Subscription $registerSceneStackDestroyedListener(::std::function<void()> callback);
     // NOLINTEND
 };

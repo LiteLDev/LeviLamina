@@ -11,6 +11,7 @@
 // clang-format off
 class TaskGroup;
 namespace Audio { class IOnlineAudioFetcher; }
+namespace Audio { class OnlineAudioEncryptionData; }
 namespace Audio { class OnlineAudioStream; }
 namespace Audio { class OnlineStreamedAudioBuffer; }
 namespace Audio { struct OnlineStreamConfig; }
@@ -29,7 +30,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnk8cf63d;
     ::ll::UntypedStorage<8, 16> mUnkdd4389;
     ::ll::UntypedStorage<8, 16> mUnk3eae52;
-    ::ll::UntypedStorage<8, 64> mUnkeab388;
+    ::ll::UntypedStorage<8, 64> mUnk42867b;
     ::ll::UntypedStorage<8, 64> mUnk42e32e;
     ::ll::UntypedStorage<8, 24> mUnkf0432d;
     // NOLINTEND
@@ -49,7 +50,8 @@ public:
         ::brstd::move_only_function<::std::unique_ptr<::Audio::IOnlineAudioFetcher>(
             ::std::string const&,
             ::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>,
-            ::Audio::OnlineStreamConfig const&
+            ::Audio::OnlineStreamConfig const&,
+            ::std::optional<::Audio::OnlineAudioEncryptionData>
         )>                                         fetcherFactory,
         ::Bedrock::UniqueOwnerPointer<::TaskGroup> taskGroup,
         int                                        maxConcurrentStreams
@@ -59,6 +61,8 @@ public:
 
     MCNAPI ::WeakRef<::Audio::OnlineAudioStream>
     createStream(::std::string const& url, ::Audio::OnlineStreamParams params);
+
+    MCNAPI void stopAll();
 
     MCNAPI void update();
 
@@ -75,7 +79,8 @@ public:
         ::brstd::move_only_function<::std::unique_ptr<::Audio::IOnlineAudioFetcher>(
             ::std::string const&,
             ::std::shared_ptr<::Audio::OnlineStreamedAudioBuffer>,
-            ::Audio::OnlineStreamConfig const&
+            ::Audio::OnlineStreamConfig const&,
+            ::std::optional<::Audio::OnlineAudioEncryptionData>
         )>                                         fetcherFactory,
         ::Bedrock::UniqueOwnerPointer<::TaskGroup> taskGroup,
         int                                        maxConcurrentStreams

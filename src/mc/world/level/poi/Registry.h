@@ -5,6 +5,12 @@
 // auto generated inclusion list
 #include "mc/world/level/poi/TypeId.h"
 
+// auto generated forward declare list
+// clang-format off
+class Block;
+namespace Poi { class TagProvider; }
+// clang-format on
+
 namespace Poi {
 
 struct Registry {
@@ -26,6 +32,18 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ::Poi::TypeId find(::std::string_view name) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ::Poi::TypeId push(
+        ::std::string_view                   id,
+        ::std::unordered_set<::Block const*> blocks,
+        uchar                                maxTickets,
+        uchar                                usableRange,
+        ::Poi::TagProvider const&            tagProvider
+    );
+
+    MCNAPI void reserveId(::std::string id, ::Poi::TypeId token, ::Poi::TagProvider const& tagProvider);
+#endif
     // NOLINTEND
 };
 

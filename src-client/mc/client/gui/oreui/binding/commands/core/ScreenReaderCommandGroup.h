@@ -11,6 +11,8 @@
 // clang-format off
 class AppPlatform;
 class ITTSEventManager;
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class GameDependencies; }
 // clang-format on
 
 namespace OreUI {
@@ -30,11 +32,17 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    ScreenReaderCommandGroup();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _clear() const;
+    MCNAPI ScreenReaderCommandGroup(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
 
-    MCAPI void _read(
+    MCNAPI void _clear() const;
+
+    MCNAPI void _read(
         ::std::string const&     text,
         ::ProfanityFilterContext context,
         bool                     interruptable,
@@ -42,6 +50,18 @@ public:
         bool                     background,
         bool                     playWhenEnabled
     ) const;
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client, ::OreUI::GameDependencies const& game);
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

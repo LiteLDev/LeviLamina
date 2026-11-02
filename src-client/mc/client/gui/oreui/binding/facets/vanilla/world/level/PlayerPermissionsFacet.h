@@ -78,7 +78,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerPermissionsFacet(
+    MCNAPI PlayerPermissionsFacet(
         ::MinecraftCommands&                 commands,
         ::PacketSender&                      packetSender,
         ::LocalPlayerChangedConnector const& localPlayerChangedConnector,
@@ -89,65 +89,63 @@ public:
         ::std::function<bool()>              isHostingLocalDedicatedServer
     );
 
-    MCAPI bool _evaluateCanKickPlayer(::ActorUniqueID playerId);
+    MCNAPI void _evaluateStates();
 
-    MCAPI void _evaluateStates();
+    MCNAPI void _initResources();
 
-    MCAPI void _initResources();
+    MCNAPI void _reloadPermissions();
 
-    MCAPI void _reloadPermissions();
+    MCNAPI bool _validateLocalPlayer();
 
-    MCAPI bool _validateLocalPlayer();
+    MCNAPI bool areCheatsEnabled() const;
 
-    MCAPI bool areCheatsEnabled() const;
+    MCNAPI bool canEditPermissions() const;
 
-    MCAPI bool canEditPermissions() const;
+    MCNAPI bool canKickPlayer() const;
 
-    MCAPI bool canKickPlayer() const;
+    MCNAPI void clearErrorFlag(::OreUI::PlayerPermissionsError error);
 
-    MCAPI void clearErrorFlag(::OreUI::PlayerPermissionsError error);
+    MCNAPI void enableCheats();
 
-    MCAPI void enableCheats();
+    MCNAPI ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
 
-    MCAPI ::std::optional<::PlayerPermissionLevel> const& getCurrentPlayerPermissionLevel() const;
+    MCNAPI ::OreUI::PlayerPermissionsActionState const& getKickCommandState() const;
 
-    MCAPI ::OreUI::PlayerPermissionsActionState const& getKickCommandState() const;
+    MCNAPI bool getOperatorCommandsRevokedFlag() const;
 
-    MCAPI bool getOperatorCommandsRevokedFlag() const;
+    MCNAPI bool getPlayerIdInvalidFlag() const;
 
-    MCAPI bool getPlayerIdInvalidFlag() const;
+    MCNAPI ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
 
-    MCFOLD ::std::vector<::OreUI::PlayerAbilityBindings> const& getPlayerPermissionList() const;
+    MCNAPI bool getPlayerPermissionsMissingFlag() const;
 
-    MCAPI bool getPlayerPermissionsMissingFlag() const;
+    MCNAPI bool getSelectedPlayerLeftFlag() const;
 
-    MCAPI bool getSelectedPlayerLeftFlag() const;
+    MCNAPI bool getSelectedPlayerPermissionsChangedFlag() const;
 
-    MCAPI bool getSelectedPlayerPermissionsChangedFlag() const;
+    MCNAPI bool isWorldTemplateOptionsLocked() const;
 
-    MCAPI bool isWorldTemplateOptionsLocked() const;
+    MCNAPI void kickPlayer(::std::string playerId);
 
-    MCAPI void kickPlayer(::std::string playerId);
+    MCNAPI void loadPlayerPermissions(::std::string playerId);
 
-    MCAPI void loadPlayerPermissions(::std::string playerId);
+    MCNAPI void requestSavePermissions();
 
-    MCAPI void requestSavePermissions();
+    MCNAPI void setPlayerPermission(::std::string playerId, ::AbilitiesIndex abilityIndex, bool isEnabled);
 
-    MCAPI void setPlayerPermission(::std::string playerId, ::AbilitiesIndex abilityIndex, bool isEnabled);
-
-    MCAPI void setPlayerPermissionLevel(::std::string playerId, ::PlayerPermissionLevel playerPermissionLevel);
+    MCNAPI void setPlayerPermissionLevel(::std::string playerId, ::PlayerPermissionLevel playerPermissionLevel);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MinecraftCommands&                 commands,
         ::PacketSender&                      packetSender,
         ::LocalPlayerChangedConnector const& localPlayerChangedConnector,
@@ -162,7 +160,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

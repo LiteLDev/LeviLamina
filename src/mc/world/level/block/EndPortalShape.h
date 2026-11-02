@@ -34,14 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
+    MCNAPI EndPortalShape(::BlockSource& region, ::BlockPos pos);
 
-    MCAPI bool isValid(::BlockSource& region);
+    MCNAPI bool isValid(::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
+    MCNAPI void* $ctor(::BlockSource& region, ::BlockPos pos);
     // NOLINTEND
 };

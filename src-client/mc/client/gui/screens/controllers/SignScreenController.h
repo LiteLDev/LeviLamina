@@ -52,20 +52,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SignScreenController(
+    MCNAPI SignScreenController(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::BlockPos                                     signPosition,
         ::BlockActorType                               blockActorType,
         ::SignTextSide                                 signSide
     );
 
-    MCAPI void _setMessageToSign(::std::string message);
+    MCNAPI void _setMessageToSign(::std::string message);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::ClientInstanceScreenModel> model,
         ::BlockPos                                     signPosition,
         ::BlockActorType                               blockActorType,
@@ -76,16 +76,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
     // NOLINTEND
 };

@@ -11,7 +11,6 @@
 // clang-format off
 class BlockPos;
 class BlockType;
-class HashedString;
 class IBlockSource;
 namespace Util { class XXHash; }
 namespace br::worldgen { struct StructureBlockInfo; }
@@ -49,32 +48,28 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bootstrap();
+    MCNAPI static void bootstrap();
 
-    MCAPI static ::br::worldgen::processors::BlockIgnore
+    MCNAPI static ::br::worldgen::processors::BlockIgnore
     from(::std::vector<::SharedTypes::Reference<0>> const& toIgnore);
-
-#ifdef LL_PLAT_C
-    MCAPI static ::br::worldgen::processors::BlockIgnore from(::std::vector<::HashedString> const& toIgnore);
-#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor>> const& STRUCTURE_BLOCK();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource&,
         ::BlockPos,
         ::BlockPos,
@@ -83,9 +78,9 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
     // NOLINTEND

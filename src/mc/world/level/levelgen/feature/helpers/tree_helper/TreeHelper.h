@@ -18,7 +18,7 @@ namespace TreeHelper { struct TreeParams; }
 namespace TreeHelper {
 // functions
 // NOLINTBEGIN
-MCAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
+MCNAPI bool isValidTreePosition(::IBlockWorldGenAPI const& target, ::BlockPos const& pos);
 
 MCAPI bool isValidTreePosition(
     ::IBlockWorldGenAPI const&      target,
@@ -32,7 +32,8 @@ MCAPI ::std::optional<::BlockPos> placeBaseBlock(
     ::std::vector<::BlockDescriptor> const& validBaseBlocks
 );
 
-MCAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
+#ifdef LL_PLAT_S
+MCNAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     ::IBlockWorldGenAPI& target,
     ::BlockPos const&    pos,
     ::Random&,
@@ -42,6 +43,7 @@ MCAPI ::std::optional<::BlockPos> placeRadialBlockGroup(
     bool                                    simplify,
     ::std::vector<::BlockDescriptor> const& mayGrowThrough
 );
+#endif
 
 MCAPI bool prepareSpawn(
     ::IBlockWorldGenAPI const&              target,

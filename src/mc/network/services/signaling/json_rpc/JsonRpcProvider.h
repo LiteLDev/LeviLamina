@@ -8,6 +8,8 @@
 // auto generated forward declare list
 // clang-format off
 class IJsonRpcComponent;
+class Scheduler;
+class WorkerPool;
 namespace Json { class Value; }
 namespace JsonRpc { class IObserver; }
 namespace JsonRpc { class IResultHandler; }
@@ -83,13 +85,25 @@ public:
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
     );
 
+    MCNAPI JsonRpcProvider(
+        ::std::shared_ptr<::JsonRpc::ITransport>              transport,
+        ::std::shared_ptr<::JsonRpc::IObserver>               observer,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components,
+        ::WorkerPool&                                         workerPool,
+        ::Scheduler&                                          scheduler
+    );
+
     MCNAPI void _expirePendingResult(::std::string const& id);
 
     MCNAPI void
     handleJsonRpcResult(::std::string const& id, ::Bedrock::Result<::Json::Value, ::JsonRpc::JsonRpcError>&& result);
 
+    MCNAPI void onMessage(::std::string_view incomingMessage);
+
     MCNAPI ::std::unique_ptr<::std::string, ::std::function<void(::std::string*)>>
     registerJsonRpcMethod(::std::string method, ::std::unique_ptr<::JsonRpc::IResultHandler> handler);
+
+    MCNAPI ~JsonRpcProvider();
     // NOLINTEND
 
 public:
@@ -100,6 +114,20 @@ public:
         ::std::shared_ptr<::JsonRpc::IObserver>               observer,
         ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components
     );
+
+    MCNAPI void* $ctor(
+        ::std::shared_ptr<::JsonRpc::ITransport>              transport,
+        ::std::shared_ptr<::JsonRpc::IObserver>               observer,
+        ::std::vector<::std::shared_ptr<::IJsonRpcComponent>> components,
+        ::WorkerPool&                                         workerPool,
+        ::Scheduler&                                          scheduler
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

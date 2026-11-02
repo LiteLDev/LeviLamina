@@ -15,10 +15,12 @@ class BlockCustomComponentsComponent;
 class BlockDeprecatedR16EventListenerComponent;
 class BlockEntityFallOnConfigurationComponent;
 class BlockMultiBlockComponent;
+class BlockNeighborChangeConfigurationComponent;
 class BlockRandomOffsetComponent;
 class BlockRedstoneConsumerComponent;
 class BlockTickConfigurationComponent;
 class BlockTransformationComponent;
+class BlockVibrationPropertiesComponent;
 class OnFallOnTrigger;
 class OnInteractTrigger;
 class OnPlacedTrigger;
@@ -121,9 +123,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockComponentStorage::ComponentBase* _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
+    MCNAPI ::BlockComponentStorage::ComponentBase*
+    _findComponentBase(::Bedrock::typeid_t<void> componentIdToFind) const;
 
-    MCAPI ~BlockComponentStorage();
+    MCNAPI ~BlockComponentStorage();
     // NOLINTEND
 
 public:
@@ -175,6 +178,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -13,9 +13,9 @@ struct GetTileRenderConfig {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::dragon::rendering::BufferClear const& CLEAR();
+    MCNAPI static ::dragon::rendering::BufferClear const& CLEAR();
 
-    MCAPI static ::glm::mat4x4 const& PROJ();
+    MCNAPI static ::glm::mat4x4 const& PROJ();
     // NOLINTEND
 };
 

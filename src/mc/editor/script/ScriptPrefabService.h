@@ -9,13 +9,17 @@
 
 // auto generated forward declare list
 // clang-format off
+class BoundingBox;
+struct DimensionType;
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Prefabs { struct PrefabDBInstanceInteractionEvent; }
 namespace Editor::ScriptModule { class ScriptPrefabTemplateInstance; }
 namespace Editor::ScriptModule { struct ScriptPrefabErrorInvalidInstance; }
 namespace Editor::ScriptModule { struct ScriptPrefabErrorServiceError; }
+namespace Editor::ScriptModule { struct ScriptPrefabPlacementValidation; }
 namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -29,6 +33,7 @@ public:
     ::ll::UntypedStorage<8, 16> mUnkd311b8;
     ::ll::UntypedStorage<8, 16> mUnk89c3d7;
     ::ll::UntypedStorage<8, 16> mUnk14906d;
+    ::ll::UntypedStorage<8, 16> mUnkc0760d;
     ::ll::UntypedStorage<8, 16> mUnkcce71c;
     ::ll::UntypedStorage<8, 32> mUnkef299b;
     // NOLINTEND
@@ -80,6 +85,15 @@ public:
 
     MCNAPI ::Scripting::Result<void, ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
     _shouldCaptureMouseClicks(bool active);
+
+    MCNAPI ::Scripting::Result<
+        ::Editor::ScriptModule::ScriptPrefabPlacementValidation,
+        ::Editor::ScriptModule::ScriptPrefabErrorServiceError>
+    _validateBoundsAgainstPlacedInstances(
+        ::BoundingBox const&                candidateBounds,
+        ::DimensionType const&              candidateDimension,
+        ::std::optional<::mce::UUID> const& excludedInstanceId
+    );
     // NOLINTEND
 
 public:

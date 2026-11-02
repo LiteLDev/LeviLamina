@@ -12,4 +12,8 @@ enum class StructureBlockPaletteLoadResult : int {
     ExpectedCompoundTagForBlockEntityData              = 6,
     ExpectedListTagForTickQueueData                    = 7,
     ExpectedCompoundTagInTickQueueData                 = 8,
+    ExpectedListTagForNamedTickQueueData               = 9,
+    ExpectedCompoundTagInNamedTickQueueData            = 10,
+    ExpectedListTagForNeighborChangedQueueData         = 11,
+    ExpectedCompoundTagInNeighborChangedQueueData      = 12,
 };

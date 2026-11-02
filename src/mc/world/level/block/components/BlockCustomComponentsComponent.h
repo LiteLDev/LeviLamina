@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/WeakRef.h"
 #include "mc/scripting/modules/minecraft/ScriptCustomComponentParameterCacheHandle.h"
+#include "mc/scripting/modules/minecraft/events/ScriptBlockCustomComponentEventTypes.h"
 #include "mc/scripting/modules/minecraft/events/ScriptCustomComponentToExecute.h"
 
 // auto generated forward declare list
@@ -55,14 +56,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
+    MCNAPI ::std::vector<::BlockCustomComponentsComponent::ExecutableComponent> _gatherComponentsToExecute() const;
 
-    MCAPI void finalize(
+    MCNAPI void finalize(
         ::WeakRef<::ScriptModuleMinecraft::ScriptBlockCustomComponentsRegistry> const& registry,
         ::ScriptModuleMinecraft::ScriptCustomComponentParameterCache&                  parameterCache
     );
 
-    MCAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCNAPI bool hasRegisteredEventHandler(
+        ::ScriptModuleMinecraft::ScriptBlockCustomComponentEventTypes eventType,
+        ::BlockType const&                                            baseBlock
+    ) const;
+
+    MCNAPI ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockType const& baseBlock) const;

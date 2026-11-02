@@ -2,4 +2,15 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct StartGlidingIntentSystem {};
+// auto generated forward declare list
+// clang-format off
+struct TickingSystemWithInfo;
+// clang-format on
+
+struct StartGlidingIntentSystem {
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::TickingSystemWithInfo createSystem();
+    // NOLINTEND
+};

@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DlcProgressScreenController(
+    MCNAPI DlcProgressScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::vector<::DlcId> const&            dlcIds,
         ::std::function<void(bool, bool)>        callback,
@@ -60,12 +60,14 @@ public:
         bool                                     processingUpdates,
         bool                                     disableExitWhileInProgress
     );
+
+    MCNAPI ::std::string const _getImportProgress() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::vector<::DlcId> const&            dlcIds,
         ::std::function<void(bool, bool)>        callback,
@@ -78,10 +80,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI bool $canExit();
+    MCNAPI bool $canExit();
     // NOLINTEND
 };

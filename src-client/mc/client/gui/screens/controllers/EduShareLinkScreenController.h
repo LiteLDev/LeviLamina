@@ -76,38 +76,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EduShareLinkScreenController(
+    MCNAPI EduShareLinkScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LibraryItem const&                     item,
         ::std::optional<::EduSharedUriResource>  resource
     );
 
-    MCAPI ::std::string _appendAdditionalResources(::std::string const& url);
+    MCNAPI ::std::string _appendAdditionalResources(::std::string const& url);
 
-    MCAPI void _clearAdditionalUriResource();
+    MCNAPI void _clearAdditionalUriResource();
 
-    MCAPI void _closeActiveScreen();
+    MCNAPI void _closeActiveScreen();
 
-    MCAPI ::std::string _getResourceAddedText() const;
+    MCNAPI ::std::string _getResourceAddedText() const;
 
-    MCAPI ::std::string _getTeamsAdvancedShareTitle() const;
+    MCNAPI ::std::string _getTeamsAdvancedShareTitle() const;
 
-    MCAPI ::std::string _getTeamsBodyText() const;
+    MCNAPI ::std::string _getTeamsBodyText() const;
 
-    MCAPI void _openScreen(::EduShareLinkScreenController::ScreenState state);
+    MCNAPI void _openScreen(::EduShareLinkScreenController::ScreenState state);
 
-    MCAPI void _registerShareDialogHandlers(::std::string const& copyUri);
+    MCNAPI void _registerShareDialogHandlers(::std::string const& copyUri);
 
-    MCAPI void _screenTTS(::std::string const& title, ::std::string const& contents, ::std::string const& extra);
+    MCNAPI void _screenTTS(::std::string const& title, ::std::string const& contents, ::std::string const& extra);
 
-    MCAPI void
+    MCNAPI void
     _sendNotification(::EduShareUriType shareType, ::EduShareMethodType methodType, ::std::string const& toastMessage);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::LibraryItem const&                     item,
         ::std::optional<::EduSharedUriResource>  resource
@@ -117,6 +117,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

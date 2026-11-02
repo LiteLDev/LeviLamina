@@ -15,7 +15,7 @@ namespace ActorColor {
 // NOLINTBEGIN
 MCAPI void setColor(::SynchedActorDataComponent& entityData, ::SharedTypes::Legacy::PaletteColor color);
 
-MCAPI void setColor2(::SynchedActorDataComponent& entityData, ::SharedTypes::Legacy::PaletteColor color);
+MCNAPI void setColor2(::SynchedActorDataComponent& entityData, ::SharedTypes::Legacy::PaletteColor color);
 // NOLINTEND
 
 } // namespace ActorColor

@@ -28,22 +28,29 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    virtual ~CreativeItemGroupCategory() /*override*/ = default;
+#else // LL_PLAT_C
     virtual ~CreativeItemGroupCategory() /*override*/;
+#endif
+
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::CreativeGroupInfo* addAnonymousGroup();
+    MCNAPI ::CreativeGroupInfo* addAnonymousGroup();
 
-    MCAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
+    MCNAPI ::CreativeGroupInfo* addChildGroup(::HashedString const& name, ::ItemInstance const& icon);
 
-    MCAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
+    MCNAPI ::CreativeGroupInfo* getChildGroup(::HashedString const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };

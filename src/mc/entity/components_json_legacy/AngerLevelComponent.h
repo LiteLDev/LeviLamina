@@ -78,28 +78,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _decrementAnger(::Actor* owner, ::ILevel const& level);
+    MCNAPI void _decrementAnger(::Actor* owner, ::ILevel const& level);
 
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI bool belowAngryThreshold(::ActorUniqueID id) const;
+    MCNAPI bool belowAngryThreshold(::ActorUniqueID id) const;
 
-    MCAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
+    MCNAPI bool canBeNuisance(::Actor* owner, ::Actor* target) const;
 
-    MCAPI int getAngerForAnimations(::Actor& owner) const;
+    MCNAPI int getAngerForAnimations(::Actor& owner) const;
 
-    MCAPI ::std::optional<::std::pair<::Actor*, int>> getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
+    MCNAPI ::std::optional<::std::pair<::Actor*, int>>
+    getTopActiveNuisance(::Actor* owner, ::ILevel const& level) const;
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
+    MCNAPI void tryIncreaseAngerAt(::Actor& owner, ::Actor& nuisance, int anger, bool playSounds);
 
-    MCAPI ~AngerLevelComponent();
+    MCNAPI ~AngerLevelComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

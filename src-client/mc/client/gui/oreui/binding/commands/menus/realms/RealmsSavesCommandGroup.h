@@ -48,6 +48,12 @@ public:
         ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::string>>
                                                                     mDownloadBackup;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mCancelBackupDownload;
+    ::ll::TypedStorage<
+        8,
+        168,
+        ::OreUI::Detail::CallableImpl<void, int64, int, ::std::string, ::std::string, ::std::string, ::std::string>>
+                                                                    mDownload;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mResetDownload;
     // NOLINTEND
 
 public:
@@ -63,13 +69,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsSavesCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _resolveStatus(
+    MCNAPI static void _resolveStatus(
         ::std::shared_ptr<::OreUI::InvocationStatus> const& commandStatus,
         ::Realms::GenericStatus                             responseStatus
     );
@@ -78,13 +84,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

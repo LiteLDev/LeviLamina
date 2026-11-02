@@ -24,23 +24,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool operator==(::SharedTypes::v1_26_20::BlockDefinition::EmbeddedVisualComponent const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_20::BlockDefinition::EmbeddedVisualComponent const&) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& GeometryId();
+    MCNAPI static ::std::string_view const& GeometryId();
 
-    MCAPI static ::std::string_view const& MaterialInstancesId();
+    MCNAPI static ::std::string_view const& MaterialInstancesId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
     // NOLINTEND
 };
 

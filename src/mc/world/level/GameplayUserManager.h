@@ -85,35 +85,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
+    MCNAPI void _addTrackedMapPlayers(::MapItemSavedData& mapItemSavedData);
 
-    MCAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
+    MCNAPI void _forEachActivePlayer(::std::function<bool(::Player&)> callback, bool includeRemovedPlayers) const;
 
-    MCAPI void _saveAllPlayers(::LevelStorage& levelStorage);
+    MCNAPI void _saveAllPlayers(::LevelStorage& levelStorage);
 
-    MCAPI void cleanupRemovedGameplayUsers();
+    MCNAPI void cleanupRemovedGameplayUsers();
 
-    MCAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
+    MCNAPI void forEachActiveGameplayUser(::std::function<bool(::EntityContext&)> callback) const;
 
-    MCAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
+    MCNAPI bool isGameplayUserSuspended(::WeakEntityRef weakEntityUser) const;
 
-    MCAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
+    MCNAPI void registerMapDataManagerListener(::IServerMapDataManagerConnector& serverMapDataManagerConnector);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserAddedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserResumedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserResumedConnector();
 
-    MCFOLD ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::EntityContext const&)>& $getGameplayUserSuspendedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::Player const&)>& $getPlayerRenamedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void(::EntityContext&)>& $getGameplayUserRemovedConnector();
 
-    MCAPI ::Bedrock::PubSub::Connector<void()>& $getAnyGameplayUsersRemovedConnector();
+    MCNAPI ::Bedrock::PubSub::Connector<void()>& $getAnyGameplayUsersRemovedConnector();
 
 
     // NOLINTEND

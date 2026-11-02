@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReplacePage(::BookEditAction::ReplacePage const&);
+    MCNAPI ReplacePage(::BookEditAction::ReplacePage const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BookEditAction::ReplacePage const&);
+    MCNAPI void* $ctor(::BookEditAction::ReplacePage const&);
     // NOLINTEND
 };
 

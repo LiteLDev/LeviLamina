@@ -21,28 +21,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations&&);
+    MCNAPI ActorTextureResourceLocations(::ActorTextureResourceLocations const&);
 
-    MCAPI ActorTextureResourceLocations(::ActorTextureResourceLocations const&);
+    MCNAPI ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations&&);
 
-    MCFOLD ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations&&);
+    MCNAPI ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations const&);
 
-    MCFOLD ::ActorTextureResourceLocations& operator=(::ActorTextureResourceLocations const&);
-
-    MCAPI ~ActorTextureResourceLocations();
+    MCNAPI ~ActorTextureResourceLocations();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::ActorTextureResourceLocations&&);
-
-    MCFOLD void* $ctor(::ActorTextureResourceLocations const&);
+    MCNAPI void* $ctor(::ActorTextureResourceLocations const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

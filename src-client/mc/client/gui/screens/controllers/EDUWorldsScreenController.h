@@ -20,9 +20,9 @@ namespace EduCloud { struct IEduCloudSaveSystem; }
 namespace Json { class Value; }
 // clang-format on
 
-class EDUWorldsScreenController : public ::SettingsScreenControllerBase {
+class EduWorldsScreenController : public ::SettingsScreenControllerBase {
 public:
-    // EDUWorldsScreenController inner types define
+    // EduWorldsScreenController inner types define
     enum class StartWorldCaller : int {
         Play     = 0,
         Host     = 1,
@@ -53,14 +53,14 @@ public:
 
 public:
     // prevent constructor by default
-    EDUWorldsScreenController& operator=(EDUWorldsScreenController const&);
-    EDUWorldsScreenController(EDUWorldsScreenController const&);
-    EDUWorldsScreenController();
+    EduWorldsScreenController& operator=(EduWorldsScreenController const&);
+    EduWorldsScreenController(EduWorldsScreenController const&);
+    EduWorldsScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldsScreenController() /*override*/ = default;
+    virtual ~EduWorldsScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -78,55 +78,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUWorldsScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI explicit EduWorldsScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void _closeEduCloudConflictPopup(bool keepLocal);
+    MCNAPI void _closeEduCloudConflictPopup(bool keepLocal);
 
-    MCAPI void _openWorldSettings(::std::string const& levelId);
+    MCNAPI void _openWorldSettings(::std::string const& levelId);
 
-    MCAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
+    MCNAPI void _openWorldSettings(::LocalWorldInfo* worldInfo);
 
-    MCAPI void _registerBindings();
+    MCNAPI void _registerBindings();
 
-    MCAPI void _registerControllerCallbacks();
+    MCNAPI void _registerControllerCallbacks();
 
-    MCAPI void _registerEventHandlers();
+    MCNAPI void _registerEventHandlers();
 
-    MCAPI void _registerSubControllers();
+    MCNAPI void _registerSubControllers();
 
-    MCAPI void _showEduCloudConflictPopup();
+    MCNAPI void _showEduCloudConflictPopup();
 
-    MCAPI void _startWorld(::std::string const& levelId, ::EDUWorldsScreenController::StartWorldCaller caller);
+    MCNAPI void _startWorld(::std::string const& levelId, ::EduWorldsScreenController::StartWorldCaller caller);
 
-    MCAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EDUWorldsScreenController::StartWorldCaller caller);
+    MCNAPI void _startWorld(::LocalWorldInfo* worldInfo, ::EduWorldsScreenController::StartWorldCaller caller);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
+    MCNAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onEntering();
+    MCNAPI void $onEntering();
 
-    MCAPI void $onReload();
+    MCNAPI void $onReload();
 
-    MCFOLD void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 
 public:

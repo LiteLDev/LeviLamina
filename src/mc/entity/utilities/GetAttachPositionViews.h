@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class StrictEntityContext;
+class StrictExecutionContextBase;
 struct AABBShapeComponent;
 struct ActorDataFlagComponent;
 struct ActorDataSeatOffsetComponent;
@@ -77,5 +78,21 @@ public:
                                                                                               mPassengerRenderingView;
     ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::VanillaOffsetComponent const>> mVanillaOffsetView;
     ::ll::TypedStorage<8, 24, ::ViewT<::StrictEntityContext, ::ActorHeadRotationComponent const>> mRotationsView;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    GetAttachPositionViews();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit GetAttachPositionViews(::StrictExecutionContextBase& c);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::StrictExecutionContextBase& c);
     // NOLINTEND
 };

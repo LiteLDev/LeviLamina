@@ -22,7 +22,7 @@ class LootTableUtils {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string convertFromJavaLootTableName(::std::string const& lootTableName);
+    MCNAPI static ::std::string convertFromJavaLootTableName(::std::string const& lootTableName);
 
     MCAPI static void fillContainer(
         ::Level&             level,
@@ -42,7 +42,7 @@ public:
         float                      luck
     );
 
-    MCAPI static ::std::vector<::ItemStack>
+    MCNAPI static ::std::vector<::ItemStack>
     getRandomItems(::std::string const& tableName, ::Random& random, ::LootTableContext& context);
 
     MCAPI static int givePlayer(::Player& player, ::std::vector<::ItemStack>& items, bool shouldAddWhenFull);

@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/world/level/storage/FlushableEnv.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Core { class Path; }
-// clang-format on
-
 class InMemoryEnv : public ::FlushableEnv {
 public:
     // member variables
@@ -46,21 +41,15 @@ public:
 
     virtual ::leveldb::Status GetChildren(::std::string const& dir, ::std::vector<::std::string>* r) /*override*/;
 
+    virtual ::leveldb::Status GetFileSize(::std::string const& f, uint64* size) /*override*/;
+
     virtual void flushToPermanentStorage() /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI InMemoryEnv(::leveldb::Env* env, ::Core::Path const& rootDbPath);
-
     MCNAPI void _flushWithTransaction();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCNAPI void* $ctor(::leveldb::Env* env, ::Core::Path const& rootDbPath);
     // NOLINTEND
 
 public:
@@ -82,14 +71,10 @@ public:
 
     MCNAPI ::leveldb::Status $GetChildren(::std::string const& dir, ::std::vector<::std::string>* r);
 
+    MCNAPI ::leveldb::Status $GetFileSize(::std::string const& f, uint64* size);
+
     MCNAPI void $flushToPermanentStorage();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

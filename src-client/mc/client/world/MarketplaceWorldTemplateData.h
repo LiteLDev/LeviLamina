@@ -44,30 +44,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MarketplaceWorldTemplateData(::World::MarketplaceWorldTemplateData const&);
+    MCNAPI MarketplaceWorldTemplateData(::World::MarketplaceWorldTemplateData const&);
 
-    MCAPI ::World::MarketplaceWorldTemplateData& operator=(::World::MarketplaceWorldTemplateData const&);
+    MCNAPI ::World::MarketplaceWorldTemplateData& operator=(::World::MarketplaceWorldTemplateData const&);
 
-    MCAPI ~MarketplaceWorldTemplateData();
+    MCNAPI ~MarketplaceWorldTemplateData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::World::MarketplaceWorldTemplateData
+    MCNAPI static ::World::MarketplaceWorldTemplateData
     fromStoreCatalogItem(::StoreCatalogItem const& worldTemplateInfo);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::MarketplaceWorldTemplateData const&);
+    MCNAPI void* $ctor(::World::MarketplaceWorldTemplateData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

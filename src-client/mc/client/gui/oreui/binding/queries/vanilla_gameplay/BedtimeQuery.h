@@ -45,19 +45,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BedtimeQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit BedtimeQuery(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

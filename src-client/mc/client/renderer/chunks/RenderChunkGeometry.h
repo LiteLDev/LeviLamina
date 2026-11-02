@@ -21,12 +21,15 @@ class RenderChunkBuilder;
 class RenderChunkSorter;
 class TerrainTextures;
 class TextureAtlas;
+class Vec3;
 struct BlockQueueEntry;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
+struct RenderChunkLayerGroupIndexData;
+struct RenderChunkLayerGroupVertexData;
 struct RenderChunkQuadInfo;
+namespace RenderChunkVertexStreaming { class RenderChunkVertexStreamPlanRegistry; }
 namespace dragon { struct RenderMetadata; }
-namespace mce { class IndexBufferContainer; }
 namespace mce { class Mesh; }
 namespace mce { class TextureGroup; }
 namespace mce { struct BufferResourceService; }
@@ -56,8 +59,11 @@ public:
     ::ll::TypedStorage<
         8,
         24,
-        ::std::
-            variant<::std::monostate, ::std::shared_ptr<::mce::Mesh>, ::std::shared_ptr<::RenderChunkDirectVertexData>>>
+        ::std::variant<
+            ::std::monostate,
+            ::std::shared_ptr<::mce::Mesh>,
+            ::std::shared_ptr<::RenderChunkDirectVertexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupVertexData>>>
                                                                                               mMeshData;
     ::ll::TypedStorage<4, 4, ::std::bitset<7>>                                                mFlags;
     ::ll::TypedStorage<4, 4, float>                                                           mReadyTime;
@@ -68,8 +74,9 @@ public:
     ::ll::TypedStorage<4, 4, ::EntityId>                                                      mEntityId;
     ::ll::TypedStorage<8, 112, ::std::array<::std::shared_ptr<::FaceSortingMetaDataBase>, 7>> mFaceSortingMetaData;
     ::ll::TypedStorage<4, 176, ::std::array<::RangeIndices, 22>>                              mRenderLayerIndexRanges;
-    ::ll::TypedStorage<4, 4, float>                                                           mAverageSkyLight;
-    ::ll::TypedStorage<4, 4, ::std::bitset<6>>                                                mInterlockBitField;
+    ::ll::TypedStorage<4, 176, ::std::array<::RangeIndices, 22>>      mWholeChunkSortSourceIndexRanges;
+    ::ll::TypedStorage<4, 4, float>                                   mAverageSkyLight;
+    ::ll::TypedStorage<4, 4, ::std::bitset<6>>                        mInterlockBitField;
     ::ll::TypedStorage<1, 6, ::std::array<uchar, 6>>                  mInterlockNeighborVersionNumbers;
     ::ll::TypedStorage<1, 1, uchar>                                   mBuildVersionNumber;
     ::ll::TypedStorage<8, 24, ::std::vector<::BlockQueueEntry>>       mPointLightCandidates;
@@ -77,33 +84,48 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    RenderChunkGeometry();
+
+public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _convertFaceMetaDataToFaceSortingMetaData(
+    MCNAPI RenderChunkGeometry(
+        ::BlockPos                             p,
+        bool                                   immediateChangeRequested,
+        int                                    buildIterationCount,
+        double                                 overrideReadyTime,
+        uchar                                  versionNum,
+        ::std::weak_ptr<::IRenderChunkGarbage> garbage,
+        ::EntityId                             entityId
+    );
+
+    MCNAPI void _convertFaceMetaDataToFaceSortingMetaData(
         ::std::array<::std::vector<::RenderChunkQuadInfo>, 7> const& faceMetadata,
         bool                                                         hasSortedLayers
     );
 
-    MCAPI void _resetFaceMetadata();
+    MCNAPI void _resetFaceMetadata();
 
-    MCAPI uint64 endFaceSortOnly(
+    MCNAPI uint64 endFaceSortOnly(
         ::mce::BufferResourceService& bufferResourceService,
         ::RenderChunkSorter&          sorter,
         ::std::variant<
             ::std::monostate,
-            ::std::shared_ptr<::mce::IndexBufferContainer>,
-            ::std::shared_ptr<::RenderChunkDirectIndexData>>& nextIndices,
-        ::std::array<::RangeIndices, 22>&                     sortedIndexRange,
-        ::dragon::RenderMetadata const&                       renderMetadata
+            ::std::shared_ptr<::RenderChunkDirectIndexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupIndexData>>& nextIndices,
+        ::std::array<::RangeIndices, 22>&                         sortedIndexRange,
+        ::dragon::RenderMetadata const&                           renderMetadata
     );
 
     MCAPI void endRebuild(
-        ::RenderChunkBuilder&           builder,
-        ::mce::BufferResourceService&   bufferResourceService,
-        bool                            isBuilding,
-        bool                            alreadyHadGeometry,
-        ::dragon::RenderMetadata const& renderMetadata,
-        bool                            useSplitStream
+        ::RenderChunkBuilder&                                                    builder,
+        ::mce::BufferResourceService&                                            bufferResourceService,
+        ::RenderChunkVertexStreaming::RenderChunkVertexStreamPlanRegistry const& renderChunkVertexStreamPlanRegistry,
+        bool                                                                     isBuilding,
+        bool                                                                     alreadyHadGeometry,
+        ::dragon::RenderMetadata const&                                          renderMetadata,
+        bool                                                                     useSplitStream
     );
 
     MCAPI void rebuild(
@@ -114,15 +136,19 @@ public:
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
+
+    MCNAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
+
+    MCNAPI ~RenderChunkGeometry();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
+    MCNAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
 
-    MCAPI static void initTextures(
+    MCNAPI static void initTextures(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> const&  minecraftGraphics,
         ::std::shared_ptr<::mce::TextureGroup>                     textureGroup,
         ::Bedrock::NotNullNonOwnerPtr<::TextureAtlas const> const& atlas
@@ -132,6 +158,26 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::TerrainTextures>& mTerrainTextures();
+    MCNAPI static ::std::unique_ptr<::TerrainTextures>& mTerrainTextures();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::BlockPos                             p,
+        bool                                   immediateChangeRequested,
+        int                                    buildIterationCount,
+        double                                 overrideReadyTime,
+        uchar                                  versionNum,
+        ::std::weak_ptr<::IRenderChunkGarbage> garbage,
+        ::EntityId                             entityId
+    );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

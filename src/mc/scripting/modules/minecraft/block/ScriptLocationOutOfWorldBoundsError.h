@@ -21,23 +21,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationOutOfWorldBoundsError(::Vec3 const& pos);
+    MCNAPI explicit ScriptLocationOutOfWorldBoundsError(::Vec3 const& pos);
 
-    MCAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
+    MCNAPI ScriptLocationOutOfWorldBoundsError(::std::string const& details, ::Vec3 const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos);
+    MCNAPI void* $ctor(::Vec3 const& pos);
 
-    MCAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
+    MCNAPI void* $ctor(::std::string const& details, ::Vec3 const& pos);
     // NOLINTEND
 };
 

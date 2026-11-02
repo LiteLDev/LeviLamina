@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
+    MCNAPI ::std::vector<::NameTagRenderObject> extractRenderTextObjects(
         ::Font&                              font,
         ::Tessellator&                       tessellator,
         ::IVanillaRenderBlockActorComponent& renderComponent,
@@ -77,7 +77,7 @@ public:
         ::Experiments const&                                                       experiments
     );
 
-    MCAPI void registerGameSpecificBlockActorRendererCallback(
+    MCNAPI void registerGameSpecificBlockActorRendererCallback(
         ::std::function<void(
             ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup const> const&,
             ::std::shared_ptr<::mce::TextureGroup>

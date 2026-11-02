@@ -12,11 +12,11 @@ namespace PlayerDestroy { struct DestroyProgressContext; }
 namespace PlayerDestroy {
 // functions
 // NOLINTBEGIN
-MCAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context);
+MCNAPI float getDestroyProgress(::PlayerDestroy::DestroyProgressContext& context);
 
-MCAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
+MCNAPI float getDestroySpeed(::PlayerDestroy::DestroyProgressContext& context);
 
-MCAPI ::PlayerDestroyProgressCacheComponent& initializePlayer(::EntityContext& provider);
+MCNAPI ::PlayerDestroyProgressCacheComponent& initializePlayer(::EntityContext& provider);
 // NOLINTEND
 
 } // namespace PlayerDestroy

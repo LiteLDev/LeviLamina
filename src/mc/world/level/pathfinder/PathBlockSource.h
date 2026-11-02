@@ -45,15 +45,15 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInWater() const;
+    MCNAPI bool $isInWater() const;
 
-    MCAPI bool $isInLava() const;
+    MCNAPI bool $isInLava() const;
 
-    MCAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
+    MCNAPI bool $isWaterBlock(::BlockPos const& blockPos) const;
 
-    MCAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
+    MCNAPI bool $isLavaBlock(::BlockPos const& blockPos) const;
 
-    MCAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
+    MCNAPI bool $isSolidBlock(::BlockPos const& blockPos) const;
 
 
     // NOLINTEND

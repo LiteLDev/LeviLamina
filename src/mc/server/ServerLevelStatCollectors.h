@@ -16,8 +16,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnkfe1225;
-    ::ll::UntypedStorage<8, 368> mUnkd18e0a;
-    ::ll::UntypedStorage<8, 368> mUnk64561d;
+    ::ll::UntypedStorage<8, 432> mUnkd18e0a;
+    ::ll::UntypedStorage<8, 432> mUnk64561d;
     // NOLINTEND
 
 public:
@@ -29,11 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::DebuggerStat>
-    _collectEntityCountStats(::Bedrock::NotNullNonOwnerPtr<::ServerLevel> serverLevel, uint64, uint64, uint64);
+    MCNAPI void
+    _collectEntityCountStats(::Bedrock::NotNullNonOwnerPtr<::ServerLevel> serverLevel, ::DebuggerStat& entityCount);
 
-    MCNAPI ::std::optional<::DebuggerStat> _collectLoadedChunkStats(
+    MCNAPI void _collectLoadedChunkStats(
         ::Bedrock::NotNullNonOwnerPtr<::ServerLevel> serverLevel,
+        ::DebuggerStat&                              loadedChunks,
         uint64                                       currentTick,
         uint64,
         uint64

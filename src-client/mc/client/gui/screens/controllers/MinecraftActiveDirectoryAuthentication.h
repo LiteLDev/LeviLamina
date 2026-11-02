@@ -61,38 +61,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _isIOS() const;
+    MCNAPI bool _isIOS() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ActiveDirectoryAuthenticationState $getAuthenticationState() const;
+    MCNAPI ::ActiveDirectoryAuthenticationState $getAuthenticationState() const;
 
-    MCAPI ::std::optional<::ActiveDirectoryPopup> $getPopup() const;
+    MCNAPI ::std::optional<::ActiveDirectoryPopup> $getPopup() const;
 
-    MCAPI ::std::string $getTrialPopupId() const;
+    MCNAPI ::std::string $getTrialPopupId() const;
 
-    MCAPI ::AuthenticationUIState $getSignInUIState() const;
+    MCNAPI ::AuthenticationUIState $getSignInUIState() const;
 
-    MCAPI bool $shouldShowPurchaseDialog() const;
+    MCNAPI bool $shouldShowPurchaseDialog() const;
 
-    MCFOLD bool $shouldAllowExitGame() const;
+    MCNAPI bool $shouldAllowExitGame() const;
 
-    MCFOLD bool $shouldShowTrialPurchaseLink() const;
+    MCNAPI bool $shouldShowTrialPurchaseLink() const;
 
-    MCAPI ::AuthenticationUIState $initializeActiveDirectorySignIn(bool displaySignIn);
+    MCNAPI ::AuthenticationUIState $initializeActiveDirectorySignIn(bool displaySignIn);
 
-    MCAPI void $setActiveDirectoryAuthenticationOfferPurchase();
+    MCNAPI void $setActiveDirectoryAuthenticationOfferPurchase();
 
-    MCAPI bool $purchaseEduLicense(::std::unique_ptr<::TransactionContext> context);
+    MCNAPI bool $purchaseEduLicense(::std::unique_ptr<::TransactionContext> context);
 
-    MCAPI bool $getUnfulfilledEduPurchase(::EduPurchaseDetails& details) const;
+    MCNAPI bool $getUnfulfilledEduPurchase(::EduPurchaseDetails& details) const;
 
-    MCAPI bool
+    MCNAPI bool
     $fulfillPriorEduPurchase(::std::weak_ptr<::Purchase> purchase, ::std::unique_ptr<::TransactionContext> context);
 
-    MCAPI ::AuthenticationUIState $doSignIn(::AuthenticationUIState currentState);
+    MCNAPI ::AuthenticationUIState $doSignIn(::AuthenticationUIState currentState);
     // NOLINTEND
 
 public:

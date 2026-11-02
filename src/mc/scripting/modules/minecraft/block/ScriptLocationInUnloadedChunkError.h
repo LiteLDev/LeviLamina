@@ -21,19 +21,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
+    MCNAPI explicit ScriptLocationInUnloadedChunkError(::Vec3 const& pos);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Vec3 const& pos);
+    MCNAPI void* $ctor(::Vec3 const& pos);
     // NOLINTEND
 };
 

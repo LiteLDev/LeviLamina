@@ -41,21 +41,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getRainLevel() const;
+    MCNAPI float $getRainLevel() const;
 
-    MCAPI float $getLightningLevel() const;
+    MCNAPI float $getLightningLevel() const;
 
-    MCAPI int $getRainTime() const;
+    MCNAPI int $getRainTime() const;
 
-    MCAPI int $getLightningTime() const;
+    MCNAPI int $getLightningTime() const;
 
-    MCAPI void $setRainLevel(float rainLevel);
+    MCNAPI void $setRainLevel(float rainLevel);
 
-    MCAPI void $setLightningLevel(float lightningLevel);
+    MCNAPI void $setLightningLevel(float lightningLevel);
 
-    MCAPI void $setRainTime(int rainTime);
+    MCNAPI void $setRainTime(int rainTime);
 
-    MCAPI void $setLightningTime(int lightningTime);
+    MCNAPI void $setLightningTime(int lightningTime);
 
 
     // NOLINTEND

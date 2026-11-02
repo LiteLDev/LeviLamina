@@ -12,6 +12,7 @@ class ServerSoundHandle;
 class Vec3;
 struct LoopingSoundAttributes;
 struct LoopingSoundState;
+struct PlayMusicOptions;
 struct PlaySoundOptions;
 struct PlayingSoundAttributes;
 struct SoundInstanceProperties;
@@ -38,9 +39,9 @@ public:
 
     virtual uint64 playUI(::std::string const& name, float volume, float pitch) = 0;
 
-    virtual void playMusic(::std::string const& eventName, float volume, uint& playlistIndex) = 0;
+    virtual void playMusic(::PlayMusicOptions options) = 0;
 
-    virtual void playMusic(::std::string const& eventName, float volume) = 0;
+    virtual void playMusic(::PlayMusicOptions options, uint& playlistIndex) = 0;
 
     virtual bool isLoadingMusic() const = 0;
 
@@ -102,6 +103,8 @@ public:
     virtual bool isPlayingSound(::Core::Path const& soundName) const = 0;
 
     virtual bool isPlayingSound(::ServerSoundHandle serverSoundHandle) const = 0;
+
+    virtual bool wasSoundStoppedExplicitly(::ServerSoundHandle serverSoundHandle) const = 0;
 
     virtual uint64 playAttached(
         ::std::string const&                                eventName,

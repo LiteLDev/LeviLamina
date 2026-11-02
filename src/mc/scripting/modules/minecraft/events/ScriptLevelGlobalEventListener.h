@@ -55,17 +55,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::ScriptingWorldInitializeEvent const& eventData);
 
-    MCAPI ::EventResult $onEvent(::LevelGameRuleChangeEvent const& eventData);
+    MCNAPI ::EventResult $onEvent(::LevelGameRuleChangeEvent const& eventData);
 
-    MCAPI ::EventResult $onLevelTick(::Level& level);
+    MCNAPI ::EventResult $onLevelTick(::Level& level);
 
-    MCAPI ::EventResult $onLevelAddedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelAddedPlayer(::Player& player);
 
-    MCAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
+    MCNAPI ::EventResult $onLevelRemovedPlayer(::Player& player);
 
-    MCAPI ::EventResult $onLevelWeatherChange(
+    MCNAPI ::EventResult $onLevelWeatherChange(
         ::std::string const& dimension,
         bool                 wasRaining,
         bool                 wasLightning,
@@ -73,7 +73,7 @@ public:
         bool                 isLightning
     );
 
-    MCAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
+    MCNAPI ::EventResult $onLevelRemovedActor(::Actor& actor);
 
 
     // NOLINTEND

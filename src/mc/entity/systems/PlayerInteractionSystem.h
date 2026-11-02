@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -24,7 +27,7 @@ public:
         // NOLINTBEGIN
         virtual ~InteractionMappingBase() = default;
 
-        virtual ::Interaction getInteraction(::Actor& actor, ::Player& player) const = 0;
+        virtual ::Interaction getInteraction(::Actor&, ::Player&, ::HandSlot) const = 0;
         // NOLINTEND
     };
 

@@ -17,6 +17,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FogSetting const& ZERO_SETTING();
+    MCNAPI static ::FogSetting const& ZERO_SETTING();
     // NOLINTEND
 };

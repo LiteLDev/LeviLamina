@@ -31,30 +31,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit GameServerToken(::std::string const& tokenString);
+    MCNAPI explicit GameServerToken(::std::string const& tokenString);
 
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo() const;
 
-    MCAPI bool hasMatchingIssuer(::MinecraftServiceKeyManager const& serviceKeyManager);
+    MCNAPI bool hasMatchingIssuer(::MinecraftServiceKeyManager const& serviceKeyManager);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _checkExpiration(::WebToken const& token, int64 currentTime);
+    MCNAPI static bool _checkExpiration(::WebToken const& token, int64 currentTime);
 
-    MCAPI static ::GameServerTokenValidationResult _validate(
+    MCNAPI static ::GameServerTokenValidationResult _validate(
         ::WebToken const&                   token,
         ::MinecraftServiceKeyManager const& keyManager,
         int64                               currentTime,
         bool                                checkExpiration
     );
 
-    MCAPI static ::GameServerTokenValidationResult
+    MCNAPI static ::GameServerTokenValidationResult
     _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::RawGameServerToken createLocal(
+    MCNAPI static ::RawGameServerToken createLocal(
         ::PrivateKeyManager const&        signer,
         int64                             expirationDate,
         ::std::string const&              keyId,
@@ -66,6 +66,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& tokenString);
+    MCNAPI void* $ctor(::std::string const& tokenString);
     // NOLINTEND
 };

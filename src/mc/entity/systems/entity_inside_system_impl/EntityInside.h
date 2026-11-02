@@ -14,6 +14,7 @@
 #include "mc/deps/ecs/strict/Write.h"
 #include "mc/entity/components/InsideBlockWithPosAndBlockComponent.h"
 #include "mc/entity/components/InsideBlockWithPosComponent.h"
+#include "mc/entity/systems/entity_inside_system_impl/EntityInsideViews.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -130,7 +131,8 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, bool const> mIsClientSide;
+    ::ll::TypedStorage<1, 1, bool const>                                                     mIsClientSide;
+    ::ll::TypedStorage<8, 840, ::std::optional<::EntityInsideSystemImpl::EntityInsideViews>> mViews;
     // NOLINTEND
 
 public:
@@ -219,7 +221,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(
+    MCNAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,
@@ -258,7 +260,7 @@ public:
             ::EntityFactoryT<>>& executionContext
     );
 
-    MCAPI void $singleTick(
+    MCNAPI void $singleTick(
         ::StrictExecutionContext<
             ::Filter<
                 ::InterpolateMovementNeededComponent,

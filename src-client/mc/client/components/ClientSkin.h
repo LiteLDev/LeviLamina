@@ -20,7 +20,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mIsLoadingGeometry;
     ::ll::TypedStorage<4, 4, int>                                 mReferenceCount;
     ::ll::TypedStorage<8, 32, ::OwnerPtr<::EntityId>>             mEntity;
-    ::ll::TypedStorage<8, 296, ::ClientSkinInfoData>              mSkinInfoData;
+    ::ll::TypedStorage<8, 328, ::ClientSkinInfoData>              mSkinInfoData;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GeometryGroup>> mClientSkinGeometryGroup;
     // NOLINTEND
 };

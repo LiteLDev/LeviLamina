@@ -12,11 +12,11 @@ namespace SharedTypes::v1_21_100 { struct CameraDocument; }
 namespace SharedTypes::v1_21_110 { struct VoxelShapeDocument; }
 namespace SharedTypes::v1_21_30 { struct TradeTableData; }
 namespace SharedTypes::v1_26_0 { struct CameraSplineFile; }
-namespace SharedTypes::v1_26_20::BlockDefinition { struct BlockDefinitionDocument; }
-namespace SharedTypes::v1_26_30 { struct ItemDocument; }
 namespace SharedTypes::v1_26_40::Poi { struct TagDocument; }
 namespace SharedTypes::v1_26_40::Poi { struct TypeDocument; }
 namespace SharedTypes::v1_26_50 { struct CraftingCatalogDocument; }
+namespace SharedTypes::v1_26_50 { struct ItemDocument; }
+namespace SharedTypes::v1_26_60::BlockDefinition { struct BlockDefinitionDocument; }
 // clang-format on
 
 namespace Bedrock::Resources {
@@ -60,7 +60,7 @@ public:
     virtual ::Puv::Loader<::SharedTypes::v1_26_0::CameraSplineFile, ::SharedTypes::v1_26_0::CameraSplineFile> const&
     getCameraSplineLoader() const = 0;
 
-    virtual ::Puv::Loader<::SharedTypes::v1_26_30::ItemDocument, ::SharedTypes::v1_26_30::ItemDocument> const&
+    virtual ::Puv::Loader<::SharedTypes::v1_26_50::ItemDocument, ::SharedTypes::v1_26_50::ItemDocument> const&
     getItemLoader() const = 0;
 
     virtual ::Puv::Loader<
@@ -75,8 +75,8 @@ public:
     getPoiTagLoader() const = 0;
 
     virtual ::Puv::Loader<
-        ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument,
-        ::SharedTypes::v1_26_20::BlockDefinition::BlockDefinitionDocument> const&
+        ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument,
+        ::SharedTypes::v1_26_60::BlockDefinition::BlockDefinitionDocument> const&
     getBlockLoader() const = 0;
     // NOLINTEND
 

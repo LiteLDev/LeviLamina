@@ -61,39 +61,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
+    MCNAPI PackManifestDocument(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&&);
 
-    MCAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
+    MCNAPI ::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument&
     operator=(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
 
-    MCAPI ~PackManifestDocument();
+    MCNAPI ~PackManifestDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::PackManifestDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

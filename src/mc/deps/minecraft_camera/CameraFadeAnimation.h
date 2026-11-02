@@ -31,9 +31,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void _addKeyframe(float time, float value);
+    MCNAPI void _addKeyframe(float time, float value);
 
-    MCAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
+    MCNAPI void addFade(float inTime, float requestedHoldTime, float outTime, float targetAlpha);
 #endif
     // NOLINTEND
 };

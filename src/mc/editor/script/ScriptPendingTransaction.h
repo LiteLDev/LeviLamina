@@ -36,6 +36,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI bool _hasValidManager() const;
+
     MCNAPI ::Scripting::Result_deprecated<void> addPrefabInstanceOperation(
         ::Editor::ScriptModule::ScriptPrefabInstanceTransactionOperationHandler const& operationHandler,
         ::std::string const&                                                           instanceId,

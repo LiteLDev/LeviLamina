@@ -81,7 +81,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CraftingContainerManagerModel(
+    MCNAPI CraftingContainerManagerModel(
         ::ContainerID        containerId,
         ::Player&            player,
         bool                 workbench,
@@ -91,28 +91,28 @@ public:
         ::std::string const& inventorySearch
     );
 
-    MCAPI ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
+    MCNAPI ::std::shared_ptr<::FilteredContainerModel> _createContainerModel(
         ::ContainerEnumName                                          containerEnumName,
         ::CreativeItemGroupCategory* const                           category,
         bool                                                         doExpando,
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
-    MCAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
+    MCNAPI ::FilterResult _filterByInventory(::ItemInstance const& item, bool includeCursorItem) const;
 
     MCAPI ::FilterResult _filterByText(::ItemInstance const& item, ::TextSearchMode searchMode) const;
 
-    MCAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
+    MCNAPI bool _foundInStartOfAnyWord(::std::string const& itemName) const;
 
-    MCAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
+    MCNAPI bool _hasUnlockedRecipes(::ItemInstance const& item) const;
 
-    MCAPI ::std::vector<::std::string> const getCraftingTags() const;
+    MCNAPI ::std::vector<::std::string> const getCraftingTags() const;
 
-    MCAPI bool hasIngredientSetChanged(::ItemStack const& inHand);
+    MCNAPI bool hasIngredientSetChanged(::ItemStack const& inHand);
 
-    MCAPI void setIsFiltering(bool craftableFilterOn);
+    MCNAPI void setIsFiltering(bool craftableFilterOn);
 
-    MCAPI void setSearchString(::std::string const& searchString);
+    MCNAPI void setSearchString(::std::string const& searchString);
 #endif
     // NOLINTEND
 
@@ -120,7 +120,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ContainerID        containerId,
         ::Player&            player,
         bool                 workbench,
@@ -136,21 +136,21 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCFOLD void $setSlot(int, ::ItemStack const&, bool);
+    MCNAPI void $setSlot(int, ::ItemStack const&, bool);
 
-    MCFOLD ::ItemStack const& $getSlot(int) const;
+    MCNAPI ::ItemStack const& $getSlot(int) const;
 
-    MCFOLD void $setData(int, int);
+    MCNAPI void $setData(int, int);
 
-    MCFOLD void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI bool $tick();
+    MCNAPI bool $tick();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 #endif
 
 

@@ -14,6 +14,7 @@ namespace Scripting { struct InterfaceBinding; }
 namespace Scripting { struct PropertyBinding; }
 namespace Scripting { struct TypeNameInfo; }
 namespace Scripting::QuickJS { class RegisteredClass; }
+namespace Scripting::QuickJS { class RegisteredEnum; }
 namespace Scripting::QuickJS { class RegisteredError; }
 namespace Scripting::QuickJS { class RegisteredInterface; }
 namespace Scripting::QuickJS { struct ResolvedTypes; }
@@ -68,6 +69,16 @@ public:
             ::Scripting::EqualPropertyBinding>& allProperties,
         ::Scripting::ClassBinding const&        classBinding
     );
+
+    MCNAPI ::Scripting::QuickJS::RegisteredClass* findClassByType(::entt::meta_type const& type) const;
+
+    MCNAPI ::Scripting::QuickJS::RegisteredClass* findClassByTypeOrBase(::entt::meta_type const& type) const;
+
+    MCNAPI ::Scripting::QuickJS::RegisteredEnum* findEnumByType(::entt::meta_type const& type) const;
+
+    MCNAPI ::Scripting::QuickJS::RegisteredError* findErrorByType(::entt::meta_type const& type) const;
+
+    MCNAPI ::Scripting::QuickJS::RegisteredInterface* findInterfaceByType(::entt::meta_type const& type) const;
 
     MCNAPI ::std::optional<::Scripting::TypeNameInfo> getNameForType(
         ::Scripting::QuickJS::ResolvedTypes const& resolvedTypes,

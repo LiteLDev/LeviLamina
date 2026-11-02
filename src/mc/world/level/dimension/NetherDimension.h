@@ -15,16 +15,11 @@ class LevelChunk;
 class Vec3;
 class WorldGenerator;
 struct BiomeIdType;
-struct DerivedDimensionArguments;
 struct DimensionType;
 namespace br::worldgen { class StructureSetRegistry; }
 // clang-format on
 
 class NetherDimension : public ::Dimension {
-public:
-    // prevent constructor by default
-    NetherDimension();
-
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -64,48 +59,36 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit NetherDimension(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DerivedDimensionArguments&& args);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
+    MCNAPI void $init(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
-    MCAPI ::BiomeIdType $getDefaultBiomeId() const;
+    MCNAPI ::BiomeIdType $getDefaultBiomeId() const;
 
-    MCFOLD bool $isNaturalDimension() const;
+    MCNAPI bool $isNaturalDimension() const;
 
-    MCFOLD bool $isValidSpawn(int x, int z) const;
+    MCNAPI bool $isValidSpawn(int x, int z) const;
 
-    MCFOLD bool $showSky() const;
+    MCNAPI bool $showSky() const;
 
-    MCFOLD float $getTimeOfDay(int time, float a) const;
+    MCNAPI float $getTimeOfDay(int time, float a) const;
 
-    MCFOLD bool $mayRespawnViaBed() const;
+    MCNAPI bool $mayRespawnViaBed() const;
 
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator>
+    MCNAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;
 
-    MCAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
+    MCNAPI void $upgradeLevelChunk(::ChunkSource& source, ::LevelChunk& lc, ::LevelChunk& generatedChunk);
 
     MCAPI void $fixWallChunk(::ChunkSource& source, ::LevelChunk& lc);
 
     MCAPI void $_upgradeOldLimboEntity(::CompoundTag& tag, ::LimboEntitiesVersion vers);
 
-    MCFOLD ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 

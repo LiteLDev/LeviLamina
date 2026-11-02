@@ -23,19 +23,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
+    MCNAPI static void setup(::CommandRegistry& registry, ::IMinecraftApp& app);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::IMinecraftApp*& mApp();
+    MCNAPI static ::IMinecraftApp*& mApp();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput&) const;
 
 
     // NOLINTEND

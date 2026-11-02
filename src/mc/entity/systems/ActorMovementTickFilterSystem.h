@@ -11,6 +11,6 @@ struct ActorMovementTickFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::TickingSystemWithInfo addInterpolationNeededComponent(bool isClientSide);
+    MCNAPI static ::TickingSystemWithInfo addInterpolationNeededComponent(bool isClientSide);
     // NOLINTEND
 };

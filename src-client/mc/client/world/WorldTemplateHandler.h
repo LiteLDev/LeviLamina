@@ -60,17 +60,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadTemplate(
+    MCNAPI void $loadTemplate(
         ::std::string const&                                                                            templateId,
         ::std::function<void(::std::variant<::World::WorldID, ::World::IWorldTemplateHandler::Result>)> onComplete
     );
 
-    MCAPI ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
+    MCNAPI ::std::optional<::World::IWorldTemplateHandler::WriteTemplateError>
     $saveTemplate(::LevelSummary const& levelSummary) const;
 
-    MCFOLD bool $isTemplateExportEnabled() const;
+    MCNAPI bool $isTemplateExportEnabled() const;
 
-    MCAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
+    MCNAPI ::std::vector<::std::unique_ptr<::WorldTemplateInfo const>> const& $getLocalTemplates() const;
     // NOLINTEND
 };
 

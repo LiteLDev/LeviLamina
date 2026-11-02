@@ -42,47 +42,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorTutorialFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorTutorialFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleStageChangeEvent(::HashedString const& curr, ::HashedString const&, bool);
+    MCNAPI void _handleStageChangeEvent(::HashedString const& curr, ::HashedString const&, bool);
 
-    MCAPI void _handleStageConditionsChangeEvent(::std::unordered_map<::HashedString, bool> const& conditions);
+    MCNAPI void _handleStageConditionsChangeEvent(::std::unordered_map<::HashedString, bool> const& conditions);
 
-    MCAPI void activateTutorial();
+    MCNAPI void activateTutorial();
 
-    MCAPI void endTutorial(bool cancelled);
+    MCNAPI void endTutorial(bool cancelled);
 
-    MCFOLD ::std::unordered_map<::HashedString, bool> const& getCurrentStageConditions() const;
+    MCNAPI ::std::unordered_map<::HashedString, bool> const& getCurrentStageConditions() const;
 
-    MCFOLD ::HashedString const& getCurrentStageId() const;
+    MCNAPI ::HashedString const& getCurrentStageId() const;
 
-    MCAPI bool isTutorialActivatedOnLaunch() const;
+    MCNAPI bool isTutorialActivatedOnLaunch() const;
 
-    MCAPI bool isTutorialActive() const;
+    MCNAPI bool isTutorialActive() const;
 
-    MCAPI bool isTutorialStarted() const;
+    MCNAPI bool isTutorialStarted() const;
 
-    MCAPI void reportStageCondition(::HashedString const& stageId, ::HashedString const& condition);
+    MCNAPI void reportStageCondition(::HashedString const& stageId, ::HashedString const& condition);
 
-    MCAPI void skipToNextStage();
+    MCNAPI void skipToNextStage();
+
+    MCNAPI void skipToNextStageGroup();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

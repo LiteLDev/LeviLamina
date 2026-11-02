@@ -18,15 +18,15 @@ struct StateVectorComponent;
 namespace BuoyancySystem {
 // functions
 // NOLINTBEGIN
-MCAPI void checkAndAddFloatRequest(
-    ::StrictEntityContext const&                       entity,
-    ::StateVectorComponent const&                      stateVectorComponent,
-    ::BuoyancyComponent&                               buoyancyComponent,
-    ::EntityModifier<::BuoyancyFloatRequestComponent>& mod,
-    ::IConstBlockSource const&                         region
+MCNAPI void checkAndAddFloatRequest(
+    ::StrictEntityContext const&                             entity,
+    ::StateVectorComponent const&                            stateVectorComponent,
+    ::BuoyancyComponent&                                     buoyancyComponent,
+    ::EntityModifier<::BuoyancyFloatRequestComponent> const& mod,
+    ::IConstBlockSource const&                               region
 );
 
-MCAPI void registerSystems(::EntitySystems& systemRegistry);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry);
 // NOLINTEND
 
 } // namespace BuoyancySystem

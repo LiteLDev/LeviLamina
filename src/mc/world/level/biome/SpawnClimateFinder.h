@@ -47,21 +47,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SpawnClimateFinder(
+    MCNAPI SpawnClimateFinder(
         ::std::vector<::ClimateParameters> targetClimates,
         ::OverworldNoises3d const&         noiseSampler,
         ::DimensionHeightRange const&      dimensionHeightRange
     );
 
-    MCAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
+    MCNAPI int64 _calculateClimateMinFitness(::BlockPos pos) const;
 
-    MCAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
+    MCNAPI ::SpawnClimateFinder::ResultDetails _findSpawnPositionDetailedResult() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::ClimateParameters> targetClimates,
         ::OverworldNoises3d const&         noiseSampler,
         ::DimensionHeightRange const&      dimensionHeightRange

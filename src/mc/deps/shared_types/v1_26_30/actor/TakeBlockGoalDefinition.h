@@ -38,46 +38,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TakeBlockGoalDefinition(::SharedTypes::v1_26_30::TakeBlockGoalDefinition&&);
+    MCNAPI TakeBlockGoalDefinition(::SharedTypes::v1_26_30::TakeBlockGoalDefinition&&);
 
-    MCAPI TakeBlockGoalDefinition(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&);
+    MCNAPI TakeBlockGoalDefinition(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_30::TakeBlockGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::TakeBlockGoalDefinition&
     operator=(::SharedTypes::v1_26_30::TakeBlockGoalDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&) const;
 
-    MCAPI ~TakeBlockGoalDefinition();
+    MCNAPI ~TakeBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool const& DEFAULT_AFFECTED_BY_GRIEFING_RULE();
-
-    MCAPI static bool const& DEFAULT_REQUIRES_LINE_OF_SIGHT();
-
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::TakeBlockGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::TakeBlockGoalDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::TakeBlockGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

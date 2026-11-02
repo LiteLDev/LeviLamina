@@ -31,13 +31,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NativeModuleDependency(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
+    MCNAPI NativeModuleDependency(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::NativeModuleDependency const&);
     // NOLINTEND
 };
 

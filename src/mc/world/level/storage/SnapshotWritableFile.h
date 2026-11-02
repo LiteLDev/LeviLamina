@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8> mUnkd25792;
-    ::ll::UntypedStorage<8, 8> mUnk3809e9;
+    ::ll::UntypedStorage<8, 8> mUnk63f034;
     // NOLINTEND
 
 public:
@@ -42,5 +42,11 @@ public:
     MCNAPI ::leveldb::Status $Sync();
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

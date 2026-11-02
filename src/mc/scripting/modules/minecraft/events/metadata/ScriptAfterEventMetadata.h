@@ -28,20 +28,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ScriptModuleMinecraft::ScriptAfterEventList createSignals(::Scripting::WeakLifetimeScope& scope) const;
+    MCNAPI ::ScriptModuleMinecraft::ScriptAfterEventList createSignals(::Scripting::WeakLifetimeScope& scope) const;
 
-    MCAPI void generateOrderDocumentationForVersion(
+    MCNAPI void generateOrderDocumentationForVersion(
         ::Scripting::ModuleDescriptor const& moduleToDocumentFor,
         ::Json::Value&                       eventOrderArray
     ) const;
 
-    MCAPI ~ScriptAfterEventMetadata();
+    MCNAPI ~ScriptAfterEventMetadata();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

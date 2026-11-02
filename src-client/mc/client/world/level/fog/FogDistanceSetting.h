@@ -25,6 +25,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FogDistanceSetting const& ZERO_SETTING();
+    MCNAPI static ::FogDistanceSetting const& ZERO_SETTING();
     // NOLINTEND
 };

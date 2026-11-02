@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void update();
+    MCNAPI void update();
     // NOLINTEND
 };

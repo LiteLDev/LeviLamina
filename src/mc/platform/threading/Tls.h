@@ -34,13 +34,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Thread(::Bedrock::Threading::Detail::Tls*& tls);
+        MCNAPI explicit Thread(::Bedrock::Threading::Detail::Tls*& tls);
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::Threading::Detail::Tls*& tls);
+        MCNAPI void* $ctor(::Bedrock::Threading::Detail::Tls*& tls);
         // NOLINTEND
     };
 
@@ -64,11 +64,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint allocate();
+    MCNAPI uint allocate();
 
-    MCAPI void free(uint key);
+    MCNAPI void free(uint key);
 
-    MCAPI void registerThread(::Bedrock::Threading::Detail::Tls::Thread& thread);
+    MCNAPI void registerThread(::Bedrock::Threading::Detail::Tls::Thread& thread);
     // NOLINTEND
 };
 

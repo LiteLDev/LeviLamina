@@ -12,7 +12,7 @@ class Vec3;
 namespace WindBurstUtility {
 // functions
 // NOLINTBEGIN
-MCAPI void burst(
+MCNAPI void burst(
     ::BlockSource& region,
     ::Actor*       actor,
     ::Vec3 const&  explosionPosition,

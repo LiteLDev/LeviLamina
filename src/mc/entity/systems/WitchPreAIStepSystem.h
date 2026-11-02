@@ -25,6 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+    MCNAPI static void
+    _doWitchPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 };

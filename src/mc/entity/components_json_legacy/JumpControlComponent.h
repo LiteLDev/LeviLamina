@@ -33,14 +33,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JumpControlComponent(::JumpControlComponent const& other);
+    MCNAPI JumpControlComponent(::JumpControlComponent const& other);
 
-    MCAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
+    MCNAPI void initMultiTypeJumpComponent(::Mob& entity, ::ActorDefinitionDescriptor& initDescription);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::JumpControlComponent const& other);
+    MCNAPI void* $ctor(::JumpControlComponent const& other);
     // NOLINTEND
 };

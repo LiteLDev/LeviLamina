@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion {
 
 struct FileDataContainer {
@@ -20,13 +15,21 @@ public:
 public:
     // prevent constructor by default
     FileDataContainer& operator=(FileDataContainer const&);
-    FileDataContainer(FileDataContainer const&);
     FileDataContainer();
 
 public:
-    // static functions
+    // member functions
     // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI FileDataContainer(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer const&);
+
+    MCNAPI ::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer&
+    operator=(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer&&);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::Prefabs::PrefabDBInstanceLoader::CurrentVersion::FileDataContainer const&);
     // NOLINTEND
 };
 

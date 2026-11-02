@@ -22,16 +22,15 @@ class Option;
 class ScreenContext;
 struct TextBoxStateChange;
 namespace OreUI { class BedrockInputSource; }
-namespace OreUI { class FacetBinder; }
-namespace OreUI { class IFacetRegistry; }
+namespace OreUI { class FocusNavigationBinding; }
+namespace OreUI { class FocusNavigationController; }
 namespace OreUI { class IScene; }
 namespace OreUI { class ITelemetry; }
 namespace OreUI { class IViewTestHelper; }
 namespace OreUI { class RouterLocation; }
 namespace OreUI { class ViewInputHandler; }
 namespace OreUI { class ViewRenderer; }
-namespace OreUI::Detail { class Binder; }
-namespace OreUI::Detail { class ViewContext; }
+namespace OreUI::Detail { class ViewBindings; }
 namespace cohtml { class IClientSideSocket; }
 namespace cohtml { class ISocketListener; }
 namespace cohtml { class View; }
@@ -46,19 +45,17 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::cohtml::View*>                                           mGamefaceView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewRenderer>>                  mRenderer;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FocusNavigationBinding>>        mFocusNavigationBinding;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FocusNavigationController>>     mFocusNavigationController;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ViewInputHandler>>              mInputHandler;
     ::ll::TypedStorage<8, 32, ::std::string>                                            mUrl;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::reference_wrapper<::OreUI::IScene>>> mScenes;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::BedrockInputSource>>            mBedrockInputSource;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>>         mClientInstance;
     ::ll::TypedStorage<8, 8, ::KeyboardManager&>                                        mKeyboardManager;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::FacetBinder>>                   mFacetBinder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::IFacetRegistry>>                mFacetRegistry;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::Binder>>                mBinder;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewContext>>           mViewContext;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::Detail::ViewBindings>>          mBindings;
     ::ll::TypedStorage<8, 8, ::OreUI::ITelemetry&>                                      mTelemetry;
     ::ll::TypedStorage<8, 400, ::std::optional<::OreUI::ScreenPerformanceTelemetry>>    mScreenPerformanceTelemetry;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>                             mUpdatedFacets;
     ::ll::TypedStorage<1, 1, ::OreUI::ViewState>                                        mState;
     ::ll::TypedStorage<4, 4, ::OreUI::RouteMode>                                        mRouteMode;
     ::ll::TypedStorage<8, 8, double>                                                    mLastUpdateTime;
@@ -89,6 +86,8 @@ public:
     virtual void update(double time) /*override*/;
 
     virtual void render(::ScreenContext& screenContext) /*override*/;
+
+    virtual void renderOffscreen(::ScreenContext& screenContext) /*override*/;
 
     virtual void resize(uint width, uint height) /*override*/;
 
@@ -171,91 +170,93 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode);
+    MCNAPI void $pushCurrentScene(::OreUI::IScene& scene, ::OreUI::RouteMode routeMode);
 
-    MCAPI bool $hasScenes() const;
+    MCNAPI bool $hasScenes() const;
 
-    MCAPI void $removeScene(::OreUI::IScene const& scene);
+    MCNAPI void $removeScene(::OreUI::IScene const& scene);
 
-    MCAPI void $update(double time);
+    MCNAPI void $update(double time);
 
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
 
-    MCAPI void $resize(uint width, uint height);
+    MCNAPI void $renderOffscreen(::ScreenContext& screenContext);
 
-    MCAPI void $reload();
+    MCNAPI void $resize(uint width, uint height);
 
-    MCAPI void $leave();
+    MCNAPI void $reload();
 
-    MCAPI void $onSuspend();
+    MCNAPI void $leave();
 
-    MCAPI void $onResume();
+    MCNAPI void $onSuspend();
 
-    MCAPI void $onRouteChanged(
+    MCNAPI void $onResume();
+
+    MCNAPI void $onRouteChanged(
         ::std::optional<::OreUI::RouterLocation> const& previousLocation,
         ::std::optional<::OreUI::RouterLocation> const& currentLocation
     );
 
-    MCAPI ::std::string_view $getUrl() const;
+    MCNAPI ::std::string_view $getUrl() const;
 
-    MCAPI ::OreUI::RouteMode $getRouteMode() const;
+    MCNAPI ::OreUI::RouteMode $getRouteMode() const;
 
-    MCAPI uint $getWidth() const;
+    MCNAPI uint $getWidth() const;
 
-    MCAPI uint $getHeight() const;
+    MCNAPI uint $getHeight() const;
 
-    MCAPI ::OreUI::ViewState $getState() const;
+    MCNAPI ::OreUI::ViewState $getState() const;
 
-    MCAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
+    MCNAPI void $setTextBoxState(::TextBoxStateChange const& stateChange);
 
-    MCAPI void $onKeyboardDismissed();
+    MCNAPI void $onKeyboardDismissed();
 
-    MCAPI void $setCaretLocation(int caretLocation);
+    MCNAPI void $setCaretLocation(int caretLocation);
 
-    MCAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
+    MCNAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
 
-    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
+    MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
 
-    MCAPI void $OnLoadFailed(char const* url, char const* error);
+    MCNAPI void $OnLoadFailed(char const* url, char const* error);
 
-    MCAPI void $OnReadyForBindings();
+    MCNAPI void $OnReadyForBindings();
 
-    MCAPI void $OnBindingsReleased();
+    MCNAPI void $OnBindingsReleased();
 
-    MCAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
+    MCNAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
 
-    MCAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
+    MCNAPI void $OnTextInputTypeChanged(::cohtml::TextInputControlType::ControlType type);
 
-    MCAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
+    MCNAPI void $OnCaretRectChanged(int x, int y, uint width, uint height);
 
-    MCAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
+    MCNAPI void $OnCursorChanged(::cohtml::CursorTypes::Cursors cursor, char const*, float const*, float const*);
 
-    MCFOLD ::cohtml::IClientSideSocket* $OnCreateWebSocket(
+    MCNAPI ::cohtml::IClientSideSocket* $OnCreateWebSocket(
         ::cohtml::ISocketListener* listener,
         char const*                url,
         char const**               protocols,
         uint                       protocolsCount
     );
 
-    MCAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
+    MCNAPI void $OnAudioStreamCreated(int id, int bitDepth, int channels, float samplingRate);
 
-    MCAPI void $OnAudioStreamClosed(int id);
+    MCNAPI void $OnAudioStreamClosed(int id);
 
-    MCAPI void $OnAudioStreamPlay(int id);
+    MCNAPI void $OnAudioStreamPlay(int id);
 
-    MCAPI void $OnAudioStreamPause(int id);
+    MCNAPI void $OnAudioStreamPause(int id);
 
-    MCAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
+    MCNAPI void $OnAudioDataReceived(int id, int samples, float** pcm, int channels);
 
-    MCAPI void $OnAudioStreamEnded(int id);
+    MCNAPI void $OnAudioStreamEnded(int id);
 
-    MCAPI void $OnAudioStreamVolumeChanged(int id, float volume);
+    MCNAPI void $OnAudioStreamVolumeChanged(int id, float volume);
 
-    MCAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
+    MCNAPI void $OnClipboardTextSet(char const* text, uint lengthBytes);
 
-    MCAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
+    MCNAPI void $OnClipboardTextGet(::cohtml::IViewListener::IClipboardData* setDataObject);
 
-    MCFOLD ::OreUI::IViewTestHelper* $getViewTestHelper();
+    MCNAPI ::OreUI::IViewTestHelper* $getViewTestHelper();
     // NOLINTEND
 };
 

@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class ResourcePackManager;
 class SemVersionConstant;
 struct PBRFallbackSettings;
 namespace cereal { struct ReflectionCtx; }
@@ -59,13 +58,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~PBRFallbackConfig() /*override*/;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI void loadDataSync(::cereal::ReflectionCtx const& ctx, ::ResourcePackManager& resourcePackManager);
+    virtual ~PBRFallbackConfig() /*override*/ = default;
     // NOLINTEND
 
 public:
@@ -80,17 +73,5 @@ public:
     MCNAPI static ::std::string_view const& PAYLOAD_KEY();
 
     MCNAPI static ::std::string_view const& PBR_FALLBACK_GLOBAL_CONFIG_FILE();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

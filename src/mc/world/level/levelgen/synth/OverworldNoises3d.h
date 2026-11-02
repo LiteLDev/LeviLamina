@@ -14,7 +14,6 @@
 class BlockPos;
 class XoroshiroPositionalRandomFactory;
 struct TargetPoint;
-struct TerrainInfo;
 // clang-format on
 
 struct OverworldNoises3d {
@@ -51,38 +50,36 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI OverworldNoises3d(::OverworldNoises3d&&);
+    MCNAPI OverworldNoises3d(::OverworldNoises3d&&);
 #endif
 
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry
+    MCNAPI ::ChunkLocalNoiseCache::CacheEntry
     _computeBaseValueSetForCacheEntry(::DividedPos2d<4> const& worldQuartPos) const;
 
-    MCAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
-
-    MCAPI ::TerrainInfo computeOffsetAndFactor(::DividedPos2d<4> const& worldQuartPos) const;
+    MCNAPI ::ChunkLocalNoiseCache::CacheEntry computeNoiseValues(::DividedPos2d<4> const& worldQuartPos) const;
 
     MCAPI ::TargetPoint sample(::BlockPos position) const;
 
-    MCAPI ~OverworldNoises3d();
+    MCNAPI ~OverworldNoises3d();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
+    MCNAPI static ::OverworldNoises3d make(::XoroshiroPositionalRandomFactory const& randomFactory);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::OverworldNoises3d&&);
+    MCNAPI void* $ctor(::OverworldNoises3d&&);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

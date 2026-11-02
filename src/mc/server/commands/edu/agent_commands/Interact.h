@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/server/commands/Command.h"
-#include "mc/server/commands/edu/agent_commands/SubCommand.h"
 #include "mc/world/actor/agent/agent_components/Direction.h"
 
 // auto generated forward declare list
@@ -32,7 +31,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

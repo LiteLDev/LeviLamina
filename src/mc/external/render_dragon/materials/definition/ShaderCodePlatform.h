@@ -14,11 +14,12 @@ enum class ShaderCodePlatform : uchar {
     Glsl120      = 6,
     Glsl430      = 7,
     Essl310      = 8,
-    Metal        = 9,
-    Vulkan       = 10,
-    Pssl         = 11,
-    Unknown      = 12,
-    Count        = 12,
+    Essl320      = 9,
+    Metal        = 10,
+    Vulkan       = 11,
+    Pssl         = 12,
+    Unknown      = 13,
+    Count        = 13,
 };
 
 }

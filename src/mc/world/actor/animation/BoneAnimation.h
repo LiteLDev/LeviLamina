@@ -27,24 +27,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BoneAnimation(::std::string const& name);
-
-#ifdef LL_PLAT_C
-    MCAPI ~BoneAnimation();
-#endif
+    MCNAPI explicit BoneAnimation(::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCNAPI void* $ctor(::std::string const& name);
     // NOLINTEND
 };

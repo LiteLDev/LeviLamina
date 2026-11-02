@@ -36,7 +36,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     vertexBufferTransform(::std::vector<uchar> const& gameface, ::std::vector<uchar>& dragon, uint64 elementCount);
     // NOLINTEND
 };

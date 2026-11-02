@@ -8,6 +8,8 @@ enum class NeighborAwareBlockUpgradeVersionType : int {
     FenceBlock                = 2,
     StairBlock                = 3,
     ThinFenceAndTripWireBlock = 4,
-    Count                     = 5,
-    Latest                    = 4,
+    RedstoneWireBlock         = 5,
+    ChorusPlantAndFireBlock   = 6,
+    Count                     = 7,
+    Latest                    = 6,
 };

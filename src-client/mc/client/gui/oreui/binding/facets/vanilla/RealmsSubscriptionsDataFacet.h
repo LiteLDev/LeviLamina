@@ -44,35 +44,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsSubscriptionsDataFacet(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
+    MCNAPI explicit RealmsSubscriptionsDataFacet(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
 
-    MCAPI bool getCanBuyCoreRealm() const;
+    MCNAPI bool getCanBuyCoreRealm() const;
 
-    MCAPI bool getCanBuyPlusRealm() const;
+    MCNAPI bool getCanBuyPlusRealm() const;
 
-    MCFOLD ::std::string const& getClientStoreId() const;
+    MCNAPI ::std::string const& getClientStoreId() const;
 
-    MCFOLD ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
+    MCNAPI ::std::vector<::Realms::RealmsSubscriptionInfo> const& getRealmsSubscriptionInfo() const;
 
-    MCAPI ::Realms::RealmsSubscriptionsState getState() const;
+    MCNAPI ::Realms::RealmsSubscriptionsState getState() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsSubscriptions> realmsSubscriptions);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

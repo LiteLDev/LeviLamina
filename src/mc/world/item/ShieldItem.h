@@ -54,8 +54,8 @@ public:
         ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const /*override*/;
 
     virtual ::ItemStack& use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const /*override*/;
@@ -86,72 +86,68 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void playBlockSound(::Player* player) const;
+    MCNAPI void playBlockSound(::Player* player) const;
 
-    MCAPI void playBreakSound(::Player* player) const;
+    MCNAPI void playBreakSound(::Player* player) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static int const getBaseColor(::CompoundTag const* data);
+    MCNAPI static int getBaseColor(::CompoundTag const* data);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& TIMESTAMP_TAG();
+    MCNAPI static ::std::string const& TIMESTAMP_TAG();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
+    MCNAPI bool $inventoryTick(::ItemStack& item, ::Level& level, ::Actor& owner, int, bool selected) const;
 
-#ifdef LL_PLAT_S
-    MCAPI int $getEnchantSlot() const;
-#else // LL_PLAT_C
-    MCFOLD int $getEnchantSlot() const;
-#endif
+    MCNAPI int $getEnchantSlot() const;
 
-    MCAPI bool $isValidRepairItem(
+    MCNAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion
     ) const;
 
-    MCFOLD bool $isHandEquipped() const;
+    MCNAPI bool $isHandEquipped() const;
 
-    MCFOLD ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCFOLD void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCAPI ::InHandUpdateType $getInHandUpdateType(
+    MCNAPI ::InHandUpdateType $getInHandUpdateType(
         ::Player const&    player,
         ::ItemStack const& oldItem,
         ::ItemStack const& newItem,
-        bool const         isMainHand,
-        bool const         slotChanged
+        bool const,
+        bool const slotChanged
     ) const;
 
-    MCFOLD ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
-    MCAPI void
+    MCNAPI void
     $readUserData(::ItemStackBase& stack, ::IDataInput& input, ::ReadOnlyBinaryStream& underlyingStream) const;
 
-    MCAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
+    MCNAPI void $writeUserData(::ItemStackBase const& stack, ::IDataOutput& output) const;
 
-    MCAPI ::HashedString const& $getCooldownCategory() const;
+    MCNAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCFOLD int $getCooldownDuration() const;
+    MCNAPI int $getCooldownDuration() const;
 
-    MCAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
+    MCNAPI ::std::string $buildDescriptionId(::ItemDescriptor const&, ::CompoundTag const* userData) const;
 
-    MCAPI void $appendFormattedHovertext(
+    MCNAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
@@ -164,6 +160,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -19,15 +19,21 @@ class ScreenRenderBatch {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::std::vector<::RenderControlMetadata>>       mRenderControls;
-    ::ll::TypedStorage<8, 24, ::std::vector<::ComponentRenderBatch>>        mRenderBatches;
+    ::ll::TypedStorage<8, 24, ::std::vector<::RenderControlMetadata>> mRenderControls;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ComponentRenderBatch>>  mRenderBatches;
+    ::ll::TypedStorage<
+        8,
+        8,
+        ::std::reverse_iterator<
+            ::std::_Vector_iterator<::std::_Vector_val<::std::_Simple_types<::ComponentRenderBatch>>>>>
+                                                                            mEndValidRenderBatches;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<uint64, ::TextureState>> mTextureStates;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addRenderControl(
+    MCNAPI bool _addRenderControl(
         ::UIControl&                control,
         ::BatchClippingState const& batchClippingState,
         ::BatchVisualState const&   batchVisualState,
@@ -35,7 +41,9 @@ public:
         bool                        hasRenderableComponent
     );
 
-    MCAPI bool _populateRenderControlsCollection(
+    MCNAPI ::ComponentRenderBatch& _findOrAddRenderBatch(::BatchKey&& batchKey);
+
+    MCNAPI bool _populateRenderControlsCollection(
         ::UIControl&                control,
         ::BatchClippingState const& batchClippingState,
         ::BatchClippingState const& unclippedBatchClippingState,
@@ -44,13 +52,13 @@ public:
         bool                        checkIfRendered
     );
 
-    MCAPI void _storeTextureState(::UIControl& control, bool state);
+    MCNAPI void _storeTextureState(::UIControl& control, bool state);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::BatchKey createBatchKey(
+    MCNAPI static ::BatchKey createBatchKey(
         ::UICustomRenderer const&   renderer,
         int                         pass,
         float                       alpha,
@@ -62,6 +70,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::pair<int, int>>& GRID_DIMENSIONS();
     // NOLINTEND
 };

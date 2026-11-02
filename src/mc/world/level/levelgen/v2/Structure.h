@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/spawn_category/Type.h"
+#include "mc/world/level/levelgen/structure/registry/OnStructurePlacedToken.h"
 #include "mc/world/level/levelgen/v2/generation_step/Type.h"
 #include "mc/world/level/levelgen/v2/terrain_adjustment/Type.h"
 
@@ -31,6 +32,7 @@ public:
                                                                                     mMobs;
     ::ll::TypedStorage<1, 1, ::br::worldgen::GenerationStep::Type>                  mStep;
     ::ll::TypedStorage<8, 48, ::HashedString>                                       mType;
+    ::ll::TypedStorage<4, 4, ::br::worldgen::OnStructurePlacedToken>                mOnPlaced;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::PoolAliasBinding>>> mPoolAliases;
     // NOLINTEND
 
@@ -51,7 +53,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Structure(::br::worldgen::Structure const&);
+    MCNAPI Structure(::br::worldgen::Structure const&);
 
     MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     generate(::br::worldgen::GenerationContext& context) const;
@@ -60,13 +62,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::br::worldgen::Structure const&);
+    MCNAPI void* $ctor(::br::worldgen::Structure const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

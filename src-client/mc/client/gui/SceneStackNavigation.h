@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/gui/RouteOperation.h"
 #include "mc/client/gui/StackOperation.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 
@@ -11,7 +12,6 @@
 class IMinecraftGame;
 class ISceneStack;
 class SceneFactory;
-class TextToSpeechSystem;
 namespace OreUI { class Router; }
 namespace ui { class ScreenTechStackSelector; }
 // clang-format on
@@ -21,20 +21,26 @@ namespace SceneStackNavigation {
 // NOLINTBEGIN
 MCAPI void openPauseMenu(::IMinecraftGame& minecraftGame);
 
-MCAPI void toMainMenu(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
+MCNAPI void toMainMenu(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
 
-MCAPI void toPlayScreen(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
-
-MCAPI void toPreStartScreen(
-    ::TextToSpeechSystem&                        ttsSystem,
-    ::ui::ScreenTechStackSelector const&         screenTechStackSelector,
+MCNAPI void toMainMenu(
     ::OreUI::Router&                             router,
     ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> sceneStack,
     ::SceneFactory&                              sceneFactory,
-    bool                                         initialNavigation
+    ::ui::StackOperation                         stackOperation,
+    ::ui::RouteOperation                         routeOperation
 );
 
-MCAPI void tryShowXblFirstLaunchScreen(::IMinecraftGame& minecraftGame, bool isUserConnectedToPlatform);
+MCNAPI void toPlayScreen(::IMinecraftGame& minecraftGame, ::ui::StackOperation stackOperation);
+
+MCNAPI void toPreStartScreen(
+    ::ui::ScreenTechStackSelector const&         screenTechStackSelector,
+    ::OreUI::Router&                             router,
+    ::Bedrock::NotNullNonOwnerPtr<::ISceneStack> sceneStack,
+    ::SceneFactory&                              sceneFactory
+);
+
+MCNAPI void tryShowXblFirstLaunchScreen(::IMinecraftGame& minecraftGame, bool isUserConnectedToPlatform);
 // NOLINTEND
 
 } // namespace SceneStackNavigation

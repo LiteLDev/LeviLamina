@@ -3,17 +3,16 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/resource/ResourceLoader.h"
+#include "mc/deps/core/resource/ResourceLoaderBase.h"
 
 // auto generated forward declare list
 // clang-format off
-class LoadedResourceData;
 class ResourceLocation;
 class ResourceLocationPair;
 namespace mce { struct Image; }
 // clang-format on
 
-class AppResourceLoader : public ::ResourceLoader {
+class AppResourceLoader : public ::ResourceLoaderBase {
 public:
     // member variables
     // NOLINTBEGIN
@@ -42,9 +41,6 @@ public:
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const /*override*/;
-
-    virtual ::std::vector<::LoadedResourceData> loadAllVersionsOf(::ResourceLocation const& resourceLocation) const
-        /*override*/;
 
 #ifdef LL_PLAT_S
     virtual ::std::pair<int, ::std::string_view> getPackStackIndexOfResource(
@@ -79,8 +75,6 @@ public:
         ::std::string&                   resourceStream,
         ::gsl::span<::std::string const> extensionList
     ) const;
-
-    MCNAPI ::std::vector<::LoadedResourceData> $loadAllVersionsOf(::ResourceLocation const& resourceLocation) const;
 
     MCNAPI ::std::pair<int, ::std::string_view> $getPackStackIndexOfResource(
         ::ResourceLocation const&        resourceLocation,

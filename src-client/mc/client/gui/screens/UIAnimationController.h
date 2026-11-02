@@ -50,7 +50,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _tick(
+    MCNAPI static bool _tick(
         ::std::vector<::UIAnimationController::AnimationUIControlFunctionCallback>& animationList,
         ::mce::TimeStep const&                                                      timeStep,
         ::std::vector<::ScreenEvent>&                                               screenEvents

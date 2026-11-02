@@ -31,43 +31,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AtomicClientEntityDescription();
+    MCNAPI AtomicClientEntityDescription();
 
-    MCAPI AtomicClientEntityDescription(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&);
+    MCNAPI AtomicClientEntityDescription(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&);
 
 #ifdef LL_PLAT_C
-    MCAPI ::SharedTypes::Beta::AtomicClientEntity::RenderDescription getRenderDescription() const;
+    MCNAPI ::SharedTypes::Beta::AtomicClientEntity::RenderDescription getRenderDescription() const;
 #endif
 
-    MCAPI ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription&
+    MCNAPI ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription&
     operator=(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription&&);
 
-    MCAPI ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription&
+    MCNAPI ::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription&
     operator=(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&);
 
-    MCAPI bool operator==(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&) const;
+    MCNAPI bool operator==(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&) const;
 
-    MCAPI ~AtomicClientEntityDescription();
+    MCNAPI ~AtomicClientEntityDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::AtomicClientEntity::AtomicClientEntityDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

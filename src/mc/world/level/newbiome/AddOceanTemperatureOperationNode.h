@@ -26,7 +26,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_fillArea(
+    MCNAPI void $_fillArea(
         ::OperationNodeDetails::WorkingData<::BiomeTemperatureCategory, char>& operationNodeData,
         ::Pos2d const&                                                         origin,
         ::Pos2d const&                                                         size

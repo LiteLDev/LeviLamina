@@ -17,10 +17,13 @@ public:
     public:
         // GpuUploadSnapshot inner types declare
         // clang-format off
+        struct HeaderUpload;
         struct VolumeUpload;
         // clang-format on
 
         // GpuUploadSnapshot inner types define
+        struct HeaderUpload {};
+
         struct VolumeUpload {};
     };
 

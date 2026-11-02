@@ -35,7 +35,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AttributeModifier(
+    MCNAPI AttributeModifier(
         ::mce::UUID          id,
         ::std::string const& name,
         float                amount,
@@ -53,25 +53,25 @@ public:
         bool                         serializable
     );
 
-    MCAPI ::std::string getIdAsString() const;
+    MCNAPI ::std::string getIdAsString() const;
 
-    MCAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
+    MCNAPI ::AttributeModifier& operator=(::AttributeModifier const& rhs);
 
-    MCAPI void setIdFromString(::std::string const& s);
+    MCNAPI void setIdFromString(::std::string const& s);
 
-    MCAPI void setName(::std::string const& name);
+    MCNAPI void setName(::std::string const& name);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& mInvalidUUID();
+    MCNAPI static ::mce::UUID const& mInvalidUUID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::mce::UUID id, ::std::string const& name, float amount, int operation, int operand, bool serializable);
 
     MCAPI void* $ctor(
@@ -93,7 +93,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInstantaneous() const;
+    MCNAPI bool $isInstantaneous() const;
 
 
     // NOLINTEND

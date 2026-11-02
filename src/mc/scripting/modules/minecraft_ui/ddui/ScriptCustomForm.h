@@ -6,12 +6,15 @@
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/WeakHandleFromThis.h"
 #include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/script_engine/scripting/Closure.h"
 #include "mc/deps/script_core/script_engine/scripting/Promise.h"
 #include "mc/scripting/modules/minecraft_ui/ddui/ScriptDataDrivenScreenClosedReason.h"
 
 // auto generated forward declare list
 // clang-format off
 class IGameplayUserManagerConnector;
+class ServerPlayer;
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormVisibilityError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptInvalidFormError; }
@@ -20,6 +23,9 @@ namespace ScriptModuleMinecraftServerUI { class ScriptObservableString; }
 namespace ScriptModuleMinecraftServerUI { class ScriptObservableUIRawMessage; }
 namespace ScriptModuleMinecraftServerUI { class ScriptPlayerLeftError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptUIRawMessage; }
+namespace ScriptModuleMinecraftServerUI { struct CustomFormButtonData; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptButtonOptions; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptCustomFormOptions; }
 namespace ScriptModuleMinecraftServerUI { struct ScriptTextOptions; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
@@ -36,11 +42,12 @@ public:
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>   mUnk79d155;
     ::ll::UntypedStorage<8, 32>  mUnka5eaf1;
+    ::ll::UntypedStorage<8, 48>  mUnk61cee3;
     ::ll::UntypedStorage<8, 216> mUnkbf8dda;
-    ::ll::UntypedStorage<8, 24>  mUnke4c798;
+    ::ll::UntypedStorage<8, 24>  mUnkd6950a;
     ::ll::UntypedStorage<1, 1>   mUnk656f06;
     ::ll::UntypedStorage<8, 16>  mUnk15455b;
-    ::ll::UntypedStorage<8, 664> mUnk292132;
+    ::ll::UntypedStorage<8, 712> mUnk292132;
     // NOLINTEND
 
 public:
@@ -52,6 +59,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptCustomForm(
+        ::IGameplayUserManagerConnector&                                            userManagerConnector,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::ServerPlayer&                                                             serverPlayer,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                  title,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptCustomFormOptions> options,
+        ::Scripting::WeakLifetimeScope                                            scope
+    );
+
+    MCNAPI ::ScriptModuleMinecraftServerUI::CustomFormButtonData _createCustomFormButtonData(
+        ::Scripting::WeakLifetimeScope& scope,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>&             label,
+        ::Scripting::Closure<void()>&                                         onClick,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptButtonOptions> options
+    );
+
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptCustomForm>,
         ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
@@ -102,6 +133,23 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const* const& FORM_ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::IGameplayUserManagerConnector&                                            userManagerConnector,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::ServerPlayer&                                                             serverPlayer,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                  title,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptCustomFormOptions> options,
+        ::Scripting::WeakLifetimeScope                                            scope
+    );
     // NOLINTEND
 };
 

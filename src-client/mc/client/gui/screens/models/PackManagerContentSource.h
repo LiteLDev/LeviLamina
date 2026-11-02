@@ -70,12 +70,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::PackContentItem> _copyAndSetValuesFromPackContentItemAndData(
+    MCNAPI ::std::shared_ptr<::PackContentItem> _copyAndSetValuesFromPackContentItemAndData(
         ::std::shared_ptr<::PackContentItem const> const& baseItem,
         ::PackManagerContentSourceData const&             packData
     );
 
-    MCAPI ::std::shared_ptr<::PackContentItem> _createPackContentItem(
+    MCNAPI ::std::shared_ptr<::PackContentItem> _createPackContentItem(
         ::Pack const&                                      pack,
         ::PackModel&                                       model,
         ::PackListType                                     listType,
@@ -88,7 +88,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _applySelectedPacksCache(
+    MCNAPI static void _applySelectedPacksCache(
         ::PackManagerContentSourceData& packData,
         ::std::vector<::PackModel>&     selected,
         ::std::vector<::PackModel>&     available
@@ -98,20 +98,20 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load();
+    MCNAPI void $load();
 
-    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+    MCNAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
 
-    MCAPI void
+    MCNAPI void
     $_createSelectedPackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& selected);
 
-    MCAPI void
+    MCNAPI void
     $_createAvailablePackContentItems(::PackManagerContentSourceData& packData, ::std::vector<::PackModel>& available);
     // NOLINTEND
 };

@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/gui/oreui/binding/queries/menus/social/PartyEligibilityOutcome.h"
+#include "mc/client/world/JoinServerWorldResult.h"
 #include "mc/deps/core/threading/TaskGroup.h"
 
 // auto generated forward declare list
@@ -23,7 +24,13 @@ public:
     ::ll::TypedStorage<8, 176, ::OreUI::Property<::OreUI::PartyEligibilityOutcome, ::OreUI::PartyEligibilityOutcome>>
                                                                                       mOutcome;
     ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::std::string, ::std::string>> mIneligibleXuids;
-    ::ll::TypedStorage<8, 336, ::TaskGroup>                                           mTaskGroup;
+    ::ll::TypedStorage<
+        8,
+        176,
+        ::OreUI::
+            Property<::std::optional<::World::JoinServerWorldResult>, ::std::optional<::World::JoinServerWorldResult>>>
+                                            mFailureCode;
+    ::ll::TypedStorage<8, 336, ::TaskGroup> mTaskGroup;
     // NOLINTEND
 
 public:
@@ -39,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PartyEligibilityQuery(
+    MCNAPI PartyEligibilityQuery(
         ::OreUI::GameDependencies const& game,
         ::std::string                    experienceId,
         ::std::string                    partyId,
@@ -51,7 +58,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OreUI::GameDependencies const& game,
         ::std::string                    experienceId,
         ::std::string                    partyId,

@@ -67,7 +67,7 @@ public:
             biomeIdToResolvedData
     ) /*override*/;
 
-    virtual void configureNewPlayer(::Player& player) /*override*/;
+    virtual void configureNewPlayer(::Player&) /*override*/;
 
     virtual void configureDocumentation(
         ::IGameModuleDocumentation& moduleDocumentation,
@@ -87,9 +87,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
+    MCNAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
-    MCAPI void $initializeBehaviorStack(
+    MCNAPI void $initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,
@@ -98,7 +98,7 @@ public:
         ::std::optional<::std::string>                                  worldId
     );
 
-    MCAPI void $configureLevel(
+    MCNAPI void $configureLevel(
         ::Bedrock::NotNullNonOwnerPtr<::Level>& level,
         ::Experiments const&                    experiments,
         ::ResourcePackManager&                  resourcePackManager,
@@ -109,16 +109,16 @@ public:
             biomeIdToResolvedData
     );
 
-    MCFOLD void $configureNewPlayer(::Player& player);
+    MCNAPI void $configureNewPlayer(::Player&);
 
-    MCFOLD void
+    MCNAPI void
     $configureDocumentation(::IGameModuleDocumentation& moduleDocumentation, ::ItemRegistryRef const docItemRegistry);
 
-    MCFOLD void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
+    MCNAPI void $setupCommands(::CommandRegistry& commandRegistry);
 
-    MCAPI void $configureServerNetworkHandler(
+    MCNAPI void $configureServerNetworkHandler(
         ::ServerInstance&                                     server,
         ::Bedrock::NotNullNonOwnerPtr<::ServerNetworkHandler> handler
     );

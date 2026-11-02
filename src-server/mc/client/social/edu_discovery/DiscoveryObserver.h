@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-namespace EDUDiscovery {
+namespace EduDiscovery {
 
 class DiscoveryObserver {};
 
-} // namespace EDUDiscovery
+} // namespace EduDiscovery

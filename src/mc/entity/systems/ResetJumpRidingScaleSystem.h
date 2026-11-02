@@ -13,7 +13,7 @@ class ResetJumpRidingScaleSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _doResetJumpRidingScaleSystem(
+    MCNAPI static void _doResetJumpRidingScaleSystem(
         ::StrictEntityContext const&,
         ::JumpRidingScaleComponent&       jumpRidingScaleComponent,
         ::VanillaClientGameplayComponent& vanillaClientGameplayComponent

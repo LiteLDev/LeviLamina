@@ -88,9 +88,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void createAgent(::Player& player, ::CommandOrigin const& origin, ::CommandOutput& output) const;
-
-    MCAPI void reportSuccess(bool success, ::CommandOutput& output) const;
+    MCNAPI void reportSuccess(bool success, ::CommandOutput& output) const;
     // NOLINTEND
 
 public:
@@ -102,7 +100,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

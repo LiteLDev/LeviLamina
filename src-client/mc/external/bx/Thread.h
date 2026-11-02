@@ -31,27 +31,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Thread();
+    MCNAPI Thread();
 
-    MCAPI void init(int (*_fn)(::bx::Thread*, void*), void* _userData, uint _stackSize, char const* _name);
+    MCNAPI void init(int (*_fn)(::bx::Thread*, void*), void* _userData, uint _stackSize, char const* _name);
 
-    MCAPI bool isRunning() const;
+    MCNAPI bool isRunning() const;
 
-    MCAPI void setThreadName(char const* _name);
+    MCNAPI void setThreadName(char const* _name);
 
-    MCAPI void shutdown();
+    MCNAPI void shutdown();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -13,12 +13,12 @@ namespace cereal { struct ReflectionCtx; }
 namespace SharedTypes::v1_26_10 {
 // functions
 // NOLINTBEGIN
-MCFOLD void bindAll(::cereal::ReflectionCtx& ctx);
+MCNAPI void bindAll(::cereal::ReflectionCtx& ctx);
 
-MCAPI void
+MCNAPI void
 transformToVersioned(::LegacyGoalDefinition&& legacyGoal, ::SharedTypes::v1_26_10::LayEggGoalDefinition& sharedGoal);
 
-MCAPI void transformToVersioned(
+MCNAPI void transformToVersioned(
     ::LegacyGoalDefinition&&                           legacyGoal,
     ::SharedTypes::v1_26_10::RaidGardenGoalDefinition& sharedGoal
 );

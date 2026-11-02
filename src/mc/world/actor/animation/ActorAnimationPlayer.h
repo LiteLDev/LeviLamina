@@ -30,11 +30,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
     virtual ~ActorAnimationPlayer() = default;
-#else // LL_PLAT_C
-    virtual ~ActorAnimationPlayer();
-#endif
 
 #ifdef LL_PLAT_S
     virtual void applyToPose(
@@ -73,35 +69,17 @@ public:
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
+    MCNAPI void $buildBoneToPartMapping(::AnimationComponent& animationComponent);
 
-    MCFOLD void
+    MCNAPI void
     $bindParticleEffects(::std::unordered_map<::HashedString, ::HashedString> const& actorParticleEffectMap);
 
-    MCFOLD void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
+    MCNAPI void $bindSoundEffects(::std::unordered_map<::HashedString, ::std::string> const& actorSoundEffectMap);
 
-#ifdef LL_PLAT_S
-    MCAPI void $visit(::AnimationVisitor&& dispatcher);
-#else // LL_PLAT_C
-    MCFOLD void $visit(::AnimationVisitor&& dispatcher);
-#endif
+    MCNAPI void $visit(::AnimationVisitor&& dispatcher);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

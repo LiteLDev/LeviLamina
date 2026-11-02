@@ -187,36 +187,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::World::WorldPacks&
+    MCNAPI ::World::WorldPacks&
     _cacheWorldPackData(::World::WorldResourcePackHandler::Contexts&& contexts, ::LevelSummary const& levelSummary);
 
-    MCAPI ::std::unique_ptr<::ContentViews> _createContentViews(
+    MCNAPI ::std::unique_ptr<::ContentViews> _createContentViews(
         ::World::WorldResourcePackHandler::Contexts& contexts,
         ::ContentType                                contentType,
         ::PackScope                                  scope
     ) const;
 
-    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackByType(
+    MCNAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackByType(
         ::World::WorldPacks& worldPacks,
         ::ContentType const  contentType,
         ::std::string const& packId
     ) const;
 
-    MCAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackViewAndContent(
+    MCNAPI ::std::variant<::World::PackActionError, ::World::PackViewAndItem> _findPackViewAndContent(
         ::World::WorldPacks&      worldPacks,
         ::ContentType const       contentType,
         ::World::PackStatus const packStatus,
         ::std::string const&      packId
     ) const;
 
-    MCAPI void _getMissingPackIds(
+    MCNAPI void _getMissingPackIds(
         ::LevelSummary const&                                      levelSummary,
         ::std::vector<::std::string> const&                        packIds,
         ::std::function<void(::World::PackActionError)>            onErrorCallback,
         ::std::function<void(::std::vector<::std::string> const&)> onCompleteCallback
     );
 
-    MCAPI ::World::PackDetails _getPackDetails(
+    MCNAPI ::World::PackDetails _getPackDetails(
         ::World::WorldID const                  worldID,
         ::std::shared_ptr<::ContentItem> const& contentItem,
         ::ContentViews const&                   contentViews,
@@ -224,12 +224,12 @@ public:
         bool const                              isEduMode
     );
 
-    MCAPI ::World::WorldResourcePackHandler::Contexts
+    MCNAPI ::World::WorldResourcePackHandler::Contexts
     _initializeContentManagerForWorld(::LevelSummary const& levelSummary);
 
-    MCAPI bool _needToDownloadPack(::std::shared_ptr<::ContentItem> const& contentItem) const;
+    MCNAPI bool _needToDownloadPack(::std::shared_ptr<::ContentItem> const& contentItem) const;
 
-    MCAPI ::std::optional<::World::PackActionError> _performPackMovement(
+    MCNAPI ::std::optional<::World::PackActionError> _performPackMovement(
         ::World::PackAction const packAction,
         ::LevelSummary const&     levelSummary,
         ::ContentType const       contentType,
@@ -238,7 +238,7 @@ public:
         bool const                force
     );
 
-    MCAPI void _populatePackDetails(
+    MCNAPI void _populatePackDetails(
         ::World::WorldID const                    worldID,
         ::std::vector<::World::PackDetails>&      packDetails,
         ::Bedrock::NonOwnerPointer<::ContentView> contentView,
@@ -252,12 +252,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::World::WorldPacks& $loadPackContentForWorld(::LevelSummary const& levelSummary);
+    MCNAPI ::World::WorldPacks& $loadPackContentForWorld(::LevelSummary const& levelSummary);
 
-    MCAPI ::World::PackCollection
+    MCNAPI ::World::PackCollection
     $getWorldPackCollection(::LevelSummary const& levelSummary, ::ContentType const contentType, bool const isEduMode);
 
-    MCAPI ::std::optional<::World::PackActionError> $activatePack(
+    MCNAPI ::std::optional<::World::PackActionError> $activatePack(
         ::LevelSummary const& levelSummary,
         ::ContentType const   contentType,
         ::std::string const&  packId,
@@ -265,7 +265,7 @@ public:
         bool const            force
     );
 
-    MCAPI ::std::optional<::World::PackActionError> $deactivatePack(
+    MCNAPI ::std::optional<::World::PackActionError> $deactivatePack(
         ::LevelSummary const& levelSummary,
         ::ContentType const   contentType,
         ::std::string const&  packId,
@@ -273,41 +273,41 @@ public:
         bool const            force
     );
 
-    MCAPI ::std::optional<::World::PackActionError> $continuePackActivation(::LevelSummary const& levelSummary);
+    MCNAPI ::std::optional<::World::PackActionError> $continuePackActivation(::LevelSummary const& levelSummary);
 
-    MCAPI ::std::optional<::World::PackActionError> $continuePackDeactivation(::LevelSummary const& levelSummary);
+    MCNAPI ::std::optional<::World::PackActionError> $continuePackDeactivation(::LevelSummary const& levelSummary);
 
-    MCAPI void $downloadPacks(
+    MCNAPI void $downloadPacks(
         ::LevelSummary const&                             levelSummary,
         ::std::vector<::std::string> const&               packIds,
         ::std::function<void()>                           onCompleteCallback,
         ::std::function<void(::World::PackDownloadError)> onErrorCallback
     );
 
-    MCAPI ::World::PackDownloadProgressInfo $getDownloadPackProgress();
+    MCNAPI ::World::PackDownloadProgressInfo $getDownloadPackProgress();
 
-    MCAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
+    MCNAPI void $getDownloadingPackTitles(::std::function<void(::std::vector<::std::string>)> packTitlesCallback);
 
-    MCFOLD void $cancelDownloadPack();
+    MCNAPI void $cancelDownloadPack();
 
-    MCAPI void $getPackSizes(
+    MCNAPI void $getPackSizes(
         ::LevelSummary const&                           levelSummary,
         ::std::vector<::std::string> const&             packIds,
         ::std::function<void(uint64)>                   onCompleteCallback,
         ::std::function<void(::World::PackActionError)> onErrorCallback
     );
 
-    MCAPI void $savePacksData();
+    MCNAPI void $savePacksData();
 
-    MCAPI void $saveDirtyPacksData();
+    MCNAPI void $saveDirtyPacksData();
 
-    MCAPI bool $hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary);
+    MCNAPI bool $hasNonAddonBehaviorPacks(::LevelSummary const& levelSummary);
 
-    MCAPI bool $hasBehaviorPacks(::LevelSummary const& levelSummary);
+    MCNAPI bool $hasBehaviorPacks(::LevelSummary const& levelSummary);
 
-    MCAPI bool $hasLockedPacks(::LevelSummary const& levelSummary) const;
+    MCNAPI bool $hasLockedPacks(::LevelSummary const& levelSummary) const;
 
-    MCAPI ::std::optional<::World::PackActionError> $changePackPriority(
+    MCNAPI ::std::optional<::World::PackActionError> $changePackPriority(
         ::LevelSummary const& levelSummary,
         ::ContentType const   contentType,
         ::std::string const&  packId,
@@ -315,15 +315,15 @@ public:
         int const             toIndex
     );
 
-    MCAPI ::World::PackCheckResult
+    MCNAPI ::World::PackCheckResult
     $checkDlc(::std::string const& levelId, ::PackIdVersion const& packIdVersion, bool const isForRealms);
 
-    MCAPI ::std::vector<::World::PackDetails>
+    MCNAPI ::std::vector<::World::PackDetails>
     $getPackDetailsForWorld(::LevelSummary const& levelSummary, ::std::vector<::std::string> const& packIds);
 
-    MCAPI bool $getResourcePacksDirty();
+    MCNAPI bool $getResourcePacksDirty();
 
-    MCAPI void $refreshPacksData();
+    MCNAPI void $refreshPacksData();
     // NOLINTEND
 };
 

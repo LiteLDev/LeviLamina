@@ -70,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CubemapBackgroundScreen(
+    MCNAPI CubemapBackgroundScreen(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&            client,
         ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> const& cubemapResources,
         bool                                                               flushable
@@ -80,7 +80,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance> const&            client,
         ::Bedrock::NotNullNonOwnerPtr<::CubemapBackgroundResources> const& cubemapResources,
         bool                                                               flushable
@@ -90,36 +90,36 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $init(::ScreenSizeData const& screenSizeData);
+    MCNAPI void $init(::ScreenSizeData const& screenSizeData);
 
-    MCAPI void $terminate();
+    MCNAPI void $terminate();
 
-    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCFOLD bool $screenIsNotFlushable() const;
+    MCNAPI bool $screenIsNotFlushable() const;
 
-    MCAPI bool $renderOnlyWhenTopMost() const;
+    MCNAPI bool $renderOnlyWhenTopMost() const;
 
-    MCFOLD bool $lowFreqRendering() const;
+    MCNAPI bool $lowFreqRendering() const;
 
-    MCFOLD bool $renderGameBehind() const;
+    MCNAPI bool $renderGameBehind() const;
 
-    MCFOLD bool $isShowingMenu() const;
+    MCNAPI bool $isShowingMenu() const;
 
-    MCAPI ::std::string $getScreenName() const;
+    MCNAPI ::std::string $getScreenName() const;
 
-    MCAPI bool $equalsScreenName(::std::string_view comparison) const;
+    MCNAPI bool $equalsScreenName(::std::string_view comparison) const;
 
-    MCAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
+    MCNAPI bool $containsScreenNameSubstring(::std::string_view substring) const;
 
-    MCFOLD bool $getShouldSendEvents();
+    MCNAPI bool $getShouldSendEvents();
 
-    MCFOLD ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
+    MCNAPI ::RectangleArea $getAreaOfControlByName(::std::string const&) const;
     // NOLINTEND
 };

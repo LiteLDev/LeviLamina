@@ -25,20 +25,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FurnaceScreenControllerProxyCallbacks(::FurnaceScreenControllerProxyCallbacks const&);
+    MCNAPI FurnaceScreenControllerProxyCallbacks(::FurnaceScreenControllerProxyCallbacks const&);
 
-    MCAPI ~FurnaceScreenControllerProxyCallbacks();
+    MCNAPI ~FurnaceScreenControllerProxyCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks const&);
+    MCNAPI void* $ctor(::FurnaceScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

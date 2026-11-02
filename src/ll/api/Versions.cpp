@@ -16,7 +16,7 @@ data::Version getGameVersion() {
     return ver;
 }
 
-int getNetworkProtocolVersion() { return TARGET_BDS_PROTOCOL_VERSION; }
+int getNetworkProtocolVersion() { return TARGET_MC_PROTOCOL_VERSION; }
 
 bool isClient() {
 #ifdef LL_PLAT_C

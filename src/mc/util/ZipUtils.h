@@ -19,19 +19,19 @@ namespace Core::ZipUtils { class ZipSettings; }
 namespace Core::ZipUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
+MCNAPI ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> _zipEncodedPathToUTF8(::Core::PathView path);
 
-MCAPI bool getFilenames(
+MCNAPI bool getFilenames(
     ::Core::PathView                                  zipPath,
     ::std::vector<::Core::PathBuffer<::std::string>>& result,
     ::Core::ZipUtils::UnzipSettings const&            unzipSettings
 );
 
 #ifdef LL_PLAT_C
-MCAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
+MCNAPI ::std::string readAssetFileZipped_DEPRECATED(::Core::PathView zippedFolder, ::Core::PathView filename);
 #endif
 
-MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
+MCNAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::PathView                       zipInputPath,
     ::Core::PathView                       outputFolderPath,
     ::Core::ZipUtils::ZipProgress&         progress,
@@ -39,7 +39,7 @@ MCAPI ::Core::ZipUtils::UnzipResult unzipInTransaction(
     ::Core::ZipUtils::UnzipSettings const& unzipSettings
 );
 
-MCAPI ::Core::ZipUtils::ZipResult
+MCNAPI ::Core::ZipUtils::ZipResult
 zip(::Core::PathView                     inputPathIn,
     ::Core::PathView                     zipOutputPath,
     ::Core::ZipUtils::ZipProgress&       progress,
@@ -47,7 +47,7 @@ zip(::Core::PathView                     inputPathIn,
     ::Core::ZipUtils::ZipSettings const& zipSettings);
 
 #ifdef LL_PLAT_C
-MCAPI ::Core::ZipUtils::ZipResult
+MCNAPI ::Core::ZipUtils::ZipResult
 zip(::std::vector<::Core::PathBuffer<::std::string>> const& filesToZip,
     ::Core::PathView                                        zipOutputPath,
     ::Core::ZipUtils::ZipProgress&                          progress,

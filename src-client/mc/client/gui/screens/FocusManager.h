@@ -57,70 +57,73 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FocusManager();
+    MCNAPI FocusManager();
 
-    MCAPI ::std::shared_ptr<::UIControl> _findFocusContainerControlFor(::std::shared_ptr<::UIControl> forControl) const;
+    MCNAPI ::std::shared_ptr<::UIControl>
+    _findFocusContainerControlFor(::std::shared_ptr<::UIControl> forControl) const;
 
-    MCAPI ::SweepResult _getControlAtFocusPoint(
+    MCNAPI ::SweepResult _getControlAtFocusPoint(
         ::SweepDescription const&                            desc,
         ::std::vector<::std::shared_ptr<::UIControl>> const& controls
     );
 
-    MCAPI ::std::shared_ptr<::UIControl> _getLastGoodFocusedControl(::std::shared_ptr<::UIControl> oldFocusedControl);
+    MCNAPI ::std::shared_ptr<::UIControl> _getLastGoodFocusedControl(::std::shared_ptr<::UIControl> oldFocusedControl);
 
-    MCAPI void _setFocusControlFromIndex(int focusControlIndex, bool overrideLastFocus);
+    MCNAPI void _setFocusControlFromIndex(int focusControlIndex, bool overrideLastFocus);
 
-    MCAPI void _setFocusControlInternal(::UIControl const& control, bool allowDefault, bool overrideLastFocus);
+    MCNAPI void _setFocusControlInternal(::UIControl const& control, bool allowDefault, bool overrideLastFocus);
 
-    MCAPI void _sweepForClosestControl(::std::shared_ptr<::UIControl> focusedControl);
+    MCNAPI void _sweepForClosestControl(::std::shared_ptr<::UIControl> focusedControl);
 
-    MCAPI ::SweepResult _sweepForControlDirectional(
+    MCNAPI ::SweepResult _sweepForControlDirectional(
         ::SweepDescription const&                            desc,
         ::std::vector<::std::shared_ptr<::UIControl>> const& controls,
         bool                                                 hasWrapped
     );
 
-    MCAPI void
+    MCNAPI void
     _sweepToNextFocusObject(::ui::CardinalDirection direction, bool overrideOrigin, ::glm::vec2 const& overridePos);
 
-    MCAPI void _updateLostFocusControlList(::std::weak_ptr<::UIControl> control);
+    MCNAPI void _updateLostFocusControlList(::std::weak_ptr<::UIControl> control);
 
-    MCAPI void _updateRootOfFocusTree();
+    MCNAPI void _updateRootOfFocusTree();
 
-    MCAPI void addControl(::UIControl& control);
+    MCNAPI void addControl(::UIControl& control);
 
-    MCAPI void defaultFocus();
+    MCNAPI void clearFocusTreeState();
 
-    MCAPI void removeControl(
+    MCNAPI void defaultFocus();
+
+    MCNAPI void removeControl(
         ::UIControl& control,
         ::std::map<::std::vector<::std::shared_ptr<::UIControl>>*, ::std::vector<::std::shared_ptr<::UIControl>>>&
             controlsToRemove
     );
 
-    MCAPI bool setFocusControl(::UIControl const& control, bool allowDefault);
+    MCNAPI bool setFocusControl(::UIControl const& control, bool allowDefault);
 
-    MCAPI void setFocusedControlToLostFocus();
+    MCNAPI void setFocusedControlToLostFocus();
 
-    MCAPI void setModalRoot(::std::shared_ptr<::UIControl>& control);
+    MCNAPI void setModalRoot(::std::shared_ptr<::UIControl>& control);
 
-    MCAPI void updateDefaultFocusIfNeeded();
+    MCNAPI void updateDefaultFocusIfNeeded();
 
-    MCAPI bool updatePendingFocusControl();
+    MCNAPI bool updatePendingFocusControl();
 
-    MCAPI void validateFocusControl();
+    MCNAPI void validateFocusControl();
 
-    MCAPI ~FocusManager();
+    MCNAPI ~FocusManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

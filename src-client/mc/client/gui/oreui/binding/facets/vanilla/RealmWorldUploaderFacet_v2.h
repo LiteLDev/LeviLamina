@@ -40,30 +40,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmWorldUploaderFacet_v2(
+    MCNAPI RealmWorldUploaderFacet_v2(
         ::std::shared_ptr<::Realms::RealmsUploader> realmsUploader,
         ::std::shared_ptr<::Realms::RealmsList>     realmsList
     );
 
-    MCAPI void clearUploadWorldToRealmTaskState();
+    MCNAPI void clearUploadWorldToRealmTaskState();
 
-    MCFOLD ::std::optional<::Realms::UploadToRealmsError> const& getUploadWorldToRealmError() const;
+    MCNAPI ::std::optional<::Realms::UploadToRealmsError> const& getUploadWorldToRealmError() const;
 
-    MCFOLD ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getUploadWorldToRealmTaskState() const;
 
-    MCAPI void uploadWorldToRealm(::std::string const& realmID, ::std::string const& worldID);
+    MCNAPI void uploadWorldToRealm(::std::string const& realmID, ::std::string const& worldID);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::RealmsUploader> realmsUploader,
         ::std::shared_ptr<::Realms::RealmsList>     realmsList
     );
@@ -72,7 +72,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

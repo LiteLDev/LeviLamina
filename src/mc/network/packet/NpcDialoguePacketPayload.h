@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit NpcDialoguePacketPayload(::ActorUniqueID npcID);
+    MCNAPI explicit NpcDialoguePacketPayload(::ActorUniqueID npcID);
 
-    MCAPI NpcDialoguePacketPayload(
+    MCNAPI NpcDialoguePacketPayload(
         ::ActorUniqueID                                   npcID,
         ::NpcDialoguePacketPayload::NpcDialogueActionType dialogueActionType,
         ::std::string const&                              dialogueText,
@@ -48,13 +48,13 @@ public:
         ::std::string const&                              actionJSON
     );
 
-    MCAPI ~NpcDialoguePacketPayload();
+    MCNAPI ~NpcDialoguePacketPayload();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool initializePacket(
+    MCNAPI static bool initializePacket(
         ::NpcDialoguePacket&        outPacket,
         ::NpcDialogueStorage const* storage,
         ::std::string const&        sceneName
@@ -64,9 +64,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorUniqueID npcID);
+    MCNAPI void* $ctor(::ActorUniqueID npcID);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorUniqueID                                   npcID,
         ::NpcDialoguePacketPayload::NpcDialogueActionType dialogueActionType,
         ::std::string const&                              dialogueText,
@@ -79,6 +79,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

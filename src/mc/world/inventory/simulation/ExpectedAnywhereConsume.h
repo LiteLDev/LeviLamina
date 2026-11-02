@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class ItemStack;
+// clang-format on
+
 struct ExpectedAnywhereConsume {
 public:
     // member variables
@@ -15,4 +20,16 @@ public:
     ExpectedAnywhereConsume& operator=(ExpectedAnywhereConsume const&);
     ExpectedAnywhereConsume(ExpectedAnywhereConsume const&);
     ExpectedAnywhereConsume();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ExpectedAnywhereConsume(::ItemStack const& item, uint quantity);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::ItemStack const& item, uint quantity);
+    // NOLINTEND
 };

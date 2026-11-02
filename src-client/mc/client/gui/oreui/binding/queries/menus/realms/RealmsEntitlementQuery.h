@@ -36,13 +36,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsEntitlementQuery(::OreUI::GameDependencies const& game, int64 realmId);
+    MCNAPI RealmsEntitlementQuery(::OreUI::GameDependencies const& game, int64 realmId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game, int64 realmId);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game, int64 realmId);
     // NOLINTEND
 };
 

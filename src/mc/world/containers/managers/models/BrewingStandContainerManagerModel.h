@@ -3,15 +3,14 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/world/ContainerID.h"
 #include "mc/world/containers/managers/models/ContainerManagerModel.h"
 #include "mc/world/level/BlockPos.h"
 
 // auto generated forward declare list
 // clang-format off
 class ContainerScreenContext;
+class ItemInstance;
 class ItemStack;
-class Player;
 // clang-format on
 
 class BrewingStandContainerManagerModel : public ::ContainerManagerModel {
@@ -23,10 +22,6 @@ public:
     ::ll::TypedStorage<4, 4, int>         mLastFuelAmount;
     ::ll::TypedStorage<4, 4, int>         mLastFuelTotal;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    BrewingStandContainerManagerModel();
 
 public:
     // virtual functions
@@ -51,39 +46,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BrewingStandContainerManagerModel(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
-
 #ifdef LL_PLAT_C
-    MCAPI int getBrewProgress(int max);
+    MCNAPI void fireItemAcquiredEvent(::ItemInstance const& item, int count);
 
-    MCAPI int getFuelProgress(int max);
+    MCNAPI int getBrewProgress(int max);
 
-    MCAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
+    MCNAPI int getBubbleProgress(int);
+
+    MCNAPI int getFuelProgress(int max);
+
+    MCNAPI bool isFinished(int& outputId, int& outputAuxValue, int outputSlot);
 #endif
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player, ::BlockPos const& blockPos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCAPI void $setData(int id, int value);
+    MCNAPI void $setData(int id, int value);
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -91,6 +82,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

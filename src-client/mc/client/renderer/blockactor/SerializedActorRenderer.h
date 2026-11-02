@@ -68,7 +68,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ItemStack const&              item,
@@ -78,7 +78,7 @@ public:
         float                           lightMultiplier
     );
 
-    MCAPI void renderInHand(
+    MCNAPI void renderInHand(
         ::BaseActorRenderContext&     renderContext,
         ::BlockActorRenderData const& blockEntityRenderData,
         ::ItemStack const&            item,
@@ -86,7 +86,7 @@ public:
         bool                          isInHandItem
     );
 
-    MCAPI void renderInItemFrame(
+    MCNAPI void renderInItemFrame(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ItemStack const&              item,
@@ -100,6 +100,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

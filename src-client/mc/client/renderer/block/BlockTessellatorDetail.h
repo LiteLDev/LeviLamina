@@ -19,7 +19,7 @@ class BlockTessellatorDetail {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _tessellateDeclarative(
+    MCNAPI static bool _tessellateDeclarative(
         ::BlockTessellator&                                     bt,
         ::Tessellator&                                          tessellator,
         ::Block const&                                          block,

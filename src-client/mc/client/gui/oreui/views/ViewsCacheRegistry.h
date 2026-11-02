@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/interface/ViewId.h"
+#include "mc/common/SubClientId.h"
 
 namespace OreUI {
 
@@ -33,13 +34,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ViewsCacheRegistry();
+    MCNAPI void add(::SubClientId subClientId, ::OreUI::ViewId viewId, ::std::string_view path);
+
+    MCNAPI ~ViewsCacheRegistry();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

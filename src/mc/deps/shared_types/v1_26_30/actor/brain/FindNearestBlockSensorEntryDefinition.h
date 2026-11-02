@@ -21,13 +21,13 @@ struct FindNearestBlockSensorEntryDefinition
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>
+        mFoundBlockPosMemory;
     ::ll::TypedStorage<
         8,
         56,
         ::std::optional<::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>>
-        mSearchBlockPosMemory;
-    ::ll::TypedStorage<8, 48, ::SharedTypes::v1_21_130::Brain::MemoryIdentifierDefinition<::WorldBlockPosition>>
-                                                                                     mFoundBlockPosMemory;
+                                                                                     mSearchBlockPosMemory;
     ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::BlockDescriptor>> mBlockDescriptors;
     ::ll::TypedStorage<4, 4, int>                                                    mSearchRange;
     ::ll::TypedStorage<4, 4, int>                                                    mSearchHeight;
@@ -41,41 +41,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FindNearestBlockSensorEntryDefinition(
+    MCNAPI FindNearestBlockSensorEntryDefinition(
         ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition const&
     );
 
-    MCAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition&
     operator=(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition&&);
 
-    MCAPI bool
+    MCNAPI bool
     operator==(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition const&) const;
 
-    MCAPI ~FindNearestBlockSensorEntryDefinition();
+    MCNAPI ~FindNearestBlockSensorEntryDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& TYPE_NAME();
+    MCNAPI static ::std::string_view const& TYPE_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::Brain::MemorySensors::FindNearestBlockSensorEntryDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

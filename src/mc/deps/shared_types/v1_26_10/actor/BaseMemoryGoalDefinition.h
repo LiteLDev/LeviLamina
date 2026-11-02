@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
+#include "mc/deps/shared_types/shared_types/FloatRange.h"
 #include "mc/deps/shared_types/v1_21_20/filter_groups/FilterGroupData.h"
 
 // auto generated forward declare list
@@ -20,32 +21,33 @@ public:
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData> mConditionalFilters;
     ::ll::TypedStorage<4, 4, float>                                      mChanceToStart;
     ::ll::TypedStorage<4, 4, float>                                      mRetryAttemptCooldownSeconds;
+    ::ll::TypedStorage<4, 16, ::std::optional<::std::variant<float, ::SharedTypes::FloatRange>>> mDurationSeconds;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseMemoryGoalDefinition();
+    MCNAPI BaseMemoryGoalDefinition();
 
-    MCAPI ~BaseMemoryGoalDefinition();
+    MCNAPI ~BaseMemoryGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -24,6 +24,7 @@ class Dimension;
 class IUnknownBlockTypeRegistry;
 class JigsawStructureBlockInfo;
 class LevelChunk;
+class StructureAnimationData;
 class StructureBlockPalette;
 class StructureSettings;
 class StructureTelemetryServerData;
@@ -101,43 +102,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureTemplate(::StructureTemplate&& other);
+    MCNAPI StructureTemplate(::StructureTemplate&& other);
 
-    MCAPI explicit StructureTemplate(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCNAPI explicit StructureTemplate(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
     MCAPI StructureTemplate(
         ::std::string_view                                      name,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCAPI StructureTemplate(
+    MCNAPI StructureTemplate(
         ::StructureTemplate const&                              temp,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
 
-    MCAPI void _fillBlockInfo(
+    MCNAPI void _fillBlockInfo(
         ::BlockSource&    region,
         ::BlockPos const& minCorner,
         ::BlockPos const& maxCorner,
         ::BlockPos const& size
     );
 
-    MCAPI void _fillEntityList(::BlockSource& region, ::BlockPos const& minCorner, ::BlockPos const& maxCorner);
+    MCNAPI void _fillEntityList(::BlockSource& region, ::BlockPos const& minCorner, ::BlockPos const& maxCorner);
 
-    MCAPI int _getOrCreateIndex(
+    MCNAPI int _getOrCreateIndex(
         ::Block const&                   block,
         ::std::map<::Block const*, int>& indexMap,
         ::StructureBlockPalette&         palette
     );
 
-    MCAPI void _placeEntitiesInWorld(
+    MCNAPI void _placeEntitiesInWorld(
         ::BlockSource&                 region,
         ::DataLoadHelper&              dataLoadHelper,
         bool                           shouldReloadActorEquipment,
         ::std::optional<::BoundingBox> overlapBB
     ) const;
 
-    MCAPI void _placeNextBlockSegmentInWorld(
+    MCNAPI void _placeNextBlockSegmentInWorld(
         ::BlockSource&                 region,
         uint64                         startPlacement,
         uint64                         endPlacement,
@@ -163,17 +164,17 @@ public:
         ::StructureSettings const& structureSettings
     );
 
-    MCAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
+    MCNAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
+    MCNAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
-    MCAPI ::StructureTemplate& operator=(::StructureTemplate&& other);
+    MCNAPI ::StructureTemplate& operator=(::StructureTemplate&& other);
 
-    MCAPI bool operator==(::StructureTemplate const& other) const;
+    MCNAPI bool operator==(::StructureTemplate const& other) const;
 
-    MCAPI void optimizePalette(::std::string const& paletteName);
+    MCNAPI void optimizePalette(::std::string const& paletteName);
 
-    MCAPI void placeEntitiesInWorld(
+    MCNAPI void placeEntitiesInWorld(
         ::BlockSource&             region,
         ::BlockPos const&          position,
         ::StructureSettings const& structureSettings,
@@ -189,9 +190,16 @@ public:
         bool                            updateItemData
     ) const;
 
-    MCAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
+#ifdef LL_PLAT_C
+    MCNAPI void placeNextSegmentInWorld(
+        ::StructureAnimationData& structureAnimationData,
+        ::BlockPalette const&     globalBlockPalette
+    ) const;
+#endif
 
-    MCAPI bool structureTemplateDataIsValid(
+    MCNAPI bool setBlock(::BlockPos const& pos, ::Block const* block, bool waterlogged);
+
+    MCNAPI bool structureTemplateDataIsValid(
         ::BlockSource const&       region,
         ::std::string const&       structureName,
         ::BlockPos const&          capturePosition,
@@ -202,10 +210,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Block const& _mapToRotation(::Block const& curr, ::Rotation rotation);
+    MCNAPI static ::Block const& _mapToRotation(::Block const& curr, ::Rotation rotation);
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
+    MCNAPI static ::std::vector<::std::unique_ptr<::LevelChunk>> constructTransformedLevelChunks(
         ::Dimension&                                            targetDimension,
         ::StructureSettings const&                              settings,
         ::StructureTemplateData const&                          structureTemplateData,
@@ -213,7 +221,7 @@ public:
     );
 #endif
 
-    MCAPI static ::Block const* tryGetBlockAtPos(
+    MCNAPI static ::Block const* tryGetBlockAtPos(
         ::BlockPos const&                                       pos,
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry
@@ -223,14 +231,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureTemplate&& other);
+    MCNAPI void* $ctor(::StructureTemplate&& other);
 
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
     MCAPI void*
     $ctor(::std::string_view name, ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::StructureTemplate const&                              temp,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     );
@@ -247,24 +255,24 @@ public:
     // NOLINTBEGIN
     MCAPI bool $load(::CompoundTag const& tag);
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $save() const;
 
-    MCAPI void $clear();
+    MCNAPI void $clear();
 
-    MCAPI ::BoundingBox
+    MCNAPI ::BoundingBox
     $getTransformedBounds(::BlockPos loadPosition, ::StructureSettings const& structureSettings) const;
 
-    MCAPI void $fillEmpty(::BlockPos const& size);
+    MCNAPI void $fillEmpty(::BlockPos const& size);
 
-    MCAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
+    MCNAPI ::NeighborAwareBlockUpdateType $shouldHandleUpgradeForBlock(::Block const& block) const;
 
-    MCAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
+    MCNAPI bool $_allowReadBlock(::BlockPos const& position, ::Block const& block) const;
 
-    MCAPI bool $_allowReadActor(::Actor const& actor) const;
+    MCNAPI bool $_allowReadActor(::Actor const& actor) const;
 
-    MCAPI ::BlockPos $rawSize() const;
+    MCNAPI ::BlockPos $rawSize() const;
 
-    MCAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos randomPosSeed) const;
+    MCNAPI ::br::worldgen::StructureTemplateBlockPalette $randomPalette(::BlockPos randomPosSeed) const;
 
 
     // NOLINTEND

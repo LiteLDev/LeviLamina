@@ -2,9 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockPos.h"
+
 // auto generated forward declare list
 // clang-format off
-class BlockPos;
 class IBlockWorldGenAPI;
 class Random;
 class RenderParams;
@@ -16,6 +18,7 @@ public:
     // ITreeCanopy inner types declare
     // clang-format off
     struct BranchSize;
+    struct AttachmentInfo;
     // clang-format on
 
     // ITreeCanopy inner types define
@@ -25,6 +28,16 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, int> sizeX;
         ::ll::TypedStorage<4, 4, int> sizeZ;
+        // NOLINTEND
+    };
+
+    struct AttachmentInfo {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<4, 12, ::BlockPos const>               attachmentPos;
+        ::ll::TypedStorage<4, 8, ::ITreeCanopy::BranchSize const> attachmentSize;
+        ::ll::TypedStorage<4, 4, int const>                       attachmentHeight;
         // NOLINTEND
     };
 
@@ -40,8 +53,8 @@ public:
         ::Random&,
         ::RenderParams&,
         ::TreeHelper::TreeParams const&,
-        ::std::vector<::BlockPos> const&,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const&
     ) const = 0;
     // NOLINTEND
 };

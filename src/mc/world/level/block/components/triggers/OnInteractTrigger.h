@@ -21,7 +21,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onEvent(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void onEvent(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:

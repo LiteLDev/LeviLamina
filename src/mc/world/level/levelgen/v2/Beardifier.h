@@ -19,18 +19,20 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::Rigid>>          mPieces;
     ::ll::TypedStorage<8, 24, ::std::vector<::br::worldgen::JigsawJunction>> mJunctions;
+    ::ll::TypedStorage<4, 4, int>                                            mMinAffectedY;
+    ::ll::TypedStorage<4, 4, int>                                            mMaxAffectedY;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI double compute(::BlockPos pos) const;
+    MCNAPI double compute(::BlockPos pos) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::br::worldgen::Beardifier
+    MCNAPI static ::br::worldgen::Beardifier
     forStructuresInChunk(::br::worldgen::StructureCache const& structureCache, ::ChunkPos pos);
     // NOLINTEND
 };

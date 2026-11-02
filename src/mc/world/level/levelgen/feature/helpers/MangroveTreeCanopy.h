@@ -66,42 +66,42 @@ public:
         ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        ::TreeHelper::TreeParams const& treeParams,
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const& attachmentInfos
     ) const /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MangroveTreeCanopy();
+    MCNAPI MangroveTreeCanopy();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&,
         ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        ::TreeHelper::TreeParams const& treeParams,
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const& attachmentInfos
     ) const;
 
 

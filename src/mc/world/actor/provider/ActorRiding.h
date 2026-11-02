@@ -19,7 +19,7 @@ struct VehicleComponent;
 namespace ActorRiding {
 // functions
 // NOLINTBEGIN
-MCAPI ::StrictEntityContext getPassengerClosestTo(
+MCNAPI ::StrictEntityContext getPassengerClosestTo(
     ::Vec3 const&                                                       pos,
     ::VehicleComponent const&                                           vehicle,
     ::ViewT<::StrictEntityContext, ::StateVectorComponent const> const& positions
@@ -27,17 +27,17 @@ MCAPI ::StrictEntityContext getPassengerClosestTo(
 
 MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& getPassengers(::EntityContext const& provider);
 
-MCAPI bool isControlled(::EntityContext const& provider);
+MCNAPI bool isControlled(::EntityContext const& provider);
 
-MCAPI bool isPassenger(::EntityContext const& provider);
+MCNAPI bool isPassenger(::EntityContext const& provider);
 
-MCAPI void
+MCNAPI void
 setVehicle(::EntityContext& provider, ::StrictEntityContext vehicleContext, ::ActorUniqueID const& vehicleID);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
+MCNAPI ::std::vector<::StrictActorIDEntityContextPair> const& STRICTACTORIDENTITYCONTEXTPAIR_EMPTY_VECTOR();
 // NOLINTEND
 
 } // namespace ActorRiding

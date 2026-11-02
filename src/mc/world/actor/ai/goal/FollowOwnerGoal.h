@@ -63,35 +63,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FollowOwnerGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI FollowOwnerGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
+    MCNAPI bool _canReachOwner(::Mob& owner, ::NavigationComponent& navigationComponent) const;
 
-    MCAPI void _tryToTeleport(::Mob& owner) const;
+    MCNAPI void _tryToTeleport(::Mob& owner) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
+    MCNAPI void $onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
 
     // NOLINTEND

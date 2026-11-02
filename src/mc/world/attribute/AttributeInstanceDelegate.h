@@ -39,23 +39,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::AttributeInstanceRef _getMutableInstance(::AttributeModificationContext& context) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::AttributeInstanceRef _getMutableInstance(::AttributeModificationContext& context) const;
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
+    MCNAPI void $tick(::AttributeInstance& mutableInstance, ::AttributeModificationContext& context);
 
-    MCFOLD void $notify(int64 type, ::AttributeModificationContext& context);
+    MCNAPI void $notify(int64 type, ::AttributeModificationContext& context);
 
-    MCFOLD bool $willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
+    MCNAPI bool $willChange(float oldValue, float newValue, ::AttributeBuff const& buff);
 
-    MCAPI ::std::optional<float> $change(float oldValue, float newValue, ::AttributeBuff const& buff);
+    MCNAPI ::std::optional<float> $change(float oldValue, float newValue, ::AttributeBuff const& buff);
 
-    MCAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
+    MCNAPI float $getBuffValueWithModifiers(::AttributeBuff const& buff) const;
 
 
     // NOLINTEND
@@ -63,6 +63,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

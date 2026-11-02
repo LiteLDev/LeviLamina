@@ -48,12 +48,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~StructureTemplateRegistrationContext();
+    MCNAPI ~StructureTemplateRegistrationContext();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

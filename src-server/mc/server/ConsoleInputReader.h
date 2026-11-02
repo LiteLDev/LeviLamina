@@ -12,5 +12,6 @@ public:
     ::ll::TypedStorage<8, 80, ::SPSCQueue<::std::string, 512>> mConsoleInput;
     ::ll::TypedStorage<1, 1, ::std::atomic<bool>>              mReadConsole;
     ::ll::TypedStorage<8, 16, ::std::thread>                   mConsoleThread;
+    ::ll::TypedStorage<4, 4, int>                              mWakeEvent;
     // NOLINTEND
 };

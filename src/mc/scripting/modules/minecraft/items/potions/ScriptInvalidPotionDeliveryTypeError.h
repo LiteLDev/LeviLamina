@@ -16,7 +16,7 @@ struct ScriptInvalidPotionDeliveryTypeError : public ::Scripting::BaseError {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ErrorBinding bind();
+    MCNAPI static ::Scripting::ErrorBinding bind();
     // NOLINTEND
 };
 

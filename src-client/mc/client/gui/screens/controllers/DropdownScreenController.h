@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setUpCallbacksForCollectionDropdownOption(
+    MCNAPI void setUpCallbacksForCollectionDropdownOption(
         ::std::string const&                            collectionName,
         int const&                                      collectionSize,
         ::std::string const&                            dropdownName,
@@ -79,7 +79,7 @@ public:
         ::std::function<void(int, int)>                 setValue
     );
 
-    MCAPI void setUpCallbacksForDropdownOption(
+    MCNAPI void setUpCallbacksForDropdownOption(
         ::std::string const&                            dropdownName,
         ::std::string const&                            dropdownToggleLabelBindingName,
         ::std::unordered_map<::std::string, int> const& nameValuePairs,
@@ -90,13 +90,13 @@ public:
         ::std::function<void(int)>                      setValue
     );
 
-    MCAPI void updateDropdownCollectionSize(int const& collectionSize);
+    MCNAPI void updateDropdownCollectionSize(int const& collectionSize);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

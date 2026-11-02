@@ -120,8 +120,6 @@ public:
     // NOLINTBEGIN
     MCAPI TheEndGenerator(::Dimension& dimension, uint seed, ::Biome const* overrideBiome);
 
-    MCAPI ::Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(::ChunkPos const& chunkPos) const;
-
     MCAPI float
     getIslandHeightValue(int const chunkX, int const chunkZ, int const cellOffsetX, int const cellOffsetZ) const;
     // NOLINTEND
@@ -135,32 +133,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
+    MCNAPI void $loadChunk(::LevelChunk& levelChunk, bool forceImmediateReplacementDataLoad);
 
-    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
-    MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
+    MCNAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 
-    MCAPI void $prepareHeights(
+    MCNAPI void $prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>* ZXheights,
         bool                  factorInBeardsAndShavers
     );
 
-    MCAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
+    MCNAPI ::std::optional<short> $getPreliminarySurfaceLevel(::DividedPos2d<4> worldQuartPos) const;
 
-    MCAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
+    MCNAPI ::BiomeArea $getBiomeArea(::BoundingBox const& area, uint scale) const;
 
-    MCAPI ::BiomeSource const& $getBiomeSource() const;
+    MCNAPI ::BiomeSource const& $getBiomeSource() const;
 
-    MCFOLD ::BlockPos $findSpawnPosition() const;
+    MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
+    MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCFOLD void $decorateWorldGenLoadChunk(
+    MCNAPI void $decorateWorldGenLoadChunk(
         ::Biome const&       biome,
         ::LevelChunk&        lc,
         ::BlockVolumeTarget& target,
@@ -168,7 +166,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCAPI void
+    MCNAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
 

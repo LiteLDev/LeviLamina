@@ -1,0 +1,22 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated forward declare list
+// clang-format off
+class HashedString;
+// clang-format on
+
+namespace Editor::LogTags {
+// static variables
+// NOLINTBEGIN
+#ifdef LL_PLAT_C
+MCNAPI ::HashedString const& CHAT();
+
+MCNAPI ::HashedString const& CONTENT_LOG();
+#endif
+
+MCNAPI ::HashedString const& EDITOR();
+// NOLINTEND
+
+} // namespace Editor::LogTags

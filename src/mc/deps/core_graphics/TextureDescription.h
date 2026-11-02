@@ -18,7 +18,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool operator!=(::cg::TextureDescription const& rhs) const;
+    MCNAPI bool operator!=(::cg::TextureDescription const& rhs) const;
 #endif
     // NOLINTEND
 };

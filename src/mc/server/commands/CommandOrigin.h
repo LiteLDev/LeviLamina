@@ -117,14 +117,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CommandArea>
+    MCNAPI ::std::unique_ptr<::CommandArea>
     getAreaAt(::BlockPos const& min, ::BlockPos const& max, int commandVersion, bool allowUnloadedChunks) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI bool isTeacher() const;
+#endif
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::CommandOrigin> fromCommandOriginData(
+    MCNAPI static ::std::unique_ptr<::CommandOrigin> fromCommandOriginData(
         ::CommandOriginData const&                  data,
         ::Bedrock::NonOwnerPointer<::ILevel> const& level,
         ::NetworkIdentifier const&                  sourceId,
@@ -135,7 +139,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::NetworkIdentifier& sUnknownSource();
+    MCNAPI static ::NetworkIdentifier& sUnknownSource();
     // NOLINTEND
 
 public:
@@ -183,7 +187,7 @@ public:
 
     MCFOLD bool $requiresValidLevel() const;
 
-    MCFOLD void $_setUUID(::mce::UUID const& uuid);
+    MCNAPI void $_setUUID(::mce::UUID const& uuid);
 
 
     // NOLINTEND

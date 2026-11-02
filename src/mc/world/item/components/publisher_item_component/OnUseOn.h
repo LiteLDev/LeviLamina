@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/ItemComponent.h"
 
 // auto generated forward declare list
@@ -19,11 +20,12 @@ namespace cereal { struct ReflectionCtx; }
 
 namespace PublisherItemComponent {
 
-struct OnUseOn : public ::ItemComponent,
-                 public ::Bedrock::PubSub::Publisher<
-                     void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&),
-                     ::Bedrock::PubSub::ThreadModel::SingleThreaded,
-                     0> {
+struct OnUseOn
+: public ::ItemComponent,
+  public ::Bedrock::PubSub::Publisher<
+      void(bool&, ::ItemStack const&, ::ItemStack&, ::Actor&, ::BlockPos, uchar, ::Vec3 const&, ::HandSlot),
+      ::Bedrock::PubSub::ThreadModel::SingleThreaded,
+      0> {
 public:
     // member variables
     // NOLINTBEGIN
@@ -43,11 +45,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isNetworkComponent() const;
+    MCNAPI bool $isNetworkComponent() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag(::cereal::ReflectionCtx const& ctx) const;
 
-    MCAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
+    MCNAPI bool $initializeFromNetwork(::CompoundTag const& tag, ::cereal::ReflectionCtx const& ctx);
 
 
     // NOLINTEND

@@ -13,7 +13,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::Social::PlayerProfileState> state;
-    ::ll::TypedStorage<8, 584, ::Social::PlayerProfileData> data;
+    ::ll::TypedStorage<8, 648, ::Social::PlayerProfileData> data;
     // NOLINTEND
 };
 

@@ -24,7 +24,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::PaperDollHandle> $createDoll(::std::unique_ptr<::PropertyBag> bag) const;
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::PaperDollHandle> $createDoll(::std::unique_ptr<::PropertyBag> bag) const;
     // NOLINTEND
 
 public:

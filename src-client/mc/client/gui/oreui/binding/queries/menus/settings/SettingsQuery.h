@@ -1,0 +1,44 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/client/gui/oreui/binding/QueryBase.h"
+#include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
+
+// auto generated forward declare list
+// clang-format off
+namespace OreUI { class ClientDependencies; }
+namespace OreUI { class SettingsGroupId; }
+namespace Settings { class IRegistry; }
+// clang-format on
+
+namespace OreUI {
+
+class SettingsQuery : public ::OreUI::QueryBase<::OreUI::SettingsQuery> {
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::OreUI::SettingsGroupId, ::OreUI::SettingsGroupId>>
+                                                                        mSettingsGroups;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Settings::IRegistry>> mSettingsRegistry;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    SettingsQuery();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit SettingsQuery(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    // NOLINTEND
+};
+
+} // namespace OreUI

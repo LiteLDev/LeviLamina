@@ -27,6 +27,8 @@ MCNAPI ::std::string const& ProfileTextureVisible();
 
 MCNAPI ::std::string const& ProgressBarVisible();
 
+MCNAPI ::std::string const& Source();
+
 MCNAPI ::std::string const& ToastTextureVisible();
 // NOLINTEND
 

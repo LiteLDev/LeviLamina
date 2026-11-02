@@ -8,12 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class Vec3;
 namespace Editor::ScriptModule { struct ExtrudeInteractiveToolOptions; }
+namespace Editor::ScriptModule { struct FloodInteractiveToolOptions; }
 namespace Editor::ScriptModule { struct SmartFillInteractiveToolOptions; }
 namespace Scripting { class ScriptObjectFactory; }
 namespace Scripting { struct ClassBinding; }
 namespace Scripting { struct Error; }
-namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -41,6 +42,12 @@ public:
         ::Editor::ScriptModule::ExtrudeInteractiveToolOptions const& options
     );
 
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> activateFlood(
+        ::Scripting::ScriptObjectFactory&                          factory,
+        ::Vec3 const&                                              targetLocation,
+        ::Editor::ScriptModule::FloodInteractiveToolOptions const& options
+    );
+
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> activateSmartFill(
         ::Scripting::ScriptObjectFactory&                              factory,
         ::Editor::ScriptModule::SmartFillInteractiveToolOptions const& options
@@ -56,11 +63,20 @@ public:
     supportsExtrude(::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<bool, ::Scripting::Error>>
+    supportsFlood(::Scripting::ScriptObjectFactory& factory);
+
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<bool, ::Scripting::Error>>
     supportsSmartFill(::Scripting::ScriptObjectFactory& factory);
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> updateExtrude(
         ::Scripting::ScriptObjectFactory&                            factory,
         ::Editor::ScriptModule::ExtrudeInteractiveToolOptions const& options
+    );
+
+    MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> updateFlood(
+        ::Scripting::ScriptObjectFactory&                          factory,
+        ::Vec3 const&                                              targetLocation,
+        ::Editor::ScriptModule::FloodInteractiveToolOptions const& options
     );
 
     MCNAPI ::Scripting::Result_deprecated<::Scripting::Promise<void, ::Scripting::Error>> updateSmartFill(
@@ -72,11 +88,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindExtrudeOptions();
-
     MCNAPI static ::Scripting::ClassBinding bindScript();
-
-    MCNAPI static ::Scripting::InterfaceBinding bindSmartFillOptions();
     // NOLINTEND
 };
 

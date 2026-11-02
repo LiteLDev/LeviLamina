@@ -9,8 +9,8 @@
 // clang-format off
 namespace Core { class SingleThreadedLock; }
 namespace Social { struct Nonce; }
-namespace mce { class UUID; }
 namespace Social { struct OnlineId; }
+namespace mce { class UUID; }
 // clang-format on
 
 namespace Social {
@@ -32,14 +32,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onUserDisconnectedBecauseConcurrentLogin(::std::string const&);
+    MCNAPI void $onUserDisconnectedBecauseConcurrentLogin(::std::string const&);
 
 #ifdef LL_PLAT_C
-    MCFOLD void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
+    MCNAPI void $onInvalidPlayerJoinedLobby(::mce::UUID const& uuid, ::std::string const& xuid);
 
-    MCFOLD void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
+    MCNAPI void $onPlayerJoinedLobby(::Social::OnlineId const& player, ::Social::Nonce const& nonce);
 
-    MCFOLD void $onPlayerLeftLobby(::Social::OnlineId const&);
+    MCNAPI void $onPlayerLeftLobby(::Social::OnlineId const&);
 #endif
 
 

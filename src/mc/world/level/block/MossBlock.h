@@ -39,22 +39,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MossBlock(::std::string const& nameId, int id, ::std::optional<::std::string> onFertilizeFeature);
+    MCNAPI MossBlock(::std::string const& nameId, int id, ::std::optional<::std::string> onFertilizeFeature);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::std::optional<::std::string> onFertilizeFeature);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::std::optional<::std::string> onFertilizeFeature);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
-    MCAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
+    MCNAPI bool $canBeFertilized(::BlockSource& region, ::BlockPos const& pos, ::Block const& aboveBlock) const;
 
 
     // NOLINTEND
@@ -62,6 +62,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

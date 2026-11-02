@@ -22,7 +22,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        864,
+        832,
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ReconnectGameProgressHandler(
+    MCNAPI ReconnectGameProgressHandler(
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
@@ -76,7 +76,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::variant<
             ::GameConnectionInfoEx,
             ::Social::MultiplayerGameInfo,
@@ -89,21 +89,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onStart(::MinecraftScreenModel&);
+    MCNAPI void $onStart(::MinecraftScreenModel&);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel&);
+    MCNAPI void $onExit(::MinecraftScreenModel&);
 
-    MCAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel&) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

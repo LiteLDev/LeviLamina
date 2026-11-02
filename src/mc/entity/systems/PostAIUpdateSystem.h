@@ -18,11 +18,11 @@ class PostAIUpdateSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void doPostAiUpdate(
-        ::StrictEntityContext&                       entity,
-        ::Optional<::OnGroundFlagComponent const>    onGround,
-        ::NoActionTimeComponent&                     noActionTime,
-        ::EntityModifier<::WasOnGroundFlagComponent> mod
+    MCNAPI static void doPostAiUpdate(
+        ::StrictEntityContext&                              entity,
+        ::Optional<::OnGroundFlagComponent const>           onGround,
+        ::NoActionTimeComponent&                            noActionTime,
+        ::EntityModifier<::WasOnGroundFlagComponent> const& mod
     );
     // NOLINTEND
 };

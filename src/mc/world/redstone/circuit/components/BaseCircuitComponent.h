@@ -102,9 +102,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addSourceItem(::CircuitComponentList::Item const& item);
+#ifdef LL_PLAT_C
+    MCNAPI BaseCircuitComponent();
+#endif
 
-    MCAPI bool trackPowerSource(
+    MCNAPI void addSourceItem(::CircuitComponentList::Item const& item);
+
+    MCNAPI bool trackPowerSource(
         ::CircuitTrackingInfo const& info,
         int                          dampening,
         bool                         directlyPowered,
@@ -114,68 +118,76 @@ public:
     // NOLINTEND
 
 public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
+    // NOLINTEND
+
+public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD int $getStrength() const;
+    MCNAPI int $getStrength() const;
 
-    MCAPI int $getDirection() const;
+    MCNAPI int $getDirection() const;
 
-    MCAPI void $setOldStrength(short strength);
+    MCNAPI void $setOldStrength(short strength);
 
-    MCAPI void $setStrength(int strength);
+    MCNAPI void $setStrength(int strength);
 
-    MCAPI void $setDirection(uchar direction);
+    MCNAPI void $setDirection(uchar direction);
 
-    MCAPI void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
+    MCNAPI void $setConsumePowerAnyDirection(bool canConsumePowerAnyDirection);
 
-    MCAPI bool $canConsumePowerAnyDirection() const;
+    MCNAPI bool $canConsumePowerAnyDirection() const;
 
-    MCFOLD bool $canConsumerPower() const;
+    MCNAPI bool $canConsumerPower() const;
 
-    MCFOLD bool $canStopPower() const;
+    MCNAPI bool $canStopPower() const;
 
-    MCFOLD void $setStopPower(bool bPower);
+    MCNAPI void $setStopPower(bool bPower);
 
-    MCAPI bool $needsUpdate();
+    MCNAPI bool $needsUpdate();
 
-    MCAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
+    MCNAPI void $removeSource(::BlockPos const& posSource, ::BaseCircuitComponent const* pComponent);
 
-    MCFOLD bool
+    MCNAPI bool
     $addSource(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, int& dampening, bool& bDirectlyPowered);
 
-    MCFOLD bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
+    MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 
-    MCFOLD void $checkLock(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI void $checkLock(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCFOLD bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCFOLD void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
+    MCNAPI void $cacheValues(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCFOLD void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
+    MCNAPI void $updateDependencies(::CircuitSceneGraph& system, ::BlockPos const& pos);
 
-    MCFOLD ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
+    MCNAPI ::RedstoneLogicExecutionFlags $getLogicExecutionFlags() const;
 
-    MCFOLD bool $allowIndirect() const;
+    MCNAPI bool $allowIndirect() const;
 
-    MCFOLD bool $isHalfPulse() const;
+    MCNAPI bool $isHalfPulse() const;
 
-    MCAPI bool $hasSource(::BaseCircuitComponent const& source) const;
+    MCNAPI bool $hasSource(::BaseCircuitComponent const& source) const;
 
-    MCFOLD bool $hasChildrenSource() const;
+    MCNAPI bool $hasChildrenSource() const;
 
-    MCFOLD bool $isSecondaryPowered() const;
+    MCNAPI bool $isSecondaryPowered() const;
 
-    MCAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
+    MCNAPI void $removeFromAnySourceList(::BaseCircuitComponent const* component);
 
-    MCFOLD ::CircuitComponentType $getCircuitComponentType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentType() const;
 
-    MCAPI ::CircuitComponentType $getCircuitComponentGroupType() const;
+    MCNAPI ::CircuitComponentType $getCircuitComponentGroupType() const;
 
 
     // NOLINTEND
@@ -183,6 +195,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

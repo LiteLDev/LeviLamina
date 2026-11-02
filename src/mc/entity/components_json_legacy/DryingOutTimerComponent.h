@@ -48,20 +48,20 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DryingOutTimerDefinition(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
+        MCNAPI DryingOutTimerDefinition(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
 
-        MCAPI void initialize(::EntityContext& entity, ::DryingOutTimerComponent& dryingOutComponent) const;
+        MCNAPI void initialize(::EntityContext& entity, ::DryingOutTimerComponent& dryingOutComponent) const;
 
-        MCAPI ::DryingOutTimerComponent::DryingOutTimerDefinition&
+        MCNAPI ::DryingOutTimerComponent::DryingOutTimerDefinition&
         operator=(::DryingOutTimerComponent::DryingOutTimerDefinition const&);
 
-        MCAPI ~DryingOutTimerDefinition();
+        MCNAPI ~DryingOutTimerDefinition();
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCAPI static void buildSchema(
+        MCNAPI static void buildSchema(
             ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<
                 ::JsonUtil::EmptyClass,
                 ::DryingOutTimerComponent::DryingOutTimerDefinition>>& root
@@ -71,13 +71,13 @@ public:
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
+        MCNAPI void* $ctor(::DryingOutTimerComponent::DryingOutTimerDefinition&&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -92,8 +92,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
+    MCNAPI void readAdditionalSaveData(::Actor&, ::CompoundTag const& tag, ::DataLoadHelper&);
     // NOLINTEND
 };

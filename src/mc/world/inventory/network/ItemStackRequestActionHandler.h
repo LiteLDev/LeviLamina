@@ -8,28 +8,29 @@
 #include "mc/world/TypedRuntimeId.h"
 #include "mc/world/containers/ContainerEnumName.h"
 #include "mc/world/inventory/network/ItemStackNetResult.h"
+#include "mc/world/inventory/network/QueuedCursorItemEvent.h"
 #include "mc/world/inventory/network/TypedClientNetId.h"
 #include "mc/world/inventory/network/TypedServerNetId.h"
 
 // auto generated forward declare list
 // clang-format off
+class Container;
 class ContainerScreenContext;
 class ContainerScreenValidation;
 class EntityContext;
 class ItemInstance;
 class ItemStack;
-class ItemStackNetManagerScreen;
 class ItemStackNetManagerServer;
-class ItemStackRequestAction;
 class ItemStackRequestActionCraftHandler;
-class ItemStackRequestActionDestroy;
-class ItemStackRequestActionDrop;
 class ItemStackRequestActionTransferBase;
 class Player;
 class ScreenHandlerBase;
 class SimpleSparseContainer;
 struct ContainerRuntimeIdTag;
 struct ContainerValidationCraftInputs;
+struct ContainerValidationResult;
+struct ContainerValidationSlotData;
+struct CursorDragDeferredSlot;
 struct FullContainerName;
 struct ItemStackLegacyRequestIdTag;
 struct ItemStackNetIdTag;
@@ -37,6 +38,7 @@ struct ItemStackRequestHandlerSlotInfo;
 struct ItemStackRequestIdTag;
 struct ItemStackRequestSlotInfo;
 struct ItemStackResponseContainerInfo;
+struct QueuedCursorItemEvent;
 // clang-format on
 
 class ItemStackRequestActionHandler {
@@ -64,6 +66,22 @@ public:
         ::ll::TypedStorage<1, 1, ::ContainerEnumName const>  mContainerName;
         ::ll::TypedStorage<4, 4, ::ContainerRuntimeId const> mContainerRuntimeId;
         ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ItemStackLegacyRequestId, ::ItemStackNetId>>> mSlots;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        PlayerLegacyRequestSlotIdAssignment();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI PlayerLegacyRequestSlotIdAssignment(::ContainerEnumName containerName, ::Container& container);
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(::ContainerEnumName containerName, ::Container& container);
         // NOLINTEND
     };
 
@@ -125,6 +143,8 @@ public:
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mFilteredStrings;
     ::ll::TypedStorage<8, 16, ::std::map<::std::string, ::std::vector<::std::string>>> mStrings;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ContainerScreenValidation>>           mScreenValidation;
+    ::ll::TypedStorage<8, 24, ::std::vector<::QueuedCursorItemEvent>>                  mQueuedCursorItemEvents;
+    ::ll::TypedStorage<8, 24, ::std::vector<::CursorDragDeferredSlot>>                 mCursorDragDeferredSlots;
     // NOLINTEND
 
 public:
@@ -136,20 +156,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackRequestActionHandler(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
+    MCNAPI ItemStackRequestActionHandler(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
 
-    MCAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
+    MCNAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
 
-#ifdef LL_PLAT_S
-    MCAPI void _cacheLegacySlotIdAssignment(
-        ::ContainerEnumName               containerName,
-        uchar                             slot,
-        ::ItemStackLegacyRequestId const& legacyClientRequestId,
-        ::ItemStackNetId const&           serverNetId
-    );
-#endif
-
-    MCAPI void _cacheSlotIdAssigment(
+    MCNAPI void _cacheSlotIdAssigment(
         ::ContainerRuntimeId const& containerRuntimeId,
         uchar                       requestSlot,
         uchar                       slot,
@@ -159,87 +170,71 @@ public:
     MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     _getOrInitSparseContainer(::FullContainerName const& openContainerId);
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStackNetResult _handleDestroy(::ItemStackRequestActionDestroy const& requestAction);
-
-    MCAPI ::ItemStackNetResult _handleDrop(::ItemStackRequestActionDrop const& requestAction);
-#endif
-
     MCAPI ::ItemStackNetResult _handleRemove(
         ::ItemStackRequestActionTransferBase const& requestAction,
         ::ItemStack&                                removedItem,
         ::ItemStackRequestActionHandler::RemoveType removeType
     );
 
-#ifdef LL_PLAT_S
-    MCAPI ::ItemStackNetResult _handleTransfer(
-        ::ItemStackRequestActionTransferBase const& requestAction,
-        bool                                        isSrcHintSlot,
-        bool                                        isDstHintSlot,
-        bool                                        isSwap
-    );
-#endif
-
-#ifdef LL_PLAT_C
     MCAPI ::ItemStackNetResult _handleTransfer(
         ::ItemStackRequestActionTransferBase const& requestAction,
         bool const                                  isSrcHintSlot,
         bool const                                  isDstHintSlot,
         bool const                                  isSwap
     );
-#endif
 
-#ifdef LL_PLAT_S
-    MCAPI void _initScreen(::ItemStackNetManagerScreen& screen);
-#endif
+    MCNAPI void _queueCursorEvent(
+        ::ItemStackRequestActionTransferBase const& requestAction,
+        ::ContainerValidationResult const&          result,
+        bool                                        isSwap
+    );
 
-    MCAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+    MCNAPI void _queueCursorGrab(::ItemStack const& item, ::QueuedCursorItemEvent::DispatchPolicy dispatchPolicy);
 
-    MCAPI ::ItemStackRequestHandlerSlotInfo
+    MCNAPI void _queueCursorRelease(::ItemStack const& item, ::QueuedCursorItemEvent::DispatchPolicy dispatchPolicy);
+
+    MCNAPI void _sendCursorItemEvent(::QueuedCursorItemEvent::Type type, ::ItemStack const& item);
+
+    MCNAPI void _trackCursorDragDeferredSlot(
+        ::ContainerEnumName                  containerName,
+        ::ContainerValidationSlotData const& slotData,
+        ::ItemStack const&                   item
+    );
+
+    MCNAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+
+    MCNAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
-#ifdef LL_PLAT_S
-    MCAPI void addFilteredStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> filteredStrings);
-#endif
-
-    MCAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
+    MCNAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
 
 #ifdef LL_PLAT_S
-    MCAPI void beginRequest(::ItemStackRequestId const& clientRequestId, ::ItemStackNetManagerScreen& screen);
-
-    MCAPI ::std::tuple<::ItemStackNetResult, ::std::vector<::ItemStackResponseContainerInfo>>
-    endRequest(::ItemStackNetResult currentResult);
-
-    MCAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
+    MCNAPI ::std::vector<::std::string> const& getFilteredStrings(::ItemStackRequestId requestId) const;
 #endif
 
     MCAPI ::ContainerScreenContext const& getScreenContext() const;
 
 #ifdef LL_PLAT_S
-    MCAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
-
-    MCAPI ::ItemStackNetResult handleRequestAction(::ItemStackRequestAction const& requestAction);
-
-    MCAPI bool hasFilteredStrings(::ItemStackRequestId requestId) const;
+    MCNAPI ::std::vector<::std::string> const& getStrings(::ItemStackRequestId requestId) const;
 #endif
 
-    MCAPI void normalTick();
+    MCNAPI void normalTick();
 
-    MCAPI ::std::vector<::ItemInstance>
+    MCNAPI ::std::vector<::ItemInstance>
     tryCraft(::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs, uchar numCrafts);
 
-    MCAPI ~ItemStackRequestActionHandler();
+    MCNAPI ~ItemStackRequestActionHandler();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
+    MCNAPI void* $ctor(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

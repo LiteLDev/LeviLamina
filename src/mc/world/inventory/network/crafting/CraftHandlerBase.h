@@ -62,35 +62,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult
-    handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction, ::ItemStackNetResult currentResult);
-
     MCAPI void postRequest(bool wasSuccess);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackNetResult $handleConsumedItem(
+    MCNAPI ::ItemStackNetResult $handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
     );
 
-    MCFOLD ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
+    MCNAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
 
-    MCFOLD void $endRequestBatch();
+    MCNAPI void $endRequestBatch();
 
-    MCFOLD void $_postCraftRequest(bool const wasSuccess);
+    MCNAPI void $_postCraftRequest(bool const wasSuccess);
 
-    MCFOLD ::Recipes const* $_getLevelRecipes() const;
+    MCNAPI ::Recipes const* $_getLevelRecipes() const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

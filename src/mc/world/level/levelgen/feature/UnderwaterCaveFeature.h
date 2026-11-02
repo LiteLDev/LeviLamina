@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $carveEllipsoidVolume(
+    MCNAPI bool $carveEllipsoidVolume(
         ::IBlockWorldGenAPI& target,
         ::CaveFeatureUtils::CarverConfiguration const&,
         ::Random&                                    random,
@@ -56,11 +56,5 @@ public:
     ) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

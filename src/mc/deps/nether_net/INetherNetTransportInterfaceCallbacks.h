@@ -25,13 +25,8 @@ public:
 
     virtual void OnSessionGetConnectionFlags(::NetherNet::NetworkID, uint*) = 0;
 
-    virtual ::Bedrock::Threading::Async<bool> OnSessionRequested(
-        ::NetherNet::NetworkID networkID,
-        uint64                 sessionId,
-        ::std::string_view     assertion,
-        ::std::string_view     fingerprintJson,
-        bool                   isLan
-    ) = 0;
+    virtual ::Bedrock::Threading::Async<bool>
+    OnSessionRequested(::NetherNet::NetworkID, uint64, ::std::string_view, ::std::string_view, bool) = 0;
 
 #ifdef LL_PLAT_S
     virtual ::Bedrock::Threading::Async<bool>
@@ -46,7 +41,8 @@ public:
     );
 #endif
 
-    virtual void OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, bool isLan) = 0;
+    virtual void
+    OnSessionOpen(::NetherNet::NetworkID networkID, uint64 sessionId, ::std::string_view assertion, bool isLan) = 0;
 
     virtual void OnSessionClose(
         ::NetherNet::NetworkID     networkID,

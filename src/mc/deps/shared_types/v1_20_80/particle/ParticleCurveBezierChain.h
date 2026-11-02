@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/v1_20_80/particle/BezierChainNodeMap.h"
 #include "mc/deps/shared_types/v1_20_80/particle/ParticleCurveBase.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_20_80 {
 
 struct ParticleCurveBezierChain : public ::SharedTypes::v1_20_80::ParticleCurveBase {
@@ -37,27 +32,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+    MCNAPI ParticleCurveBezierChain(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&) const;
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_80::ParticleCurveBezierChain const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

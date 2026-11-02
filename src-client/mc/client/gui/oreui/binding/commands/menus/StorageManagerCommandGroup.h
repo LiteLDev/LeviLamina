@@ -27,11 +27,12 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::shared_ptr<::StorageManager::ContentItemProvider>()>>
-        mStorageContentItemProviderFunc;
+                                                                    mStorageContentItemProviderFunc;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>> mRefreshPacks;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string, bool>> mSetSelected;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, bool>>                mSetAllSelected;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string>>                mDeleteSelectedItems;
-    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mConvertLegacyWorld;
+    ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void, ::std::string, ::std::string>> mConvertWorld;
     ::ll::TypedStorage<8, 168, ::OreUI::Detail::CallableImpl<void>>                               mToPlayScreen;
     // NOLINTEND
 
@@ -48,13 +49,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit StorageManagerCommandGroup(::OreUI::GameDependencies const& game);
+    MCNAPI explicit StorageManagerCommandGroup(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

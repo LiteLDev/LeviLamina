@@ -28,21 +28,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorTamedEventFilterData const& data) const;
+    MCNAPI bool shouldAllow(::ScriptModuleMinecraft::EventFilters::ScriptActorTamedEventFilterData const& data) const;
 
-    MCAPI ~ScriptActorTamedEventFilter();
+    MCNAPI ~ScriptActorTamedEventFilter();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::InterfaceBinding bind();
+    MCNAPI static ::Scripting::InterfaceBinding bind();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -25,20 +25,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~BiomeConsolidatedFeatureData();
+    MCNAPI ~BiomeConsolidatedFeatureData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static ::Bedrock::Result<::BiomeConsolidatedFeatureData> read(::ReadOnlyBinaryStream& stream);
-#endif
+    MCNAPI static ::Bedrock::Result<::BiomeConsolidatedFeatureData> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -34,16 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::ext::internal::JSONSchemaValidation&
+    MCNAPI ::cereal::ext::internal::JSONSchemaValidation&
     operator=(::cereal::ext::internal::JSONSchemaValidation const&);
 
-    MCAPI ~JSONSchemaValidation();
+    MCNAPI ~JSONSchemaValidation();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

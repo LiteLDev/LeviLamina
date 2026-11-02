@@ -66,7 +66,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCNAPI AutomaticFeatureRules(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
 
     MCAPI ::Puv::LoadResult<::SharedTypes::v1_21_20::AutomaticFeatureRulesData> _parseAndInsertUnsorted(
         ::std::string const&        filename,
@@ -79,7 +79,7 @@ public:
         bool                                                                                      isBasePack
     ) const;
 
-    MCAPI void attachAutomaticFeatures(
+    MCNAPI void attachAutomaticFeatures(
         ::ResourcePackManager&                                          resourcePackManager,
         ::IWorldRegistriesProvider&                                     worldRegistries,
         ::std::unordered_map<::HashedString, ::BiomeDecorationFeature>& biomeDecorationFeatureMap
@@ -89,12 +89,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
+    MCNAPI static ::SemVersionConstant const& SCHEMA_VERSION_1();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
+    MCNAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::IMinecraftEventing& eventing);
     // NOLINTEND
 };

@@ -56,7 +56,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DlcUIWrapper(
+    MCNAPI DlcUIWrapper(
         ::IDlcValidation&                                            dlcValidation,
         ::IDlcBatcher&                                               dlcBatcher,
         ::ILevelListCache&                                           levelListCache,
@@ -69,15 +69,15 @@ public:
         ::MainMenuScreenController&                                  mainMenuScreenController
     );
 
-    MCAPI void _checkForCopiedPremiumWorldTemplate(::std::shared_ptr<::DlcValidationState> dlcState);
+    MCNAPI void _checkForCopiedPremiumWorldTemplate(::std::shared_ptr<::DlcValidationState> dlcState);
 
-    MCAPI bool _continueAllowed(::std::shared_ptr<::DlcValidationState> const dlcState) const;
+    MCNAPI bool _continueAllowed(::std::shared_ptr<::DlcValidationState> const dlcState) const;
 
-    MCAPI void _showDlcMissingContentKeyModal();
+    MCNAPI void _showDlcMissingContentKeyModal();
 
-    MCAPI ::DlcUIWrapperResult tick();
+    MCNAPI ::DlcUIWrapperResult tick();
 
-    MCAPI void tryDownload(
+    MCNAPI void tryDownload(
         ::std::string const&    productId,
         ::std::function<void()> callback,
         bool                    showProgressScreen,
@@ -85,7 +85,7 @@ public:
         bool                    showDownloadPrompt
     );
 
-    MCAPI void tryDownload(
+    MCNAPI void tryDownload(
         ::std::vector<::std::string> const& productIds,
         ::std::function<void()>             callback,
         bool                                showProgressScreen,
@@ -93,28 +93,28 @@ public:
         bool                                showDownloadPrompt
     );
 
-    MCAPI void
+    MCNAPI void
     tryProcessPendingUpdatesFor(::PackIdVersion const& worldTemplateIdentity, ::std::function<void()> callback);
 
-    MCAPI void tryValidateDlcForRealmsUpload(
+    MCNAPI void tryValidateDlcForRealmsUpload(
         ::std::string const&    levelId,
         ::PackIdVersion const&  worldPackId,
         ::std::function<void()> callback
     );
 
-    MCAPI void tryValidateDlcForWorldLoad(
+    MCNAPI void tryValidateDlcForWorldLoad(
         ::std::string const&    levelId,
         ::PackIdVersion const&  worldPackId,
         ::std::function<void()> callback
     );
 
-    MCAPI ~DlcUIWrapper();
+    MCNAPI ~DlcUIWrapper();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IDlcValidation&                                            dlcValidation,
         ::IDlcBatcher&                                               dlcBatcher,
         ::ILevelListCache&                                           levelListCache,
@@ -131,6 +131,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

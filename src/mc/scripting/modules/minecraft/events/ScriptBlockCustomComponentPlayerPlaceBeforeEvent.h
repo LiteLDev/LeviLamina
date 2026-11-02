@@ -55,11 +55,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&
     );
 
-    MCAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
+    MCNAPI ScriptBlockCustomComponentPlayerPlaceBeforeEvent(
         ::BlockEvents::BlockPlayerPlacingEvent const& engineEvent,
         ::Scripting::WeakLifetimeScope const&         scope
     );
@@ -68,9 +68,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
+    MCNAPI static ::std::vector<::ScriptModuleMinecraft::ScriptCustomComponentToExecute<
         ::ScriptModuleMinecraft::ScriptBlockCustomComponentInterface const&,
         void>>
     tryGetComponentsToExecute(::BlockEvents::BlockPlayerPlacingEvent const& eventData);
@@ -79,18 +79,18 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptBlockCustomComponentPlayerPlaceBeforeEvent const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::BlockEvents::BlockPlayerPlacingEvent const& engineEvent, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
+    MCNAPI void $updateEngineEvent(::BlockEvents::BlockPlayerPlacingEvent& engineEvent) const;
 
-    MCAPI bool $shouldCancel() const;
+    MCNAPI bool $shouldCancel() const;
 
 
     // NOLINTEND

@@ -19,20 +19,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DimensionDataPacketPayload(::DimensionDefinitionGroup&& dimensionDefinitionGroup);
+    MCNAPI explicit DimensionDataPacketPayload(::DimensionDefinitionGroup&& dimensionDefinitionGroup);
 
-    MCAPI ~DimensionDataPacketPayload();
+    MCNAPI ~DimensionDataPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DimensionDefinitionGroup&& dimensionDefinitionGroup);
+    MCNAPI void* $ctor(::DimensionDefinitionGroup&& dimensionDefinitionGroup);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

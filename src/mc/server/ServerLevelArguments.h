@@ -15,7 +15,7 @@ struct ServerLevelArguments {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 312, ::LevelArguments>                  mBase;
+    ::ll::TypedStorage<8, 344, ::LevelArguments>                  mBase;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager&>              mServerResourcePackManager;
     ::ll::TypedStorage<8, 8, ::ResourcePackManager&>              mClientResourcePackManager;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CommandManager>> mCommandManager;

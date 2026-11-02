@@ -7,11 +7,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class Actor;
 class DimensionManager;
-class Mob;
-class StrictEntityContext;
-struct ActorUniqueID;
 // clang-format on
 
 class ActorFetcher {
@@ -19,15 +15,5 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::DimensionManager const> const> mDimensionManager;
-    // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Actor* fetchActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
-
-    MCAPI ::Mob* fetchMobAllDimensions(::ActorUniqueID mobId) const;
-
-    MCAPI ::StrictEntityContext fetchStrictActorAllDimensions(::ActorUniqueID actorId, bool getRemoved) const;
     // NOLINTEND
 };

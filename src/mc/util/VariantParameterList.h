@@ -3,6 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 #include "mc/util/VariantParameterListConst.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -24,6 +27,7 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockPos const*> mBlock;
     ::ll::TypedStorage<8, 8, ::Actor*>          mDamager;
     ::ll::TypedStorage<8, 8, ::Actor*>          mHolder;
+    ::ll::TypedStorage<1, 1, ::HandSlot>        mHandSlot;
     // NOLINTEND
 
 public:

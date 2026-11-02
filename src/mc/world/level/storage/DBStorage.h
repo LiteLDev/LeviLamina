@@ -32,6 +32,7 @@ class TaskGroup;
 class TaskResult;
 struct DBStorageConfig;
 struct SnapshotFilenameAndLength;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { class Path; }
 // clang-format on
 
@@ -217,98 +218,103 @@ public:
     virtual void setCompactionCallback(::std::function<void(::CompactionStatus)> callback) /*override*/;
 
     virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) /*override*/;
+
+    virtual void
+    setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DBStorage(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
+    MCNAPI DBStorage(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
 
-    MCAPI ::TaskResult _flushWriteCacheToLevelDB();
+    MCNAPI ::TaskResult _flushWriteCacheToLevelDB();
 
-    MCAPI ::std::string _getTelemetryMessage(::leveldb::Status const& status) const;
+    MCNAPI ::std::string _getTelemetryMessage(::leveldb::Status const& status) const;
 
-    MCAPI ::DBStorage::PendingWriteResult
+    MCNAPI ::DBStorage::PendingWriteResult
     _readPendingWrite(::std::string const& key, ::DBHelpers::Category category) const;
 
-    MCAPI bool tryRepair(::Core::Path const& path) const;
+    MCNAPI bool tryRepair(::Core::Path const& path) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
+    MCNAPI void* $ctor(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer);
+    MCNAPI void $addStorageObserver(::std::unique_ptr<::LevelStorageObserver> observer);
 
-    MCFOLD bool $loadedSuccessfully() const;
+    MCNAPI bool $loadedSuccessfully() const;
 
-    MCAPI ::Core::LevelStorageResult $getState() const;
+    MCNAPI ::Core::LevelStorageResult $getState() const;
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $createChunkStorage(::std::unique_ptr<::ChunkSource> generator, ::StorageVersion);
 
-    MCAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
+    MCNAPI ::Core::PathBuffer<::std::string> const& $getFullPath() const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
+    MCNAPI ::std::unique_ptr<::CompoundTag> $getCompoundTag(::std::string const& key, ::DBHelpers::Category category);
 
-    MCAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
+    MCNAPI bool $hasKey(::std::string_view key, ::DBHelpers::Category category) const;
 
-    MCAPI bool $loadLevelData(::LevelData& data);
+    MCNAPI bool $loadLevelData(::LevelData& data);
 
-    MCAPI void $saveLevelData(::LevelData const& levelData);
+    MCNAPI void $saveLevelData(::LevelData const& levelData);
 
-    MCAPI ::Bedrock::Threading::Async<void>
+    MCNAPI ::Bedrock::Threading::Async<void>
     $saveData(::std::string const& key, ::std::string&& data, ::DBHelpers::Category category);
 
-    MCAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
+    MCNAPI ::Bedrock::Threading::Async<void> $saveData(::LevelStorageWriteBatch const& batch);
 
-    MCAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
+    MCNAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
 
-    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+    MCNAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
-    MCAPI void $forEachKeyWithPrefix(
+    MCNAPI void $forEachKeyWithPrefix(
         ::std::string_view                                                   prefix,
         ::DBHelpers::Category                                                category,
         ::std::function<void(::std::string_view, ::std::string_view)> const& callback
     ) const;
 
-    MCAPI ::Core::LevelStorageResult $getLevelStorageState() const;
+    MCNAPI ::Core::LevelStorageResult $getLevelStorageState() const;
 
-    MCFOLD ::ContentIdentity const* $getContentIdentity() const;
+    MCNAPI ::ContentIdentity const* $getContentIdentity() const;
 
-    MCAPI void $startShutdown();
+    MCNAPI void $startShutdown();
 
-    MCAPI bool $isShuttingDown() const;
+    MCNAPI bool $isShuttingDown() const;
 
-    MCAPI bool $checkShutdownDone();
+    MCNAPI bool $checkShutdownDone();
 
-    MCAPI void $getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const;
+    MCNAPI void $getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const;
 
-    MCAPI ::std::vector<::SnapshotFilenameAndLength>
+    MCNAPI ::std::vector<::SnapshotFilenameAndLength>
     $createSnapshot(::std::string const& filePrefix, bool flushWriteCache);
 
-    MCAPI void $releaseSnapshot();
+    MCNAPI void $releaseSnapshot();
 
-    MCAPI ::Bedrock::Threading::Async<void> $compactStorage();
+    MCNAPI ::Bedrock::Threading::Async<void> $compactStorage();
 
-    MCAPI void $syncAndSuspendStorage();
+    MCNAPI void $syncAndSuspendStorage();
 
-    MCAPI void $resumeStorage();
+    MCNAPI void $resumeStorage();
 
-    MCAPI void $setFlushAllowed(bool flushAllowed);
+    MCNAPI void $setFlushAllowed(bool flushAllowed);
 
-    MCAPI void $flushToPermanentStorage();
+    MCNAPI void $flushToPermanentStorage();
 
-    MCAPI void $freeCaches();
+    MCNAPI void $freeCaches();
 
-    MCAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
+    MCNAPI void $setCompactionCallback(::std::function<void(::CompactionStatus)> callback);
 
-    MCAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
+    MCNAPI void $setCriticalSyncSaveCallback(::std::function<void()> callback);
+
+    MCNAPI void $setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
 
 
     // NOLINTEND

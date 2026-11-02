@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class HashedString;
 class IWorldRegistriesProvider;
 struct FilterContext;
 struct FilterInputs;
@@ -90,12 +89,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _testValuesWithOperator(::HashedString const& a, ::HashedString const& b) const;
-
-    MCNAPI bool _testValuesWithOperator(float a, float b) const;
-
-    MCNAPI bool _testValuesWithOperator(bool a, bool b) const;
-
     MCNAPI ::Json::Value serialize() const;
     // NOLINTEND
 

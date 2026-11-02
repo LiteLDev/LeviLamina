@@ -24,8 +24,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructureTemplate const* getStructure(::std::string const& name);
+    MCNAPI ::StructureTemplate const* getStructure(::std::string const& name);
 
-    MCAPI bool const isSpecificStructureDirty(::std::string const& name);
+    MCNAPI bool const isSpecificStructureDirty(::std::string const& name);
     // NOLINTEND
 };

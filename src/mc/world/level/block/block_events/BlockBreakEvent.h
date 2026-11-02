@@ -18,7 +18,7 @@ class BlockBreakEvent : public ::BlockEvents::BlockEventBase {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 32, ::BlockChangeContext> mDestructionContext;
+    ::ll::TypedStorage<8, 56, ::BlockChangeContext> mDestructionContext;
     ::ll::TypedStorage<8, 8, ::BlockSource&>        mRegion;
     ::ll::TypedStorage<8, 8, ::Block const&>        mDestroyedBlock;
     // NOLINTEND
@@ -38,7 +38,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockSource const& $getBlockSource() const;
+    MCNAPI ::BlockSource const& $getBlockSource() const;
 
 
     // NOLINTEND

@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
+    MCNAPI ::std::optional<::BlockPos> _findValidSpawnPosUnder(::BlockPos const& pos, ::BlockSource& region) const;
 
-    MCAPI void tick();
+    MCNAPI void tick();
 
-    MCAPI void writeSaveData() const;
+    MCNAPI void writeSaveData() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<float> const& CHANCE_TO_SPAWN_PER_DAY();
+    MCNAPI static ::std::vector<float> const& CHANCE_TO_SPAWN_PER_DAY();
     // NOLINTEND
 };

@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/level/BlockDestroySound.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -21,7 +24,8 @@ public:
         ::LevelEventManager& levelEventManager,
         ::BlockSource&       region,
         ::BlockPos const&    pos,
-        ::Block const&       block
+        ::Block const&       block,
+        ::BlockDestroySound  destroySound
     ) = 0;
 
     virtual void

@@ -60,7 +60,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     createJsonIndex(::std::string const& ruleName, ::GameRule const& rule, ::Json::Value& json, ::std::string* value);
 
     MCAPI static void setup(::CommandRegistry& registry, ::GameRuleCommand::InitProxy&& dependencies);
@@ -69,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

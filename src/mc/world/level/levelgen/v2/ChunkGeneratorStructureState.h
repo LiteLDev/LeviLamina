@@ -28,12 +28,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> findNearestStructureFeature(
+    MCNAPI ::std::optional<::BlockPos> findNearestStructureFeature(
         ::Dimension&         dimension,
         ::HashedString       feature,
         ::BlockPos const&    origin,
         ::BiomeSource const& biomeSource,
-        bool                 mustBeInNewChunks
+        bool                 mustBeInNewChunks,
+        int                  searchRadiusCells
     ) const;
 
     MCAPI ~ChunkGeneratorStructureState();

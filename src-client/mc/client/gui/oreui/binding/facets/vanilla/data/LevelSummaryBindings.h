@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelSummaryBindings(
+    MCNAPI LevelSummaryBindings(
         ::LevelSummary const&                                      levelSummary,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI ::OreUI::LevelSummaryBindings& operator=(::OreUI::LevelSummaryBindings&&);
+    MCNAPI ::OreUI::LevelSummaryBindings& operator=(::OreUI::LevelSummaryBindings&&);
 
-    MCAPI ~LevelSummaryBindings();
+    MCNAPI ~LevelSummaryBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelSummary const&                                      levelSummary,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
@@ -54,7 +54,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

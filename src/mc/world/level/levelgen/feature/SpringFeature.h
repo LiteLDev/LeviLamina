@@ -36,20 +36,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region);
+    MCNAPI static bool isValidSpringBorderBlock(::BlockType const& block, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
+    MCNAPI bool $place(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

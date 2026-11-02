@@ -32,12 +32,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerModel(uint textureWidth, uint textureHeight);
+    MCNAPI BannerModel(uint textureWidth, uint textureHeight);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(uint textureWidth, uint textureHeight);
+    MCNAPI void* $ctor(uint textureWidth, uint textureHeight);
     // NOLINTEND
 };

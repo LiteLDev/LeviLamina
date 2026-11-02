@@ -24,7 +24,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI AnimationSource(::SharedTypes::v1_26_40::PersonaPieceMetaDef::AnimationSource const&);
+    MCNAPI AnimationSource(::SharedTypes::v1_26_40::PersonaPieceMetaDef::AnimationSource const&);
 #endif
     // NOLINTEND
 
@@ -32,7 +32,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::AnimationSource const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::AnimationSource const&);
 #endif
     // NOLINTEND
 };

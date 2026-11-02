@@ -57,8 +57,6 @@ public:
     MCNAPI void _handleFetchRequest(::Editor::Network::ThumbnailCacheFetchRequestPayload const& evt) const;
 
     MCNAPI void _handleStoreRequest(::Editor::Network::ThumbnailCacheStorePayload const& evt);
-
-    MCNAPI void _scanFileCache();
     // NOLINTEND
 
 public:

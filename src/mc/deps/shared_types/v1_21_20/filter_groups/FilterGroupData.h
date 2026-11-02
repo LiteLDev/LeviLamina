@@ -37,29 +37,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilterGroupData();
+    MCNAPI FilterGroupData();
 
-    MCAPI bool operator==(::SharedTypes::v1_21_20::FilterGroupData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_20::FilterGroupData const&) const;
 
-    MCAPI ~FilterGroupData();
+    MCNAPI ~FilterGroupData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

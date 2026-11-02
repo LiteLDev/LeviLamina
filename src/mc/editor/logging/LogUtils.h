@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/LogChannel.h"
+#include "mc/editor/LogChannel.h"
 #include "mc/editor/logging/LogContext.h"
 #include "mc/editor/logging/LogLevel.h"
 #include "mc/editor/logging/LogLevelFilter.h"
@@ -32,7 +32,8 @@ public:
         ::Editor::LogLevel                                  level,
         ::std::vector<::HashedString>&&                     tags,
         ::std::variant<::std::string, ::Editor::LogContent> content,
-        ::Editor::LogChannel                                channelMask);
+        ::Editor::LogChannel                                channelMask,
+        ::std::optional<bool>                               alert);
 
     MCNAPI static void
     log(::Editor::ServiceProviderCollection&                providers,
@@ -40,7 +41,8 @@ public:
         ::Editor::LogLevel                                  level,
         ::std::vector<::HashedString>&&                     tags,
         ::std::variant<::std::string, ::Editor::LogContent> content,
-        ::Editor::LogChannel                                channelMask);
+        ::Editor::LogChannel                                channelMask,
+        ::std::optional<bool>                               alert);
 
     MCNAPI static void queueToast(
         ::Editor::ServiceProviderCollection& providers,

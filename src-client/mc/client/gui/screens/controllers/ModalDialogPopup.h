@@ -38,7 +38,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModalDialogPopup(
+    MCNAPI ModalDialogPopup(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      mainMessage,
         ::std::string const&                      overrideMessage,
@@ -51,7 +51,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      mainMessage,
         ::std::string const&                      overrideMessage,
@@ -64,6 +64,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 };

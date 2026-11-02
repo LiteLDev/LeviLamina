@@ -12,12 +12,12 @@ struct ItemTier;
 namespace VanillaItemTiers {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGameVersion const& baseGameVersion);
+MCNAPI ::std::vector<::ItemStack> getTierItems(::ItemTier const& tier, ::BaseGameVersion const& baseGameVersion);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::ItemTier const& WOOD();
+MCNAPI ::ItemTier const& WOOD();
 // NOLINTEND
 
 } // namespace VanillaItemTiers

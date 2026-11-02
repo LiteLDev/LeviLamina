@@ -6,12 +6,14 @@
 #include "mc/client/model/models/Model.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/world/actor/animation/AttachableSlotIndex.h"
+#include "mc/world/phys/AABB.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
 class ActorRenderData;
 class ActorResourceDefinition;
+class BaseActorRenderContext;
 class DataDrivenRenderer;
 class ExpressionNode;
 class GameVersion;
@@ -27,6 +29,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::ActorResourceDefinition>>                       mResourceDefinition;
     ::ll::TypedStorage<8, 48, ::HashedString>                                                   mName;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<int, ::std::weak_ptr<::DataDrivenRenderer>>> mItemToRendererMap;
+    ::ll::TypedStorage<4, 24, ::AABB>                                                           mDefaultPoseAABB;
     ::ll::TypedStorage<1, 1, bool>                                                              mEnableAttachables;
     ::ll::TypedStorage<1, 1, bool>                                                              mHideArmor;
     // NOLINTEND
@@ -44,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCNAPI explicit DataDrivenModel(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
 
-    MCAPI bool _setArmorTrim(
+    MCNAPI bool _setArmorTrim(
         ::ItemStack const&                   itemInstance,
         ::std::shared_ptr<::DataDrivenModel> model,
         ::Actor&                             actor,
@@ -54,16 +57,20 @@ public:
         ::RenderParams&                      childRenderParams
     );
 
-    MCAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
+    MCNAPI ::AABB calculateDefaultPoseAABB() const;
 
-    MCAPI ::std::weak_ptr<::DataDrivenRenderer>
+    MCNAPI ::ExpressionNode getCopyOfScript_defaultIfNone(::HashedString const& name) const;
+
+    MCNAPI ::std::weak_ptr<::DataDrivenRenderer>
     getDataDrivenRenderer(::RenderParams& renderParams, ::ItemStack const& itemInstance);
 
-    MCAPI ::std::string getResourceDefinitionName() const;
+    MCNAPI ::AABB getOrCalculateDefaultPoseAABB(::BaseActorRenderContext& renderContext);
 
-    MCAPI bool hasScript(::HashedString const& name) const;
+    MCNAPI ::std::string getResourceDefinitionName() const;
 
-    MCAPI void render(
+    MCNAPI bool hasScript(::HashedString const& name) const;
+
+    MCNAPI void render(
         ::std::shared_ptr<::DataDrivenRenderer> renderer,
         ::ActorRenderData&                      actorRenderData,
         ::Vec3 const&                           modelTranslationWithWorldRotation,
@@ -84,7 +91,7 @@ public:
         ::Actor&                     actor
     );
 
-    MCAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
+    MCNAPI void resolveHeldItemScaleForRender(::RenderParams& renderParams) const;
 
     MCAPI void setupAttachable(
         ::ItemStack const&           itemInstance,
@@ -93,7 +100,7 @@ public:
         ::Actor&                     actor
     );
 
-    MCAPI void setupAttachableNoChecks(
+    MCNAPI void setupAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,
@@ -102,13 +109,13 @@ public:
         bool                         runParentSetup
     );
 
-    MCAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
+    MCNAPI bool tryExecuteScript(::HashedString const& scriptName, ::RenderParams& renderParams, float& result);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool shouldRenderAttachableOnActor(
+    MCNAPI static bool shouldRenderAttachableOnActor(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         bool                         isSpectator,
@@ -122,12 +129,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::GameVersion& Version_1_16_210();
+    MCNAPI static ::GameVersion& Version_1_16_210();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
+    MCNAPI void* $ctor(::std::weak_ptr<::ActorResourceDefinition> definitionWeakPtr);
     // NOLINTEND
 };

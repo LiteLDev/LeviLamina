@@ -3,7 +3,6 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/script_core/lifetime_registry/scripting/StrongTypedObjectHandle.h"
 #include "mc/scripting/modules/minecraft/ScriptWeatherType.h"
 #include "mc/world/level/GameType.h"
@@ -25,6 +24,7 @@ struct ItemUseEvent;
 struct ItemUseOnEvent;
 struct PlayerInteractWithBlockBeforeEvent;
 struct PlayerInteractWithEntityBeforeEvent;
+struct PlayerItemAttackEntityBeforeEvent;
 struct ScriptingWorldInitializeEvent;
 namespace ScriptModuleMinecraft { struct ScriptActorAddEffectBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptActorHealBeforeEvent; }
@@ -39,6 +39,7 @@ namespace ScriptModuleMinecraft { struct ScriptPlayerBreakBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerGameModeChangeBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerInteractWithEntityBeforeEvent; }
+namespace ScriptModuleMinecraft { struct ScriptPlayerItemAttackEntityBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptPlayerPlaceBlockBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWeatherChangedBeforeEvent; }
 namespace ScriptModuleMinecraft { struct ScriptWorldClockRestartBeforeEvent; }
@@ -63,6 +64,14 @@ public:
         ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
         ::ScriptModuleMinecraft::ScriptWeatherType newWeatherType,
         int                                        duration
+    );
+
+    virtual ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
     );
 
     virtual ::std::optional<
@@ -122,18 +131,18 @@ public:
 
     virtual ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
+    onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptChatSendBeforeEvent>>
     $onBeforeChat(::ChatEvent const& chatEvent, ::Player const& player);
 
-    MCFOLD void $onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData);
+    MCNAPI void $onBeforeWorldInitialize(::ScriptingWorldInitializeEvent const& eventData);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWeatherChangedBeforeEvent>>
     $onBeforeWeatherChangedEvent(
         ::ScriptModuleMinecraft::ScriptWeatherType previousWeatherType,
@@ -141,7 +150,15 @@ public:
         int                                        duration
     );
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>>
+    $onBeforePlayerItemAttackEntity(
+        ::Player&                                  player,
+        ::Actor&                                   target,
+        ::PlayerItemAttackEntityBeforeEvent const& eventData
+    );
+
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>>
     $onBeforePlayerInteractWithEntity(
         ::Player&                                    player,
@@ -149,56 +166,56 @@ public:
         ::PlayerInteractWithEntityBeforeEvent const& eventData
     );
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerInteractWithBlockBeforeEvent>>
     $onBeforePlayerInteractWithBlock(::Player& player, ::PlayerInteractWithBlockBeforeEvent const& eventData);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerGameModeChangeBeforeEvent>>
     $onBeforePlayerGameModeChange(::Player const& player, ::GameType fromGameMode, ::GameType toGameMode);
 
-    MCFOLD void $onBeforePlayerLeave(::Player const& player);
+    MCNAPI void $onBeforePlayerLeave(::Player const& player);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHealBeforeEvent>>
     $onBeforeActorHeal(::Actor const& actor, ::ActorBeforeHealEvent const& eventData);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorHurtBeforeEvent>>
     $onBeforeActorHurt(::Actor const& actor, ::ActorBeforeHurtEvent const& eventData);
 
-    MCFOLD void $onBeforeActorRemove(::Actor const& actor);
+    MCNAPI void $onBeforeActorRemove(::Actor const& actor);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorAddEffectBeforeEvent>>
     $onBeforeEffectAddedEventSend(::ActorAddEffectEvent& actorEffectAddedEvent, ::Actor const& actor);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorItemPickupBeforeEvent>>
     $onBeforeActorItemPickup(::ActorBeforeAcquireItemEvent& actorItemPickupEvent);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActorTamedBeforeEvent>>
     $onBeforeActorTamed(::Actor const& actor, ::Actor const& tamingActor);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptExplosionStartedBeforeEvent>>
     $onBeforeExplosion(::ExplosionStartedEvent const& event);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerBreakBlockBeforeEvent>>
     $onBeforePlayerBreakBlock(::Player const& player, ::BlockTryDestroyByPlayerEvent const& eventData);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayerPlaceBlockBeforeEvent>>
     $onBeforePlayerPlaceBlock(::Player const& player, ::BlockTryPlaceByPlayerEvent const& eventData);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseBeforeEvent>>
     $onBeforeItemUse(::Player const& player, ::ItemUseEvent const& itemEvent);
 
-    MCFOLD ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
+    MCNAPI ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptItemUseOnBeforeEvent>>
     $onBeforeItemUseOn(::Player const& player, ::ItemUseOnEvent const& itemEvent);
 
-    MCAPI ::std::optional<
+    MCNAPI ::std::optional<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptWorldClockRestartBeforeEvent>>
-    $onBeforeWorldClockRestart(::Bedrock::NotNullNonOwnerPtr<::WorldClock> const clock, int newTime);
+    $onBeforeWorldClockRestart(::gsl::not_null<::WorldClock*> clock, int newTime);
 
 
     // NOLINTEND

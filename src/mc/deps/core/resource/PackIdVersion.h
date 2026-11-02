@@ -51,7 +51,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PackIdVersion& EMPTY();
+    MCNAPI static ::PackIdVersion& EMPTY();
     // NOLINTEND
 
 public:

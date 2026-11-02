@@ -36,7 +36,7 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 456, ::std::optional<::cereal::internal::ConstraintDescription>>            mConstraint;
+    ::ll::TypedStorage<8, 504, ::std::optional<::cereal::internal::ConstraintDescription>>            mConstraint;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::internal::EnumValue>>>          mEnumValues;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mParents;
     ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::cereal::SchemaDescription>>>            mSetters;
@@ -51,6 +51,9 @@ public:
     ::ll::TypedStorage<1, 2, ::std::optional<::cereal::SerializationTraits>> mSerializationTraits;
     ::ll::TypedStorage<1, 2, ::std::optional<uchar>>                         mOrdinalIndex;
     ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mNonPublicFlag;
+    ::ll::TypedStorage<8, 40, ::std::optional<::std::string>>                mSetterFunction;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsDefaultSetter;
+    ::ll::TypedStorage<1, 1, bool>                                           mIsOptional;
     // NOLINTEND
 
 public:
@@ -60,35 +63,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SchemaDescription(::cereal::SchemaDescription&&);
+    MCNAPI SchemaDescription(::cereal::SchemaDescription&&);
 
-    MCAPI SchemaDescription(::cereal::SchemaDescription const&);
+    MCNAPI SchemaDescription(::cereal::SchemaDescription const&);
 
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
+    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription&&);
 
-    MCAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
+    MCNAPI ::cereal::SchemaDescription& operator=(::cereal::SchemaDescription const&);
 
-    MCAPI ~SchemaDescription();
+    MCNAPI ~SchemaDescription();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindTypes(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::SchemaDescription&&);
+    MCNAPI void* $ctor(::cereal::SchemaDescription&&);
 
-    MCAPI void* $ctor(::cereal::SchemaDescription const&);
+    MCNAPI void* $ctor(::cereal::SchemaDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -27,7 +27,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::string_view filterEnding);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx, ::std::string_view filterEnding);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

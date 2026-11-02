@@ -5,7 +5,6 @@
 // auto generated forward declare list
 // clang-format off
 struct CustomBiome;
-namespace Scripting { struct InterfaceBinding; }
 // clang-format on
 
 namespace Editor::ScriptModule {
@@ -32,12 +31,6 @@ public:
     MCNAPI void addToMap(::std::map<::std::string, ::CustomBiome>& map) const;
 
     MCNAPI ~ScriptCustomBiomeConfig();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::InterfaceBinding bindType();
     // NOLINTEND
 
 public:

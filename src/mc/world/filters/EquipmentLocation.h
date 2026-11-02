@@ -2,15 +2,16 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-enum class EquipmentLocation : int {
-    Any        = 0,
-    Hand       = 1,
-    MainHand   = 2,
-    AnyArmor   = 3,
-    HeadArmor  = 4,
-    TorsoArmor = 5,
-    LegArmor   = 6,
-    FeetArmor  = 7,
-    BodyArmor  = 8,
-    Inventory  = 9,
+enum class EquipmentLocation : uchar {
+    Any             = 0,
+    Hand            = 1,
+    MainHand        = 2,
+    InteractionHand = 3,
+    AnyArmor        = 4,
+    HeadArmor       = 5,
+    TorsoArmor      = 6,
+    LegArmor        = 7,
+    FeetArmor       = 8,
+    BodyArmor       = 9,
+    Inventory       = 10,
 };

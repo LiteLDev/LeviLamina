@@ -30,13 +30,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~SearchConfig();
+        MCNAPI ~SearchConfig();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -61,15 +61,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LibrarySearchBarScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI explicit LibrarySearchBarScreenController(::std::shared_ptr<::MainMenuScreenModel> model);
 
-    MCAPI void openSearch();
+    MCNAPI void openSearch();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model);
     // NOLINTEND
 
 public:

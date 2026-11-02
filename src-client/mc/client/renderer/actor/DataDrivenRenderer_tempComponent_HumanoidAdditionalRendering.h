@@ -66,10 +66,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void preRender(
@@ -90,12 +86,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRenderer_tempComponent_HumanoidAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer,
-        ::std::shared_ptr<::mce::TextureGroup>  textureGroup
-    );
-
-    MCAPI void _renderChestGear(
+    MCNAPI void _renderChestGear(
         ::BaseActorRenderContext&              renderContext,
         ::dragon::RenderMetadata const         renderMetadata,
         ::std::shared_ptr<::mce::TextureGroup> textureGroup,
@@ -104,7 +95,7 @@ public:
         float                                  actorFrameAlpha
     );
 
-    MCAPI void _renderHeadGear(
+    MCNAPI void _renderHeadGear(
         ::BaseActorRenderContext&         renderContext,
         ::dragon::RenderMetadata const    renderMetadata,
         ::ItemStack const&                headGear,
@@ -112,7 +103,7 @@ public:
         ::std::vector<::BoneOrientation>* boneOrientations
     );
 
-    MCAPI void _renderMainHandItem(
+    MCNAPI void _renderMainHandItem(
         ::BaseActorRenderContext&         renderContext,
         ::RenderParams&                   renderParams,
         ::ItemStack const&                ii,
@@ -120,60 +111,51 @@ public:
         ::std::vector<::BoneOrientation>* boneOrientations
     );
 
-    MCAPI void _renderOffHandItem(
+    MCNAPI void _renderOffHandItem(
         ::BaseActorRenderContext&         renderContext,
         ::ItemStack const&                offhandItemInstance,
         ::Mob&                            mob,
         ::std::vector<::BoneOrientation>* boneOrientations
     );
-
-    MCAPI void prepareCarriedOffhandItem(::Mob&, ::ItemStack const& item);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _applyBlockItemTransforms(
+    MCNAPI static void _applyBlockItemTransforms(
         ::MatrixStack::MatrixStackRef& worldMatrix,
         ::BlockType const*             block,
         ::BlockShape                   blockShape,
         bool                           isMainHand
     );
 
-    MCAPI static void _applyDataDrivenBlockItemTransforms(
+    MCNAPI static void _applyDataDrivenBlockItemTransforms(
         ::MatrixStack::MatrixStackRef& worldMatrix,
         ::Block const&                 block,
         bool const                     isMainHand
     );
 
-    MCAPI static bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
+    MCNAPI static bool _shouldRenderOffHandItem(::Mob const& mob, ::ItemStack const& offhandItemInstance);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& ELYTRA_TEXTURE_LOCATION();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI static ::Core::PathBuffer<::std::string> const& ELYTRA_TEXTURE_LOCATION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $preRender(
+    MCNAPI void $preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams
     );
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
 
-    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
     // NOLINTEND
 };

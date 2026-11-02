@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -162,41 +163,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
+    MCNAPI explicit ChunkSource(::std::unique_ptr<::ChunkSource> parent);
 
 #ifdef LL_PLAT_C
-    MCAPI void _checkForUnblockingChunks(::ChunkPos cp);
+    MCNAPI void _checkForUnblockingChunks(::ChunkPos cp);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _checkForUnblockingChunks(::ChunkPos cp);
+    MCNAPI void _checkForUnblockingChunks(::ChunkPos cp);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void _createOrReplaceGridAreaMap(::std::shared_ptr<::LevelChunk> lc, bool createNeighbourGridsIfMissing);
+    MCNAPI void _createOrReplaceGridAreaMap(::std::shared_ptr<::LevelChunk> lc, bool createNeighbourGridsIfMissing);
 #endif
 
-    MCAPI void _freeChunkGenerationGridMap(::ChunkPos const& cp, bool isLevelChunkDeletion);
+    MCNAPI void _freeChunkGenerationGridMap(::ChunkPos const& cp, bool isLevelChunkDeletion);
 
-    MCAPI void _launchChunkTask(
+    MCNAPI void _launchChunkTask(
         ::std::string_view                          taskName,
         ::ChunkPos const&                           chunkPos,
         bool                                        areInTask,
         ::brstd::move_only_function<::TaskResult()> taskFunc
     );
 
-    MCAPI void _saveDirtyChunks(::LevelStorage&);
+    MCNAPI void _saveDirtyChunks(::LevelStorage&);
 
-    MCAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
+    MCNAPI void _spawnChunkGenerationTasks(int numTasks, bool calledFromTask);
 
 #ifdef LL_PLAT_C
-    MCAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
+    MCNAPI void addEmptyChunkPosForProcessingNeighbours(::std::shared_ptr<::LevelChunk> lc);
 #endif
 
     MCAPI void checkAndLaunchChunkGenerationTasks(bool calledFromTask);
 
 #ifdef LL_PLAT_C
-    MCAPI ::GridArea<::std::shared_ptr<::LevelChunk>> createEmptyView(
+    MCNAPI ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox> createEmptyView(
         ::ChunkSource::LoadMode                                             lm,
         bool                                                                circle,
         ::std::function<void(::gsl::span<::std::shared_ptr<::LevelChunk>>)> add,
@@ -208,20 +209,20 @@ public:
     // Unlike getExistingChunk, this one withholds any chunk that has not finished loading.
     LLAPI ::std::shared_ptr<::LevelChunk> getAvailableChunk(::ChunkPos const& cp);
 
-    MCAPI void
+    MCNAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static bool& gPerfIsClientSide();
+    MCNAPI static bool& gPerfIsClientSide();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent);
+    MCNAPI void* $ctor(::std::unique_ptr<::ChunkSource> parent);
     // NOLINTEND
 
 public:
@@ -316,15 +317,19 @@ public:
 
     MCAPI ::std::shared_ptr<::LevelChunkMetaDataDictionary> $loadLevelChunkMetaDataDictionary();
 
+#ifdef LL_PLAT_S
+    MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#else // LL_PLAT_C
     MCFOLD void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
+#endif
 
     MCAPI bool $canLaunchTasks() const;
 
     MCAPI bool $chunkPosNeedsBlending(::ChunkPos const& cp);
 
-    MCAPI void $_clearBlendingCache();
+    MCNAPI void $_clearBlendingCache();
 
-    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 
@@ -333,6 +338,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

@@ -100,9 +100,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addPlayerToHeroList(::Actor const& actor);
+    MCNAPI void addPlayerToHeroList(::Actor const& actor);
 
-    MCAPI float getBossBarFilledFraction() const;
+    MCNAPI float getBossBarFilledFraction() const;
 
     MCAPI bool isRaider(::ActorUniqueID actor) const;
     // NOLINTEND

@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/oreui/binding/FacetBase_DEPRECATED.h"
+#include "mc/client/gui/oreui/input/MouseButton.h"
 #include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
 
@@ -23,14 +24,6 @@ public:
     // clang-format on
 
     // EditorInputStateFacet inner types define
-    enum class MouseButton : uchar {
-        Left    = 0,
-        Middle  = 1,
-        Right   = 2,
-        Back    = 3,
-        Forward = 4,
-    };
-
     struct KeyBindingStateFacet {
     public:
         // member variables
@@ -81,55 +74,48 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorInputStateFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorInputStateFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleViewportFocusChange(bool);
+    MCNAPI void _handleViewportFocusChange(bool);
 
-    MCFOLD ::std::unordered_map<::HashedString, ::std::string> const& getCursorIconStateMap() const;
+    MCNAPI ::std::unordered_map<::HashedString, ::std::string> const& getCursorIconStateMap() const;
 
-    MCFOLD ::std::unordered_map<
+    MCNAPI ::std::unordered_map<
         ::HashedString,
         ::std::unordered_map<::HashedString, ::OreUI::EditorInputStateFacet::KeyBindingStateFacet>> const&
     getKeyBindingStateMap() const;
 
-    MCFOLD bool isViewportFocused() const;
+    MCNAPI bool isViewportFocused() const;
 
-    MCAPI bool
-    onViewportMouseButtonDown(::OreUI::EditorInputStateFacet::MouseButton button, bool shift, bool ctrl, bool alt);
+    MCNAPI bool onViewportMouseButtonDown(::OreUI::MouseButton button, bool shift, bool ctrl, bool alt);
 
-    MCAPI bool onViewportMouseButtonUp(
-        ::OreUI::EditorInputStateFacet::MouseButton button,
-        bool                                        shift,
-        bool                                        ctrl,
-        bool                                        alt,
-        bool                                        hasDragged
-    );
+    MCNAPI bool onViewportMouseButtonUp(::OreUI::MouseButton button, bool shift, bool ctrl, bool alt, bool hasDragged);
 
-    MCAPI bool onViewportMouseDelta(float dx, float dy);
+    MCNAPI bool onViewportMouseDelta(float dx, float dy);
 
-    MCAPI bool onViewportMouseWheel(bool wheelOut);
+    MCNAPI bool onViewportMouseWheel(bool wheelOut);
 
-    MCAPI void setCursorReleased(bool shouldRelease);
+    MCNAPI void setCursorReleased(bool shouldRelease);
 
-    MCAPI void setViewportFocus(bool isFocused);
+    MCNAPI void setViewportFocus(bool isFocused);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

@@ -32,11 +32,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $sample(::IRandom& random) const;
+    MCNAPI int $sample(::IRandom& random) const;
 
-    MCAPI int $maxValue() const;
+    MCNAPI int $maxValue() const;
 
-    MCAPI int $minValue() const;
+    MCNAPI int $minValue() const;
 
 
     // NOLINTEND

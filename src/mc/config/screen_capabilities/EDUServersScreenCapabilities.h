@@ -5,23 +5,23 @@
 // auto generated inclusion list
 #include "mc/config/TypedScreenCapabilities.h"
 
-struct EDUServersScreenCapabilities : public ::TypedScreenCapabilities<::EDUServersScreenCapabilities> {
+struct EduServersScreenCapabilities : public ::TypedScreenCapabilities<::EduServersScreenCapabilities> {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<1, 1> mUnk3d38b2;
+    ::ll::UntypedStorage<1, 1> mUnk7169c1;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    EDUServersScreenCapabilities& operator=(EDUServersScreenCapabilities const&);
-    EDUServersScreenCapabilities(EDUServersScreenCapabilities const&);
-    EDUServersScreenCapabilities();
+    EduServersScreenCapabilities& operator=(EduServersScreenCapabilities const&);
+    EduServersScreenCapabilities(EduServersScreenCapabilities const&);
+    EduServersScreenCapabilities();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUServersScreenCapabilities() /*override*/ = default;
+    virtual ~EduServersScreenCapabilities() /*override*/ = default;
     // NOLINTEND
 
 public:

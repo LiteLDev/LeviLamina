@@ -5,11 +5,13 @@
 namespace cereal::internal {
 
 enum class TypeTraits : ushort {
-    NoTraits                = 0,
-    IsTaggedVariant         = 1,
-    HasTaggedVariantMembers = 2,
-    HasDefaultMembers       = 4,
-    EnttEnumAsBitmask       = 5,
+    // bitfield representation
+    NoTraits                    = 0,
+    IsTaggedVariant             = 1 << 0,
+    HasTaggedVariantMembers     = 1 << 1,
+    HasDefaultMembers           = 1 << 2,
+    DerivesFromComponentStorage = 1 << 3,
+    EnttEnumAsBitmask           = IsTaggedVariant | DerivesFromComponentStorage,
 };
 
 }

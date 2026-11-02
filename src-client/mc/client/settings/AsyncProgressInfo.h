@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Settings::AsyncProgressInfo& operator=(::Settings::AsyncProgressInfo&&);
+    MCNAPI ::Settings::AsyncProgressInfo& operator=(::Settings::AsyncProgressInfo&&);
 
-    MCAPI ~AsyncProgressInfo();
+    MCNAPI ~AsyncProgressInfo();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

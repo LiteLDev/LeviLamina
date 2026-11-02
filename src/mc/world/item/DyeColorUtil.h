@@ -9,10 +9,10 @@ class DyeColorUtil {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::array<short, 16> const& COLOR_TO_AUX();
+    MCNAPI static ::std::array<short, 16> const& COLOR_TO_AUX();
 
-    MCAPI static ::std::array<short, 16> const& DYE_AUX_VALUES();
+    MCNAPI static ::std::array<short, 16> const& DYE_AUX_VALUES();
 
-    MCAPI static ::std::array<::ItemColor, 20> const& mColorMap();
+    MCNAPI static ::std::array<::ItemColor, 20> const& mColorMap();
     // NOLINTEND
 };

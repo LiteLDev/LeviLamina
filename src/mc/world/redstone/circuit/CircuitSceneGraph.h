@@ -54,30 +54,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CircuitSceneGraph();
+    MCNAPI CircuitSceneGraph();
 
-    MCAPI void add(::BlockPos const& pos, ::std::unique_ptr<::BaseCircuitComponent> component);
+    MCNAPI void add(::BlockPos const& pos, ::std::unique_ptr<::BaseCircuitComponent> component);
 
-    MCAPI void invalidatePos(::BlockPos const& pos);
+    MCNAPI void invalidatePos(::BlockPos const& pos);
 
-    MCAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
+    MCNAPI void preSetupPoweredBlocks(::ChunkPos const& chunkPos);
 
     MCAPI void remove(::BlockPos const& pos, ::BaseCircuitComponent* component);
 
     MCAPI void update(::BlockSource* region);
 
-    MCAPI ~CircuitSceneGraph();
+    MCNAPI ~CircuitSceneGraph();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

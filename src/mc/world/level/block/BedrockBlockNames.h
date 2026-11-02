@@ -12,9 +12,9 @@ namespace BedrockBlockNames {
 // NOLINTBEGIN
 MCAPI ::HashedString const& Air();
 
-MCAPI ::HashedString const& ClientRequestPlaceholderBlock();
+MCNAPI ::HashedString const& ClientRequestPlaceholderBlock();
 
-MCAPI ::HashedString const& Unknown();
+MCNAPI ::HashedString const& Unknown();
 // NOLINTEND
 
 } // namespace BedrockBlockNames

@@ -29,28 +29,32 @@ public:
 
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildNetworkTag(
+#ifdef LL_PLAT_S
+    MCNAPI static void buildNetworkTag(
         ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype const& archetypeData,
         ::CompoundTag&                                                  tag,
         ::cereal::ReflectionCtx const&                                  ctx
     );
-
-#ifdef LL_PLAT_C
-    MCAPI static ::BlockShape getBlockShape(::std::string const& blockName);
 #endif
 
-    MCAPI static void initializeFromNetwork(
+#ifdef LL_PLAT_C
+    MCNAPI static ::BlockShape getBlockShape(::std::string const& blockName);
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI static void initializeFromNetwork(
         ::CompoundTag const&                                      tag,
         ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype& archetypeData,
         ::cereal::ReflectionCtx const&                            ctx
     );
 
-    MCAPI static ::BlockType* tryRegisterBlock(
+    MCNAPI static ::BlockType* tryRegisterBlock(
         ::BlockTypeRegistry&                                            registry,
         ::SharedTypes::v1_26_20::BlockDefinition::BlockArchetype const& archetypeData,
         ::std::string const&                                            blockName,
         int                                                             blockID,
         ::Material const&                                               material
     );
+#endif
     // NOLINTEND
 };

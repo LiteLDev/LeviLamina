@@ -17,10 +17,10 @@ class LootResolver {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::optional<::std::vector<::ItemStack>>
+    MCNAPI static ::std::optional<::std::vector<::ItemStack>>
     getItemsFromKilling(::Actor* killer, ::Actor* victim, ::ItemStack const& tool, ::CommandOutput* commandOutput);
 
-    MCAPI static ::std::optional<::std::vector<::ItemStack>> getItemsFromLooting(
+    MCNAPI static ::std::optional<::std::vector<::ItemStack>> getItemsFromLooting(
         ::std::string const& lootTableDir,
         ::ItemStack const&   tool,
         ::Level&             level,
@@ -28,7 +28,7 @@ public:
         ::CommandOutput*     commandOutput
     );
 
-    MCAPI static ::std::optional<::std::vector<::ItemStack>>
+    MCNAPI static ::std::optional<::std::vector<::ItemStack>>
     getItemsFromMining(::BlockSource const& region, ::BlockPos positionToMine, ::ItemStack const& tool);
     // NOLINTEND
 };

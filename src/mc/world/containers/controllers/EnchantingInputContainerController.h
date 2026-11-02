@@ -24,15 +24,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
+    MCNAPI bool $isItemFiltered(::Recipes const&, ::ItemStackBase const& item) const;
 #endif
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

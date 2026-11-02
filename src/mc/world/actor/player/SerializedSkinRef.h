@@ -44,13 +44,12 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinRef();
 
-    MCAPI SerializedSkinRef(::std::string const& playFabId, ::ConnectionRequest const& connectionRequest);
+    MCNAPI explicit SerializedSkinRef(::ConnectionRequest const& connectionRequest);
 
-    MCAPI SerializedSkinRef(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCNAPI explicit SerializedSkinRef(::SubClientConnectionRequest const& request);
 
-    MCAPI SerializedSkinRef(
+    MCNAPI SerializedSkinRef(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,
@@ -71,7 +70,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI int64 estimateSizeInBytes() const;
+    MCNAPI int64 estimateSizeInBytes() const;
 #endif
 
     MCAPI bool isValid() const;
@@ -80,49 +79,45 @@ public:
 
     MCAPI ::SerializedSkinRef& operator=(::SerializedSkinRef const& rhs);
 
-    MCAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
+    MCNAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
 
-    MCAPI void setAnimationData(::std::string const& animationData);
+    MCNAPI void setAnimationData(::std::string const& animationData);
 
-    MCAPI void setArmSize(::SharedTypes::persona::ArmSizeType const& armSizeType);
+    MCNAPI void setArmSize(::SharedTypes::persona::ArmSizeType const& armSizeType);
 
-    MCAPI void setCapeId(::std::string const& capeId);
+    MCNAPI void setCapeId(::std::string const& capeId);
 
-    MCAPI void setCapeImageDataCereal(::SkinImage const& image);
+    MCNAPI void setCapeImageDataCereal(::SkinImage const& image);
 
-    MCAPI void setFullId(::std::string const& fullId);
+    MCNAPI void setFullId(::std::string const& fullId);
 
 #ifdef LL_PLAT_C
-    MCAPI void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
+    MCNAPI void setGeometryData(::Json::Value data, ::MinEngineVersion minEngineVersion);
 #endif
 
-    MCAPI void setGeometryDataMinEngineVersion(::MinEngineVersion minEngineVersion);
+    MCNAPI void setGeometryDataMinEngineVersion(::MinEngineVersion minEngineVersion);
 
-    MCAPI void setId(::std::string const& id);
+    MCNAPI void setId(::std::string const& id);
 
-    MCAPI void setImageDataCereal(::SkinImage const& image);
+    MCNAPI void setImageDataCereal(::SkinImage const& image);
 
-    MCAPI void setIsTrustedSkinFlag(::TrustedSkinFlag const& isTrustedSkinFlag);
+    MCNAPI void setIsTrustedSkinFlag(::TrustedSkinFlag const& isTrustedSkinFlag);
 
-    MCAPI void setPersonaAppearanceData(
+    MCNAPI void setPersonaAppearanceData(
         ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
         ::mce::Color const&                                                            skinColor,
         ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
         ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
 
-    MCAPI void setPersonaPieces(::std::vector<::SerializedPersonaPieceHandle> const& personaPieces);
+    MCNAPI void setPersonaPieces(::std::vector<::SerializedPersonaPieceHandle> const& personaPieces);
 
-    MCAPI void
+    MCNAPI void
     setPieceTintColors(::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors);
 
-    MCAPI void setPlayFabId(::std::string const& playFabId);
+    MCNAPI void setProfileHash(::std::string const& profileHash);
 
-    MCAPI void setProfileHash(::std::string const& profileHash);
-
-    MCAPI void setResourcePatch(::std::string const& resourcePatch);
-
-    MCAPI void setSkinColor(::mce::Color const& color);
+    MCNAPI void setSkinColor(::mce::Color const& color);
 
     MCAPI ~SerializedSkinRef();
     // NOLINTEND
@@ -138,13 +133,12 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::ConnectionRequest const& connectionRequest);
+    MCNAPI void* $ctor(::ConnectionRequest const& connectionRequest);
 
-    MCAPI void* $ctor(::std::string const& playFabId, ::SubClientConnectionRequest const& request);
+    MCNAPI void* $ctor(::SubClientConnectionRequest const& request);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&      name,
-        ::std::string const&      playFabId,
         ::std::string const&      resourcePatch,
         ::mce::Image const&       skinImage,
         ushort const&             skinImageWidth,

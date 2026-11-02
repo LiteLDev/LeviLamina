@@ -49,7 +49,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileSystemReader(
+    MCNAPI FileSystemReader(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
         ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory
@@ -59,7 +59,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::Core::FileSystem> const&                             fileSystem,
         ::Bedrock::NotNullNonOwnerPtr<::IFileAccess> const&                                  fileAccess,
         ::std::function<::Gameface::ISyncStreamReader*(::IFileAccess&, ::Core::Path)> const& syncStreamReaderFactory
@@ -69,11 +69,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $EnumerateFolder(char const* path);
+    MCNAPI bool $EnumerateFolder(char const* path);
 
-    MCAPI char const* $NextFile();
+    MCNAPI char const* $NextFile();
 
-    MCAPI ::cohtml::ISyncStreamReader* $OpenFile(char const* path);
+    MCNAPI ::cohtml::ISyncStreamReader* $OpenFile(char const* path);
     // NOLINTEND
 
 public:

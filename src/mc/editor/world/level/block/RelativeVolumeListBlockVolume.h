@@ -76,9 +76,31 @@ public:
 
     MCNAPI RelativeVolumeListBlockVolume(::Editor::RelativeVolumeListBlockVolume const& rhs);
 
+    MCNAPI RelativeVolumeListBlockVolume(
+        ::std::vector<::BlockPos> const&   blockPositions,
+        ::std::optional<::BlockPos> const& origin
+    );
+
+    MCNAPI RelativeVolumeListBlockVolume(
+        ::std::vector<::Vec3> const&       blockPositions,
+        ::std::optional<::BlockPos> const& origin
+    );
+
+    MCNAPI RelativeVolumeListBlockVolume(::BlockPos const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI RelativeVolumeListBlockVolume(::Vec3 const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI RelativeVolumeListBlockVolume(::SimpleBlockVolume const& volume, ::std::optional<::BlockPos> const& origin);
+
     MCNAPI void _addVolumesBulkViaGrid(::std::vector<::SimpleBlockVolume> const& volumes);
 
     MCNAPI void add(::SimpleBlockVolume const& _relativeVolume);
+
+    MCNAPI void add(::Vec3 const& pos);
+
+    MCNAPI void add(::Editor::RelativeVolumeListBlockVolume const& volume);
+
+    MCNAPI void add(::std::vector<::SimpleBlockVolume> const& volumes);
 
     MCNAPI ::std::vector<::SimpleBlockVolume>
     calculateVolumetricDifference(::SimpleBlockVolume const& volA, ::SimpleBlockVolume const& volB);
@@ -113,6 +135,14 @@ public:
 
     MCNAPI bool operator==(::Editor::RelativeVolumeListBlockVolume const& rhs) const;
 
+    MCNAPI void remove(::std::unordered_set<::BlockPos> const& blockPositions);
+
+    MCNAPI void remove(::std::vector<::BlockPos> const& blockPositions);
+
+    MCNAPI void remove(::std::vector<::Vec3> const& blockPositions);
+
+    MCNAPI void remove(::Vec3 const& pos);
+
     MCNAPI void remove(::SimpleBlockVolume const& relativeVolume);
     // NOLINTEND
 
@@ -137,6 +167,16 @@ public:
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume&& rhs);
 
     MCNAPI void* $ctor(::Editor::RelativeVolumeListBlockVolume const& rhs);
+
+    MCNAPI void* $ctor(::std::vector<::BlockPos> const& blockPositions, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::std::vector<::Vec3> const& blockPositions, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::BlockPos const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::Vec3 const& pos, ::std::optional<::BlockPos> const& origin);
+
+    MCNAPI void* $ctor(::SimpleBlockVolume const& volume, ::std::optional<::BlockPos> const& origin);
     // NOLINTEND
 
 public:

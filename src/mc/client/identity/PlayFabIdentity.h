@@ -7,8 +7,6 @@ namespace Social {
 class PlayFabIdentity {
 public:
     // PlayFabIdentity inner types define
-    enum class NsaLinkingFeatureFlagState : int {};
-
     enum class RetryType : int {};
 };
 

@@ -19,7 +19,7 @@ class StructureTemplate;
 namespace gametest::StructureUtils {
 // functions
 // NOLINTBEGIN
-MCAPI void AddCommandBlockAndButtonToStartTest(
+MCNAPI void AddCommandBlockAndButtonToStartTest(
     ::BlockPos const& structureBlockPos,
     ::Rotation,
     ::BlockPos const&    commandBlockPosRelativeToTestPos,
@@ -27,9 +27,9 @@ MCAPI void AddCommandBlockAndButtonToStartTest(
     ::BlockSource&       region
 );
 
-MCAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
+MCNAPI void ClearSpaceForStructure(::BoundingBox const& structureBoundingBox, int structureYPos, ::BlockSource& region);
 
-MCAPI void CreateNewEmptyStructureBlock(
+MCNAPI void CreateNewEmptyStructureBlock(
     ::std::string const& testName,
     ::BlockPos const&    structurePos,
     ::BlockPos const&    size,
@@ -37,20 +37,20 @@ MCAPI void CreateNewEmptyStructureBlock(
     ::BlockSource&       region
 );
 
-MCAPI ::StructureBlockActor*
+MCNAPI ::StructureBlockActor*
 FindNearestStructureBlock(::BlockPos const& origin, int searchRadius, ::BlockSource& region);
 
-MCAPI ::std::optional<::BlockPos>
+MCNAPI ::std::optional<::BlockPos>
 FindStructureBlockContainingPos(::BlockPos const& pos, int searchRadius, ::BlockSource& region);
 
-MCAPI ::std::vector<::BlockPos>
+MCNAPI ::std::vector<::BlockPos>
 FindStructureBlocks(::BlockPos const& centerPos, int searchRadius, ::BlockSource& region);
 
-MCAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
+MCNAPI ::StructureEditorData GetStructureEditorData(::StructureTemplate const& structure, ::Rotation const& rotation);
 
-MCAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
+MCNAPI ::StructureTemplate* GetStructureTemplate(::std::string const& structureName, ::Level& level);
 
-MCAPI ::StructureBlockActor* SpawnStructure(
+MCNAPI ::StructureBlockActor* SpawnStructure(
     ::std::string const& structureName,
     ::BlockPos const&    northWestCorner,
     ::Rotation           rotation,

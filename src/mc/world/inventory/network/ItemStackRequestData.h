@@ -35,9 +35,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ItemStackRequestData(::ItemStackRequestData&&);
+    MCNAPI ItemStackRequestData(::ItemStackRequestData&&);
 
-    MCAPI ::ItemStackRequestData& operator=(::ItemStackRequestData&&);
+    MCNAPI ::ItemStackRequestData& operator=(::ItemStackRequestData&&);
 #endif
 
     MCAPI ~ItemStackRequestData();
@@ -47,7 +47,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ItemStackRequestData&&);
+    MCNAPI void* $ctor(::ItemStackRequestData&&);
 #endif
     // NOLINTEND
 

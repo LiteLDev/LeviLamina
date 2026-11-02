@@ -43,9 +43,9 @@ public:
     // NOLINTBEGIN
     virtual ~ScriptDedicatedServerUtils() /*override*/ = default;
 
-    virtual bool saveHold() /*override*/;
+    virtual void saveHold(::std::function<void(bool)>&& callback) /*override*/;
 
-    virtual bool saveResume() /*override*/;
+    virtual void saveResume(::std::function<void(bool)>&& callback) /*override*/;
 
     virtual ::std::optional<::std::vector<::SnapshotFilenameAndLength>> saveQuery() /*override*/;
 
@@ -86,42 +86,42 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $saveHold();
+    MCNAPI void $saveHold(::std::function<void(bool)>&& callback);
 
-    MCAPI bool $saveResume();
+    MCNAPI void $saveResume(::std::function<void(bool)>&& callback);
 
-    MCAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
+    MCNAPI ::std::optional<::std::vector<::SnapshotFilenameAndLength>> $saveQuery();
 
-    MCAPI bool $addToAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCNAPI bool $addToAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCAPI bool $removeFromAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCNAPI bool $removeFromAllowList(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCAPI bool $allowListContains(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
+    MCNAPI bool $allowListContains(::IScriptDedicatedServerUtils::AllowListEntryInfo const& identity);
 
-    MCAPI ::std::vector<::IScriptDedicatedServerUtils::AllowListEntryInfo> $getAllowListEntries() const;
+    MCNAPI ::std::vector<::IScriptDedicatedServerUtils::AllowListEntryInfo> $getAllowListEntries() const;
 
-    MCAPI void $clearAllowList();
+    MCNAPI void $clearAllowList();
 
-    MCAPI bool $reloadAllowListFile();
+    MCNAPI bool $reloadAllowListFile();
 
-    MCAPI void $setAllowListEnabled(bool enabled);
+    MCNAPI void $setAllowListEnabled(bool enabled);
 
-    MCAPI bool $getAllowListEnabled() const;
+    MCNAPI bool $getAllowListEnabled() const;
 
-    MCAPI bool $reloadPermissionsFile();
+    MCNAPI bool $reloadPermissionsFile();
 
-    MCAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& $getPermissions() const;
+    MCNAPI ::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& $getPermissions() const;
 
-    MCAPI bool $setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData);
+    MCNAPI bool $setPermissions(::std::unordered_map<::std::string, ::PlayerPermissionLevel> const& permissionData);
 
-    MCAPI bool $setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission);
+    MCNAPI bool $setPlayerPermission(::std::string const& xuid, ::PlayerPermissionLevel permission);
 
-    MCAPI bool $reloadScriptConfig();
+    MCNAPI bool $reloadScriptConfig();
 
-    MCAPI bool $reloadCDNConfig();
+    MCNAPI bool $reloadCDNConfig();
 
-    MCAPI ::std::string const& $getSessionID() const;
+    MCNAPI ::std::string const& $getSessionID() const;
 
-    MCAPI void $stopServer();
+    MCNAPI void $stopServer();
     // NOLINTEND
 };

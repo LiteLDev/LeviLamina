@@ -8,9 +8,9 @@
 namespace GameTypeConv {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string gameTypeToString(::GameType type);
+MCNAPI ::std::string gameTypeToString(::GameType type);
 
-MCAPI ::GameType stringToGameType(::std::string const& str);
+MCNAPI ::GameType stringToGameType(::std::string const& str);
 // NOLINTEND
 
 } // namespace GameTypeConv

@@ -3,12 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/deps/script_core/runtime/scripting/Result.h"
+#include "mc/deps/script_core/script_engine/scripting/Promise.h"
 
 // auto generated forward declare list
 // clang-format off
 namespace ScriptModuleServerAdmin { class ScriptLevelStorageSaveStateChangeError; }
 namespace Scripting { class ModuleBindingBuilder; }
+namespace Scripting { class ScriptObjectFactory; }
 // clang-format on
 
 namespace ScriptModuleServerAdmin {
@@ -51,9 +52,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveHold();
+    MCNAPI ::Scripting::Promise<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError>
+    saveHold(::Scripting::ScriptObjectFactory& factory);
 
-    MCNAPI ::Scripting::Result<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError> saveResume();
+    MCNAPI ::Scripting::Promise<void, ::ScriptModuleServerAdmin::ScriptLevelStorageSaveStateChangeError>
+    saveResume(::Scripting::ScriptObjectFactory& factory);
     // NOLINTEND
 
 public:

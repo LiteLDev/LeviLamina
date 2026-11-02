@@ -27,7 +27,7 @@ struct SynchedActorDataComponent;
 namespace ActorSetPosSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void _tickActorUpdatePositionAndAABBSystem2(
+MCNAPI void _tickActorUpdatePositionAndAABBSystem2(
     ::ActorSetPositionRequestComponent const& positionUpdateRequest,
     ::OffsetsComponent const&                 heightOffsetComponent,
     ::AABBShapeComponent&                     aabbShapeComponent,
@@ -35,36 +35,36 @@ MCAPI void _tickActorUpdatePositionAndAABBSystem2(
     ::Optional<::PaintingFlagComponent>       isPainting
 );
 
-MCAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
+MCNAPI void _tickAddLocalPlayerEntityMovedSystemAsynchronous1(
     ::StrictEntityContext& context,
     ::EntityModifier<
         ::ActorChunkMoveFlagComponent,
         ::ActorLocalPlayerEntityMovedFlagComponent,
-        ::ActorSetPositionRequestComponent> modifier
+        ::ActorSetPositionRequestComponent> const& modifier
 );
 
-MCAPI void _tickChunkMoveNeededSystemAsynchronous4(
+MCNAPI void _tickChunkMoveNeededSystemAsynchronous4(
     ::StrictEntityContext&          context,
     ::ChunkPositionComponent const& chunkPositionComponent,
     ::StateVectorComponent const&   stateVectorComponent,
     ::EntityModifier<
         ::ActorChunkMoveFlagComponent,
         ::ActorLocalPlayerEntityMovedFlagComponent,
-        ::ActorSetPositionRequestComponent> modifier
+        ::ActorSetPositionRequestComponent> const& modifier
 );
 
-MCAPI void _tickChunkMoveNeededSystemSynchronous4(
+MCNAPI void _tickChunkMoveNeededSystemSynchronous4(
     ::ActorOwnerComponent const&    actorOwnerComponent,
     ::ChunkPositionComponent const& chunkPositionComponent,
     ::StateVectorComponent const&   stateVectorComponent
 );
 
-MCFOLD void _tickMoveHitboxSystem3(
+MCNAPI void _tickMoveHitboxSystem3(
     ::ActorSetPositionRequestComponent const& positionUpdateComponent,
     ::HitboxComponent&                        hitboxComponent
 );
 
-MCAPI void _tickShulkerUpdatePositionSystem5(
+MCNAPI void _tickShulkerUpdatePositionSystem5(
     ::StateVectorComponent const&   stateVectorComponent,
     ::SynchedActorDataComponent&    synchedActorDataComponent,
     ::ActorDataFlagComponent&       actorDataFlagComponent,

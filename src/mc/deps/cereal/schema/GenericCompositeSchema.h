@@ -7,10 +7,13 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct MetaVisitor; }
+namespace cereal { struct SchemaDescription; }
 namespace cereal { struct SchemaReader; }
 namespace cereal { struct SchemaWriter; }
 namespace cereal::internal { struct LoadState; }
+namespace cereal::internal { struct ReflectionContext; }
 namespace cereal::internal { struct SaveState; }
 // clang-format on
 
@@ -18,8 +21,18 @@ namespace cereal::internal {
 
 class GenericCompositeSchema : public ::cereal::internal::DefaultCompositeSchema {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint> mTypeId;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
+    virtual ::cereal::SchemaDescription
+    makeDescription(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const
+        /*override*/;
+
     virtual void doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
@@ -39,39 +52,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI int iterate(
+    MCNAPI int iterate(
         ::entt::meta_type const& type,
         ::entt::meta_any&        src,
         ::entt::meta_any&        dst,
         ::cereal::MetaVisitor&   visitor
     ) const;
 
-    MCAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI void members(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor);
+    MCNAPI static bool setters(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doLoad(
+    MCNAPI ::cereal::SchemaDescription
+    $makeDescription(::cereal::internal::ReflectionContext const& ctx, ::cereal::DescriptionConfig config) const;
+
+    MCNAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
 
-    MCAPI void $doSave(
+    MCNAPI void $doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
 
-    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
 
     // NOLINTEND

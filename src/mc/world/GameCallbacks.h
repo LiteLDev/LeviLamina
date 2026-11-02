@@ -30,7 +30,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $onBeforeSimTick();
+    MCNAPI void $onBeforeSimTick();
 
 
     // NOLINTEND

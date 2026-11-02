@@ -39,7 +39,8 @@ public:
     // NOLINTBEGIN
     virtual ::Block const* getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    virtual bool _calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const /*override*/;
+    virtual bool _calculatePlacePos(::ItemStackBase const&, ::Actor const& entity, uchar& face, ::BlockPos& pos) const
+        /*override*/;
 
     virtual ::InteractionResult _useOn(
         ::ItemStack&  instance,
@@ -62,7 +63,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool calculatePlacePos(::Actor& entity, uchar& face, ::BlockPos& pos);
+    MCNAPI static bool calculatePlacePos(::Actor const& entity, uchar& face, ::BlockPos& pos);
     // NOLINTEND
 
 public:
@@ -80,11 +81,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
+    MCNAPI ::Block const* $getBlockToPlace(uchar const face, ::Actor const& entity, ::BlockPos const pos) const;
 
-    MCAPI bool $_calculatePlacePos(::ItemStackBase&, ::Actor& entity, uchar& face, ::BlockPos& pos) const;
+    MCNAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCAPI ::InteractionResult $_useOn(
+    MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -99,6 +100,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

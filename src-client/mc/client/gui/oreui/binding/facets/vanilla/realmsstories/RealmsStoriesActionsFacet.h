@@ -45,75 +45,75 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI RealmsStoriesActionsFacet(
+    MCNAPI RealmsStoriesActionsFacet(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
     );
 
-    MCAPI void _clearDeleteStatus(::std::string const& feedItemId);
+    MCNAPI void _clearDeleteStatus(::std::string const& feedItemId);
 
-    MCAPI void _clearEventsStatus();
+    MCNAPI void _clearEventsStatus();
 
-    MCAPI void _clearFetchMembersStatus();
+    MCNAPI void _clearFetchMembersStatus();
 
-    MCAPI void _clearFetchSessionsStatus();
+    MCNAPI void _clearFetchSessionsStatus();
 
-    MCAPI void _clearPostCommentStatus();
+    MCNAPI void _clearPostCommentStatus();
 
-    MCAPI void _clearPostStoryStatus();
+    MCNAPI void _clearPostStoryStatus();
 
-    MCAPI void _clearReportToClubOwnerStatus(::std::string const& feedItemId);
+    MCNAPI void _clearReportToClubOwnerStatus(::std::string const& feedItemId);
 
-    MCAPI void _clearReportToXboxStatus(::std::string const& feedItemId);
+    MCNAPI void _clearReportToXboxStatus(::std::string const& feedItemId);
 
-    MCAPI void _clearSetViewedStatus(::std::string const& feedItemId);
+    MCNAPI void _clearSetViewedStatus(::std::string const& feedItemId);
 
-    MCAPI void _clearSettingsStatus();
+    MCNAPI void _clearSettingsStatus();
 
-    MCAPI void _clearStoryFeedStatus();
+    MCNAPI void _clearStoryFeedStatus();
 
-    MCAPI void _clearToggleLikeStatus(::std::string const& feedItemId);
+    MCNAPI void _clearToggleLikeStatus(::std::string const& feedItemId);
 
-    MCAPI void _delete(::std::string const& feedItemId, ::std::string const& feedItemRoot);
+    MCNAPI void _delete(::std::string const& feedItemId, ::std::string const& feedItemRoot);
 
-    MCAPI void _fetchEvents();
+    MCNAPI void _fetchEvents();
 
-    MCAPI void _fetchMembers();
+    MCNAPI void _fetchMembers();
 
-    MCAPI void _fetchSessions();
+    MCNAPI void _fetchSessions();
 
-    MCAPI void _fetchStories();
+    MCNAPI void _fetchStories();
 
-    MCAPI void _fetchStoriesSettings(::std::string const& realmId);
+    MCNAPI void _fetchStoriesSettings(::std::string const& realmId);
 
-    MCAPI void _fetchStoryComments(::std::string const& storyId);
+    MCNAPI void _fetchStoryComments(::std::string const& storyId);
 
-    MCAPI void _fetchStoryImage(::std::string const& storyId);
+    MCNAPI void _fetchStoryImage(::std::string const& storyId);
 
-    MCAPI void _initProvider(::std::string const& worldId);
+    MCNAPI void _initProvider(::std::string const& worldId);
 
-    MCAPI void _joinRealmFromInvite();
+    MCNAPI void _joinRealmFromInvite();
 
-    MCAPI void _loadStoriesSlice(int fromIndex, int toIndex);
+    MCNAPI void _loadStoriesSlice(int fromIndex, int toIndex);
 
-    MCAPI void _openManageMembersScreen();
+    MCNAPI void _openManageMembersScreen();
 
-    MCAPI void _postComment();
+    MCNAPI void _postComment();
 
-    MCAPI void _postStoriesSettings(::std::string const& realmId);
+    MCNAPI void _postStoriesSettings(::std::string const& realmId);
 
-    MCAPI void _postStoriesSettingsOnExit(::std::string const& realmId);
+    MCNAPI void _postStoriesSettingsOnExit(::std::string const& realmId);
 
-    MCAPI void _postStory();
+    MCNAPI void _postStory();
 
-    MCAPI void _reportFeedItemToXbox(
+    MCNAPI void _reportFeedItemToXbox(
         ::std::string const& feedItemId,
         ::std::string const& feedItemRoot,
         ::std::string const& reportReason,
         ::std::string const& comment
     );
 
-    MCAPI void _reportGamertagToXbox(
+    MCNAPI void _reportGamertagToXbox(
         ::std::string const& gamertag,
         ::std::string const& feedItemId,
         ::std::string const& feedItemRoot,
@@ -121,11 +121,11 @@ public:
         ::std::string const& comment
     );
 
-    MCAPI void _reportToClubOwner(::std::string const& feedItemId, ::std::string const& feedItemRoot);
+    MCNAPI void _reportToClubOwner(::std::string const& feedItemId, ::std::string const& feedItemRoot);
 
-    MCAPI void _resetProvider();
+    MCNAPI void _resetProvider();
 
-    MCAPI void _setPlayerOptInStatusAndPostWithOptInTelemetry(
+    MCNAPI void _setPlayerOptInStatusAndPostWithOptInTelemetry(
         ::std::string const&                                        realmId,
         ::Realms::OptInState                                        state,
         ::std::string const&                                        correlationId,
@@ -133,31 +133,31 @@ public:
         ::OreUI::RealmsStoriesActionsFacet::OptInTelemetryUserState userState
     );
 
-    MCAPI void _setRealmEventsState(bool state);
+    MCNAPI void _setRealmEventsState(bool state);
 
-    MCAPI void _setRealmsCoordinatesState(bool state);
+    MCNAPI void _setRealmsCoordinatesState(bool state);
 
-    MCAPI void _setRealmsNotificationState(bool state);
+    MCNAPI void _setRealmsNotificationState(bool state);
 
-    MCAPI void _setRealmsTimelineRequirementState(bool state);
+    MCNAPI void _setRealmsTimelineRequirementState(bool state);
 
-    MCAPI void _setRealmsTimelineState(bool state);
+    MCNAPI void _setRealmsTimelineState(bool state);
 
-    MCAPI void _setViewed(::std::string const& feedItemId, ::std::string const& feedItemRoot);
+    MCNAPI void _setViewed(::std::string const& feedItemId, ::std::string const& feedItemRoot);
 
-    MCAPI void _toggleLike(::std::string const& feedItemId, ::std::string const& feedItemRoot);
+    MCNAPI void _toggleLike(::std::string const& feedItemId, ::std::string const& feedItemRoot);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::Realms::Stories::FacetStateManager> realmsStoriesProvider,
         ::std::shared_ptr<::MainMenuScreenModel>                mainMenuScreenModel
     );
@@ -166,7 +166,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

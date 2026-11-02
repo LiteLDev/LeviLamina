@@ -89,17 +89,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MultifaceBlock(
+    MCNAPI MultifaceBlock(
         ::std::string const&                         nameId,
         int                                          id,
         ::Material const&                            material,
         ::std::unique_ptr<::MultifaceSpreader const> spreader
     );
 
-    MCAPI bool
+    MCNAPI bool
     _canSpread(::IBlockWorldGenAPI& target, ::Block const& block, ::BlockPos const& pos, uchar startingFace) const;
 
-    MCAPI void removeFace(
+    MCNAPI void removeFace(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::Block const&       block,
@@ -108,17 +108,17 @@ public:
         bool                 canSpawnParticles
     ) const;
 
-    MCAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
+    MCNAPI void tick(::BlockEvents::BlockQueuedTickEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static int _getNumSides(::Block const& block);
+    MCNAPI static int _getNumSides(::Block const& block);
 
-    MCAPI static bool _hasAnyFace(::Block const& block);
+    MCNAPI static bool _hasAnyFace(::Block const& block);
 
-    MCAPI static ::Block const& getBlockForPlacementWorldGen(
+    MCNAPI static ::Block const& getBlockForPlacementWorldGen(
         ::Block const&       oldBlock,
         ::Block const&       placementBlock,
         ::IBlockWorldGenAPI& region,
@@ -127,16 +127,16 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::vector<uchar> getFacingListFromMask(uchar faceDirectionBits);
+    MCNAPI static ::std::vector<uchar> getFacingListFromMask(uchar faceDirectionBits);
 #endif
 
-    MCAPI static bool hasFace(::Block const& block, uchar faceDirection);
+    MCNAPI static bool hasFace(::Block const& block, uchar faceDirection);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& MULTIFACE_ALL();
+    MCNAPI static int const& MULTIFACE_ALL();
 
     MCAPI static int const& MULTIFACE_DOWN();
 
@@ -144,7 +144,7 @@ public:
 
     MCAPI static int const& MULTIFACE_NORTH();
 
-    MCAPI static int const& MULTIFACE_SIDES();
+    MCNAPI static int const& MULTIFACE_SIDES();
 
     MCAPI static int const& MULTIFACE_SOUTH();
 
@@ -156,7 +156,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&                         nameId,
         int                                          id,
         ::Material const&                            material,
@@ -167,28 +167,28 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShapeInWorld(
+    MCNAPI ::AABB const& $getVisualShapeInWorld(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::AABB& bufferAABB
     ) const;
 
-    MCFOLD ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const&,
         ::BlockPos const&,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCFOLD ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI ::HitResult $clip(
+    MCNAPI ::HitResult $clip(
         ::Block const&                                     block,
         ::BlockSource const&                               region,
         ::BlockPos const&                                  pos,
@@ -198,7 +198,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const> entity
     ) const;
 
-    MCAPI ::Block const& $getPlacementBlock(
+    MCNAPI ::Block const& $getPlacementBlock(
         ::Actor const&    by,
         ::BlockPos const& pos,
         uchar             face,
@@ -206,17 +206,17 @@ public:
         int               itemValue
     ) const;
 
-    MCFOLD void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
+    MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCFOLD bool $isMultifaceBlock() const;
+    MCNAPI bool $isMultifaceBlock() const;
 
-    MCFOLD bool $isLavaBlocking() const;
+    MCNAPI bool $isLavaBlocking() const;
 
-    MCAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
+    MCNAPI ::Block const& $sanitizeFillBlock(::Block const& block) const;
 
 
     // NOLINTEND
@@ -224,6 +224,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

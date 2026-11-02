@@ -39,7 +39,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BaseMoveToBlockGoal(
+    MCNAPI BaseMoveToBlockGoal(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -55,7 +55,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Mob&          mob,
         ::std::string   name,
         ::GoalId const& goalId,
@@ -71,13 +71,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $findTargetBlock();
+    MCNAPI bool $findTargetBlock();
 
-    MCFOLD bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $_moveToBlock();
+    MCNAPI void $_moveToBlock();
 
 
     // NOLINTEND

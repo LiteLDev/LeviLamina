@@ -29,20 +29,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnvilScreenControllerProxyCallbacks(::AnvilScreenControllerProxyCallbacks const&);
+    MCNAPI AnvilScreenControllerProxyCallbacks(::AnvilScreenControllerProxyCallbacks const&);
 
-    MCAPI ~AnvilScreenControllerProxyCallbacks();
+    MCNAPI ~AnvilScreenControllerProxyCallbacks();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::AnvilScreenControllerProxyCallbacks const&);
+    MCNAPI void* $ctor(::AnvilScreenControllerProxyCallbacks const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

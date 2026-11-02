@@ -52,7 +52,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptTextPrimitive(
+    MCNAPI ScriptTextPrimitive(
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text,
         bool                                                                                     isDebugShape,
@@ -61,34 +61,34 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string const& getLocalizedText() const;
+    MCNAPI ::std::string const& getLocalizedText() const;
 #endif
 
-    MCAPI ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> getText() const;
+    MCNAPI ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> getText() const;
 
-    MCAPI void setDepthTest(bool depthTest);
+    MCNAPI void setDepthTest(bool depthTest);
 
-    MCAPI void setShowBackface(bool showBackface);
+    MCNAPI void setShowBackface(bool showBackface);
 
-    MCAPI void setShowTextBackface(bool showTextBackface);
+    MCNAPI void setShowTextBackface(bool showTextBackface);
 
-    MCAPI ::Scripting::
+    MCNAPI ::Scripting::
         Result<void, ::ScriptModuleMinecraft::ScriptRawMessageError, ::Scripting::ArgumentOutOfBoundsError>
         setText(::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text);
 
-    MCAPI void setUseRotation(bool useRotation);
+    MCNAPI void setUseRotation(bool useRotation);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const&          location,
         ::std::variant<::std::string, ::ScriptModuleMinecraft::ScriptRawMessageInterface> const& text,
         bool                                                                                     isDebugShape,
@@ -100,9 +100,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
+    MCNAPI void $populatePacketData(::PrimitiveShapeDataPayload& packetShapeData) const;
 
-    MCAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
+    MCNAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& existing);
 
 
     // NOLINTEND

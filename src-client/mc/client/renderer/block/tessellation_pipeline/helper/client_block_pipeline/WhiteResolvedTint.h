@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::mce::Color const& $get(int, uchar) const;
+    MCNAPI ::mce::Color const& $get(int, uchar) const;
     // NOLINTEND
 };
 

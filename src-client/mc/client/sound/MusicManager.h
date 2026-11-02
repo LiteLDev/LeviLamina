@@ -10,7 +10,6 @@
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/core/utility/pub_sub/Connector.h"
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
-#include "mc/sound/MusicRepeatMode.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -28,7 +27,7 @@ class MusicManager {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 216, ::CustomMusic>                                                  mCustomMusic;
+    ::ll::TypedStorage<8, 232, ::CustomMusic>                                                  mCustomMusic;
     ::ll::TypedStorage<1, 1, bool>                                                             mPaused;
     ::ll::TypedStorage<4, 4, int>                                                              mNextSongDelay;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::SoundPlayerInterface>>              mSoundPlayer;
@@ -51,53 +50,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MusicManager(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
+    MCNAPI explicit MusicManager(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music> _findBiomeSpecificMusic(
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music> _findBiomeSpecificMusic(
         ::Player const&,
         ::std::string const&                  biomeName,
         ::std::optional<::std::string> const& biomeMusicDefinition
     ) const;
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music> _getMusic(::std::string const& musicDefinition);
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music> _getMusic(::std::string const& musicDefinition);
 
-    MCAPI void _update(::Bedrock::NotNullNonOwnerPtr<::Music> desiredMusic);
+    MCNAPI void _update(::Bedrock::NotNullNonOwnerPtr<::Music> desiredMusic);
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Music>
+    MCNAPI ::Bedrock::NonOwnerPointer<::Music>
     getSituationalMusic(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
 
-    MCAPI void load(
+    MCNAPI void load(
         ::ResourcePackManager&                                                      resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>                        resourceLoadManager,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator>                          validator,
         ::std::shared_ptr<::std::vector<::Bedrock::Resources::PreloadedPathHandle>> preloadHandles
     );
 
-    MCAPI void
-    playCustomMusic(::std::string const& eventName, float volume, float fadeoutSeconds, ::MusicRepeatMode playMode);
+    MCNAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
 
-    MCAPI void registerPauseManagerCallback(::Bedrock::PubSub::Connector<void(bool)>& connector);
+    MCNAPI void update(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
 
-    MCAPI void update(::LocalPlayer const* player, bool isCreditsScreen, bool isLoadingProgressScreen);
-
-    MCAPI ~MusicManager();
+    MCNAPI ~MusicManager();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool shouldPlayCreativeMusic(bool playerIsCreative, ::BiomeIdType const biomeId);
+    MCNAPI static bool shouldPlayCreativeMusic(bool playerIsCreative, ::BiomeIdType const biomeId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::SoundPlayerInterface> const& soundPlayer);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

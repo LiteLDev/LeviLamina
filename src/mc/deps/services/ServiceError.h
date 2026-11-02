@@ -24,13 +24,18 @@ public:
 
 public:
     // prevent constructor by default
-    ServiceError& operator=(ServiceError const&);
     ServiceError();
 
 public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ServiceError(::Bedrock::Services::ServiceError const&);
+
+    MCNAPI ::Bedrock::Services::ServiceError& operator=(::Bedrock::Services::ServiceError&&);
+
+    MCNAPI ::Bedrock::Services::ServiceError& operator=(::Bedrock::Services::ServiceError const&);
+
+    MCNAPI bool operator==(::Bedrock::Services::ServiceError const&) const;
 
     MCNAPI ~ServiceError();
     // NOLINTEND

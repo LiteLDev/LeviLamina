@@ -4,7 +4,7 @@
 
 namespace cereal::internal {
 
-template <typename T0, typename T1>
+template <typename T0>
 class CompositeSchema {};
 
 } // namespace cereal::internal

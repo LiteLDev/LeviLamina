@@ -33,12 +33,12 @@ public:
     // NOLINTBEGIN
     MCAPI MobArmorEquipmentPacketPayload();
 
-    MCAPI MobArmorEquipmentPacketPayload(::MobArmorEquipmentPacketPayload&&);
+    MCNAPI MobArmorEquipmentPacketPayload(::MobArmorEquipmentPacketPayload&&);
 
-    MCAPI explicit MobArmorEquipmentPacketPayload(::Actor const& e);
+    MCNAPI explicit MobArmorEquipmentPacketPayload(::Actor const& e);
 
 #ifdef LL_PLAT_C
-    MCAPI void fillIn(::Actor& e) const;
+    MCNAPI void fillIn(::Actor& e) const;
 #endif
 
     MCAPI ~MobArmorEquipmentPacketPayload();
@@ -49,9 +49,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCAPI void* $ctor(::MobArmorEquipmentPacketPayload&&);
+    MCNAPI void* $ctor(::MobArmorEquipmentPacketPayload&&);
 
-    MCAPI void* $ctor(::Actor const& e);
+    MCNAPI void* $ctor(::Actor const& e);
     // NOLINTEND
 
 public:

@@ -4,8 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
-struct PDFError;
 struct PDFOptions;
+struct PDFError;
 // clang-format on
 
 class PDFWriter : public ::std::enable_shared_from_this<::PDFWriter> {

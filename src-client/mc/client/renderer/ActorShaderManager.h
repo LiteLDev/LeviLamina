@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/client/renderer/helpers/shaderpacking/BlockLightingFlags.h"
 #include "mc/deps/minecraft_renderer/renderer/MaterialPtr.h"
 
 // auto generated forward declare list
@@ -45,13 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::mce::MaterialPtr& getEntityMaterial();
+    MCNAPI ::mce::MaterialPtr& getEntityMaterial();
 
-    MCAPI ::mce::MaterialPtr& getStaticMaterial();
+    MCNAPI ::mce::MaterialPtr& getStaticMaterial();
 
-    MCAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
+    MCNAPI ::mce::MaterialPtr& getTransparentEntityMaterial();
 
-    MCAPI void setupFoilShaderParameters(
+    MCNAPI void setupFoilShaderParameters(
         ::ScreenContext&                    screenContext,
         ::BaseActorRenderContext&           entityContext,
         ::Actor&                            entity,
@@ -93,9 +94,9 @@ public:
         float                  uvRot2
     );
 
-    MCAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
+    MCNAPI static void setupFoilShaderParameters(::ScreenContext& screenContext, ::TextureUVCoordinateSet const& icon);
 
-    MCAPI static void setupFoilShaderParameters(
+    MCNAPI static void setupFoilShaderParameters(
         ::ScreenContext&    screenContext,
         ::mce::Color const& overlay,
         ::mce::Color const& changeColor,
@@ -154,18 +155,6 @@ public:
     );
 
     MCAPI static void setupShaderParameters(
-        ::ScreenContext&                                               screenContext,
-        ::BlockSource&                                                 source,
-        ::BlockPos const&                                              pos,
-        float                                                          a,
-        bool                                                           ignoreLighting,
-        ::LightTexture&                                                lightTexture,
-        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
-        ::Vec2 const&                                                  uvScale,
-        ::Vec4 const&                                                  uvAnim
-    );
-
-    MCAPI static void setupShaderParameters(
         ::ScreenContext&          screenContext,
         ::BaseActorRenderContext& entityContext,
         ::Actor&                  entity,
@@ -176,6 +165,19 @@ public:
         float                     br,
         float,
         bool isEnchanted
+    );
+
+    MCAPI static void setupShaderParameters(
+        ::ScreenContext&                                               screenContext,
+        ::BlockSource&                                                 source,
+        ::BlockPos const&                                              pos,
+        float                                                          a,
+        bool                                                           ignoreLighting,
+        ::LightTexture&                                                lightTexture,
+        ::std::weak_ptr<::LightPropagation::LightVolumeManager> const& lightVolumeManager,
+        ::Vec2 const&                                                  uvScale,
+        ::Vec4 const&                                                  uvAnim,
+        ::shaderpacking::BlockLightingFlags                            flags
     );
 
     MCAPI static void setupShaderParameters(
@@ -231,15 +233,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
+    MCNAPI static ::ResourceLocation const& GLINT_ACTOR_TEXTURE_LOCATION();
 
-    MCAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
+    MCNAPI static ::ResourceLocation const& GLINT_ITEM_TEXTURE_LOCATION();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

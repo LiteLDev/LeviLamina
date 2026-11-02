@@ -60,43 +60,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
+    MCNAPI explicit BaseMobSpawner(::ActorDefinitionIdentifier actorDefId);
 
-    MCAPI void _delay(::BlockSource& source);
+    MCNAPI void _delay(::BlockSource& source);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Actor* createAndAddDisplayEntity(::BlockSource& region);
+    MCNAPI ::Actor* createAndAddDisplayEntity(::BlockSource& region);
 #endif
 
-    MCAPI void removeDisplayEntity();
+    MCNAPI void removeDisplayEntity();
 
     MCAPI void setEntityId(::ActorDefinitionIdentifier actorDefId);
 
 #ifdef LL_PLAT_C
-    MCAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
+    MCNAPI ::Mob* tryGetOrCreateDisplayEntity(::BlockSource& region);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
+    MCNAPI void* $ctor(::ActorDefinitionIdentifier actorDefId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::BlockSource& source);
+    MCNAPI void $tick(::BlockSource& source);
 
-    MCAPI void $load(::CompoundTag const& data);
+    MCNAPI void $load(::CompoundTag const& data);
 
-    MCAPI void $save(::CompoundTag& tag);
+    MCNAPI void $save(::CompoundTag& tag);
 
 
     // NOLINTEND
@@ -104,6 +104,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

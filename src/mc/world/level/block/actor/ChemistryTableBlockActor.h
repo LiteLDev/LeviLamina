@@ -80,63 +80,63 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
+    MCNAPI explicit ChemistryTableBlockActor(::BlockPos const& pos);
 
 #ifdef LL_PLAT_C
-    MCAPI ::HashedString const& _getType(::BlockSource& region);
+    MCNAPI ::HashedString const& _getType(::BlockSource& region);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI ::HashedString const& _getType(::BlockSource& region);
+    MCNAPI ::HashedString const& _getType(::BlockSource& region);
 #endif
 
 #ifdef LL_PLAT_C
-    MCAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
+    MCNAPI void clientLabTablePacket(::LabTablePacket const& packet, ::BlockSource& region);
 #endif
 
-    MCAPI void playerOpenLabTable(::Player& player);
+    MCNAPI void playerOpenLabTable(::Player& player);
 
-    MCAPI void reset(::BlockSource& region);
+    MCNAPI void reset(::BlockSource& region);
 
-    MCAPI void serverCombine(::BlockSource& region, ::std::vector<::ItemStack> const& consumedInput);
+    MCNAPI void serverCombine(::BlockSource& region, ::std::vector<::ItemStack> const& consumedInput);
 
-    MCAPI void serverLabTablePacket_DEPRECATED(::LabTablePacket const& packet, ::BlockSource& region);
+    MCNAPI void serverLabTablePacket_DEPRECATED(::LabTablePacket const& packet, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Container* $getContainer();
+    MCNAPI ::Container* $getContainer();
 
-    MCFOLD ::Container const* $getContainer() const;
+    MCNAPI ::Container const* $getContainer() const;
 
-    MCAPI ::ItemStack const& $getItem(int slot) const;
+    MCNAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCAPI void $setItem(int slot, ::ItemStack const& item);
+    MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCFOLD int $getMaxStackSize() const;
+    MCNAPI int $getMaxStackSize() const;
 
-    MCFOLD int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCFOLD void $startOpen(::Actor&);
+    MCNAPI void $startOpen(::Actor&);
 
-    MCAPI void $stopOpen(::Actor& actor);
+    MCNAPI void $stopOpen(::Actor& actor);
 
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI void $serverInitItemStackIds(
+    MCNAPI void $serverInitItemStackIds(
         int                                            containerSlot,
         int                                            count,
         ::std::function<void(int, ::ItemStack const&)> onNetIdChanged

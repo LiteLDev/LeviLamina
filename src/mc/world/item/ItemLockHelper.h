@@ -9,6 +9,7 @@
 // clang-format off
 class Actor;
 class ItemStackBase;
+namespace Bedrock::Safety { class RedactableString; }
 namespace Json { class Value; }
 // clang-format on
 
@@ -21,16 +22,23 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
+    MCNAPI static bool _parseItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
+
+    MCNAPI static bool addItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
+
+    MCNAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
 #ifdef LL_PLAT_C
-    MCAPI static void
+    MCNAPI static void
+    appendItemLockHoverText(::Bedrock::Safety::RedactableString& formattedHoverText, ::ItemStackBase const& item);
+
+    MCNAPI static void
     appendItemLockPopupNoticeText(::std::string& formattedPopupNoticeText, ::ItemStackBase const& item);
 
-    MCAPI static bool canDropItem(::Actor const& actor, ::ItemStackBase const& item);
+    MCNAPI static bool canDropItem(::Actor const& actor, ::ItemStackBase const& item);
 #endif
 
-    MCAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
+    MCNAPI static bool canMoveItemSlots(::Actor const& actor, ::ItemStackBase const& item);
 
 #ifdef LL_PLAT_C
     MCAPI static ::ItemLockMode getItemLockMode(::ItemStackBase const& item);
@@ -38,10 +46,10 @@ public:
 
     MCAPI static bool isItemLocked(::ItemStackBase const& item);
 
-    MCAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
+    MCNAPI static void setItemLockMode(::ItemStackBase& item, ::ItemLockMode lockMode);
 
-    MCAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
+    MCNAPI static bool shouldKeepOnDeath(::ItemStackBase const& item);
 
-    MCAPI static bool shouldKeepOnDeath(::Actor const& actor, ::ItemStackBase const& item);
+    MCNAPI static bool shouldKeepOnDeath(::Actor const& actor, ::ItemStackBase const& item);
     // NOLINTEND
 };

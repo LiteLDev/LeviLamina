@@ -6,7 +6,8 @@
 // clang-format off
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
-namespace mce { class IndexBufferContainer; }
+struct RenderChunkLayerGroupIndexData;
+struct RenderChunkLayerGroupVertexData;
 namespace mce { class Mesh; }
 // clang-format on
 
@@ -21,8 +22,8 @@ public:
         24,
         ::std::variant<
             ::std::monostate,
-            ::std::shared_ptr<::mce::IndexBufferContainer>,
-            ::std::shared_ptr<::RenderChunkDirectIndexData>> const>
+            ::std::shared_ptr<::RenderChunkDirectIndexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupIndexData>> const>
         mChunkIndices;
     ::ll::TypedStorage<
         8,
@@ -30,19 +31,20 @@ public:
         ::std::variant<
             ::std::monostate,
             ::std::shared_ptr<::mce::Mesh>,
-            ::std::shared_ptr<::RenderChunkDirectVertexData>> const>
+            ::std::shared_ptr<::RenderChunkDirectVertexData>,
+            ::std::shared_ptr<::RenderChunkLayerGroupVertexData>> const>
         mChunkMesh;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~ChunkRenderData();
+    MCNAPI ~ChunkRenderData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

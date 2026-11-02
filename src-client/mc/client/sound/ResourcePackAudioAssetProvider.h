@@ -34,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::Audio::IStreamableAudioAsset> $openStreamableAudioAsset(
+    MCNAPI ::std::unique_ptr<::Audio::IStreamableAudioAsset> $openStreamableAudioAsset(
         ::ResourceLocation const&         resourceLocation,
         ::gsl::span<::std::string const>  extensions,
         ::std::optional<::Core::PathView> tempDirectory

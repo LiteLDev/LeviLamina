@@ -39,6 +39,7 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PackMetadata>>                       mMetadata;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::std::vector<::PackIdVersion> const>> mDependenciesUpgrade;
     ::ll::TypedStorage<1, 1, uchar>                                                   mRevision;
+    ::ll::TypedStorage<1, 2, ::std::optional<bool>>                                   mIsBaseGameOverride;
     // NOLINTEND
 
 public:
@@ -48,25 +49,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Pack(
+    MCNAPI Pack(
         ::I18n&                                 loc,
         ::std::unique_ptr<::PackManifest>       manifest,
         ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
         ::SubpackInfoCollection                 subpacks,
-        ::std::unique_ptr<::PackMetadata>       metadata
+        ::std::unique_ptr<::PackMetadata>       metadata,
+        ::std::optional<bool>                   isBaseGameOverride
     );
 
-    MCAPI void move(::Pack&& pack);
+    MCNAPI void move(::Pack&& pack);
 
-    MCAPI void upgradeLegacyDependencies(::std::unique_ptr<::std::vector<::PackIdVersion> const> upgrade);
+    MCNAPI void upgradeLegacyDependencies(::std::unique_ptr<::std::vector<::PackIdVersion> const> upgrade);
 
-    MCAPI ~Pack();
+    MCNAPI ~Pack();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::Pack> createPack(
+    MCNAPI static ::std::unique_ptr<::Pack> createPack(
         ::IPackIOProvider const&                                io,
         ::ResourceLocation const&                               fileLocation,
         ::PackType                                              type,
@@ -77,7 +79,7 @@ public:
         ::Core::Path const&                                     zipSubDir
     );
 
-    MCAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
+    MCNAPI static ::std::unique_ptr<::PackMetadata> createPackMetadata(
         ::PackType                  type,
         ::PackManifest&             manifest,
         ::PackAccessStrategy const& accessStrategy,
@@ -88,24 +90,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Core::PathBuffer<::std::string> const& EDUCATION_METADATA_FILE();
+    MCNAPI static ::Core::PathBuffer<::std::string> const& EDUCATION_METADATA_FILE();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::I18n&                                 loc,
         ::std::unique_ptr<::PackManifest>       manifest,
         ::std::unique_ptr<::PackAccessStrategy> accessStrategy,
         ::SubpackInfoCollection                 subpacks,
-        ::std::unique_ptr<::PackMetadata>       metadata
+        ::std::unique_ptr<::PackMetadata>       metadata,
+        ::std::optional<bool>                   isBaseGameOverride
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

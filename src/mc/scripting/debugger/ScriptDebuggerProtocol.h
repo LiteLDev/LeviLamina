@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace ScriptDebuggerMessages { class INetworkPayload; }
+namespace ScriptDebuggerMessages { struct ScriptDebuggerPacket; }
 // clang-format on
 
 class ScriptDebuggerProtocol {
@@ -27,6 +28,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::std::string _receive();
+
+    MCNAPI void send(::std::string const& message);
+
     MCNAPI void sendPayload(::ScriptDebuggerMessages::INetworkPayload&& payload);
+
+    MCNAPI bool tryReceive(::std::string& message);
+
+    MCNAPI bool waitForPacket(::ScriptDebuggerMessages::ScriptDebuggerPacket& packetOut);
+
+    MCNAPI ~ScriptDebuggerProtocol();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

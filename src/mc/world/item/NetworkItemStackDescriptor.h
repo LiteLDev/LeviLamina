@@ -9,6 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockPalette;
 class ItemStack;
 class ReadOnlyBinaryStream;
 // clang-format on
@@ -41,9 +42,11 @@ public:
 
     MCAPI explicit NetworkItemStackDescriptor(::ItemStack const& item);
 
-    MCAPI bool operator==(::NetworkItemStackDescriptor const& rhs) const;
+    MCNAPI ::ItemStack getItemStack(::BlockPalette const& blockPalette) const;
 
-    MCAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
+    MCNAPI bool operator==(::NetworkItemStackDescriptor const& rhs) const;
+
+    MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
     // NOLINTEND
 
 public:
@@ -63,6 +66,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

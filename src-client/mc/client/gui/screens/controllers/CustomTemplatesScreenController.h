@@ -42,27 +42,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomTemplatesScreenController(
+    MCNAPI CustomTemplatesScreenController(
         ::std::shared_ptr<::PlayScreenModel>      model,
         ::std::vector<::WorldTemplateInfo> const& customTemplates
     );
 
-    MCAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
+    MCNAPI void _handleWorldTemplateClicked(::WorldTemplateInfo const& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::std::shared_ptr<::PlayScreenModel> model, ::std::vector<::WorldTemplateInfo> const& customTemplates);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onCreation();
+    MCNAPI void $onCreation();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 
 public:

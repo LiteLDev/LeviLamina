@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class Player;
+// clang-format on
+
 namespace ScriptModuleParties {
 
 struct ScriptPartyInfo {
@@ -22,6 +27,12 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ScriptPartyInfo();
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::optional<::ScriptModuleParties::ScriptPartyInfo> fromPlayer(::Player const& player);
     // NOLINTEND
 
 public:

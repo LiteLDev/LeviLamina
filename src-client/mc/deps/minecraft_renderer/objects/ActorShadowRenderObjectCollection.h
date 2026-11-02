@@ -27,16 +27,4 @@ public:
     ::ll::TypedStorage<8, 8, ::mce::MaterialPtr const*>       mShadowOverlayMat;
     ::ll::TypedStorage<4, 16, ::mce::Color>                   mShadowColor;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ~ActorShadowRenderObjectCollection();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };

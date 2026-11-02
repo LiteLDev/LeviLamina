@@ -11,7 +11,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct DimensionType;
+class Vec3;
 namespace Bedrock::PubSub { class Subscription; }
 namespace Editor { class ServiceProviderCollection; }
 namespace Editor::Network { class PrefabDBClientInitializedPayload; }
@@ -30,12 +30,36 @@ class ServerPrefabPlayerService : public ::Editor::Services::IEditorService,
                                   public ::Editor::Prefabs::ServerPrefabPlayerServiceProvider,
                                   public ::Editor::Services::PayloadStoreHelper {
 public:
+    // ServerPrefabPlayerService inner types declare
+    // clang-format off
+    struct InstancePositionValidation;
+    // clang-format on
+
+    // ServerPrefabPlayerService inner types define
+    struct InstancePositionValidation {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1>  mUnkd5b51a;
+        ::ll::UntypedStorage<8, 24> mUnk244418;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        InstancePositionValidation& operator=(InstancePositionValidation const&);
+        InstancePositionValidation(InstancePositionValidation const&);
+        InstancePositionValidation();
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 8>  mUnkd20dca;
+    ::ll::UntypedStorage<4, 4>  mUnk2eee55;
     ::ll::UntypedStorage<4, 4>  mUnk281e56;
     ::ll::UntypedStorage<4, 12> mUnke74db6;
     ::ll::UntypedStorage<4, 4>  mUnk19f0ef;
+    ::ll::UntypedStorage<1, 1>  mUnk875908;
     ::ll::UntypedStorage<1, 1>  mUnk67704d;
     ::ll::UntypedStorage<8, 64> mUnkc4c47a;
     ::ll::UntypedStorage<8, 16> mUnk14247b;
@@ -87,9 +111,6 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit ServerPrefabPlayerService(::Editor::ServiceProviderCollection& providers);
 
-    MCNAPI void
-    _buildAndSendVisibilityPayload(::DimensionType const& oldDimension, ::DimensionType const& newDimension);
-
     MCNAPI void _handleClientInitializedPayload(::Editor::Network::PrefabDBClientInitializedPayload const& payload);
 
     MCNAPI void _handleClientPlayerPositionUpdatePayload(
@@ -104,6 +125,13 @@ public:
     MCNAPI void _handlePrefabDBTemplateChange(::Editor::Prefabs::PrefabDBTemplateChangeEvent const& event);
 
     MCNAPI void _processPendingEvents();
+
+    MCNAPI void _updateVisibilityFromPlayer();
+
+    MCNAPI ::Editor::Services::ServerPrefabPlayerService::InstancePositionValidation _validateInstancePosition(
+        ::Editor::Prefabs::PrefabDBPrefabInstance const& instance,
+        ::Vec3 const&                                    newPosition
+    ) const;
     // NOLINTEND
 
 public:

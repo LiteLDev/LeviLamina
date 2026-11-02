@@ -6,6 +6,8 @@
 #include "mc/client/gui/oreui/ViewCacheMode.h"
 #include "mc/client/gui/oreui/interface/IViewProvider.h"
 #include "mc/client/gui/oreui/interface/ViewId.h"
+#include "mc/client/gui/oreui/rendering/IOffscreenRenderer.h"
+#include "mc/client/gui/oreui/views/FramesToPaintQueue.h"
 #include "mc/client/gui/oreui/views/ViewsCacheRegistry.h"
 #include "mc/common/SubClientId.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
@@ -14,13 +16,14 @@
 // clang-format off
 class IClientInstance;
 class IGamefaceTextInputProxy;
+class ScreenContext;
 struct TextBoxStateChange;
 namespace Input::Debug { class ISplitscreenRedirect; }
-namespace OreUI { class FramesToPaintQueue; }
 namespace OreUI { class IFacetRegistry; }
 namespace OreUI { class IView; }
 namespace OreUI { class LayoutScheduler; }
-namespace OreUI::Detail { class ViewContextFactory; }
+namespace OreUI { class Router; }
+namespace OreUI::Detail { class BindingRegistryFactory; }
 namespace cohtml { class ITimeZoneProvider; }
 namespace cohtml { class System; }
 namespace cohtml { class SystemRenderer; }
@@ -28,7 +31,7 @@ namespace cohtml { class SystemRenderer; }
 
 namespace OreUI {
 
-class ViewsCoordinator : public ::OreUI::IViewProvider {
+class ViewsCoordinator : public ::OreUI::IViewProvider, public ::Gameface::IOffscreenRenderer {
 public:
     // ViewsCoordinator inner types declare
     // clang-format off
@@ -53,7 +56,7 @@ public:
     ::ll::TypedStorage<8, 8, ::cohtml::SystemRenderer*>                            mSystemRenderer;
     ::ll::TypedStorage<8, 8, ::cohtml::ITimeZoneProvider*>                         mTimeZoneProvider;
     ::ll::TypedStorage<8, 8, ::OreUI::LayoutScheduler&>                            mLayoutScheduler;
-    ::ll::TypedStorage<8, 8, ::OreUI::FramesToPaintQueue&>                         mFramesToPaint;
+    ::ll::TypedStorage<8, 104, ::OreUI::FramesToPaintQueue>                        mFramesToPaint;
     ::ll::TypedStorage<8, 24, ::std::vector<::OreUI::ViewsCoordinator::ViewEntry>> mViews;
     ::ll::TypedStorage<8, 96, ::OreUI::ViewsCacheRegistry>                         mViewsCacheRegistry;
     ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>           mShowDebugToast;
@@ -75,53 +78,54 @@ public:
     virtual ::Bedrock::NonOwnerPointer<::OreUI::IView> get(::OreUI::ViewId viewId) const /*override*/;
 
     virtual void discard(::OreUI::ViewId viewId) /*override*/;
+
+    virtual void renderOffscreen(::ScreenContext& screenContext) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ViewsCoordinator(
+    MCNAPI ViewsCoordinator(
         ::cohtml::System*                                                          system,
         ::cohtml::SystemRenderer*                                                  systemRenderer,
         ::cohtml::ITimeZoneProvider*                                               timeZoneProvider,
         ::OreUI::LayoutScheduler&                                                  layoutScheduler,
-        ::OreUI::FramesToPaintQueue&                                               framesToPaint,
         ::std::function<void(::std::string_view)>                                  showDebugToast,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
 
-    MCAPI void _destroyView(::OreUI::ViewId viewId);
+    MCNAPI void _destroyView(::OreUI::ViewId viewId);
 
-    MCAPI ::std::vector<::OreUI::ViewId> _getViewIds();
+    MCNAPI ::std::vector<::OreUI::ViewId> _getViewIds();
 
-    MCAPI void clearUnusedCachedViews(::SubClientId subClientId);
+    MCNAPI void clearUnusedCachedViews(::SubClientId subClientId);
 
-    MCAPI ::OreUI::ViewId createView(
-        ::OreUI::Detail::ViewContextFactory&       contextFactory,
+    MCNAPI ::OreUI::ViewId createView(
+        ::OreUI::Detail::BindingRegistryFactory&   bindingRegistryFactory,
+        ::OreUI::Router&                           router,
         ::std::string const&                       viewPath,
         ::std::unique_ptr<::OreUI::IFacetRegistry> facets,
         ::IClientInstance&                         clientInstance,
         ::OreUI::ViewCacheMode                     viewCacheMode
     );
 
-    MCAPI ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy();
+    MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> getTextInputProxy();
 
-    MCAPI void onKeyboardDismissed();
+    MCNAPI void onKeyboardDismissed();
 
-    MCAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
+    MCNAPI void setTextBoxState(::TextBoxStateChange const& stateChange);
 
-    MCAPI void update(double time);
+    MCNAPI void update(double time);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::cohtml::System*                                                          system,
         ::cohtml::SystemRenderer*                                                  systemRenderer,
         ::cohtml::ITimeZoneProvider*                                               timeZoneProvider,
         ::OreUI::LayoutScheduler&                                                  layoutScheduler,
-        ::OreUI::FramesToPaintQueue&                                               framesToPaint,
         ::std::function<void(::std::string_view)>                                  showDebugToast,
         ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect> const& debugSplitscreenInputRedirect
     );
@@ -130,21 +134,25 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::NonOwnerPointer<::OreUI::IView> $get(::OreUI::ViewId viewId) const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::OreUI::IView> $get(::OreUI::ViewId viewId) const;
 
-    MCAPI void $discard(::OreUI::ViewId viewId);
+    MCNAPI void $discard(::OreUI::ViewId viewId);
+
+    MCNAPI void $renderOffscreen(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCNAPI static void** $vftableForIOffscreenRenderer();
+
+    MCNAPI static void** $vftableForIViewProvider();
     // NOLINTEND
 };
 

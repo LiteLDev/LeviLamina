@@ -61,7 +61,8 @@ template <
     typename T53,
     typename T54,
     typename T55,
-    typename T56>
+    typename T56,
+    typename T57>
 class Frame {};
 
 } // namespace dragon::frameobject

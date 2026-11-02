@@ -24,7 +24,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI int $_getContainerOffset() const;
+    MCNAPI int $_getContainerOffset() const;
 #endif
 
 

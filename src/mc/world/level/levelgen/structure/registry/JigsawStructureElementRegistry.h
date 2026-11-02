@@ -27,18 +27,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD ::StructurePoolElement const* _lookupById(::JigsawStructureUtils::StructureElementId const& id) const;
+#ifdef LL_PLAT_C
+    MCNAPI ::StructurePoolElement const* _lookupById(::JigsawStructureUtils::StructureElementId const& id) const;
 #endif
 
-    MCAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
+    MCNAPI ::StructurePoolElement const* lookupByName(::std::string name) const;
 
-    MCAPI ::StructurePoolElement const* lookupEmptyElement() const;
+    MCNAPI ::StructurePoolElement const* lookupEmptyElement() const;
 
-    MCAPI ::StructurePoolElement const&
+    MCNAPI ::StructurePoolElement const&
     registerElement(::std::string name, ::std::unique_ptr<::StructurePoolElement>&& element);
 
-    MCAPI ::StructurePoolElement const&
+    MCNAPI ::StructurePoolElement const&
     registerEmptyElement(::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager> manager);
     // NOLINTEND
 };

@@ -18,7 +18,6 @@ class PacketSender;
 class UserEntityIdentifierComponent;
 class Vec3;
 namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
-namespace mce { class Color; }
 // clang-format on
 
 class LevelEventManager : public ::ILevelEventManagerCoordinator {
@@ -47,10 +46,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    LevelEventManager();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~LevelEventManager() /*override*/ = default;
@@ -65,54 +60,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
-    LevelEventManager(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
-
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::CompoundTag const&                   tag,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void broadcastLevelEvent(
+    MCNAPI void broadcastLevelEvent(
         ::SharedTypes::Legacy::LevelEvent      type,
         ::Vec3 const&                          pos,
         int                                    data,
         ::UserEntityIdentifierComponent const* userIdentifierToExclude
     );
 
-    MCAPI void
+    MCNAPI void
     broadcastLocalEvent(::IDimension& dimension, ::SharedTypes::Legacy::LevelEvent type, ::Vec3 const& pos, int data);
-
-    MCAPI void potionSplash(::Vec3 const& pos, ::mce::Color const& color, bool instantaneousEffect);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(bool isClientSide, ::Bedrock::NotNullNonOwnerPtr<::LevelEventCoordinator> levelEventCoordinator);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
     $getLevelEventDataConnector();
-#else // LL_PLAT_C
-    MCFOLD ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::Vec3 const&, int)>&
-    $getLevelEventDataConnector();
-#endif
 
-    MCAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
+    MCNAPI ::Bedrock::PubSub::Connector<void(::SharedTypes::Legacy::LevelEvent, ::CompoundTag const&)>&
     $getLevelEventCompoundTagConnector();
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };

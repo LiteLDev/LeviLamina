@@ -25,7 +25,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                   mFilePath;
     ::ll::TypedStorage<1, 1, bool>                             mSourceChanged;
     ::ll::TypedStorage<1, 1, bool>                             mUseAnimations;
-    ::ll::TypedStorage<8, 24, ::mce::ClientTexture>            mFrameTexture;
+    ::ll::TypedStorage<8, 16, ::mce::ClientTexture>            mFrameTexture;
     ::ll::TypedStorage<8, 136, ::std::optional<::AnimatedGif>> mAnimatedGif;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                    mTaskGroup;
     // NOLINTEND
@@ -50,27 +50,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimatedGifRenderer();
+    MCNAPI AnimatedGifRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCFOLD ::UIBatchType $getBatchType() const;
+    MCNAPI ::UIBatchType $getBatchType() const;
 
-    MCFOLD int $getCustomId() const;
+    MCNAPI int $getCustomId() const;
     // NOLINTEND
 
 public:

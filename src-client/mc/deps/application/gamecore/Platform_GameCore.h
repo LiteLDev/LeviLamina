@@ -15,6 +15,7 @@ class AppPlatform_GameCore;
 class GameControllerHandler_GameCore;
 class HIDControllerGameCoreDesktop;
 class IMinecraftEventing;
+struct XGameActivationInfo;
 struct XTaskQueueObject;
 namespace Bedrock { class ActivationArguments; }
 namespace Bedrock { class GameHolder; }
@@ -38,7 +39,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::HIDControllerGameCoreDesktop>>   mHIDController;
     ::ll::TypedStorage<1, 1, bool>                                                 mResetCalled;
     ::ll::TypedStorage<8, 8, ::XTaskQueueObject*>                                  mTaskQueue;
-    ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                        mGameProtocolToken;
+    ::ll::TypedStorage<8, 8, ::XTaskQueueRegistrationToken>                        mGameActivationToken;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::GameControllerHandler_GameCore>> mGameControllerHandler_Shim;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::AppPlatform_GameCore>>            mPlatform_Shim;
     ::ll::TypedStorage<8, 8, ::HWND__*>                                            mHwnd;
@@ -90,39 +91,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setRemoteSession(bool value);
+    MCNAPI void setRemoteSession(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void onProtocolActivation(void* context, char const* uri);
+    MCNAPI static void onActivation(void* context, ::XGameActivationInfo const* activationInfo);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& sAppName();
+    MCNAPI static ::std::string_view const& sAppName();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $updatePlatformInfo();
+    MCNAPI bool $updatePlatformInfo();
 
-    MCAPI bool $updatePlatformGraphicsInfo();
+    MCNAPI bool $updatePlatformGraphicsInfo();
 
-    MCAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
+    MCNAPI bool $_preAppCreation(::Bedrock::ActivationArguments const&);
 
-    MCAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
+    MCNAPI void $_processActivationArguments(::Bedrock::ActivationArguments const& args);
 
-    MCAPI bool $_postAppCreation(::Bedrock::ActivationArguments const& actArgs);
+    MCNAPI bool $_postAppCreation(::Bedrock::ActivationArguments const& actArgs);
 
-    MCAPI bool $_update(bool canRender);
+    MCNAPI bool $_update(bool canRender);
 
-    MCAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
+    MCNAPI void $notifyUriListeners_Shim(::ActivationUri const& uri);
 
-    MCFOLD void $resetCallback();
+    MCNAPI void $resetCallback();
     // NOLINTEND
 };
 

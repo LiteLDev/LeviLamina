@@ -52,29 +52,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WitherTargetHighestDamage(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI WitherTargetHighestDamage(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI ::Player* getHighestDamageTarget();
+    MCNAPI ::Player* getHighestDamageTarget();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI bool $_canAttack(
+    MCNAPI bool $_canAttack(
         ::Mob*                  testMob,
         ::Actor*                target,
         bool                    allowInvulnerable,

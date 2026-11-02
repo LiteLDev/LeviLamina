@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/JigsawJsonType.h"
+#include "mc/editor/JigsawJsonType.h"
 
 // auto generated forward declare list
 // clang-format off

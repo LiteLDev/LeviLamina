@@ -22,12 +22,15 @@ struct MobFlagComponent;
 struct MoveRequestComponent;
 struct ServerCatchupMovementTrackerComponent;
 struct StateVectorComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace SolidMobSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void flagNearbyMobsForServerMovementCatchup(
+MCNAPI ::TickingSystemWithInfo createStoreNearbyMobsOnMoveRequestSystem();
+
+MCNAPI void flagNearbyMobsForServerMovementCatchup(
     ::StrictEntityContext const&                   player,
     ::StateVectorComponent const&                  stateVector,
     ::ServerCatchupMovementTrackerComponent const& tracker,
@@ -38,26 +41,26 @@ MCAPI void flagNearbyMobsForServerMovementCatchup(
         ::Optional<::MobFlagComponent const>,
         ::Optional<::IsSolidMobComponent const>> const&                                            fullData,
     ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& solidMobs,
-    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier,
+    ::EntityModifier<::IsSolidMobNearbyComponent> const&                                           modifier,
     ::LocalSpatialEntityFetcherFactoryComponent const&                                             fetcherFactory,
     ::LocalSpatialEntityFetcher&                                                                   fetcher,
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void flagSolidMobsFromNearbyEntity(
+MCNAPI void flagSolidMobsFromNearbyEntity(
     ::StrictEntityContext const&                                                                   entity,
     ::AABBShapeComponent const&                                                                    shape,
     ::Optional<::MobFlagComponent const>                                                           isMob,
     ::Optional<::IsSolidMobComponent const>                                                        isSolid,
     ::ViewT<::StrictEntityContext, ::IsSolidMobComponent const, ::AABBShapeComponent const> const& nearbySolidMobs,
     ::LocalSpatialEntityFetcher&                                                                   fetcher,
-    ::EntityModifier<::IsSolidMobNearbyComponent>                                                  modifier,
+    ::EntityModifier<::IsSolidMobNearbyComponent> const&                                           modifier,
     ::std::vector<::StrictEntityContext>&                                                          buffer
 );
 
-MCAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systems, bool isClientSide);
 
-MCAPI void storeNearbyMobsOnMoveRequest(
+MCNAPI void storeNearbyMobsOnMoveRequest(
     ::IsSolidMobNearbyComponent const& nearby,
     ::DepenetrationComponent&          depenetration,
     ::MoveRequestComponent&            request

@@ -10,5 +10,6 @@ enum class StatelessBlockChangeContext : uchar {
     MultiBlock         = 4,
     ExtraBlock         = 5,
     DelayedMultiBlock  = 6,
-    Count              = 7,
+    SupportLost        = 7,
+    Count              = 8,
 };

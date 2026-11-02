@@ -11,9 +11,9 @@ class EntityContext;
 namespace ActorChunkPosition {
 // functions
 // NOLINTBEGIN
-MCAPI ::ChunkPos const& getChunkPosition(::EntityContext const& provider);
+MCNAPI ::ChunkPos const& getChunkPosition(::EntityContext const& provider);
 
-MCAPI void setChunkPosition(::EntityContext& provider, ::ChunkPos const& chunkPosition);
+MCNAPI void setChunkPosition(::EntityContext& provider, ::ChunkPos const& chunkPosition);
 // NOLINTEND
 
 } // namespace ActorChunkPosition

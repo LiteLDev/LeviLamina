@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     ClickSourceContext(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity, ::LastClickedSource source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity, ::LastClickedSource source);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ActiveDirectoryIdentity> identity, ::LastClickedSource source);
     // NOLINTEND
 };

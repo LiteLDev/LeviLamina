@@ -2,11 +2,6 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace Scripting { struct ClassBinding; }
-// clang-format on
-
 namespace Editor::ScriptModule {
 
 class ScriptExtrudeInteractiveToolResult {
@@ -26,12 +21,6 @@ public:
     ScriptExtrudeInteractiveToolResult& operator=(ScriptExtrudeInteractiveToolResult const&);
     ScriptExtrudeInteractiveToolResult(ScriptExtrudeInteractiveToolResult const&);
     ScriptExtrudeInteractiveToolResult();
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static ::Scripting::ClassBinding bindScript();
-    // NOLINTEND
 };
 
 } // namespace Editor::ScriptModule

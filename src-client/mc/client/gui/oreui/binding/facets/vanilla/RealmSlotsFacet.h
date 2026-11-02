@@ -56,47 +56,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmSlotsFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+    MCNAPI explicit RealmSlotsFacet(::std::shared_ptr<::PlayScreenModel> playScreenModel);
 
-    MCAPI void activateSlot(int index);
+    MCNAPI void activateSlot(int index);
 
-    MCAPI void confirm();
+    MCNAPI void confirm();
 
-    MCAPI bool didFailToActivateSlot() const;
+    MCNAPI bool didFailToActivateSlot() const;
 
-    MCAPI bool didFailToQuerySelectedRealmDetails() const;
+    MCNAPI bool didFailToQuerySelectedRealmDetails() const;
 
-    MCFOLD ::std::vector<::OreUI::RealmSlot> const& getRealmSlots() const;
+    MCNAPI ::std::vector<::OreUI::RealmSlot> const& getRealmSlots() const;
 
-    MCAPI void getSelectedRealmDetails(::std::string const& realmId);
+    MCNAPI void getSelectedRealmDetails(::std::string const& realmId);
 
-    MCAPI bool isLoading() const;
+    MCNAPI bool isLoading() const;
 
-    MCAPI bool isShowingConfirmationModal() const;
+    MCNAPI bool isShowingConfirmationModal() const;
 
-    MCAPI bool isSlotSelected() const;
+    MCNAPI bool isSlotSelected() const;
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void selectSlot(int index);
+    MCNAPI void selectSlot(int index);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> playScreenModel);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> playScreenModel);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

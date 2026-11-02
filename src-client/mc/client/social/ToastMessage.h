@@ -22,6 +22,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mHasCustomPocketToast;
     ::ll::TypedStorage<1, 1, bool>                                mUseCustomPocketToast;
     ::ll::TypedStorage<1, 1, bool>                                mIsSilent;
+    ::ll::TypedStorage<1, 1, bool>                                mIsPersistent;
     ::ll::TypedStorage<4, 4, ::ToastMessageType>                  mType;
     ::ll::TypedStorage<8, 32, ::std::string>                      mTitle;
     ::ll::TypedStorage<8, 32, ::std::string>                      mSubtitle;
@@ -54,11 +55,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastMessage(::ToastMessage const&);
+    MCNAPI ToastMessage(::ToastMessage const&);
 
-    MCAPI explicit ToastMessage(::std::string const& message);
+    MCNAPI explicit ToastMessage(::std::string const& message);
 
-    MCAPI ToastMessage(
+    MCNAPI ToastMessage(
         ::ToastMessageType   type,
         ::std::string const& title,
         ::std::string const& subtitle,
@@ -66,7 +67,7 @@ public:
         float                displaySeconds
     );
 
-    MCAPI ToastMessage(
+    MCNAPI ToastMessage(
         ::ToastMessageType                  type,
         ::std::string const&                title,
         ::std::string const&                subtitle,
@@ -76,19 +77,19 @@ public:
         ::PlayerMessaging::ButtonActionType buttonActionType
     );
 
-    MCAPI ::ToastMessage& operator=(::ToastMessage const&);
+    MCNAPI ::ToastMessage& operator=(::ToastMessage const&);
 
-    MCAPI ~ToastMessage();
+    MCNAPI ~ToastMessage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ToastMessage const&);
+    MCNAPI void* $ctor(::ToastMessage const&);
 
-    MCAPI void* $ctor(::std::string const& message);
+    MCNAPI void* $ctor(::std::string const& message);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ToastMessageType   type,
         ::std::string const& title,
         ::std::string const& subtitle,
@@ -96,7 +97,7 @@ public:
         float                displaySeconds
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ToastMessageType                  type,
         ::std::string const&                title,
         ::std::string const&                subtitle,
@@ -110,6 +111,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

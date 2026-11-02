@@ -36,11 +36,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCNAPI explicit ProjectileItemComponent(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
+    MCNAPI ProjectileItemComponent(::ActorType actorType, float minCriticalPower);
 
-    MCAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCNAPI bool dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
     MCAPI ::Actor* shootProjectile(
         ::BlockSource& region,
@@ -54,7 +54,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -64,9 +64,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_20_50::ProjectileItemComponent component);
 
-    MCAPI void* $ctor(::ActorType actorType, float minCriticalPower);
+    MCNAPI void* $ctor(::ActorType actorType, float minCriticalPower);
     // NOLINTEND
 
 public:

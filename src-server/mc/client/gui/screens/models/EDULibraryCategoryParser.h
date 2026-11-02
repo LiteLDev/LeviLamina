@@ -2,8 +2,8 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-struct EDULibraryCategoryParser {
+struct EduLibraryCategoryParser {
 public:
-    // EDULibraryCategoryParser inner types define
+    // EduLibraryCategoryParser inner types define
     enum class CategoryType : int {};
 };

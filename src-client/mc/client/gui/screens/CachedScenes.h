@@ -30,26 +30,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CachedScenes(
+    MCNAPI CachedScenes(
         bool                                                                  lowMemoryDevice,
         ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
     );
 
-    MCAPI void cacheVisualTree(
+    MCNAPI void cacheVisualTree(
         ::std::unique_ptr<::VisualTree>       screen,
         ::std::shared_ptr<::UIControlFactory> factory,
         ::std::unique_ptr<::LayoutManager>    layoutManager
     );
 
-    MCAPI ::std::unique_ptr<::CachedScene> getCachedScene(::Json::Value const& info);
-
-    MCAPI ~CachedScenes();
+    MCNAPI ~CachedScenes();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         bool                                                                  lowMemoryDevice,
         ::std::function<::std::unique_ptr<::TaskGroup>(::std::string)> const& taskGroupProvider
     );
@@ -58,6 +56,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -26,12 +26,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
-
-    MCAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
+    MCNAPI CloudSaveLevelInfo(::CloudSaveLevelInfo const&);
 
 #ifdef LL_PLAT_C
-    MCAPI CloudSaveLevelInfo(
+    MCNAPI explicit CloudSaveLevelInfo(::CompoundTag const& tag);
+
+    MCNAPI CloudSaveLevelInfo(
         ::std::string driveItemId,
         ::std::string cTag,
         ::std::string userId,
@@ -41,28 +41,28 @@ public:
     );
 #endif
 
-    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
+    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo&&);
 
-    MCAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
+    MCNAPI ::CloudSaveLevelInfo& operator=(::CloudSaveLevelInfo const&);
 
 #ifdef LL_PLAT_C
-    MCAPI bool operator==(::CloudSaveLevelInfo const& other) const;
+    MCNAPI bool operator==(::CloudSaveLevelInfo const& other) const;
+
+    MCNAPI void serialize(::CompoundTag& tag) const;
 #endif
 
-    MCAPI void serialize(::CompoundTag& tag) const;
-
-    MCAPI ~CloudSaveLevelInfo();
+    MCNAPI ~CloudSaveLevelInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::CloudSaveLevelInfo const&);
-
-    MCAPI void* $ctor(::CompoundTag const& tag);
+    MCNAPI void* $ctor(::CloudSaveLevelInfo const&);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(::CompoundTag const& tag);
+
+    MCNAPI void* $ctor(
         ::std::string driveItemId,
         ::std::string cTag,
         ::std::string userId,
@@ -76,6 +76,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

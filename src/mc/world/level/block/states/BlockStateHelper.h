@@ -10,7 +10,7 @@ class Block;
 namespace BlockStateHelper {
 // functions
 // NOLINTBEGIN
-MCAPI bool isOrientationSensitiveBlock(::Block const& block);
+MCNAPI bool isOrientationSensitiveBlock(::Block const& block);
 // NOLINTEND
 
 } // namespace BlockStateHelper

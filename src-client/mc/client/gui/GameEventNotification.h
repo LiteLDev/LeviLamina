@@ -51,9 +51,6 @@ enum class GameEventNotification : uint {
     OnScreenKeyboardTruncation        = 43,
     RevertToLegacyWorldPackDownloader = 44,
     HudElementVisibilityUpdated       = 45,
-    PartyNotEligible                  = 46,
-    PartyPartiallyEligible            = 47,
-    ContinuePartyJoin                 = 48,
 };
 
 }

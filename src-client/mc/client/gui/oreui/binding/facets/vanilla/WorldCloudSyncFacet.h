@@ -43,25 +43,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void clearSyncWorldTaskState();
+    MCNAPI void clearSyncWorldTaskState();
 
-    MCFOLD ::std::optional<::World::WorldCloudSyncResult> const& getSyncWorldResult() const;
+    MCNAPI ::std::optional<::World::WorldCloudSyncResult> const& getSyncWorldResult() const;
 
-    MCFOLD ::OreUI::FacetTaskState getSyncWorldTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState getSyncWorldTaskState() const;
 
-    MCAPI void syncWorld(::std::string const& id);
+    MCNAPI void syncWorld(::std::string const& id);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

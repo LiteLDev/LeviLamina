@@ -41,32 +41,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI KnockbackRoarGoalDefinition(::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&&);
+    MCNAPI KnockbackRoarGoalDefinition(::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&
     operator=(::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&&);
 
-    MCAPI ~KnockbackRoarGoalDefinition();
+    MCNAPI ~KnockbackRoarGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
+    MCNAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::KnockbackRoarGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

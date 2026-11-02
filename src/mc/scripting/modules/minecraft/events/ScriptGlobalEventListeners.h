@@ -11,6 +11,7 @@ class LevelEventCoordinator;
 class ScriptingEventCoordinator;
 class ServerNetworkEventCoordinator;
 class ServerPlayerEventCoordinator;
+namespace ScriptLiveEventsUtilities { class ScriptLiveEventsUtilitiesGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptActorGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptBlockGlobalEventListener; }
 namespace ScriptModuleMinecraft { class ScriptItemGlobalEventListener; }
@@ -42,6 +43,9 @@ public:
         mBlockEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptItemGlobalEventListener>>
         mItemEventListener;
+    ::ll::
+        TypedStorage<8, 8, ::std::unique_ptr<::ScriptLiveEventsUtilities::ScriptLiveEventsUtilitiesGlobalEventListener>>
+            mLiveEventsUtilitiesEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleParties::ScriptPartiesGlobalEventListener>>
         mPartiesEventListener;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ScriptModuleMinecraft::ScriptPlayerGlobalEventListener>>
@@ -67,7 +71,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptGlobalEventListeners(
+    MCNAPI ScriptGlobalEventListeners(
         ::ActorEventCoordinator&         actorEventCoordinator,
         ::BlockEventCoordinator&         blockEventCoordinator,
         ::ItemEventCoordinator&          itemEventCoordinator,
@@ -77,13 +81,13 @@ public:
         ::LevelEventCoordinator&         levelEventCoordinator
     );
 
-    MCAPI ~ScriptGlobalEventListeners();
+    MCNAPI ~ScriptGlobalEventListeners();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorEventCoordinator&         actorEventCoordinator,
         ::BlockEventCoordinator&         blockEventCoordinator,
         ::ItemEventCoordinator&          itemEventCoordinator,
@@ -97,7 +101,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

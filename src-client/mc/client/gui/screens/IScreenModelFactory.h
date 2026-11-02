@@ -25,7 +25,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::IScreenModelFactory> create(
+    MCNAPI static ::std::unique_ptr<::IScreenModelFactory> create(
         ::IMinecraftGame&           game,
         ::IClientInstance&          client,
         ::IAdvancedGraphicsOptions& graphics,

@@ -105,69 +105,69 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::WorldContentItemCollectionsModel _generatePackCollectionsModel();
+    MCNAPI ::WorldContentItemCollectionsModel _generatePackCollectionsModel();
 
-    MCAPI ::std::shared_ptr<::ContentItemCollection>
+    MCNAPI ::std::shared_ptr<::ContentItemCollection>
     _getAvailableContentItemCollection(::ContentType contentType) const;
 
-    MCAPI ::std::shared_ptr<::ContentItemCollection>
+    MCNAPI ::std::shared_ptr<::ContentItemCollection>
     _getMarketplacePassContentItemCollection(::ContentType contentType) const;
 
-    MCAPI ::std::optional<::World::PackActionError> _movePackContent(
+    MCNAPI ::std::optional<::World::PackActionError> _movePackContent(
         ::std::string const& packIdVersion,
         ::ContentType        packType,
         ::World::PackAction  packAction,
         bool                 ignoreWarnings
     );
 
-    MCAPI void _reloadAndReapplyPendingChanges();
+    MCNAPI void _reloadAndReapplyPendingChanges();
 
-    MCAPI void _reloadContentSource();
+    MCNAPI void _reloadContentSource();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
+    MCNAPI void $setContentSource(::std::unique_ptr<::ContentSource>&& contentSource);
 
-    MCAPI void $resetContent();
+    MCNAPI void $resetContent();
 
-    MCAPI void $reloadPacks();
+    MCNAPI void $reloadPacks();
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $subscribeToContentItemCollectionDirtySubscription(::std::function<void()>&& callback);
 
-    MCAPI ::WorldContentItemCollectionsModel $getWorldCollectionsModel() const;
+    MCNAPI ::WorldContentItemCollectionsModel $getWorldCollectionsModel() const;
 
-    MCAPI ::std::optional<::World::PackActionError>
+    MCNAPI ::std::optional<::World::PackActionError>
     $changePackPriority(::std::string const& packIdVersion, ::ContentType packType, int fromPosition, int toPosition);
 
-    MCAPI ::std::optional<::World::PackActionError>
+    MCNAPI ::std::optional<::World::PackActionError>
     $activatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
 
-    MCAPI ::std::optional<::World::PackActionError>
+    MCNAPI ::std::optional<::World::PackActionError>
     $deactivatePack(::std::string const& packIdVersion, ::ContentType packType, bool ignoreWarnings);
 
-    MCAPI ::std::optional<::World::PackActionError> $continuePendingPackAction();
+    MCNAPI ::std::optional<::World::PackActionError> $continuePendingPackAction();
 
-    MCAPI void $clearPendingPackAction();
+    MCNAPI void $clearPendingPackAction();
 
-    MCAPI ::Bedrock::PubSub::Subscription
+    MCNAPI ::Bedrock::PubSub::Subscription
     $subscribeToPendingPackActionPublisher(::std::function<void(::std::optional<::World::PendingPackAction>)> callback);
 
-    MCAPI ::std::optional<::PackSettingsInfo> $getPackSettingsForPackIdVersion(::std::string const& packIdVersion);
+    MCNAPI ::std::optional<::PackSettingsInfo> $getPackSettingsForPackIdVersion(::std::string const& packIdVersion);
 
-    MCAPI ::std::shared_ptr<::PackContentItem const> $getPackItemForPackIdVersion(::std::string_view packIdVersion);
+    MCNAPI ::std::shared_ptr<::PackContentItem const> $getPackItemForPackIdVersion(::std::string_view packIdVersion);
 
-    MCAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
+    MCNAPI ::Bedrock::PubSub::Subscription $subscribeToMarketplacePackDownloadStatus(
         ::std::function<void(::IMarketplacePackDownloader::MarketplacePackDownloadStatus)>&& onDownloadStatusChange
     );
 
-    MCAPI void $setEditorEnabled(bool isEditorEnabled);
+    MCNAPI void $setEditorEnabled(bool isEditorEnabled);
 
-    MCFOLD bool $getEditorEnabled() const;
+    MCNAPI bool $getEditorEnabled() const;
     // NOLINTEND
 };
 

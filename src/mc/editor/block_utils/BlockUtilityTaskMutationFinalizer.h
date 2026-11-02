@@ -34,22 +34,12 @@ public:
     MCNAPI BlockUtilityTaskMutationFinalizer(::BlockSource& region, ::Block const* constantPlacedBlock);
 
     MCNAPI void _finalizePosition(::Editor::BlockUtils::Task::BlockUtilityPositionEntry const& entry);
-
-    MCNAPI void finalizeRemaining();
-
-    MCNAPI ~BlockUtilityTaskMutationFinalizer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCNAPI void* $ctor(::BlockSource& region, ::Block const* constantPlacedBlock);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

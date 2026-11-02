@@ -63,7 +63,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FilteredContainerModel(
+    MCNAPI FilteredContainerModel(
         ::FullContainerName const&                                   containerName,
         int                                                          size,
         ::ContainerCategory                                          containerCategory,
@@ -73,13 +73,13 @@ public:
         ::std::function<::FilterResult(::ItemInstance const&, bool)> rule
     );
 
-    MCAPI void _refreshContainer(bool fullRefresh);
+    MCNAPI void _refreshContainer(bool fullRefresh);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::FullContainerName const&                                   containerName,
         int                                                          size,
         ::ContainerCategory                                          containerCategory,
@@ -93,23 +93,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $containerContentChanged(int slot);
+    MCNAPI void $containerContentChanged(int slot);
 
-    MCAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
+    MCNAPI ::ItemInstance const& $getItemInstance(int modelSlot) const;
 
-    MCAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
+    MCNAPI void $setItemInstance(int modelSlot, ::ItemInstance const& item);
 
-    MCAPI void $refreshContainer(bool fullRefresh);
+    MCNAPI void $refreshContainer(bool fullRefresh);
 
-    MCAPI int $getContainerSize() const;
+    MCNAPI int $getContainerSize() const;
 
-    MCAPI int $getFilteredContainerSize() const;
+    MCNAPI int $getFilteredContainerSize() const;
 
-    MCAPI bool $isExpanableItemFiltered(int index) const;
+    MCNAPI bool $isExpanableItemFiltered(int index) const;
 
-    MCAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
+    MCNAPI int $getIndexForCreativeItem(::ItemStackBase const& item) const;
 
-    MCAPI void $_init();
+    MCNAPI void $_init();
 
 
     // NOLINTEND

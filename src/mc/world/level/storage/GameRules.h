@@ -10,6 +10,8 @@
 
 // auto generated forward declare list
 // clang-format off
+class BaseGameVersion;
+class CompoundTag;
 class GameRule;
 class GameRulesChangedPacket;
 class GameRulesChangedPacketData;
@@ -98,15 +100,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameRules();
+    MCNAPI GameRules();
 
-    MCAPI GameRules(::GameRules&& rhs);
+    MCNAPI GameRules(::GameRules&& rhs);
 
-    MCAPI GameRules(::GameRules const& rhs);
+    MCNAPI GameRules(::GameRules const& rhs);
 
-    MCAPI void _registerRules();
+    MCNAPI void _registerRules();
 
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
+    MCNAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
         ::GameRule*                                          gameRule,
         ::std::variant<::cereal::NullType, bool, int, float> value,
         ::GameRule::Type                                     type,
@@ -116,43 +118,51 @@ public:
         ::GameRule::ValidationError*                         errorOutput
     );
 
-    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
+    MCNAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
 
-    MCAPI void deserializeRules(::GameRulesChangedPacketData const& ruleData);
+    MCNAPI void deserializeRules(::GameRulesChangedPacketData const& ruleData);
 
     MCAPI bool getBool(::GameRuleId ruleType, bool defaultValue) const;
 
-    MCAPI ::GameRules& operator=(::GameRules&& rhs);
-
-    MCAPI ::GameRules& operator=(::GameRules const& rhs);
-
 #ifdef LL_PLAT_C
-    MCAPI bool operator==(::GameRules const& rhs) const;
+    MCNAPI void getTagData(::CompoundTag const& tag, ::BaseGameVersion const& version);
 #endif
 
-    MCAPI void setMarketplaceOverrides();
+    MCNAPI ::GameRules& operator=(::GameRules&& rhs);
+
+    MCNAPI ::GameRules& operator=(::GameRules const& rhs);
+
+#ifdef LL_PLAT_C
+    MCNAPI bool operator==(::GameRules const& rhs) const;
+#endif
+
+    MCNAPI void setMarketplaceOverrides();
+
+#ifdef LL_PLAT_C
+    MCNAPI void setTagData(::CompoundTag& tag) const;
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& WORLD_POLICY_TAG_NAME();
+    MCNAPI static ::std::string const& WORLD_POLICY_TAG_NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::GameRules&& rhs);
+    MCNAPI void* $ctor(::GameRules&& rhs);
 
-    MCAPI void* $ctor(::GameRules const& rhs);
+    MCNAPI void* $ctor(::GameRules const& rhs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

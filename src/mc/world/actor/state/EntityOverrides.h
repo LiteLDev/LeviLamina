@@ -31,11 +31,11 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void clear(::ActorUniqueID entity);
+    MCNAPI void clear(::ActorUniqueID entity);
 
-    MCAPI void remove(::ActorUniqueID entity, uint propertyIndex);
+    MCNAPI void remove(::ActorUniqueID entity, uint propertyIndex);
 
-    MCAPI void set(::ActorUniqueID entity, uint propertyIndex, ::std::variant<::std::monostate, int, float> value);
+    MCNAPI void set(::ActorUniqueID entity, uint propertyIndex, ::std::variant<::std::monostate, int, float> value);
 #endif
     // NOLINTEND
 };

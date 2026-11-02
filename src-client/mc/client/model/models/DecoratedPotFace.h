@@ -51,19 +51,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DecoratedPotFace(::DecoratedPotFace::Alignment const& alignment);
+    MCNAPI explicit DecoratedPotFace(::DecoratedPotFace::Alignment const& alignment);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::DecoratedPotFace::Alignment const& alignment);
+    MCNAPI void* $ctor(::DecoratedPotFace::Alignment const& alignment);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:

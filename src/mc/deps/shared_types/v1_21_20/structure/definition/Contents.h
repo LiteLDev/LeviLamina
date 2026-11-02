@@ -32,6 +32,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 32, ::SharedTypes::v1_21_20::JigsawStructureDefinition::Description>      mDescription;
     ::ll::TypedStorage<8, 32, ::std::string>                                                        mStartJigsawName;
+    ::ll::TypedStorage<8, 32, ::std::string>                                                        mOnPlaced;
     ::ll::TypedStorage<8, 232, ::SharedTypes::v1_21_20::FilterGroupData>                            mBiomeFilters;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureDefinition::GenerationStep>    mStep;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_21_20::JigsawStructureDefinition::TerrainAdaptation> mTerrainAdaptation;
@@ -66,43 +67,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+    MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
-    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
+    MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
 
-    MCAPI ~Contents();
+    MCNAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

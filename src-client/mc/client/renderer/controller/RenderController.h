@@ -51,8 +51,6 @@ public:
     // NOLINTBEGIN
     MCNAPI RenderController(::RenderController const&);
 
-    MCNAPI ::std::vector<::std::shared_ptr<::DataDrivenGeometry const>> getDataDrivenGeometries() const;
-
     MCNAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
 
     MCNAPI ::mce::Color getOnFireColor(::RenderParams& renderParams) const;

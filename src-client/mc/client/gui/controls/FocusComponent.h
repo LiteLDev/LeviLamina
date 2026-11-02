@@ -64,40 +64,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit FocusComponent(::UIControl& owner);
+    MCNAPI explicit FocusComponent(::UIControl& owner);
 
-    MCAPI bool checkFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& checkName) const;
+    MCNAPI bool checkFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& checkName) const;
 
-    MCAPI void registerNewLookupMapEntry(
+    MCNAPI void registerNewLookupMapEntry(
         ::std::string const&                                                focusID,
         ::std::unordered_map<::ui::CardinalDirection, ::std::string> const& mapping
     );
 
-    MCAPI void setFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& str);
+    MCNAPI void setFocusChangeOverride(::ui::CardinalDirection dir, ::std::string const& str);
 
-    MCAPI void setFocusIdentifier(::std::string const& str);
+    MCNAPI void setFocusIdentifier(::std::string const& str);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
     // NOLINTEND
 };

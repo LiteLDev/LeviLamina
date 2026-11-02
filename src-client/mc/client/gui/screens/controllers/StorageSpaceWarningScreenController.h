@@ -32,20 +32,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI
+    MCNAPI
     StorageSpaceWarningScreenController(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& message);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& message);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::std::string const& message);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
     // NOLINTEND
 
 public:

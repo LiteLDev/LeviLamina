@@ -35,7 +35,7 @@ public:
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~ClientAnimationComponent() /*override*/;
+    virtual ~ClientAnimationComponent() /*override*/ = default;
 
     virtual ::ClientAnimationComponent* tryGetClient() /*override*/;
 
@@ -63,55 +63,49 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool attemptToSetParentBoneMapping(
+    MCNAPI bool attemptToSetParentBoneMapping(
         ::ClientAnimationComponent& parentAnimationComponent,
         ::BoneOrientation&          childBoneOrientation
     ) const;
 
-    MCAPI ::std::vector<::BoneOrientation>& getBoneOrientationsFromGeometry(::DataDrivenGeometry const& sourceGeo);
+    MCNAPI ::std::vector<::BoneOrientation>& getBoneOrientationsFromGeometry(::DataDrivenGeometry const& sourceGeo);
 
-    MCAPI ::RenderParams& prepRenderParamsForActorRendering(
+    MCNAPI ::RenderParams& prepRenderParamsForActorRendering(
         ::ActorRenderData&                   actorRenderData,
         ::BaseActorRenderContext*            baseActorRenderContext,
         ::std::shared_ptr<::DataDrivenModel> model,
         float                                frameAlpha
     );
 
-    MCAPI void updateRenderControllersToProcess(
+    MCNAPI void updateRenderControllersToProcess(
         ::std::shared_ptr<::DataDrivenModel> itemModel,
         ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
     );
     // NOLINTEND
 
 public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ClientAnimationComponent* $tryGetClient();
+    MCNAPI ::ClientAnimationComponent* $tryGetClient();
 
-    MCAPI void $visitApplyContext(
+    MCNAPI void $visitApplyContext(
         ::brstd::function_ref<void(::ApplyAnimationContext const&) const, void(::ApplyAnimationContext const&)> visitor
     ) const;
 
-    MCAPI void $updateQueryableGeometryBoneOrientations();
+    MCNAPI void $updateQueryableGeometryBoneOrientations();
 
-    MCAPI ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
+    MCNAPI ::gsl::span<::SkeletalHierarchyIndex const> $getSkeletalHierarchiesToProcess() const;
 
-    MCAPI void $setDirty();
+    MCNAPI void $setDirty();
 
-    MCAPI void
+    MCNAPI void
     $initializeClientAnimationComponent(::std::function<void(::ActorAnimationPlayer&)> animationComponentInitFunction);
 
-    MCAPI void $ensureClientAnimationComponentIsInitialized();
+    MCNAPI void $ensureClientAnimationComponentIsInitialized();
 
-    MCAPI float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
+    MCNAPI float $_getActorRenderDeltaTime(::ActorRenderData const& data) const;
 
-    MCAPI ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
+    MCNAPI ::Matrix const* $getQueryableBoneOrientation(uint64 boneNameHash) const;
     // NOLINTEND
 
 public:

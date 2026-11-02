@@ -25,27 +25,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getBlockPriorities() const;
 
-    MCAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getBlockTagPriorities() const;
 
-    MCAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getEntityPriorities() const;
 
-    MCAPI ::std::unordered_map<::std::string, int> getEntityTypeFamilyPriorities() const;
+    MCNAPI ::std::unordered_map<::std::string, int> getEntityTypeFamilyPriorities() const;
 
-    MCAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
+    MCNAPI void setBlockPriorities(::std::unordered_map<::std::string, int> blockPriorities);
 
-    MCAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
+    MCNAPI void setBlockTagPriorities(::std::unordered_map<::std::string, int> blockTagPriorities);
 
-    MCAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
+    MCNAPI void setEntityPriorities(::std::unordered_map<::std::string, int> entityPriorities);
 
-    MCAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
+    MCNAPI void setEntityTypeFamilyPriorities(::std::unordered_map<::std::string, int> entityTypeFamilyPriorities);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

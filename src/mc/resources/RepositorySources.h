@@ -5,10 +5,8 @@
 // auto generated forward declare list
 // clang-format off
 class CompositePackSource;
-class ContentIdentity;
 class PackSourceFactory;
 struct RepositorySourceOptions;
-namespace Core { class PathView; }
 // clang-format on
 
 class RepositorySources {
@@ -26,15 +24,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initializeCachedPackSource(::PackSourceFactory& packSourceFactory);
-
     MCAPI void initializePackSource(::PackSourceFactory& packSourceFactory);
-
-    MCAPI void initializePremiumWorldTemplatePackSource(
-        ::PackSourceFactory&     packSourceFactory,
-        ::ContentIdentity const& currentPremiumWorldTemplateIdentity
-    );
-
-    MCAPI void initializeWorldPackSource(::PackSourceFactory& packSourceFactory, ::Core::PathView currentWorldPath);
     // NOLINTEND
 };

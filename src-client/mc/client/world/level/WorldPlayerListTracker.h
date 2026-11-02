@@ -56,22 +56,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayerListTracker(
+    MCNAPI WorldPlayerListTracker(
         ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
         ::LocalPlayerChangedConnector     localPlayerChangedConnector
     );
 
-    MCAPI void _init();
+    MCNAPI void _init();
 
-    MCAPI bool _updatePlayerList();
+    MCNAPI bool _updatePlayerList();
 
-    MCAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
+    MCNAPI ::std::vector<::PlayerListEntry const*> getLobbyPlayerList();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::LocalPlayer*()> getCurrentLocalPlayer,
         ::LocalPlayerChangedConnector     localPlayerChangedConnector
     );
@@ -80,11 +80,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::mce::UUID> const& $getPlayerList();
+    MCNAPI ::std::vector<::mce::UUID> const& $getPlayerList();
 
-    MCAPI ::PlayerListEntry const* $getPlayerEntry(::mce::UUID const& uuid);
+    MCNAPI ::PlayerListEntry const* $getPlayerEntry(::mce::UUID const& uuid);
 
-    MCAPI ::std::vector<::mce::UUID> $_getCurrentLobby() const;
+    MCNAPI ::std::vector<::mce::UUID> $_getCurrentLobby() const;
     // NOLINTEND
 };
 

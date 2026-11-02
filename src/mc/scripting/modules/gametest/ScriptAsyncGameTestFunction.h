@@ -45,7 +45,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptAsyncGameTestFunction(
+    MCNAPI ScriptAsyncGameTestFunction(
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<
             ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
@@ -57,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope scope,
         ::Scripting::Closure<
             ::Scripting::Future<void>(::Scripting::TypedObjectHandle<::ScriptModuleGameTest::ScriptGameTestHelper>)>
@@ -69,7 +69,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
+    MCNAPI ::std::unique_ptr<::gametest::IGameTestFunctionRunResult>
     $run(::gametest::BaseGameTestHelper&, ::gametest::IGameTestFunctionContext& fnContext) const;
 
 

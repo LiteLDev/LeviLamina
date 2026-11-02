@@ -41,13 +41,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI ~ItemProperties();
+        MCNAPI ~ItemProperties();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -80,23 +80,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EquipmentPreviewRenderer(::UIResolvedDef const& definition);
+    MCNAPI explicit EquipmentPreviewRenderer(::UIResolvedDef const& definition);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& definition);
+    MCNAPI void* $ctor(::UIResolvedDef const& definition);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

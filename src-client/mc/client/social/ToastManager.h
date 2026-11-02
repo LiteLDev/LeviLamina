@@ -34,8 +34,9 @@ public:
     ::ll::TypedStorage<8, 8, ::IClientInstance&>                                             mClient;
     ::ll::TypedStorage<4, 4, ::ToastState>                                                   mState;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager>>          mResourcePackManager;
-    ::ll::TypedStorage<8, 376, ::std::optional<::ToastMessage>>                              mCurrentMessage;
+    ::ll::TypedStorage<8, 384, ::std::optional<::ToastMessage>>                              mCurrentMessage;
     ::ll::TypedStorage<8, 24, ::std::vector<::ToastMessage>>                                 mQueuedToastMessages;
+    ::ll::TypedStorage<8, 384, ::std::optional<::ToastMessage>>                              mPersistentToastMessage;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::ToastChannel, ::IToastListener*>>> mListeners;
     ::ll::TypedStorage<8, 24, ::std::vector<::gsl::not_null<::IToastEventListener*>>>        mEventListeners;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::RecipeToastDataViewer>>                     mIconsViewer;
@@ -43,12 +44,13 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                                           mToastsEnabled;
     ::ll::TypedStorage<1, 1, bool>                                                           mRefreshPendingInvites;
     ::ll::TypedStorage<1, 1, bool>                                                           mDestroyToast;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mToastStartTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mToastEndTime;
-    ::ll::TypedStorage<4, 4, float>                                                          mDeltaTime;
-    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                        mLastUpdateTimePoint;
-    ::ll::TypedStorage<8, 8, ::Option*>                                                      mEnableDebugToastsOption;
-    ::ll::TypedStorage<8, 32, ::std::string>                                                 mLongestRecipeText;
+    ::ll::TypedStorage<1, 1, bool>                                    mMatchmakingJoiningToastExpired;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mToastStartTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mToastEndTime;
+    ::ll::TypedStorage<4, 4, float>                                   mDeltaTime;
+    ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point> mLastUpdateTimePoint;
+    ::ll::TypedStorage<8, 8, ::Option*>                               mEnableDebugToastsOption;
+    ::ll::TypedStorage<8, 32, ::std::string>                          mLongestRecipeText;
     // NOLINTEND
 
 public:
@@ -64,6 +66,10 @@ public:
 
     virtual void pushToast(::ToastMessage&& message) /*override*/;
 
+    virtual void pushPersistentToast(::ToastMessage&& message) /*override*/;
+
+    virtual void removePersistentToast() /*override*/;
+
     virtual bool isEditorModeEnabled() const /*override*/;
 
     virtual void onActiveResourcePacksChanged(::ResourcePackManager&) /*override*/;
@@ -72,49 +78,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ToastManager(
+    MCNAPI ToastManager(
         ::IClientInstance&                                   client,
         ::Option*                                            enableDebugToastsOption,
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
     );
 
-    MCAPI void _destroyToast();
+    MCNAPI void _destroyToast();
 
-    MCAPI ::std::string _getNewRecipesText() const;
+    MCNAPI ::std::string _getNewRecipesText() const;
 
-    MCAPI void _handleInvite(bool parseJSON);
+    MCNAPI void _handleInvite(bool parseJSON);
 
-    MCAPI bool _isToastAllowed(::ToastMessageType messageType) const;
+    MCNAPI bool _isToastAllowed(::ToastMessageType messageType) const;
 
-    MCAPI void _reportClick();
+    MCNAPI void _removePendingPersistentToast();
 
-    MCAPI void _sendShowToast(bool const animateIn);
+    MCNAPI void _reportClick();
 
-    MCAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
+    MCNAPI void _sendShowToast(bool const animateIn);
 
-    MCAPI void _setInitialToastValues();
+    MCNAPI void _sendTTS(bool useIndication, ::std::string const& message) const;
 
-    MCAPI void _showNewToast();
+    MCNAPI void _setInitialToastValues();
 
-    MCAPI void _updateLongestRecipeText();
+    MCNAPI void _showNewToast();
 
-    MCAPI ::std::string getMoreRecipesTitle() const;
+    MCNAPI void _updateLongestRecipeText();
 
-    MCAPI ::std::string getRecipeTranslationText();
+    MCNAPI void _updatePersistentToast();
 
-    MCAPI ::ui::ViewRequest handleToastButton();
+    MCNAPI ::std::string getMoreRecipesTitle() const;
 
-    MCAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
+    MCNAPI ::std::string getRecipeTranslationText();
 
-    MCAPI void unregisterListener(::IToastListener* listener);
+    MCNAPI ::ui::ViewRequest handleToastButton();
 
-    MCAPI void update();
+    MCNAPI void pushNotificationReceived(::PushNotificationMessage const& msg);
+
+    MCNAPI void unregisterListener(::IToastListener* listener);
+
+    MCNAPI void update();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::IClientInstance&                                   client,
         ::Option*                                            enableDebugToastsOption,
         ::Bedrock::NotNullNonOwnerPtr<::ResourcePackManager> resourcePackManager
@@ -124,10 +134,14 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $pushToast(::ToastMessage&& message);
+    MCNAPI void $pushToast(::ToastMessage&& message);
 
-    MCAPI bool $isEditorModeEnabled() const;
+    MCNAPI void $pushPersistentToast(::ToastMessage&& message);
 
-    MCAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
+    MCNAPI void $removePersistentToast();
+
+    MCNAPI bool $isEditorModeEnabled() const;
+
+    MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager&);
     // NOLINTEND
 };

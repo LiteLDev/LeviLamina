@@ -32,41 +32,48 @@ public:
     ::ll::TypedStorage<4, 1440, ::std::array<::Abilities, 6>> mLayers;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
     LayeredAbilities(LayeredAbilities const&);
 
+#endif
 public:
     // member functions
     // NOLINTBEGIN
     MCAPI LayeredAbilities();
 
-#ifdef LL_PLAT_C
-    MCAPI void addSaveData(::CompoundTag& parentTag) const;
+#ifdef LL_PLAT_S
+    MCNAPI LayeredAbilities(::LayeredAbilities const& other);
 #endif
 
-    MCAPI void forEachAbility(
+#ifdef LL_PLAT_C
+    MCNAPI void addSaveData(::CompoundTag& parentTag) const;
+
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability const&, char const*)> const& callback,
         ::Ability::Options                                          requiredOptions
     ) const;
+#endif
 
-    MCAPI void forEachAbility(
+    MCNAPI void forEachAbility(
         ::std::function<void(::Ability const&, ::AbilitiesIndex)> const& callback,
         ::Ability::Options                                               requiredOptions
     ) const;
 
 #ifdef LL_PLAT_C
-    MCFOLD void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
+    MCNAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities&)> const& callback);
 #endif
 
-    MCFOLD void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities const&)> const& callback) const;
+    MCNAPI void forEachLayer(::std::function<void(::AbilitiesLayer, ::Abilities const&)> const& callback) const;
 
-    MCAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
+    MCNAPI ::Ability const& getAbility(::AbilitiesIndex val) const;
 
     MCAPI bool getBool(::AbilitiesIndex val) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool loadSaveData(::CompoundTag const& parentTag);
+    MCNAPI bool loadSaveData(::CompoundTag const& parentTag);
 #endif
 
     MCAPI ::LayeredAbilities& operator=(::LayeredAbilities const& rhs);
@@ -82,7 +89,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::optional<::std::string> getDiff(::LayeredAbilities const& lhs, ::LayeredAbilities const& rhs);
+    MCNAPI static ::std::optional<::std::string> getDiff(::LayeredAbilities const& lhs, ::LayeredAbilities const& rhs);
 #endif
     // NOLINTEND
 
@@ -90,7 +97,7 @@ public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& DIFF_LAYER_AT();
+    MCNAPI static ::std::string const& DIFF_LAYER_AT();
 #endif
     // NOLINTEND
 
@@ -98,6 +105,10 @@ public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor();
+
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(::LayeredAbilities const& other);
+#endif
     // NOLINTEND
 
 public:

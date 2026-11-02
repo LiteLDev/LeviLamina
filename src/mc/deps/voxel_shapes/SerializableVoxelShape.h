@@ -24,25 +24,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SerializableVoxelShape(::VoxelShapes::SerializableVoxelShape const&);
+    MCNAPI SerializableVoxelShape(::VoxelShapes::SerializableVoxelShape const&);
 
-    MCAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape&&);
+    MCNAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape&&);
 
-    MCAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape const&);
+    MCNAPI ::VoxelShapes::SerializableVoxelShape& operator=(::VoxelShapes::SerializableVoxelShape const&);
 
-    MCAPI ~SerializableVoxelShape();
+    MCNAPI ~SerializableVoxelShape();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::VoxelShapes::SerializableVoxelShape const&);
+    MCNAPI void* $ctor(::VoxelShapes::SerializableVoxelShape const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -107,7 +107,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void forEachSelectedPlayersCameraStates(
+    MCNAPI void forEachSelectedPlayersCameraStates(
         ::CommandOrigin const&                                origin,
         ::std::function<void(::ServerCameraStatesComponent&)> callback
     ) const;
@@ -116,25 +116,25 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool resolveInheritance(
+    MCNAPI static bool resolveInheritance(
         ::std::string&                                              currentPresetName,
         ::std::string const&                                        parentToStopAt,
         ::std::vector<::SharedTypes::v1_26_50::CameraPreset> const& presetList
     );
 
-    MCAPI static void setup(::CommandRegistry& registry);
+    MCNAPI static void setup(::CommandRegistry& registry);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
+    MCNAPI static ::BaseGameVersion const& REMOVE_IGNORE_STARTING_VALUE_COMPONENT_VERSION();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

@@ -18,7 +18,7 @@ namespace texd { struct Ktx1Header; }
 namespace texd {
 // functions
 // NOLINTBEGIN
-MCAPI bool decompress(
+MCNAPI bool decompress(
     uchar*                                destBuffer,
     ::texd::DecompressedImageDescription& dImg,
     ::texd::PixelFormat                   pixelFormat,
@@ -26,7 +26,7 @@ MCAPI bool decompress(
     uint                                  mipLevel
 );
 
-MCAPI bool decompressKtx1(
+MCNAPI bool decompressKtx1(
     uchar*                                destBuffer,
     ::texd::DecompressedImageDescription& dImg,
     ::texd::PixelFormat                   pixelFormat,
@@ -34,7 +34,7 @@ MCAPI bool decompressKtx1(
     uint                                  mipLevel
 );
 
-MCAPI bool decompressMipLevel(
+MCNAPI bool decompressMipLevel(
     ::texd::CompressionScheme scheme,
     uint                      width,
     uint                      height,
@@ -45,24 +45,24 @@ MCAPI bool decompressMipLevel(
     uchar*                    outBuffer
 );
 
-MCAPI bool determineImageDescription(::texd::CompressedImageDescription& cImg, uchar const* stream);
+MCNAPI bool determineImageDescription(::texd::CompressedImageDescription& cImg, uchar const* stream);
 
-MCAPI bool
+MCNAPI bool
 getStreamForGpu(::texd::GpuStreamDescription& gpuStream, ::texd::StorageBuffer const& storage, uint mipLevel);
 
-MCAPI bool loadKtx1(
+MCNAPI bool loadKtx1(
     ::texd::StorageBuffer&              storage,
     ::texd::CompressedImageDescription& cImg,
     uchar const*                        stream,
     uint64                              streamSize
 );
 
-MCAPI ::texd::Ktx1Header parseHeader(uchar const* stream);
+MCNAPI ::texd::Ktx1Header parseHeader(uchar const* stream);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<uchar const[]> ktx1Identifier();
+MCNAPI ::std::add_lvalue_reference_t<uchar const[]> ktx1Identifier();
 // NOLINTEND
 
 } // namespace texd

@@ -39,19 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GalleryScreenshot(
+    MCNAPI GalleryScreenshot(
         ::Screenshots::GalleryScreenshot const&                    screenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI GalleryScreenshot(
+    MCNAPI GalleryScreenshot(
         ::Screenshots::ShowcasedScreenshot const&                  showcasedScreenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI GalleryScreenshot(
+    MCNAPI GalleryScreenshot(
         ::std::string          id,
         ::OreUI::AllowListPath thumbnail,
         ::OreUI::AllowListPath image,
@@ -64,25 +64,25 @@ public:
         bool                   loadingImage
     );
 
-    MCAPI ~GalleryScreenshot();
+    MCNAPI ~GalleryScreenshot();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Screenshots::GalleryScreenshot const&                    screenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Screenshots::ShowcasedScreenshot const&                  showcasedScreenshot,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager const>         dateManager
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string          id,
         ::OreUI::AllowListPath thumbnail,
         ::OreUI::AllowListPath image,
@@ -99,7 +99,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

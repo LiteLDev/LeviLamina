@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class Actor;
+namespace SharedTypes::v1_26_60 { struct TeleportComponentDefinition; }
 // clang-format on
 
 class TeleportComponent {
@@ -31,14 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void initFromDefinition(::Actor& actor);
+    MCNAPI void initFromDefinition(::Actor& actor);
 
-    MCAPI bool randomTeleport(::Actor& owner);
+    MCNAPI void initFromDefinition(::SharedTypes::v1_26_60::TeleportComponentDefinition const& definition);
 
-    MCAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
+    MCNAPI bool randomTeleport(::Actor& owner);
 
-    MCAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
+    MCNAPI bool teleport(::Actor& owner, ::Vec3 const& pos);
 
-    MCAPI bool tryTeleportFromProjectileHit(::Actor& owner, ::Actor const& projectile);
+    MCNAPI bool teleportTowards(::Actor& owner, ::Actor const& target);
+
+    MCNAPI bool tryTeleportFromProjectileHit(::Actor& owner, ::Actor const& projectile);
     // NOLINTEND
 };

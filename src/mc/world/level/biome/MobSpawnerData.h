@@ -33,6 +33,6 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::MobSpawnerData from(::br::worldgen::SpawnerData const& spawnerData);
+    MCNAPI static ::MobSpawnerData from(::br::worldgen::SpawnerData const& spawnerData);
     // NOLINTEND
 };

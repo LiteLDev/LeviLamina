@@ -49,21 +49,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PanoramaRenderer(::UIResolvedDef const& def);
+    MCNAPI explicit PanoramaRenderer(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIResolvedDef const& def);
+    MCNAPI void* $ctor(::UIResolvedDef const& def);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext&, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

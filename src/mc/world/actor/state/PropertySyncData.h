@@ -44,22 +44,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PropertySyncData(::PropertySyncData const&);
+    MCNAPI PropertySyncData(::PropertySyncData const&);
 
-    MCFOLD ::PropertySyncData& operator=(::PropertySyncData&&);
+    MCNAPI ::PropertySyncData& operator=(::PropertySyncData&&);
 
-    MCAPI ~PropertySyncData();
+    MCNAPI ~PropertySyncData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::PropertySyncData const&);
+    MCNAPI void* $ctor(::PropertySyncData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

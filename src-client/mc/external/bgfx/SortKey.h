@@ -7,7 +7,9 @@ namespace bgfx {
 struct SortKey {
 public:
     // SortKey inner types define
-    enum class Enum : int {};
+    enum class SortEnum : int {};
+
+    enum class TypeEnum : uchar {};
 };
 
 } // namespace bgfx

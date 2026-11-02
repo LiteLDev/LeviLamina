@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AddPage(::BookEditAction::AddPage const&);
+    MCNAPI AddPage(::BookEditAction::AddPage const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BookEditAction::AddPage const&);
+    MCNAPI void* $ctor(::BookEditAction::AddPage const&);
     // NOLINTEND
 };
 

@@ -33,21 +33,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_120::MobDescriptor const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_120::MobDescriptor const&) const;
 
-    MCAPI ~MobDescriptor();
+    MCNAPI ~MobDescriptor();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

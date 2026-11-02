@@ -40,35 +40,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptSoundInstance(::ScriptModuleMinecraft::ScriptSoundInstance const&);
+    MCNAPI ScriptSoundInstance(::ScriptModuleMinecraft::ScriptSoundInstance const&);
 
-    MCAPI ScriptSoundInstance(
+    MCNAPI ScriptSoundInstance(
         ::ServerSoundInstance                                                                        soundInstance,
         ::Scripting::WeakLifetimeScope                                                               scope,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> recipient
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSoundInstance& operator=(::ScriptModuleMinecraft::ScriptSoundInstance&&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSoundInstance& operator=(::ScriptModuleMinecraft::ScriptSoundInstance&&);
 
-    MCAPI ::ScriptModuleMinecraft::ScriptSoundInstance& operator=(::ScriptModuleMinecraft::ScriptSoundInstance const&);
+    MCNAPI ::ScriptModuleMinecraft::ScriptSoundInstance& operator=(::ScriptModuleMinecraft::ScriptSoundInstance const&);
 
-    MCAPI void setPitch(float pitch);
+    MCNAPI void setPitch(float pitch);
 
-    MCAPI void setVolume(float volume);
+    MCNAPI void setVolume(float volume);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundInstance const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptSoundInstance const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ServerSoundInstance                                                                        soundInstance,
         ::Scripting::WeakLifetimeScope                                                               scope,
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> recipient

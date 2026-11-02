@@ -13,7 +13,7 @@ Blob::Blob() noexcept : mBlob(nullptr, Deleter()), mSize(0) {}
 
 Blob::Blob(size_type size) : mBlob(nullptr, Deleter()), mSize(size) {
     auto* alloc = &ll::memory::getDefaultAllocator();
-    auto* buf   = static_cast<value_type*>(alloc->allocate(size));
+    auto* buf   = static_cast<value_type*>(alloc->_allocate(size));
     if (size && buf) std::memset(buf, 0, size);
     mBlob.reset(buf);
 }
@@ -45,7 +45,7 @@ Blob& Blob::operator=(Blob&& rhs) noexcept {
 Blob::Blob(Blob const& rhs) : mBlob(nullptr, Deleter()), mSize(rhs.mSize) {
     if (rhs.mSize) {
         auto* alloc = &ll::memory::getDefaultAllocator();
-        auto* buf   = static_cast<value_type*>(alloc->allocate(rhs.mSize));
+        auto* buf   = static_cast<value_type*>(alloc->_allocate(rhs.mSize));
         if (!buf) throw std::bad_alloc();
         std::memcpy(buf, rhs.mBlob.get(), rhs.mSize);
         mBlob.reset(buf);

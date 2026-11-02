@@ -11,7 +11,7 @@ class LevelData;
 namespace WorldSpawnPositionInitializer {
 // functions
 // NOLINTBEGIN
-MCAPI void initializeSpawnPosition(::LevelData& levelData, ::DimensionManager& dimensionManager);
+MCNAPI void initializeSpawnPosition(::LevelData& levelData, ::DimensionManager& dimensionManager);
 // NOLINTEND
 
 } // namespace WorldSpawnPositionInitializer

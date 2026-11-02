@@ -17,25 +17,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TlsSlot();
+    MCNAPI TlsSlot();
 
-    MCAPI void* getValue() const;
+    MCNAPI void* getValue() const;
 
-    MCAPI void setValue(void* value);
+    MCNAPI void setValue(void* value);
 
-    MCAPI ~TlsSlot();
+    MCNAPI ~TlsSlot();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

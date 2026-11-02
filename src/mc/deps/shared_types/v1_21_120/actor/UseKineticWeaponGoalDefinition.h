@@ -20,6 +20,12 @@ public:
     ::ll::TypedStorage<4, 4, float>                     mWeaponReachMultiplier;
     ::ll::TypedStorage<4, 4, float>                     mWeaponMinSpeedMultiplier;
     // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
+    // NOLINTEND
 };
 
 } // namespace SharedTypes::v1_21_120

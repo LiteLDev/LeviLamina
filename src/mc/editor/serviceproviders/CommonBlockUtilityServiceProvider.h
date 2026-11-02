@@ -89,6 +89,8 @@ public:
 
     virtual ::BoundingBox getDimensionLocationBoundingBox() const = 0;
 
+    virtual bool isHighPriorityFillBlock(::Block const& block, ::BlockPos const& location) const = 0;
+
     virtual ::AABB getBoundForContiguousSelection(
         ::Vec3 const&         initialLocation,
         ::Facing::Name const& selectionDirection,

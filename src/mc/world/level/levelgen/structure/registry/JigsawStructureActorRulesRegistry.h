@@ -35,24 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
+    MCNAPI ::std::vector<::std::unique_ptr<::StructurePoolActorRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerActorRules(
+    MCNAPI void registerActorRules(
         ::std::string                                                                                        name,
         ::std::unique_ptr<::std::vector<
             ::std::unique_ptr<::StructurePoolActorRule, ::std::default_delete<::StructurePoolActorRule>>>>&& ruleList
     );
-
-#ifdef LL_PLAT_C
-    MCAPI ~JigsawStructureActorRulesRegistry();
-#endif
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

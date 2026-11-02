@@ -22,7 +22,7 @@ namespace BiomeDecorationSystem {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void consolidateDecorationFeatures(::BiomeRegistry& registry);
+MCNAPI void consolidateDecorationFeatures(::BiomeRegistry& registry);
 #endif
 
 MCAPI void decorate(
@@ -44,7 +44,7 @@ MCAPI bool decorateBiome(
     ::IPreliminarySurfaceProvider const&        preliminarySurfaceProvider
 );
 
-MCAPI bool decorateLargeFeature(
+MCNAPI bool decorateLargeFeature(
     ::GeneratorType                             generatorType,
     uint const&                                 seed,
     ::BlockVolumeTarget&                        target,

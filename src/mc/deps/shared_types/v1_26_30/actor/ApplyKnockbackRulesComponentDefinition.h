@@ -35,9 +35,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(
+        MCNAPI bool operator==(
             ::SharedTypes::v1_26_30::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
         ) const;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::std::string_view const& NAME();
         // NOLINTEND
     };
 
@@ -54,7 +60,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

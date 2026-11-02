@@ -39,27 +39,33 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI BiomeJsonObject(::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI BiomeJsonObject(::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject const&);
 
-        MCAPI ~BiomeJsonObject();
+        MCNAPI ~BiomeJsonObject();
+        // NOLINTEND
+
+    public:
+        // static functions
+        // NOLINTBEGIN
+        MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
         // NOLINTEND
 
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::SemVersionConstant const& VERSION();
+        MCNAPI static ::SemVersionConstant const& VERSION();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void* $ctor(::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_30::BiomeJsonDocument::BiomeJsonObject const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -73,13 +79,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 };
 

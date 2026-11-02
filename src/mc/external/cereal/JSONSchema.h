@@ -32,38 +32,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JSONSchema();
+    MCNAPI JSONSchema();
 
-    MCAPI JSONSchema(::cereal::ext::JSONSchema const&);
+    MCNAPI JSONSchema(::cereal::ext::JSONSchema const&);
 
-    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
+    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema&&);
 
-    MCAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
+    MCNAPI ::cereal::ext::JSONSchema& operator=(::cereal::ext::JSONSchema const&);
 
-    MCAPI ~JSONSchema();
+    MCNAPI ~JSONSchema();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static ::cereal::ext::JSONSchema
+    MCNAPI static ::cereal::ext::JSONSchema
     fromDescription(::cereal::SchemaDescription const& desc, ::std::function<::std::string(uint)> const& uriProvider);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::cereal::ext::JSONSchema const&);
+    MCNAPI void* $ctor(::cereal::ext::JSONSchema const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

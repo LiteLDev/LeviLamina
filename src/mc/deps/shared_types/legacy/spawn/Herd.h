@@ -24,15 +24,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Herd(::SharedTypes::Legacy::Spawn::Herd const&);
+    MCNAPI Herd(::SharedTypes::Legacy::Spawn::Herd const&);
 
-    MCAPI bool operator==(::SharedTypes::Legacy::Spawn::Herd const&) const;
+    MCNAPI bool operator==(::SharedTypes::Legacy::Spawn::Herd const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::Legacy::Spawn::Herd const&);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::Spawn::Herd const&);
     // NOLINTEND
 };
 

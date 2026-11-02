@@ -84,7 +84,7 @@ public:
     ::ll::TypedStorage<8, 24, ::HudHeartRenderer::HeartIconData>    mFullIcon;
     ::ll::TypedStorage<8, 24, ::HudHeartRenderer::HeartIconData>    mHalfIcon;
     ::ll::TypedStorage<8, 640, ::std::array<::mce::TexturePtr, 20>> mHeartTextures;
-    ::ll::TypedStorage<8, 12640, ::std::array<::mce::Mesh, 20>>     mHeartMeshes;
+    ::ll::TypedStorage<8, 12160, ::std::array<::mce::Mesh, 20>>     mHeartMeshes;
     ::ll::TypedStorage<8, 24, ::std::vector<::glm::vec3>>           mIconPosition;
     // NOLINTEND
 
@@ -104,17 +104,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
+    MCNAPI void _loadHeartTextures(::mce::TextureGroup& textureGroup, bool isHardcore);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
     MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 
 public:

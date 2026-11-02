@@ -72,60 +72,66 @@ public:
 
     virtual void onContainerScreenOpen(::ContainerScreenContext const& screenContext) /*override*/;
 
+    virtual void beginCursorItemDrag() /*override*/;
+
+    virtual void endCursorItemDrag() /*override*/;
+
     virtual void _initScreen(::ItemStackNetManagerScreen& screen) /*override*/;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCNAPI ItemStackNetManagerServer(::ServerPlayer& serverPlayer, bool isEnabled);
 
-    MCAPI void _handleLegacyTransactionRequest(
+    MCNAPI void _handleLegacyTransactionRequest(
         ::ItemStackLegacyRequestId const&     legacyClientRequestId,
         ::std::vector<::LegacySetSlot> const& legacySetItemSlots
     );
 
-    MCAPI void _processQueue();
+    MCNAPI void _processQueue();
 
-    MCAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
+    MCNAPI void _queueRequest(::std::unique_ptr<::ItemStackRequestData> request);
 
-#ifdef LL_PLAT_S
-    MCAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
-#endif
+    MCNAPI void _setTextFilterState(::ItemStackNetManagerServer::TextFilterState state);
 
-    MCAPI void handleRequest(
+    MCNAPI void handleRequest(
         ::std::unique_ptr<::ItemStackRequestData>            request,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
-    MCAPI void handleRequestBatch(
+    MCNAPI void handleRequestBatch(
         ::ItemStackRequestBatch const&                       requestBatch,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
-    MCAPI void normalTick();
+    MCNAPI void normalTick();
 
-    MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
+    MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
+    MCNAPI void* $ctor(::ServerPlayer& serverPlayer, bool isEnabled);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemStackRequestId $getRequestId() const;
+    MCNAPI ::ItemStackRequestId $getRequestId() const;
 
-    MCAPI bool $retainSetItemStackNetIdVariant() const;
+    MCNAPI bool $retainSetItemStackNetIdVariant() const;
 
-    MCAPI bool $allowInventoryTransactionManager() const;
+    MCNAPI bool $allowInventoryTransactionManager() const;
 
-    MCAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
+    MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
+    MCNAPI void $beginCursorItemDrag();
+
+    MCNAPI void $endCursorItemDrag();
+
+    MCNAPI void $_initScreen(::ItemStackNetManagerScreen& screen);
 
 
     // NOLINTEND
@@ -133,6 +139,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

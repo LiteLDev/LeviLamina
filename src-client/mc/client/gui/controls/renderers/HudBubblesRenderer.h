@@ -36,7 +36,7 @@ public:
     ::ll::TypedStorage<1, 1, bool>                                mPopSoundReady;
     ::ll::TypedStorage<1, 1, bool>                                mWobblingLastFrame;
     ::ll::TypedStorage<8, 96, ::std::array<::mce::TexturePtr, 3>> mBubbleTextures;
-    ::ll::TypedStorage<8, 1896, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
+    ::ll::TypedStorage<8, 1824, ::std::array<::mce::Mesh, 3>>     mBubbleMeshes;
     ::ll::TypedStorage<4, 120, ::std::array<::glm::vec3, 10>>     mIconPosition;
     // NOLINTEND
 
@@ -56,22 +56,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudBubblesRenderer();
+    MCNAPI HudBubblesRenderer();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
-    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
+    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND
 };

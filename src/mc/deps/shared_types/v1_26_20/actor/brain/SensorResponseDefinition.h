@@ -16,7 +16,7 @@ struct SensorResponseDefinition : public ::SharedTypes::v1_26_20::Brain::MemoryS
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

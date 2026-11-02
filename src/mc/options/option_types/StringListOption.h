@@ -35,7 +35,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI StringListOption(
+    MCNAPI StringListOption(
         ::OptionID                          id,
         ::OptionOwnerType                   ownerType,
         ::OptionResetFlags                  resetFlags,
@@ -44,7 +44,7 @@ public:
         ::std::vector<::std::string> const& value
     );
 
-    MCAPI void set(::std::vector<::std::string> const& value, bool saveOptionChange);
+    MCNAPI void set(::std::vector<::std::string> const& value, bool saveOptionChange);
 #endif
     // NOLINTEND
 
@@ -52,7 +52,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID                          id,
         ::OptionOwnerType                   ownerType,
         ::OptionResetFlags                  resetFlags,
@@ -67,9 +67,9 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
+    MCNAPI void $save(::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector);
 
-    MCAPI void $load(::std::string const& valueString);
+    MCNAPI void $load(::std::string const& valueString);
 #endif
 
 

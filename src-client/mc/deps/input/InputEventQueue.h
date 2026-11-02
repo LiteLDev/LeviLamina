@@ -19,7 +19,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void enqueueButton(
+    MCNAPI void enqueueButton(
         uint          id,
         ::ButtonState state,
         bool          exclusive,
@@ -30,15 +30,15 @@ public:
         int           source
     );
 
-    MCAPI void enqueueButtonPressAndRelease(uint buttonId, ::FocusImpact focusImpact, int controllerId);
+    MCNAPI void enqueueButtonPressAndRelease(uint buttonId, ::FocusImpact focusImpact, int controllerId);
 
-    MCAPI void enqueueClearPointerLocationWithId(int id);
+    MCNAPI void enqueueClearPointerLocationWithId(int id);
 
-    MCAPI void enqueueClearPointerLocations();
+    MCNAPI void enqueueClearPointerLocations();
 
-    MCAPI void enqueueCustomZone(int id, short x, short y);
+    MCNAPI void enqueueCustomZone(int id, short x, short y);
 
-    MCAPI void enqueueDirection(
+    MCNAPI void enqueueDirection(
         ::DirectionId directionId,
         float         x,
         float         y,
@@ -47,7 +47,7 @@ public:
         bool          inputClearingEvent
     );
 
-    MCAPI void enqueuePointerLocation(
+    MCNAPI void enqueuePointerLocation(
         ::InputMode   inputMode,
         short         x,
         short         y,
@@ -56,6 +56,6 @@ public:
         int           controllerId
     );
 
-    MCAPI void enqueuePointerLocationWithId(int id, short x, short y, bool updateActionPointer);
+    MCNAPI void enqueuePointerLocationWithId(int id, short x, short y, bool updateActionPointer);
     // NOLINTEND
 };

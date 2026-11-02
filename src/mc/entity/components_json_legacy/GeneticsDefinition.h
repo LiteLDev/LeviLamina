@@ -24,22 +24,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
+    MCNAPI void addGeneDefinition(::GeneDefinition const& geneDefinition);
 
-    MCAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
+    MCNAPI void initialize(::EntityContext& entity, ::GeneticsComponent& component) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildSchema(
+    MCNAPI static void buildSchema(
         ::std::shared_ptr<::JsonUtil::JsonSchemaObjectNode<::JsonUtil::EmptyClass, ::GeneticsDefinition>>& root
     );
-    // NOLINTEND
-
-public:
-    // static variables
-    // NOLINTBEGIN
-    MCAPI static float const& DEFAULT_MUTATION_RATE();
     // NOLINTEND
 };

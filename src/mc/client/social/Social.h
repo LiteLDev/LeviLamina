@@ -61,6 +61,8 @@ MCNAPI ::std::string
 sanitizeDisplayName(::std::string_view input, uint64 maxLength, ::brstd::function_ref<bool(int)> validCharFn);
 
 #ifdef LL_PLAT_C
+MCNAPI ::Social::MultiplayerServiceIdentifier serviceIdentifierFromString(::std::string_view idString);
+
 MCNAPI ::std::string xblErrorToString(int errorCode);
 #endif
 // NOLINTEND
@@ -76,17 +78,7 @@ MCNAPI ::std::string const& BEDROCK_PLAYFAB_REALMS_PLUS_DEVELOPMENT();
 
 MCNAPI ::std::string const& BEDROCK_PLAYFAB_REALMS_PLUS_PRODUCTION();
 
-MCNAPI uint const& BEDROCK_XBOXLIVE_ACTIVE_TITLEID();
-
 MCNAPI ::std::vector<::std::string> const& BEDROCK_XBOXLIVE_ALL_SCIDS();
-
-MCNAPI ::std::vector<uint> const& BEDROCK_XBOXLIVE_ALL_TITLEIDS();
-
-MCNAPI ::std::string const& BEDROCK_XBOXLIVE_CLIENTID();
-
-MCNAPI ::std::string const& BEDROCK_XBOXLIVE_REDIRECTURI();
-
-MCNAPI ::std::string const& BEDROCK_XBOXLIVE_SCID();
 #endif
 
 MCNAPI ::Social::GameConnectionInfo const& INVALID_CONNECTION();

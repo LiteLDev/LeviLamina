@@ -25,8 +25,6 @@ public:
 
     MCNAPI ::Scripting::ResultAny& operator=(::Scripting::ResultAny const& rhs);
 
-    MCNAPI ::entt::meta_any toAny();
-
     MCNAPI ::entt::meta_any toAny() const;
 
     MCNAPI ::entt::meta_any toErrorAny() const;

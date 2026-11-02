@@ -9,6 +9,7 @@
 // auto generated forward declare list
 // clang-format off
 class ActorMigratedDefinitionFactory;
+class AtomicClientEntityFactory;
 class BaseGameVersion;
 class ClientInputMappingFactory;
 class ClientLevel;
@@ -16,6 +17,7 @@ class CommandRegistry;
 class Experiments;
 class GameModuleDocumentation;
 class IClientInstance;
+class IEducationOptions;
 class IResourcePackRepository;
 class ItemRegistryRef;
 class Level;
@@ -56,16 +58,21 @@ public:
         ::ResourcePackStack&                                            stack,
         ::BaseGameVersion const&                                        baseGameVersion,
         ::GameModuleClient::ResourceLoadingPhase                        loadingPhase,
-        bool                                                            includeEditorPacks
+        bool                                                            includeEditorPacks,
+        ::IEducationOptions const*                                      educationOptions
     ) = 0;
 
     virtual void configureDocumentation(::GameModuleDocumentation&, ::ItemRegistryRef const) = 0;
 
     virtual void tick(::IClientInstance const& client) = 0;
 
-    virtual void setupStandardCommands(::CommandRegistry& commandRegistry) = 0;
+    virtual void setupStandardCommands(
+        ::CommandRegistry&           commandRegistry,
+        ::AtomicClientEntityFactory& atomicClientEntityFactory,
+        ::IEducationOptions const&   educationOptions
+    ) = 0;
 
-    virtual void setupStartMenuScreenCommands(::CommandRegistry& commandRegistry) = 0;
+    virtual void setupStartMenuScreenCommands(::CommandRegistry&) = 0;
 
     virtual void setupUI() = 0;
 
@@ -81,5 +88,7 @@ public:
     ) const = 0;
 
     virtual ::ServerboundDiagnosticsPacket createServerboundDiagnosticsPacket() = 0;
+
+    virtual ::std::shared_ptr<void const> getWorldSystemsScope() = 0;
     // NOLINTEND
 };

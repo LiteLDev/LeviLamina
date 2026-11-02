@@ -49,20 +49,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void calculateFlockVector(::Actor const& owner);
+    MCNAPI void calculateFlockVector(::Actor const& owner);
 
-    MCAPI void calculateGoalHeading(::Mob& owner);
+    MCNAPI void calculateGoalHeading(::Mob& owner);
 
-    MCAPI bool canJoinFlock(::Actor& owner) const;
+    MCNAPI bool canJoinFlock(::Actor& owner) const;
 
-    MCAPI void joinFlock(::Actor& owner);
+    MCNAPI void joinFlock(::Actor& owner);
 
-    MCAPI void manageNeighborhood(::Actor& owner);
+    MCNAPI void manageNeighborhood(::Actor& owner);
 
-    MCAPI void mergeNeighborhoods(::Actor& owner);
+    MCNAPI void mergeNeighborhoods(::Actor& owner);
 
-    MCAPI void updateNeighborhoodData(::Actor const& owner);
+    MCNAPI void updateNeighborhoodData(::Actor const& owner);
 
-    MCAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
+    MCNAPI bool validateVariantEntityTypes(::Actor const& e0, ::Actor const& e1) const;
     // NOLINTEND
 };

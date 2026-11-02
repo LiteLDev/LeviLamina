@@ -35,39 +35,39 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument(::SharedTypes::v1_26_40::ActorDocument const&);
+    MCNAPI ActorDocument(::SharedTypes::v1_26_40::ActorDocument const&);
 
-    MCFOLD ::SharedTypes::v1_26_40::ActorDocument& operator=(::SharedTypes::v1_26_40::ActorDocument&&);
+    MCNAPI ::SharedTypes::v1_26_40::ActorDocument& operator=(::SharedTypes::v1_26_40::ActorDocument&&);
 
-    MCFOLD ::SharedTypes::v1_26_40::ActorDocument& operator=(::SharedTypes::v1_26_40::ActorDocument const&);
+    MCNAPI ::SharedTypes::v1_26_40::ActorDocument& operator=(::SharedTypes::v1_26_40::ActorDocument const&);
 
-    MCFOLD bool operator==(::SharedTypes::v1_26_40::ActorDocument const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::ActorDocument const&) const;
 
-    MCAPI ~ActorDocument();
+    MCNAPI ~ActorDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_40::ActorDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::ActorDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

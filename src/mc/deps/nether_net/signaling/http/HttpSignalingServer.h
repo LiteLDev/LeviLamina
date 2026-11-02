@@ -76,12 +76,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    MCNAPI ::Bedrock::Threading::Async<::NetherNet::ESessionError>
     $SendSignal(::NetherNet::NetworkID, ::NetherNet::NetworkID to, ::std::string const& signal);
 
-    MCAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
+    MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
-    MCAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
+    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
     $onRequest(::NetherNet::HttpRequest request);
 
 

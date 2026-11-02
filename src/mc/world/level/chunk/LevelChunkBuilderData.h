@@ -52,22 +52,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkBuilderData();
+    MCNAPI LevelChunkBuilderData();
 
-    MCAPI void enqueueChunkForProcessing(::ChunkPos const& pos, ::ChunkState state);
+    MCNAPI void enqueueChunkForProcessing(::ChunkPos const& pos, ::ChunkState state);
 
-    MCAPI ~LevelChunkBuilderData();
+    MCNAPI ~LevelChunkBuilderData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

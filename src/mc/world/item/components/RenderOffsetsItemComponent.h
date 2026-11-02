@@ -5,11 +5,13 @@
 // auto generated inclusion list
 #include "mc/deps/renderer/MatrixStack.h"
 #include "mc/deps/shared_types/legacy/item/RenderOffsetsItemComponent.h"
+#include "mc/world/item/ItemTransformType.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
 // auto generated forward declare list
 // clang-format off
+class Matrix;
 class SemVersion;
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -41,27 +43,42 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI static void _buildMatrixFromData(
-        ::MatrixStack::MatrixStackRef&                                           mvs,
-        ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms const& hand,
-        ::RenderOffsetsItemComponent::Perspective                                perspective
+    MCNAPI static ::Matrix _getDisplayTransform(
+        ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms const& mainHand,
+        ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms const& offhand,
+        ::ItemTransformType                                                      type
     );
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::Matrix _matrixFromTrs(::SharedTypes::Legacy::RenderOffsetsItemComponent::TRS const& trs);
 #endif
 
-    MCAPI static void bindType(
+#ifdef LL_PLAT_S
+    MCNAPI static ::Matrix _matrixFromTrs(::SharedTypes::Legacy::RenderOffsetsItemComponent::TRS const& trs);
+#endif
+
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
     );
+
+#ifdef LL_PLAT_C
+    MCNAPI static void buildMatrixFromDefaults(
+        ::MatrixStack::MatrixStackRef&            mvs,
+        ::RenderOffsetsItemComponent::Hand        hand,
+        ::RenderOffsetsItemComponent::Perspective perspective,
+        float                                     textureScale
+    );
+#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
+    MCNAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Main_Hand_Defaults();
 
-    MCAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
+    MCNAPI static ::SharedTypes::Legacy::RenderOffsetsItemComponent::ItemTransforms& Off_Hand_Defaults();
     // NOLINTEND
 
 public:

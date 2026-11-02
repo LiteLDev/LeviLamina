@@ -17,10 +17,10 @@ class MarkEquippableMobForUpgradeToBodySlotSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _markForUpgradeIfNeeded(
+    MCNAPI static void _markForUpgradeIfNeeded(
         ::StrictEntityContext& strictEntityContext,
         ::EquippableComponent& equippableComponent,
-        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent>& modifier
+        ::EntityModifier<::NeedsUpgradeToBodySlotFlagComponent, ::SkipBodySlotUpgradeFlagComponent> const& modifier
     );
     // NOLINTEND
 };

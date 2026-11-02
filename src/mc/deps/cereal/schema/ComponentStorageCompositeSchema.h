@@ -21,6 +21,12 @@ namespace cereal::internal {
 
 class ComponentStorageCompositeSchema : public ::cereal::internal::DefaultCompositeSchema {
 public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::TypedStorage<4, 4, uint> mTypeId;
+    // NOLINTEND
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual void doSave(
@@ -42,7 +48,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::cereal::SchemaDescription makeDescriptionForComponents(
+    MCNAPI ::cereal::SchemaDescription makeDescriptionForComponents(
         ::cereal::internal::ReflectionContext const& ctx,
         ::entt::meta_type const&                     type,
         ::cereal::DescriptionConfig                  config
@@ -52,10 +58,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::entt::meta_data
+    MCNAPI static ::entt::meta_data
     findComponentData(::entt::meta_type const& type, uint componentId, bool serializeDeprecated);
 
-    MCAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
+    MCNAPI static ::std::pair<uint, ::entt::meta_data> findComponentFamilyData(
         ::entt::meta_type const& source,
         ::entt::meta_type const& curr,
         ::std::string_view       family,
@@ -66,20 +72,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $doSave(
+    MCNAPI void $doSave(
         ::cereal::SchemaWriter&              writer,
         ::entt::meta_any const&              any,
         ::cereal::internal::SaveState const& state
     ) const;
 
-    MCAPI void $doLoad(
+    MCNAPI void $doLoad(
         ::cereal::SchemaReader&              reader,
         ::entt::meta_any&                    any,
         ::entt::meta_any const&              udata,
         ::cereal::internal::LoadState const& state
     ) const;
 
-    MCAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
+    MCNAPI bool $doMap(::entt::meta_any& src, ::entt::meta_any& dst, ::cereal::MetaVisitor& visitor) const;
 
 
     // NOLINTEND

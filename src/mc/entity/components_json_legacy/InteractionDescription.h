@@ -60,30 +60,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI InteractionDescription(::InteractionDescription&&);
+    MCNAPI InteractionDescription(::InteractionDescription&&);
 
-    MCAPI InteractionDescription(::InteractionDescription const&);
+    MCNAPI InteractionDescription(::InteractionDescription const&);
 
-    MCAPI void addActorDefinitionIdentifierByName(::std::string const& name);
+    MCNAPI void addActorDefinitionIdentifierByName(::std::string const& name);
 
-    MCAPI void setTransformItem(::std::string const& name);
+    MCNAPI void setTransformItem(::std::string const& name);
 
-    MCAPI void setVibration(::SharedTypes::v1_26_50::InteractionData::VibrationType const& type);
+    MCNAPI void setVibration(::SharedTypes::v1_26_50::InteractionData::VibrationType const& type);
 
-    MCAPI ~InteractionDescription();
+    MCNAPI ~InteractionDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::InteractionDescription&&);
+    MCNAPI void* $ctor(::InteractionDescription&&);
 
-    MCAPI void* $ctor(::InteractionDescription const&);
+    MCNAPI void* $ctor(::InteractionDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

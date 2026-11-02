@@ -7,12 +7,15 @@
 class AABB;
 class Vec3;
 struct MaxAutoStepComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 namespace AutoStepSystem {
 // functions
 // NOLINTBEGIN
-MCAPI ::AABB
+MCNAPI ::TickingSystemWithInfo createSystem();
+
+MCNAPI ::AABB
 getMaxCollisionVolume(::Vec3 const& preMoveSpeed, ::MaxAutoStepComponent const& step, ::AABB const& preMoveShape);
 // NOLINTEND
 

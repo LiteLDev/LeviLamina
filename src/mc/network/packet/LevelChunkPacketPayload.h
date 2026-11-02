@@ -34,5 +34,6 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                                              mSerializedChunk;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsChunkInTickRange;
     ::ll::TypedStorage<1, 1, bool>                                                        mIsClientPacket;
+    ::ll::TypedStorage<1, 1, bool>                                                        mIsClientBiomeUpdate;
     // NOLINTEND
 };

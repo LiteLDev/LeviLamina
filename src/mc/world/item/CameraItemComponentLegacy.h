@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/molang/MolangVersion.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/ICameraItemComponent.h"
 
 // auto generated forward declare list
@@ -53,12 +54,18 @@ public:
 
     virtual void takePictureNow(::Player& player, ::Actor* camera, ::Actor* target) /*override*/;
 
-    virtual void use(::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual void releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft) /*override*/;
 
-    virtual bool
-    useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&) /*override*/;
+    virtual bool useOn(
+        ::ItemStack&      instance,
+        ::Actor&          actor,
+        ::BlockPos const& blockPos,
+        uchar             face,
+        ::Vec3 const&,
+        ::HandSlot handSlot
+    ) /*override*/;
 
     virtual bool canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const
         /*override*/;
@@ -81,46 +88,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
 
-    MCAPI bool init(::Json::Value const& data, ::MolangVersion);
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::CameraItemComponentLegacy::UseAction
+    MCNAPI static ::CameraItemComponentLegacy::UseAction
     _tryPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3& spawnPos);
 
-    MCAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $takePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
+    MCNAPI void $takePictureNow(::Player& player, ::Actor* camera, ::Actor* target);
 
-    MCAPI void $use(::ItemStack& instance, ::Player& player);
+    MCNAPI void $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
+    MCNAPI void $releaseUsing(::ItemStack& instance, ::Player& player, int durationLeft);
 
-    MCAPI bool $useOn(::ItemStack& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face, ::Vec3 const&);
+    MCNAPI bool $useOn(
+        ::ItemStack&      instance,
+        ::Actor&          actor,
+        ::BlockPos const& blockPos,
+        uchar             face,
+        ::Vec3 const&,
+        ::HandSlot handSlot
+    );
 
-    MCAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
+    MCNAPI bool $canPlace(::ItemStack const& instance, ::Actor& actor, ::BlockPos const& blockPos, uchar face) const;
 
-    MCAPI float $blackBarsDuration() const;
+    MCNAPI float $blackBarsDuration() const;
 
-    MCFOLD float $blackBarsScreenRatio() const;
+    MCNAPI float $blackBarsScreenRatio() const;
 
-    MCAPI float $shutterScreenRatio() const;
+    MCNAPI float $shutterScreenRatio() const;
 
-    MCAPI float $shutterDuration() const;
+    MCNAPI float $shutterDuration() const;
 
-    MCAPI float $pictureDuration() const;
+    MCNAPI float $pictureDuration() const;
 
-    MCAPI float $slideAwayDuration() const;
+    MCNAPI float $slideAwayDuration() const;
 
-    MCAPI void $registerCallbacks(::CameraCallbacks* callbacks);
+    MCNAPI void $registerCallbacks(::CameraCallbacks* callbacks);
 
 
     // NOLINTEND

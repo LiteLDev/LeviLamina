@@ -10,7 +10,7 @@ namespace Scripting { struct EnumBinding; }
 namespace ScriptModuleMinecraft::Poi::Block {
 // functions
 // NOLINTBEGIN
-MCAPI ::Scripting::EnumBinding bindOccupancyFilter();
+MCNAPI ::Scripting::EnumBinding bindOccupancyFilter();
 // NOLINTEND
 
 } // namespace ScriptModuleMinecraft::Poi::Block

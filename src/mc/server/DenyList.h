@@ -82,6 +82,11 @@ public:
 
     MCNAPI bool isBlocked(::DenyList::Entry const& entry) const;
 
+    MCNAPI bool isBlocked(
+        ::DenyList::Entry const&                                                                    entry,
+        ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::DenyList::Entry>>>& it
+    ) const;
+
     MCNAPI void removeEntry(::DenyList::Entry const& entry);
     // NOLINTEND
 };

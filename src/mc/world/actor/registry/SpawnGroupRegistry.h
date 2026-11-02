@@ -45,18 +45,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _getResources(
+    MCNAPI void _getResources(
         ::ResourcePackManager& resourcePackManager,
         ::std::function<void(::std::string const&, int, ::BiomeFilterGroup&, ::MobSpawnRules&, ::SemVersion const&)>
             callback
     );
 
-    MCAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
+    MCNAPI ::SpawnGroupData const* getSpawnGroup(::std::string const& identifier) const;
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

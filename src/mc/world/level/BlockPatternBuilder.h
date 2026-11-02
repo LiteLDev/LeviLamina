@@ -23,11 +23,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
+    MCNAPI ::BlockPatternBuilder& aisle(::std::vector<::std::string> patterns);
 
-    MCAPI ::BlockPatternData buildOrAssert();
+    MCNAPI ::BlockPatternData buildOrAssert();
 
-    MCAPI ::BlockPatternBuilder& define(
+    MCNAPI ::BlockPatternBuilder& define(
         char                                                                                       pattern,
         ::brstd::move_only_function<bool(::BlockSource&, ::BlockPos const&, ::Block const&) const> tester
     );

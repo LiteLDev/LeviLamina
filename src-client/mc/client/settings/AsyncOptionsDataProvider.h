@@ -51,33 +51,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit AsyncOptionsDataProvider(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
+    MCNAPI explicit AsyncOptionsDataProvider(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
+    MCNAPI void* $ctor(::std::unique_ptr<::Settings::IOptionsDataProvider> delegateProvider);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setChangeListener(::std::function<void()> callback);
+    MCNAPI void $setChangeListener(::std::function<void()> callback);
 
-    MCFOLD bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
+    MCNAPI ::gsl::span<::Settings::OptionData const> $getOptions() const;
 
-    MCAPI int $getValue() const;
+    MCNAPI int $getValue() const;
 
-    MCAPI void $setValue(int value);
+    MCNAPI void $setValue(int value);
 
-    MCFOLD ::std::optional<
+    MCNAPI ::std::optional<
         ::std::variant<::std::string, ::std::function<::std::string()>, ::Settings::LocStringData>> const&
     $getInfo() const;
 
-    MCAPI bool $flush();
+    MCNAPI bool $flush();
     // NOLINTEND
 
 public:

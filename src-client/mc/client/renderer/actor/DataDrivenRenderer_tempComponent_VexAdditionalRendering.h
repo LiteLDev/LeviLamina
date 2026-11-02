@@ -33,10 +33,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_VexAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::V2TempComponentRequirements getV2Requirements() const /*override*/;
@@ -51,11 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit DataDrivenRenderer_tempComponent_VexAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-
-    MCAPI void _renderParentedItemInHand(
+    MCNAPI void _renderParentedItemInHand(
         ::Mob&                                  mob,
         ::HashedString const&                   boneName,
         ::ItemStack const&                      item,
@@ -66,17 +58,11 @@ public:
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
     // NOLINTEND
 };

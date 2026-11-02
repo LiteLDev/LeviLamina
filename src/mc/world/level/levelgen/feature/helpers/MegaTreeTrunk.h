@@ -23,7 +23,7 @@ class MegaTreeTrunk : public ::ITreeTrunk {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, int>                                  mTrunkWidth;
+    ::ll::TypedStorage<4, 8, ::IntRange>                           mTrunkWidth;
     ::ll::TypedStorage<4, 4, int>                                  mBaseHeight;
     ::ll::TypedStorage<4, 4, int>                                  mBranchLength;
     ::ll::TypedStorage<4, 8, ::IntRange>                           mBranchInterval;
@@ -57,9 +57,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getTreeHeight(::Random& random) const;
+    MCNAPI int $getTreeHeight(::Random& random) const;
 
-    MCAPI ::std::optional<::BlockPos> $placeTrunk(
+    MCNAPI ::std::optional<::BlockPos> $placeTrunk(
         ::IBlockWorldGenAPI&            target,
         ::BlockPos const&               pos,
         ::Random&                       random,

@@ -37,7 +37,7 @@ public:
     ::ll::TypedStorage<8, 24, ::NetherNet::NetworkID>                                           mNetherNetId;
     ::ll::TypedStorage<8, 16, ::PlayerMessaging::NetworkID>                                     mPlayerMessagingId;
     ::ll::TypedStorage<1, 2, ::ServerSupportedAuthenticationTypes>                              mSupportedAuth;
-    ::ll::TypedStorage<8, 200, ::ThirdPartyInfo>                                                mThirdPartyServerInfo;
+    ::ll::TypedStorage<8, 168, ::ThirdPartyInfo>                                                mThirdPartyServerInfo;
     ::ll::TypedStorage<8, 312, ::std::optional<::Social::ResolvedExperienceInfo>>               mResolvedExperienceInfo;
     ::ll::TypedStorage<1, 1, bool>                                                              mAllowSmallDownloads;
     ::ll::TypedStorage<1, 1, bool>                                                              mDisableTrickleIce;
@@ -55,37 +55,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameConnectionInfo();
+    MCNAPI GameConnectionInfo();
 
 #ifdef LL_PLAT_C
-    MCAPI GameConnectionInfo(::Social::GameConnectionInfo&&);
+    MCNAPI GameConnectionInfo(::Social::GameConnectionInfo&&);
 
-    MCAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
+    MCNAPI GameConnectionInfo(::Social::GameConnectionInfo const&);
 #endif
 
-    MCAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
+    MCNAPI GameConnectionInfo(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
 #ifdef LL_PLAT_C
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType            connectionType,
         ::NetherNet::NetworkID const&       netherNetId,
         ::PlayerMessaging::NetworkID const& playerMessagingId
     );
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
     );
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType            connectionType,
         ::NetherNet::NetworkID const&       netherNetId,
         ::PlayerMessaging::NetworkID const& playerMessagingId,
         ::ThirdPartyInfo const&             thirdPartyInfo
     );
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::std::string&                serverRegion,
@@ -93,14 +93,14 @@ public:
     );
 #endif
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port
     );
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
@@ -109,7 +109,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
@@ -118,7 +118,7 @@ public:
         ::std::string const&     externalServerName
     );
 
-    MCAPI GameConnectionInfo(
+    MCNAPI GameConnectionInfo(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
@@ -127,15 +127,15 @@ public:
         int                      serviceQuality
     );
 
-    MCFOLD ::std::string const getServerRegionName() const;
+    MCNAPI ::std::string const getServerRegionName() const;
 
-    MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
+    MCNAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo&&);
 #endif
 
-    MCAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
+    MCNAPI ::Social::GameConnectionInfo& operator=(::Social::GameConnectionInfo const&);
 
 #ifdef LL_PLAT_C
-    MCAPI void toJson(::Json::Value& connectionJson) const;
+    MCNAPI void toJson(::Json::Value& connectionJson) const;
 #endif
 
     MCAPI ~GameConnectionInfo();
@@ -145,44 +145,44 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::Social::GameConnectionInfo fromJson(::Json::Value const& properties);
+    MCNAPI static ::Social::GameConnectionInfo fromJson(::Json::Value const& properties);
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Social::GameConnectionInfo&&);
+    MCNAPI void* $ctor(::Social::GameConnectionInfo&&);
 
-    MCAPI void* $ctor(::Social::GameConnectionInfo const&);
+    MCNAPI void* $ctor(::Social::GameConnectionInfo const&);
 #endif
 
-    MCAPI void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
+    MCNAPI void* $ctor(::Social::ConnectionType connectionType, ::NetherNet::NetworkID const& netherNetId);
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType            connectionType,
         ::NetherNet::NetworkID const&       netherNetId,
         ::PlayerMessaging::NetworkID const& playerMessagingId
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::ThirdPartyInfo const&       serverInfo
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType            connectionType,
         ::NetherNet::NetworkID const&       netherNetId,
         ::PlayerMessaging::NetworkID const& playerMessagingId,
         ::ThirdPartyInfo const&             thirdPartyInfo
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType      connectionType,
         ::NetherNet::NetworkID const& netherNetId,
         ::std::string&                serverRegion,
@@ -190,14 +190,14 @@ public:
     );
 #endif
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
         int                      port
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
@@ -206,7 +206,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,
@@ -215,7 +215,7 @@ public:
         ::std::string const&     externalServerName
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Social::ConnectionType connectionType,
         ::TransportLayer         transportType,
         ::std::string const&     ipAddress,

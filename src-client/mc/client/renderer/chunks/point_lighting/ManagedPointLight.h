@@ -21,6 +21,7 @@ public:
         ::std::variant<::PointLighting::BakedLightResources, ::PointLighting::AnalyticLightResources>>
                                                                                           mResources;
     ::ll::TypedStorage<8, 224, ::std::optional<::PointLighting::TransitioningLightState>> mTransitionState;
+    ::ll::TypedStorage<4, 4, float>                                                       mScore;
     // NOLINTEND
 };
 

@@ -5,7 +5,6 @@
 #include "mc/common/SharedPtr.h"
 #include "mc/common/WeakPtr.h"
 #include "mc/world/level/block/BlockType.h"
-#include "mc/world/level/block/registry/BlockTypeRegistryModificationsLock.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/sem_ver/SemVersion.h"
@@ -18,8 +17,6 @@
 // clang-format off
 class Block;
 class BlockType;
-class BlockTypeRegistryRWLock;
-class Experiments;
 class LinkedAssetValidator;
 class ServerScriptManager;
 namespace VoxelShapes { class VoxelShapeRegistry; }
@@ -57,7 +54,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -126,8 +123,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::set<::std::string>>                  mKnownNamespaces;
     ::ll::TypedStorage<8, 72, ::entt::dense_map<uint64, ::HashedString>>  mBlockNameHashToStringMap;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::BlockTypeRegistry::DirectAccessBlocks>> mDirectAccessBlocks;
-    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::VoxelShapes::VoxelShapeRegistry>>        mShapeRegistry;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::BlockTypeRegistryRWLock>>              mRWLock;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::VoxelShapes::VoxelShapeRegistry>>      mShapeRegistry;
     // NOLINTEND
 
 public:
@@ -137,8 +133,6 @@ public:
     template <class TBlockType, class... Args>
     TBlockType& registerBlock(::HashedString const& blockName, Args&&... args) {
         ::std::string nameId = blockName.getString();
-
-        BlockTypeRegistryModificationsLock lock(mRWLock);
 
         auto* block = new TBlockType(nameId, ::std::forward<Args>(args)...);
 
@@ -176,76 +170,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlockTypeRegistry();
+    MCNAPI BlockTypeRegistry();
 
-    MCAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCNAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
         bool                                         logNotFound
     ) const;
 
-    MCAPI ::Block const* _lookupByNameImplSetNewBlockStates(
+    MCNAPI ::Block const* _lookupByNameImplSetNewBlockStates(
         ::Block const&                                                         block,
         ::std::vector<::BlockTypeRegistry::BlockComplexAliasBlockState> const& states
     ) const;
 
 #ifdef LL_PLAT_C
-    MCAPI void addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
+    MCNAPI void addBlocksToValidator(::LinkedAssetValidator& validator, ::BaseGameVersion const& baseGameVersion) const;
 #endif
 
-    MCAPI void checkBlockPermutationCap() const;
+    MCNAPI void checkBlockPermutationCap() const;
 
-    MCAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
-
-    MCAPI void finalizeBlockComponentStorage();
+    MCNAPI uint64 computeBlockTypeRegistryChecksum(::BaseGameVersion const& worldBaseGameVersion) const;
 
 #ifdef LL_PLAT_C
     MCAPI void finalizeBlockComponentStorageForRendering(::brstd::function_ref<void(::BlockType&)> finalizer);
 #endif
 
-    MCAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
+    MCNAPI void finalizeBlockCustomComponentEvents(::ServerScriptManager const& scriptManager);
 
 #ifdef LL_PLAT_C
-    MCFOLD void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
+    MCNAPI void forEachBlockDEPRECATED(::brstd::function_ref<bool(::BlockType&)> callback);
 #endif
-
-    MCAPI void forEachBlockMutable(::brstd::function_ref<bool(::Block&)> callback);
-
-    MCFOLD void forEachBlockType(::brstd::function_ref<bool(::BlockType const&)> callback) const;
 
     MCAPI ::HashedString const& getBlockNameFromNameHash(uint64 hash) const;
 
-    MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
+    MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const&
     getComplexAliasPostSplitBlockNames(::HashedString const& oldName) const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::HashedString const* getComplexAliasPreSplitBlockName(::HashedString const& postSplitName) const;
+    MCNAPI ::HashedString const* getComplexAliasPreSplitBlockName(::HashedString const& postSplitName) const;
 #endif
 
     MCAPI ::Block const& getDefaultBlockState(::HashedString const& name, bool logNotFound = false) const;
 
-    MCAPI ::BlockTypeRegistry::DirectAccessBlocks const& getDirectAccessBlocks() const;
-
 #ifdef LL_PLAT_C
-    MCAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
+    MCNAPI int getStartVariantForComplexAliasBlock(::HashedString const& blockName) const;
 #endif
-
-    MCAPI void initHardCodedBlockComponents(::Experiments const& experiments);
-
-    MCAPI void initRWLock();
 
     MCAPI bool isComplexAliasBlock(::HashedString const& blockName) const;
 
 #ifdef LL_PLAT_C
-    MCAPI bool isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
+    MCNAPI bool
+    isExpectFlattenedInBlocksJson(::HashedString const& blockName, ::SemVersion const& currentVersion) const;
 #endif
 
-    MCAPI void prepareBlocks(uint latestUpdaterVersion);
+    MCNAPI void prepareBlocks(uint latestUpdaterVersion);
 
-    MCAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
+    MCNAPI void registerAlias(::HashedString const& alias, ::HashedString const& name);
 
-    MCAPI void registerComplexAlias(
+    MCNAPI void registerComplexAlias(
         ::HashedString const&                                                alias,
         ::std::function<::Block const*(int)>                                 callback,
         ::std::vector<::std::reference_wrapper<::HashedString const>> const& postSplitBlockNames,
@@ -255,11 +238,9 @@ public:
         int                                                                  startVariant
     );
 
-    MCAPI void unregisterBlock(::HashedString const& name);
+    MCNAPI void unregisterBlocks();
 
-    MCAPI void unregisterBlocks();
-
-    MCAPI ~BlockTypeRegistry();
+    MCNAPI ~BlockTypeRegistry();
     // NOLINTEND
 
 public:
@@ -271,12 +252,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

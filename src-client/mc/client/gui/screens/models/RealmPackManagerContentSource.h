@@ -28,6 +28,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
+    MCNAPI void $generateItems(::std::vector<::std::shared_ptr<::ContentItem>>& content);
     // NOLINTEND
 };

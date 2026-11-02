@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/game_refs/EnableGetWeakRef.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace Editor {
 
 class ThumbnailFileBytes : public ::EnableGetWeakRef<::Editor::ThumbnailFileBytes> {
@@ -30,12 +25,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCNAPI ~ThumbnailFileBytes();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:

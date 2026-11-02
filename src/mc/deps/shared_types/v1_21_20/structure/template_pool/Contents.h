@@ -33,38 +33,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Contents(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
+    MCNAPI Contents(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
 
-    MCAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
+    MCNAPI ::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&
     operator=(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents&&);
 
-    MCAPI ~Contents();
+    MCNAPI ~Contents();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_FALLBACK();
+    MCNAPI static ::std::string const& DEFAULT_FALLBACK();
 
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

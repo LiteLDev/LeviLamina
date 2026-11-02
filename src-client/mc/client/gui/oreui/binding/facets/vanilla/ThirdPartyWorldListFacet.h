@@ -49,35 +49,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThirdPartyWorldListFacet(
+    MCNAPI ThirdPartyWorldListFacet(
         ::World::ThirdPartyWorldList&                              thirdPartyWorldList,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&          appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI void _onWorldListUpdated();
+    MCNAPI void _onWorldListUpdated();
 
-    MCAPI void _refresh();
+    MCNAPI void _refresh();
 
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getCreatorWorlds() const;
+    MCNAPI ::std::vector<::OreUI::NetworkWorldData> const& getCreatorWorlds() const;
 
-    MCFOLD ::std::vector<::OreUI::NetworkWorldData> const& getFeaturedWorlds() const;
+    MCNAPI ::std::vector<::OreUI::NetworkWorldData> const& getFeaturedWorlds() const;
 
-    MCFOLD ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
+    MCNAPI ::OreUI::FacetTaskState const getFetchThirdPartyWorldsTaskState() const;
 
-    MCFOLD ::OreUI::ThirdPartyServersStatus const getThirdPartyServersStatus() const;
+    MCNAPI ::OreUI::ThirdPartyServersStatus const getThirdPartyServersStatus() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::ThirdPartyWorldList&                              thirdPartyWorldList,
         ::Bedrock::NonOwnerPointer<::IAppPlatform> const&          appPlatform,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
@@ -87,7 +87,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

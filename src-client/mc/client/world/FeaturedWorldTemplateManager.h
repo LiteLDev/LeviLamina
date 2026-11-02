@@ -44,30 +44,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FeaturedWorldTemplateManager(
+    MCNAPI FeaturedWorldTemplateManager(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );
 
-    MCAPI ::std::vector<::World::MarketplaceWorldTemplateData> const _getTemplates() const;
+    MCNAPI ::std::vector<::World::MarketplaceWorldTemplateData> const _getTemplates() const;
 
-    MCAPI void _onOfferPurchased(::std::string const& productId);
+    MCNAPI void _onOfferPurchased(::std::string const& productId);
 
-    MCAPI void _prepareOffers();
+    MCNAPI void _prepareOffers();
 
-    MCAPI void update(double);
+    MCNAPI void update(double);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IStoreCatalogRepository> storeCatalogRepository,
         ::Bedrock::NotNullNonOwnerPtr<::DateManager>             dateManager,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>     entitlementManager,
+        bool                                                     vibrantVisualsSupported,
         ::ServicesManager&                                       servicesManager,
         ::MarketplaceServicesManager&                            marketplaceServicesManager
     );

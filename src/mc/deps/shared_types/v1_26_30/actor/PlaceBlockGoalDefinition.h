@@ -36,25 +36,21 @@ public:
     public:
         // prevent constructor by default
         WeightedBlockDescriptor& operator=(WeightedBlockDescriptor const&);
+        WeightedBlockDescriptor(WeightedBlockDescriptor const&);
         WeightedBlockDescriptor();
 
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI WeightedBlockDescriptor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
+        MCNAPI WeightedBlockDescriptor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
 
-        MCAPI
-        WeightedBlockDescriptor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&);
-
-        MCAPI bool operator==(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&) const;
+        MCNAPI bool operator==(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&) const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
-
-        MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition::WeightedBlockDescriptor&&);
         // NOLINTEND
     };
 
@@ -79,45 +75,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlaceBlockGoalDefinition(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&&);
+    MCNAPI PlaceBlockGoalDefinition(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&&);
 
-    MCAPI PlaceBlockGoalDefinition(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&);
+    MCNAPI PlaceBlockGoalDefinition(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&
     operator=(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&
     operator=(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&) const;
 
-    MCAPI ~PlaceBlockGoalDefinition();
+    MCNAPI ~PlaceBlockGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::PlaceBlockGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

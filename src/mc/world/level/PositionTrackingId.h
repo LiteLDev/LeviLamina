@@ -12,14 +12,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const toString() const;
+    MCNAPI ::std::string const toString() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::PositionTrackingId const& INVALID_ID();
+    MCNAPI static ::PositionTrackingId const& INVALID_ID();
 
-    MCAPI static uint& sNextId();
+    MCNAPI static uint& sNextId();
     // NOLINTEND
 };

@@ -33,6 +33,7 @@ public:
         ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mId;
         ::ll::TypedStorage<8, 200, ::OreUI::Property<::std::string, ::std::string>> mName;
         ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mAllContentOwned;
+        ::ll::TypedStorage<8, 176, ::OreUI::Property<bool, bool>>                   mIsMarioMashUp;
         // NOLINTEND
     };
 
@@ -62,21 +63,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit LocalWorldListQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit LocalWorldListQuery(::OreUI::GameDependencies const& game);
 
-    MCAPI void _rebuildWorlds();
+    MCNAPI void _rebuildWorlds();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double);
+    MCNAPI void $update(double);
     // NOLINTEND
 };
 

@@ -27,6 +27,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::HeartbeatServerComponent& operator=(::HeartbeatServerComponent&&);
+    MCNAPI ::HeartbeatServerComponent& operator=(::HeartbeatServerComponent&&);
     // NOLINTEND
 };

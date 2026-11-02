@@ -27,16 +27,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldTemplateLevelData();
+    MCNAPI WorldTemplateLevelData();
 
-    MCAPI void _getTagData(::CompoundTag const& tag);
+    MCNAPI void _getTagData(::CompoundTag const& tag);
 
-    MCAPI void _setTagData(::CompoundTag& tag) const;
+    MCNAPI void _setTagData(::CompoundTag& tag) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 };

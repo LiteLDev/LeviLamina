@@ -56,29 +56,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Random();
+    MCNAPI Random();
 
-    MCAPI uint _genRandInt32(bool allowUnitTestDeterministicOverride);
+    MCNAPI uint _genRandInt32(bool allowUnitTestDeterministicOverride);
 
 #ifdef LL_PLAT_C
-    MCAPI float nextGaussianFloat();
+    MCNAPI float nextGaussianFloat();
 #endif
 
-    MCAPI ::glm::vec3 nextGaussianVec3();
+    MCNAPI ::glm::vec3 nextGaussianVec3();
 
-    MCAPI void reset();
+    MCNAPI void reset();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID generateUUID();
+    MCNAPI static ::mce::UUID generateUUID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

@@ -60,28 +60,28 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
+    MCNAPI ::SharedTypes::v1_21_100::TransportItemsGoalDefinition&
     operator=(::SharedTypes::v1_21_100::TransportItemsGoalDefinition&&);
 
-    MCAPI ~TransportItemsGoalDefinition();
+    MCNAPI ~TransportItemsGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

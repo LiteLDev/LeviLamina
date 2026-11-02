@@ -10,7 +10,7 @@ struct GameConnectionInfoEx {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 784, ::Social::GameConnectionInfo> connectionInfo;
+    ::ll::TypedStorage<8, 752, ::Social::GameConnectionInfo> connectionInfo;
     ::ll::TypedStorage<8, 32, ::std::string>                 serverName;
     ::ll::TypedStorage<8, 32, ::std::string>                 worldName;
     ::ll::TypedStorage<4, 4, ::NetworkType>                  networkTypeOverride;
@@ -24,22 +24,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI GameConnectionInfoEx(::GameConnectionInfoEx const&);
+    MCNAPI GameConnectionInfoEx(::GameConnectionInfoEx const&);
 
-    MCAPI ::GameConnectionInfoEx& operator=(::GameConnectionInfoEx&&);
+    MCNAPI ::GameConnectionInfoEx& operator=(::GameConnectionInfoEx&&);
 
-    MCAPI ~GameConnectionInfoEx();
+    MCNAPI ~GameConnectionInfoEx();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GameConnectionInfoEx const&);
+    MCNAPI void* $ctor(::GameConnectionInfoEx const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

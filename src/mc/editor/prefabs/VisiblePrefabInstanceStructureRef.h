@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace Editor::Prefabs {
 
 class VisiblePrefabInstanceStructureRef {
@@ -23,6 +28,12 @@ public:
     VisiblePrefabInstanceStructureRef& operator=(VisiblePrefabInstanceStructureRef const&);
     VisiblePrefabInstanceStructureRef(VisiblePrefabInstanceStructureRef const&);
     VisiblePrefabInstanceStructureRef();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
 };
 
 } // namespace Editor::Prefabs

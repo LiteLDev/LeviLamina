@@ -78,19 +78,19 @@ public:
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::Player* $fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
+        MCNAPI ::Player* $fetchAnyInteractablePlayer(::Vec3 const& searchPos, float maxDist) const;
 
-        MCAPI uint $getChunkTickRange() const;
+        MCNAPI uint $getChunkTickRange() const;
 
-        MCAPI bool $areChunksFullyLoaded(::BlockPos const& min, int r) const;
+        MCNAPI bool $areChunksFullyLoaded(::BlockPos const& min, int r) const;
 
-        MCAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
+        MCNAPI bool $hasUntickedNeighborChunk(::ChunkPos const& pos, int chunkRadius) const;
 
-        MCAPI ::IRandom& $getChanceRandom();
+        MCNAPI ::IRandom& $getChanceRandom();
 
-        MCAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
+        MCNAPI ::std::optional<int> $getActorNoActionTime(::Actor const& actor) const;
 
-        MCAPI void $resetActorNoActionTime(::Actor& actor);
+        MCNAPI void $resetActorNoActionTime(::Actor& actor);
 
 
         // NOLINTEND
@@ -105,26 +105,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canDespawn(
+    MCNAPI bool _canDespawn(
         ::Actor&                            actor,
         ::DespawnComponent::IWorldAccessor& worldAccessor,
         ::DespawnDefinition const&          definition
     ) const;
 
-    MCAPI bool _instantRulesPrescribeDespawn(
+    MCNAPI bool _instantRulesPrescribeDespawn(
         ::Actor&                                  actor,
         ::DespawnDefinition const&                definition,
         ::DespawnComponent::IWorldAccessor const& worldAccessor
     ) const;
 
-    MCAPI bool _softRulesPrescribeDespawn(
+    MCNAPI bool _softRulesPrescribeDespawn(
         ::Actor&                            actor,
         ::DespawnDefinition const&          definition,
         ::DespawnComponent::IWorldAccessor& worldAccessor
     ) const;
 
-    MCAPI void onDespawn(::Actor& actor);
+    MCNAPI void onDespawn(::Actor& actor);
 
-    MCAPI void tick(::Actor& actor);
+    MCNAPI void tick(::Actor& actor);
     // NOLINTEND
 };

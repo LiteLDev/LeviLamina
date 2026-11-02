@@ -97,6 +97,8 @@ public:
 
     virtual ::BoundingBox getDimensionLocationBoundingBox() const /*override*/;
 
+    virtual bool isHighPriorityFillBlock(::Block const& block, ::BlockPos const& location) const /*override*/;
+
     virtual ::Editor::RelativeVolumeListBlockVolume getContiguousSelection(
         int const                                            size,
         ::Facing::Name const&                                selectionDirection,
@@ -212,6 +214,8 @@ public:
     MCNAPI ::Vec3 $getDimensionMaxLocation() const;
 
     MCNAPI ::BoundingBox $getDimensionLocationBoundingBox() const;
+
+    MCNAPI bool $isHighPriorityFillBlock(::Block const& block, ::BlockPos const& location) const;
 
     MCNAPI ::Editor::RelativeVolumeListBlockVolume $getContiguousSelection(
         int const                                            size,

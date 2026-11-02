@@ -40,15 +40,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tryDropHorn(::Vec3 dropPos) const;
+    MCNAPI void $tryDropHorn(::Vec3 dropPos) const;
 
-    MCAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
+    MCNAPI void $checkForHornDropOnCollision(::Vec3 collisionPos);
 
-#ifdef LL_PLAT_S
-    MCAPI void $dontDropHorn();
-#else // LL_PLAT_C
-    MCFOLD void $dontDropHorn();
-#endif
+    MCNAPI void $dontDropHorn();
 
 
     // NOLINTEND

@@ -10,15 +10,15 @@
 struct WorldTemplateInfo;
 // clang-format on
 
-namespace EDUScreenHelpers {
+namespace EduScreenHelpers {
 
 class TemplateWrapper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<1, 1, ::EDUScreenHelpers::TemplateType> mType;
+    ::ll::TypedStorage<1, 1, ::EduScreenHelpers::TemplateType> mType;
     ::ll::TypedStorage<8, 8, ::WorldTemplateInfo const*>       mLocalInfo;
     // NOLINTEND
 };
 
-} // namespace EDUScreenHelpers
+} // namespace EduScreenHelpers

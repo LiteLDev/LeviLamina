@@ -4,7 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/shared_types/beta/actor/ActorDefinitions.h"
-#include "mc/deps/shared_types/v1_26_50/actor/ActorDocument.h"
+#include "mc/deps/shared_types/v1_26_60/actor/ActorDocument.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -13,7 +13,7 @@ class SemVersionConstant;
 
 namespace SharedTypes::Beta {
 
-struct ActorDocument : public ::SharedTypes::v1_26_50::ActorDocument {
+struct ActorDocument : public ::SharedTypes::v1_26_60::ActorDocument {
 public:
     // member variables
     // NOLINTBEGIN
@@ -25,33 +25,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDocument();
+    MCNAPI ActorDocument();
 
-    MCAPI ActorDocument(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI ActorDocument(::SharedTypes::Beta::ActorDocument const&);
 
-    MCAPI ::SharedTypes::Beta::ActorDocument& operator=(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI ::SharedTypes::Beta::ActorDocument& operator=(::SharedTypes::Beta::ActorDocument const&);
 
-    MCAPI ~ActorDocument();
+    MCNAPI ~ActorDocument();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::SharedTypes::Beta::ActorDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::Beta::ActorDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

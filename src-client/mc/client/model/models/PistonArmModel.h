@@ -25,15 +25,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PistonArmModel();
+    MCNAPI PistonArmModel();
 
-    MCAPI void renderArm(::ScreenContext& screenContext, float progress);
+    MCNAPI void renderArm(::ScreenContext& screenContext, float progress);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

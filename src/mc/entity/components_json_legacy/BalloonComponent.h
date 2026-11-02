@@ -25,34 +25,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addAdditionalSaveData(::CompoundTag& tag) const;
+    MCNAPI void addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCAPI void detach(::Actor& owner);
+    MCNAPI void detach(::Actor& owner);
 
-    MCAPI void integrate(::Actor& owner);
+    MCNAPI void integrate(::Actor& owner);
 
-    MCAPI void onRemoved(::Actor& owner, bool shouldPop);
+    MCNAPI void onRemoved(::Actor& owner, bool shouldPop);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI void setAttachedActor(::Actor& owner, ::Actor& toAttach);
+    MCNAPI void setAttachedActor(::Actor& owner, ::Actor& toAttach);
 
-    MCAPI bool shouldPop(::Actor& owner, bool& removeAttached);
+    MCNAPI bool shouldPop(::Actor& owner, bool& removeAttached);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Actor* getBalloonForActor(::Actor const& actor);
+    MCNAPI static ::Actor* getBalloonForActor(::Actor const& actor);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ATTACHED_TAG();
+    MCNAPI static ::std::string const& ATTACHED_TAG();
 
-    MCAPI static ::std::string const& MAX_HEIGHT_TAG();
+    MCNAPI static ::std::string const& MAX_HEIGHT_TAG();
 
-    MCAPI static ::std::string const& SHOULD_DROP_TAG();
+    MCNAPI static ::std::string const& SHOULD_DROP_TAG();
     // NOLINTEND
 };

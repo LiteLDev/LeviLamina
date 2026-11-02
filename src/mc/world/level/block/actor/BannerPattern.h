@@ -32,16 +32,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BannerPattern(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
+    MCNAPI BannerPattern(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
 
-    MCAPI BannerPattern(
+    MCNAPI BannerPattern(
         ::std::string const&             name,
         ::std::string const&             nameID,
         ::std::function<::ItemStack()>&& itemFunctor,
         short                            patternItemType
     );
 
-    MCAPI BannerPattern(
+    MCNAPI BannerPattern(
         ::std::string const&             name,
         ::std::string const&             nameID,
         ::std::function<::ItemStack()>&& itemFunctor,
@@ -49,7 +49,7 @@ public:
         bool                             ignoreAux
     );
 
-    MCAPI BannerPattern(
+    MCNAPI BannerPattern(
         ::std::string const& name,
         ::std::string const& nameID,
         ::std::string const& row1,
@@ -57,30 +57,32 @@ public:
         ::std::string const& row3
     );
 
-    MCAPI bool hasPattern() const;
+#ifdef LL_PLAT_C
+    MCNAPI bool hasPattern() const;
+#endif
 
-    MCAPI bool matchesPatternItem(::ItemStackBase const& item) const;
+    MCNAPI bool matchesPatternItem(::ItemStackBase const& item) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::BannerPattern> const& mPatterns();
+    MCNAPI static ::std::vector<::BannerPattern> const& mPatterns();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
+    MCNAPI void* $ctor(::std::string const& name, ::std::string const& nameID, bool hiddenFromCrafting);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&             name,
         ::std::string const&             nameID,
         ::std::function<::ItemStack()>&& itemFunctor,
         short                            patternItemType
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&             name,
         ::std::string const&             nameID,
         ::std::function<::ItemStack()>&& itemFunctor,
@@ -88,7 +90,7 @@ public:
         bool                             ignoreAux
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const& name,
         ::std::string const& nameID,
         ::std::string const& row1,

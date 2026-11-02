@@ -51,6 +51,8 @@ public:
     MCNAPI PackReport(::PackReport const&);
 
 #ifdef LL_PLAT_C
+    MCNAPI void clear();
+
     MCNAPI void merge(::PackReport&& other);
 #endif
 

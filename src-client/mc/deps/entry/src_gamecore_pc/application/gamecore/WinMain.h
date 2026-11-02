@@ -43,7 +43,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_processProtocolActivationArguments(::Bedrock::ActivationArguments& args);
+    MCNAPI void $_processProtocolActivationArguments(::Bedrock::ActivationArguments& args);
     // NOLINTEND
 
 public:

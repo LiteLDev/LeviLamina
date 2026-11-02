@@ -80,6 +80,8 @@ public:
 
     virtual ::Core::Result deleteEmptyDirectory(::Core::PathView dirPath) /*override*/;
 
+    virtual ::Core::Result deleteEmptyDirectoryRecursively(::Core::PathView dirPath) /*override*/;
+
     virtual ::Core::Result deleteDirectoryAndContentsRecursively(::Core::PathView dirName) /*override*/;
 
     virtual ::Core::Result deleteDirectoryContentsRecursively(::Core::PathView directoryName) /*override*/;
@@ -274,6 +276,8 @@ public:
     MCNAPI bool $directoryExists(::Core::PathView dirName);
 
     MCNAPI ::Core::Result $deleteEmptyDirectory(::Core::PathView dirPath);
+
+    MCNAPI ::Core::Result $deleteEmptyDirectoryRecursively(::Core::PathView dirPath);
 
     MCNAPI ::Core::Result $deleteDirectoryAndContentsRecursively(::Core::PathView dirName);
 

@@ -38,13 +38,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
+    MCNAPI void add(::Scripting::WeakLifetimeScope& scope, ::std::string const& actorName);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
     // NOLINTEND
 };
 

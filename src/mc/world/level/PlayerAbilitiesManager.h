@@ -37,16 +37,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI explicit PlayerAbilitiesManager(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
 
-    MCAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
+    MCNAPI ::LayeredAbilities* getPlayerAbilities(::ActorUniqueID const& playerId);
 
-    MCAPI void sendAllPlayerAbilities(::Player const& playerReference);
+    MCNAPI void sendAllPlayerAbilities(::Player const& playerReference);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
+    MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager);
     // NOLINTEND
 };

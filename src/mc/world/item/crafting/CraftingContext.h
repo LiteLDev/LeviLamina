@@ -11,6 +11,7 @@
 // clang-format off
 class CompoundTag;
 class ILevel;
+class ItemStackBase;
 class MapItemSavedData;
 class TrimMaterialRegistry;
 class TrimPatternRegistry;
@@ -39,6 +40,7 @@ public:
             mGetMapSavedDataByCampoundTag;
         ::ll::TypedStorage<8, 64, ::std::function<::ActorUniqueID(::ActorUniqueID, bool)>> mExpandMapByID;
         ::ll::TypedStorage<8, 64, ::std::function<bool(::ActorUniqueID, ::ActorUniqueID)>> mCopyAndLockMap;
+        ::ll::TypedStorage<8, 64, ::std::function<bool(::ItemStackBase const&)>>           mIsStorageItemEmpty;
         // NOLINTEND
 
     public:
@@ -48,21 +50,21 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit Impl(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+        MCNAPI explicit Impl(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
 
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
+        MCNAPI void* $ctor(::Bedrock::NotNullNonOwnerPtr<::ILevel> level);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

@@ -11,7 +11,7 @@ namespace MarketplaceErrorUtils { struct StoreErrorResult; }
 namespace MarketplaceErrorUtils {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::optional<::MarketplaceErrorUtils::StoreErrorResult>
+MCNAPI ::std::optional<::MarketplaceErrorUtils::StoreErrorResult>
 tryGetStoreErrorResult(::std::shared_ptr<::MainMenuScreenModel> mainMenuScreenModel);
 // NOLINTEND
 

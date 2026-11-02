@@ -4,7 +4,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Block;
+class CompoundTag;
 class IStructurePoolBlockTagPredicate;
+namespace Util { class XXHash; }
 // clang-format on
 
 class StructurePoolBlockTagRule {
@@ -23,19 +26,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePoolBlockTagRule(
+    MCNAPI StructurePoolBlockTagRule(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
     );
 
-    MCAPI ~StructurePoolBlockTagRule();
+#ifdef LL_PLAT_C
+    MCNAPI void appendMetadataKey(::Util::XXHash& hash) const;
+
+    MCNAPI bool processRule(::Block const& sourceBlock, ::CompoundTag& sourceTag) const;
+#endif
+
+    MCNAPI ~StructurePoolBlockTagRule();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::IStructurePoolBlockTagPredicate>&& sourceBlockTagPredicate,
         ::std::string                                          resultKey,
         ::std::string                                          resultValue
@@ -45,6 +54,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

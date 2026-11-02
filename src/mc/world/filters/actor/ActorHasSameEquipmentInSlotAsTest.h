@@ -17,7 +17,7 @@ class ActorHasSameEquipmentInSlotAsTest : public ::SimpleBoolFilterTest {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk7f0a76;
+    ::ll::UntypedStorage<1, 1> mUnk7f0a76;
     // NOLINTEND
 
 public:

@@ -31,21 +31,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ItemStack> _initializeStorageItem(
+    MCNAPI ::std::optional<::ItemStack> _initializeStorageItem(
         ::ItemStack const&                 item,
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent
     );
 
-    MCAPI void _markAux(::ItemStack const& item, int depth);
+    MCNAPI void _markAux(::ItemStack const& item, int depth);
 
-    MCAPI void _retrackRecursiveAux(::ItemStack const& item, int depth);
+    MCNAPI void _retrackRecursiveAux(::ItemStack const& item, int depth);
 
-    MCAPI void
+    MCNAPI void
     broadcastChanges(::PlayerContainerRefresher& refresher, ::std::function<void()> contentsChangedCallback) const;
 
-    MCAPI void sweep();
+    MCNAPI void sweep();
 
-    MCAPI ::std::optional<::ItemStack> tryTrackContainer(::ItemStack const& item);
+    MCNAPI ::std::optional<::ItemStack> tryTrackContainer(::ItemStack const& item);
     // NOLINTEND
 };

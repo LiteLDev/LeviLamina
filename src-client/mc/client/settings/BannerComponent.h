@@ -41,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::std::string> getCtaText() const;
+    MCNAPI ::std::optional<::std::string> getCtaText() const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::Settings::ComponentState $getDefaultState() const;
+    MCNAPI ::Settings::ComponentState $getDefaultState() const;
     // NOLINTEND
 };
 

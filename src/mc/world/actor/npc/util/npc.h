@@ -20,29 +20,29 @@ namespace npc { struct UrlAction; }
 namespace npc {
 // functions
 // NOLINTBEGIN
-MCAPI void
+MCNAPI void
 fillCommands(::npc::CommandAction& cmd, ::std::vector<::std::string_view> const& src, ::CurrentCmdVersion ver);
 
-MCAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
+MCNAPI ::std::optional<::std::variant<::npc::CommandAction, ::npc::UrlAction>> fromJson(::Json::Value const& root);
 
 #ifdef LL_PLAT_C
-MCAPI ::std::string_view getRawButtonLabel(::std::variant<::npc::CommandAction, ::npc::UrlAction> const& action);
+MCNAPI ::std::string_view getRawButtonLabel(::std::variant<::npc::CommandAction, ::npc::UrlAction> const& action);
 #endif
 
-MCAPI void
+MCNAPI void
 handlePacket(::Actor& owner, ::Player& initiator, ::NpcComponent& npcComp, ::NpcRequestPacket const& request);
 
 #ifdef LL_PLAT_C
-MCAPI void setActionValue(::std::variant<::npc::CommandAction, ::npc::UrlAction>& action, ::std::string_view value);
+MCNAPI void setActionValue(::std::variant<::npc::CommandAction, ::npc::UrlAction>& action, ::std::string_view value);
 
-MCAPI void setButtonLabel(::std::variant<::npc::CommandAction, ::npc::UrlAction>& action, ::std::string_view value);
+MCNAPI void setButtonLabel(::std::variant<::npc::CommandAction, ::npc::UrlAction>& action, ::std::string_view value);
 #endif
 
-MCAPI ::Json::Value toJson(::npc::CommandAction const& action);
+MCNAPI ::Json::Value toJson(::npc::CommandAction const& action);
 
-MCAPI ::Json::Value toJson(::npc::ActionContainer const& container);
+MCNAPI ::Json::Value toJson(::npc::ActionContainer const& container);
 
-MCAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
+MCNAPI ::Json::Value toJson(::npc::UrlAction const& urlAction);
 // NOLINTEND
 
 } // namespace npc

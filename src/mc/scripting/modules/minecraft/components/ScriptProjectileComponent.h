@@ -23,75 +23,75 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<float> getAirInertia() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getAirInertia() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCatchFireOnHurt() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCatchFireOnHurt() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getCritParticlesOnProjectileHurt() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getCritParticlesOnProjectileHurt() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getDestroyOnProjectileHurt() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getDestroyOnProjectileHurt() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getGravity() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getGravity() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitEntitySound() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitEntitySound() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitGroundSound() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitGroundSound() const;
 
-    MCAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitParticle() const;
+    MCNAPI ::Scripting::Result_deprecated<::std::optional<::std::string>> getHitParticle() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getLightningStrikeOnHit() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getLightningStrikeOnHit() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getLiquidInertia() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getLiquidInertia() const;
 
-    MCAPI ::Scripting::Result_deprecated<float> getOnFireTime() const;
+    MCNAPI ::Scripting::Result_deprecated<float> getOnFireTime() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getShouldBounceOnHit() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getShouldBounceOnHit() const;
 
-    MCAPI ::Scripting::Result_deprecated<bool> getStopOnHit() const;
+    MCNAPI ::Scripting::Result_deprecated<bool> getStopOnHit() const;
 
-    MCAPI ::Scripting::Result_deprecated<void> setAirInertia(float value);
+    MCNAPI ::Scripting::Result_deprecated<void> setAirInertia(float value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setCatchFireOnHurt(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setCatchFireOnHurt(bool value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setCritParticlesOnProjectileHurt(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setCritParticlesOnProjectileHurt(bool value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setDestroyOnProjectileHurt(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setDestroyOnProjectileHurt(bool value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setGravity(float value);
+    MCNAPI ::Scripting::Result_deprecated<void> setGravity(float value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setHitEntitySound(::std::optional<::std::string> const& value);
+    MCNAPI ::Scripting::Result_deprecated<void> setHitEntitySound(::std::optional<::std::string> const& value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setHitGroundSound(::std::optional<::std::string> const& value);
+    MCNAPI ::Scripting::Result_deprecated<void> setHitGroundSound(::std::optional<::std::string> const& value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setHitParticle(::std::optional<::std::string> const& value);
+    MCNAPI ::Scripting::Result_deprecated<void> setHitParticle(::std::optional<::std::string> const& value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setLightningStrikeOnHit(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setLightningStrikeOnHit(bool value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setLiquidInertia(float value);
+    MCNAPI ::Scripting::Result_deprecated<void> setLiquidInertia(float value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setOnFireTime(float value);
+    MCNAPI ::Scripting::Result_deprecated<void> setOnFireTime(float value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setShouldBounceOnHit(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setShouldBounceOnHit(bool value);
 
-    MCAPI ::Scripting::Result_deprecated<void> setStopOnHit(bool value);
+    MCNAPI ::Scripting::Result_deprecated<void> setStopOnHit(bool value);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static char const*& ComponentId();
+    MCNAPI static char const*& ComponentId();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $_isValid() const;
+    MCNAPI bool $_isValid() const;
 
 
     // NOLINTEND

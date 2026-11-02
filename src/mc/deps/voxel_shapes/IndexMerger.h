@@ -27,7 +27,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI IndexMerger(
+    MCNAPI IndexMerger(
         ::Bedrock::small_vector<float, 12> const& first,
         ::Bedrock::small_vector<float, 12> const& second,
         bool                                      canTrimExcessOfFirst,
@@ -38,13 +38,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
+    MCNAPI static ::Bedrock::small_vector<float, 12> const& emptyShapeCoords();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::small_vector<float, 12> const& first,
         ::Bedrock::small_vector<float, 12> const& second,
         bool                                      canTrimExcessOfFirst,

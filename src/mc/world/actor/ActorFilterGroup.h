@@ -38,7 +38,7 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::TypedStorage<4, 4, ::FilterGroup::CollectionType>        mType;
+        ::ll::TypedStorage<1, 1, ::FilterGroup::CollectionType>        mType;
         ::ll::TypedStorage<8, 8, ::FilterTest::Definition const&>      mFilterDef;
         ::ll::TypedStorage<2, 2, ::SharedTypes::Legacy::FilterSubject> mSubject;
         ::ll::TypedStorage<2, 2, ::FilterOperator>                     mOperator;
@@ -63,24 +63,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _addLegacyFilter(
+    MCNAPI bool _addLegacyFilter(
         ::std::string const&                     name,
         ::ActorFilterGroup::LegacyMapping const& legacy,
         ::FilterInput const&                     filterInput
     );
 
-    MCAPI bool
+    MCNAPI bool
     _parseMemberCollectionJSONCpp(::FilterGroup::CollectionType collectionType, ::Json::Value const& jsonVal);
 
-    MCAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
+    MCNAPI bool _parseObjectJSONCpp(::std::string const& name, ::Json::Value const& jsonVal);
 
-    MCAPI bool _processLegacyArray(
+    MCNAPI bool _processLegacyArray(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
     );
 
-    MCAPI bool _processLegacyMember(
+    MCNAPI bool _processLegacyMember(
         ::std::string const&                     name,
         ::Json::Value const&                     jsonVal,
         ::ActorFilterGroup::LegacyMapping const& legacy
@@ -92,7 +92,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void initialize();
+    MCNAPI static void initialize();
     // NOLINTEND
 
 public:
@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
+    MCNAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
 
 
     // NOLINTEND
@@ -108,6 +108,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

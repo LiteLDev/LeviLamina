@@ -34,7 +34,7 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ConduitBaseModel>> mModel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitCageModel>>  mCage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ConduitWindModel>>  mOuterWind;
-    ::ll::TypedStorage<8, 632, ::mce::Mesh>                          mHeartMesh;
+    ::ll::TypedStorage<8, 608, ::mce::Mesh>                          mHeartMesh;
     // NOLINTEND
 
 public:
@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::BlockActor&                   entity,
@@ -61,14 +61,14 @@ public:
         float                           lightMultiplier
     );
 
-    MCAPI void renderInHand(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void renderInHand(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

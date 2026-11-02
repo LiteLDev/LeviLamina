@@ -94,37 +94,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SelectionWheelComponent(::UIControl& owner);
+    MCNAPI explicit SelectionWheelComponent(::UIControl& owner);
 
-    MCAPI void _updateControlVisibility();
+    MCNAPI void _updateControlVisibility();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI void $reload(::UIComponent const& rhs);
+    MCNAPI void $reload(::UIComponent const& rhs);
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCAPI void $onVisibilityChanged(bool visible);
+    MCNAPI void $onVisibilityChanged(bool visible);
 
-    MCAPI void $onEnabledChanged(bool enabled);
+    MCNAPI void $onEnabledChanged(bool enabled);
     // NOLINTEND
 };

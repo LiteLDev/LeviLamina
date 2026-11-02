@@ -88,84 +88,86 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SubChunk(::SubChunk&& rhs);
+    MCNAPI SubChunk(::SubChunk&& rhs);
 
-    MCAPI SubChunk(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
+    MCNAPI SubChunk(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
 
 #ifdef LL_PLAT_C
-    MCAPI void _createBlockLightStorage();
+    MCNAPI void _createBlockLightStorage();
 
-    MCAPI void _createSkyLightStorage();
+    MCNAPI void _createSkyLightStorage();
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void _resetLight(bool maxSkyLight, bool maxLight);
+    MCNAPI void _resetLight(bool maxSkyLight, bool maxLight);
 #endif
 
-    MCAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
+    MCNAPI void _setBlock(uchar layer, ushort index, ::Block const& block);
 
-    MCAPI void deserialize(
+    MCNAPI void deserialize(
         ::IDataInput&                              stream,
         ::BlockPalette const&                      palette,
         ::SubChunkPos const&                       subChunkPos,
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCAPI void fetchBlocks(
+    MCNAPI void fetchBlocks(
         ::BlockPos const& subChunkOrigin,
         ::BlockPos const& volumeOrigin,
         short             dimensionMinHeight,
         ::BlockVolume&    volume
     ) const;
 
+    MCNAPI void initialize(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
+
 #ifdef LL_PLAT_C
     MCAPI bool isPlaceHolderSubChunk() const;
 #endif
 
-    MCAPI ::SubChunk& operator=(::SubChunk&& rhs);
+    MCNAPI ::SubChunk& operator=(::SubChunk&& rhs);
 
-    MCAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
+    MCNAPI void prune(::SubChunkStorageUnit::PruneType pruneType);
 
-    MCAPI ::std::string recalculateHashAndSerialize(bool network);
+    MCNAPI ::std::string recalculateHashAndSerialize(bool network);
 
-    MCAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
+    MCNAPI void reset(::Block const* resetBlock, bool maxSkyLight, bool fullyLit);
 
     MCAPI void serialize(::IDataOutput& stream, bool network) const;
 
 #ifdef LL_PLAT_S
-    MCAPI void setBlockLight(ushort index, uchar lightValue);
+    MCNAPI void setBlockLight(ushort index, uchar lightValue);
 #endif
 
-    MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
+    MCNAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
-    MCAPI void setFromBlockVolume(
+    MCNAPI void setFromBlockVolume(
         ::BlockVolume const&                           box,
         short                                          height,
         ::ChunkVolume::SubVolumeViewOf<::Block const*> scratchVolume
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void setLight(ushort idx, ::SubChunkBrightnessStorage::LightPair pair);
+    MCNAPI void setLight(ushort idx, ::SubChunkBrightnessStorage::LightPair pair);
 #endif
 
 #ifdef LL_PLAT_S
-    MCAPI void setSkyLight(ushort index, uchar lightValue);
+    MCNAPI void setSkyLight(ushort index, uchar lightValue);
 #endif
 
-    MCAPI ~SubChunk();
+    MCNAPI ~SubChunk();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SubChunk&& rhs);
+    MCNAPI void* $ctor(::SubChunk&& rhs);
 
-    MCAPI void* $ctor(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
+    MCNAPI void* $ctor(::Block const* initBlock, bool maxSkyLight, bool maxLight, schar absoluteIndex);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

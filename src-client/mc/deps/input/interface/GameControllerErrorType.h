@@ -8,4 +8,5 @@ enum class GameControllerErrorType : uchar {
     InvalidConfiguration             = 2,
     AdhocOverWirelessConnectionLimit = 3,
     AdhocInvalidConfiguration        = 4,
+    WirelessControllersRequired      = 5,
 };

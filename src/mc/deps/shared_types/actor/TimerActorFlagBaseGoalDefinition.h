@@ -32,32 +32,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TimerActorFlagBaseGoalDefinition(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
+    MCNAPI TimerActorFlagBaseGoalDefinition(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
 
-    MCAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition& operator=(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
+    MCNAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition&
+    operator=(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
 
-    MCAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition&
+    MCNAPI ::SharedTypes::TimerActorFlagBaseGoalDefinition&
     operator=(::SharedTypes::TimerActorFlagBaseGoalDefinition const&);
 
-    MCAPI ~TimerActorFlagBaseGoalDefinition();
+    MCNAPI ~TimerActorFlagBaseGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::TimerActorFlagBaseGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

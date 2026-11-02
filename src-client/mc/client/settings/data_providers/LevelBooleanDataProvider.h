@@ -46,7 +46,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelBooleanDataProvider(
+    MCNAPI LevelBooleanDataProvider(
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback,
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
@@ -57,7 +57,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::function<::Bedrock::PubSub::Subscription(::std::function<void(::LevelDataWrapper&)>)>
             registerLevelChangeCallback,
         ::std::vector<::std::function<::Bedrock::PubSub::Subscription(::std::function<void()>)>> subscriptionConnectors,
@@ -68,11 +68,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canModify() const;
+    MCNAPI bool $canModify() const;
 
-    MCFOLD bool $getValue() const;
+    MCNAPI bool $getValue() const;
 
-    MCAPI void $setValue(bool value);
+    MCNAPI void $setValue(bool value);
     // NOLINTEND
 };
 

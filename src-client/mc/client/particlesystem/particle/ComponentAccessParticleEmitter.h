@@ -124,11 +124,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setEmitRate(float emitRate);
+    MCNAPI void $setEmitRate(float emitRate);
 
-    MCFOLD float $getEmitRate() const;
+    MCNAPI float $getEmitRate() const;
 
-    MCFOLD float& $getEmissionAccumulator();
+    MCNAPI float& $getEmissionAccumulator();
     // NOLINTEND
 };
 

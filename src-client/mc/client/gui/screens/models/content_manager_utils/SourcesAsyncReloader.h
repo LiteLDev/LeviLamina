@@ -38,9 +38,24 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Bedrock::Threading::Async<void> _queueReloadingSources(bool saveSources);
+
+    MCNAPI ::Bedrock::Threading::Async<void>
+    reloadSourcesAfterAsync(::Bedrock::Threading::Async<void>&& prerequisite, bool saveSources);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::std::unique_ptr<::TaskGroup> createDefaultTaskGroup();
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Bedrock::Threading::Async<void> $reloadSourcesAsync(bool saveSources);
+    MCNAPI ::Bedrock::Threading::Async<void> $reloadSourcesAsync(bool saveSources);
     // NOLINTEND
 
 public:

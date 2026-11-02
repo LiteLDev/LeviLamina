@@ -31,33 +31,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CameraAimAssistCategoryPriorities();
+    MCNAPI CameraAimAssistCategoryPriorities();
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&&);
 
-    MCAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
+    MCNAPI ::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities&
     operator=(::SharedTypes::v1_21_50::CameraAimAssistCategoryPriorities const&);
 
-    MCAPI ~CameraAimAssistCategoryPriorities();
+    MCNAPI ~CameraAimAssistCategoryPriorities();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

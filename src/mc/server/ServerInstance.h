@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/events/WorldSaveAndExitPackTelemetryData.h"
 
 // auto generated inclusion list
 #include "mc/deps/application/AppPlatformListener.h"
@@ -60,6 +61,7 @@ struct ServerInstanceArguments;
 struct ServerInstanceInitArguments;
 struct ServerNetworkHandlerDependencies;
 struct ServerPerformanceData;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { class FileStorageArea; }
 namespace Editor { class IEditorManager; }
 namespace Scripting { class RegistryManager; }
@@ -212,20 +214,22 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ServerScriptManager>>                         mServerScriptManager;
     ::ll::TypedStorage<8, 64, ::std::function<void(char const*)>> mScriptWatchdogCriticalErrorCallback;
     ::ll::TypedStorage<8, 64, ::std::function<void(::Connection::DisconnectFailReason, char const*)>>
-                                                                                      mUnrecoverableErrorCallback;
-    ::ll::TypedStorage<1, 1, bool>                                                    mHandledLevelCorruption;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TextFilteringProcessor>>             mTextFilteringProcessor;
-    ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                             mWakeupInterval;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mLevelId;
-    ::ll::TypedStorage<8, 32, ::std::string>                                          mServerName;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>               mWorldSessionEndPoint;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>             mStorageAreaForLevel;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>                      mServerItemRegistry;
-    ::ll::TypedStorage<1, 1, bool>                                                    mEnableItemStackNetManager;
-    ::ll::TypedStorage<1, 1, bool>                                                    mEnableRealmsStories;
-    ::ll::TypedStorage<1, 1, bool>                                                    mbFlaggedForEarlyDestruction;
-    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>>            mServiceRegistrationToken;
-    ::ll::TypedStorage<1, 1, bool>                                                    mHasScheduledLeaveGame;
+                                                                           mUnrecoverableErrorCallback;
+    ::ll::TypedStorage<1, 1, bool>                                         mHandledLevelCorruption;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TextFilteringProcessor>>  mTextFilteringProcessor;
+    ::ll::TypedStorage<8, 8, ::std::chrono::microseconds>                  mWakeupInterval;
+    ::ll::TypedStorage<8, 32, ::std::string>                               mLevelId;
+    ::ll::TypedStorage<8, 32, ::std::string>                               mServerName;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::WorldSessionEndPoint>>    mWorldSessionEndPoint;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Core::FileStorageArea>>  mStorageAreaForLevel;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::ItemRegistry>>           mServerItemRegistry;
+    ::ll::TypedStorage<1, 1, bool>                                         mEnableItemStackNetManager;
+    ::ll::TypedStorage<1, 1, bool>                                         mEnableRealmsStories;
+    ::ll::TypedStorage<1, 1, bool>                                         mbFlaggedForEarlyDestruction;
+    ::ll::TypedStorage<8, 8, ::ServiceRegistrationToken<::ServerInstance>> mServiceRegistrationToken;
+    ::ll::TypedStorage<1, 1, bool>                                         mHasScheduledLeaveGame;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::WorldSaveAndExitPackTelemetryData>>>
+                                                                                      mWorldSaveAndExitPackTelemetry;
     ::ll::TypedStorage<1, 1, bool>                                                    mCriticalDiskErrorTelemetrySent;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Editor::IEditorManager>>             mEditorManager;
     ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::CDNConfig>>                mCDNConfig;
@@ -286,45 +290,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
+    MCNAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
-    MCAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
-
-    MCAPI void _resetServerScriptManager();
+    MCNAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
 
 #ifdef LL_PLAT_C
-    MCAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
+    MCNAPI void finishLoadingLinkedAssets(::ResourcePackManager& rpm);
 #endif
 
-    MCAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
+    MCNAPI ::Bedrock::NonOwnerPointer<::Editor::IEditorManager> getEditorManager() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::string getLevelId() const;
+    MCNAPI ::std::string getLevelId() const;
 #endif
 
     MCAPI ::ServerInitialization::ServerInitResult initializeServer(::ServerInstanceInitArguments&& args);
 
     MCAPI void leaveGameSync();
 
-    MCAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
+    MCNAPI void onCriticalScriptError(::Connection::DisconnectFailReason clientReason, char const* logMessage);
 
-    MCAPI void queueForServerThread(::std::function<void()> command);
+    MCNAPI void queueForServerThread(::std::function<void()> command);
 
 #ifdef LL_PLAT_C
-    MCAPI bool requestInGamePause(bool status);
+    MCNAPI bool requestInGamePause(bool status);
+
+    MCNAPI void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
 #endif
 
     MCAPI void startLeaveGame();
 
-    MCAPI void startServerThread();
+    MCNAPI void startServerThread();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
+    MCNAPI static bool _useClientSideChunkGeneration(::LevelData* levelData);
 
-    MCAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
+    MCNAPI static ::brstd::move_only_function<bool(::ServerInstanceInitArguments::HostMultiplayerArguments&&) const>
     createHostMultiplayerCallback(
         ::ServerInstance&                  instance,
         ::NetworkServerConfig              networkServerConfig,
@@ -334,73 +338,73 @@ public:
         ::ServerNetworkHandlerDependencies serverNetworkOptions
     );
 
-    MCAPI static ::brstd::move_only_function<
+    MCNAPI static ::brstd::move_only_function<
         ::std::unique_ptr<::ServerLevel>(::ServerInstanceInitArguments::CreateLevelArguments&&) const>
     createServerLevelCallback(::ServerInstance::CreateServerLevelOps&& ops);
 
 #ifdef LL_PLAT_S
-    MCAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
+    MCNAPI static bool forceOffClientChunkGeneration(::LevelData& levelData);
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& ASSET_EXTRACTION_ERROR();
+    MCNAPI static ::std::string const& ASSET_EXTRACTION_ERROR();
 
-    MCAPI static ::std::string const& ENTITY_REGISTRY_CREATION_ERROR();
+    MCNAPI static ::std::string const& ENTITY_REGISTRY_CREATION_ERROR();
 
-    MCAPI static ::std::string const& FINAL_LEVEL_STORAGE_STATE_ERROR();
+    MCNAPI static ::std::string const& FINAL_LEVEL_STORAGE_STATE_ERROR();
 
-    MCAPI static ::std::string const& HOST_MULTIPLAYER_ERROR();
+    MCNAPI static ::std::string const& HOST_MULTIPLAYER_ERROR();
 
-    MCAPI static ::std::string const& INITIAL_LEVEL_STORAGE_STATE_ERROR();
+    MCNAPI static ::std::string const& INITIAL_LEVEL_STORAGE_STATE_ERROR();
 
-    MCAPI static ::std::string const& LEVEL_STORAGE_CREATION_ERROR();
+    MCNAPI static ::std::string const& LEVEL_STORAGE_CREATION_ERROR();
 
-    MCAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
+    MCNAPI static ::std::string const& PACK_SOURCE_LOADING_ERROR();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& POST_INIT_ERROR();
+    MCNAPI static ::std::string const& POST_INIT_ERROR();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ServerInstanceArguments&& args);
+    MCNAPI void* $ctor(::ServerInstanceArguments&& args);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onLowMemory(::LowMemorySeverity);
+    MCNAPI void $onLowMemory(::LowMemorySeverity);
 
-    MCAPI void $onLevelCorrupt();
+    MCNAPI void $onLevelCorrupt();
 
-    MCFOLD void $onGameModeChanged();
+    MCNAPI void $onGameModeChanged();
 
-    MCFOLD void $onTick(int nTick, int maxTick);
+    MCNAPI void $onTick(int nTick, int maxTick);
 
-    MCFOLD void $onInternetUpdate();
+    MCNAPI void $onInternetUpdate();
 
-    MCFOLD void $onGameSessionReset();
+    MCNAPI void $onGameSessionReset();
 
-    MCFOLD void $onLevelExit();
+    MCNAPI void $onLevelExit();
 
-    MCAPI void $onRequestResourceReload();
+    MCNAPI void $onRequestResourceReload();
 
-    MCAPI void $onLowDiskSpace(bool const bSet, uint64);
+    MCNAPI void $onLowDiskSpace(bool const bSet, uint64);
 
-    MCAPI void $onOutOfDiskSpace(bool const bSet, uint64);
+    MCNAPI void $onOutOfDiskSpace(bool const bSet, uint64);
 
-    MCAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
+    MCNAPI void $onCriticalDiskError(bool const bSet, ::Core::LevelStorageState const& errorCode);
 
-    MCAPI void $onAppSuspended();
+    MCNAPI void $onAppSuspended();
 
-    MCAPI void $onAppResumed();
+    MCNAPI void $onAppResumed();
 
-    MCFOLD void $updateScreens();
+    MCNAPI void $updateScreens();
 
 
     // NOLINTEND

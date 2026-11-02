@@ -12,6 +12,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class CompoundTag;
 class CustomParticle;
 class HashedString;
 class Level;
@@ -37,9 +38,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 2520, ::std::vector<::std::unique_ptr<::Particle>>[105]> mInactiveParticlesPool;
+    ::ll::TypedStorage<8, 2544, ::std::vector<::std::unique_ptr<::Particle>>[106]> mInactiveParticlesPool;
     ::ll::TypedStorage<8, 8, ::Level&>                                             mLevel;
-    ::ll::TypedStorage<8, 6720, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[105]>
+    ::ll::TypedStorage<8, 6784, ::std::unordered_map<::ParticleType, ::std::vector<::std::unique_ptr<::Particle>>>[106]>
                                                                                     mActiveParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::CustomParticle>>>   customParticles;
     ::ll::TypedStorage<8, 24, ::std::vector<::std::unique_ptr<::Particle>>>         mNewParticles;
@@ -48,8 +49,8 @@ public:
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   opaqueMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   alphaTestMat;
     ::ll::TypedStorage<8, 16, ::mce::MaterialPtr>                                   blendMat;
-    ::ll::TypedStorage<4, 420, uint[105]>                                           maxParticleCount;
-    ::ll::TypedStorage<4, 420, uint[105]>                                           particleCount;
+    ::ll::TypedStorage<4, 424, uint[106]>                                           maxParticleCount;
+    ::ll::TypedStorage<4, 424, uint[106]>                                           particleCount;
     ::ll::TypedStorage<1, 1, bool>                                                  mTemporaryCameraActive;
     ::ll::TypedStorage<8, 64, ::std::unordered_map<::ParticleType, ::HashedString>> mNewParticleSystemJsonLookup;
     ::ll::TypedStorage<
@@ -76,13 +77,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleEngine(
+    MCNAPI ParticleEngine(
         ::Level&                                         level,
         ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons,
         ::LightTexture&                                  lightTexture
     );
 
-    MCAPI void _emitParticleNew(
+    MCNAPI ::std::unique_ptr<::Particle> _create(::ParticleType type);
+
+    MCNAPI void _emitParticleNew(
         ::ParticleSystemEngine& particleSystemEngine,
         ::ParticleType          type,
         ::Vec3 const&           pos,
@@ -90,23 +93,32 @@ public:
         int                     data
     );
 
-    MCAPI ::ParticleLayerRenderObject _extractParticleLayer(
+    MCNAPI ::ParticleLayerRenderObject _extractParticleLayer(
         ::ScreenContext&               screenContext,
         ::ParticleRenderContext const& particleRenderContext,
         ::ParticleLayer                particleLayer,
         ::mce::MaterialPtr const&      mat
     ) const;
 
-    MCAPI void addCustomParticle(::std::unique_ptr<::CustomParticle> particle);
+    MCNAPI void addCustomParticle(::std::unique_ptr<::CustomParticle> particle);
 
     MCAPI void clear();
 
-    MCAPI ::ParticleRenderObjectCollection
+    MCNAPI ::ParticleRenderObjectCollection
     extract(::ScreenContext& screenContext, ::Vec3 const& cameraPos, ::Vec3 const& viewOff, float minDist) const;
 
-    MCAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
+    MCNAPI ::ParticleRenderObjectCollection extractEmptyCollection(::ScreenContext& screenContext) const;
 
-    MCAPI void tick();
+    MCNAPI ::Particle* instance(
+        ::ParticleType          type,
+        ::Vec3 const&           pos,
+        ::Vec3 const&           dir,
+        int                     data,
+        ::ParticleSystemEngine* particleSystemEngine,
+        ::CompoundTag const*    tag
+    );
+
+    MCNAPI void tick();
     // NOLINTEND
 
 public:
@@ -118,7 +130,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::Level& level, ::Bedrock::NotNullNonOwnerPtr<::SeasonsRenderer> seasons, ::LightTexture& lightTexture);
     // NOLINTEND
 };

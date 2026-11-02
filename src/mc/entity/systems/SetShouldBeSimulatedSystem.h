@@ -17,12 +17,12 @@ struct VehicleInputIntentComponent;
 namespace SetShouldBeSimulatedSystem {
 // functions
 // NOLINTBEGIN
-MCAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
+MCNAPI void registerSystems(::EntitySystems& systemRegistry, bool isClientSide);
 
-MCAPI void setShouldBeSimulatedIfClientPredicted(
-    ::StrictEntityContext const&                        entity,
-    ::optional_ref<::VehicleInputIntentComponent const> vehicleInputIntent,
-    ::EntityModifier<::ShouldBeSimulatedComponent>&     modifier
+MCNAPI void setShouldBeSimulatedIfClientPredicted(
+    ::StrictEntityContext const&                          entity,
+    ::optional_ref<::VehicleInputIntentComponent const>   vehicleInputIntent,
+    ::EntityModifier<::ShouldBeSimulatedComponent> const& modifier
 );
 // NOLINTEND
 

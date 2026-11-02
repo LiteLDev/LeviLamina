@@ -32,42 +32,35 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCNAPI static ::std::shared_ptr<::br::worldgen::StructureInstance>
     parseStructureInstanceFromLevelStorage(::std::string_view data, ::JigsawStructureRegistry const& registry);
 
-    MCAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(
+    MCNAPI static ::std::vector<::br::worldgen::JigsawStructure> prepareJigsawDefinitionData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents> const& jigsawsData,
         ::IWorldRegistriesProvider&                                                        registries
     );
 
-    MCAPI static ::std::unordered_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>>
+    MCNAPI static ::std::unordered_map<::std::string, ::std::shared_ptr<::br::worldgen::StructureSet>>
     prepareJigsawSetData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureSet::Contents> const& stuctureSets,
         ::br::worldgen::StructureRegistry const&                                    structureRegistry
     );
 
-    MCAPI static ::std::unordered_map<
+    MCNAPI static ::std::unordered_map<
         ::std::string,
         ::std::vector<::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>>>>
     prepareProcessorsData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureProcessorList::Contents> const& documents
     );
 
-    MCAPI static ::std::vector<::StructureTemplatePool> prepareTemplatePoolsData(
+    MCNAPI static ::std::vector<::StructureTemplatePool> prepareTemplatePoolsData(
         ::std::vector<::SharedTypes::v1_21_20::JigsawStructureTemplatePool::Contents> const& templatePoolsData,
         ::Bedrock::NotNullNonOwnerPtr<::IStructureTemplateManager>                           structureManager,
         ::JigsawStructureRegistry&                                                           registry,
         ::FeatureRegistry&                                                                   features
     );
 
-#ifdef LL_PLAT_S
-    MCAPI static ::br::worldgen::JigsawStructure processJigsawDefinition(
-        ::SharedTypes::v1_21_20::JigsawStructureDefinition::Contents const& jigsawData,
-        ::IWorldRegistriesProvider&                                         registries
-    );
-#endif
-
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     serializeStructureInstanceForLevelStorage(::br::worldgen::StructureInstance const& instance);
     // NOLINTEND
 };

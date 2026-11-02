@@ -12,10 +12,12 @@ struct ContainerAction {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::GameplayUI::ContainerActionType> type;
-    ::ll::TypedStorage<4, 8, ::GameplayUI::ContainerSlot>       source;
-    ::ll::TypedStorage<4, 8, ::GameplayUI::ContainerSlot>       destination;
-    ::ll::TypedStorage<4, 8, ::GameplayUI::ContainerSlot>       splitStart;
+    ::ll::TypedStorage<4, 4, ::GameplayUI::ContainerActionType>             type;
+    ::ll::TypedStorage<4, 8, ::GameplayUI::ContainerSlot>                   source;
+    ::ll::TypedStorage<4, 12, ::std::optional<::GameplayUI::ContainerSlot>> destination;
+    ::ll::TypedStorage<4, 12, ::std::optional<::GameplayUI::ContainerSlot>> distributeSource;
+    ::ll::TypedStorage<4, 8, ::std::optional<int>>                          amount;
+    ::ll::TypedStorage<4, 4, int>                                           bundleSlot;
     // NOLINTEND
 };
 

@@ -28,6 +28,8 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 64, ::std::function<::std::unique_ptr<::WorldGenerator>(::Dimension&)>> mGeneratorCreator;
     ::ll::TypedStorage<2, 2, ::BiomeIdType>                                                       mDefaultBiome;
+    ::ll::TypedStorage<2, 2, short>                                                               mDefaultCloudHeight;
+    ::ll::TypedStorage<1, 1, bool>                                                                mRenderClouds;
     // NOLINTEND
 
 public:
@@ -53,6 +55,10 @@ public:
     virtual ::mce::Color getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const
         /*override*/;
 
+    virtual short getCloudHeight() const /*override*/;
+
+    virtual bool shouldRenderClouds() const /*override*/;
+
     virtual void _upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion) /*override*/;
 
     virtual ::std::unique_ptr<::ChunkSource> _wrapStorageForVersionCompatibility(
@@ -64,7 +70,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CustomDimension(
+    MCNAPI CustomDimension(
         ::DerivedDimensionArguments&&   args,
         ::DimensionType                 id,
         ::std::string const&            name,
@@ -75,7 +81,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::DerivedDimensionArguments&&   args,
         ::DimensionType                 id,
         ::std::string const&            name,
@@ -86,35 +92,27 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
+    MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const&);
+    MCNAPI ::std::unique_ptr<::WorldGenerator> $createGenerator(::br::worldgen::StructureSetRegistry const&);
 
     MCFOLD bool $levelChunkNeedsUpgrade(::LevelChunk const&) const;
 
-    MCFOLD void $upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&);
+    MCNAPI void $upgradeLevelChunk(::ChunkSource&, ::LevelChunk&, ::LevelChunk&);
 
     MCFOLD void $fixWallChunk(::ChunkSource&, ::LevelChunk&);
 
-    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCNAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+
+    MCNAPI short $getCloudHeight() const;
+
+    MCNAPI bool $shouldRenderClouds() const;
 
     MCFOLD void $_upgradeOldLimboEntity(::CompoundTag&, ::LimboEntitiesVersion);
 
-    MCAPI ::std::unique_ptr<::ChunkSource>
+    MCNAPI ::std::unique_ptr<::ChunkSource>
     $_wrapStorageForVersionCompatibility(::std::unique_ptr<::ChunkSource> storageSource, ::StorageVersion levelVersion);
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftableForSavedData();
-
-    MCNAPI static void** $vftableForIDimension();
-
-    MCNAPI static void** $vftableForEnableNonOwnerReferences();
-
-    MCNAPI static void** $vftableForLevelListener();
     // NOLINTEND
 };

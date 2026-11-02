@@ -21,10 +21,6 @@ class ItemInstance;
 
 class HangingSignBlock : public ::SignBlock {
 public:
-    // prevent constructor by default
-    HangingSignBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual ::AABB const& getVisualShape(::Block const& block, ::AABB& bufferAABB) const /*override*/;
@@ -53,52 +49,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HangingSignBlock(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-
     MCAPI bool _canAttachTo(::BlockSource& region, ::BlockPos const attachPos, uchar attachFace, uchar ourFace) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _isDoubleChainAttached(::Block const& block);
+    MCNAPI static bool _isDoubleChainAttached(::Block const& block);
 
-    MCAPI static bool _isHangingSign(::Block const& block);
+    MCNAPI static bool _isHangingSign(::Block const& block);
 
-    MCAPI static bool _isVShapedChainAttached(::Block const& block);
+    MCNAPI static bool _isVShapedChainAttached(::Block const& block);
 
     MCAPI static bool isSideAttachedHangingSign(::Block const& block);
     // NOLINTEND
 
 public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, bool onGround, ::SignBlock::SignType signType);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
+    MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 
-    MCAPI ::AABB $getCollisionShape(
+    MCNAPI ::AABB $getCollisionShape(
         ::Block const& block,
         ::IConstBlockSource const&,
         ::BlockPos const& pos,
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCFOLD bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
+    MCNAPI bool $canProvideSupport(::Block const&, uchar face, ::BlockSupportType type) const;
 
     MCAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 
-    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCAPI float $getYRotationInDegrees(::Block const& block) const;
 
-    MCAPI ::ItemInstance $_getItemInstance() const;
+    MCNAPI ::ItemInstance $_getItemInstance() const;
 
 
     // NOLINTEND
@@ -106,6 +94,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

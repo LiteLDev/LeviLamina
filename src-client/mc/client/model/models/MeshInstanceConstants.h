@@ -35,12 +35,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MeshInstanceConstants(::ScreenContext& screenContext);
+    MCNAPI explicit MeshInstanceConstants(::ScreenContext& screenContext);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScreenContext& screenContext);
+    MCNAPI void* $ctor(::ScreenContext& screenContext);
     // NOLINTEND
 };

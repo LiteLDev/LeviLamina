@@ -19,9 +19,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $toggle(uint64);
+    MCNAPI void $toggle(uint64);
 
-    MCFOLD bool $isToggled(uint64) const;
+    MCNAPI bool $isToggled(uint64) const;
     // NOLINTEND
 };
 

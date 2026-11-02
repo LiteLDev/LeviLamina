@@ -13,13 +13,13 @@ namespace Bedrock {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_S
-MCAPI ::std::unique_ptr<::Bedrock::DeviceIdManager> _createDefaultDeviceIdManager();
+MCNAPI ::std::unique_ptr<::Bedrock::DeviceIdManager> _createDefaultDeviceIdManager();
 #endif
 
 #ifdef LL_PLAT_C
-MCAPI void initializeGameCoreCrashProcessing();
+MCNAPI void initializeGameCoreCrashProcessing();
 
-MCAPI ::Bedrock::ChunkScoringContext makeChunkScoringContext(::IClientInstance const& client);
+MCNAPI ::Bedrock::ChunkScoringContext makeChunkScoringContext(::IClientInstance const& client);
 #endif
 // NOLINTEND
 

@@ -23,20 +23,20 @@ struct TickingSystemWithInfo;
 namespace MobMovementClimb {
 // functions
 // NOLINTBEGIN
-MCAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
+MCNAPI void forAutoClimbSystems(::std::function<void(::TickingSystemWithInfo&&)> const& func);
 
-MCAPI void tickAutoClimbingMob(
+MCNAPI void tickAutoClimbingMob(
     ::StrictEntityContext const&                                   entity,
     ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnow,
     ::Optional<::CanStandOnPowderSnowFromEquipmentComponent const> canStandOnPowderSnowFromEquipment,
     ::ActorDataFlagComponent const&                                synchedActorData,
     ::AABBShapeComponent const&                                    aabbShape,
     ::StateVectorComponent&                                        stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::EntityModifier<::AutoClimbTravelFlagComponent> const&        climbModifier,
     ::IConstBlockSource const&                                     region
 );
 
-MCAPI void tickAutoClimbingMobInLava(
+MCNAPI void tickAutoClimbingMobInLava(
     ::StrictEntityContext const&                                   entity,
     ::NavigationComponent const&                                   navigation,
     ::Optional<::CanStandOnPowderSnowComponent const>              canStandOnPowderSnow,
@@ -44,7 +44,7 @@ MCAPI void tickAutoClimbingMobInLava(
     ::ActorDataFlagComponent const&                                synchedActorData,
     ::AABBShapeComponent const&                                    aabbShape,
     ::StateVectorComponent&                                        stateVector,
-    ::EntityModifier<::AutoClimbTravelFlagComponent>               climbModifier,
+    ::EntityModifier<::AutoClimbTravelFlagComponent> const&        climbModifier,
     ::IConstBlockSource const&                                     region
 );
 // NOLINTEND

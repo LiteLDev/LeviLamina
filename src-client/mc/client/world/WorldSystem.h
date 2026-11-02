@@ -17,7 +17,7 @@ class WorldSystem {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 168, ::World::WorldSystemModules> mModules;
+    ::ll::TypedStorage<8, 184, ::World::WorldSystemModules> mModules;
     // NOLINTEND
 
 public:
@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldSystem(::World::WorldSystemModules&& modules);
+    MCNAPI explicit WorldSystem(::World::WorldSystemModules&& modules);
 
-    MCAPI void update(
+    MCNAPI void update(
         double              timestampMs,
         ::TrialManager*     trialManager,
         ::World::InGameType inGameType,
@@ -40,7 +40,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::WorldSystemModules&& modules);
+    MCNAPI void* $ctor(::World::WorldSystemModules&& modules);
     // NOLINTEND
 };
 

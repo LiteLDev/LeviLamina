@@ -68,11 +68,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void onDisabledSlotToggleRequested(::BlockSource& region, int slot, bool shouldDisable);
+    MCNAPI void onDisabledSlotToggleRequested(::BlockSource& region, int slot, bool shouldDisable);
 
-    MCAPI void setToCraftingVisualState(::BlockSource& region);
+    MCNAPI void setToCraftingVisualState(::BlockSource& region);
 
-    MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
+    MCNAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
     // NOLINTEND
 
 public:
@@ -84,21 +84,21 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
+    MCNAPI bool $canPushInItem(int slot, int, ::ItemStack const& item) const;
 
-    MCAPI bool $isSlotDisabled(int slot) const;
+    MCNAPI bool $isSlotDisabled(int slot) const;
 
-    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCAPI void $tick(::BlockSource& region);
+    MCNAPI void $tick(::BlockSource& region);
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

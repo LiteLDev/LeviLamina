@@ -73,16 +73,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
+    MCNAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
 
-    MCAPI uint $registerForUpdates();
+    MCNAPI uint $registerForUpdates();
 
-    MCAPI void $unregisterForUpdates(uint handle);
+    MCNAPI void $unregisterForUpdates(uint handle);
 
-    MCAPI void
+    MCNAPI void
     $setPlayerInfluence(uint handle, ::ChunkPos const& playerPosition, ::Vec3 const& playerMovementDirection);
 
-    MCAPI void $setTickingAreaInfluence(
+    MCNAPI void $setTickingAreaInfluence(
         uint              handle,
         ::ChunkPos const& tickingAreaPosition,
         int               sizeX,
@@ -91,7 +91,7 @@ public:
         bool              preload
     );
 
-    MCAPI void $updateInfluences();
+    MCNAPI void $updateInfluences();
 
 
     // NOLINTEND

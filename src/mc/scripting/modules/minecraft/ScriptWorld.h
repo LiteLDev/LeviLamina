@@ -77,9 +77,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptWorld(::ScriptModuleMinecraft::ScriptWorld&&);
+    MCNAPI ScriptWorld(::ScriptModuleMinecraft::ScriptWorld&&);
 
-    MCAPI ScriptWorld(
+    MCNAPI ScriptWorld(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
@@ -88,68 +88,66 @@ public:
         ::Scripting::Version                                 serverModuleVersion
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playOrQueueMusic(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
         bool                                                         shouldQueue
     );
 
-    MCAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic_010(
+    MCNAPI ::Scripting::Result_deprecated<void> _playOrQueueMusic_010(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions,
         bool                                                         shouldQueue
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playSoundInternal(
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError> _playSoundInternal(
         ::std::string const&                                              soundID,
         ::Vec3 const&                                                     location,
         ::std::optional<::ScriptModuleMinecraft::ScriptWorldSoundOptions> soundOptions
     );
 
-    MCAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
+    MCNAPI ::std::optional<::Scripting::Error> _validateDynamicProperty_V010(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const* value
     ) const;
 
-    MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
     playMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCAPI ::Scripting::Result_deprecated<void> playMusic_010(
+    MCNAPI ::Scripting::Result_deprecated<void> playMusic_010(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
+    MCNAPI ::Scripting::Result<void, ::Scripting::PropertyOutOfBoundsError>
     queueMusic(::std::string const& trackID, ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions);
 
-    MCAPI ::Scripting::Result_deprecated<void> queueMusic_010(
+    MCNAPI ::Scripting::Result_deprecated<void> queueMusic_010(
         ::std::string const&                                         trackID,
         ::std::optional<::ScriptModuleMinecraft::ScriptMusicOptions> musicOptions
     );
 
-    MCAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperty(
+    MCNAPI ::Scripting::Result<void, ::Scripting::ArgumentOutOfBoundsError> setDynamicProperty(
         ::Scripting::ContextConfig const&                                                  contextConfig,
         ::std::string const&                                                               key,
         ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>> const& value
     );
 
-#ifdef LL_PLAT_C
-    MCAPI ~ScriptWorld();
-#endif
+    MCNAPI ~ScriptWorld();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorld&&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptWorld&&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Scripting::WeakLifetimeScope const&                scope,
         ::gsl::not_null<::ServerLevel*>                      level,
         ::ScriptModuleMinecraft::ScriptGlobalEventListeners& listeners,
@@ -162,9 +160,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

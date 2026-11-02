@@ -29,11 +29,11 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD ::EventResult $onChangedHitResult(::HitResult&);
+    MCNAPI ::EventResult $onChangedHitResult(::HitResult&);
 
-    MCFOLD ::EventResult $onChangedPickHitResult(::HitResult&);
+    MCNAPI ::EventResult $onChangedPickHitResult(::HitResult&);
 
-    MCFOLD ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
+    MCNAPI ::EventResult $onContinuousPickHitResult(::HitResult& hitResult);
 #endif
 
 

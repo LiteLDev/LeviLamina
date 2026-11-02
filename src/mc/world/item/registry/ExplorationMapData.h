@@ -17,6 +17,7 @@ public:
     ::ll::TypedStorage<8, 48, ::HashedString>                  mStructureType;
     ::ll::TypedStorage<1, 1, bool>                             mFeatureMustBeInNewChunks;
     ::ll::TypedStorage<8, 56, ::std::optional<::HashedString>> mBiomeTag;
+    ::ll::TypedStorage<4, 4, int>                              mSearchRadiusCells;
     // NOLINTEND
 
 public:
@@ -26,34 +27,36 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExplorationMapData(
+    MCNAPI ExplorationMapData(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
         ::HashedString                         structureType,
         bool                                   featureMustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
+        ::std::optional<::HashedString> const& biomeTag,
+        int                                    searchRadiusCells
     );
 
-    MCAPI ~ExplorationMapData();
+    MCNAPI ~ExplorationMapData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::MapType                              mapType,
         ::MapDecoration::Type                  markerType,
         ::std::string const&                   featureName,
         ::HashedString                         structureType,
         bool                                   featureMustBeInNewChunks,
-        ::std::optional<::HashedString> const& biomeTag
+        ::std::optional<::HashedString> const& biomeTag,
+        int                                    searchRadiusCells
     );
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

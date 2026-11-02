@@ -24,11 +24,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::SemVersion getMinFormatVersion(::FeatureLoading::FeatureVersion const& version);
-#endif
+    MCNAPI static ::SemVersion getMinFormatVersion(::FeatureLoading::FeatureVersion const& version);
 
-    MCAPI static ::std::optional<::Puv::VersionRange>
+    MCNAPI static ::std::optional<::Puv::VersionRange>
     getRangeFromVersion(::FeatureLoading::FeatureVersion const& version);
     // NOLINTEND
 };

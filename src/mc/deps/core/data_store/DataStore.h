@@ -46,18 +46,6 @@ public:
         CustomFileHandlers& operator=(CustomFileHandlers const&);
         CustomFileHandlers(CustomFileHandlers const&);
         CustomFileHandlers();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~CustomFileHandlers();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
     };
 
     class Viewer {

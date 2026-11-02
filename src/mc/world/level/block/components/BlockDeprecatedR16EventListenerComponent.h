@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _executeEvent(
+    MCNAPI void _executeEvent(
         ::std::string const&                                            eventName,
         ::Bedrock::small_vector_base<::ActorDefinitionEventStackEntry>& eventStack,
         ::RenderParams&                                                 params
@@ -34,8 +34,8 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void executeEvent(::Block const& block, ::std::string const& eventName, ::RenderParams& params);
+    MCNAPI static void executeEvent(::Block const& block, ::std::string const& eventName, ::RenderParams& params);
 
-    MCAPI static bool executeTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
+    MCNAPI static bool executeTrigger(::Block const& block, ::DefinitionTrigger const& trigger, ::RenderParams& params);
     // NOLINTEND
 };

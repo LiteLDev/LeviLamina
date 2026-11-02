@@ -35,9 +35,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
+    MCNAPI ::std::vector<::std::unique_ptr<::StructurePoolBlockTagRule>> const* lookupByName(::std::string name) const;
 
-    MCAPI void registerBlockTagRules(
+    MCNAPI void registerBlockTagRules(
         ::std::string name,
         ::std::unique_ptr<::std::vector<
             ::std::unique_ptr<::StructurePoolBlockTagRule, ::std::default_delete<::StructurePoolBlockTagRule>>>>&&

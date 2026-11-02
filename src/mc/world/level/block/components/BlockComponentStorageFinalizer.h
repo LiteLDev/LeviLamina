@@ -15,22 +15,22 @@ public:
 
     // member functions
     // NOLINTBEGIN
-    MCAPI void _checkForCollisionComponentBoxDuplication(::Block& block);
+    MCNAPI void _checkForCollisionComponentBoxDuplication(::Block& block);
 
 #ifdef LL_PLAT_C
-    MCAPI void _checkForDuplicatingBlockGeometryForPartVisibility(::Block& block);
+    MCNAPI void _checkForDuplicatingBlockGeometryForPartVisibility(::Block& block);
 #endif
 
-    MCAPI void _checkForMissingCullingComponentForMaterialOverride(::Block& block);
+    MCNAPI void _checkForMissingCullingComponentForMaterialOverride(::Block& block);
 
-    MCAPI void _checkForMissingGeometryComponent(::Block& block);
+    MCNAPI void _checkForMissingGeometryComponent(::Block& block);
 
-    MCAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
+    MCNAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
 
-    MCAPI void _finalizeCollisionBoxComponent(::Block& block);
+    MCNAPI void _finalizeCollisionBoxComponent(::Block& block);
 
-    MCAPI void _finalizeSelectionBoxComponent(::Block& block);
+    MCNAPI void _finalizeSelectionBoxComponent(::Block& block);
 
-    MCAPI void addRemainingComponents(::Block& block);
+    MCNAPI void addRemainingComponents(::Block& block);
     // NOLINTEND
 };

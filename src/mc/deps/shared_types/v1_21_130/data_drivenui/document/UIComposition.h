@@ -31,36 +31,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UIComposition(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
+    MCNAPI UIComposition(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
 
-    MCAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition&
+    MCNAPI ::SharedTypes::v1_21_130::DataDrivenUI::UIComposition&
     operator=(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
 
-    MCAPI ~UIComposition();
+    MCNAPI ~UIComposition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::std::string_view const& UI_COMPOSITION_PAYLOAD_KEY();
+
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_130::DataDrivenUI::UIComposition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

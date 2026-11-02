@@ -12,11 +12,11 @@ namespace FlatteningUtils { struct Instance; }
 namespace FlatteningUtils::ChemistryTable {
 // functions
 // NOLINTBEGIN
-MCAPI ::FlatteningUtils::Instance get();
+MCNAPI ::FlatteningUtils::Instance get();
 
-MCAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
+MCNAPI ::std::function<::Block const*(int)> getBlockComplexAliasCallback();
 
-MCAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
+MCNAPI ::ItemRegistryComplexAlias getItemComplexAliasCallback();
 // NOLINTEND
 
 } // namespace FlatteningUtils::ChemistryTable

@@ -18,6 +18,7 @@ enum class ResultCode : ushort {
     DeprecatedMember      = 1 << 9,
     UnrecognizedComponent = 1 << 10,
     UnsupportedVersion    = 1 << 11,
+    InputTooLarge         = 1 << 12,
     InvalidEnumValue      = 1 << 12,
     EnttEnumAsBitmask     = 65535,
     All                   = 65535,

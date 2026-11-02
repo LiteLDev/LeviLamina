@@ -30,35 +30,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TagDocument(::SharedTypes::v1_26_40::Poi::TagDocument const&);
+    MCNAPI TagDocument(::SharedTypes::v1_26_40::Poi::TagDocument const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::Poi::TagDocument const& rhs) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::Poi::TagDocument const& rhs) const;
 
-    MCAPI ~TagDocument();
+    MCNAPI ~TagDocument();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SemVersionConstant const& VERSION();
+    MCNAPI static ::SemVersionConstant const& VERSION();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::Poi::TagDocument const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::Poi::TagDocument const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

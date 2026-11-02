@@ -51,6 +51,12 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI bool listen(ushort port, ::std::optional<::std::string> const& bindAddress);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
     MCNAPI bool $listen(ushort port);
@@ -76,5 +82,11 @@ public:
     MCNAPI void $send(char const* buffer, uint64 length);
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

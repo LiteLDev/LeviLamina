@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/world/actor/ActorDefinitionTrigger.h"
+#include "mc/world/item/HandSlot.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -40,20 +41,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void becomeTame(::Actor& owner, bool tamingParticles);
+    MCNAPI void becomeTame(::Actor& owner, bool tamingParticles);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::MountTamingComponent& operator=(::MountTamingComponent const&);
+    MCNAPI ::MountTamingComponent& operator=(::MountTamingComponent const&);
 
     MCAPI void tameToPlayer(::Actor& owner, ::Player& player, bool tamingParticles);
 
-    MCAPI ~MountTamingComponent();
+    MCNAPI ~MountTamingComponent();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -16,4 +16,37 @@ public:
     ::ll::TypedStorage<4, 4, int>                                mAmount;
     ::ll::TypedStorage<8, 152, ::ItemStack>                      mStack;
     // NOLINTEND
+
+#ifdef LL_PLAT_S
+public:
+    // prevent constructor by default
+    ContainerValidationOperation();
+
+#else // LL_PLAT_C
+#endif
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI ContainerValidationOperation(
+        ::ContainerValidationOperationType   type,
+        ::ContainerValidationSlotData const& slotData,
+        int                                  amount,
+        ::ItemStack const&                   stack
+    );
+#endif
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI void* $ctor(
+        ::ContainerValidationOperationType   type,
+        ::ContainerValidationSlotData const& slotData,
+        int                                  amount,
+        ::ItemStack const&                   stack
+    );
+#endif
+    // NOLINTEND
 };

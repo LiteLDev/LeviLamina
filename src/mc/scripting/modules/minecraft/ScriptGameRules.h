@@ -26,9 +26,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder, ::Level const& level);
 
-    MCAPI static ::Scripting::EnumBinding bindPlayerWaypointsModeEnum();
+    MCNAPI static ::Scripting::EnumBinding bindPlayerWaypointsModeEnum();
     // NOLINTEND
 };
 

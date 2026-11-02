@@ -31,6 +31,7 @@ struct RangeIndices;
 struct RenderChunkDirectIndexData;
 struct RenderChunkDirectVertexData;
 struct TerrainLayer;
+namespace Core { class PathView; }
 namespace cg { struct ImageDescription; }
 namespace dragon { class ResolvedImageResource; }
 namespace dragon { class ResolvedMaterialResource; }
@@ -47,6 +48,9 @@ namespace dragon::platform { struct SurfaceParameters; }
 namespace dragon::rendering { class RayTracingFeatureConfiguration; }
 namespace dragon::rendering { class RayTracingResources; }
 namespace dragon::rendering { struct SharedTextureHandle; }
+namespace dragon::streampacking { class StreamPackingPlan; }
+namespace dragon::streampacking { struct PackedBuffers; }
+namespace dragon::streampacking { struct PackedStreamsGPU; }
 namespace dragon::texturestreaming { struct DragonTextureCacheContext; }
 namespace mce { class VertexFormat; }
 namespace mce { struct ClientTexture; }
@@ -86,6 +90,7 @@ namespace mce::framebuilder { struct RenderEditorBlockVolumeOutlineDescription; 
 namespace mce::framebuilder { struct RenderEditorGizmoHandleArrowDescription; }
 namespace mce::framebuilder { struct RenderEditorGizmoHandleCubeDescription; }
 namespace mce::framebuilder { struct RenderEditorGizmoHandlePaneDescription; }
+namespace mce::framebuilder { struct RenderEditorGizmoHandleRingDescription; }
 namespace mce::framebuilder { struct RenderEditorRenderPlaneDescription; }
 namespace mce::framebuilder { struct RenderEditorSelectionCursorDescription; }
 namespace mce::framebuilder { struct RenderEndSkyDescription; }
@@ -110,6 +115,7 @@ namespace mce::framebuilder { struct RenderVolumetricFogDescription; }
 namespace mce::framebuilder { struct RenderWeatherDescription; }
 namespace mce::framebuilder { struct ShadowAtlasFrameDescription; }
 namespace mce::framebuilder { struct SkyAmbientSamplesDescription; }
+namespace mce::framebuilder { struct TransitioningVoxelVolumeDescription; }
 namespace mce::framebuilder { struct VoxelVolumeDescription; }
 namespace mce::framebuilder::bgfxbridge { struct EntityCreationContext; }
 namespace mce::framebuilder::gamecomponents { struct EditorHighlightConfiguration; }
@@ -150,6 +156,8 @@ public:
 
     using LayerRanges = ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)>;
 
+    using IndexData = ::std::variant<::gsl::span<ushort const>, ::gsl::span<uint const>>;
+
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -182,6 +190,8 @@ public:
     virtual bool initialized() const = 0;
 
     virtual void destroy() = 0;
+
+    virtual void initializePipelineDiskCache(::Core::PathView directory);
 
     virtual void loadCoreAssets(
         ::Core::PathBuffer<::std::string> const&                                   dataDirectory,
@@ -273,11 +283,22 @@ public:
         int const*                                                                absoluteBlockPosition
     ) = 0;
 
+    virtual void generateRenderChunkVertexData(
+        ::dragon::streampacking::PackedStreamsGPU&        outPackedStreams,
+        ::dragon::streampacking::StreamPackingPlan const& plan,
+        ::dragon::streampacking::PackedBuffers&&          packedBuffers
+    ) = 0;
+
     virtual void generateRenderChunkIndexData(
         ::RenderChunkDirectIndexData&                                             renderChunkDirectIndexData,
         ::std::function<::RangeIndices(::TerrainLayer const&, ::TerrainLayerLOD)> layerRanges,
         ::gsl::span<uchar const> const&                                           indexData,
         ::dragon::mesh::IndexSize const                                           indexSize
+    ) = 0;
+
+    virtual void generateRenderChunkIndexData(
+        ::mce::ServerResourcePointer<::dragon::ResolvedIndexBufferResource>&      outIndexBuffer,
+        ::std::variant<::gsl::span<ushort const>, ::gsl::span<uint const>> const& indexData
     ) = 0;
 
     virtual void generateRenderChunkAdditionalVertexData(
@@ -403,6 +424,8 @@ public:
 
     virtual uint getMaxVertexCount() const = 0;
 
+    virtual uint getMaxVertexStreams() const = 0;
+
     virtual void queueMaterialReload() = 0;
 
     virtual void
@@ -427,7 +450,8 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::LightPointDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::ShadowAtlasFrameDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::gamecomponents::ServerGraphicsOverrideParameters const>,
-            ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>> description
+            ::std::reference_wrapper<::mce::framebuilder::VoxelVolumeDescription const>,
+            ::std::reference_wrapper<::mce::framebuilder::TransitioningVoxelVolumeDescription const>> description
     ) = 0;
 
     virtual void _insert(
@@ -489,6 +513,7 @@ public:
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandleArrowDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandleCubeDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandlePaneDescription const>,
+            ::std::reference_wrapper<::mce::framebuilder::RenderEditorGizmoHandleRingDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorSelectionCursorDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorBlockVolumeOutlineDescription const>,
             ::std::reference_wrapper<::mce::framebuilder::RenderEditorRenderPlaneDescription const>> description

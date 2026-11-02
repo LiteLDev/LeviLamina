@@ -81,48 +81,89 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JigsawStructureLoader(
+    MCNAPI JigsawStructureLoader(
         ::cereal::ReflectionCtx const&                     ctx,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
     );
 
-    MCAPI bool _parseJigsawDefinitionData(
+#ifdef LL_PLAT_S
+    MCNAPI bool _parseJigsawDefinitionData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
-    MCAPI bool _parseProcessorsData(
+#ifdef LL_PLAT_C
+    MCNAPI bool _parseJigsawDefinitionData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
-    MCAPI bool _parseStructureSetData(
+#ifdef LL_PLAT_S
+    MCNAPI bool _parseProcessorsData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
-    MCAPI bool _parseTemplatePoolsData(
+#ifdef LL_PLAT_C
+    MCNAPI bool _parseProcessorsData(
         ::std::string_view                 fileWithExtension,
         ::std::string&&                    fileData,
         ::PuvLoadData::TelemetryEventData& eventData
     );
+#endif
 
-    MCAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
+#ifdef LL_PLAT_S
+    MCNAPI bool _parseStructureSetData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI bool _parseStructureSetData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_S
+    MCNAPI bool _parseTemplatePoolsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+#ifdef LL_PLAT_C
+    MCNAPI bool _parseTemplatePoolsData(
+        ::std::string_view                 fileWithExtension,
+        ::std::string&&                    fileData,
+        ::PuvLoadData::TelemetryEventData& eventData
+    );
+#endif
+
+    MCNAPI void loadJigsawStructureData(::ResourcePackManager& resourcePackManager, ::IMinecraftEventing& eventing);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
+    MCNAPI void*
+    $ctor(::cereal::ReflectionCtx const& ctx, ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

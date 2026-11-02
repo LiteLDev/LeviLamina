@@ -7,7 +7,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 64> mUnk8f1589;
-    ::ll::UntypedStorage<8, 64> mUnkccd709;
+    ::ll::UntypedStorage<8, 64> mUnk8085d4;
     // NOLINTEND
 
 public:
@@ -15,16 +15,4 @@ public:
     TextureAtlasResourceCallbacks& operator=(TextureAtlasResourceCallbacks const&);
     TextureAtlasResourceCallbacks(TextureAtlasResourceCallbacks const&);
     TextureAtlasResourceCallbacks();
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCNAPI ~TextureAtlasResourceCallbacks();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
-    // NOLINTEND
 };

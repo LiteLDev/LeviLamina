@@ -36,14 +36,14 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI GeometrySource(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&);
+    MCNAPI GeometrySource(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&);
 
-    MCAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource&
+    MCNAPI ::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource&
     operator=(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&) const;
 
-    MCAPI ~GeometrySource();
+    MCNAPI ~GeometrySource();
 #endif
     // NOLINTEND
 
@@ -51,7 +51,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_40::PersonaPieceMetaDef::GeometrySource const&);
 #endif
     // NOLINTEND
 
@@ -59,7 +59,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

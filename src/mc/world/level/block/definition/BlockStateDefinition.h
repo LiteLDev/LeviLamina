@@ -31,23 +31,27 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
+    MCNAPI BlockStateDefinition(::BlockStateDefinition const& rhs);
 #endif
 
-    MCAPI ~BlockStateDefinition();
+#ifdef LL_PLAT_C
+    MCNAPI void _copy(::BlockStateDefinition const& rhs);
+#endif
+
+    MCNAPI ~BlockStateDefinition();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCAPI void* $ctor(::BlockStateDefinition const& rhs);
+    MCNAPI void* $ctor(::BlockStateDefinition const& rhs);
 #endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

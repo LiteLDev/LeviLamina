@@ -10,12 +10,12 @@ struct BiomeIdType;
 namespace BiomeIdCompatibility {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
+MCNAPI ::std::string_view getFixedBiomeName(::BiomeIdType biomeId);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::BiomeIdType const& MAX_CUSTOM_BIOMES();
+MCNAPI ::BiomeIdType const& MAX_CUSTOM_BIOMES();
 // NOLINTEND
 
 } // namespace BiomeIdCompatibility

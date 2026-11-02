@@ -41,22 +41,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit MobEffectsLayout(::IClientInstance& client);
+    MCNAPI explicit MobEffectsLayout(::IClientInstance& client);
 
-    MCAPI void _updateAnimations();
+    MCNAPI void _updateAnimations();
 
-    MCAPI void _updatePositions();
+    MCNAPI void _updatePositions();
 
-    MCAPI void onConfigChanged(::Config const& c);
+    MCNAPI void onConfigChanged(::Config const& c);
 
-    MCAPI void setHeight(int val);
+    MCNAPI void setHeight(int val);
 
-    MCAPI void setWidth(int val);
+    MCNAPI void setWidth(int val);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IClientInstance& client);
+    MCNAPI void* $ctor(::IClientInstance& client);
     // NOLINTEND
 };

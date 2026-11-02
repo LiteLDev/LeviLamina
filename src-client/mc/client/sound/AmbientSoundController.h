@@ -65,22 +65,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AmbientSoundController(::WeakEntityRef localUser, ::SoundMapping const& soundMap);
+    MCNAPI AmbientSoundController(::WeakEntityRef localUser, ::SoundMapping const& soundMap);
 
-    MCAPI void _addDelayOrTransitioningToNewStage();
+    MCNAPI void _addDelayOrTransitioningToNewStage();
 
-    MCAPI void _startLoopSound();
+    MCNAPI void _startLoopSound();
 
-    MCAPI void _stopLoopSound(bool hard);
+    MCNAPI void _stopLoopSound(bool hard);
 
-    MCAPI void _tryPlayAdditionSounds(
+    MCNAPI void _tryPlayAdditionSounds(
         ::Vec3 const&                                                            listenerPos,
         ::brstd::function_ref<void(::HashedString const&, ::Vec3 const&)> const& playSoundFunc
     );
 
-    MCAPI void _tryPlayLoopSounds(::Vec3 const& listenerPos);
+    MCNAPI void _tryPlayLoopSounds(::Vec3 const& listenerPos);
 
-    MCAPI void _tryPlayMoodSound(
+    MCNAPI void _tryPlayMoodSound(
         ::Vec3 const&                                                                      listenerPos,
         ::brstd::function_ref<void(::HashedString const&, ::Vec3 const&)> const&           playSoundFunc,
         ::brstd::function_ref<bool(::BrightnessPair, ::BlockPos const&, ::BrightnessPair)> lightThresholdFunc
@@ -90,16 +90,16 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::WeakEntityRef localUser, ::SoundMapping const& soundMap);
+    MCNAPI void* $ctor(::WeakEntityRef localUser, ::SoundMapping const& soundMap);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onWillChangeDimension(::Player& player);
+    MCNAPI void $onWillChangeDimension(::Player& player);
 
-    MCFOLD void $onDimensionChanged(::Player& player);
+    MCNAPI void $onDimensionChanged(::Player& player);
 
-    MCAPI void $onPlayerDestruction(::Player& player);
+    MCNAPI void $onPlayerDestruction(::Player& player);
     // NOLINTEND
 };

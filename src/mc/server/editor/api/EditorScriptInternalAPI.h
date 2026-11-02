@@ -4,6 +4,8 @@
 
 // auto generated forward declare list
 // clang-format off
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { class WeakLifetimeScope; }
 namespace Scripting { struct ClassBinding; }
 // clang-format on
 
@@ -23,13 +25,37 @@ public:
 public:
     // prevent constructor by default
     EditorScriptInternalAPI& operator=(EditorScriptInternalAPI const&);
-    EditorScriptInternalAPI(EditorScriptInternalAPI const&);
     EditorScriptInternalAPI();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI EditorScriptInternalAPI(::Editor::API::EditorScriptInternalAPI const&);
+
+    MCNAPI
+    EditorScriptInternalAPI(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+
+    MCNAPI ~EditorScriptInternalAPI();
+    // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ClassBinding bindScript();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::Editor::API::EditorScriptInternalAPI const&);
+
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection& services, ::Scripting::WeakLifetimeScope const& scope);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

@@ -13,6 +13,8 @@ namespace Gameface { class TemporaryTextureHolder; }
 namespace Input::Debug { class ISplitscreenRedirect; }
 namespace OreUI { class ILiveViewCollectionConsumer; }
 namespace OreUI { struct DebugData; }
+namespace mce { class RenderContext; }
+namespace mce { class ShaderGroup; }
 // clang-format on
 
 namespace OreUI {
@@ -25,6 +27,9 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Gameface::ResourceHandlerBroker>>    mResourceHandlerBroker;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::OreUI::ILiveViewCollectionConsumer>> mLiveViewConsumer;
     ::ll::TypedStorage<8, 8, ::Gameface::TemporaryTextureHolder&>                     mTemporaryTextureHolder;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>>         mShaderGroup;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::mce::RenderContext*>>                  mRenderContext;
+    ::ll::TypedStorage<8, 64, ::std::function<void(::std::string_view)>>              mShowDebugToast;
     ::ll::TypedStorage<8, 8, ::OreUI::DebugData&>                                     mDebugData;
     ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::Input::Debug::ISplitscreenRedirect>>
         mDebugSplitscreenInputRedirect;

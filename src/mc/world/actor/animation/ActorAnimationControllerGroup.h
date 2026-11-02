@@ -37,31 +37,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorAnimationControllerGroup();
+    MCNAPI ActorAnimationControllerGroup();
 
-    MCAPI ::std::shared_ptr<::ActorAnimationControllerInfo> getActorAnimationControllerInfo(::HashedString const& name);
+    MCNAPI ::std::shared_ptr<::ActorAnimationControllerInfo>
+    getActorAnimationControllerInfo(::HashedString const& name);
 
-    MCAPI void loadActorAnimationController(
+    MCNAPI void loadActorAnimationController(
         ::std::string const&      fileData,
         ::Core::Path const&       filenameWithExtension,
         ::MinEngineVersion const& minEngineVersion,
-        ::CurrentCmdVersion const packCommandVersion
+        ::CurrentCmdVersion       packCommandVersion
     );
 
 #ifdef LL_PLAT_C
-    MCAPI void loadActorAnimationControllersAsync(
+    MCNAPI void loadActorAnimationControllersAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager
     );
 #endif
 
-    MCAPI void loadActorAnimationControllersSync(::ResourcePackManager& resourcePackManager);
+    MCNAPI void loadActorAnimationControllersSync(::ResourcePackManager& resourcePackManager);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

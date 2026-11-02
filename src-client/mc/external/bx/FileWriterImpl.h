@@ -39,13 +39,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $open(::bx::FilePath const& _filePath, bool _append, ::bx::Error* _err);
+    MCNAPI bool $open(::bx::FilePath const& _filePath, bool _append, ::bx::Error* _err);
 
-    MCAPI void $close();
+    MCNAPI void $close();
 
-    MCAPI int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
+    MCNAPI int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
 
-    MCAPI int $write(void const* _data, int _size, ::bx::Error* _err);
+    MCNAPI int $write(void const* _data, int _size, ::bx::Error* _err);
     // NOLINTEND
 
 public:

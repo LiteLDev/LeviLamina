@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorUnloadedChunkTransferEntry(
+    MCNAPI ActorUnloadedChunkTransferEntry(
         ::ChunkKey&                      fromChunkKey,
         ::std::string&                   actorStorageKey,
         ::std::unique_ptr<::CompoundTag> actorTag
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ChunkKey& fromChunkKey, ::std::string& actorStorageKey, ::std::unique_ptr<::CompoundTag> actorTag);
     // NOLINTEND
 };

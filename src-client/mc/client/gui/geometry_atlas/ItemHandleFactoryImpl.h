@@ -8,6 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class BlockType;
 class ItemRegistryRef;
 class PropertyBag;
 class TickingTextures;
@@ -32,9 +33,15 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::std::optional<int> _resolveBlockIDAux(::BlockType const& blockType) const;
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::shared_ptr<::GeometryAtlas::IItemHandle>
+    MCNAPI ::std::shared_ptr<::GeometryAtlas::IItemHandle>
     $createItem(::std::string_view name, ::std::unique_ptr<::PropertyBag> bag) const;
     // NOLINTEND
 

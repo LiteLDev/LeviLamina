@@ -11,6 +11,6 @@ class FrontloadedResources {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::gsl::span<::ResourceLocation> getTextures();
+    MCNAPI static ::gsl::span<::ResourceLocation> getTextures();
     // NOLINTEND
 };

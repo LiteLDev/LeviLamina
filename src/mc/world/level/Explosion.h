@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool explode(::IRandom& random);
 
-    MCAPI ~Explosion();
+    MCNAPI ~Explosion();
     // NOLINTEND
 
 public:
@@ -71,6 +71,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

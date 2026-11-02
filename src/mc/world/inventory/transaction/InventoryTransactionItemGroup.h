@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStack getItemInstance() const;
+    MCNAPI ::ItemStack getItemInstance() const;
     // NOLINTEND
 };

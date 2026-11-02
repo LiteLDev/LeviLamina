@@ -16,16 +16,20 @@ class SharedAttributes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::AttributeInstanceRef
+    MCNAPI static bool _isDefaultAttribute(::AttributeInstance const& instance, ::AttributeInstance const& defaults);
+
+    MCNAPI static ::AttributeInstanceRef
     _legacyGetInstance(::BaseAttributeMap& attributes, ::std::string const& attributeName);
 
-    MCAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
+    MCNAPI static ::std::string const& _legacyGetName(::std::string const& attributeName);
 
-    MCAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
+    MCNAPI static ::std::unique_ptr<::CompoundTag> _saveAttribute(::AttributeInstance const& instance);
 
-    MCAPI static void loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list);
+    MCNAPI static void
+    loadAttributes(::BaseAttributeMap* attributes, ::ListTag const* list, ::BaseAttributeMap const* defaults);
 
-    MCAPI static ::std::unique_ptr<::ListTag> saveAttributes(::BaseAttributeMap const* attributes);
+    MCNAPI static ::std::unique_ptr<::ListTag>
+    saveAttributes(::BaseAttributeMap const* attributes, ::BaseAttributeMap const* defaults);
     // NOLINTEND
 
 public:
@@ -33,15 +37,15 @@ public:
     // NOLINTBEGIN
     MCAPI static ::Attribute const& ABSORPTION();
 
-    MCAPI static ::Attribute const& AIR_DRAG_MODIFIER();
+    MCNAPI static ::Attribute const& AIR_DRAG_MODIFIER();
 
     MCAPI static ::Attribute const& ATTACK_DAMAGE();
 
-    MCAPI static ::Attribute const& BOUNCINESS();
+    MCNAPI static ::Attribute const& BOUNCINESS();
 
     MCAPI static ::Attribute const& FOLLOW_RANGE();
 
-    MCAPI static ::Attribute const& FRICTION_MODIFIER();
+    MCNAPI static ::Attribute const& FRICTION_MODIFIER();
 
     MCAPI static ::Attribute const& HEALTH();
 

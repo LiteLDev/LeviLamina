@@ -21,23 +21,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Finalize(::BookEditAction::Finalize const&);
+    MCNAPI Finalize(::BookEditAction::Finalize const&);
 
-    MCFOLD bool operator==(::BookEditAction::Finalize const&) const;
+    MCNAPI bool operator==(::BookEditAction::Finalize const&) const;
 
-    MCAPI ~Finalize();
+    MCNAPI ~Finalize();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::BookEditAction::Finalize const&);
+    MCNAPI void* $ctor(::BookEditAction::Finalize const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

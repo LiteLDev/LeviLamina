@@ -10,7 +10,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class EDUServersScreenController;
+class EduServersScreenController;
 class MinecraftScreenModel;
 // clang-format on
 
@@ -18,7 +18,7 @@ class EduServerFetchProgressHandler : public ::EmptyProgressHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::EDUServersScreenController>> mEduServersScreenController;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::EduServersScreenController>> mEduServersScreenController;
     ::ll::TypedStorage<8, 8, ::std::chrono::steady_clock::time_point>                   mEduServerFetchStartTime;
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mMinimumDisplayInterval;
     ::ll::TypedStorage<8, 8, ::std::chrono::milliseconds const>                         mTimeOutTime;
@@ -50,33 +50,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EduServerFetchProgressHandler(
-        ::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController
+    MCNAPI explicit EduServerFetchProgressHandler(
+        ::Bedrock::NonOwnerPointer<::EduServersScreenController> eduServersScreenController
     );
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Bedrock::NonOwnerPointer<::EDUServersScreenController> eduServersScreenController);
+    MCNAPI void* $ctor(::Bedrock::NonOwnerPointer<::EduServersScreenController> eduServersScreenController);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCFOLD ::ProgressAnimation $showLoadingBar() const;
+    MCNAPI ::ProgressAnimation $showLoadingBar() const;
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
     // NOLINTEND
 
 public:

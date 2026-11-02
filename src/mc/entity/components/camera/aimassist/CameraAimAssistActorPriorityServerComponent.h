@@ -21,9 +21,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setExclusion(::HashedString const& presetId, ::HashedString const& actorId, bool isExcluded);
+    MCNAPI void setExclusion(::HashedString const& presetId, ::HashedString const& actorId, bool isExcluded);
 
-    MCAPI void setPriority(
+    MCNAPI void setPriority(
         ::HashedString const& presetId,
         ::HashedString const& categoryId,
         ::HashedString const& actorId,

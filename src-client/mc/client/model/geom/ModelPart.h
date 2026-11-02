@@ -115,11 +115,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ModelPart(::ModelPart&& rhs);
+    MCNAPI ModelPart(::ModelPart&& rhs);
 
-    MCAPI ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
+    MCNAPI ModelPart(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
 
-    MCAPI void _copyBoneMatricesToSkinnedMeshes(
+    MCNAPI void _copyBoneMatricesToSkinnedMeshes(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,
         ::RenderController const*            renderControllerId,
@@ -127,61 +127,59 @@ public:
         bool                                 deferred
     );
 
-    MCAPI void addBox(::Vec3 const& point0, ::Vec3 const& extents, bool mirror, float g, ::mce::Color const& color);
+    MCNAPI void addBox(::Vec3 const& point0, ::Vec3 const& extents, bool mirror, float g, ::mce::Color const& color);
 
-    MCAPI void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
+    MCNAPI void assignPartToGroup(::Model& model, bool forceToUniqueGroup, ::DataDrivenGeometry* owningGeometry);
 
     MCAPI void compileCubes(::Tessellator& tessellator);
 
-    MCAPI void compileQuads(::MinecraftGameplayGraphicsResources& gameplayResources, ::Tessellator& tessellator);
+    MCNAPI void compileQuads(::MinecraftGameplayGraphicsResources& gameplayResources, ::Tessellator& tessellator);
 
-    MCAPI void compileTris(::Tessellator& tessellator);
+    MCNAPI void compileTris(::Tessellator& tessellator);
 
-    MCAPI void copyBoneMatricesToActor(
+    MCNAPI void copyBoneMatricesToActor(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,
         ::RenderController const*            renderControllerId,
         ::DataDrivenGeometry&                geo
     );
 
-    MCAPI void copyBoneMatricesToSkinnedMeshes(
+    MCNAPI void copyBoneMatricesToSkinnedMeshes(
         ::RenderParams&                      renderParams,
         ::gsl::span<::BoneOrientation const> boneOrientations,
         ::RenderController const*            renderControllerId,
         ::DataDrivenGeometry&                geo
     );
 
-    MCAPI void expandAABB(::AABB& bb) const;
+    MCNAPI void expandAABB(::AABB& bb) const;
 
-    MCAPI void LL_CC_V generateBoneTransformMatrices(
-        ::RenderParams&                renderParams,
+    MCNAPI void LL_CC_V generateBoneTransformMatrices(
         ::gsl::span<::BoneOrientation> boneOrientations,
-        ::RenderController const*      renderControllerId,
         ::DirectX::XMMATRIX const      boneToEntitySpaceMatrix
-    );
+    ) const;
 
-    MCAPI bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
+    MCNAPI bool isVisible(::RenderParams& renderParams, ::RenderController const* renderControllerId) const;
 
-    MCAPI bool load(::GeometryPtr source, ::std::string_view nodeName, ::ModelPart* parentPart);
+    MCNAPI bool load(::GeometryPtr source, ::std::string_view nodeName, ::ModelPart* parentPart);
 
-    MCAPI bool load(
+    MCNAPI bool load(
         ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
         ::GeometryPtr const                                source,
         ::std::string_view                                 nodeName,
         ::ModelPart*                                       parentPart
     );
 
-    MCAPI void loadBoxes(
+    MCNAPI void loadBoxes(
         ::Vec3 const&                         newPivot,
         ::Vec3 const&                         offset,
         ::std::vector<::Geometry::Box> const& boxes,
         ::Vec3 const&                         bindPoseRotation
     );
 
-    MCAPI void
+    MCNAPI void
     loadPolyMesh(::Vec3 const& newPivot, ::Vec3 const& bindPoseRotation, ::Geometry::NodePolyMesh const& sourceMesh);
 
-    MCAPI bool loadWithOrientation(
+    MCNAPI bool loadWithOrientation(
         ::std::shared_ptr<::ActorResourceDefinition> const resourceDefinition,
         ::GeometryPtr const                                source,
         ::std::string_view                                 nodeName,
@@ -190,7 +188,7 @@ public:
         ::ModelPart*                                       parentPart
     );
 
-    MCAPI bool loadWithOrientation_(
+    MCNAPI bool loadWithOrientation_(
         ::GeometryPtr const source,
         ::std::string_view  nodeName,
         ::Vec3 const&       basePos,
@@ -198,11 +196,11 @@ public:
         ::ModelPart*        parentPart
     );
 
-    MCAPI uint64 numCubes() const;
+    MCNAPI uint64 numCubes() const;
 
-    MCAPI ::ModelPart& operator=(::ModelPart&& rhs);
+    MCNAPI ::ModelPart& operator=(::ModelPart&& rhs);
 
-    MCAPI void render(
+    MCNAPI void render(
         ::ScreenContext& screenContext,
         ::Model&         model,
         float            scale,
@@ -211,7 +209,7 @@ public:
         ::Matrix         boneToEntitySpaceMatrix
     );
 
-    MCAPI void renderAtPosition(
+    MCNAPI void renderAtPosition(
         ::ScreenContext& screenContext,
         ::Model&         model,
         ::Vec3 const&    position,
@@ -221,26 +219,26 @@ public:
         ::Matrix         boneToEntitySpaceMatrix
     );
 
-    MCAPI void reset();
+    MCNAPI void reset();
 
-    MCAPI void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
+    MCNAPI void setModelPartMaterial(::mce::MaterialPtr const& mat, ::RenderController const* renderControllerId);
 
-    MCAPI void translateTo(::Matrix& mv, float scale);
+    MCNAPI void translateTo(::Matrix& mv, float scale);
 
-    MCAPI ~ModelPart();
+    MCNAPI ~ModelPart();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ModelPart&& rhs);
+    MCNAPI void* $ctor(::ModelPart&& rhs);
 
-    MCAPI void* $ctor(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
+    MCNAPI void* $ctor(int xTexOffs, int yTexOffs, int texWidth, int texHeight);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

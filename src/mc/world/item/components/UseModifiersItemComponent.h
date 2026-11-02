@@ -12,7 +12,7 @@
 // clang-format off
 class ComponentItem;
 class SemVersion;
-namespace SharedTypes::Beta { struct UseModifiersItemComponent; }
+namespace SharedTypes::v1_26_50 { struct UseModifiersItemComponent; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
@@ -48,13 +48,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UseModifiersItemComponent(::SharedTypes::Beta::UseModifiersItemComponent component);
+    MCNAPI explicit UseModifiersItemComponent(::SharedTypes::v1_26_50::UseModifiersItemComponent component);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -64,13 +64,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::Beta::UseModifiersItemComponent component);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::UseModifiersItemComponent component);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

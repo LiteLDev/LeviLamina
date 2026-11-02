@@ -11,6 +11,7 @@
 class ActorOwnerComponent;
 class StrictEntityContext;
 struct InterpolateMovementNeededComponent;
+struct TickingSystemWithInfo;
 struct WaterAnimalFlagComponent;
 // clang-format on
 
@@ -25,7 +26,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doWaterAnimalPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

@@ -13,7 +13,6 @@
 class ActorRenderData;
 class BaseActorRenderContext;
 class BlockTessellator;
-class DataDrivenRenderer;
 class ModelPart;
 class RenderParams;
 // clang-format on
@@ -51,26 +50,11 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DataDrivenRenderer_tempComponent_MushroomCowAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer,
-        ::BlockTessellator&                     commonBlockRenderer
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer, ::BlockTessellator& commonBlockRenderer);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::V2TempComponentRequirements $getV2Requirements() const;
+    MCNAPI ::V2TempComponentRequirements $getV2Requirements() const;
 
-    MCAPI void
+    MCNAPI void
     $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData, ::RenderParams& renderParams);
     // NOLINTEND
 };

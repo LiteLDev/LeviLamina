@@ -5,7 +5,12 @@
 namespace OreUI::EntryPoints::AnnouncementModal {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeRoute(::std::string const& messageId);
+MCNAPI ::std::string composeRoute(::std::string const& messageId);
+// NOLINTEND
+
+// static variables
+// NOLINTBEGIN
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::AnnouncementModal

@@ -2,6 +2,11 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+namespace cereal { struct ReflectionCtx; }
+// clang-format on
+
 namespace VolumeInstanceData {
 
 struct VolumeStorageDefinition {
@@ -20,6 +25,14 @@ public:
     VolumeStorageDefinition& operator=(VolumeStorageDefinition const&);
     VolumeStorageDefinition(VolumeStorageDefinition const&);
     VolumeStorageDefinition();
+
+public:
+    // static functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+#endif
+    // NOLINTEND
 };
 
 } // namespace VolumeInstanceData

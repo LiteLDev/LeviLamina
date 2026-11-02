@@ -20,24 +20,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AutomaticFeatureRuleDescription(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
+    MCNAPI AutomaticFeatureRuleDescription(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
 
-    MCFOLD ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
+    MCNAPI ::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&
     operator=(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription&&);
 
-    MCAPI ~AutomaticFeatureRuleDescription();
+    MCNAPI ~AutomaticFeatureRuleDescription();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_21_20::AutomaticFeatureRuleDescription const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

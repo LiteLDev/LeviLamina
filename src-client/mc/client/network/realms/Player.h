@@ -8,17 +8,17 @@ struct Player {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 32> mUnkc9ca1b;
-    ::ll::UntypedStorage<8, 32> mUnkc2b20e;
-    ::ll::UntypedStorage<8, 32> mUnk142cb6;
-    ::ll::UntypedStorage<8, 72> mUnk3468aa;
-    ::ll::UntypedStorage<1, 1>  mUnk64710a;
-    ::ll::UntypedStorage<1, 1>  mUnke1c1b0;
-    ::ll::UntypedStorage<1, 1>  mUnk8c6858;
-    ::ll::UntypedStorage<1, 1>  mUnkd251a2;
-    ::ll::UntypedStorage<4, 4>  mUnk9ba5b7;
-    ::ll::UntypedStorage<1, 1>  mUnk5a0651;
-    ::ll::UntypedStorage<8, 8>  mUnk7ca601;
+    ::ll::UntypedStorage<8, 32>  mUnkc9ca1b;
+    ::ll::UntypedStorage<8, 32>  mUnkc2b20e;
+    ::ll::UntypedStorage<8, 32>  mUnk142cb6;
+    ::ll::UntypedStorage<8, 104> mUnk3468aa;
+    ::ll::UntypedStorage<1, 1>   mUnk64710a;
+    ::ll::UntypedStorage<1, 1>   mUnke1c1b0;
+    ::ll::UntypedStorage<1, 1>   mUnk8c6858;
+    ::ll::UntypedStorage<1, 1>   mUnkd251a2;
+    ::ll::UntypedStorage<4, 4>   mUnk9ba5b7;
+    ::ll::UntypedStorage<1, 1>   mUnk5a0651;
+    ::ll::UntypedStorage<8, 8>   mUnk7ca601;
     // NOLINTEND
 
 public:

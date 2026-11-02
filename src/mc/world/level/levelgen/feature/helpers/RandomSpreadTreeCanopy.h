@@ -53,24 +53,24 @@ public:
         ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        ::TreeHelper::TreeParams const& treeParams,
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const& attachmentInfos
     ) const /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::BlockPos> $placeCanopy(
+    MCNAPI ::std::optional<::BlockPos> $placeCanopy(
         ::IBlockWorldGenAPI& target,
         ::BlockPos const&,
         ::ITreeCanopy::BranchSize const&,
         ::Random& random,
         ::RenderParams&,
-        ::TreeHelper::TreeParams const&  treeParams,
-        ::std::vector<::BlockPos> const& attachmentPositions,
-        ::std::vector<::ITreeCanopy::BranchSize> const&
+        ::TreeHelper::TreeParams const& treeParams,
+        int,
+        ::std::vector<::ITreeCanopy::AttachmentInfo> const& attachmentInfos
     ) const;
 
 

@@ -7,6 +7,7 @@
 #include "mc/client/gui/oreui/binding/properties/Property.h"
 #include "mc/client/gui/oreui/binding/properties/PropertyVector.h"
 #include "mc/client/realms/FetchAllRealmsRolesAndActionsForCurrentUserState.h"
+#include "mc/client/realms/PlayerPermission.h"
 #include "mc/client/realms/PlayerRole.h"
 #include "mc/client/realms/PlayerRoleActions.h"
 #include "mc/client/realms/RolesAndPermissionsState.h"
@@ -30,9 +31,11 @@ public:
     ::ll::
         TypedStorage<8, 176, ::OreUI::Property<::Realms::RolesAndPermissionsState, ::Realms::RolesAndPermissionsState>>
                                                                                               mState;
-    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::PlayerRole, ::Realms::PlayerRole>> mSelectedUserRole;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::PlayerRole, ::Realms::PlayerRole>> mSelectedPlayerRole;
     ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::Realms::PlayerRoleActions, ::Realms::PlayerRoleActions>>
-        mSelectedUserActions;
+        mSelectedPlayerActions;
+    ::ll::TypedStorage<8, 176, ::OreUI::Property<::Realms::PlayerPermission, ::Realms::PlayerPermission>>
+        mSelectedPlayerPermission;
     ::ll::TypedStorage<
         8,
         120,
@@ -54,19 +57,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsRolesAndPermissionsQuery(::OreUI::GameDependencies const& game);
+    MCNAPI explicit RealmsRolesAndPermissionsQuery(::OreUI::GameDependencies const& game);
+
+    MCNAPI void _updateState();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::GameDependencies const& game);
+    MCNAPI void* $ctor(::OreUI::GameDependencies const& game);
     // NOLINTEND
 };
 

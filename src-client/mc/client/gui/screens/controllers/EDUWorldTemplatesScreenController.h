@@ -15,7 +15,7 @@ class PlayScreenModel;
 class UIPropertyBag;
 // clang-format on
 
-class EDUWorldTemplatesScreenController : public ::MainMenuScreenController {
+class EduWorldTemplatesScreenController : public ::MainMenuScreenController {
 public:
     // member variables
     // NOLINTBEGIN
@@ -29,12 +29,12 @@ public:
 
 public:
     // prevent constructor by default
-    EDUWorldTemplatesScreenController();
+    EduWorldTemplatesScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUWorldTemplatesScreenController() /*override*/ = default;
+    virtual ~EduWorldTemplatesScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -44,13 +44,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI explicit EduWorldTemplatesScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EDUScreenHelpers::InstanceType instanceType);
+    MCNAPI void _createOrDeleteTemplate(::UIPropertyBag& bag, ::EduScreenHelpers::InstanceType instanceType);
 
-    MCAPI void _useTemplate(
+    MCNAPI void _useTemplate(
         ::PackManifest const&            manifest,
-        ::EDUScreenHelpers::InstanceType type,
+        ::EduScreenHelpers::InstanceType type,
         ::std::string_view               templateName
     );
     // NOLINTEND
@@ -58,20 +58,20 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
+    MCNAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

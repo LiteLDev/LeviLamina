@@ -37,9 +37,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchGlyphButtonBinding(::TouchGlyphButtonBinding const&);
+    MCNAPI TouchGlyphButtonBinding(::TouchGlyphButtonBinding const&);
 
-    MCAPI TouchGlyphButtonBinding(
+    MCNAPI TouchGlyphButtonBinding(
         ::std::string const&  aButtonName,
         uint                  aAreaBindingName,
         uint                  aConditionBindingName,
@@ -58,15 +58,15 @@ public:
         float                 innerPaddingY
     );
 
-    MCAPI ~TouchGlyphButtonBinding();
+    MCNAPI ~TouchGlyphButtonBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TouchGlyphButtonBinding const&);
+    MCNAPI void* $ctor(::TouchGlyphButtonBinding const&);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&  aButtonName,
         uint                  aAreaBindingName,
         uint                  aConditionBindingName,
@@ -89,6 +89,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

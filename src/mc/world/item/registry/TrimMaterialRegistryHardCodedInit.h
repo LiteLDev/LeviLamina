@@ -10,7 +10,7 @@ struct TrimMaterial;
 namespace TrimMaterialRegistryHardCodedInit {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::vector<::TrimMaterial> getMaterials();
+MCNAPI ::std::vector<::TrimMaterial> getMaterials();
 // NOLINTEND
 
 } // namespace TrimMaterialRegistryHardCodedInit

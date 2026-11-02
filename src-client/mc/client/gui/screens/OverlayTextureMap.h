@@ -35,16 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit OverlayTextureMap(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
+    MCNAPI explicit OverlayTextureMap(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
 
-    MCAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
+    MCNAPI ::mce::TexturePtr _getTextureHandle(::std::string effectTextureName) const;
 
-    MCAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
+    MCNAPI ::mce::TexturePtr get(::OverlayTextureMap::TextureId textureId) const;
+
+    MCNAPI ~OverlayTextureMap();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
+    MCNAPI void* $ctor(::std::shared_ptr<::mce::TextureGroupBase> textureGroup);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

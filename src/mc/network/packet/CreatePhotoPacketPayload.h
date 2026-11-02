@@ -25,7 +25,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI CreatePhotoPacketPayload(::ActorUniqueID, ::std::string const& photoName);
+    MCNAPI CreatePhotoPacketPayload(::ActorUniqueID, ::std::string const& photoName);
 #endif
     // NOLINTEND
 
@@ -33,7 +33,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void* $ctor(::ActorUniqueID, ::std::string const& photoName);
+    MCNAPI void* $ctor(::ActorUniqueID, ::std::string const& photoName);
 #endif
     // NOLINTEND
 };

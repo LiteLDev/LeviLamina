@@ -9,7 +9,7 @@
 
 // auto generated forward declare list
 // clang-format off
-struct EDUConfigData;
+struct EduConfigData;
 namespace Core { class SingleThreadedLock; }
 namespace edu::auth { struct CredentialsAcquired; }
 namespace edu::auth { struct CredentialsRefreshSuccess; }
@@ -34,7 +34,7 @@ public:
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const& state);
 
-    virtual void onNotify(::EDUConfigData const& config);
+    virtual void onNotify(::EduConfigData const& config);
 
     virtual void onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
 
@@ -60,7 +60,7 @@ public:
 
     MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::SignInCredsRefreshFailed> const& state);
 
-    MCNAPI void $onNotify(::EDUConfigData const& config);
+    MCNAPI void $onNotify(::EduConfigData const& config);
 
     MCNAPI void $onNotify(::edu::auth::GenericCredentialsEvent<::edu::auth::CredsAuthComplete> const& state);
 

@@ -47,9 +47,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
+    MCNAPI ::br::worldgen::WorldGenRandom forkPositional(::BlockPos pos);
 
-    MCAPI ::br::worldgen::WorldGenRandom& setDecorationSeed(int64 seed, int chunkX, int chunkZ);
+    MCNAPI ::br::worldgen::WorldGenRandom& setDecorationSeed(int64 seed, int chunkX, int chunkZ);
 
     MCAPI ::br::worldgen::WorldGenRandom& setLargeFeatureSeed(int64 seed, int chunkX, int chunkZ);
     // NOLINTEND

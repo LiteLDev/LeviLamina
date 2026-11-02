@@ -19,15 +19,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCFOLD float $getGravity();
-#else // LL_PLAT_C
-    MCAPI float $getGravity();
-#endif
+    MCNAPI float $getGravity();
 
-    MCFOLD float $getThrowPower();
+    MCNAPI float $getThrowPower();
 
-    MCAPI float $getThrowUpAngleOffset();
+    MCNAPI float $getThrowUpAngleOffset();
 
 
     // NOLINTEND
@@ -35,6 +31,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

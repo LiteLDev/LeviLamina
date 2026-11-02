@@ -11,7 +11,6 @@
 namespace cereal { class Constraint; }
 namespace cereal { struct DescriptionConfig; }
 namespace cereal { struct SchemaDescription; }
-namespace cereal::internal { struct ReflectionContext; }
 // clang-format on
 
 namespace cereal::internal {
@@ -20,22 +19,16 @@ class DefaultCompositeSchema : public ::cereal::internal::BasicSchema {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void constraintDescriptionIfAny(
+    MCNAPI void constraintDescriptionIfAny(
         ::cereal::SchemaDescription& description,
         ::cereal::Constraint const*  constraint,
         ::cereal::DescriptionConfig  config
     ) const;
 
-    MCAPI ::cereal::internal::VariantPriorityLevel
+    MCNAPI ::cereal::internal::VariantPriorityLevel
     findMinVariantPriorityLevel(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
 
-    MCAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
-
-    MCAPI ::cereal::SchemaDescription makeDescriptionForType(
-        ::cereal::internal::ReflectionContext const& ctx,
-        ::entt::meta_type const&                     type,
-        ::cereal::DescriptionConfig                  config
-    ) const;
+    MCNAPI bool isGreedyCheck(::entt::meta_ctx const& ctx, ::entt::meta_type const& type) const;
     // NOLINTEND
 };
 

@@ -108,6 +108,8 @@ public:
 
     virtual ::Core::Result _deleteEmptyDirectory(::Core::PathView directoryPath) = 0;
 
+    virtual ::Core::Result _deleteEmptyDirectoryRecursively(::Core::PathView directoryPath);
+
     virtual ::Core::Result _deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath);
 
     virtual ::Core::Result _deleteDirectoryContentsRecursively(::Core::PathView directoryPath);
@@ -352,6 +354,8 @@ public:
     MCNAPI ::Core::Result $_createOneDirectoryIfNotExisting(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result $_createDirectoryRecursively(::Core::PathView directoryPath);
+
+    MCNAPI ::Core::Result $_deleteEmptyDirectoryRecursively(::Core::PathView directoryPath);
 
     MCNAPI ::Core::Result $_deleteDirectoryAndContentsRecursively(::Core::PathView directoryPath);
 

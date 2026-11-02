@@ -26,33 +26,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ItemDeprecatedComponentData(::SharedTypes::v1_26_30::ItemDeprecatedComponentData&&);
+    MCNAPI ItemDeprecatedComponentData(::SharedTypes::v1_26_30::ItemDeprecatedComponentData&&);
 
-    MCAPI ItemDeprecatedComponentData(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&);
+    MCNAPI ItemDeprecatedComponentData(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&);
 
-    MCAPI ::SharedTypes::v1_26_30::ItemDeprecatedComponentData&
+    MCNAPI ::SharedTypes::v1_26_30::ItemDeprecatedComponentData&
     operator=(::SharedTypes::v1_26_30::ItemDeprecatedComponentData&&);
 
-    MCAPI ::SharedTypes::v1_26_30::ItemDeprecatedComponentData&
+    MCNAPI ::SharedTypes::v1_26_30::ItemDeprecatedComponentData&
     operator=(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&) const;
 
-    MCAPI ~ItemDeprecatedComponentData();
+    MCNAPI ~ItemDeprecatedComponentData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::ItemDeprecatedComponentData&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::ItemDeprecatedComponentData&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::ItemDeprecatedComponentData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

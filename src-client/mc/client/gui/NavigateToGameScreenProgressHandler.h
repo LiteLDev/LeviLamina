@@ -16,9 +16,11 @@ class NavigateToGameScreenProgressHandler : public ::ProgressHandler {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::LoadingState>                                            state;
-    ::ll::TypedStorage<1, 1, bool>                                                      hasWaitedToUnloadAssets;
-    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ILocalPlayerEntityGetter const> const> mLocalPlayerEntityGetter;
+    ::ll::TypedStorage<4, 4, ::LoadingState> state;
+    ::ll::TypedStorage<1, 1, bool>           hasWaitedToUnloadAssets;
+    ::ll::TypedStorage<1, 1, bool>           mHasNavigated;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::ILocalPlayerEntityGetter const>> const>
+        mLocalPlayerEntityGetter;
     // NOLINTEND
 
 public:
@@ -48,23 +50,23 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel&);
+    MCNAPI void $onCancel(::MinecraftScreenModel&);
 
-    MCFOLD void $onExit(::MinecraftScreenModel&);
+    MCNAPI void $onExit(::MinecraftScreenModel&);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel&) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& model) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& model) const;
 
-    MCFOLD ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 
 public:

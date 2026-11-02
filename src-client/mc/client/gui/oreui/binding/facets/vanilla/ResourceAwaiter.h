@@ -8,7 +8,7 @@
 
 // auto generated forward declare list
 // clang-format off
-class IResourcePackRepository;
+class IContentManager;
 // clang-format on
 
 namespace OreUI {
@@ -18,7 +18,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<1, 1, bool>                               mWasLastDone;
-    ::ll::TypedStorage<8, 8, ::IResourcePackRepository&>         mRepository;
+    ::ll::TypedStorage<8, 8, ::IContentManager&>                 mContentManager;
     ::ll::TypedStorage<8, 16, ::Bedrock::Threading::Async<void>> mRefreshTask;
     // NOLINTEND
 
@@ -39,9 +39,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::OreUI::IResourceAwaiter::Status $updateStatus();
+    MCNAPI ::OreUI::IResourceAwaiter::Status $updateStatus();
 
-    MCAPI void $refreshResources();
+    MCNAPI void $refreshResources();
     // NOLINTEND
 };
 

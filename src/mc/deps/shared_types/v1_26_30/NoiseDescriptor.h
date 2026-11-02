@@ -26,21 +26,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NoiseDescriptor(::SharedTypes::v1_26_30::NoiseDescriptor const&);
+    MCNAPI NoiseDescriptor(::SharedTypes::v1_26_30::NoiseDescriptor const&);
 
-    MCAPI ::SharedTypes::v1_26_30::NoiseDescriptor& operator=(::SharedTypes::v1_26_30::NoiseDescriptor&&);
+    MCNAPI ::SharedTypes::v1_26_30::NoiseDescriptor& operator=(::SharedTypes::v1_26_30::NoiseDescriptor&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v1_26_30::NoiseDescriptor const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::NoiseDescriptor const&);
     // NOLINTEND
 };
 

@@ -27,54 +27,69 @@ public:
     ::ll::TypedStorage<8, 104, ::StructureSettings>                mSettings;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
 public:
     // prevent constructor by default
     StructureEditorData& operator=(StructureEditorData const&);
     StructureEditorData();
 
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    StructureEditorData& operator=(StructureEditorData const&);
+
+#endif
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructureEditorData(::StructureEditorData&&);
+#ifdef LL_PLAT_C
+    MCNAPI StructureEditorData();
+#endif
 
-    MCAPI StructureEditorData(::StructureEditorData const&);
+    MCNAPI StructureEditorData(::StructureEditorData&&);
 
-    MCAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI StructureEditorData(::StructureEditorData const&);
 
-    MCAPI ::StructureEditorData& operator=(::StructureEditorData&&);
+    MCNAPI void load(::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCAPI bool operator==(::StructureEditorData const& rhs) const;
+    MCNAPI ::StructureEditorData& operator=(::StructureEditorData&&);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI bool operator==(::StructureEditorData const& rhs) const;
 
-    MCAPI void setFilteredStructureName(::std::string const& filteredName);
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI ~StructureEditorData();
+    MCNAPI void setFilteredStructureName(::std::string const& filteredName);
+
+    MCNAPI ~StructureEditorData();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::string const& DEFAULT_EXPORT_NAME();
+    MCNAPI static ::std::string const& DEFAULT_EXPORT_NAME();
 #endif
 
-    MCAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
+    MCNAPI static ::std::string const& DEFAULT_STRUCTURE_NAMESPACE();
 
-    MCAPI static ::std::string const& NAME_PREFIX();
+    MCNAPI static ::std::string const& NAME_PREFIX();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::StructureEditorData&&);
+#ifdef LL_PLAT_C
+    MCNAPI void* $ctor();
+#endif
 
-    MCAPI void* $ctor(::StructureEditorData const&);
+    MCNAPI void* $ctor(::StructureEditorData&&);
+
+    MCNAPI void* $ctor(::StructureEditorData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

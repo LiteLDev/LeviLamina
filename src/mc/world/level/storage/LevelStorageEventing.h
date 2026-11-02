@@ -1,6 +1,7 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/events/WorldSaveAndExitPackTelemetryData.h"
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
@@ -11,6 +12,8 @@
 // clang-format off
 class DBStorageFolderWatcher;
 class LevelData;
+struct WorldSaveAndExitPackTelemetryData;
+namespace Core { class PathView; }
 // clang-format on
 
 class LevelStorageEventing : public ::Bedrock::EnableNonOwnerReferences {
@@ -18,6 +21,8 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 112, ::LevelStorageEventingContext> mContext;
+    ::ll::TypedStorage<8, 32, ::std::optional<::std::vector<::WorldSaveAndExitPackTelemetryData>>>
+        mWorldSaveAndExitPackTelemetry;
     // NOLINTEND
 
 public:
@@ -46,6 +51,11 @@ public:
         ::std::string const&  reason,
         ::std::optional<bool> isOutOfDiskSpace
     ) const;
+
+    MCNAPI void
+    fireEventWorldSaveAndExit(::DBStorageFolderWatcher const& folderWatcher, ::Core::PathView levelDbSubfolder);
+
+    MCNAPI void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs);
     // NOLINTEND
 
 public:

@@ -16,16 +16,16 @@ namespace MakeCodeFileIO {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void openFilePicker(
+MCNAPI void openFilePicker(
     ::std::string&                      resultPath,
     ::CodeBuilder::IRequestHandler&     sender,
     ::CodeBuilder::RequestHeader const& header
 );
 #endif
 
-MCAPI ::MakeCodeFileIO::MakeCodeFileIOReadResult readFile(::std::string const& filePath);
+MCNAPI ::MakeCodeFileIO::MakeCodeFileIOReadResult readFile(::std::string const& filePath);
 
-MCAPI ::MakeCodeFileIO::MakeCodeFileResult writeFile(::std::string const& filePath, ::std::string const& input);
+MCNAPI ::MakeCodeFileIO::MakeCodeFileResult writeFile(::std::string const& filePath, ::std::string const& input);
 // NOLINTEND
 
 } // namespace MakeCodeFileIO

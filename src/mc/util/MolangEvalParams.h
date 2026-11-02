@@ -33,24 +33,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
+    MCNAPI uint64 popMissingVariableOrActorAddress(::MolangVariableIndex variableIndex);
 
-    MCAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
+    MCNAPI uint64 popMissingVariableOrActorAddress(::HashedString const& variableName);
 
-    MCAPI void pushReturnValue();
+    MCNAPI void pushReturnValue();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void restoreStackState(::MolangEvalStackState&& state);
+    MCNAPI static void restoreStackState(::MolangEvalStackState&& state);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RenderParams& mErrorRenderParams();
+    MCNAPI static ::RenderParams& mErrorRenderParams();
 
-    MCAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
+    MCNAPI static ::MolangEvalParams& mThreadLocalMolangEvalParams();
     // NOLINTEND
 };

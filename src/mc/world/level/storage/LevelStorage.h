@@ -19,6 +19,7 @@ class LevelStorageObserver;
 class LevelStorageWriteBatch;
 class Player;
 struct SnapshotFilenameAndLength;
+struct WorldSaveAndExitPackTelemetryData;
 namespace Core { struct LevelStorageResult; }
 // clang-format on
 
@@ -107,6 +108,8 @@ public:
 
     virtual void setCriticalSyncSaveCallback(::std::function<void()> callback) = 0;
 
+    virtual void setWorldSaveAndExitPackTelemetry(::std::vector<::WorldSaveAndExitPackTelemetryData> packs) = 0;
+
     virtual void corruptLevel();
     // NOLINTEND
 
@@ -114,12 +117,12 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
+    MCNAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
 #endif
 
-    MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
+    MCNAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
-    MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
+    MCNAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> loadServerPlayerData(::Player const& client, bool isXboxLive);
 
@@ -132,19 +135,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
+    MCNAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
 
-    MCAPI static ::std::string const& LOCAL_PLAYER_EDITOR_TAG();
+    MCNAPI static ::std::string const& LOCAL_PLAYER_EDITOR_TAG();
 
-    MCAPI static ::std::string const& LOCAL_PLAYER_TAG();
+    MCNAPI static ::std::string const& LOCAL_PLAYER_TAG();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey, bool isEditorPlayer);
+    MCNAPI bool $clonePlayerData(::std::string_view fromKey, ::std::string_view toKey, bool isEditorPlayer);
 
-    MCFOLD void $corruptLevel();
+    MCNAPI void $corruptLevel();
 
 
     // NOLINTEND

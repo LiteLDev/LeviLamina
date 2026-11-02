@@ -26,23 +26,23 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI PersonaCharacterHandle(::std::string const& skinName, ::persona::ProfileType type);
+    MCNAPI PersonaCharacterHandle(::std::string const& skinName, ::persona::ProfileType type);
 
-    MCAPI ~PersonaCharacterHandle();
+    MCNAPI ~PersonaCharacterHandle();
 #endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::persona::PersonaCharacterHandle const& INVALID();
+    MCNAPI static ::persona::PersonaCharacterHandle const& INVALID();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void* $ctor(::std::string const& skinName, ::persona::ProfileType type);
+    MCNAPI void* $ctor(::std::string const& skinName, ::persona::ProfileType type);
 #endif
     // NOLINTEND
 
@@ -50,7 +50,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 };

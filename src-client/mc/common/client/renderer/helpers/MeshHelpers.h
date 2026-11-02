@@ -32,23 +32,10 @@ MCAPI void renderMeshImmediately(
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,
     ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
-    ::std::function<void(
-        ::ScreenContext const&,
-        ::mce::Mesh const&,
-        ::mce::MaterialPtr const&,
-        ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const&
-    )> meshRenderOverride
-);
-
-MCAPI void renderMeshImmediately(
-    ::ScreenContext&          screenContext,
-    ::Tessellator&            tessellator,
-    ::mce::MaterialPtr const& material,
-    ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
     ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&                     screenContext,
     ::Tessellator&                       tessellator,
     ::mce::MaterialPtr const&            material,
@@ -56,7 +43,7 @@ MCAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const& offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&                                                           screenContext,
     ::Tessellator&                                                             tessellator,
     ::mce::MaterialPtr const&                                                  material,
@@ -64,7 +51,21 @@ MCAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const&                                       offscreenCaptureDescription
 );
 
-MCAPI void renderMeshImmediately(
+MCNAPI void renderMeshImmediately(
+    ::ScreenContext&          screenContext,
+    ::Tessellator&            tessellator,
+    ::mce::MaterialPtr const& material,
+    ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const& texture,
+    ::SupplementaryFieldAutoGenerationMode generationMode,
+    ::std::function<void(
+        ::ScreenContext const&,
+        ::mce::Mesh const&,
+        ::mce::MaterialPtr const&,
+        ::std::variant<::std::monostate, ::mce::TexturePtr, ::mce::ClientTexture, ::mce::ServerTexture> const&
+    )> const&                              meshRenderOverride
+);
+
+MCNAPI void renderMeshImmediately(
     ::ScreenContext&          screenContext,
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,

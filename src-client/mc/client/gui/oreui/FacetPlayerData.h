@@ -22,39 +22,39 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 416, ::Realms::Stories::Player>                            mPlayer;
     ::ll::TypedStorage<8, 16, ::std::weak_ptr<::Realms::Stories::FacetStateManager>> mStoriesFacetStateManager;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>                       mProfileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage>                       mProfileImage;
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Realms::Stories::FetchStatus getFetchProfileStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getFetchProfileStatus() const;
 
-    MCAPI ::std::string const& getGamerTag() const;
+    MCNAPI ::std::string const& getGamerTag() const;
 
-    MCAPI bool getHasAccepted() const;
+    MCNAPI bool getHasAccepted() const;
 
-    MCAPI bool getHasOptedIn() const;
+    MCNAPI bool getHasOptedIn() const;
 
-    MCAPI bool getIsPlayingOnRealm() const;
+    MCNAPI bool getIsPlayingOnRealm() const;
 
-    MCFOLD int64 getLastSeenTime() const;
+    MCNAPI int64 getLastSeenTime() const;
 
-    MCAPI bool getOnlineStatus() const;
+    MCNAPI bool getOnlineStatus() const;
 
-    MCAPI ::OreUI::AllowListProfileImage const& getProfileImage() const;
+    MCNAPI ::OreUI::AllowListProfileImage const& getProfileImage() const;
 
-    MCAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
+    MCNAPI ::Realms::Stories::RealmStoriesPlayerRole getRealmStoriesRole() const;
 
-    MCAPI ::Realms::PlayerRole getRealmsRole() const;
+    MCNAPI ::Realms::PlayerRole getRealmsRole() const;
 
-    MCFOLD ::std::string const& getXuid() const;
+    MCNAPI ::std::string const& getXuid() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
     // NOLINTEND
 };
 

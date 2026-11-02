@@ -11,9 +11,9 @@ class CompoundTagEditHelper {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk76e80d;
-    ::ll::UntypedStorage<8, 24> mUnk9ba84f;
-    ::ll::UntypedStorage<8, 24> mUnk43c659;
+    ::ll::UntypedStorage<8, 8>   mUnk76e80d;
+    ::ll::UntypedStorage<8, 40>  mUnka643d6;
+    ::ll::UntypedStorage<8, 112> mUnk753b1e;
     // NOLINTEND
 
 public:

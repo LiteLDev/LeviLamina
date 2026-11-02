@@ -28,6 +28,7 @@ public:
     ::ll::TypedStorage<4, 8, ::FloatRange> mProjectileDamage;
     ::ll::TypedStorage<4, 4, ::ActorType>  mFilter;
     ::ll::TypedStorage<1, 1, bool>         mCatchFire;
+    ::ll::TypedStorage<1, 1, bool>         mSpreadFire;
     ::ll::TypedStorage<1, 1, bool>         mChanneling;
     ::ll::TypedStorage<1, 1, bool>         mKnockback;
     ::ll::TypedStorage<1, 1, ::SharedTypes::v1_26_50::ImpactDamageSubcomponentDefinition::DifficultyRandomization>
@@ -57,13 +58,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component);
+    MCNAPI void $initFromDefinition(::SharedTypes::v1_26_50::ProjectileOnHitSubcomponent const& component);
 
-    MCAPI void $writetoJSON(::Json::Value& component) const;
+    MCNAPI void $writetoJSON(::Json::Value& component) const;
 
-    MCAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
+    MCNAPI void $doOnHitEffect(::Actor& owner, ::ProjectileComponent& component);
 
-    MCAPI char const* $getName() const;
+    MCNAPI char const* $getName() const;
 
 
     // NOLINTEND

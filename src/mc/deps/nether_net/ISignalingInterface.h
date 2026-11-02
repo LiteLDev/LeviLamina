@@ -21,8 +21,13 @@ public:
     // NOLINTBEGIN
     virtual ~ISignalingInterface() = default;
 
+#ifdef LL_PLAT_S
     virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
     SendSignal(::NetherNet::NetworkID from, ::NetherNet::NetworkID to, ::std::string const& message) = 0;
+#else // LL_PLAT_C
+    virtual ::Bedrock::Threading::Async<::NetherNet::ESessionError>
+    SendSignal(::NetherNet::NetworkID from, ::NetherNet::NetworkID to, ::std::string const& signal) = 0;
+#endif
 
     virtual ::Bedrock::PubSub::Subscription RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler) = 0;
     // NOLINTEND

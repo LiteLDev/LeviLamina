@@ -65,28 +65,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CommandListQueue(
+    MCNAPI CommandListQueue(
         ::mce::RenderDevice&,
         ::Scheduler&                                        renderingScheduler,
         ::WorkerPool*                                       renderingPool,
         ::gsl::span<::std::reference_wrapper<::WorkerPool>> helperPools
     );
 
-    MCAPI void generateAndQueue(::std::function<void(::CommandListTaskContext&)> func);
+    MCNAPI ::CommandListFuture generateAsync(::std::function<void(::CommandListTaskContext&)> func);
 
-    MCAPI ::CommandListFuture generateAsync(::std::function<void(::CommandListTaskContext&)> func);
+    MCNAPI bool isAsync() const;
 
-    MCAPI bool isAsync() const;
+    MCNAPI void processCommandLists();
 
-    MCAPI void processCommandLists();
-
-    MCAPI void queue(::buffer_span_mut<::CommandListFuture> futures);
+    MCNAPI void queue(::buffer_span_mut<::CommandListFuture> futures);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::RenderDevice&,
         ::Scheduler&                                        renderingScheduler,
         ::WorkerPool*                                       renderingPool,

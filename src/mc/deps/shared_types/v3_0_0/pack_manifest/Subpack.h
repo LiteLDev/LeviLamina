@@ -21,13 +21,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Subpack(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
+    MCNAPI Subpack(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCFOLD void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
+    MCNAPI void* $ctor(::SharedTypes::v3_0_0::PackManifestDefinition::Subpack const&);
     // NOLINTEND
 };
 

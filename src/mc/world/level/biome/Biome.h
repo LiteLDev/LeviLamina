@@ -74,49 +74,53 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Biome(::BiomeIdType id, ::std::string_view name);
+    MCNAPI Biome(::BiomeIdType id, ::std::string_view name);
 
-    MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
+#ifdef LL_PLAT_S
+    MCNAPI int getMapFoliageColor() const;
+
+    MCNAPI int getMapGrassColor(::BlockPos const& pos) const;
+#endif
+
+    MCNAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void buildCachedTemperatureNoise(::LevelChunk& chunk);
+    MCNAPI static void buildCachedTemperatureNoise(::LevelChunk& chunk);
 
-#ifdef LL_PLAT_C
-    MCAPI static ::mce::Color getColorBySamplingSurroundings(
+    MCNAPI static ::mce::Color getColorBySamplingSurroundings(
         ::BlockSource&                                                     region,
         ::BlockPos const&                                                  pos,
         ::std::vector<::BlockPos> const&                                   pattern,
         ::gsl::not_null<int (*)(::Biome const&, ::BlockPos const&)> const& sampler
     );
-#endif
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::mce::Color const& BIRCH_FOLIAGE_TINT();
+    MCNAPI static ::mce::Color const& BIRCH_FOLIAGE_TINT();
 
-    MCAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
+    MCNAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
 
     MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
-    MCAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
+    MCNAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 
-    MCAPI static ::mce::Color const& DEFAULT_WATER_TINT();
+    MCNAPI static ::mce::Color const& DEFAULT_WATER_TINT();
 
-    MCAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
+    MCNAPI static ::mce::Color const& DRY_FOLIAGE_TINT();
 
-    MCAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
+    MCNAPI static ::mce::Color const& EVERGREEN_FOLIAGE_TINT();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
+    MCNAPI void* $ctor(::BiomeIdType id, ::std::string_view name);
     // NOLINTEND
 };

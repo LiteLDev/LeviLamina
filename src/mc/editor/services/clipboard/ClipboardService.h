@@ -107,6 +107,8 @@ public:
 
     virtual bool hasStructureData(::mce::UUID const& id) const /*override*/;
 
+    virtual bool canAccessStructureData(::mce::UUID const& id, ::mce::UUID const& clientId) const /*override*/;
+
     virtual ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,
         ::Editor::EditorStructureTemplate const*,
@@ -188,6 +190,8 @@ public:
     $listenForClipboardItemChanges(::std::function<void(::mce::UUID const&, bool)> callback);
 
     MCNAPI bool $hasStructureData(::mce::UUID const& id) const;
+
+    MCNAPI bool $canAccessStructureData(::mce::UUID const& id, ::mce::UUID const& clientId) const;
 
     MCNAPI ::Scripting::Result_deprecated<::std::variant<
         ::StructureTemplate const*,

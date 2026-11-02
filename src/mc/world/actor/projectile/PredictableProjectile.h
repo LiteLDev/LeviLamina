@@ -15,7 +15,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $_doInitialMove();
+    MCNAPI void $_doInitialMove();
 
 
     // NOLINTEND

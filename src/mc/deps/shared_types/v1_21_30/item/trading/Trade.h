@@ -5,6 +5,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace SharedTypes::v1_21_30 { struct TradeItemList; }
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 namespace SharedTypes::v1_21_30 {
@@ -24,7 +25,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool operator==(::SharedTypes::v1_21_30::Trade const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_21_30::Trade const&) const;
+
+#ifdef LL_PLAT_C
+    MCNAPI ~Trade();
+#endif
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
     // NOLINTEND
 };
 

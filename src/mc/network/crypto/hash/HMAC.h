@@ -28,15 +28,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HMAC(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
+    MCNAPI HMAC(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
 
-    MCAPI void _final(::std::string& out);
+    MCNAPI void _final(::std::string& out);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
+    MCNAPI void* $ctor(::Crypto::Hash::HashType type, ::std::string const& key, int resultSize);
     // NOLINTEND
 };
 

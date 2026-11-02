@@ -14,16 +14,16 @@ class Dimension;
 namespace BiomeSourceUtil {
 // functions
 // NOLINTBEGIN
-MCAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
+MCNAPI short determineDestinationHeight(::Dimension const& dimension, ::BlockPos const& destination);
 
-MCAPI ::BlockPos determineUndergroundDestination(
+MCNAPI ::BlockPos determineUndergroundDestination(
     ::Dimension const&                           dimension,
     ::BlockPos const&                            startDestination,
     ::std::function<bool(::Biome const&)> const& predicate,
     int                                          searchRadius
 );
 
-MCAPI ::std::optional<::BlockPos> locateBiome(
+MCNAPI ::std::optional<::BlockPos> locateBiome(
     ::std::function<bool(::Biome const&)> const& predicate,
     ::BiomeSource const&                         biomeSource,
     ::BlockPos const&                            center,

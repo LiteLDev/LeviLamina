@@ -20,7 +20,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::ContainerValidationResult $tryActivate();
+    MCNAPI ::ContainerValidationResult $tryActivate();
 
 
     // NOLINTEND

@@ -13,9 +13,9 @@ class ScriptDimensionTypes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::std::string, ::std::string> DEPRECATED_getDimensionStringNames();
+    MCNAPI static ::std::unordered_map<::std::string, ::std::string> DEPRECATED_getDimensionStringNames();
 
-    MCAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
+    MCNAPI static void bind(::Scripting::ModuleBindingBuilder& moduleBuilder);
     // NOLINTEND
 };
 

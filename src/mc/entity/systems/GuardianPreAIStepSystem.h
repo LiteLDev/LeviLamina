@@ -12,6 +12,7 @@ class ActorOwnerComponent;
 class StrictEntityContext;
 struct GuardianFlagComponent;
 struct InterpolateMovementNeededComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class GuardianPreAIStepSystem {
@@ -25,7 +26,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _doGuardianPreAIStepSystem(::StrictEntityContext const&, ::ActorOwnerComponent& actorOwnerComponent);
+
+    MCNAPI static ::TickingSystemWithInfo createSystem();
     // NOLINTEND
 };

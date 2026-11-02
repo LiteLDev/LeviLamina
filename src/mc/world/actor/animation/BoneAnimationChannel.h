@@ -24,15 +24,11 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void animate(
+    MCNAPI void animate(
         ::RenderParams&               renderParams,
         ::BoneOrientation&            destBoneOrientation,
         float                         scale,
         ::BoneAnimationChannelPlayer* boneAnimationChannelPlayer
     ) const;
-
-#ifdef LL_PLAT_C
-    MCAPI void sortKeyFrames();
-#endif
     // NOLINTEND
 };

@@ -41,7 +41,7 @@ public:
         bool                             packAll
     );
 
-    MCAPI ::SetActorDataPacketPayload& operator=(::SetActorDataPacketPayload&&);
+    MCNAPI ::SetActorDataPacketPayload& operator=(::SetActorDataPacketPayload&&);
 
     MCAPI ~SetActorDataPacketPayload();
     // NOLINTEND

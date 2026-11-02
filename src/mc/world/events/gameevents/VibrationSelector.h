@@ -25,13 +25,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void addCandidate(
+    MCNAPI void addCandidate(
         ::Tick                    currentTick,
         ::GameEvent const&        gameEvent,
         ::GameEventContext const& gameEventContext,
         ::BlockPos const&         destinationPos
     );
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
     // NOLINTEND
 };

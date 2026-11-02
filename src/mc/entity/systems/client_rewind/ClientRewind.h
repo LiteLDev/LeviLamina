@@ -24,7 +24,7 @@ namespace ClientRewind {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCAPI void _advanceRewindFrameSystem(
+MCNAPI void _advanceRewindFrameSystem(
     ::Optional<::MoveInputComponent const>                    moveInputComponent,
     ::Optional<::ReplayStateValidFrameSupportComponent const> validFrameSupportComponent,
     ::ActorOwnerComponent&                                    actorOwnerComponent,
@@ -32,7 +32,7 @@ MCAPI void _advanceRewindFrameSystem(
 );
 #endif
 
-MCAPI ::ReplayStateTrackerDiff extractSnapshot(
+MCNAPI ::ReplayStateTrackerDiff extractSnapshot(
     ::std::tuple<
         ::ActorDataFlagComponent const&,
         ::Optional<::ActorDataHorseFlagComponent const>,
@@ -42,7 +42,7 @@ MCAPI ::ReplayStateTrackerDiff extractSnapshot(
 );
 
 #ifdef LL_PLAT_C
-MCAPI void tickAccumulate(
+MCNAPI void tickAccumulate(
     ::ReplayStateTrackerComponent& tracker,
     ::std::tuple<
         ::ActorDataFlagComponent const&,

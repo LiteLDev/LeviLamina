@@ -25,18 +25,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ClientInputLockComponent* _tryGetClientInputLockComponent() const;
+    MCNAPI ::ClientInputLockComponent* _tryGetClientInputLockComponent() const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _makeCategoryPropertyBinding(
+    MCNAPI static void _makeCategoryPropertyBinding(
         ::Scripting::ClassBindingBuilder<::ScriptModuleMinecraft::ScriptPlayerInputPermissions>& classBuilder,
         ::ClientInputLockCategory                                                                category
     );
 
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

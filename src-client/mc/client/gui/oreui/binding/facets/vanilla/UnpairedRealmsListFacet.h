@@ -37,33 +37,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit UnpairedRealmsListFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
+    MCNAPI explicit UnpairedRealmsListFacet(::std::shared_ptr<::Realms::RealmsList> realmsList);
 
-    MCAPI void forceFetchUnpairedRealmsList();
+    MCNAPI void forceFetchUnpairedRealmsList();
 
-    MCAPI ::std::optional<::RealmsAPI::Compatibility> getRealmsCompatibility() const;
+    MCNAPI ::std::optional<::RealmsAPI::Compatibility> getRealmsCompatibility() const;
 
-    MCAPI ::Realms::RealmsListState getState() const;
+    MCNAPI ::Realms::RealmsListState getState() const;
 
-    MCAPI ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
+    MCNAPI ::std::vector<::RealmsWorldInfo> const& getWorldList() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsList> realmsList);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsList> realmsList);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

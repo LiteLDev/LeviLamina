@@ -13,31 +13,15 @@ class BlockSource;
 
 class DropperBlock : public ::DispenserBlock {
 public:
-    // prevent constructor by default
-    DropperBlock();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const /*override*/;
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI DropperBlock(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND
@@ -45,6 +29,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

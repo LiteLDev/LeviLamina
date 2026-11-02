@@ -36,7 +36,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
 #endif
         // NOLINTEND
     };
@@ -46,7 +46,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ::Json::Value toJson() const;
+        MCNAPI ::Json::Value toJson() const;
 #endif
         // NOLINTEND
     };
@@ -78,22 +78,22 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _recordPacket(::std::string const& data, bool isOutgoing);
+    MCNAPI void _recordPacket(::std::string const& data, bool isOutgoing);
 
 #ifdef LL_PLAT_C
-    MCAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
+    MCNAPI ::std::pair<::Json::Value, ::Json::Value> getPacketTraces() const;
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void
+    MCNAPI void
     $sendPacket(::std::string const& data, ::NetworkPeer::Reliability reliability, ::Compressibility compressible);
 
-    MCFOLD ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
+    MCNAPI ::NetworkPeer::NetworkStatus $getNetworkStatus() const;
 
-    MCAPI ::NetworkPeer::DataStatus $_receivePacket(
+    MCNAPI ::NetworkPeer::DataStatus $_receivePacket(
         ::std::string&                                                    outData,
         ::std::shared_ptr<::std::chrono::steady_clock::time_point> const& timepointPtr
     );

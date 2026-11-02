@@ -48,37 +48,38 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static float _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb);
+    MCNAPI static float
+    _getHighestBlockHeight(::BlockSource& region, ::Mob& mob, ::Vec3 const& pos, ::Vec2 const& aabb);
 
-    MCAPI static bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb);
+    MCNAPI static bool _isPositionOnlyInAir(::BlockSource const& region, ::Vec3 const& pos, ::Vec2 const& aabb);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
+    MCNAPI void $initializeInternal(::Mob& mob, ::NavigationDescription const* description);
 
-    MCAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $tick(::NavigationComponent& parent, ::Mob& mob);
 
-    MCAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
+    MCNAPI ::Vec3 $getTempMobPos(::Mob const& mob) const;
 
-    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos);
 
-    MCFOLD ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
+    MCNAPI ::std::unique_ptr<::Path> $createPath(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target);
 
-    MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Vec3 const& pos, float speed);
 
-    MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::Actor const& target, float speed);
 
-    MCAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
+    MCNAPI bool $moveTo(::NavigationComponent& parent, ::Mob& mob, ::std::unique_ptr<::Path> newPath, float speed);
 
-    MCAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $stop(::NavigationComponent& parent, ::Mob& mob);
 
-    MCFOLD bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
+    MCNAPI bool $travel(::NavigationComponent& parent, ::Mob& mob, float& xa, float& ya, float& za);
 
-    MCAPI bool $canUpdatePath(::Mob const& mob) const;
+    MCNAPI bool $canUpdatePath(::Mob const& mob) const;
 
-    MCAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
+    MCNAPI void $updatePath(::NavigationComponent& parent, ::Mob& mob);
 
 
     // NOLINTEND

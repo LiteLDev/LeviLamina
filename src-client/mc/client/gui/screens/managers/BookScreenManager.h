@@ -46,69 +46,65 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ItemStack const& _getBook();
+    MCNAPI ::ItemStack const& _getBook();
 
-    MCAPI ::Core::PathBuffer<::std::string> _getExportTempDir();
+    MCNAPI ::Core::PathBuffer<::std::string> _getExportTempDir();
 
-    MCAPI ::ViewStatus _viewPage(::PageContent const& page);
+    MCNAPI ::ViewStatus _viewPage(::PageContent const& page);
 
-    MCAPI void addPageAt(int index, ::PageContent const& page);
+    MCNAPI void addPageAt(int index, ::PageContent const& page);
 
-    MCAPI float buildExportFiles(
+    MCNAPI float buildExportFiles(
         ::std::vector<::PageContent> const&                  pages,
         ::ScreenContext&                                     context,
         ::JpegCommentWriter&                                 writer,
         ::std::function<::std::string(::std::string const&)> profanityFilter
     );
 
-    MCAPI void deletePage(int index);
+    MCNAPI void deletePage(int index);
 
-    MCAPI void editPage(int index, ::PageContent const& page);
+    MCNAPI void editPage(int index, ::PageContent const& page);
 
-    MCAPI bool finalizeBook(::std::string const& title, ::std::string const& author, ::std::string const& authorXUID);
+    MCNAPI bool finalizeBook(::std::string const& title, ::std::string const& author, ::std::string const& authorXUID);
 
-    MCAPI void fireBookEditedEvent() const;
+    MCNAPI void fireBookEditedEvent() const;
 
-    MCAPI void fireBookExportEvent() const;
+    MCNAPI void fireBookExportEvent() const;
 
-    MCAPI void firePageTurnSound(::std::string const& eventName, float volume, float pitch) const;
+    MCNAPI void firePageTurnSound(::std::string const& eventName, float volume, float pitch) const;
 
-    MCAPI void fireSignedBookOpenedEvent(
+    MCNAPI void fireSignedBookOpenedEvent(
         ::std::string const& author,
         ::std::string const& authorXUID,
         ::std::string const& playerXUID
     ) const;
 
-    MCAPI int getLecternBookPage() const;
+    MCNAPI int getLecternBookPage() const;
 
-    MCAPI ::std::string getPickPhotoInventoryName(int index);
+    MCNAPI ::std::string getPickPhotoInventoryName(int index);
 
-    MCAPI ::std::string getPickPhotoName(int index);
+    MCNAPI ::std::string getPickPhotoName(int index);
 
-    MCAPI ::Core::PathBuffer<::std::string> getScreenshotPath(::PageContent const& page);
+    MCNAPI ::Core::PathBuffer<::std::string> getScreenshotPath(::PageContent const& page);
 
-    MCAPI ::std::string const& getSignedAuthor();
+    MCNAPI bool lecternHasBook() const;
 
-    MCAPI ::std::string const& getXUID();
+    MCNAPI bool lecternIsValid() const;
 
-    MCAPI bool lecternHasBook() const;
+    MCNAPI void populatePickPics(::std::vector<::PageContent> const& pages);
 
-    MCAPI bool lecternIsValid() const;
+    MCNAPI void startBookExport();
 
-    MCAPI void populatePickPics(::std::vector<::PageContent> const& pages);
+    MCNAPI void swapPages(int page1Index, int page2Index);
 
-    MCAPI void startBookExport();
+    MCNAPI void updateLectern(int page);
 
-    MCAPI void swapPages(int page1Index, int page2Index);
-
-    MCAPI void updateLectern(int page);
-
-    MCAPI ~BookScreenManager();
+    MCNAPI ~BookScreenManager();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

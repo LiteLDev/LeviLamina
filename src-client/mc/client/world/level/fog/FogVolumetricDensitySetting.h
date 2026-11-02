@@ -22,25 +22,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FogVolumetricDensitySetting(
+    MCNAPI FogVolumetricDensitySetting(
         ::Core::Keyframes<float, float> const& maxDensity,
         ::Core::Keyframes<float, float> const& maxDensityHeight,
         ::Core::Keyframes<float, float> const& zeroDensityHeight
     );
 
-    MCAPI ~FogVolumetricDensitySetting();
+    MCNAPI ~FogVolumetricDensitySetting();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::FogVolumetricDensitySetting const& ZERO_SETTING();
+    MCNAPI static ::FogVolumetricDensitySetting const& ZERO_SETTING();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Core::Keyframes<float, float> const& maxDensity,
         ::Core::Keyframes<float, float> const& maxDensityHeight,
         ::Core::Keyframes<float, float> const& zeroDensityHeight
@@ -50,6 +50,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

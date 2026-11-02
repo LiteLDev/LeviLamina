@@ -60,35 +60,35 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
+    MCNAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
 
 #ifdef LL_PLAT_C
-    MCAPI void cleanUpDynamicContainers();
+    MCNAPI void cleanUpDynamicContainers();
 
-    MCAPI void refreshHotbar();
+    MCNAPI void refreshHotbar();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int id, int value);
+    MCNAPI void $setData(int id, int value);
 
-    MCAPI void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -96,6 +96,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

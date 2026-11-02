@@ -22,11 +22,9 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::ItemVersion>                                                  mItemVersion;
     ::ll::TypedStorage<4, 4, ::ItemParseContext::LoadMode>                                   mLoadMode;
     ::ll::TypedStorage<8, 8, ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)> mItemIconFactory;
     ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                           mParsedDefinitions;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::std::string>>                 mUnverifiedItemOverrideNames;
-    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemVersion>> mVanillaItemVersionMap;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::ItemVersion>>           mVanillaItemVersionMap;
     // NOLINTEND
 };

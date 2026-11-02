@@ -46,23 +46,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScreenReaderFacet(
+    MCNAPI ScreenReaderFacet(
         ::std::weak_ptr<::ITTSEventManager> ttsEventManager,
         ::gsl::not_null<::Option*>          chatTextToSpeechOption,
         ::gsl::not_null<::Option*>          uiTextToSpeechOption
     );
 
-    MCAPI void _registerObservers();
+    MCNAPI void _registerObservers();
 
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCFOLD bool getIsChatTextToSpeechEnabled() const;
+    MCNAPI bool getIsChatTextToSpeechEnabled() const;
 
-    MCAPI bool getIsIdle() const;
+    MCNAPI bool getIsIdle() const;
 
-    MCFOLD bool getIsUITextToSpeechEnabled() const;
+    MCNAPI bool getIsUITextToSpeechEnabled() const;
 
-    MCAPI void read(
+    MCNAPI void read(
         ::std::string const&                textToRead,
         ::ProfanityFilterContext            profanityFilterContext,
         ::OreUI::ScreenReaderOptions const& options
@@ -72,13 +72,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::weak_ptr<::ITTSEventManager> ttsEventManager,
         ::gsl::not_null<::Option*>          chatTextToSpeechOption,
         ::gsl::not_null<::Option*>          uiTextToSpeechOption
@@ -88,7 +88,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

@@ -4,7 +4,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class IRandom;
 class SimplexNoise;
 // clang-format on
 
@@ -25,10 +24,6 @@ public:
     // member functions
     // NOLINTBEGIN
     MCAPI PerlinSimplexNoise(uint seed, int levels);
-
-#ifdef LL_PLAT_C
-    MCAPI void _init(::IRandom& r, bool parityInitialization);
-#endif
 
     MCAPI float getValue(float x, float y) const;
 

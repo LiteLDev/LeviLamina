@@ -54,7 +54,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Cube(
+    MCNAPI Cube(
         ::Vec3 const&          point,
         ::Vec3 const&          extents,
         float                  growAmount,
@@ -64,13 +64,13 @@ public:
         ::mce::Color const&    color
     );
 
-    MCAPI ~Cube();
+    MCNAPI ~Cube();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Vec3 const&          point,
         ::Vec3 const&          extents,
         float                  growAmount,
@@ -84,6 +84,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

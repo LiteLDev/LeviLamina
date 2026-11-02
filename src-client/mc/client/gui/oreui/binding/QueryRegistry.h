@@ -77,9 +77,9 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI LiveQuery(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
+        MCNAPI LiveQuery(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
 
-        MCAPI LiveQuery(
+        MCNAPI LiveQuery(
             ::OreUI::Detail::Binder const&             binder,
             ::OreUI::Detail::IdType const&             id,
             ::OreUI::ECapabilities                     capabilities,
@@ -88,17 +88,17 @@ public:
             int                                        rank
         );
 
-        MCAPI ::OreUI::Detail::QueryRegistry::LiveQuery& operator=(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
+        MCNAPI ::OreUI::Detail::QueryRegistry::LiveQuery& operator=(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
 
-        MCAPI ~LiveQuery();
+        MCNAPI ~LiveQuery();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
+        MCNAPI void* $ctor(::OreUI::Detail::QueryRegistry::LiveQuery&& other);
 
-        MCAPI void* $ctor(
+        MCNAPI void* $ctor(
             ::OreUI::Detail::Binder const&             binder,
             ::OreUI::Detail::IdType const&             id,
             ::OreUI::ECapabilities                     capabilities,
@@ -111,7 +111,7 @@ public:
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -186,32 +186,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _createQuery(
+    MCNAPI void _createQuery(
         ::OreUI::Detail::IdType const&             id,
         ::OreUI::ECapabilities                     capabilities,
         ::std::unique_ptr<::OreUI::Detail::IQuery> query,
         int                                        rank
     );
-
-    MCAPI void _syncQueries();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onReadyForBindings();
+    MCNAPI void $onReadyForBindings();
 
-    MCAPI void $onSuspend();
+    MCNAPI void $onSuspend();
 
-    MCFOLD void $onBindingsReleased();
+    MCNAPI void $onBindingsReleased();
 
-    MCAPI void $update(double const time);
+    MCNAPI void $update(double const time);
     // NOLINTEND
 };
 

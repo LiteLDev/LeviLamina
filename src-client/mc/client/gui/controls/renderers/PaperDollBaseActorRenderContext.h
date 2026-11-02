@@ -8,10 +8,13 @@
 
 // auto generated forward declare list
 // clang-format off
+class AABB;
 class ActorRenderData;
+class ActorRenderDispatcher;
 class BaseActorRenderContext;
 class HashedString;
 class MatrixStack;
+class MinecraftGameplayGraphicsResources;
 struct OffscreenCaptureDescription;
 // clang-format on
 
@@ -37,7 +40,7 @@ public:
 
     virtual ::MatrixStack& getWorldMatrixStack() /*override*/;
 
-    virtual float getYOffset(float screenScale) /*override*/;
+    virtual float getLegacyGuiOffsetY(float screenScale) /*override*/;
 
     virtual void renderGui(
         ::HashedString const&                rendererName,
@@ -45,35 +48,51 @@ public:
         ::OffscreenCaptureDescription const* capture
     ) /*override*/;
 
+    virtual ::std::optional<::std::string> getCoCoEntityIdentifier(::std::string const& pieceId) /*override*/;
+
+    virtual ::ActorRenderDispatcher* getActorRenderDispatcher() /*override*/;
+
+    virtual ::MinecraftGameplayGraphicsResources& getGameplayGraphicsResources() /*override*/;
+
     virtual float getLastTimestamp() /*override*/;
 
     virtual ::glm::vec2 getMouseMove(::glm::vec2 const& ownerPos) /*override*/;
 
     virtual ::SubClientId getClientSubId() /*override*/;
+
+    virtual ::std::optional<::AABB> getDefaultPoseBounds(::HashedString const& rendererName) /*override*/;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getDebugSkinSpeedMultiplier();
+    MCNAPI float $getDebugSkinSpeedMultiplier();
 
-    MCFOLD bool $shouldDisableRenderMainMenuPaperDollAnimation();
+    MCNAPI bool $shouldDisableRenderMainMenuPaperDollAnimation();
 
-    MCAPI ::MatrixStack& $getWorldMatrixStack();
+    MCNAPI ::MatrixStack& $getWorldMatrixStack();
 
-    MCAPI float $getYOffset(float screenScale);
+    MCNAPI float $getLegacyGuiOffsetY(float screenScale);
 
-    MCAPI void $renderGui(
+    MCNAPI void $renderGui(
         ::HashedString const&                rendererName,
         ::ActorRenderData&                   data,
         ::OffscreenCaptureDescription const* capture
     );
 
-    MCAPI float $getLastTimestamp();
+    MCNAPI ::std::optional<::std::string> $getCoCoEntityIdentifier(::std::string const& pieceId);
 
-    MCAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
+    MCNAPI ::ActorRenderDispatcher* $getActorRenderDispatcher();
 
-    MCAPI ::SubClientId $getClientSubId();
+    MCNAPI ::MinecraftGameplayGraphicsResources& $getGameplayGraphicsResources();
+
+    MCNAPI float $getLastTimestamp();
+
+    MCNAPI ::glm::vec2 $getMouseMove(::glm::vec2 const& ownerPos);
+
+    MCNAPI ::SubClientId $getClientSubId();
+
+    MCNAPI ::std::optional<::AABB> $getDefaultPoseBounds(::HashedString const& rendererName);
     // NOLINTEND
 
 public:

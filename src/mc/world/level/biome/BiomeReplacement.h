@@ -27,20 +27,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BiomeReplacement(::BiomeReplacement const&);
+    MCNAPI BiomeReplacement(::BiomeReplacement const&);
 
-    MCAPI ~BiomeReplacement();
+    MCNAPI ~BiomeReplacement();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BiomeReplacement const&);
+    MCNAPI void* $ctor(::BiomeReplacement const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

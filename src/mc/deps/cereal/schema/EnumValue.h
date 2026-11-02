@@ -26,27 +26,28 @@ public:
 
 public:
     // prevent constructor by default
-    EnumValue& operator=(EnumValue const&);
     EnumValue();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI EnumValue(::cereal::internal::EnumValue const&);
+    MCNAPI EnumValue(::cereal::internal::EnumValue const&);
 
-    MCAPI ~EnumValue();
+    MCNAPI ::cereal::internal::EnumValue& operator=(::cereal::internal::EnumValue const&);
+
+    MCNAPI ~EnumValue();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::internal::EnumValue const&);
+    MCNAPI void* $ctor(::cereal::internal::EnumValue const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

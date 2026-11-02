@@ -46,19 +46,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit InputQuery(::OreUI::ClientDependencies const& client);
+    MCNAPI explicit InputQuery(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::ClientDependencies const& client);
+    MCNAPI void* $ctor(::OreUI::ClientDependencies const& client);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $update(double const time);
+    MCNAPI void $update(double const time);
     // NOLINTEND
 };
 

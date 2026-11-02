@@ -25,17 +25,17 @@ struct NoClipOrNoBlockMoveFilterSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tick(
-        ::StrictEntityContext const&                                        context,
-        ::MoveRequestComponent const&                                       moveRequest,
-        ::OffsetsComponent const&                                           offsets,
-        ::ActorDataFlagComponent const&                                     actorData,
-        ::AABBShapeComponent&                                               aabb,
-        ::StateVectorComponent&                                             state,
-        ::SubBBsComponent&                                                  subBBs,
-        ::EntityModifier<::MoveRequestComponent>                            mod,
-        ::OptionalGlobal<::VanillaSystems::VanillaSystemsEventingComponent> eventingComponent,
-        ::IConstBlockSource const&                                          region
+    MCNAPI static void tick(
+        ::StrictEntityContext const&                                               context,
+        ::MoveRequestComponent const&                                              moveRequest,
+        ::OffsetsComponent const&                                                  offsets,
+        ::ActorDataFlagComponent const&                                            actorData,
+        ::AABBShapeComponent&                                                      aabb,
+        ::StateVectorComponent&                                                    state,
+        ::SubBBsComponent&                                                         subBBs,
+        ::EntityModifier<::MoveRequestComponent> const&                            mod,
+        ::OptionalGlobal<::VanillaSystems::VanillaSystemsEventingComponent> const& eventingComponent,
+        ::IConstBlockSource const&                                                 region
     );
     // NOLINTEND
 };

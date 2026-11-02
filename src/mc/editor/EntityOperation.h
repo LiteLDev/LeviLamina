@@ -1,0 +1,92 @@
+#pragma once
+
+#include "mc/_HeaderOutputPredefine.h"
+
+// auto generated inclusion list
+#include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/IOperation.h"
+
+// auto generated forward declare list
+// clang-format off
+class Level;
+namespace Editor { class ServiceProviderCollection; }
+namespace Scripting { struct EnumBinding; }
+// clang-format on
+
+namespace Editor::Transactions {
+
+class EntityOperation : public ::Editor::Transactions::IOperation {
+public:
+    // EntityOperation inner types define
+    enum class OperationType : int {
+        Create = 0,
+        Delete = 1,
+    };
+
+public:
+    // member variables
+    // NOLINTBEGIN
+    ::ll::UntypedStorage<4, 4> mUnkd7236d;
+    ::ll::UntypedStorage<8, 8> mUnk52c0aa;
+    ::ll::UntypedStorage<8, 8> mUnk4a2873;
+    // NOLINTEND
+
+public:
+    // prevent constructor by default
+    EntityOperation& operator=(EntityOperation const&);
+    EntityOperation(EntityOperation const&);
+    EntityOperation();
+
+public:
+    // virtual functions
+    // NOLINTBEGIN
+    virtual ~EntityOperation() /*override*/ = default;
+
+    virtual ::std::string_view getName() /*override*/;
+
+    virtual ::Editor::Transactions::IOperation::ProcessResult
+    _processUndo(::Editor::ServiceProviderCollection& services) /*override*/;
+
+    virtual ::Editor::Transactions::IOperation::ProcessResult
+    _processRedo(::Editor::ServiceProviderCollection& services) /*override*/;
+    // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ::Scripting::Result_deprecated<void> _loadEntity(::Level* level);
+
+    MCNAPI ::Scripting::Result_deprecated<void>
+    _performOperation(::Editor::ServiceProviderCollection& services, bool isUndo);
+
+    MCNAPI ::Scripting::Result_deprecated<void> _saveEntity(::Level* level);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Scripting::EnumBinding bindOperationType();
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string const& DEFAULT_OPERATION_NAME();
+    // NOLINTEND
+
+public:
+    // virtual function thunks
+    // NOLINTBEGIN
+    MCNAPI ::std::string_view $getName();
+
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processUndo(::Editor::ServiceProviderCollection& services);
+
+    MCNAPI ::Editor::Transactions::IOperation::ProcessResult
+    $_processRedo(::Editor::ServiceProviderCollection& services);
+
+
+    // NOLINTEND
+};
+
+} // namespace Editor::Transactions

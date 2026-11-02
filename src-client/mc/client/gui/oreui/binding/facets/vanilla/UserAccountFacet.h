@@ -18,6 +18,7 @@ class GenericEntitlementChangeListener;
 class IEntitlementManager;
 class MainMenuScreenModel;
 class PlatformMultiplayerRestrictions;
+namespace Safety { class SafetyConfigService; }
 namespace Social { class User; }
 // clang-format on
 
@@ -48,7 +49,8 @@ public:
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::MainMenuScreenModel>>            mMainMenuScreenModel;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::PlatformMultiplayerRestrictions>> mPlatformMultiplayerRestrictions;
     ::ll::TypedStorage<8, 16, ::std::shared_ptr<::Social::User>>                   mUser;
-    ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>         mUnlinkAccountTask;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService>> mSafetyConfigService;
+    ::ll::TypedStorage<4, 12, ::OreUI::FacetTaskTracker<::std::monostate>>               mUnlinkAccountTask;
     ::ll::TypedStorage<4, 16, ::OreUI::FacetTaskTracker<::Social::UserPlatformConnectionResult>>
                                                                                      mSignInToPlatformNetworkTask;
     ::ll::TypedStorage<8, 336, ::TaskGroup>                                          mTaskGroup;
@@ -71,91 +73,91 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI UserAccountFacet(
-        ::std::shared_ptr<::MainMenuScreenModel>             model,
-        ::std::shared_ptr<::Social::User>                    user,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
+    MCNAPI UserAccountFacet(
+        ::std::shared_ptr<::MainMenuScreenModel>                  model,
+        ::std::shared_ptr<::Social::User>                         user,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>      entitlementManager,
+        ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService> safetyConfigService
     );
 
-    MCAPI bool _isMarketplacePassSubscriptionActive() const;
+    MCNAPI bool _isMarketplacePassSubscriptionActive() const;
 
-    MCAPI bool _isRealmsPlusSubscriptionActive() const;
+    MCNAPI bool _isRealmsPlusSubscriptionActive() const;
 
-    MCAPI void _onEntitlementsInventoryRefreshed();
+    MCNAPI void _onEntitlementsInventoryRefreshed();
 
-    MCAPI void clearAccountUnlinkState();
+    MCNAPI void clearAccountUnlinkState();
 
-    MCAPI ::OreUI::FacetTaskState getAccountUnlinkState();
+    MCNAPI ::OreUI::FacetTaskState getAccountUnlinkState();
 
-    MCFOLD ::std::string const& getBanExpiration() const;
+    MCNAPI ::std::string const& getBanExpiration() const;
 
-    MCFOLD ::std::string const& getBanReason() const;
+    MCNAPI ::std::string const& getBanReason() const;
 
-    MCFOLD ::std::string const& getCurrentPlatformId() const;
+    MCNAPI ::std::string const& getCurrentPlatformId() const;
 
-    MCFOLD ::std::string const& getCurrentXuid() const;
+    MCNAPI ::std::string const& getCurrentXuid() const;
 
-    MCAPI ::std::string getMarketplaceDisabledReason() const;
+    MCNAPI ::std::string getMarketplaceDisabledReason() const;
 
-    MCAPI ::std::optional<::Social::UserPlatformConnectionResult> const& getSignInToPlatformNetworkResult() const;
+    MCNAPI ::std::optional<::Social::UserPlatformConnectionResult> const& getSignInToPlatformNetworkResult() const;
 
-    MCAPI ::OreUI::FacetTaskState getSignInToPlatformNetworkState();
+    MCNAPI ::OreUI::FacetTaskState getSignInToPlatformNetworkState();
 
-    MCFOLD ::OreUI::UserPermissionsFEWrapper const& getUserPermissions() const;
+    MCNAPI ::OreUI::UserPermissionsFEWrapper const& getUserPermissions() const;
 
-    MCFOLD bool hasPremiumNetworkAccess() const;
+    MCNAPI bool hasPremiumNetworkAccess() const;
 
-    MCAPI bool hasValidCrossPlatformSkin() const;
+    MCNAPI bool hasValidCrossPlatformSkin() const;
 
-    MCAPI bool isBanned() const;
+    MCNAPI bool isBanned() const;
 
-    MCAPI bool isLoggedInWithMicrosoftAccount() const;
+    MCNAPI bool isLoggedInWithMicrosoftAccount() const;
 
-    MCAPI bool isMarketplaceDisabled() const;
+    MCNAPI bool isMarketplaceDisabled() const;
 
-    MCAPI bool isMarketplacePassSubscriptionActive() const;
+    MCNAPI bool isMarketplacePassSubscriptionActive() const;
 
-    MCAPI bool isRealmsPlusSubscriptionActive() const;
+    MCNAPI bool isRealmsPlusSubscriptionActive() const;
 
-    MCAPI bool isSignInInProgress() const;
+    MCNAPI bool isSignInInProgress() const;
 
-    MCAPI bool isSignedInPlatformNetwork() const;
+    MCNAPI bool isSignedInPlatformNetwork() const;
 
-    MCAPI void manageMicrosoftAccount();
+    MCNAPI void resetSignInToPlatformNetwork();
 
-    MCAPI void resetSignInToPlatformNetwork();
+    MCNAPI void showPremiumNetworkUpsellModal();
 
-    MCAPI void showPremiumNetworkUpsellModal();
+    MCNAPI void signInToPlatformNetwork(bool isUserInitiated);
 
-    MCAPI void signInToPlatformNetwork(bool isUserInitiated);
+    MCNAPI void signOutOfMicrosoftAccount();
 
-    MCAPI void signOutOfMicrosoftAccount();
+    MCNAPI void unlinkMicrosoftAccount();
 
-    MCAPI void unlinkMicrosoftAccount();
-
-    MCAPI void updateMultiplayerPrivilegeUsingSystemModal();
+    MCNAPI void updateMultiplayerPrivilegeUsingSystemModal();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::std::shared_ptr<::MainMenuScreenModel>             model,
-        ::std::shared_ptr<::Social::User>                    user,
-        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
+    MCNAPI void* $ctor(
+        ::std::shared_ptr<::MainMenuScreenModel>                  model,
+        ::std::shared_ptr<::Social::User>                         user,
+        ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager>      entitlementManager,
+        ::Bedrock::NonOwnerPointer<::Safety::SafetyConfigService> safetyConfigService
     );
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

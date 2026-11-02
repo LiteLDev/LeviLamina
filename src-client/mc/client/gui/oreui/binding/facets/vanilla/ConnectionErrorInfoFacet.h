@@ -48,24 +48,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ConnectionErrorInfoFacet(
+    MCNAPI ConnectionErrorInfoFacet(
         ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler>    disconnectionRequestHandler,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStack,
         ::SceneFactory&                                                 sceneFactory,
         ::std::function<void(::std::string const&)>                     launchUri
     );
 
-    MCAPI ::OreUI::ConnectionErrorInfo const getConnectionErrorInfo(int reason) const;
+    MCNAPI ::OreUI::ConnectionErrorInfo const getConnectionErrorInfo(int reason) const;
 
-    MCAPI void openLearnMoreLink(int reason) const;
+    MCNAPI void openLearnMoreLink(int reason) const;
 
-    MCAPI void tryReconnect();
+    MCNAPI void tryReconnect();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::DisconnectionRequestHandler>    disconnectionRequestHandler,
         ::std::function<::Bedrock::NotNullNonOwnerPtr<::ISceneStack>()> getSceneStack,
         ::SceneFactory&                                                 sceneFactory,
@@ -76,7 +76,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

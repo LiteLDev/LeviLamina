@@ -51,13 +51,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI Weather(::Dimension& d, ::IRandom& random);
-#endif
+    MCNAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
 
-    MCAPI int calcSnowBlockDepth(::BlockSource& region, ::BlockPos const& pos, int maxLayerDepth) const;
-
-    MCAPI bool canPlaceTopSnow(
+    MCNAPI bool canPlaceTopSnow(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         bool              fromFallingSnow,
@@ -65,36 +61,28 @@ public:
         int*              newHeightAfterPlacement
     ) const;
 
-    MCAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCNAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCAPI void serverTick();
+    MCNAPI void serverTick();
 
-    MCAPI void tick();
+    MCNAPI void tick();
 
-    MCAPI bool
+    MCNAPI bool
     tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Dimension& d, ::IRandom& random);
-#endif
+    MCNAPI static void rebuildTopSnowToDepth(::BlockSource& region, ::BlockPos const& testPos, int desiredDepth);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const&, int data);
+    MCNAPI void $levelEvent(::SharedTypes::Legacy::LevelEvent type, ::Vec3 const&, int data);
 
 
     // NOLINTEND

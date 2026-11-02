@@ -25,9 +25,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::Container* $_tryGetContainer() const;
+    MCNAPI ::Container* $_tryGetContainer() const;
 
-    MCAPI ::ItemContext $_getItemContext(int slot) const;
+    MCNAPI ::ItemContext $_getItemContext(int slot) const;
 
 
     // NOLINTEND

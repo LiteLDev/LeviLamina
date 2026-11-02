@@ -115,7 +115,8 @@ enum class MemoryCategory : uchar {
     GamefaceScriptEngine                  = 107,
     GamefaceScript                        = 108,
     GamefaceLayout                        = 109,
-    MemoryCategoryCount                   = 110,
+    Executable                            = 110,
+    MemoryCategoryCount                   = 111,
 };
 
 }

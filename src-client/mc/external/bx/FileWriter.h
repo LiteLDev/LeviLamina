@@ -38,31 +38,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI FileWriter();
+    MCNAPI FileWriter();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $open(::bx::FilePath const& _filePath, bool _append, ::bx::Error* _err);
+    MCNAPI bool $open(::bx::FilePath const& _filePath, bool _append, ::bx::Error* _err);
 
-    MCFOLD void $close();
+    MCNAPI void $close();
 
-    MCFOLD int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
+    MCNAPI int64 $seek(int64 _offset, ::bx::Whence::Enum _whence);
 
-    MCFOLD int $write(void const* _data, int _size, ::bx::Error* _err);
+    MCNAPI int $write(void const* _data, int _size, ::bx::Error* _err);
     // NOLINTEND
 
 public:

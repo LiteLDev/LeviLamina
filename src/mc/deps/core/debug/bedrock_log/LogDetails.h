@@ -54,33 +54,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _logToFile(::std::string const& debugEvent);
-
-    MCAPI void _log_va(
-        ::LogAreaID _area,
-        uint        _priority,
-        char const* _function,
-        int         line,
-        int         _messageId,
-        char const* pszFormat,
-        char*       argptr
+    MCAPI void _appendLogEntryMetadata(
+        ::std::string&     logEntry,
+        ::std::string_view timestamp,
+        ::LogAreaID        area,
+        uint               priority,
+        ::std::string_view functionName,
+        int                lineNumber,
+        int                _messageId
     );
 
-    MCAPI ::std::string _makeLogString(
-        ::std::string        timestamp,
-        ::LogAreaID          area,
-        uint                 priority,
-        ::std::string        functionName,
-        int                  lineNumber,
-        int                  messageId,
-        ::std::string const& logMessage
-    );
+    MCNAPI void
+    _log(::LogAreaID _area, uint _priority, char const* _function, int line, int _messageId, ::std::string message);
 
-    MCAPI void _openLogFile();
+    MCNAPI void _logToFile(::std::string const& debugEvent);
 
-    MCAPI void closeLog();
+    MCNAPI void _openLogFile();
 
-    MCAPI void createLog(
+    MCNAPI void closeLog();
+
+    MCNAPI void createLog(
         ::Core::Path const&   _logFilePath,
         ::std::string const&  _logFileName,
         ::std::string const&  _debugLogTimestamp,
@@ -90,7 +83,7 @@ public:
     );
 
 #ifdef LL_PLAT_S
-    MCAPI void updateLogFilter(
+    MCNAPI void updateLogFilter(
         ::std::unique_ptr<::LogSettingsUpdater> options,
         ::std::string const&                    filterType,
         ::std::vector<::std::string> const&     filters,
@@ -99,7 +92,7 @@ public:
     );
 #endif
 
-    MCAPI void updateLogSetting(::std::string const& setting, bool newValue);
+    MCNAPI void updateLogSetting(::std::string const& setting, bool newValue);
     // NOLINTEND
 };
 

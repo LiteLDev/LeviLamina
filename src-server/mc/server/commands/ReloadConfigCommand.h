@@ -22,12 +22,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScriptSettings*& sScriptSettings();
+    MCNAPI static ::ScriptSettings*& sScriptSettings();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const&, ::CommandOutput& output) const;
     // NOLINTEND
 };

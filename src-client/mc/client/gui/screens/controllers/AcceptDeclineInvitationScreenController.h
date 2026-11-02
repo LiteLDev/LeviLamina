@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AcceptDeclineInvitationScreenController(
+    MCNAPI AcceptDeclineInvitationScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      title,
         ::std::string const&                      subtitle,
@@ -71,7 +71,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string const&                      title,
         ::std::string const&                      subtitle,
@@ -82,12 +82,12 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCAPI ::std::string $getAdditionalScreenInfo() const;
+    MCNAPI ::std::string $getAdditionalScreenInfo() const;
 
-    MCAPI ::std::string $getTelemetryOverride() const;
+    MCNAPI ::std::string $getTelemetryOverride() const;
     // NOLINTEND
 };

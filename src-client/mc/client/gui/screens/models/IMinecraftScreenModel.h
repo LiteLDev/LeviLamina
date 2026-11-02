@@ -34,6 +34,10 @@ public:
 
     virtual bool tryNavigateToSafeZoneScreenOnFirstSignin() = 0;
 
+    virtual void prepareToNavigateToGamePlayScreen() = 0;
+
+    virtual void navigateToGamePlayScreen() = 0;
+
     virtual bool leaveScreen(::std::string expectedScreenName, bool onlyThis) = 0;
 
     virtual bool isInGame() const = 0;

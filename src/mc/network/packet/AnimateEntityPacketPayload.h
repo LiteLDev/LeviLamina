@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AnimateEntityPacketPayload(
+    MCNAPI AnimateEntityPacketPayload(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
@@ -40,13 +40,13 @@ public:
         ::std::string const&                   controller
     );
 
-    MCAPI ~AnimateEntityPacketPayload();
+    MCNAPI ~AnimateEntityPacketPayload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::vector<::ActorRuntimeID> const& runtimeIds,
         ::std::string const&                   animation,
         ::std::string const&                   nextState,
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

@@ -94,9 +94,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EditorBlockPaletteFacet(::Editor::ServiceProviderCollection* services);
+    MCNAPI explicit EditorBlockPaletteFacet(::Editor::ServiceProviderCollection* services);
 
-    MCAPI void _handleBlockPaletteEvent(
+    MCNAPI void _handleBlockPaletteEvent(
         ::std::variant<
             ::Editor::EditorBlockPaletteEventItemUpdated,
             ::Editor::EditorBlockPaletteEventSelectedItemIndexChanged,
@@ -105,21 +105,21 @@ public:
             ::Editor::EditorBlockPaletteEventPaletteRemoved> const& evt
     );
 
-    MCAPI void addOrReplaceBlockPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const& newData);
+    MCNAPI void addOrReplaceBlockPalette(::OreUI::EditorBlockPaletteFacet::BlockPalette const& newData);
 
-    MCFOLD ::OreUI::EditorBlockPaletteFacet::BlockPalette const& getActivePalette() const;
+    MCNAPI ::OreUI::EditorBlockPaletteFacet::BlockPalette const& getActivePalette() const;
 
-    MCAPI int getActivePaletteSelectedItemIndex() const;
+    MCNAPI int getActivePaletteSelectedItemIndex() const;
 
-    MCAPI ::std::vector<::OreUI::EditorBlockPaletteFacet::BlockPalette> const& getPaletteList() const;
+    MCNAPI ::std::vector<::OreUI::EditorBlockPaletteFacet::BlockPalette> const& getPaletteList() const;
 
-    MCAPI void removeBlockPalette(::HashedString const& paletteId);
+    MCNAPI void removeBlockPalette(::HashedString const& paletteId);
 
-    MCAPI void setActivePalette(::HashedString const& paletteId);
+    MCNAPI void setActivePalette(::HashedString const& paletteId);
 
-    MCAPI void setActivePaletteSelectedItemIndex(int index);
+    MCNAPI void setActivePaletteSelectedItemIndex(int index);
 
-    MCAPI void updateBlockPaletteItem(
+    MCNAPI void updateBlockPaletteItem(
         ::HashedString const&                                     paletteId,
         int                                                       index,
         ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const& newData
@@ -129,15 +129,15 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string _getNamespaceCorrectedName(::Block const* block);
+    MCNAPI static ::std::string _getNamespaceCorrectedName(::Block const* block);
 
-    MCAPI static ::OreUI::EditorBlockPaletteFacet::BlockPalette
+    MCNAPI static ::OreUI::EditorBlockPaletteFacet::BlockPalette
     convertToFacetPalette(::Editor::EditorBlockPalette const& nativePalette);
 
-    MCAPI static ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
+    MCNAPI static ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem>
     getPaletteItemAsVariant(::OreUI::EditorBlockPaletteFacet::BlockPaletteItem const& facetItem);
 
-    MCAPI static ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem getPaletteItemFromVariant(
+    MCNAPI static ::OreUI::EditorBlockPaletteFacet::BlockPaletteItem getPaletteItemFromVariant(
         ::std::variant<::Editor::SimpleBlockPaletteItem, ::Editor::ProbabilityBlockPaletteItem> const& variantItem
     );
     // NOLINTEND
@@ -145,19 +145,19 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Editor::ServiceProviderCollection* services);
+    MCNAPI void* $ctor(::Editor::ServiceProviderCollection* services);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

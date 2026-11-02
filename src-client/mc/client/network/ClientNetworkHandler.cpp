@@ -157,7 +157,7 @@ void ClientNetworkHandler::_handleSubChunkData(
     }
 
     ::Dimension const& dimension = player->getDimension();
-    auto               chunk     = dimension.getChunkSource().getAvailableChunk({subChunkPos.x, subChunkPos.z});
+    auto               chunk     = dimension.mChunkSource->getAvailableChunk({subChunkPos.x, subChunkPos.z});
     if (!chunk) {
         return;
     }

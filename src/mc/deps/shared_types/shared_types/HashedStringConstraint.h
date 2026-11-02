@@ -34,19 +34,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit HashedStringConstraint(::cereal::StringConstraint constraint);
+    MCNAPI explicit HashedStringConstraint(::cereal::StringConstraint constraint);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::cereal::StringConstraint constraint);
+    MCNAPI void* $ctor(::cereal::StringConstraint constraint);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
 
 
     // NOLINTEND

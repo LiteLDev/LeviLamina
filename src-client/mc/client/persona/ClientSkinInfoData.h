@@ -23,6 +23,7 @@ public:
     ::ll::TypedStorage<8, 48, ::BedrockTexture>                mCapeTexture;
     ::ll::TypedStorage<8, 48, ::mce::Image>                    mLodSkinImage;
     ::ll::TypedStorage<8, 48, ::BedrockTexture>                mLodSkinTexture;
+    ::ll::TypedStorage<8, 32, ::std::string>                   mLodSkinProfileHash;
     ::ll::TypedStorage<1, 1, bool>                             mValid;
     // NOLINTEND
 
@@ -43,33 +44,34 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ClientSkinInfoData();
+    MCNAPI ClientSkinInfoData();
 
-    MCAPI void setLodSkinImage(::mce::Image&& image);
+    MCNAPI void setSkinAnimatedTextures(::std::vector<::BedrockTexture>&& newTextures);
 
-    MCAPI void setSkinAnimatedTextures(::std::vector<::BedrockTexture>&& newTextures);
+    MCNAPI bool trySetLodSkinImage(::mce::Image&& image, ::std::string const& profileHash);
 
-    MCAPI void unload();
+    MCNAPI void unload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData);
+    MCNAPI void
+    $updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData);
 
-    MCFOLD bool $hasValidTexture();
+    MCNAPI bool $hasValidTexture();
     // NOLINTEND
 
 public:

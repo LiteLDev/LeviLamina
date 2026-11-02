@@ -12,8 +12,6 @@ public:
     // clang-format on
 
     // EditorInputStateFacet inner types define
-    enum class MouseButton : uchar {};
-
     struct KeyBindingStateFacet {};
 };
 

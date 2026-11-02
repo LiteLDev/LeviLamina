@@ -34,31 +34,14 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRendererPool(DataDrivenRendererPool const&);
-    DataDrivenRendererPool();
-
-public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenRendererPool(::DataDrivenRendererPool&&);
-
-    MCAPI ::DataDrivenRendererPool& operator=(::DataDrivenRendererPool const&);
-
-    MCAPI ::DataDrivenRendererPool& operator=(::DataDrivenRendererPool&&);
-
-    MCAPI ~DataDrivenRendererPool();
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::DataDrivenRendererPool&&);
+    MCNAPI ~DataDrivenRendererPool();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

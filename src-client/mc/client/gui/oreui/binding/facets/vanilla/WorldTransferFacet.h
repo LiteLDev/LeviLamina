@@ -46,45 +46,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit WorldTransferFacet(::World::WorldTransferer& worldTransferer);
+    MCNAPI explicit WorldTransferFacet(::World::WorldTransferer& worldTransferer);
 
-    MCAPI void backupWorld(::std::string const& world);
+    MCNAPI void backupWorld(::std::string const& world);
 
-    MCAPI ::OreUI::FacetTaskState const getBackupWorldProgress();
+    MCNAPI ::OreUI::FacetTaskState const getBackupWorldProgress();
 
-    MCFOLD ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getBackupWorldResult();
+    MCNAPI ::std::optional<::World::IWorldStorageHandler::DuplicateWorldResult> const& getBackupWorldResult();
 
-    MCFOLD ::OreUI::AsyncStatefulFunction_DEPRECATED<::World::TransferResult()>& getImportWorldFunctor_DEPRICATED();
+    MCNAPI ::OreUI::AsyncStatefulFunction_DEPRECATED<::World::TransferResult()>& getImportWorldFunctor_DEPRICATED();
 
-    MCFOLD ::OreUI::FacetTaskState const getImportWorldProgress();
+    MCNAPI ::OreUI::FacetTaskState const getImportWorldProgress();
 
-    MCAPI float getImportWorldProgressPercentage();
+    MCNAPI float getImportWorldProgressPercentage();
 
-    MCAPI ::std::optional<::World::TransferResult> const& getImportWorldResult();
+    MCNAPI ::std::optional<::World::TransferResult> const& getImportWorldResult();
 
-    MCAPI void importWorld();
+    MCNAPI void importWorld();
 
-    MCAPI void resetBackupWorld();
+    MCNAPI void resetBackupWorld();
 
-    MCAPI void resetImportWorld();
+    MCNAPI void resetImportWorld();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::World::WorldTransferer& worldTransferer);
+    MCNAPI void* $ctor(::World::WorldTransferer& worldTransferer);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

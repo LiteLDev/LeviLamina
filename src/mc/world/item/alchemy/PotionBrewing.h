@@ -4,6 +4,7 @@
 
 // auto generated forward declare list
 // clang-format off
+class IEducationOptions;
 class Item;
 class ItemDescriptor;
 class ItemInstance;
@@ -42,40 +43,40 @@ public:
         ::ItemDescriptor const&            to
     );
 
-    MCAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
+    MCNAPI static ::ItemInstance getChemistryMix(::ItemDescriptor const& from, ::ItemDescriptor const& ingredient);
 
-    MCAPI static int getFuelValue(::ItemDescriptor const& item);
+    MCNAPI static int getFuelValue(::ItemDescriptor const& item);
 
     MCAPI static bool hasMix(::ItemInstance const& source, ::ItemDescriptor const& ingredient);
 
-    MCAPI static void initPotionBrewing();
+    MCAPI static void initPotionBrewing(::IEducationOptions const& educationOptions);
 
-    MCAPI static bool isFuel(::ItemDescriptor const& item);
+    MCNAPI static bool isFuel(::ItemDescriptor const& item);
 
     MCAPI static bool isIngredient(::ItemDescriptor const& item);
 
     MCAPI static bool isPotionIngredient(::ItemDescriptor const& item);
 
-    MCAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
+    MCNAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
 
     MCAPI static ::ItemInstance mix(::ItemDescriptor const& ingredient, ::ItemInstance const& source);
 
-    MCAPI static void shutdown();
+    MCNAPI static void shutdown();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::ItemInstance>>& mChemistryMixes();
 
-    MCAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
+    MCNAPI static ::std::vector<::PotionBrewing::Mix<::Item const&>>& mContainerMixes();
 
     MCAPI static ::std::vector<::PotionBrewing::Mix<::ItemDescriptor>>& mPotionMixes();
 
     MCAPI static ::std::vector<::PotionBrewing::Ingredient>& mValidContainers();
 
-    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
+    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidIngredients();
 
-    MCAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
+    MCNAPI static ::std::unordered_set<::PotionBrewing::Ingredient>& mValidRecipeInputs();
     // NOLINTEND
 };

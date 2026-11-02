@@ -45,9 +45,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
+    MCNAPI void $clear(::std::string const& dataStoreName, bool addToOutgoingChanges);
 
-    MCFOLD void $assertAppropriateThread() const;
+    MCNAPI void $assertAppropriateThread() const;
 
 
     // NOLINTEND

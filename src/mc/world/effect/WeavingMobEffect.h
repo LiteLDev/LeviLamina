@@ -21,13 +21,13 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
+    MCNAPI static ::Vec3 const& COBWEB_SLOWDOWN_OVERRIDE();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onActorDied(::Actor& target, int amplifier) const;
+    MCNAPI void $onActorDied(::Actor& target, int amplifier) const;
 
 
     // NOLINTEND

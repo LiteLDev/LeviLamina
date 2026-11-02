@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
+#include "mc/deps/shared_types/v1_26_60/actor/ShareableComponentDefinition.h"
 #include "mc/world/actor/ActorDefinitionTrigger.h"
 #include "mc/world/actor/TempEPtr.h"
 #include "mc/world/actor/ai/goal/BaseGoal.h"
@@ -18,7 +19,6 @@ class Path;
 class WeakEntityRef;
 struct DistanceSortedActor;
 struct GoalId;
-struct Shareable;
 // clang-format on
 
 class PickupItemsGoal : public ::BaseGoal {
@@ -75,44 +75,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PickupItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI PickupItemsGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI void _dropItem(::ItemStack const& item) const;
+    MCNAPI void _dropItem(::ItemStack const& item) const;
 
-    MCAPI ::std::vector<::WeakEntityRef>
+    MCNAPI ::std::vector<::WeakEntityRef>
     _filterValidTargets(::std::vector<::DistanceSortedActor> const& entities) const;
 
-    MCAPI ::Shareable const* _getShareableItem(::ItemStack const& item) const;
+    MCNAPI ::SharedTypes::v1_26_60::ShareableComponentDefinition::ShareableData const*
+    _getShareableItem(::ItemStack const& item) const;
 
-    MCAPI bool _hasRoomForCarriedItem() const;
+    MCNAPI bool _hasRoomForCarriedItem() const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

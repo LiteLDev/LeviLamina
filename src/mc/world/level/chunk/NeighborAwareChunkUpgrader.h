@@ -33,10 +33,10 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::NeighborAwareBlockUpdateType
+    MCNAPI ::NeighborAwareBlockUpdateType
     $getUpdateType(::Block const& block, ::NeighborAwareBlockUpgradeVersionType neighborAwareUpgradeVersion) const;
 
-    MCAPI bool $doLevelChunkNeighborAwareUpgrade(
+    MCNAPI bool $doLevelChunkNeighborAwareUpgrade(
         ::NeighborAwareBlockUpdateType updateType,
         ::BlockSource&                 region,
         ::Block const&                 block,

@@ -22,8 +22,8 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                  xblName;
     ::ll::TypedStorage<8, 32, ::std::string>                  platformName;
     ::ll::TypedStorage<8, 32, ::std::string>                  realName;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>  profileImage;
-    ::ll::TypedStorage<8, 72, ::Social::ProfileImageOptions>  avatarImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> profileImage;
+    ::ll::TypedStorage<8, 104, ::Social::ProfileImageOptions> avatarImage;
     ::ll::TypedStorage<8, 56, ::Social::UserPicturePath>      platformProfilePic;
     ::ll::TypedStorage<4, 4, ::Social::RelationToCurrentUser> relation;
     ::ll::TypedStorage<1, 1, bool>                            isOnline;
@@ -42,31 +42,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PlayerProfileData();
+    MCNAPI PlayerProfileData();
 
-    MCAPI PlayerProfileData(::Social::PlayerProfileData&&);
+    MCNAPI PlayerProfileData(::Social::PlayerProfileData&&);
 
-    MCAPI PlayerProfileData(::Social::PlayerProfileData const&);
+    MCNAPI PlayerProfileData(::Social::PlayerProfileData const&);
 
-    MCAPI ::Social::PlayerProfileData& operator=(::Social::PlayerProfileData const&);
+    MCNAPI ::Social::PlayerProfileData& operator=(::Social::PlayerProfileData const&);
 
-    MCAPI ~PlayerProfileData();
+    MCNAPI ~PlayerProfileData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void* $ctor(::Social::PlayerProfileData&&);
+    MCNAPI void* $ctor(::Social::PlayerProfileData&&);
 
-    MCAPI void* $ctor(::Social::PlayerProfileData const&);
+    MCNAPI void* $ctor(::Social::PlayerProfileData const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

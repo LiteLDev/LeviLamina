@@ -274,7 +274,9 @@ public:
 #ifdef LL_PLAT_C
     MCAPI int toARGB() const;
 
-    MCAPI ::std::string toHexString() const;
+    MCNAPI ::std::string toHexString() const;
+
+    MCNAPI ::std::string toRGBAHexString() const;
 #endif
     // NOLINTEND
 
@@ -283,7 +285,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::mce::Color fromHexString(::std::string const& hexStr);
 
-    MCAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
+    MCNAPI static ::mce::Color fromRGBHexString(::std::string const& hexStr);
     // NOLINTEND
 
 public:
@@ -294,29 +296,29 @@ public:
     MCAPI static ::mce::Color const& BLUE();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::mce::Color const& CYAN();
+    MCNAPI static ::mce::Color const& CYAN();
 #endif
 
     MCAPI static ::mce::Color const& GREEN();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::mce::Color const& GREY();
+    MCNAPI static ::mce::Color const& GREY();
 #endif
 
-    MCAPI static ::mce::Color const& NIL();
+    MCNAPI static ::mce::Color const& NIL();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::mce::Color const& ORANGE();
+    MCNAPI static ::mce::Color const& ORANGE();
 
-    MCAPI static ::mce::Color const& PARTY_BLUE();
+    MCNAPI static ::mce::Color const& PARTY_BLUE();
 
-    MCAPI static ::mce::Color const& PINK();
+    MCNAPI static ::mce::Color const& PINK();
 #endif
 
     MCAPI static ::mce::Color const& PURPLE();
 
 #ifdef LL_PLAT_C
-    MCAPI static ::mce::Color const& REBECCA_PURPLE();
+    MCNAPI static ::mce::Color const& REBECCA_PURPLE();
 #endif
 
     MCAPI static ::mce::Color const& RED();

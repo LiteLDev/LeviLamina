@@ -28,14 +28,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void forEachBox(
+    MCNAPI void forEachBox(
         ::brstd::function_ref<
             void(schar, schar, schar, schar, schar, schar) const,
             void(schar, schar, schar, schar, schar, schar)> consumer,
         bool                                                mergeNeighbors
     ) const;
 
-    MCAPI ::VoxelShapes::Cells reverseAxes(bool reverseX, bool reverseY, bool reverseZ) const;
+    MCNAPI ::VoxelShapes::Cells reverseAxes(bool reverseX, bool reverseY, bool reverseZ) const;
     // NOLINTEND
 };
 

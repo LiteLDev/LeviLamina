@@ -7,8 +7,10 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 32> mUnkca3acb;
-    ::ll::UntypedStorage<8, 8>  mUnka0ad7a;
+    ::ll::UntypedStorage<8, 24> mUnkf8e43d;
+    ::ll::UntypedStorage<8, 48> mUnkf469e9;
     ::ll::UntypedStorage<8, 16> mUnk949039;
+    ::ll::UntypedStorage<8, 72> mUnkaa4078;
     // NOLINTEND
 
 public:
@@ -16,4 +18,20 @@ public:
     StreamingMusicEntry& operator=(StreamingMusicEntry const&);
     StreamingMusicEntry(StreamingMusicEntry const&);
     StreamingMusicEntry();
+
+public:
+    // member functions
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI ~StreamingMusicEntry();
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
+#endif
+    // NOLINTEND
 };

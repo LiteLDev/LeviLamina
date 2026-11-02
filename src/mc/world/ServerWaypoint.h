@@ -52,15 +52,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(::ServerWaypoint::Payload const&) const;
+        MCNAPI bool operator==(::ServerWaypoint::Payload const&) const;
 
-        MCAPI ~Payload();
+        MCNAPI ~Payload();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -116,29 +116,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerWaypoint::Payload generatePayload(uint updateFlag);
+    MCNAPI ::ServerWaypoint::Payload generatePayload(uint updateFlag);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setWorldPosition(::WorldPosition const& worldPosition);
+    MCNAPI void $setWorldPosition(::WorldPosition const& worldPosition);
 
-    MCAPI void $setColor(::std::optional<::mce::Color> const& color);
+    MCNAPI void $setColor(::std::optional<::mce::Color> const& color);
 
-    MCAPI void $setIsVisible(bool isVisible);
+    MCNAPI void $setIsVisible(bool isVisible);
 
-    MCAPI void $setClientPositionAuthority(bool clientPositionAuthority);
+    MCNAPI void $setClientPositionAuthority(bool clientPositionAuthority);
 
-    MCAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
+    MCNAPI void $setTexturePath(::std::optional<::std::string> const& texturePath);
 
-    MCAPI void $setIconSize(::Vec2 const& iconSize);
+    MCNAPI void $setIconSize(::Vec2 const& iconSize);
 
-    MCFOLD bool $isValid() const;
+    MCNAPI bool $isValid() const;
 
-    MCAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
+    MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
-    MCAPI void $update(::Player const& viewingPlayer);
+    MCNAPI void $update(::Player const& viewingPlayer);
 
 
     // NOLINTEND

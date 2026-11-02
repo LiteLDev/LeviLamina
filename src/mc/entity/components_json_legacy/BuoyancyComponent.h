@@ -11,6 +11,7 @@
 class IConstBlockSource;
 class SemVersion;
 struct StateVectorComponent;
+namespace Json { class Value; }
 // clang-format on
 
 class BuoyancyComponent {
@@ -31,11 +32,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
+    MCNAPI ::Json::Value _serialize() const;
 
-    MCAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
+    MCNAPI bool canFloat(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
 
-    MCAPI bool
+    MCNAPI void loadData(::std::string const& data, ::SemVersion const& engineVersion);
+
+    MCNAPI bool
     needToResurface(::StateVectorComponent const& stateVectorComponent, ::IConstBlockSource const& region) const;
     // NOLINTEND
 };

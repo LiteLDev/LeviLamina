@@ -4,24 +4,26 @@
 
 // auto generated inclusion list
 #include "mc/client/sound/Category.h"
+#include "mc/deps/audio/ServerSoundHandle.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 class Music : public ::Bedrock::EnableNonOwnerReferences {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::Category>                    mCategory;
-    ::ll::TypedStorage<8, 32, ::std::string>                mName;
-    ::ll::TypedStorage<8, 32, ::std::string>                mEventName;
-    ::ll::TypedStorage<4, 4, int>                           mMinDelay;
-    ::ll::TypedStorage<4, 4, int>                           mMaxDelay;
-    ::ll::TypedStorage<1, 1, bool>                          mPaused;
-    ::ll::TypedStorage<4, 4, float>                         mVolume;
-    ::ll::TypedStorage<4, 4, float>                         mFadeoutSeconds;
-    ::ll::TypedStorage<1, 1, bool>                          mPlaylist;
-    ::ll::TypedStorage<4, 4, uint>                          mPlaylistIndex;
-    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>> mOverrideInterruptibleCategories;
-    ::ll::TypedStorage<1, 1, bool>                          mInitialized;
+    ::ll::TypedStorage<4, 4, ::Category>                            mCategory;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mName;
+    ::ll::TypedStorage<8, 32, ::std::string>                        mEventName;
+    ::ll::TypedStorage<4, 4, int>                                   mMinDelay;
+    ::ll::TypedStorage<4, 4, int>                                   mMaxDelay;
+    ::ll::TypedStorage<1, 1, bool>                                  mPaused;
+    ::ll::TypedStorage<4, 4, float>                                 mVolume;
+    ::ll::TypedStorage<4, 4, float>                                 mFadeoutSeconds;
+    ::ll::TypedStorage<1, 1, bool>                                  mPlaylist;
+    ::ll::TypedStorage<4, 4, uint>                                  mPlaylistIndex;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::string>>         mOverrideInterruptibleCategories;
+    ::ll::TypedStorage<1, 1, bool>                                  mInitialized;
+    ::ll::TypedStorage<8, 16, ::std::optional<::ServerSoundHandle>> mServerSoundHandle;
     // NOLINTEND
 
 public:
@@ -43,29 +45,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Music(::Category category, ::std::string const& name);
+    MCNAPI Music(::Category category, ::std::string const& name);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Category category, ::std::string const& name);
+    MCNAPI void* $ctor(::Category category, ::std::string const& name);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $hasTracks() const;
+    MCNAPI bool $hasTracks() const;
 
-    MCFOLD void $nextTrack();
+    MCNAPI void $nextTrack();
 
-    MCFOLD void $setActive(bool active);
+    MCNAPI void $setActive(bool active);
     // NOLINTEND
 
 public:

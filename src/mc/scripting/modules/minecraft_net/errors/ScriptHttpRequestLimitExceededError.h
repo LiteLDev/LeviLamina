@@ -27,9 +27,21 @@ public:
     ScriptHttpRequestLimitExceededError();
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ScriptHttpRequestLimitExceededError(uint64 maxConcurrentRequests, uint64 inFlightRequests);
+    // NOLINTEND
+
+public:
     // static functions
     // NOLINTBEGIN
     MCNAPI static ::Scripting::ErrorBinding bind();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(uint64 maxConcurrentRequests, uint64 inFlightRequests);
     // NOLINTEND
 };
 

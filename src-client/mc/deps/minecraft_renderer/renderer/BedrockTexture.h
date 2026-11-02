@@ -34,14 +34,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BedrockTexture();
+    MCNAPI BedrockTexture();
 
-    MCAPI ::std::optional<::ResourceLocationPair> const _getLayerLocation(
+    MCNAPI ::std::optional<::ResourceLocationPair> const _getLayerLocation(
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> const textureSetDefinition,
         ::cg::TextureSetLayerType                                            layerType
     );
 
-    MCAPI bool _loadFromImageBuffer(
+    MCNAPI bool _loadFromImageBuffer(
         ::cg::TextureSetImageContainer&         imageContainer,
         ::cg::TextureSetLayerType const         textureType,
         ::mce::TextureResourceService&          textureResourceService,
@@ -50,15 +50,15 @@ public:
         ::std::string_view                      debugName
     ) const;
 
-    MCAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
+    MCNAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
 
-    MCAPI bool load(
+    MCNAPI bool load(
         ::mce::TextureResourceService&                                 textureResourceService,
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition,
         ::std::string_view                                             debugName
     );
 
-    MCAPI bool load(
+    MCNAPI bool load(
         ::mce::TextureResourceService& textureResourceService,
         ::mce::TextureContainer&&      textureContainer,
         ::IsMissingTexture             isMissingTexture,
@@ -66,34 +66,34 @@ public:
         ::cg::TextureSetLayerType      textureType
     );
 
-    MCAPI void loadMetadata(::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition);
+    MCNAPI void loadMetadata(::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition);
 
-    MCAPI void loadMetadata(
+    MCNAPI void loadMetadata(
         ::mce::TextureDescription const&    textureDescription,
         ::std::optional<::IsMissingTexture> optIsMissingTexture
     );
 
-    MCAPI void loadMetadata(
+    MCNAPI void loadMetadata(
         ::cg::TextureSetImageDescription const& textureSetImageDescription,
         ::std::optional<::IsMissingTexture>     optIsMissingTexture
     );
 
-    MCAPI ::BedrockTexture& operator=(::BedrockTexture const& rhs);
+    MCNAPI ::BedrockTexture& operator=(::BedrockTexture const& rhs);
 
-    MCAPI void unload();
+    MCNAPI void unload();
 
-    MCAPI ~BedrockTexture();
+    MCNAPI ~BedrockTexture();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

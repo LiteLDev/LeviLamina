@@ -296,7 +296,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 Get64BitUniqueRandomNumber();
+    MCNAPI static uint64 Get64BitUniqueRandomNumber();
     // NOLINTEND
 };
 

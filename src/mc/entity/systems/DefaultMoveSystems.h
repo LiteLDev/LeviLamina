@@ -51,9 +51,9 @@ MCAPI void doFlyingPlayerMoveSystems(
     ::IConstBlockSource const&                region
 );
 
-MCAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
+MCNAPI void forSystems(::brstd::function_ref<void(::TickingSystemWithInfo&&)> func);
 
-MCAPI void horizontalMovement(
+MCNAPI void horizontalMovement(
     ::Optional<::OnGroundFlagComponent const> onGroundFlagComponent,
     ::AABBShapeComponent const&               aabbShapeComponent,
     ::ActorRotationComponent const&           actorRotationComponent,

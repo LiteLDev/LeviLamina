@@ -36,31 +36,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MessageImage(::OreUI::MessageImage const&);
+    MCNAPI MessageImage(::OreUI::MessageImage const&);
 
-    MCAPI MessageImage(
+    MCNAPI MessageImage(
         ::ImageData const&                                         image,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI MessageImage(
+    MCNAPI MessageImage(
         ::ImageData const&                                         image,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>
     );
 
-    MCAPI ~MessageImage();
+    MCNAPI ~MessageImage();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::OreUI::MessageImage const&);
+    MCNAPI void* $ctor(::OreUI::MessageImage const&);
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ImageData const& image, ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ImageData const&                                         image,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList,
         ::Bedrock::NotNullNonOwnerPtr<::IClientInstance>
@@ -70,7 +70,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

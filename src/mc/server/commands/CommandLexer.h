@@ -62,6 +62,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 8, ::std::string const&>   mInput;
     ::ll::TypedStorage<8, 16, ::CommandLexer::Token> mToken;
+    ::ll::TypedStorage<1, 1, bool const>             mIsCodeBuilderEnabled;
     // NOLINTEND
 
 public:
@@ -73,6 +74,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void step();
+    MCNAPI void step();
     // NOLINTEND
 };

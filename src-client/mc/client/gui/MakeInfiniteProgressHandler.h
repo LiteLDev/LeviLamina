@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/client/gui/ProgressHandler.h"
+#include "mc/deps/core/threading/SharedLockbox.h"
 #include "mc/deps/core/utility/UniqueOwnerPointer.h"
 #include "mc/util/GridArea.h"
 #include "mc/world/actor/player/LoadingState.h"
@@ -32,11 +33,11 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 4, ::MakeInfiniteProgressHandler::State>           mState;
-    ::ll::TypedStorage<8, 8, ::LevelSummary const&>                          mEditedLevel;
-    ::ll::TypedStorage<4, 4, ::StorageVersion>                               mStorageVersion;
-    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>              mUnloaded;
-    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>>>  mView;
+    ::ll::TypedStorage<4, 4, ::MakeInfiniteProgressHandler::State> mState;
+    ::ll::TypedStorage<8, 8, ::LevelSummary const&>                mEditedLevel;
+    ::ll::TypedStorage<4, 4, ::StorageVersion>                     mStorageVersion;
+    ::ll::TypedStorage<8, 64, ::std::unordered_set<::ChunkPos>>    mUnloaded;
+    ::ll::TypedStorage<8, 304, ::GridArea<::std::shared_ptr<::LevelChunk>, ::Bedrock::Threading::SharedLockbox>> mView;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ChunkSource>>               mLegacySource;
     ::ll::TypedStorage<8, 16, ::Bedrock::UniqueOwnerPointer<::LevelStorage>> mLevelStorage;
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::TaskGroup>>                 mIOTaskGroup;
@@ -81,7 +82,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MakeInfiniteProgressHandler(
+    MCNAPI MakeInfiniteProgressHandler(
         ::LevelSummary const&   editedLevel,
         ::StorageVersion        storageVersion,
         ::std::function<void()> callback
@@ -91,31 +92,31 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::LevelSummary const& editedLevel, ::StorageVersion storageVersion, ::std::function<void()> callback);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onStart(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $tick(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onCancel(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD void $onExit(::MinecraftScreenModel& minecraftScreenModel);
+    MCNAPI void $onExit(::MinecraftScreenModel& minecraftScreenModel);
 
-    MCFOLD ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::LoadingState $getLoadingState(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI ::std::string $getProgressMessage(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
+    MCNAPI float $getLoadingProgress(::MinecraftScreenModel& minecraftScreenModel) const;
 
-    MCAPI ::std::string $getTTSProgressMessage() const;
+    MCNAPI ::std::string $getTTSProgressMessage() const;
 
-    MCFOLD ::std::string $getTitleText() const;
+    MCNAPI ::std::string $getTitleText() const;
 
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
     // NOLINTEND
 };

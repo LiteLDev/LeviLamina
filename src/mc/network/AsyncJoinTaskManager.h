@@ -81,18 +81,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AsyncJoinTaskManager(
+    MCNAPI AsyncJoinTaskManager(
         ::std::unique_ptr<::TaskGroup>                        taskGroup,
         ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> defaultJoinVerdict
     );
 
-    MCAPI ::Bedrock::Threading::Async<::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny>> handleAsyncJoinCallbacks(
+    MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny>> handleAsyncJoinCallbacks(
         ::NetworkIdentifier const&        source,
         ::PlayerAuthenticationInfo const& playerInfo,
         ::SubClientId                     subClientId
     );
 
-    MCAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
+    MCNAPI ::std::unique_ptr<uint64, ::std::function<void(uint64*)>> registerAsyncJoinCallback(
         ::brstd::move_only_function<void(
             ::NetworkIdentifier const&,
             ::PlayerAuthenticationInfo const&,
@@ -105,7 +105,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::TaskGroup>                        taskGroup,
         ::nonstd::expected<::AsyncJoinAllow, ::AsyncJoinDeny> defaultJoinVerdict
     );

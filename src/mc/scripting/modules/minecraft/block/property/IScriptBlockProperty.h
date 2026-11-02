@@ -24,15 +24,12 @@ public:
     ::ll::TypedStorage<8, 8, ::BlockState const*> mBlockState;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     IScriptBlockProperty& operator=(IScriptBlockProperty const&);
     IScriptBlockProperty(IScriptBlockProperty const&);
     IScriptBlockProperty();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -42,21 +39,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
-#endif
+    MCNAPI ::ScriptModuleMinecraft::IScriptBlockProperty& operator=(::ScriptModuleMinecraft::IScriptBlockProperty&&);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bindV010();
+    MCNAPI static ::Scripting::ClassBinding bindV010();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

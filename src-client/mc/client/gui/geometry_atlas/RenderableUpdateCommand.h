@@ -7,6 +7,8 @@
 #include "mc/client/gui/geometry_atlas/AllocateBackendPayload.h"
 #include "mc/client/gui/geometry_atlas/InitializeCallbackPayload.h"
 #include "mc/client/gui/geometry_atlas/InsertTilePayload.h"
+#include "mc/client/gui/geometry_atlas/PaperDollScreenBoundsPayload.h"
+#include "mc/client/gui/geometry_atlas/PaperDollSetBodyRotationPayload.h"
 #include "mc/client/gui/geometry_atlas/PaperDollTransformPayload.h"
 #include "mc/client/gui/geometry_atlas/RemoveTilePayload.h"
 #include "mc/client/gui/geometry_atlas/UIItemPayload.h"
@@ -23,6 +25,8 @@ public:
         ::GeometryAtlas::InsertTilePayload,
         ::GeometryAtlas::RemoveTilePayload,
         ::GeometryAtlas::PaperDollTransformPayload,
+        ::GeometryAtlas::PaperDollScreenBoundsPayload,
+        ::GeometryAtlas::PaperDollSetBodyRotationPayload,
         ::GeometryAtlas::InitializeCallbackPayload>;
 
 public:
@@ -30,7 +34,7 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<
         8,
-        80,
+        112,
         ::std::variant<
             ::GeometryAtlas::AllocateAtlasPayload,
             ::GeometryAtlas::AllocateBackendPayload,
@@ -38,6 +42,8 @@ public:
             ::GeometryAtlas::InsertTilePayload,
             ::GeometryAtlas::RemoveTilePayload,
             ::GeometryAtlas::PaperDollTransformPayload,
+            ::GeometryAtlas::PaperDollScreenBoundsPayload,
+            ::GeometryAtlas::PaperDollSetBodyRotationPayload,
             ::GeometryAtlas::InitializeCallbackPayload>>
                                    mData;
     ::ll::TypedStorage<4, 4, uint> mTarget;

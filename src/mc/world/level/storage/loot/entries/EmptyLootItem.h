@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $_createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const;
+    MCNAPI bool $_createItem(::std::vector<::ItemStack>&, ::Random&, ::LootTableContext&) const;
 
-    MCFOLD ::LootPoolEntry::EntryType $getEntryType() const;
+    MCNAPI ::LootPoolEntry::EntryType $getEntryType() const;
 
 
     // NOLINTEND

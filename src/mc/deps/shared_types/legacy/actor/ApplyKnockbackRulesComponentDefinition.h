@@ -29,9 +29,15 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI bool operator==(
+        MCNAPI bool operator==(
             ::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset const& other
         ) const;
+        // NOLINTEND
+
+    public:
+        // static variables
+        // NOLINTBEGIN
+        MCNAPI static ::std::string_view const& NAME();
         // NOLINTEND
     };
 
@@ -43,6 +49,12 @@ public:
         24,
         ::std::vector<::SharedTypes::Legacy::ApplyKnockbackRulesComponentDefinition::ApplyKnockbackRulesPreset>>
         mPresets;
+    // NOLINTEND
+
+public:
+    // static variables
+    // NOLINTBEGIN
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

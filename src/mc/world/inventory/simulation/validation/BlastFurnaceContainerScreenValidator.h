@@ -9,13 +9,13 @@ class BlastFurnaceContainerScreenValidator : public ::FurnaceContainerScreenVali
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BlastFurnaceContainerScreenValidator();
+    MCNAPI BlastFurnaceContainerScreenValidator();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

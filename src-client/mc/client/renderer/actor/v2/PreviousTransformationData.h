@@ -49,14 +49,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PreviousTransformationData& operator=(::PreviousTransformationData&&);
+    MCNAPI ::PreviousTransformationData& operator=(::PreviousTransformationData&&);
 
-    MCAPI ~PreviousTransformationData();
+    MCNAPI ~PreviousTransformationData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

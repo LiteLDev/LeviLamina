@@ -11,24 +11,24 @@ class SharedAmplifiers {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::shared_ptr<::Amplifier>& ABSORPTION();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& ABSORPTION();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& FATAL_POISON();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& FATAL_POISON();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& HARM();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& HARM();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& HEAL();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& HEAL();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& HUNGER_DURATION();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& HUNGER_DURATION();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& HUNGER_VALUE();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& HUNGER_VALUE();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& POISON();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& POISON();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& REGENERATION();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& REGENERATION();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& SATURATION();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& SATURATION();
 
-    MCAPI static ::std::shared_ptr<::Amplifier>& WITHER();
+    MCNAPI static ::std::shared_ptr<::Amplifier>& WITHER();
     // NOLINTEND
 };

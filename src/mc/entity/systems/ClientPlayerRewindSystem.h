@@ -6,15 +6,20 @@
 // clang-format off
 class EntityContext;
 struct ReplayStateTrackerComponent;
+struct TickingSystemWithInfo;
 // clang-format on
 
 class ClientPlayerRewindSystem {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void applyHistoryChangesToLiveEntity(
+    MCNAPI static void applyHistoryChangesToLiveEntity(
         ::ReplayStateTrackerComponent const& postSimulationState,
         ::EntityContext&                     liveData
     );
+
+#ifdef LL_PLAT_C
+    MCNAPI static ::TickingSystemWithInfo createCorrectionInterpolationSystem();
+#endif
     // NOLINTEND
 };

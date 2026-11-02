@@ -37,47 +37,47 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD ::std::string const& getAuthorXuid() const;
+    MCNAPI ::std::string const& getAuthorXuid() const;
 
-    MCAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getDeleteStatus() const;
 
-    MCAPI bool const getEventHasCoordinates() const;
+    MCNAPI bool const getEventHasCoordinates() const;
 
-    MCAPI ::std::string const& getEventMetaData() const;
+    MCNAPI ::std::string const& getEventMetaData() const;
 
-    MCAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
+    MCNAPI ::std::vector<::std::string> const& getEventPlayerXuids() const;
 
-    MCAPI int const getEventXCoordinate() const;
+    MCNAPI int const getEventXCoordinate() const;
 
-    MCAPI int const getEventYCoordinate() const;
+    MCNAPI int const getEventYCoordinate() const;
 
-    MCAPI int const getEventZCooridnate() const;
+    MCNAPI int const getEventZCooridnate() const;
 
-    MCFOLD ::std::string const& getFeedItemId() const;
+    MCNAPI ::std::string const& getFeedItemId() const;
 
-    MCFOLD ::std::string const& getId() const;
+    MCNAPI ::std::string const& getId() const;
 
-    MCAPI ::Realms::Stories::FetchStatus getImageStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getImageStatus() const;
 
-    MCAPI bool const getIsComment() const;
+    MCNAPI bool const getIsComment() const;
 
-    MCAPI bool const getIsEvent() const;
+    MCNAPI bool const getIsEvent() const;
 
-    MCAPI ::std::string const& getLastReported() const;
+    MCNAPI ::std::string const& getLastReported() const;
 
-    MCFOLD int const getReportCount() const;
+    MCNAPI int const getReportCount() const;
 
-    MCAPI ::Realms::Stories::FetchStatus getReportStatus() const;
+    MCNAPI ::Realms::Stories::FetchStatus getReportStatus() const;
 
-    MCAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
+    MCNAPI ::Realms::Stories::PostStatus getReportToXboxStatus() const;
 
-    MCAPI ::std::vector<::std::string> const& getReporterXuids() const;
+    MCNAPI ::std::vector<::std::string> const& getReporterXuids() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[29]> NAME();
     // NOLINTEND
 };
 

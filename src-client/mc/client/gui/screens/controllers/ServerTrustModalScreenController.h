@@ -34,7 +34,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ServerTrustModalScreenController(
+    MCNAPI ServerTrustModalScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string                             serverAddress,
         ::Bedrock::Threading::AsyncPromise<bool>  resultPromise
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::std::string                             serverAddress,
         ::Bedrock::Threading::AsyncPromise<bool>  resultPromise
@@ -54,6 +54,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
     // NOLINTEND
 };

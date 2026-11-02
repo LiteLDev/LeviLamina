@@ -15,6 +15,10 @@ public:
     // NOLINTEND
 
 public:
+    // prevent constructor by default
+    KeyboardRemappingLayout();
+
+public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~KeyboardRemappingLayout() /*override*/ = default;
@@ -34,19 +38,31 @@ public:
     // NOLINTEND
 
 public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI explicit KeyboardRemappingLayout(::KeyboardType keyboardType);
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(::KeyboardType keyboardType);
+    // NOLINTEND
+
+public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType);
+    MCNAPI void $setMappingWithRawInput(::std::string const& action, int rawKeyIndex, ::RawInputType rawKeyType);
 
-    MCAPI ::std::string $getMappedKeyName(int key) const;
+    MCNAPI ::std::string $getMappedKeyName(int key) const;
 
-    MCAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
+    MCNAPI ::std::string $getMappedKeyName(int key, bool checkUserConfiguredSwap) const;
 
-    MCAPI int $getAdjustedKey(int key) const;
+    MCNAPI int $getAdjustedKey(int key) const;
 
-    MCAPI ::std::string $getSaveString(::std::string const& action) const;
+    MCNAPI ::std::string $getSaveString(::std::string const& action) const;
 
-    MCAPI int $_rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const;
+    MCNAPI int $_rawKeyToKey(int rawKeyIndex, ::RawInputType rawInputType) const;
     // NOLINTEND
 
 public:

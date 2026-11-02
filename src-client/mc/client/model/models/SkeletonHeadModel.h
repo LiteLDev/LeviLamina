@@ -52,19 +52,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit SkeletonHeadModel(::GeometryPtr const source);
+    MCNAPI explicit SkeletonHeadModel(::GeometryPtr const source);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::GeometryPtr const source);
+    MCNAPI void* $ctor(::GeometryPtr const source);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(
+    MCNAPI void $render(
         ::ScreenContext& screenContext,
         ::Actor&         e,
         float            time,
@@ -75,10 +75,10 @@ public:
         float            scale
     );
 
-    MCFOLD void $render(::ScreenContext& screenContext);
+    MCNAPI void $render(::ScreenContext& screenContext);
 
-    MCFOLD void $render(::BaseActorRenderContext&);
+    MCNAPI void $render(::BaseActorRenderContext&);
 
-    MCAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
+    MCNAPI void $setupAnim(float time, float r, float bob, float yRot, float xRot, float scale);
     // NOLINTEND
 };

@@ -32,15 +32,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI StructurePlacementInfo(::BlockPos const& size, ::BlockPos const& origin);
+    MCNAPI StructurePlacementInfo(::BlockPos const& size, ::BlockPos const& origin);
 
-    MCAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
+    MCNAPI uint _findOrInsertPlacementIndex(::StructureBlockPlacementInfo const& info);
 
-    MCAPI ::StructureBlockPlacementInfo const& getBlockPlacementInfo(::BlockPos const& pos) const;
+    MCNAPI void _setBlockPlacementInfo(::BlockPos const& pos, ::StructureBlockPlacementInfo const& info);
 
-    MCAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
+    MCNAPI ::StructureBlockPlacementInfo const& getBlockPlacementInfo(::BlockPos const& pos) const;
 
-    MCAPI void handlePostPlacedStructureForArea(
+    MCNAPI ::StructurePlacementNeighbors getNeighbors(::BlockPos const& relativePos, ::Rotation rotation);
+
+    MCNAPI void handlePostPlacedStructureForArea(
         ::BlockSource&                                                     region,
         ::BlockPos const&                                                  startPos,
         ::BlockPos const&                                                  endPos,
@@ -49,21 +51,21 @@ public:
         ::std::function<void(::BlockPos const&, ::BlockPos const&)> const& preHandleBlock
     );
 
-    MCAPI void
+    MCNAPI void
     setBlockPlacementInfo(::BlockPos const& pos, ::Block const& block, ::NeighborAwareBlockUpdateType updateType);
 
-    MCAPI ~StructurePlacementInfo();
+    MCNAPI ~StructurePlacementInfo();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockPos const& size, ::BlockPos const& origin);
+    MCNAPI void* $ctor(::BlockPos const& size, ::BlockPos const& origin);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

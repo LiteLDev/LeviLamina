@@ -2,17 +2,14 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
-// auto generated inclusion list
-#include "mc/util/Mirror.h"
-#include "mc/util/Rotation.h"
-
 // auto generated forward declare list
 // clang-format off
-class Vec3;
+namespace cereal { struct ReflectionCtx; }
 // clang-format on
 
 class AABB;
 class BoundingBox;
+class Vec3;
 
 class BlockPos : public ll::math::intN3<BlockPos> {
 public:
@@ -27,23 +24,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BlockPos east() const;
+    MCNAPI ::BlockPos east() const;
 
-    MCAPI ::BlockPos north() const;
+    MCNAPI ::BlockPos north() const;
 
-    MCAPI ::BlockPos south() const;
+    MCNAPI ::BlockPos south() const;
 
     MCAPI ::std::string toString() const;
 
-    MCAPI ::BlockPos transform(::Rotation rotation, ::Mirror mirror, ::Vec3 const& pivot) const;
+    MCNAPI ::BlockPos west() const;
+    // NOLINTEND
 
-    MCAPI ::BlockPos west() const;
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BlockPos const& MAX();
+    MCNAPI static ::BlockPos const& MAX();
 
     MCAPI static ::BlockPos const& MIN();
 

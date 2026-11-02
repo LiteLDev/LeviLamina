@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Route(
+    MCNAPI Route(
         ::std::string const&             fileName,
         ::std::string const&             route,
         ::OreUI::RouteMode const         mode,
@@ -36,7 +36,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::string const&             fileName,
         ::std::string const&             route,
         ::OreUI::RouteMode const         mode,

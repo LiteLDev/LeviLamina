@@ -12,7 +12,7 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::TypedStorage<4, 4, ::Remapping::ActionEnum> mAction;
-    ::ll::TypedStorage<8, 8, char const*>             mActionName;
+    ::ll::TypedStorage<8, 16, ::std::string_view>     mActionName;
     // NOLINTEND
 };
 

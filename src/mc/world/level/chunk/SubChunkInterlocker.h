@@ -23,15 +23,15 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI bool tryLock3x3x3(::SubChunkPos const& center);
+    MCNAPI bool tryLock3x3x3(::SubChunkPos const& center);
 #endif
 
-    MCAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
+    MCNAPI bool tryLock3x3xN(::SubChunkPos const& bottom, int top);
 
 #ifdef LL_PLAT_C
-    MCAPI void unlock3x3x3(::SubChunkPos const& center);
+    MCNAPI void unlock3x3x3(::SubChunkPos const& center);
 #endif
 
-    MCAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);
+    MCNAPI void unlock3x3xN(::SubChunkPos const& bottom, int top);
     // NOLINTEND
 };

@@ -34,45 +34,48 @@ public:
 public:
     // prevent constructor by default
     TakeFlowerGoalDefinition& operator=(TakeFlowerGoalDefinition const&);
-    TakeFlowerGoalDefinition(TakeFlowerGoalDefinition const&);
     TakeFlowerGoalDefinition();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TakeFlowerGoalDefinition(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
+    MCNAPI TakeFlowerGoalDefinition(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&) const;
+    MCNAPI TakeFlowerGoalDefinition(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&);
 
-    MCAPI ~TakeFlowerGoalDefinition();
+    MCNAPI bool operator==(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&) const;
+
+    MCNAPI ~TakeFlowerGoalDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Vec3 const& DEFAULT_SEARCH_AREA();
+    MCNAPI static ::Vec3 const& DEFAULT_SEARCH_AREA();
 
-    MCAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
+    MCNAPI static ::SemVersionConstant const& JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION();
 
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition&&);
+
+    MCNAPI void* $ctor(::SharedTypes::v1_26_10::TakeFlowerGoalDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

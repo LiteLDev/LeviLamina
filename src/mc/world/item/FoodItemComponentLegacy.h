@@ -5,18 +5,22 @@
 // auto generated inclusion list
 #include "mc/deps/core/math/Vec3.h"
 #include "mc/deps/core/string/HashedString.h"
+#include "mc/molang/MolangVersion.h"
 #include "mc/world/effect/EffectDuration.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/ItemUseMethod.h"
 #include "mc/world/item/components/IFoodItemComponent.h"
 
 // auto generated forward declare list
 // clang-format off
 class Actor;
+class CompoundTag;
 class Item;
 class ItemStack;
 class Level;
 class Player;
 struct ItemOnUseResult;
+namespace Json { class Value; }
 // clang-format on
 
 class FoodItemComponentLegacy : public ::IFoodItemComponent {
@@ -79,7 +83,8 @@ public:
 
     virtual ::Item const* eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level) /*override*/;
 
-    virtual void use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player) /*override*/;
+    virtual void
+    use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot) /*override*/;
 
     virtual ::Item const* useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
@@ -93,27 +98,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+    MCNAPI void _applyEatEffects(::ItemStack const&, ::Actor& actor, ::Level& level);
+
+    MCNAPI ::std::unique_ptr<::CompoundTag> buildNetworkTag() const;
+
+    MCNAPI bool init(::Json::Value const& data, ::MolangVersion);
+    // NOLINTEND
+
+public:
+    // static functions
+    // NOLINTBEGIN
+    MCNAPI static ::Json::Value initializeFromNetwork(::CompoundTag const& tag);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI int $getNutrition() const;
-#else // LL_PLAT_C
-    MCFOLD int $getNutrition() const;
-#endif
+    MCNAPI int $getNutrition() const;
 
-    MCFOLD float $getSaturationModifier() const;
+    MCNAPI float $getSaturationModifier() const;
 
-    MCAPI bool $canAlwaysEat() const;
+    MCNAPI bool $canAlwaysEat() const;
 
-    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player);
+    MCNAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI ::Item const* $useTimeDepleted(
+    MCNAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,
         ::ItemStack const&,
         ::ItemStack& instance,
@@ -122,5 +133,11 @@ public:
     );
 
 
+    // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

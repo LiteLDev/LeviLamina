@@ -61,51 +61,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MountTamingComponentDefinition(::SharedTypes::v1_26_50::MountTamingComponentDefinition&&);
+    MCNAPI MountTamingComponentDefinition(::SharedTypes::v1_26_50::MountTamingComponentDefinition&&);
 
-    MCAPI MountTamingComponentDefinition(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&);
+    MCNAPI MountTamingComponentDefinition(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&);
 
-    MCAPI ::SharedTypes::v1_26_50::MountTamingComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::MountTamingComponentDefinition&
     operator=(::SharedTypes::v1_26_50::MountTamingComponentDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_50::MountTamingComponentDefinition&
+    MCNAPI ::SharedTypes::v1_26_50::MountTamingComponentDefinition&
     operator=(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&) const;
+    MCNAPI bool operator==(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&) const;
 
-    MCAPI ~MountTamingComponentDefinition();
+    MCNAPI ~MountTamingComponentDefinition();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& DEFAULT_ATTEMPT_TEMPER_MOD();
-
-    MCAPI static int const& DEFAULT_MAX_TEMPER();
-
-    MCAPI static int const& DEFAULT_MIN_TEMPER();
-
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::MountTamingComponentDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::MountTamingComponentDefinition&&);
 
-    MCAPI void* $ctor(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_50::MountTamingComponentDefinition const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

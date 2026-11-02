@@ -10,7 +10,7 @@ class PoolAliasBinding;
 namespace TrialChambersPieces {
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& ALIAS_BINDINGS();
+MCNAPI ::std::vector<::std::shared_ptr<::PoolAliasBinding>> const& ALIAS_BINDINGS();
 // NOLINTEND
 
 } // namespace TrialChambersPieces

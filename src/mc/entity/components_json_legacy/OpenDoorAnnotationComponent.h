@@ -22,12 +22,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _cleanUp(::Mob& mob);
+    MCNAPI void _cleanUp(::Mob& mob);
 
-    MCAPI void _tryToggleDoorState(::Block const& block, ::Mob& mob, ::BlockPos const doorPos) const;
+    MCNAPI void _tryToggleDoorState(::Block const& block, ::Mob& mob, ::BlockPos const doorPos) const;
 
-    MCAPI void checkPath(::Mob& mob);
+    MCNAPI void checkPath(::Mob& mob);
 
-    MCAPI void onComponentRemoved(::EntityContext& entity);
+    MCNAPI void onComponentRemoved(::EntityContext& entity);
     // NOLINTEND
 };

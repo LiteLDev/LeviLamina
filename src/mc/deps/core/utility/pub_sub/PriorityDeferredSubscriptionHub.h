@@ -84,23 +84,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $flushPendingEvents();
+    MCNAPI void $flushPendingEvents();
 
-    MCFOLD ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
+    MCNAPI ::Bedrock::PubSub::DeferredSubscriptionHub::HubType $getHubType() const;
 
-    MCAPI bool $_runOneEvent();
+    MCNAPI bool $_runOneEvent();
 
-    MCAPI void $_enqueue(
+    MCNAPI void $_enqueue(
         ::brstd::move_only_function<void()> fn,
         ::Bedrock::PubSub::ConnectPosition  at,
         ::std::optional<int>                group
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
-#else // LL_PLAT_C
-    MCFOLD void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
-#endif
+    MCNAPI void $_runDequeuedEntry(::Bedrock::PubSub::PriorityDeferredSubscriptionHub::DequeuedEntry&& entry);
 
 
     // NOLINTEND

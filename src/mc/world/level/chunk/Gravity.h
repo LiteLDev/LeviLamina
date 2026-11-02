@@ -46,13 +46,14 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>> const& TERRAIN_MATCHING();
+    MCNAPI static ::gsl::not_null<::std::shared_ptr<::br::worldgen::StructureProcessor const>> const&
+    TERRAIN_MATCHING();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
+    MCNAPI ::std::optional<::br::worldgen::StructureBlockInfo> $process(
         ::IBlockSource& region,
         ::BlockPos,
         ::BlockPos,
@@ -61,17 +62,11 @@ public:
         ::br::worldgen::StructurePlaceSettings const&
     ) const;
 
-    MCFOLD ::br::worldgen::StructureProcessorType $type() const;
+    MCNAPI ::br::worldgen::StructureProcessorType $type() const;
 
-    MCAPI void $appendMetadataKey(::Util::XXHash& hash) const;
+    MCNAPI void $appendMetadataKey(::Util::XXHash& hash) const;
 
 
-    // NOLINTEND
-
-public:
-    // vftables
-    // NOLINTBEGIN
-    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

@@ -10,6 +10,7 @@
 // auto generated forward declare list
 // clang-format off
 namespace Bedrock::Http { class HeaderCollection; }
+namespace Bedrock::Http::Internal { struct WebSocketCallbackContext; }
 struct HC_WEBSOCKET_OBSERVER;
 // clang-format on
 
@@ -19,6 +20,7 @@ class WebSocket : public ::std::enable_shared_from_this<::Bedrock::Http::WebSock
 public:
     // member variables
     // NOLINTBEGIN
+    ::ll::UntypedStorage<8, 16> mUnk90188a;
     ::ll::UntypedStorage<8, 80> mUnk2c8c31;
     ::ll::UntypedStorage<8, 8>  mUnk2d81af;
     ::ll::UntypedStorage<8, 8>  mUnk5cda29;
@@ -28,7 +30,6 @@ public:
     // prevent constructor by default
     WebSocket& operator=(WebSocket const&);
     WebSocket(WebSocket const&);
-    WebSocket();
 
 public:
     // virtual functions
@@ -47,6 +48,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI WebSocket();
+
     MCNAPI ::Bedrock::Threading::Async<::nonstd::expected<::Bedrock::Http::StatusCode, ::std::error_code>>
     connect(::std::string const& uri, ::Bedrock::Http::HeaderCollection const& headers);
     // NOLINTEND
@@ -54,7 +57,16 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _deallocateSocketAsync(::HC_WEBSOCKET_OBSERVER* handle);
+    MCNAPI static void _deallocateSocketAsync(
+        ::HC_WEBSOCKET_OBSERVER*                                               handle,
+        ::std::shared_ptr<::Bedrock::Http::Internal::WebSocketCallbackContext> callbackContext
+    );
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:

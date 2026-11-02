@@ -3,13 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/PersistenceGroupChangeAction.h"
-#include "mc/common/editor/PersistenceGroupItemChangeAction.h"
-#include "mc/common/editor/PersistenceGroupType.h"
-#include "mc/common/editor/PersistenceScope.h"
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/game_refs/StackRefResult.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/PersistenceGroupChangeAction.h"
+#include "mc/editor/PersistenceGroupItemChangeAction.h"
+#include "mc/editor/PersistenceGroupType.h"
+#include "mc/editor/PersistenceScope.h"
 #include "mc/editor/services/persistence/EditorPersistenceService.h"
 
 // auto generated forward declare list

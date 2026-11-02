@@ -27,10 +27,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    DataDrivenRenderer_tempComponent_EnderCrystalAdditionalRendering();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&) /*override*/;
@@ -43,31 +39,18 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI explicit DataDrivenRenderer_tempComponent_EnderCrystalAdditionalRendering(
-        ::std::shared_ptr<::DataDrivenRenderer> renderer
-    );
-    // NOLINTEND
-
-public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void tessellateCrystalBeam(::Tessellator& tessellator, ::Vec3 const& beamStart, ::Vec3 const& beamEnd);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::DataDrivenRenderer> renderer);
+    MCNAPI static void
+    tessellateCrystalBeam(::Tessellator& tessellator, ::Vec3 const& beamStart, ::Vec3 const& beamEnd);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
+    MCNAPI void $render(::BaseActorRenderContext&, ::ActorRenderData&, ::RenderParams&);
 
-    MCAPI void $renderEffects(
+    MCNAPI void $renderEffects(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams

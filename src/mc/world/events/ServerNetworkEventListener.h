@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 struct DiagnosticsEvent;
+struct MatchmakingTicketCancelRequestedEvent;
 struct MessageEvent;
 struct PartyChangedEvent;
 struct PartyDestinationCookieResponseEvent;
@@ -33,20 +34,24 @@ public:
     virtual ::EventResult onPartyChanged(::PartyChangedEvent const& event);
 
     virtual ::EventResult onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+
+    virtual ::EventResult onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const& event);
+    MCNAPI ::EventResult $onEvent(::ServerNetworkGameplayNotificationEvent const& event);
 
-    MCFOLD ::EventResult $onMessage(::MessageEvent const& messageEvent);
+    MCNAPI ::EventResult $onMessage(::MessageEvent const& messageEvent);
 
-    MCFOLD ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
+    MCNAPI ::EventResult $onDiagnostics(::DiagnosticsEvent const& diagnosticsEvent);
 
-    MCFOLD ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
+    MCNAPI ::EventResult $onPartyChanged(::PartyChangedEvent const& event);
 
-    MCFOLD ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+    MCNAPI ::EventResult $onPartyDestinationCookieResponse(::PartyDestinationCookieResponseEvent const& event);
+
+    MCNAPI ::EventResult $onMatchmakingTicketCancelRequested(::MatchmakingTicketCancelRequestedEvent const& event);
 
 
     // NOLINTEND

@@ -9,7 +9,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class CompoundTag;
 class Objective;
 class Scoreboard;
 // clang-format on
@@ -32,16 +31,8 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI static ::std::unique_ptr<::CompoundTag> serialize(::ScoreboardIdentityRef const& toSave);
-#endif
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ScoreboardIdentityRef const& Undefined();
+    MCNAPI static ::ScoreboardIdentityRef const& Undefined();
     // NOLINTEND
 };

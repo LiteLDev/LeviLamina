@@ -5,6 +5,7 @@
 // auto generated inclusion list
 #include "mc/world/level/BlockPos.h"
 #include "mc/world/level/chunk/NeighborAwareBlockUpgradeVersionType.h"
+#include "mc/world/level/levelgen/structure/StructureCompression.h"
 #include "mc/world/level/levelgen/structure/StructureLoadResult.h"
 
 // auto generated forward declare list
@@ -43,71 +44,59 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseBlockIndices(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
+    MCNAPI ::StructureLoadResult _parseEntities(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseFormatVersion(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
 
-    MCAPI ::StructureLoadResult _parseNeighborAwareBlockUpgradeVersion(::CompoundTag const& tag);
+    MCNAPI void _saveSize(::CompoundTag& tag) const;
 
-    MCAPI ::StructureLoadResult _parsePalettes(::CompoundTag const& structureTag);
+    MCNAPI bool _saveStructureTag(::CompoundTag& tag, ::StructureCompression compression) const;
 
-    MCAPI ::StructureLoadResult _parseSize(::CompoundTag const& tag);
+    MCNAPI void _saveStructureWorldOrigin(::CompoundTag& tag) const;
 
-    MCAPI ::CompoundTag const* _parseStructureTag(::CompoundTag const& tag);
+    MCNAPI ::StructureLoadResult _validateSizeAndBlockIndicesSize() const;
 
-    MCAPI ::StructureLoadResult _parseStructureWorldOrigin(::CompoundTag const& tag);
-
-    MCAPI void _saveBlockIndices(::CompoundTag& structureTag) const;
-
-    MCAPI void _saveEntities(::CompoundTag& structureTag) const;
-
-    MCAPI void _savePalettes(::CompoundTag& structureTag) const;
-
-    MCAPI void _saveSize(::CompoundTag& tag) const;
-
-    MCAPI void _saveStructureTag(::CompoundTag& tag) const;
-
-    MCAPI void _saveStructureWorldOrigin(::CompoundTag& tag) const;
-
-    MCAPI ::StructureLoadResult _validateSizeAndBlockIndicesSize() const;
-
-    MCAPI void clear();
+    MCNAPI void clear();
 
     MCAPI ::StructureBlockPalette const* getPalette(::std::string const& name) const;
 
-    MCAPI bool load(::CompoundTag const& tag);
+    MCNAPI bool load(::CompoundTag const& tag);
 
-    MCAPI ::StructureTemplateData& operator=(::StructureTemplateData&&);
+    MCNAPI ::StructureTemplateData& operator=(::StructureTemplateData&&);
 
-    MCAPI bool operator==(::StructureTemplateData const& other) const;
+    MCNAPI bool operator==(::StructureTemplateData const& other) const;
 
-    MCAPI ::std::unique_ptr<::CompoundTag> save() const;
+    MCNAPI ::std::unique_ptr<::CompoundTag> save(::StructureCompression compression) const;
 
-    MCAPI void setBlockIndices(::std::vector<int> blockIndices);
+    MCNAPI void setBlockIndices(::std::vector<int> blockIndices);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool _readBlockIndexArray(::Tag const& tag, int formatVersion, ::std::vector<int>& blockIndices);
+    MCNAPI static ::CompoundTag const* _parseStructureTag(
+        ::CompoundTag const&              tag,
+        ::StructureCompression            compression,
+        ::std::unique_ptr<::CompoundTag>& decompressedStructure
+    );
+
+    MCNAPI static bool _readBlockIndexArray(::Tag const& tag, int formatVersion, ::std::vector<int>& blockIndices);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static int const& CURRENT_FORMAT_VERSION();
-
     MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
 
-    MCAPI static int const& NO_BLOCK_INDEX_VALUE();
+    MCNAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

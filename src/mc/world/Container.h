@@ -24,6 +24,7 @@
 class Actor;
 class BlockSource;
 class CompoundTag;
+class DynamicContainerTracker;
 class ItemDescriptor;
 class ItemStack;
 class Random;
@@ -193,49 +194,51 @@ public:
     virtual bool isEmpty() const;
 
     virtual bool isSlotDisabled(int slot) const;
+
+    virtual void receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
     // NOLINTEND
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Container(::Container const&);
+    MCNAPI Container(::Container const&);
 
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCNAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
 #ifdef LL_PLAT_C
-    MCAPI Container(
+    MCNAPI Container(
         ::SharedTypes::Legacy::ContainerType       type,
         ::Bedrock::Safety::RedactableString const& name,
         bool                                       customName
     );
 #endif
 
-    MCAPI void
+    MCNAPI void
     _dropSlotContent(::BlockSource& region, ::Random& random, ::Vec3 const& pos, bool randomizeDrop, int slot);
 
-    MCAPI void
+    MCNAPI void
     _serverInitId(int slot, ::ItemStack& item, ::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
 
-    MCAPI void createTransactionContext(
+    MCNAPI void createTransactionContext(
         ::brstd::copyable_function<void(::Container&, int, ::ItemStack const&, ::ItemStack const&)> callback,
         ::brstd::function_ref<void()>                                                               execute
     );
 
-    MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
+    MCNAPI int getItemCount(::ItemDescriptor const& descriptor) const;
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 
-    MCAPI ::Container& operator=(::Container const&);
+    MCNAPI ::Container& operator=(::Container const&);
 
-    MCAPI void serverInitItemStackIdsAll(::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
+    MCNAPI void serverInitItemStackIdsAll(::std::function<void(int, ::ItemStack const&)> onNetIdChanged);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
+    MCNAPI static ::SharedTypes::Legacy::ContainerType getContainerTypeId(::std::string const& name);
     // NOLINTEND
 
 public:
@@ -248,14 +251,14 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Container const&);
+    MCNAPI void* $ctor(::Container const&);
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
-    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
 #ifdef LL_PLAT_C
-    MCAPI void*
+    MCNAPI void*
     $ctor(::SharedTypes::Legacy::ContainerType type, ::Bedrock::Safety::RedactableString const& name, bool customName);
 #endif
     // NOLINTEND
@@ -329,7 +332,11 @@ public:
 
     MCAPI void $setCustomName(::Bedrock::Safety::RedactableString const& name);
 
+#ifdef LL_PLAT_S
     MCAPI bool $hasCustomName() const;
+#else // LL_PLAT_C
+    MCFOLD bool $hasCustomName() const;
+#endif
 
     MCAPI void $readAdditionalSaveData(::CompoundTag const& tag);
 
@@ -341,12 +348,14 @@ public:
 
     MCFOLD bool $isSlotDisabled(int slot) const;
 
+    MCNAPI void $receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
+
 
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

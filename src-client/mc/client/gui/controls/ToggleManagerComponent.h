@@ -44,17 +44,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
+    MCNAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCFOLD void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,

@@ -8,10 +8,12 @@ class AudioDecodeContext {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk486802;
-    ::ll::UntypedStorage<8, 8>  mUnkbf9721;
-    ::ll::UntypedStorage<8, 8>  mUnk103abc;
-    ::ll::UntypedStorage<8, 8>  mUnkef28e3;
+    ::ll::UntypedStorage<8, 16>  mUnk486802;
+    ::ll::UntypedStorage<8, 8>   mUnkbf9721;
+    ::ll::UntypedStorage<8, 256> mUnk4727fc;
+    ::ll::UntypedStorage<4, 4>   mUnkace0f4;
+    ::ll::UntypedStorage<8, 8>   mUnk103abc;
+    ::ll::UntypedStorage<8, 8>   mUnkef28e3;
     // NOLINTEND
 
 public:

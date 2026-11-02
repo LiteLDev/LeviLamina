@@ -17,7 +17,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $nextFloat();
+    MCNAPI float $nextFloat();
 
 
     // NOLINTEND

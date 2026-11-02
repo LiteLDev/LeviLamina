@@ -29,14 +29,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool pushOutItems(::BlockSource& region);
+    MCNAPI bool pushOutItems(::BlockSource& region);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
+    MCNAPI static bool
+    _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+#endif
+
+#ifdef LL_PLAT_C
     MCAPI static bool
     _tryMoveInItemsAndDepleteStack(::Container& container, ::ItemStack& item, int stackSizeLimit, int slot, int face);
+#endif
 
     MCAPI static ::Container* getContainerAt(::BlockSource& region, ::Vec3 const& pos);
     // NOLINTEND
@@ -44,11 +51,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::string $getName() const;
+    MCNAPI ::std::string $getName() const;
 
-    MCAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
+    MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
-    MCAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+    MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
 
     // NOLINTEND

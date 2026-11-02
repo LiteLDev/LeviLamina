@@ -32,8 +32,9 @@ namespace SharedTypes::v1_26_10 { struct ActorDocument; }
 namespace SharedTypes::v1_26_20 { struct ActorDocument; }
 namespace SharedTypes::v1_26_30 { struct ActorDocument; }
 namespace SharedTypes::v1_26_40 { struct ActorDocument; }
-namespace SharedTypes::v1_26_50 { struct ActorDefinitions; }
 namespace SharedTypes::v1_26_50 { struct ActorDocument; }
+namespace SharedTypes::v1_26_60 { struct ActorDefinitions; }
+namespace SharedTypes::v1_26_60 { struct ActorDocument; }
 namespace cereal { class DynamicValue; }
 namespace cereal { struct ReflectionCtx; }
 // clang-format on
@@ -50,7 +51,7 @@ public:
     using FillDefinitionCb = ::std::function<::ActorMigratedDefinitionFactory::InitResult(
         ::ActorDefinitionDescriptor&,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_50::ActorDefinitions,
+            ::SharedTypes::v1_26_60::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>
     )>;
 
@@ -58,7 +59,7 @@ public:
         ::ActorDefinition&,
         ::ActorDefinitionDescriptor&,
         ::ComponentStorageLoadDataRefVariant<
-            ::SharedTypes::v1_26_50::ActorDefinitions,
+            ::SharedTypes::v1_26_60::ActorDefinitions,
             ::SharedTypes::Beta::ActorDefinitions>
     );
 
@@ -83,7 +84,7 @@ public:
             ::ActorDefinition&,
             ::ActorDefinitionDescriptor&,
             ::ComponentStorageLoadDataRefVariant<
-                ::SharedTypes::v1_26_50::ActorDefinitions,
+                ::SharedTypes::v1_26_60::ActorDefinitions,
                 ::SharedTypes::Beta::ActorDefinitions>
         )>>
         mFillActorDescriptionCbs;
@@ -93,13 +94,13 @@ public:
         ::std::vector<::std::function<::ActorMigratedDefinitionFactory::InitResult(
             ::ActorDefinitionDescriptor&,
             ::ComponentStorageLoadDataRefVariant<
-                ::SharedTypes::v1_26_50::ActorDefinitions,
+                ::SharedTypes::v1_26_60::ActorDefinitions,
                 ::SharedTypes::Beta::ActorDefinitions>
         )>>>
         mFillActorDefinitionCbs;
     ::ll::TypedStorage<
         8,
-        288,
+        312,
         ::std::tuple<
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::Legacy::ActorDocumentCorrected,
@@ -147,6 +148,10 @@ public:
                                    ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
             ::std::vector<void (*)(::Puv::CerealUpgrader<
                                    ::SharedTypes::v1_26_50::ActorDocument,
+                                   ::SharedTypes::v1_26_60::ActorDocument,
+                                   ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>,
+            ::std::vector<void (*)(::Puv::CerealUpgrader<
+                                   ::SharedTypes::v1_26_60::ActorDocument,
                                    ::SharedTypes::Beta::ActorDocument,
                                    ::JsonComponentGlueUtils::CustomUpgradeData const&>&)>>>
                                                                         mLegacyUpgradeCallbacks;
@@ -158,42 +163,31 @@ public:
         mDocumentLoader;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     ActorMigratedDefinitionFactory();
 
-#endif
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI explicit ActorMigratedDefinitionFactory(::Experiments const& experiments);
+    MCNAPI explicit ActorMigratedDefinitionFactory(::Experiments const& experiments);
 
-    MCAPI void _initialize();
-#endif
+    MCNAPI void _initialize();
 
-#ifdef LL_PLAT_S
-    MCAPI void _initialize();
-#endif
+    MCNAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
 
-    MCAPI ::IJsonDefinitionSerializer* _tryGetDefinitionSerializer(::std::string_view name) const;
+    MCNAPI void resetLoader();
 
-    MCAPI void resetLoader();
-
-    MCAPI void
+    MCNAPI void
     setLoaderCustomData(::BedrockLoadContext customParseData, ::DeserializeDataSettings customUpgradeData) const;
 
-#ifdef LL_PLAT_C
-    MCAPI ~ActorMigratedDefinitionFactory();
-#endif
+    MCNAPI ~ActorMigratedDefinitionFactory();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
+    MCNAPI static ::LegacyGoalDefinition _parseLegacyGoalDefinition(
         ::std::string                    name,
         ::cereal::DynamicValue const&    def,
         ::DeserializeDataSettings const& settings
@@ -203,16 +197,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(::Experiments const& experiments);
-#endif
+    MCNAPI void* $ctor(::Experiments const& experiments);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void $dtor();
-#endif
+    MCNAPI void $dtor();
     // NOLINTEND
 };

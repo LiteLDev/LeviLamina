@@ -69,6 +69,11 @@ public:
         TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
                                                                         mVisibleTo;
     ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mVisibleToClients;
+    ::ll::
+        TypedStorage<8, 24, ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>>>
+                                                                        mHiddenFrom;
+    ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mHiddenFromClients;
+    ::ll::TypedStorage<1, 1, bool>                                      mDefaultVisibleToAll;
     ::ll::TypedStorage<8, 16, ::std::set<::NetworkIdentifierWithSubId>> mSentToClients;
     ::ll::TypedStorage<8, 8, uint64>                                    mNetworkId;
     ::ll::TypedStorage<4, 4, uint>                                      mFlags;
@@ -98,30 +103,40 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
+    MCNAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
+    MCNAPI ScriptPrimitiveShape(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
 
-    MCAPI ScriptPrimitiveShape(
+    MCNAPI ScriptPrimitiveShape(
         ::ScriptModuleMinecraft::ScriptPrimitiveShapeType                               shapeType,
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
         bool                                                                            isDebugShape
     );
 
-    MCAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    getHiddenFrom() const;
+
+    MCNAPI ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const&
+    getVisibleTo() const;
+
+    MCNAPI ::ScriptModuleMinecraft::ScriptPrimitiveShape&
     operator=(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI void setAttachedTo(
+    MCNAPI void setAttachedTo(
         ::std::optional<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>> const& attachedTo
     );
 
-    MCAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
+    MCNAPI void setHiddenFrom(
+        ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& hiddenFrom
+    );
 
-    MCAPI void setMaxRenderDistance(::std::optional<float> dist);
+    MCNAPI void setLocation(::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location);
 
-    MCAPI void setTotalTimeLeft(::std::optional<float> timeSec);
+    MCNAPI void setMaxRenderDistance(::std::optional<float> dist);
 
-    MCAPI void setVisibleTo(
+    MCNAPI void setTotalTimeLeft(::std::optional<float> timeSec);
+
+    MCNAPI void setVisibleTo(
         ::std::vector<::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer>> const& visibleTo
     );
     // NOLINTEND
@@ -129,17 +144,17 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShape const&);
 
-    MCAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
+    MCNAPI void* $ctor(::ScriptModuleMinecraft::ScriptPrimitiveShapeType shapeType, bool isDebugShape);
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ScriptModuleMinecraft::ScriptPrimitiveShapeType                               shapeType,
         ::std::variant<::ScriptModuleMinecraft::ScriptDimensionLocation, ::Vec3> const& location,
         bool                                                                            isDebugShape
@@ -149,15 +164,15 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $populatePacketData(::PrimitiveShapeDataPayload& packet) const;
+    MCNAPI void $populatePacketData(::PrimitiveShapeDataPayload& packet) const;
 
-    MCAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& packet);
+    MCNAPI void $applyUpdatedData(::PrimitiveShapeDataPayload const& packet);
 
 
     // NOLINTEND

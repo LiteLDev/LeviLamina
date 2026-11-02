@@ -16,8 +16,8 @@
 // auto generated forward declare list
 // clang-format off
 class DlcUIWrapper;
-class EDUAddServerScreenController;
-class EDUPasscodeEntryScreenController;
+class EduAddServerScreenController;
+class EduPasscodeEntryScreenController;
 class IContentManager;
 class PlayScreenModel;
 class UIPropertyBag;
@@ -27,7 +27,7 @@ namespace Json { class Value; }
 namespace Social { struct EduDedicatedServerDetails; }
 // clang-format on
 
-class EDUServersScreenController : public ::SettingsScreenControllerBase {
+class EduServersScreenController : public ::SettingsScreenControllerBase {
 public:
     // member variables
     // NOLINTBEGIN
@@ -66,8 +66,8 @@ public:
             ::std::vector<::std::string>,
             ::std::vector<::std::string>>>
                                                                                      mUnmatchedServers;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUAddServerScreenController>>     mAddServerScreenController;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EDUPasscodeEntryScreenController>> mPasscodeEntryScreenController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduAddServerScreenController>>     mAddServerScreenController;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::EduPasscodeEntryScreenController>> mPasscodeEntryScreenController;
     ::ll::TypedStorage<
         8,
         128,
@@ -86,14 +86,14 @@ public:
 
 public:
     // prevent constructor by default
-    EDUServersScreenController& operator=(EDUServersScreenController const&);
-    EDUServersScreenController(EDUServersScreenController const&);
-    EDUServersScreenController();
+    EduServersScreenController& operator=(EduServersScreenController const&);
+    EduServersScreenController(EduServersScreenController const&);
+    EduServersScreenController();
 
 public:
     // virtual functions
     // NOLINTBEGIN
-    virtual ~EDUServersScreenController() /*override*/ = default;
+    virtual ~EduServersScreenController() /*override*/ = default;
 
     virtual void onOpen() /*override*/;
 
@@ -109,54 +109,55 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit EDUServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI explicit EduServersScreenController(::std::shared_ptr<::PlayScreenModel> model);
 
-    MCAPI void _closeAddServerModal();
+    MCNAPI void _closeAddServerModal();
 
-    MCAPI void _closePasscodeEntryModal();
+    MCNAPI void _closePasscodeEntryModal();
 
-    MCAPI void _closeSharePopup();
+    MCNAPI void _closeSharePopup();
 
-    MCAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
+    MCNAPI ::std::optional<::Social::EduDedicatedServerDetails> _getServerDetails(::UIPropertyBag& bag) const;
 
-    MCAPI void _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
+    MCNAPI void
+    _launchShareUri(::std::string const& uri, ::std::string const& toastMsg, ::std::string const& eventName);
 
-    MCAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
+    MCNAPI void _refreshServerInfo(::std::vector<::std::string> serverIds, ::Social::EduRefreshType const& refreshType);
 
-    MCAPI void _requestAddServer(::std::string const& serverId);
+    MCNAPI void _requestAddServer(::std::string const& serverId);
 
-    MCAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
+    MCNAPI void _requestJoinServer(::Social::EduDedicatedServerDetails const& details, ::std::string const& passcode);
 
-    MCAPI void _showAddServerModal();
+    MCNAPI void _showAddServerModal();
 
-    MCAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
+    MCNAPI void _showFetchErrorMessage(::Social::EduResponseError& error);
 
-    MCAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
+    MCNAPI void _showPasscodeEntryModal(::Social::EduDedicatedServerDetails const& details);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
+    MCNAPI static uint64 _getTileIndex(::UIPropertyBag& bag);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
+    MCNAPI void* $ctor(::std::shared_ptr<::PlayScreenModel> model);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $onTerminate();
+    MCNAPI void $onTerminate();
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+    MCNAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
     // NOLINTEND
 };

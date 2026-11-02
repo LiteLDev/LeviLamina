@@ -12,6 +12,7 @@
 // clang-format off
 class BlockPalette;
 class BlockSource;
+class BoundingBox;
 class ChunkPos;
 class Vec3;
 class WeakEntityRef;
@@ -93,6 +94,8 @@ public:
 
     virtual ::Scripting::Result_deprecated<void>
     applyInstanceSnapshot(::Editor::Prefabs::PrefabDBInstanceLoader::v1::InstanceData const& data) = 0;
+
+    virtual ::BoundingBox getPrefabInstanceBounds(::Editor::Prefabs::PrefabDBPrefabInstance const& instance) const = 0;
 
     virtual ::Scripting::Result_deprecated<void> deleteInstanceById(::mce::UUID const& instanceId) = 0;
 

@@ -31,9 +31,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SculkSpreader();
+    MCNAPI SculkSpreader();
 
-    MCAPI SculkSpreader(
+    MCNAPI SculkSpreader(
         bool isWorldGen,
         int  growthSpawnCost,
         int  noGrowthRadius,
@@ -41,11 +41,11 @@ public:
         int  additionalDecayRate
     );
 
-    MCAPI void load(::CompoundTag const& tag);
+    MCNAPI void load(::CompoundTag const& tag);
 
-    MCAPI void save(::CompoundTag& tag) const;
+    MCNAPI void save(::CompoundTag& tag) const;
 
-    MCAPI void updateCursors(
+    MCNAPI void updateCursors(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,
@@ -57,9 +57,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
 
-    MCAPI void*
+    MCNAPI void*
     $ctor(bool isWorldGen, int growthSpawnCost, int noGrowthRadius, int chargeDecayRate, int additionalDecayRate);
     // NOLINTEND
 };

@@ -31,7 +31,7 @@ public:
     ::ll::TypedStorage<8, 32, ::std::string>                           mXUID;
     ::ll::TypedStorage<8, 32, ::std::string>                           mPlatformOnlineId;
     ::ll::TypedStorage<8, 32, ::std::string>                           mPlayerName;
-    ::ll::TypedStorage<8, 144, ::OreUI::AllowListProfileImage>         mProfileImage;
+    ::ll::TypedStorage<8, 176, ::OreUI::AllowListProfileImage>         mProfileImage;
     ::ll::TypedStorage<8, 96, ::OreUI::AllowListPath>                  mPlatformImage;
     ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>         mProfileSubscription;
     ::ll::TypedStorage<1, 2, ::std::optional<::PlayerPermissionLevel>> mPermissionLevel;
@@ -42,18 +42,21 @@ public:
 
 public:
     // prevent constructor by default
+    WorldPlayerInfoBindings& operator=(WorldPlayerInfoBindings const&);
     WorldPlayerInfoBindings();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldPlayerInfoBindings(
+    MCNAPI WorldPlayerInfoBindings(::OreUI::WorldPlayerInfoBindings const& data);
+
+    MCNAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
         ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
     );
 
-    MCAPI WorldPlayerInfoBindings(
+    MCNAPI WorldPlayerInfoBindings(
         ::mce::UUID                              uuid,
         ::LocalPlayer const*                     localPlayer,
         ::std::shared_ptr<::Social::User>        user,
@@ -62,19 +65,21 @@ public:
         ::BuildPlatform                          platform
     );
 
-    MCAPI ::std::string const& getActiveProfileImage() const;
+    MCNAPI ~WorldPlayerInfoBindings();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(::OreUI::WorldPlayerInfoBindings const& data);
+
+    MCNAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::PlayerListEntry const*                 playerDetails,
         ::std::optional<::PlayerPermissionLevel> playerPermissionLevel
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::mce::UUID                              uuid,
         ::LocalPlayer const*                     localPlayer,
         ::std::shared_ptr<::Social::User>        user,
@@ -82,6 +87,12 @@ public:
         bool                                     isHost,
         ::BuildPlatform                          platform
     );
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

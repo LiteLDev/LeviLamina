@@ -7,7 +7,6 @@
 
 // auto generated forward declare list
 // clang-format off
-class BaseActorRenderContext;
 class ClientPBRTextureData;
 class ExpressionNode;
 class MaterialVariants;
@@ -38,28 +37,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI SkinnedMeshGroup(
+    MCNAPI SkinnedMeshGroup(
         ::ModelPart& modelPart,
         int          skinnedMeshGroupIdentifier,
         bool         isUniqueGroup,
         uint64       skinnedMeshGroupIndex
     );
 
-    MCAPI bool canRegisterPart(::ModelPart const& modelPart, int skinnedMeshGroupIdentifier) const;
-
-    MCAPI void
-    constructMesh(::BaseActorRenderContext& baseActorRenderContext, ::MaterialVariants const& defaultMaterialVariants);
-
-    MCAPI void copyBoneMatrixToSkinnedMesh(
-        int                            meshIndex,
-        int                            partIndex,
-        bool                           isVisible,
-        ::Matrix const&                matrix,
-        int                            vertexCount,
-        ::std::optional<::glm::mat4x4> previousMatrix
+    MCNAPI void copyBoneMatrixToSkinnedMesh(
+        int                                                       meshIndex,
+        int                                                       partIndex,
+        bool                                                      isVisible,
+        ::Matrix const&                                           matrix,
+        int                                                       vertexCount,
+        ::std::optional<::std::reference_wrapper<::Matrix const>> previousMatrix
     );
 
-    MCAPI void dataDrivenDraw(
+    MCNAPI void dataDrivenDraw(
         ::RenderParams&                            renderParams,
         ::dragon::RenderMetadata const&            renderMetadata,
         ::gsl::not_null<::RenderController const*> renderController,
@@ -67,7 +61,7 @@ public:
         ::std::optional<::MERSUniformData> const&  mersUniforms
     );
 
-    MCAPI void draw(
+    MCNAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::MaterialVariants const&                 modelMaterialVariants,
@@ -75,16 +69,21 @@ public:
         ::std::optional<::MERSUniformData> const& mersUniforms
     );
 
-    MCAPI bool
-    isMaterialExpressionMapEqual(::std::unordered_map<::RenderController const*, ::ExpressionNode> const& rhs) const;
+    MCNAPI void registerPart(::ModelPart& part, int groupIndex);
 
-    MCAPI void registerPart(::ModelPart& part, int groupIndex);
+    MCNAPI ~SkinnedMeshGroup();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void*
+    MCNAPI void*
     $ctor(::ModelPart& modelPart, int skinnedMeshGroupIdentifier, bool isUniqueGroup, uint64 skinnedMeshGroupIndex);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };

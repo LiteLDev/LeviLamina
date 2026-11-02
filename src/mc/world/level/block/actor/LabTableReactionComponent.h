@@ -24,9 +24,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD void $_onStart(::LabTableReaction&, ::BlockSource&);
+    MCNAPI void $_onStart(::LabTableReaction&, ::BlockSource&);
 
-    MCFOLD void $_onTick(::LabTableReaction&, ::BlockSource&);
+    MCNAPI void $_onTick(::LabTableReaction&, ::BlockSource&);
 
 
     // NOLINTEND

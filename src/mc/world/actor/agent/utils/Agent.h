@@ -15,9 +15,10 @@ namespace Util::Agent { struct SimulatedMoveResult; }
 namespace Util::Agent {
 // functions
 // NOLINTBEGIN
-MCAPI ::Vec3 getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
+MCNAPI ::Vec3
+getNextPosFromDirection(::Vec3 const& startPosition, float bodyRotation, ::AgentComponents::Direction dir);
 
-MCAPI ::Util::Agent::SimulatedMoveResult
+MCNAPI ::Util::Agent::SimulatedMoveResult
 simulateMove(::EntityContext& entity, ::AgentComponents::Direction dir, ::Vec3 destination);
 // NOLINTEND
 

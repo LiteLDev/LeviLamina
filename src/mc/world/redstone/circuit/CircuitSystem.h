@@ -34,16 +34,16 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::BaseCircuitComponent*
+    MCNAPI ::BaseCircuitComponent*
     createComponent(::BlockPos const& pos, uchar direction, ::std::unique_ptr<::BaseCircuitComponent> newComponent);
 
     MCAPI void evaluate(::BlockSource* region);
 
 #ifdef LL_PLAT_C
-    MCAPI void evaluateComponents(bool bOnlyProducers);
+    MCNAPI void evaluateComponents(bool bOnlyProducers);
 #endif
 
-    MCAPI bool isConnectionAllowed(
+    MCNAPI bool isConnectionAllowed(
         ::BaseCircuitComponent& component,
         ::BlockPos const&       componentPos,
         uchar                   connectionDirection,

@@ -81,45 +81,45 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $fireEvent(
+    MCNAPI void $fireEvent(
         ::std::string const&                                eventName,
         ::std::vector<::Social::Events::Property> const&    properties,
         ::std::vector<::Social::Events::Measurement> const& measurements,
         bool                                                shouldAggregate
     );
 
-    MCAPI void $fireEventOreUIScreenLoadFailed();
+    MCNAPI void $fireEventOreUIScreenLoadFailed();
 
-    MCAPI void $fireEventOreUIJsException();
+    MCNAPI void $fireEventOreUIJsException();
 
-    MCAPI void $fireEventOreUIScreenPerformance(::OreUI::DataTracker const& dataTracker);
+    MCNAPI void $fireEventOreUIScreenPerformance(::OreUI::DataTracker const& dataTracker);
 
-    MCAPI void $fireEventButtonPressed(
+    MCNAPI void $fireEventButtonPressed(
         ::std::string const&                                      buttonName,
         ::std::unordered_map<::std::string, ::std::string> const& details
     );
 
-    MCAPI void $fireEventModalShown(
+    MCNAPI void $fireEventModalShown(
         ::std::string const&                                      modalName,
         ::std::unordered_map<::std::string, ::std::string> const& details
     );
 
-    MCAPI void
+    MCNAPI void
     $fireEventOptionsChanged(::std::string const& optionsGroup, ::std::unordered_map<::std::string, int> const& events);
 
-    MCAPI void $fireEventOptionsChangedAlt(
+    MCNAPI void $fireEventOptionsChangedAlt(
         ::std::string const&                                                       optionsGroup,
         ::std::unordered_map<::std::string, ::Social::Events::OptionChange> const& changes
     );
 
-    MCAPI void $fireEventRealmsStoriesOptIn(
+    MCNAPI void $fireEventRealmsStoriesOptIn(
         ::std::string const& correlationId,
         ::std::string const& action,
         ::std::string const& realmId,
         bool                 isOwner
     );
 
-    MCAPI void $fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
+    MCNAPI void $fireEventStoreOfferClicked(::std::string const& telemetryId, ::std::string const& productId);
     // NOLINTEND
 
 public:

@@ -101,41 +101,41 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI JumpToBlockGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI JumpToBlockGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
 
-    MCAPI void _clearGoalState();
+    MCNAPI void _clearGoalState();
 
-    MCAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
+    MCNAPI bool _findCandidateBlocks(::NavigationComponent& navigation);
 
-    MCAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
+    MCNAPI bool _findJumpableBlocks(bool useOnlyPreferredBlocksIfAny);
 
-    MCAPI bool _findTargetBlock();
+    MCNAPI bool _findTargetBlock();
 
-    MCAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
+    MCNAPI bool _turnToTarget(::MoveControlComponent const& moveControl) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
-    MCFOLD bool $canBeInterrupted();
+    MCNAPI bool $canBeInterrupted();
 
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
 
     // NOLINTEND

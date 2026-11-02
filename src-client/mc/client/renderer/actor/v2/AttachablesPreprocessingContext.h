@@ -18,10 +18,4 @@ public:
     ::ll::TypedStorage<8, 8, ::std::reference_wrapper<::DataDrivenRendererRegistry>> mResources;
     ::ll::TypedStorage<8, 8, ::ddrv2::PoolHandle<::AttachableRendererPool>>          mTargetPool;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void prepareForNextBake(uint64 maxAttachablesPerPool);
-    // NOLINTEND
 };

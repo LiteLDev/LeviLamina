@@ -33,8 +33,8 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::ServerLocatorBar::GroupStrongHandle createGroupHandle();
+    MCNAPI ::ServerLocatorBar::GroupStrongHandle createGroupHandle();
 
-    MCAPI void update(::Player& player);
+    MCNAPI void update(::Player& player);
     // NOLINTEND
 };

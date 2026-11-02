@@ -36,19 +36,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCFOLD bool isRealmsPreproductionEnvironment() const;
+    MCNAPI bool isRealmsPreproductionEnvironment() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

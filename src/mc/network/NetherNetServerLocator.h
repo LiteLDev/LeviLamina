@@ -4,7 +4,6 @@
 
 // auto generated inclusion list
 #include "mc/deps/cereal/ContextArea.h"
-#include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/network/StubServerLocator.h"
 #include "mc/platform/threading/UniqueLock.h"
@@ -15,11 +14,13 @@
 class AppPlatform;
 class AsynchronousIPResolver;
 class SignalingService;
+class TransportEndpointCache;
 struct NetherNetConnector;
 struct PingedCompatibleServer;
 struct PortPair;
 struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Http { class DispatcherInterface; }
+namespace Bedrock::PubSub { class Subscription; }
 namespace NetherNet { struct NetworkID; }
 namespace Social { struct Nonce; }
 namespace cereal { struct ReflectionCtx; }
@@ -30,10 +31,48 @@ class NetherNetServerLocator : public ::StubServerLocator {
 public:
     // NetherNetServerLocator inner types declare
     // clang-format off
+    struct ExternalServerPing;
+    struct HttpProbeImpl;
     struct ServerData;
     // clang-format on
 
     // NetherNetServerLocator inner types define
+    struct ExternalServerPing {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 64>  mUnk844989;
+        ::ll::UntypedStorage<2, 2>   mUnk4833f4;
+        ::ll::UntypedStorage<8, 40>  mUnkc5147c;
+        ::ll::UntypedStorage<8, 40>  mUnkda1767;
+        ::ll::UntypedStorage<8, 424> mUnkf65c24;
+        ::ll::UntypedStorage<8, 8>   mUnka6d1dd;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        ExternalServerPing& operator=(ExternalServerPing const&);
+        ExternalServerPing(ExternalServerPing const&);
+        ExternalServerPing();
+    };
+
+    struct HttpProbeImpl {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 48>  mUnk849326;
+        ::ll::UntypedStorage<8, 128> mUnk8d8819;
+        ::ll::UntypedStorage<8, 40>  mUnke15916;
+        ::ll::UntypedStorage<8, 8>   mUnk4ca46d;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HttpProbeImpl& operator=(HttpProbeImpl const&);
+        HttpProbeImpl(HttpProbeImpl const&);
+        HttpProbeImpl();
+    };
+
     struct ServerData {
     public:
         // member variables
@@ -70,12 +109,14 @@ public:
     // member variables
     // NOLINTBEGIN
     ::ll::UntypedStorage<8, 24>  mUnk983682;
-    ::ll::UntypedStorage<8, 48>  mUnk4488db;
+    ::ll::UntypedStorage<8, 8>   mUnk36b3eb;
     ::ll::UntypedStorage<8, 24>  mUnka0ecad;
     ::ll::UntypedStorage<8, 24>  mUnke14539;
+    ::ll::UntypedStorage<8, 16>  mUnk3ee0a8;
     ::ll::UntypedStorage<8, 8>   mUnk965302;
     ::ll::UntypedStorage<8, 168> mUnk9e12a8;
     ::ll::UntypedStorage<8, 16>  mUnkeab7f7;
+    ::ll::UntypedStorage<8, 24>  mUnk4b5a50;
     ::ll::UntypedStorage<1, 1>   mUnkfee0d4;
     ::ll::UntypedStorage<1, 1>   mUnk646852;
     ::ll::UntypedStorage<8, 160> mUnk330682;
@@ -93,6 +134,8 @@ public:
     // virtual functions
     // NOLINTBEGIN
     virtual ~NetherNetServerLocator() /*override*/ = default;
+
+    virtual ::std::shared_ptr<::TransportEndpointCache> getTransportEndpointCache() const /*override*/;
 
     virtual void startAnnouncingServer(
         ::std::string const&                 playerName,
@@ -115,6 +158,8 @@ public:
 
     virtual void addCustomServer(::AsynchronousIPResolver const& futureIP, int port) /*override*/;
 
+    virtual ::Bedrock::PubSub::Subscription acquireHttpProbePermission() /*override*/;
+
     virtual ::std::vector<::PingedCompatibleServer> getServerList() const /*override*/;
 
     virtual void update() /*override*/;
@@ -134,18 +179,11 @@ public:
 
     MCNAPI bool _onDiscoveryRequest(::cereal::SchemaWriter& writer, ::cereal::ContextArea area);
 
-    MCNAPI ::Bedrock::Threading::Async<::PingedCompatibleServer> _pingExternalServer(
-        ::AsynchronousIPResolver const& futureIP,
-        ushort                          port,
-        ::std::vector<::std::string>    urls,
-        uint64                          index
-    );
-
     MCNAPI void _setDiscoveryRequestCallback(bool enable);
 
-    MCNAPI void _setDiscoveryResponseCallback(bool enable);
+    MCNAPI void _setIsDiscovering(bool isDiscovering);
 
-    MCNAPI void clearServerList();
+    MCNAPI void _startPendingExternalServerRequests();
     // NOLINTEND
 
 public:
@@ -169,6 +207,8 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
+    MCNAPI ::std::shared_ptr<::TransportEndpointCache> $getTransportEndpointCache() const;
+
     MCNAPI void $startAnnouncingServer(
         ::std::string const&                 playerName,
         ::std::string const&                 worldName,
@@ -189,6 +229,8 @@ public:
     MCNAPI void $stopServerDiscovery();
 
     MCNAPI void $addCustomServer(::AsynchronousIPResolver const& futureIP, int port);
+
+    MCNAPI ::Bedrock::PubSub::Subscription $acquireHttpProbePermission();
 
     MCNAPI ::std::vector<::PingedCompatibleServer> $getServerList() const;
 

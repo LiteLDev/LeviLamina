@@ -19,6 +19,8 @@ namespace ResourceLoaders {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
+MCNAPI ::std::string encodeBase64(::ResourceLocation const& resourceLocation);
+
 MCNAPI ::gsl::span<::std::string const> getFileTypeExtensions(::ResourceLoaders::ResourceFileType fileType);
 
 MCNAPI ::ResourceLocation getRawResourceLocation(::ResourceLocation const& resourceLocation);
@@ -39,9 +41,7 @@ MCNAPI ::std::string const& IMGEXT_PNG();
 
 MCNAPI ::BackwardsCompatTextureGroup& backCompatGroup();
 
-#ifdef LL_PLAT_C
 MCNAPI ::std::map<::ResourceFileSystem, ::std::unique_ptr<::ResourceLoader>>& loaders();
-#endif
 // NOLINTEND
 
 } // namespace ResourceLoaders

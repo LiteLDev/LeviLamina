@@ -89,7 +89,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ActorDefinitionGroup(
+    MCNAPI ActorDefinitionGroup(
         ::Level&                                           level,
         ::ResourcePackManager&                             resourcePackManager,
         ::IMinecraftEventing&                              eventing,
@@ -97,11 +97,7 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
-#ifdef LL_PLAT_S
-    MCAPI void _addRef(::ActorDefinitionPtr& ptr);
-#endif
-
-    MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
+    MCNAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::PackLoadContext&                   packLoadContext,
         ::std::string const&                 relativeResourceFilepath,
@@ -110,22 +106,22 @@ public:
         ::LogArea                            logArea
     );
 
-    MCAPI ::std::vector<::std::string> buildActorEventList() const;
+    MCNAPI ::std::vector<::std::string> buildActorEventList() const;
 
     MCAPI ::ActorDefinitionPtr tryGetDefinition(::std::string const& definitionId);
 
-    MCAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
+    MCNAPI ::ActorDefinitionPtr tryGetDefinitionGroup(::std::string const& base, ::std::string const& definitionId);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
+    MCNAPI static void _setupCommonResourceDefinitionMap(::ActorDefinition& def, ::Level& level);
 
 #ifdef LL_PLAT_C
-    MCAPI static void loadActorDefinitionFormatVersion(::Json::Value& root, ::SemVersion& formatVersion);
+    MCNAPI static void loadActorDefinitionFormatVersion(::Json::Value& root, ::SemVersion& formatVersion);
 
-    MCAPI static bool loadActorDefinitionIdentifier(
+    MCNAPI static bool loadActorDefinitionIdentifier(
         ::Json::Value const& root,
         ::SemVersion const&  formatVersion,
         ::std::string&       identifier
@@ -136,7 +132,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Level&                                           level,
         ::ResourcePackManager&                             resourcePackManager,
         ::IMinecraftEventing&                              eventing,

@@ -47,9 +47,9 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static uchar getDestructionParticleNumber(::Block const& block);
+    MCNAPI static uchar getDestructionParticleNumber(::Block const& block);
 
-    MCAPI static ::BlockDestructionParticlesComponent::TextureInfo getTextureInfo(::Block const& block);
+    MCNAPI static ::BlockDestructionParticlesComponent::TextureInfo getTextureInfo(::Block const& block);
 #endif
     // NOLINTEND
 };

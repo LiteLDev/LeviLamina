@@ -61,7 +61,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unique_ptr<::ISceneFactoryImpl> create(
+    MCNAPI static ::std::unique_ptr<::ISceneFactoryImpl> create(
         ::IMinecraftGame&                             game,
         ::IAppPlatform&                               platform,
         ::IClientInstance&                            client,

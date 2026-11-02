@@ -48,31 +48,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI NetworkWorldDetailsFacet(
+    MCNAPI NetworkWorldDetailsFacet(
         ::World::ThirdPartyWorldList&                              thirdPartyWorldList,
         ::World::ExternalServerWorldList&                          externalServerWorldList,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
     );
 
-    MCAPI void _onWorldListUpdated();
+    MCNAPI void _onWorldListUpdated();
 
-    MCFOLD ::OreUI::NetworkWorldDetails const& getCurrentNetworkWorldDetails() const;
+    MCNAPI ::OreUI::NetworkWorldDetails const& getCurrentNetworkWorldDetails() const;
 
-    MCAPI bool hasLoadedDetails() const;
+    MCNAPI bool hasLoadedDetails() const;
 
-    MCAPI void loadNetworkWorldDetails(::std::string const& id, ::OreUI::NetworkWorldType const worldType);
+    MCNAPI void loadNetworkWorldDetails(::std::string const& id, ::OreUI::NetworkWorldType const worldType);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::World::ThirdPartyWorldList&                              thirdPartyWorldList,
         ::World::ExternalServerWorldList&                          externalServerWorldList,
         ::Bedrock::NotNullNonOwnerPtr<::OreUI::IResourceAllowList> resourceAllowList
@@ -82,7 +82,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

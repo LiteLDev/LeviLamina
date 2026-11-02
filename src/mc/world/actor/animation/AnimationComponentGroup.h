@@ -16,23 +16,16 @@ class AnimationComponentGroup {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&
+    MCNAPI static ::std::unordered_map<::AnimationComponentID, ::std::weak_ptr<::AnimationComponent>>&
     _getAllAnimationComponents(::AnimationComponentGroupType groupType);
 
-    MCAPI static ::std::shared_ptr<::AnimationComponent>
+    MCNAPI static ::std::shared_ptr<::AnimationComponent>
     getAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
 
 #ifdef LL_PLAT_C
-    MCAPI static void onFrameRendered();
-#endif
+    MCNAPI static void onFrameRendered();
 
-#ifdef LL_PLAT_S
-    MCAPI static void
-    releaseAnimationComponent(::AnimationComponentGroupType groupType, ::AnimationComponentID ownerUUID);
-#endif
-
-#ifdef LL_PLAT_C
-    MCAPI static void
+    MCNAPI static void
     setFactory(::gsl::not_null<::std::unique_ptr<::AnimationComponent> (*)(::AnimationComponentArguments&&)> factory);
 #endif
     // NOLINTEND

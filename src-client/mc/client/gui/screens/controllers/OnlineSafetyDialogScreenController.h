@@ -37,7 +37,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI OnlineSafetyDialogScreenController(
+    MCNAPI OnlineSafetyDialogScreenController(
         ::std::shared_ptr<::MinecraftScreenModel> model,
         ::OnlineSafetyProgressHandler&            handler
     );
@@ -46,15 +46,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::OnlineSafetyProgressHandler& handler);
+    MCNAPI void* $ctor(::std::shared_ptr<::MinecraftScreenModel> model, ::OnlineSafetyProgressHandler& handler);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI void $_registerSafetyEventHandlers();
+    MCNAPI void $_registerSafetyEventHandlers();
     // NOLINTEND
 
 public:

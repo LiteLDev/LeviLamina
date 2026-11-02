@@ -37,25 +37,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit BlockHashPalette(::Level& level);
+    MCNAPI explicit BlockHashPalette(::Level& level);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Level& level);
+    MCNAPI void* $ctor(::Level& level);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD ::BlockPalette::PaletteType $getPaletteType();
+    MCNAPI ::BlockPalette::PaletteType $getPaletteType();
 
-    MCAPI void $appendBlock(::Block const& block);
+    MCNAPI void $appendBlock(::Block const& block);
 
-    MCAPI ::Block const& $getBlock(uint const& networkId) const;
+    MCNAPI ::Block const& $getBlock(uint const& networkId) const;
 
-    MCAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
+    MCNAPI void $assignBlockNetworkId(::Block const& block, uint64 networkId) const;
 
 
     // NOLINTEND
@@ -63,6 +63,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

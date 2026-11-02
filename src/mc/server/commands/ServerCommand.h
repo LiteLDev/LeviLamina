@@ -23,7 +23,7 @@ class ServerCommand : public ::Command {
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool tryToFilterTextWithRemoteFilter(
+    MCNAPI bool tryToFilterTextWithRemoteFilter(
         ::CommandOrigin const&              origin,
         ::CommandOutput&                    output,
         ::std::vector<::std::string> const& text,
@@ -39,7 +39,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void kickPlayerDueToFlooding(
+    MCNAPI static void kickPlayerDueToFlooding(
         ::Bedrock::NonOwnerPointer<::ServerNetworkHandler> serverNetworkHandler,
         ::Player*                                          player,
         ::IMinecraftEventing&                              eventing,
@@ -50,8 +50,8 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Minecraft*& mGame();
+    MCNAPI static ::Minecraft*& mGame();
 
-    MCAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
+    MCNAPI static ::Bedrock::NonOwnerPointer<::TextFilteringProcessor>& mTextFilteringProcessor();
     // NOLINTEND
 };

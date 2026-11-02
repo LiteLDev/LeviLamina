@@ -13,6 +13,7 @@ class IExternalServerFile;
 class ProfanityContext;
 class ServerLocator;
 struct NetworkWorldInfo;
+namespace Bedrock::PubSub { class Subscription; }
 namespace Bedrock::PubSub::ThreadModel { struct SingleThreaded; }
 // clang-format on
 
@@ -41,29 +42,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ExternalServerWorldList(
+    MCNAPI ExternalServerWorldList(
         ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> externalServerFile,
         ::ServerLocator&                                     serverLocator,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>    profanityContext
     );
 
-    MCAPI void _refreshWorlds();
+    MCNAPI void _refreshWorlds();
 
-    MCAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
+    MCNAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
     addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError>
+    MCNAPI ::std::optional<::World::ExternalServerWorldError>
     editExternalServerWorld(int id, ::std::string const& name, ::std::string const& address, int port);
 
-    MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
+    MCNAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCAPI ::std::optional<::World::ExternalServerWorldError> removeExternalServerWorld(int id);
+    MCNAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IExternalServerFile> externalServerFile,
         ::ServerLocator&                                     serverLocator,
         ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>    profanityContext

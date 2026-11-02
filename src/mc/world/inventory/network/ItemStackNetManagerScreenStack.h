@@ -13,12 +13,4 @@ public:
     // NOLINTBEGIN
     ::ll::TypedStorage<8, 40, ::std::deque<::std::unique_ptr<::ItemStackNetManagerScreen>>> mStack;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI ::ItemStackNetManagerScreen* push(::std::unique_ptr<::ItemStackNetManagerScreen> screen);
-#endif
-    // NOLINTEND
 };

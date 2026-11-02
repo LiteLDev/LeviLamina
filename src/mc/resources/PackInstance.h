@@ -46,7 +46,7 @@ public:
         ::PackSettings*                                    packSettings
     );
 
-    MCAPI PackInstance(
+    MCNAPI PackInstance(
         ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
         ::std::string const&                               subpackName,
         bool                                               isDependent,
@@ -66,7 +66,7 @@ public:
         ::PackSettings*                                    packSettings
     );
 
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::gsl::not_null<::std::shared_ptr<::ResourcePack>> pack,
         ::std::string const&                               subpackName,
         bool                                               isDependent,

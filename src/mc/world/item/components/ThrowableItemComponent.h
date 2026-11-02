@@ -4,6 +4,7 @@
 
 // auto generated inclusion list
 #include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/world/item/HandSlot.h"
 #include "mc/world/item/components/NetworkedItemComponent.h"
 #include "mc/world/level/storage/AllExperiments.h"
 
@@ -42,20 +43,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void _doThrow(
+    MCNAPI void _doThrow(
         ::ItemStack&                     item,
         ::Player&                        player,
         ::ProjectileItemComponent const& projectileComponent,
-        float                            power
+        float                            power,
+        ::HandSlot                       handSlot
     ) const;
 
-    MCAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCNAPI bool releaseUsing(::ItemStack& item, ::Player* player, int durationLeft, ::HandSlot handSlot) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(
+    MCNAPI static void bindType(
         ::cereal::ReflectionCtx&               ctx,
         ::std::vector<::AllExperiments> const& requiredToggles,
         ::std::optional<::SemVersion>          releasedMinFormatVersion
@@ -65,9 +67,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
+    MCNAPI void $handleVersionBasedInitialization(::SemVersion const& originalJsonVersion);
 
-    MCAPI void $_initializeComponent(::ComponentItem& owner);
+    MCNAPI void $_initializeComponent(::ComponentItem& owner);
 
 
     // NOLINTEND

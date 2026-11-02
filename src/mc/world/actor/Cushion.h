@@ -38,29 +38,29 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Cushion(
+    MCNAPI Cushion(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
     );
 
-    MCAPI bool _wouldSurviveAt(::BlockSource const& region, ::Vec3 const& at) const;
+    MCNAPI bool _wouldSurviveAt(::BlockSource const& region, ::Vec3 const& at) const;
 
-    MCAPI void dropCushionAndRemove(bool dropCushion, ::Actor* breakingActor);
+    MCNAPI void dropCushionAndRemove(bool dropCushion, ::Actor* breakingActor);
 
-    MCAPI bool wouldSurvive(::BlockSource const& region) const;
+    MCNAPI bool wouldSurvive(::BlockSource const& region) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::HashedString getVariantItemName(int color);
+    MCNAPI static ::HashedString getVariantItemName(int color);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ActorDefinitionGroup*            definitions,
         ::ActorDefinitionIdentifier const& definitionName,
         ::EntityContext&                   entityContext
@@ -70,13 +70,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getInterpolatedBodyYaw(float) const;
+    MCNAPI float $getInterpolatedBodyYaw(float) const;
 
-    MCAPI void $remove();
+    MCNAPI void $remove();
 
-    MCFOLD float $getShadowRadius() const;
+    MCNAPI float $getShadowRadius() const;
 
-    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, ::HurtParameters const&);
+    MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const& source, float, ::HurtParameters const&);
 
 
     // NOLINTEND

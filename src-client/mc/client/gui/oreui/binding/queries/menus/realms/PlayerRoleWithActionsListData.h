@@ -20,6 +20,12 @@ public:
     ::ll::TypedStorage<8, 120, ::OreUI::PropertyVector<::Realms::PlayerRoleActions, ::Realms::PlayerRoleActions>>
         mActions;
     // NOLINTEND
+
+public:
+    // vftables
+    // NOLINTBEGIN
+    MCNAPI static void** $vftable();
+    // NOLINTEND
 };
 
 } // namespace OreUI

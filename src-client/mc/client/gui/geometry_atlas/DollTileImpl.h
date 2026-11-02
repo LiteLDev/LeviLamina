@@ -30,13 +30,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $submitUpdate(::GeometryAtlas::PaperDollPayload&& payload);
+    MCNAPI void $submitUpdate(::GeometryAtlas::PaperDollPayload&& payload);
 
-    MCFOLD uint $getUserID() const;
+    MCNAPI uint $getUserID() const;
 
-    MCAPI ::dragon::atlas::AtlasTileHandle $getBackendID() const;
+    MCNAPI ::dragon::atlas::AtlasTileHandle $getBackendID() const;
 
-    MCAPI bool $isInitialized() const;
+    MCNAPI bool $isInitialized() const;
     // NOLINTEND
 };
 

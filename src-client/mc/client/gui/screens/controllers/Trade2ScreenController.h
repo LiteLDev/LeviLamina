@@ -56,25 +56,25 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
+        MCNAPI explicit TradeItemCollections(::UIPropertyBag const& bag);
 
-        MCAPI int getTierIndex() const;
+        MCNAPI int getTierIndex() const;
 
-        MCAPI int getTradeIndex() const;
+        MCNAPI int getTradeIndex() const;
 
-        MCAPI bool hasSellItemCollection() const;
+        MCNAPI bool hasSellItemCollection() const;
 
-        MCAPI bool hasTradeItem1Collection() const;
+        MCNAPI bool hasTradeItem1Collection() const;
 
-        MCAPI bool hasTradeItem2Collection() const;
+        MCNAPI bool hasTradeItem2Collection() const;
 
-        MCAPI bool hasValidTradeToggleCollections() const;
+        MCNAPI bool hasValidTradeToggleCollections() const;
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::UIPropertyBag const& bag);
+        MCNAPI void* $ctor(::UIPropertyBag const& bag);
         // NOLINTEND
     };
 
@@ -137,50 +137,50 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI Trade2ScreenController(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
+    MCNAPI Trade2ScreenController(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
 
-    MCAPI void _changeLeftTab(int dir);
+    MCNAPI void _changeLeftTab(int dir);
 
-    MCAPI int _getBaseItemCountForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
+    MCNAPI int _getBaseItemCountForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
 
-    MCAPI ::ItemInstance const& _getItemForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
+    MCNAPI ::ItemInstance const& _getItemForTrade(::Trade2ScreenController::TradeItemCollections const& tic) const;
 
-    MCAPI ::std::string _getTradeErrorDetails(::ItemStackBase const& item, bool itemA) const;
+    MCNAPI ::std::string _getTradeErrorDetails(::ItemStackBase const& item, bool itemA) const;
 
-    MCAPI bool _hasAdjustedBuyCount(::Trade2ScreenController::TradeItemCollections const& tic) const;
+    MCNAPI bool _hasAdjustedBuyCount(::Trade2ScreenController::TradeItemCollections const& tic) const;
 
-    MCAPI void _makeTradeDetails(bool itemA) const;
+    MCNAPI void _makeTradeDetails(bool itemA) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> pModel, ::ActorUniqueID uniqueID);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI void $onLeave();
+    MCNAPI void $onLeave();
 
-    MCAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
+    MCNAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 
-    MCFOLD bool $_getGestureControlEnabled() const;
+    MCNAPI bool $_getGestureControlEnabled() const;
 
-    MCAPI void $_registerCoalesceOrder();
+    MCNAPI void $_registerCoalesceOrder();
 
-    MCAPI void $_registerAutoPlaceOrder();
+    MCNAPI void $_registerAutoPlaceOrder();
 
-    MCFOLD bool $_isStillValid() const;
+    MCNAPI bool $_isStillValid() const;
 
-    MCAPI ::ItemStackBase const&
+    MCNAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
-    MCAPI void $_sendFlyingItem(
+    MCNAPI void $_sendFlyingItem(
         ::ItemStackBase const& item,
         ::std::string const&   fromName,
         int                    fromIndex,
@@ -189,6 +189,6 @@ public:
         ::FadeInIconBehavior   fadeInIconBehavior
     );
 
-    MCAPI ::std::string $_getButtonADescription();
+    MCNAPI ::std::string $_getButtonADescription();
     // NOLINTEND
 };

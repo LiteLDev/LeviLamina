@@ -47,40 +47,42 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ThirdPartyWorldList(
+    MCNAPI ThirdPartyWorldList(
         ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>            offerRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
         ::ServerLocator&                                             serverLocator,
         bool                                                         isEditorMode,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext,
+        ::ServicesManager&                                           servicesManager
     );
 
-    MCAPI void _fetchWorlds(bool forceFetch);
+    MCNAPI void _fetchWorlds(bool forceFetch);
 
-    MCAPI void _onMCTokenUpdated(::ServicesManager*);
+    MCNAPI void _onMCTokenUpdated(::ServicesManager*);
 
-    MCAPI void _onServersChanged();
+    MCNAPI void _onServersChanged();
 
-    MCAPI void _refreshWorlds();
+    MCNAPI void _refreshWorlds();
 
-    MCAPI void _remove3PServersMismatchingEditorMode();
+    MCNAPI void _remove3PServersMismatchingEditorMode();
 
-    MCAPI void _runProfanityCheckOnWorlds();
+    MCNAPI void _runProfanityCheckOnWorlds();
 
-    MCAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
+    MCNAPI ::std::optional<::NetworkWorldInfo> getWorld(::std::string const& id);
 
-    MCAPI void update(double timestampMs);
+    MCNAPI ::Bedrock::PubSub::Subscription registerListener(::std::function<void()> callback);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::Bedrock::NotNullNonOwnerPtr<::IOfferRepository>            offerRepository,
         ::Bedrock::NotNullNonOwnerPtr<::IThirdPartyServerRepository> thirdPartyServerRepository,
         ::ServerLocator&                                             serverLocator,
         bool                                                         isEditorMode,
-        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext
+        ::Bedrock::NotNullNonOwnerPtr<::ProfanityContext>            profanityContext,
+        ::ServicesManager&                                           servicesManager
     );
     // NOLINTEND
 };

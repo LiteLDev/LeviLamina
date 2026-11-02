@@ -10,7 +10,6 @@
 // clang-format off
 class Actor;
 class Mob;
-struct GoalId;
 struct SendEventData;
 // clang-format on
 
@@ -51,37 +50,19 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI SendEventGoal(
-        ::Mob&                                mob,
-        ::std::string                         name,
-        ::GoalId const&                       goalId,
-        ::std::vector<::SendEventData> const& spellTypes
-    );
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void*
-    $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::std::vector<::SendEventData> const& spellTypes);
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $appendDebugInfo(::std::string& str) const;
+    MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
 
     // NOLINTEND

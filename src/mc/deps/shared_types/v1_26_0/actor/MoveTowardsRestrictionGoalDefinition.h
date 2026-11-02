@@ -5,11 +5,6 @@
 // auto generated inclusion list
 #include "mc/deps/shared_types/actor/BaseGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_0 {
 
 struct MoveTowardsRestrictionGoalDefinition : public ::SharedTypes::BaseGoalDefinition {
@@ -20,15 +15,9 @@ public:
     // NOLINTEND
 
 public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

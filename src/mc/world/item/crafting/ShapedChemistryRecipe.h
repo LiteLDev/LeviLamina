@@ -7,40 +7,19 @@
 
 // auto generated forward declare list
 // clang-format off
-class CraftingContainer;
-class CraftingContext;
 namespace mce { class UUID; }
 // clang-format on
 
 class ShapedChemistryRecipe : public ::ShapedRecipe {
 public:
-    // virtual functions
-    // NOLINTBEGIN
-    virtual ::mce::UUID const& getId() const /*override*/;
-
-    virtual bool matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const
-        /*override*/;
-    // NOLINTEND
-
-public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::mce::UUID const& ID();
-    // NOLINTEND
-
-public:
-    // virtual function thunks
-    // NOLINTBEGIN
-    MCAPI ::mce::UUID const& $getId() const;
-
-    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const& craftingContext) const;
-
-
+    MCNAPI static ::mce::UUID const& ID();
     // NOLINTEND
 
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

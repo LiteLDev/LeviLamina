@@ -42,25 +42,6 @@ public:
     ::ll::TypedStorage<8, 24, ::std::vector<::std::function<void(::ClientBlockPipeline::Inputs const&)>>>
         mCallbackFunctions;
     // NOLINTEND
-
-public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI void _buildCache();
-
-    MCAPI ::ClientBlockPipeline::Instance&
-    addOnCompletion(::std::function<void(::ClientBlockPipeline::Inputs const&)> callback);
-
-    MCAPI ::ClientBlockPipeline::Instance& start(::ClientBlockPipeline::Inputs const& inputs);
-
-    MCAPI ~Instance();
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCAPI void $dtor();
-    // NOLINTEND
 };
 
 } // namespace ClientBlockPipeline

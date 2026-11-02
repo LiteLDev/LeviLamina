@@ -71,43 +71,43 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ToggleComponent(::UIControl& owner);
+    MCNAPI explicit ToggleComponent(::UIControl& owner);
 
-    MCAPI void _setChecked(::ScreenInputContext& context, bool checked, bool toggledByButtonClick);
+    MCNAPI void _setChecked(::ScreenInputContext& context, bool checked, bool toggledByButtonClick);
 
-    MCAPI void _updateControlVisibility();
+    MCNAPI void _updateControlVisibility();
 
-    MCAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
+    MCNAPI void _updateToggleGroupState(::VisualTree& visualTree, bool toggleState);
 
-    MCAPI void resetDefaultState();
+    MCNAPI void resetDefaultState();
 
-    MCAPI void setChecked(bool checked);
+    MCNAPI void setChecked(bool checked);
 
-    MCAPI void setForcedGroupIndex(int forcedIndex);
+    MCNAPI void setForcedGroupIndex(int forcedIndex);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::UIControl& owner);
+    MCNAPI void* $ctor(::UIControl& owner);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
+    MCNAPI ::std::unique_ptr<::UIComponent> $clone(::UIControl& cloneOwner) const;
 
-    MCAPI void $reset();
+    MCNAPI void $reset();
 
-    MCAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
+    MCNAPI ::ComponentReceiveActionType $receive(::ScreenEvent const& screenEvent);
 
-    MCAPI ::ComponentReceiveActionType $receive(
+    MCNAPI ::ComponentReceiveActionType $receive(
         ::VisualTree&            visualTree,
         ::ScreenInputContext&    context,
         ::UIAnimationController& animationController,
         ::ScreenEvent const&     screenEvent
     );
 
-    MCAPI ::std::string const& $getTextToSpeechComponentValue() const;
+    MCNAPI ::std::string const& $getTextToSpeechComponentValue() const;
     // NOLINTEND
 };

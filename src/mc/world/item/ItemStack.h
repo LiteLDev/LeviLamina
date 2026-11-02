@@ -30,6 +30,13 @@ public:
     ::ll::TypedStorage<8, 24, ::ItemStackNetIdVariant> mNetIdVariant;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
+public:
+    // prevent constructor by default
+    ItemStack();
+
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -51,23 +58,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI ItemStack();
+#endif
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCAPI ::ItemStack clone() const;
-
-#ifdef LL_PLAT_S
-    MCAPI float getDestroySpeed(::Block const& block) const;
-#endif
+    MCNAPI ::ItemStack clone() const;
 
 #ifdef LL_PLAT_C
-    MCAPI ::Brightness getLightEmission() const;
+    MCNAPI float getDestroySpeed(::Block const& block) const;
+
+    MCNAPI ::Brightness getLightEmission() const;
 #endif
 
-    MCAPI ::ItemStack getStrippedNetworkItem() const;
+    MCNAPI ::ItemStack getStrippedNetworkItem() const;
 
-    MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
+    MCNAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
     MCAPI ::ItemStack& operator=(::ItemStack const& rhs);
 
@@ -90,8 +97,10 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::ItemStack
+#ifdef LL_PLAT_C
+    MCNAPI static ::ItemStack
     fromDescriptor(::NetworkItemStackDescriptor const& descriptor, ::BlockPalette& blockPalette, bool isClientSide);
+#endif
 
     MCAPI static ::ItemStack fromTag(::CompoundTag const& tag);
 
@@ -107,7 +116,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
+#ifdef LL_PLAT_S
     MCAPI void* $ctor();
+#endif
 
     MCAPI void* $ctor(::ItemStack const& rhs);
     // NOLINTEND
@@ -139,6 +150,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

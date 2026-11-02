@@ -11,6 +11,6 @@ class VanillaVoxelShapes {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void addVoxelShapesToBlocks(::Experiments const& experiments);
+    MCNAPI static void addVoxelShapesToBlocks(::Experiments const& experiments);
     // NOLINTEND
 };

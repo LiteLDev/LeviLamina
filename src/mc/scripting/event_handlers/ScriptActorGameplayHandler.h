@@ -51,20 +51,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorAddEffectEvent& actorEffectAddedEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHealEvent& actorHealEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHealEvent& actorHealEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHurtEvent& actorHurtEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHurtEvent& actorHurtEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeTamingEvent& beforeTamingEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeTamingEvent& beforeTamingEvent);
 
-    MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeMountTamingEvent& beforeMountTamingEvent);
+    MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeMountTamingEvent& beforeMountTamingEvent);
 
-    MCAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
+    MCNAPI ::HandlerResult $handleEvent(::ActorRemovedEvent const& actorRemovedEvent);
 
 
     // NOLINTEND

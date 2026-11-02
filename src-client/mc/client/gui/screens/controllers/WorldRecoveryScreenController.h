@@ -54,27 +54,27 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI WorldRecoveryScreenController(
+    MCNAPI WorldRecoveryScreenController(
         ::std::shared_ptr<::MainMenuScreenModel> model,
         ::std::function<void()>                  successCallback
     );
 
-    MCAPI void _fireTelemetry();
+    MCNAPI void _fireTelemetry();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::function<void()> successCallback);
+    MCNAPI void* $ctor(::std::shared_ptr<::MainMenuScreenModel> model, ::std::function<void()> successCallback);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onOpen();
+    MCNAPI void $onOpen();
 
-    MCAPI bool $canExit();
+    MCNAPI bool $canExit();
     // NOLINTEND
 };

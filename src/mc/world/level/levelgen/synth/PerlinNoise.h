@@ -25,26 +25,26 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI PerlinNoise(::IRandom& random, int levels);
+    MCNAPI PerlinNoise(::IRandom& random, int levels);
 
-    MCAPI PerlinNoise(uint seed, int levels);
+    MCNAPI PerlinNoise(uint seed, int levels);
 
-    MCAPI float getValue(::Vec3 const& pos) const;
+    MCNAPI float getValue(::Vec3 const& pos) const;
 
-    MCAPI ~PerlinNoise();
+    MCNAPI ~PerlinNoise();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::IRandom& random, int levels);
+    MCNAPI void* $ctor(::IRandom& random, int levels);
 
-    MCAPI void* $ctor(uint seed, int levels);
+    MCNAPI void* $ctor(uint seed, int levels);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

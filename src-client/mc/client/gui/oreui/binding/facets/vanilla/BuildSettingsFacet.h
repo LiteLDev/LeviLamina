@@ -25,35 +25,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI BuildSettingsFacet();
+    MCNAPI BuildSettingsFacet();
 
-    MCFOLD ::OreUI::GameVersionBindings const& getCurrentGameVersion() const;
+    MCNAPI ::OreUI::GameVersionBindings const& getCurrentGameVersion() const;
 
-    MCFOLD ::std::optional<::std::string> const& getDevelopmentVersion() const;
+    MCNAPI ::std::optional<::std::string> const& getDevelopmentVersion() const;
 
-    MCFOLD bool isAnyBeta() const;
+    MCNAPI bool isAnyBeta() const;
 
-    MCFOLD bool isBetaBuild() const;
+    MCNAPI bool isBetaBuild() const;
 
-    MCFOLD bool isInDeveloperMode() const;
+    MCNAPI bool isInDeveloperMode() const;
+
+    MCNAPI bool isPartnerBuild() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
+    MCNAPI void* $ctor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 
 public:

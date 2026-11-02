@@ -46,9 +46,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
+    MCNAPI void fireItemAcquiredEvent(::ItemInstance const& instance, int count);
 
-    MCAPI ::std::pair<::ItemInstance, ::RecipeNetId> getResultForItems(
+    MCNAPI ::std::pair<::ItemInstance, ::RecipeNetId> getResultForItems(
         ::ItemStack const& templateStack,
         ::ItemStack const& inputStack,
         ::ItemStack const& materialStack
@@ -59,19 +59,19 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::vector<::ItemStack> $getItemCopies() const;
+    MCNAPI ::std::vector<::ItemStack> $getItemCopies() const;
 
-    MCAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
+    MCNAPI void $setSlot(int slot, ::ItemStack const& item, bool fromNetwork);
 
-    MCAPI ::ItemStack const& $getSlot(int slot) const;
+    MCNAPI ::ItemStack const& $getSlot(int slot) const;
 
-    MCFOLD void $setData(int, int);
+    MCNAPI void $setData(int, int);
 
-    MCAPI bool $isValid(float pickRange);
+    MCNAPI bool $isValid(float pickRange);
 
-    MCFOLD void $broadcastChanges();
+    MCNAPI void $broadcastChanges();
 
-    MCAPI ::ContainerScreenContext $_postInit();
+    MCNAPI ::ContainerScreenContext $_postInit();
 
 
     // NOLINTEND
@@ -79,6 +79,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

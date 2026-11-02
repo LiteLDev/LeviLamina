@@ -6,7 +6,7 @@
 #include "mc/deps/cereal/Constraint.h"
 #include "mc/deps/cereal/ConstraintHandle.h"
 #include "mc/deps/cereal/ContextArea.h"
-#include "mc/deps/cereal/MinSizeConstraint.h"
+#include "mc/deps/cereal/MinSizeConstraintData.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -20,9 +20,9 @@ class SequenceContainerConstraint : public ::cereal::ConstraintHandle<::cereal::
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<8, 8, ::cereal::internal::MinSizeConstraint>    mConstraint;
-    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::Constraint>> mValueConstraint;
-    ::ll::TypedStorage<1, 1, bool>                                     mNoDuplicates;
+    ::ll::TypedStorage<8, 8, ::cereal::internal::MinSizeConstraintData> mConstraint;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::cereal::Constraint>>  mValueConstraint;
+    ::ll::TypedStorage<1, 1, bool>                                      mNoDuplicates;
     // NOLINTEND
 
 public:
@@ -38,21 +38,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
+    MCNAPI void validateValue(::entt::meta_sequence_container cont, ::cereal::SerializerContext& context) const;
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
+    MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea req) const;
 
-    MCAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
+    MCNAPI ::cereal::Constraint const* $subConstraint(uint64 index) const;
 
 
     // NOLINTEND

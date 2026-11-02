@@ -163,7 +163,8 @@ public:
 
     virtual bool useEduDemoUpsellDialog() const /*override*/;
 
-    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool enteringLevel) const /*override*/;
+    virtual ::std::vector<::PackIdVersion> getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) const
+        /*override*/;
 
     virtual ::std::string getFeedbackURL() const /*override*/;
 

@@ -26,19 +26,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DataDrivenBlockActor(::BlockType const& blockType, ::BlockPos const& pos);
+    MCNAPI DataDrivenBlockActor(::BlockType const& blockType, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::BlockType const& blockType, ::BlockPos const& pos);
+    MCNAPI void* $ctor(::BlockType const& blockType, ::BlockPos const& pos);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onRemoved(::BlockSource& region);
+    MCNAPI void $onRemoved(::BlockSource& region);
 
 
     // NOLINTEND

@@ -83,44 +83,44 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
+    MCNAPI CodeScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
 
-    MCAPI void _selectEditor(::std::string const& url);
+    MCNAPI void _selectEditor(::std::string const& url);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static bool validateUri(::std::string const& uri);
+    MCNAPI static bool _validateAllowedUriInternal(::std::string const& uri);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
+    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model, ::OpenCodeMethod openMethod);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $onInit();
+    MCNAPI void $onInit();
 
-    MCAPI void $onDelete();
+    MCNAPI void $onDelete();
 
-    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCAPI ::ScreenControllerProxy* $getProxy();
+    MCNAPI ::ScreenControllerProxy* $getProxy();
 
-    MCAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCAPI ::ui::DirtyFlag $tick();
+    MCNAPI ::ui::DirtyFlag $tick();
 
-    MCAPI void $onLoadingBegin();
+    MCNAPI void $onLoadingBegin();
 
-    MCAPI void $onLoadingEnd();
+    MCNAPI void $onLoadingEnd();
 
-    MCAPI void $onError(::WebviewError const& error);
+    MCNAPI void $onError(::WebviewError const& error);
 
-    MCAPI void $onWebviewChanged();
+    MCNAPI void $onWebviewChanged();
     // NOLINTEND
 };

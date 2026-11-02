@@ -52,30 +52,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TorchflowerCropBlock(::std::string const& nameId, int id);
+    MCNAPI TorchflowerCropBlock(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id);
+    MCNAPI void* $ctor(::std::string const& nameId, int id);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::ItemInstance const $getBaseSeed() const;
+    MCNAPI ::ItemInstance const $getBaseSeed() const;
 
-    MCAPI int $getVariant(::Block const& block) const;
+    MCNAPI int $getVariant(::Block const& block) const;
 
-    MCAPI ::AABB const& $getOutline(
+    MCNAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,
         ::AABB&                    bufferValue
     ) const;
 
-    MCAPI ::Block const& $setGrowth(
+    MCNAPI ::Block const& $setGrowth(
         ::BlockSource&    region,
         ::BlockPos const& pos,
         ::Block const&    baseBlock,
@@ -83,7 +83,7 @@ public:
         int               updateFlags
     ) const;
 
-    MCAPI bool
+    MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;
 
 
@@ -92,6 +92,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

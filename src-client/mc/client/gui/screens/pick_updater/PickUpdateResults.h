@@ -21,6 +21,18 @@ public:
     ::ll::TypedStorage<8, 136, ::HitResult> mHitResult;
     ::ll::TypedStorage<8, 136, ::HitResult> mLiquidHitResult;
     // NOLINTEND
+
+public:
+    // member functions
+    // NOLINTBEGIN
+    MCNAPI ~PickUpdateResults();
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
+    // NOLINTEND
 };
 
 } // namespace PickUpdater

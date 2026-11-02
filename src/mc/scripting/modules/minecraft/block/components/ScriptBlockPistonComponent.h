@@ -33,23 +33,23 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::Result_deprecated<bool> isExpanded();
+    MCNAPI ::Scripting::Result_deprecated<bool> isExpanded();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isExpanding();
+    MCNAPI ::Scripting::Result_deprecated<bool> isExpanding();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isMoving();
+    MCNAPI ::Scripting::Result_deprecated<bool> isMoving();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isRetracted();
+    MCNAPI ::Scripting::Result_deprecated<bool> isRetracted();
 
-    MCAPI ::Scripting::Result_deprecated<bool> isRetracting();
+    MCNAPI ::Scripting::Result_deprecated<bool> isRetracting();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
 
-    MCAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
+    MCNAPI static ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptBlockPistonComponent>
     tryCreate(::BlockSource& region, ::BlockPos position, ::Scripting::WeakLifetimeScope const& scope);
     // NOLINTEND
 

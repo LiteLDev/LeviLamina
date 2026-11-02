@@ -38,8 +38,6 @@ public:
     );
 
     MCNAPI bool operator()(::Block const& block) const;
-
-    MCNAPI ~BlockCriteriaMatcher();
     // NOLINTEND
 
 public:
@@ -50,12 +48,6 @@ public:
         ::Editor::BlockUtils::Task::BlockUtilityFloodMatchCriteria criteria,
         ::std::vector<::std::string> const&                        customBlockList
     );
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-    MCNAPI void $dtor();
     // NOLINTEND
 };
 

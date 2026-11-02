@@ -76,63 +76,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TemptBaseGoal(
-        ::Mob&                                 mob,
-        ::std::string                          name,
-        ::GoalId const&                        goalId,
-        float                                  speed,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        bool                                   canGetScared,
-        float                                  temptDistance,
-        float                                  stopDistance,
-        bool                                   canTemptVertically,
-        bool                                   canTemptWhileRidden,
-        ::ActorDefinitionTrigger const&        onStartEvent,
-        ::ActorDefinitionTrigger const&        onEndEvent
-    );
+    MCNAPI TemptBaseGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
-        ::Mob&                                 mob,
-        ::std::string                          name,
-        ::GoalId const&                        goalId,
-        float                                  speed,
-        ::std::vector<::ItemDescriptor> const& itemList,
-        ::SharedTypes::Legacy::LevelSoundEvent sound,
-        ::FloatRange                           soundIntervalRange,
-        bool                                   canGetScared,
-        float                                  temptDistance,
-        float                                  stopDistance,
-        bool                                   canTemptVertically,
-        bool                                   canTemptWhileRidden,
-        ::ActorDefinitionTrigger const&        onStartEvent,
-        ::ActorDefinitionTrigger const&        onEndEvent
-    );
+    MCNAPI void* $ctor(::Mob& mob, ::std::string name, ::GoalId const& goalId);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI bool $canUse();
+    MCNAPI bool $canUse();
 
-    MCAPI bool $canContinueToUse();
+    MCNAPI bool $canContinueToUse();
 
-    MCAPI void $start();
+    MCNAPI void $start();
 
-    MCAPI void $stop();
+    MCNAPI void $stop();
 
-    MCAPI void $tick();
+    MCNAPI void $tick();
 
 
     // NOLINTEND

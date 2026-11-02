@@ -14,7 +14,6 @@ class IdentityDefinition;
 class Level;
 class Objective;
 class Scoreboard;
-class ScoreboardIdentityRef;
 namespace ScriptModuleMinecraft { class ScriptActor; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardIdentity; }
 namespace ScriptModuleMinecraft { class ScriptScoreboardListener; }
@@ -61,27 +60,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardObjective>
     _getOrCreateScoreboardObjective(::Objective const& objective);
 
-    MCAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
+    MCNAPI ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>
     getOrCreateScoreboardIdentity(::IdentityDefinition const& identity);
 
-    MCAPI ::ScoreboardIdentityRef* getOrCreateScoreboardIdentityRef(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-            ::std::string> const& participant
-    );
-
-    MCAPI ::ScoreboardIdentityRef* tryGetScoreboardParticipantIdentityRef(
-        ::std::variant<
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
-            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
-            ::std::string> const& participant
-    ) const;
-
-    MCAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
+    MCNAPI ::std::optional<::ScoreboardId> tryGetScoreboardParticipantScoreboardId(
         ::std::variant<
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptScoreboardIdentity>,
             ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptActor>,
@@ -92,7 +77,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 };
 

@@ -31,37 +31,37 @@ namespace UpdateBoundingBox { struct SystemParams; }
 namespace UpdateBoundingBox {
 // functions
 // NOLINTBEGIN
-MCAPI void baseSetSize(::Vec2 const& size, ::UpdateBoundingBox::SetSizeArgs& args);
+MCNAPI void baseSetSize(::Vec2 const& size, ::UpdateBoundingBox::SetSizeArgs& args);
 
-MCAPI void onAABBRelativeSizeChanged(
+MCNAPI void onAABBRelativeSizeChanged(
     ::AABBRelativeSizeUpdateComponent const& relative,
     ::AABBShapeComponent const&              aabb,
     ::OffsetsComponent&                      offsets
 );
 
-MCAPI void onCustomSizeChanged(
+MCNAPI void onCustomSizeChanged(
     ::CustomSizeUpdateComponent const& custom,
     ::AABBShapeComponent const&        aabb,
     ::OffsetsComponent&                offsets
 );
 
-MCAPI void onMinecartSizeChanged(
+MCNAPI void onMinecartSizeChanged(
     ::StateVectorComponent const& stateVector,
     ::AABBShapeComponent&         aabb,
     ::OffsetsComponent&           offsets
 );
 
-MCAPI void onShulkerSizeChanged(
+MCNAPI void onShulkerSizeChanged(
     ::SynchedActorDataComponent const& data,
     ::AABBShapeComponent const&        aabb,
     ::OffsetsComponent&                offsets
 );
 
-MCAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
+MCNAPI void singleTickOnSizeChanged(::StrictEntityContext const& entity, ::UpdateBoundingBox::SystemParams& args);
 
-MCAPI void tickImpl(::UpdateBoundingBox::SystemParams& args);
+MCNAPI void tickImpl(::UpdateBoundingBox::SystemParams& args);
 
-MCAPI void transformPlayerSizeRequest(
+MCNAPI void transformPlayerSizeRequest(
     ::ShouldUpdateBoundingBoxRequestComponent&        request,
     ::CollisionBoxComponent const&                    collisionBox,
     ::Optional<::IsHorizontalPoseFlagComponent const> isHorizontal,
@@ -69,16 +69,16 @@ MCAPI void transformPlayerSizeRequest(
     float                                             sneakHeight
 );
 
-MCAPI void visitCommonSetSize(
-    ::StrictEntityContext const&                                entity,
-    ::ShouldUpdateBoundingBoxRequestComponent const&            request,
-    ::StateVectorComponent const&                               stateVector,
-    ::ActorDataDirtyFlagsComponent&                             actorDataDirtyFlags,
-    ::ActorDataBoundingBoxComponent&                            actorData,
-    ::AABBShapeComponent&                                       aabbShape,
-    ::DepenetrationComponent&                                   depenetration,
-    ::optional_ref<::CollisionBoxComponent const>               collisionBox,
-    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> modifier
+MCNAPI void visitCommonSetSize(
+    ::StrictEntityContext const&                                       entity,
+    ::ShouldUpdateBoundingBoxRequestComponent const&                   request,
+    ::StateVectorComponent const&                                      stateVector,
+    ::ActorDataDirtyFlagsComponent&                                    actorDataDirtyFlags,
+    ::ActorDataBoundingBoxComponent&                                   actorData,
+    ::AABBShapeComponent&                                              aabbShape,
+    ::DepenetrationComponent&                                          depenetration,
+    ::optional_ref<::CollisionBoxComponent const>                      collisionBox,
+    ::EntityModifier<::ShouldUpdateBoundingBoxRequestComponent> const& modifier
 );
 // NOLINTEND
 

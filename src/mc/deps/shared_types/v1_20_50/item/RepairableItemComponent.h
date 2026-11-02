@@ -29,12 +29,6 @@ public:
         ::ll::TypedStorage<8, 24, ::std::vector<::SharedTypes::Legacy::ItemDescriptor>> mItems;
         ::ll::TypedStorage<8, 48, ::SharedTypes::Legacy::ExpressionNode>                mRepairAmount;
         // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCAPI bool operator==(::SharedTypes::v1_20_50::RepairableItemComponent::RepairItemEntry const& a) const;
-        // NOLINTEND
     };
 
 public:
@@ -47,13 +41,13 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 };
 

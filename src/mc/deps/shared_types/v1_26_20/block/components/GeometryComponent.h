@@ -37,13 +37,13 @@ public:
     public:
         // static variables
         // NOLINTBEGIN
-        MCAPI static ::std::string_view const& ConstraintDescription();
+        MCNAPI static ::std::string_view const& ConstraintDescription();
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
+        MCNAPI ::cereal::internal::ConstraintDescription $doDescription(::cereal::ContextArea) const;
 
 
         // NOLINTEND
@@ -65,34 +65,34 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI NWayVisualRotationStateMapping(
+        MCNAPI NWayVisualRotationStateMapping(
             ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&
         );
 
-        MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
+        MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
         operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&&);
 
-        MCFOLD ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
+        MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping&
         operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&);
 
-        MCFOLD bool operator==(
+        MCNAPI bool operator==(
             ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&
         ) const;
 
-        MCAPI ~NWayVisualRotationStateMapping();
+        MCNAPI ~NWayVisualRotationStateMapping();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCFOLD void*
+        MCNAPI void*
         $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::NWayVisualRotationStateMapping const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCFOLD void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -121,34 +121,34 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCAPI DetailedGeometry(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&&);
+        MCNAPI DetailedGeometry(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&&);
 
-        MCAPI DetailedGeometry(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&);
+        MCNAPI DetailedGeometry(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&);
 
-        MCAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&
+        MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&
         operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&&);
 
-        MCAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&
+        MCNAPI ::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&
         operator=(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&);
 
-        MCAPI bool
+        MCNAPI bool
         operator==(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&) const;
 
-        MCAPI ~DetailedGeometry();
+        MCNAPI ~DetailedGeometry();
         // NOLINTEND
 
     public:
         // constructor thunks
         // NOLINTBEGIN
-        MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry&&);
 
-        MCAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&);
+        MCNAPI void* $ctor(::SharedTypes::v1_26_20::BlockDefinition::GeometryComponent::DetailedGeometry const&);
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -165,45 +165,45 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~GeometryComponent();
+    MCNAPI ~GeometryComponent();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& BoneVisibilityId();
+    MCNAPI static ::std::string_view const& BoneVisibilityId();
 
-    MCAPI static ::std::string_view const& CullingId();
+    MCNAPI static ::std::string_view const& CullingId();
 
-    MCAPI static ::std::string_view const& CullingLayerId();
+    MCNAPI static ::std::string_view const& CullingLayerId();
 
-    MCAPI static ::std::string const& CullingLayerRegex();
+    MCNAPI static ::std::string const& CullingLayerRegex();
 
-    MCAPI static ::std::string const& CullingShapeNameRegex();
+    MCNAPI static ::std::string const& CullingShapeNameRegex();
 
-    MCAPI static ::std::string const& GeoNameDocumentation();
+    MCNAPI static ::std::string const& GeoNameDocumentation();
 
-    MCAPI static ::std::string_view const& IdentifierId();
+    MCNAPI static ::std::string_view const& IdentifierId();
 
-    MCAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
+    MCNAPI static ::std::array<::std::string_view, 3> const& InvalidVanillaGeometryForBoneVis();
 
-    MCAPI static ::std::string_view const& NWayVisualRotationId();
+    MCNAPI static ::std::string_view const& NWayVisualRotationId();
 
-    MCAPI static ::std::string_view const& NameId();
+    MCNAPI static ::std::string_view const& NameId();
 
-    MCAPI static ::std::string_view const& UVLockId();
+    MCNAPI static ::std::string_view const& UVLockId();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCFOLD void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

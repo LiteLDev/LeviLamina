@@ -17,7 +17,16 @@ enum class JoinServerWorldResult : int {
     ThirdPartyNoServerOrServerLockedError = 9,
     ExternalLocalhostError                = 10,
     ExternalPrivateNetworkError           = 11,
-    UnknownError                          = 12,
+    ExperienceClientVersionMismatchError  = 12,
+    ExperiencePlayerNotEligibleError      = 13,
+    ExperienceUnavailableError            = 14,
+    ExperienceDestinationNotFoundError    = 15,
+    ExperienceDestinationUnavailableError = 16,
+    ExperiencePartyInvalidError           = 17,
+    ExperienceDependencyUnavailableError  = 18,
+    ExperienceInternalServerError         = 19,
+    ExperienceUnknownError                = 20,
+    UnknownError                          = 21,
 };
 
 }

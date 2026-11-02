@@ -67,7 +67,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleSystemInterfaceProxy(
+    MCNAPI ParticleSystemInterfaceProxy(
         ::LevelRendererPlayer const&              levelRendererPlayer,
         ::OptionRegistry&                         options,
         ::std::unique_ptr<::ParticleEngine>       particleEngine,
@@ -78,7 +78,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::LevelRendererPlayer const&              levelRendererPlayer,
         ::OptionRegistry&                         options,
         ::std::unique_ptr<::ParticleEngine>       particleEngine,
@@ -89,16 +89,16 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI float $getDistanceToCameraSqr(::Vec3 const& pos) const;
+    MCNAPI float $getDistanceToCameraSqr(::Vec3 const& pos) const;
 
-    MCFOLD int $getViewDistanceChunks() const;
+    MCNAPI int $getViewDistanceChunks() const;
 
-    MCAPI float $getParticleViewDistance() const;
+    MCNAPI float $getParticleViewDistance() const;
 
-    MCAPI ::Particle*
+    MCNAPI ::Particle*
     $instance(::ParticleType type, ::Vec3 const& pos, ::Vec3 const& dir, int data, ::CompoundTag const* tag);
 
-    MCAPI void $addParticleEffect(
+    MCNAPI void $addParticleEffect(
         ::HashedString const&      effect,
         ::Vec3 const&              emitterPosition,
         ::MolangVariableMap const& molangVariables

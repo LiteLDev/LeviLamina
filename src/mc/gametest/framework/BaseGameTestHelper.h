@@ -256,6 +256,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ::BlockPos _absolutePos(::BlockPos const& relativePos) const;
+
+    MCNAPI ::Vec3 _absoluteVec(::Vec3 const& relativeVec) const;
+
+    MCNAPI ::BlockPos _relativePos(::BlockPos const& absolutePos) const;
+
     MCNAPI ::std::optional<::gametest::GameTestError> assertCondition(bool condition, ::std::string const& message);
 
     MCNAPI void fail(::gametest::GameTestError error);
@@ -282,6 +288,8 @@ public:
     MCNAPI void runAfterDelay(int ticksToDelay, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 
     MCNAPI void succeedIf(::std::function<::std::optional<::gametest::GameTestError>()> fn);
+
+    MCNAPI void succeedOnTick(int tick);
 
     MCNAPI void succeedOnTickWhen(int tick, ::std::function<::std::optional<::gametest::GameTestError>()> fn);
 

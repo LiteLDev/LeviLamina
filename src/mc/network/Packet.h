@@ -144,16 +144,6 @@ public:
     // NOLINTEND
 
 public:
-    // member functions
-    // NOLINTBEGIN
-    MCAPI ::Bedrock::Result<void> readNoHeader(
-        ::ReadOnlyBinaryStream&        bitstream,
-        ::cereal::ReflectionCtx const& reflectionCtx,
-        ::SubClientId const&           subid
-    );
-    // NOLINTEND
-
-public:
     // virtual function thunks
     // NOLINTBEGIN
     MCFOLD uint64 $getMaxSize() const;
@@ -183,7 +173,7 @@ public:
 
     MCFOLD ::std::string $toString() const;
 
-    MCAPI ::Bedrock::Result<void>
+    MCNAPI ::Bedrock::Result<void>
     $_read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
 
@@ -192,7 +182,7 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };
 

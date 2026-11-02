@@ -28,6 +28,22 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<8, 8, ::std::unique_ptr<::CompoundTag>> mTag;
         // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI Tag();
+#endif
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+#ifdef LL_PLAT_S
+        MCNAPI void* $ctor();
+#endif
+        // NOLINTEND
     };
 
 public:
@@ -53,12 +69,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ~LevelDataValue();
+    MCNAPI ~LevelDataValue();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

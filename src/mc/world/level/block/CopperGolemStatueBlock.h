@@ -40,37 +40,38 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI CopperGolemStatueBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    MCNAPI CopperGolemStatueBlock(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
 
-    MCAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
+    MCNAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
-    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static ::std::array<::std::string_view, 4> const& POSES();
+    MCNAPI static ::std::array<::std::string_view, 4> const& POSES();
 #endif
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
+    MCNAPI void* $ctor(::std::string const& nameId, int id, ::CopperBlockSet const& copperSet);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $isInteractiveBlock() const;
+    MCNAPI bool $isInteractiveBlock() const;
 
-    MCAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
+    MCNAPI ::ItemInstance $asItemInstance(::Block const& block, ::BlockActor const* blockActor) const;
 
-    MCFOLD bool $hasComparatorSignal() const;
+    MCNAPI bool $hasComparatorSignal() const;
 
-    MCAPI int $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
+    MCNAPI int
+    $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
 
     // NOLINTEND
@@ -78,6 +79,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

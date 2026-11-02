@@ -35,20 +35,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI TouchTextButtonBinding(::TouchTextButtonBinding const&);
+    MCNAPI TouchTextButtonBinding(::TouchTextButtonBinding const&);
 
-    MCAPI ~TouchTextButtonBinding();
+    MCNAPI ~TouchTextButtonBinding();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::TouchTextButtonBinding const&);
+    MCNAPI void* $ctor(::TouchTextButtonBinding const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

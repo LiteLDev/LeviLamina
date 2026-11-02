@@ -11,7 +11,7 @@
 class SemVersion;
 struct LegacyEventItemComponentData;
 struct PackLoadInfo;
-namespace SharedTypes::v1_26_30 { struct ItemDocument; }
+namespace SharedTypes::v1_26_50 { struct ItemDocument; }
 // clang-format on
 
 class ItemEventResponseFactory : public ::EventResponseFactory, public ::IPackLoadScoped {
@@ -28,18 +28,18 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
+    MCNAPI ::std::optional<::LegacyEventItemComponentData> makeLegacyEvents(
         ::SemVersion const&                          documentVersion,
-        ::SharedTypes::v1_26_30::ItemDocument const& itemDocument
+        ::SharedTypes::v1_26_50::ItemDocument const& itemDocument
     ) const;
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
+    MCNAPI void $initializeFactory(::PackLoadInfo const& packLoadInfo);
 
-    MCAPI void $initSchema();
+    MCNAPI void $initSchema();
 
 
     // NOLINTEND

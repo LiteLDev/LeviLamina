@@ -12,6 +12,7 @@
 #include "mc/world/events/LevelEventListener.h"
 #include "mc/world/level/ChunkPos.h"
 #include "mc/world/level/dimension/DimensionType.h"
+#include "mc/world/level/ticking/TransientTickingAreaLimits.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -67,10 +68,10 @@ public:
         ::std::map<
             ::DimensionType,
             ::std::unordered_map<::ChunkPos, ::ScriptModuleMinecraft::ScriptTickingAreaManager::Counter>>>
-                                                              mTickingChunksCache;
-    ::ll::TypedStorage<4, 4, int const>                       mMaxNumberOfChunks;
-    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope> mScope;
-    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>> mLevel;
+                                                                 mTickingChunksCache;
+    ::ll::TypedStorage<4, 8, ::TransientTickingAreaLimits const> mLimitPolicy;
+    ::ll::TypedStorage<8, 16, ::Scripting::WeakLifetimeScope>    mScope;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::ServerLevel*>>    mLevel;
     // NOLINTEND
 
 public:
@@ -84,24 +85,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
+    MCNAPI ::std::optional<::ScriptModuleMinecraft::ScriptTickingArea>
     _getTickingArea(::ScriptModuleMinecraft::ScriptTickingAreaManager::PromiseContext const& context) const;
 
-    MCAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
+    MCNAPI bool _hasCapacity(::DimensionType const& dimensionId, ::Bounds const& bounds);
 
-    MCAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
+    MCNAPI bool _removeTickingAreas(::std::vector<::mce::UUID> const& uuids);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::Scripting::ClassBinding bind();
+    MCNAPI static ::Scripting::ClassBinding bind();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
+    MCNAPI ::EventResult $onEvent(::LevelTickingAreaFinishedLoadingEvent const& event);
 
 
     // NOLINTEND

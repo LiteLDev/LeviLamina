@@ -18,15 +18,15 @@ struct MovementAttributesComponent;
 namespace UpdateAttributesSystemImpl {
 // functions
 // NOLINTBEGIN
-MCAPI void tickProcessRequests(
+MCNAPI void tickProcessRequests(
     ::entt::type_list<::Include<::ActorMovementTickNeededComponent>>,
-    ::StrictEntityContext const&                  entity,
-    ::AttributesComponent&                        attributes,
-    ::AttributeRequestComponent const&            request,
-    ::EntityModifier<::AttributeRequestComponent> modifier
+    ::StrictEntityContext const&                         entity,
+    ::AttributesComponent&                               attributes,
+    ::AttributeRequestComponent const&                   request,
+    ::EntityModifier<::AttributeRequestComponent> const& modifier
 );
 
-MCAPI void
+MCNAPI void
 tickUpdateAttributesSystem(::AttributesComponent const& attributes, ::MovementAttributesComponent& movementAttributes);
 // NOLINTEND
 

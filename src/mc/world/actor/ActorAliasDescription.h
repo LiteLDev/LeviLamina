@@ -28,16 +28,24 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
+    MCNAPI ::AliasInfoDescription const* getAliasInfo(::std::string const& name) const;
 
-    MCAPI void parse(::Json::Value& root, bool isVanilla);
+    MCNAPI void parse(::Json::Value& root, bool isVanilla);
+#endif
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+#ifdef LL_PLAT_C
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI char const* $getJsonName() const;
+    MCNAPI char const* $getJsonName() const;
 
 
     // NOLINTEND
@@ -45,6 +53,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCAPI static void** $vftable();
+    MCNAPI static void** $vftable();
     // NOLINTEND
 };

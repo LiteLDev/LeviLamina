@@ -60,73 +60,73 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit RealmsWorldEditorGameRulesQueriesFacet(
+    MCNAPI explicit RealmsWorldEditorGameRulesQueriesFacet(
         ::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor
     );
 
-    MCAPI void _refreshRealmWorldSubscriptions();
+    MCNAPI void _refreshRealmWorldSubscriptions();
 
-    MCAPI bool getCommandBlocksEnabled() const;
+    MCNAPI bool getCommandBlocksEnabled() const;
 
-    MCAPI bool getEntitiesDropLoot() const;
+    MCNAPI bool getEntitiesDropLoot() const;
 
-    MCAPI bool getFireSpreads() const;
+    MCNAPI bool getFireSpreads() const;
 
-    MCAPI bool getFriendlyFireEnabled() const;
+    MCNAPI bool getFriendlyFireEnabled() const;
 
-    MCAPI bool getImmediateRespawn() const;
+    MCNAPI bool getImmediateRespawn() const;
 
-    MCAPI bool getKeepInventory() const;
+    MCNAPI bool getKeepInventory() const;
 
-    MCAPI bool getMobGriefing() const;
+    MCNAPI bool getMobGriefing() const;
 
-    MCAPI bool getMobSpawn() const;
+    MCNAPI bool getMobSpawn() const;
 
-    MCAPI bool getMobsDropLoot() const;
+    MCNAPI bool getMobsDropLoot() const;
 
-    MCAPI bool getNaturalRegeneration() const;
+    MCNAPI bool getNaturalRegeneration() const;
 
-    MCFOLD int getPlayerWaypointsMode() const;
+    MCNAPI int getPlayerWaypointsMode() const;
 
-    MCAPI int getRandomTickSpeed() const;
+    MCNAPI int getRandomTickSpeed() const;
 
-    MCFOLD bool getRecipesUnlock() const;
+    MCNAPI bool getRecipesUnlock() const;
 
-    MCFOLD bool getRespawnBlocksExplode() const;
+    MCNAPI bool getRespawnBlocksExplode() const;
 
-    MCAPI int getRespawnRadius() const;
+    MCNAPI int getRespawnRadius() const;
 
-    MCFOLD bool getShowCoordinates() const;
+    MCNAPI bool getShowCoordinates() const;
 
-    MCFOLD bool getShowDaysPlayed() const;
+    MCNAPI bool getShowDaysPlayed() const;
 
-    MCAPI bool getSleepSkipNight() const;
+    MCNAPI bool getSleepSkipNight() const;
 
-    MCAPI int getSleepSkipNightPercent() const;
+    MCNAPI int getSleepSkipNightPercent() const;
 
-    MCAPI bool getTNTExplodes() const;
+    MCNAPI bool getTNTExplodes() const;
 
-    MCAPI bool getTileDrops() const;
+    MCNAPI bool getTileDrops() const;
 
-    MCAPI bool getWeatherCycle() const;
+    MCNAPI bool getWeatherCycle() const;
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
+    MCNAPI void* $ctor(::std::shared_ptr<::Realms::RealmsWorldEditor> realmsWorldEditor);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCFOLD bool $update();
+    MCNAPI bool $update();
     // NOLINTEND
 };
 

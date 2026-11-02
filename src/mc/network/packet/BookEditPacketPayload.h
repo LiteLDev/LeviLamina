@@ -43,14 +43,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::PageContent getPage() const;
+    MCNAPI ::PageContent getPage() const;
 
 #ifdef LL_PLAT_C
-    MCAPI void setToAddPage(int bookSlot, int pageIndex, ::PageContent const& page);
+    MCNAPI void setToAddPage(int bookSlot, int pageIndex, ::PageContent const& page);
 
-    MCAPI void setToFinalize(int bookSlot, ::std::string title, ::std::string author, ::std::string xuid);
+    MCNAPI void setToFinalize(int bookSlot, ::std::string title, ::std::string author, ::std::string xuid);
 
-    MCAPI void setToReplacePage(int bookSlot, int pageIndex, ::PageContent const& page);
+    MCNAPI void setToReplacePage(int bookSlot, int pageIndex, ::PageContent const& page);
 #endif
     // NOLINTEND
 };

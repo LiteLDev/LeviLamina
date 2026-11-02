@@ -30,6 +30,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
+    MCNAPI void setLookAtPosition(::Actor const* target, float yMax, float xMax);
     // NOLINTEND
 };

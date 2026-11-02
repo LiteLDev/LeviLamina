@@ -7,11 +7,6 @@
 #include "mc/deps/shared_types/v1_21_120/actor/ActorDefinitionTrigger.h"
 #include "mc/deps/shared_types/v1_26_0/actor/NearestAttackableTargetGoalDefinition.h"
 
-// auto generated forward declare list
-// clang-format off
-namespace cereal { struct ReflectionCtx; }
-// clang-format on
-
 namespace SharedTypes::v1_26_30 {
 
 struct DefendTrustedTargetGoalDefinition : public ::SharedTypes::v1_26_0::NearestAttackableTargetGoalDefinition {
@@ -32,38 +27,30 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI DefendTrustedTargetGoalDefinition(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+    MCNAPI DefendTrustedTargetGoalDefinition(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
 
-    MCAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
+    MCNAPI ::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&
     operator=(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
 
-    MCAPI bool operator==(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition const&) const;
-
-    MCAPI ~DefendTrustedTargetGoalDefinition();
-    // NOLINTEND
-
-public:
-    // static functions
-    // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI ~DefendTrustedTargetGoalDefinition();
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string_view const& NAME();
+    MCNAPI static ::std::string_view const& NAME();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
+    MCNAPI void* $ctor(::SharedTypes::v1_26_30::DefendTrustedTargetGoalDefinition&&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

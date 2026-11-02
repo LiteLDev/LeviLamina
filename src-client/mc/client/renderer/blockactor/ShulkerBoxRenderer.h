@@ -16,7 +16,6 @@ class ItemStack;
 struct ActorTextureInfo;
 struct BlockActorRenderData;
 namespace dragon { struct RenderMetadata; }
-namespace mce { class TextureGroup; }
 // clang-format on
 
 class ShulkerBoxRenderer : public ::BlockActorRenderer {
@@ -29,10 +28,6 @@ public:
     // NOLINTEND
 
 public:
-    // prevent constructor by default
-    ShulkerBoxRenderer();
-
-public:
     // virtual functions
     // NOLINTBEGIN
     virtual void
@@ -42,15 +37,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit ShulkerBoxRenderer(::std::shared_ptr<::mce::TextureGroup> textureGroup);
-
-    MCAPI void renderByItem(
+    MCNAPI void renderByItem(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::ItemStack const&              item
     );
 
-    MCAPI void renderInGui(
+    MCNAPI void renderInGui(
         ::BaseActorRenderContext&       renderContext,
         ::dragon::RenderMetadata const& renderMetadata,
         ::BlockActor&,
@@ -66,18 +59,12 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string const& getTexturePathFor(::HashedString const& blockId);
-    // NOLINTEND
-
-public:
-    // constructor thunks
-    // NOLINTBEGIN
-    MCAPI void* $ctor(::std::shared_ptr<::mce::TextureGroup> textureGroup);
+    MCNAPI static ::std::string const& getTexturePathFor(::HashedString const& blockId);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
+    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::BlockActorRenderData& blockEntityRenderData);
     // NOLINTEND
 };

@@ -34,17 +34,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool
+    MCNAPI bool
     _canKickPlayerOrGenerateFailureOutput(::Player const& player, ::CommandOutput& output, ::Level* level) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void
+    MCNAPI static void
     _generateSuccessOutput(::CommandOutput& output, ::std::string const& playerNameTag, ::std::string const& reason);
 
-    MCAPI static void _kickPlayer(
+    MCNAPI static void _kickPlayer(
         ::Minecraft*                   game,
         ::Player const&                matchingPlayer,
         ::std::string const&           message,
@@ -57,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
+    MCNAPI void $execute(::CommandOrigin const& origin, ::CommandOutput& output) const;
 
 
     // NOLINTEND

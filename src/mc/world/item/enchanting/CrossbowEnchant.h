@@ -23,21 +23,21 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
+    MCNAPI static ::std::vector<::Enchant::Type> const& VALID_ENCHANTMENTS();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI int $getMinCost(int level) const;
+    MCNAPI int $getMinCost(int level) const;
 
-    MCAPI int $getMaxCost(int level) const;
+    MCNAPI int $getMaxCost(int level) const;
 
-    MCAPI int $getMaxLevel() const;
+    MCNAPI int $getMaxLevel() const;
 
-    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
+    MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 
 
     // NOLINTEND

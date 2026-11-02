@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/world/item/HandSlot.h"
+
 // auto generated forward declare list
 // clang-format off
 class Actor;
@@ -26,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool _canBribe(::ItemStack const& item);
+    MCNAPI bool _canBribe(::ItemStack const& item);
 
-    MCAPI bool clientBribeCheck(::Actor& owner);
+    MCNAPI bool clientBribeCheck(::Actor& owner);
 
-    MCAPI ::Interaction getInteraction(::Actor& owner, ::Player& player);
+    MCNAPI ::Interaction getInteraction(::Actor& owner, ::Player& player, ::HandSlot handSlot);
 
-    MCAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
     // NOLINTEND
 };

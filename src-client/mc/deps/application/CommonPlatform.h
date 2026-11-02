@@ -46,13 +46,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
+    MCNAPI bool startApp(::Bedrock::ActivationArguments const& actArgs);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 
 public:

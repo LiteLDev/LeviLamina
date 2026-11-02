@@ -65,29 +65,25 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI LevelChunkSaveManager(
+    MCNAPI LevelChunkSaveManager(
         ::std::unique_ptr<::ILevelChunkSaveManagerProxy>     levelChunkSaverProxy,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager
     );
 
-    MCAPI void _findRandomChunkToSave();
+    MCNAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
 
-    MCAPI void _onChunkLoaded(::ChunkSource& chunkSource, ::LevelChunk& levelChunk, int closestPlayerDistanceSquared);
+    MCNAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
 
-    MCAPI bool _shouldDoSave() const;
+    MCNAPI void trySaveChunks();
 
-    MCAPI void registerForLevelChunkManagerEvents(::ILevelChunkEventManagerConnector& levelChunkEventManagerConnector);
-
-    MCAPI void trySaveChunks();
-
-    MCAPI ~LevelChunkSaveManager();
+    MCNAPI ~LevelChunkSaveManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::std::unique_ptr<::ILevelChunkSaveManagerProxy>     levelChunkSaverProxy,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager,
         ::Bedrock::NotNullNonOwnerPtr<::DimensionManager>    dimensionManager
@@ -97,6 +93,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };

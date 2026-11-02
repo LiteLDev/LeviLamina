@@ -105,25 +105,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI explicit VillageManager(::Dimension& dimension);
+    MCNAPI explicit VillageManager(::Dimension& dimension);
 
-    MCAPI void _assignPOIOnly(::std::shared_ptr<::POIInstance>&& pi);
+    MCNAPI void _assignPOIOnly(::std::shared_ptr<::POIInstance>&& pi);
 
-#ifdef LL_PLAT_S
-    MCAPI void _clusterPOIs();
-#endif
+    MCNAPI void _loadPOIBlueprints();
 
-    MCAPI void _loadPOIBlueprints();
+    MCNAPI void _processNextUnclusteredPOIQuery();
 
-    MCAPI void _processNextUnclusteredPOIQuery();
+    MCNAPI void _removeEligibleVillages();
 
-    MCAPI void _removeEligibleVillages();
+    MCNAPI void _saveAllVillages(::LevelStorage& levelStorage);
 
-    MCAPI void _saveAllVillages(::LevelStorage& levelStorage);
+    MCNAPI void _tryAssignPOIOrCreateVillage(::std::shared_ptr<::POIInstance>&& pi);
 
-    MCAPI void _tryAssignPOIOrCreateVillage(::std::shared_ptr<::POIInstance>&& pi);
-
-    MCAPI ::std::weak_ptr<::Village> fetchClosestVillageMostSuitableForDweller(
+    MCNAPI ::std::weak_ptr<::Village> fetchClosestVillageMostSuitableForDweller(
         ::BlockPos const& position,
         int               maxDistFromVillageBounds,
         uint              searchRadius
@@ -131,35 +127,31 @@ public:
 
     MCAPI ::std::weak_ptr<::Village> getClosestVillageWithRaid(::BlockPos const& pos);
 
-    MCAPI void
+    MCNAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);
 
-#ifdef LL_PLAT_S
-    MCAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
-#endif
+    MCNAPI bool isValidPOIType(::BlockPos const& pos, ::Block const& block) const;
 
-    MCAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
+    MCNAPI void submitFindPOIQuery(::ActorUniqueID const& actorID);
 
-#ifdef LL_PLAT_C
-    MCAPI void tick(::Tick const& tick);
-#endif
+    MCNAPI void tick(::Tick const& tick);
 
-    MCAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
+    MCNAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::Dimension& dimension);
+    MCNAPI void* $ctor(::Dimension& dimension);
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI ::std::weak_ptr<::Village>
+    MCNAPI ::std::weak_ptr<::Village>
     $fetchClosestVillage(::BlockPos const& position, int maxDistFromVillageBounds, uint searchRadius) const;
 
-    MCAPI ::std::weak_ptr<::Village> $getVillageByID(::mce::UUID const& villageID) const;
+    MCNAPI ::std::weak_ptr<::Village> $getVillageByID(::mce::UUID const& villageID) const;
 
 
     // NOLINTEND

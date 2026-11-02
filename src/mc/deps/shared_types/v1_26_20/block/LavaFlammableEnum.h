@@ -13,7 +13,7 @@ struct LavaFlammableEnum {
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindLavaFlammable(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindLavaFlammable(::cereal::ReflectionCtx& ctx);
     // NOLINTEND
 };
 

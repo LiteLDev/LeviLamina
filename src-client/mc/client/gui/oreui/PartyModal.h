@@ -13,14 +13,14 @@ namespace Realms { struct RealmId; }
 namespace OreUI::EntryPoints::PartyModal {
 // functions
 // NOLINTBEGIN
-MCAPI ::std::string composeInvitePartyToCreatedRealmRoute(::Realms::RealmId realmId);
+MCNAPI ::std::string composeInvitePartyToCreatedRealmRoute(::Realms::RealmId realmId);
 
-MCAPI ::std::string composeRouteForModal(::OreUI::EntryPoints::PartyModal::ModalType modal);
+MCNAPI ::std::string composeRouteForModal(::OreUI::EntryPoints::PartyModal::ModalType modal);
 // NOLINTEND
 
 // static variables
 // NOLINTBEGIN
-MCAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
+MCNAPI ::std::add_lvalue_reference_t<char const[]> ROUTE();
 // NOLINTEND
 
 } // namespace OreUI::EntryPoints::PartyModal

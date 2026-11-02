@@ -3,8 +3,8 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
-#include "mc/common/editor/MouseCursorIconType.h"
 #include "mc/deps/script_core/runtime/scripting/Result_deprecated.h"
+#include "mc/editor/MouseCursorIconType.h"
 #include "mc/editor/services/IEditorService.h"
 #include "mc/server/editor/serviceproviders/ServerPlayerInputServiceProvider.h"
 

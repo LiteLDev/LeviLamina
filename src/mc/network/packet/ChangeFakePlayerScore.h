@@ -24,24 +24,12 @@ public:
     // NOLINTBEGIN
     MCAPI ChangeFakePlayerScore(::ChangeFakePlayerScore const&);
 
-    MCAPI bool operator==(::ChangeFakePlayerScore const&) const;
-
-#ifdef LL_PLAT_S
-    MCAPI ~ChangeFakePlayerScore();
-#endif
+    MCNAPI bool operator==(::ChangeFakePlayerScore const&) const;
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
     MCAPI void* $ctor(::ChangeFakePlayerScore const&);
-    // NOLINTEND
-
-public:
-    // destructor thunk
-    // NOLINTBEGIN
-#ifdef LL_PLAT_S
-    MCAPI void $dtor();
-#endif
     // NOLINTEND
 };

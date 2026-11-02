@@ -25,9 +25,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static void bindType(::cereal::ReflectionCtx& ctx);
+    MCNAPI static void bindType(::cereal::ReflectionCtx& ctx);
 
-    MCAPI static void
+    MCNAPI static void
     upgrade(::SharedTypes::v1_21_60::ItemMenuCategory& oldData, ::SharedTypes::v1_21_110::ItemMenuCategory& newData);
     // NOLINTEND
 };

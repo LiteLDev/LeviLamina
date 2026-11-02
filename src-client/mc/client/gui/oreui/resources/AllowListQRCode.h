@@ -20,13 +20,21 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI AllowListQRCode(::std::string id, ::std::string target);
+    MCNAPI AllowListQRCode(::std::string id, ::std::string target);
+
+    MCNAPI ~AllowListQRCode();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(::std::string id, ::std::string target);
+    MCNAPI void* $ctor(::std::string id, ::std::string target);
+    // NOLINTEND
+
+public:
+    // destructor thunk
+    // NOLINTBEGIN
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

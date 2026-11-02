@@ -77,7 +77,7 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI ~Impl();
+        MCNAPI ~Impl();
 #endif
         // NOLINTEND
 
@@ -85,7 +85,7 @@ public:
         // destructor thunk
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCAPI void $dtor();
+        MCNAPI void $dtor();
 #endif
         // NOLINTEND
     };
@@ -102,13 +102,10 @@ public:
     ::ll::TypedStorage<8, 8, ::std::unique_ptr<::Option::Impl>> mImpl;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
-#else // LL_PLAT_C
 public:
     // prevent constructor by default
     Option();
 
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -130,8 +127,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI Option(
+    MCNAPI Option(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -141,33 +137,35 @@ public:
         ::GameVersion        version
     );
 
-    MCAPI void _resetOption(::InputMode inputMode, bool saveOptionChange);
+#ifdef LL_PLAT_C
+    MCNAPI void _resetOption(::InputMode inputMode, bool saveOptionChange);
+#endif
 
-    MCAPI void _updatePropertyVector(
+    MCNAPI void _updatePropertyVector(
         ::std::vector<::std::pair<::std::string, ::std::string>>& propertyVector,
         ::std::string const&                                      value
     );
 
-    MCAPI bool canModify() const;
+#ifdef LL_PLAT_C
+    MCNAPI bool canModify() const;
 
-    MCAPI bool isDefaultValue(::InputMode inputMode) const;
+    MCNAPI bool isDefaultValue(::InputMode inputMode) const;
 
-    MCAPI bool isNewVersion(::GameVersion currentVersion) const;
+    MCNAPI bool isNewVersion(::GameVersion currentVersion) const;
+#endif
 
-    MCAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
+    MCNAPI ::Bedrock::PubSub::Subscription registerLock(::std::function<void(bool&)> isModifiableCondition);
 
-    MCAPI ::Bedrock::PubSub::Subscription
-    registerObserver(::std::function<void(::Option const&)> onValueChangedCallback);
+#ifdef LL_PLAT_C
+    MCNAPI void setCoerceSaveValueCallback(::std::function<int(int)> callback);
 
-    MCAPI void setCoerceSaveValueCallback(::std::function<int(int)> callback);
+    MCNAPI void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
 
-    MCAPI void setCoerceValueCallback(::std::function<::std::string(::std::string const&)> f);
+    MCNAPI void setCoerceValueCallback(::std::function<bool(bool)> f);
 
-    MCAPI void setCoerceValueCallback(::std::function<bool(bool)> f);
+    MCNAPI void setOverrideSource(::Option* overrideSource);
 
-    MCAPI void setOverrideSource(::Option* overrideSource);
-
-    MCAPI void toggle();
+    MCNAPI void toggle();
 #endif
     // NOLINTEND
 
@@ -175,19 +173,18 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI static bool read(::std::string const& valueString, int& output);
+    MCNAPI static bool read(::std::string const& valueString, int& output);
 
-    MCAPI static bool read(::std::string const& valueString, float& output);
-
-    MCAPI static bool read(::std::string const& valueString, bool& output);
+    MCNAPI static bool read(::std::string const& valueString, float& output);
 #endif
+
+    MCNAPI static bool read(::std::string const& valueString, bool& output);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::OptionID           id,
         ::OptionOwnerType    ownerType,
         ::OptionResetFlags   resetFlags,
@@ -196,23 +193,22 @@ public:
         ::OptionType         optionType,
         ::GameVersion        version
     );
-#endif
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
 #endif
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
+    MCNAPI void $load(::std::map<::std::string, ::std::string>& propertyMap);
 
-    MCAPI void $load(::Json::Value const& valueJson);
+    MCNAPI void $load(::Json::Value const& valueJson);
 
 
     // NOLINTEND

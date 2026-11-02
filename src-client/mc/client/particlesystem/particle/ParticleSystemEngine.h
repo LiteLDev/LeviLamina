@@ -77,7 +77,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ParticleSystemEngine(
+    MCNAPI ParticleSystemEngine(
         ::ParticleEffectGroup&                                  particleEffectGroup,
         ::BlockSource&                                          region,
         ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,
@@ -87,24 +87,24 @@ public:
 
     MCAPI void clear();
 
-    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::std::shared_ptr<::ParticleEffectInfo> const& effectInfo,
         ::Matrix const&                                transform,
         ::MolangVariableMap                            molangVariableMap
     );
 
-    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(::HashedString const& effectName, ::Vec3 const& pos, ::MolangVariableMap molangVariableMap);
 
-    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::HashedString const& effectName,
         ::Matrix const&       transform,
         ::MolangVariableMap   molangVariableMap
     );
 
-    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::HashedString const& effectName,
         ::Actor const&        actor,
@@ -113,28 +113,28 @@ public:
         ::MolangVariableMap   molangVariableMap
     );
 
-    MCAPI void emitParticleManually(
+    MCNAPI void emitParticleManually(
         ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle,
         ::Vec3 const&                                                                            particlePosition,
         ::Vec3 const&                                                                            velocityAdd,
         float                                                                                    scaleMult
     );
 
-    MCAPI uint64 getEffectEmitterCount(::HashedString const& effectName) const;
+    MCNAPI uint64 getEffectEmitterCount(::HashedString const& effectName) const;
 
-    MCAPI uint64 getEffectParticleCount(::HashedString const& effectName) const;
+    MCNAPI uint64 getEffectParticleCount(::HashedString const& effectName) const;
 
-    MCAPI void setEmitterIsManuallyEmitted(
+    MCNAPI void setEmitterIsManuallyEmitted(
         ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle
     );
 
-    MCAPI void tick(float a, bool paused);
+    MCNAPI void tick(float a, bool paused);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor(
+    MCNAPI void* $ctor(
         ::ParticleEffectGroup&                                  particleEffectGroup,
         ::BlockSource&                                          region,
         ::std::weak_ptr<::LightPropagation::LightVolumeManager> lightVolumeManager,

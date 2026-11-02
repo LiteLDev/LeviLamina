@@ -8,6 +8,7 @@
 // auto generated forward declare list
 // clang-format off
 class ISecureStorageKeySystem;
+class SecureStorageKey;
 namespace Core { class Path; }
 namespace Core { class PathView; }
 // clang-format on
@@ -126,6 +127,8 @@ public:
     );
 
     MCNAPI ::std::string _contentKeyObfuscator(::std::string const& codedData, ::std::string const& identifier);
+
+    MCNAPI ::SecureStorageKey _getSecureStorageKey() const;
 
 #ifdef LL_PLAT_C
     MCNAPI bool _init(bool expectedFailure);

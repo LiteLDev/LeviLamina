@@ -36,32 +36,32 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI ::std::string const& getCreator() const;
+    MCNAPI ::std::string const& getCreator() const;
 
-    MCAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
+    MCNAPI ::World::OwnedWorldTemplateData& operator=(::World::OwnedWorldTemplateData const&);
 
-    MCAPI ~OwnedWorldTemplateData();
+    MCNAPI ~OwnedWorldTemplateData();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCAPI static ::std::string
+    MCNAPI static ::std::string
     _formatPackKeyword(::std::string const& rawName, ::WorldTemplatePackManifest const& manifest);
 
-    MCAPI static ::World::OwnedWorldTemplateData fromStoreCatalogItem(::StoreCatalogItem const& itemData);
+    MCNAPI static ::World::OwnedWorldTemplateData fromStoreCatalogItem(::StoreCatalogItem const& itemData);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_UNKNOWN_ID();
+    MCNAPI static ::std::add_lvalue_reference_t<char const[]> DEFAULT_UNKNOWN_ID();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCAPI void $dtor();
+    MCNAPI void $dtor();
     // NOLINTEND
 };
 

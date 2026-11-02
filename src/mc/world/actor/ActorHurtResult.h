@@ -4,17 +4,21 @@
 
 class ActorHurtResult {
 public:
+    // ActorHurtResult inner types define
+    enum class Type : int {
+        NotHurt         = 0,
+        EffectsOnly     = 1,
+        DamageProcessed = 2,
+    };
+
+public:
     // member variables
     // NOLINTBEGIN
-    ::ll::TypedStorage<4, 8, ::std::variant<bool, float>> mHurtOrDamage;
-    ::ll::TypedStorage<1, 1, bool>                        mShouldAllowKnockback;
+    ::ll::TypedStorage<4, 4, ::ActorHurtResult::Type> mType;
+    ::ll::TypedStorage<4, 8, ::std::optional<float>>  mDamageAmount;
+    ::ll::TypedStorage<1, 1, bool>                    mShouldAllowKnockback;
     // NOLINTEND
 
     // TODO: check
-    operator bool() const {
-        if (std::holds_alternative<bool>(*mHurtOrDamage)) {
-            return std::get<bool>(*mHurtOrDamage);
-        }
-        return std::get<float>(*mHurtOrDamage) > 0;
-    }
+    operator bool() const { return mDamageAmount->value_or(0.0f) > 0; }
 };

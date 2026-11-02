@@ -39,23 +39,22 @@ public:
 public:
     // prevent constructor by default
     MeshData& operator=(MeshData const&);
+    MeshData();
 
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI MeshData();
-
     MCAPI MeshData(::mce::MeshData&&);
 
-    MCAPI MeshData(::mce::MeshData const&);
+    MCNAPI MeshData(::mce::MeshData const&);
 
-    MCAPI void clear();
+    MCNAPI void clear();
 
-    MCAPI void freeMemory();
+    MCNAPI void freeMemory();
 
-    MCAPI ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
+    MCNAPI ::mce::MeshDataVertexFieldCounts getVertexFieldCount() const;
 
-    MCAPI ::mce::MeshData& operator=(::mce::MeshData&&);
+    MCNAPI ::mce::MeshData& operator=(::mce::MeshData&&);
 
     MCAPI uint64 size() const;
 
@@ -65,11 +64,9 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCAPI void* $ctor();
-
     MCAPI void* $ctor(::mce::MeshData&&);
 
-    MCAPI void* $ctor(::mce::MeshData const&);
+    MCNAPI void* $ctor(::mce::MeshData const&);
     // NOLINTEND
 
 public:

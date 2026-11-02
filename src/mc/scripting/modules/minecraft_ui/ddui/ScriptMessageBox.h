@@ -11,6 +11,8 @@
 // auto generated forward declare list
 // clang-format off
 class IGameplayUserManagerConnector;
+class ServerPlayer;
+namespace ScriptModuleMinecraft { class ScriptPlayer; }
 namespace ScriptModuleMinecraft { struct ScriptInvalidActorError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptFormVisibilityError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptInvalidFormError; }
@@ -19,7 +21,9 @@ namespace ScriptModuleMinecraftServerUI { class ScriptObservableString; }
 namespace ScriptModuleMinecraftServerUI { class ScriptObservableUIRawMessage; }
 namespace ScriptModuleMinecraftServerUI { class ScriptPlayerLeftError; }
 namespace ScriptModuleMinecraftServerUI { class ScriptUIRawMessage; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxBodyOptions; }
 namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxButtonOptions; }
+namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxOptions; }
 namespace ScriptModuleMinecraftServerUI { struct ScriptMessageBoxResult; }
 namespace Scripting { class DependencyLocator; }
 namespace Scripting { class ScriptObjectFactory; }
@@ -38,8 +42,11 @@ public:
     ::ll::UntypedStorage<8, 32>  mUnk447b66;
     ::ll::UntypedStorage<8, 216> mUnk852f39;
     ::ll::UntypedStorage<8, 216> mUnkcd09d9;
-    ::ll::UntypedStorage<8, 576> mUnkd684d3;
-    ::ll::UntypedStorage<8, 576> mUnkb7893f;
+    ::ll::UntypedStorage<8, 48>  mUnkfe6b4b;
+    ::ll::UntypedStorage<8, 56>  mUnk57efdf;
+    ::ll::UntypedStorage<8, 632> mUnkd684d3;
+    ::ll::UntypedStorage<8, 632> mUnkb7893f;
+    ::ll::UntypedStorage<8, 632> mUnkd0d61e;
     // NOLINTEND
 
 public:
@@ -51,6 +58,31 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
+    MCNAPI ScriptMessageBox(
+        ::IGameplayUserManagerConnector&                                            userManagerConnector,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::ServerPlayer&                                                             serverPlayer,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                  title,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxOptions> options,
+        ::Scripting::WeakLifetimeScope                                            scope
+    );
+
+    MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    bodyWithOptions(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                      text,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxBodyOptions> options
+    );
+
     MCNAPI ::Scripting::Result<
         ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
         ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
@@ -108,6 +140,18 @@ public:
     );
 
     MCNAPI ::Scripting::Result<
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptMessageBox>,
+        ::ScriptModuleMinecraftServerUI::ScriptInvalidFormModificationError>
+    button3WithOptions(
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                        label,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxButtonOptions> options
+    );
+
+    MCNAPI ::Scripting::Result<
         ::Scripting::Promise<
             ::ScriptModuleMinecraftServerUI::ScriptMessageBoxResult,
             ::ScriptModuleMinecraftServerUI::ScriptPlayerLeftError,
@@ -133,6 +177,23 @@ public:
     // static variables
     // NOLINTBEGIN
     MCNAPI static char const* const& FORM_ID();
+    // NOLINTEND
+
+public:
+    // constructor thunks
+    // NOLINTBEGIN
+    MCNAPI void* $ctor(
+        ::IGameplayUserManagerConnector&                                            userManagerConnector,
+        ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraft::ScriptPlayer> scriptPlayer,
+        ::ServerPlayer&                                                             serverPlayer,
+        ::std::variant<
+            ::std::string,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableString>,
+            ::Scripting::StrongTypedObjectHandle<::ScriptModuleMinecraftServerUI::ScriptObservableUIRawMessage>,
+            ::ScriptModuleMinecraftServerUI::ScriptUIRawMessage>                  title,
+        ::std::optional<::ScriptModuleMinecraftServerUI::ScriptMessageBoxOptions> options,
+        ::Scripting::WeakLifetimeScope                                            scope
+    );
     // NOLINTEND
 };
 

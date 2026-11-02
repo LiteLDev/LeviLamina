@@ -12,7 +12,7 @@ namespace mce { struct TextureResourceService; }
 namespace TexturePairHelper {
 // functions
 // NOLINTBEGIN
-MCAPI void updateTexture(
+MCNAPI void updateTexture(
     ::mce::TextureResourceService& textureResourceService,
     ::mce::Image const&            image,
     ::mce::ServerTexture const&    serverTexture,

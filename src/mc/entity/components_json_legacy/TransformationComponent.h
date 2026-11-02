@@ -17,7 +17,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCAPI void reloadComponent(::Actor& actor);
+    MCNAPI void reloadComponent(::Actor& actor);
 
     MCAPI void transformIfAble(::Actor& actor, bool shouldRemove);
     // NOLINTEND
