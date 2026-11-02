@@ -13,8 +13,8 @@ public:
 
 public:
     // prevent constructor by default
-    ChordButtonMapping& operator=(ChordButtonMapping const&);
-    ChordButtonMapping();
+    ChordButtonMapping& operator=(ChordButtonMapping const&) = default;
+    ChordButtonMapping()                                     = default;
 
 public:
     // member functions

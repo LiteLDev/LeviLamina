@@ -1,32 +1,19 @@
 #include "ll/api/input/KeyRegistry.h"
+#include "ll/api/input/InputUtils.h"
 
+#include "ll/api/input/ChordHandle.h"
+#include "ll/api/input/HandleBase.h"
+#include "ll/api/input/KeyHandle.h"
 #include "ll/api/mod/ModManagerRegistry.h"
 #include "mc/client/game/ClientInstance.h"
-#include "mc/client/input/KeyboardRemappingLayout.h"
-#include "mc/client/input/MinecraftInputHandler.h"
-#include "mc/client/input/VanillaClientInputMappingFactory.h"
-#include "mc/deps/input/InputHandler.h"
-#include "mc/deps/input/KeyboardInputMapping.h"
-#include "mc/deps/input/KeyboardKeyBinding.h"
-#include "mc/deps/input/MouseButtonBinding.h"
-#include "mc/deps/input/MouseInputMapping.h"
 
-#include <memory>
-#include <string_view>
 
 namespace ll::input {
 
 struct KeyRegistry::Impl {
-    SmallStringNodeMap<KeyHandle>   keys;
-    SmallDenseMap<int, std::string> keyCodeToName;
-
-    struct PendingKeyMapping {
-        std::string      name;
-        std::vector<int> keyCodes;
-        bool             allowRemap;
-    };
-
-    std::vector<PendingKeyMapping> pendingKeyMappings;
+    SmallStringNodeMap<KeyHandle>   keys;   // keyed by "<mod>.key.<name>"
+    SmallStringNodeMap<WheelHandle> wheels; // keyed by "<mod>.wheel.<name>"
+    SmallStringNodeMap<ChordHandle> chords; // keyed by "<mod>.chord.<name>"
 
     std::recursive_mutex mutex;
 };
@@ -36,69 +23,215 @@ KeyRegistry::KeyRegistry() : impl(std::make_unique<Impl>()) {
     reg.executeOnModDisable([this](std::string_view name) { disableModKeys(name); });
 }
 
+void KeyRegistry::disableModKeys(std::string_view modName) {
+    std::lock_guard lock{impl->mutex};
+    for (auto& [name, handle] : impl->keys) {
+        handle.disableModOverloads(modName);
+    }
+    for (auto& [name, wheel] : impl->wheels) {
+        wheel.disableModOverloads(modName);
+    }
+    for (auto& [name, chord] : impl->chords) {
+        chord.disableModOverloads(modName);
+    }
+}
+
+std::unique_lock<std::recursive_mutex> KeyRegistry::lock() const { return std::unique_lock{impl->mutex}; }
+
+void KeyRegistry::onInputHandlersRegister(::MinecraftInputHandler& mcInput) {
+    std::lock_guard lock{impl->mutex};
+
+    auto& inputHandler = *mcInput.mInputHandler;
+    for (auto& [name, key] : impl->keys) {
+        if (key.isValid()) {
+            key.registerInputHandler(inputHandler);
+        }
+    }
+    for (auto& [name, wheel] : impl->wheels) {
+        if (wheel.isValid()) {
+            wheel.registerInputHandler(inputHandler);
+        }
+    }
+    for (auto& [name, chord] : impl->chords) {
+        if (chord.isValid()) {
+            chord.registerInputHandler(inputHandler);
+        }
+    }
+    setRegisteredInput(&mcInput);
+}
+
+void KeyRegistry::onKeyboardAndMouseControlsUpdate(::VanillaClientInputMappingFactory& factory) {
+    std::lock_guard lock{impl->mutex};
+
+    for (auto& [name, key] : impl->keys) {
+        if (key.isValid()) {
+            key.registerMappingBinding(factory);
+        }
+    }
+    for (auto& [name, wheel] : impl->wheels) {
+        if (wheel.isValid()) {
+            wheel.registerMappingBinding(factory);
+        }
+    }
+    for (auto& [name, chord] : impl->chords) {
+        if (chord.isValid()) {
+            chord.registerMappingBinding(factory);
+        }
+    }
+}
+
 KeyRegistry& KeyRegistry::getInstance() {
     static KeyRegistry instance;
     return instance;
 }
 
-void KeyRegistry::clear() {
-    std::lock_guard lock{impl->mutex};
-    impl->keys.clear();
-    impl->keyCodeToName.clear();
-}
-
 KeyHandle& KeyRegistry::getOrCreateKey(
-    std::string_view        name,
-    std::vector<int> const& defaultKeyCodes,
-    bool                    allowRemap,
-    std::weak_ptr<mod::Mod> mod
+    std::string_view                      name,
+    std::vector<int>                      defaultKeyCodes,
+    bool                                  allowRemap,
+    std::function<bool(std::string_view)> mappingSwitchProvider,
+    FocusImpact                           focusImpact,
+    std::weak_ptr<mod::Mod>               mod
 ) {
     std::lock_guard lock{impl->mutex};
 
     std::string fullName;
     if (auto modPtr = mod.lock()) {
         fullName  = modPtr->getName();
-        fullName += '.';
+        fullName += ".key.";
     }
     fullName += name;
 
-    if (impl->keys.contains(fullName)) {
-        return impl->keys.at(fullName);
+    if (auto it = impl->keys.find(fullName); it != impl->keys.end()) {
+        return it->second;
     }
 
-    auto handle = KeyHandle{*this, name, defaultKeyCodes, allowRemap, mod};
-
-    auto& ref = impl->keys.insert_or_assign(fullName, std::move(handle)).first->second;
-
-    for (int keyCode : defaultKeyCodes) {
-        impl->keyCodeToName[keyCode] = fullName;
-    }
-
-    impl->pendingKeyMappings.push_back({fullName, defaultKeyCodes, allowRemap});
-
-    return ref;
+    auto& created = impl->keys
+                        .insert_or_assign(
+                            fullName,
+                            KeyHandle{
+                                *this,
+                                name,
+                                std::move(defaultKeyCodes),
+                                allowRemap,
+                                std::move(mappingSwitchProvider),
+                                focusImpact,
+                                std::move(mod)
+                            }
+                        )
+                        .first->second;
+    created.enable();
+    return created;
 }
 
-bool KeyRegistry::hasKey(std::string_view name) {
+WheelHandle& KeyRegistry::getOrCreateWheel(
+    std::string_view                      name,
+    bool                                  isDown,
+    std::function<bool(std::string_view)> mappingSwitchProvider,
+    std::weak_ptr<mod::Mod>               mod
+) {
     std::lock_guard lock{impl->mutex};
 
-    if (impl->keys.find(name) != impl->keys.end()) {
-        return true;
+    std::string fullName;
+    if (auto modPtr = mod.lock()) {
+        fullName  = modPtr->getName();
+        fullName += ".wheel.";
+    }
+    fullName += name;
+
+    if (auto it = impl->wheels.find(fullName); it != impl->wheels.end()) {
+        return it->second;
     }
 
-    for (auto const& [fullName, handle] : impl->keys) {
-        size_t dotPos = fullName.find_last_of('.');
-        if (dotPos != std::string::npos) {
-            std::string baseName = fullName.substr(dotPos + 1);
-            if (baseName == name) {
-                return true;
-            }
-        }
-    }
-
-    return false;
+    auto& created = impl->wheels
+                        .insert_or_assign(
+                            fullName,
+                            WheelHandle{*this, name, isDown, std::move(mappingSwitchProvider), std::move(mod)}
+                        )
+                        .first->second;
+    created.enable();
+    return created;
 }
 
+ChordHandle& KeyRegistry::getOrCreateChord(
+    std::string_view                      name,
+    std::string                           triggerButtonName,
+    std::vector<std::string>              modifierButtonNames,
+    float                                 minHoldTime,
+    std::function<bool(std::string_view)> mappingSwitchProvider,
+    std::weak_ptr<mod::Mod>               mod
+) {
+    std::lock_guard lock{impl->mutex};
+
+    std::string fullName;
+    if (auto modPtr = mod.lock()) {
+        fullName  = modPtr->getName();
+        fullName += ".chord.";
+    }
+    fullName += name;
+
+    if (auto it = impl->chords.find(fullName); it != impl->chords.end()) {
+        return it->second;
+    }
+
+    auto& created = impl->chords
+                        .insert_or_assign(
+                            fullName,
+                            ChordHandle{
+                                *this,
+                                name,
+                                std::move(triggerButtonName),
+                                std::move(modifierButtonNames),
+                                minHoldTime,
+                                std::move(mappingSwitchProvider),
+                                std::move(mod)
+                            }
+                        )
+                        .first->second;
+    created.enable();
+    return created;
+}
+
+bool KeyRegistry::hasKey(std::string_view name, std::weak_ptr<mod::Mod> const& mod) {
+    std::lock_guard lock{impl->mutex};
+
+    std::string fullName;
+    if (auto modPtr = mod.lock()) {
+        fullName  = modPtr->getName();
+        fullName += ".key.";
+    }
+    fullName += name;
+
+    return impl->keys.find(fullName) != impl->keys.end() || impl->keys.find(name) != impl->keys.end();
+}
+
+bool KeyRegistry::hasWheel(std::string_view name, std::weak_ptr<mod::Mod> const& mod) {
+    std::lock_guard lock{impl->mutex};
+
+    std::string fullName;
+    if (auto modPtr = mod.lock()) {
+        fullName  = modPtr->getName();
+        fullName += ".wheel.";
+    }
+    fullName += name;
+
+    return impl->wheels.find(fullName) != impl->wheels.end() || impl->wheels.find(name) != impl->wheels.end();
+}
+
+bool KeyRegistry::hasChord(std::string_view name, std::weak_ptr<mod::Mod> const& mod) {
+    std::lock_guard lock{impl->mutex};
+
+    std::string fullName;
+    if (auto modPtr = mod.lock()) {
+        fullName  = modPtr->getName();
+        fullName += ".chord.";
+    }
+    fullName += name;
+
+    return impl->chords.find(fullName) != impl->chords.end() || impl->chords.find(name) != impl->chords.end();
+}
+
+// 是否应该改为获取该mod注册的keys？
 std::vector<std::string> KeyRegistry::getRegisteredKeys() const {
     std::lock_guard          lock{impl->mutex};
     std::vector<std::string> keys;
@@ -111,95 +244,28 @@ std::vector<std::string> KeyRegistry::getRegisteredKeys() const {
     return keys;
 }
 
-void KeyRegistry::triggerKeyDownCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
-    std::lock_guard lock{impl->mutex};
-    auto            it = impl->keyCodeToName.find(keyCode);
-    if (it != impl->keyCodeToName.end()) {
-        auto keyIt = impl->keys.find(it->second);
-        if (keyIt != impl->keys.end() && keyIt->second.isValid()) {
-            keyIt->second.triggerButtonDownHandlers(focusImpact, client);
-        }
+std::vector<std::string> KeyRegistry::getRegisteredWheels() const {
+    std::lock_guard          lock{impl->mutex};
+    std::vector<std::string> wheels;
+    wheels.reserve(impl->wheels.size());
+
+    for (auto const& pair : impl->wheels) {
+        wheels.push_back(pair.first);
     }
+
+    return wheels;
 }
 
-void KeyRegistry::triggerKeyUpCallback(int keyCode, ::FocusImpact focusImpact, ::IClientInstance& client) {
-    std::lock_guard lock{impl->mutex};
-    auto            it = impl->keyCodeToName.find(keyCode);
-    if (it != impl->keyCodeToName.end()) {
-        auto keyIt = impl->keys.find(it->second);
-        if (keyIt != impl->keys.end() && keyIt->second.isValid()) {
-            keyIt->second.triggerButtonUpHandlers(focusImpact, client);
-        }
+std::vector<std::string> KeyRegistry::getRegisteredChords() const {
+    std::lock_guard          lock{impl->mutex};
+    std::vector<std::string> chords;
+    chords.reserve(impl->chords.size());
+
+    for (auto const& pair : impl->chords) {
+        chords.push_back(pair.first);
     }
-}
 
-void KeyRegistry::disableModKeys(std::string_view modName) {
-    std::lock_guard lock{impl->mutex};
-    for (auto& [name, handle] : impl->keys) {
-        handle.disableModOverloads(modName);
-    }
-}
-
-void KeyRegistry::registerAllKeysToInputHandler(MinecraftInputHandler& inputHandler) {
-    std::lock_guard lock{impl->mutex};
-
-    for (auto& [name, handle] : impl->keys) {
-        auto keyCodes = handle.getKeyCodes();
-        for (int keyCode : keyCodes) {
-            inputHandler.mInputHandler->registerButtonDownHandler(
-                "button." + name,
-                [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
-                    triggerKeyDownCallback(keyCode, focusImpact, client);
-                },
-                false
-            );
-
-            inputHandler.mInputHandler->registerButtonUpHandler(
-                "button." + name,
-                [this, keyCode](::FocusImpact focusImpact, ::IClientInstance& client) {
-                    triggerKeyUpCallback(keyCode, focusImpact, client);
-                },
-                false
-            );
-        }
-    }
-}
-
-void KeyRegistry::registerKeyboardInputs(
-    VanillaClientInputMappingFactory& inputs,
-    std::string_view                  mappingName,
-    KeyboardInputMapping&             keyboardMapping,
-    MouseInputMapping&                mouseMapping,
-    FocusImpact                       focusImpact
-) {
-    std::lock_guard lock{impl->mutex};
-
-    for (auto& [name, handle] : impl->keys) {
-        if (!handle.isValid()) continue;
-
-        if (!handle.containsInputMappingStack(mappingName)) continue;
-
-        std::string buttonName = "button." + name;
-        std::string keyName    = "key." + name;
-        auto        keyMapping = inputs.mKeyboardRemappingLayout.lock()->getKeymappingByAction(keyName);
-
-        for (int key : *keyMapping.mKeys) {
-            if (!keyMapping.isAssigned()) continue;
-            if (keyMapping.isAltKey()) {
-                mouseMapping.buttonBindings->emplace_back(buttonName, key);
-            } else {
-                keyboardMapping.keyBindings->emplace_back(buttonName, key, focusImpact);
-            }
-        }
-    }
-}
-
-void KeyRegistry::processPendingKeyMappings(std::vector<::Keymapping>& newDefaultMapping) {
-    std::lock_guard lock{impl->mutex};
-    for (auto const& pending : impl->pendingKeyMappings) {
-        Keymapping map("key." + pending.name, pending.keyCodes, pending.allowRemap, false);
-        newDefaultMapping.emplace_back(map);
-    }
+    return chords;
 }
 
 } // namespace ll::input
