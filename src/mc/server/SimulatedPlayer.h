@@ -61,7 +61,8 @@ public:
         setSneaking(false);
         return !SynchedActorDataAccess::getActorFlag(mEntityContext, ActorFlags::Sneaking);
     }
-    bool simulateUseItem() { return simulateUseItemInSlot(mInventory->mSelected); }
+    bool       simulateUseItem() { return simulateUseItemInSlot(mInventory->mSelected); }
+    LLAPI bool simulateUseItem(ItemStack& item);
 
     LLAPI bool simulateDestroyBlock(BlockPos const&, ScriptModuleMinecraft::ScriptFacing);
     LLAPI bool simulateDestroyLookAt(float handLength = 5.5f);
@@ -88,7 +89,6 @@ public:
     LLAPI void simulateMoveToLocation(::Vec3 const& position, float speed, bool faceTarget);
     LLAPI void simulateStopDestroyingBlock();
     LLAPI bool simulateInteract(::BlockPos const& pos, ::ScriptModuleMinecraft::ScriptFacing face);
-
 
     LLAPI static ::SimulatedPlayer* tryGetFromEntity(::EntityContext& entity, bool includeRemoved);
 

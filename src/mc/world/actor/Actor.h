@@ -215,6 +215,7 @@ public:
     [[nodiscard]] bool isCrawling() const { return getStatusFlag(::ActorFlags::Crawling); }
     [[nodiscard]] bool isGliding() const { return getStatusFlag(::ActorFlags::Gliding); }
     [[nodiscard]] bool isDancing() const { return getStatusFlag(::ActorFlags::Dancing); }
+    [[nodiscard]] bool canFly() const { return getStatusFlag(::ActorFlags::Canfly); }
     [[nodiscard]] bool isHurt() const {
         if (auto health = getHealth(); health > 0 && health < getMaxHealth()) {
             return true;

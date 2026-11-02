@@ -220,3 +220,16 @@ bool SimulatedPlayer::simulateInteract(::BlockPos const& pos, ::ScriptModuleMine
     Vec3 hitResult;
     return block.use(*this, pos, static_cast<unsigned char>(face), HandSlot::Mainhand, hitResult);
 }
+
+bool SimulatedPlayer::simulateUseItem(ItemStack& item) {
+    if (!isAlive() || !item) {
+        return false;
+    }
+    auto currentTick = getLevel().getCurrentServerTick().tickID;
+    if (*mInputCooldownTick && (currentTick - **mInputCooldownTick < 10)) {
+        return false;
+    }
+    mGameMode->useItem(item, HandSlot::Mainhand);
+    mInputCooldownTick = currentTick;
+    return true;
+}
