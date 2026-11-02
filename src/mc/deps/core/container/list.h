@@ -3,7 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 #include "ll/api/data/IntrusiveList.h"
-#include "mc/platform/container/list_base_hook.h"
+#include "mc/deps/core/container/list_base_hook.h"
 
 namespace Bedrock::Intrusive {
 
