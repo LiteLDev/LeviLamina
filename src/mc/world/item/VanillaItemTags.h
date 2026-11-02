@@ -10,7 +10,7 @@ struct ItemTag;
 namespace VanillaItemTags {
 // static variables
 // NOLINTBEGIN
-MCAPI ::ItemTag const& Armor();
+MCNAPI ::ItemTag const& Armor();
 
 MCNAPI ::ItemTag const& Arrows();
 
@@ -52,13 +52,13 @@ MCNAPI ::ItemTag const& GoldenTier();
 
 MCNAPI ::ItemTag const& HangingActor();
 
-MCAPI ::ItemTag const& HangingSign();
+MCNAPI ::ItemTag const& HangingSign();
 
 MCNAPI ::ItemTag const& Harness();
 
 MCNAPI ::ItemTag const& Hatchet();
 
-MCAPI ::ItemTag const& Hoe();
+MCNAPI ::ItemTag const& Hoe();
 
 MCNAPI ::ItemTag const& HorseArmor();
 
@@ -68,7 +68,7 @@ MCNAPI ::ItemTag const& LeatherTier();
 
 MCNAPI ::ItemTag const& LecternBooks();
 
-MCAPI ::ItemTag const& Logs();
+MCNAPI ::ItemTag const& Logs();
 
 MCNAPI ::ItemTag const& LogsThatBurn();
 
@@ -88,21 +88,21 @@ MCNAPI ::ItemTag const& NautilusArmor();
 
 MCNAPI ::ItemTag const& NetheriteTier();
 
-MCAPI ::ItemTag const& Pickaxe();
+MCNAPI ::ItemTag const& Pickaxe();
 
 MCNAPI ::ItemTag const& PiglinLoved();
 
 MCNAPI ::ItemTag const& PiglinRepellents();
 
-MCAPI ::ItemTag const& Planks();
+MCNAPI ::ItemTag const& Planks();
 
 MCNAPI ::ItemTag const& Sand();
 
-MCAPI ::ItemTag const& Shears();
+MCNAPI ::ItemTag const& Shears();
 
-MCAPI ::ItemTag const& Shovel();
+MCNAPI ::ItemTag const& Shovel();
 
-MCAPI ::ItemTag const& Sign();
+MCNAPI ::ItemTag const& Sign();
 
 MCNAPI ::ItemTag const& SoulFireBaseBlocks();
 
@@ -142,7 +142,7 @@ MCNAPI ::ItemTag const& SulfurCubeArchetypeSlowSliding();
 
 MCNAPI ::ItemTag const& SulfurCubeArchetypeSticky();
 
-MCAPI ::ItemTag const& Sword();
+MCNAPI ::ItemTag const& Sword();
 
 MCNAPI ::ItemTag const& Tool();
 
@@ -150,7 +150,7 @@ MCNAPI ::ItemTag const& TransformMaterials();
 
 MCNAPI ::ItemTag const& TransformTemplates();
 
-MCAPI ::ItemTag const& TransformableItems();
+MCNAPI ::ItemTag const& TransformableItems();
 
 MCNAPI ::ItemTag const& Trident();
 

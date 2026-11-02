@@ -203,7 +203,7 @@ public:
 
     MCNAPI ::Tick const $getCurrentServerTick() const;
 
-    MCNAPI void $startLeaveGame();
+    MCAPI void $startLeaveGame();
 
     MCNAPI ::ResourcePackManager* $getClientResourcePackManager() const;
 
@@ -227,7 +227,7 @@ public:
 
     MCNAPI ::SubChunkRequestManager* $getSubChunkRequestManager();
 
-    MCNAPI void $onSubChunkLoaded(
+    MCAPI void $onSubChunkLoaded(
         ::ChunkSource& source,
         ::LevelChunk&  lc,
         short          absoluteSubChunkIndex,
@@ -268,6 +268,6 @@ public:
 
     MCNAPI ::MapDataManager& $_getMapDataManager();
 
-    MCNAPI void $_subTick();
+    MCAPI void $_subTick();
     // NOLINTEND
 };

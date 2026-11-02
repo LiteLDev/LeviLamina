@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
+    MCAPI void
     $handleGameEvent(::GameEvent const& gameEvent, ::GameEventContext const& gameEventContext, ::BlockSource& region);
 
     MCNAPI uint $getRange() const;

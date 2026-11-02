@@ -63,7 +63,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
+    MCAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
     MCNAPI bool $allowConnection(::CircuitSceneGraph& graph, ::CircuitTrackingInfo const& info, bool& bDirectlyPowered);
 

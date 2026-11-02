@@ -56,7 +56,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ItemInstance const& EMPTY_ITEM();
+    MCNAPI static ::ItemInstance const& EMPTY_ITEM();
     // NOLINTEND
 
 public:

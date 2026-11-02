@@ -119,7 +119,7 @@ public:
 
     MCNAPI void $RemoveLanHost(::NetherNet::NetworkID remote);
 
-    MCNAPI void $SendLanBroadcastResponse(
+    MCAPI void $SendLanBroadcastResponse(
         ::webrtc::SocketAddress const& destination,
         ::NetherNet::NetworkID         from,
         ::std::string                  data

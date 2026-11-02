@@ -99,7 +99,7 @@ public:
 
     MCNAPI void $destroy(::Actor* source);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI float $getShadowRadius() const;
 

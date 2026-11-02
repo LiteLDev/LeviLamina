@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
+    MCAPI ::SharedTypes::Legacy::DealsDamage _recordDamageAndCheckIfDealt(
         ::Actor&                                       owner,
         ::Actor*                                       sender,
         ::SharedTypes::Legacy::ActorDamageCause const& cause,

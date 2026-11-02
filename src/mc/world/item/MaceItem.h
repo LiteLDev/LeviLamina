@@ -56,7 +56,7 @@ public:
     // NOLINTBEGIN
     MCNAPI int $getEnchantSlot() const;
 
-    MCNAPI bool
+    MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
     MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;

@@ -532,7 +532,7 @@ public:
 
     MCNAPI ::ItemActor const* _drop(::ItemStack const& item, bool randomly);
 
-    MCNAPI ::std::vector<::MobEffectInstance>& _getAllEffectsNonConst();
+    MCFOLD ::std::vector<::MobEffectInstance>& _getAllEffectsNonConst();
 
     MCNAPI ::AnimationComponent& _getAnimationComponent(
         ::std::shared_ptr<::AnimationComponent>& animationComponent,
@@ -555,7 +555,7 @@ public:
 
     MCNAPI void _setHandContainerItem(::ItemStack const& item, ::HandSlot handSlot);
 
-    MCNAPI void _setPos(::Vec3 const& pos);
+    MCAPI void _setPos(::Vec3 const& pos);
 
     MCNAPI void _setupServerAnimationComponent();
 
@@ -1122,13 +1122,13 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $hasComponent(::HashedString const& name) const;
 
-    MCNAPI void $outOfWorld();
+    MCAPI void $outOfWorld();
 
     MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCNAPI void $reloadComponents(::ActorInitializationMethod, ::VariantParameterList const&);
 
@@ -1140,7 +1140,7 @@ public:
 
     MCNAPI ::ActorType $getOwnerEntityType();
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
     MCNAPI ::Vec3 $getFiringPos() const;
 
@@ -1160,14 +1160,14 @@ public:
 
     MCNAPI bool $canDisableShield();
 
-    MCNAPI void
+    MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCNAPI void $lerpMotion(::Vec3 const& delta);
 
     MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI void $baseTick();
 
@@ -1175,7 +1175,7 @@ public:
 
     MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
-    MCNAPI void $addPassenger(::Actor& passenger);
+    MCAPI void $addPassenger(::Actor& passenger);
 
     MCNAPI ::std::string $getExitTip(::std::string const& kind, ::InputMode mode, ::NewInteractionModel scheme) const;
 
@@ -1251,7 +1251,7 @@ public:
 
     MCNAPI ::ActorHurtResult $doFireHurt(int amount);
 
-    MCNAPI void $onLightningHit();
+    MCAPI void $onLightningHit();
 
     MCNAPI void $feed(int itemId);
 
@@ -1259,9 +1259,9 @@ public:
 
     MCNAPI ::HashedString const& $getActorRendererId() const;
 
-    MCNAPI void $despawn();
+    MCAPI void $despawn();
 
-    MCNAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
     MCNAPI ::ArmorMaterialType $getArmorMaterialTypeInSlot(::SharedTypes::Legacy::ArmorSlot slot) const;
 
@@ -1271,7 +1271,7 @@ public:
 
     MCNAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
-    MCNAPI void $setCarriedItem(::ItemStack const& item);
+    MCAPI void $setCarriedItem(::ItemStack const& item);
 
     MCNAPI ::ItemStack const& $getCarriedItem() const;
 
@@ -1281,7 +1281,7 @@ public:
 
     MCNAPI bool $consumeTotem();
 
-    MCNAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI bool $load(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI ::HashedString const& $queryEntityRenderer() const;
 
@@ -1307,7 +1307,7 @@ public:
 
     MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCNAPI bool $canAddPassenger(::Actor& passenger) const;
+    MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
     MCNAPI bool $canPickupItem(::ItemStack const& item) const;
 
@@ -1333,7 +1333,7 @@ public:
 
     MCNAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
-    MCNAPI void $onEffectRemoved(::MobEffectInstance& effect);
+    MCAPI void $onEffectRemoved(::MobEffectInstance& effect);
 
     MCNAPI bool $canObstructSpawningAndBlockPlacement() const;
 

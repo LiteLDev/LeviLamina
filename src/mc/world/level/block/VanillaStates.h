@@ -70,11 +70,11 @@ MCNAPI ::BlockState const* getState(::HashedString const& name);
 // NOLINTBEGIN
 MCNAPI ::BlockStateVariant<bool> const& Active();
 
-MCAPI ::BlockStateVariant<int> const& Age();
+MCNAPI ::BlockStateVariant<int> const& Age();
 
-MCAPI ::BlockStateVariant<bool> const& AgeBit();
+MCNAPI ::BlockStateVariant<bool> const& AgeBit();
 
-MCAPI ::BlockStateVariant<bool> const& AttachedBit();
+MCNAPI ::BlockStateVariant<bool> const& AttachedBit();
 
 MCNAPI ::BlockStateVariant<::AttachmentType> const& Attachment();
 
@@ -82,13 +82,13 @@ MCNAPI ::BlockStateVariant<::LeafSize> const& BambooLeafSize();
 
 MCNAPI ::BlockStateVariant<::StalkThickness> const& BambooThickness();
 
-MCAPI ::BlockStateVariant<int> const& BeehiveHoneyLevel();
+MCNAPI ::BlockStateVariant<int> const& BeehiveHoneyLevel();
 
 MCNAPI ::BlockStateVariant<bool> const& BigDripleafHead();
 
 MCNAPI ::BlockStateVariant<::BigDripleafTilt> const& BigDripleafTilt();
 
-MCAPI ::BlockStateVariant<int> const& BiteCounter();
+MCNAPI ::BlockStateVariant<int> const& BiteCounter();
 
 MCNAPI ::BlockStateVariant<bool> const& Bloom();
 
@@ -106,9 +106,9 @@ MCNAPI ::BlockStateVariant<bool> const& ButtonPressedBit();
 
 MCNAPI ::BlockStateVariant<bool> const& CanSummon();
 
-MCAPI ::BlockStateVariant<int> const& Candles();
+MCNAPI ::BlockStateVariant<int> const& Candles();
 
-MCAPI ::BlockStateVariant<::CauldronLiquidType> const& CauldronLiquid();
+MCNAPI ::BlockStateVariant<::CauldronLiquidType> const& CauldronLiquid();
 
 MCNAPI ::BlockStateVariant<int> const& ClusterCount();
 
@@ -198,11 +198,11 @@ MCNAPI ::BlockStateVariant<::WoodType> const& DEPRECATED_WoodType();
 
 MCNAPI ::BlockStateVariant<bool> const& DeadBit();
 
-MCAPI ::BlockStateVariant<int> const& Direction();
+MCNAPI ::BlockStateVariant<int> const& Direction();
 
 MCNAPI ::BlockStateVariant<bool> const& DisarmedBit();
 
-MCAPI ::BlockStateVariant<bool> const& DoorHingeBit();
+MCNAPI ::BlockStateVariant<bool> const& DoorHingeBit();
 
 MCNAPI ::BlockStateVariant<bool> const& DragDown();
 
@@ -210,19 +210,19 @@ MCNAPI ::BlockStateVariant<bool> const& EndPortalEyeBit();
 
 MCNAPI ::BlockStateVariant<bool> const& ExplodeBit();
 
-MCAPI ::BlockStateVariant<bool> const& Extinguished();
+MCNAPI ::BlockStateVariant<bool> const& Extinguished();
 
-MCAPI ::BlockStateVariant<int> const& FacingDirection();
+MCNAPI ::BlockStateVariant<int> const& FacingDirection();
 
-MCAPI ::BlockStateVariant<int> const& FillLevel();
+MCNAPI ::BlockStateVariant<int> const& FillLevel();
 
-MCAPI ::BlockStateVariant<int> const& GrowingPlantAge();
+MCNAPI ::BlockStateVariant<int> const& GrowingPlantAge();
 
-MCAPI ::BlockStateVariant<int> const& Growth();
+MCNAPI ::BlockStateVariant<int> const& Growth();
 
-MCAPI ::BlockStateVariant<bool> const& HangingBit();
+MCNAPI ::BlockStateVariant<bool> const& HangingBit();
 
-MCAPI ::BlockStateVariant<bool> const& HeadPieceBit();
+MCNAPI ::BlockStateVariant<bool> const& HeadPieceBit();
 
 MCNAPI ::BlockStateVariant<int> const& Height();
 
@@ -236,17 +236,17 @@ MCNAPI ::BlockStateVariant<bool> const& ItemFrameMapBit();
 
 MCNAPI ::BlockStateVariant<bool> const& ItemFramePhotoBit();
 
-MCAPI ::BlockStateVariant<int> const& KelpAge();
+MCNAPI ::BlockStateVariant<int> const& KelpAge();
 
 MCNAPI ::BlockStateVariant<::LeverDirection> const& LeverDirection();
 
-MCAPI ::BlockStateVariant<int> const& LiquidDepth();
+MCNAPI ::BlockStateVariant<int> const& LiquidDepth();
 
-MCAPI ::BlockStateVariant<bool> const& Lit();
+MCNAPI ::BlockStateVariant<bool> const& Lit();
 
-MCAPI ::BlockStateVariant<int> const& MoisturizedAmount();
+MCNAPI ::BlockStateVariant<int> const& MoisturizedAmount();
 
-MCAPI ::BlockStateVariant<int> const& MultiFaceDirectionBits();
+MCNAPI ::BlockStateVariant<int> const& MultiFaceDirectionBits();
 
 MCNAPI ::BlockStateVariant<bool> const& Natural();
 
@@ -254,7 +254,7 @@ MCNAPI ::BlockStateVariant<bool> const& OccupiedBit();
 
 MCNAPI ::BlockStateVariant<bool> const& Ominous();
 
-MCAPI ::BlockStateVariant<bool> const& OpenBit();
+MCNAPI ::BlockStateVariant<bool> const& OpenBit();
 
 MCNAPI ::BlockStateVariant<::FrontAndTop> const& Orientation();
 
@@ -270,17 +270,17 @@ MCNAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideSouth(
 
 MCNAPI ::BlockStateVariant<::PaleMossCarpetSide> const& PaleMossCarpetSideWest();
 
-MCAPI ::BlockStateVariant<bool> const& PersistentBit();
+MCNAPI ::BlockStateVariant<bool> const& PersistentBit();
 
-MCAPI ::BlockStateVariant<::PillarAxis> const& PillarAxis();
+MCNAPI ::BlockStateVariant<::PillarAxis> const& PillarAxis();
 
-MCAPI ::BlockStateVariant<::PortalAxis> const& PortalAxis();
+MCNAPI ::BlockStateVariant<::PortalAxis> const& PortalAxis();
 
 MCNAPI ::BlockStateVariant<::PotentSulfurState> const& PotentSulfurState();
 
-MCAPI ::BlockStateVariant<bool> const& PoweredBit();
+MCNAPI ::BlockStateVariant<bool> const& PoweredBit();
 
-MCAPI ::BlockStateVariant<int> const& PropaguleStage();
+MCNAPI ::BlockStateVariant<int> const& PropaguleStage();
 
 MCNAPI ::BlockStateVariant<bool> const& RailDataBit();
 
@@ -298,9 +298,9 @@ MCNAPI ::BlockStateVariant<::RedstoneSide> const& RedstoneWest();
 
 MCNAPI ::BlockStateVariant<int> const& RehydrationLevel();
 
-MCAPI ::BlockStateVariant<int> const& RepeaterDelay();
+MCNAPI ::BlockStateVariant<int> const& RepeaterDelay();
 
-MCAPI ::BlockStateVariant<int> const& RespawnAnchorCharge();
+MCNAPI ::BlockStateVariant<int> const& RespawnAnchorCharge();
 
 MCNAPI ::BlockStateVariant<int> const& Rotation();
 
@@ -310,13 +310,13 @@ MCNAPI ::BlockStateVariant<::SeagrassType> const& SeagrassType();
 
 MCNAPI ::BlockStateVariant<int> const& ShelfConnectionType();
 
-MCAPI ::BlockStateVariant<::SpeleothemThickness> const& SpeleothemThickness();
+MCNAPI ::BlockStateVariant<::SpeleothemThickness> const& SpeleothemThickness();
 
 MCNAPI ::BlockStateVariant<int> const& Stability();
 
 MCNAPI ::BlockStateVariant<bool> const& StabilityCheckBit();
 
-MCAPI ::BlockStateVariant<int> const& StandingRotation();
+MCNAPI ::BlockStateVariant<int> const& StandingRotation();
 
 MCNAPI ::BlockStateVariant<::StructureBlockType> const& StructureBlockType();
 
@@ -338,11 +338,11 @@ MCNAPI ::BlockStateVariant<::EggCount> const& TurtleEggCount();
 
 MCNAPI ::BlockStateVariant<int> const& TwistingVinesAge();
 
-MCAPI ::BlockStateVariant<bool> const& UpdateBit();
+MCNAPI ::BlockStateVariant<bool> const& UpdateBit();
 
-MCAPI ::BlockStateVariant<bool> const& UpperBlockBit();
+MCNAPI ::BlockStateVariant<bool> const& UpperBlockBit();
 
-MCAPI ::BlockStateVariant<bool> const& UpsideDownBit();
+MCNAPI ::BlockStateVariant<bool> const& UpsideDownBit();
 
 MCNAPI ::BlockStateVariant<::VaultBlockState> const& VaultState();
 

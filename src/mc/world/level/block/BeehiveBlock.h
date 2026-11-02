@@ -72,7 +72,7 @@ public:
     MCNAPI int
     $getComparatorSignal(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, uchar dir) const;
 
-    MCNAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
+    MCAPI ::Block const* $playerWillDestroy(::Player& player, ::BlockPos const& pos, ::Block const& block) const;
 
     MCNAPI ::Block const* $getNextBlockPermutation(::Block const& currentBlock) const;
 

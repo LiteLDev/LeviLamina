@@ -115,11 +115,11 @@ public:
 
     MCNAPI ItemStackBase(::ItemStackBase const& rhs);
 
-    MCNAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCNAPI ItemStackBase(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCNAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI ItemStackBase(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
 
     MCNAPI void _addCustomUserDataCommon(::std::unique_ptr<::CompoundTag>&& tag);
 
@@ -135,7 +135,7 @@ public:
 
     MCNAPI bool _isInstance(::std::string_view itemName) const;
 
-    MCNAPI void _loadItem(::CompoundTag const& compoundTag);
+    MCAPI void _loadItem(::CompoundTag const& compoundTag);
 
     MCNAPI void _setChargedItem(::ItemInstance const& item);
 
@@ -147,7 +147,7 @@ public:
     MCNAPI bool _setItem(int id, bool doRemap);
 #endif
 
-    MCNAPI void _updateCompareHashes();
+    MCAPI void _updateCompareHashes();
 
     MCNAPI void add(int inCount);
 
@@ -218,7 +218,7 @@ public:
     MCNAPI bool hasComponent(::std::string const& name) const;
 #endif
 
-    MCNAPI bool hasSameAuxValue(::ItemStackBase const& other) const;
+    MCAPI bool hasSameAuxValue(::ItemStackBase const& other) const;
 
     MCAPI bool hasSameUserData(::ItemStackBase const& other) const;
 
@@ -285,7 +285,7 @@ public:
 
     MCAPI bool matchesItem(::ItemStackBase const& other) const;
 
-    MCNAPI ::ItemStackBase& operator=(::ItemStackBase const& rhs);
+    MCAPI ::ItemStackBase& operator=(::ItemStackBase const& rhs);
 
     MCAPI void remove(int inCount);
 
@@ -337,7 +337,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
+    MCAPI static bool
     _loadBlocksForCanPlaceOnCanDestroy(::std::vector<::BlockType const*>& blockList, ::std::string const& blockName);
 
 #ifdef LL_PLAT_C
@@ -369,7 +369,7 @@ public:
 
     MCNAPI static ::std::string const& TAG_DISPLAY_NAME();
 
-    MCAPI static ::std::string const& TAG_ENCHANTS();
+    MCNAPI static ::std::string const& TAG_ENCHANTS();
 
     MCNAPI static ::std::string const& TAG_LORE();
 
@@ -393,11 +393,11 @@ public:
 
     MCNAPI void* $ctor(::ItemStackBase const& rhs);
 
-    MCNAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
+    MCAPI void* $ctor(::Block const& block, int count, ::CompoundTag const* _userData);
 
     MCNAPI void* $ctor(::Item const& item, int count, int auxValue, ::CompoundTag const* _userData);
 
-    MCNAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
+    MCAPI void* $ctor(::std::string_view name, int count, int auxValue, ::CompoundTag const* _userData);
     // NOLINTEND
 
 public:

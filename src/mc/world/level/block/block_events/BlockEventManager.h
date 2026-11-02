@@ -23,7 +23,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BlockEvents::IBlockEventExecutor* _tryGetExecutor(::BlockEvents::EventType type) const;
+    MCAPI ::BlockEvents::IBlockEventExecutor* _tryGetExecutor(::BlockEvents::EventType type) const;
 
     MCAPI bool hasExecutor(::BlockEvents::EventType type) const;
     // NOLINTEND

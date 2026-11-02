@@ -201,7 +201,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $createInputMappingTemplates(::IOptionRegistry& options);
 
-    MCNAPI void $_updateKeyboardAndMouseControls(::IOptionRegistry& options);
+    MCAPI void $_updateKeyboardAndMouseControls(::IOptionRegistry& options);
 
     MCNAPI void $_updateGameControllerControls();
 

@@ -113,7 +113,7 @@ public:
 
     MCNAPI void _launchVisibilityRebuild(::std::shared_ptr<::RenderChunkShared>& renderChunkShared);
 
-    MCNAPI void _setAllDirty(bool immediate, bool changesVisibility);
+    MCAPI void _setAllDirty(bool immediate, bool changesVisibility);
 
     MCAPI void
     _setDirty(::BlockPos const& min, ::BlockPos const& max, bool immediate, bool changesVisibility, bool canInterlock);
@@ -143,7 +143,7 @@ public:
 
     MCNAPI void $onBrightnessChanged(::BlockSource& source, ::BlockPos const& pos);
 
-    MCNAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
+    MCAPI void $onAreaChanged(::BlockSource& source, ::BlockPos const& min, ::BlockPos const& max);
 
     MCNAPI void $onBlockChanged(
         ::BlockSource&                 source,

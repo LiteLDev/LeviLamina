@@ -21,7 +21,7 @@ MCNAPI void unregisterBlockStates();
 // NOLINTBEGIN
 MCNAPI ::BuiltInBlockStateVariant<uchar> const& BlockFace();
 
-MCAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
+MCNAPI ::BuiltInBlockStateVariant<::Direction::Type> const& CardinalDirection();
 
 MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionDown();
 
@@ -37,7 +37,7 @@ MCNAPI ::BuiltInBlockStateVariant<bool> const& ConnectionWest();
 
 MCNAPI ::BuiltInBlockStateVariant<::CornerShape> const& Corner();
 
-MCAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
+MCNAPI ::BuiltInBlockStateVariant<uchar> const& FacingDirection();
 
 MCNAPI ::BuiltInBlockStateVariant<::SharedTypes::v1_26_20::MultiBlockPart> const& MultiBlock();
 

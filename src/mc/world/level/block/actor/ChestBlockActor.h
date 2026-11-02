@@ -272,11 +272,11 @@ public:
 
     MCNAPI bool $saveItemInstanceData(::CompoundTag& base) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCNAPI void $triggerEvent(int b0, int b1);
 
-    MCNAPI void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCNAPI void $onRemoved(::BlockSource& region);
 
@@ -324,11 +324,11 @@ public:
 
     MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCNAPI bool $_canOpenThis(::BlockSource& region) const;
+    MCAPI bool $_canOpenThis(::BlockSource& region) const;
 
     MCNAPI ::AABB $getObstructionAABB() const;
 
-    MCNAPI bool $_detectEntityObstruction(::BlockSource& region) const;
+    MCAPI bool $_detectEntityObstruction(::BlockSource& region) const;
 
     MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 

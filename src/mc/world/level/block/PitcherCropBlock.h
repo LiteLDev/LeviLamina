@@ -114,7 +114,7 @@ public:
 
     MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 

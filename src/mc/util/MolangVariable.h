@@ -28,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::MolangVariableIndex
+    MCAPI static ::MolangVariableIndex
     _findOrAddVariableIndex(uint64 nameHash, char const* name, bool allowSpecialCharacters);
 
     MCNAPI static void _resetToLowWaterMark();

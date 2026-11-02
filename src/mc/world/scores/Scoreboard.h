@@ -153,7 +153,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_CRITERIA();
+    MCNAPI static ::std::string const& DEFAULT_CRITERIA();
 
     MCNAPI static ::std::string const& DISPLAY_SLOT_BELOWNAME();
 

@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
+    MCAPI ::std::shared_ptr<::ActorRenderer> _getRenderer(::Actor& actor) const;
 
     MCNAPI void cleanupIndependentRenderer(::HashedString const& name);
 

@@ -115,7 +115,7 @@ public:
 
     MCNAPI void $reset();
 
-    MCNAPI void $render(::UIRenderContext& context);
+    MCAPI void $render(::UIRenderContext& context);
 
     MCNAPI void $updateUI(::UIMeasureStrategy const& uiMeasureStrategy);
 

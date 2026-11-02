@@ -11,6 +11,6 @@ class Mouse {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::MouseDevice& _instance();
+    MCNAPI static ::MouseDevice& _instance();
     // NOLINTEND
 };

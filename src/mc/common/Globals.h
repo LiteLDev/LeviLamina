@@ -1855,7 +1855,7 @@ MCNAPI ::std::string_view const& CEREAL_JSON_SCHEMA_PROPERTY();
 
 MCNAPI ::std::string_view const& CEREAL_ROOT_SCHEMA_PROPERTY();
 
-MCAPI ::std::unordered_map<::ContainerEnumName, ::std::string>& ContainerCollectionNameMap();
+MCNAPI ::std::unordered_map<::ContainerEnumName, ::std::string>& ContainerCollectionNameMap();
 
 #ifdef LL_PLAT_C
 MCNAPI ::std::string const& DEFAULT_DRIVE_CONTENTS_PATH();
@@ -1885,13 +1885,13 @@ MCNAPI ::MCRESULT const& MCRESULT_CommandRequestInitiated();
 
 MCNAPI ::MCRESULT const& MCRESULT_CommandStepFail();
 
-MCAPI ::MCRESULT const& MCRESULT_CommandsDisabled();
+MCNAPI ::MCRESULT const& MCRESULT_CommandsDisabled();
 
 MCNAPI ::MCRESULT const& MCRESULT_EncryptionRequired();
 
-MCAPI ::MCRESULT const& MCRESULT_ExecutionFail();
+MCNAPI ::MCRESULT const& MCRESULT_ExecutionFail();
 
-MCAPI ::MCRESULT const& MCRESULT_FailedToParseCommand();
+MCNAPI ::MCRESULT const& MCRESULT_FailedToParseCommand();
 
 MCNAPI ::MCRESULT const& MCRESULT_InvalidCommandContext();
 
@@ -1899,7 +1899,7 @@ MCNAPI ::MCRESULT const& MCRESULT_InvalidCommandOrigin();
 
 MCNAPI ::MCRESULT const& MCRESULT_MalformedRequest();
 
-MCAPI ::MCRESULT const& MCRESULT_Success();
+MCNAPI ::MCRESULT const& MCRESULT_Success();
 
 MCNAPI ::MCRESULT const& MCRESULT_TooManyPendingRequests();
 
@@ -1974,7 +1974,7 @@ MCNAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Biome>>& gBiomeChunkGC();
 
 MCNAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Block>>& gBlockStorageGC();
 
-MCAPI ::InternalTaskGroup& gInternalTaskGroup();
+MCNAPI ::InternalTaskGroup& gInternalTaskGroup();
 
 MCNAPI ::SubChunkDelayedDeleter<::SubChunkBrightnessStorage>& gLightStorageGC();
 

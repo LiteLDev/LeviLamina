@@ -115,7 +115,7 @@ public:
 
     MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCNAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $dispenseFrom(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND

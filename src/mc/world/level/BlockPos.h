@@ -41,8 +41,8 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::BlockPos const& MAX();
 
-    MCAPI static ::BlockPos const& MIN();
+    MCNAPI static ::BlockPos const& MIN();
 
-    MCAPI static ::BlockPos const& ZERO();
+    MCNAPI static ::BlockPos const& ZERO();
     // NOLINTEND
 };

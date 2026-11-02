@@ -597,7 +597,7 @@ public:
     MCNAPI void
     PingInternal(::RakNet::SystemAddress const target, bool performImmediate, ::PacketReliability reliability);
 
-    MCNAPI RakPeer();
+    MCAPI RakPeer();
 
     MCNAPI void ReferenceRemoteSystem(::RakNet::SystemAddress const& sa, uint remoteSystemListIndex);
 
@@ -637,7 +637,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
@@ -696,8 +696,7 @@ public:
         uint                     timeoutTime
     );
 
-    MCNAPI void
-    $Shutdown(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
+    MCAPI void $Shutdown(uint blockDuration, uchar orderingChannel, ::PacketPriority disconnectionNotificationPriority);
 
     MCNAPI bool $SetApplicationHandshakeCompleted(::RakNet::AddressOrGUID systemIdentifier);
 
@@ -791,7 +790,7 @@ public:
 
     MCNAPI uint64 $GetClockDifferential(::RakNet::AddressOrGUID const systemIdentifier);
 
-    MCNAPI void $SetOfflinePingResponse(char const* data, uint const length);
+    MCAPI void $SetOfflinePingResponse(char const* data, uint const length);
 
     MCNAPI ::RakNet::SystemAddress $GetInternalID(::RakNet::SystemAddress const systemAddress, int const index) const;
 

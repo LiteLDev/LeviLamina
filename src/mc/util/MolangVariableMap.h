@@ -41,7 +41,7 @@ public:
         ::MolangVariableMap::MissingVariableHandling errorHandling
     ) const;
 
-    MCNAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
+    MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
     MCNAPI ::MolangVariableMap& clear();
 

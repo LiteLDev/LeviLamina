@@ -22,7 +22,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
 
     // NOLINTEND

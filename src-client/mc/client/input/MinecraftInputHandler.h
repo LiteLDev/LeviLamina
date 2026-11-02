@@ -132,7 +132,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $onConfigChanged(::Config const& c);
 
-    MCNAPI void $_registerInputHandlers();
+    MCAPI void $_registerInputHandlers();
 
     MCNAPI void $_registerDebugInputHandlers();
     // NOLINTEND

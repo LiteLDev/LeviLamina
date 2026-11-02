@@ -92,9 +92,9 @@ public:
 
     MCNAPI void $onTextEditComponentLostFocus();
 
-    MCNAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
+    MCAPI void $onKeyDown(int keyCode, ::Bedrock::Input::KeyboardEventProcessor::InputOrigin origin);
 
-    MCNAPI void $onKeyUp(int keyCode);
+    MCAPI void $onKeyUp(int keyCode);
 
     MCNAPI void $updateEditContext(int keyCode);
 

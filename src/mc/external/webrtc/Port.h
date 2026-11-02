@@ -372,7 +372,7 @@ public:
 
     MCNAPI bool $CanHandleIncomingPacketsFrom(::webrtc::SocketAddress const& addr) const;
 
-    MCNAPI void $SendBindingErrorResponse(
+    MCAPI void $SendBindingErrorResponse(
         ::webrtc::StunMessage*         message,
         ::webrtc::SocketAddress const& addr,
         int                            error_code,

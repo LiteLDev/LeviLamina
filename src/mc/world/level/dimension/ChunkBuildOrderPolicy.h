@@ -73,7 +73,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
+    MCAPI int $getChunkRebuildPriority(::ChunkPos const& cp) const;
 
     MCNAPI uint $registerForUpdates();
 

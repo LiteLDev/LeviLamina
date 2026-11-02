@@ -169,7 +169,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::LegacyStructureTemplate& $getOrCreateLegacy(::std::string const& structureName);
 
-    MCNAPI ::StructureTemplate& $getOrCreate(::std::string const& structureName);
+    MCAPI ::StructureTemplate& $getOrCreate(::std::string const& structureName);
 
     MCNAPI ::StructureTemplate* $getStructure(::std::string const& structureName) const;
 

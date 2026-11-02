@@ -100,7 +100,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCNAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
+    MCAPI ::std::shared_ptr<::FilterGroup> $_createSubgroup(::FilterGroup::CollectionType type) const;
 
 
     // NOLINTEND

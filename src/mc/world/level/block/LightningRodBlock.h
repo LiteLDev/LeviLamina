@@ -91,7 +91,7 @@ public:
 
     MCNAPI void $onProjectileHit(::BlockSource& region, ::BlockPos const& pos, ::Actor const& projectile) const;
 
-    MCNAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void $onLightningHit(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI ::AABB const& $getVisualShape(::Block const& block, ::AABB& bufferAABB) const;
 

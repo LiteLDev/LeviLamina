@@ -146,7 +146,7 @@ public:
 
     MCNAPI bool $isImmobile() const;
 
-    MCNAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
+    MCAPI float $causeFallDamageToActor(float fallDistance, float multiplier, ::ActorDamageSource source);
 
     MCNAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);

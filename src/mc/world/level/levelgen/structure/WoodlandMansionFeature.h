@@ -95,7 +95,7 @@ public:
 
     MCFOLD bool $shouldPostProcessMobs() const;
 
-    MCNAPI bool $isFeatureChunk(
+    MCAPI bool $isFeatureChunk(
         ::BiomeSource const&                 biomeSource,
         ::Random&                            random,
         ::ChunkPos const&                    lc,
@@ -104,7 +104,7 @@ public:
         ::Dimension const&
     );
 
-    MCNAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
+    MCAPI ::std::unique_ptr<::StructureStart> $createStructureStart(
         ::Dimension& dimension,
         ::BiomeSource const&,
         ::Random&         random,

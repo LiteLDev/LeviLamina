@@ -71,7 +71,7 @@ public:
 
     MCFOLD ::BiomeSourceType const $getType() const;
 
-    MCNAPI ::Biome const* $_getBiome(::GetBiomeOptions const&) const;
+    MCFOLD ::Biome const* $_getBiome(::GetBiomeOptions const&) const;
 
 
     // NOLINTEND

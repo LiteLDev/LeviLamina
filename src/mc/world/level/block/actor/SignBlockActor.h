@@ -279,7 +279,7 @@ public:
 
     MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCNAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
+    MCAPI bool $_playerCanUpdate(::Player const& fromPlayer) const;
 
 
     // NOLINTEND

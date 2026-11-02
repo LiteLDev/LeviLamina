@@ -110,7 +110,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::ItemStack const& EMPTY_ITEM();
+    MCNAPI static ::ItemStack const& EMPTY_ITEM();
     // NOLINTEND
 
 public:

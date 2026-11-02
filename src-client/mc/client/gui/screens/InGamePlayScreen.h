@@ -178,7 +178,7 @@ public:
 
     MCNAPI void $prepareFrame(::ScreenContext& screenContext);
 
-    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCNAPI void $postRenderUpdate(::ScreenContext& screenContext);
 
@@ -216,8 +216,7 @@ public:
 
     MCNAPI bool $_isPlayerSuspended() const;
 
-    MCNAPI void
-    $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
+    MCAPI void $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
 
     MCNAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 

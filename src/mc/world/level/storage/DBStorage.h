@@ -226,7 +226,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI DBStorage(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
+    MCAPI DBStorage(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
 
     MCNAPI ::TaskResult _flushWriteCacheToLevelDB();
 
@@ -241,7 +241,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
+    MCAPI void* $ctor(::DBStorageConfig config, ::Bedrock::NotNullNonOwnerPtr<::LevelDbEnv> levelDbEnv);
     // NOLINTEND
 
 public:
@@ -273,7 +273,7 @@ public:
 
     MCNAPI ::Bedrock::Threading::Async<void> $deleteData(::std::string const& key, ::DBHelpers::Category category);
 
-    MCNAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
+    MCAPI bool $loadData(::std::string_view key, ::std::string& buffer, ::DBHelpers::Category category) const;
 
     MCNAPI void $forEachKeyWithPrefix(
         ::std::string_view                                                   prefix,
@@ -289,14 +289,14 @@ public:
 
     MCNAPI bool $isShuttingDown() const;
 
-    MCNAPI bool $checkShutdownDone();
+    MCAPI bool $checkShutdownDone();
 
     MCNAPI void $getStatistics(::std::string& outStats, ::LevelStorage::StatsType statsType) const;
 
-    MCNAPI ::std::vector<::SnapshotFilenameAndLength>
+    MCAPI ::std::vector<::SnapshotFilenameAndLength>
     $createSnapshot(::std::string const& filePrefix, bool flushWriteCache);
 
-    MCNAPI void $releaseSnapshot();
+    MCAPI void $releaseSnapshot();
 
     MCNAPI ::Bedrock::Threading::Async<void> $compactStorage();
 

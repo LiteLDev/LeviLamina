@@ -82,7 +82,7 @@ public:
 
     MCAPI bool $isDestructive(int) const;
 
-    MCNAPI ::InteractionResult $_useOn(
+    MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      actor,
         ::BlockPos    pos,
@@ -91,7 +91,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCNAPI bool
+    MCAPI bool
     $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 

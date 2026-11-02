@@ -64,7 +64,7 @@ public:
 
     MCNAPI ::std::vector<::ItemInstance> const& $getResultItems() const;
 
-    MCNAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
+    MCAPI bool $matches(::CraftingContainer const& craftSlots, ::CraftingContext const&) const;
 
     MCNAPI int $size() const;
 
@@ -74,6 +74,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

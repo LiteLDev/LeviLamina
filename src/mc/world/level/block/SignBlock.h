@@ -180,7 +180,7 @@ public:
 
     MCAPI float $getYRotationInDegrees(::Block const& block) const;
 
-    MCNAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
+    MCAPI bool $_canSurvive(::BlockSource& region, ::BlockPos const& pos, uchar face) const;
 
     MCNAPI ::ItemInstance $_getItemInstance() const;
 

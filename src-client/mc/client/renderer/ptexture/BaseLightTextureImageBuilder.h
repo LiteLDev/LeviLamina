@@ -67,7 +67,7 @@ public:
         bool                   clampToMinimum
     );
 
-    MCNAPI ::std::unique_ptr<::BaseLightData>
+    MCAPI ::std::unique_ptr<::BaseLightData>
     $createBaseLightTextureData(::IClientInstance* client, ::BaseLightData const& currentData);
     // NOLINTEND
 };

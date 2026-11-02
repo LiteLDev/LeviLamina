@@ -51,7 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI BaseAttributeMap(::BaseAttributeMap const&);
 
-    MCNAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
+    MCAPI void _onAttributeModified(::AttributeInstance const& attributeInstance);
 
 #ifdef LL_PLAT_C
     MCNAPI void _onAttributeModifiedDisabled(::AttributeInstance const&);

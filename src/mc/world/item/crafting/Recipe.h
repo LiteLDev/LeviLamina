@@ -180,7 +180,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit Recipe(::Recipe::ConstructionContext&& context);
+    MCAPI explicit Recipe(::Recipe::ConstructionContext&& context);
 
 #ifdef LL_PLAT_C
     MCNAPI ::IngredientSearchResults checkContainerItemsForUsability(
@@ -202,7 +202,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Recipe::ConstructionContext&& context);
+    MCAPI void* $ctor(::Recipe::ConstructionContext&& context);
     // NOLINTEND
 
 public:

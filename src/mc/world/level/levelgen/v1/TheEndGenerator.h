@@ -137,7 +137,7 @@ public:
 
     MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhood);
 
     MCNAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 
@@ -166,7 +166,7 @@ public:
         ::ChunkPos const&    pos
     ) const;
 
-    MCNAPI void
+    MCAPI void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
 

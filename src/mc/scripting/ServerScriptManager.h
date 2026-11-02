@@ -211,7 +211,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::EventResult $onServerUpdateEnd(::ServerInstance& instance);
 
-    MCNAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
+    MCAPI ::EventResult $onServerThreadStarted(::ServerInstance& instance);
 
     MCNAPI ::EventResult $onEvent(::ServerInstanceRequestResourceReload const& reloadEvent);
 

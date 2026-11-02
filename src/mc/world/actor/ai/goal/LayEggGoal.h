@@ -65,7 +65,7 @@ public:
 
     MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
+    MCAPI bool $isValidTarget(::BlockSource& region, ::BlockPos const& pos);
 
     MCNAPI void $_moveToBlock();
 

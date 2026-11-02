@@ -36,7 +36,7 @@ public:
 
     MCAPI explicit CommandOutput(::CommandOutputType type);
 
-    MCNAPI void addMessage(
+    MCAPI void addMessage(
         ::std::string_view                             msgId,
         ::std::vector<::CommandOutputParameter> const& params,
         ::CommandOutputMessageType                     type

@@ -117,7 +117,7 @@ public:
 
     MCNAPI void _saveAllVillages(::LevelStorage& levelStorage);
 
-    MCNAPI void _tryAssignPOIOrCreateVillage(::std::shared_ptr<::POIInstance>&& pi);
+    MCAPI void _tryAssignPOIOrCreateVillage(::std::shared_ptr<::POIInstance>&& pi);
 
     MCNAPI ::std::weak_ptr<::Village> fetchClosestVillageMostSuitableForDweller(
         ::BlockPos const& position,

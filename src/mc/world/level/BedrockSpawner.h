@@ -151,7 +151,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
+    MCAPI void $initializeServerSide(::ResourcePackManager& rpm, ::IWorldRegistriesProvider& registries);
 
     MCNAPI ::SpawnSettings const& $getSpawnSettings() const;
 
@@ -165,15 +165,15 @@ public:
 
     MCNAPI ::br::spawn::EntityTypeCache* $getEntityTypeCache() const;
 
-    MCNAPI ::ItemActor*
+    MCAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
     MCNAPI void $postProcessSpawnMobs(::BlockSource& region, int xo, int zo, ::Random& random);
 
-    MCNAPI void
+    MCAPI void
     $tick(::BlockSource& region, ::LevelChunkVolumeData const& levelChunkVolumeData, ::ChunkPos const chunkPos);
 
-    MCNAPI void $tickMobCount();
+    MCAPI void $tickMobCount();
 
     MCNAPI void $incrementSpawnableTickedMob();
 

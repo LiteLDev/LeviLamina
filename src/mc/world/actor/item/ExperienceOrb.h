@@ -83,7 +83,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
+    MCAPI static void _spawnOrb(::BlockSource& region, ::Level& level, ::Vec3 const& pos, int orbXPValue);
 
     MCNAPI static bool _tryMergeIntoExistingOrbs(::BlockSource& region, ::Vec3 const& pos, int xpValue);
 
@@ -115,7 +115,7 @@ public:
 
     MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
     MCNAPI float $getShadowRadius() const;
 

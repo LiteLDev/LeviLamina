@@ -248,7 +248,7 @@ public:
 
     MCNAPI bool $isShutdownDone();
 
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCNAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 

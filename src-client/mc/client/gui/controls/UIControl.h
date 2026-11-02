@@ -131,9 +131,9 @@ public:
 
     MCNAPI void _resolvePostCreate();
 
-    MCNAPI void _setCachedPosition() const;
+    MCAPI void _setCachedPosition() const;
 
-    MCNAPI void _setPositionDirty();
+    MCAPI void _setPositionDirty();
 
     MCNAPI void
     _setVisible(::ui::VisibilityFlag visibleFlags, bool setLayoutChangedFlag, bool doLayout, bool shrinkInvisible);

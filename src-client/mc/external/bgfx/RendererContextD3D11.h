@@ -466,7 +466,7 @@ public:
 
     MCNAPI void $setName(::bgfx::Handle _handle, char const* _name);
 
-    MCNAPI void
+    MCAPI void
     $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
 
     MCNAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);

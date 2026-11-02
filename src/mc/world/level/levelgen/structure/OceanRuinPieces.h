@@ -101,7 +101,7 @@ public:
         // NOLINTBEGIN
         MCNAPI ::StructurePieceType $getType() const;
 
-        MCNAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
+        MCAPI bool $postProcess(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
         MCNAPI void $_handleDataMarker(
             ::std::string const& markerId,

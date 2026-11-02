@@ -421,7 +421,7 @@ public:
 
     MCFOLD bool $showSky() const;
 
-    MCNAPI float $getTimeOfDay(int time, float a) const;
+    MCAPI float $getTimeOfDay(int time, float a) const;
 
     MCFOLD void $setDimensionDirectionalLightControls(
         ::std::variant<::Dimension::ChaoticDirectionalLightControls> const& directionalLightControls
@@ -491,7 +491,7 @@ public:
 
     MCAPI void $updatePoiBlockStateChange(::BlockPos pos, ::Block const& removed, ::Block const& placed) const;
 
-    MCNAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
+    MCAPI ::std::unique_ptr<::ChunkBuildOrderPolicyBase> $_createChunkBuildOrderPolicy();
 
 
     // NOLINTEND

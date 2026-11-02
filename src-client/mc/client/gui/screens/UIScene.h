@@ -281,9 +281,9 @@ public:
 
     MCNAPI bool $canBeTransitioned() const;
 
-    MCNAPI void $onScreenExit(bool isPopping, bool doScreenTransitions, ::std::shared_ptr<::AbstractScene> pushedScene);
+    MCAPI void $onScreenExit(bool isPopping, bool doScreenTransitions, ::std::shared_ptr<::AbstractScene> pushedScene);
 
-    MCNAPI void $onScreenEntrance(bool isRevisiting, bool doScreenTransitions);
+    MCAPI void $onScreenEntrance(bool isRevisiting, bool doScreenTransitions);
 
     MCNAPI bool $isEntering() const;
 
@@ -306,13 +306,13 @@ public:
 
     MCNAPI void $onSetKeyboardHeight(float keyboardHeight);
 
-    MCNAPI void $onFocusLost();
+    MCAPI void $onFocusLost();
 
     MCNAPI void $onInternetUpdate();
 
-    MCNAPI bool $renderGameBehind() const;
+    MCAPI bool $renderGameBehind() const;
 
-    MCNAPI bool $closeOnPlayerHurt() const;
+    MCAPI bool $closeOnPlayerHurt() const;
 
     MCNAPI bool $useCustomPocketToast() const;
 
@@ -343,7 +343,7 @@ public:
 
     MCNAPI void $frameUpdate(::MinecraftUIFrameUpdateContext& frameUpdateContext);
 
-    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCNAPI void $applyInput(float a);
 
@@ -353,7 +353,7 @@ public:
 
     MCNAPI void $handleDirection(::DirectionId directionId, float x, float y, ::FocusImpact focusImpact);
 
-    MCNAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
+    MCAPI void $handleTextChar(::std::string const& inputUtf8, ::FocusImpact focusImpact);
 
     MCNAPI void $handleTouchPadTouch(::TouchPadTouchEventData const& touchEventData, ::FocusImpact focusImpact);
 

@@ -51,7 +51,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $setHUDOpacity(float opacity);
 
-    MCNAPI void $renderGuiItemInChunk(
+    MCAPI void $renderGuiItemInChunk(
         ::ItemRenderChunkType                            itemRenderChunkType,
         ::ItemStack const&                               item,
         float                                            x,

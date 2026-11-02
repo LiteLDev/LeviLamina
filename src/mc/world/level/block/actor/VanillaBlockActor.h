@@ -174,7 +174,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI VanillaBlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
+    MCAPI VanillaBlockActor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
 
     MCNAPI void _loadCustomNameFromUpdatePacket(::CompoundTag const& data);
 
@@ -184,7 +184,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
+    MCAPI void* $ctor(::BlockActorType type, ::BlockPos const& pos, ::BlockActorRendererId rendererId);
     // NOLINTEND
 
 public:
@@ -232,7 +232,7 @@ public:
 
     MCFOLD ::ActorTerrainInterlockData const& $getEntityTerrainInterlockDataConst() const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCFOLD void $tick(::BlockSource& region);
 
     MCFOLD int $getTickCount() const;
 
@@ -282,23 +282,23 @@ public:
 
     MCFOLD void $onChanged(::BlockSource& region);
 
-    MCNAPI void $_resetAABB();
+    MCAPI void $_resetAABB();
 
-    MCNAPI void $_setCanRenderCustomName(bool value);
+    MCAPI void $_setCanRenderCustomName(bool value);
 
-    MCNAPI void $_setCustomNameSaved(bool saveCustomName);
+    MCAPI void $_setCustomNameSaved(bool saveCustomName);
 
-    MCNAPI ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
+    MCFOLD ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
 
-    MCNAPI ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
+    MCFOLD ::IVanillaRenderBlockActorComponent* $_getRenderComponent();
 
-    MCNAPI ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
+    MCFOLD ::IVanillaTickBlockActorComponent const* $_getTickComponent() const;
 
-    MCNAPI ::IVanillaTickBlockActorComponent* $_getTickComponent();
+    MCFOLD ::IVanillaTickBlockActorComponent* $_getTickComponent();
 
-    MCNAPI ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
+    MCFOLD ::IVanillaMainBlockActorComponent const* $_getMainComponent() const;
 
-    MCNAPI ::IVanillaMainBlockActorComponent* $_getMainComponent();
+    MCFOLD ::IVanillaMainBlockActorComponent* $_getMainComponent();
 
 
     // NOLINTEND

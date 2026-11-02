@@ -66,11 +66,11 @@ public:
 
     MCNAPI void $neighborChanged(::BlockSource& region, ::BlockPos const& pos, ::BlockPos const& neighborPos) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI void $movedByPiston(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI bool $checkIsPathable(::Actor& entity, ::BlockPos const& lastPathPos, ::BlockPos const& pathPos) const;
 

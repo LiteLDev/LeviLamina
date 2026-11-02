@@ -145,7 +145,7 @@ public:
 
     MCNAPI void $tickMovementCorrectionReplay(::EntityRegistry& registry);
 
-    MCNAPI void $registerTickingSystem(
+    MCAPI void $registerTickingSystem(
         ::gsl::span<::Bedrock::typeid_t<::SystemCategory> const> categories,
         ::std::unique_ptr<::ITickingSystem>                      system,
         ::SystemInfo const&                                      info,

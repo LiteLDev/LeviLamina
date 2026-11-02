@@ -54,7 +54,7 @@ MCNAPI ::HashedString const& Bed();
 
 MCNAPI ::HashedString const& Beetroot();
 
-MCAPI ::HashedString const& BeetrootSeeds();
+MCNAPI ::HashedString const& BeetrootSeeds();
 
 MCNAPI ::HashedString const& BirchBoat();
 
@@ -70,7 +70,7 @@ MCNAPI ::HashedString const& BlackBundle();
 
 MCNAPI ::HashedString const& BlackCushion();
 
-MCAPI ::HashedString const& BlackDye();
+MCNAPI ::HashedString const& BlackDye();
 
 MCNAPI ::HashedString const& BlackHarness();
 
@@ -82,11 +82,11 @@ MCNAPI ::HashedString const& BlueBundle();
 
 MCNAPI ::HashedString const& BlueCushion();
 
-MCAPI ::HashedString const& BlueDye();
+MCNAPI ::HashedString const& BlueDye();
 
 MCNAPI ::HashedString const& BlueHarness();
 
-MCAPI ::HashedString const& BoneMeal();
+MCNAPI ::HashedString const& BoneMeal();
 
 MCNAPI ::HashedString const& Book();
 
@@ -94,7 +94,7 @@ MCNAPI ::HashedString const& BookAndQuill();
 
 MCNAPI ::HashedString const& BordureIndentedBannerPattern();
 
-MCAPI ::HashedString const& Bow();
+MCNAPI ::HashedString const& Bow();
 
 MCNAPI ::HashedString const& Bowl();
 
@@ -110,7 +110,7 @@ MCNAPI ::HashedString const& BrownBundle();
 
 MCNAPI ::HashedString const& BrownCushion();
 
-MCAPI ::HashedString const& BrownDye();
+MCNAPI ::HashedString const& BrownDye();
 
 MCNAPI ::HashedString const& BrownHarness();
 
@@ -128,7 +128,7 @@ MCNAPI ::HashedString const& Camera();
 
 MCNAPI ::HashedString const& CampFire();
 
-MCAPI ::HashedString const& Carrot();
+MCNAPI ::HashedString const& Carrot();
 
 MCNAPI ::HashedString const& CarrotOnAStick();
 
@@ -184,13 +184,13 @@ MCNAPI ::HashedString const& CrimsonHangingSign();
 
 MCNAPI ::HashedString const& CrimsonSign();
 
-MCAPI ::HashedString const& Crossbow();
+MCNAPI ::HashedString const& Crossbow();
 
 MCNAPI ::HashedString const& CyanBundle();
 
 MCNAPI ::HashedString const& CyanCushion();
 
-MCAPI ::HashedString const& CyanDye();
+MCNAPI ::HashedString const& CyanDye();
 
 MCNAPI ::HashedString const& CyanHarness();
 
@@ -288,7 +288,7 @@ MCNAPI ::HashedString const& GrayBundle();
 
 MCNAPI ::HashedString const& GrayCushion();
 
-MCAPI ::HashedString const& GrayDye();
+MCNAPI ::HashedString const& GrayDye();
 
 MCNAPI ::HashedString const& GrayHarness();
 
@@ -296,7 +296,7 @@ MCNAPI ::HashedString const& GreenBundle();
 
 MCNAPI ::HashedString const& GreenCushion();
 
-MCAPI ::HashedString const& GreenDye();
+MCNAPI ::HashedString const& GreenDye();
 
 MCNAPI ::HashedString const& GreenHarness();
 
@@ -380,7 +380,7 @@ MCNAPI ::HashedString const& LightBlueBundle();
 
 MCNAPI ::HashedString const& LightBlueCushion();
 
-MCAPI ::HashedString const& LightBlueDye();
+MCNAPI ::HashedString const& LightBlueDye();
 
 MCNAPI ::HashedString const& LightBlueHarness();
 
@@ -388,7 +388,7 @@ MCNAPI ::HashedString const& LightGrayBundle();
 
 MCNAPI ::HashedString const& LightGrayCushion();
 
-MCAPI ::HashedString const& LightGrayDye();
+MCNAPI ::HashedString const& LightGrayDye();
 
 MCNAPI ::HashedString const& LightGrayHarness();
 
@@ -396,7 +396,7 @@ MCNAPI ::HashedString const& LimeBundle();
 
 MCNAPI ::HashedString const& LimeCushion();
 
-MCAPI ::HashedString const& LimeDye();
+MCNAPI ::HashedString const& LimeDye();
 
 MCNAPI ::HashedString const& LimeHarness();
 
@@ -410,7 +410,7 @@ MCNAPI ::HashedString const& MagentaBundle();
 
 MCNAPI ::HashedString const& MagentaCushion();
 
-MCAPI ::HashedString const& MagentaDye();
+MCNAPI ::HashedString const& MagentaDye();
 
 MCNAPI ::HashedString const& MagentaHarness();
 
@@ -425,14 +425,14 @@ MCNAPI ::HashedString const& MangroveHangingSign();
 MCNAPI ::HashedString const& MangroveSign();
 
 #ifdef LL_PLAT_C
-MCAPI ::HashedString const& Medicine();
+MCNAPI ::HashedString const& Medicine();
 #endif
 
-MCAPI ::HashedString const& MelonSeeds();
+MCNAPI ::HashedString const& MelonSeeds();
 
 MCNAPI ::HashedString const& MelonSlice();
 
-MCAPI ::HashedString const& MilkBucket();
+MCNAPI ::HashedString const& MilkBucket();
 
 MCNAPI ::HashedString const& Minecart();
 
@@ -504,7 +504,7 @@ MCNAPI ::HashedString const& OrangeBundle();
 
 MCNAPI ::HashedString const& OrangeCushion();
 
-MCAPI ::HashedString const& OrangeDye();
+MCNAPI ::HashedString const& OrangeDye();
 
 MCNAPI ::HashedString const& OrangeHarness();
 
@@ -534,7 +534,7 @@ MCNAPI ::HashedString const& PinkBundle();
 
 MCNAPI ::HashedString const& PinkCushion();
 
-MCAPI ::HashedString const& PinkDye();
+MCNAPI ::HashedString const& PinkDye();
 
 MCNAPI ::HashedString const& PinkHarness();
 
@@ -556,9 +556,9 @@ MCNAPI ::HashedString const& PoplarSign();
 MCNAPI ::HashedString const& PortfolioBook();
 #endif
 
-MCAPI ::HashedString const& Potato();
+MCNAPI ::HashedString const& Potato();
 
-MCAPI ::HashedString const& Potion();
+MCNAPI ::HashedString const& Potion();
 
 MCNAPI ::HashedString const& PowderSnowBucket();
 
@@ -568,13 +568,13 @@ MCNAPI ::HashedString const& PufferfishBucket();
 
 MCNAPI ::HashedString const& PumpkinPie();
 
-MCAPI ::HashedString const& PumpkinSeeds();
+MCNAPI ::HashedString const& PumpkinSeeds();
 
 MCNAPI ::HashedString const& PurpleBundle();
 
 MCNAPI ::HashedString const& PurpleCushion();
 
-MCAPI ::HashedString const& PurpleDye();
+MCNAPI ::HashedString const& PurpleDye();
 
 MCNAPI ::HashedString const& PurpleHarness();
 
@@ -594,7 +594,7 @@ MCNAPI ::HashedString const& RedBundle();
 
 MCNAPI ::HashedString const& RedCushion();
 
-MCAPI ::HashedString const& RedDye();
+MCNAPI ::HashedString const& RedDye();
 
 MCNAPI ::HashedString const& RedHarness();
 
@@ -654,7 +654,7 @@ MCNAPI ::HashedString const& String();
 
 MCNAPI ::HashedString const& Sugar();
 
-MCAPI ::HashedString const& SugarCane();
+MCNAPI ::HashedString const& SugarCane();
 
 MCNAPI ::HashedString const& SulfurCubeBucket();
 
@@ -668,7 +668,7 @@ MCNAPI ::HashedString const& TntMinecart();
 
 MCNAPI ::HashedString const& TorchflowerSeeds();
 
-MCAPI ::HashedString const& TotemOfUndying();
+MCNAPI ::HashedString const& TotemOfUndying();
 
 MCNAPI ::HashedString const& TrialKey();
 
@@ -702,13 +702,13 @@ MCNAPI ::HashedString const& WeatheredCopperDoor();
 
 MCNAPI ::HashedString const& Wheat();
 
-MCAPI ::HashedString const& WheatSeeds();
+MCNAPI ::HashedString const& WheatSeeds();
 
 MCNAPI ::HashedString const& WhiteBundle();
 
 MCNAPI ::HashedString const& WhiteCushion();
 
-MCAPI ::HashedString const& WhiteDye();
+MCNAPI ::HashedString const& WhiteDye();
 
 MCNAPI ::HashedString const& WhiteHarness();
 
@@ -722,7 +722,7 @@ MCNAPI ::HashedString const& YellowBundle();
 
 MCNAPI ::HashedString const& YellowCushion();
 
-MCAPI ::HashedString const& YellowDye();
+MCNAPI ::HashedString const& YellowDye();
 
 MCNAPI ::HashedString const& YellowHarness();
 // NOLINTEND

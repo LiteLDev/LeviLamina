@@ -52,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool _allNeighborsEmpty(::BlockSource& region, ::BlockPos const& pos, uchar ignore);
 
-    MCNAPI static void _growTreeRecursive(
+    MCAPI static void _growTreeRecursive(
         ::BlockSource&    region,
         ::BlockPos const& current,
         ::BlockPos const& startPos,

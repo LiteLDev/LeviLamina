@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<::ItemStack> _initializeStorageItem(
+    MCAPI ::std::optional<::ItemStack> _initializeStorageItem(
         ::ItemStack const&                 item,
         ::StorageItemComponent*            storageItemComponent,
         ::StorageWeightLimitItemComponent* storageWeightLimitItemComponent

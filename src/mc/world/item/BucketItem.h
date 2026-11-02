@@ -156,7 +156,7 @@ public:
         bool const                           showCategory
     ) const;
 
-    MCNAPI ::InteractionResult $_useOn(
+    MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,
@@ -171,6 +171,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

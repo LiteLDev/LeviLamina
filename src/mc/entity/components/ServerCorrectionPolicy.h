@@ -42,7 +42,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MovementCorrection $shouldCorrectMovement(
+    MCAPI ::MovementCorrection $shouldCorrectMovement(
         ::EntityContext&               entity,
         ::PlayerAuthInputPacket const& packet,
         uint64                         frame,

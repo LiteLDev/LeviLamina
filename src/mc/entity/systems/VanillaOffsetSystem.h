@@ -109,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(
+    MCAPI void $tick(
         ::StrictExecutionContext<
             ::Filter<::PlayerComponent, ::ActorMovementTickNeededComponent>,
             ::Read<::OffsetsComponent, ::ActorDataFlagComponent, ::PlayerIsSleepingFlagComponent>,

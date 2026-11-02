@@ -112,7 +112,7 @@ public:
 
     MCNAPI int $getEnchantSlot() const;
 
-    MCNAPI bool $isValidRepairItem(
+    MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&   source,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion

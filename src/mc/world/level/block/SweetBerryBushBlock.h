@@ -139,7 +139,7 @@ public:
     MCNAPI bool
     $hasTag(::BlockSource& region, ::BlockPos const& pos, ::Block const& block, ::std::string const& tagName) const;
 
-    MCNAPI bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $mayPlaceOn(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI bool
     $onFertilized(::BlockSource& region, ::BlockPos const& pos, ::Actor* actor, ::FertilizerType fType) const;

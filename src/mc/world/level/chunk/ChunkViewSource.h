@@ -109,7 +109,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
+    MCAPI ::std::shared_ptr<::LevelChunk> $getExistingChunk(::ChunkPos const& pos);
 
     MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
@@ -122,7 +122,7 @@ public:
 
     MCAPI void $setLevelChunk(::std::shared_ptr<::LevelChunk> lc);
 
-    MCNAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
+    MCAPI ::std::shared_ptr<::br::worldgen::StructureInstance>
     $_tryGetOrLoadStructureInstanceAt(::ChunkPos const& cp, ::br::worldgen::Structure const& structure);
 
 

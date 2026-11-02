@@ -69,6 +69,6 @@ public:
 
     MCNAPI static ::Vec3 const& UNIT_Z();
 
-    MCAPI static ::Vec3 const& ZERO();
+    MCNAPI static ::Vec3 const& ZERO();
     // NOLINTEND
 };

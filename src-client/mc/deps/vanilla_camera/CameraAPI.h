@@ -92,7 +92,7 @@ public:
         ::SharedTypes::Legacy::ActorLocation actorLoc
     ) const;
 
-    MCNAPI ::std::optional<::Vec3>
+    MCAPI ::std::optional<::Vec3>
     $tryGetActorInterpolatedPosition(::WeakRef<::EntityContext> const actorRef, float interpolationFactor) const;
 
     MCNAPI ::std::optional<::Vec2> $tryGetActorRotation(::WeakRef<::EntityContext const> const actorRef) const;
@@ -106,9 +106,9 @@ public:
         float                      amplitude
     ) const;
 
-    MCNAPI ::std::optional<float> $tryGetFOV() const;
+    MCAPI ::std::optional<float> $tryGetFOV() const;
 
-    MCNAPI ::ICameraAPI::CameraMovementData $getCameraMovementVector() const;
+    MCAPI ::ICameraAPI::CameraMovementData $getCameraMovementVector() const;
 
     MCNAPI float $getSecondsSinceProgramStart() const;
 

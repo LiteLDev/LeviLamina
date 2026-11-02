@@ -277,7 +277,7 @@ public:
     );
 #endif
 
-    MCNAPI void _lightingCallbacks(
+    MCAPI void _lightingCallbacks(
         ::ChunkBlockPos const& pos,
         ::Block const&         old,
         ::Block const&         current,
@@ -292,7 +292,7 @@ public:
 
     MCNAPI void _setAllBiomesFrom2D(::std::array<::BiomeIdType, 256>& legacyBiomes);
 
-    MCNAPI void _setBiome(::Biome const& biome, ::ChunkBlockPos const& pos, bool fillYDimension);
+    MCAPI void _setBiome(::Biome const& biome, ::ChunkBlockPos const& pos, bool fillYDimension);
 
     MCNAPI void addEntity(::WeakEntityRef entityRef);
 
@@ -509,7 +509,7 @@ public:
 
     MCAPI void tickBlockEntities(::BlockSource& tickRegion);
 
-    MCNAPI void tickImpl(::BlockSource& tickRegion, ::Tick const& tick, ::std::function<void()> spawnerCallback);
+    MCAPI void tickImpl(::BlockSource& tickRegion, ::Tick const& tick, ::std::function<void()> spawnerCallback);
 
     MCAPI bool tryChangeState(::ChunkState from, ::ChunkState to);
 

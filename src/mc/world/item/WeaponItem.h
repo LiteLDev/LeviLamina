@@ -82,9 +82,9 @@ public:
 
     MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
-    MCNAPI bool $canDestroySpecial(::Block const& block) const;
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCNAPI bool $isValidRepairItem(
+    MCAPI bool $isValidRepairItem(
         ::ItemStackBase const&,
         ::ItemStackBase const&   repairItem,
         ::BaseGameVersion const& baseGameVersion

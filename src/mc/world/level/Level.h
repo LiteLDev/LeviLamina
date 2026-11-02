@@ -1557,7 +1557,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -1578,11 +1578,11 @@ public:
 
     MCNAPI bool $isLeaveGameDone();
 
-    MCNAPI bool $isDimensionTypeActive(::DimensionType dimensionType) const;
+    MCAPI bool $isDimensionTypeActive(::DimensionType dimensionType) const;
 
-    MCNAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
+    MCAPI ::WeakRef<::Dimension> $getOrCreateDimension(::DimensionType dimensionType);
 
-    MCNAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
+    MCAPI ::WeakRef<::Dimension> $getDimension(::DimensionType id) const;
 
     MCNAPI ::PlayerSpawnDimensionResolution $resolvePlayerSpawnDimension(::CompoundTag const* playerTag) const;
 
@@ -1596,7 +1596,7 @@ public:
 
     MCNAPI ::PortalForcer& $getPortalForcer();
 
-    MCNAPI void $requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest);
+    MCAPI void $requestPlayerChangeDimension(::Player& player, ::ChangeDimensionRequest&& changeRequest);
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
 
@@ -1647,7 +1647,7 @@ public:
 
     MCNAPI void $setMsaGamertagsOnly(bool msaGamertagsOnly);
 
-    MCNAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
+    MCAPI ::Actor* $addEntity(::BlockSource& region, ::OwnerPtr<::EntityContext> entity);
 
     MCNAPI ::Actor* $putEntity(
         ::BlockSource&              region,
@@ -1712,7 +1712,7 @@ public:
 
     MCNAPI ::Player* $getPlayer(::std::string const& name) const;
 
-    MCNAPI ::Player* $getPlayer(::mce::UUID const& uuid) const;
+    MCAPI ::Player* $getPlayer(::mce::UUID const& uuid) const;
 
     MCNAPI ::Player* $getPlayer(::ActorUniqueID entityID) const;
 
@@ -1816,11 +1816,11 @@ public:
 
     MCNAPI void $tickEntities();
 
-    MCNAPI void $tickEntitySystems();
+    MCAPI void $tickEntitySystems();
 
     MCNAPI void $onPlayerDeath(::Player& player, ::ActorDamageSource const& source);
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
     MCNAPI bool $explode(
         ::BlockSource& region,
@@ -1959,7 +1959,7 @@ public:
     MCNAPI void
     $addTickingAreaList(::DimensionType dimensionId, ::std::shared_ptr<::TickingAreaList> const& tickingAreas);
 
-    MCNAPI void $playSound(
+    MCAPI void $playSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int                                    data,
@@ -1967,12 +1967,12 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI void
+    MCAPI void
     $playSound(::SharedTypes::Legacy::LevelSoundEvent type, ::Vec3 const& pos, float const volume, float const pitch);
 
     MCNAPI void $playSound(::PlaySoundOptions const& options);
 
-    MCNAPI void $playSound(
+    MCAPI void $playSound(
         ::IConstBlockSource const&             region,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -1981,7 +1981,7 @@ public:
         bool                                   isGlobal
     );
 
-    MCNAPI void $playSound(
+    MCAPI void $playSound(
         ::DimensionType                        dimension,
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
@@ -2173,7 +2173,7 @@ public:
 
     MCNAPI void $sendServerLegacyParticle(::ParticleType id, ::Vec3 const& pos, ::Vec3 const& dir, int data);
 
-    MCNAPI ::Particle* $addParticle(
+    MCAPI ::Particle* $addParticle(
         ::ParticleType       id,
         ::Vec3 const&        pos,
         ::Vec3 const&        dir,
@@ -2187,7 +2187,7 @@ public:
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ServerParticleManager> $getServerParticleManager();
 
-    MCNAPI void $addParticleEffect(
+    MCAPI void $addParticleEffect(
         ::HashedString const&      effect,
         ::Vec3 const&              emitterPosition,
         ::MolangVariableMap const& molangVariables
@@ -2489,7 +2489,7 @@ public:
 
     MCNAPI ::LootTables& $getLootTables();
 
-    MCNAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCAPI void $updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
 
     MCNAPI int $getNetherScale() const;
 

@@ -172,7 +172,7 @@ public:
 
     MCNAPI ::IGameModuleShared& $getGameModuleShared();
 
-    MCNAPI void $requestServerShutdown();
+    MCAPI void $requestServerShutdown();
 
     MCNAPI bool $requestInGamePause(::SubClientId const&, bool);
     // NOLINTEND

@@ -55,11 +55,11 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _isDoubleChainAttached(::Block const& block);
+    MCAPI static bool _isDoubleChainAttached(::Block const& block);
 
-    MCNAPI static bool _isHangingSign(::Block const& block);
+    MCAPI static bool _isHangingSign(::Block const& block);
 
-    MCNAPI static bool _isVShapedChainAttached(::Block const& block);
+    MCAPI static bool _isVShapedChainAttached(::Block const& block);
 
     MCAPI static bool isSideAttachedHangingSign(::Block const& block);
     // NOLINTEND

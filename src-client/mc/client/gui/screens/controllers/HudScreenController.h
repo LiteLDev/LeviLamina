@@ -171,7 +171,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit HudScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCAPI explicit HudScreenController(::std::shared_ptr<::ClientInstanceScreenModel> model);
 
     MCNAPI void _bindActionIconForGamepad(
         ::Remapping::ActionEnum action,
@@ -315,7 +315,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
+    MCAPI void* $ctor(::std::shared_ptr<::ClientInstanceScreenModel> model);
     // NOLINTEND
 
 public:

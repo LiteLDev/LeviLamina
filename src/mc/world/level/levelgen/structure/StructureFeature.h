@@ -166,7 +166,7 @@ public:
         ::std::optional<::HashedString> const& biomeTag
     );
 
-    MCNAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
+    MCAPI ::StructureStart* $getStructureAt(int cellX, int cellY, int cellZ);
 
 
     // NOLINTEND

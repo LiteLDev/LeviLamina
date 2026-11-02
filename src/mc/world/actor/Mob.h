@@ -367,7 +367,7 @@ public:
 
     MCNAPI void joinCaravan(::Mob* head);
 
-    MCNAPI void jumpFromGround();
+    MCAPI void jumpFromGround();
 
     MCNAPI void leaveCaravan();
 
@@ -433,17 +433,17 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
+    MCAPI void $initializeComponents(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
     MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
     MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCNAPI void $kill();
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCNAPI bool $shouldDropDeathLoot() const;
 
@@ -467,7 +467,7 @@ public:
 
     MCNAPI float $getYawSpeedInDegreesPerSecond() const;
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI void $baseTick();
 
@@ -557,7 +557,7 @@ public:
 
     MCNAPI bool $isSurfaceMob() const;
 
-    MCNAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
+    MCAPI float $getDamageAfterEnchantReduction(::ActorDamageSource const& source, float damage) const;
 
     MCNAPI bool $createAIGoals();
 
@@ -569,9 +569,9 @@ public:
 
     MCNAPI bool $hasComponent(::HashedString const& name) const;
 
-    MCNAPI bool $canChangeDimensionsUsingPortal() const;
+    MCAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCNAPI void
+    MCAPI void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCNAPI float $_getWalkTargetValue(::BlockPos const& pos);
@@ -590,11 +590,11 @@ public:
 
     MCNAPI ::std::unique_ptr<::BodyControl> $initBodyControl();
 
-    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
     MCNAPI void $outOfWorld();
 
-    MCNAPI ::ActorHurtResult
+    MCAPI ::ActorHurtResult
     $_hurt(::ActorDamageSource const& source, float damage, ::HurtParameters const& hurtParameters);
 
     MCNAPI void $newServerAiStep();

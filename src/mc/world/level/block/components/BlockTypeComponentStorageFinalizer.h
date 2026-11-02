@@ -11,11 +11,11 @@ class BlockTypeComponentStorageFinalizer {
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _finalizeCollisionBoxComponent(::BlockType& blockType);
+    MCAPI void _finalizeCollisionBoxComponent(::BlockType& blockType);
 
-    MCNAPI void _finalizeRedstoneProducerComponent(::BlockType& blockType);
+    MCAPI void _finalizeRedstoneProducerComponent(::BlockType& blockType);
 
-    MCNAPI void _finalizeSelectionBoxComponent(::BlockType& blockType);
+    MCAPI void _finalizeSelectionBoxComponent(::BlockType& blockType);
 
     MCNAPI void addRemainingComponents(::BlockType& blockType);
     // NOLINTEND

@@ -75,7 +75,7 @@ public:
 
     MCNAPI bool $mayPlace(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI void $animateTickBedrockLegacy(::BlockAnimateTickData const& tickData) const;
 

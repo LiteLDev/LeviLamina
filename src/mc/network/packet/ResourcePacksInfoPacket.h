@@ -96,7 +96,7 @@ public:
 
     MCNAPI void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
     MCNAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);

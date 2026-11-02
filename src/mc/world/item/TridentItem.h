@@ -62,7 +62,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 

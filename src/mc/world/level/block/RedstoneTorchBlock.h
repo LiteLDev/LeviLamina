@@ -63,7 +63,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RedstoneTorchBlock(::std::string const& nameId, int id, bool on);
 
-    MCNAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
+    MCAPI void _onRedstoneUpdate(::BlockEvents::BlockRedstoneUpdateEvent& blockEvent) const;
 
     MCNAPI void onPlaceRedstoneTorchBlock(::BlockEvents::BlockPlaceEvent& eventData) const;
     // NOLINTEND

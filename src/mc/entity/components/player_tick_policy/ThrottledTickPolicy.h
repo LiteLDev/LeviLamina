@@ -41,7 +41,7 @@ public:
     // NOLINTBEGIN
     MCNAPI uint64 $getMaxTickCount(uint64 const creditTicks, bool hasQueuedInput) const;
 
-    MCNAPI ::IPlayerTickPolicy::TickAction
+    MCAPI ::IPlayerTickPolicy::TickAction
     $shouldTickPlayer(uint64 const creditTicks, uint64 unprocessedTicksSize) const;
 
     MCNAPI bool $isStrictMovement() const;

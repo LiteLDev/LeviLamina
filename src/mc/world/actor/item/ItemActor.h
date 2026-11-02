@@ -141,21 +141,21 @@ public:
     // NOLINTBEGIN
     MCNAPI void $reloadHardcoded(::ActorInitializationMethod, ::VariantParameterList const&);
 
-    MCNAPI void $playerTouch(::Player& player);
+    MCAPI void $playerTouch(::Player& player);
 
     MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCNAPI ::ActorUniqueID $getSourceUniqueID() const;
 
-    MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
+    MCAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
     MCNAPI bool $canSynchronizeNewEntity() const;
 
     MCNAPI void $handleEntityEvent(::ActorEvent eventId, int data);
 
-    MCNAPI bool $isFireImmune() const;
+    MCAPI bool $isFireImmune() const;
 
-    MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
+    MCAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float damage, ::HurtParameters const&);
 
     MCNAPI void $addAdditionalSaveData(::CompoundTag& entityTag) const;
 

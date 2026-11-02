@@ -289,7 +289,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ServerInstance(::ServerInstanceArguments&& args);
+    MCAPI explicit ServerInstance(::ServerInstanceArguments&& args);
 
     MCNAPI ::Bedrock::Threading::Async<bool> _postLevelInitialization(::ServerInstance::PostLevelArgs&& args);
 
@@ -371,7 +371,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ServerInstanceArguments&& args);
+    MCAPI void* $ctor(::ServerInstanceArguments&& args);
     // NOLINTEND
 
 public:

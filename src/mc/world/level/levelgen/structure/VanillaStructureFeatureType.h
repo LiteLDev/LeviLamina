@@ -36,13 +36,13 @@ MCNAPI ::HashedString const& EndCity();
 
 MCNAPI ::HashedString const& Fortress();
 
-MCAPI ::HashedString const& Mineshaft();
+MCNAPI ::HashedString const& Mineshaft();
 
 MCNAPI ::HashedString const& Monument();
 
 MCNAPI ::HashedString const& PillagerOutpost();
 
-MCAPI ::HashedString const& RuinedPortal();
+MCNAPI ::HashedString const& RuinedPortal();
 
 MCNAPI ::HashedString const& Ruins();
 
@@ -56,7 +56,7 @@ MCNAPI ::HashedString const& TrailRuins();
 
 MCNAPI ::HashedString const& TrialChambers();
 
-MCAPI ::HashedString const& Village();
+MCNAPI ::HashedString const& Village();
 
 MCNAPI ::HashedString const& WoodlandMansion();
 // NOLINTEND

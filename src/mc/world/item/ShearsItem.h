@@ -71,7 +71,7 @@ public:
 
     MCNAPI int $getEnchantSlot() const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar) const;
 
     MCNAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,

@@ -82,7 +82,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
+    MCAPI PauseScreenController(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
 
     MCNAPI bool _isInviteButtonEnabled() const;
 
@@ -113,7 +113,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
+    MCAPI void* $ctor(::std::shared_ptr<::PauseScreenModel> model, bool overlaySocialDrawerOnce);
     // NOLINTEND
 
 public:

@@ -174,9 +174,9 @@ public:
 
     MCNAPI bool $hasScenes() const;
 
-    MCNAPI void $removeScene(::OreUI::IScene const& scene);
+    MCAPI void $removeScene(::OreUI::IScene const& scene);
 
-    MCNAPI void $update(double time);
+    MCAPI void $update(double time);
 
     MCNAPI void $render(::ScreenContext& screenContext);
 
@@ -213,15 +213,15 @@ public:
 
     MCNAPI void $setCaretLocation(int caretLocation);
 
-    MCNAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
+    MCAPI void $triggerEvent(::std::string const& eventName, ::std::string const& eventData);
 
     MCNAPI ::std::unique_ptr<::IGamefaceTextInputProxy> $getTextInputProxy();
 
     MCNAPI void $OnLoadFailed(char const* url, char const* error);
 
-    MCNAPI void $OnReadyForBindings();
+    MCAPI void $OnReadyForBindings();
 
-    MCNAPI void $OnBindingsReleased();
+    MCAPI void $OnBindingsReleased();
 
     MCNAPI ::cohtml::ScreenInfo $OnScreenInfoRequested();
 

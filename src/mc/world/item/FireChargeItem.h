@@ -63,7 +63,7 @@ public:
         ::Vec3 const& clickPos
     ) const;
 
-    MCNAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
+    MCAPI bool $_calculatePlacePos(::ItemStackBase const&, ::Actor const& actor, uchar& face, ::BlockPos& pos) const;
 
 
     // NOLINTEND

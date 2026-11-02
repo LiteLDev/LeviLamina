@@ -100,7 +100,7 @@ public:
 
     MCNAPI void $terminate();
 
-    MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCNAPI bool $screenIsNotFlushable() const;
 

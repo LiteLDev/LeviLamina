@@ -114,9 +114,9 @@ public:
 
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI ::ItemStack const& $getItem(int slot) const;
+    MCAPI ::ItemStack const& $getItem(int slot) const;
 
-    MCNAPI void $setItem(int slot, ::ItemStack const& item);
+    MCAPI void $setItem(int slot, ::ItemStack const& item);
 
     MCNAPI ::std::string $getName() const;
 

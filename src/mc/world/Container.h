@@ -216,7 +216,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
+    MCNAPI static ::BidirectionalUnorderedMap<::SharedTypes::Legacy::ContainerType, ::std::string> const&
     containerTypeMap();
     // NOLINTEND
 
