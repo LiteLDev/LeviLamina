@@ -45,7 +45,7 @@ public:
 
     MCAPI ::std::string getDisplayName() const;
 
-    MCNAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
+    MCAPI ::MobEffectInstance& operator=(::MobEffectInstance&&);
 
     MCAPI ::std::unique_ptr<::CompoundTag> save() const;
 
@@ -55,7 +55,7 @@ public:
 
     MCNAPI void updateEffects(::Actor& mob) const;
 
-    MCNAPI ~MobEffectInstance();
+    MCAPI ~MobEffectInstance();
     // NOLINTEND
 
 public:
@@ -83,6 +83,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

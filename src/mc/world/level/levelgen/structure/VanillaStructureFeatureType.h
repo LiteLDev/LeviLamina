@@ -56,7 +56,7 @@ MCNAPI ::HashedString const& TrailRuins();
 
 MCNAPI ::HashedString const& TrialChambers();
 
-MCNAPI ::HashedString const& Village();
+MCAPI ::HashedString const& Village();
 
 MCNAPI ::HashedString const& WoodlandMansion();
 // NOLINTEND

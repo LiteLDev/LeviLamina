@@ -1438,7 +1438,7 @@ public:
         ::std::optional<::dragon::framerenderer::DebugParameters> initDebugOptions
     );
 
-    MCNAPI void _finishReloadingResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+    MCAPI void _finishReloadingResources(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
     MCNAPI ::Bedrock::Threading::Async<void> _handleMultiplayerServiceJoinResult(
         ::Social::MultiplayerServiceIdentifier const gameServiceProvider,
@@ -1492,7 +1492,7 @@ public:
 
     MCNAPI void _loadLastGlobalResourcePacksFromFile(bool waitForUIReload);
 
-    MCNAPI void _onActiveResourcePacksChanged(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
+    MCAPI void _onActiveResourcePacksChanged(::ResourcePackManager& mgr, bool fullVanillaPackOnStack);
 
     MCNAPI ::SerialWorkList::WorkResult _onDeviceRestoreFinish();
 
@@ -1591,7 +1591,7 @@ public:
 
     MCNAPI void _update();
 
-    MCNAPI void _updateBiomeBlendingAndAtmosphericScattering(
+    MCAPI void _updateBiomeBlendingAndAtmosphericScattering(
         float           timeOfDay,
         float           intensityMultiplier,
         ::DimensionType dimensionId

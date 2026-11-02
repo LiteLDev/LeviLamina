@@ -65,7 +65,7 @@ public:
         ::SculkSpreader&
     ) const;
 
-    MCNAPI int $attemptUseCharge(
+    MCAPI int $attemptUseCharge(
         ::IBlockWorldGenAPI& target,
         ::BlockSource*       region,
         ::BlockPos const&    originPos,

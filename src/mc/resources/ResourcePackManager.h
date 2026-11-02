@@ -106,7 +106,7 @@ public:
 
     MCNAPI void clearStack(::ResourcePackStackType stackType);
 
-    MCNAPI int composeFullStack(
+    MCAPI int composeFullStack(
         ::ResourcePackStack&       output,
         ::ResourcePackStack const& globalStack,
         ::ResourcePackStack const& levelStack
@@ -136,7 +136,7 @@ public:
     MCNAPI void removeUnsupportedPacks();
 #endif
 
-    MCNAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
+    MCAPI bool setStack(::std::unique_ptr<::ResourcePackStack> stack, ::ResourcePackStackType stackType);
     // NOLINTEND
 
 public:

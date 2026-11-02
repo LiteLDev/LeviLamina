@@ -246,7 +246,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::Owner<::BlockTypeRegistry>& mBlockTypeRegistry();
+    MCAPI static ::Bedrock::Owner<::BlockTypeRegistry>& mBlockTypeRegistry();
     // NOLINTEND
 
 public:

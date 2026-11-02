@@ -358,7 +358,7 @@ public:
 
     MCNAPI float getSunAngle(float a) const;
 
-    MCNAPI float getTimeOfDay(float a) const;
+    MCAPI float getTimeOfDay(float a) const;
 
     MCNAPI void registerDisplayEntity(::WeakRef<::EntityContext> entityRef);
 #endif

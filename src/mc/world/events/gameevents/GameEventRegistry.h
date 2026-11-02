@@ -20,7 +20,7 @@ MCNAPI ::GameEvent const& blockClose();
 
 MCNAPI ::GameEvent const& blockDeactivate();
 
-MCNAPI ::GameEvent const& blockDestroy();
+MCAPI ::GameEvent const& blockDestroy();
 
 MCNAPI ::GameEvent const& blockDetach();
 
@@ -138,7 +138,7 @@ MCNAPI ::GameEvent const& splash();
 
 MCNAPI ::GameEvent const& swim();
 
-MCNAPI ::GameEvent const& teleport();
+MCAPI ::GameEvent const& teleport();
 
 MCNAPI ::GameEvent const& unequip();
 // NOLINTEND
