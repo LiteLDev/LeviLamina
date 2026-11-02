@@ -52,7 +52,7 @@ public:
     );
 #endif
 
-    MCNAPI ResourcePackStack(
+    MCAPI ResourcePackStack(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion
@@ -127,7 +127,7 @@ public:
     );
 #endif
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> const&                                identities,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository const> const& repo,
         bool                                                                  anyVersion

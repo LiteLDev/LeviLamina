@@ -438,7 +438,7 @@ public:
 
     MCNAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
 
-    MCNAPI ::LevelRendererCamera::RainState doRainUpdate();
+    MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
     MCNAPI ::RenderChunkInstanced* getOrCreateRenderChunkInstancedAt(::SubChunkPos const& rcp);
 
@@ -467,7 +467,7 @@ public:
 
     MCNAPI void renderChunkVisibilityChanged(::RenderChunkShared& renderChunkShared, bool visibilityMatrixChanged);
 
-    MCNAPI void renderSky(
+    MCAPI void renderSky(
         ::ScreenContext&                             screenContext,
         ::ViewRenderObject const&                    renderObj,
         ::BaseSceneDirectionalLightRenderData const& sceneDirectionalLightRenderData

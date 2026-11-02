@@ -44,7 +44,7 @@ MCAPI bool decorateBiome(
     ::IPreliminarySurfaceProvider const&        preliminarySurfaceProvider
 );
 
-MCNAPI bool decorateLargeFeature(
+MCAPI bool decorateLargeFeature(
     ::GeneratorType                             generatorType,
     uint const&                                 seed,
     ::BlockVolumeTarget&                        target,

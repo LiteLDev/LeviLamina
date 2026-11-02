@@ -465,7 +465,7 @@ public:
 
     MCNAPI void $recalculateRenderDistance(float const renderDistanceScalar);
 
-    MCNAPI void $preRenderUpdate(
+    MCAPI void $preRenderUpdate(
         ::ScreenContext&                        screenContext,
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );

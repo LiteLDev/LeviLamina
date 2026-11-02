@@ -40,7 +40,7 @@ public:
 
     MCNAPI ::Json::Value getBodyAsJson() const;
 
-    MCNAPI ::std::string getBodyAsUtf8String() const;
+    MCAPI ::std::string getBodyAsUtf8String() const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::Bedrock::Http::Response& operator=(::Bedrock::Http::Response const&);
