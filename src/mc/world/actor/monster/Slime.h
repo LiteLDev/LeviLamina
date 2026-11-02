@@ -124,7 +124,7 @@ public:
 
     MCNAPI void $onSynchedDataUpdate(int dataId);
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
     MCNAPI bool $checkSpawnRules(bool fromSpawner);
 

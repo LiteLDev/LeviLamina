@@ -1390,7 +1390,7 @@ public:
 
     MCNAPI ::InputMode $getDefaultInputMode() const;
 
-    MCNAPI ::AppFocusState $getFocusState();
+    MCAPI ::AppFocusState $getFocusState();
 
     MCNAPI ::AppLifecycleContext& $getAppLifecycleContext();
 

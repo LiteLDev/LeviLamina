@@ -103,7 +103,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
+    MCAPI Village(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
 
     MCNAPI void _calcPOIDist();
 
@@ -204,6 +204,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
+    MCAPI void* $ctor(::Dimension& dimension, ::mce::UUID id, ::BlockPos const& origin);
     // NOLINTEND
 };

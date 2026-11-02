@@ -816,7 +816,7 @@ public:
 
     MCNAPI bool matchesStates(::BlockType const& blockType) const;
 
-    MCNAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
+    MCAPI void onFallOnBase(::BlockEvents::BlockEntityFallOnEvent& eventData) const;
 
     MCNAPI ::BlockType& setNameId(::std::string const& id);
 
@@ -1173,7 +1173,7 @@ public:
 
     MCFOLD void $animateTick(::BlockAnimateTickData const& tickData) const;
 
-    MCNAPI ::Brightness $getLightEmission(::Block const& block) const;
+    MCAPI ::Brightness $getLightEmission(::Block const& block) const;
 
     MCFOLD ::Block const* $tryLegacyUpgrade(ushort extraData) const;
 
@@ -1185,39 +1185,39 @@ public:
 
     MCFOLD void $_addHardCodedBlockComponents(::Experiments const& experiments);
 
-    MCNAPI void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD void $onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
+    MCFOLD void $onExploded(::BlockSource& region, ::BlockPos const& pos, ::Actor* entitySource) const;
 
-    MCNAPI void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
+    MCFOLD void $onStandOn(::EntityContext& entity, ::BlockPos const& pos) const;
 
-    MCNAPI bool $shouldTickOnSetBlock() const;
+    MCFOLD bool $shouldTickOnSetBlock() const;
 
-    MCNAPI bool $isInteractiveBlock() const;
+    MCFOLD bool $isInteractiveBlock() const;
 
-    MCNAPI bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
+    MCFOLD bool $allowStateMismatchOnPlacement(::Block const& clientTarget, ::Block const& serverTarget) const;
 
-    MCNAPI bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
+    MCFOLD bool $canSurvive(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
+    MCAPI ::BlockRenderLayer $getRenderLayer(::Block const& block, ::BlockSource&, ::BlockPos const& pos) const;
 
-    MCNAPI int $getExtraRenderLayers() const;
+    MCFOLD int $getExtraRenderLayers() const;
 
-    MCNAPI ::HashedString const& $getCullingLayer() const;
+    MCAPI ::HashedString const& $getCullingLayer() const;
 
-    MCNAPI float $getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const;
+    MCFOLD float $getBounciness(::IConstBlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::Brightness $getLight(::Block const& block) const;
+    MCAPI ::Brightness $getLight(::Block const& block) const;
 
-    MCNAPI ::Brightness $getEmissiveBrightness(::Block const& block) const;
+    MCFOLD ::Brightness $getEmissiveBrightness(::Block const& block) const;
 
-    MCNAPI ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
+    MCFOLD ::mce::Color $getMapColor(::BlockSource& source, ::BlockPos const& pos, ::Block const& block) const;
 
-    MCNAPI ::Block const& $getInitialDefaultState();
+    MCAPI ::Block const& $getInitialDefaultState();
 
-    MCNAPI void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
+    MCFOLD void $_onHitByActivatingAttack(::BlockSource& region, ::BlockPos const& pos, ::Actor* sourceActor) const;
 
-    MCNAPI void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
+    MCFOLD void $entityInside(::BlockSource& region, ::BlockPos const& pos, ::Actor& entity) const;
 
 
     // NOLINTEND

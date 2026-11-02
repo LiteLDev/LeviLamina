@@ -90,7 +90,7 @@ public:
 
     MCNAPI void $handleEntityEvent(::ActorEvent event, int data);
 
-    MCNAPI void $onLightningHit();
+    MCAPI void $onLightningHit();
 
 
     // NOLINTEND

@@ -136,7 +136,7 @@ public:
 
     MCNAPI Block(ushort data, ::gsl::not_null<::BlockType*> oldBlock, ::CompoundTag serId, uint const& runId);
 
-    MCNAPI bool _isSolid() const;
+    MCAPI bool _isSolid() const;
 
 #ifdef LL_PLAT_C
     MCNAPI void _playAmbientSounds(::BlockAnimateTickData const& tickData) const;
@@ -149,7 +149,7 @@ public:
         bool              placingBlock
     ) const;
 
-    MCNAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI void _removeFromTickingQueues(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCNAPI ::Block& addTag(::HashedString const& tag);
 
@@ -262,7 +262,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
+    MCNAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
     // NOLINTEND
 
 public:

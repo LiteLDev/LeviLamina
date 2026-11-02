@@ -124,7 +124,7 @@ public:
 
     MCNAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
-    MCNAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
+    MCAPI ::std::shared_ptr<::ContainerModel> _getContainer(::ContainerEnumName collectionEnumName) const;
 
     MCNAPI void addDynamicContainer(::std::shared_ptr<::ContainerModel> model);
 

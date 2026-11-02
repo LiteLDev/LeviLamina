@@ -151,7 +151,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::Mob* $spawnMob(
+    MCAPI ::Mob* $spawnMob(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,
@@ -161,10 +161,10 @@ public:
         bool                               fromSpawner
     );
 
-    MCNAPI ::ItemActor*
+    MCAPI ::ItemActor*
     $spawnItem(::BlockSource& region, ::ItemStack const& inst, ::Actor* spawner, ::Vec3 const& pos, int throwTime);
 
-    MCNAPI ::Actor* $spawnProjectile(
+    MCAPI ::Actor* $spawnProjectile(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::Actor*                           spawner,

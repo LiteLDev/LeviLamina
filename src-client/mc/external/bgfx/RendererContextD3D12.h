@@ -501,9 +501,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $init(::bgfx::Init const& _init);
+    MCAPI bool $init(::bgfx::Init const& _init);
 
-    MCNAPI void $shutdown();
+    MCAPI void $shutdown();
 
     MCNAPI ::bgfx::RendererType::Enum $getRendererType() const;
 
@@ -666,7 +666,7 @@ public:
 
     MCNAPI void $setName(::bgfx::Handle _handle, char const* _name);
 
-    MCNAPI void
+    MCAPI void
     $submit(::bgfx::Frame* _render, ::bgfx::ClearQuad& _clearQuad, ::bgfx::TextVideoMemBlitter& _textVideoMemBlitter);
 
     MCNAPI void $blitSetup(::bgfx::TextVideoMemBlitter& _blitter);

@@ -204,7 +204,7 @@ public:
 
     MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
 
-    MCNAPI bool $_playerCanUpdate(::Player const& player) const;
+    MCFOLD bool $_playerCanUpdate(::Player const& player) const;
 
     MCNAPI ::IVanillaRenderBlockActorComponent const* $_getRenderComponent() const;
 

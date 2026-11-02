@@ -214,6 +214,6 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
     // NOLINTEND
 };

@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePack(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCAPI ResourcePack(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
 
     MCNAPI void _createSubpack(::I18n& loc, ::SubpackInfo const& subpackInfo);
 
@@ -164,6 +164,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
+    MCAPI void* $ctor(::I18n& loc, ::gsl::not_null<::std::shared_ptr<::Pack>> pack);
     // NOLINTEND
 };

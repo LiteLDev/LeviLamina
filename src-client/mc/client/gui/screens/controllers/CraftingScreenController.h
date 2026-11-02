@@ -266,9 +266,9 @@ public:
 
     MCNAPI void $onEntered();
 
-    MCNAPI void $onTerminate();
+    MCAPI void $onTerminate();
 
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
     MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
@@ -282,11 +282,11 @@ public:
 
     MCNAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
 
-    MCNAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
 
     MCNAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI ::ItemStackBase const&
+    MCAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI ::std::string $_getButtonADescription();
@@ -297,7 +297,7 @@ public:
 
     MCNAPI ::std::string $_getButtonYDescription();
 
-    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
     MCNAPI ::ui::ViewRequest $_onContainerSlotPressed(::std::string const& collectionName, int index);
 

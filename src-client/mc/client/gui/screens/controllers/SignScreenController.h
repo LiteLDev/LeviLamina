@@ -78,7 +78,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::ui::DirtyFlag $tick();
 
-    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCNAPI void $onOpen();
 

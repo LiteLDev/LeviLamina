@@ -42,7 +42,7 @@ public:
 
     MCAPI ActorDefinitionIdentifier(::std::string nameSpace, ::std::string identifier, ::std::string initEvent);
 
-    MCNAPI void _initialize();
+    MCAPI void _initialize();
 
     MCNAPI bool isVanilla() const;
 

@@ -34,9 +34,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
+    MCAPI ::ItemStack& $use(::ItemStack& instance, ::Player& player, ::HandSlot handSlot) const;
 
     MCNAPI int
     $getAnimationFrameFor(::Mob* holder, bool asItemEntity, ::ItemStack const* item, bool shouldAnimate) const;

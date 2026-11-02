@@ -231,7 +231,7 @@ public:
 
     MCNAPI void $showMousePointer();
 
-    MCNAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
+    MCAPI void $setMousePointerType(::Bedrock::Input::PointerType pointerType);
 
     MCNAPI void $toggleSimulateTouchWithMouse();
 

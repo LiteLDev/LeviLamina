@@ -99,13 +99,13 @@ public:
 
     MCNAPI ::BlockPos $findSpawnPosition() const;
 
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
     MCNAPI bool $structurePostProcessChunk(::ChunkViewSource&);
 
-    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource&);
+    MCFOLD bool $decorationPostProcessChunk(::ChunkViewSource&);
 
-    MCNAPI void $prepareHeights(
+    MCFOLD void $prepareHeights(
         ::BlockVolume&        box,
         ::ChunkPos const&     chunkPos,
         ::std::vector<short>* ZXheights,

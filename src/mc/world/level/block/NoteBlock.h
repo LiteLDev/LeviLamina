@@ -46,9 +46,9 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isInteractiveBlock() const;
 
-    MCNAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
+    MCAPI bool $attack(::Player* player, ::BlockPos const& pos) const;
 
-    MCNAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const;
+    MCAPI void $triggerEvent(::BlockSource& region, ::BlockPos const& pos, int instrument, int note) const;
 
 
     // NOLINTEND

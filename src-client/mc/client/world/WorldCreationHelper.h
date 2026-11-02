@@ -90,7 +90,7 @@ public:
         ::IGameServerStartup&                                           gameServerStartup
     );
 
-    MCNAPI ::WorldCreationUtils::WorldCreationResult
+    MCAPI ::WorldCreationUtils::WorldCreationResult
     _createWorldImpl(::LevelDataWrapper& levelData, ::LevelSummary& levelSummary);
 
     MCNAPI ::DlcCheckResult checkDlc();

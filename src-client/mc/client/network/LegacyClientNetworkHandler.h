@@ -314,9 +314,9 @@ public:
 
     MCNAPI bool $getIsConnectedToApplicationLayer() const;
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddActorPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::AddItemActorPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::AddPaintingPacket const& packet);
 
@@ -324,33 +324,33 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::AnimatePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::BlockActorDataPacket> packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::BlockEventPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::BlockEventPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::ChangeDimensionPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerClosePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ContainerOpenPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerOpenPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::ContainerRegistryCleanupPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ContainerSetDataPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::DisconnectPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LevelChunkPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::LevelChunkPacket> packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::ClientCacheMissResponsePacket> packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::GameRulesChangedPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::HurtArmorPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::InventoryContentPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket> packet);
 
@@ -358,7 +358,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::MobEffectPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packetPtr);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packetPtr);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
 
@@ -372,7 +372,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerListPacket const& packet);
 
@@ -380,9 +380,9 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::PlayerUpdateEntityOverridesPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RemoveActorPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetActorDataPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SetActorLinkPacket const& packet);
 
@@ -394,7 +394,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SetDefaultGameTypePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetDifficultyPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SetHealthPacket const& packet);
 
@@ -402,19 +402,19 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SetSpawnPositionPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::SetTimePacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SetHudPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::SpawnParticleEffectPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::StartGamePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockPacket> packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::UpdateBlockSyncedPacket> packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CreativeContentPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::ItemRegistryPacket const& packet);
 

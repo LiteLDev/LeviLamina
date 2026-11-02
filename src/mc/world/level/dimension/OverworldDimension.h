@@ -54,7 +54,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::Vec3 $translatePosAcrossDimension(::Vec3 const& originalPos, ::DimensionType fromId) const;
 
-    MCNAPI ::std::unique_ptr<::WorldGenerator>
+    MCAPI ::std::unique_ptr<::WorldGenerator>
     $createGenerator(::br::worldgen::StructureSetRegistry const& structureSetRegistry);
 
     MCAPI bool $levelChunkNeedsUpgrade(::LevelChunk const& lc) const;

@@ -77,9 +77,9 @@ public:
     );
 #endif
 
-    MCNAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
+    MCAPI void _registerCustomDimensionWithFactory(::std::string_view name, ::DimensionType type);
 
-    MCNAPI bool _registerDimensionWithDimensionDefinitionGroup(
+    MCAPI bool _registerDimensionWithDimensionDefinitionGroup(
         ::std::string_view                                     name,
         ::DimensionDefinitionGroup::DimensionDefinition const& jsonDef
     );

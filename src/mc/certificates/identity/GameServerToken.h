@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit GameServerToken(::std::string const& tokenString);
+    MCAPI explicit GameServerToken(::std::string const& tokenString);
 
     MCAPI ::PlayerAuthenticationInfo getTrustedInfo() const;
 
@@ -50,7 +50,7 @@ public:
         bool                                checkExpiration
     );
 
-    MCNAPI static ::GameServerTokenValidationResult
+    MCAPI static ::GameServerTokenValidationResult
     _validateSelfSigned(::WebToken const& token, int64 currentTime, bool checkExpiration);
 
 #ifdef LL_PLAT_C
@@ -66,6 +66,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& tokenString);
+    MCAPI void* $ctor(::std::string const& tokenString);
     // NOLINTEND
 };

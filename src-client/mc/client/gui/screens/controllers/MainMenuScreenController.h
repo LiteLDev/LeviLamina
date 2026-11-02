@@ -98,7 +98,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $onOpen();
+    MCAPI void $onOpen();
     // NOLINTEND
 
 public:

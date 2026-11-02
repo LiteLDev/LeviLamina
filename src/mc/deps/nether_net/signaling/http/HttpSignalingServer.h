@@ -81,7 +81,7 @@ public:
 
     MCNAPI ::Bedrock::PubSub::Subscription $RegisterEventHandler(::NetherNet::ISignalingEventHandler* handler);
 
-    MCNAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
+    MCAPI ::Bedrock::Threading::Async<::Bedrock::Result<::NetherNet::HttpResponse>>
     $onRequest(::NetherNet::HttpRequest request);
 
 

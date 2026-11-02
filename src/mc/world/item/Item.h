@@ -838,17 +838,17 @@ public:
     MCAPI bool
     $calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCNAPI ::std::string $_getHoverTextDescription() const;
+    MCAPI ::std::string $_getHoverTextDescription() const;
 
-    MCNAPI bool
+    MCFOLD bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;
 
-    MCNAPI bool
+    MCFOLD bool
     $_calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;
 
-    MCNAPI bool $_shouldAutoCalculatePlacePos() const;
+    MCFOLD bool $_shouldAutoCalculatePlacePos() const;
 
-    MCNAPI ::InteractionResult $_useOn(
+    MCAPI ::InteractionResult $_useOn(
         ::ItemStack&  instance,
         ::Actor&      entity,
         ::BlockPos    pos,

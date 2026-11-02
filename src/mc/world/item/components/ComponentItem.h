@@ -356,7 +356,7 @@ public:
 
     MCNAPI bool $isBlockPlanterItem() const;
 
-    MCNAPI bool $isDamageable() const;
+    MCAPI bool $isDamageable() const;
 
     MCNAPI bool $isDyeable() const;
 
@@ -384,7 +384,7 @@ public:
 
     MCNAPI bool $canBeDepleted() const;
 
-    MCNAPI bool $canDestroySpecial(::Block const& block) const;
+    MCAPI bool $canDestroySpecial(::Block const& block) const;
 
     MCNAPI int $getLevelDataForAuxValue(int) const;
 
@@ -402,14 +402,14 @@ public:
 
     MCNAPI bool $requiresInteract() const;
 
-    MCNAPI void $appendFormattedHovertext(
+    MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
         ::Level&                             level,
         ::Bedrock::Safety::RedactableString& hovertext,
         bool const                           showCategory
     ) const;
 
-    MCNAPI bool
+    MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
     MCNAPI int $getEnchantSlot() const;
@@ -454,11 +454,11 @@ public:
         ::Vec3 const&      aimDirection
     ) const;
 
-    MCNAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
+    MCAPI bool $dispense(::BlockSource& region, ::Container& container, int slot, ::Vec3 const& pos, uchar face) const;
 
-    MCNAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
+    MCAPI ::ItemUseMethod $useTimeDepleted(::ItemStack& inoutInstance, ::Level* level, ::Player* player) const;
 
-    MCNAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
+    MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
     MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 

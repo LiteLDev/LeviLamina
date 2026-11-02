@@ -195,7 +195,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
+    MCAPI explicit NetworkSystem(::NetworkSystem::Dependencies&& deps);
 
     MCNAPI ::std::shared_ptr<::IPacketSecurityController>
     _createPacketSecurityController(::NetworkIdentifier const& id);
@@ -231,13 +231,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::NetworkSystem::Dependencies&& deps);
+    MCAPI void* $ctor(::NetworkSystem::Dependencies&& deps);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -255,7 +255,7 @@ public:
 
     MCNAPI void $_onEnable();
 
-    MCNAPI bool $onNewIncomingConnection(
+    MCAPI bool $onNewIncomingConnection(
         ::NetworkIdentifier const&         id,
         ::std::shared_ptr<::NetworkPeer>&& peer,
         ::std::optional<::WebKey>          identityPublicKey
@@ -263,7 +263,7 @@ public:
 
     MCNAPI bool $onNewOutgoingConnection(::NetworkIdentifier const& id, ::std::shared_ptr<::NetworkPeer>&& peer);
 
-    MCNAPI void $onConnectionClosed(
+    MCAPI void $onConnectionClosed(
         ::NetworkIdentifier const&               id,
         ::Connection::DisconnectFailReason const discoReason,
         ::std::string const&                     messageFromServer,

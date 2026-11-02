@@ -118,9 +118,9 @@ public:
 
     MCFOLD void $stopOpen(::Actor& actor);
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& base, ::DataLoadHelper& dataLoadHelper);
 
-    MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
+    MCAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
     MCFOLD void $onMove();
 
@@ -132,7 +132,11 @@ public:
 
     MCNAPI ::std::unique_ptr<::BlockActorDataPacket> $_getUpdatePacket(::BlockSource& region);
 
+#ifdef LL_PLAT_S
+    MCFOLD void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+#else // LL_PLAT_C
     MCNAPI void $_onUpdatePacket(::CompoundTag const& data, ::BlockSource& region);
+#endif
 
 
     // NOLINTEND

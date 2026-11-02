@@ -43,7 +43,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
+    MCAPI bool _performCommand(::BlockSource& region, ::CommandOrigin const& origin, bool& markForSaving);
 
     MCNAPI void _setCommand(::BlockSource& region, ::CommandOrigin const& origin, ::std::string const& command);
 

@@ -237,32 +237,32 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
+    MCAPI bool $startDestroyBlock(::BlockPos const& pos, uchar face, bool& hasDestroyedBlock);
 
-    MCNAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool $destroyBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool
+    MCAPI bool
     $continueDestroyBlock(::BlockPos const& pos, uchar face, ::Vec3 const& playerPos, bool& hasDestroyedBlock);
 
-    MCNAPI void $stopDestroyBlock(::BlockPos const& pos);
+    MCAPI void $stopDestroyBlock(::BlockPos const& pos);
 
-    MCNAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
+    MCAPI void $startBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot);
 
-    MCNAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
+    MCAPI bool $buildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, bool const isSimTick);
 
     MCAPI void $continueBuildBlock(::BlockPos const& pos, uchar face, ::HandSlot handSlot, float buildDelayScale);
 
-    MCNAPI void $stopBuildBlock();
+    MCAPI void $stopBuildBlock();
 
     MCNAPI void $tick();
 
     MCNAPI float $getPickRange(::InputMode const& currentInputMode);
 
-    MCNAPI bool $useItem(::ItemStack& item, ::HandSlot handSlot);
+    MCAPI bool $useItem(::ItemStack& item, ::HandSlot handSlot);
 
-    MCNAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
+    MCAPI bool $useItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot handSlot);
 
-    MCNAPI ::InteractionResult $useItemOn(
+    MCAPI ::InteractionResult $useItemOn(
         ::ItemStack&      item,
         ::BlockPos const& at,
         uchar             face,
@@ -272,9 +272,9 @@ public:
         bool              isFirstEvent
     );
 
-    MCNAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
+    MCAPI bool $interact(::Actor& entity, ::Vec3 const& location, ::HandSlot handSlot);
 
-    MCNAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
+    MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
     MCNAPI void $releaseUsingItem();
 

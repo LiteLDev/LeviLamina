@@ -2,13 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/entity/components/ForceSendSpatialDataValue.h"
+#include "mc/legacy/ActorUniqueID.h"
+#include "mc/network/NetworkIdentifierWithSubId.h"
+#include "mc/network/packet/MoveActorAbsoluteData.h"
+
 // auto generated forward declare list
 // clang-format off
+class Actor;
 class ActorRuntimeID;
-class MoveActorAbsoluteData;
 class Player;
 class Vec2;
 class Vec3;
+struct Tick;
 // clang-format on
 
 class SpatialActorNetworkData {
@@ -25,65 +32,47 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk3652fb;
-        ::ll::UntypedStorage<4, 4> mUnkd1ec5e;
-        ::ll::UntypedStorage<1, 1> mUnk2a008d;
+        ::ll::TypedStorage<4, 4, int>  mSendEveryNPackets;
+        ::ll::TypedStorage<4, 4, int>  mDropPacketChance;
+        ::ll::TypedStorage<1, 1, bool> mDrawDebugLines;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DebugSendRateModifiers& operator=(DebugSendRateModifiers const&);
-        DebugSendRateModifiers(DebugSendRateModifiers const&);
-        DebugSendRateModifiers();
     };
 
     struct DebugSpatialPacketModifiers {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8> mUnkcde04f;
-        ::ll::UntypedStorage<8, 8> mUnk70f911;
-        ::ll::UntypedStorage<8, 8> mUnka07cd9;
-        ::ll::UntypedStorage<1, 1> mUnke12a67;
-        ::ll::UntypedStorage<1, 1> mUnk2c6ac9;
-        ::ll::UntypedStorage<4, 4> mUnke0a99e;
-        ::ll::UntypedStorage<8, 8> mUnk92dc7e;
-        ::ll::UntypedStorage<8, 8> mUnk70a9cd;
-        ::ll::UntypedStorage<1, 1> mUnk529cf2;
+        ::ll::TypedStorage<8, 8, uint64> mCurrentSentSpatialPackets;
+        ::ll::TypedStorage<8, 8, uint64> mExpectedSentSpatialPackets;
+        ::ll::TypedStorage<8, 8, uint64> mCurrentSentMotionPredictionHintsPackets;
+        ::ll::TypedStorage<1, 1, bool>   mUseValueOverrides;
+        ::ll::TypedStorage<1, 1, bool>   mUseScoreOverride;
+        ::ll::TypedStorage<4, 4, float>  mOverridemMaxOptimizedDistance;
+        ::ll::TypedStorage<8, 8, uint64> mOverridemMaxDroppedTicks;
+        ::ll::TypedStorage<8, 8, uint64> mOverrideScoreValue;
+        ::ll::TypedStorage<1, 1, bool>   mOverridemUseMotionPredictionHints;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        DebugSpatialPacketModifiers& operator=(DebugSpatialPacketModifiers const&);
-        DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&);
-        DebugSpatialPacketModifiers();
     };
 
     struct PlayerUpdateTarget {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 184> mUnk6dc1e3;
-        ::ll::UntypedStorage<8, 8>   mUnke8aaa8;
+        ::ll::TypedStorage<8, 184, ::NetworkIdentifierWithSubId> mNetworkIdentifierWithSubId;
+        ::ll::TypedStorage<8, 8, uint64>                         mTicks;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        PlayerUpdateTarget& operator=(PlayerUpdateTarget const&);
-        PlayerUpdateTarget(PlayerUpdateTarget const&);
-        PlayerUpdateTarget();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk3d576d;
-    ::ll::UntypedStorage<1, 1>  mUnk61c3eb;
-    ::ll::UntypedStorage<1, 1>  mUnkf6f1aa;
-    ::ll::UntypedStorage<8, 40> mUnk662955;
-    ::ll::UntypedStorage<8, 40> mUnk4f87d7;
-    ::ll::UntypedStorage<4, 4>  mUnkec90d2;
-    ::ll::UntypedStorage<8, 64> mUnk5ce137;
+    ::ll::TypedStorage<8, 8, ::Actor&>                                       mEntity;
+    ::ll::TypedStorage<1, 1, bool>                                           mHasInitializedLastSent;
+    ::ll::TypedStorage<1, 1, bool>                                           mAutoSend;
+    ::ll::TypedStorage<8, 40, ::MoveActorAbsoluteData>                       mLastSentMoveData;
+    ::ll::TypedStorage<8, 40, ::MoveActorAbsoluteData>                       mLastReceivedMoveData;
+    ::ll::TypedStorage<4, 4, ::ForceSendSpatialDataValue>                    mLastForceSendSpatialDataValue;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::ActorUniqueID, ::Tick>> mLastSpatialUpdateTicks;
     // NOLINTEND
 
 public:
@@ -95,20 +84,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::optional<uint64> _getOptimizationUpdateInterval(::Player& player) const;
+    MCAPI ::std::optional<uint64> _getOptimizationUpdateInterval(::Player& player) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI void handleServerData(
+    MCAPI void handleServerData(
         ::MoveActorAbsoluteData const&                 moveData,
         ::std::chrono::steady_clock::time_point const& receiveTimepoint,
         bool                                           isPredictableProjectile
     );
 #endif
 
-    MCNAPI void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion);
+    MCAPI void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setLastReceivedMoveDataForAddedEntity(
+    MCAPI void setLastReceivedMoveDataForAddedEntity(
         ::ActorRuntimeID runtimeId,
         ::Vec3           position,
         ::Vec2           rotation,
@@ -116,12 +105,12 @@ public:
     );
 #endif
 
-    MCNAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
+    MCAPI void teleportEntity(::Vec3 const& pos, ::Vec2 const& rot, float yHeadRot);
     // NOLINTEND
 
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
+    MCAPI static ::SpatialActorNetworkData::DebugSpatialPacketModifiers& mDebugSpatialPacketModifiers();
     // NOLINTEND
 };

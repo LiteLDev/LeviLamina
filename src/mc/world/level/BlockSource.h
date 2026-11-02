@@ -382,7 +382,7 @@ public:
         ::std::function<bool(::Actor*)>                     selector
     );
 
-    MCNAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
+    MCAPI ::Brightness _getRawBrightness(::BlockPos const& pos, ::Brightness skyDarken, bool accountForNight) const;
 
     MCNAPI void _tryRecordNeighborChange(
         ::BlockPos const&              notifiedPos,

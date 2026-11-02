@@ -121,7 +121,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI StartMenuScreenController(
+    MCAPI StartMenuScreenController(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
@@ -146,7 +146,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::shared_ptr<::MainMenuScreenModel>             model,
         ::Bedrock::NotNullNonOwnerPtr<::IEntitlementManager> entitlementManager
     );
@@ -159,17 +159,17 @@ public:
 
     MCNAPI ::ui::SceneType $getSceneType() const;
 
-    MCNAPI void $onCreation();
+    MCAPI void $onCreation();
 
     MCNAPI void $queueTitleNarration();
 
-    MCNAPI void $onOpen();
+    MCAPI void $onOpen();
 
     MCNAPI void $onEntered();
 
     MCNAPI void $onInit();
 
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
     MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 

@@ -89,7 +89,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init(::ServerInstance& server, ::Bedrock::NotNullNonOwnerPtr<::Level> const& level);
 
-    MCNAPI void $initializeBehaviorStack(
+    MCAPI void $initializeBehaviorStack(
         ::Experiments const&                                            experiments,
         ::Bedrock::NotNullNonOwnerPtr<::IResourcePackRepository> const& repo,
         ::ResourcePackStack&                                            stack,

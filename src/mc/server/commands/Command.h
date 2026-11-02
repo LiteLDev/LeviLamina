@@ -68,7 +68,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $collectOptionalArguments();
+    MCFOLD bool $collectOptionalArguments();
 
 
     // NOLINTEND

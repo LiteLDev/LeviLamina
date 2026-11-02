@@ -117,13 +117,13 @@ public:
     // NOLINTBEGIN
     MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI float $getShadowRadius() const;
 
     MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
-    MCNAPI void
+    MCFOLD void
     $teleportTo(::Vec3 const& pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity);
 
     MCNAPI bool $canChangeDimensionsUsingPortal() const;
@@ -132,9 +132,9 @@ public:
 
     MCNAPI ::ActorHurtResult $_hurt(::ActorDamageSource const&, float, ::HurtParameters const&);
 
-    MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
+    MCAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
-    MCNAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $readAdditionalSaveData(::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
 
     // NOLINTEND

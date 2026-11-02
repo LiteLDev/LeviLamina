@@ -219,16 +219,16 @@ public:
 
     MCNAPI void _compareStatesForFlyingItems();
 
-    MCNAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
+    MCAPI ::ItemStack const& _getItemStack(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI ::ItemStackBase const&
     _getTakeableItemStackBase(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI ::ItemStackBase const& _getVisualItemStack(::std::string const& collectionName, int collectionIndex) const;
+    MCAPI ::ItemStackBase const& _getVisualItemStack(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
+    MCAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
 
     MCAPI void
     _handleDropItem(::std::string const& collectionName, int collectionIndex, ::ItemTransferAmount transferAmount);
@@ -295,7 +295,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::SlotData const& mCursorSlotData();
+    MCNAPI static ::SlotData const& mCursorSlotData();
     // NOLINTEND
 
 public:
@@ -307,35 +307,35 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
-    MCNAPI void $onOpen();
+    MCAPI void $onOpen();
 
     MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCNAPI void $onLeave();
+    MCAPI void $onLeave();
 
     MCNAPI void $setAssociatedBlockPos(::BlockPos const& pos);
 
     MCNAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const uniqueID);
 
-    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
     MCNAPI bool $_isStillValid() const;
 
-    MCNAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
+    MCAPI void $_handleTakeHalf(::std::string const& collectionName, int index);
 
     MCNAPI void $_handlePlaceAll(::std::string const& collectionName, int index);
 
-    MCNAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
+    MCAPI void $_handlePlaceOne(::std::string const& collectionName, int index);
 
-    MCNAPI int $_handleTakePlace(::std::string const& collectionName, int collectionIndex, bool allItems);
+    MCAPI int $_handleTakePlace(::std::string const& collectionName, int collectionIndex, bool allItems);
 
     MCNAPI void $_handleSelectSlot(::std::string const& collectionName, int collectionIndex);
 
@@ -349,9 +349,9 @@ public:
 
     MCNAPI ::std::string $_getButtonYDescription();
 
-    MCNAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
+    MCAPI ::ui::ViewRequest $_onContainerSlotHovered(::std::string const& collectionName, int index);
 
-    MCNAPI ::ui::ViewRequest $_onContainerSlotUnhovered(::std::string const& collectionName, int index);
+    MCAPI ::ui::ViewRequest $_onContainerSlotUnhovered(::std::string const& collectionName, int index);
 
     MCNAPI ::ui::ViewRequest $_onContainerSlotSelected(::std::string const& collectionName, int index);
 
@@ -385,7 +385,7 @@ public:
 
     MCNAPI bool $_isContainerScreen() const;
 
-    MCNAPI ::ItemStackBase const&
+    MCAPI ::ItemStackBase const&
     $_getVisualItemStackImpl(::std::string const& collectionName, int collectionIndex) const;
 
     MCNAPI void $_createItemLockNotification(::ItemLockAction const action);

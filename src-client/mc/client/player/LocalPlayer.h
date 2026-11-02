@@ -432,7 +432,7 @@ public:
         ::EntityContext&                  entityContext
     );
 
-    MCNAPI void _applyTurnDelta(::Vec2 const& turnOffset);
+    MCAPI void _applyTurnDelta(::Vec2 const& turnOffset);
 
     MCNAPI void _forceCameraCut();
 
@@ -530,13 +530,13 @@ public:
 
     MCNAPI void $destroyRegion();
 
-    MCNAPI void $tickWorld(::Tick const& currentTick);
+    MCAPI void $tickWorld(::Tick const& currentTick);
 
     MCNAPI void $frameUpdate(::FrameUpdateContextBase& frameUpdateContextBase);
 
     MCNAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
@@ -604,9 +604,9 @@ public:
 
     MCNAPI void $handleInsidePortal(::BlockPos const& portalPos);
 
-    MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
+    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
-    MCNAPI void $setSneaking(bool _isSneaking);
+    MCAPI void $setSneaking(bool _isSneaking);
 
     MCNAPI void $setSprinting(bool _isSprinting);
 
@@ -629,7 +629,7 @@ public:
 
     MCNAPI void $_fireDimensionChanged();
 
-    MCNAPI bool $isAutoJumpEnabled() const;
+    MCAPI bool $isAutoJumpEnabled() const;
 
     MCNAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
@@ -655,7 +655,7 @@ public:
 
     MCNAPI bool $isActorRelevant(::Actor const& actor);
 
-    MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
+    MCAPI void $handleEntityEvent(::ActorEvent id, int data);
 
     MCNAPI void $checkMovementStats(::Vec3 const& d);
 
@@ -667,7 +667,7 @@ public:
 
     MCNAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
 
-    MCNAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
+    MCAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
 
     MCNAPI void $sendNetworkPacket(::Packet& packet) const;
 

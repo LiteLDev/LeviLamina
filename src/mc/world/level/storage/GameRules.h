@@ -106,7 +106,7 @@ public:
 
     MCNAPI GameRules(::GameRules const& rhs);
 
-    MCNAPI void _registerRules();
+    MCAPI void _registerRules();
 
     MCNAPI ::std::unique_ptr<::GameRulesChangedPacket> _setGameRule(
         ::GameRule*                                          gameRule,

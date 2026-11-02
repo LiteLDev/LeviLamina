@@ -143,7 +143,7 @@ public:
 
     MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
-    MCNAPI void
+    MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
     MCNAPI ::UIBatchType $getBatchType() const;

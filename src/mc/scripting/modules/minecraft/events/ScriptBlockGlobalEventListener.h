@@ -130,7 +130,7 @@ public:
 
     MCNAPI ::EventResult $onEvent(::ExplosionStartedEvent const& eventData);
 
-    MCNAPI ::EventResult $onBlockExploded(
+    MCAPI ::EventResult $onBlockExploded(
         ::Dimension&      dimension,
         ::BlockPos const& blockPos,
         ::Block const&    destroyedBlock,

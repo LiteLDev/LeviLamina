@@ -480,7 +480,7 @@ public:
 
     MCNAPI ::std::optional<::gametest::GameTestError> $getBlockSource(::BlockSource*& blockSourceResult);
 
-    MCNAPI ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
+    MCAPI ::std::variant<::gametest::GameTestError, ::SimulatedPlayer*>
     $spawnSimulatedPlayer(::std::string const& name, ::BlockPos const& pos, ::GameType gameMode);
 
     MCNAPI void $removeSimulatedPlayer(::SimulatedPlayer& simulatedPlayer);

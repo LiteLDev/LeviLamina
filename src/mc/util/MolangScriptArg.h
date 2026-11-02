@@ -104,7 +104,7 @@ public:
 
     MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_emptyStringHash();
 
-    MCAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
+    MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_float0();
 
     MCNAPI static ::MolangScriptArg const& mDefaultReturnValue_float1();
 

@@ -55,7 +55,7 @@ public:
     // static functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
+    MCAPI static ::BannerBlockType getBannerType(::CompoundTag const* tag);
 
     MCNAPI static ::std::string getColors(::CompoundTag const* tag);
 #endif

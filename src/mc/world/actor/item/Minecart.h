@@ -88,7 +88,7 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void _registerLoopingSounds();
+    MCAPI void _registerLoopingSounds();
 
     MCNAPI void dropMinecartWithContentsAndRemove(::std::string_view vanillaMinecartName, bool dropMinecartComponents);
 

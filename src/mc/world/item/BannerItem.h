@@ -78,7 +78,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
+    MCAPI static ::std::vector<::std::pair<::gsl::not_null<::BannerPattern const*>, ::ItemColor>>
     getPatternAndColorPairsFromItemStack(::ItemStackBase const& item);
     // NOLINTEND
 

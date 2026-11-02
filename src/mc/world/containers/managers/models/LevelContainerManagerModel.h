@@ -55,7 +55,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -69,7 +69,7 @@ public:
 
     MCNAPI void $setData(int id, int value);
 
-    MCNAPI void $broadcastChanges();
+    MCAPI void $broadcastChanges();
 
     MCNAPI bool $isValid(float pickRange);
 

@@ -156,7 +156,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCNAPI void
+    MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
     MCNAPI void $onSourceDestroyed(::BlockSource& source);

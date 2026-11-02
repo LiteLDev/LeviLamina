@@ -32,13 +32,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::string $getName() const;
+    MCAPI ::std::string $getName() const;
 
     MCNAPI void $onPlace(::BlockSource& region);
 
-    MCNAPI void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
-    MCNAPI void $stopOpen(::Actor& actor);
+    MCAPI void $stopOpen(::Actor& actor);
 
     MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getOpenSound() const;
 

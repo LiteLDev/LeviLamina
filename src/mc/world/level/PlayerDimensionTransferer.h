@@ -190,7 +190,7 @@ public:
 
     MCNAPI void $playerDestroyRegion(::Player& player, ::ChangeDimensionRequest const& changeRequest);
 
-    MCNAPI void $playerPrepareRegion(
+    MCAPI void $playerPrepareRegion(
         ::Player&                       player,
         ::ChangeDimensionRequest const& changeRequest,
         ::Dimension const&              toDimension

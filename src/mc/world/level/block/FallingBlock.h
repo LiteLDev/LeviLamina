@@ -42,7 +42,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
+    MCAPI void _tickBlocksAround2D(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock) const;
 
     MCNAPI void checkSlide(::BlockSource& region, ::BlockPos const& pos) const;
 
@@ -64,7 +64,7 @@ public:
 
     MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void
+    MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;
 
 

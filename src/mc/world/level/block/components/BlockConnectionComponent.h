@@ -58,7 +58,7 @@ public:
         int                                                        updateFlags
     );
 
-    MCNAPI ::Block const& handleConnectionUpdate(
+    MCAPI ::Block const& handleConnectionUpdate(
         ::BlockSource&                   region,
         ::Block const&                   block,
         ::BlockPos const&                pos,

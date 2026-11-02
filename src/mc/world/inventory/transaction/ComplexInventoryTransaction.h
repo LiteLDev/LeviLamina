@@ -67,7 +67,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $postLoadItems(::BlockPalette& blockPalette, bool isClientSide);
 
-    MCNAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
+    MCAPI ::InventoryTransactionError $handle(::Player& player, bool isSenderAuthority) const;
 
     MCNAPI void $onTransactionError(::Player& player, ::InventoryTransactionError error) const;
 

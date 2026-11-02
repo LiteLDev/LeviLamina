@@ -207,7 +207,7 @@ public:
         ::std::string const&                                 initLang
     );
 
-    MCNAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
+    MCAPI void $loadAllLanguages(::ResourcePackManager& resourcePackManager);
 
     MCNAPI ::std::vector<::std::string> $getLanguageCodesFromPack(::PackAccessStrategy const& accessStrategy);
 
@@ -242,15 +242,15 @@ public:
 
     MCNAPI void $addI18nObserver(::I18nObserver& observer);
 
-    MCNAPI void $chooseLanguage(::std::string const& code);
+    MCAPI void $chooseLanguage(::std::string const& code);
 
-    MCNAPI ::std::string $get(
+    MCAPI ::std::string $get(
         ::std::string const&                          id,
         ::std::vector<::std::string> const&           params,
         ::std::shared_ptr<::Localization const> const locale
     );
 
-    MCNAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale);
+    MCAPI ::std::string $get(::std::string const& langString, ::std::shared_ptr<::Localization const> const locale);
 
     MCNAPI ::std::string $getPackKeywordValue(::PackManifest const& manifest, ::std::string const& key);
 

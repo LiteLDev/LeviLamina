@@ -57,7 +57,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ItemStackNetResult $handleConsumedItem(
+    MCAPI ::ItemStackNetResult $handleConsumedItem(
         ::FullContainerName const& openContainerNetId,
         uchar const                slot,
         ::ItemStack const&         consumedItem
@@ -65,7 +65,7 @@ public:
 
     MCNAPI ::ItemStackNetResult $preHandleAction(::ItemStackRequestActionType requestActionType);
 
-    MCNAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
+    MCAPI ::ItemStackNetResult $_handleCraftAction(::ItemStackRequestActionCraftBase const& requestAction);
 
     MCNAPI ::Recipes const* $_getLevelRecipes() const;
 

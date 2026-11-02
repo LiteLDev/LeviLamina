@@ -107,7 +107,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $createAnswer(
+    MCAPI void $createAnswer(
         ::webrtc::PeerConnectionInterface::RTCConfiguration const& config,
         ::NetherNet::ConnectRequest const&                         offer,
         ::brstd::move_only_function<void(

@@ -20,13 +20,13 @@ MCNAPI ::GameEvent const& blockClose();
 
 MCNAPI ::GameEvent const& blockDeactivate();
 
-MCAPI ::GameEvent const& blockDestroy();
+MCNAPI ::GameEvent const& blockDestroy();
 
 MCNAPI ::GameEvent const& blockDetach();
 
 MCNAPI ::GameEvent const& blockOpen();
 
-MCAPI ::GameEvent const& blockPlace();
+MCNAPI ::GameEvent const& blockPlace();
 
 MCNAPI ::GameEvent const& bounce();
 
@@ -90,9 +90,9 @@ MCNAPI ::GameEvent const& pistonExtend();
 
 MCNAPI ::GameEvent const& primeFuse();
 
-MCAPI ::GameEvent const& projectileLand();
+MCNAPI ::GameEvent const& projectileLand();
 
-MCAPI ::GameEvent const& projectileShoot();
+MCNAPI ::GameEvent const& projectileShoot();
 
 MCNAPI ::GameEvent const& resonate1();
 
@@ -138,7 +138,7 @@ MCNAPI ::GameEvent const& splash();
 
 MCNAPI ::GameEvent const& swim();
 
-MCAPI ::GameEvent const& teleport();
+MCNAPI ::GameEvent const& teleport();
 
 MCNAPI ::GameEvent const& unequip();
 // NOLINTEND

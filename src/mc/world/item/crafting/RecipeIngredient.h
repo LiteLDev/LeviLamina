@@ -9,7 +9,7 @@ class RecipeIngredient : public ::ItemDescriptorCount {
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::RecipeIngredient& EMPTY_INGREDIENT();
+    MCNAPI static ::RecipeIngredient& EMPTY_INGREDIENT();
     // NOLINTEND
 
 public:

@@ -725,7 +725,7 @@ public:
 
     MCNAPI void $preFrameTick();
 
-    MCNAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
+    MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
     MCNAPI ::std::optional<::std::string> $getRoute() const;
 
@@ -755,7 +755,7 @@ public:
 
     MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
-    MCNAPI bool $bind(
+    MCAPI bool $bind(
         ::std::string const& collectionName,
         uint                 collectionNameHash,
         int                  collectionIndex,

@@ -43,7 +43,7 @@ public:
 
     MCNAPI bool $update(::IClientInstance& client, ::UIControl&, ::UIScene const&);
 
-    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int);
     // NOLINTEND
 
 public:

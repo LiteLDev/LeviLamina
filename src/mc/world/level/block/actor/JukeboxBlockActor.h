@@ -79,7 +79,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _startRecordSound(::BlockSource& region, ::MusicDiscPlaybackInfo const& playback);
+    MCAPI void _startRecordSound(::BlockSource& region, ::MusicDiscPlaybackInfo const& playback);
 
     MCAPI void setRecord(::ItemStack const& record, bool startPlaying);
 
@@ -93,7 +93,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
+    MCAPI void $load(::ILevel& level, ::CompoundTag const& tag, ::DataLoadHelper& dataLoadHelper);
 
     MCNAPI void $tick(::BlockSource& region);
 

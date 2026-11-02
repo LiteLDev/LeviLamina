@@ -86,7 +86,7 @@ public:
     // NOLINTBEGIN
     MCAPI bool $parse(::Json::Value const& jsonVal);
 
-    MCNAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
+    MCAPI bool $_setupContext(::FilterTest const& test, ::FilterContext& context) const;
 
 
     // NOLINTEND

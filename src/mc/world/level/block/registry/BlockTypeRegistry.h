@@ -172,7 +172,7 @@ public:
     // NOLINTBEGIN
     MCNAPI BlockTypeRegistry();
 
-    MCNAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
+    MCAPI ::BlockTypeRegistry::LookupByNameImplReturnType _lookupByNameImpl(
         ::HashedString const&                        name,
         int                                          data,
         ::BlockTypeRegistry::LookupByNameImplResolve resolve,
@@ -246,7 +246,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::Bedrock::Owner<::BlockTypeRegistry>& mBlockTypeRegistry();
+    MCNAPI static ::Bedrock::Owner<::BlockTypeRegistry>& mBlockTypeRegistry();
     // NOLINTEND
 
 public:

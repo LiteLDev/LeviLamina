@@ -38,7 +38,7 @@ public:
     // NOLINTBEGIN
     MCNAPI bool $isCraftingImplemented();
 
-    MCNAPI ::ContainerValidationCraftResult $getCraftResult(
+    MCAPI ::ContainerValidationCraftResult $getCraftResult(
         ::ContainerScreenContext const&                     screenContext,
         ::ContainerScreenValidation&                        screenValidation,
         ::std::unique_ptr<::ContainerValidationCraftInputs> craftInputs,

@@ -73,7 +73,7 @@ public:
 
     MCNAPI bool $save(::CompoundTag& tag, ::SaveContext const& saveContext) const;
 
-    MCNAPI void $tick(::BlockSource& region);
+    MCAPI void $tick(::BlockSource& region);
 
     MCNAPI void $onChanged(::BlockSource& region);
 

@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
-    MCNAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
+    MCAPI void $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance&, ::UIControl& owner, int);
 
     MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const& scene);
     // NOLINTEND

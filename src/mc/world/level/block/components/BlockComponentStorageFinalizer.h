@@ -27,9 +27,9 @@ public:
 
     MCNAPI void _checkForSelectionBoxComponentDuplication(::Block& block);
 
-    MCNAPI void _finalizeCollisionBoxComponent(::Block& block);
+    MCAPI void _finalizeCollisionBoxComponent(::Block& block);
 
-    MCNAPI void _finalizeSelectionBoxComponent(::Block& block);
+    MCAPI void _finalizeSelectionBoxComponent(::Block& block);
 
     MCNAPI void addRemainingComponents(::Block& block);
     // NOLINTEND

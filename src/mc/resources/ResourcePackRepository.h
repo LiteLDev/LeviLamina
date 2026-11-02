@@ -277,7 +277,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePackRepository(
+    MCAPI ResourcePackRepository(
         ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -295,7 +295,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::gsl::not_null<::std::shared_ptr<::RepositoryPacks>>                 repositoryPacks,
         ::PackManifestFactory&                                                manifestFactory,
         ::Bedrock::NotNullNonOwnerPtr<::IContentAccessibilityProvider> const& contentAccessibility,
@@ -312,7 +312,7 @@ public:
     // destructor thunk
     // NOLINTBEGIN
 #ifdef LL_PLAT_S
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
 #endif
     // NOLINTEND
 

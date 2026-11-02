@@ -146,7 +146,7 @@ public:
 
     MCNAPI bool $retainSetItemStackNetIdVariant() const;
 
-    MCNAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
+    MCAPI ::gsl::final_action<::std::function<void()>> $_tryBeginClientLegacyTransactionRequest();
 
     MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 

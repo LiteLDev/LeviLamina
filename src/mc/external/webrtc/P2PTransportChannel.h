@@ -341,7 +341,7 @@ public:
 
     MCNAPI void SendPingRequestInternal(::webrtc::Connection* connection);
 
-    MCNAPI void SwitchSelectedConnectionInternal(::webrtc::Connection* conn, ::webrtc::IceSwitchReason reason);
+    MCAPI void SwitchSelectedConnectionInternal(::webrtc::Connection* conn, ::webrtc::IceSwitchReason reason);
 
     MCNAPI ::std::string ToString() const;
 

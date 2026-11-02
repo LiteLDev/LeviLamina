@@ -90,7 +90,7 @@ public:
 
     MCNAPI int $_getContainerOffset() const;
 
-    MCNAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void $_onItemChanged(int modelSlot, ::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCNAPI ::Container* $_getContainer() const;
 
@@ -100,6 +100,6 @@ public:
 public:
     // vftables
     // NOLINTBEGIN
-    MCNAPI static void** $vftable();
+    MCAPI static void** $vftable();
     // NOLINTEND
 };

@@ -107,13 +107,13 @@ public:
         ::std::function<void(::cereal::DynamicValue const*)> onChange
     );
 
-    MCNAPI void
+    MCAPI void
     set(::std::string const&          datastoreName,
         ::std::string const&          property,
         ::cereal::DynamicValue const& obj,
         bool                          addToOutgoingChanges);
 
-    MCNAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
+    MCAPI ::nonstd::expected<void, ::Bedrock::DDUI::PathUtility::PathQueryError> setPath(
         ::std::string const&                               dataStoreName,
         ::std::string const&                               propertyName,
         ::std::string const&                               path,

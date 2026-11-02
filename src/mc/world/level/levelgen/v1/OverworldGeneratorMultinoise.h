@@ -227,7 +227,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::PerlinSimplexNoise> const& $getMaterialAdjNoise() const;
 
-    MCNAPI void
+    MCAPI void
     $decorateWorldGenPostProcess(::Biome const&, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
     MCNAPI void $_prepareHeights(

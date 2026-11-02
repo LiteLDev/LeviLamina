@@ -29,12 +29,12 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::DedicatedServer*& mServer();
+    MCNAPI static ::DedicatedServer*& mServer();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $execute(::CommandOrigin const&, ::CommandOutput&) const;
+    MCAPI void $execute(::CommandOrigin const&, ::CommandOutput&) const;
     // NOLINTEND
 };

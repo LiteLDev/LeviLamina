@@ -158,7 +158,7 @@ public:
         ::brstd::move_only_function<void(::std::unordered_map<::PackInstanceId, ::PackReport>&) const> onReportsReady
     ) const;
 
-    MCNAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
+    MCAPI ::Json::Value const& $findDef(::std::string const& defNamespace, ::std::string const& defName) const;
 
     MCNAPI ::Bedrock::Threading::SharedLock<::std::shared_mutex> $acquireSharedLock() const;
 

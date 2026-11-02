@@ -95,7 +95,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
+    MCAPI static bool _shouldBePost(::BlockSource& region, ::BlockPos const& pos, ::Block const& block);
     // NOLINTEND
 
 public:

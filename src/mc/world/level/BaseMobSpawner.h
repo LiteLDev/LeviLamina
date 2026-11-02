@@ -92,7 +92,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $tick(::BlockSource& source);
+    MCAPI void $tick(::BlockSource& source);
 
     MCNAPI void $load(::CompoundTag const& data);
 

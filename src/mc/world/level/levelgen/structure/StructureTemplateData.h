@@ -88,7 +88,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCAPI static ::std::string const& DEFAULT_PALETTE_NAME();
+    MCNAPI static ::std::string const& DEFAULT_PALETTE_NAME();
 
     MCNAPI static int const& NO_BLOCK_INDEX_VALUE();
     // NOLINTEND

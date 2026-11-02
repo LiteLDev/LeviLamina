@@ -78,7 +78,7 @@ public:
 
     MCNAPI void $reloadHardcodedClient(::ActorInitializationMethod method);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 
