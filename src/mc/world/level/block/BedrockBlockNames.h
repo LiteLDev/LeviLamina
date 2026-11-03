@@ -10,7 +10,7 @@ class HashedString;
 namespace BedrockBlockNames {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::HashedString const& Air();
+MCAPI ::HashedString const& Air();
 
 MCNAPI ::HashedString const& ClientRequestPlaceholderBlock();
 

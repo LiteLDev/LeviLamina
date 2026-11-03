@@ -124,7 +124,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static uint64& INVALID_FONT();
+    MCAPI static uint64& INVALID_FONT();
     // NOLINTEND
 
 public:

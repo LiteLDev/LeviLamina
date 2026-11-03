@@ -191,7 +191,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::unordered_map<::HashedString, ::Enchant::Type>& mEnchantNameToType();
+    MCAPI static ::std::unordered_map<::HashedString, ::Enchant::Type>& mEnchantNameToType();
 
     MCNAPI static ::std::unordered_map<
         ::SharedTypes::EnchantSlot,
@@ -202,7 +202,7 @@ public:
 
     MCNAPI static ::std::unordered_map<::std::string, ::SharedTypes::EnchantSlot>& mEnchantSlotTypeNameToEnumMap();
 
-    MCNAPI static ::std::vector<::std::unique_ptr<::Enchant>>& mEnchants();
+    MCAPI static ::std::vector<::std::unique_ptr<::Enchant>>& mEnchants();
     // NOLINTEND
 
 public:

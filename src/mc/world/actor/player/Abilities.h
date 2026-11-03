@@ -72,7 +72,7 @@ public:
     MCNAPI static ::std::string const& DIFF_ABILITIY_AT();
 #endif
 
-    MCNAPI static ::Ability& INVALID_ABILITY();
+    MCAPI static ::Ability& INVALID_ABILITY();
 
     MCNAPI static ::std::string const& SERIALIZATION_TAG();
     // NOLINTEND

@@ -26,7 +26,7 @@ MCNAPI ::GameEvent const& blockDetach();
 
 MCNAPI ::GameEvent const& blockOpen();
 
-MCNAPI ::GameEvent const& blockPlace();
+MCAPI ::GameEvent const& blockPlace();
 
 MCNAPI ::GameEvent const& bounce();
 
@@ -90,9 +90,9 @@ MCNAPI ::GameEvent const& pistonExtend();
 
 MCNAPI ::GameEvent const& primeFuse();
 
-MCNAPI ::GameEvent const& projectileLand();
+MCAPI ::GameEvent const& projectileLand();
 
-MCNAPI ::GameEvent const& projectileShoot();
+MCAPI ::GameEvent const& projectileShoot();
 
 MCNAPI ::GameEvent const& resonate1();
 

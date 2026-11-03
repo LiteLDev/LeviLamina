@@ -58,7 +58,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::UUID const& ID();
+    MCAPI static ::mce::UUID const& ID();
     // NOLINTEND
 
 public:

@@ -262,7 +262,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
+    MCAPI static ::std::string const& BLOCK_DESCRIPTION_PREFIX();
     // NOLINTEND
 
 public:

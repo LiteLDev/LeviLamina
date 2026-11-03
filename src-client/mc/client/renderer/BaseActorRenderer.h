@@ -82,7 +82,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR();
+    MCAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR();
 
     MCNAPI static ::mce::Color const& NAME_TAG_BACKGROUND_COLOR_EDU();
     // NOLINTEND

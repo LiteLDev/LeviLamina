@@ -144,7 +144,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::AABB const& BLOCK_SHAPE();
 
-    MCNAPI static ::AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
+    MCAPI static ::AABB const& BOX_AT_ORIGIN_WITH_NO_VOLUME();
     // NOLINTEND
 
 public:

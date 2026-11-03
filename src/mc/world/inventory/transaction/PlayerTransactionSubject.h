@@ -136,7 +136,7 @@ public:
 
     MCNAPI void $addExpectedAction(::InventoryAction const& action);
 
-    MCNAPI bool $baseUseItem(::ItemStack& item, ::HandSlot const handSlot);
+    MCAPI bool $baseUseItem(::ItemStack& item, ::HandSlot const handSlot);
 
     MCNAPI bool $baseUseItemAsAttack(::ItemStack& item, ::Vec3 const& aimDirection, ::HandSlot const handSlot);
 

@@ -36,13 +36,13 @@ MCNAPI ::HashedString const& EndCity();
 
 MCNAPI ::HashedString const& Fortress();
 
-MCNAPI ::HashedString const& Mineshaft();
+MCAPI ::HashedString const& Mineshaft();
 
 MCNAPI ::HashedString const& Monument();
 
 MCNAPI ::HashedString const& PillagerOutpost();
 
-MCNAPI ::HashedString const& RuinedPortal();
+MCAPI ::HashedString const& RuinedPortal();
 
 MCNAPI ::HashedString const& Ruins();
 

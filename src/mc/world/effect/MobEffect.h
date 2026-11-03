@@ -157,7 +157,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::Color const& DEFAULT_COLOR();
 
-    MCNAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 39>& mMobEffects();
+    MCAPI static ::Bedrock::DenseEnumMap<::MobEffectIds, ::std::unique_ptr<::MobEffect>, 39>& mMobEffects();
     // NOLINTEND
 
 public:

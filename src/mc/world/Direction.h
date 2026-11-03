@@ -29,9 +29,9 @@ public:
 
     MCNAPI static ::std::add_lvalue_reference_t<uchar[][6]> RELATIVE_DIRECTION_FACING();
 
-    MCNAPI static ::std::add_lvalue_reference_t<int const[]> STEP_X();
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_X();
 
-    MCNAPI static ::std::add_lvalue_reference_t<int const[]> STEP_Z();
+    MCAPI static ::std::add_lvalue_reference_t<int const[]> STEP_Z();
 
     MCNAPI static ::std::unordered_map<uint, ::std::string> const& TO_STRING_MAP();
     // NOLINTEND

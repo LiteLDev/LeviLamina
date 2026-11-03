@@ -1885,13 +1885,13 @@ MCNAPI ::MCRESULT const& MCRESULT_CommandRequestInitiated();
 
 MCNAPI ::MCRESULT const& MCRESULT_CommandStepFail();
 
-MCNAPI ::MCRESULT const& MCRESULT_CommandsDisabled();
+MCAPI ::MCRESULT const& MCRESULT_CommandsDisabled();
 
 MCNAPI ::MCRESULT const& MCRESULT_EncryptionRequired();
 
-MCNAPI ::MCRESULT const& MCRESULT_ExecutionFail();
+MCAPI ::MCRESULT const& MCRESULT_ExecutionFail();
 
-MCNAPI ::MCRESULT const& MCRESULT_FailedToParseCommand();
+MCAPI ::MCRESULT const& MCRESULT_FailedToParseCommand();
 
 MCNAPI ::MCRESULT const& MCRESULT_InvalidCommandContext();
 
@@ -1899,7 +1899,7 @@ MCNAPI ::MCRESULT const& MCRESULT_InvalidCommandOrigin();
 
 MCNAPI ::MCRESULT const& MCRESULT_MalformedRequest();
 
-MCNAPI ::MCRESULT const& MCRESULT_Success();
+MCAPI ::MCRESULT const& MCRESULT_Success();
 
 MCNAPI ::MCRESULT const& MCRESULT_TooManyPendingRequests();
 
@@ -1974,7 +1974,7 @@ MCNAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Biome>>& gBiomeChunkGC();
 
 MCNAPI ::SubChunkDelayedDeleter<::SubChunkStorage<::Block>>& gBlockStorageGC();
 
-MCNAPI ::InternalTaskGroup& gInternalTaskGroup();
+MCAPI ::InternalTaskGroup& gInternalTaskGroup();
 
 MCNAPI ::SubChunkDelayedDeleter<::SubChunkBrightnessStorage>& gLightStorageGC();
 

@@ -119,7 +119,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::BackgroundTaskBase*& gCurrentTask();
+    MCAPI static ::BackgroundTaskBase*& gCurrentTask();
     // NOLINTEND
 
 public:

@@ -29,7 +29,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::DedicatedServer*& mServer();
+    MCAPI static ::DedicatedServer*& mServer();
     // NOLINTEND
 
 public:

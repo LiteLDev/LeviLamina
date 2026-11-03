@@ -291,15 +291,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::Color const& BLACK();
+    MCAPI static ::mce::Color const& BLACK();
 
-    MCNAPI static ::mce::Color const& BLUE();
+    MCAPI static ::mce::Color const& BLUE();
 
 #ifdef LL_PLAT_C
     MCNAPI static ::mce::Color const& CYAN();
 #endif
 
-    MCNAPI static ::mce::Color const& GREEN();
+    MCAPI static ::mce::Color const& GREEN();
 
 #ifdef LL_PLAT_C
     MCNAPI static ::mce::Color const& GREY();
@@ -315,17 +315,17 @@ public:
     MCNAPI static ::mce::Color const& PINK();
 #endif
 
-    MCNAPI static ::mce::Color const& PURPLE();
+    MCAPI static ::mce::Color const& PURPLE();
 
 #ifdef LL_PLAT_C
     MCNAPI static ::mce::Color const& REBECCA_PURPLE();
 #endif
 
-    MCNAPI static ::mce::Color const& RED();
+    MCAPI static ::mce::Color const& RED();
 
-    MCNAPI static ::mce::Color const& WHITE();
+    MCAPI static ::mce::Color const& WHITE();
 
-    MCNAPI static ::mce::Color const& YELLOW();
+    MCAPI static ::mce::Color const& YELLOW();
     // NOLINTEND
 };
 

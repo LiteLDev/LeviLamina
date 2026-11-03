@@ -14,13 +14,13 @@ MCNAPI ::HashedString const& Acacia();
 
 MCNAPI ::HashedString const& Birch();
 
-MCNAPI ::HashedString const& Crop();
+MCAPI ::HashedString const& Crop();
 
 MCNAPI ::HashedString const& DarkOak();
 
 MCNAPI ::HashedString const& DiamondDiggable();
 
-MCNAPI ::HashedString const& Dirt();
+MCAPI ::HashedString const& Dirt();
 
 MCNAPI ::HashedString const& FertilizeArea();
 
@@ -32,7 +32,7 @@ MCNAPI ::HashedString const& HasFenceConnections();
 
 MCNAPI ::HashedString const& IronDiggable();
 
-MCNAPI ::HashedString const& IsAxeItemDestructible();
+MCAPI ::HashedString const& IsAxeItemDestructible();
 
 MCNAPI ::HashedString const& IsDestructibleByDiamondTier();
 
@@ -42,15 +42,15 @@ MCNAPI ::HashedString const& IsDestructibleByNetheriteTier();
 
 MCNAPI ::HashedString const& IsDestructibleByStoneTier();
 
-MCNAPI ::HashedString const& IsHoeItemDestructible();
+MCAPI ::HashedString const& IsHoeItemDestructible();
 
 MCNAPI ::HashedString const& IsMaceItemDestructible();
 
-MCNAPI ::HashedString const& IsPickaxeItemDestructible();
+MCAPI ::HashedString const& IsPickaxeItemDestructible();
 
 MCNAPI ::HashedString const& IsShearsItemDestructible();
 
-MCNAPI ::HashedString const& IsShovelItemDestructible();
+MCAPI ::HashedString const& IsShovelItemDestructible();
 
 MCNAPI ::HashedString const& IsSwordItemDestructible();
 
@@ -76,7 +76,7 @@ MCNAPI ::HashedString const& Pumpkin();
 
 MCNAPI ::HashedString const& Rail();
 
-MCNAPI ::HashedString const& Sand();
+MCAPI ::HashedString const& Sand();
 
 MCNAPI ::HashedString const& Snow();
 
@@ -86,7 +86,7 @@ MCNAPI ::HashedString const& Stone();
 
 MCNAPI ::HashedString const& StoneDiggable();
 
-MCNAPI ::HashedString const& TextSign();
+MCAPI ::HashedString const& TextSign();
 
 MCNAPI ::HashedString const& Trapdoors();
 

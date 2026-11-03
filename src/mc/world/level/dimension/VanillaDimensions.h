@@ -38,14 +38,14 @@ public:
     // NOLINTBEGIN
     MCAPI static ::BidirectionalUnorderedMap<::std::string, ::DimensionType> const& DimensionMap();
 
-    MCNAPI static ::DimensionType const& Nether();
+    MCAPI static ::DimensionType const& Nether();
 
-    MCNAPI static ::DimensionType const& Overworld();
+    MCAPI static ::DimensionType const& Overworld();
 
-    MCNAPI static ::DimensionType const& TheEnd();
+    MCAPI static ::DimensionType const& TheEnd();
 
     MCNAPI static ::Vec3 const& TheEndSpawnPoint();
 
-    MCNAPI static ::DimensionType const& Undefined();
+    MCAPI static ::DimensionType const& Undefined();
     // NOLINTEND
 };
