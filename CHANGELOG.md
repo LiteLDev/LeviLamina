@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.60.0] - 2026-11-03
+
 ### Added
 
 - Packets can declare a compile-time `CustomPacketId` instead of relying on their type name, and a `PacketVersion`
@@ -20,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Adapted to Minecaft 26.60.5(client) and 26.60.6(server)
 - Packet handlers receive the `PacketSide` they are called on, as a new parameter before the packet
 
 ### Removed
@@ -2058,7 +2061,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.9...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.0...HEAD
+[26.60.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.9...v26.60.0
 [26.51.9]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.8...v26.51.9
 [26.51.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.7...v26.51.8
 [26.51.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.6...v26.51.7
