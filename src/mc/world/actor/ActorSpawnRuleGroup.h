@@ -50,7 +50,7 @@ public:
         ::IMinecraftEventing&          eventing
     );
 
-    MCNAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
+    MCAPI int getActorSpawnPool(::ActorDefinitionIdentifier const& id) const;
 
     MCNAPI int getDelayEnd(::std::string const& id) const;
 

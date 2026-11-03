@@ -1365,7 +1365,7 @@ public:
 
     MCNAPI void _startDestroyingGame();
 
-    MCNAPI void _startLeaveGame();
+    MCAPI void _startLeaveGame();
 
     MCNAPI void _startWorldPrimaryClient(::PlayerAuthenticationType authType, ::RawGameServerToken&& token);
 

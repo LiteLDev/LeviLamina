@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ScreenContext(::ScreenContext&&);
 
-    MCNAPI ScreenContext(
+    MCAPI ScreenContext(
         ::mce::ViewportInfo const&                                _vpInfo,
         ::Bedrock::NotNullNonOwnerPtr<::GuiData>                  _guiData,
         ::mce::Clock const&                                       _clock,
@@ -68,7 +68,7 @@ public:
         float                                                     a
     );
 
-    MCNAPI ~ScreenContext();
+    MCAPI ~ScreenContext();
     // NOLINTEND
 
 public:
@@ -76,7 +76,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::ScreenContext&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::mce::ViewportInfo const&                                _vpInfo,
         ::Bedrock::NotNullNonOwnerPtr<::GuiData>                  _guiData,
         ::mce::Clock const&                                       _clock,
@@ -95,6 +95,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

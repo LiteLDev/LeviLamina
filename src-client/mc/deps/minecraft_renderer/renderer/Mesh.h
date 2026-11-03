@@ -80,7 +80,7 @@ public:
     // NOLINTBEGIN
     MCAPI Mesh(::mce::Mesh&& c);
 
-    MCNAPI Mesh(::mce::Mesh const& rhs);
+    MCAPI Mesh(::mce::Mesh const& rhs);
 
     MCAPI Mesh(
         ::std::shared_ptr<::mce::BufferResourceService>& bufferResourceService,
@@ -164,7 +164,7 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor(::mce::Mesh&& c);
 
-    MCNAPI void* $ctor(::mce::Mesh const& rhs);
+    MCAPI void* $ctor(::mce::Mesh const& rhs);
 
     MCAPI void* $ctor(
         ::std::shared_ptr<::mce::BufferResourceService>& bufferResourceService,

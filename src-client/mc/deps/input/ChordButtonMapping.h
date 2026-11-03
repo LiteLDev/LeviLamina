@@ -19,12 +19,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ChordButtonMapping(::ChordButtonMapping const&);
+    MCAPI ChordButtonMapping(::ChordButtonMapping const&);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ChordButtonMapping const&);
+    MCAPI void* $ctor(::ChordButtonMapping const&);
     // NOLINTEND
 };

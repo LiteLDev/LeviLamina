@@ -138,7 +138,7 @@ public:
 
     MCNAPI bool $calculateIsVisible(::Player const& viewingPlayer) const;
 
-    MCNAPI void $update(::Player const& viewingPlayer);
+    MCAPI void $update(::Player const& viewingPlayer);
 
 
     // NOLINTEND

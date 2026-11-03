@@ -218,7 +218,7 @@ public:
 
     MCNAPI ::BlockTessellator& getBlockRenderer();
 
-    MCNAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
+    MCAPI ::StackRefResult<::RenderChunkCoordinator> getRenderChunkCoordinator(::DimensionType dimID);
 
     MCNAPI void onDimensionChanged();
 

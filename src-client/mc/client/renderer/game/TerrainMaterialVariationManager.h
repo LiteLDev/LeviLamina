@@ -54,14 +54,14 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TerrainMaterialVariationManager(
+    MCAPI TerrainMaterialVariationManager(
         ::mce::RenderMaterialGroup&  renderMaterialGroup,
         ::buffer_span<::std::string> variations
     );
 
     MCNAPI void addVariation(::std::string const& variationNames);
 
-    MCNAPI ::mce::MaterialPtr const&
+    MCAPI ::mce::MaterialPtr const&
     getMaterial(::TerrainLayer const& terrainLayer, ::TerrainLayerLOD terrainLayerLOD) const;
 
     MCNAPI ::optional_ref<::TerrainMaterialVariationManager const>
@@ -69,18 +69,18 @@ public:
 
     MCNAPI void populateMaterialList(bool assertIfMaterialIsntFound);
 
-    MCNAPI ~TerrainMaterialVariationManager();
+    MCAPI ~TerrainMaterialVariationManager();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::mce::RenderMaterialGroup& renderMaterialGroup, ::buffer_span<::std::string> variations);
+    MCAPI void* $ctor(::mce::RenderMaterialGroup& renderMaterialGroup, ::buffer_span<::std::string> variations);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

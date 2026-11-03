@@ -646,7 +646,7 @@ MCNAPI ::HashedString const& SpruceSign();
 
 MCNAPI ::HashedString const& Spyglass();
 
-MCNAPI ::HashedString const& Stick();
+MCAPI ::HashedString const& Stick();
 
 MCNAPI ::HashedString const& StrawBed();
 

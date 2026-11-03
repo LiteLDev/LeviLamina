@@ -51,7 +51,7 @@ MCNAPI void renderMeshImmediately(
     ::OffscreenCaptureDescription const&                                       offscreenCaptureDescription
 );
 
-MCNAPI void renderMeshImmediately(
+MCAPI void renderMeshImmediately(
     ::ScreenContext&          screenContext,
     ::Tessellator&            tessellator,
     ::mce::MaterialPtr const& material,

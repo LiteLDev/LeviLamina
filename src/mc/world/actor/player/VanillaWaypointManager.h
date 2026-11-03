@@ -22,6 +22,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void update(::Player& self, ::ServerLocatorBar& serverLocatorBar, bool isLocatorBarEnabled);
+    MCAPI void update(::Player& self, ::ServerLocatorBar& serverLocatorBar, bool isLocatorBarEnabled);
     // NOLINTEND
 };

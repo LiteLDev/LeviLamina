@@ -34,7 +34,7 @@ public:
 
     MCAPI Keymapping(::std::string_view action, ::std::vector<int> const& defaultKeys, bool allowRemap, bool sharedKey);
 
-    MCNAPI void operator=(::Keymapping const& rhs);
+    MCAPI void operator=(::Keymapping const& rhs);
 
     MCAPI ~Keymapping();
     // NOLINTEND

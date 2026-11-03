@@ -84,7 +84,7 @@ public:
 
     MCNAPI bool isTouchGameplayAllowed() const;
 
-    MCNAPI void onConfigChanged(::Config const& c);
+    MCAPI void onConfigChanged(::Config const& c);
 
     MCNAPI void pushInputMapping(bool inGame);
 
@@ -98,7 +98,7 @@ public:
 
     MCNAPI bool showImmersiveReader() const;
 
-    MCNAPI void updateInputMapping();
+    MCAPI void updateInputMapping();
 
     MCNAPI bool updateInputMode(::std::string const& mode);
 

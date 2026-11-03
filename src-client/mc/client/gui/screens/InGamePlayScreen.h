@@ -218,7 +218,7 @@ public:
 
     MCAPI void $_renderLevelPrep(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer, ::Actor& cameraEntity);
 
-    MCNAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
+    MCAPI void $_renderLevel(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
     MCNAPI void $_preLevelRender(::ScreenContext& screenContext);
 

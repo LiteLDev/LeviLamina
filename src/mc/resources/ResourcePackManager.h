@@ -96,7 +96,7 @@ public:
 
     MCNAPI void _calculateMinEngineVersionFromFullStack();
 
-    MCNAPI void _composeFullStack();
+    MCAPI void _composeFullStack();
 
     MCNAPI void _updateLanguageSubpacks();
 

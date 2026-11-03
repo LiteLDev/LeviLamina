@@ -2093,7 +2093,7 @@ public:
 
     MCNAPI void $onChunkReload(::Bounds const& bound);
 
-    MCNAPI int $getActivePlayerCount() const;
+    MCAPI int $getActivePlayerCount() const;
 
     MCNAPI int $getActiveUsersCount() const;
 

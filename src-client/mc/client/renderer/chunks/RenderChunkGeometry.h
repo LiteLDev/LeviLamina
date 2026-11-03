@@ -136,7 +136,7 @@ public:
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
 
-    MCNAPI void reset();
+    MCAPI void reset();
 
     MCNAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 
@@ -146,7 +146,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
+    MCAPI static ::std::vector<::mce::ServerTexture> createTerrainTextureList(::SubClientId player);
 
     MCNAPI static void initTextures(
         ::Bedrock::NotNullNonOwnerPtr<::MinecraftGraphics> const&  minecraftGraphics,

@@ -308,7 +308,7 @@ public:
 
     MCNAPI bool getNewPopupNotice(::std::string& message, ::std::string& subtitle);
 
-    MCNAPI ::RectangleArea getSafeScreenZoneArea() const;
+    MCAPI ::RectangleArea getSafeScreenZoneArea() const;
 
     MCNAPI ::RectangleArea getWYSIWYGBottomHudReservedArea() const;
 

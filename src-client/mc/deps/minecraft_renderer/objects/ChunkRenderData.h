@@ -39,12 +39,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~ChunkRenderData();
+    MCAPI ~ChunkRenderData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

@@ -39,7 +39,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
+    MCAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& ASYNC();
 
     MCNAPI static ::Bedrock::NonOwnerPointer<::WorkerPool>& CONNECTEDSTORAGE();
 

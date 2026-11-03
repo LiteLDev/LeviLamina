@@ -1403,7 +1403,7 @@ public:
 
     MCNAPI void _addSubClientInstanceAndAssociateToUserInternal(int controllerId, bool isInitialCheck);
 
-    MCNAPI void _beginReloadingResources();
+    MCAPI void _beginReloadingResources();
 
     MCNAPI void _buildClientStack();
 
@@ -1607,7 +1607,7 @@ public:
 
     MCNAPI void adjustClientsUISize();
 
-    MCNAPI void cleanReloadMaterials();
+    MCAPI void cleanReloadMaterials();
 
     MCNAPI void doInitializationCompleteWork(::std::function<void()> workFn);
 
