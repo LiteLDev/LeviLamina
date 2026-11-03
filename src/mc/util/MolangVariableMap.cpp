@@ -13,11 +13,11 @@ void MolangVariableMap::setMolangVariable(
 ) {
     setMolangVariable(variableNameHash, variableName, value, false);
 }
+#endif
 
 void MolangVariableMap::setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value) {
     setMolangVariable(variableName.getHash(), variableName.c_str(), value, false);
 }
-#endif
 
 void MolangVariableMap::setMolangVariable(
     uint64                   variableNameHash,
