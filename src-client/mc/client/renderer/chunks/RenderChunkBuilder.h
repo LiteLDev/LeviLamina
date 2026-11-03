@@ -98,7 +98,7 @@ public:
         ::std::weak_ptr<::IRenderChunkGarbage>                              garbage
     );
 
-    MCNAPI RenderChunkBuilder(
+    MCAPI RenderChunkBuilder(
         ::MinecraftGameplayGraphicsResources&                                    minecraftGameplayGraphicsResources,
         ::ClientBlockPipeline::TessellatorContext&                               pipelineTessellatorContext,
         ::ChunkSource&                                                           mainSource,
@@ -116,7 +116,7 @@ public:
         ::mce::framebuilder::FrameLightingModelCapabilities const& lightingModelCapabilities
     );
 
-    MCNAPI ~RenderChunkBuilder();
+    MCAPI ~RenderChunkBuilder();
     // NOLINTEND
 
 public:
@@ -146,7 +146,7 @@ public:
         ::std::weak_ptr<::IRenderChunkGarbage>                              garbage
     );
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::MinecraftGameplayGraphicsResources&                                    minecraftGameplayGraphicsResources,
         ::ClientBlockPipeline::TessellatorContext&                               pipelineTessellatorContext,
         ::ChunkSource&                                                           mainSource,
@@ -158,6 +158,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

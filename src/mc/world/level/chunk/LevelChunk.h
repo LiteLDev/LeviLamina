@@ -529,7 +529,7 @@ public:
         ::LevelChunkBlockActorStorage::TrackingMode blockActorTrackingMode
     );
 
-    MCNAPI static ::std::unique_ptr<::LevelChunk>
+    MCAPI static ::std::unique_ptr<::LevelChunk>
     createNewNoCustomDeleter(::Dimension& dimension, ::ChunkPos cp, bool readOnly, ::SubChunkInitMode initBlocks);
 
     MCNAPI static ::std::pair<ushort, ::std::vector<::std::unique_ptr<::SubChunkStorage<::Biome>>>> deserialize3DBiomes(

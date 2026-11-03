@@ -624,7 +624,7 @@ public:
 
     MCNAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCNAPI void $_fireDimensionChanged();
+    MCAPI void $_fireDimensionChanged();
 
     MCAPI bool $isAutoJumpEnabled() const;
 

@@ -22,7 +22,7 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI MaterialVariants();
+    MCAPI MaterialVariants();
 
     MCNAPI explicit MaterialVariants(::mce::MaterialPtr const& skinningMaterial);
 
@@ -34,7 +34,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
     MCNAPI void* $ctor(::mce::MaterialPtr const& skinningMaterial);
 #endif

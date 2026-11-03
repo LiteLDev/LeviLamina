@@ -436,7 +436,7 @@ public:
 
     MCNAPI ::GridArea<::std::shared_ptr<::RenderChunkInstanced>, ::LevelRendererLockbox>& _viewAreaMutable();
 
-    MCNAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
+    MCAPI bool cullerIsVisible(::Vec3 const& point, float radius) const;
 
     MCAPI ::LevelRendererCamera::RainState doRainUpdate();
 
@@ -530,7 +530,7 @@ public:
         ::LevelRenderPreRenderUpdateParameters& levelRenderPreRenderUpdateParameters
     );
 
-    MCNAPI void $render(
+    MCAPI void $render(
         ::BaseActorRenderContext& baseEntityRenderContext,
         ::ViewRenderObject const& renderObj,
         ::IClientInstance&        ci

@@ -75,7 +75,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI RenderChunkInstanced();
+    MCAPI RenderChunkInstanced();
 
     MCNAPI void _startSortCommon(::RenderChunkSorter& sorter);
 
@@ -90,17 +90,17 @@ public:
         ::RangeIndices            indices
     ) const;
 
-    MCNAPI void endSort(::RenderChunkSorter& sorter, ::mce::BufferResourceService& bufferResourceService);
+    MCAPI void endSort(::RenderChunkSorter& sorter, ::mce::BufferResourceService& bufferResourceService);
 
     MCNAPI void onOrthographicCameraMoved(::Vec3 const& currentCameraForward);
 
     MCNAPI void onPerspectiveCameraMoved(::Vec3 const& currentCameraPos, bool forceAccurateSort);
 
-    MCNAPI void promoteSortedGeometry();
+    MCAPI void promoteSortedGeometry();
 
     MCNAPI void setRenderChunkShared(::std::shared_ptr<::RenderChunkShared> renderChunkShared);
 
-    MCNAPI ~RenderChunkInstanced();
+    MCAPI ~RenderChunkInstanced();
     // NOLINTEND
 
 public:
@@ -129,12 +129,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

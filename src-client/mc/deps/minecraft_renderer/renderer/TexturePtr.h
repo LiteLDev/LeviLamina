@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::mce::TexturePtr const& NONE();
 
-    MCNAPI static ::BedrockTextureData const& mDefaultTextureData();
+    MCAPI static ::BedrockTextureData const& mDefaultTextureData();
     // NOLINTEND
 
 public:

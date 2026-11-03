@@ -107,7 +107,7 @@ public:
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> unknownBlockRegistry
     ) const;
 
-    MCNAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
+    MCAPI ::StructureBlockPalette::BlockPositionData const* getBlockPositionData(uint64 blockIndex) const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::unique_ptr<::CompoundTag> save() const;

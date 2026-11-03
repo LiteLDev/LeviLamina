@@ -91,7 +91,7 @@ public:
         bool              preload
     );
 
-    MCNAPI void $updateInfluences();
+    MCAPI void $updateInfluences();
 
 
     // NOLINTEND

@@ -687,7 +687,7 @@ public:
     MCNAPI void finalizeScriptCustomComponents(::ScriptBlockCustomComponentsFinalizer& finalizer);
 
 #ifdef LL_PLAT_C
-    MCNAPI void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
+    MCAPI void forEachBlockStateInstance(::brstd::function_ref<bool(::BlockStateInstance const&)> callback) const;
 #endif
 
     MCAPI ::BlockActorType getBlockEntityType() const;

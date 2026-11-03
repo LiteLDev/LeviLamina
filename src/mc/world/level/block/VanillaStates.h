@@ -250,7 +250,7 @@ MCAPI ::BlockStateVariant<int> const& MultiFaceDirectionBits();
 
 MCNAPI ::BlockStateVariant<bool> const& Natural();
 
-MCNAPI ::BlockStateVariant<bool> const& OccupiedBit();
+MCAPI ::BlockStateVariant<bool> const& OccupiedBit();
 
 MCNAPI ::BlockStateVariant<bool> const& Ominous();
 

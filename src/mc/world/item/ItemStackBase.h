@@ -254,7 +254,7 @@ public:
 
     MCAPI bool isHumanoidWearableItem() const;
 
-    MCNAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
+    MCAPI bool isInstance(::HashedString const& itemName, bool useItemLookup) const;
 
     MCAPI bool isNull() const;
 

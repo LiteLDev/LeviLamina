@@ -64,13 +64,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RenderChunkSorter(::std::shared_ptr<::RenderChunkSorterSharedInfo> sharedInfo);
+    MCAPI explicit RenderChunkSorter(::std::shared_ptr<::RenderChunkSorterSharedInfo> sharedInfo);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::RangeIndices getRangeIndices(
+    MCAPI static ::RangeIndices getRangeIndices(
         ::buffer_span<::RangeIndices> renderLayerRange,
         ::TerrainLayer const&         terrainLayer,
         ::TerrainLayerLOD             terrainLayerLOD,
@@ -81,7 +81,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::shared_ptr<::RenderChunkSorterSharedInfo> sharedInfo);
+    MCAPI void* $ctor(::std::shared_ptr<::RenderChunkSorterSharedInfo> sharedInfo);
     // NOLINTEND
 
 public:

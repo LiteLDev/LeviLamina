@@ -117,7 +117,7 @@ public:
 
     MCNAPI void _spawnMobCluster(::BlockSource& region, ::BlockPos const& pos, ::SpawnConditions& conditions);
 
-    MCNAPI void _spawnMobInCluster(
+    MCAPI void _spawnMobInCluster(
         ::BlockSource&                     region,
         ::ActorDefinitionIdentifier const& id,
         ::BlockPos const&                  pos,
@@ -125,7 +125,7 @@ public:
         ::std::vector<::Mob*>&             spawnGroup
     );
 
-    MCNAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
+    MCAPI void _updateBaseTypeCount(::BlockSource& region, ::ChunkPos const& center);
     // NOLINTEND
 
 public:
@@ -133,7 +133,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static bool _isInsideAncientCity(::BlockSource const& region, ::BlockPos pos);
 
-    MCNAPI static void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup);
+    MCAPI static void _sendHerdEvents(::MobSpawnHerdInfo const& herdInfo, ::std::vector<::Mob*>& spawnGroup);
     // NOLINTEND
 
 public:

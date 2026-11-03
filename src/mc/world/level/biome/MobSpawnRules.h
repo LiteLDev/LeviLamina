@@ -81,7 +81,7 @@ public:
 
     MCNAPI ::MobSpawnRules& addPermutation(int weight, int guaranteedCount, ::ActorDefinitionIdentifier const& id);
 
-    MCNAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
+    MCAPI bool canSpawnInConditions(::SpawnConditions const& conditions, ::BlockSource& region) const;
 
     MCNAPI ::std::string const getMobToDelayId() const;
 
@@ -89,7 +89,7 @@ public:
 
     MCNAPI ::MobSpawnRules& operator=(::MobSpawnRules const&);
 
-    MCNAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
+    MCAPI ::MobSpawnHerdInfo const& selectRandomHerd(::IRandom& random) const;
 
     MCNAPI ::MobSpawnRules&
     setHardcodedSpawnRuleCallback(::std::function<bool(::SpawnConditions const&, ::BlockSource&)> callback);

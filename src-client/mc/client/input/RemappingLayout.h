@@ -85,7 +85,7 @@ public:
 
     MCAPI void setMapping(::std::string_view action, ::std::vector<int> const& keys);
 
-    MCNAPI void unassignDuplicateKeys(uint64 index);
+    MCAPI void unassignDuplicateKeys(uint64 index);
 
     MCNAPI void unassignKeyAtIndex(uint64 index);
     // NOLINTEND

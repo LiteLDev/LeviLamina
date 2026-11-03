@@ -49,7 +49,7 @@ public:
 
     MCAPI ::MatrixStack::MatrixStackRef push(bool isSortOrigin);
 
-    MCNAPI ::MatrixStack::MatrixStackRef pushIdentity(bool isSortOrigin);
+    MCAPI ::MatrixStack::MatrixStackRef pushIdentity(bool isSortOrigin);
     // NOLINTEND
 
 public:

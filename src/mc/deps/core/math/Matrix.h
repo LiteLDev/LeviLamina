@@ -41,7 +41,7 @@ public:
 
     MCAPI void scale(float x, float y, float z);
 
-    MCNAPI void translate(::glm::vec3 const& t);
+    MCAPI void translate(::glm::vec3 const& t);
 
     MCAPI void translate(float x, float y, float z);
 #endif

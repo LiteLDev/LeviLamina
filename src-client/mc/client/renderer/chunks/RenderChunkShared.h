@@ -96,7 +96,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RenderChunkShared(::SubChunkPos const& rcp);
+    MCAPI explicit RenderChunkShared(::SubChunkPos const& rcp);
 
     MCNAPI void addBlockEntityBlockSyncMessages(::buffer_span<::BlockActorBlockSyncMessage> syncMsgList);
 
@@ -117,20 +117,20 @@ public:
 
     MCNAPI void setVisibilityToEmptyAndSkyLit();
 
-    MCNAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
+    MCAPI void startRebuild(::RenderChunkBuilder& builder, ::Vec3 const& currentCameraPosition);
 
-    MCNAPI ~RenderChunkShared();
+    MCAPI ~RenderChunkShared();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SubChunkPos const& rcp);
+    MCAPI void* $ctor(::SubChunkPos const& rcp);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

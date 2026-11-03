@@ -10,39 +10,39 @@ struct TerrainLayer;
 namespace TerrainLayers {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::TerrainLayer const& Alpha();
+MCAPI ::TerrainLayer const& Alpha();
 
-MCNAPI ::TerrainLayer const& AlphaSeasons();
+MCAPI ::TerrainLayer const& AlphaSeasons();
 
 MCNAPI ::TerrainLayer const& AlphaShifts();
 
-MCNAPI ::TerrainLayer const& AlphaSingleSide();
+MCAPI ::TerrainLayer const& AlphaSingleSide();
 
 MCNAPI ::TerrainLayer const& AlphaSingleSideShifts();
 
-MCNAPI ::TerrainLayer const& Barrier();
+MCAPI ::TerrainLayer const& Barrier();
 
-MCNAPI ::TerrainLayer const& Blend();
+MCAPI ::TerrainLayer const& Blend();
 
 MCNAPI ::TerrainLayer const& DeferredWater();
 
-MCNAPI ::TerrainLayer const& DoubleSide();
+MCAPI ::TerrainLayer const& DoubleSide();
 
-MCNAPI ::TerrainLayer const& EndPortal();
+MCAPI ::TerrainLayer const& EndPortal();
 
 MCNAPI ::TerrainLayer const& Light();
 
 MCNAPI ::TerrainLayer const& LightSource();
 
-MCNAPI ::TerrainLayer const& Opaque();
+MCAPI ::TerrainLayer const& Opaque();
 
-MCNAPI ::TerrainLayer const& OpaqueSeasons();
+MCAPI ::TerrainLayer const& OpaqueSeasons();
 
 MCNAPI ::TerrainLayer const& OpaqueShifts();
 
 MCNAPI ::TerrainLayer const& RayTracedWater();
 
-MCNAPI ::TerrainLayer const& StructureVoid();
+MCAPI ::TerrainLayer const& StructureVoid();
 // NOLINTEND
 
 } // namespace TerrainLayers

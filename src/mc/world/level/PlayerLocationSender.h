@@ -78,7 +78,7 @@ public:
         ::std::function<void(::UserEntityIdentifierComponent const&, ::Player const&, ::Player const&)> action
     );
 
-    MCNAPI bool _shouldSendPositionPacket(
+    MCAPI bool _shouldSendPositionPacket(
         ::Vec3 const&                                     viewingPlayerPosition,
         ::DimensionType const&                            viewingPlayerDimension,
         bool                                              viewingPlayerIsSpectator,

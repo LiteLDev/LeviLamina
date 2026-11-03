@@ -37,7 +37,7 @@ public:
         bool                                                 isClientSide
     );
 
-    MCNAPI void processPlayerNetworking(::Tick const& currentTick);
+    MCAPI void processPlayerNetworking(::Tick const& currentTick);
 
     MCNAPI void tick(::Tick const& currentTick);
 

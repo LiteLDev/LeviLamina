@@ -54,7 +54,7 @@ public:
 
     MCNAPI bool $isChunkKnown(::ChunkPos const& chunkPos);
 
-    MCNAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
+    MCAPI ::std::shared_ptr<::LevelChunk> $getRandomChunk(::Random& random);
 
     MCNAPI ::std::shared_ptr<::LevelChunk>
     $createNewChunk(::ChunkPos const& cp, ::ChunkSource::LoadMode lm, bool readOnly);

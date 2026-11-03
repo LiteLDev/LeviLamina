@@ -482,7 +482,7 @@ public:
         ::brstd::move_only_function<bool(::std::string const&, int) const> condition
     );
 
-    MCNAPI void bindBoolForCollection(
+    MCAPI void bindBoolForCollection(
         ::StringHash const&                          collectionName,
         ::StringHash const&                          bindingName,
         ::brstd::move_only_function<bool(int) const> callback,
@@ -526,7 +526,7 @@ public:
         ::brstd::move_only_function<bool(::std::string const&, int) const>  condition
     );
 
-    MCNAPI void bindFloatForCollection(
+    MCAPI void bindFloatForCollection(
         ::StringHash const&                           collectionName,
         ::StringHash const&                           bindingName,
         ::brstd::move_only_function<float(int) const> callback,
@@ -570,7 +570,7 @@ public:
         ::brstd::move_only_function<bool(::std::string const&, int) const> condition
     );
 
-    MCNAPI void bindIntForCollection(
+    MCAPI void bindIntForCollection(
         ::StringHash const&                          collectionName,
         ::StringHash const&                          bindingName,
         ::brstd::move_only_function<int(int) const>  callback,
@@ -595,7 +595,7 @@ public:
         ::brstd::move_only_function<bool(::std::string const&, int) const>          condition
     );
 
-    MCNAPI void bindStringForCollection(
+    MCAPI void bindStringForCollection(
         ::StringHash const&                                   collectionName,
         ::StringHash const&                                   bindingName,
         ::brstd::move_only_function<::std::string(int) const> callback,
@@ -636,7 +636,7 @@ public:
     MCNAPI void
     registerCustomRendererEventHandler(uint eventId, ::brstd::move_only_function<::ui::ViewRequest() const> callback);
 
-    MCNAPI void registerSliderChangedEventHandler(
+    MCAPI void registerSliderChangedEventHandler(
         uint                                                             buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(int, float) const> callback
     );
@@ -656,7 +656,7 @@ public:
         ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
     );
 
-    MCNAPI void registerTextEditFinishedEventHandler(
+    MCAPI void registerTextEditFinishedEventHandler(
         uint                                                                                  buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
     );
@@ -670,7 +670,7 @@ public:
         ::brstd::move_only_function<::ui::ViewRequest(::TextEditScreenEventData&, int) const> callback
     );
 
-    MCNAPI void registerToggleChangeEventHandler(
+    MCAPI void registerToggleChangeEventHandler(
         uint                                                                           buttonId,
         ::brstd::move_only_function<::ui::ViewRequest(::ToggleChangeEventData&) const> callback
     );
@@ -693,45 +693,45 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
-    MCNAPI void $preFrameTick();
+    MCFOLD void $preFrameTick();
 
     MCAPI ::ui::ViewRequest $handleEvent(::ScreenEvent& screenEvent);
 
-    MCNAPI ::std::optional<::std::string> $getRoute() const;
+    MCFOLD ::std::optional<::std::string> $getRoute() const;
 
-    MCNAPI void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
+    MCFOLD void $setScreenState(::std::vector<::std::pair<::std::string_view, ::std::string_view>> const&);
 
-    MCNAPI void $onOpen();
+    MCAPI void $onOpen();
 
-    MCNAPI void $queueTitleNarration();
+    MCAPI void $queueTitleNarration();
 
-    MCNAPI void $onTerminate();
+    MCFOLD void $onTerminate();
 
-    MCNAPI void $onInit();
+    MCAPI void $onInit();
 
-    MCNAPI void $onDelete();
+    MCFOLD void $onDelete();
 
-    MCNAPI bool $canExit();
+    MCAPI bool $canExit();
 
     MCNAPI ::ui::ViewRequest $tryExit();
 
-    MCNAPI void $onCreation();
+    MCAPI void $onCreation();
 
-    MCNAPI void $onReload();
+    MCFOLD void $onReload();
 
-    MCNAPI void $onLeave();
+    MCAPI void $onLeave();
 
-    MCNAPI void $leaveScreen(::std::string const& expectedScreenName);
+    MCFOLD void $leaveScreen(::std::string const& expectedScreenName);
 
-    MCNAPI ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
+    MCFOLD ::ui::DirtyFlag $handleGameEventNotification(::ui::GameEventNotification notification);
 
     MCAPI bool $bind(
         ::std::string const& collectionName,
@@ -743,46 +743,46 @@ public:
         ::UIPropertyBag&     bag
     );
 
-    MCNAPI bool $bind(
+    MCAPI bool $bind(
         ::std::string const& bindingName,
         uint                 bindingNameHash,
         ::std::string const& bindingNameOverride,
         ::UIPropertyBag&     bag
     );
 
-    MCNAPI void $handleLicenseChanged();
+    MCFOLD void $handleLicenseChanged();
 
-    MCNAPI void $setAssociatedBlockPos(::BlockPos const& pos);
+    MCFOLD void $setAssociatedBlockPos(::BlockPos const& pos);
 
-    MCNAPI void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
+    MCFOLD void $setAssociatedEntityUniqueID(::ActorUniqueID const unqiueID);
 
-    MCNAPI void $setSuspendInput(bool suspendInput);
+    MCFOLD void $setSuspendInput(bool suspendInput);
 
-    MCNAPI void $setSuspendDirectionalInput(bool suspendDirectionalInput);
+    MCFOLD void $setSuspendDirectionalInput(bool suspendDirectionalInput);
 
-    MCNAPI void $setViewCommand(::ScreenViewCommand const& callback);
+    MCAPI void $setViewCommand(::ScreenViewCommand const& callback);
 
-    MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
+    MCFOLD void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCNAPI ::std::string $getAdditionalScreenInfo() const;
+    MCFOLD ::std::string $getAdditionalScreenInfo() const;
 
-    MCNAPI ::std::string $getTelemetryOverride() const;
+    MCFOLD ::std::string $getTelemetryOverride() const;
 
-    MCNAPI void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
+    MCFOLD void $addEventProperties(::std::unordered_map<::std::string, ::std::string>& eventProperties) const;
 
-    MCNAPI ::ui::SceneType $getSceneType() const;
+    MCFOLD ::ui::SceneType $getSceneType() const;
 
-    MCNAPI int $getScreenVersion() const;
+    MCFOLD int $getScreenVersion() const;
 
-    MCNAPI uint $getSceneId() const;
+    MCFOLD uint $getSceneId() const;
 
-    MCNAPI ::ScreenControllerProxy* $getProxy();
+    MCAPI ::ScreenControllerProxy* $getProxy();
 
-    MCNAPI void $onEntered();
+    MCFOLD void $onEntered();
 
-    MCNAPI void $onScreenPushedAbove();
+    MCFOLD void $onScreenPushedAbove();
 
-    MCNAPI void $onEntering();
+    MCFOLD void $onEntering();
 
     MCNAPI bool $_doesScreenHaveExitBehavior() const;
 

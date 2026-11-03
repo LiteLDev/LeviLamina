@@ -133,14 +133,14 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool findNextSpawnBlockUnder(
+    MCAPI static bool findNextSpawnBlockUnder(
         ::BlockSource const&                                   region,
         ::BlockPos&                                            pos,
         ::std::optional<::SharedTypes::v1_26_20::MaterialType> materialToSpawnIn,
         ::SpawnBlockRequirements                               spawnBlockRequirements
     );
 
-    MCNAPI static bool isSpawnPositionOk(
+    MCAPI static bool isSpawnPositionOk(
         ::MobSpawnRules const& rules,
         ::BlockSource&         region,
         ::BlockPos const&      pos,

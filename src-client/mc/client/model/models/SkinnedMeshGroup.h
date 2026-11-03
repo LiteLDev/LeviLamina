@@ -61,7 +61,7 @@ public:
         ::std::optional<::MERSUniformData> const&  mersUniforms
     );
 
-    MCNAPI void draw(
+    MCAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::MaterialVariants const&                 modelMaterialVariants,

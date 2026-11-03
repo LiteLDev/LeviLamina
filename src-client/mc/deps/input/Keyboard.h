@@ -142,7 +142,7 @@ public:
 
     MCNAPI static ::std::array<::std::string_view, 256>& _shortKeyNames();
 
-    MCNAPI static ::std::add_lvalue_reference_t<int[]> _states();
+    MCAPI static ::std::add_lvalue_reference_t<int[]> _states();
 
     MCNAPI static int& _textIndex();
 

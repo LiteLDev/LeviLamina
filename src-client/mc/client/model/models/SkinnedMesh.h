@@ -43,7 +43,7 @@ public:
     MCNAPI void
     constructMesh(::BaseActorRenderContext& baseActorRenderContext, ::MaterialVariants const& defaultMaterialVariants);
 
-    MCNAPI void draw(
+    MCAPI void draw(
         ::ScreenContext&                          screenContext,
         ::dragon::RenderMetadata const&           renderMetadata,
         ::RenderController const*                 renderController,
