@@ -1,6 +1,9 @@
 #pragma once
 
 #include "mc/_HeaderOutputPredefine.h"
+#include "mc/deps/minecraft_renderer/objects/ChunkLayerRenderObject.h"
+#include "mc/deps/minecraft_renderer/objects/ChunkRenderData.h"
+#include "mc/deps/minecraft_renderer/resources/ServerTexture.h"
 
 // auto generated forward declare list
 // clang-format off

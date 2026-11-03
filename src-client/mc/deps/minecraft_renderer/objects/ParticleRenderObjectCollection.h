@@ -8,6 +8,9 @@
 
 struct ParticleRenderObjectCollection {
 public:
+    LLAPI ~ParticleRenderObjectCollection();
+
+public:
     // member variables
     // NOLINTBEGIN
     union {

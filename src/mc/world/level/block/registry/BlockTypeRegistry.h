@@ -2,8 +2,6 @@
 
 #include "ll/api/utils/StringUtils.h"
 #include "mc/_HeaderOutputPredefine.h"
-#include "mc/common/SharedPtr.h"
-#include "mc/common/WeakPtr.h"
 #include "mc/world/level/block/BlockType.h"
 
 // auto generated inclusion list
@@ -166,6 +164,8 @@ public:
         return _lookupByNameImpl(name, 0, ::BlockTypeRegistry::LookupByNameImplResolve::BlockType, logNotFound)
             .mBlockType;
     }
+
+    LLAPI void finalizeBlockComponentStorage();
 
 public:
     // member functions

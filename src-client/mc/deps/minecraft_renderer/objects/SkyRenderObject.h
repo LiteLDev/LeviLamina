@@ -16,6 +16,9 @@ namespace mce { class Mesh; }
 
 struct SkyRenderObject {
 public:
+    LLAPI ~SkyRenderObject();
+
+public:
     // member variables
     // NOLINTBEGIN
     union {
