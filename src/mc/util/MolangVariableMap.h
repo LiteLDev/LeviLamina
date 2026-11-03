@@ -20,9 +20,9 @@ public:
 
 #ifdef LL_PLAT_S
     LLAPI void setMolangVariable(uint64 variableNameHash, char const* variableName, ::MolangScriptArg const& value);
+#endif
 
     LLAPI void setMolangVariable(HashedString const& variableName, ::MolangScriptArg const& value);
-#endif
 
     LLAPI void setMolangVariable(
         uint64                   variableNameHash,
