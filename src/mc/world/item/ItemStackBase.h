@@ -94,13 +94,9 @@ public:
     ::std::unique_ptr<::ItemInstance>       mChargedItem;
     // NOLINTEND
 
-#ifdef LL_PLAT_S
 public:
-    // prevent constructor by default
-    ItemStackBase();
+    LLAPI ItemStackBase();
 
-#else // LL_PLAT_C
-#endif
 public:
     // virtual functions
     // NOLINTBEGIN
@@ -124,10 +120,6 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-#ifdef LL_PLAT_C
-    MCNAPI ItemStackBase();
-#endif
-
     MCNAPI explicit ItemStackBase(::RecipeIngredient const& ingredient);
 
     MCNAPI ItemStackBase(::ItemStackBase const& rhs);

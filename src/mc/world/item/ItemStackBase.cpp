@@ -2,6 +2,7 @@
 #include "mc/deps/nbt/CompoundTag.h"
 #include "mc/util/IDataInput.h"
 #include "mc/world/item/Item.h"
+#include "mc/world/item/ItemInstance.h"
 #include "mc/world/level/block/Block.h"
 
 std::string ItemStackBase::getTypeName() const {
@@ -87,4 +88,13 @@ void ItemStackBase::setDamageValue(short newDamage) {
     if (mItem) {
         mItem->setDamageValue(*this, newDamage);
     }
+}
+
+// mBlock, mAuxValue, mCount, mShowPickUp, mBlockingTick will be initialized by setNull()
+ItemStackBase::ItemStackBase() // NOLINT(cppcoreguidelines-pro-type-member-init)
+: mValid_DeprecatedSeeComment(false),
+  mWasPickedUp(false),
+  mCanPlaceOnHash(0),
+  mCanDestroyHash(0) {
+    setNull(std::nullopt);
 }

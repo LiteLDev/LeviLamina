@@ -33,8 +33,7 @@ public:
 #ifdef LL_PLAT_S
 #else // LL_PLAT_C
 public:
-    // prevent constructor by default
-    ItemStack();
+    ItemStack() = default;
 
 #endif
 public:
