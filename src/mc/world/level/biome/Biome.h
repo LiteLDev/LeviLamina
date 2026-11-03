@@ -106,7 +106,7 @@ public:
 
     MCNAPI static ::mce::Color const& DEFAULT_FOLIAGE_TINT();
 
-    MCNAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
+    MCAPI static ::mce::Color const& DEFAULT_GRASS_TINT();
 
     MCNAPI static ::mce::Color const& DEFAULT_WATER_COLOR();
 

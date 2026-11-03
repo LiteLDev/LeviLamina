@@ -207,6 +207,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ProfilerLite& gProfilerLiteInstance();
+    MCAPI static ::ProfilerLite& gProfilerLiteInstance();
     // NOLINTEND
 };

@@ -124,7 +124,7 @@ public:
 
     MCNAPI static int& mLastId();
 
-    MCNAPI static ::std::array<::std::shared_ptr<::Potion const>, 64>& mPotionsById();
+    MCAPI static ::std::array<::std::shared_ptr<::Potion const>, 64>& mPotionsById();
 
     MCNAPI static ::std::unordered_map<::std::string, int>& mPotionsByName();
     // NOLINTEND

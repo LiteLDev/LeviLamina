@@ -69,9 +69,9 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::mce::RenderMaterialGroup& common();
+    MCAPI static ::mce::RenderMaterialGroup& common();
 
-    MCNAPI static ::mce::RenderMaterialGroup& switchable();
+    MCAPI static ::mce::RenderMaterialGroup& switchable();
     // NOLINTEND
 
 public:

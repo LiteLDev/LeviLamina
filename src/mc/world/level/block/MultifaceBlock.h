@@ -138,19 +138,19 @@ public:
     // NOLINTBEGIN
     MCNAPI static int const& MULTIFACE_ALL();
 
-    MCNAPI static int const& MULTIFACE_DOWN();
+    MCAPI static int const& MULTIFACE_DOWN();
 
-    MCNAPI static int const& MULTIFACE_EAST();
+    MCAPI static int const& MULTIFACE_EAST();
 
-    MCNAPI static int const& MULTIFACE_NORTH();
+    MCAPI static int const& MULTIFACE_NORTH();
 
     MCNAPI static int const& MULTIFACE_SIDES();
 
-    MCNAPI static int const& MULTIFACE_SOUTH();
+    MCAPI static int const& MULTIFACE_SOUTH();
 
-    MCNAPI static int const& MULTIFACE_UP();
+    MCAPI static int const& MULTIFACE_UP();
 
-    MCNAPI static int const& MULTIFACE_WEST();
+    MCAPI static int const& MULTIFACE_WEST();
     // NOLINTEND
 
 public:

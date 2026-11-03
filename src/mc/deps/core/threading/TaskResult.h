@@ -21,7 +21,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::TaskResult const& Done();
+    MCAPI static ::TaskResult const& Done();
 
     MCNAPI static ::TaskResult const& RequeueImmediateAggressive();
     // NOLINTEND

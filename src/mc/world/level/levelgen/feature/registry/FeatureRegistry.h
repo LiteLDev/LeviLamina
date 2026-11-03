@@ -145,7 +145,7 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::std::string const& AFTER_SKY_PASS();
 
-    MCNAPI static ::std::string const& AFTER_SURFACE_PASS();
+    MCAPI static ::std::string const& AFTER_SURFACE_PASS();
 
     MCNAPI static ::std::string const& AFTER_UNDERGROUND_PASS();
 

@@ -24,7 +24,7 @@ MCNAPI ::HashedString const& AcaciaHangingSign();
 
 MCNAPI ::HashedString const& AcaciaLeaves();
 
-MCNAPI ::HashedString const& AcaciaLog();
+MCAPI ::HashedString const& AcaciaLog();
 
 MCNAPI ::HashedString const& AcaciaPlanks();
 
@@ -34,13 +34,13 @@ MCNAPI ::HashedString const& AcaciaSapling();
 
 MCNAPI ::HashedString const& AcaciaShelf();
 
-MCNAPI ::HashedString const& AcaciaSlab();
+MCAPI ::HashedString const& AcaciaSlab();
 
 MCNAPI ::HashedString const& AcaciaStairs();
 
 MCNAPI ::HashedString const& AcaciaStandingSign();
 
-MCNAPI ::HashedString const& AcaciaTrapdoor();
+MCAPI ::HashedString const& AcaciaTrapdoor();
 
 MCNAPI ::HashedString const& AcaciaWallSign();
 
@@ -56,7 +56,7 @@ MCNAPI ::HashedString const& AmethystBlock();
 
 MCNAPI ::HashedString const& AmethystCluster();
 
-MCNAPI ::HashedString const& AncientDebris();
+MCAPI ::HashedString const& AncientDebris();
 
 MCNAPI ::HashedString const& Andesite();
 
@@ -68,7 +68,7 @@ MCNAPI ::HashedString const& AndesiteStairs();
 
 MCNAPI ::HashedString const& AndesiteWall();
 
-MCNAPI ::HashedString const& Anvil();
+MCAPI ::HashedString const& Anvil();
 
 MCNAPI ::HashedString const& Azalea();
 
@@ -110,13 +110,13 @@ MCNAPI ::HashedString const& BambooSapling();
 
 MCNAPI ::HashedString const& BambooShelf();
 
-MCNAPI ::HashedString const& BambooSlab();
+MCAPI ::HashedString const& BambooSlab();
 
 MCNAPI ::HashedString const& BambooStairs();
 
 MCNAPI ::HashedString const& BambooStandingSign();
 
-MCNAPI ::HashedString const& BambooTrapdoor();
+MCAPI ::HashedString const& BambooTrapdoor();
 
 MCNAPI ::HashedString const& BambooWallSign();
 
@@ -156,7 +156,7 @@ MCNAPI ::HashedString const& BirchHangingSign();
 
 MCNAPI ::HashedString const& BirchLeaves();
 
-MCNAPI ::HashedString const& BirchLog();
+MCAPI ::HashedString const& BirchLog();
 
 MCNAPI ::HashedString const& BirchPlanks();
 
@@ -166,13 +166,13 @@ MCNAPI ::HashedString const& BirchSapling();
 
 MCNAPI ::HashedString const& BirchShelf();
 
-MCNAPI ::HashedString const& BirchSlab();
+MCAPI ::HashedString const& BirchSlab();
 
 MCNAPI ::HashedString const& BirchStairs();
 
 MCNAPI ::HashedString const& BirchStandingSign();
 
-MCNAPI ::HashedString const& BirchTrapdoor();
+MCAPI ::HashedString const& BirchTrapdoor();
 
 MCNAPI ::HashedString const& BirchWallSign();
 
@@ -356,7 +356,7 @@ MCNAPI ::HashedString const& CherryHangingSign();
 
 MCNAPI ::HashedString const& CherryLeaves();
 
-MCNAPI ::HashedString const& CherryLog();
+MCAPI ::HashedString const& CherryLog();
 
 MCNAPI ::HashedString const& CherryPlanks();
 
@@ -366,19 +366,19 @@ MCNAPI ::HashedString const& CherrySapling();
 
 MCNAPI ::HashedString const& CherryShelf();
 
-MCNAPI ::HashedString const& CherrySlab();
+MCAPI ::HashedString const& CherrySlab();
 
 MCNAPI ::HashedString const& CherryStairs();
 
 MCNAPI ::HashedString const& CherryStandingSign();
 
-MCNAPI ::HashedString const& CherryTrapdoor();
+MCAPI ::HashedString const& CherryTrapdoor();
 
 MCNAPI ::HashedString const& CherryWallSign();
 
 MCNAPI ::HashedString const& CherryWood();
 
-MCNAPI ::HashedString const& Chest();
+MCAPI ::HashedString const& Chest();
 
 MCNAPI ::HashedString const& ChippedAnvil();
 
@@ -442,7 +442,7 @@ MCNAPI ::HashedString const& ClosedEyeblossom();
 
 MCNAPI ::HashedString const& CoalBlock();
 
-MCNAPI ::HashedString const& CoalOre();
+MCAPI ::HashedString const& CoalOre();
 
 MCNAPI ::HashedString const& CoarseDirt();
 
@@ -476,7 +476,7 @@ MCNAPI ::HashedString const& ColoredTorchRed();
 
 MCNAPI ::HashedString const& CommandBlock();
 
-MCNAPI ::HashedString const& Composter();
+MCAPI ::HashedString const& Composter();
 
 MCNAPI ::HashedString const& CompoundCreator();
 
@@ -500,7 +500,7 @@ MCNAPI ::HashedString const& CopperGrate();
 
 MCNAPI ::HashedString const& CopperLantern();
 
-MCNAPI ::HashedString const& CopperOre();
+MCAPI ::HashedString const& CopperOre();
 
 MCNAPI ::HashedString const& CopperTorch();
 
@@ -552,15 +552,15 @@ MCNAPI ::HashedString const& CrimsonRoots();
 
 MCNAPI ::HashedString const& CrimsonShelf();
 
-MCNAPI ::HashedString const& CrimsonSlab();
+MCAPI ::HashedString const& CrimsonSlab();
 
 MCNAPI ::HashedString const& CrimsonStairs();
 
 MCNAPI ::HashedString const& CrimsonStandingSign();
 
-MCNAPI ::HashedString const& CrimsonStem();
+MCAPI ::HashedString const& CrimsonStem();
 
-MCNAPI ::HashedString const& CrimsonTrapdoor();
+MCAPI ::HashedString const& CrimsonTrapdoor();
 
 MCNAPI ::HashedString const& CrimsonWallSign();
 
@@ -622,7 +622,7 @@ MCNAPI ::HashedString const& DarkOakFenceGate();
 
 MCNAPI ::HashedString const& DarkOakLeaves();
 
-MCNAPI ::HashedString const& DarkOakLog();
+MCAPI ::HashedString const& DarkOakLog();
 
 MCNAPI ::HashedString const& DarkOakPlanks();
 
@@ -632,11 +632,11 @@ MCNAPI ::HashedString const& DarkOakSapling();
 
 MCNAPI ::HashedString const& DarkOakShelf();
 
-MCNAPI ::HashedString const& DarkOakSlab();
+MCAPI ::HashedString const& DarkOakSlab();
 
 MCNAPI ::HashedString const& DarkOakStairs();
 
-MCNAPI ::HashedString const& DarkOakTrapdoor();
+MCAPI ::HashedString const& DarkOakTrapdoor();
 
 MCNAPI ::HashedString const& DarkOakWood();
 
@@ -714,21 +714,21 @@ MCNAPI ::HashedString const& DeepslateBrickWall();
 
 MCNAPI ::HashedString const& DeepslateBricks();
 
-MCNAPI ::HashedString const& DeepslateCoalOre();
+MCAPI ::HashedString const& DeepslateCoalOre();
 
-MCNAPI ::HashedString const& DeepslateCopperOre();
+MCAPI ::HashedString const& DeepslateCopperOre();
 
-MCNAPI ::HashedString const& DeepslateDiamondOre();
+MCAPI ::HashedString const& DeepslateDiamondOre();
 
-MCNAPI ::HashedString const& DeepslateEmeraldOre();
+MCAPI ::HashedString const& DeepslateEmeraldOre();
 
-MCNAPI ::HashedString const& DeepslateGoldOre();
+MCAPI ::HashedString const& DeepslateGoldOre();
 
-MCNAPI ::HashedString const& DeepslateIronOre();
+MCAPI ::HashedString const& DeepslateIronOre();
 
-MCNAPI ::HashedString const& DeepslateLapisOre();
+MCAPI ::HashedString const& DeepslateLapisOre();
 
-MCNAPI ::HashedString const& DeepslateRedstoneOre();
+MCAPI ::HashedString const& DeepslateRedstoneOre();
 
 MCNAPI ::HashedString const& DeepslateTileDoubleSlab();
 
@@ -752,7 +752,7 @@ MCNAPI ::HashedString const& DetectorRail();
 
 MCNAPI ::HashedString const& DiamondBlock();
 
-MCNAPI ::HashedString const& DiamondOre();
+MCAPI ::HashedString const& DiamondOre();
 
 MCNAPI ::HashedString const& Diorite();
 
@@ -774,7 +774,7 @@ MCNAPI ::HashedString const& Dispenser();
 
 MCNAPI ::HashedString const& DoubleCutCopperSlab();
 
-MCNAPI ::HashedString const& DragonEgg();
+MCAPI ::HashedString const& DragonEgg();
 
 MCNAPI ::HashedString const& DragonHead();
 
@@ -792,7 +792,7 @@ MCNAPI ::std::array<::HashedString const, 119> const& Elements();
 
 MCNAPI ::HashedString const& EmeraldBlock();
 
-MCNAPI ::HashedString const& EmeraldOre();
+MCAPI ::HashedString const& EmeraldOre();
 
 MCNAPI ::HashedString const& EnchantingTable();
 
@@ -802,7 +802,7 @@ MCNAPI ::HashedString const& EndBricks();
 
 MCNAPI ::HashedString const& EndGateway();
 
-MCNAPI ::HashedString const& EndPortal();
+MCAPI ::HashedString const& EndPortal();
 
 MCNAPI ::HashedString const& EndPortalFrame();
 
@@ -880,7 +880,7 @@ MCNAPI ::HashedString const& FlowingWater();
 
 MCNAPI ::HashedString const& FrogSpawn();
 
-MCNAPI ::HashedString const& FrostedIce();
+MCAPI ::HashedString const& FrostedIce();
 
 MCNAPI ::HashedString const& Furnace();
 
@@ -896,11 +896,11 @@ MCNAPI ::HashedString const& GlowLichen();
 
 MCNAPI ::HashedString const& GlowingObsidian();
 
-MCNAPI ::HashedString const& Glowstone();
+MCAPI ::HashedString const& Glowstone();
 
 MCNAPI ::HashedString const& GoldBlock();
 
-MCNAPI ::HashedString const& GoldOre();
+MCAPI ::HashedString const& GoldOre();
 
 MCNAPI ::HashedString const& GoldenDandelion();
 
@@ -1090,11 +1090,11 @@ MCNAPI ::HashedString const& IronBars();
 
 MCNAPI ::HashedString const& IronBlock();
 
-MCNAPI ::HashedString const& IronChain();
+MCAPI ::HashedString const& IronChain();
 
 MCNAPI ::HashedString const& IronDoor();
 
-MCNAPI ::HashedString const& IronOre();
+MCAPI ::HashedString const& IronOre();
 
 MCNAPI ::HashedString const& IronTrapdoor();
 
@@ -1118,7 +1118,7 @@ MCNAPI ::HashedString const& JungleHangingSign();
 
 MCNAPI ::HashedString const& JungleLeaves();
 
-MCNAPI ::HashedString const& JungleLog();
+MCAPI ::HashedString const& JungleLog();
 
 MCNAPI ::HashedString const& JunglePlanks();
 
@@ -1128,13 +1128,13 @@ MCNAPI ::HashedString const& JungleSapling();
 
 MCNAPI ::HashedString const& JungleShelf();
 
-MCNAPI ::HashedString const& JungleSlab();
+MCAPI ::HashedString const& JungleSlab();
 
 MCNAPI ::HashedString const& JungleStairs();
 
 MCNAPI ::HashedString const& JungleStandingSign();
 
-MCNAPI ::HashedString const& JungleTrapdoor();
+MCAPI ::HashedString const& JungleTrapdoor();
 
 MCNAPI ::HashedString const& JungleWallSign();
 
@@ -1150,7 +1150,7 @@ MCNAPI ::HashedString const& Lantern();
 
 MCNAPI ::HashedString const& LapisBlock();
 
-MCNAPI ::HashedString const& LapisOre();
+MCAPI ::HashedString const& LapisOre();
 
 MCNAPI ::HashedString const& LargeAmethystBud();
 
@@ -1272,7 +1272,7 @@ MCNAPI ::HashedString const& LimeWool();
 
 MCNAPI ::HashedString const& LitBlastFurnace();
 
-MCNAPI ::HashedString const& LitDeepslateRedstoneOre();
+MCAPI ::HashedString const& LitDeepslateRedstoneOre();
 
 MCNAPI ::HashedString const& LitFurnace();
 
@@ -1280,7 +1280,7 @@ MCNAPI ::HashedString const& LitPumpkin();
 
 MCNAPI ::HashedString const& LitRedstoneLamp();
 
-MCNAPI ::HashedString const& LitRedstoneOre();
+MCAPI ::HashedString const& LitRedstoneOre();
 
 MCNAPI ::HashedString const& LitSmoker();
 
@@ -1326,7 +1326,7 @@ MCNAPI ::HashedString const& MangroveHangingSign();
 
 MCNAPI ::HashedString const& MangroveLeaves();
 
-MCNAPI ::HashedString const& MangroveLog();
+MCAPI ::HashedString const& MangroveLog();
 
 MCNAPI ::HashedString const& MangrovePlanks();
 
@@ -1338,13 +1338,13 @@ MCNAPI ::HashedString const& MangroveRoots();
 
 MCNAPI ::HashedString const& MangroveShelf();
 
-MCNAPI ::HashedString const& MangroveSlab();
+MCAPI ::HashedString const& MangroveSlab();
 
 MCNAPI ::HashedString const& MangroveStairs();
 
 MCNAPI ::HashedString const& MangroveStandingSign();
 
-MCNAPI ::HashedString const& MangroveTrapdoor();
+MCAPI ::HashedString const& MangroveTrapdoor();
 
 MCNAPI ::HashedString const& MangroveWallSign();
 
@@ -1416,7 +1416,7 @@ MCNAPI ::HashedString const& NetherBrickStairs();
 
 MCNAPI ::HashedString const& NetherBrickWall();
 
-MCNAPI ::HashedString const& NetherGoldOre();
+MCAPI ::HashedString const& NetherGoldOre();
 
 MCNAPI ::HashedString const& NetherReactor();
 
@@ -1446,7 +1446,7 @@ MCNAPI ::HashedString const& OakHangingSign();
 
 MCNAPI ::HashedString const& OakLeaves();
 
-MCNAPI ::HashedString const& OakLog();
+MCAPI ::HashedString const& OakLog();
 
 MCNAPI ::HashedString const& OakPlanks();
 
@@ -1454,7 +1454,7 @@ MCNAPI ::HashedString const& OakSapling();
 
 MCNAPI ::HashedString const& OakShelf();
 
-MCNAPI ::HashedString const& OakSlab();
+MCAPI ::HashedString const& OakSlab();
 
 MCNAPI ::HashedString const& OakStairs();
 
@@ -1612,7 +1612,7 @@ MCNAPI ::HashedString const& PinkWool();
 
 MCNAPI ::HashedString const& Piston();
 
-MCNAPI ::HashedString const& PistonArmCollision();
+MCAPI ::HashedString const& PistonArmCollision();
 
 MCNAPI ::HashedString const& PitcherCrop();
 
@@ -1750,13 +1750,13 @@ MCNAPI ::HashedString const& PoplarWood();
 
 MCNAPI ::HashedString const& Poppy();
 
-MCNAPI ::HashedString const& Portal();
+MCAPI ::HashedString const& Portal();
 
 MCNAPI ::HashedString const& Potatoes();
 
 MCNAPI ::HashedString const& PotentSulfur();
 
-MCNAPI ::HashedString const& PowderSnow();
+MCAPI ::HashedString const& PowderSnow();
 
 MCNAPI ::HashedString const& PoweredComparator();
 
@@ -1822,7 +1822,7 @@ MCNAPI ::HashedString const& QuartzBricks();
 
 MCNAPI ::HashedString const& QuartzDoubleSlab();
 
-MCNAPI ::HashedString const& QuartzOre();
+MCAPI ::HashedString const& QuartzOre();
 
 MCNAPI ::HashedString const& QuartzPillar();
 
@@ -1894,7 +1894,7 @@ MCNAPI ::HashedString const& RedstoneBlock();
 
 MCNAPI ::HashedString const& RedstoneLamp();
 
-MCNAPI ::HashedString const& RedstoneOre();
+MCAPI ::HashedString const& RedstoneOre();
 
 MCNAPI ::HashedString const& RedstoneTorch();
 
@@ -1938,7 +1938,7 @@ MCNAPI ::HashedString const& SandstoneStairs();
 
 MCNAPI ::HashedString const& SandstoneWall();
 
-MCNAPI ::HashedString const& Scaffolding();
+MCAPI ::HashedString const& Scaffolding();
 
 MCNAPI ::HashedString const& Sculk();
 
@@ -1946,7 +1946,7 @@ MCNAPI ::HashedString const& SculkCatalyst();
 
 MCNAPI ::HashedString const& SculkSensor();
 
-MCNAPI ::HashedString const& SculkShrieker();
+MCAPI ::HashedString const& SculkShrieker();
 
 MCNAPI ::HashedString const& SculkVein();
 
@@ -2008,7 +2008,7 @@ MCNAPI ::HashedString const& SmoothStoneDoubleSlab();
 
 MCNAPI ::HashedString const& SmoothStoneSlab();
 
-MCNAPI ::HashedString const& SnifferEgg();
+MCAPI ::HashedString const& SnifferEgg();
 
 MCNAPI ::HashedString const& Snow();
 
@@ -2040,11 +2040,11 @@ MCNAPI ::HashedString const& SpruceFence();
 
 MCNAPI ::HashedString const& SpruceFenceGate();
 
-MCNAPI ::HashedString const& SpruceHangingSign();
+MCAPI ::HashedString const& SpruceHangingSign();
 
 MCNAPI ::HashedString const& SpruceLeaves();
 
-MCNAPI ::HashedString const& SpruceLog();
+MCAPI ::HashedString const& SpruceLog();
 
 MCNAPI ::HashedString const& SprucePlanks();
 
@@ -2054,15 +2054,15 @@ MCNAPI ::HashedString const& SpruceSapling();
 
 MCNAPI ::HashedString const& SpruceShelf();
 
-MCNAPI ::HashedString const& SpruceSlab();
+MCAPI ::HashedString const& SpruceSlab();
 
 MCNAPI ::HashedString const& SpruceStairs();
 
-MCNAPI ::HashedString const& SpruceStandingSign();
+MCAPI ::HashedString const& SpruceStandingSign();
 
-MCNAPI ::HashedString const& SpruceTrapdoor();
+MCAPI ::HashedString const& SpruceTrapdoor();
 
-MCNAPI ::HashedString const& SpruceWallSign();
+MCAPI ::HashedString const& SpruceWallSign();
 
 MCNAPI ::HashedString const& SpruceWood();
 
@@ -2072,7 +2072,7 @@ MCNAPI ::HashedString const& StandingSign();
 
 MCNAPI ::HashedString const& StickyPiston();
 
-MCNAPI ::HashedString const& StickyPistonArmCollision();
+MCAPI ::HashedString const& StickyPistonArmCollision();
 
 MCNAPI ::HashedString const& Stone();
 
@@ -2198,7 +2198,7 @@ MCNAPI ::HashedString const& Torchflower();
 
 MCNAPI ::HashedString const& TorchflowerCrop();
 
-MCNAPI ::HashedString const& Trapdoor();
+MCAPI ::HashedString const& Trapdoor();
 
 MCNAPI ::HashedString const& TrappedChest();
 
@@ -2288,15 +2288,15 @@ MCNAPI ::HashedString const& WarpedRoots();
 
 MCNAPI ::HashedString const& WarpedShelf();
 
-MCNAPI ::HashedString const& WarpedSlab();
+MCAPI ::HashedString const& WarpedSlab();
 
 MCNAPI ::HashedString const& WarpedStairs();
 
 MCNAPI ::HashedString const& WarpedStandingSign();
 
-MCNAPI ::HashedString const& WarpedStem();
+MCAPI ::HashedString const& WarpedStem();
 
-MCNAPI ::HashedString const& WarpedTrapdoor();
+MCAPI ::HashedString const& WarpedTrapdoor();
 
 MCNAPI ::HashedString const& WarpedWallSign();
 

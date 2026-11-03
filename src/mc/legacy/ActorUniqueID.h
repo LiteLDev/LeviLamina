@@ -20,6 +20,6 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::ActorUniqueID const& INVALID_ID();
+    MCAPI static ::ActorUniqueID const& INVALID_ID();
     // NOLINTEND
 };

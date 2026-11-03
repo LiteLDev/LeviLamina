@@ -295,7 +295,7 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::SlotData const& mCursorSlotData();
+    MCAPI static ::SlotData const& mCursorSlotData();
     // NOLINTEND
 
 public:

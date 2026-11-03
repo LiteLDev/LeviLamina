@@ -11,7 +11,7 @@ class SemVersionConstant;
 namespace SharedConstants {
 // static variables
 // NOLINTBEGIN
-MCNAPI ::SemVersionConstant const& CurrentGameSemVersion();
+MCAPI ::SemVersionConstant const& CurrentGameSemVersion();
 
 #ifdef LL_PLAT_C
 MCNAPI int const& MajorVersion();

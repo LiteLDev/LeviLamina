@@ -369,7 +369,7 @@ public:
 
     MCNAPI static ::std::string const& TAG_DISPLAY_NAME();
 
-    MCNAPI static ::std::string const& TAG_ENCHANTS();
+    MCAPI static ::std::string const& TAG_ENCHANTS();
 
     MCNAPI static ::std::string const& TAG_LORE();
 

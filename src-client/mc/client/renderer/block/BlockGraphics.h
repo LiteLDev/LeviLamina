@@ -168,7 +168,7 @@ public:
 
     MCNAPI static ::std::unordered_map<uint, ::BlockGraphics*>& mBlocks();
 
-    MCNAPI static ::std::unique_ptr<::BlockGraphics>& mDummyBlock();
+    MCAPI static ::std::unique_ptr<::BlockGraphics>& mDummyBlock();
 
     MCNAPI static bool& mInitialized();
 

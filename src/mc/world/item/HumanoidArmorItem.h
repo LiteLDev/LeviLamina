@@ -147,25 +147,25 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& CHAIN();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& CHAIN();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& COPPER();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& COPPER();
 
     MCNAPI static ::mce::Color& DEFAULT_LEATHER_COLOR();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& DIAMOND();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& DIAMOND();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& ELYTRA();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& ELYTRA();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& GOLD();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& GOLD();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& IRON();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& IRON();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& LEATHER();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& LEATHER();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& NETHERITE();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& NETHERITE();
 
-    MCNAPI static ::HumanoidArmorItem::ArmorMaterial const& TURTLE();
+    MCAPI static ::HumanoidArmorItem::ArmorMaterial const& TURTLE();
     // NOLINTEND
 
 public:

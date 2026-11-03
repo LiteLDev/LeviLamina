@@ -1010,15 +1010,15 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::Attribute const& EXHAUSTION();
+    MCAPI static ::Attribute const& EXHAUSTION();
 
-    MCNAPI static ::Attribute const& EXPERIENCE();
+    MCAPI static ::Attribute const& EXPERIENCE();
 
-    MCNAPI static ::Attribute const& HUNGER();
+    MCAPI static ::Attribute const& HUNGER();
 
-    MCNAPI static ::Attribute const& LEVEL();
+    MCAPI static ::Attribute const& LEVEL();
 
-    MCNAPI static ::Attribute const& SATURATION();
+    MCAPI static ::Attribute const& SATURATION();
     // NOLINTEND
 
 public:
