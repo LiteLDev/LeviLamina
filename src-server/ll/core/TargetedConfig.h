@@ -18,9 +18,7 @@ struct TargetedConfig {
     bool                                                                 checkRunningBDS          = true;
     ll::reflection::Dispatcher<bool, PreserveInputLine>                  preserveInputLine        = true;
     struct {
-        bool                     enable     = true;
-        bool                     singlePort = true;
-        std::string              serverIP;
+        bool                     enable      = true;
         std::vector<std::string> stunServers = {"stun:stun.l.google.com:19302", "stun:stun.miwifi.com:3478"};
     } netherNetPatch;
     struct {

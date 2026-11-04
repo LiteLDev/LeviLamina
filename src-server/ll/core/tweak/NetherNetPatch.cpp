@@ -16,106 +16,15 @@
 #include "ll/core/tweak/NetherNetPatch.h"
 #include "ll/api/i18n/I18n.h"
 #include "ll/api/memory/Hook.h"
-#include "ll/api/utils/SystemUtils.h"
 #include "ll/core/Config.h"
 #include "ll/core/LeviLamina.h"
-#include "mc/deps/nether_net/INetherNetTransportInterface.h"
-#include "mc/deps/nether_net/INetherNetTransportInterfaceCallbacks.h"
 #include "mc/deps/nether_net/ServerNegotiator.h"
-#include "mc/deps/nether_net/TransportConfiguration.h"
-#include "mc/external/webrtc/Port.h"
-#include "mc/network/NetherNetConnector.h"
-#include "mc/network/ServerNetworkSystem.h"
 
 namespace ll::network::nether_net_patch {
 
 using namespace ll::i18n_literals;
 
-static std::uint16_t parsePort(std::string_view const value) {
-    unsigned int port    = 0;
-    auto const [ptr, ec] = std::from_chars(value.data(), value.data() + value.size(), port);
-    if (ec != std::errc{} || ptr != value.data() + value.size() || port == 0 || port > 0xffff) {
-        return 0;
-    }
-    return static_cast<uint16>(port);
-}
-
-static bool addPublishedAddress(NetherNet::TransportConfiguration& config, std::uint16_t const localPort) {
-    auto address = ll::sys_utils::getEnvironmentVariable("SERVER_IP");
-    if (address.empty() || address == "0.0.0.0" || address == "::") {
-        auto& addressFromCfg = ll::getLeviConfig().targeted.netherNetPatch.serverIP;
-        if (addressFromCfg.empty() || addressFromCfg == "0.0.0.0" || addressFromCfg == "::") {
-            return false;
-        } else {
-            address = addressFromCfg;
-        }
-    }
-
-    auto const published = parsePort(ll::sys_utils::getEnvironmentVariable("SERVER_PORT"));
-    auto&      range     = config.mKnownMappedAddressRanges[config.mKnownMappedAddressRangeCount];
-    range->mInternalAddress->reset();
-    range->mInternalPortMin               = localPort;
-    range->mInternalPortMax               = localPort;
-    range->mExternalAddress               = address;
-    range->mExternalPortOffset            = (published != 0 ? published : localPort) - localPort;
-    config.mKnownMappedAddressRangeCount += 1;
-
-    ll::getLogger().info(
-        "Configured {}:{} as the mapped address for NetherNet."_tr(address, published != 0 ? published : localPort)
-    );
-    return true;
-}
-
-LL_TYPE_INSTANCE_HOOK(
-    CreateTransportInterfaceHook,
-    HookPriority::High,
-    NetherNet::INetherNetTransportInterface,
-    "?createTransportInterface@TransportFactoryImpl@?A0x30FC2A75@NetherNet@@UEAAPEAVINetherNetTransportInterface@2@"
-    "AEBUNetworkID@2@AEBUTransportConfiguration@2@PEAVINetherNetTransportInterfaceCallbacks@2@@Z"_sym,
-    NetherNet::INetherNetTransportInterface*,
-    NetherNet::NetworkID const&                       localId,
-    NetherNet::TransportConfiguration const&          configuration,
-    NetherNet::INetherNetTransportInterfaceCallbacks* callbacks
-) {
-    auto const* http =
-        std::get_if<NetherNet::TransportConfiguration::Http>(&configuration.mDefaultSignalingChannel.get());
-    if (http != nullptr) {
-        // #blameMojang - BDS runs the same NetherNet code as a player hosting a world from their console.
-        // Every player who joins gets their own UDP port. Fine at home, useless on a rented server with
-        // one open port, where only the first player can get in.
-        // Fix: put every player on the signaling port. Set both bounds, a zero minimum skips the cache.
-        auto& config          = const_cast<NetherNet::TransportConfiguration&>(configuration);
-        config.mMinUdpPort    = http->mPort;
-        config.mMaxUdpPort    = http->mPort;
-        config.mGlobalUdpPort = true;
-        addPublishedAddress(config, http->mPort);
-    }
-    return origin(localId, configuration, callbacks);
-}
-
-static constexpr int                                           StunErrorUnauthorized = 401;
 static std::vector<webrtc::PeerConnectionInterface::IceServer> StunServers;
-
-LL_TYPE_INSTANCE_HOOK(
-    BindingErrorResponseHook,
-    HookPriority::High,
-    webrtc::Port,
-    &webrtc::Port::$SendBindingErrorResponse,
-    void,
-    ::webrtc::StunMessage*         message,
-    ::webrtc::SocketAddress const& addr,
-    int                            error_code,
-    ::std::string_view             reason
-) {
-    // #blameMojang - with everyone on one socket, every port sees every request and answers 401 to the
-    // ones that are not its own. A 401 carries no message integrity, so the client believes it and gives
-    // up on a request that was about to be answered properly.
-    // Fix: stay quiet. The port the request belongs to still replies.
-    if (error_code == StunErrorUnauthorized) {
-        return;
-    }
-    origin(message, addr, error_code, reason);
-}
 
 LL_TYPE_INSTANCE_HOOK(
     CreateAnswerHook,
@@ -157,9 +66,6 @@ void loadStunConfig() {
 
 void enablePatch() {
     auto& config = ll::getLeviConfig().targeted.netherNetPatch;
-    if (config.singlePort) {
-        static ll::memory::HookRegistrar<CreateTransportInterfaceHook, BindingErrorResponseHook> reg;
-    }
     if (!config.stunServers.empty()) {
         loadStunConfig();
         static ll::memory::HookRegistrar<CreateAnswerHook> reg;

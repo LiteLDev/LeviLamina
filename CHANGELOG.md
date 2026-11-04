@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.60.1] - 2026-11-04
+
+### Changed
+
+- Removed `targeted.netherNetPatch.singlePort` in configuration file, because on 26.60.6 server, NetherNet use single udp port in server.properties by default.
+- Removed `targeted.netherNetPatch.serverIP` in configuration file, because users can configure server's public address by `server-udp-ports=IP:public port:local port`(e.g. `server-udp-ports=12.19.20.18:19489:19489`) in server.properties
+
 ## [26.60.0] - 2026-11-03
 
 ### Added
@@ -2061,7 +2068,8 @@ For lip and tooth-hub test only.
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.0...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.1...HEAD
+[26.60.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.0...v26.60.1
 [26.60.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.9...v26.60.0
 [26.51.9]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.8...v26.51.9
 [26.51.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.7...v26.51.8
