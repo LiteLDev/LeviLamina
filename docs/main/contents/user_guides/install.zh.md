@@ -29,7 +29,7 @@ LeviLamina 运行在 Windows 版基岩版专用服务器（BDS）中。你可以
     ```
 2. （可选）可以通过`lip config set`命令来设置GitHub镜像，例如:
     ```shell
-    lip config set github_proxy https://mirror.ghproxy.com/
+    lip config set github_proxy https://v4.gh-proxy.org/https://github.com/
     ```
 3. （可选）可以通过定义`BDSDOWN_MIRROR_URL`环境变量来自定义BDS下载镜像站，例如: `https://www.minecraft.net`
    。你也可以手动在Minecraft官网下载BDS，然后把压缩文件丢到`.cache/bdsdown`目录下，如果该目录不存在请手动创建。
@@ -82,8 +82,10 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
     docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
     ```
 
+    使用 GitHub 以及 ghcr.io 镜像站：
+
     ```sh
-    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
+    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://v4.gh-proxy.org/https://github.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
     ```
 
     Docker Compose：把 [wine/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/wine/compose.yaml)
@@ -97,8 +99,10 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
     docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
     ```
 
+     使用 GitHub 以及 ghcr.io 镜像站：
+
     ```sh
-    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
+    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://v4.gh-proxy.org/https://github.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
     ```
 
     Docker Compose：把 [windows/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/windows/compose.yaml)
@@ -108,7 +112,7 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 
 - `EULA`: 必须设置为`TRUE`以接受[Minecraft最终用户许可协议](https://www.minecraft.net/zh-hans/eula)。
 
-- `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL（例如`https://mirror.ghproxy.com/`），以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
+- `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL（例如`https://v4.gh-proxy.org/https://github.com/`），以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
 - `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合
   [lip包名规范](https://docs.levimc.org/lip/zh/cli/commands/install.html)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。

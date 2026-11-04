@@ -29,20 +29,12 @@ To run Bedrock Dedicated Server (BDS), you need to install the following softwar
     # or
     winget install levimc.lip
     ```
-2. (Optional) Set a GitHub mirror with `lip config set`, for example:
-    ```shell
-    lip config set github_proxy https://mirror.ghproxy.com/
-    ```
-3. (Optional) Set the `BDSDOWN_MIRROR_URL` environment variable to choose the site BDS is downloaded from, for example
-   `https://www.minecraft.net`. You can also download BDS yourself from the Minecraft website and put the archive in the
-   `.cache/bdsdown` directory (create it if it does not exist). This directory is inside the directory you install BDS
-   into, for example `C:\Users\YourName\BDS\.cache\bdsdown`.
-4. Begin by creating a directory for your Minecraft server and navigating into it:
+2. Begin by creating a directory for your Minecraft server and navigating into it:
     ```shell
     mkdir myserver
     cd myserver
     ```
-5. Then, install LeviLamina (bundled with Bedrock Dedicated Server) using lip:
+3. Then, install LeviLamina (bundled with Bedrock Dedicated Server) using lip:
     ```shell
     # Install the latest version
     lip install github.com/LiteLDev/LeviLamina
@@ -52,7 +44,7 @@ To run Bedrock Dedicated Server (BDS), you need to install the following softwar
     ```
    During installation, PeEditor creates `bedrock_server_mod.exe`, a copy of `bedrock_server.exe` that loads
    LeviLamina, and keeps the original executable as `bedrock_server.exe.bak`.
-6. Launch your server by running:
+4. Launch your server by running:
     ```shell
     ./bedrock_server_mod.exe
     ```
@@ -86,10 +78,6 @@ Choose the container type. If your server is in mainland China, use the second c
     docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.io/liteldev/levilamina-server:latest-wine
     ```
 
-    ```sh
-    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:/data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-wine
-    ```
-
     Docker Compose: download [wine/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/wine/compose.yaml)
     to an empty directory and run `docker compose up -d`.
 
@@ -101,10 +89,6 @@ Choose the container type. If your server is in mainland China, use the second c
     docker run -d -it -e EULA=TRUE -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.io/liteldev/levilamina-server:latest-windows
     ```
 
-    ```sh
-    docker run -d -it -e EULA=TRUE -e GITHUB_MIRROR_URL=https://mirror.ghproxy.com/ -p 19132:19132/udp -p 19132:19132/tcp -v levilamina-server-data:C:\data ghcr.nju.edu.cn/liteldev/levilamina-server:latest-windows
-    ```
-
     Docker Compose: download [windows/compose.yaml](https://github.com/LiteLDev/docker-levilamina-server/blob/main/windows/compose.yaml)
     to an empty directory and run `docker compose up -d`.
 
@@ -112,7 +96,7 @@ Choose the container type. If your server is in mainland China, use the second c
 
 - `EULA`: must be set to `TRUE` to accept the [Minecraft End User License Agreement](https://www.minecraft.net/en-us/eula).
 
-- `GITHUB_MIRROR_URL`: can be set to a GitHub mirror URL (for example `https://mirror.ghproxy.com/`) to speed up the installation of
+- `GITHUB_MIRROR_URL`: can be set to a GitHub mirror URL (for example `https://v4.gh-proxy.org/https://github.com/`) to speed up the installation of
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
 - `PACKAGES`: can be set to a space-separated list of packages to install on first run. Each package must be a
