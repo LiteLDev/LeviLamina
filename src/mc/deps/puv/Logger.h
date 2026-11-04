@@ -129,25 +129,7 @@ public:
 
     using ContextType = ::cereal::BasicSerializerContext::ContextType;
 
-    using ParseLogIterable = ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>>;
-
     using ParseResultCode = ::cereal::ResultCode;
-
-    using UpgradeLogIterable = ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>,
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>>;
-
-    using ValidationLogIterable = ::entt::iterable_adaptor<
-        ::Puv::LoggerIterator<
-            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>,
-        ::Puv::LoggerIterator<::std::_Vector_const_iterator<
-            ::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>>;
 
 public:
     // member variables
