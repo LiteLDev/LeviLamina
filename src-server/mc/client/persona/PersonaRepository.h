@@ -6,12 +6,12 @@ class PersonaRepository {
 public:
     // PersonaRepository inner types declare
     // clang-format off
-    struct PendingPieceDownloadBatch;
     struct StartupParams;
+    struct PendingPieceDownloadBatch;
     // clang-format on
 
     // PersonaRepository inner types define
-    struct PendingPieceDownloadBatch {};
-
     struct StartupParams {};
+
+    struct PendingPieceDownloadBatch {};
 };
