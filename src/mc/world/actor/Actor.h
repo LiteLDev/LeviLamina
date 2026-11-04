@@ -1001,7 +1001,7 @@ public:
     MCNAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setRotationWrapped(::Vec2 const& rot);
+    MCAPI void setRotationWrapped(::Vec2 const& rot);
 #endif
 
     MCNAPI void setRuntimeID(::ActorRuntimeID id);

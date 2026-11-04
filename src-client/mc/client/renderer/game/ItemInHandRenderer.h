@@ -241,7 +241,7 @@ public:
         float                               scale
     );
 
-    MCNAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
+    MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
 
     MCNAPI void _renderPhotoMapItem(
         ::BaseActorRenderContext& renderContext,

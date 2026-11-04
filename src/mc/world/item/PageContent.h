@@ -36,7 +36,7 @@ public:
     // NOLINTBEGIN
     MCNAPI PageContent(::PageContent const&);
 
-    MCNAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCAPI PageContent(::std::string nText, ::std::optional<::std::string> nFilteredText);
 
     MCNAPI ::std::unique_ptr<::CompoundTag> createTag() const;
 
@@ -46,7 +46,7 @@ public:
 
     MCNAPI ::PageContent& operator=(::PageContent const&);
 
-    MCNAPI ~PageContent();
+    MCAPI ~PageContent();
     // NOLINTEND
 
 public:
@@ -68,12 +68,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::PageContent const&);
 
-    MCNAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
+    MCAPI void* $ctor(::std::string nText, ::std::optional<::std::string> nFilteredText);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

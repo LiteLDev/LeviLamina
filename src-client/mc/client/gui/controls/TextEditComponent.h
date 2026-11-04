@@ -89,7 +89,7 @@ public:
 
     MCNAPI ::RectangleArea getTextArea() const;
 
-    MCNAPI void handleFocusSet(bool focused);
+    MCAPI void handleFocusSet(bool focused);
 
     MCNAPI ::TextCharEventResult handleTextCharEvent(::VisualTree& visualTree, ::std::string const& inputUtf8);
 
@@ -99,7 +99,7 @@ public:
 
     MCNAPI void setText(::std::string const& text);
 
-    MCNAPI bool trySetText(::std::string text);
+    MCAPI bool trySetText(::std::string text);
 
     MCNAPI void updateCaretBlink(float dt);
     // NOLINTEND

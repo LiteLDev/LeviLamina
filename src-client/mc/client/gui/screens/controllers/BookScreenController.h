@@ -83,11 +83,11 @@ public:
         ::BlockActor*                                  lectern
     );
 
-    MCNAPI void _addPageAt(int index, ::PageContent const& page);
+    MCAPI void _addPageAt(int index, ::PageContent const& page);
 
     MCNAPI void _addPhotoPageAt(int index, ::std::string const& photoName);
 
-    MCNAPI void _parsePageText(int index);
+    MCAPI void _parsePageText(int index);
 
     MCNAPI void _setPageText(int index, ::std::string const& text);
 
@@ -119,11 +119,11 @@ public:
     // NOLINTBEGIN
     MCNAPI void $addStaticScreenVars(::Json::Value& globalVars);
 
-    MCNAPI void $preFrameTick();
+    MCAPI void $preFrameTick();
 
     MCNAPI ::ui::DirtyFlag $tick();
 
-    MCNAPI bool $_isStillValid() const;
+    MCAPI bool $_isStillValid() const;
 
     MCNAPI ::std::string $_getButtonBDescription();
     // NOLINTEND

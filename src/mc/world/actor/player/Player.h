@@ -932,7 +932,7 @@ public:
 
     MCAPI void setCommandPermissions(::CommandPermissionLevel permissions);
 
-    MCNAPI void setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> manager);
+    MCAPI void setContainerManagerModel(::std::shared_ptr<::ContainerManagerModel> manager);
 
     MCAPI void setName(::std::string const& newName);
 
