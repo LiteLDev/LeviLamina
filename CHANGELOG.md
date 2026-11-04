@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [26.60.1] - 2026-11-04
+## [26.60.1] - 2026-11-05
 
 ### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Removed
 
 - Removed `targeted.netherNetPatch.singlePort` in configuration file, because on 26.60.6 server, NetherNet use single udp port in server.properties by default.
 - Removed `targeted.netherNetPatch.serverIP` in configuration file, because users can configure server's public address by `server-udp-ports=IP:public port:local port`(e.g. `server-udp-ports=12.19.20.18:19489:19489`) in server.properties
