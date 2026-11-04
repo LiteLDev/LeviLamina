@@ -43,7 +43,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _renderGuiIcon(
+    MCAPI static void _renderGuiIcon(
         ::MinecraftUIRenderContext& renderContext,
         ::IClientInstance&          client,
         ::ui::FlyingItem&           item,

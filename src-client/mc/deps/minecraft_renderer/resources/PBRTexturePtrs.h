@@ -29,12 +29,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ~PBRTexturePtrs();
+    MCAPI ~PBRTexturePtrs();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

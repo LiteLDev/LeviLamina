@@ -2,6 +2,9 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/puv/InputFormat.h"
+
 // auto generated forward declare list
 // clang-format off
 class SemVersion;
@@ -24,15 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk489f9a;
-        ::ll::UntypedStorage<8, 8> mUnk9320ae;
+        ::ll::TypedStorage<1, 1, ::Puv::InputFormat> mFormat;
+        ::ll::TypedStorage<8, 8, void const*>        mPtr;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Data& operator=(Data const&);
-        Data(Data const&);
-        Data();
     };
 
 public:

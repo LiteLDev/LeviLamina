@@ -790,7 +790,7 @@ public:
 
     MCAPI bool hasType(::ActorType types) const;
 
-    MCNAPI bool hasUniqueID() const;
+    MCAPI bool hasUniqueID() const;
 
     MCAPI void heal(int heal);
 
@@ -1084,7 +1084,7 @@ public:
     );
 #endif
 
-    MCNAPI static bool isInLiquid(
+    MCAPI static bool isInLiquid(
         ::SharedTypes::v1_26_20::MaterialType liquidType,
         ::IConstBlockSource const&            region,
         ::AABB const&                         mainAABB,

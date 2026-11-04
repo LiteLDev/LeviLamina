@@ -6,8 +6,13 @@
 #include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ResourceLoaderBase.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/game_refs/WeakRef.h"
+#include "mc/deps/resource_processing/category/CategoryFileMapping.h"
 #include "mc/deps/resource_processing/category/CategoryMergeStrategy.h"
+#include "mc/deps/resource_processing/category/CategoryMergeStrategyFactory.h"
+#include "mc/deps/resource_processing/category/ResourceCategory.h"
 #include "mc/platform/brstd/function_ref.h"
+#include "mc/resources/ResourceMergeOptions.h"
 
 // auto generated forward declare list
 // clang-format off
@@ -44,33 +49,25 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 16>  mUnka2e56b;
-        ::ll::UntypedStorage<8, 136> mUnk511682;
-        ::ll::UntypedStorage<2, 4>   mUnkdb630c;
+        ::ll::TypedStorage<8, 16, ::brstd::function_ref<bool(::PackInstance const&)>>     packInstanceFilter;
+        ::ll::TypedStorage<8, 136, ::std::optional<::ResourceMergeOptions>>               mergeOptions;
+        ::ll::TypedStorage<2, 4, ::std::optional<::Bedrock::Resources::ResourceCategory>> loadAsCategory;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        LoadAllVersionsOptions& operator=(LoadAllVersionsOptions const&);
-        LoadAllVersionsOptions(LoadAllVersionsOptions const&);
-        LoadAllVersionsOptions();
     };
 
     struct ResourcePackLoaderArgs {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkcfd81d;
-        ::ll::UntypedStorage<8, 64> mUnkd1b0df;
-        ::ll::UntypedStorage<8, 64> mUnk128638;
-        ::ll::UntypedStorage<8, 64> mUnkbfaf0b;
+        ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>                stack;
+        ::ll::TypedStorage<8, 64, ::std::function<::Core::PathBuffer<::std::string>()>> getPath;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::Bedrock::Resources::CategoryMergeStrategyFactory<::LoadedResourceData, ::ResourceMergeOptions>>
+                                                                             mergeStrategyFactory;
+        ::ll::TypedStorage<8, 64, ::Bedrock::Resources::CategoryFileMapping> categoryFileMapping;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ResourcePackLoaderArgs& operator=(ResourcePackLoaderArgs const&);
-        ResourcePackLoaderArgs(ResourcePackLoaderArgs const&);
-        ResourcePackLoaderArgs();
 
     public:
         // member functions
@@ -92,18 +89,23 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkf914db;
-    ::ll::UntypedStorage<8, 16> mUnk86cf50;
-    ::ll::UntypedStorage<8, 64> mUnkea7f9a;
-    ::ll::UntypedStorage<8, 64> mUnkfb1985;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::ResourcePackStack>>     mFullStack;
+    ::ll::TypedStorage<8, 16, ::WeakRef<::ResourcePackLoader>>           mWeakThis;
+    ::ll::TypedStorage<8, 64, ::Bedrock::Resources::CategoryFileMapping> mCategoryFileMapping;
+    ::ll::TypedStorage<
+        8,
+        64,
+        ::Bedrock::Resources::CategoryMergeStrategyFactory<::LoadedResourceData, ::ResourceMergeOptions>>
+        mMergeStrategyFactory;
     // NOLINTEND
 
+#ifdef LL_PLAT_S
+#else // LL_PLAT_C
 public:
     // prevent constructor by default
-    ResourcePackLoader& operator=(ResourcePackLoader const&);
-    ResourcePackLoader(ResourcePackLoader const&);
     ResourcePackLoader();
 
+#endif
 public:
     // virtual functions
     // NOLINTBEGIN

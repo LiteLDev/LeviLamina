@@ -81,17 +81,17 @@ public:
 
     MCNAPI BaseConnectionRequest(::std::optional<::WebToken> rawToken, ::Json::Value const& authentication);
 
-    MCNAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
+    MCAPI ::std::vector<::AnimatedImageData> getAnimatedImageData() const;
 
-    MCNAPI ::std::string getArmSize() const;
+    MCAPI ::std::string getArmSize() const;
 
-    MCNAPI ::std::vector<uchar> getCapeData() const;
+    MCAPI ::std::vector<uchar> getCapeData() const;
 
-    MCNAPI ::std::string getCapeId() const;
+    MCAPI ::std::string getCapeId() const;
 
-    MCNAPI ushort getCapeImageHeight() const;
+    MCAPI ushort getCapeImageHeight() const;
 
-    MCNAPI ushort getCapeImageWidth() const;
+    MCAPI ushort getCapeImageWidth() const;
 
     MCNAPI uint64 getClientRandomId() const;
 
@@ -105,9 +105,9 @@ public:
 
     MCNAPI ::std::optional<::Social::Nonce> getNonce() const;
 
-    MCNAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
+    MCAPI ::std::vector<::SerializedPersonaPieceHandle> getPersonaPieces() const;
 
-    MCNAPI ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
+    MCAPI ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> getPieceTintColors() const;
 
     MCNAPI ::std::string getPlatformId() const;
 
@@ -117,41 +117,41 @@ public:
 
     MCNAPI ::PlatformType getPlatformType() const;
 
-    MCNAPI ::std::string getProfileHash() const;
+    MCAPI ::std::string getProfileHash() const;
 
     MCAPI ::std::string getSelfSignedId() const;
 
-    MCNAPI ::std::string getSkinAnimationData() const;
+    MCAPI ::std::string getSkinAnimationData() const;
 
-    MCNAPI ::mce::Color getSkinColor() const;
+    MCAPI ::mce::Color getSkinColor() const;
 
-    MCNAPI ::std::vector<uchar> getSkinData() const;
+    MCAPI ::std::vector<uchar> getSkinData() const;
 
-    MCNAPI ::std::string getSkinGeometry() const;
+    MCAPI ::std::string getSkinGeometry() const;
 
-    MCNAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
+    MCAPI ::MinEngineVersion getSkinGeometryMinEngineVersion() const;
 
-    MCNAPI ::std::string getSkinId() const;
+    MCAPI ::std::string getSkinId() const;
 
-    MCNAPI ushort getSkinImageHeight() const;
+    MCAPI ushort getSkinImageHeight() const;
 
-    MCNAPI ushort getSkinImageWidth() const;
+    MCAPI ushort getSkinImageWidth() const;
 
-    MCNAPI ::std::string getSkinResourcePatch() const;
+    MCAPI ::std::string getSkinResourcePatch() const;
 
     MCAPI ::std::string getThirdPartyName() const;
 
-    MCNAPI bool isCapeOnClassicSkin() const;
+    MCAPI bool isCapeOnClassicSkin() const;
 
     MCNAPI bool isCompatibleWithClientSideChunkGen() const;
 
-    MCNAPI bool isOverrideSkin() const;
+    MCAPI bool isOverrideSkin() const;
 
-    MCNAPI bool isPersonaSkin() const;
+    MCAPI bool isPersonaSkin() const;
 
-    MCNAPI bool isPremiumSkin() const;
+    MCAPI bool isPremiumSkin() const;
 
-    MCNAPI bool isTrustedSkin() const;
+    MCAPI bool isTrustedSkin() const;
 
     MCNAPI bool isWellFormed() const;
 

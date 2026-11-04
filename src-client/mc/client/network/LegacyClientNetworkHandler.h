@@ -352,7 +352,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::InventorySlotPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket> packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::std::shared_ptr<::InventoryTransactionPacket> packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::MobArmorEquipmentPacket const& packet);
 
@@ -360,9 +360,9 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packetPtr);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MoveActorAbsolutePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::MoveActorDeltaPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::MovementEffectPacket const& packet);
 

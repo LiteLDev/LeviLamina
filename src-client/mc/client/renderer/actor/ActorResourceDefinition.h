@@ -68,18 +68,18 @@ public:
         ::SemVersion const& actorJsonMinEngineVersion
     );
 
-    MCNAPI ::ActorTextureInfo const getActorTextureInfo(::std::string_view name, bool returnFirstIfNotFound) const;
+    MCAPI ::ActorTextureInfo const getActorTextureInfo(::std::string_view name, bool returnFirstIfNotFound) const;
 
-    MCNAPI ::PBRTexturePtrs const getActorTexturePtrs(::std::string const& name, bool returnFirstIfNotFound) const;
+    MCAPI ::PBRTexturePtrs const getActorTexturePtrs(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCNAPI ::mce::TexturePtr const getColorTexture(::std::string const& name, bool returnFirstIfNotFound) const;
+    MCAPI ::mce::TexturePtr const getColorTexture(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCNAPI ::ResourceLocation const
+    MCAPI ::ResourceLocation const
     getColorTextureResourceLocation(::std::string const& name, bool returnFirstIfNotFound) const;
 
-    MCNAPI ::GeometryPtr const getGeometry(::std::string_view name, bool returnFirstIfNotFound) const;
+    MCAPI ::GeometryPtr const getGeometry(::std::string_view name, bool returnFirstIfNotFound) const;
 
-    MCNAPI ::MaterialVariants const& getMaterialVariants(::std::string const& name) const;
+    MCAPI ::MaterialVariants const& getMaterialVariants(::std::string const& name) const;
 
     MCNAPI void mergeGeometry(::std::string const& name, ::GeometryPtr geometryPtr);
 
@@ -137,19 +137,19 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ActorTextureInfo getActorTextureInfo(
+    MCAPI static ::ActorTextureInfo getActorTextureInfo(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string_view                           name,
         bool                                         returnFirstIfNotFound
     );
 
-    MCNAPI static ::PBRTexturePtrs getActorTexturePtrs(
+    MCAPI static ::PBRTexturePtrs getActorTexturePtrs(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string const&                         name,
         bool                                         returnFirstIfNotFound
     );
 
-    MCNAPI static ::mce::TexturePtr getColorTexture(
+    MCAPI static ::mce::TexturePtr getColorTexture(
         ::std::shared_ptr<::ActorResourceDefinition> definition,
         ::std::string const&                         name,
         bool                                         returnFirstIfNotFound

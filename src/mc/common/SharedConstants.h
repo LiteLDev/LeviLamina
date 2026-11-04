@@ -14,17 +14,17 @@ namespace SharedConstants {
 MCAPI ::SemVersionConstant const& CurrentGameSemVersion();
 
 #ifdef LL_PLAT_C
-MCNAPI int const& MajorVersion();
+MCAPI int const& MajorVersion();
 #endif
 
 MCNAPI ::GameVersion const& MinimumCompatibleGameVersionForLevelData();
 
 #ifdef LL_PLAT_C
-MCNAPI int const& MinorVersion();
+MCAPI int const& MinorVersion();
 
 MCNAPI int const& NetworkProtocolVersion();
 
-MCNAPI int const& PatchVersion();
+MCAPI int const& PatchVersion();
 #endif
 // NOLINTEND
 

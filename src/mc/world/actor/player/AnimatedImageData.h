@@ -44,7 +44,7 @@ public:
     MCNAPI ::AnimatedImageData& operator=(::AnimatedImageData const& rhs);
 #endif
 
-    MCNAPI void setSkinImage(::SkinImage const& image);
+    MCAPI void setSkinImage(::SkinImage const& image);
     // NOLINTEND
 
 public:

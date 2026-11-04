@@ -4,13 +4,14 @@
 
 // auto generated inclusion list
 #include "mc/client/renderer/controller/RenderControllerArrayType.h"
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/molang/MolangVersion.h"
+#include "mc/util/molang/ExpressionNode.h"
 
 // auto generated forward declare list
 // clang-format off
 class DataDrivenGeometry;
 class DataDrivenModel;
-class ExpressionNode;
 class RenderParams;
 class Vec4;
 namespace Json { class Value; }
@@ -21,24 +22,24 @@ class RenderController {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 48>  mUnk972647;
-    ::ll::UntypedStorage<8, 192> mUnkbd217d;
-    ::ll::UntypedStorage<8, 16>  mUnk82218a;
-    ::ll::UntypedStorage<8, 64>  mUnkd6f969;
-    ::ll::UntypedStorage<8, 64>  mUnkd9ddbc;
-    ::ll::UntypedStorage<8, 64>  mUnk117366;
-    ::ll::UntypedStorage<8, 64>  mUnk6e4053;
-    ::ll::UntypedStorage<8, 64>  mUnk44f009;
-    ::ll::UntypedStorage<8, 24>  mUnk43d5b6;
-    ::ll::UntypedStorage<8, 24>  mUnk8437ab;
-    ::ll::UntypedStorage<8, 24>  mUnkf0a6dd;
-    ::ll::UntypedStorage<8, 24>  mUnk85c383;
-    ::ll::UntypedStorage<1, 1>   mUnkfa4011;
-    ::ll::UntypedStorage<1, 1>   mUnkad774d;
-    ::ll::UntypedStorage<1, 1>   mUnk7aa91c;
-    ::ll::UntypedStorage<1, 1>   mUnk15c5da;
-    ::ll::UntypedStorage<8, 16>  mUnk39f6f1;
-    ::ll::UntypedStorage<8, 8>   mUnk861111;
+    ::ll::TypedStorage<8, 48, ::HashedString const>                                        mName;
+    ::ll::TypedStorage<8, 192, ::std::unordered_map<::HashedString, ::ExpressionNode>[3]>  mArrays;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode>                                            mGeometry;
+    ::ll::TypedStorage<8, 64, ::ExpressionNode[4]>                                         mTintColor;
+    ::ll::TypedStorage<8, 64, ::ExpressionNode[4]>                                         mOverlayColor;
+    ::ll::TypedStorage<8, 64, ::ExpressionNode[4]>                                         mOnFireColor;
+    ::ll::TypedStorage<8, 64, ::ExpressionNode[4]>                                         mIsHurtColor;
+    ::ll::TypedStorage<8, 64, ::ExpressionNode[4]>                                         mUVAnim;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::ExpressionNode>>> mPartVisibility;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::pair<::std::string, ::ExpressionNode>>> mMaterials;
+    ::ll::TypedStorage<8, 24, ::std::vector<::std::shared_ptr<::DataDrivenGeometry>>>      mReferencedGeometries;
+    ::ll::TypedStorage<8, 24, ::std::vector<::ExpressionNode>>                             mTextures;
+    ::ll::TypedStorage<1, 1, bool>              mShouldRebuildAnimationMatrices;
+    ::ll::TypedStorage<1, 1, bool>              mIgnoreLighting;
+    ::ll::TypedStorage<1, 1, bool>              mFilterLighting;
+    ::ll::TypedStorage<1, 1, bool>              mMaterialsNeedVertexColor;
+    ::ll::TypedStorage<8, 16, ::ExpressionNode> mLightColorMultiplier;
+    ::ll::TypedStorage<8, 8, int64 const>       mResourceLoadTimeStamp;
     // NOLINTEND
 
 public:
@@ -51,7 +52,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RenderController(::RenderController const&);
 
-    MCNAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
+    MCAPI ::std::shared_ptr<::DataDrivenGeometry> getGeometry(::RenderParams& renderParams) const;
 
     MCNAPI ::mce::Color getOnFireColor(::RenderParams& renderParams) const;
 
@@ -59,7 +60,7 @@ public:
 
     MCNAPI ::mce::Color getTintColor(::RenderParams& renderParams) const;
 
-    MCNAPI ::Vec4 getUVAnim(::RenderParams& renderParams, ::Vec4 const& defaultUVAnim) const;
+    MCAPI ::Vec4 getUVAnim(::RenderParams& renderParams, ::Vec4 const& defaultUVAnim) const;
 
     MCNAPI bool init(::DataDrivenModel& model);
 

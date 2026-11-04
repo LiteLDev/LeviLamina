@@ -1356,7 +1356,7 @@ public:
 
     MCNAPI void _perspectiveOptionChanged(::Option const&);
 
-    MCNAPI void _requestLeaveGameImpl(bool const switchScreen, bool const sync);
+    MCAPI void _requestLeaveGameImpl(bool const switchScreen, bool const sync);
 
     MCNAPI void _startDestroyingGame();
 
@@ -2154,7 +2154,7 @@ public:
 
     MCNAPI void $onAppResumed();
 
-    MCNAPI void $onActiveResourcePacksChanged(
+    MCAPI void $onActiveResourcePacksChanged(
         ::Bedrock::NotNullNonOwnerPtr<::ActorResourceDefinitionGroup> const& entityResourceDefGroup
     );
 

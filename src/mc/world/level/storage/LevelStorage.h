@@ -120,7 +120,7 @@ public:
     MCNAPI ::std::unique_ptr<::LevelStorageWriteBatch> createWriteBatch();
 #endif
 
-    MCNAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
+    MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
     MCNAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
 

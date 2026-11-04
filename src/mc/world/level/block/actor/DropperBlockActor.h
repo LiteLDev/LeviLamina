@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool pushOutItems(::BlockSource& region);
+    MCAPI bool pushOutItems(::BlockSource& region);
     // NOLINTEND
 
 public:

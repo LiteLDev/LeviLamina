@@ -243,7 +243,7 @@ public:
 
     MCAPI void _renderMiniMapHand(::BaseActorRenderContext& renderContext, ::Player& player, bool inOffhand);
 
-    MCNAPI void _renderPhotoMapItem(
+    MCAPI void _renderPhotoMapItem(
         ::BaseActorRenderContext& renderContext,
         ::Player&                 player,
         float const               frameAlpha,

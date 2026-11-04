@@ -171,7 +171,7 @@ public:
         ::gsl::not_null<::std::shared_ptr<::cg::TextureSetDefinition>> textureSetDefinition
     );
 
-    MCNAPI ::BedrockTexture& uploadTexture(
+    MCAPI ::BedrockTexture& uploadTexture(
         ::ResourceLocation const& resourceLocation,
         ::mce::TextureContainer&& textureContainer,
         ::std::string_view        optionalIdentifier

@@ -605,7 +605,7 @@ public:
 
     MCAPI void $setSneaking(bool _isSneaking);
 
-    MCNAPI void $setSprinting(bool _isSprinting);
+    MCAPI void $setSprinting(bool _isSprinting);
 
     MCNAPI void $playEmote(::std::string const& pieceId, bool const playChatMessage);
 

@@ -68,16 +68,16 @@ public:
         ::BoneOrientation&          childBoneOrientation
     ) const;
 
-    MCNAPI ::std::vector<::BoneOrientation>& getBoneOrientationsFromGeometry(::DataDrivenGeometry const& sourceGeo);
+    MCAPI ::std::vector<::BoneOrientation>& getBoneOrientationsFromGeometry(::DataDrivenGeometry const& sourceGeo);
 
-    MCNAPI ::RenderParams& prepRenderParamsForActorRendering(
+    MCAPI ::RenderParams& prepRenderParamsForActorRendering(
         ::ActorRenderData&                   actorRenderData,
         ::BaseActorRenderContext*            baseActorRenderContext,
         ::std::shared_ptr<::DataDrivenModel> model,
         float                                frameAlpha
     );
 
-    MCNAPI void updateRenderControllersToProcess(
+    MCAPI void updateRenderControllersToProcess(
         ::std::shared_ptr<::DataDrivenModel> itemModel,
         ::RenderParams&                      renderParamsToUseForRenderControllerEvalulation
     );

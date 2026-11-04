@@ -2,19 +2,22 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/file/PathView.h"
+
+// auto generated forward declare list
+// clang-format off
+class Scheduler;
+class WorkerPool;
+// clang-format on
+
 struct ResourceLoadManagerOptions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnkc1dcf2;
-    ::ll::UntypedStorage<8, 8>  mUnk333f53;
-    ::ll::UntypedStorage<8, 24> mUnkee3e79;
-    ::ll::UntypedStorage<1, 1>  mUnkf2d2c2;
+    ::ll::TypedStorage<8, 8, ::Scheduler*>                       mScheduler;
+    ::ll::TypedStorage<8, 8, ::WorkerPool*>                      mWorkerPool;
+    ::ll::TypedStorage<8, 24, ::std::optional<::Core::PathView>> mLoggingPath;
+    ::ll::TypedStorage<1, 1, bool>                               mRegisterClientResourceGroups;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    ResourceLoadManagerOptions& operator=(ResourceLoadManagerOptions const&);
-    ResourceLoadManagerOptions(ResourceLoadManagerOptions const&);
-    ResourceLoadManagerOptions();
 };

@@ -208,9 +208,9 @@ public:
 
     MCNAPI ::Bedrock::Safety::RedactableString getRedactedCustomName() const;
 
-    MCNAPI ::Bedrock::Safety::RedactableString getRedactedHoverName() const;
+    MCAPI ::Bedrock::Safety::RedactableString getRedactedHoverName() const;
 
-    MCNAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
+    MCAPI ::Bedrock::Safety::RedactableString getRedactedName() const;
 
     MCNAPI bool hasChargedItem() const;
 

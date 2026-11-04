@@ -457,7 +457,7 @@ public:
 
     MCNAPI bool $isBlocking() const;
 
-    MCNAPI void $setSprinting(bool shouldSprint);
+    MCAPI void $setSprinting(bool shouldSprint);
 
     MCNAPI bool $canBePulledIntoVehicle() const;
 

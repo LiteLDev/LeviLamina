@@ -87,24 +87,24 @@ public:
 
     MCAPI void clear();
 
-    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::std::shared_ptr<::ParticleEffectInfo> const& effectInfo,
         ::Matrix const&                                transform,
         ::MolangVariableMap                            molangVariableMap
     );
 
-    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(::HashedString const& effectName, ::Vec3 const& pos, ::MolangVariableMap molangVariableMap);
 
-    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::HashedString const& effectName,
         ::Matrix const&       transform,
         ::MolangVariableMap   molangVariableMap
     );
 
-    MCNAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
+    MCAPI ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32>
     createParticleEmitter(
         ::HashedString const& effectName,
         ::Actor const&        actor,
@@ -113,22 +113,22 @@ public:
         ::MolangVariableMap   molangVariableMap
     );
 
-    MCNAPI void emitParticleManually(
+    MCAPI void emitParticleManually(
         ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle,
         ::Vec3 const&                                                                            particlePosition,
         ::Vec3 const&                                                                            velocityAdd,
         float                                                                                    scaleMult
     );
 
-    MCNAPI uint64 getEffectEmitterCount(::HashedString const& effectName) const;
+    MCAPI uint64 getEffectEmitterCount(::HashedString const& effectName) const;
 
-    MCNAPI uint64 getEffectParticleCount(::HashedString const& effectName) const;
+    MCAPI uint64 getEffectParticleCount(::HashedString const& effectName) const;
 
-    MCNAPI void setEmitterIsManuallyEmitted(
+    MCAPI void setEmitterIsManuallyEmitted(
         ::Bedrock::slot_map_handle<::std::unique_ptr<::ParticleSystem::ParticleEmitter>, 64, 32> emitterHandle
     );
 
-    MCNAPI void tick(float a, bool paused);
+    MCAPI void tick(float a, bool paused);
     // NOLINTEND
 
 public:

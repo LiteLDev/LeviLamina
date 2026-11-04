@@ -287,7 +287,7 @@ public:
         bool      useActorRotation
     ) const;
 
-    MCNAPI void _emitNewParticle(
+    MCAPI void _emitNewParticle(
         ::ParticleSystem::ParticleEffect const& effect,
         ::Vec3 const&                           particleOriginOffset,
         ::Vec3 const&                           velocityAdd,

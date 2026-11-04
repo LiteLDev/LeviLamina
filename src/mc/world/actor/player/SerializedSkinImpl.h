@@ -55,9 +55,9 @@ public:
     // NOLINTBEGIN
     MCAPI SerializedSkinImpl();
 
-    MCNAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::ConnectionRequest const& request);
 
-    MCNAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
+    MCAPI explicit SerializedSkinImpl(::SubClientConnectionRequest const& request);
 
     MCNAPI SerializedSkinImpl(
         ::std::string const&      name,
@@ -80,26 +80,26 @@ public:
         bool                      overridesPlayerAppearance
     );
 
-    MCNAPI bool operator==(::SerializedSkinImpl const& rhs) const;
+    MCAPI bool operator==(::SerializedSkinImpl const& rhs) const;
 
-    MCNAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
+    MCAPI void setAnimatedImageData(::std::vector<::AnimatedImageData> animatedImages);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setCapeId(::std::string const& capeId);
+    MCAPI void setCapeId(::std::string const& capeId);
 
-    MCNAPI void setCapeImageData(::mce::Image const* image);
+    MCAPI void setCapeImageData(::mce::Image const* image);
 
-    MCNAPI void setImageData(::mce::Image const* image);
+    MCAPI void setImageData(::mce::Image const* image);
 #endif
 
-    MCNAPI void setPersonaAppearanceData(
+    MCAPI void setPersonaAppearanceData(
         ::SharedTypes::persona::ArmSizeType const&                                     armSizeType,
         ::mce::Color const&                                                            skinColor,
         ::std::vector<::SerializedPersonaPieceHandle>                                  personaPieces,
         ::std::unordered_map<::SharedTypes::persona::PieceType, ::TintMapColor> const& pieceTintColors
     );
 
-    MCNAPI void updateGeometryName();
+    MCAPI void updateGeometryName();
     // NOLINTEND
 
 public:
@@ -107,9 +107,9 @@ public:
     // NOLINTBEGIN
     MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ConnectionRequest const& request);
+    MCAPI void* $ctor(::ConnectionRequest const& request);
 
-    MCNAPI void* $ctor(::SubClientConnectionRequest const& request);
+    MCAPI void* $ctor(::SubClientConnectionRequest const& request);
 
     MCNAPI void* $ctor(
         ::std::string const&      name,

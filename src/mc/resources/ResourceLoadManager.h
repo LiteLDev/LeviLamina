@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/Path.h"
 #include "mc/deps/core/threading/Async.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/platform/brstd/move_only_function.h"
@@ -10,7 +11,10 @@
 
 // auto generated forward declare list
 // clang-format off
+class Scheduler;
+class TaskGroup;
 class TaskResult;
+class WorkerPool;
 struct ResourceLoadManagerOptions;
 namespace Bedrock::Profiler::details { struct PredeclaredAnnotation; }
 // clang-format on
@@ -82,14 +86,18 @@ public:
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4>  mUnk641f6f;
-    ::ll::UntypedStorage<8, 8>  mUnkbc3f4e;
-    ::ll::UntypedStorage<8, 8>  mUnk833b4d;
-    ::ll::UntypedStorage<8, 16> mUnk2466a3;
-    ::ll::UntypedStorage<8, 8>  mUnkb77267;
-    ::ll::UntypedStorage<1, 1>  mUnk8953d0;
-    ::ll::UntypedStorage<8, 32> mUnkc455ca;
-    ::ll::UntypedStorage<8, 8>  mUnkddb755;
+    ::ll::TypedStorage<4, 4, int>           mRepeatedHitcountHACK;
+    ::ll::TypedStorage<8, 8, ::Scheduler&>  mScheduler;
+    ::ll::TypedStorage<8, 8, ::WorkerPool&> mWorkerPool;
+    ::ll::TypedStorage<
+        8,
+        16,
+        ::std::map<::ResourceLoadType, ::std::unique_ptr<::ResourceLoadManager::ResourceLoadTaskGroup>>>
+                                                                              mResourceLoadTaskGroups;
+    ::ll::TypedStorage<8, 8, uint64>                                          mAppSuspended;
+    ::ll::TypedStorage<1, 1, bool>                                            mSupportsCancel;
+    ::ll::TypedStorage<8, 32, ::Core::Path const>                             mLoggingPath;
+    ::ll::TypedStorage<8, 8, ::gsl::not_null<::std::unique_ptr<::TaskGroup>>> mDispatchTaskGroup;
     // NOLINTEND
 
 public:

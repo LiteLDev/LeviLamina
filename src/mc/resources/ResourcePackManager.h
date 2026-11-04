@@ -3,10 +3,13 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/file/PathBuffer.h"
 #include "mc/deps/core/resource/ResourcePackStackType.h"
 #include "mc/deps/core/sem_ver/SemVersion.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/deps/game_refs/OwnerPtr.h"
+#include "mc/deps/resource_processing/category/CategoryFileMapping.h"
+#include "mc/deps/resource_processing/category/CategoryMergeStrategyFactory.h"
 #include "mc/resources/ResourcePackLoader.h"
 
 // auto generated forward declare list
@@ -14,11 +17,13 @@
 class ContentTierIncompatibleReason;
 class IContentTierManager;
 class LinkedAssetValidator;
+class LoadedResourceData;
 class PackInstance;
 class PackSourceReport;
 class ResourcePack;
 class ResourcePackListener;
 class ResourcePackStack;
+struct ResourceMergeOptions;
 // clang-format on
 
 class ResourcePackManager : public ::ResourcePackLoader {
@@ -33,11 +38,15 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64> mUnkd67bde;
-        ::ll::UntypedStorage<8, 8>  mUnk542099;
-        ::ll::UntypedStorage<1, 1>  mUnk6180e5;
-        ::ll::UntypedStorage<8, 64> mUnkf0d8cc;
-        ::ll::UntypedStorage<8, 64> mUnkc1a4c3;
+        ::ll::TypedStorage<8, 64, ::std::function<::Core::PathBuffer<::std::string>()>>             getPath;
+        ::ll::TypedStorage<8, 8, ::Bedrock::NotNullNonOwnerPtr<::IContentTierManager const> const&> contentTierManager;
+        ::ll::TypedStorage<1, 1, bool>                                                              needsToInitialize;
+        ::ll::TypedStorage<8, 64, ::Bedrock::Resources::CategoryFileMapping>                        categoryFileMapping;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::Bedrock::Resources::CategoryMergeStrategyFactory<::LoadedResourceData, ::ResourceMergeOptions>>
+            mergeStrategyFactory;
         // NOLINTEND
 
     public:

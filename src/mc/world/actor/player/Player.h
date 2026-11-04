@@ -970,12 +970,12 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void unRegisterTrackedBoss(::ActorUniqueID mob);
 
-    MCNAPI bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
+    MCAPI bool updateEmoteMessageData(::PersonaPiece const& emotePiece);
 #endif
 
     MCAPI void updateInventoryTransactions();
 
-    MCNAPI void updateSkin(::SerializedSkinRef const& skin, int clientSubID);
+    MCAPI void updateSkin(::SerializedSkinRef const& skin, int clientSubID);
 
     MCNAPI void updateTouch();
 

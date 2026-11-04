@@ -137,20 +137,20 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
+    MCAPI ::std::shared_ptr<::UICustomRenderer> $clone() const;
 
     MCNAPI void $preRenderSetup(::MinecraftUIRenderContext& renderContext);
 
-    MCNAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
+    MCAPI bool $update(::IClientInstance& client, ::UIControl& owner, ::UIScene const&);
 
     MCAPI void
     $render(::MinecraftUIRenderContext& renderContext, ::IClientInstance& client, ::UIControl& owner, int pass);
 
-    MCNAPI ::UIBatchType $getBatchType() const;
+    MCAPI ::UIBatchType $getBatchType() const;
 
     MCNAPI int $getCustomId() const;
 
-    MCNAPI int $getNumRenderPasses() const;
+    MCAPI int $getNumRenderPasses() const;
 
     MCNAPI ::UIMaterialType $getUIMaterialType(int pass) const;
 

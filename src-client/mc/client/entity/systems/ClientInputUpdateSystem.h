@@ -47,7 +47,7 @@ public:
         ::Optional<::WasInWaterFlagComponent const> isInWater
     );
 
-    MCNAPI static void inputHandlerUpdatePlayerState(
+    MCAPI static void inputHandlerUpdatePlayerState(
         ::MovementAbilitiesComponent const&         abilities,
         ::MobEffectsComponent const&                mobEffects,
         ::ActorDataFlagComponent const&             synchedActorData,

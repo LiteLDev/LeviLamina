@@ -87,37 +87,37 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ParticleEffectData_Legacy();
+    MCAPI ParticleEffectData_Legacy();
 
-    MCNAPI ParticleEffectData_Legacy(::ParticleSystem::ParticleEffectData_Legacy&& other);
+    MCAPI ParticleEffectData_Legacy(::ParticleSystem::ParticleEffectData_Legacy&& other);
 
-    MCNAPI void _extractComponents(
+    MCAPI void _extractComponents(
         ::ConstDeserializeDataParams const&                      deserializeDataParams,
         ::ParticleSystem::ParticleEffectComponentRegistry const& particleComponentRegistry
     );
 
-    MCNAPI ~ParticleEffectData_Legacy();
+    MCAPI ~ParticleEffectData_Legacy();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SharedTypes::v1_20_80::ParticleEffectData
+    MCAPI static ::SharedTypes::v1_20_80::ParticleEffectData
     upgrade(::ParticleSystem::ParticleEffectData_Legacy&& legacyData);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
 
-    MCNAPI void* $ctor(::ParticleSystem::ParticleEffectData_Legacy&& other);
+    MCAPI void* $ctor(::ParticleSystem::ParticleEffectData_Legacy&& other);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 
