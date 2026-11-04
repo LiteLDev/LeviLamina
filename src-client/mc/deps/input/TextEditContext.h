@@ -59,7 +59,7 @@ public:
 
     MCNAPI void feedCaretUpdate(::TextEditContext::CaretUpdate caretMovement);
 
-    MCNAPI void feedText(::std::string_view utf8Text);
+    MCAPI void feedText(::std::string_view utf8Text);
 
     MCNAPI ::std::string const getText() const;
     // NOLINTEND

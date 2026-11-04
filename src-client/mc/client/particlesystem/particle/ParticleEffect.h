@@ -58,12 +58,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _generateEffectComponents(
+    MCAPI void _generateEffectComponents(
         ::SharedTypes::v1_20_80::ParticleEffectComponents&       componentData,
         ::ParticleSystem::ParticleEffectComponentRegistry const* particleComponentRegistry
     );
 
-    MCNAPI bool isManualEmitter() const;
+    MCAPI bool isManualEmitter() const;
     // NOLINTEND
 };
 

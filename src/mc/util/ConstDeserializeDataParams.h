@@ -2,10 +2,12 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/resources/MinEngineVersion.h"
+
 // auto generated forward declare list
 // clang-format off
-class MinEngineVersion;
-class SemVersion;
 struct DeserializeDataParams;
 namespace Json { class Value; }
 // clang-format on
@@ -14,9 +16,9 @@ struct ConstDeserializeDataParams {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 8>  mUnk53e6e0;
-    ::ll::UntypedStorage<8, 24> mUnkcb3186;
-    ::ll::UntypedStorage<8, 32> mUnk25c848;
+    ::ll::TypedStorage<8, 8, ::Json::Value const&>      mValue;
+    ::ll::TypedStorage<8, 24, ::SemVersion const>       mFormatVersion;
+    ::ll::TypedStorage<8, 32, ::MinEngineVersion const> mMinEngineVersion;
     // NOLINTEND
 
 public:

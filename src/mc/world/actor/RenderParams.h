@@ -102,7 +102,7 @@ public:
     // NOLINTBEGIN
     MCNAPI RenderParams(::RenderParams const&);
 
-    MCNAPI ::RenderParams& init(
+    MCAPI ::RenderParams& init(
         ::BaseActorRenderContext*            baseActorRenderContext,
         ::Actor*                             actor,
         ::AnimationComponent*                animationComponent,

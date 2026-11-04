@@ -91,7 +91,7 @@ public:
 
     MCNAPI bool _canSeeTarget(::BlockPos const& targetPosition) const;
 
-    MCNAPI void _executeEvent(::TransportItemsGoal::Event event) const;
+    MCAPI void _executeEvent(::TransportItemsGoal::Event event) const;
 
     MCNAPI void _reset();
 

@@ -120,7 +120,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ContainerManagerModel(::ContainerID containerId, ::Player& player);
+    MCAPI ContainerManagerModel(::ContainerID containerId, ::Player& player);
 
     MCNAPI void _addContainer(::std::shared_ptr<::ContainerModel> containerModel);
 
@@ -144,7 +144,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:

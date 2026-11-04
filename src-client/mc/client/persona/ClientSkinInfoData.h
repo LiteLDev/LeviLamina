@@ -44,34 +44,33 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ClientSkinInfoData();
+    MCAPI ClientSkinInfoData();
 
-    MCNAPI void setSkinAnimatedTextures(::std::vector<::BedrockTexture>&& newTextures);
+    MCAPI void setSkinAnimatedTextures(::std::vector<::BedrockTexture>&& newTextures);
 
-    MCNAPI bool trySetLodSkinImage(::mce::Image&& image, ::std::string const& profileHash);
+    MCAPI bool trySetLodSkinImage(::mce::Image&& image, ::std::string const& profileHash);
 
-    MCNAPI void unload();
+    MCAPI void unload();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void
-    $updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData);
+    MCAPI void $updateSkin(::SerializedSkinRef const& skin, ::mce::Image const* skinData, ::mce::Image const* capeData);
 
-    MCNAPI bool $hasValidTexture();
+    MCAPI bool $hasValidTexture();
     // NOLINTEND
 
 public:

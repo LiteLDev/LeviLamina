@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/string/HashedString.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
 #include "mc/platform/threading/UniqueLock.h"
@@ -12,7 +13,6 @@
 // clang-format off
 class GeometryInfo;
 class GeometryInheritanceTree;
-class HashedString;
 class MinEngineVersion;
 class ResourceLoadManager;
 class ResourcePackManager;
@@ -29,15 +29,10 @@ class GeometryGroup : public ::Bedrock::EnableNonOwnerReferences,
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 64> mUnk69fa9e;
-    ::ll::UntypedStorage<8, 80> mUnk557494;
-    ::ll::UntypedStorage<8, 8>  mUnk89a968;
+    ::ll::TypedStorage<8, 64, ::std::unordered_map<::HashedString, ::std::shared_ptr<::GeometryInfo>>> mGeometries;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                                            mGeometryLock;
+    ::ll::TypedStorage<8, 8, int64 const> mResourceLoadTimeStamp;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    GeometryGroup& operator=(GeometryGroup const&);
-    GeometryGroup(GeometryGroup const&);
 
 public:
     // virtual functions
@@ -61,7 +56,7 @@ public:
         ::std::function<void()> mainThreadCallback
     );
 
-    MCNAPI void addGeometries(
+    MCAPI void addGeometries(
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::Json::Value&                                       geometryData,
         ::MinEngineVersion const&                            minEngineVersion,
@@ -69,7 +64,7 @@ public:
         bool                                                 isAsync
     );
 
-    MCNAPI void loadGeometriesAsync(
+    MCAPI void loadGeometriesAsync(
         ::ResourcePackManager&                               resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager> resourceLoadManager,
         ::std::function<void(::std::weak_ptr<::GeometryGroup>, ::std::string const&, ::ModelParent const&)>
@@ -115,11 +110,11 @@ public:
         ::std::function<void(::Json::Value&)> postLoadFixup
     );
 
-    MCNAPI static bool checkVersionlessName(::std::string_view name, ::std::string_view versionlessGeoName);
+    MCAPI static bool checkVersionlessName(::std::string_view name, ::std::string_view versionlessGeoName);
 
-    MCNAPI static bool isValidGeometryIdentifier(::Json::Value const& name);
+    MCAPI static bool isValidGeometryIdentifier(::Json::Value const& name);
 
-    MCNAPI static bool isValidOptionalNamespaceGeometryIdentifier(::Json::Value const& name);
+    MCAPI static bool isValidOptionalNamespaceGeometryIdentifier(::Json::Value const& name);
 
     MCNAPI static void loadModel(
         ::std::weak_ptr<::GeometryGroup> weakGeometryGroup,

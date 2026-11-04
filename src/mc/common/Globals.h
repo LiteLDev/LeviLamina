@@ -1727,7 +1727,7 @@ MCNAPI void recursiveMerge(
     int                                                                             packIndex
 );
 
-MCNAPI void
+MCAPI void
 registerBedrockEffectComponents(::ParticleSystem::ParticleEffectComponentRegistry& particleComponentRegistry);
 
 MCNAPI void removeFromCollection(
@@ -1738,7 +1738,7 @@ MCNAPI void removeFromCollection(
     ::ControlCollectionFlag flag
 );
 
-MCNAPI ::mce::framebuilder::FrameBuilder* renderDragonFrameBuilder();
+MCAPI ::mce::framebuilder::FrameBuilder* renderDragonFrameBuilder();
 
 MCNAPI uchar* resample_row_1(uchar* out, uchar* in_near, uchar* in_far, int w, int hs);
 

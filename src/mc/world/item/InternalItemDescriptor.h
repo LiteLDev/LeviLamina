@@ -45,7 +45,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
+    MCAPI ::std::unique_ptr<::ItemDescriptor::BaseDescriptor> $clone() const;
 
     MCNAPI bool $sameItem(::ItemDescriptor::ItemEntry const& otherItem, bool compareAux) const;
 

@@ -220,7 +220,7 @@ public:
 
     MCAPI ::std::string const& getMessage(::SignTextSide side) const;
 
-    MCNAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
+    MCAPI ::SignTextSide getSideFacingPlayer(::Player const& player) const;
 
     MCNAPI void
     requestToSendOpenSignPacket(::WeakRef<::EntityContext> entityRef, ::BlockPos const& position, bool isFrontSide);
@@ -231,7 +231,7 @@ public:
     MCNAPI void setMessage(::SignTextSide side, ::TextObjectRoot message);
 #endif
 
-    MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
+    MCAPI void setMessageForServerScripingOnly(::SignTextSide side, ::std::string message, ::std::string ownerID);
 
     MCNAPI void setMessageForServerScripingOnly(::SignTextSide side, ::TextObjectRoot message, ::std::string ownerID);
     // NOLINTEND

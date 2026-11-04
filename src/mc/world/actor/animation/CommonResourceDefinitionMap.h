@@ -28,10 +28,10 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
+    MCAPI ::std::vector<::NamedMolangScript> const& getAnimateScriptArray() const;
 
 #ifdef LL_PLAT_C
-    MCNAPI uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
+    MCAPI uint64 getQueryableGeometryBoneIndexByNameHash(uint64 boneNameHash) const;
 
     MCNAPI void initQueryableGeometryBoneNames(::std::vector<::HashedString> geometryDefaultBoneOrientations);
 #endif

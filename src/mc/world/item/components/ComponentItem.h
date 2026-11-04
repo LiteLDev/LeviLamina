@@ -473,7 +473,7 @@ public:
 
     MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
-    MCNAPI uchar $getMaxStackSize(::ItemDescriptor const&) const;
+    MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
     MCNAPI ::HashedString const& $getCooldownCategory() const;
 

@@ -43,15 +43,15 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::ParticleEffectInfo> getParticleEffectInfo(::HashedString const& name);
+    MCAPI ::std::shared_ptr<::ParticleEffectInfo> getParticleEffectInfo(::HashedString const& name);
 
-    MCNAPI void loadParticleEffects(
+    MCAPI void loadParticleEffects(
         ::ResourcePackManager&                                   resourcePackManager,
         ::Bedrock::NotNullNonOwnerPtr<::ResourceLoadManager>     resourceLoadManager,
         ::ParticleSystem::ParticleEffectComponentRegistry const& particleComponentRegistry,
         ::LinkedAssetValidator&                                  validator
     );
 
-    MCNAPI void unloadParticleEffects();
+    MCAPI void unloadParticleEffects();
     // NOLINTEND
 };

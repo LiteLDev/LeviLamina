@@ -3,6 +3,7 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/threading/BasicLockbox.h"
 #include "mc/deps/core/utility/EnableNonOwnerReferences.h"
 
 class LinkedAssetValidator : public ::Bedrock::EnableNonOwnerReferences {
@@ -26,15 +27,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk34eb49;
-        ::ll::UntypedStorage<8, 32> mUnka5ac8c;
+        ::ll::TypedStorage<4, 4, int>            mAssetType;
+        ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        KnownObject& operator=(KnownObject const&);
-        KnownObject(KnownObject const&);
-        KnownObject();
     };
 
     struct KnownObjectHasher {};
@@ -43,48 +38,53 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4>  mUnk6cb2bf;
-        ::ll::UntypedStorage<8, 32> mUnk41daf1;
-        ::ll::UntypedStorage<8, 32> mUnkce0e5d;
+        ::ll::TypedStorage<4, 4, int>            mAssetType;
+        ::ll::TypedStorage<8, 32, ::std::string> mIdentifier;
+        ::ll::TypedStorage<8, 32, ::std::string> mReferencedFromContext;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        Reference& operator=(Reference const&);
-        Reference(Reference const&);
-        Reference();
     };
 
     struct AssetCollection {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkb4df7f;
-        ::ll::UntypedStorage<8, 24> mUnkce6ed9;
-        ::ll::UntypedStorage<8, 24> mUnk76fe3d;
-        ::ll::UntypedStorage<8, 64> mUnkd26c34;
-        ::ll::UntypedStorage<8, 64> mUnkf668bd;
+        ::ll::TypedStorage<1, 1, bool>                                              mIsClientAssetCollection;
+        ::ll::TypedStorage<8, 24, ::std::vector<::LinkedAssetValidator::Reference>> mAssetReferences;
+        ::ll::TypedStorage<8, 24, ::std::vector<::LinkedAssetValidator::Reference>> mFileReferences;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_set<
+                ::LinkedAssetValidator::KnownObject,
+                ::LinkedAssetValidator::KnownObjectHasher,
+                ::std::equal_to<::LinkedAssetValidator::KnownObject>>>
+            mAllIdentifiers;
+        ::ll::TypedStorage<
+            8,
+            64,
+            ::std::unordered_set<
+                ::LinkedAssetValidator::KnownObject,
+                ::LinkedAssetValidator::KnownObjectHasher,
+                ::std::equal_to<::LinkedAssetValidator::KnownObject>>>
+            mAllFiles;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        AssetCollection& operator=(AssetCollection const&);
-        AssetCollection(AssetCollection const&);
-        AssetCollection();
     };
 
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 104> mUnk1fb332;
-    ::ll::UntypedStorage<1, 1>   mUnk86474b;
-    ::ll::UntypedStorage<1, 1>   mUnk1d7f18;
+    ::ll::TypedStorage<
+        8,
+        104,
+        ::Bedrock::Threading::
+            BasicLockbox<::std::vector<::std::shared_ptr<::LinkedAssetValidator::AssetCollection>>, ::std::mutex>>
+                                                                                     mAllAssetCollections;
+    ::ll::TypedStorage<1, 1, ::std::atomic<::LinkedAssetValidator::ValidatorStatus>> mIsLoadingReferences;
+    ::ll::TypedStorage<1, 1, bool const>                                             mIsClient;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    LinkedAssetValidator& operator=(LinkedAssetValidator const&);
-    LinkedAssetValidator(LinkedAssetValidator const&);
     LinkedAssetValidator();
 
 public:

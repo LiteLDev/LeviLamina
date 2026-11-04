@@ -45,7 +45,7 @@ public:
 
     MCNAPI bool operator==(::SharedTypes::v1_20_80::ParticleEffectData const&) const;
 
-    MCNAPI ~ParticleEffectData();
+    MCAPI ~ParticleEffectData();
     // NOLINTEND
 
 public:
@@ -73,7 +73,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

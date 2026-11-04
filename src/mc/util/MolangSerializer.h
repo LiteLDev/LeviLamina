@@ -17,7 +17,7 @@ MCNAPI ::std::unique_ptr<::MolangScriptArg> deserializeScriptArg(::Json::Value c
 
 MCNAPI ::std::unique_ptr<::MolangVariable> deserializeVariable(::Json::Value const& json);
 
-MCNAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Value const& json);
+MCAPI ::std::unique_ptr<::MolangVariableMap> deserializeVariableMap(::Json::Value const& json);
 
 MCNAPI ::Json::Value serializeScriptArg(::MolangScriptArg const& scriptArg);
 

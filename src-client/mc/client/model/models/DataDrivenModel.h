@@ -66,7 +66,7 @@ public:
 
     MCNAPI ::AABB getOrCalculateDefaultPoseAABB(::BaseActorRenderContext& renderContext);
 
-    MCNAPI ::std::string getResourceDefinitionName() const;
+    MCAPI ::std::string getResourceDefinitionName() const;
 
     MCNAPI bool hasScript(::HashedString const& name) const;
 

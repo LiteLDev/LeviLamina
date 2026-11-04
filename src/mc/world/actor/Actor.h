@@ -903,7 +903,7 @@ public:
 
     MCAPI bool hasType(::ActorType types) const;
 
-    MCNAPI bool hasUniqueID() const;
+    MCAPI bool hasUniqueID() const;
 
     MCAPI void heal(int heal);
 
@@ -1106,7 +1106,7 @@ public:
     MCNAPI void setRedactableNameTag(::Bedrock::Safety::RedactableString const& name);
 
 #ifdef LL_PLAT_C
-    MCNAPI void setRotationWrapped(::Vec2 const& rot);
+    MCAPI void setRotationWrapped(::Vec2 const& rot);
 #endif
 
     MCNAPI void setRuntimeID(::ActorRuntimeID id);
@@ -1189,7 +1189,7 @@ public:
     );
 #endif
 
-    MCNAPI static bool isInLiquid(
+    MCAPI static bool isInLiquid(
         ::SharedTypes::v1_26_20::MaterialType liquidType,
         ::IConstBlockSource const&            region,
         ::AABB const&                         mainAABB,

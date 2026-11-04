@@ -41,9 +41,13 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<2, 2>  mUnk3e9543;
-        ::ll::UntypedStorage<8, 24> mUnkb41697;
-        ::ll::UntypedStorage<8, 32> mUnkd44d5c;
+        ::ll::TypedStorage<2, 2, ::cereal::ResultCode> mResultCode;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>>>
+                                                 mContext;
+        ::ll::TypedStorage<8, 32, ::std::string> mMessage;
         // NOLINTEND
 
     public:
@@ -68,10 +72,18 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkecd095;
-        ::ll::UntypedStorage<8, 24> mUnk4f5fdc;
-        ::ll::UntypedStorage<8, 24> mUnk89974d;
-        ::ll::UntypedStorage<8, 32> mUnk615a04;
+        ::ll::TypedStorage<1, 1, ::Puv::Logger::UpgradeResultCode> mResultCode;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>>>
+            mContextSrc;
+        ::ll::TypedStorage<
+            8,
+            24,
+            ::std::vector<::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>>>
+                                                 mContextDst;
+        ::ll::TypedStorage<8, 32, ::std::string> mMessage;
         // NOLINTEND
 
     public:
@@ -96,15 +108,9 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkfab5d3;
-        ::ll::UntypedStorage<8, 32> mUnkb040ef;
+        ::ll::TypedStorage<1, 1, ::Puv::Logger::ValidationResultCode> mResultCode;
+        ::ll::TypedStorage<8, 32, ::std::string>                      mMessage;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ValidationLogEntry& operator=(ValidationLogEntry const&);
-        ValidationLogEntry(ValidationLogEntry const&);
-        ValidationLogEntry();
 
     public:
         // member functions
@@ -119,16 +125,40 @@ public:
         // NOLINTEND
     };
 
+    using Context = ::std::pair<::cereal::BasicSerializerContext::ContextType, ::std::string>;
+
+    using ContextType = ::cereal::BasicSerializerContext::ContextType;
+
+    using ParseLogIterable = ::entt::iterable_adaptor<
+        ::Puv::LoggerIterator<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>,
+        ::Puv::LoggerIterator<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ParseLogEntry>>>>>;
+
+    using ParseResultCode = ::cereal::ResultCode;
+
+    using UpgradeLogIterable = ::entt::iterable_adaptor<
+        ::Puv::LoggerIterator<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>,
+        ::Puv::LoggerIterator<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::UpgradeLogEntry>>>>>;
+
+    using ValidationLogIterable = ::entt::iterable_adaptor<
+        ::Puv::LoggerIterator<
+            ::std::_Vector_const_iterator<::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>,
+        ::Puv::LoggerIterator<::std::_Vector_const_iterator<
+            ::std::_Vector_val<::std::_Simple_types<::Puv::Logger::ValidationLogEntry>>>>>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24> mUnk2f69a4;
-    ::ll::UntypedStorage<8, 24> mUnkb27419;
-    ::ll::UntypedStorage<8, 24> mUnk9fdd72;
-    ::ll::UntypedStorage<2, 2>  mUnka1ba32;
-    ::ll::UntypedStorage<1, 1>  mUnk3c26f9;
-    ::ll::UntypedStorage<1, 1>  mUnka0317f;
-    ::ll::UntypedStorage<1, 1>  mUnkbcb18b;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Puv::Logger::ParseLogEntry>>      mParseLog;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Puv::Logger::UpgradeLogEntry>>    mUpgradeLog;
+    ::ll::TypedStorage<8, 24, ::std::vector<::Puv::Logger::ValidationLogEntry>> mValidationLog;
+    ::ll::TypedStorage<2, 2, ::cereal::ResultCode>                              mParseErrorCodes;
+    ::ll::TypedStorage<1, 1, ::Puv::Logger::UpgradeResultCode>                  mUpgradeErrorCodes;
+    ::ll::TypedStorage<1, 1, ::Puv::Logger::ValidationResultCode>               mValidationErrorCodes;
+    ::ll::TypedStorage<1, 1, bool>                                              mHasErrors;
     // NOLINTEND
 
 public:

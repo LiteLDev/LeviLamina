@@ -27,9 +27,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::std::unique_ptr<::ParticleSystem::EffectComponentBase> generateComponent(::HashedString const& name) const;
+    MCAPI ::std::unique_ptr<::ParticleSystem::EffectComponentBase> generateComponent(::HashedString const& name) const;
 
-    MCNAPI void registerComponent(
+    MCAPI void registerComponent(
         ::HashedString const&                                                       name,
         ::std::function<::std::unique_ptr<::ParticleSystem::EffectComponentBase>()> createFunc
     );

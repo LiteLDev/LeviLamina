@@ -50,7 +50,7 @@ public:
         ::std::string_view                      debugName
     ) const;
 
-    MCNAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
+    MCAPI ::cg::TextureSetImageDescription getTextureSetImageDescription() const;
 
     MCNAPI bool load(
         ::mce::TextureResourceService&                                 textureResourceService,

@@ -175,14 +175,14 @@ public:
         ::std::string const&  runtimeController
     );
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
+    MCAPI ::std::shared_ptr<::ActorAnimationPlayer> findAnimation(::HashedString const& rawAnimationName);
 
-    MCNAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
+    MCAPI ::std::shared_ptr<::ActorAnimationControllerPlayer>
     getAnimationControllerPlayer(::HashedString const& destControllerName, bool createIfMissing);
 
     MCNAPI ::ModelPartLocator* getLocator(::HashedString const& locatorNameHash);
 
-    MCNAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
+    MCAPI float getRegisteredAnimationLength(::std::string const& friendlyName) const;
 
     MCNAPI void initInstanceSpecificAnimationData(::MolangVariableMap* variableMap);
 #endif
@@ -194,7 +194,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
+    MCAPI bool isAnimationRegistered(::HashedString const& friendlyName) const;
 
     MCNAPI ::std::shared_ptr<::ActorAnimationControllerStatePlayer> playAnimation(
         ::HashedString const& friendlyName,

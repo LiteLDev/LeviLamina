@@ -364,7 +364,7 @@ public:
 
     MCNAPI void bobHurt(::Matrix& mv, float a);
 
-    MCNAPI void bobView(::Matrix& mv, float a);
+    MCAPI void bobView(::Matrix& mv, float a);
 
     MCNAPI ::CrackRenderObject createCrackRenderObject(
         ::ScreenContext&  screenContext,

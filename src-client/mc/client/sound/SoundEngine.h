@@ -206,7 +206,7 @@ public:
         ::std::shared_ptr<::std::vector<::Bedrock::Resources::PreloadedPathHandle>> preloadHandles
     );
 
-    MCNAPI uint64 playFromMemory(
+    MCAPI uint64 playFromMemory(
         ::Core::Path const& soundName,
         char const*         data,
         uint64              dataSize,

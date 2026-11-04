@@ -1716,7 +1716,7 @@ public:
 
     MCAPI void $onAppFocusLost();
 
-    MCNAPI void $onAppFocusGained();
+    MCAPI void $onAppFocusGained();
 
     MCNAPI void $onAppPaused();
 
@@ -2167,7 +2167,7 @@ public:
 
     MCNAPI void $onActiveResourcePacksChanged(::ResourcePackManager& mgr);
 
-    MCNAPI bool $onFullPackStackInvalid();
+    MCAPI bool $onFullPackStackInvalid();
 
     MCNAPI void $onLanguageSubpacksChanged();
 
@@ -2226,7 +2226,7 @@ public:
 
     MCNAPI void $resetThreadCallbacks();
 
-    MCNAPI bool $isInGame() const;
+    MCAPI bool $isInGame() const;
 
     MCNAPI bool $isInServer() const;
 

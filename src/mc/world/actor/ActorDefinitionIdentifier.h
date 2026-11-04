@@ -34,7 +34,7 @@ public:
 
     MCAPI explicit ActorDefinitionIdentifier(char const* fullName);
 
-    MCNAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
+    MCAPI explicit ActorDefinitionIdentifier(::std::string_view fullName);
 
     MCAPI ActorDefinitionIdentifier(::ActorDefinitionIdentifier const& other);
 
@@ -72,7 +72,7 @@ public:
 
     MCAPI void* $ctor(char const* fullName);
 
-    MCNAPI void* $ctor(::std::string_view fullName);
+    MCAPI void* $ctor(::std::string_view fullName);
 
     MCAPI void* $ctor(::ActorDefinitionIdentifier const& other);
 

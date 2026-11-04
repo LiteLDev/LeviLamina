@@ -2,20 +2,20 @@
 
 #include "mc/_HeaderOutputPredefine.h"
 
+// auto generated forward declare list
+// clang-format off
+class DataDrivenGeometry;
+class RenderController;
+// clang-format on
+
 struct RenderControllerToProcess {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnk176ade;
-    ::ll::UntypedStorage<8, 16> mUnkabc415;
-    ::ll::UntypedStorage<8, 8>  mUnkb50ef8;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::RenderController>> mRenderController;
+    ::ll::TypedStorage<8, 16, ::std::weak_ptr<::DataDrivenGeometry>> mGeo;
+    ::ll::TypedStorage<8, 8, uint64>                                 mSortIndex;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    RenderControllerToProcess& operator=(RenderControllerToProcess const&);
-    RenderControllerToProcess(RenderControllerToProcess const&);
-    RenderControllerToProcess();
 
 public:
     // member functions

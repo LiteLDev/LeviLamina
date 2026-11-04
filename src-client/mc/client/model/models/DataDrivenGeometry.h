@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void copyTransformMatricesToModelParts(::RenderParams& renderParams);
 
-    MCNAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
+    MCAPI ::std::vector<::HashedString> getQueryableBoneOrientations() const;
     // NOLINTEND
 
 public:

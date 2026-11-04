@@ -3,13 +3,9 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/json/Value.h"
 #include "mc/deps/puv/Input.h"
-
-// auto generated forward declare list
-// clang-format off
-class SemVersion;
-namespace Json { class Value; }
-// clang-format on
 
 namespace Puv {
 
@@ -17,14 +13,12 @@ class JsonCppInput : public ::Puv::Input {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 16> mUnkec571a;
-    ::ll::UntypedStorage<8, 24> mUnkb4e3a6;
+    ::ll::TypedStorage<8, 16, ::Json::Value> mData;
+    ::ll::TypedStorage<8, 24, ::SemVersion>  mVersion;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    JsonCppInput& operator=(JsonCppInput const&);
-    JsonCppInput(JsonCppInput const&);
     JsonCppInput();
 
 public:

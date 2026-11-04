@@ -502,7 +502,7 @@ public:
 
     MCNAPI void $setContainerData(::IContainerManager& menu, int id, int value);
 
-    MCNAPI void $slotChanged(
+    MCAPI void $slotChanged(
         ::IContainerManager& menu,
         ::Container&         container,
         int                  slot,

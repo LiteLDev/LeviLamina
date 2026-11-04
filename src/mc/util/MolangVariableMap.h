@@ -68,10 +68,10 @@ public:
 
     MCAPI ::MolangVariable* _getOrAddMolangVariable(::MolangVariableIndex molangVariableIndex);
 
-    MCNAPI ::MolangVariableMap& clear();
+    MCAPI ::MolangVariableMap& clear();
 
 #ifdef LL_PLAT_C
-    MCNAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
+    MCAPI ::MolangScriptArg const& getMolangVariable(uint64 variableNameHash, char const*) const;
 #endif
 
     MCNAPI ::MolangVariableMap& operator=(::MolangVariableMap&& rhs);
