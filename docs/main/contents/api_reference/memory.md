@@ -126,6 +126,49 @@ LL_AUTO_INSTANCE_HOOK(
 }
 ```
 
+### Virtual Functions from a Secondary Base
+
+On Windows, when a class overrides a virtual function inherited from a base other than its first one, the game calls
+the override with `this` pointing at that base instead of at the start of the object. `ServerNetworkHandler`, for
+example, gets its `handle` functions from `NetEventCallback`, which is not its first base, so the game calls them with
+`this` 16 bytes into the object.
+
+The Bedrock headers list these functions with `LL_VIRTUAL_THIS_BASE` after the class. When the hooked function is
+listed, the instance hook macros move `this` back to the start of the object before your code runs and pass the base
+pointer again in `origin`, so `this` is an ordinary `ServerNetworkHandler`:
+
+```cpp
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    ChatHook,
+    ll::memory::HookPriority::Normal,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::$handle,
+    void,
+    NetworkIdentifier const& identifier,
+    TextPacket const&        packet
+) {
+    if (auto player = _getServerPlayer(identifier, packet.mSenderSubId)) {
+        // ...
+    }
+    origin(identifier, packet);
+}
+```
+
+`thisFor<T>()` keeps returning the right object, so hooks written before a function was listed still work. Do not
+adjust `this` by hand. For a function the headers do not list yet, add the entry yourself at global namespace scope
+before the hook, giving the class, the function, its signature and the base it comes from:
+
+```cpp
+LL_VIRTUAL_THIS_BASE(
+    ::ServerNetworkHandler,
+    $handle,
+    void(::NetworkIdentifier const&, ::TextPacket const&),
+    ::NetEventCallback
+);
+```
+
+Wrap a class or base whose name contains a comma in `LL_VA_EXPAND(...)`.
+
 ### Hook with Priority
 
 ```cpp
@@ -169,6 +212,7 @@ void callVirtual(void* obj) {
 
 - Use function pointers (`&ClassName::method`) instead of symbol names
 - Hook priority determines execution order (lower number = earlier)
+- `LL_VIRTUAL_THIS_BASE` only takes effect on Windows; on Linux these functions already receive the whole object
 
 ## Related
 

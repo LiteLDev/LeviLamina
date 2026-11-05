@@ -120,4 +120,78 @@ TEST(HookTest, HookExPreservesStaticSingletonIdentity) {
 
     EXPECT_EQ(&instance1, &instance2);
 }
+
+#if defined(_MSC_VER)
+class TestThisBasePrimary {
+public:
+    virtual ~TestThisBasePrimary() = default;
+
+    int primary = 1;
+};
+
+class TestThisBaseCallback {
+public:
+    virtual ~TestThisBaseCallback() = default;
+    virtual int read(int a) const { return base + a; }
+
+    int base = 2;
+};
+
+class TestThisBaseHandler : public TestThisBasePrimary, public TestThisBaseCallback {
+public:
+    int read(int a) const override { return base + a; }
+    int $read(int a) const;
+
+    int value = 40;
+};
+
+LL_VIRTUAL_THIS_BASE(::TestThisBaseHandler, $read, int(int) const, ::TestThisBaseCallback);
+
+static_assert(
+    std::is_same_v<
+        ll::VirtualThisBase<static_cast<int (TestThisBaseHandler::*)(int) const>(&TestThisBaseHandler::$read)>::type,
+        TestThisBaseCallback>
+);
+
+LL_NOINLINE int TestThisBaseHandler::$read(int a) const {
+    int volatile result = static_cast<TestThisBaseCallback const*>(static_cast<void const*>(this))->base;
+    return result + a;
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    TestThisBaseHook,
+    HookPriority::Normal,
+    TestThisBaseHandler,
+    &TestThisBaseHandler::$read,
+    int,
+    int a
+) {
+    return value + origin(a);
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    TestThisBaseOuterHook,
+    HookPriority::High,
+    TestThisBaseHandler,
+    &TestThisBaseHandler::$read,
+    int,
+    int a
+) {
+    return thisFor<TestThisBaseCallback>()->value * 100 + origin(a);
+}
+
+TEST(HookTest, VirtualThisBaseHooksReceiveWholeObject) {
+    TestThisBaseHandler handler;
+    auto                call =
+        reinterpret_cast<int (*)(TestThisBaseCallback const*, int)>(ll::memory::toFuncPtr(&TestThisBaseHandler::$read));
+
+    TestThisBaseHook::hook();
+    TestThisBaseOuterHook::hook();
+    auto result = call(&handler, 1);
+    TestThisBaseOuterHook::unhook();
+    TestThisBaseHook::unhook();
+
+    EXPECT_EQ(result, 4043);
+}
+#endif
 // NOLINTEND

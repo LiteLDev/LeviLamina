@@ -245,6 +245,9 @@ v5 = (const struct Player *)(*(__int64 (__fastcall **)(char *, const struct Netw
 auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId);
 ```
 
+头文件用 `LL_VIRTUAL_THIS_BASE` 列出这个 `$handle` 之后（见[来自非首个基类的虚函数](../../api_reference/memory.zh.md#来自非首个基类的虚函数)），
+钩子收到的就已经是完整的对象：可以直接调用 `_getServerPlayer(identifier, packet.mSenderSubId)`，`thisFor<NetEventCallback>()` 则会原样返回 `this`。
+
 就此，我们已经实现了我们的目标，我们可以Hook这个函数，实现我们的功能。
 
 具体的代码实现，限于篇幅，不再赘述。

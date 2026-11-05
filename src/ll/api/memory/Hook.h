@@ -1,12 +1,14 @@
 #pragma once
 
 #include <atomic> // IWYU pragma: keep
+#include <bit>
 #include <cstdint>
 #include <memory>
 #include <string>
 #include <string_view>
 #include <type_traits>
 
+#include "ll/api/base/Alias.h"
 #include "ll/api/base/CompilerPredefine.h"
 #include "ll/api/base/Concepts.h" // IWYU pragma: keep
 #include "ll/api/base/Macro.h"
@@ -112,6 +114,74 @@ consteval bool virtualDetector() noexcept {
 }
 using ::ll::internal::virtualDetector;
 
+namespace detail {
+template <class Fn, Fn Identifier>
+struct VirtualThisBaseOf {};
+
+#if defined(_MSC_VER)
+template <class Fn, Fn Identifier>
+    requires requires { typename ::ll::VirtualThisBase<Identifier>::type; }
+struct VirtualThisBaseOf<Fn, Identifier> : ::ll::VirtualThisBase<Identifier> {};
+#endif
+
+template <class Hook, class Base, class Type, class Ret, class... Args>
+struct VirtualThisEntry : Base {
+    using Original = Ret (VirtualThisEntry::*)(Args...);
+
+    Ret entry(Args... args) {
+        return static_cast<Hook*>(static_cast<Type*>(static_cast<Base*>(this)))->detour(std::forward<Args>(args)...);
+    }
+};
+
+template <class Hook, class Base, class Fn>
+struct VirtualThisEntryOf;
+
+template <class Hook, class Base, class Type, class Ret, class... Args>
+struct VirtualThisEntryOf<Hook, Base, Ret (Type::*)(Args...)> {
+    using type = VirtualThisEntry<Hook, Base, Type, Ret, Args...>;
+};
+
+template <class Hook, class Base, class Type, class Ret, class... Args>
+struct VirtualThisEntryOf<Hook, Base, Ret (Type::*)(Args...) const> {
+    using type = VirtualThisEntry<Hook, Base, Type, Ret, Args...>;
+};
+
+template <class T>
+    requires std::is_member_function_pointer_v<T>
+[[nodiscard]] T fromFuncPtr(FuncPtr fp) noexcept {
+    if constexpr (sizeof(T) == sizeof(FuncPtr)) {
+        return std::bit_cast<T>(fp);
+    } else {
+        struct {
+            FuncPtr   fp;
+            ptrdiff_t offset;
+        } raw{fp, 0};
+        return std::bit_cast<T>(raw);
+    }
+}
+
+template <class Hook, class Type, class Base, class Fn, class Detour>
+[[nodiscard]] FuncPtr detourEntry(Detour detour) {
+    if constexpr (std::is_same_v<Base, Type>) {
+        return toFuncPtr(detour);
+    } else {
+        return toFuncPtr(&VirtualThisEntryOf<Hook, Base, Fn>::type::entry);
+    }
+}
+
+template <class Type, class Base, class Hook, class Fn, class... Args>
+decltype(auto) callOriginal(Hook* self, Fn original, Args&&... args) {
+    if constexpr (std::is_same_v<Base, Type>) {
+        return (self->*original)(std::forward<Args>(args)...);
+    } else {
+        using Entry = typename VirtualThisEntryOf<Hook, Base, Fn>::type;
+        auto target = fromFuncPtr<typename Entry::Original>(toFuncPtr(original));
+        auto entry  = static_cast<Entry*>(static_cast<Base*>(static_cast<Type*>(self)));
+        return (entry->*target)(std::forward<Args>(args)...);
+    }
+}
+} // namespace detail
+
 template <class... Ts>
 class HookRegistrar {
 public:
@@ -192,11 +262,37 @@ struct LL_EBO Hook {};
             }                                                                                                          \
         }                                                                                                              \
                                                                                                                        \
+        template <class T>                                                                                             \
+        static constexpr auto _ThisBaseOf() noexcept {                                                                 \
+            if constexpr (requires { typename ::ll::memory::detail::VirtualThisBaseOf<T, IDENTIFIER>::type; }) {       \
+                return ::std::type_identity<typename ::ll::memory::detail::VirtualThisBaseOf<T, IDENTIFIER>::type>{};  \
+            } else {                                                                                                   \
+                return ::std::type_identity<TYPE>{};                                                                   \
+            }                                                                                                          \
+        }                                                                                                              \
+                                                                                                                       \
+        template <class T = _OriginFuncType>                                                                           \
+        using _ThisBase = typename decltype(_ThisBaseOf<T>())::type;                                                   \
+                                                                                                                       \
+        static _FuncPtr _DetourEntry() {                                                                               \
+            return ::ll::memory::detail::detourEntry<DEF_TYPE, TYPE, _ThisBase<>, _OriginFuncType>(&DEF_TYPE::detour); \
+        }                                                                                                              \
+                                                                                                                       \
+        template <class... Args>                                                                                       \
+        RET_TYPE _CallOriginal(Args&&... params) {                                                                     \
+            return ::ll::memory::detail::callOriginal<TYPE, _ThisBase<>>(                                              \
+                this,                                                                                                  \
+                _OriginalFunc,                                                                                         \
+                ::std::forward<Args>(params)...                                                                        \
+            );                                                                                                         \
+        }                                                                                                              \
+                                                                                                                       \
     public:                                                                                                            \
         template <class T>                                                                                             \
             requires(::std::is_polymorphic_v<TYPE> && ::std::is_base_of_v<T, TYPE>)                                    \
         [[nodiscard]] TYPE* thisFor() {                                                                                \
-            return static_cast<decltype(this)>(reinterpret_cast<T*>(reinterpret_cast<uintptr_t>(this)));               \
+            auto raw = reinterpret_cast<uintptr_t>(static_cast<_ThisBase<>*>(static_cast<TYPE*>(this)));               \
+            return static_cast<decltype(this)>(reinterpret_cast<T*>(raw));                                             \
         }                                                                                                              \
         template <class... Args>                                                                                       \
         STATIC RET_TYPE origin(Args&&... params) {                                                                     \
@@ -210,7 +306,7 @@ struct LL_EBO Hook {};
             if (!_HookTarget) _HookTarget = ::ll::memory::resolveIdentifier<_OriginFuncType>(IDENTIFIER);              \
             return ::ll::memory::hookEx(                                                                               \
                 _HookTarget,                                                                                           \
-                ::ll::memory::toFuncPtr(&DEF_TYPE::detour),                                                            \
+                _DetourEntry(),                                                                                        \
                 reinterpret_cast<_FuncPtr*>(&_OriginalFunc),                                                           \
                 PRIORITY,                                                                                              \
                 OPTIONS,                                                                                               \
@@ -219,7 +315,7 @@ struct LL_EBO Hook {};
         }                                                                                                              \
                                                                                                                        \
         static bool unhook(bool suspendThreads = true) {                                                               \
-            return ::ll::memory::unhook(_HookTarget, ::ll::memory::toFuncPtr(&DEF_TYPE::detour), suspendThreads);      \
+            return ::ll::memory::unhook(_HookTarget, _DetourEntry(), suspendThreads);                                  \
         }                                                                                                              \
     };                                                                                                                 \
     REGISTER;                                                                                                          \
@@ -242,10 +338,10 @@ struct LL_EBO Hook {};
 #define LL_AUTO_STATIC_HOOK_IMPL(...) LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((*), static, _OriginalFunc, __VA_ARGS__))
 
 #define LL_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, ...)                                                                     \
-    LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((TYPE::*), , (this->*_OriginalFunc), DEF_TYPE, TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_MANUAL_REG_HOOK_IMPL((TYPE::*), , _CallOriginal, DEF_TYPE, TYPE, __VA_ARGS__))
 
 #define LL_AUTO_INSTANCE_HOOK_IMPL(DEF_TYPE, TYPE, ...)                                                                \
-    LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((TYPE::*), , (this->*_OriginalFunc), DEF_TYPE, TYPE, __VA_ARGS__))
+    LL_VA_EXPAND(LL_AUTO_REG_HOOK_IMPL((TYPE::*), , _CallOriginal, DEF_TYPE, TYPE, __VA_ARGS__))
 
 /**
  * @brief Register a hook for a typed static function.

@@ -245,6 +245,11 @@ And by consulting LeviLamina's information about [ServerNetworkHandler](https://
 auto player = thisFor<NetEventCallback>()->_getServerPlayer(identifier, packet.mSenderSubId);
 ```
 
+Once the header lists this `$handle` with `LL_VIRTUAL_THIS_BASE` (see
+[Virtual Functions from a Secondary Base](../../api_reference/memory.md#virtual-functions-from-a-secondary-base)), the
+hook already receives the whole object: `_getServerPlayer(identifier, packet.mSenderSubId)` works directly, and
+`thisFor<NetEventCallback>()` returns `this` unchanged.
+
 Thus, we have achieved our goal. We can hook this function to implement our feature.
 
 The specific code implementation is omitted due to space constraints.

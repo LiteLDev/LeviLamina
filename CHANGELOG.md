@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added `LL_VIRTUAL_THIS_BASE`, which records that a virtual function overridden from a secondary base is called with `this` pointing at that base
+
+### Changed
+
+- On Windows, instance hooks on functions recorded with `LL_VIRTUAL_THIS_BASE` receive `this` as the whole object, and `origin` passes the base pointer back; `thisFor<T>()` is unaffected, but hooks that offset `this` by hand must stop doing so
+
 ## [26.60.1] - 2026-11-05
 
 ### Changed

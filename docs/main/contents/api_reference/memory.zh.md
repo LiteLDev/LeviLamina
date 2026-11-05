@@ -126,6 +126,46 @@ LL_AUTO_INSTANCE_HOOK(
 }
 ```
 
+### 来自非首个基类的虚函数
+
+在 Windows 上，如果一个类重写的虚函数继承自它的非首个基类，游戏调用这个重写时传入的 `this` 指向该基类，而不是对象的起始位置。
+例如 `ServerNetworkHandler` 的 `handle` 函数来自 `NetEventCallback`，而它不是 `ServerNetworkHandler` 的首个基类，
+所以游戏调用这些函数时，`this` 位于对象起始位置之后 16 字节处。
+
+Bedrock 头文件在类的后面用 `LL_VIRTUAL_THIS_BASE` 列出了这些函数。被 Hook 的函数在列表中时，实例方法钩子宏会在你的代码运行之前
+把 `this` 移回对象的起始位置，并在 `origin` 中重新传入基类指针，所以 `this` 就是普通的 `ServerNetworkHandler`：
+
+```cpp
+LL_AUTO_TYPE_INSTANCE_HOOK(
+    ChatHook,
+    ll::memory::HookPriority::Normal,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::$handle,
+    void,
+    NetworkIdentifier const& identifier,
+    TextPacket const&        packet
+) {
+    if (auto player = _getServerPlayer(identifier, packet.mSenderSubId)) {
+        // ...
+    }
+    origin(identifier, packet);
+}
+```
+
+`thisFor<T>()` 仍然返回正确的对象，所以函数被列出之前写的钩子依然可用。不要手动偏移 `this`。头文件还没有列出的函数，可以在全局命名空间、
+钩子之前自己添加一项，依次给出类、函数、函数签名和它来自的基类：
+
+```cpp
+LL_VIRTUAL_THIS_BASE(
+    ::ServerNetworkHandler,
+    $handle,
+    void(::NetworkIdentifier const&, ::TextPacket const&),
+    ::NetEventCallback
+);
+```
+
+类名或基类名中含有逗号时，用 `LL_VA_EXPAND(...)` 包起来。
+
 ### 带优先级的钩子
 
 ```cpp
@@ -169,6 +209,7 @@ void callVirtual(void* obj) {
 
 - 使用函数指针（`&ClassName::method`）而不是符号名称
 - 钩子优先级决定执行顺序（数字越小越早执行）
+- `LL_VIRTUAL_THIS_BASE` 只在 Windows 上生效；在 Linux 上这些函数本来就会收到完整的对象
 
 ## 相关模块
 

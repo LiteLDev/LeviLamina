@@ -126,4 +126,15 @@ struct TypedStorageType<A, S, T[N]> {
 template <size_t A, size_t S, class T>
 using TypedStorage = TypedStorageType<A, S, T>::Type;
 
+template <auto Fn>
+struct VirtualThisBase {};
+
+template <class Signature, class Type>
+using MemberFunctionPointer = Signature Type::*;
+
 } // namespace ll
+
+#define LL_VIRTUAL_THIS_BASE(TYPE, FUNCTION, SIGNATURE, BASE)                                                          \
+    template <>                                                                                                        \
+    struct ll::VirtualThisBase<static_cast<::ll::MemberFunctionPointer<SIGNATURE, TYPE>>(&TYPE::FUNCTION)>             \
+    : ::std::type_identity<BASE> {}
