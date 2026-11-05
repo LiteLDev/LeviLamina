@@ -293,11 +293,13 @@ void talkToServer() {
 
 ### How the Check Works
 
-When a player logs in, after `PlayerConnectEvent`, the server holds back StartGame. It sends `levilamina:register`
-listing the runtime ids of the packets it handles, followed by a `NetworkStackLatencyPacket` with a zero timestamp as a
-fence. A LeviLamina client answers with its own `levilamina:register` before echoing the fence; a vanilla client drops
-the unknown packet and only echoes the fence. When the fence comes back, the server checks the packets it requires and
-then sends StartGame or disconnects the client. The client checks the packets it requires when StartGame arrives.
+Once a client is authenticated, while it negotiates resource packs, the server sends `levilamina:register` listing the
+runtime ids of the packets it handles. A LeviLamina client answers with its own `levilamina:register` as soon as it
+reads the packet; a vanilla client drops the unknown packet. The server sends it ahead of the resource pack stack, so
+the answer of a LeviLamina client arrives before the client reports the stack as loaded. When that report arrives, the
+server checks the packets it requires before creating the player and disconnects the client if any are missing, so a
+rejected client never reaches `PlayerConnectEvent`. Until the player is created, `levilamina:register` is the only
+custom packet the server accepts from the client. The client checks the packets it requires when StartGame arrives.
 
 After that, each end sends `levilamina:register` again when the packets it handles change. It carries a bool, true when
 the packets are now handled and false when they no longer are, then an unsigned 64-bit varint count followed by that

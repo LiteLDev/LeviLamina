@@ -1,6 +1,5 @@
 #include "ll/core/network/PacketPeers.h"
 
-#include <chrono>
 #include <mutex>
 #include <shared_mutex>
 #include <string_view>
@@ -13,18 +12,16 @@
 #include "ll/api/service/GamingStatus.h"
 
 #include "mc/common/SubClientId.h"
+#include "mc/deps/certificates/WebToken.h"
 #include "mc/deps/core/utility/BinaryStream.h"
 #include "mc/deps/core/utility/ReadOnlyBinaryStream.h"
+#include "mc/deps/ecs/gamerefs_entity/GameRefsEntity.h"
 #include "mc/network/ConnectionRequest.h"
 #include "mc/network/NetworkIdentifier.h"
 #include "mc/network/ServerNetworkHandler.h"
 #include "mc/network/connection/DisconnectFailReason.h"
-#include "mc/network/packet/NetworkStackLatencyPacket.h"
-#include "mc/server/ServerPlayer.h"
 
 namespace ll::network {
-
-static constexpr std::chrono::steady_clock::time_point FenceTime{};
 
 class RegisterPacket final : public PacketBase<RegisterPacket> {
 public:
@@ -86,38 +83,75 @@ public:
     }
 };
 
-LL_TYPE_INSTANCE_HOOK(
-    ServerLoginHook,
-    HookPriority::Low,
-    ServerNetworkHandler,
-    &ServerNetworkHandler::sendLoginMessageLocal,
-    void,
-    NetworkIdentifier const& source,
-    ConnectionRequest const& connectionRequest,
-    ServerPlayer&            player
-) {
-    auto resume = [this, source] {
-        auto joining = _getServerPlayer(source, SubClientId::PrimaryClient);
-        auto client  = mClients->find(source);
-        if (joining && client != mClients->end() && client->second && client->second->mPrimaryRequest) {
-            origin(source, *client->second->mPrimaryRequest, *joining);
-        }
-    };
-    PacketPeers::getInstance().holdLogin(source, player, std::move(resume));
+static bool isLoggingIn(ServerNetworkHandler& handler, NetworkIdentifier const& client) {
+    auto& clients = *handler.mClients;
+    auto  it      = clients.find(client);
+    return it != clients.end() && it->second
+        && it->second->mLoginState == ServerNetworkHandler::Client::LoginState::AwaitingPlayerSpawn;
+}
+
+static std::string localeCodeOf(ConnectionRequest const& request) {
+    if (!request.mRawToken->has_value()) {
+        return {};
+    }
+    return request.mRawToken.get()->mDataInfo["LanguageCode"].asString({});
 }
 
 LL_TYPE_INSTANCE_HOOK(
-    ServerFenceHook,
+    ServerAuthenticatedHook,
     HookPriority::Normal,
     ServerNetworkHandler,
-    &ServerNetworkHandler::$handle,
+    &ServerNetworkHandler::_onClientAuthenticated,
     void,
-    NetworkIdentifier const&         source,
-    NetworkStackLatencyPacket const& packet
+    NetworkIdentifier const&        source,
+    PlayerAuthenticationInfo const& playerInfo
 ) {
-    if (!PacketPeers::getInstance().releaseLogin(source, packet)) {
-        origin(source, packet);
+    origin(source, playerInfo);
+    if (isLoggingIn(*this, source)) {
+        PacketPeers::getInstance().beginLogin(source);
     }
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    ServerLoginPacketFilterHook,
+    HookPriority::Normal,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::$allowIncomingPacketId,
+    IncomingPacketFilterResult,
+    NetworkIdentifierWithSubId const& sender,
+    MinecraftPacketIds                packetId,
+    uint64                            packetSize
+) {
+    if (packetId == MinecraftPacketIds::LeviLaminaRuntimePacket
+        && isLoggingIn(*thisFor<NetEventCallback>(), sender.id)) {
+        return IncomingPacketFilterResult::Allowed;
+    }
+    return origin(sender, packetId, packetSize);
+}
+
+LL_TYPE_INSTANCE_HOOK(
+    ServerPlayerCreationHook,
+    HookPriority::High,
+    ServerNetworkHandler,
+    &ServerNetworkHandler::createNewPlayer,
+    OwnerPtr<EntityContext>,
+    NetworkIdentifier const&        source,
+    ConnectionRequest const&        connectionRequest,
+    PlayerAuthenticationInfo const& playerInfo
+) {
+    auto& peers = PacketPeers::getInstance();
+    if (auto reason = peers.checkClient(source, localeCodeOf(connectionRequest))) {
+        peers.removeClient(source);
+        disconnectClientWithMessage(
+            source,
+            SubClientId::PrimaryClient,
+            Connection::DisconnectFailReason::Kicked,
+            *reason,
+            std::nullopt
+        );
+        return OwnerStorageEntity{};
+    }
+    return origin(source, connectionRequest, playerInfo);
 }
 
 LL_TYPE_INSTANCE_HOOK(
@@ -139,31 +173,18 @@ LL_TYPE_INSTANCE_HOOK(
 }
 
 struct PacketPeers::Impl {
-    struct HeldLogin {
-        std::function<void()> resume;
-        std::string           locale;
-    };
-
     ConcurrentDenseMap<NetworkIdentifier, SmallDenseSet<PacketRuntimeId>> clients;
-    std::mutex                                                            heldMutex;
-    DenseMap<NetworkIdentifier, HeldLogin>                                heldLogins;
 
     mutable std::shared_mutex      serverMutex;
     SmallDenseSet<PacketRuntimeId> server;
     bool                           registered{false};
 
-    memory::HookRegistrar<ServerLoginHook, ServerFenceHook, ServerDisconnectHook> hooks;
-
-    std::optional<HeldLogin> takeHeldLogin(NetworkIdentifier const& client) {
-        std::lock_guard lock{heldMutex};
-        auto            it = heldLogins.find(client);
-        if (it == heldLogins.end()) {
-            return std::nullopt;
-        }
-        auto held = std::move(it->second);
-        heldLogins.erase(it);
-        return held;
-    }
+    memory::HookRegistrar<
+        ServerAuthenticatedHook,
+        ServerLoginPacketFilterHook,
+        ServerPlayerCreationHook,
+        ServerDisconnectHook>
+        hooks;
 };
 
 PacketPeers::PacketPeers() : impl(std::make_unique<Impl>()) {}
@@ -205,33 +226,23 @@ bool PacketPeers::serverHandles(PacketRuntimeId id) const {
     return impl->server.contains(id);
 }
 
-void PacketPeers::holdLogin(NetworkIdentifier const& client, ServerPlayer& player, std::function<void()> resume) {
+void PacketPeers::beginLogin(NetworkIdentifier const& client) {
     removeClient(client);
-
-    {
-        std::lock_guard lock{impl->heldMutex};
-        impl->heldLogins.insert_or_assign(client, Impl::HeldLogin{std::move(resume), player.getLocaleCode()});
-    }
-
     RegisterPacket{PacketRegistrar::getInstance().getHandledPackets(PacketSide::Server), true}.sendToClient(
         client,
         SubClientId::PrimaryClient
     );
-    NetworkStackLatencyPacket fence;
-    fence.mCreateTime = FenceTime;
-    fence.mFromServer = true;
-    fence.sendToClient(client, SubClientId::PrimaryClient);
 }
 
-bool PacketPeers::releaseLogin(NetworkIdentifier const& client, NetworkStackLatencyPacket const& packet) {
-    if (packet.mCreateTime.get() != FenceTime) {
-        return false;
+bool PacketPeers::acceptsFromClient(NetworkIdentifier const& client, PacketRuntimeId id) {
+    if (id == getPacketRuntimeId<RegisterPacket>) {
+        return true;
     }
-    auto held = impl->takeHeldLogin(client);
-    if (!held) {
-        return false;
-    }
+    auto handler = service::getServerNetworkHandler();
+    return !handler || !isLoggingIn(*handler, client);
+}
 
+std::optional<std::string> PacketPeers::checkClient(NetworkIdentifier const& client, std::string_view locale) const {
     auto                     required = PacketRegistrar::getInstance().getRequiredPackets(PacketSide::Client);
     std::vector<std::string> missing;
     bool                     isLeviLamina = impl->clients.if_contains(client, [&](auto const& entry) {
@@ -248,22 +259,12 @@ bool PacketPeers::releaseLogin(NetworkIdentifier const& client, NetworkStackLate
     }
 
     if (missing.empty()) {
-        held->resume();
-        return true;
+        return std::nullopt;
     }
-    removeClient(client);
-    if (auto handler = service::getServerNetworkHandler()) {
-        handler->disconnectClientWithMessage(
-            client,
-            SubClientId::PrimaryClient,
-            Connection::DisconnectFailReason::Kicked,
-            isLeviLamina
-                ? "This server needs mods on the client that handle: {0}"_trl(held->locale, missing)
-                : "This server needs LeviLamina and mods on the client that handle: {0}"_trl(held->locale, missing),
-            std::nullopt
-        );
+    if (isLeviLamina) {
+        return "This server needs mods on the client that handle: {0}"_trl(locale, missing);
     }
-    return true;
+    return "This server needs LeviLamina and mods on the client that handle: {0}"_trl(locale, missing);
 }
 
 void PacketPeers::updateClient(
@@ -292,10 +293,7 @@ void PacketPeers::updateClient(
     );
 }
 
-void PacketPeers::removeClient(NetworkIdentifier const& client) {
-    impl->clients.erase(client);
-    impl->takeHeldLogin(client);
-}
+void PacketPeers::removeClient(NetworkIdentifier const& client) { impl->clients.erase(client); }
 
 void PacketPeers::updateServer(std::vector<PacketRuntimeId> const& packets, bool handled) {
     bool answer;

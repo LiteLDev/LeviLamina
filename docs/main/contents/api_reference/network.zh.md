@@ -279,10 +279,11 @@ void talkToServer() {
 
 ### 检查的过程
 
-玩家登录时，在 `PlayerConnectEvent` 之后，服务器会暂缓发送 StartGame。它先发送 `levilamina:register`，列出自己处理的数据包的运行时 ID，
-再发送一个时间戳为 0 的 `NetworkStackLatencyPacket` 作为栅栏。LeviLamina 客户端会在回显栅栏之前先回复自己的 `levilamina:register`；
-原版客户端会丢弃不认识的数据包，只回显栅栏。栅栏回来后，服务器检查自己需要的数据包，然后发送 StartGame 或断开客户端。
-客户端在收到 StartGame 时检查自己需要的数据包。
+客户端通过身份验证后，在协商资源包期间，服务器会发送 `levilamina:register`，列出自己处理的数据包的运行时 ID。
+LeviLamina 客户端读到后立即回复自己的 `levilamina:register`；原版客户端会丢弃这个不认识的数据包。服务器在资源包栈之前发出它，
+所以 LeviLamina 客户端的回复总是在它报告资源包栈加载完成之前到达。收到这个报告后，服务器在创建玩家之前检查自己需要的数据包，
+缺少时断开客户端，因此被拒绝的客户端不会触发 `PlayerConnectEvent`。玩家创建之前，服务器只接受客户端发来的 `levilamina:register`
+这一个自定义数据包。客户端在收到 StartGame 时检查自己需要的数据包。
 
 此后，任一端处理的数据包发生变化时，都会再发送 `levilamina:register`。它的内容是一个布尔值（true 表示开始处理这些数据包，false 表示不再处理），
 接着是一个 64 位无符号变长整数表示的数量，后面跟着这么多个 64 位运行时 ID。

@@ -225,6 +225,10 @@ public:
         }
         auto side =
             ll::network::isServerSide(netEvent) ? ll::network::PacketSide::Server : ll::network::PacketSide::Client;
+        if (side == ll::network::PacketSide::Server
+            && !ll::network::PacketPeers::acceptsFromClient(networkId, packet.getRuntimeId())) {
+            return;
+        }
         if (auto handler = ll::network::PacketRegistrar::getInstance().getHandler(packet.getRuntimeId(), side)) {
             handler->handle(networkId, netEvent, side, *inner);
         }

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The server checks the packets a client handles before creating its player instead of holding back StartGame, so a client lacking required packets is disconnected before `PlayerConnectEvent`
+
+### Fixed
+
+- Fixed a player joining near other players never loading some chunks, not seeing those players and being unable to move when client-side chunk generation is on
+
 ## [26.60.1] - 2026-11-05
 
 ### Changed
