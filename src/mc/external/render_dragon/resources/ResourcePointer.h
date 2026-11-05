@@ -14,7 +14,7 @@ public:
     explicit ResourcePointer(std::shared_ptr<ResourceBlockTemplate<T>> const& block)
     : mResourcePointerBlock(block) {} // [inferred]
 
-    virtual ~ResourcePointer() = default;
+    ~ResourcePointer() = default;
 
     bool isValid(ValidityCheckType validityCheckType) const {
         if (!mResourcePointerBlock) {
