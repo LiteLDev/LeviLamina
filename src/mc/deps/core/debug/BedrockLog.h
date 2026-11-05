@@ -54,7 +54,7 @@ MCNAPI void createLog(
     double                    _logCycleInS
 );
 
-MCNAPI void log_fmt(
+MCAPI void log_fmt(
     ::BedrockLog::LogCategory                          category,
     ::std::bitset<3>                                   channelMask,
     ::BedrockLog::LogRule                              rule,

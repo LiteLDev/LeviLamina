@@ -696,7 +696,7 @@ public:
 
     MCNAPI bool _isPrimaryOrSecondaryPlayerInServer(::mce::UUID const& playerId) const;
 
-    MCNAPI void _onClientAuthenticated(::NetworkIdentifier const& source, ::PlayerAuthenticationInfo const& playerInfo);
+    MCAPI void _onClientAuthenticated(::NetworkIdentifier const& source, ::PlayerAuthenticationInfo const& playerInfo);
 
     MCAPI void _onPlayerLeft(::ServerPlayer* player, bool skipMessage);
 
@@ -925,7 +925,7 @@ public:
         ::std::string const&                     telemetryOverride
     );
 
-    MCNAPI ::IncomingPacketFilterResult $allowIncomingPacketId(
+    MCAPI ::IncomingPacketFilterResult $allowIncomingPacketId(
         ::NetworkIdentifierWithSubId const& sender,
         ::MinecraftPacketIds                packetId,
         uint64                              packetSize

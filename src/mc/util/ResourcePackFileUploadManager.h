@@ -83,7 +83,7 @@ public:
     );
 #endif
 
-    MCNAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
+    MCAPI void _addZipPath(::Core::PathBuffer<::std::string> const& resourceZipPath);
 
     MCNAPI ::Bedrock::Threading::Async<void> uploadResourcePack(
         ::std::string const&                     resourcePackName,

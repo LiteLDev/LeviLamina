@@ -155,7 +155,7 @@ public:
         ::NetherNet::SignalingChannelId sourceChannel
     );
 
-    MCNAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
+    MCAPI ::NetherNet::ErrorOr<void, ::NetherNet::ESessionError> SendToSignalingChannel(
         ::NetherNet::NetworkID networkIDTo,
         ::std::variant<
             ::NetherNet::ConnectRequest,

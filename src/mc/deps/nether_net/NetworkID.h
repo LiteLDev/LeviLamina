@@ -26,7 +26,7 @@ public:
 
     MCNAPI explicit NetworkID(::Json::Value const& value);
 
-    MCNAPI bool isValid() const;
+    MCAPI bool isValid() const;
 
     MCNAPI ::std::string toCorrelationId() const;
 
