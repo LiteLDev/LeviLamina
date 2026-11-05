@@ -475,7 +475,7 @@ public:
 
     MCNAPI void resetChunkCullingData(::ChunkPos const& cp);
 
-    MCNAPI void updateFarChunksDistance();
+    MCAPI void updateFarChunksDistance();
 
     MCNAPI void updatePerChunkFaceSortState(::Vec3 const& viewPos, ::Vec3 const& viewDir, bool isOrthoCamera);
     // NOLINTEND
@@ -540,7 +540,7 @@ public:
 
     MCNAPI void $notifyGeoChangedForAffectedEntities(::RenderChunkShared& renderChunkShared, uchar version);
 
-    MCNAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& preRenderUpdateParameters);
+    MCAPI void $queueRenderEntities(::LevelRenderPreRenderUpdateParameters const& preRenderUpdateParameters);
 
     MCNAPI void $_releaseRespectiveResources();
 

@@ -2232,7 +2232,7 @@ public:
 
     MCNAPI ::std::vector<::ChunkPos> const& $getClientTickingOffsets() const;
 
-    MCNAPI ::std::vector<::ChunkPos>
+    MCAPI ::std::vector<::ChunkPos>
     $getSortedPositionsFromClientOffsets(::std::vector<::ChunkPos> const& centers) const;
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ChunkTickOffsetManager const> $getChunkTickOffsetManager() const;

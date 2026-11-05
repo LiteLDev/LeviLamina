@@ -436,7 +436,7 @@ public:
     fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
 #ifdef LL_PLAT_C
-    MCNAPI void fetchRenderBlockActorComponents(
+    MCAPI void fetchRenderBlockActorComponents(
         ::AABB const&                                                         bb,
         ::std::vector<::gsl::not_null<::IVanillaRenderBlockActorComponent*>>& blockEntityList,
         bool                                                                  withPreservedEntities
