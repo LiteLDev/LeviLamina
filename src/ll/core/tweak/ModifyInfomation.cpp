@@ -18,22 +18,22 @@ namespace ll {
 LL_STATIC_HOOK(
     DiagnosticsLogHook,
     HookPriority::Normal,
-    BedrockLog::log_va,
+    BedrockLog::log_fmt,
     void,
-    ::BedrockLog::LogCategory category,
-    std::bitset<3>            channelMask,
-    ::BedrockLog::LogRule     rule,
-    ::LogAreaID               area,
-    uint                      priority,
-    char const*               func,
-    int                       line,
-    char const*               pszFormat,
-    char*                     va
+    BedrockLog::LogCategory                        category,
+    std::bitset<3>                                 channelMask,
+    BedrockLog::LogRule                            rule,
+    LogAreaID                                      area,
+    uint                                           priority,
+    char const*                                    function,
+    int                                            line,
+    fmt::v11::basic_string_view<char>              format,
+    fmt::v11::basic_format_args<fmt::v11::context> args
 ) {
-    if (getLeviConfig().modules.disableAutoCompactionLog && std::string_view{func}.starts_with("DBStorage::")) {
+    if (getLeviConfig().modules.disableAutoCompactionLog && std::string_view{function}.starts_with("DBStorage::")) {
         return;
     }
-    origin(category, channelMask, rule, area, priority, func, line, pszFormat, va);
+    origin(category, channelMask, rule, area, priority, function, line, format, args);
 }
 
 auto serverLogger = io::LoggerRegistry::getInstance().getOrCreate("Server");
@@ -100,13 +100,13 @@ LL_TYPE_INSTANCE_HOOK(
     ::BedrockLog::LogDetails,
     &::BedrockLog::LogDetails::_appendLogEntryMetadata,
     void,
-    std::string&     logEntry,
-    std::string_view timestamp,
-    LogAreaID        area,
-    uint             priority,
-    std::string_view functionName,
-    int              lineNumber,
-    int              _messageId
+    std::string&     /* logEntry */,
+    std::string_view /* timestamp */,
+    LogAreaID        /* area */,
+    uint             /* priority */,
+    std::string_view /* functionName */,
+    int              /* lineNumber */,
+    int              /* _messageId */
 ) {
     // Block from adding LOG metadata
 }

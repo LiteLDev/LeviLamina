@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed DBStorage related log blocking @zimuya4153
+
 ## [26.60.2] - 2026-11-05
 
 ### Changed
