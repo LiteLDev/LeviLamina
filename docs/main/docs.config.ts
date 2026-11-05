@@ -39,6 +39,7 @@ export default defineDocsConfig({
       'User Guides': [
         'user_guides/install.md',
         'user_guides/install_on_client.md',
+        'user_guides/configure_server_under_nat.md',
         'user_guides/troubleshooting.md',
         'common_guides/usage_guidelines.md',
       ],
