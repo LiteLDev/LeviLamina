@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.60.2] - 2026-11-05
+
 ### Changed
 
 - The server checks the packets a client handles before creating its player instead of holding back StartGame, so a client lacking required packets is disconnected before `PlayerConnectEvent`
+- Bumped bedrock-runtime-data versions
 
 ### Fixed
 
-- Fixed a player joining near other players never loading some chunks, not seeing those players and being unable to move when client-side chunk generation is on
+- Fixed a player joining near other players never loading some chunks, not seeing those players and being unable to move when client-side chunk generation is on [#1868]
+- Fixed size of ResourcePointer [#1867]
 
 ## [26.60.1] - 2026-11-05
 
@@ -2079,8 +2083,11 @@ For lip and tooth-hub test only.
 [#1835]: https://github.com/LiteLDev/LeviLamina/issues/1835
 [#1836]: https://github.com/LiteLDev/LeviLamina/issues/1836
 [#1837]: https://github.com/LiteLDev/LeviLamina/issues/1837
+[#1867]: https://github.com/LiteLDev/LeviLamina/issues/1867
+[#1868]: https://github.com/LiteLDev/LeviLamina/issues/1868
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.1...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.2...HEAD
+[26.60.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.1...v26.60.2
 [26.60.1]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.0...v26.60.1
 [26.60.0]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.9...v26.60.0
 [26.51.9]: https://github.com/LiteLDev/LeviLamina/compare/v26.51.8...v26.51.9
