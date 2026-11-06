@@ -116,7 +116,7 @@ public:
 
     MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 
-    MCNAPI void
+    MCFOLD void
     $decorateWorldGenPostProcess(::Biome const& biome, ::LevelChunk& lc, ::BlockSource& source, ::Random& random) const;
 
     MCNAPI void $decorateWorldGenLoadChunk(

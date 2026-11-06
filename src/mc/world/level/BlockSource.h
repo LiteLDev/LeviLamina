@@ -365,7 +365,7 @@ public:
         ::NeighborChangeHistory const& history
     );
 
-    MCNAPI void addToRandomTickingQueue(
+    MCAPI void addToRandomTickingQueue(
         ::BlockPos const& pos,
         ::Block const&    block,
         int               tickDelay,

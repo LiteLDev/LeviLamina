@@ -399,11 +399,11 @@ public:
 
     MCFOLD bool $isNaturalDimension() const;
 
-    MCNAPI bool $shouldRenderClouds() const;
+    MCFOLD bool $shouldRenderClouds() const;
 
     MCFOLD bool $isValidSpawn(int x, int z) const;
 
-    MCNAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
+    MCAPI ::mce::Color $getBrightnessDependentFogColor(::mce::Color const& baseColor, float brightness) const;
 
     MCNAPI short $getCloudHeight() const;
 

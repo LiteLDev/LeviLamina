@@ -88,7 +88,7 @@ public:
 
     MCNAPI void $setSerializationMode(::SerializationMode mode);
 
-    MCNAPI void $writeWithSerializationMode(
+    MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode

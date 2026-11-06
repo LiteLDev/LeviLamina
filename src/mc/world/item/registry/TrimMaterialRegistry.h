@@ -22,6 +22,6 @@ public:
     // NOLINTBEGIN
     MCNAPI ::std::optional<::TrimMaterial> getTrimMaterialByMaterialId(::HashedString const& materialId) const;
 
-    MCNAPI void initializeServer();
+    MCAPI void initializeServer();
     // NOLINTEND
 };

@@ -42,6 +42,6 @@ public:
     MCNAPI void initializeFromTrimPatterns(::std::vector<::TrimPattern> const& patterns);
 #endif
 
-    MCNAPI void initializeServer(::ItemRegistryRef itemRegistry);
+    MCAPI void initializeServer(::ItemRegistryRef itemRegistry);
     // NOLINTEND
 };

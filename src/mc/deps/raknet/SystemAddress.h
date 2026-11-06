@@ -24,7 +24,7 @@ public:
 
     MCNAPI bool FromString(char const* str, char portDelineator, int ipVersion);
 
-    MCNAPI ::std::string GetIPString() const;
+    MCAPI ::std::string GetIPString() const;
 
     MCAPI ::std::string ToString(char portDelineator) const;
 

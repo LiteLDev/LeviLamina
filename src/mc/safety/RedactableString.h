@@ -40,7 +40,7 @@ public:
     MCNAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString&&);
 #endif
 
-    MCNAPI ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
+    MCFOLD ::Bedrock::Safety::RedactableString& operator=(::Bedrock::Safety::RedactableString const&);
 
     MCNAPI ::Bedrock::Safety::RedactableString& operator=(char const* unredactedCString);
 

@@ -1600,7 +1600,7 @@ public:
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::PlayerDimensionTransferManager> $getPlayerDimensionTransferManager();
 
-    MCNAPI void
+    MCAPI void
     $entityChangeDimension(::Actor& entity, ::ActorDimensionTransferRequest const& actorDimensionTransferRequest);
 
     MCNAPI ::Bedrock::NotNullNonOwnerPtr<::ActorDimensionTransferManager> $getActorDimensionTransferManager();
@@ -1822,7 +1822,7 @@ public:
 
     MCAPI void $tick();
 
-    MCNAPI bool $explode(
+    MCAPI bool $explode(
         ::BlockSource& region,
         ::Actor*       source,
         ::Vec3 const&  pos,
@@ -1833,7 +1833,7 @@ public:
         bool           allowUnderwater
     );
 
-    MCNAPI bool $explode(::Explosion& explosion);
+    MCAPI bool $explode(::Explosion& explosion);
 
     MCNAPI void $denyEffect(::BlockSource& region, ::Vec3 const& pos);
 

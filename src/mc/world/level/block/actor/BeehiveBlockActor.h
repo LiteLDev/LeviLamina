@@ -58,7 +58,7 @@ public:
 
     MCNAPI bool _tickOccupant(::BlockSource& region, ::BeehiveBlockActor::Occupant& occupant);
 
-    MCNAPI void evictAll(::BlockSource& region, bool angry);
+    MCAPI void evictAll(::BlockSource& region, bool angry);
 
     MCNAPI void saveUserData(::CompoundTag& tag) const;
 

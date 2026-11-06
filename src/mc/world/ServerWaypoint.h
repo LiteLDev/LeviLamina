@@ -54,13 +54,13 @@ public:
         // NOLINTBEGIN
         MCNAPI bool operator==(::ServerWaypoint::Payload const&) const;
 
-        MCNAPI ~Payload();
+        MCAPI ~Payload();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCAPI void $dtor();
         // NOLINTEND
     };
 

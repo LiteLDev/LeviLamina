@@ -19,12 +19,12 @@ public:
     // NOLINTBEGIN
     MCNAPI void setRules(::std::vector<::GameRule> rules);
 
-    MCNAPI ~GameRulesChangedPacketData();
+    MCAPI ~GameRulesChangedPacketData();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

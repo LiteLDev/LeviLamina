@@ -57,7 +57,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDamageByChildActorSource(
+    MCAPI ActorDamageByChildActorSource(
         ::Actor const&                          childActor,
         ::Actor const&                          actor,
         ::SharedTypes::Legacy::ActorDamageCause cause
@@ -67,13 +67,13 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
+    MCAPI void* $ctor(::Actor const& childActor, ::Actor const& actor, ::SharedTypes::Legacy::ActorDamageCause cause);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

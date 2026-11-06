@@ -111,7 +111,7 @@ public:
 
     MCNAPI bool $hasAllBiomeTags(::gsl::span<uint64 const> tagNameHashes, ::BlockPos const& pos) const;
 
-    MCNAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
+    MCAPI bool $setBlock(::BlockPos const& pos, ::Block const& newBlock, int updateFlags);
 
     MCNAPI bool $setBlockSimple(::BlockPos const& pos, ::Block const& block);
 

@@ -1128,7 +1128,7 @@ public:
 
     MCNAPI bool $isBlocking() const;
 
-    MCNAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
+    MCAPI bool $isDamageBlocked(::ActorDamageSource const& source) const;
 
     MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
@@ -1205,7 +1205,7 @@ public:
 
     MCNAPI float $getShadowRadius() const;
 
-    MCNAPI bool $isSleeping() const;
+    MCAPI bool $isSleeping() const;
 
     MCNAPI void $setSleeping(bool val);
 

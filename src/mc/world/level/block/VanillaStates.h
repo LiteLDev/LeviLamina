@@ -208,7 +208,7 @@ MCNAPI ::BlockStateVariant<bool> const& DragDown();
 
 MCNAPI ::BlockStateVariant<bool> const& EndPortalEyeBit();
 
-MCNAPI ::BlockStateVariant<bool> const& ExplodeBit();
+MCAPI ::BlockStateVariant<bool> const& ExplodeBit();
 
 MCAPI ::BlockStateVariant<bool> const& Extinguished();
 
@@ -230,7 +230,7 @@ MCNAPI ::BlockStateVariant<int> const& HugeMushroomBits();
 
 MCNAPI ::BlockStateVariant<bool> const& InWallBit();
 
-MCNAPI ::BlockStateVariant<bool> const& InfiniburnBit();
+MCAPI ::BlockStateVariant<bool> const& InfiniburnBit();
 
 MCNAPI ::BlockStateVariant<bool> const& ItemFrameMapBit();
 

@@ -61,7 +61,7 @@ public:
         int*              newHeightAfterPlacement
     ) const;
 
-    MCNAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool isPrecipitatingAt(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI bool isRainingAt(::BlockSource& region, ::BlockPos const& pos) const;
 

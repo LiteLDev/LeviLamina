@@ -303,7 +303,7 @@ public:
 
     MCAPI float calculateAttackDamage(::Actor const& target, ::CalculateAttackDamageSettings const& settings) const;
 
-    MCNAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
+    MCAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
 
     MCNAPI void clearMainHandSlot();
 

@@ -111,7 +111,7 @@ public:
 
     MCNAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
     MCNAPI void $appendDebugInfo(::std::string& str) const;
 

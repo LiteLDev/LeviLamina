@@ -150,7 +150,7 @@ public:
 
     MCNAPI void $onContainerScreenOpen(::ContainerScreenContext const& screenContext);
 
-    MCNAPI void $onContainerScreenClose();
+    MCAPI void $onContainerScreenClose();
 
 #ifdef LL_PLAT_S
     MCNAPI ::SparseContainer* $initOpenContainer(::BlockSource&, ::FullContainerName const&, ::ContainerWeakRef const&);

@@ -77,7 +77,7 @@ public:
         ::PortalRecord const& referenceRecord
     );
 
-    MCNAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
+    MCAPI void removePortalRecord(::BlockSource& source, ::BlockPos const& pos);
     // NOLINTEND
 
 public:

@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ActorDefinitionTrigger(::ActorDefinitionTrigger const&);
+    MCAPI ActorDefinitionTrigger(::ActorDefinitionTrigger const&);
 
     MCNAPI explicit ActorDefinitionTrigger(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
 
@@ -44,7 +44,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ActorDefinitionTrigger const&);
+    MCAPI void* $ctor(::ActorDefinitionTrigger const&);
 
     MCNAPI void* $ctor(::SharedTypes::v1_21_120::ActorDefinitionTrigger const& other);
     // NOLINTEND

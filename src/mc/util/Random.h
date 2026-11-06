@@ -73,9 +73,9 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Random createSeedable();
+    MCAPI static ::Random createSeedable();
 
-    MCNAPI static ::Random& getThreadLocal();
+    MCAPI static ::Random& getThreadLocal();
     // NOLINTEND
 
 public:
