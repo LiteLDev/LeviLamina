@@ -32,7 +32,7 @@ MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Colo
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& ConcretePowderIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBarsBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBarsBlockIds();
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& CopperBlockIds();
 
@@ -78,7 +78,7 @@ MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Larg
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LeavesBlockIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightBlockIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightBlockIds();
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& LightningRodBlockIds();
 
@@ -170,7 +170,7 @@ MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& Supp
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TerracottaIds();
 
-MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TntIds();
+MCAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TntIds();
 
 MCNAPI ::std::vector<::std::reference_wrapper<::HashedString const>> const& TulipIds();
 

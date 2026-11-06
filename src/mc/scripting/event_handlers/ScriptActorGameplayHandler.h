@@ -57,7 +57,7 @@ public:
 
     MCAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::ActorBeforeHurtEvent& actorHurtEvent);
 
-    MCNAPI ::GameplayHandlerResult<::CoordinatorResult>
+    MCAPI ::GameplayHandlerResult<::CoordinatorResult>
     $handleEvent(::ActorBeforeAcquireItemEvent& actorAquireItemEvent);
 
     MCNAPI ::GameplayHandlerResult<::CoordinatorResult> $handleEvent(::BeforeTamingEvent& beforeTamingEvent);

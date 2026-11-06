@@ -118,7 +118,7 @@ public:
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
     mLootingExperimentalFunctions();
 
-    MCNAPI static ::std::unordered_map<
+    MCAPI static ::std::unordered_map<
         ::HashedString,
         ::std::function<::std::unique_ptr<
             ::LootItemFunction>(::Json::Value&, ::std::vector<::std::unique_ptr<::LootItemCondition>>&)>> const&
@@ -128,17 +128,17 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
+    MCAPI int $applyPreVersion(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const&);
 
-    MCNAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
+    MCAPI void $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context);
 
-    MCNAPI int $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
+    MCAPI int $apply26U6(::ItemStackBase& item, ::Random& random, ::LootTableContext& context, ::Trade const& trade);
 
 
     // NOLINTEND

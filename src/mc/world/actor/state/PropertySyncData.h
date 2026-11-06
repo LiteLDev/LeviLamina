@@ -48,7 +48,7 @@ public:
 
     MCNAPI ::PropertySyncData& operator=(::PropertySyncData&&);
 
-    MCNAPI ~PropertySyncData();
+    MCAPI ~PropertySyncData();
     // NOLINTEND
 
 public:
@@ -60,6 +60,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCFOLD void $dtor();
     // NOLINTEND
 };

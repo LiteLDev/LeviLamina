@@ -82,7 +82,7 @@ public:
     MCNAPI int getMapGrassColor(::BlockPos const& pos) const;
 #endif
 
-    MCNAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
+    MCAPI float getTemperature(::BlockSource const& region, ::BlockPos const& pos) const;
     // NOLINTEND
 
 public:

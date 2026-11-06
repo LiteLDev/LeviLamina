@@ -22,20 +22,20 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI TrimMaterial(::TrimMaterial const&);
+    MCAPI TrimMaterial(::TrimMaterial const&);
 
-    MCNAPI ~TrimMaterial();
+    MCAPI ~TrimMaterial();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::TrimMaterial const&);
+    MCAPI void* $ctor(::TrimMaterial const&);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

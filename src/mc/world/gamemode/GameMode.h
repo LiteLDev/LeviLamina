@@ -276,7 +276,7 @@ public:
 
     MCAPI bool $attack(::Actor& entity, ::Vec3 const& hitPosition);
 
-    MCNAPI void $releaseUsingItem();
+    MCAPI void $releaseUsingItem();
 
     MCNAPI void $setTrialMode(bool isEnabled);
 

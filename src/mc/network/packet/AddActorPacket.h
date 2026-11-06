@@ -81,34 +81,34 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::MinecraftPacketIds $getId() const;
+    MCAPI ::MinecraftPacketIds $getId() const;
 
-    MCNAPI ::std::string_view $getName() const;
+    MCAPI ::std::string_view $getName() const;
 
-    MCNAPI ::SerializationMode $getSerializationMode() const;
+    MCAPI ::SerializationMode $getSerializationMode() const;
 
-    MCNAPI void $setSerializationMode(::SerializationMode mode);
+    MCAPI void $setSerializationMode(::SerializationMode mode);
 
-    MCNAPI void $writeWithSerializationMode(
+    MCAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,
         ::cereal::ReflectionCtx const&       reflectionCtx,
         ::std::optional<::SerializationMode> overrideMode
     ) const;
 
-    MCNAPI void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
+    MCFOLD void $write(::BinaryStream& stream, ::cereal::ReflectionCtx const& reflectionCtx) const;
 
-    MCNAPI void $write(::BinaryStream& stream) const;
+    MCAPI void $write(::BinaryStream& stream) const;
 
-    MCNAPI ::Bedrock::Result<void>
+    MCAPI ::Bedrock::Result<void>
     $read(::ReadOnlyBinaryStream& bitStream, ::cereal::ReflectionCtx const& reflectionCtx);
 
-    MCNAPI bool $disallowBatching() const;
+    MCFOLD bool $disallowBatching() const;
 
-    MCNAPI bool $isValid() const;
+    MCFOLD bool $isValid() const;
 
-    MCNAPI uint64 $getMaxSize() const;
+    MCFOLD uint64 $getMaxSize() const;
 
-    MCNAPI ::std::string $toString() const;
+    MCAPI ::std::string $toString() const;
 
     MCNAPI ::Bedrock::Result<void> $_read(::ReadOnlyBinaryStream& stream);
 

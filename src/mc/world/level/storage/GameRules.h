@@ -118,7 +118,7 @@ public:
         ::GameRule::ValidationError*                         errorOutput
     );
 
-    MCNAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
+    MCAPI ::std::unique_ptr<::GameRulesChangedPacket> createAllGameRulesPacket() const;
 
     MCNAPI void deserializeRules(::GameRulesChangedPacketData const& ruleData);
 

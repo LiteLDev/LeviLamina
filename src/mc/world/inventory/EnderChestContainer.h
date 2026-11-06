@@ -34,7 +34,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $startOpen(::Actor& actor);
+    MCAPI void $startOpen(::Actor& actor);
 
     MCNAPI void $stopOpen(::Actor& actor);
 

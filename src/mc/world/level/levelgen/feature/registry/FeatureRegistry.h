@@ -98,7 +98,7 @@ public:
     );
 #endif
 
-    MCNAPI bool _setupFeature(
+    MCAPI bool _setupFeature(
         ::IWorldRegistriesProvider&  worldRegistries,
         bool                         isBasePack,
         ::ResourcePackManager const& rpm,

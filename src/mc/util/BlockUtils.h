@@ -15,7 +15,7 @@ class BlockPos;
 namespace BlockUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstructionType);
+MCAPI bool canSee(::Actor const& actor, ::BlockPos const& pos, ::ShapeType obstructionType);
 
 MCNAPI float getLiquidBlockHeight(::Block const& block, ::BlockPos const& blockPos);
 

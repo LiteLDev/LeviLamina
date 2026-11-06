@@ -33,7 +33,7 @@ public:
 
     MCAPI ::std::array<::std::vector<::EnchantmentInstance>, 3> getEnchantInstances() const;
 
-    MCNAPI ::std::vector<::std::string> getEnchantNames() const;
+    MCAPI ::std::vector<::std::string> getEnchantNames() const;
 
     MCNAPI int getTotalValue(bool bookModifier) const;
 

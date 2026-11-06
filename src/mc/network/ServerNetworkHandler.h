@@ -1014,7 +1014,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerHotbarPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::PlayerSkinPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerToggleCrafterSlotRequestPacket const& packet);
 
@@ -1121,7 +1121,7 @@ public:
     MCAPI ::std::optional<::PlayerAuthenticationInfo>
     $_validateLoginPacket(::NetworkIdentifier const& source, ::LoginPacket const& packet);
 
-    MCNAPI void $_onClientAsyncAuthorized(
+    MCAPI void $_onClientAsyncAuthorized(
         ::NetworkIdentifier const&          source,
         ::ConnectionRequest const&          request,
         ::PlayerAuthenticationInfo const&   playerInfo,

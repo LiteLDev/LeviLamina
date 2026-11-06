@@ -30,11 +30,11 @@ public:
 
     MCAPI ::std::string HostAsURIString() const;
 
-    MCNAPI bool IsAnyIP() const;
+    MCAPI bool IsAnyIP() const;
 
     MCNAPI bool IsLoopbackIP() const;
 
-    MCNAPI bool IsNil() const;
+    MCAPI bool IsNil() const;
 
     MCNAPI bool IsPrivateIP() const;
 

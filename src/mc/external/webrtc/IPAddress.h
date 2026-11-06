@@ -30,7 +30,7 @@ public:
 
     MCNAPI ::std::string ToSensitiveString() const;
 
-    MCNAPI ::std::string ToString() const;
+    MCAPI ::std::string ToString() const;
 
     MCNAPI ::in_addr ipv4_address() const;
 

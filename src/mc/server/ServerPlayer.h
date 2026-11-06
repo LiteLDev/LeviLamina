@@ -426,7 +426,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCNAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
+    MCAPI void $knockback(::Actor* source, float damage, float xd, float zd, ::KnockbackParameters const& parameters);
 
     MCAPI void $die(::ActorDamageSource const& source);
 
@@ -436,7 +436,7 @@ public:
 
     MCNAPI void $frameUpdate(::FrameUpdateContextBase&);
 
-    MCNAPI bool $isValidTarget(::Actor* attacker) const;
+    MCAPI bool $isValidTarget(::Actor* attacker) const;
 
     MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 

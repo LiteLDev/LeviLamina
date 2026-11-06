@@ -47,7 +47,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _setBook(
+    MCAPI void _setBook(
         ::Player&                      player,
         ::ItemStack                    heldItem,
         ::ChiseledBookshelfBlockActor& bookshelfActor,
@@ -55,14 +55,13 @@ public:
         ::HandSlot                     handSlot
     ) const;
 
-    MCNAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
+    MCAPI void use(::BlockEvents::BlockPlayerInteractEvent& eventData) const;
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool
-    _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
+    MCAPI static bool _retrieveBook(::Player& player, ::ChiseledBookshelfBlockActor& bookshelfActor, int const hitSlot);
 
 #ifdef LL_PLAT_C
     MCNAPI static ::ChiseledBookshelfBlock::SlotState

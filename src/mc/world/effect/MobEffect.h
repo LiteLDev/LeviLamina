@@ -147,7 +147,7 @@ public:
     // NOLINTBEGIN
     MCAPI static ::MobEffect const* getByName(::std::string const& name);
 
-    MCNAPI static ::std::string getNameById(uint effectId);
+    MCAPI static ::std::string getNameById(uint effectId);
 
     MCNAPI static void initEffects(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
     // NOLINTEND

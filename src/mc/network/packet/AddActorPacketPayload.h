@@ -46,7 +46,7 @@ public:
     // NOLINTBEGIN
     MCNAPI explicit AddActorPacketPayload(::Actor& e);
 
-    MCNAPI ~AddActorPacketPayload();
+    MCAPI ~AddActorPacketPayload();
     // NOLINTEND
 
 public:
@@ -58,6 +58,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

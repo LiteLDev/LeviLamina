@@ -147,7 +147,7 @@ public:
         ::br::worldgen::ChunkStructureAccess& structureAccess
     );
 
-    MCNAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
+    MCAPI void addHardcodedSpawnAreas(::LevelChunk& lc);
 
     MCAPI ::std::vector<short> computeChunkHeightMap(::ChunkPos const& pos);
 
@@ -185,9 +185,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
+    MCAPI ::HashedString $findStructureFeatureTypeAt(::BlockPos const& pos);
 
-    MCNAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
+    MCAPI bool $isStructureFeatureTypeAt(::BlockPos const& pos, ::HashedString type) const;
 
     MCAPI bool $findNearestStructureFeature(
         ::HashedString                  feature,
@@ -200,7 +200,7 @@ public:
 
     MCAPI ::StructureFeature* $getStructureFeatureOfType(::HashedString type) const;
 
-    MCNAPI void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
+    MCAPI void $garbageCollectBlueprints(::buffer_span<::ChunkPos> activeChunks);
 
     MCAPI void $postProcessMobsAt(::BlockSource& region, int chunkWestBlock, int chunkNorthBlock, ::Random& random);
 

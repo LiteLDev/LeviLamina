@@ -700,7 +700,7 @@ public:
 
     MCNAPI void celebrateHunt(int duration, bool special);
 
-    MCNAPI void checkFallDamage(float ya, bool onGround, bool recheckLiquid);
+    MCAPI void checkFallDamage(float ya, bool onGround, bool recheckLiquid);
 
     MCNAPI void chorusFruitTeleport(::Vec3 const& range);
 
@@ -1031,7 +1031,7 @@ public:
         ::Player*                     primaryLocalPlayer
     );
 
-    MCNAPI void playSynchronizedSound(
+    MCAPI void playSynchronizedSound(
         ::SharedTypes::Legacy::LevelSoundEvent type,
         ::Vec3 const&                          pos,
         int                                    data,
@@ -1276,7 +1276,7 @@ public:
 
     MCNAPI void $passengerTick();
 
-    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCAPI void $addPassenger(::Actor& passenger);
 
