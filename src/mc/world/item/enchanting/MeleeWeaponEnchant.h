@@ -42,7 +42,7 @@ public:
 
     MCNAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCAPI int $getMaxLevel() const;
 
     MCNAPI float $getDamageBonus(int level, ::Actor const& target, ::Actor const&) const;
 

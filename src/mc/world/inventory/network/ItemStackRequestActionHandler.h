@@ -157,7 +157,7 @@ public:
     // NOLINTBEGIN
     MCNAPI ItemStackRequestActionHandler(::ItemStackNetManagerServer& itemStackNetManager, ::Player& player);
 
-    MCNAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
+    MCAPI void _addResponseSlotInfo(::ItemStackRequestHandlerSlotInfo const& slotInfo, ::ItemStack const& item);
 
     MCNAPI void _cacheSlotIdAssigment(
         ::ContainerRuntimeId const& containerRuntimeId,
@@ -202,7 +202,7 @@ public:
 
     MCNAPI ::ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
 
-    MCNAPI ::ItemStackRequestHandlerSlotInfo
+    MCAPI ::ItemStackRequestHandlerSlotInfo
     _validateRequestSlot(::ItemStackRequestSlotInfo const& requestSlotInfo, bool isItemRequired, bool isHintSlot);
 
     MCNAPI void addStrings(::ItemStackRequestId requestId, ::std::vector<::std::string> strings);
