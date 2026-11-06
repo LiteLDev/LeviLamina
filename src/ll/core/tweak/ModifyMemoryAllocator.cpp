@@ -5,7 +5,7 @@
 
 namespace ll::memory {
 #ifdef LL_PLAT_C
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocAllocateHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -16,7 +16,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._allocate(size);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocReleaseHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -27,7 +27,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._release(ptr);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocAlignedAllocateHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -39,7 +39,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._alignedAllocate(size, alignment);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocAlignedReleaseHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -50,7 +50,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._alignedRelease(ptr);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocSizeHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -62,7 +62,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._getUsableSize(ptr, alignedAllocation);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocReallocHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -74,7 +74,7 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
     return ll::memory::getDefaultAllocator()._realloc(ptr, newSize);
 }
 
-LL_AUTO_TYPE_INSTANCE_HOOK(
+LL_TYPE_INSTANCE_HOOK(
     MallocAlignedReallocHook,
     HookPriority::Highest,
     Bedrock::Memory::MallocAllocator,
@@ -86,9 +86,23 @@ LL_AUTO_TYPE_INSTANCE_HOOK(
 ) {
     return ll::memory::getDefaultAllocator()._alignedRealloc(ptr, newSize, alignment);
 }
+
+using HookReg = memory::HookRegistrar<
+    MallocAllocateHook,
+    MallocReleaseHook,
+    MallocAlignedAllocateHook,
+    MallocAlignedReleaseHook,
+    MallocSizeHook,
+    MallocReallocHook,
+    MallocAlignedReallocHook>;
 #endif
 
 auto replaceMemoryAllocator = []() -> bool {
+#ifdef LL_PLAT_C
+    // Let LeviLamina don't uninstall hooks when client exits
+    static auto* hookReg = new HookReg; // NOLINT
+#endif
+
     *reinterpret_cast<std::atomic<Bedrock::Memory::IMemoryAllocator*>*>(
         "Memory::`anonymous namespace'::MemoryTrackerAnon::memoryAllocator"_sym.resolve()
     ) = &ll::memory::getDefaultAllocator();

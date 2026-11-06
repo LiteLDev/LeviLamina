@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed client crashes on exit #1869
+
 ## [26.60.3] - 2026-11-06
 
 ### Changed
