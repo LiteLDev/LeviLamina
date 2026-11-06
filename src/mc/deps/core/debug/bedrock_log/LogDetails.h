@@ -64,7 +64,7 @@ public:
         int                _messageId
     );
 
-    MCNAPI void
+    MCAPI void
     _log(::LogAreaID _area, uint _priority, char const* _function, int line, int _messageId, ::std::string message);
 
     MCNAPI void _logToFile(::std::string const& debugEvent);

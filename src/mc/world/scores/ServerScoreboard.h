@@ -104,7 +104,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ServerScoreboard(
+    MCAPI ServerScoreboard(
         ::CommandSoftEnumRegistry                            registry,
         ::LevelStorage*                                      levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager
@@ -137,7 +137,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::CommandSoftEnumRegistry                            registry,
         ::LevelStorage*                                      levelStorage,
         ::Bedrock::NotNullNonOwnerPtr<::GameplayUserManager> gameplayUserManager

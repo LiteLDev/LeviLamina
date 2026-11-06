@@ -102,7 +102,7 @@ public:
         schar                                                      clientSubId
     );
 
-    MCNAPI void _applyPlayerSkin(
+    MCAPI void _applyPlayerSkin(
         ::IClientInstance&             client,
         ::SkinProcessingRequest const& skinRequest,
         ::SerializedSkinRef const&     serializableSkin,
@@ -134,7 +134,7 @@ public:
     MCNAPI void
     _queueAppearanceFetch(::mce::UUID const& playerId, ::std::string const& playFabId, ::AppearanceFetchMode mode);
 
-    MCNAPI void _removeOldSkinProcessRequests(::mce::UUID const& playerId);
+    MCAPI void _removeOldSkinProcessRequests(::mce::UUID const& playerId);
     // NOLINTEND
 
 public:

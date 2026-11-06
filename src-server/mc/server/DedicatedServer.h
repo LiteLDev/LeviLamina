@@ -132,7 +132,7 @@ public:
 
     MCNAPI void shutdownServices();
 
-    MCNAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
+    MCAPI ::ServerExitCode start(::std::string const& sessionID, ::Bedrock::ActivationArguments const& args);
 
     MCAPI bool stop();
     // NOLINTEND

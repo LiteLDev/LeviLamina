@@ -847,7 +847,7 @@ public:
         ::SemanticConstraint                constraints
     );
 
-    MCNAPI int addEnumValues(::std::string const& name, ::std::vector<::std::string> const& values);
+    MCAPI int addEnumValues(::std::string const& name, ::std::vector<::std::string> const& values);
 
     MCNAPI void addEnumValuesToExisting(uint index, ::std::vector<::std::pair<uint64, uint64>> const& values);
 
