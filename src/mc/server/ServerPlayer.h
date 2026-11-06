@@ -363,7 +363,7 @@ public:
 
     MCNAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
-    MCNAPI ::ContainerID openUnmanagedContainer(
+    MCAPI ::ContainerID openUnmanagedContainer(
         ::SharedTypes::Legacy::ContainerType        containerType,
         ::std::variant<::BlockPos, ::ActorUniqueID> owner
     );

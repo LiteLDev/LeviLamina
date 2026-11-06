@@ -45,7 +45,7 @@ public:
 
     MCNAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCFOLD int $getMaxLevel() const;
 
     MCNAPI bool $isTreasureOnly() const;
 

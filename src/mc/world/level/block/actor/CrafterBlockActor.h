@@ -72,7 +72,7 @@ public:
 
     MCNAPI void setToCraftingVisualState(::BlockSource& region);
 
-    MCNAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
+    MCAPI bool tryMoveItemsIntoContainer(::BlockSource& region, ::std::vector<::ItemInstance>& items);
     // NOLINTEND
 
 public:

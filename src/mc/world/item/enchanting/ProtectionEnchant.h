@@ -44,7 +44,7 @@ public:
 
     MCNAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCAPI int $getMaxLevel() const;
 
     MCNAPI int $getDamageProtection(int level, ::ActorDamageSource const& source) const;
 

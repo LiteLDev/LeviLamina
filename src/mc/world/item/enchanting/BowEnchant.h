@@ -31,7 +31,7 @@ public:
 
     MCNAPI int $getMaxCost(int level) const;
 
-    MCNAPI int $getMaxLevel() const;
+    MCAPI int $getMaxLevel() const;
 
     MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 

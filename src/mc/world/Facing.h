@@ -55,11 +55,11 @@ MCNAPI ::std::array<::Vec3, 6> const& NORMAL();
 
 MCAPI ::std::add_lvalue_reference_t<uchar const[]> OPPOSITE_FACING();
 
-MCNAPI ::std::array<schar, 6> const& STEP_X();
+MCAPI ::std::array<schar, 6> const& STEP_X();
 
-MCNAPI ::std::array<schar, 6> const& STEP_Y();
+MCAPI ::std::array<schar, 6> const& STEP_Y();
 
-MCNAPI ::std::array<schar, 6> const& STEP_Z();
+MCAPI ::std::array<schar, 6> const& STEP_Z();
 
 MCNAPI ::std::array<::std::string_view, 6> const& TO_STRING_ARR();
 // NOLINTEND
