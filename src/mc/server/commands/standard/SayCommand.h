@@ -38,7 +38,7 @@ public:
         ::std::optional<::std::string> const& filteredMessage
     );
 
-    MCNAPI static void _sendMessage(
+    MCAPI static void _sendMessage(
         ::std::string const&                  message,
         ::std::optional<::std::string> const& filteredMessage,
         ::std::string const&                  sender,

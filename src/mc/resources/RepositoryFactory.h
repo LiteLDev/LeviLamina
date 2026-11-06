@@ -25,7 +25,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::std::shared_ptr<::RepositorySources> $createSources(::IResourcePackRepository const& repository) const;
+    MCAPI ::std::shared_ptr<::RepositorySources> $createSources(::IResourcePackRepository const& repository) const;
 
     MCNAPI ::std::unique_ptr<::IPackIOProvider> $createIO() const;
 

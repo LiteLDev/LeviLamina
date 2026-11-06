@@ -45,7 +45,7 @@ public:
 
     MCNAPI void stopWeather();
 
-    MCNAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
+    MCAPI void updateWeather(float rainLevel, int rainTime, float lightningLevel, int lightningTime);
     // NOLINTEND
 
 public:

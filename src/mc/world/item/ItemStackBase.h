@@ -144,7 +144,7 @@ public:
 #endif
 
 #ifdef LL_PLAT_S
-    MCNAPI bool _setItem(int id, bool doRemap);
+    MCAPI bool _setItem(int id, bool doRemap);
 #endif
 
     MCAPI void _updateCompareHashes();

@@ -74,7 +74,7 @@ public:
         int                                          ipv6Index
     );
 
-    MCNAPI ::RakNet::StartupResult peerStartup(
+    MCAPI ::RakNet::StartupResult peerStartup(
         ::RakNet::RakPeerInterface*   peerIn,
         ::ConnectionDefinition const& definition,
         ::RakPeerHelper::PeerPurpose  purpose

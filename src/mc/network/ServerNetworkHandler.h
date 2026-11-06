@@ -800,7 +800,7 @@ public:
     MCNAPI void setEduSystems(::Bedrock::NonOwnerPointer<::IEduSystems> eduSystems);
 #endif
 
-    MCNAPI bool tryToLoadPlayer(
+    MCAPI bool tryToLoadPlayer(
         ::ServerPlayer&                   player,
         ::ConnectionRequest const&        connectionRequest,
         ::PlayerAuthenticationInfo const& playerInfo

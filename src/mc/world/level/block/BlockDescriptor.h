@@ -51,7 +51,7 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI void resolve(bool logInvalidBlocks);
+        MCAPI void resolve(bool logInvalidBlocks);
         // NOLINTEND
     };
 
