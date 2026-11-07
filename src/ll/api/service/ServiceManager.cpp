@@ -4,6 +4,7 @@
 #include "ll/api/event/EventBus.h"
 #include "ll/api/event/service/ServiceEvents.h"
 #include "ll/api/i18n/I18n.h"
+#include "ll/api/mod/ModManagerRegistry.h"
 
 namespace ll::service {
 std::string GetServiceError::message(std::string_view locale) const noexcept {
@@ -163,7 +164,11 @@ ServiceManager& ServiceManager::getInstance() {
     return instance;
 }
 
-ServiceManager::ServiceManager() : impl(std::make_unique<Impl>()) {}
+ServiceManager::ServiceManager() : impl(std::make_unique<Impl>()) {
+    mod::ModManagerRegistry::getInstance().executeOnModUnload([this](std::string_view name) {
+        impl->removeService(name);
+    });
+}
 
 ServiceManager::~ServiceManager() = default;
 
