@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.60.5] - 2026-11-08
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
 ### Fixed
 
+- Fixed the issue where the service automatically unregisters and update the documentation @zimuya4153
 - Fixed constructor of SerializedSkinRef
 - Fixed ServerInstance lifecycle on client, broken lifecycle will cause crash
 
@@ -2112,7 +2119,8 @@ For lip and tooth-hub test only.
 [#1868]: https://github.com/LiteLDev/LeviLamina/issues/1868
 [#1869]: https://github.com/LiteLDev/LeviLamina/issues/1869
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.4...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.5...HEAD
+[26.60.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.4...v26.60.5
 [26.60.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.3...v26.60.4
 [26.60.3]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.2...v26.60.3
 [26.60.2]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.1...v26.60.2
