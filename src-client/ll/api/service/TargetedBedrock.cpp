@@ -20,7 +20,7 @@
 #include "mc/server/commands/CommandRegistry.h"
 #include "mc/server/commands/MinecraftCommands.h"
 #include "mc/world/Minecraft.h"
-
+#include "mc/world/item/registry/ItemRegistry.h"
 
 namespace ll::service::inline bedrock {
 
@@ -42,13 +42,9 @@ LL_TYPE_INSTANCE_HOOK(
     return res;
 }
 
-LL_TYPE_INSTANCE_HOOK(
-    ServerInstanceDestructor,
-    HookPriority::High,
-    MinecraftGame,
-    &MinecraftGame::$shutdownServer,
-    void
-) {
+// Exiting from local world will trigger this hook twice, exiting from multiplayer game will trigger this hook
+// But there're no better functions to hook
+LL_TYPE_INSTANCE_HOOK(ServerInstanceDestructor, HookPriority::High, ItemRegistry, &ItemRegistry::shutdown, void) {
     serverInstance = nullptr;
     origin();
 }

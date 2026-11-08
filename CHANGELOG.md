@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fixed constructor of SerializedSkinRef
+- Fixed ServerInstance lifecycle on client, broken lifecycle will cause crash
+
 ## [26.60.4] - 2026-11-07
 
 ### Changed
