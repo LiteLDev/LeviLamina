@@ -65,7 +65,7 @@ public:
         bool                      isPremium,
         bool                      isPersona,
         bool                      isPersonaCapeOnClassicSkin,
-        bool                      isPrimaryUser,
+        bool const                isPrimaryUser,
         bool                      overridesPlayerAppearance
     );
 
