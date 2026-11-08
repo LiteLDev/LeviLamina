@@ -135,11 +135,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
+    MCAPI void $loadChunk(::LevelChunk& lc, bool forceImmediateReplacementDataLoad);
 
-    MCNAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCAPI bool $structurePostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
-    MCNAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
+    MCAPI bool $decorationPostProcessChunk(::ChunkViewSource& neighborhoodIn);
 
     MCNAPI ::WorldGenerator::BlockVolumeDimensions $getBlockVolumeDimensions() const;
 

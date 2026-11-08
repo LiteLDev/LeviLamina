@@ -580,7 +580,7 @@ public:
 
     MCNAPI bool $canPowerJump() const;
 
-    MCNAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
+    MCAPI void $setEquippedSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     MCNAPI void $renderDebugServerState(::IOptionsReader const& options);
 

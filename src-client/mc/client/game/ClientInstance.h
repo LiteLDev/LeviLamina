@@ -1829,7 +1829,7 @@ public:
 
     MCNAPI void $getNormalizedUICursorTransform(::MatrixStack::MatrixStackRef& matrix, float cursorHalfSizeTexels);
 
-    MCNAPI bool $shouldRenderUICursor() const;
+    MCAPI bool $shouldRenderUICursor() const;
 
     MCNAPI bool $getRenderPlayerModel() const;
 

@@ -48,7 +48,7 @@ public:
 
     MCAPI ::Bedrock::Result<::std::string> getString(uint64 maxLength);
 
-    MCNAPI ::Bedrock::Result<void> getString(::std::string& outStringStream, uint64 maxLength);
+    MCAPI ::Bedrock::Result<void> getString(::std::string& outStringStream, uint64 maxLength);
 
     MCNAPI ::Bedrock::Result<uchar> getUnsignedChar();
 

@@ -17,12 +17,12 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ScriptMessagePacketPayload(::std::string const& messageId, ::std::string const& messageValue);
+    MCAPI ScriptMessagePacketPayload(::std::string const& messageId, ::std::string const& messageValue);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& messageId, ::std::string const& messageValue);
+    MCFOLD void* $ctor(::std::string const& messageId, ::std::string const& messageValue);
     // NOLINTEND
 };

@@ -1255,9 +1255,9 @@ public:
 
     MCNAPI void $addLevels(int levels);
 
-    MCNAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
+    MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
-    MCNAPI void $setOffhandSlot(::ItemStack const& item);
+    MCAPI void $setOffhandSlot(::ItemStack const& item);
 
     MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 

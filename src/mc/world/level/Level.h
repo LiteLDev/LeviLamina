@@ -2367,7 +2367,7 @@ public:
 
     MCNAPI ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> $getUnknownBlockTypeRegistry();
 
-    MCNAPI bool $isClientSideGenerationEnabled();
+    MCAPI bool $isClientSideGenerationEnabled();
 
     MCNAPI bool $blockNetworkIdsAreHashes();
 

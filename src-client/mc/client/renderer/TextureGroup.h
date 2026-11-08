@@ -121,11 +121,11 @@ public:
 
     MCNAPI uint64 estimateMemoryUsage() const;
 
-    MCNAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
+    MCAPI ::cg::ImageBuffer* getCachedImageOrLoadAsync(::ResourceLocation const& imageToLoad);
 
     MCAPI ::cg::ImageBuffer* getCachedImageOrLoadSync(::ResourceLocation const& resourceLocation, bool forceReload);
 
-    MCNAPI bool isLoaded(
+    MCAPI bool isLoaded(
         ::ResourceLocation const& resourceLocation,
         bool                      ignoreCreation,
         ::cg::TextureSetLayerType textureType

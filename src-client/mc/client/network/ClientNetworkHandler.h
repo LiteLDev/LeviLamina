@@ -714,7 +714,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::RespawnPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::ScriptMessagePacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::ServerPlayerPostMovePositionPacket const& packet);
 

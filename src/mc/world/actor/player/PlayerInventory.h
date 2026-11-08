@@ -53,7 +53,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $containerSizeChanged(int size);
 
-    MCNAPI void $containerContentChanged(int slot);
+    MCAPI void $containerContentChanged(int slot);
 
 
     // NOLINTEND

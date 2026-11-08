@@ -150,42 +150,42 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $tick();
+    MCFOLD bool $tick();
 
-    MCNAPI ::ContainerID $getContainerId() const;
+    MCFOLD ::ContainerID $getContainerId() const;
 
-    MCNAPI void $setContainerId(::ContainerID id);
+    MCAPI void $setContainerId(::ContainerID id);
 
-    MCNAPI ::SharedTypes::Legacy::ContainerType $getContainerType() const;
+    MCFOLD ::SharedTypes::Legacy::ContainerType $getContainerType() const;
 
-    MCNAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
+    MCAPI void $setContainerType(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI ::Bedrock::PubSub::Subscription
+    MCAPI ::Bedrock::PubSub::Subscription
     $registerContainerTypeListener(::std::function<void(::SharedTypes::Legacy::ContainerType)> callback) const;
 
-    MCNAPI void $debitPlayerLevels(int levels);
+    MCAPI void $debitPlayerLevels(int levels);
 
-    MCNAPI bool $isCreativeMode() const;
+    MCAPI bool $isCreativeMode() const;
 
-    MCNAPI bool $isClientSide() const;
+    MCAPI bool $isClientSide() const;
 
-    MCNAPI bool $isServerAuthoritative() const;
+    MCAPI bool $isServerAuthoritative() const;
 
     MCNAPI bool $isValid(float pickRange);
 
-    MCNAPI void $serverInitItemStackIds();
+    MCAPI void $serverInitItemStackIds();
 
-    MCNAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
+    MCAPI void $setFullContainerSlot(int slot, ::FullContainerName const& name, ::ItemStack const& item, bool);
 
-    MCNAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
+    MCAPI ::ItemStack const& $getFullContainerSlot(int slot, ::FullContainerName const& name) const;
 
-    MCNAPI void $broadcastChanges();
+    MCAPI void $broadcastChanges();
 
     MCNAPI void $_onDynamicContainerContentsChanged();
 

@@ -70,19 +70,19 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ScriptMessagePacket(::ScriptMessagePacketPayload payload);
+    MCAPI explicit ScriptMessagePacket(::ScriptMessagePacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ScriptMessagePacketPayload payload);
+    MCAPI void* $ctor(::ScriptMessagePacketPayload payload);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

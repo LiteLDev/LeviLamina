@@ -1043,7 +1043,7 @@ public:
     MCNAPI static ::BlockType const* _getBlockFromCmdParameters(::std::string const& parameters);
 #endif
 
-    MCNAPI static ::std::string _removeStringQuotes(::std::string const& str);
+    MCAPI static ::std::string _removeStringQuotes(::std::string const& str);
 
     MCNAPI static ::CommandRegistry::ParseToken*
     collapse(::CommandRegistry::ParseToken& parent, ::CommandRegistry::Symbol symbol);
