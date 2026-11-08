@@ -111,14 +111,14 @@ public:
     getContainerIterator(::ContainerValidationSlotData const& slotData);
 #endif
 
-    MCNAPI ::std::shared_ptr<::SimpleSparseContainer>
+    MCAPI ::std::shared_ptr<::SimpleSparseContainer>
     getOrCreateSparseContainer(::FullContainerName const& containerEnumName);
 
 #ifdef LL_PLAT_C
     MCNAPI void postRequest();
 #endif
 
-    MCNAPI bool tryCommitActionResults();
+    MCAPI bool tryCommitActionResults();
 
     MCNAPI ::ContainerValidationResult tryConsume(::ContainerValidationSlotData const& srcSlotData, int transferAmount);
 

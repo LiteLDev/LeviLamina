@@ -60,7 +60,7 @@ public:
 
     MCNAPI ::std::string getDescriptionId() const;
 
-    MCNAPI ::std::string getDescriptionId(::PotionType potionType) const;
+    MCAPI ::std::string getDescriptionId(::PotionType potionType) const;
 
     MCNAPI ::std::string getNameId() const;
 
@@ -82,7 +82,7 @@ public:
         ::Player const&                      player
     );
 
-    MCNAPI static ::std::string
+    MCAPI static ::std::string
     effectDurationToString(::PotionType potionType, float timeMod, ::MobEffectInstance const& effect);
 
     MCNAPI static ::std::string effectPotencyToString(::MobEffectInstance const& effect);

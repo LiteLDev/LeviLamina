@@ -88,11 +88,11 @@ public:
 
     MCNAPI void pushInputMapping(bool inGame);
 
-    MCNAPI void releaseButtonsAndSticks();
+    MCAPI void releaseButtonsAndSticks();
 
     MCNAPI void render(::ScreenContext& screenContext);
 
-    MCNAPI void resetPlayerState();
+    MCAPI void resetPlayerState();
 
     MCNAPI void setBlockSelectToggle(bool value);
 

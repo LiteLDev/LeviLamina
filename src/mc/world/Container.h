@@ -205,7 +205,7 @@ public:
 
     MCAPI explicit Container(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI Container(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
 #ifdef LL_PLAT_C
     MCNAPI Container(
@@ -255,7 +255,7 @@ public:
 
     MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type);
 
-    MCNAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
+    MCAPI void* $ctor(::SharedTypes::Legacy::ContainerType type, ::std::string const& name, bool customName);
 
 #ifdef LL_PLAT_C
     MCNAPI void*
@@ -348,7 +348,7 @@ public:
 
     MCFOLD bool $isSlotDisabled(int slot) const;
 
-    MCNAPI void $receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
+    MCAPI void $receiveContainerLifetimes(::DynamicContainerTracker const& tracker);
 
 
     // NOLINTEND

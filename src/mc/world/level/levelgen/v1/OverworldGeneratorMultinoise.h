@@ -185,7 +185,7 @@ public:
         ::ChunkBlenderFactory&     chunkBlenderFactory
     );
 
-    MCNAPI static ::std::unique_ptr<::BiomeSource> makeBiomeSource(
+    MCAPI static ::std::unique_ptr<::BiomeSource> makeBiomeSource(
         ::XoroshiroPositionalRandomFactory const& random,
         ::BiomeRegistry const&                    biomeRegistry,
         ::Biome const*                            overrideBiome,

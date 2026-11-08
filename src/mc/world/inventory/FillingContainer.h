@@ -93,25 +93,25 @@ public:
     // NOLINTBEGIN
     MCNAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
-    MCNAPI void $swapSlots(int from, int to);
+    MCAPI void $swapSlots(int from, int to);
 
     MCAPI bool $add(::ItemStack& item);
 
     MCNAPI bool $canAdd(::ItemStack const& item) const;
 
-    MCNAPI void $removeItem(int slot, int count);
+    MCAPI void $removeItem(int slot, int count);
 
-    MCNAPI void $clearSlot(int slot);
+    MCAPI void $clearSlot(int slot);
 
-    MCNAPI int $clearInventory(int resizeTo);
+    MCAPI int $clearInventory(int resizeTo);
 
     MCNAPI ::std::unique_ptr<::ListTag> $saveToTag(::SaveContext const& saveContext) const;
 
-    MCNAPI void $loadFromTag(::ListTag const& inventoryList);
+    MCAPI void $loadFromTag(::ListTag const& inventoryList);
 
     MCNAPI void $setItem(int slot, ::ItemStack const& item);
 
-    MCNAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
+    MCAPI void $setItemWithForceBalance(int slot, ::ItemStack const& item, bool forceBalanced);
 
     MCNAPI ::ItemStack const& $getItem(int slot) const;
 

@@ -65,7 +65,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI SimpleSparseContainer(
+    MCAPI SimpleSparseContainer(
         ::Container&                                     backingContainer,
         ::SparseContainerBackingSetType                  backingSetType,
         ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,
@@ -82,7 +82,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::Container&                                     backingContainer,
         ::SparseContainerBackingSetType                  backingSetType,
         ::std::unique_ptr<::ISparseContainerSetListener> sparseContainerSetListener,

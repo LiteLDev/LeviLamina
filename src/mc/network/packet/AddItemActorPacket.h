@@ -68,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AddItemActorPacket(::AddItemActorPacketPayload payload);
+    MCAPI explicit AddItemActorPacket(::AddItemActorPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AddItemActorPacketPayload payload);
+    MCAPI void* $ctor(::AddItemActorPacketPayload payload);
     // NOLINTEND
 
 public:

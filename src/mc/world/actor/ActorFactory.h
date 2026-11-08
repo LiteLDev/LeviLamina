@@ -65,7 +65,7 @@ public:
         ::std::function<void(::std::string const&, ::ActorFactoryData const&)> callback
     ) const;
 
-    MCNAPI ::OwnerPtr<::EntityContext> _constructActor(
+    MCAPI ::OwnerPtr<::EntityContext> _constructActor(
         ::ActorDefinitionIdentifier const&  identifier,
         ::Vec3 const&                       position,
         ::Vec2 const&                       rotation,
