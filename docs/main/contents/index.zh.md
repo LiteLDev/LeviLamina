@@ -1,12 +1,39 @@
-# 欢迎来到LeviLamina文档
+---
+layout: home
+hero:
+  name: LeviLamina
+  text: Minecraft 基岩版模组加载器
+  tagline: 轻量级、模块化和多功能的 Minecraft 基岩版模组加载器，LiteLoaderBDS 的后继者
+  image:
+    src: logo.svg
+    alt: LeviLamina
+  actions:
+    - theme: brand
+      text: 安装服务端
+      link: user_guides/install.md
+    - theme: alt
+      text: 创建你的第一个模组
+      link: developer_guides/tutorials/create_your_first_mod.md
+    - theme: alt
+      text: API 参考
+      link: /LeviLamina/api/
+features:
+  - title: 全面的 API
+    details: 为用 C++ 编写的模组提供全面的 API 和一系列实用接口。
+    link: api_reference/index.md
+  - title: 强大的事件系统
+    details: 订阅游戏中发生的事情，从玩家加入到方块被破坏。
+    link: developer_guides/how_to_guides/event_guide.md
+  - title: 服务端与客户端
+    details: 可运行在基岩版专用服务器和 Windows 客户端上。
+    link: user_guides/install_on_client.md
+---
 
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge&logo=discord)](https://discord.gg/v5R5P4vRZk)
 [![Telegram](https://img.shields.io/badge/Telegram-blue?style=for-the-badge&logo=telegram)](https://t.me/LiteLoader)
 [![656669024](https://img.shields.io/badge/656669024-red?style=for-the-badge&logo=qq)](https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ndxRXO1HARA8ing7OunMClOz3cQTogL0&authKey=D7QTcqnzhBzuh3zc%2F70FjgklsVvkCImTjSRqHMwYGCLwIFpxzp%2FflC97Y7AUG%2Fpy&noverify=0&group_code=656669024)
 [![937236109](https://img.shields.io/badge/937236109-red?style=for-the-badge&logo=qq)](https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=1u0nmmUIZOB716neFTlbyj_2aOQn_TV-&authKey=1lBqM20oOfdKjDnxkq09DjR729fqFfWVnaLQ7VjrDB%2FAg6qwvw6QCwdwYoRUrewU&noverify=0&group_code=937236109)
 [![850517473](https://img.shields.io/badge/850517473-red?style=for-the-badge&logo=qq)](https://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=3Fxt0gwMYkoLPani_vQ9tsNfYrnVy4hK&authKey=2A%2BNk3jmRaK%2FO1FBQSjTIbStAU1kbZWkjEkyh2RTVA015eTg6c4CvVhfByc1BtGZ&noverify=0&group_code=850517473)
-
-轻量级、模块化和多功能的 Minecraft 基岩版模组加载器，LiteLoaderBDS 的后继者
 
 LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版提供必不可少的 API 支持。它拥有全面的 API、一系列实用接口、强大的事件系统，以及对基本接口的广泛支持。LeviLamina 为给 Minecraft 增加游戏特性和功能提供了坚实的基础，用户友好的开发环境和灵活的方式让模组开发变得轻而易举。
 

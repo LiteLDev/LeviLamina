@@ -1,0 +1,4 @@
+# Generated before every Doxygen run from the docs build's dist/_kit/nav.json (see the build-doxygen job):
+#   node docs/main/kit/static/doxygen/gen-header.mjs --nav docs/main/dist/_kit/nav.json --out docs/api/header.html
+# Without a docs build, leave out --nav: the kit's copy of LeviLamina's sections is used.
+/header.html

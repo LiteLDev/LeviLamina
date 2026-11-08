@@ -33,9 +33,13 @@ jobs:
           echo "live: $have · published: $want"
           echo "stale=$([ "$want" != "$have" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
 
+  # The API reference carries the docs pages' header (sections, resources, locales): it is generated from the docs
+  # build's navigation (dist/_kit/nav.json), so this job runs after build-docs and takes nav.json from its artifact.
   build-doxygen:
-    needs: kit
-    if: ${{ !cancelled() && (github.event_name != 'schedule' || needs.kit.outputs.stale == 'true') }}
+    needs:
+      - kit
+      - build-docs
+    if: ${{ !cancelled() && needs.build-docs.result == 'success' && (github.event_name != 'schedule' || needs.kit.outputs.stale == 'true') }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v7
@@ -44,9 +48,20 @@ jobs:
         with:
           node-version: 24
 
-      # the Doxygen header, footer, stylesheets and kit.js are levimc-kit's (docs/main/kit/static/)
+      # the Doxygen header generator, footer, stylesheets, kit.js and the navtree.js patch are levimc-kit's
+      # (docs/main/kit/static/)
       - run: |
           node docs/main/scripts/fetch-kit.mjs --dest docs/main/kit
+
+      - uses: actions/download-artifact@v8
+        with:
+          name: docs-pages
+          path: docs-pages/
+
+      # docs/api/header.html (git-ignored): the docs header with the docs build's sections, resources and locales
+      - run: |
+          tar -xf docs-pages/artifact.tar -C docs-pages/ ./_kit/nav.json
+          node docs/main/kit/static/doxygen/gen-header.mjs --nav docs-pages/_kit/nav.json --out docs/api/header.html
 
       - run: |
           git clone --depth 1 --branch v2.4.1 https://github.com/jothepro/doxygen-awesome-css.git docs/api/doxygen-awesome-css
@@ -64,6 +79,10 @@ jobs:
 
       - run: |
           doxygen docs/api/Doxyfile
+
+      # the tree renders a window of its long lists (the Class List) and leaves the page layout to the kit
+      - run: |
+          node docs/main/kit/static/doxygen/patch-navtree.mjs site/api
 
       - run: |
           tar -cvf artifact.tar -C site/ .
