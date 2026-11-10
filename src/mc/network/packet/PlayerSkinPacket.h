@@ -82,7 +82,7 @@ public:
 
     MCNAPI ::SerializationMode $getSerializationMode() const;
 
-    MCNAPI void $setSerializationMode(::SerializationMode mode);
+    MCFOLD void $setSerializationMode(::SerializationMode mode);
 
     MCNAPI void $writeWithSerializationMode(
         ::BinaryStream&                      stream,

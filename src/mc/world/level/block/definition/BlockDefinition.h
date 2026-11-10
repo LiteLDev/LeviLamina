@@ -45,7 +45,7 @@ public:
 
     MCNAPI ::BlockDefinition& operator=(::BlockDefinition const&);
 
-    MCNAPI ~BlockDefinition();
+    MCAPI ~BlockDefinition();
     // NOLINTEND
 
 public:
@@ -81,6 +81,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

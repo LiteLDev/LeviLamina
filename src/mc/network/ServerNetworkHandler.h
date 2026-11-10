@@ -774,7 +774,7 @@ public:
         ::ResourcePackClientResponsePacket const& packet
     );
 
-    MCNAPI ::PlayerAuthenticationInfo fetchPlayerAuthenticationInfo(::NetworkIdentifier const& source);
+    MCAPI ::PlayerAuthenticationInfo fetchPlayerAuthenticationInfo(::NetworkIdentifier const& source);
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::string getServerName() const;
@@ -812,7 +812,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _decideIfSkinIsTrusted(::SerializedSkinRef& skin);
+    MCAPI static void _decideIfSkinIsTrusted(::SerializedSkinRef& skin);
 
     MCNAPI static bool _isServerTextEnabled(::ServerTextEvent const& textEvent);
 
@@ -931,7 +931,7 @@ public:
         uint64                              packetSize
     );
 
-    MCNAPI ::OutgoingPacketFilterResult
+    MCAPI ::OutgoingPacketFilterResult
     $allowOutgoingPacket(::std::vector<::NetworkIdentifierWithSubId> const& ids, ::Packet const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ActorEventPacket const& packet);
@@ -960,7 +960,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::ClientToServerHandshakePacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::CommandBlockUpdatePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::CommandRequestPacket const& packet);
 
@@ -1000,7 +1000,7 @@ public:
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::std::shared_ptr<::MobEquipmentPacket> packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::ModalFormResponsePacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::NetworkStackLatencyPacket const& packet);
 
@@ -1073,7 +1073,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::ChangeMobPropertyPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::RequestAbilityPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::RequestAbilityPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::RequestNetworkSettingsPacket const& packet);
 

@@ -58,7 +58,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool _executeChainBlock(
+    MCAPI bool _executeChainBlock(
         ::BlockSource&       region,
         ::BlockPos const&    pos,
         ::CommandBlockActor& blockActor,

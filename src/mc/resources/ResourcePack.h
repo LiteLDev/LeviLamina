@@ -126,7 +126,7 @@ public:
     MCNAPI bool hasExtraResourcesForLocale(::std::string const& code, int subpackIndex) const;
 #endif
 
-    MCNAPI bool hasResource(::Core::PathView const& resourceName, int subpackIndex) const;
+    MCAPI bool hasResource(::Core::PathView const& resourceName, int subpackIndex) const;
 
 #ifdef LL_PLAT_C
     MCNAPI void invalidatePreloadCache();

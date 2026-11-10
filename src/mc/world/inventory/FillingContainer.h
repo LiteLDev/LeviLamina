@@ -77,7 +77,7 @@ public:
 
     MCNAPI int _getSlotWithRemainingSpace(::ItemStack const& newItem) const;
 
-    MCNAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
+    MCAPI int getSlotWithItem(::ItemStack const& item, bool checkAux, bool checkData) const;
 
     MCNAPI bool removeResource(int type);
     // NOLINTEND
@@ -91,7 +91,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
+    MCAPI int $removeResource(::ItemStack const& item, bool requireExactAux, bool requireExactData, int maxCount);
 
     MCAPI void $swapSlots(int from, int to);
 

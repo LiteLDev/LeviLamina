@@ -28,7 +28,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::SetScorePacketPayload change(
+    MCAPI static ::SetScorePacketPayload change(
         ::std::vector<::std::variant<::RemoveScore, ::ChangePlayerScore, ::ChangeEntityScore, ::ChangeFakePlayerScore>>
             info
     );

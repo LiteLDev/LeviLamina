@@ -103,7 +103,7 @@ public:
 
     MCNAPI void onEvent(::BlockEvents::ActorInternalEvent& event) const;
 
-    MCNAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
+    MCAPI void randomTick(::BlockEvents::BlockRandomTickEvent& eventData) const;
     // NOLINTEND
 
 public:
@@ -138,7 +138,7 @@ public:
         ::optional_ref<::GetCollisionShapeInterface const>
     ) const;
 
-    MCNAPI ::AABB const& $getOutline(
+    MCAPI ::AABB const& $getOutline(
         ::Block const&             block,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,

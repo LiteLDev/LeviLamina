@@ -177,9 +177,9 @@ public:
 
     MCNAPI bool _attack(::Actor& entity, bool playPredictiveSound, ::Vec3 const& hitPosition);
 
-    MCNAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
+    MCAPI bool _creativeDestroyBlock(::BlockPos const& pos, uchar face);
 
-    MCNAPI bool _enableBlockBreakDelay() const;
+    MCAPI bool _enableBlockBreakDelay() const;
 
 #ifdef LL_PLAT_C
     MCNAPI bool _startDestroyBlock(::BlockPos const& hitPos, ::Vec3 const&, uchar hitFace, bool& hasDestroyedBlock);

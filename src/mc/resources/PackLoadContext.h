@@ -33,7 +33,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PackLoadContext(
+    MCAPI PackLoadContext(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
@@ -47,13 +47,13 @@ public:
     );
 #endif
 
-    MCNAPI ~PackLoadContext();
+    MCAPI ~PackLoadContext();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::PackInstance const&                              pack,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator
@@ -71,6 +71,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

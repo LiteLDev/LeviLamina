@@ -157,13 +157,13 @@ public:
 
     MCAPI ::Block const* getBlock() const;
 
-    MCNAPI ::BlockType const* getBlockType() const;
+    MCAPI ::BlockType const* getBlockType() const;
 
-    MCNAPI int getIdAux() const;
+    MCAPI int getIdAux() const;
 
     MCAPI ::Item const* getItem() const;
 
-    MCNAPI ::std::string getRawNameId() const;
+    MCAPI ::std::string getRawNameId() const;
 
     MCAPI ::std::string getSerializedNameAndAux(bool removeInvalidAux) const;
 
@@ -183,7 +183,7 @@ public:
 
     MCNAPI static void fromSharedTypes(::ItemDescriptor& instance, ::SharedTypes::Legacy::ItemDescriptor const& desc);
 
-    MCNAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
+    MCAPI static ::std::optional<::ItemDescriptor> fromTag(::CompoundTag const* tag);
     // NOLINTEND
 
 public:

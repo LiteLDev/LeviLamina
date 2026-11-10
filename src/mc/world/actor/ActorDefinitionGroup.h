@@ -97,7 +97,7 @@ public:
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> linkedAssetValidator
     );
 
-    MCNAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
+    MCAPI ::ActorDefinitionGroup::LoadActorResult _loadActorDefinition(
         ::Level&                             level,
         ::PackLoadContext&                   packLoadContext,
         ::std::string const&                 relativeResourceFilepath,

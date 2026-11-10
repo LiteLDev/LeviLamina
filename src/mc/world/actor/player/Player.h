@@ -792,7 +792,7 @@ public:
 
     MCAPI bool canUseOperatorBlocks() const;
 
-    MCNAPI void causeFoodExhaustion(float exhaustionAmount);
+    MCAPI void causeFoodExhaustion(float exhaustionAmount);
 
     MCNAPI bool checkBed(::BlockSource* spawnBlockSource, ::Vec3 const* const positionToCheck);
 
@@ -851,7 +851,7 @@ public:
 
     MCNAPI int getMaxItemCooldownLeft() const;
 
-    MCNAPI ::AABB getPickupArea() const;
+    MCAPI ::AABB getPickupArea() const;
 
     MCAPI ::GameType getPlayerGameType() const;
 
@@ -884,11 +884,11 @@ public:
 
     MCNAPI bool isEditorPlayer() const;
 
-    MCNAPI bool isEquipmentHidden() const;
+    MCAPI bool isEquipmentHidden() const;
 
     MCAPI bool isFlying() const;
 
-    MCNAPI bool isForcedRespawn() const;
+    MCAPI bool isForcedRespawn() const;
 
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
@@ -940,7 +940,7 @@ public:
 
     MCAPI void setRespawnPosition(::BlockPos const& inRespawnPosition, ::DimensionType dimension);
 
-    MCNAPI void setRespawnPositionCandidate();
+    MCAPI void setRespawnPositionCandidate();
 
     MCAPI ::ItemStack const& setSelectedSlot(int slot);
 
@@ -1044,7 +1044,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
@@ -1074,7 +1074,7 @@ public:
 
     MCNAPI ::std::vector<::ChunkPos> const& $getTickingOffsets() const;
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI void $moveView();
 
@@ -1098,11 +1098,11 @@ public:
 
     MCAPI void $die(::ActorDamageSource const& source);
 
-    MCNAPI void $remove();
+    MCAPI void $remove();
 
     MCAPI void $respawn();
 
-    MCNAPI bool $shouldDropDeathLoot() const;
+    MCAPI bool $shouldDropDeathLoot() const;
 
     MCNAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
 
@@ -1213,7 +1213,7 @@ public:
 
     MCAPI void $stopSleepInBed(bool forcefulWakeUp, bool updateLevelList);
 
-    MCNAPI bool $canStartSleepInBed();
+    MCAPI bool $canStartSleepInBed();
 
     MCNAPI void $sendInventory(bool shouldSelectSlot);
 
@@ -1237,7 +1237,7 @@ public:
 
     MCNAPI float $getSpeed() const;
 
-    MCNAPI void $setPlayerGameType(::GameType gameType);
+    MCAPI void $setPlayerGameType(::GameType gameType);
 
     MCNAPI void $initHUDContainerManager();
 
@@ -1253,7 +1253,7 @@ public:
 
     MCAPI void $addExperience(int xp);
 
-    MCNAPI void $addLevels(int levels);
+    MCAPI void $addLevels(int levels);
 
     MCAPI void $setArmor(::SharedTypes::Legacy::ArmorSlot slot, ::ItemStack const& item);
 
@@ -1363,7 +1363,7 @@ public:
 
     MCAPI ::std::shared_ptr<::ChunkViewSource> $_createChunkSource(::ChunkSource& mainChunkSource);
 
-    MCNAPI void $setAbilities(::LayeredAbilities const& newAbilities);
+    MCAPI void $setAbilities(::LayeredAbilities const& newAbilities);
 
     MCNAPI ::AnimationComponent& $getAnimationComponent();
 

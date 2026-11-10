@@ -95,7 +95,7 @@ public:
 
     MCAPI ::BlockPos const& getFacingDir(::IConstBlockSource const& region) const;
 
-    MCNAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
+    MCAPI void moveEntityLastProgress(::Actor& entity, ::Vec3 delta);
 
     MCNAPI ::BlockPushResult pushOrHurtCollidedEntity(::Actor& entity, ::Vec3 const& pushDelta);
 

@@ -198,7 +198,7 @@ public:
         ::brstd::function_ref<void()>                                                               execute
     );
 
-    MCNAPI int getItemCount(::ItemDescriptor const& descriptor) const;
+    MCAPI int getItemCount(::ItemDescriptor const& descriptor) const;
 
     MCAPI int getRedstoneSignalFromContainer(::BlockSource& region);
 

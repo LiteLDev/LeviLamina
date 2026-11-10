@@ -146,9 +146,9 @@ MCAPI ::ItemTag const& Sword();
 
 MCNAPI ::ItemTag const& Tool();
 
-MCNAPI ::ItemTag const& TransformMaterials();
+MCAPI ::ItemTag const& TransformMaterials();
 
-MCNAPI ::ItemTag const& TransformTemplates();
+MCAPI ::ItemTag const& TransformTemplates();
 
 MCAPI ::ItemTag const& TransformableItems();
 

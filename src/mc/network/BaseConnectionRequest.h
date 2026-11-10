@@ -99,7 +99,7 @@ public:
 
     MCAPI ::std::string getDeviceId() const;
 
-    MCNAPI ::BuildPlatform getDeviceOS() const;
+    MCAPI ::BuildPlatform getDeviceOS() const;
 
     MCNAPI ::std::string getLanguageCode() const;
 

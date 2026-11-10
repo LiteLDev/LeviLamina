@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
+    MCAPI void _createServerSideAction(::ItemStack const& oldItem, ::ItemStack const& newItem);
 
     MCAPI void addAction(::InventoryAction const& action, bool forceBalanced);
 

@@ -23,7 +23,7 @@ MCNAPI bool canDispenseToHumanoids(::Mob const& mob);
 
 MCNAPI bool canDispenseToNonPlayerHumanoids(::Mob const& mob);
 
-MCNAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
+MCAPI void spawnLoot(::Level& level, ::Actor& actor, ::std::string const& lootTable);
 
 MCNAPI bool tryDispenseEquipment(
     ::BlockSource&                            region,

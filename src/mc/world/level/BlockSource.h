@@ -373,7 +373,7 @@ public:
         bool              skipOverrides
     );
 
-    MCNAPI void addToRandomTickingQueuePercentChance(
+    MCAPI void addToRandomTickingQueuePercentChance(
         ::BlockPos const& pos,
         ::Block const&    block,
         float             percentChance,
@@ -393,18 +393,18 @@ public:
 
     MCNAPI void connectionUpdate(::BlockPos const& neighPos, ::BlockPos const& myPos);
 
-    MCNAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
+    MCAPI bool containsAnyBlockOfType(::BlockPos const& min, ::BlockPos const& max, ::Block const& type) const;
 
-    MCNAPI bool containsAnySolidBlocking(::AABB const& box) const;
+    MCAPI bool containsAnySolidBlocking(::AABB const& box) const;
 
-    MCNAPI uint64 countBlocksOfType(
+    MCAPI uint64 countBlocksOfType(
         ::BlockDescriptor const& blockDescriptor,
         ::BlockPos const&        min,
         ::BlockPos const&        max,
         uint64                   maxCount
     ) const;
 
-    MCNAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchActors(::ActorDefinitionIdentifier const& actorId, ::AABB const& bb);
 
     MCAPI ::std::vector<::BlockActor*> fetchBlockEntities(::BlockActorType blockActorTypeId, ::AABB const& bb) const;
@@ -412,10 +412,10 @@ public:
     MCAPI void
     fetchBlockEntities(::AABB const& bb, ::std::vector<::BlockActor*>& blockEntityList, bool withPreservedEntities);
 
-    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
+    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const>
     fetchBlocksInBox(::BoundingBox const& box, ::brstd::function_ref<bool(::Block const&)> predicate);
 
-    MCNAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
+    MCAPI ::gsl::span<::BlockDataFetchResult<::Block> const> fetchBlocksInCylinder(
         ::BlockPos const&                           centerPos,
         uint                                        radius,
         uint                                        height,
@@ -430,9 +430,9 @@ public:
         ::std::function<bool(::Actor*)>              selector
     );
 
-    MCNAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
+    MCAPI ::std::vector<::Actor*> const& fetchEntities2(::ActorType type, ::AABB const& aabb, bool ignoreTargetType);
 
-    MCNAPI ::gsl::span<::gsl::not_null<::Actor*>>
+    MCAPI ::gsl::span<::gsl::not_null<::Actor*>>
     fetchPlayers(::AABB const& bb, ::Actor const* except, ::std::function<bool(::Actor*)> selector);
 
 #ifdef LL_PLAT_C
@@ -443,7 +443,7 @@ public:
     );
 #endif
 
-    MCNAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
+    MCAPI bool findNextTopSolidBlockUnder(::BlockPos& pos);
 
     MCNAPI void fireBlockEntityAboutToBeRemoved(::std::shared_ptr<::BlockActor> te);
 
@@ -499,7 +499,7 @@ public:
 
     MCNAPI bool isTouchingMaterial(::BlockPos const& pos, ::SharedTypes::v1_26_20::MaterialType type) const;
 
-    MCNAPI void
+    MCAPI void
     neighborChanged(::BlockPos const& neighPos, ::BlockPos const& myPos, ::NeighborChangeHistory const& history);
 
     MCAPI bool setBlock(
@@ -523,14 +523,14 @@ public:
 
     MCAPI void updateNeighborsAt(::BlockPos const& pos, ::NeighborChangeHistory const& history);
 
-    MCNAPI void
+    MCAPI void
     updateNeighborsAtExceptFromFacing(::BlockPos const& pos, int skipFacing, ::NeighborChangeHistory const& history);
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
+    MCAPI static bool containsAnyLiquid(::IConstBlockSource const& region, ::AABB const& box);
     // NOLINTEND
 
 public:

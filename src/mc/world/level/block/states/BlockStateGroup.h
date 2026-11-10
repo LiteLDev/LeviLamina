@@ -29,17 +29,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BlockStateGroup();
+    MCAPI BlockStateGroup();
 
     MCNAPI ::BlockStateMeta const* getBlockStateFromHash(uint64 const& h) const;
 
     MCNAPI ::BlockStateMeta const* getBlockStateFromName(::std::string const& name) const;
 
-    MCNAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
+    MCAPI void registerBlockStateDefinition(::BlockStateDefinition const& def);
 
-    MCNAPI void registerExistingBlockState(::BlockState const& state);
+    MCAPI void registerExistingBlockState(::BlockState const& state);
 
-    MCNAPI ~BlockStateGroup();
+    MCAPI ~BlockStateGroup();
     // NOLINTEND
 
 public:
@@ -52,12 +52,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor();
+    MCAPI void* $ctor();
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

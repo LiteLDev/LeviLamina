@@ -77,7 +77,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $appendDebugInfo(::std::string& str) const;
 
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
     MCNAPI bool $canContinueToUse();
 
@@ -85,7 +85,7 @@ public:
 
     MCNAPI void $stop();
 
-    MCNAPI void $tick();
+    MCAPI void $tick();
 
     MCNAPI void $useWorkstation();
 

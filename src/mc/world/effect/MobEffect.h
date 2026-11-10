@@ -188,7 +188,7 @@ public:
 
     MCNAPI void $onActorHurt(::Actor& target, int amplifier, ::ActorDamageSource const& source, float damage) const;
 
-    MCNAPI void
+    MCAPI void
     $applyInstantaneousEffect(::Actor* source, ::Actor* owner, ::Actor* target, int amplification, float scale) const;
 
     MCNAPI bool $isInstantaneous() const;

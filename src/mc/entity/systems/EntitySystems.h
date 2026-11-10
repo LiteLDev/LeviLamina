@@ -124,7 +124,7 @@ public:
     setTotalTickCallbacks(::std::function<void()>&& preTick, ::std::function<void()>&& postTick);
 #endif
 
-    MCNAPI void tick(::EntityRegistry& registry);
+    MCAPI void tick(::EntityRegistry& registry);
 
     MCNAPI void tickEditor(::EntityRegistry& registry);
 

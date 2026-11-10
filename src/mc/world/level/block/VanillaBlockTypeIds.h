@@ -140,7 +140,7 @@ MCNAPI ::HashedString const& Beetroot();
 
 MCNAPI ::HashedString const& Bell();
 
-MCNAPI ::HashedString const& BigDripleaf();
+MCAPI ::HashedString const& BigDripleaf();
 
 MCNAPI ::HashedString const& BirchButton();
 
@@ -1970,7 +1970,7 @@ MCNAPI ::HashedString const& SlimeBlock();
 
 MCNAPI ::HashedString const& SmallAmethystBud();
 
-MCNAPI ::HashedString const& SmallDripleaf();
+MCAPI ::HashedString const& SmallDripleaf();
 
 MCNAPI ::HashedString const& SmithingTable();
 

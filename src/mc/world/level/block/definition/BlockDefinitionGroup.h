@@ -106,14 +106,14 @@ public:
 
     MCAPI void initializeBlockFromDefinition(::BlockDefinition const& definition, ::Level& level);
 
-    MCNAPI ::std::unique_ptr<::BlockDefinition> loadResource(
+    MCAPI ::std::unique_ptr<::BlockDefinition> loadResource(
         ::std::string                            upgradedJsonData,
         ::Core::PathBuffer<::std::string> const& res,
         ::std::string const&                     resourcePacklocation,
         ::PackLoadContext&                       packLoadContext
     );
 
-    MCNAPI void loadResources(
+    MCAPI void loadResources(
         ::ResourcePackManager const&                       resourcePackManager,
         ::Experiments const&                               experiments,
         ::Bedrock::NonOwnerPointer<::LinkedAssetValidator> validator

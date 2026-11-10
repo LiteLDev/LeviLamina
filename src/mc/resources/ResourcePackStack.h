@@ -76,7 +76,7 @@ public:
     MCNAPI ::UnextractablePacks
     getPacksWhereAssetExtractionNotViable(::std::function<::std::string(::ContentIdentity const&)> getContentKey) const;
 
-    MCNAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
+    MCAPI void getSplitStacks(::ResourcePackStack& clientStack, ::ResourcePackStack& serverStack) const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::std::vector<::PackInstanceId> getStackAsIdentities() const;

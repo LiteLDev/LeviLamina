@@ -39,9 +39,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view const itemToCreate) const;
+    MCAPI void _createBottledItem(::Actor& entity, ::ItemStack& instance, ::std::string_view const itemToCreate) const;
 
-    MCNAPI void _fillBottleViaDispenser(
+    MCAPI void _fillBottleViaDispenser(
         ::BlockSource&           region,
         ::std::string_view const bottledItem,
         ::Container&             container,

@@ -571,13 +571,13 @@ public:
 
     MCAPI void burn(int damage, bool inFire);
 
-    MCNAPI bool canAttack(::Actor const& entity) const;
+    MCAPI bool canAttack(::Actor const& entity) const;
 
     MCNAPI bool canBeginOrContinueClimbingLadder() const;
 
     MCNAPI bool canMate(::Actor const& partner) const;
 
-    MCNAPI bool canReceiveMobEffectsFromGameplay() const;
+    MCAPI bool canReceiveMobEffectsFromGameplay() const;
 
     MCAPI bool canSee(::Vec3 const& targetPos, ::ShapeType obstructionType) const;
 
@@ -589,11 +589,11 @@ public:
 
     MCNAPI void chorusFruitTeleport(::Vec3 const& range);
 
-    MCNAPI bool closerThan(::Actor const& e, float distance) const;
+    MCAPI bool closerThan(::Actor const& e, float distance) const;
 
-    MCNAPI bool closerThan(::Actor const& e, float distanceXZ, float distanceY) const;
+    MCAPI bool closerThan(::Actor const& e, float distanceXZ, float distanceY) const;
 
-    MCNAPI void consumeItem(::ItemActor& itemActor, int count);
+    MCAPI void consumeItem(::ItemActor& itemActor, int count);
 
     MCNAPI ::UpdateEquipPacket createUpdateEquipPacket(int containerID);
 
@@ -605,11 +605,11 @@ public:
 
     MCAPI float distanceTo(::Actor const& e) const;
 
-    MCNAPI void dropTowards(::ItemStack const& item, ::Vec3 towards);
+    MCAPI void dropTowards(::ItemStack const& item, ::Vec3 towards);
 
-    MCNAPI void equip(::EquipmentTable const& equipmentTable);
+    MCAPI void equip(::EquipmentTable const& equipmentTable);
 
-    MCNAPI void equip(::std::string const& lootTableFilePath);
+    MCAPI void equip(::std::string const& lootTableFilePath);
 
     MCNAPI void equipFromEquipmentDefinition();
 
@@ -619,12 +619,11 @@ public:
     MCAPI bool executeEvent(::std::string const& name, ::VariantParameterList const& list);
 #endif
 
-    MCNAPI void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail);
+    MCAPI void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail);
 
     MCNAPI ::FishingHook* fetchFishingHook();
 
-    MCNAPI ::std::vector<::DistanceSortedActor>
-    fetchNearbyActorsSorted(::Vec3 const& distance, ::ActorType actorTypeId);
+    MCAPI ::std::vector<::DistanceSortedActor> fetchNearbyActorsSorted(::Vec3 const& distance, ::ActorType actorTypeId);
 
 #ifdef LL_PLAT_C
     MCNAPI int getActiveEffectCount() const;
@@ -652,7 +651,7 @@ public:
 
     MCNAPI ::ItemStack const& getCarriedItemInSlotPreferredBy(::ItemStack const& item) const;
 
-    MCNAPI int getChestSlots() const;
+    MCAPI int getChestSlots() const;
 
     MCNAPI float getCurrentSwimAmount() const;
 
@@ -670,11 +669,11 @@ public:
 
     MCAPI ::ActorType getEntityTypeId() const;
 
-    MCNAPI int getEquipSlots() const;
+    MCAPI int getEquipSlots() const;
 
-    MCNAPI int getEquipmentCount() const;
+    MCAPI int getEquipmentCount() const;
 
-    MCNAPI ::SharedTypes::Legacy::EquipmentSlot getEquipmentSlotForItem(::ItemStack const& item) const;
+    MCAPI ::SharedTypes::Legacy::EquipmentSlot getEquipmentSlotForItem(::ItemStack const& item) const;
 
     MCAPI ::Vec3 getEyePos() const;
 
@@ -696,7 +695,7 @@ public:
 
     MCNAPI ::Vec3 getInterpolatedRidingPosition(float a) const;
 
-    MCNAPI int getInventorySize() const;
+    MCAPI int getInventorySize() const;
 
     MCAPI ::ItemStack const& getItemInHandSlot(::HandSlot slot) const;
 
@@ -704,9 +703,9 @@ public:
 
     MCAPI uint64 getLevelTimeStamp() const;
 
-    MCNAPI ::std::vector<::ActorLink> getLinks() const;
+    MCAPI ::std::vector<::ActorLink> getLinks() const;
 
-    MCNAPI ::LootTable* getLootTable();
+    MCAPI ::LootTable* getLootTable();
 
     MCAPI int getMarkVariant() const;
 
@@ -720,9 +719,9 @@ public:
 
     MCAPI ::std::string const& getNameTag() const;
 
-    MCNAPI int getOnDeathExperience();
+    MCAPI int getOnDeathExperience();
 
-    MCNAPI ::DynamicProperties& getOrAddDynamicProperties();
+    MCAPI ::DynamicProperties& getOrAddDynamicProperties();
 
     MCAPI ::ActorUniqueID const& getOrCreateUniqueID() const;
 
@@ -776,7 +775,7 @@ public:
 
     MCAPI bool hasPassenger() const;
 
-    MCNAPI bool hasPlayerPassenger() const;
+    MCAPI bool hasPlayerPassenger() const;
 
     MCNAPI bool hasPriorityAmmunition() const;
 
@@ -808,7 +807,7 @@ public:
 
     MCAPI bool isAdventure() const;
 
-    MCNAPI bool isAngry() const;
+    MCAPI bool isAngry() const;
 
     MCAPI bool isBaby() const;
 
@@ -836,11 +835,11 @@ public:
 
     MCAPI bool isInWaterOrRain() const;
 
-    MCNAPI bool isInsidePortal() const;
+    MCAPI bool isInsidePortal() const;
 
     MCNAPI bool isInvertedHealAndHarm() const;
 
-    MCNAPI bool isJumping() const;
+    MCAPI bool isJumping() const;
 
     MCNAPI bool isLayingDown() const;
 
@@ -860,7 +859,7 @@ public:
 
     MCAPI bool isRiding(::Actor* targetVehicle) const;
 
-    MCNAPI bool isSilent() const;
+    MCAPI bool isSilent() const;
 
     MCAPI bool isSitting() const;
 
@@ -988,7 +987,7 @@ public:
 
     MCAPI void setLeashHolder(::ActorUniqueID leashHolder);
 
-    MCNAPI void setLimitedLifetimeTicks(int lifetimeTicks);
+    MCAPI void setLimitedLifetimeTicks(int lifetimeTicks);
 
     MCAPI void setNameTag(::std::string const& name);
 
@@ -1006,7 +1005,7 @@ public:
 
     MCNAPI void setRuntimeID(::ActorRuntimeID id);
 
-    MCNAPI void setScoreTag(::std::string const& score);
+    MCAPI void setScoreTag(::std::string const& score);
 
     MCAPI void setStrength(int strength);
 
@@ -1033,9 +1032,9 @@ public:
     MCAPI void
     stopRiding(bool exitFromPassenger, bool actorIsBeingDestroyed, bool switchingVehicles, bool isBeingTeleported);
 
-    MCNAPI void synchronousSetSize(float w, float h);
+    MCAPI void synchronousSetSize(float w, float h);
 
-    MCNAPI void teleportPassengersTo(::Vec3 const& pos, int cause, int entityType);
+    MCAPI void teleportPassengersTo(::Vec3 const& pos, int cause, int entityType);
 
     MCNAPI void thawFreezeEffect();
 
@@ -1049,7 +1048,7 @@ public:
 
     MCNAPI ::std::optional<int> tryGetEquippableSlotForItem(::ItemDescriptor item) const;
 
-    MCNAPI bool tryTeleportTo(::Vec3 const& pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType);
+    MCAPI bool tryTeleportTo(::Vec3 const& pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType);
 
 #ifdef LL_PLAT_S
     MCNAPI void updateDescription();
@@ -1219,11 +1218,11 @@ public:
 
     MCNAPI bool $isTargetable() const;
 
-    MCNAPI void $setTarget(::Actor* entity);
+    MCAPI void $setTarget(::Actor* entity);
 
     MCNAPI bool $isValidTarget(::Actor* attacker) const;
 
-    MCNAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCNAPI void $performRangedAttack(::Actor& target, float);
 
@@ -1293,7 +1292,7 @@ public:
 
     MCNAPI bool $canChangeDimensionsUsingPortal() const;
 
-    MCNAPI void $changeDimension(::DimensionType toId);
+    MCAPI void $changeDimension(::DimensionType toId);
 
 #ifdef LL_PLAT_S
     MCNAPI void $changeDimension(::ChangeDimensionPacket const&);
@@ -1303,13 +1302,13 @@ public:
 
     MCNAPI ::ActorUniqueID $getControllingPlayer() const;
 
-    MCNAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
+    MCAPI float $causeFallDamageToActor(float distance, float multiplier, ::ActorDamageSource source);
 
     MCNAPI void $onSynchedDataUpdate(int dataId);
 
     MCAPI bool $canAddPassenger(::Actor& passenger) const;
 
-    MCNAPI bool $canPickupItem(::ItemStack const& item) const;
+    MCFOLD bool $canPickupItem(::ItemStack const& item) const;
 
     MCNAPI bool $canBePulledIntoVehicle() const;
 
@@ -1329,7 +1328,7 @@ public:
 
     MCNAPI int $getDeathTime() const;
 
-    MCNAPI bool $canBeAffected(uint id) const;
+    MCAPI bool $canBeAffected(uint id) const;
 
     MCNAPI bool $canBeAffectedByArrow(::MobEffectInstance const& effect) const;
 
@@ -1343,7 +1342,7 @@ public:
 
     MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
-    MCNAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
+    MCAPI void $useItem(::ItemStackBase& item, ::ItemUseMethod itemUseMethod, bool consumeItem);
 
     MCNAPI void $getDebugText(::std::vector<::std::string>& outputInfo);
 
@@ -1353,9 +1352,9 @@ public:
 
     MCNAPI bool $add(::ItemStack& item);
 
-    MCNAPI bool $drop(::ItemStack const& item, bool const randomly);
+    MCAPI bool $drop(::ItemStack const& item, bool const randomly);
 
-    MCNAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
+    MCAPI ::Interaction $getInteraction(::Player& player, ::Vec3 const& location, ::HandSlot handSlot);
 
     MCNAPI bool $canDestroyBlock(::Block const& block) const;
 
@@ -1363,9 +1362,9 @@ public:
 
     MCNAPI void $renderDebugServerState(::IOptionsReader const& options);
 
-    MCNAPI void $kill();
+    MCAPI void $kill();
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCNAPI bool $shouldDropDeathLoot() const;
 

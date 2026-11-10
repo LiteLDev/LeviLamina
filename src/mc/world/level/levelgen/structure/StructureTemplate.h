@@ -145,9 +145,9 @@ public:
 
     MCNAPI ::std::vector<::JigsawStructureBlockInfo> getJigsawMarkers() const;
 
-    MCNAPI bool const isWaterlogged(::BlockPos const& pos) const;
+    MCAPI bool const isWaterlogged(::BlockPos const& pos) const;
 
-    MCNAPI ::StructureTemplate& operator=(::StructureTemplate&& other);
+    MCAPI ::StructureTemplate& operator=(::StructureTemplate&& other);
 
     MCNAPI bool operator==(::StructureTemplate const& other) const;
 
@@ -200,7 +200,7 @@ public:
     );
 #endif
 
-    MCNAPI static ::Block const* tryGetBlockAtPos(
+    MCAPI static ::Block const* tryGetBlockAtPos(
         ::BlockPos const&                                       pos,
         ::StructureTemplateData const&                          structureTemplateData,
         ::Bedrock::NonOwnerPointer<::IUnknownBlockTypeRegistry> blockRegistry

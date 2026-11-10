@@ -45,7 +45,7 @@ public:
 
     MCNAPI bool operator==(::StructureSettings const& rhs) const;
 
-    MCNAPI void setPaletteName(::std::string paletteName);
+    MCAPI void setPaletteName(::std::string paletteName);
 
     MCNAPI void setPivot(::Vec3 const& pivot);
 

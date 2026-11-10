@@ -144,9 +144,9 @@ public:
 
     MCNAPI ::Vec3 getShooterAngle(::Actor& shooter) const;
 
-    MCNAPI void handleMovementAndGravity(::Actor& owner, bool skipPositionUpdate);
+    MCAPI void handleMovementAndGravity(::Actor& owner, bool skipPositionUpdate);
 
-    MCNAPI void handleMovementHoming(::Actor& owner);
+    MCAPI void handleMovementHoming(::Actor& owner);
 
     MCNAPI void hurt(::Actor& owner, ::ActorDamageSource const& damageSource);
 

@@ -25,7 +25,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePackStackPacketPayload(
+    MCAPI ResourcePackStackPacketPayload(
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,
@@ -39,7 +39,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::vector<::PackInstanceId> texturePackIdsAndVersions,
         ::BaseGameVersion const&        baseGameVersion,
         bool                            texturePackRequired,

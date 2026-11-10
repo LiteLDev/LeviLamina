@@ -36,7 +36,7 @@ MCNAPI void appendEnchantToFormattedText(
 
 MCAPI bool applyEnchant(::ItemStackBase& out, ::EnchantmentInstance const& enchant, bool allowNonVanilla);
 
-MCNAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
+MCAPI int applyEnchant(::ItemStackBase& out, ::ItemEnchants const& enchants, bool allowNonVanilla);
 
 MCNAPI float
 calculateAfterBreachArmorFraction(::ActorUniqueID const& attackerID, ::Mob const& target, float armorFraction);
@@ -89,7 +89,7 @@ MCAPI bool hasEnchant(::Enchant::Type enchantType, ::ItemStackBase const& item);
 
 MCAPI void randomlyEnchant(::IRandom& random, ::ItemStackBase& out, int cost, int valueBuff, bool treasure);
 
-MCNAPI void removeEnchants(::ItemStack& out);
+MCAPI void removeEnchants(::ItemStack& out);
 
 MCNAPI ::ItemEnchants
 selectEnchantments(::IRandom& random, ::Item const* item, int enchantCost, int valueBuff, bool treasure);

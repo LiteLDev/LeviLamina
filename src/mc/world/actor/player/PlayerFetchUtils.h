@@ -16,7 +16,7 @@ namespace PlayerFetchUtils {
 MCNAPI ::Player*
 findActivePlayerByActorUniqueID(::GameplayUserManager const& gameplayUserManager, ::ActorUniqueID actorUniqueID);
 
-MCNAPI ::Player*
+MCAPI ::Player*
 findPlayer(::GameplayUserManager const& gameplayUserManager, ::std::function<bool(::EntityContext const&)> callback);
 // NOLINTEND
 

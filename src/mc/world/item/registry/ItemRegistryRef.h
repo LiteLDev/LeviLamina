@@ -131,7 +131,7 @@ public:
 
     MCAPI ::WeakPtr<::Item> getItem(short itemId) const;
 
-    MCNAPI ::HashedString getNameFromLegacyID(short id) const;
+    MCAPI ::HashedString getNameFromLegacyID(short id) const;
 
     MCAPI ::std::unordered_map<::HashedString, ::WeakPtr<::Item>> const& getNameToItemMap() const;
 
@@ -173,19 +173,19 @@ public:
 
     MCAPI ::WeakPtr<::Item> lookupByName(::HashedString const& inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByName(int& outItemAux, ::std::string_view inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByName(int& outItemAux, ::std::string_view inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& outItemAux, ::std::string_view inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByName(int& outItemId, int& outItemAux, ::std::string_view inString) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByNameNoAlias(::HashedString const& inString) const;
+    MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::HashedString const& inString) const;
 
     MCAPI ::WeakPtr<::Item> lookupByNameNoAlias(::std::string_view inString) const;
 
     MCNAPI ::WeakPtr<::Item> lookupByNameNoParsing(int& inOutItemAux, ::HashedString const& fullName) const;
 
-    MCNAPI ::std::unordered_set<::Item const*> lookupByTag(::ItemTag const& tag) const;
+    MCAPI ::std::unordered_set<::Item const*> lookupByTag(::ItemTag const& tag) const;
 
-    MCNAPI ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
+    MCFOLD ::WeakPtr<::Item> lookupByVanillaName(::HashedString const& inString) const;
 
     MCNAPI void onLevelInit(
         ::WeakRef<::IDynamicContainerSerialization> containerSerialization,
@@ -193,7 +193,7 @@ public:
         ::WeakRef<::IContainerRegistryTracker>      containerTracker
     ) const;
 
-    MCNAPI void
+    MCAPI void
     registerAlias(::HashedString const& alias, ::HashedString const& name, ::BaseGameVersion const& fromVersion) const;
 
     MCNAPI ::WeakPtr<::Item>
@@ -213,6 +213,6 @@ public:
 
     MCNAPI void setCheckForItemWorldCompatibility(bool value) const;
 
-    MCNAPI void unregisterItem(::HashedString const& itemName) const;
+    MCAPI void unregisterItem(::HashedString const& itemName) const;
     // NOLINTEND
 };

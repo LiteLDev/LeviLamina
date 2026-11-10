@@ -296,7 +296,7 @@ public:
 
     MCNAPI void _updateSprintingState();
 
-    MCNAPI void
+    MCAPI void
     addSpeedModifier(::mce::UUID const& attributeID, ::std::string const& attributeName, float speedModifier);
 
     MCNAPI float calcMoveRelativeSpeed(::TravelType travelType);
@@ -305,7 +305,7 @@ public:
 
     MCAPI ::std::optional<float> checkTotemDeathProtection(::ActorDamageSource const& killingDamage);
 
-    MCNAPI void clearMainHandSlot();
+    MCAPI void clearMainHandSlot();
 
     MCNAPI void containerChanged(int iSlot);
 
@@ -323,7 +323,7 @@ public:
 
     MCNAPI int getCarriedItemKnockbackBonus() const;
 
-    MCNAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
+    MCAPI float getDamageAfterArmorReduction(::ActorDamageSource const& source, float damage) const;
 
     MCNAPI float getDamageAfterDamageSensorComponentAdjustments(::ActorDamageSource const& source, float damage);
 
@@ -359,7 +359,7 @@ public:
     MCNAPI ::InterpolationPair getYBodyRotationsNewOld() const;
 #endif
 
-    MCNAPI void hurtArmor(::ActorDamageSource const& source, int damage);
+    MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
     MCNAPI bool isAbleToMove() const;
 
@@ -371,11 +371,11 @@ public:
 
     MCNAPI void leaveCaravan();
 
-    MCNAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
+    MCAPI void lookAt(::Actor* lookAt, float yMax, float xMax);
 
     MCNAPI void onPlayerDimensionChanged(::Player* player, ::DimensionType fromDimension, ::DimensionType toDimension);
 
-    MCNAPI void resetAttributes();
+    MCAPI void resetAttributes();
 
     MCNAPI void resetNoActionTime();
 
@@ -383,7 +383,7 @@ public:
 
     MCNAPI void setJumpTicks(int ticks);
 
-    MCNAPI void setSpeedModifier(float speed);
+    MCAPI void setSpeedModifier(float speed);
 
     MCAPI void setYBodyRotation(float rotation);
 
@@ -395,7 +395,7 @@ public:
 
     MCNAPI void tickMobEffectsVisuals();
 
-    MCNAPI void updateEquipment();
+    MCAPI void updateEquipment();
 
     MCNAPI void updateGlidingDurability();
     // NOLINTEND
@@ -477,17 +477,17 @@ public:
 
     MCNAPI ::ActorHurtResult $doFireHurt(int amount);
 
-    MCNAPI void $aiStep();
+    MCAPI void $aiStep();
 
-    MCNAPI void $pushActors();
+    MCAPI void $pushActors();
 
-    MCNAPI bool $checkSpawnRules(bool fromSpawner);
+    MCAPI bool $checkSpawnRules(bool fromSpawner);
 
-    MCNAPI bool $checkSpawnObstruction() const;
+    MCAPI bool $checkSpawnObstruction() const;
 
-    MCNAPI void $addPassenger(::Actor& newPassenger);
+    MCAPI void $addPassenger(::Actor& newPassenger);
 
-    MCNAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
+    MCAPI bool $startRiding(::Actor& vehicle, bool forceRiding);
 
     MCNAPI void $handleEntityEvent(::ActorEvent id, int data);
 
@@ -505,13 +505,13 @@ public:
 
     MCNAPI void $blockedByShield(::ActorDamageSource const& source, ::Actor& blocker);
 
-    MCNAPI void $setTarget(::Actor* target);
+    MCAPI void $setTarget(::Actor* target);
 
-    MCNAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCAPI ::ActorHurtResult $attack(::Actor& target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCNAPI bool $isAlliedTo(::Mob* other);
 
-    MCNAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
+    MCAPI ::ActorHurtResult $doHurtTarget(::Actor* target, ::SharedTypes::Legacy::ActorDamageCause const& cause);
 
     MCNAPI ::SharedTypes::Legacy::ActorDamageCause $getBlockDamageCause(::Block const& block) const;
 
@@ -539,9 +539,9 @@ public:
 
     MCNAPI int $getDeathTime() const;
 
-    MCNAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
+    MCAPI void $dropEquipmentOnDeath(::ActorDamageSource const& source);
 
-    MCNAPI void $dropEquipmentOnDeath();
+    MCAPI void $dropEquipmentOnDeath();
 
     MCNAPI void $clearVanishEnchantedItemsOnDeath();
 
@@ -561,9 +561,9 @@ public:
 
     MCNAPI bool $createAIGoals();
 
-    MCNAPI void $onBorn(::Actor&, ::Actor&);
+    MCFOLD void $onBorn(::Actor&, ::Actor&);
 
-    MCNAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
+    MCAPI bool $setItemSlot(::SharedTypes::Legacy::EquipmentSlot slot, ::ItemStack const& item);
 
     MCNAPI void $setTransitioningSitting(bool value);
 

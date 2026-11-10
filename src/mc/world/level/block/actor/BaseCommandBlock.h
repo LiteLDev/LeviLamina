@@ -55,7 +55,7 @@ public:
 
     MCNAPI ::BaseCommandBlock& operator=(::BaseCommandBlock&&);
 
-    MCNAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
+    MCAPI bool performCommand(::BlockSource& region, ::ActorUniqueID const& minecartId);
 
     MCNAPI bool save(::CompoundTag& tag) const;
 

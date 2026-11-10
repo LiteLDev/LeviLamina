@@ -35,7 +35,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isItemAllowedInSlot(
+    MCAPI bool $isItemAllowedInSlot(
         ::ContainerScreenContext const&,
         int const,
         ::ItemStackBase const& item,

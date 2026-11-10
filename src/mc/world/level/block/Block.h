@@ -91,7 +91,7 @@ public:
 
     MCAPI ::ItemInstance asItemInstance(::BlockSource& region, ::BlockPos const& position, bool withData) const;
 
-    MCNAPI bool breaksFallingBlocks(::BaseGameVersion version) const;
+    MCAPI bool breaksFallingBlocks(::BaseGameVersion version) const;
 
     MCNAPI ::std::string buildDescriptionId() const;
 
@@ -120,7 +120,7 @@ public:
 
     MCAPI uint computeRawSerializationIdHashForNetwork() const;
 
-    MCNAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
+    MCAPI ::Block const& copyState(::Block const& fromBlock, ::BlockState const& state) const;
 
     MCNAPI void executeItemEvent(
         ::ItemStackBase&     item,
@@ -155,7 +155,7 @@ public:
 
     MCNAPI bool isTopPartialBlock(::BlockSource const& region, ::BlockPos const& pos) const;
 
-    MCNAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
+    MCAPI ::Block const& keepStates(::std::vector<::BlockState const*> const& statesToKeep) const;
 
     MCAPI bool mayPlace(::BlockSource& region, ::BlockPos const& pos, uchar face, ::Actor const* placer) const;
 
@@ -168,7 +168,7 @@ public:
 
     MCNAPI void onRemove(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI void onStateChange(
+    MCAPI void onStateChange(
         ::BlockSource&              region,
         ::BlockPos const&           pos,
         ::Block const&              previousBlock,
@@ -181,7 +181,7 @@ public:
 
     MCAPI void randomTick(::BlockSource& region, ::BlockPos const& pos, ::Random& random) const;
 
-    MCNAPI void spawnResources(
+    MCAPI void spawnResources(
         ::BlockSource&                region,
         ::BlockPos const&             pos,
         ::IRandom&                    random,

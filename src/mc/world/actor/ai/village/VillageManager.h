@@ -136,7 +136,7 @@ public:
 
     MCNAPI void tick(::Tick const& tick);
 
-    MCNAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
+    MCAPI void tickVillages(::Tick const& tick, ::Vec3 const& position, ::BlockSource& region);
     // NOLINTEND
 
 public:

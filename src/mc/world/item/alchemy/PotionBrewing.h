@@ -57,7 +57,7 @@ public:
 
     MCAPI static bool isPotionIngredient(::ItemDescriptor const& item);
 
-    MCNAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
+    MCAPI static bool isPotionRecipeInput(::ItemDescriptor const& item);
 
     MCAPI static ::ItemInstance mix(::ItemDescriptor const& ingredient, ::ItemInstance const& source);
 

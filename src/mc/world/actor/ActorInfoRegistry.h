@@ -23,9 +23,9 @@ public:
     MCNAPI void digestInfoFromServer(::std::vector<::ActorInfo> const& infoList);
 #endif
 
-    MCNAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
+    MCAPI ::ActorInfo const& getActorInfo(uint infoRuntimeId) const;
 
-    MCNAPI uint getActorInfoId(::std::string const& name) const;
+    MCAPI uint getActorInfoId(::std::string const& name) const;
 
     MCAPI ::std::vector<::ActorInfo> getActorInfoList() const;
 

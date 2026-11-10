@@ -63,7 +63,7 @@ public:
 
     MCAPI ::AttributeInstanceRef getMutableInstance(::Attribute const& attribute);
 
-    MCNAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
+    MCAPI ::AttributeInstanceRef getMutableInstance(::HashedString const& name);
 
     MCAPI ::MutableAttributeWithContext getMutableInstanceWithContext(::Attribute const& attribute);
 

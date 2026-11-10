@@ -346,7 +346,7 @@ public:
 
     MCAPI void doDeleteContainerManager(bool forceDisconnect);
 
-    MCNAPI void doInitialSpawn();
+    MCAPI void doInitialSpawn();
 
     MCAPI ::std::string getLanguageCode() const;
 
@@ -354,11 +354,11 @@ public:
 
     MCAPI void handleBlockPickRequestOnServer(::BlockPos const& position, bool withData);
 
-    MCNAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
+    MCAPI void hideAllExcept(::std::optional<::std::vector<::HudElement>> const& hudElements);
 
     MCAPI void initiateContainerClose();
 
-    MCNAPI bool isInPickRangeOf(::BlockPos const& pos) const;
+    MCAPI bool isInPickRangeOf(::BlockPos const& pos) const;
 
     MCAPI ::ContainerID openUnmanagedContainer(
         ::SharedTypes::Legacy::ContainerType        containerType,
@@ -371,7 +371,7 @@ public:
 
     MCAPI bool selectItem(::ItemStack const& item);
 
-    MCNAPI void sendPlayerContainerClosedEvent();
+    MCAPI void sendPlayerContainerClosedEvent();
 
     MCNAPI void sendPlayerContainerOpenedEvent(
         ::SharedTypes::Legacy::ContainerType        type,
@@ -380,7 +380,7 @@ public:
 
     MCAPI void setClientChunkRadius(uint requestedRadius, uchar clientMaxChunkRadius);
 
-    MCNAPI void setHudVisibilityState(
+    MCAPI void setHudVisibilityState(
         ::HudVisibility                                     hudVisibility,
         ::std::optional<::std::vector<::HudElement>> const& hudElements
     );
@@ -441,7 +441,7 @@ public:
 
     MCAPI bool $isValidTarget(::Actor* attacker) const;
 
-    MCNAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
+    MCAPI bool $swing(::ActorSwingSource swingSource, ::HandSlot handSlot);
 
     MCNAPI void $hurtArmorSlots(::ActorDamageSource const& source, int dmg, ::std::bitset<5> const hurtSlots);
 
@@ -453,7 +453,7 @@ public:
 
     MCNAPI void $sendInventory(bool shouldSelectSlot);
 
-    MCNAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
+    MCAPI void $sendInventoryTransaction(::InventoryTransaction const& transaction) const;
 
     MCNAPI void $sendComplexInventoryTransaction(::std::unique_ptr<::ComplexInventoryTransaction> transaction) const;
 
@@ -554,7 +554,7 @@ public:
 
     MCNAPI bool $isPlayerInitialized() const;
 
-    MCNAPI void $respawn();
+    MCAPI void $respawn();
 
     MCNAPI ::PlayerEventCoordinator& $getPlayerEventCoordinator();
 

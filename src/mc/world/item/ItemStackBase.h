@@ -151,11 +151,11 @@ public:
 
     MCNAPI void add(int inCount);
 
-    MCNAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
+    MCAPI bool addComponents(::Json::Value const& root, ::std::string& errorMsg);
 
-    MCNAPI void addCustomUserData(::ContainerComponent const& containerComponent);
+    MCAPI void addCustomUserData(::ContainerComponent const& containerComponent);
 
-    MCNAPI void addCustomUserData(::BlockActor& blockEntity, ::BlockSource& region);
+    MCAPI void addCustomUserData(::BlockActor& blockEntity, ::BlockSource& region);
 
     MCAPI void clearCustomLore();
 
@@ -181,9 +181,9 @@ public:
 
     MCAPI ::ItemDescriptor getDescriptor() const;
 
-    MCNAPI ::std::unique_ptr<::DynamicProperties> getDynamicProperties() const;
+    MCAPI ::std::unique_ptr<::DynamicProperties> getDynamicProperties() const;
 
-    MCNAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
+    MCAPI ::std::optional<::std::variant<double, float, bool, ::std::string, ::Vec3>>
     getDynamicProperty(::std::string const& key, ::std::string const& collectionName) const;
 
 #ifdef LL_PLAT_C
@@ -248,7 +248,7 @@ public:
 
     MCAPI bool isEnchantingBook() const;
 
-    MCNAPI bool isFullStack() const;
+    MCAPI bool isFullStack() const;
 
     MCAPI bool isHorseArmorItem() const;
 
@@ -315,7 +315,7 @@ public:
     MCAPI void setDamageValue(short newDamage);
 #endif
 
-    MCNAPI void setDynamicProperty(
+    MCAPI void setDynamicProperty(
         ::std::string const&                                              key,
         ::std::variant<double, float, bool, ::std::string, ::Vec3> const& value,
         ::std::string const&                                              collectionName
@@ -331,7 +331,7 @@ public:
 
     MCNAPI bool shouldVanish() const;
 
-    MCNAPI void startCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
+    MCAPI void startCooldown(::Player& player, ::SharedTypes::ItemCooldownType type) const;
     // NOLINTEND
 
 public:
