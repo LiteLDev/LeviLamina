@@ -52,11 +52,11 @@ end
 
 if is_server then
     if is_windows then
-        add_requires("bedrockdata v26.60.6-server.12")
+        add_requires("bedrockdata v26.60.6-server.13")
     end
 else
     if is_windows then
-        add_requires("bedrockdata v26.60.5-client.12")
+        add_requires("bedrockdata v26.60.5-client.13")
     end
 end
 
