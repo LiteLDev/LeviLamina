@@ -50,9 +50,9 @@ public:
     // NOLINTBEGIN
     MCNAPI void $init();
 
-    MCNAPI bool $add(::ItemStack& item);
+    MCAPI bool $add(::ItemStack& item);
 
-    MCNAPI bool $canAdd(::ItemStack const& item) const;
+    MCAPI bool $canAdd(::ItemStack const& item) const;
 
     MCNAPI int $getFirstEmptySlot() const;
 

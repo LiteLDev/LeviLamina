@@ -73,7 +73,7 @@ public:
 
     MCAPI ::std::vector<::AttributeModifier> getModifiers() const;
 
-    MCNAPI bool hasModifier(::AttributeModifier const& modifier) const;
+    MCAPI bool hasModifier(::AttributeModifier const& modifier) const;
 
     MCNAPI ::AttributeInstance& operator=(::AttributeInstance const&);
 
@@ -83,9 +83,9 @@ public:
 
     MCNAPI void removeModifier(::AttributeModifier const& modifier, ::AttributeModificationContext context);
 
-    MCNAPI void removeModifiers(::AttributeModificationContext context);
+    MCAPI void removeModifiers(::AttributeModificationContext context);
 
-    MCNAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
+    MCAPI void updateModifier(::AttributeModifier const& takeOver, ::AttributeModificationContext context);
     // NOLINTEND
 
 public:

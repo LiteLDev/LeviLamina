@@ -40,13 +40,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI GroundedConstraint(::StructureTemplate& structure, int groundLevel);
+    MCAPI GroundedConstraint(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
+    MCAPI void* $ctor(::StructureTemplate& structure, int groundLevel);
     // NOLINTEND
 
 public:

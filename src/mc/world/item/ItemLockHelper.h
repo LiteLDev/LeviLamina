@@ -26,7 +26,7 @@ public:
 
     MCNAPI static bool addItemLockMode(::ItemStackBase& item, ::Json::Value const& data);
 
-    MCNAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
+    MCAPI static bool addKeepOnDeath(::ItemStackBase& item, ::Json::Value const& data);
 
 #ifdef LL_PLAT_C
     MCNAPI static void

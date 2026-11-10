@@ -120,7 +120,7 @@ public:
 
     MCNAPI ::std::vector<float> const getLatencyPos(int step, float a) const;
 
-    MCNAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
+    MCAPI void onCrystalDestroyed(::EnderCrystal const& crystal, ::BlockPos pos, ::ActorDamageSource const& source);
 
     MCNAPI void postAiStep();
 
@@ -154,7 +154,7 @@ public:
 
     MCNAPI ::Vec3 $getHeadLookVector(float a) const;
 
-    MCNAPI void $die(::ActorDamageSource const& source);
+    MCAPI void $die(::ActorDamageSource const& source);
 
     MCNAPI float $getShadowRadius() const;
 

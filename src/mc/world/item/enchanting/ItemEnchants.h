@@ -25,7 +25,7 @@ public:
 
     MCNAPI ::std::unique_ptr<::ListTag> _toList() const;
 
-    MCNAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
+    MCAPI int addEnchants(::ItemEnchants const& enchants, bool allowNonVanilla);
 
     MCAPI ::EnchantResult canEnchant(::EnchantmentInstance enchant, bool allowNonVanilla);
 

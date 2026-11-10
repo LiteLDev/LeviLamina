@@ -120,9 +120,9 @@ public:
 
     MCNAPI bool $canAlwaysEat() const;
 
-    MCNAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
+    MCAPI ::Item const* $eatItem(::ItemStack& instance, ::Actor& actor, ::Level& level);
 
-    MCNAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
+    MCAPI void $use(::ItemOnUseResult& result, ::ItemStack& instance, ::Player& player, ::HandSlot handSlot);
 
     MCNAPI ::Item const* $useTimeDepleted(
         ::ItemUseMethod& itemUseMethod,

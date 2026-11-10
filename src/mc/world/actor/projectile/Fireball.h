@@ -75,7 +75,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI float $getBrightness(float a, ::IConstBlockSource const& region) const;
 

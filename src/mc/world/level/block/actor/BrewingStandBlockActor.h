@@ -126,7 +126,7 @@ public:
 
     MCNAPI void $onRemoved(::BlockSource&);
 
-    MCNAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
+    MCAPI bool $canPushInItem(int slot, int face, ::ItemStack const& item) const;
 
     MCNAPI bool $canPullOutItem(int slot, int face, ::ItemStack const&) const;
 

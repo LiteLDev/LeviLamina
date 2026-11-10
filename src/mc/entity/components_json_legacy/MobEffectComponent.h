@@ -34,6 +34,6 @@ public:
 
     MCNAPI void readAdditionalSaveData(::Actor& owner, ::CompoundTag const& tag, ::DataLoadHelper&);
 
-    MCNAPI void tick(::Actor& owner);
+    MCAPI void tick(::Actor& owner);
     // NOLINTEND
 };

@@ -63,7 +63,7 @@ public:
 
     MCAPI ItemStack(::ItemStack const& rhs);
 
-    MCNAPI ::ItemStack clone() const;
+    MCAPI ::ItemStack clone() const;
 
 #ifdef LL_PLAT_C
     MCNAPI float getDestroySpeed(::Block const& block) const;
@@ -73,7 +73,7 @@ public:
 
     MCNAPI ::ItemStack getStrippedNetworkItem() const;
 
-    MCNAPI bool matchesNetIdVariant(::ItemStack const& other) const;
+    MCAPI bool matchesNetIdVariant(::ItemStack const& other) const;
 
     MCAPI ::ItemStack& operator=(::ItemStack const& rhs);
 

@@ -71,7 +71,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $reloadHardcoded(::ActorInitializationMethod method, ::VariantParameterList const& params);
 
-    MCNAPI void $newServerAiStep();
+    MCAPI void $newServerAiStep();
 
     MCNAPI void $die(::ActorDamageSource const& source);
 

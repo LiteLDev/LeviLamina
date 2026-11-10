@@ -353,7 +353,7 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCNAPI void fetchBlocks(::BlockPos const& volumeOrigin, ::BlockVolume& volume) const;
+    MCAPI void fetchBlocks(::BlockPos const& volumeOrigin, ::BlockVolume& volume) const;
 
     MCNAPI void finalizeDeserialization();
 
@@ -370,14 +370,14 @@ public:
         ::brstd::function_ref<void()> prepareNeighborhood
     );
 
-    MCNAPI ::ChunkLocalHeight getAboveTopSolidBlock(
+    MCAPI ::ChunkLocalHeight getAboveTopSolidBlock(
         ::ChunkBlockPos const& start,
         bool                   iteratePastInitialBlocking,
         bool                   includeWater,
         bool                   includeLeaves
     ) const;
 
-    MCNAPI void getActors(
+    MCAPI void getActors(
         ::ActorDefinitionIdentifier const& actorDefinitionId,
         ::AABB const&                      bb,
         ::std::vector<::Actor*>&           actors
@@ -393,10 +393,10 @@ public:
     MCNAPI ::std::array<::ChunkLocalHeight, 256> getEntireLightingHeightMap() const;
 #endif
 
-    MCNAPI void
+    MCAPI void
     getEntities(::ActorType type, ::AABB const& bb, ::std::vector<::Actor*>& es, bool ignoreTargetType) const;
 
-    MCNAPI void getEntities(
+    MCAPI void getEntities(
         ::gsl::span<::gsl::not_null<::Actor const*>> ignoredEntities,
         ::AABB const&                                bb,
         ::std::vector<::Actor*>&                     entities,

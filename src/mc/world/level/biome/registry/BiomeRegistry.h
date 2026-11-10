@@ -147,7 +147,7 @@ public:
 
     MCNAPI ::Biome* lookupById(::BiomeIdType id);
 
-    MCNAPI ::Biome const* lookupByName(::std::string const& name) const;
+    MCFOLD ::Biome const* lookupByName(::std::string const& name) const;
 
     MCFOLD ::Biome* lookupByName(::std::string const& name);
     // NOLINTEND

@@ -101,17 +101,17 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void append(::CompoundTag const& tag);
+    MCAPI void append(::CompoundTag const& tag);
 
     MCAPI ::std::unique_ptr<::CompoundTag> clone() const;
 
-    MCNAPI void deepCopy(::CompoundTag const& other);
+    MCAPI void deepCopy(::CompoundTag const& other);
 
     MCFOLD ::Tag const* get(::std::string_view name) const;
 
     MCFOLD ::Tag* get(::std::string_view name);
 
-    MCNAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
+    MCAPI ::std::vector<uchar> const& getByteArray(::std::string_view name) const;
 
     MCNAPI ::Bedrock::Result<void> load(::IDataInput& dis, int depth);
 
@@ -123,11 +123,11 @@ public:
 
     MCAPI uchar& putByte(::std::string name, uchar value);
 
-    MCNAPI ::std::vector<uchar>& putByteArray(::std::string name, ::std::vector<uchar> mem);
+    MCAPI ::std::vector<uchar>& putByteArray(::std::string name, ::std::vector<uchar> mem);
 
     MCAPI ::CompoundTag& putCompound(::std::string name, ::CompoundTag value);
 
-    MCNAPI ::CompoundTag* putCompound(::std::string name, ::std::unique_ptr<::CompoundTag> value);
+    MCAPI ::CompoundTag* putCompound(::std::string name, ::std::unique_ptr<::CompoundTag> value);
 
     MCAPI float& putFloat(::std::string name, float value);
 
@@ -141,7 +141,7 @@ public:
 
     MCAPI bool remove(::std::string_view name);
 
-    MCNAPI void rename(::std::string_view name, ::std::string newName);
+    MCAPI void rename(::std::string_view name, ::std::string newName);
 
     MCNAPI void write(::IDataOutput& dos, int depth) const;
     // NOLINTEND

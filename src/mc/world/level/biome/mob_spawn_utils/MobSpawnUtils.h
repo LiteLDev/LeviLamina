@@ -33,7 +33,7 @@ MCNAPI ::OwnerPtr<::EntityContext> spawnIfSummonable(
     ::Vec2 const&                      rotation
 );
 
-MCNAPI ::Mob* trySpawnMob(
+MCAPI ::Mob* trySpawnMob(
     ::BlockSource&                           region,
     ::ActorDefinitionIdentifier const&       actorDefinition,
     ::BlockPos                               start,

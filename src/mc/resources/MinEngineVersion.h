@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit MinEngineVersion(::SemVersion const& version);
+    MCAPI explicit MinEngineVersion(::SemVersion const& version);
 
     MCNAPI ::Json::Value createJsonValue() const;
 
@@ -48,6 +48,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::SemVersion const& version);
+    MCAPI void* $ctor(::SemVersion const& version);
     // NOLINTEND
 };

@@ -64,17 +64,17 @@ public:
         ::EntityContext&                   entityContext
     );
 
-    MCNAPI void addAreaEffect(::MobEffectInstance effect);
+    MCAPI void addAreaEffect(::MobEffectInstance effect);
 
     MCNAPI void calculateAndSetRadiusPerTick();
 
-    MCNAPI float getEffectiveRadius() const;
+    MCAPI float getEffectiveRadius() const;
 
     MCNAPI void notifyPickup();
 
-    MCNAPI void setDuration(::EffectDuration duration);
+    MCAPI void setDuration(::EffectDuration duration);
 
-    MCNAPI void setInitialRadius(float radius);
+    MCAPI void setInitialRadius(float radius);
 
     MCNAPI void setParticleColor(::mce::Color& c);
     // NOLINTEND
@@ -96,7 +96,7 @@ public:
 
     MCNAPI void $setOwner(::ActorUniqueID const ownerID);
 
-    MCNAPI void $normalTick();
+    MCAPI void $normalTick();
 
     MCNAPI float $getShadowRadius() const;
 

@@ -68,9 +68,9 @@ public:
 
     MCNAPI bool $canContinueToUse();
 
-    MCNAPI void $start();
+    MCAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
     MCNAPI void $tick();
 

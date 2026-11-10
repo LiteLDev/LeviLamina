@@ -58,11 +58,11 @@ public:
     // NOLINTBEGIN
     MCNAPI MoveToPOIGoal(::Mob& mob, ::std::string name, ::GoalId const& goalId, ::POIType poiType);
 
-    MCNAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
+    MCAPI bool _canReachPOI(::Vec3 const& pos, float const radiusSqr, bool usingBoundingBox);
 
     MCNAPI void _updatePOIBooking();
 
-    MCNAPI bool getPOI(::POIType type);
+    MCAPI bool getPOI(::POIType type);
     // NOLINTEND
 
 public:
@@ -74,7 +74,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
     MCNAPI void $tick();
 

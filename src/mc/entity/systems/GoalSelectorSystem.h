@@ -21,7 +21,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _tickGoalSelectorComponent(::ActorOwnerComponent& actorOwnerComponent);
+    MCAPI static void _tickGoalSelectorComponent(::ActorOwnerComponent& actorOwnerComponent);
     // NOLINTEND
 
 public:

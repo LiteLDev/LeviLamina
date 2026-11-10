@@ -66,7 +66,7 @@ public:
 
     MCNAPI bool operator==(::PackInfoData const& info) const;
 
-    MCNAPI ~PackInfoData();
+    MCAPI ~PackInfoData();
     // NOLINTEND
 
 public:
@@ -91,6 +91,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

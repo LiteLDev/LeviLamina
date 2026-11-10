@@ -41,11 +41,11 @@ public:
         int                maxCount
     );
 
-    MCNAPI int clearAllItems();
+    MCAPI int clearAllItems();
 
-    MCNAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
+    MCAPI int getItemCount(::std::function<bool(::ItemStack const&)> comparator);
 
-    MCNAPI int removeResource(
+    MCAPI int removeResource(
         ::ItemStack const&                        sourceItem,
         ::std::function<bool(::ItemStack const&)> comparator,
         bool                                      requireExactAux,

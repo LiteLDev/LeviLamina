@@ -57,7 +57,7 @@ public:
 
     MCNAPI bool _isTargetInCooldown(::MobDescriptor const& descriptor) const;
 
-    MCNAPI bool _selectTarget();
+    MCAPI bool _selectTarget();
 
     MCNAPI bool isTargetVisible(::Mob const& mob, float maxDistance, float maxHeight) const;
     // NOLINTEND
@@ -71,9 +71,9 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $canUse();
+    MCAPI bool $canUse();
 
-    MCNAPI bool $canContinueToUse();
+    MCAPI bool $canContinueToUse();
 
     MCNAPI void $start();
 

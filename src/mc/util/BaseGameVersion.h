@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI BaseGameVersion(::BaseGameVersion const& rhs);
+    MCAPI BaseGameVersion(::BaseGameVersion const& rhs);
 
     MCNAPI bool isCompatibleWith(::BaseGameVersion const& baseGameVersion) const;
 
@@ -58,6 +58,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BaseGameVersion const& rhs);
+    MCAPI void* $ctor(::BaseGameVersion const& rhs);
     // NOLINTEND
 };

@@ -99,7 +99,7 @@ public:
 
     MCNAPI ::std::vector<::std::string> getPackStructureNames(::mce::UUID const& packUUID);
 
-    MCNAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
+    MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::StructureTemplate* importStructure(::std::string const& structureName, ::Core::Path const& filePath);
@@ -107,7 +107,7 @@ public:
 
     MCNAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
 
-    MCNAPI bool load(
+    MCAPI bool load(
         ::StructureTemplate&         structureTemplate,
         ::ResourcePackManager const* packManager,
         ::LevelStorage*              levelStorage

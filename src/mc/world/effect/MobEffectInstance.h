@@ -53,7 +53,7 @@ public:
 
     MCNAPI void update(::MobEffectInstance const& takeOver);
 
-    MCNAPI void updateEffects(::Actor& mob) const;
+    MCAPI void updateEffects(::Actor& mob) const;
 
     MCAPI ~MobEffectInstance();
     // NOLINTEND

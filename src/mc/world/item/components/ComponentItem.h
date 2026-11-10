@@ -287,7 +287,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
+    MCAPI ComponentItem(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
 
     MCNAPI void _initializeLoadedComponents(
         ::std::optional<::SemVersion>  documentVersion,
@@ -298,7 +298,7 @@ public:
 
     MCNAPI float getMovementModifier() const;
 
-    MCNAPI void init(
+    MCAPI void init(
         ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData,
@@ -329,78 +329,78 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
+    MCAPI void* $ctor(::std::string const& nameId, short id, ::cereal::ReflectionCtx const& ctx);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $initServer(
+    MCAPI void $initServer(
         ::SharedTypes::v1_26_50::ItemDocument&&         data,
         ::SemVersion const&                             documentVersion,
         ::Experiments const&                            experiments,
         ::std::optional<::LegacyEventItemComponentData> legacyEventData
     );
 
-    MCNAPI void $tearDown();
+    MCFOLD void $tearDown();
 
-    MCNAPI bool $isComponentBased() const;
+    MCFOLD bool $isComponentBased() const;
 
-    MCNAPI bool $isHumanoidArmor() const;
+    MCAPI bool $isHumanoidArmor() const;
 
-    MCNAPI bool $isBlockPlanterItem() const;
+    MCAPI bool $isBlockPlanterItem() const;
 
     MCAPI bool $isDamageable() const;
 
-    MCNAPI bool $isDyeable() const;
+    MCAPI bool $isDyeable() const;
 
-    MCNAPI bool $isFood() const;
+    MCFOLD bool $isFood() const;
 
-    MCNAPI bool $isThrowable() const;
+    MCAPI bool $isThrowable() const;
 
-    MCNAPI bool $isUseable() const;
+    MCAPI bool $isUseable() const;
 
-    MCNAPI bool $isMusicDisk() const;
+    MCAPI bool $isMusicDisk() const;
 
-    MCNAPI bool $isTrimAllowed() const;
+    MCAPI bool $isTrimAllowed() const;
 
-    MCNAPI ::BlockType const* $getBlockTypeForRendering() const;
+    MCAPI ::BlockType const* $getBlockTypeForRendering() const;
 
-    MCNAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
+    MCAPI ::ItemComponent* $getComponent(::HashedString const& id) const;
 
-    MCNAPI ::IFoodItemComponent* $getFood() const;
+    MCAPI ::IFoodItemComponent* $getFood() const;
 
-    MCNAPI ::Item& $setMaxDamage(int maxDamage);
+    MCAPI ::Item& $setMaxDamage(int maxDamage);
 
-    MCNAPI ::std::string const& $getDescriptionId() const;
+    MCAPI ::std::string const& $getDescriptionId() const;
 
-    MCNAPI ::BlockShape $getBlockShape() const;
+    MCFOLD ::BlockShape $getBlockShape() const;
 
-    MCNAPI bool $canBeDepleted() const;
+    MCAPI bool $canBeDepleted() const;
 
     MCAPI bool $canDestroySpecial(::Block const& block) const;
 
-    MCNAPI int $getLevelDataForAuxValue(int) const;
+    MCFOLD int $getLevelDataForAuxValue(int) const;
 
-    MCNAPI short $getMaxDamage() const;
+    MCAPI short $getMaxDamage() const;
 
-    MCNAPI int $getAttackDamage() const;
+    MCAPI int $getAttackDamage() const;
 
-    MCNAPI bool $isGlint(::ItemStackBase const& stack) const;
+    MCFOLD bool $isGlint(::ItemStackBase const& stack) const;
 
-    MCNAPI bool $canDestroyInCreative() const;
+    MCAPI bool $canDestroyInCreative() const;
 
-    MCNAPI bool $isDestructive(int) const;
+    MCFOLD bool $isDestructive(int) const;
 
-    MCNAPI bool $isLiquidClipItem() const;
+    MCAPI bool $isLiquidClipItem() const;
 
-    MCNAPI bool $requiresInteract() const;
+    MCAPI bool $requiresInteract() const;
 
     MCAPI void $appendFormattedHovertext(
         ::ItemStackBase const&               stack,
@@ -412,42 +412,42 @@ public:
     MCAPI bool
     $isValidRepairItem(::ItemStackBase const&, ::ItemStackBase const& repairItem, ::BaseGameVersion const&) const;
 
-    MCNAPI int $getEnchantSlot() const;
+    MCAPI int $getEnchantSlot() const;
 
-    MCNAPI int $getEnchantValue() const;
+    MCFOLD int $getEnchantValue() const;
 
-    MCNAPI int $getArmorValue() const;
+    MCAPI int $getArmorValue() const;
 
-    MCNAPI int $getDamageChance(int unbreaking) const;
+    MCAPI int $getDamageChance(int unbreaking) const;
 
-    MCNAPI uint $getSwingDuration() const;
+    MCAPI uint $getSwingDuration() const;
 
-    MCNAPI bool $shouldEmitInUseGameEvents() const;
+    MCAPI bool $shouldEmitInUseGameEvents() const;
 
-    MCNAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
+    MCAPI ::mce::Color $getColor(::CompoundTag const* userData, ::ItemDescriptor const& instance) const;
 
-    MCNAPI bool $hasCustomColor(::ItemStackBase const& instance) const;
+    MCAPI bool $hasCustomColor(::ItemStackBase const& instance) const;
 
-    MCNAPI void $clearColor(::ItemStackBase& instance) const;
+    MCAPI void $clearColor(::ItemStackBase& instance) const;
 
-    MCNAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
+    MCAPI void $setColor(::ItemStackBase& instance, ::mce::Color const& color) const;
 
-    MCNAPI ::std::optional<::SoundEventIdentifier> $getAttackMissSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackMissSound() const;
 
-    MCNAPI ::std::optional<::SoundEventIdentifier> $getAttackHitSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackHitSound() const;
 
-    MCNAPI ::std::optional<::SoundEventIdentifier> $getAttackCriticalHitSound() const;
+    MCAPI ::std::optional<::SoundEventIdentifier> $getAttackCriticalHitSound() const;
 
-    MCNAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
+    MCAPI ::SharedTypes::Legacy::LevelSoundEvent $getEquipSound() const;
 
-    MCNAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
+    MCAPI ::ItemStack& $use(::ItemStack& item, ::Player& player, ::HandSlot handSlot) const;
 
-    MCNAPI bool $canUseAsAttack() const;
+    MCAPI bool $canUseAsAttack() const;
 
-    MCNAPI ::ItemStack&
+    MCAPI ::ItemStack&
     $useAsAttack(::ItemStack& item, ::Player& player, ::Vec3 const& aimDirection, ::HandSlot handSlot) const;
 
-    MCNAPI ::Actor* $createProjectileActor(
+    MCAPI ::Actor* $createProjectileActor(
         ::BlockSource&     region,
         ::ItemStack const& stack,
         ::Vec3 const&      pos,
@@ -460,64 +460,64 @@ public:
 
     MCAPI void $releaseUsing(::ItemStack& item, ::Player* player, int durationLeft) const;
 
-    MCNAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
+    MCAPI float $getDestroySpeed(::ItemStackBase const& item, ::Block const& block) const;
 
-    MCNAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCAPI void $hurtActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCNAPI void $hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
+    MCAPI void $hitActor(::ItemStack& item, ::Actor& actor, ::Mob& attacker) const;
 
-    MCNAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
+    MCAPI void $hitBlock(::ItemStack& item, ::Block const& block, ::BlockPos const& blockPos, ::Mob& attacker) const;
 
-    MCNAPI ::std::string
+    MCAPI ::std::string
     $buildDescriptionId(::ItemDescriptor const& itemDescriptor, ::CompoundTag const* userData) const;
 
-    MCNAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
+    MCAPI ::std::string $buildEffectDescriptionName(::ItemStackBase const& stack, bool playerIsCreative) const;
 
     MCFOLD uchar $getMaxStackSize(::ItemDescriptor const&) const;
 
-    MCNAPI ::HashedString const& $getCooldownCategory() const;
+    MCAPI ::HashedString const& $getCooldownCategory() const;
 
-    MCNAPI int $getCooldownDuration() const;
+    MCAPI int $getCooldownDuration() const;
 
-    MCNAPI ::SharedTypes::ItemCooldownType $getCooldownType() const;
+    MCAPI ::SharedTypes::ItemCooldownType $getCooldownType() const;
 
-    MCNAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
+    MCAPI ::SharedTypes::Legacy::ActorLocation $getEquipLocation() const;
 
-    MCNAPI bool $useVariant(int, int, bool) const;
+    MCFOLD bool $useVariant(int, int, bool) const;
 
-    MCNAPI int $getVariant(int, int, bool) const;
+    MCFOLD int $getVariant(int, int, bool) const;
 
-    MCNAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
+    MCAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
 
-    MCNAPI void $initClient(
+    MCAPI void $initClient(
         ::SharedTypes::v1_26_50::ItemDocument&& data,
         ::SemVersion const&                     documentVersion,
         ::Experiments const&                    experiments,
         ::std::optional<::ItemIconInfo> (*)(::std::string const&, int)
     );
 
-    MCNAPI ::std::string $getInteractText(::Player const& player) const;
+    MCAPI ::std::string $getInteractText(::Player const& player) const;
 
-    MCNAPI int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
+    MCFOLD int $getAnimationFrameFor(::Mob*, bool, ::ItemStack const*, bool) const;
 
-    MCNAPI bool $isEmissive(int auxValue) const;
+    MCFOLD bool $isEmissive(int auxValue) const;
 
-    MCNAPI ::ResolvedItemIconInfo
+    MCAPI ::ResolvedItemIconInfo
     $getIconInfo(::ItemStackBase const& item, int newAnimationFrame, bool inInventoryPane) const;
 
-    MCNAPI ::Item& $setIconInfo(::std::string const& name, int frame);
+    MCAPI ::Item& $setIconInfo(::std::string const& name, int frame);
 
-    MCNAPI bool $canBeCharged() const;
+    MCAPI bool $canBeCharged() const;
 
-    MCNAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
+    MCAPI ::ComponentItem& $setDescriptionId(::std::string const& descriptionId);
 
-    MCNAPI bool $shouldUseJsonForRenderMatrix() const;
+    MCAPI bool $shouldUseJsonForRenderMatrix() const;
 
-    MCNAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
+    MCAPI ::std::unique_ptr<::CompoundTag> $buildNetworkTag() const;
 
-    MCNAPI void $initializeFromNetwork(::CompoundTag const& tag);
+    MCAPI void $initializeFromNetwork(::CompoundTag const& tag);
 
-    MCNAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
+    MCAPI ::std::vector<::std::string> $validateFromNetwork(::CompoundTag const& tag);
 
     MCNAPI bool
     $_checkUseOnPermissions(::Actor& entity, ::ItemStackBase& item, uchar const& face, ::BlockPos const& pos) const;

@@ -801,13 +801,13 @@ public:
 
     MCNAPI bool hasNonLegacyState(::HashedString const& name) const;
 
-    MCNAPI bool hasState(::HashedString const& name) const;
+    MCAPI bool hasState(::HashedString const& name) const;
 
     MCAPI bool hasState(::BlockState const& stateType) const;
 
     MCAPI bool hasTag(::HashedString const& tag) const;
 
-    MCNAPI bool isValidSpawn(
+    MCAPI bool isValidSpawn(
         ::BlockSource&                 region,
         ::Block const&                 state,
         ::BlockPos                     pos,
@@ -822,7 +822,7 @@ public:
 
     MCNAPI void setPreFlatteningName(::std::string preFlattenName);
 
-    MCNAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
+    MCAPI bool shouldTriggerOnStandOn(::Actor& entity, ::BlockPos const& pos) const;
 
     MCAPI void spawnResources(
         ::BlockSource&                region,

@@ -211,7 +211,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void doTick(
+    MCAPI static void doTick(
         ::StrictEntityContext const&                      entity,
         ::ActorDataFlagComponent const&                   synchedActorData,
         ::AABBShapeComponent const&                       aabbShape,

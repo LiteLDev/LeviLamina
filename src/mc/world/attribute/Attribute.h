@@ -29,7 +29,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Attribute& getByName(::HashedString const& attribute);
+    MCAPI static ::Attribute& getByName(::HashedString const& attribute);
     // NOLINTEND
 
 public:

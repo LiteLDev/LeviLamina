@@ -1642,7 +1642,7 @@ public:
 
     MCNAPI ::SharedTypes::Legacy::Difficulty $getDifficulty() const;
 
-    MCNAPI ::DimensionConversionData $getDimensionConversionData() const;
+    MCAPI ::DimensionConversionData $getDimensionConversionData() const;
 
     MCNAPI float $getSpecialMultiplier(::DimensionType dimensionType) const;
 
@@ -1819,7 +1819,7 @@ public:
 
     MCNAPI void $removeListener(::LevelListener& listener);
 
-    MCNAPI void $tickEntities();
+    MCAPI void $tickEntities();
 
     MCAPI void $tickEntitySystems();
 
@@ -2366,7 +2366,7 @@ public:
 
     MCNAPI ::std::weak_ptr<::ISubChunkLighter> $getSubChunkLighter() const;
 
-    MCNAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
+    MCAPI void $loadBlockDefinitionGroup(::Experiments const& experiments);
 
     MCNAPI void $initializeBlockDefinitionGroup();
 

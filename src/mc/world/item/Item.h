@@ -833,7 +833,7 @@ public:
 
     MCAPI float $getFurnaceXPmultiplier(::ItemStackBase const& instance) const;
 
-    MCNAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
+    MCAPI ::Matrix $getItemTransform(::ItemTransformType type, float normalizedUnitScale) const;
 
     MCAPI bool
     $calculatePlacePos(::ItemStackBase const& instance, ::Actor const& entity, uchar& face, ::BlockPos& pos) const;

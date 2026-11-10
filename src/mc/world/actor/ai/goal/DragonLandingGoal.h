@@ -51,7 +51,7 @@ public:
 
     MCNAPI void $start();
 
-    MCNAPI void $stop();
+    MCAPI void $stop();
 
     MCNAPI void $tick();
 

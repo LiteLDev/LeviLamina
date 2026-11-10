@@ -66,7 +66,7 @@ public:
 
     MCNAPI bool $pushesUpFallingBlocks() const;
 
-    MCNAPI ::AABB $getCollisionShape(
+    MCAPI ::AABB $getCollisionShape(
         ::Block const&,
         ::IConstBlockSource const& region,
         ::BlockPos const&          pos,

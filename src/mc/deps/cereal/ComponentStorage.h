@@ -51,7 +51,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI bool eraseComponent(::std::string_view name);
+    MCAPI bool eraseComponent(::std::string_view name);
 
     MCNAPI ::entt::meta_any getComponent(::std::string_view name);
 

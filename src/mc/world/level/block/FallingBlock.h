@@ -62,7 +62,7 @@ public:
 
     MCNAPI void $onLand(::BlockSource& region, ::BlockPos const& pos) const;
 
-    MCNAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
+    MCAPI bool $isFreeToFall(::BlockSource& region, ::BlockPos const& pos) const;
 
     MCAPI void
     $startFalling(::BlockSource& region, ::BlockPos const& pos, ::Block const& oldBlock, bool creative) const;

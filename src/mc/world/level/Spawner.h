@@ -172,10 +172,10 @@ public:
         ::Vec3 const&                      direction
     );
 
-    MCNAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
+    MCAPI ::std::tuple<::std::array<::SpawnCategory::Type, 8>, uint64>
     $filteredSpawningCategories(::br::spawn::State const&, bool, bool, bool) const;
 
-    MCNAPI void $spawnForChunk(
+    MCFOLD void $spawnForChunk(
         ::BlockSource&,
         ::LevelChunkVolumeData const&,
         ::br::spawn::State&,
@@ -183,7 +183,7 @@ public:
         ::IRandom&
     ) const;
 
-    MCNAPI void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
+    MCFOLD void $spawnMobsForChunkGeneration(::BlockSource&, ::Biome const&, ::ChunkPos, ::IRandom&) const;
 
 
     // NOLINTEND

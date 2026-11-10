@@ -74,7 +74,7 @@ public:
 
     MCNAPI void _loadDefinitionGroups(::ActorDefinitionGroup* group);
 
-    MCNAPI void _loadDefinitionsHelper();
+    MCAPI void _loadDefinitionsHelper();
 
     MCNAPI void applyEntityInitializer(::std::unique_ptr<::Actor> actor, ::EntityContext& entity) const;
 
@@ -85,7 +85,7 @@ public:
         ::Vec2 const&                      rotation
     );
 
-    MCNAPI ::OwnerPtr<::EntityContext> createActor(
+    MCAPI ::OwnerPtr<::EntityContext> createActor(
         ::std::string const&               method,
         ::ActorDefinitionIdentifier const& identifier,
         ::Actor*                           spawner,

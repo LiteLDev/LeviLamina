@@ -30,7 +30,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ResourcePacksInfoPacketPayload(
+    MCAPI ResourcePacksInfoPacketPayload(
         bool                          resourcePackRequired,
         ::std::vector<::PackInfoData> resourcePacks,
         bool                          hasAddonPacks,
@@ -46,7 +46,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         bool                          resourcePackRequired,
         ::std::vector<::PackInfoData> resourcePacks,
         bool                          hasAddonPacks,

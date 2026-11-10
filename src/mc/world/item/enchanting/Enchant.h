@@ -179,9 +179,9 @@ public:
     // NOLINTBEGIN
     MCNAPI static ::SharedTypes::EnchantSlot enchantSlotFromString(::std::string_view str);
 
-    MCNAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
+    MCAPI static ::Enchant const* getEnchantFromName(::HashedString const& name);
 
-    MCNAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
+    MCAPI static ::Enchant::Type getEnchantTypeFromName(::HashedString const& name);
 
     MCNAPI static void initEnchants(::BaseGameVersion const& baseGameVersion, ::Experiments const& experiments);
 
@@ -223,11 +223,11 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isCompatibleWith(::Enchant::Type type) const;
+    MCAPI bool $isCompatibleWith(::Enchant::Type type) const;
 
-    MCNAPI int $getMinCost(int level) const;
+    MCAPI int $getMinCost(int level) const;
 
-    MCNAPI int $getMaxCost(int level) const;
+    MCAPI int $getMaxCost(int level) const;
 
     MCFOLD int $getMinLevel() const;
 
@@ -237,7 +237,7 @@ public:
 
     MCNAPI float $getAfterBreachArmorFraction(int, float) const;
 
-    MCNAPI float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
+    MCFOLD float $getDamageBonus(int, ::Actor const&, ::Actor const&) const;
 
     MCNAPI void $doPostAttack(::Actor& attacker, ::Actor& victim, int level) const;
 
@@ -251,9 +251,9 @@ public:
 
     MCNAPI bool $isProtectionEnchant() const;
 
-    MCNAPI bool $isTreasureOnly() const;
+    MCFOLD bool $isTreasureOnly() const;
 
-    MCNAPI bool $isDiscoverable() const;
+    MCFOLD bool $isDiscoverable() const;
 
     MCNAPI bool $_isValidEnchantmentTypeForCategory(::Enchant::Type type) const;
 

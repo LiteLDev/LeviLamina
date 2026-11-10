@@ -116,7 +116,7 @@ public:
 
     MCNAPI void $tick();
 
-    MCNAPI void $setupCommands(::CommandRegistry& commandRegistry);
+    MCAPI void $setupCommands(::CommandRegistry& commandRegistry);
 
     MCNAPI void $configureServerNetworkHandler(
         ::ServerInstance&                                     server,
