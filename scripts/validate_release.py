@@ -54,6 +54,13 @@ def validate_lip_toml(version: str):
     if content.get("version") != version:
         raise Exception("lip.toml has wrong version")
 
+    variants = content.get("variants", {})
+    default_client = [e for e in variants.get("", []) if e.get("side") == "client"]
+    if default_client != variants.get("client", []):
+        raise Exception(
+            'lip.toml: the client entry of variant "" differs from variant "client"'
+        )
+
 
 if __name__ == "__main__":
     main()

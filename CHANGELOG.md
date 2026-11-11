@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Migrated the lip package file from tooth.json to lip.toml (format 4)
+- `lip install github.com/LiteLDev/LeviLamina` on the client side now installs the client build (it installed the server build before)
+- The variant `client` now only has a client entry, so installing `github.com/LiteLDev/LeviLamina#client` on a server is no longer supported; use `github.com/LiteLDev/LeviLamina` there
 
 ## [26.60.6] - 2026-11-10
 

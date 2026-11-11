@@ -11,7 +11,8 @@ logo = "https://docs.levimc.org/LeviLamina/logo.svg"
 # The default variant holds both builds: the server build for Bedrock Dedicated Server and the
 # client build for Minecraft for Windows. The variant "client" holds the same client build: mods
 # depend on github.com/LiteLDev/LeviLamina#client and LeviLauncher installs it under that name, so
-# it must keep existing.
+# it must keep existing. Keep both client entries identical (scripts/validate_release.py checks
+# this), e.g. when bumping bedrock-runtime-data.
 
 # --- Server ---------------------------------------------------------------------------------------
 
@@ -37,7 +38,7 @@ place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 post_install = ['.\PeEditor.exe -mb']
 post_uninstall = ["IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"]
 
-# --- Client ---------------------------------------------------------------------------------------
+# --- Client (keep identical to variants.client below) ---------------------------------------------
 
 [[variants.""]]
 side = "client"
@@ -58,6 +59,8 @@ place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 [variants."".hooks]
 post_install = ['.\PeEditor.exe -mb --exe Minecraft.Windows.exe --inplace']
 post_uninstall = ["IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"]
+
+# --- Client alias (keep identical to the client entry of variants."" above) -----------------------
 
 [[variants.client]]
 side = "client"
