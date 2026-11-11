@@ -9,10 +9,8 @@ tags = ["library"]
 logo = "https://docs.levimc.org/LeviLamina/logo.svg"
 
 # The default variant holds both builds: the server build for Bedrock Dedicated Server and the
-# client build for Minecraft for Windows. The variant "client" holds the same client build: mods
-# depend on github.com/LiteLDev/LeviLamina#client and LeviLauncher installs it under that name, so
-# it must keep existing. Keep both client entries identical (scripts/validate_release.py checks
-# this), e.g. when bumping bedrock-runtime-data.
+# client build for Minecraft for Windows. There is no "client" variant: lip and LeviLauncher pick
+# the entry by side.
 
 # --- Server ---------------------------------------------------------------------------------------
 
@@ -38,7 +36,7 @@ place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 post_install = ['.\PeEditor.exe -mb']
 post_uninstall = ["IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"]
 
-# --- Client (keep identical to variants.client below) ---------------------------------------------
+# --- Client ---------------------------------------------------------------------------------------
 
 [[variants.""]]
 side = "client"
@@ -57,27 +55,5 @@ urls = ["https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-c
 place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 
 [variants."".hooks]
-post_install = ['.\PeEditor.exe -mb --exe Minecraft.Windows.exe --inplace']
-post_uninstall = ["IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"]
-
-# --- Client alias (keep identical to the client entry of variants."" above) -----------------------
-
-[[variants.client]]
-side = "client"
-platform = "win-x64"
-
-[variants.client.deps]
-"github.com/LiteLDev/CrashLogger" = "1.4.*"
-"github.com/LiteLDev/levilamina-loc" = "1.7.*"
-"github.com/LiteLDev/PeEditor" = "3.9.*"
-"github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.13"
-
-[[variants.client.assets]]
-type = "zip"
-urls = ["https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-client-release-windows-x64.zip"]
-place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
-
-[variants.client.hooks]
 post_install = ['.\PeEditor.exe -mb --exe Minecraft.Windows.exe --inplace']
 post_uninstall = ["IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"]
