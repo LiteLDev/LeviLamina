@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Migrated the lip package file from tooth.json to lip.toml (format 4)
+- `lip install github.com/LiteLDev/LeviLamina` on the client side now installs the client build (it installed the server build before)
+- Removed the variant `client`: the default variant holds the client build, so from this release on install and depend on `github.com/LiteLDev/LeviLamina` on both sides (LeviLauncher resolves `#client` dependencies declared in tooth.json to it)
+
 ## [26.60.6] - 2026-11-10
 
 ### Changed

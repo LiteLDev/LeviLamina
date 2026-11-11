@@ -85,7 +85,7 @@ Next, modify the contents of `tooth.json`. `tooth.json` provides information req
     lip manages server workspaces only; players install the client version through [LeviLauncher](https://docs.levimc.org/LeviLauncher/guide/mods-integrations?platform=windows), which picks it for client instances.
 
 !!! note
-    The template still describes its package with `tooth.json`, which lip installs but treats as legacy. lip's current package format is `manifest.json` (format 4); `lip migrate` converts a `tooth.json`. See lip's [Creating Packages](https://docs.levimc.org/lip/guides/creating_packages.html) and [Migrating Packages](https://docs.levimc.org/lip/guides/migrating_packages.html).
+    The template still describes its package with `tooth.json`, which lip installs but treats as legacy. lip's current package format is `lip.toml` (format 4); `lip migrate` converts a `tooth.json`. See lip's [Creating Packages](https://docs.levimc.org/lip/guides/creating_packages.html) and [Migrating Packages](https://docs.levimc.org/lip/guides/migrating_packages.html).
 
 * Change the value of the `tooth` field to your mod's GitHub repository path without `https://` (for example `github.com/ShrBox/ExampleMod`), and fill in the information fields in `info`.
   `info.avatar_url` will be displayed on the mod pages of LeviMC Mods and LeviLauncher. Choosing a suitable icon is also an important part of presenting your mod. For convenience, this tutorial directly uses the author's GitHub avatar.

@@ -182,12 +182,12 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 - **预发布版**: `v26.51.8-rc.2`
 - **开发版**: `v26.51.8-rc.2+ce09050f05`（`--publish=n` 时包含提交哈希）
 
-主版本号与次版本号跟随所适配的 Minecraft 版本，当前版本参见 `tooth.json` 与 `CHANGELOG.md`。
+主版本号与次版本号跟随所适配的 Minecraft 版本，当前版本参见 `lip.toml` 与 `CHANGELOG.md`。
 
 ### 版本来源优先级
 
 1. **Git 标签** — 如果当前提交有匹配 `v*.*.*` 的标签
-2. **tooth.json** — 回退到 `tooth.json` 中的 `version` 字段
+2. **lip.toml** — 回退到 `lip.toml` 中的 `version` 字段
 
 ### 版本注入
 

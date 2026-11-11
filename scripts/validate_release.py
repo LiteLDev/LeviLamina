@@ -1,6 +1,7 @@
 import argparse
 import re
 import subprocess
+import tomllib
 from typing import TypedDict
 
 
@@ -14,7 +15,7 @@ def main():
     version = args["tag"].lstrip("v")
 
     validate_changelog(version)
-    validate_tooth_json(version)
+    validate_lip_toml(version)
 
 
 def get_args() -> Args:
@@ -46,12 +47,12 @@ def validate_changelog(version: str):
         raise Exception("CHANGELOG.md lacks version {}".format(version))
 
 
-def validate_tooth_json(version: str):
-    with open("tooth.json", "r", encoding="utf-8") as f:
-        content = f.read()
+def validate_lip_toml(version: str):
+    with open("lip.toml", "rb") as f:
+        content = tomllib.load(f)
 
-    if not re.search(r"\"version\": \"{}\"".format(version), content):
-        raise Exception("tooth.json has wrong version")
+    if content.get("version") != version:
+        raise Exception("lip.toml has wrong version")
 
 
 if __name__ == "__main__":

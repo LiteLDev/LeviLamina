@@ -83,7 +83,7 @@ add_requires("levilamina 26.51.*", {configs = {target_type = get_config("target_
     lip 只管理服务端工作区；玩家通过 [LeviLauncher](https://docs.levimc.org/LeviLauncher/zh-CN/guide/mods-integrations?platform=windows) 安装客户端版本，它会为客户端实例选择客户端版本。
 
 !!! note
-    模板仍使用 `tooth.json` 描述包，lip 仍能安装它，但已将其视为旧格式。lip 当前的包格式是 `manifest.json`（format 4），可以用 `lip migrate` 转换 `tooth.json`。参见 lip 的[创建包](https://docs.levimc.org/lip/zh/guides/creating_packages.html)和[迁移包](https://docs.levimc.org/lip/zh/guides/migrating_packages.html)。
+    模板仍使用 `tooth.json` 描述包，lip 仍能安装它，但已将其视为旧格式。lip 当前的包格式是 `lip.toml`（format 4），可以用 `lip migrate` 转换 `tooth.json`。参见 lip 的[创建包](https://docs.levimc.org/lip/zh/guides/creating_packages.html)和[迁移包](https://docs.levimc.org/lip/zh/guides/migrating_packages.html)。
 
 - 将`tooth`字段的值改为这个模组的GitHub仓库路径（不带`https://`，例如`github.com/ShrBox/ExampleMod`），填写`info`中各个信息字段  
   `info.avatar_url`会显示在LeviMC 模组以及LeviLauncher的模组页面中，为模组挑选一个适合的图标也是展示您的模组的重要一环，这里为了方便直接使用教程编写者的GitHub头像  
