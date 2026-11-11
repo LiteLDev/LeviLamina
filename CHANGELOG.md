@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Migrated the lip package file from tooth.json to lip.toml (format 4)
+
 ## [26.60.6] - 2026-11-10
 
 ### Changed

@@ -291,12 +291,11 @@ target("LeviLamina")
     end)
 
     on_load(function (target)
-        import("core.base.json")
         local tag = os.iorun("git describe --tags --abbrev=0 --always")
         local major, minor, patch, suffix = tag:match("v(%d+)%.(%d+)%.(%d+)(.*)")
         if not major then
-            print("Failed to parse version tag, using version from tooth.json")
-            tag = json.loadfile("tooth.json")["version"]
+            print("Failed to parse version tag, using version from lip.toml")
+            tag = ("\n" .. io.readfile("lip.toml")):match("\nversion%s*=%s*\"([^\"]+)\"")
             major, minor, patch, suffix = tag:match("(%d+)%.(%d+)%.(%d+)(.*)")
         end
         local versionStr =  major.."."..minor.."."..patch
