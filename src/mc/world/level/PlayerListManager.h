@@ -66,7 +66,7 @@ public:
     MCNAPI void
     initializeWithGameplayUserManagerOnServer(::IGameplayUserManagerConnector& gameplayUserManagerConnector);
 
-    MCNAPI void removeByUUID(::mce::UUID const& uuid);
+    MCAPI void removeByUUID(::mce::UUID const& uuid);
 
     MCNAPI void setPlayerLocationReceiver(::Bedrock::NonOwnerPointer<::PlayerLocationReceiver> playerLocationReceiver);
 
