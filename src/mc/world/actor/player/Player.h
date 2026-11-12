@@ -1359,7 +1359,7 @@ public:
 
     MCAPI void $setOffhandSlot(::ItemStack const& item);
 
-    MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCNAPI bool $isInvulnerableTo(::ActorDamageSource const& source) const;
 
