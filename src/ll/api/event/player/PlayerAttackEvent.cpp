@@ -26,15 +26,12 @@ static bool
 meetsKineticCondition(KineticEffectConditions const& cond, float speed, float relativeSpeed, uint ticks, ushort delay) {
     constexpr float epsilon = std::numeric_limits<float>::epsilon();
 
-    auto minSpeed         = cond.mUnk992d2b.as<float>();
-    auto minRelativeSpeed = cond.mUnka7d9bd.as<float>();
-    auto maxDuration      = cond.mUnk7e79ec.as<ushort>();
-    auto speedOk          = speed >= minSpeed || std::fabs(minSpeed) <= epsilon;
-    auto relativeOk       = relativeSpeed >= minRelativeSpeed || std::fabs(minRelativeSpeed) <= epsilon;
+    auto speedOk    = speed >= cond.mMinSpeed || std::fabs(cond.mMinSpeed) <= epsilon;
+    auto relativeOk = relativeSpeed >= cond.mMinRelativeSpeed || std::fabs(cond.mMinRelativeSpeed) <= epsilon;
 
     if (!speedOk || !relativeOk) return false;
-    if ((maxDuration & 0x8000) != 0) return true;
-    return ticks < static_cast<uint>(delay) + maxDuration;
+    if ((cond.mMaxDuration & 0x8000) != 0) return true;
+    return ticks < static_cast<uint>(delay) + cond.mMaxDuration;
 }
 
 static bool willDealKineticDamage(Actor& source, Actor& target, DealKineticDamageComponent const& component) {
@@ -95,9 +92,7 @@ LL_STATIC_HOOK(
 LL_STATIC_HOOK(
     GetHitResultsHook,
     HookPriority::Normal,
-    // TODO: Remove signature code
-    // &HitDetection::MeleeTargeting::getHitResults,
-    "55 41 57 41 56 56 57 53 48 81 EC ?? ?? ?? ?? 48 8D AC 24 ?? ?? ?? ?? 44 0F 29 8D ?? ?? ?? ?? 44 0F 29 85 ?? ?? ?? ?? 0F 29 BD ?? ?? ?? ?? 0F 29 B5 ?? ?? ?? ?? 48 C7 85 ?? ?? ?? ?? ?? ?? ?? ?? 4C 89 CB"_sig,
+    &HitDetection::MeleeTargeting::getHitResults,
     std::vector<HitResult>,
     BlockSource&                   region,
     Actor&                         source,
