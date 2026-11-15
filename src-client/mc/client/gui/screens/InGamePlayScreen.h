@@ -222,7 +222,7 @@ public:
 
     MCNAPI void $_preLevelRender(::ScreenContext& screenContext);
 
-    MCNAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+    MCAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
     MCNAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
@@ -236,9 +236,9 @@ public:
 
     MCNAPI void $_saveMatrices(::mce::Camera& camera);
 
-    MCNAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
+    MCAPI void $_renderTransparentFirstPerson3DObjects(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    MCNAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
+    MCAPI void $_renderItemInHand(::ScreenContext& screenContext, ::Player& player);
 
     MCNAPI void $_prepareCuller(::mce::Camera& camera, ::Frustum& frustumData);
 

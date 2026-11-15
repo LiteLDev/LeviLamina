@@ -59,7 +59,7 @@ public:
         ::std::chrono::nanoseconds const&                 dt
     );
 
-    MCNAPI uint64 $getNumberOfManualParticlesAllowed(
+    MCAPI uint64 $getNumberOfManualParticlesAllowed(
         ::ParticleSystem::ComponentAccessParticleEmitter& emitter,
         ::RenderParams&                                   renderParams
     );

@@ -434,7 +434,7 @@ MCNAPI ::HashedString const& MelonSlice();
 
 MCAPI ::HashedString const& MilkBucket();
 
-MCNAPI ::HashedString const& Minecart();
+MCAPI ::HashedString const& Minecart();
 
 MCNAPI ::HashedString const& MojangBannerPattern();
 

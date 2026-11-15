@@ -136,7 +136,7 @@ public:
 
     MCNAPI void _checkAndDrawInputUI(::ScreenContext& screenContext);
 
-    MCNAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
+    MCAPI void createRenderGraph(::mce::RenderContext& renderContext, bool onResume);
 
     MCNAPI ::ScreenContext makeScreenContext(float a);
 

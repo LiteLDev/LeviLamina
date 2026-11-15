@@ -24,7 +24,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void setViewportWithFullScissor(::mce::ViewportInfo const& viewportInfo);
+    MCAPI void setViewportWithFullScissor(::mce::ViewportInfo const& viewportInfo);
     // NOLINTEND
 };
 

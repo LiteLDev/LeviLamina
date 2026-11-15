@@ -224,7 +224,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $renderDebug(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 
-    MCNAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCFOLD void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     MCNAPI void $renderLeash(::BaseActorRenderContext& renderContext, ::ActorRenderData& entityRenderData);
 

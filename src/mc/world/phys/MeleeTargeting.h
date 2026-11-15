@@ -14,7 +14,7 @@ namespace SharedTypes { struct FloatRange; }
 namespace HitDetection::MeleeTargeting {
 // functions
 // NOLINTBEGIN
-MCNAPI ::std::vector<::HitResult> getHitResults(
+MCAPI ::std::vector<::HitResult> getHitResults(
     ::BlockSource&                   region,
     ::Actor&                         source,
     ::Vec3 const&                    direction,
