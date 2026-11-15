@@ -469,7 +469,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCNAPI void $baseTick();
+    MCAPI void $baseTick();
 
     MCNAPI void $hurtEffects(::ActorDamageSource const& source, float damage, ::HurtEffectsSettings const& settings);
 

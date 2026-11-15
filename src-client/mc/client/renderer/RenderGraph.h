@@ -26,7 +26,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI void preRenderUpdate(::ScreenContext& screenContext);
+    MCAPI void preRenderUpdate(::ScreenContext& screenContext);
     // NOLINTEND
 };
 

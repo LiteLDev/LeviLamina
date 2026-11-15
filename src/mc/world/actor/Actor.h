@@ -1023,7 +1023,7 @@ public:
 
     MCNAPI bool shouldOrphan(::BlockSource& source);
 
-    MCNAPI bool shouldTick() const;
+    MCAPI bool shouldTick() const;
 
     MCAPI ::ItemActor* spawnAtLocation(::ItemStack const& item, float yOffs);
 
@@ -1168,7 +1168,7 @@ public:
 
     MCAPI void $normalTick();
 
-    MCNAPI void $baseTick();
+    MCAPI void $baseTick();
 
     MCNAPI void $passengerTick();
 

@@ -55,7 +55,7 @@ public:
     MCNAPI bool
     _loadList(::Bedrock::NonOwnerPointer<::mce::ShaderGroup> shaderGroup, ::ResourcePackManager& resourcePackManager);
 
-    MCNAPI bool loadList(
+    MCAPI bool loadList(
         ::Bedrock::NonOwnerPointer<::mce::ShaderGroup>       shaderGroup,
         ::ResourceLocation const&                            listPath,
         ::ResourcePackManager&                               resourcePacks,
@@ -63,7 +63,7 @@ public:
         bool                                                 cleanReload
     );
 
-    MCNAPI void reset();
+    MCAPI void reset();
     // NOLINTEND
 
 public:
@@ -85,7 +85,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $onAppResumed();
 
-    MCNAPI ::std::shared_ptr<::mce::RenderMaterialInfo> $getMaterialInfo(::HashedString const& name);
+    MCAPI ::std::shared_ptr<::mce::RenderMaterialInfo> $getMaterialInfo(::HashedString const& name);
 
     MCNAPI void $clearMaterial(::HashedString const& name);
     // NOLINTEND

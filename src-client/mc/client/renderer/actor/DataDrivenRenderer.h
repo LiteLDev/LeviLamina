@@ -116,7 +116,7 @@ public:
         ::Bedrock::small_vector_base<::Vec3>& output
     ) const;
 
-    MCNAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
+    MCAPI void $render(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
     MCNAPI void $renderEffects(::BaseActorRenderContext& renderContext, ::ActorRenderData& actorRenderData);
 
