@@ -88,7 +88,7 @@ public:
         ::BlockPos const&         lastPathPos
     );
 
-    MCNAPI ::NodeType _classifyNode(
+    MCAPI ::NodeType _classifyNode(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::Block const&            testBlock,
@@ -103,7 +103,7 @@ public:
     MCNAPI ::std::unique_ptr<::Path>
     _findPath(::ActorPathingData const& actorData, float xt, float yt, float zt, float maxDist);
 
-    MCNAPI ::std::unique_ptr<::Path> _findPath(
+    MCAPI ::std::unique_ptr<::Path> _findPath(
         ::ActorPathingData const& data,
         ::PathfinderNode*         from,
         ::PathfinderNode*         to,
@@ -158,9 +158,9 @@ public:
     MCNAPI ::std::unique_ptr<::Path>
     _reconstructPath(::PathfinderNode* to, ::PathCompletionType const completionType, ::ActorUniqueID const actorId);
 
-    MCNAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
+    MCAPI ::std::unique_ptr<::Path> findPath(::Actor& from, ::Actor const& to, float maxDist);
 
-    MCNAPI ::NodeType isFree(
+    MCAPI ::NodeType isFree(
         ::ActorPathingData const& data,
         ::BlockPos const&         lastPathPos,
         ::BlockPos const&         testPos,

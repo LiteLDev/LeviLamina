@@ -11,16 +11,10 @@ struct KineticEffectConditions {
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<4, 4> mUnk992d2b;
-    ::ll::UntypedStorage<4, 4> mUnka7d9bd;
-    ::ll::UntypedStorage<2, 2> mUnk7e79ec;
+    ::ll::TypedStorage<4, 4, float> mMinSpeed;
+    ::ll::TypedStorage<4, 4, float> mMinRelativeSpeed;
+    ::ll::TypedStorage<2, 2, short> mMaxDuration;
     // NOLINTEND
-
-public:
-    // prevent constructor by default
-    KineticEffectConditions& operator=(KineticEffectConditions const&);
-    KineticEffectConditions(KineticEffectConditions const&);
-    KineticEffectConditions();
 
 public:
     // static functions

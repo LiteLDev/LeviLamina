@@ -1,4 +1,4 @@
-// LeviLamina docs (https://docs.levimc.org/LeviLamina/), built with the vendored levimc-kit.
+// LeviLamina docs (https://levimc.org/LeviLamina/), built with the vendored levimc-kit.
 // Content lives in contents/ (x.md = English, x.zh.md = Chinese). Register new pages in `nav` below
 // and their Chinese nav labels in `navTranslations.zh`. See kit/README.md for every option.
 import { defineDocsConfig } from './kit/docs/node/config.ts';
@@ -13,8 +13,8 @@ export default defineDocsConfig({
   repo: 'https://github.com/LiteLDev/LeviLamina',
   editLink: 'https://github.com/LiteLDev/LeviLamina/edit/main/docs/main/contents/:path',
   contentDir: 'contents',
-  hostname: 'https://docs.levimc.org',
-  sitemap: { hostname: 'https://docs.levimc.org' },
+  hostname: 'https://levimc.org',
+  sitemap: { hostname: 'https://levimc.org' },
   i18n: {
     mode: 'suffix',
     defaultLocale: 'en',
@@ -119,7 +119,7 @@ export default defineDocsConfig({
     // The Doxygen API reference, a section of this site with its own tree (opened in place, not a new tab): built by
     // the build-doxygen CI job and merged into dist/api/; its header is generated from dist/_kit/nav.json, with this
     // tab current.
-    { 'API Reference': 'https://docs.levimc.org/LeviLamina/api/' },
+    { 'API Reference': 'https://levimc.org/LeviLamina/api/' },
     { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
   ],
   // The Docker install page became a section of the one server install page.

@@ -114,7 +114,7 @@ public:
     MCNAPI void
     rotateAroundPivot(::Vec3 const& pivotOffset, float angle, ::Vec3 const& rotationAxis, bool preTransform);
 
-    MCNAPI void setTessellateIntercept(
+    MCAPI void setTessellateIntercept(
         ::std::function<void(::Tessellator const&, ::mce::MaterialPtr const&, ::mce::TexturePtr const&)> callback
     );
 

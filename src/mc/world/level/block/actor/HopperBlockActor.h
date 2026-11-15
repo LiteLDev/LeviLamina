@@ -88,7 +88,7 @@ public:
 
     MCNAPI int _countItems() const;
 
-    MCNAPI void _tick(::BlockSource& region, int maxRecursion);
+    MCAPI void _tick(::BlockSource& region, int maxRecursion);
 
     MCNAPI ::FurnaceBlockActor* getAttachedFurnace(::BlockSource& region);
 

@@ -29,7 +29,7 @@ jobs:
       - id: check
         run: |
           want=$(curl -fsSL https://levimc.org/kit/v2/manifest.json | jq -r '"levimc-kit " + .version + "+" + .build')
-          have=$(curl -fsSL https://docs.levimc.org/LeviLamina/ | grep -o 'levimc-kit [^"]*' | head -1)
+          have=$(curl -fsSL https://levimc.org/LeviLamina/ | grep -o 'levimc-kit [^"]*' | head -1)
           echo "live: $have · published: $want"
           echo "stale=$([ "$want" != "$have" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
 

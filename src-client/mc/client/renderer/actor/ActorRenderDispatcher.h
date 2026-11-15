@@ -92,7 +92,7 @@ public:
         ::std::shared_ptr<::mce::TextureGroup>       textureGroup
     );
 
-    MCNAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
+    MCAPI void render(::BaseActorRenderContext& entityRenderContext, ::Actor& entity, bool ignoreLighting);
 
     MCAPI void render(
         ::BaseActorRenderContext& entityRenderContext,

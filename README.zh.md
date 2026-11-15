@@ -17,7 +17,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，带来直观且高度灵活的开发体验。
 
-有关更多信息，请参阅[文档](https://docs.levimc.org/LeviLamina/zh/).
+有关更多信息，请参阅[文档](https://levimc.org/LeviLamina/zh/).
 
 ## EULA 和使用指南
 
@@ -26,7 +26,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 ## 安装和使用
 
-请参考 [在Windows上安装服务器](https://docs.levimc.org/LeviLamina/zh/user_guides/install/) 和 [在Windows上安装客户端](https://docs.levimc.org/LeviLamina/zh/user_guides/install_on_client/)。
+请参考 [在Windows上安装服务器](https://levimc.org/LeviLamina/zh/user_guides/install/) 和 [在Windows上安装客户端](https://levimc.org/LeviLamina/zh/user_guides/install_on_client/)。
 
 ## 星标蹭蹭涨
 
