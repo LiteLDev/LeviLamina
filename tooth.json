@@ -80,6 +80,36 @@
                     "IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"
                 ]
             }
+        },
+        {
+            "label": "client",
+            "platform": "android-arm64",
+            "dependencies": {
+                "github.com/LiteLDev/CrashLogger": "1.4.*",
+                "github.com/LiteLDev/levilamina-loc": "1.7.*",
+                "github.com/LiteLDev/PeEditor": "3.9.*",
+                "github.com/LiteLDev/PreLoader": "1.16.8",
+                "github.com/LiteLDev/bedrock-runtime-data": "26.60.5-client.15"
+            },
+            "assets": [
+                {
+                    "type": "zip",
+                    "urls": [
+                        "https://{{tooth}}/releases/download/v{{version}}/libLeviLamina.so"
+                    ],
+                    "placements": [
+                        {
+                            "type": "file",
+                            "src": "libLeviLamina.so",
+                            "dest": "mods/LeviLamina/libLeviLamina.so"
+                        }
+                    ]
+                }
+            ],
+            "scripts": {
+                "post_install": [],
+                "post_uninstall": []
+            }
         }
     ]
 }
