@@ -1,7 +1,7 @@
 # Install client on Windows
 
 LeviLamina runs in the Minecraft Bedrock Edition client on Windows through
-[LeviLauncher](https://docs.levimc.org/LeviLauncher/guide/quick-start?platform=windows), which installs client versions,
+[LeviLauncher](https://levimc.org/LeviLauncher/guide/quick-start?platform=windows), which installs client versions,
 LeviLamina and client mods for you. (lip manages server directories only; for clients, LeviLauncher uses it behind the
 scenes.)
 
@@ -15,8 +15,8 @@ You need an operating system supported by Minecraft Bedrock Edition:
 You also need:
 
 * [Microsoft Visual C++ Redistributable (x64)](https://aka.ms/vc14/vc_redist.x64.exe)
-* [LeviLauncher](https://docs.levimc.org/LeviLauncher/download) — see its
-  [Requirements & Installation](https://docs.levimc.org/LeviLauncher/guide/requirements-installation?platform=windows)
+* [LeviLauncher](https://levimc.org/LeviLauncher/download) — see its
+  [Requirements & Installation](https://levimc.org/LeviLauncher/guide/requirements-installation?platform=windows)
 
 ## Installation
 
@@ -26,8 +26,8 @@ You also need:
    instance's settings (**Loader** tab).
 3. Launch the instance. Its **Mods** card lists the installed mods.
 
-LeviLauncher's guide describes these screens: [Version Management](https://docs.levimc.org/LeviLauncher/guide/version-management?platform=windows)
-and [Mods & Integrations](https://docs.levimc.org/LeviLauncher/guide/mods-integrations?platform=windows).
+LeviLauncher's guide describes these screens: [Version Management](https://levimc.org/LeviLauncher/guide/version-management?platform=windows)
+and [Mods & Integrations](https://levimc.org/LeviLauncher/guide/mods-integrations?platform=windows).
 
 ## Upgrading LeviLamina
 

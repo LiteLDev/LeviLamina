@@ -2,7 +2,7 @@
 
 !!! note "Android，而不是 LeviLamina"
     本部分介绍 **Android 上 Minecraft 基岩版的原生模组**。它们由
-    [Android 版 LeviLauncher](https://docs.levimc.org/LeviLauncher/zh-CN/guide/quick-start?platform=android)
+    [Android 版 LeviLauncher](https://levimc.org/LeviLauncher/zh-CN/guide/quick-start?platform=android)
     通过 Preloader SDK（[LiteLDev/preloader-android](https://github.com/LiteLDev/preloader-android)）加载，而不是由
     LeviLamina 加载，并使用本部分记录的独立 `pl::` API。
 

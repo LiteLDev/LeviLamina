@@ -21,7 +21,7 @@ LeviLamina 运行在 Windows 版基岩版专用服务器（BDS）中。你可以
 
 ### 安装
 
-1. 安装 [lip](https://github.com/LiteLDev/lip)。默认使用 npm 安装，也可以使用 winget，或从 [lip 的 releases](https://github.com/LiteLDev/lip/releases/latest) 下载以 **setup.exe** 结尾的安装包（参见 [lip 安装指南](https://docs.levimc.org/lip/zh/intro/installation)）：
+1. 安装 [lip](https://github.com/LiteLDev/lip)。默认使用 npm 安装，也可以使用 winget，或从 [lip 的 releases](https://github.com/LiteLDev/lip/releases/latest) 下载以 **setup.exe** 结尾的安装包（参见 [lip 安装指南](https://levimc.org/lip/zh/intro/installation)）：
     ```shell
     npm install -g @levimc/lip
     # 或
@@ -115,7 +115,7 @@ lip update github.com/LiteLDev/LeviLamina@x.y.z
 - `GITHUB_MIRROR_URL`：可设置为GitHub镜像URL（例如`https://v4.gh-proxy.org/https://github.com/`），以加速LeviLamina的安装。当您处于防火墙后或在网络较慢的地区时很有用。
 
 - `PACKAGES`：可设置为以空格分隔的包列表，用于首次运行时安装。每个包必须符合
-  [lip包名规范](https://docs.levimc.org/lip/zh/cli/commands/install.html)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
+  [lip包名规范](https://levimc.org/lip/zh/cli/commands/install.html)。支持本地和远程的lip包。对于本地包，可能需要将包挂载到容器中。
 
 - `VERSION`(`LATEST`)：可设置为特定的[LeviLamina](https://github.com/LiteLDev/LeviLamina/tags)版本，或设置为
   `LATEST`以自动下载最新版本。
