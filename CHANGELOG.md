@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Fixed the Bedrock::Application::ThreadOwner @zimuya4153
+
 ## [26.60.7] - 2026-11-12
 
 ### Changed
