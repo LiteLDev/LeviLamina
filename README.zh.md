@@ -26,7 +26,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 ## 安装和使用
 
-请跟随教程：[开你的第一个服务器](https://levimc.org/tutorials/zh-Hans/server/first-server/)搭建带 LeviLamina 的服务器，[在 Windows 上玩模组](https://levimc.org/tutorials/zh-Hans/play/play-with-mods/)在客户端中运行它。想编写模组，请从[写你的第一个 LeviLamina 模组](https://levimc.org/tutorials/zh-Hans/develop/first-levilamina-mod/)开始。
+请跟随教程：[开你的第一个服务器](https://levimc.org/zh-Hans/tutorials/server/first-server/)搭建带 LeviLamina 的服务器，[在 Windows 上玩模组](https://levimc.org/zh-Hans/tutorials/play/play-with-mods/)在客户端中运行它。想编写模组，请从[写你的第一个 LeviLamina 模组](https://levimc.org/zh-Hans/tutorials/develop/first-levilamina-mod/)开始。
 
 ## 星标蹭蹭涨
 
