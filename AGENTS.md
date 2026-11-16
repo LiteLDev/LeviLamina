@@ -15,7 +15,10 @@ C++23 features enabled), built with xmake and clang-cl on Windows x64.
 | `src-test`    | GTest suites split into `common/`, `server/`, `client/`.               |
 | `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`.          |
 | `docs/main`   | Docs site (levimc-kit); pages in `contents/`, as `*.md` + `*.zh.md`.   |
-| `docs/api`    | Doxygen config for the API reference at `/LeviLamina/api/`.            |
+| `docs/api`    | Doxygen config for the C++ reference at `/LeviLamina/api/`.            |
+| `docs/contributing` | Contributor guides (building, C++ style); not part of the site.  |
+
+`CONTRIBUTING.md` is the human-facing version of these rules and links the contributor guides.
 
 ## Editing `src/mc` (and `mc/` under src-server/src-client)
 
@@ -82,7 +85,9 @@ functional changes out of those commits.
 
 ## Build and test
 
-xmake configuration is sticky, so reconfigure whenever you switch target or toggle tests.
+Toolchain, `xmake` options, dependencies and version numbers: `docs/contributing/building.md`. What
+matters when you build here: xmake configuration is sticky, so reconfigure whenever you switch target or
+toggle tests.
 
 ```powershell
 xmake f -a x64 -m debug -p windows -y --target_type=server --tests=y
@@ -103,11 +108,8 @@ Run `python scripts/format_all.py` after touching C++ files; it applies `.clang-
 `src`, `src-server`, `src-client`, and `src-test`. Sources use CRLF (normalized via
 `.gitattributes`); `CHANGELOG.md` stays LF.
 
-Naming follows `docs/main/contents/maintainer_guides/cpp_style_guide.md`:
-
-- directories `snake_case`, files and types `PascalCase`, namespaces lowercase
-- functions and locals `camelCase`, constants `PascalCase`, macros `UPPER_SNAKE_CASE`
-- non-public data members Hungarian `mMember`, public ones plain `camelCase`
+Naming follows `docs/contributing/cpp_style.md` (`camelCase` functions and locals, `PascalCase` files,
+types and constants, `mMember` for non-public data members, …).
 
 Code explains itself: do not add explanatory or Doxygen comments, choose clear names instead, and
 put usage explanations and tutorials in `docs/main/contents`.
@@ -137,29 +139,18 @@ output or bump versions manually.
 
 ## Docs
 
-Documentation in `docs/main/contents` is bilingual. When you change an English page, update its
-`.zh.md` sibling in the same pass, and register new pages in the `nav` of `docs/main/docs.config.ts`
-(with their Chinese label in `navTranslations.zh` when the entry is titled).
+The docs workflow (where pages live, `nav` and `redirects` in `docs/main/docs.config.ts`, Markdown
+conventions, the npm scripts) is in the "Working on the docs" section of `CONTRIBUTING.md`. In addition:
 
-The site is built with levimc-kit (Vite + React, statically prerendered), which lives in
-LiteLDev/levimc.org (`kit/`) and is published at https://levimc.org/kit/v2/: `npm ci` fetches it into
-`docs/main/kit/` (git-ignored; `npm run kit` refreshes it, `kit/.vendored` records the build, and
-`LEVIMC_KIT_SOURCE=<path to a levimc.org checkout>/kit npm run kit` tries unpublished kit changes). Never
-edit `kit/`: the LeviMC bar, footer, docs engine and Doxygen header/footer are changed in levimc.org, and
-this site picks them up with its next build (levimc.org triggers it, and an hourly check catches up).
-Markdown follows MkDocs /
-Python-Markdown conventions (4-space list nesting, `!!! note` admonitions, `=== "Tab"` tabs) and links
-use relative `.md` paths. From `docs/main` (Node 24):
-
-```sh
-npm ci
-npm run typecheck   # tsc over docs.config.ts and the kit
-npm run build       # → dist/; prints unresolved links and missing anchors
-npm run preview     # http://127.0.0.1:4173/LeviLamina/ with GitHub Pages semantics
-npm run linkcheck   # internal links, anchors and redirects of dist/ (`-- --external` checks external URLs)
-npm run dev         # dev server with hot reload
-```
-
-The Doxygen reference (`docs/api/Doxyfile`, run from the repository root after `npm ci` in `docs/main`)
-uses the kit's header, footer and stylesheets from `docs/main/kit/static/`; CI merges it into the site
-under `api/`.
+- Documentation in `docs/main/contents` is bilingual. When you change an English page, update its
+  `.zh.md` sibling in the same pass.
+- The site keeps guides and reference. Tutorials are on levimc.org/tutorials/ (LiteLDev/liteldev.github.io,
+  `tutorials/`) and contributor material is in `docs/contributing/`; do not add either to `docs/main/contents`.
+- Never edit `docs/main/kit/`: levimc-kit (the LeviMC bar, footer, docs engine and the Doxygen
+  header/footer) lives in LiteLDev/liteldev.github.io (`kit/`) and is fetched by `npm ci`;
+  `LEVIMC_KIT_SOURCE=<path to that checkout>/kit npm run kit` tries unpublished kit changes.
+- Before you finish, run `npm run typecheck`, `npm run build` and `npm run linkcheck` in `docs/main`
+  (Node 24).
+- The Doxygen reference (`docs/api/Doxyfile`, run from the repository root after `npm ci` in `docs/main`)
+  uses the kit's header, footer and stylesheets from `docs/main/kit/static/`; CI merges it into the site
+  under `api/`.

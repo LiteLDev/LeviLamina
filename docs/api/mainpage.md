@@ -1,9 +1,9 @@
-# API Reference
+# C++ Reference
 
 The C++ API of LeviLamina, generated from its headers: LeviLamina's own API in the `ll` namespace, and the
 %Minecraft Bedrock Dedicated Server and client classes it exposes (the global namespace and `mce`, `Bedrock` …).
-New to modding? Start with [Create your first mod](/LeviLamina/developer_guides/tutorials/create_your_first_mod/);
-the [API Guides](/LeviLamina/api_reference/) explain each part of the API with examples.
+New to modding? Start with the tutorial [Your first LeviLamina mod](/tutorials/develop/first-levilamina-mod/);
+the [API guides](/LeviLamina/api_reference/) explain each part of the API with examples.
 
 ## Browse
 

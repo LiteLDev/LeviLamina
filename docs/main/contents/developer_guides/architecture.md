@@ -272,5 +272,5 @@ Implemented via service system:
 
 ## Related
 
-- [Build Guide](how_to_guides/build_guide.md) — Building from source
+- [Build Guide](https://github.com/LiteLDev/LeviLamina/blob/main/docs/contributing/building.md) — Building from source
 - [API Reference](../api_reference/index.md) — Complete API documentation

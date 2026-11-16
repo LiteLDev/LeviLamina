@@ -17,7 +17,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，带来直观且高度灵活的开发体验。
 
-有关更多信息，请参阅[文档](https://levimc.org/LeviLamina/zh/).
+有关更多信息，请参阅[文档](https://levimc.org/LeviLamina/zh-Hans/).
 
 ## EULA 和使用指南
 
@@ -26,7 +26,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 ## 安装和使用
 
-请参考 [在Windows上安装服务器](https://levimc.org/LeviLamina/zh/user_guides/install/) 和 [在Windows上安装客户端](https://levimc.org/LeviLamina/zh/user_guides/install_on_client/)。
+请跟随教程：[开你的第一个服务器](https://levimc.org/tutorials/zh-Hans/server/first-server/)搭建带 LeviLamina 的服务器，[在 Windows 上玩模组](https://levimc.org/tutorials/zh-Hans/play/play-with-mods/)在客户端中运行它。想编写模组，请从[写你的第一个 LeviLamina 模组](https://levimc.org/tutorials/zh-Hans/develop/first-levilamina-mod/)开始。
 
 ## 星标蹭蹭涨
 
@@ -38,7 +38,7 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 ## 贡献
 
-欢迎参与贡献！你可以[提出问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或为我们提交拉取请求。
+欢迎参与贡献！你可以[提出问题](https://github.com/LiteLDev/LeviLamina/issues/new/choose)或为我们提交拉取请求。[CONTRIBUTING.md](CONTRIBUTING.md)（英文）介绍了如何构建 LeviLamina、代码风格以及如何编辑文档。
 
 LeviLamina 遵循 [Contributor Covenant](https://www.contributor-covenant.org/zh-cn/version/2/1/code_of_conduct/) 行为准则。
 

@@ -272,5 +272,5 @@ option("target_type")
 
 ## 相关文档
 
-- [构建指南](how_to_guides/build_guide.zh.md) — 从源代码构建
+- [构建指南](https://github.com/LiteLDev/LeviLamina/blob/main/docs/contributing/building.zh.md) — 从源代码构建
 - [API 参考](../api_reference/index.zh.md) — 完整 API 文档

@@ -3,9 +3,27 @@
 // and their Chinese nav labels in `navTranslations.zh`. See kit/README.md for every option.
 import { defineDocsConfig } from './kit/docs/node/config.ts';
 
+// Pages that left this site keep answering at every URL they had: English, zh-Hans/, the former zh/ and zh-Hant/.
+const TUTORIALS = 'https://levimc.org/tutorials/';
+const BLOB = 'https://github.com/LiteLDev/LeviLamina/blob/main/';
+/** A tutorial's URL per locale prefix of this site (Simplified and Traditional Chinese have their own). */
+const tutorial = (path: string) => ({ en: TUTORIALS + path, zhHans: `${TUTORIALS}zh-Hans/${path}`, zhHant: `${TUTORIALS}zh-Hant/${path}` });
+/** A contributor guide in the repository (docs/contributing/): English, and the Chinese text beside it. */
+const repoFile = (file: string) => ({ en: BLOB + file, zhHans: BLOB + file.replace(/\.md$/, '.zh.md'), zhHant: BLOB + file.replace(/\.md$/, '.zh.md') });
+function moved(pages: Record<string, { en: string; zhHans: string; zhHant: string }>): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [from, to] of Object.entries(pages)) {
+    out[from] = to.en;
+    out[`zh-Hans/${from}`] = to.zhHans;
+    out[`zh/${from}`] = to.zhHans;
+    out[`zh-Hant/${from}`] = to.zhHant;
+  }
+  return out;
+}
+
 export default defineDocsConfig({
   base: '/LeviLamina/',
-  // Header brand; page titles use the kit default ':title - :site Docs' ("Install the server - LeviLamina Docs").
+  // Header brand; page titles use the kit default ':title - :site Docs' ("Troubleshooting - LeviLamina Docs").
   title: 'LeviLamina',
   logo: 'logo.svg',
   favicon: 'favicon.ico',
@@ -20,7 +38,8 @@ export default defineDocsConfig({
     defaultLocale: 'en',
     locales: [
       { code: 'en', label: 'English', lang: 'en' },
-      { code: 'zh', label: '简体中文', lang: 'zh-CN' },
+      // Simplified Chinese at zh-Hans/ (sources stay *.zh.md); the former zh/ URLs redirect to it (kit 2.21)
+      { code: 'zh', label: '简体中文', lang: 'zh-Hans', prefix: 'zh-Hans/', formerPrefixes: ['zh/'] },
       // Traditional Chinese, generated from the zh pages (levimc-kit convertFrom)
       { code: 'zh-Hant', label: '繁體中文', lang: 'zh-Hant', convertFrom: 'zh' },
     ],
@@ -34,64 +53,54 @@ export default defineDocsConfig({
   // `header.tabsRow` 'auto'): one row on wide screens, the sections in their own row below when they no longer fit,
   // then the drawer (opened by the LeviMC bar's menu button).
   // The LeviMC navigation model (kit/README.md "Navigation model"): every top-level entry is a section, i.e. a header
-  // tab and the sidebar tree of its pages; the brand (logo + name) is the only link to the home page. Inside a section,
-  // getting started comes first and help (troubleshooting, FAQ, supported versions) last. Sections with up to 24 links
-  // open every group; longer ones only the group holding the current page.
+  // tab and the sidebar tree of its pages; the brand (logo + name) is the only link to the home page, which introduces
+  // the project. Step-by-step tutorials (install a server, play with mods, your first mod) live at
+  // https://levimc.org/tutorials/; this site keeps guides, reference and explanations. Help (FAQ, supported versions)
+  // comes last. Sections with up to 24 links open every group; longer ones only the group holding the current page.
   nav: [
     {
-      'User Guides': [
+      Guides: [
+        { Server: ['common_guides/usage_guidelines.md', 'user_guides/troubleshooting.md'] },
         {
-          'Getting Started': [
-            'user_guides/install.md',
-            'user_guides/install_on_client.md',
-            'user_guides/configure_server_under_nat.md',
+          Developer: [
+            {
+              'How-to Guides': [
+                'developer_guides/how_to_guides/event_guide.md',
+                'developer_guides/how_to_guides/interface_export_guide.md',
+                'developer_guides/how_to_guides/find_function_guide.md',
+                'developer_guides/how_to_guides/data_driven_ui_guide.md',
+                'developer_guides/how_to_guides/form_guide.md',
+                'developer_guides/how_to_guides/hook_guide.md',
+                'developer_guides/how_to_guides/i18n_guide.md',
+                'developer_guides/how_to_guides/item_guide.md',
+                'developer_guides/how_to_guides/command_guide.md',
+                'developer_guides/how_to_guides/coro_guide.md',
+              ],
+            },
+            // Native mods for Minecraft on Android: loaded by LeviLauncher's Android version through the Preloader
+            // SDK, not by LeviLamina (the tutorial is develop/first-android-mod/); titles are the pages' own.
+            {
+              'Android Native Mods API': [
+                'developer_guides/android/api/mod.md',
+                'developer_guides/android/api/mod_menu.md',
+                'developer_guides/android/api/config.md',
+                'developer_guides/android/api/input.md',
+                'developer_guides/android/api/hook.md',
+                'developer_guides/android/api/signature.md',
+                'developer_guides/android/api/patch.md',
+                'developer_guides/android/api/memory_hook_macros.md',
+                'developer_guides/android/api/types_and_macros.md',
+              ],
+            },
+            { Architecture: 'developer_guides/architecture.md' },
           ],
         },
-        'common_guides/usage_guidelines.md',
-        { Help: ['user_guides/troubleshooting.md', { 'Supported Versions': 'versions.md' }] },
+        { Help: [{ FAQ: 'developer_guides/faq.md' }, { 'Supported Versions': 'versions.md' }] },
       ],
     },
+    // Guides to LeviLamina's API by topic (URLs api_reference/…), next to the generated C++ reference below.
     {
-      'Developer Guides': [
-        { Tutorials: ['developer_guides/tutorials/create_your_first_mod.md'] },
-        {
-          'How-to Guides': [
-            'developer_guides/how_to_guides/event_guide.md',
-            'developer_guides/how_to_guides/interface_export_guide.md',
-            'developer_guides/how_to_guides/find_function_guide.md',
-            'developer_guides/how_to_guides/data_driven_ui_guide.md',
-            'developer_guides/how_to_guides/form_guide.md',
-            'developer_guides/how_to_guides/hook_guide.md',
-            'developer_guides/how_to_guides/i18n_guide.md',
-            'developer_guides/how_to_guides/item_guide.md',
-            'developer_guides/how_to_guides/command_guide.md',
-            'developer_guides/how_to_guides/coro_guide.md',
-            'developer_guides/how_to_guides/build_guide.md',
-          ],
-        },
-        // Native mods for Minecraft on Android: loaded by LeviLauncher's Android version through the Preloader SDK
-        // (moved here from LeviLauncher's docs); titles are the pages' own.
-        {
-          'Android Native Mods': [
-            'developer_guides/android/index.md',
-            'developer_guides/android/api/mod.md',
-            'developer_guides/android/api/mod_menu.md',
-            'developer_guides/android/api/config.md',
-            'developer_guides/android/api/input.md',
-            'developer_guides/android/api/hook.md',
-            'developer_guides/android/api/signature.md',
-            'developer_guides/android/api/patch.md',
-            'developer_guides/android/api/memory_hook_macros.md',
-            'developer_guides/android/api/types_and_macros.md',
-          ],
-        },
-        { Architecture: 'developer_guides/architecture.md' },
-        { Help: [{ FAQ: 'developer_guides/faq.md' }] },
-      ],
-    },
-    // Guides to LeviLamina's API by topic (URLs api_reference/…), next to the generated API Reference below.
-    {
-      'API Guides': [
+      API: [
         { Overview: 'api_reference/index.md' },
         { Base: 'api_reference/base.md' },
         { Chrono: 'api_reference/chrono.md' },
@@ -116,31 +125,35 @@ export default defineDocsConfig({
         { 'Input (Client)': 'api_reference/input.md' },
       ],
     },
-    // The Doxygen API reference, a section of this site with its own tree (opened in place, not a new tab): built by
+    // The Doxygen C++ reference, a section of this site with its own tree (opened in place, not a new tab): built by
     // the build-doxygen CI job and merged into dist/api/; its header is generated from dist/_kit/nav.json, with this
     // tab current.
-    { 'API Reference': 'https://levimc.org/LeviLamina/api/' },
-    { 'Maintainer Guides': ['maintainer_guides/cpp_style_guide.md'] },
+    { 'C++ Reference': 'https://levimc.org/LeviLamina/api/' },
   ],
-  // The Docker install page became a section of the one server install page.
-  redirects: {
-    'user_guides/install_on_docker/': 'user_guides/install/#install-with-docker',
-    'zh/user_guides/install_on_docker/': 'zh/user_guides/install/#通过-docker-安装',
-    'zh-Hant/user_guides/install_on_docker/': 'zh-Hant/user_guides/install/#通過-docker-安裝',
-  },
+  // Moved pages. Tutorials went to levimc.org/tutorials/ (each locale to the tutorial's own locale); the contributor
+  // guides (building LeviLamina, the C++ style) went to docs/contributing/ in the repository (see CONTRIBUTING.md).
+  redirects: moved({
+    'user_guides/install/': tutorial('server/first-server/'),
+    'user_guides/install_on_docker/': tutorial('server/docker/'),
+    'user_guides/install_on_client/': tutorial('play/play-with-mods/'),
+    'user_guides/configure_server_under_nat/': tutorial('server/let-friends-join/'),
+    'developer_guides/tutorials/create_your_first_mod/': tutorial('develop/first-levilamina-mod/'),
+    'developer_guides/android/': tutorial('develop/first-android-mod/'),
+    'developer_guides/how_to_guides/build_guide/': repoFile('docs/contributing/building.md'),
+    'maintainer_guides/cpp_style_guide/': repoFile('docs/contributing/cpp_style.md'),
+  }),
   navTranslations: {
     zh: {
       FAQ: '常见问题',
-      'Getting Started': '入门',
       Help: '帮助',
-      'User Guides': '用户指南',
-      'Developer Guides': '开发者指南',
-      Tutorials: '教程',
+      Guides: '指南',
+      Server: '服务器',
+      Developer: '开发者',
       'How-to Guides': '如何做到······',
-      'Android Native Mods': 'Android 原生模组',
+      'Android Native Mods API': 'Android 原生模组 API',
       Architecture: '项目架构',
-      'API Reference': 'API 参考',
-      'API Guides': 'API 指南',
+      API: 'API',
+      'C++ Reference': 'C++ 参考',
       Overview: '概览',
       Base: '基础类型',
       Chrono: '游戏时间',
@@ -163,7 +176,6 @@ export default defineDocsConfig({
       Thread: '线程工具',
       Utils: '工具函数',
       'Input (Client)': '输入系统（客户端）',
-      'Maintainer Guides': '维护者指南',
       'Supported Versions': '支持的版本',
     },
   },
