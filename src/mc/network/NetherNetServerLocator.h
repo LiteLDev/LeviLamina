@@ -3,26 +3,33 @@
 #include "mc/_HeaderOutputPredefine.h"
 
 // auto generated inclusion list
+#include "mc/certificates/identity/ServerSupportedAuthenticationTypes.h"
 #include "mc/deps/cereal/ContextArea.h"
+#include "mc/deps/core/sem_ver/SemVersion.h"
+#include "mc/deps/core/threading/AsyncPromise.h"
+#include "mc/deps/core/threading/TaskGroup.h"
 #include "mc/deps/core/utility/NonOwnerPointer.h"
+#include "mc/deps/core/utility/pub_sub/Publisher.h"
+#include "mc/deps/core/utility/pub_sub/Subscription.h"
+#include "mc/network/ConnectionType.h"
+#include "mc/network/Nonce.h"
+#include "mc/network/PingedCompatibleServer.h"
 #include "mc/network/StubServerLocator.h"
+#include "mc/platform/brstd/flat_map.h"
 #include "mc/platform/threading/UniqueLock.h"
+#include "mc/server/AsynchronousIPResolver.h"
 #include "mc/world/level/GameType.h"
 
 // auto generated forward declare list
 // clang-format off
 class AppPlatform;
-class AsynchronousIPResolver;
 class SignalingService;
 class TransportEndpointCache;
 struct NetherNetConnector;
-struct PingedCompatibleServer;
 struct PortPair;
-struct ServerSupportedAuthenticationTypes;
 namespace Bedrock::Http { class DispatcherInterface; }
-namespace Bedrock::PubSub { class Subscription; }
+namespace Bedrock::PubSub::ThreadModel { struct MultiThreaded; }
 namespace NetherNet { struct NetworkID; }
-namespace Social { struct Nonce; }
 namespace cereal { struct ReflectionCtx; }
 namespace cereal { struct SchemaWriter; }
 // clang-format on
@@ -41,62 +48,56 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 64>  mUnk844989;
-        ::ll::UntypedStorage<2, 2>   mUnk4833f4;
-        ::ll::UntypedStorage<8, 40>  mUnkc5147c;
-        ::ll::UntypedStorage<8, 40>  mUnkda1767;
-        ::ll::UntypedStorage<8, 424> mUnkf65c24;
-        ::ll::UntypedStorage<8, 8>   mUnka6d1dd;
+        ::ll::TypedStorage<8, 64, ::AsynchronousIPResolver>                                      mFutureIP;
+        ::ll::TypedStorage<2, 2, ushort>                                                         mPort;
+        ::ll::TypedStorage<8, 40, ::std::deque<::std::string>>                                   mUrls;
+        ::ll::TypedStorage<8, 40, ::std::deque<::std::string>>                                   mFallbackUrls;
+        ::ll::TypedStorage<8, 424, ::Bedrock::Threading::AsyncPromise<::PingedCompatibleServer>> mPromise;
+        ::ll::TypedStorage<8, 8, uint64>                                                         mInFlightRequests;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ExternalServerPing& operator=(ExternalServerPing const&);
-        ExternalServerPing(ExternalServerPing const&);
-        ExternalServerPing();
     };
 
     struct HttpProbeImpl {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 48>  mUnk849326;
-        ::ll::UntypedStorage<8, 128> mUnk8d8819;
-        ::ll::UntypedStorage<8, 40>  mUnke15916;
-        ::ll::UntypedStorage<8, 8>   mUnk4ca46d;
+        ::ll::TypedStorage<
+            8,
+            48,
+            ::brstd::flat_map<
+                ::std::string,
+                ::std::shared_ptr<::NetherNetServerLocator::ExternalServerPing>,
+                ::std::less<::std::string>,
+                ::std::vector<::std::string>,
+                ::std::vector<::std::shared_ptr<::NetherNetServerLocator::ExternalServerPing>>>>
+            mExternalServers;
+        ::ll::
+            TypedStorage<8, 128, ::Bedrock::PubSub::Publisher<void(), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+                mHttpProbePermissions;
+        ::ll::TypedStorage<8, 40, ::std::deque<::std::shared_ptr<::NetherNetServerLocator::ExternalServerPing>>>
+                                         mPendingExternalServerPings;
+        ::ll::TypedStorage<8, 8, uint64> mInFlightExternalServerRequests;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HttpProbeImpl& operator=(HttpProbeImpl const&);
-        HttpProbeImpl(HttpProbeImpl const&);
-        HttpProbeImpl();
     };
 
     struct ServerData {
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1>  mUnkbc0cac;
-        ::ll::UntypedStorage<8, 32> mUnke25e40;
-        ::ll::UntypedStorage<4, 4>  mUnk55e082;
-        ::ll::UntypedStorage<8, 24> mUnk1ae9e5;
-        ::ll::UntypedStorage<8, 32> mUnk7d9cc2;
-        ::ll::UntypedStorage<4, 4>  mUnkab0aac;
-        ::ll::UntypedStorage<4, 4>  mUnk3ed176;
-        ::ll::UntypedStorage<4, 4>  mUnkc83c1f;
-        ::ll::UntypedStorage<1, 1>  mUnk91bac1;
-        ::ll::UntypedStorage<1, 1>  mUnk1b4aaf;
-        ::ll::UntypedStorage<1, 2>  mUnkd722a4;
-        ::ll::UntypedStorage<8, 32> mUnkcbabae;
-        ::ll::UntypedStorage<2, 2>  mUnkb17aa9;
+        ::ll::TypedStorage<1, 1, uchar>                                mVersion;
+        ::ll::TypedStorage<8, 32, ::std::string>                       mServerName;
+        ::ll::TypedStorage<4, 4, int>                                  mProtocolVersion;
+        ::ll::TypedStorage<8, 24, ::SemVersion>                        mAppVersion;
+        ::ll::TypedStorage<8, 32, ::std::string>                       mLevelName;
+        ::ll::TypedStorage<4, 4, ::GameType>                           mGameType;
+        ::ll::TypedStorage<4, 4, int>                                  mNumPlayers;
+        ::ll::TypedStorage<4, 4, int>                                  mMaxNumPlayers;
+        ::ll::TypedStorage<1, 1, bool>                                 mIsEditorWorld;
+        ::ll::TypedStorage<1, 1, bool>                                 mIsHardcore;
+        ::ll::TypedStorage<1, 2, ::ServerSupportedAuthenticationTypes> mSupportedAuth;
+        ::ll::TypedStorage<8, 32, ::Social::Nonce>                     mNonce;
+        ::ll::TypedStorage<2, 2, ::Social::ConnectionType>             mConnectionType;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        ServerData& operator=(ServerData const&);
-        ServerData(ServerData const&);
-        ServerData();
 
     public:
         // static functions
@@ -105,29 +106,31 @@ public:
         // NOLINTEND
     };
 
+    using Mutex = ::std::mutex;
+
+    using UniqueLock = ::Bedrock::Threading::UniqueLock<::std::mutex>;
+
 public:
     // member variables
     // NOLINTBEGIN
-    ::ll::UntypedStorage<8, 24>  mUnk983682;
-    ::ll::UntypedStorage<8, 8>   mUnk36b3eb;
-    ::ll::UntypedStorage<8, 24>  mUnka0ecad;
-    ::ll::UntypedStorage<8, 24>  mUnke14539;
-    ::ll::UntypedStorage<8, 16>  mUnk3ee0a8;
-    ::ll::UntypedStorage<8, 8>   mUnk965302;
-    ::ll::UntypedStorage<8, 168> mUnk9e12a8;
-    ::ll::UntypedStorage<8, 16>  mUnkeab7f7;
-    ::ll::UntypedStorage<8, 24>  mUnk4b5a50;
-    ::ll::UntypedStorage<1, 1>   mUnkfee0d4;
-    ::ll::UntypedStorage<1, 1>   mUnk646852;
-    ::ll::UntypedStorage<8, 160> mUnk330682;
-    ::ll::UntypedStorage<8, 80>  mUnke6202d;
-    ::ll::UntypedStorage<8, 336> mUnk1ca294;
+    ::ll::TypedStorage<8, 24, ::std::vector<::PingedCompatibleServer>>                          mLanServerList;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::NetherNetServerLocator::HttpProbeImpl>>        mHttpProbeImpl;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::NetherNetConnector>>              mNetherNetConnector;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::Bedrock::Http::DispatcherInterface>> mHttpDispatcher;
+    ::ll::TypedStorage<8, 16, ::std::shared_ptr<::TransportEndpointCache>>                      mTransportEndpointCache;
+    ::ll::TypedStorage<8, 8, ::std::unique_ptr<::cereal::ReflectionCtx>>                        mReflectionCtx;
+    ::ll::TypedStorage<8, 168, ::std::optional<::NetherNetServerLocator::ServerData>> mCachedBroadcastDiscoveryResponse;
+    ::ll::TypedStorage<8, 16, ::Bedrock::PubSub::Subscription>                        mSignalingStatus;
+    ::ll::TypedStorage<8, 24, ::Bedrock::NonOwnerPointer<::AppPlatform>>              mAppPlatform;
+    ::ll::TypedStorage<1, 1, bool>                                                    mAnnouncing;
+    ::ll::TypedStorage<1, 1, bool>                                                    mDiscovering;
+    ::ll::TypedStorage<8, 160, ::NetherNetServerLocator::ServerData>                  mServerToAnnounce;
+    ::ll::TypedStorage<8, 80, ::std::mutex>                                           mLocatorLock;
+    ::ll::TypedStorage<8, 336, ::TaskGroup>                                           mCustomServerTaskGroup;
     // NOLINTEND
 
 public:
     // prevent constructor by default
-    NetherNetServerLocator& operator=(NetherNetServerLocator const&);
-    NetherNetServerLocator(NetherNetServerLocator const&);
     NetherNetServerLocator();
 
 public:
@@ -177,7 +180,7 @@ public:
 
     MCNAPI void _cacheDiscoveryResponseData();
 
-    MCNAPI bool _onDiscoveryRequest(::cereal::SchemaWriter& writer, ::cereal::ContextArea area);
+    MCAPI bool _onDiscoveryRequest(::cereal::SchemaWriter& writer, ::cereal::ContextArea area);
 
     MCNAPI void _setDiscoveryRequestCallback(bool enable);
 

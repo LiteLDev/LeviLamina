@@ -392,7 +392,7 @@ public:
 
     MCNAPI void $setManualParticleEmission(bool manualParticleEmission);
 
-    MCNAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
+    MCAPI void $emitParticleManually(::Vec3 const& particlePosition, ::Vec3 const& velocityAdd, float const scaleMult);
 
     MCNAPI ::ParticleSystem::EntityBindInfo $getEntityBindInfo() const;
 

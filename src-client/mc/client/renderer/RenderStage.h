@@ -66,7 +66,7 @@ public:
 
     MCNAPI void $render(::ScreenContext& screenContext, ::FrameRenderObject const& renderObj);
 
-    MCNAPI void $postRender(::ScreenContext& screenContext);
+    MCFOLD void $postRender(::ScreenContext& screenContext);
 
     MCNAPI bool $shouldSkip() const;
 

@@ -2,7 +2,7 @@
 
 !!! note "Android, not LeviLamina"
     This section is about **native mods for Minecraft Bedrock Edition on Android**. They are loaded by the
-    [Android version of LeviLauncher](https://docs.levimc.org/LeviLauncher/guide/quick-start?platform=android)
+    [Android version of LeviLauncher](https://levimc.org/LeviLauncher/guide/quick-start?platform=android)
     through the Preloader SDK ([LiteLDev/preloader-android](https://github.com/LiteLDev/preloader-android)), not by
     LeviLamina, and use their own `pl::` API documented here.
 

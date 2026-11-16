@@ -71,9 +71,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+    MCAPI explicit RenderMaterial(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
-    MCNAPI RenderMaterial(::mce::RenderMaterial const& parent);
+    MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
 
     MCNAPI ::mce::ActorMaterialVariation
     getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
@@ -87,15 +87,15 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
+    MCAPI void* $ctor(::std::vector<::mce::TextureFormat> const& defaultRenderTargetFormats);
 
-    MCNAPI void* $ctor(::mce::RenderMaterial const& parent);
+    MCAPI void* $ctor(::mce::RenderMaterial const& parent);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 
 public:

@@ -23,7 +23,7 @@ To run Bedrock Dedicated Server (BDS), you need to install the following softwar
 
 1. Install [lip](https://github.com/LiteLDev/lip). The default way is npm; winget and the **setup.exe** installer
    from [lip's releases](https://github.com/LiteLDev/lip/releases/latest) also work (see
-   [lip's installation guide](https://docs.levimc.org/lip/intro/installation)):
+   [lip's installation guide](https://levimc.org/lip/intro/installation)):
     ```shell
     npm install -g @levimc/lip
     # or
@@ -100,7 +100,7 @@ Choose the container type. If your server is in mainland China, use the second c
   LeviLamina. This is useful when you are behind a firewall or in a country with slow internet connection.
 
 - `PACKAGES`: can be set to a space-separated list of packages to install on first run. Each package must be a
-  valid [lip specification](https://docs.levimc.org/lip/cli/commands/install.html). Both local and remote lip packages are
+  valid [lip specification](https://levimc.org/lip/cli/commands/install.html). Both local and remote lip packages are
   supported. For local packages, you may need to mount the packages to the container.
 
 - `VERSION` (`LATEST`): can be set to a specific [LeviLamina](https://github.com/LiteLDev/LeviLamina/tags) version or

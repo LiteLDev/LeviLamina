@@ -112,7 +112,7 @@ public:
 
     MCNAPI void generateHALData(::mce::VertexLayout const* forcedLayout, bool splitStream) const;
 
-    MCNAPI ::gsl::span<uchar const> getRawData() const;
+    MCAPI ::gsl::span<uchar const> getRawData() const;
 
     MCAPI bool isValid() const;
 

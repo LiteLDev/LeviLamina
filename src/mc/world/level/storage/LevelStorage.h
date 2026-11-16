@@ -122,7 +122,7 @@ public:
 
     MCAPI ::std::string getServerId(::Player const& client, bool isXboxLive);
 
-    MCNAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
+    MCAPI ::std::vector<::std::string> loadAllPlayerIDs(bool includeLocalPlayer) const;
 
     MCAPI ::std::unique_ptr<::CompoundTag> loadServerPlayerData(::Player const& client, bool isXboxLive);
 
@@ -135,11 +135,11 @@ public:
 public:
     // static variables
     // NOLINTBEGIN
-    MCNAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
+    MCAPI static ::std::string const& LEGACY_CONSOLE_PLAYER_PREFIX();
 
     MCNAPI static ::std::string const& LOCAL_PLAYER_EDITOR_TAG();
 
-    MCNAPI static ::std::string const& LOCAL_PLAYER_TAG();
+    MCAPI static ::std::string const& LOCAL_PLAYER_TAG();
     // NOLINTEND
 
 public:

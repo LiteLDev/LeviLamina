@@ -1,12 +1,12 @@
 format = 4
 id = "github.com/LiteLDev/LeviLamina"
-version = "26.60.6"
+version = "26.60.8"
 
 [info]
 name = "LeviLamina"
 description = "A lightweight, modular and versatile mod loader for Minecraft Bedrock Edition."
 tags = ["library"]
-logo = "https://docs.levimc.org/LeviLamina/logo.svg"
+logo = "https://levimc.org/LeviLamina/logo.svg"
 
 # The default variant holds both builds: the server build for Bedrock Dedicated Server and the
 # client build for Minecraft for Windows. There is no "client" variant: lip and LeviLauncher pick
@@ -25,7 +25,7 @@ purge = ["bedrock_server_mod.exe", "bedrock_server_mod.exe/"]
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.13"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.15"
 
 [[variants."".assets]]
 type = "zip"
@@ -47,7 +47,7 @@ platform = "win-x64"
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.13"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.15"
 
 [[variants."".assets]]
 type = "zip"

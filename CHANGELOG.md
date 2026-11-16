@@ -12,6 +12,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Migrated the lip package file from tooth.json to lip.toml (format 4)
 - `lip install github.com/LiteLDev/LeviLamina` on the client side now installs the client build (it installed the server build before)
 - Removed the variant `client`: the default variant holds the client build, so from this release on install and depend on `github.com/LiteLDev/LeviLamina` on both sides (LeviLauncher resolves `#client` dependencies declared in tooth.json to it)
+- Bumped bedrock-runtime-data versions
+
+### Fixed
+
+- Fixed the Bedrock::Application::ThreadOwner @zimuya4153
+
+## [26.60.7] - 2026-11-12
+
+### Changed
+
+- Bumped bedrock-runtime-data versions
 
 ## [26.60.6] - 2026-11-10
 
@@ -2131,7 +2142,8 @@ For lip and tooth-hub test only.
 [#1868]: https://github.com/LiteLDev/LeviLamina/issues/1868
 [#1869]: https://github.com/LiteLDev/LeviLamina/issues/1869
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.6...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.7...HEAD
+[26.60.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.6...v26.60.7
 [26.60.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.5...v26.60.6
 [26.60.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.4...v26.60.5
 [26.60.4]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.3...v26.60.4
