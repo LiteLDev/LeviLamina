@@ -22,7 +22,7 @@ For more information, please refer to [the documentation](https://levimc.org/Lev
 ## EULA & Usage Guidelines
 
 > [!WARNING]
-> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](docs/main/contents/common_guides/usage_guidelines.md).**
+> **As a developer, you should carefully read and adhere to our [EULA](EULA.en.md) and [usage guidelines](https://levimc.org/LeviLamina/common_guides/usage_guidelines/).**
 
 ## Install & Usage
 

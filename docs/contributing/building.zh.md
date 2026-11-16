@@ -285,5 +285,5 @@ xmake g --proxy_pac=github_mirror.lua
 
 ## 相关文档
 
-- [项目架构](https://levimc.org/LeviLamina/zh-Hans/developer_guides/architecture/) — 项目结构和设计
+- [项目架构](https://levimc.org/zh-Hans/LeviLamina/developer_guides/architecture/) — 项目结构和设计
 - [测试指南](#构建并启用测试) — 运行和编写测试

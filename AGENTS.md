@@ -14,8 +14,6 @@ C++23 features enabled), built with xmake and clang-cl on Windows x64.
 | `src-client`  | Client-only code, compiled when `target_type=client`.                  |
 | `src-test`    | GTest suites split into `common/`, `server/`, `client/`.               |
 | `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`.          |
-| `docs/main`   | Docs site (levimc-kit); pages in `contents/`, as `*.md` + `*.zh.md`.   |
-| `docs/api`    | Doxygen config for the C++ reference at `/LeviLamina/api/`.            |
 | `docs/contributing` | Contributor guides (building, C++ style); not part of the site.  |
 
 `CONTRIBUTING.md` is the human-facing version of these rules and links the contributor guides.
@@ -112,7 +110,7 @@ Naming follows `docs/contributing/cpp_style.md` (`camelCase` functions and local
 types and constants, `mMember` for non-public data members, …).
 
 Code explains itself: do not add explanatory or Doxygen comments, choose clear names instead, and
-put usage explanations and tutorials in `docs/main/contents`.
+put usage explanations and tutorials in the docs (LiteLDev/liteldev.github.io, `docs/LeviLamina/`).
 
 Do not use anonymous namespaces. Give file-local functions and variables `static`, and put helper
 classes in the file's named namespace.
@@ -139,18 +137,7 @@ output or bump versions manually.
 
 ## Docs
 
-The docs workflow (where pages live, `nav` and `redirects` in `docs/main/docs.config.ts`, Markdown
-conventions, the npm scripts) is in the "Working on the docs" section of `CONTRIBUTING.md`. In addition:
-
-- Documentation in `docs/main/contents` is bilingual. When you change an English page, update its
-  `.zh.md` sibling in the same pass.
-- The site keeps guides and reference. Tutorials are on levimc.org/tutorials/ (LiteLDev/liteldev.github.io,
-  `tutorials/`) and contributor material is in `docs/contributing/`; do not add either to `docs/main/contents`.
-- Never edit `docs/main/kit/`: levimc-kit (the LeviMC bar, footer, docs engine and the Doxygen
-  header/footer) lives in LiteLDev/liteldev.github.io (`kit/`) and is fetched by `npm ci`;
-  `LEVIMC_KIT_SOURCE=<path to that checkout>/kit npm run kit` tries unpublished kit changes.
-- Before you finish, run `npm run typecheck`, `npm run build` and `npm run linkcheck` in `docs/main`
-  (Node 24).
-- The Doxygen reference (`docs/api/Doxyfile`, run from the repository root after `npm ci` in `docs/main`)
-  uses the kit's header, footer and stylesheets from `docs/main/kit/static/`; CI merges it into the site
-  under `api/`.
+The documentation at <https://levimc.org/LeviLamina/> (Simplified Chinese at `/zh-Hans/LeviLamina/`) is not in
+this repository: its pages live in LiteLDev/liteldev.github.io under `docs/LeviLamina/`, and levimc.org builds the
+site and the Doxygen C++ reference (`/LeviLamina/api/`, from this repository's headers). Change the docs there; see
+the "Working on the docs" section of `CONTRIBUTING.md`. Contributor material stays in `docs/contributing/`.
