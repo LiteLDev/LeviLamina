@@ -1,10 +1,74 @@
+# Releases a version: run it from Actions > Release > Run workflow, on the branch to release, with
+# the version (e.g. 26.60.8). lip.toml and CHANGELOG.md must already name that version.
+#
+# The tag v<version> is created only when the release is published, after every build is uploaded
+# to it: lip and LeviLauncher never see a tag whose builds are missing. Until then the release is a
+# draft, which a failed run leaves behind; delete it before running again.
+name: Release
+
 on:
-  release:
-    types:
-      - published
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to release, SemVer without the leading v (e.g. 26.60.8, 26.70.0-rc.1)
+        required: true
+        type: string
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      tag: ${{ steps.prepare.outputs.tag }}
+      prerelease: ${{ steps.prepare.outputs.prerelease }}
+      latest: ${{ steps.prepare.outputs.latest }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - id: prepare
+        name: Check the version and write the release notes
+        env:
+          VERSION: ${{ inputs.version }}
+        run: |
+          git tag --list 'v*' > tags.txt
+          python scripts/prepare_release.py --version "$VERSION" --notes-file release-notes.md --tags-file tags.txt
+
+      - name: Check that v${{ inputs.version }} is not released yet
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.prepare.outputs.tag }}
+        run: |
+          if git ls-remote --exit-code --tags origin "refs/tags/$TAG" > /dev/null; then
+            echo "::error::The tag $TAG exists already"
+            exit 1
+          fi
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            echo "::error::A release $TAG exists already (maybe a draft of a failed run): delete it first"
+            exit 1
+          fi
+
+      - name: Validate release stuff (lip.toml, CHANGELOG.md, etc.)
+        env:
+          TAG: ${{ steps.prepare.outputs.tag }}
+        run: |
+          npm i -g keep-a-changelog@2.8.0
+          python scripts/validate_release.py --tag "$TAG"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: release-notes
+          path: release-notes.md
+
   build:
+    needs: prepare
     strategy:
       fail-fast: false
       matrix:
@@ -19,6 +83,16 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
+
+      # xmake.lua reads the version from `git describe --tags`; the tag is pushed only when the
+      # release is published, so tag the commit here, locally.
+      - name: Tag the commit locally
+        shell: bash
+        env:
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          git tag "$TAG"
+          git describe --tags --abbrev=0
 
       - uses: xmake-io/github-action-setup-xmake@v1
         # with:
@@ -81,64 +155,58 @@ jobs:
       - run: |
           sentry-cli debug-files upload --include-sources artifact
 
-  update-release-notes:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-
-      - name: Validate release stuff (lip.toml, CHANGELOG.md, etc.)
-        run: |
-          npm i -g keep-a-changelog@2.8.0
-          python scripts/validate_release.py --tag ${{ github.event.release.tag_name }}
-
-      - id: extract-release-notes
-        uses: ffurrer2/extract-release-notes@v3
-
-      - uses: softprops/action-gh-release@v3
-        with:
-          tag_name: ${{ github.event.release.tag_name }}
-          body: |-
-            ${{ steps.extract-release-notes.outputs.release_notes }}
-
-  upload-to-release:
+  release:
     needs:
+      - prepare
       - build
-      - update-release-notes
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        target_type:
-          - server
-          - client
-        mode:
-          - debug
-          - release
+    env:
+      GH_TOKEN: ${{ github.token }}
+      TAG: ${{ needs.prepare.outputs.tag }}
     steps:
       - uses: actions/checkout@v7
 
       - uses: actions/download-artifact@v8
         with:
-          name: levilamina-${{ github.sha }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64
-          path: artifact
+          path: artifacts
 
-      - run: |
-          cp CHANGELOG.md COPYING COPYING.LESSER README.md artifact/
+      - name: Pack the builds
+        run: |
+          mkdir dist
+          for target_type in server client; do
+            for mode in debug release; do
+              dir="artifacts/levilamina-$GITHUB_SHA-$target_type-$mode-windows-x64"
+              cp CHANGELOG.md COPYING COPYING.LESSER README.md "$dir/"
+              (cd "$dir" && zip -r "$GITHUB_WORKSPACE/dist/levilamina-$TAG-$target_type-$mode-windows-x64.zip" *)
+            done
+          done
+          ls -l dist
 
-      - run: |
-          zip -r ../levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip *
-        working-directory: artifact
+      # A draft has no tag yet: the tag is created at the commit built when the draft is published.
+      - name: Create a draft release with the builds
+        env:
+          PRERELEASE: ${{ needs.prepare.outputs.prerelease }}
+          LATEST: ${{ needs.prepare.outputs.latest }}
+        run: |
+          gh release create "$TAG" dist/*.zip \
+            --draft \
+            --target "$GITHUB_SHA" \
+            --title "$TAG" \
+            --notes-file artifacts/release-notes/release-notes.md \
+            --prerelease="$PRERELEASE" \
+            --latest="$LATEST"
 
-      - uses: softprops/action-gh-release@v3
-        with:
-          tag_name: ${{ github.event.release.tag_name }}
-          files: |
-            levilamina-${{ github.event.release.tag_name }}-${{ matrix.target_type }}-${{ matrix.mode }}-windows-x64.zip
+      - name: Publish the release
+        run: |
+          gh release edit "$TAG" --draft=false
+          gh release view "$TAG" --json url,tagName,isPrerelease
 
   dispatch-client-version-db:
+    needs:
+      - prepare
+      - release
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch levilamina-client-version-db
@@ -147,3 +215,4 @@ jobs:
           token: ${{ secrets.VERSIONDB_PAT }}
           repository: LiteLDev/levilamina-client-version-db
           event-type: update-db
+          client-payload: '{"tag": "${{ needs.prepare.outputs.tag }}"}'

@@ -13,7 +13,7 @@ C++23 features enabled), built with xmake and clang-cl on Windows x64.
 | `src-server`  | Server-only code, compiled when `target_type=server`.                  |
 | `src-client`  | Client-only code, compiled when `target_type=client`.                  |
 | `src-test`    | GTest suites split into `common/`, `server/`, `client/`.               |
-| `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`.          |
+| `scripts`     | `format_all.py`, `coverage_report.py`, `validate_release.py`, `prepare_release.py`. |
 | `docs/contributing` | Contributor guides (building, C++ style); not part of the site.  |
 
 `CONTRIBUTING.md` is the human-facing version of these rules and links the contributor guides.
