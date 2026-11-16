@@ -544,10 +544,6 @@ fabric.properties
 /CMakeLists.txt
 /vsxmake2022
 
-## Documentation
-/docs/api/doxygen-awesome-css/
-/site/
-
 # IDE
 .idea/
 .vscode/

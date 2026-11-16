@@ -17,16 +17,16 @@ LeviLamina 是一个非官方的模组加载器，旨在为 Minecraft 基岩版�
 
 开发者可以轻松地用 C++ 编写模组。这种无缝集成赋予了他们轻松扩展和个性化游戏功能的能力，带来直观且高度灵活的开发体验。
 
-有关更多信息，请参阅[文档](https://levimc.org/LeviLamina/zh-Hans/).
+有关更多信息，请参阅[文档](https://levimc.org/zh-Hans/LeviLamina/).
 
 ## EULA 和使用指南
 
 > [!WARNING]
-> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用指南](docs/main/contents/common_guides/usage_guidelines.zh.md)。**
+> **你应该仔细阅读并遵守我们的 [EULA](EULA.zh.md) 与 [使用指南](https://levimc.org/zh-Hans/LeviLamina/common_guides/usage_guidelines/)。**
 
 ## 安装和使用
 
-请跟随教程：[开你的第一个服务器](https://levimc.org/tutorials/zh-Hans/server/first-server/)搭建带 LeviLamina 的服务器，[在 Windows 上玩模组](https://levimc.org/tutorials/zh-Hans/play/play-with-mods/)在客户端中运行它。想编写模组，请从[写你的第一个 LeviLamina 模组](https://levimc.org/tutorials/zh-Hans/develop/first-levilamina-mod/)开始。
+请跟随教程：[开你的第一个服务器](https://levimc.org/zh-Hans/tutorials/server/first-server/)搭建带 LeviLamina 的服务器，[在 Windows 上玩模组](https://levimc.org/zh-Hans/tutorials/play/play-with-mods/)在客户端中运行它。想编写模组，请从[写你的第一个 LeviLamina 模组](https://levimc.org/zh-Hans/tutorials/develop/first-levilamina-mod/)开始。
 
 ## 星标蹭蹭涨
 
