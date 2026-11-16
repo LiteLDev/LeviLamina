@@ -1,5 +1,11 @@
 # Mod API
 
+!!! note "Android, not LeviLamina"
+    These pages document the `pl::` API of **native mods for Minecraft Bedrock Edition on Android**. Such mods are
+    loaded by the Android version of [LeviLauncher](https://levimc.org/LeviLauncher/) through the Preloader SDK
+    ([LiteLDev/preloader-android](https://github.com/LiteLDev/preloader-android)), not by LeviLamina. New to them?
+    Start with the tutorial [Your first Android native mod](https://levimc.org/tutorials/develop/first-android-mod/).
+
 ## Purpose
 
 The Mod API is the lifecycle entry point for native mods. It uses

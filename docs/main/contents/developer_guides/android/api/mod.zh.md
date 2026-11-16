@@ -1,5 +1,11 @@
 # Mod API
 
+!!! note "Android，而不是 LeviLamina"
+    这些页面记录 **Android 上 Minecraft 基岩版原生模组**的 `pl::` API。这类模组由 Android 版
+    [LeviLauncher](https://levimc.org/LeviLauncher/) 通过 Preloader SDK
+    （[LiteLDev/preloader-android](https://github.com/LiteLDev/preloader-android)）加载，而不是由 LeviLamina 加载。
+    第一次接触？请从教程[写你的第一个 Android 原生模组](https://levimc.org/tutorials/zh-Hans/develop/first-android-mod/)开始。
+
 ## 作用
 
 Mod API 是原生模组的生命周期入口。它使用 `<pl/Mod.hpp>`、

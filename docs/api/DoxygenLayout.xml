@@ -4,7 +4,7 @@
   <!-- Navigation index tabs for HTML output -->
   <navindex>
     <!-- No "Home" entry: the docs header row above the tree links to the docs home (its brand), and the
-         API Reference tab leads to this reference's main page (docs/api/mainpage.md). -->
+         C++ Reference tab leads to this reference's main page (docs/api/mainpage.md). -->
     <tab type="mainpage" visible="no" title=""/>
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="topics" visible="yes" title="" intro=""/>

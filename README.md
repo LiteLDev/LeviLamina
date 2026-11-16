@@ -26,7 +26,7 @@ For more information, please refer to [the documentation](https://levimc.org/Lev
 
 ## Install & Usage
 
-Please refer to [Install server on Windows](https://levimc.org/LeviLamina/user_guides/install/) and [Install client on Windows](https://levimc.org/LeviLamina/user_guides/install_on_client/).
+Follow the tutorials: [Your first server](https://levimc.org/tutorials/server/first-server/) sets up a server with LeviLamina, and [Play with mods on Windows](https://levimc.org/tutorials/play/play-with-mods/) runs it in the client. To write a mod, start with [Your first LeviLamina mod](https://levimc.org/tutorials/develop/first-levilamina-mod/).
 
 ## Star History
 
@@ -38,7 +38,7 @@ We sincerely thank [all donors](https://5g8svn.sharepoint.com/:x:/s/LiteLDev/EXx
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit pull requests (PRs).
+Feel free to dive in! [Open an issue](https://github.com/LiteLDev/LeviLamina/issues/new/choose) or submit pull requests (PRs). [CONTRIBUTING.md](CONTRIBUTING.md) explains how to build LeviLamina, the code style and how to work on the docs.
 
 LeviLamina follows the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) Code of Conduct.
 

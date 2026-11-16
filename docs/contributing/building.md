@@ -289,5 +289,5 @@ so `clang-cl` resolves on `PATH`, and run from "Developer Command Prompt for VS 
 
 ## Related
 
-- [Architecture](../architecture.md) — Project structure and design
+- [Architecture](https://levimc.org/LeviLamina/developer_guides/architecture/) — Project structure and design
 - [Testing Guide](#build-with-tests) — Running and writing tests
