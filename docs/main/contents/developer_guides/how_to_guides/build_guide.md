@@ -185,13 +185,13 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 - **Pre-release**: `v26.51.8-rc.2`
 - **Development**: `v26.51.8-rc.2+ce09050f05` (includes commit hash when `--publish=n`)
 
-Major and minor track the targeted Minecraft version. See `tooth.json` and `CHANGELOG.md` for the
+Major and minor track the targeted Minecraft version. See `lip.toml` and `CHANGELOG.md` for the
 current one.
 
 ### Version Source Priority
 
 1. **Git tag** — If the current commit has a tag matching `v*.*.*`
-2. **tooth.json** — Fallback to `version` field in `tooth.json`
+2. **lip.toml** — Fallback to `version` field in `lip.toml`
 
 ### Version Injection
 
