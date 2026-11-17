@@ -73,9 +73,10 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
         template <class T>                                                                                             \
         using cvref = T CVREF;                                                                                         \
                                                                                                                        \
-        using return_type      = Ret;                                                                                  \
-        using args_tuple       = std::tuple<Args...>;                                                                  \
-        using function_pointer = Ret (*)(Args...);                                                                     \
+        using return_type           = Ret;                                                                             \
+        using args_tuple            = std::tuple<Args...>;                                                             \
+        using free_function_pointer = Ret (*)(Args...);                                                                \
+        using function_pointer      = free_function_pointer;                                                           \
         template <size_t I>                                                                                            \
         using arg = std::tuple_element_t<I, args_tuple>;                                                               \
                                                                                                                        \
@@ -91,9 +92,20 @@ struct function_traits : function_traits<decltype(&F::operator())> {};
     template <class Ret, class Cls, class... Args>                                                                     \
     struct function_traits<Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT)>                                             \
     : function_traits<Ret(Args...) CVREF noexcept(NOEXCEPT)> {                                                         \
-        using class_type       = Cls;                                                                                  \
-        using object_pointer   = std::add_pointer_t<Cls CVREF>;                                                        \
-        using function_pointer = Ret (*)(object_pointer, Args...);                                                     \
+        using class_type              = Cls;                                                                           \
+        using object_pointer          = std::add_pointer_t<Cls CVREF>;                                                 \
+        using member_function_type    = Ret (Cls::*)(Args...) CVREF noexcept(NOEXCEPT);                                \
+        using member_function_pointer = member_function_type;                                                          \
+        using free_function_pointer   = Ret (*)(object_pointer, Args...);                                              \
+                                                                                                                       \
+        /*                                                                                                             \
+         * A non-scalar return uses a hidden ABI parameter,                                                            \
+         * so an object-first free function pointer is not equivalent.                                                 \
+         */                                                                                                            \
+        using function_pointer = std::conditional_t<                                                                   \
+            std::is_scalar_v<Ret> || std::is_void_v<Ret> || std::is_reference_v<Ret>,                                  \
+            free_function_pointer,                                                                                     \
+            member_function_pointer>;                                                                                  \
                                                                                                                        \
         static constexpr bool is_member_function = true;                                                               \
     };
