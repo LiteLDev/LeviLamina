@@ -142,6 +142,7 @@ resolved for your current configuration.
 | `glm`           | Math library          |
 | `cpr`           | HTTP client           |
 | `stb`           | Image and font decode |
+| `zlib`          | Compression           |
 
 ### LeviLamina-Specific
 
@@ -261,10 +262,11 @@ LeviLamina uses GitHub Actions for continuous integration:
 
 ### Release Process
 
-1. Tag commit with version: `git tag v26.51.8`
-2. Push tag: `git push origin v26.51.8`
-3. CI builds with `--publish=y`
-4. Artifacts uploaded to GitHub Releases
+1. Name the version in `lip.toml` and give it a section in `CHANGELOG.md`
+2. Run Actions > Release > Run workflow on the branch to release, with the version (e.g. `26.60.8`)
+3. CI checks the version, `lip.toml` and `CHANGELOG.md`, tags the commit locally and builds with `--publish=y`
+4. The builds are uploaded to a draft GitHub release, which is then published; publishing creates the tag
+   `v{version}`, so do not push the tag yourself
 
 ## Troubleshooting
 
