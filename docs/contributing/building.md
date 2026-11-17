@@ -191,12 +191,12 @@ current one.
 
 ### Version Source Priority
 
-1. **Git tag** — If the current commit has a tag matching `v*.*.*`
+1. **Git tag** — The nearest tag reachable from the current commit (`git describe --tags`), if it matches `v*.*.*`
 2. **lip.toml** — Fallback to `version` field in `lip.toml`
 
 ### Version Injection
 
-The version is injected into `src/ll/core/Version.h.in` during build:
+The version is injected into `Version.h`, generated from `src/ll/core/Version.h.in` during build:
 
 ```cpp
 // Generated Version.h
@@ -204,7 +204,7 @@ The version is injected into `src/ll/core/Version.h.in` during build:
 #define LL_VERSION_MINOR 51
 #define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
-#define LL_VERSION_BUILD "ce09050f05"
+#define LL_VERSION_COMMIT_SHA ce09050f05
 ```
 
 ## Compiler Settings

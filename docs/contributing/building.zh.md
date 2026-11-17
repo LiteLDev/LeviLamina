@@ -187,12 +187,12 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### 版本来源优先级
 
-1. **Git 标签** — 如果当前提交有匹配 `v*.*.*` 的标签
+1. **Git 标签** — 从当前提交可达的最近标签（`git describe --tags`），若其匹配 `v*.*.*`
 2. **lip.toml** — 回退到 `lip.toml` 中的 `version` 字段
 
 ### 版本注入
 
-版本在构建期间注入到 `src/ll/core/Version.h.in`：
+版本在构建期间注入到由 `src/ll/core/Version.h.in` 生成的 `Version.h`：
 
 ```cpp
 // 生成的 Version.h
@@ -200,7 +200,7 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 #define LL_VERSION_MINOR 51
 #define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
-#define LL_VERSION_BUILD "ce09050f05"
+#define LL_VERSION_COMMIT_SHA ce09050f05
 ```
 
 ## 编译器设置
