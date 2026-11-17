@@ -140,6 +140,7 @@ LeviLamina 依赖 25+ 个外部库，全部通过 `xmake.lua` 中的 `add_requir
 | `glm`           | 数学库               |
 | `cpr`           | HTTP 客户端          |
 | `stb`           | 图像与字体解码       |
+| `zlib`          | 压缩                 |
 
 ### LeviLamina 专用
 
@@ -186,12 +187,12 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 
 ### 版本来源优先级
 
-1. **Git 标签** — 如果当前提交有匹配 `v*.*.*` 的标签
+1. **Git 标签** — 从当前提交可达的最近标签（`git describe --tags`），若其匹配 `v*.*.*`
 2. **lip.toml** — 回退到 `lip.toml` 中的 `version` 字段
 
 ### 版本注入
 
-版本在构建期间注入到 `src/ll/core/Version.h.in`：
+版本在构建期间注入到由 `src/ll/core/Version.h.in` 生成的 `Version.h`：
 
 ```cpp
 // 生成的 Version.h
@@ -199,7 +200,7 @@ v{major}.{minor}.{patch}{-prerelease}+{commit_hash}
 #define LL_VERSION_MINOR 51
 #define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
-#define LL_VERSION_BUILD "ce09050f05"
+#define LL_VERSION_COMMIT_SHA ce09050f05
 ```
 
 ## 编译器设置
@@ -257,10 +258,10 @@ LeviLamina 使用 GitHub Actions 进行持续集成：
 
 ### 发布流程
 
-1. 为提交打标签: `git tag v26.51.8`
-2. 推送标签: `git push origin v26.51.8`
-3. CI 使用 `--publish=y` 构建
-4. 产物上传到 GitHub Releases
+1. 在 `lip.toml` 中写好版本号，并在 `CHANGELOG.md` 中为它添加一节
+2. 在要发布的分支上运行 Actions > Release > Run workflow，填入版本号（如 `26.60.8`）
+3. CI 检查版本号、`lip.toml` 和 `CHANGELOG.md`，在本地为提交打标签，并使用 `--publish=y` 构建
+4. 构建产物上传到 GitHub Releases 的草稿，随后发布；发布时才创建标签 `v{version}`，不要自己推送标签
 
 ## 故障排除
 

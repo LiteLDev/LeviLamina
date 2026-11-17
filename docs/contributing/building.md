@@ -142,6 +142,7 @@ resolved for your current configuration.
 | `glm`           | Math library          |
 | `cpr`           | HTTP client           |
 | `stb`           | Image and font decode |
+| `zlib`          | Compression           |
 
 ### LeviLamina-Specific
 
@@ -190,12 +191,12 @@ current one.
 
 ### Version Source Priority
 
-1. **Git tag** — If the current commit has a tag matching `v*.*.*`
+1. **Git tag** — The nearest tag reachable from the current commit (`git describe --tags`), if it matches `v*.*.*`
 2. **lip.toml** — Fallback to `version` field in `lip.toml`
 
 ### Version Injection
 
-The version is injected into `src/ll/core/Version.h.in` during build:
+The version is injected into `Version.h`, generated from `src/ll/core/Version.h.in` during build:
 
 ```cpp
 // Generated Version.h
@@ -203,7 +204,7 @@ The version is injected into `src/ll/core/Version.h.in` during build:
 #define LL_VERSION_MINOR 51
 #define LL_VERSION_PATCH 8
 #define LL_VERSION_PRERELEASE "rc.2"
-#define LL_VERSION_BUILD "ce09050f05"
+#define LL_VERSION_COMMIT_SHA ce09050f05
 ```
 
 ## Compiler Settings
@@ -261,10 +262,11 @@ LeviLamina uses GitHub Actions for continuous integration:
 
 ### Release Process
 
-1. Tag commit with version: `git tag v26.51.8`
-2. Push tag: `git push origin v26.51.8`
-3. CI builds with `--publish=y`
-4. Artifacts uploaded to GitHub Releases
+1. Name the version in `lip.toml` and give it a section in `CHANGELOG.md`
+2. Run Actions > Release > Run workflow on the branch to release, with the version (e.g. `26.60.8`)
+3. CI checks the version, `lip.toml` and `CHANGELOG.md`, tags the commit locally and builds with `--publish=y`
+4. The builds are uploaded to a draft GitHub release, which is then published; publishing creates the tag
+   `v{version}`, so do not push the tag yourself
 
 ## Troubleshooting
 
