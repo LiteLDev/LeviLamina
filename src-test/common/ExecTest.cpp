@@ -159,9 +159,9 @@ namespace {
 constexpr size_t waiterCount = 4;
 
 struct MultiSleepContext {
-    ConditionVariable     sleeper;
-    std::binary_semaphore started{0};
-    std::atomic_size_t    finished{0};
+    ConditionVariable         sleeper;
+    std::counting_semaphore<> started{0};
+    std::atomic_size_t        finished{0};
 };
 
 CoroTask<void> multiSleepWaiter(MultiSleepContext& ctx) {
@@ -218,10 +218,10 @@ TEST(ExecTest, ConditionVariableWaitForReportsTimeout) {
 namespace {
 
 struct ConditionContext {
-    ConditionVariable     cv;
-    std::atomic_int       tickets{0};
-    std::atomic_int       consumed{0};
-    std::binary_semaphore started{0};
+    ConditionVariable         cv;
+    std::atomic_int           tickets{0};
+    std::atomic_int           consumed{0};
+    std::counting_semaphore<> started{0};
 };
 
 CoroTask<void> conditionConsumer(ConditionContext& ctx, int count) {
