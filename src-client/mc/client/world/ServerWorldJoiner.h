@@ -128,7 +128,7 @@ public:
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
     );
 
-    MCNAPI void joinExternalServer(
+    MCAPI void joinExternalServer(
         ::std::string const&                                  server,
         ushort                                                port,
         ::std::string const&                                  externalServerName,

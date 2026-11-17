@@ -89,7 +89,7 @@ public:
 
     MCNAPI ::std::string const getRealmErrorData();
 
-    MCNAPI void joinExternalNetworkWorld(
+    MCAPI void joinExternalNetworkWorld(
         ::std::string const&                                                            id,
         ::std::function<void(::std::deque<::std::unique_ptr<::ProgressHandler>>, bool)> onJoinServerCompleted,
         ::std::function<void(::World::JoinServerWorldResult)>                           onErrorCallback
