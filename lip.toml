@@ -25,16 +25,20 @@ purge = ["bedrock_server_mod.exe", "bedrock_server_mod.exe/"]
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.15"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.16"
 
 [[variants."".assets]]
 type = "zip"
-urls = ["https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-server-release-windows-x64.zip"]
+urls = [
+    "https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-server-release-windows-x64.zip",
+]
 place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 
 [variants."".hooks]
 post_install = ['.\PeEditor.exe -mb']
-post_uninstall = ["IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)"]
+post_uninstall = [
+    "IF EXIST bedrock_server.exe (DEL bedrock_server.exe.bak) ELSE (REN bedrock_server.exe.bak bedrock_server.exe)",
+]
 
 # --- Client ---------------------------------------------------------------------------------------
 
@@ -47,13 +51,17 @@ platform = "win-x64"
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.15"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.16"
 
 [[variants."".assets]]
 type = "zip"
-urls = ["https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-client-release-windows-x64.zip"]
+urls = [
+    "https://{{id}}/releases/download/v{{version}}/levilamina-v{{version}}-client-release-windows-x64.zip",
+]
 place = [{ src = "LeviLamina/", dest = "mods/LeviLamina/" }]
 
 [variants."".hooks]
 post_install = ['.\PeEditor.exe -mb --exe Minecraft.Windows.exe --inplace']
-post_uninstall = ["IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)"]
+post_uninstall = [
+    "IF EXIST Minecraft.Windows.exe.bak (DEL Minecraft.Windows.exe && REN Minecraft.Windows.exe.bak Minecraft.Windows.exe)",
+]

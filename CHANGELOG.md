@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [26.60.8] - 2026-11-17
+
+### Added
+
+- Enhanced `function_traits` @zimuya4153
+- Added the member serializer @zimuya4153
+
 ### Changed
 
 - Migrated the lip package file from tooth.json to lip.toml (format 4)
@@ -17,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fixed the Bedrock::Application::ThreadOwner @zimuya4153
+- Fixed the coroutine test @zimuya4153
+- Fixed an issue where spear attacks did not trigger the player attack event (#1872) @zimuya4153
 
 ## [26.60.7] - 2026-11-12
 
@@ -2142,7 +2151,8 @@ For lip and tooth-hub test only.
 [#1868]: https://github.com/LiteLDev/LeviLamina/issues/1868
 [#1869]: https://github.com/LiteLDev/LeviLamina/issues/1869
 
-[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.7...HEAD
+[Unreleased]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.8...HEAD
+[26.60.8]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.7...v26.60.8
 [26.60.7]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.6...v26.60.7
 [26.60.6]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.5...v26.60.6
 [26.60.5]: https://github.com/LiteLDev/LeviLamina/compare/v26.60.4...v26.60.5
