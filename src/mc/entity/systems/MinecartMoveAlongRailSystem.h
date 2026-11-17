@@ -58,7 +58,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void _calculateRailMovementSystem(
+    MCAPI static void _calculateRailMovementSystem(
         ::StrictEntityContext const&         context,
         ::RailMovementComponent const&       railMovementComponent,
         ::SnapOnRailComponent&               snapOnRailComponent,

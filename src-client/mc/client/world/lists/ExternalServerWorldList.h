@@ -50,7 +50,7 @@ public:
 
     MCNAPI void _refreshWorlds();
 
-    MCNAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
+    MCAPI ::nonstd::expected<int, ::World::ExternalServerWorldError>
     addExternalServerWorld(::std::string const& name, ::std::string const& address, int port);
 
     MCNAPI ::std::optional<::World::ExternalServerWorldError>
