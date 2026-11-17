@@ -658,24 +658,16 @@ struct magic_enum::customize::enum_range<PascalCasePermission> {
 
 template <>
 struct ll::reflection::Serializer<TestVersion> {
+    using Members = MemberSerializer<TestVersion, &TestVersion::mMajor, &TestVersion::mMinor, &TestVersion::mPatch>;
+
     template <typename J>
-    static ll::Expected<J> serialize(TestVersion const& v) {
-        using ll::reflection::member;
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMajor>(v, result));
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMinor>(v, result));
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mPatch>(v, result));
-        return result;
+    static ll::Expected<J> serialize(TestVersion const& value) {
+        return Members::template serialize<J>(value, detail::default_key_formatter);
     }
 
     template <typename J>
-    static ll::Expected<TestVersion> deserialize(J const& j) {
-        using ll::reflection::member;
-        TestVersion result;
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMajor>(result, j));
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mMinor>(result, j));
-        LL_REFLECTION_TEST_TRY(member<&TestVersion::mPatch>(result, j));
-        return result;
+    static ll::Expected<TestVersion> deserialize(J const& json) {
+        return Members::deserialize(json, detail::default_key_formatter);
     }
 
     static std::string to_string(TestVersion const& value) {
@@ -721,62 +713,18 @@ struct ll::reflection::Serializer<mce::Blob> {
 };
 
 template <>
-struct ll::reflection::Serializer<mce::Color> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(mce::Color const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::r>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::g>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::b>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::a>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<mce::Color> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        mce::Color value{};
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::r>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::g>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::b>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Color::a>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<mce::Color>
+: MemberSerializer<mce::Color, &mce::Color::r, &mce::Color::g, &mce::Color::b, &mce::Color::a> {};
 
 template <>
-struct ll::reflection::Serializer<mce::Image> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(mce::Image const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::imageFormat>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mWidth>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mHeight>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mDepth>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mUsage>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mImageBytes>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<mce::Image> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        mce::Image value{};
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::imageFormat>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mWidth>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mHeight>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mDepth>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mUsage>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&mce::Image::mImageBytes>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<mce::Image> : MemberSerializer<
+                                                    mce::Image,
+                                                    &mce::Image::imageFormat,
+                                                    &mce::Image::mWidth,
+                                                    &mce::Image::mHeight,
+                                                    &mce::Image::mDepth,
+                                                    &mce::Image::mUsage,
+                                                    &mce::Image::mImageBytes> {};
 
 template <>
 struct ll::reflection::Serializer<SkinImage> {
@@ -826,64 +774,24 @@ struct ll::reflection::Serializer<Bedrock::StaticOptimizedString> {
 };
 
 template <>
-struct ll::reflection::Serializer<SemVersion> {
+struct ll::reflection::Serializer<SemVersion> : MemberSerializer<
+                                                    SemVersion,
+                                                    &SemVersion::mMajor,
+                                                    &SemVersion::mMinor,
+                                                    &SemVersion::mPatch,
+                                                    &SemVersion::mValidVersion,
+                                                    &SemVersion::mAnyVersion,
+                                                    &SemVersion::mPreRelease,
+                                                    &SemVersion::mBuildMeta> {
     static_assert(ll::reflection::typeNameStem(ll::reflection::getRawName<&SemVersion::mMajor>()) == "mMajor");
-
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(SemVersion const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mMajor>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mMinor>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mPatch>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mValidVersion>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mAnyVersion>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mPreRelease>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mBuildMeta>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<SemVersion> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        SemVersion value{};
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mMajor>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mMinor>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mPatch>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mValidVersion>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mAnyVersion>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mPreRelease>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SemVersion::mBuildMeta>(value, j, keyFormatter));
-        return value;
-    }
 };
 
 template <>
-struct ll::reflection::Serializer<MinEngineVersion> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(MinEngineVersion const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mSemVersion>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mCommandVersion>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mMolangVersion>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<MinEngineVersion> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        MinEngineVersion value{};
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mSemVersion>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mCommandVersion>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&MinEngineVersion::mMolangVersion>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<MinEngineVersion> : MemberSerializer<
+                                                          MinEngineVersion,
+                                                          &MinEngineVersion::mSemVersion,
+                                                          &MinEngineVersion::mCommandVersion,
+                                                          &MinEngineVersion::mMolangVersion> {};
 
 template <>
 struct ll::reflection::Serializer<Json::Value, nlohmann::json> {
@@ -970,142 +878,50 @@ struct ll::reflection::Serializer<Json::Value, nlohmann::json> {
 };
 
 template <>
-struct ll::reflection::Serializer<AnimatedImageData> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(AnimatedImageData const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mType>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mAnimationExpression>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mImage>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mFrames>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<AnimatedImageData> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        AnimatedImageData value{};
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mType>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mAnimationExpression>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mImage>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&AnimatedImageData::mFrames>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<AnimatedImageData> : MemberSerializer<
+                                                           AnimatedImageData,
+                                                           &AnimatedImageData::mType,
+                                                           &AnimatedImageData::mAnimationExpression,
+                                                           &AnimatedImageData::mImage,
+                                                           &AnimatedImageData::mFrames> {};
 
 template <>
-struct ll::reflection::Serializer<SerializedPersonaPieceHandle> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(SerializedPersonaPieceHandle const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPieceId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPieceType>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPackId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mIsDefaultPiece>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mProductId>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<SerializedPersonaPieceHandle> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        SerializedPersonaPieceHandle value{};
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPieceId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPieceType>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mPackId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mIsDefaultPiece>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedPersonaPieceHandle::mProductId>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<SerializedPersonaPieceHandle> : MemberSerializer<
+                                                                      SerializedPersonaPieceHandle,
+                                                                      &SerializedPersonaPieceHandle::mPieceId,
+                                                                      &SerializedPersonaPieceHandle::mPieceType,
+                                                                      &SerializedPersonaPieceHandle::mPackId,
+                                                                      &SerializedPersonaPieceHandle::mIsDefaultPiece,
+                                                                      &SerializedPersonaPieceHandle::mProductId> {};
 
 template <>
-struct ll::reflection::Serializer<TintMapColor> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(TintMapColor const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&TintMapColor::colors>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<TintMapColor> deserialize(J const& j, F const& keyFormatter) {
-        TintMapColor value{};
-        LL_REFLECTION_TEST_TRY(ll::reflection::member<&TintMapColor::colors>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<TintMapColor> : MemberSerializer<TintMapColor, &TintMapColor::colors> {};
 
 template <>
-struct ll::reflection::Serializer<SerializedSkinImpl> {
-    template <typename J, typename F>
-    static ll::Expected<J> serialize(SerializedSkinImpl const& value, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        auto result = J::object();
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mFullId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mResourcePatch>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mDefaultGeometryName>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinImage>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mCapeImage>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinAnimatedImages>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryData>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryDataMinEngineVersion>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryDataMutable>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mAnimationData>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mCapeId>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPersonaPieces>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mArmSizeType>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPieceTintColors>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinColor>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsTrustedSkin>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPremium>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPersona>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPersonaCapeOnClassicSkin>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPrimaryUser>(value, result, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mOverridesPlayerAppearance>(value, result, keyFormatter));
-        return result;
-    }
-
-    template <typename J, typename F>
-    static ll::Expected<SerializedSkinImpl> deserialize(J const& j, F const& keyFormatter) {
-        using ll::reflection::member;
-
-        SerializedSkinImpl value{};
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mFullId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mResourcePatch>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mDefaultGeometryName>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinImage>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mCapeImage>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinAnimatedImages>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryData>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryDataMinEngineVersion>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mGeometryDataMutable>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mAnimationData>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mCapeId>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPersonaPieces>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mArmSizeType>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mPieceTintColors>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mSkinColor>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsTrustedSkin>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPremium>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPersona>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPersonaCapeOnClassicSkin>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mIsPrimaryUser>(value, j, keyFormatter));
-        LL_REFLECTION_TEST_TRY(member<&SerializedSkinImpl::mOverridesPlayerAppearance>(value, j, keyFormatter));
-        return value;
-    }
-};
+struct ll::reflection::Serializer<SerializedSkinImpl> : MemberSerializer<
+                                                            SerializedSkinImpl,
+                                                            &SerializedSkinImpl::mId,
+                                                            &SerializedSkinImpl::mFullId,
+                                                            &SerializedSkinImpl::mResourcePatch,
+                                                            &SerializedSkinImpl::mDefaultGeometryName,
+                                                            &SerializedSkinImpl::mSkinImage,
+                                                            &SerializedSkinImpl::mCapeImage,
+                                                            &SerializedSkinImpl::mSkinAnimatedImages,
+                                                            &SerializedSkinImpl::mGeometryData,
+                                                            &SerializedSkinImpl::mGeometryDataMinEngineVersion,
+                                                            &SerializedSkinImpl::mGeometryDataMutable,
+                                                            &SerializedSkinImpl::mAnimationData,
+                                                            &SerializedSkinImpl::mCapeId,
+                                                            &SerializedSkinImpl::mPersonaPieces,
+                                                            &SerializedSkinImpl::mArmSizeType,
+                                                            &SerializedSkinImpl::mPieceTintColors,
+                                                            &SerializedSkinImpl::mSkinColor,
+                                                            &SerializedSkinImpl::mIsTrustedSkin,
+                                                            &SerializedSkinImpl::mIsPremium,
+                                                            &SerializedSkinImpl::mIsPersona,
+                                                            &SerializedSkinImpl::mIsPersonaCapeOnClassicSkin,
+                                                            &SerializedSkinImpl::mIsPrimaryUser,
+                                                            &SerializedSkinImpl::mOverridesPlayerAppearance> {};
 
 template <>
 struct ll::reflection::Serializer<ItemInfo> {

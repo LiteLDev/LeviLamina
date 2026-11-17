@@ -33,15 +33,6 @@ template <class T>
 concept Reflectable = is_reflectable_v<T>;
 
 namespace detail {
-template <typename F>
-constexpr bool is_key_formatter_v = requires(F f, std::string_view sv) {
-    { f(sv) } -> std::convertible_to<std::string>;
-} || requires(F f, std::string_view sv) {
-    { f(sv) } -> std::convertible_to<std::string_view>;
-};
-
-constexpr auto default_key_formatter = [](std::string_view sv) -> std::string_view { return sv; };
-
 template <typename T>
 constexpr bool is_string_serializable_v = requires(T const& t, std::string_view sv) {
     { reflection::Serializer<T>::to_string(t) } -> std::convertible_to<std::string>;
@@ -260,9 +251,6 @@ constexpr std::optional<Enum> string_to_enum(std::string_view sv, F const& keyFo
 }
 
 } // namespace detail
-
-template <typename F>
-concept IsKeyFormatter = detail::is_key_formatter_v<std::remove_cvref_t<F>>;
 
 template <typename T>
 concept IsLeastStringifiableType = detail::is_key_stringifiable_v<std::remove_cvref_t<T>>;
