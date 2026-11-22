@@ -29,7 +29,7 @@ makeFeatureRenderParams(::BlockSource& source, ::BlockPos const& pos, ::MolangVa
 
 MCNAPI bool passesAllowList(::Block const& block, ::std::vector<::BlockDescriptor> const& allowList);
 
-MCNAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
+MCAPI ::FeatureHelper::PlaceFeatureResult placeFeature(
     ::IFeature const&                 feature,
     ::BlockSource&                    source,
     ::BlockPos const&                 pos,

@@ -26,6 +26,8 @@ public:
             struct FogDistanceSetting;
             struct FogInitDistanceSetting;
             struct FogTransitionSetting;
+            struct FogWaterDistanceSetting;
+            struct FogDistanceCollectionSetting;
             struct FogVolumetricDensitySetting;
             struct FogVolumetricDensityCollectionSetting;
             struct FogVolumetricMediaCoeffsSetting;
@@ -33,8 +35,6 @@ public:
             struct FogVolumetricHenyeyGreensteinGSetting;
             struct FogVolumetricHenyeyGreensteinGCollectionSetting;
             struct FogVolumetricCollectionSetting;
-            struct FogWaterDistanceSetting;
-            struct FogDistanceCollectionSetting;
             // clang-format on
 
             // FogSettings inner types define
@@ -50,6 +50,10 @@ public:
 
             struct FogTransitionSetting {};
 
+            struct FogWaterDistanceSetting {};
+
+            struct FogDistanceCollectionSetting {};
+
             struct FogVolumetricDensitySetting {};
 
             struct FogVolumetricDensityCollectionSetting {};
@@ -63,10 +67,6 @@ public:
             struct FogVolumetricHenyeyGreensteinGCollectionSetting {};
 
             struct FogVolumetricCollectionSetting {};
-
-            struct FogWaterDistanceSetting {};
-
-            struct FogDistanceCollectionSetting {};
         };
     };
 };

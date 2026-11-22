@@ -68,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit LevelChunkPacket(::LevelChunkPacketPayload payload);
+    MCAPI explicit LevelChunkPacket(::LevelChunkPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::LevelChunkPacketPayload payload);
+    MCAPI void* $ctor(::LevelChunkPacketPayload payload);
     // NOLINTEND
 
 public:

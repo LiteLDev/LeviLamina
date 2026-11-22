@@ -7,10 +7,10 @@ public:
     // UWPMigrationManager inner types declare
     // clang-format off
     struct MoveOperation;
-    struct OperationResult;
     struct MoveDirectoryOperation;
     struct MoveFileOperation;
     struct MoveSecureStorageOperation;
+    struct OperationResult;
     // clang-format on
 
     // UWPMigrationManager inner types define
@@ -24,11 +24,11 @@ public:
         enum class Type : int {};
     };
 
-    struct OperationResult {};
-
     struct MoveDirectoryOperation {};
 
     struct MoveFileOperation {};
 
     struct MoveSecureStorageOperation {};
+
+    struct OperationResult {};
 };

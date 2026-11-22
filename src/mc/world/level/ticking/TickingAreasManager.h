@@ -54,13 +54,13 @@ public:
     public:
         // member functions
         // NOLINTBEGIN
-        MCNAPI ~ScopedContext();
+        MCAPI ~ScopedContext();
         // NOLINTEND
 
     public:
         // destructor thunk
         // NOLINTBEGIN
-        MCNAPI void $dtor();
+        MCFOLD void $dtor();
         // NOLINTEND
     };
 
@@ -124,7 +124,7 @@ public:
         ::std::shared_ptr<::TickingAreaList> const& tickingAreaList
     );
 
-    MCNAPI ::TickingAreasManager::ScopedContext addTransientScopedArea(
+    MCAPI ::TickingAreasManager::ScopedContext addTransientScopedArea(
         ::DimensionType      dimensionId,
         ::std::string const& name,
         uint64               scopeKey,
@@ -144,7 +144,7 @@ public:
     MCNAPI ::std::vector<::TickingAreaDescription>
     removePendingAreaByPosition(::DimensionType dimensionId, ::BlockPos const& position, ::LevelStorage& levelStorage);
 
-    MCNAPI void removeScopedAreas(::std::vector<::mce::UUID> const& uuids);
+    MCAPI void removeScopedAreas(::std::vector<::mce::UUID> const& uuids);
 
     MCNAPI ::std::vector<::TickingAreaDescription> setPendingAreaLoadModeByName(
         ::DimensionType       dimensionId,

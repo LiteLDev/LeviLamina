@@ -16,10 +16,10 @@ public:
     // UWPMigrationManager inner types declare
     // clang-format off
     struct MoveOperation;
-    struct OperationResult;
     struct MoveDirectoryOperation;
     struct MoveFileOperation;
     struct MoveSecureStorageOperation;
+    struct OperationResult;
     // clang-format on
 
     // UWPMigrationManager inner types define
@@ -97,21 +97,6 @@ public:
         // NOLINTEND
     };
 
-    struct OperationResult {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<1, 1> mUnk71c09f;
-        ::ll::UntypedStorage<1, 1> mUnkd9e5e5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        OperationResult& operator=(OperationResult const&);
-        OperationResult(OperationResult const&);
-        OperationResult();
-    };
-
     struct MoveDirectoryOperation : public ::UWPMigrationManager::MoveOperation {
     public:
         // virtual functions
@@ -164,6 +149,21 @@ public:
 
         MCNAPI void $cleanup() const;
         // NOLINTEND
+    };
+
+    struct OperationResult {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<1, 1> mUnk71c09f;
+        ::ll::UntypedStorage<1, 1> mUnkd9e5e5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        OperationResult& operator=(OperationResult const&);
+        OperationResult(OperationResult const&);
+        OperationResult();
     };
 
 public:

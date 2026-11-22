@@ -35,7 +35,7 @@ public:
 
     MCNAPI void upgradeToSharedTypes(::SharedTypes::v1_20_80::ParticleEventNode& data);
 
-    MCNAPI ~ParticleEventNode();
+    MCAPI ~ParticleEventNode();
     // NOLINTEND
 
 public:
@@ -49,7 +49,7 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };
 

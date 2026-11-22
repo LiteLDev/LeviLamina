@@ -108,7 +108,7 @@ public:
 
     MCNAPI ::std::shared_ptr<::DataDrivenRenderer> getDataDrivenRenderer(::HashedString const& rendererName) const;
 
-    MCNAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
+    MCAPI ::Bedrock::NotNullNonOwnerPtr<::FontHandle const> getFontHandle();
     // NOLINTEND
 
 public:

@@ -38,6 +38,8 @@ public:
             struct FogDistanceSetting;
             struct FogInitDistanceSetting;
             struct FogTransitionSetting;
+            struct FogWaterDistanceSetting;
+            struct FogDistanceCollectionSetting;
             struct FogVolumetricDensitySetting;
             struct FogVolumetricDensityCollectionSetting;
             struct FogVolumetricMediaCoeffsSetting;
@@ -45,8 +47,6 @@ public:
             struct FogVolumetricHenyeyGreensteinGSetting;
             struct FogVolumetricHenyeyGreensteinGCollectionSetting;
             struct FogVolumetricCollectionSetting;
-            struct FogWaterDistanceSetting;
-            struct FogDistanceCollectionSetting;
             // clang-format on
 
             // FogSettings inner types define
@@ -111,6 +111,57 @@ public:
                 ::ll::TypedStorage<4, 8, ::std::optional<float>> mMidTransitionSeconds;
                 ::ll::TypedStorage<4, 8, ::std::optional<float>> mMidTransitionPercentage;
                 ::ll::TypedStorage<4, 8, ::std::optional<float>> mMaxTransitionSeconds;
+                // NOLINTEND
+            };
+
+            struct FogWaterDistanceSetting
+            : public ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting {
+            public:
+                // member variables
+                // NOLINTBEGIN
+                ::ll::TypedStorage<
+                    4,
+                    84,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogTransitionSetting>>
+                    mTransitionFog;
+                // NOLINTEND
+            };
+
+            struct FogDistanceCollectionSetting {
+            public:
+                // member variables
+                // NOLINTBEGIN
+                ::ll::TypedStorage<
+                    4,
+                    48,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
+                    mAir;
+                ::ll::TypedStorage<
+                    4,
+                    48,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
+                    mWeather;
+                ::ll::TypedStorage<
+                    4,
+                    132,
+                    ::std::optional<
+                        ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogWaterDistanceSetting>>
+                    mWater;
+                ::ll::TypedStorage<
+                    4,
+                    48,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
+                    mLava;
+                ::ll::TypedStorage<
+                    4,
+                    48,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
+                    mLavaResistance;
+                ::ll::TypedStorage<
+                    4,
+                    48,
+                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
+                    mPowderedSnow;
                 // NOLINTEND
             };
 
@@ -256,57 +307,6 @@ public:
                     ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::
                                         FogVolumetricHenyeyGreensteinGCollectionSetting>>
                     mHenyeyGreensteinGSettings;
-                // NOLINTEND
-            };
-
-            struct FogWaterDistanceSetting
-            : public ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting {
-            public:
-                // member variables
-                // NOLINTBEGIN
-                ::ll::TypedStorage<
-                    4,
-                    84,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogTransitionSetting>>
-                    mTransitionFog;
-                // NOLINTEND
-            };
-
-            struct FogDistanceCollectionSetting {
-            public:
-                // member variables
-                // NOLINTBEGIN
-                ::ll::TypedStorage<
-                    4,
-                    48,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
-                    mAir;
-                ::ll::TypedStorage<
-                    4,
-                    48,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
-                    mWeather;
-                ::ll::TypedStorage<
-                    4,
-                    132,
-                    ::std::optional<
-                        ::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogWaterDistanceSetting>>
-                    mWater;
-                ::ll::TypedStorage<
-                    4,
-                    48,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
-                    mLava;
-                ::ll::TypedStorage<
-                    4,
-                    48,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
-                    mLavaResistance;
-                ::ll::TypedStorage<
-                    4,
-                    48,
-                    ::std::optional<::FogDefinitionCerealParser::FogParametersSrcV0::FogSettings::FogDistanceSetting>>
-                    mPowderedSnow;
                 // NOLINTEND
             };
 

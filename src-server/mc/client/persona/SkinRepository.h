@@ -6,8 +6,8 @@ class SkinRepository {
 public:
     // SkinRepository inner types declare
     // clang-format off
-    struct LoadListener;
     struct SkinPackEntry;
+    struct LoadListener;
     // clang-format on
 
     // SkinRepository inner types define
@@ -15,7 +15,7 @@ public:
 
     enum class EntryDisposition : uchar {};
 
-    struct LoadListener {};
-
     struct SkinPackEntry {};
+
+    struct LoadListener {};
 };

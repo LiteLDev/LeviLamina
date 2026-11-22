@@ -82,9 +82,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
+    MCAPI uint generateFrame(::GameplayRelatedRenderData const& renderData);
 
-    MCNAPI bool
+    MCAPI bool
     tryAddActor(::Actor& actor, ::std::shared_ptr<::ActorRenderer> const& renderer, ::ShadowContext shadowContext);
 
     MCNAPI ~DataDrivenRendererV2();

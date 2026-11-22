@@ -102,10 +102,10 @@ public:
     MCAPI ::std::vector<::std::string> getStructureNames(::LevelStorage& levelStorage, bool includeUnremovable) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI ::StructureTemplate* importStructure(::std::string const& structureName, ::Core::Path const& filePath);
+    MCAPI ::StructureTemplate* importStructure(::std::string const& structureName, ::Core::Path const& filePath);
 #endif
 
-    MCNAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
+    MCAPI void importStructureFromTemplate(::std::string name, ::StructureTemplate const& temp);
 
     MCAPI bool load(
         ::StructureTemplate&         structureTemplate,
@@ -125,7 +125,7 @@ public:
 
     MCNAPI void tick(::Dimension const& dimension);
 
-    MCNAPI ::QueueRequestResult tryPlaceStructureInWorld(
+    MCAPI ::QueueRequestResult tryPlaceStructureInWorld(
         ::std::unique_ptr<::CommandArea>            cmdArea,
         ::ServerLevel&                              level,
         ::Dimension&                                dimension,

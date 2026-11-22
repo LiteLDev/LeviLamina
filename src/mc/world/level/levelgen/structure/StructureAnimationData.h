@@ -40,7 +40,7 @@ public:
     // NOLINTBEGIN
     MCNAPI StructureAnimationData(::StructureAnimationData&&);
 
-    MCNAPI StructureAnimationData(
+    MCAPI StructureAnimationData(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,
         ::std::string const&             structureName,
@@ -51,7 +51,7 @@ public:
 
     MCNAPI ::CompoundTag& serialize(::CompoundTag& tag);
 
-    MCNAPI ~StructureAnimationData();
+    MCAPI ~StructureAnimationData();
     // NOLINTEND
 
 public:
@@ -65,7 +65,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void* $ctor(::StructureAnimationData&&);
 
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::std::unique_ptr<::CommandArea> cmdArea,
         uint64                           tickQueued,
         ::std::string const&             structureName,
@@ -78,6 +78,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

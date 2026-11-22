@@ -99,7 +99,7 @@ public:
         ::std::optional<::DeserializationChanges*> deserializationChanges
     );
 
-    MCNAPI void fetchBlocks(
+    MCAPI void fetchBlocks(
         ::BlockPos const& subChunkOrigin,
         ::BlockPos const& volumeOrigin,
         short             dimensionMinHeight,
@@ -126,7 +126,7 @@ public:
     MCNAPI void setBlockLight(ushort index, uchar lightValue);
 #endif
 
-    MCNAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
+    MCAPI void setBlocksToUniform(::Block const& initBlock, bool maxSkyLight, bool fullyLit);
 
     MCNAPI void setFromBlockVolume(
         ::BlockVolume const&                           box,

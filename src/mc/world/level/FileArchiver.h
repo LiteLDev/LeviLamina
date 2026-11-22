@@ -39,12 +39,12 @@ public:
     struct CopyWorldResult;
     struct EduCloudImportInfo;
     struct ImportWorldsResult;
+    struct InterventionPublishers;
     class ProgressReporter;
     struct Result;
     struct ExportData;
     struct WorldConverterExportSettings;
     class IWorldConverter;
-    struct InterventionPublishers;
     // clang-format on
 
     // FileArchiver inner types define
@@ -146,6 +146,98 @@ public:
         // NOLINTBEGIN
         ::ll::TypedStorage<4, 4, ::FileArchiverOutcome>                                                 outcome;
         ::ll::TypedStorage<8, 24, ::std::vector<::FileArchiver::ImportWorldsResult::ImportWorldResult>> worlds;
+        // NOLINTEND
+    };
+
+    struct InterventionPublishers {
+    public:
+        // InterventionPublishers inner types define
+        using BeginSignature = void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&);
+
+        using CleanupSignature = void(::FileArchiver::ExportType);
+
+        using CopyCompleteSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+        using LevelDataFinalizeSignature = void(::FileArchiver::ExportType, ::LevelData&);
+
+        using LevelDataMutationSignature = void(::FileArchiver::ExportType, ::LevelData&);
+
+        using PreFileRemovalSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+        using PrePackageSignature =
+            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
+
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mBegin;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mCopyComplete;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::LevelData&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mLevelDataMutation;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mPreFileRemoval;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::LevelData&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mLevelDataFinalize;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::Publisher<
+                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
+                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
+                0>>
+            mPrePackage;
+        ::ll::TypedStorage<
+            8,
+            128,
+            ::Bedrock::PubSub::
+                Publisher<void(::FileArchiver::ExportType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
+            mCleanup;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI InterventionPublishers();
+        // NOLINTEND
+
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor();
         // NOLINTEND
     };
 
@@ -272,98 +364,6 @@ public:
             ::Level&                           level,
             ::Core::PathBuffer<::std::string>& generatedLevelDataFile
         ) = 0;
-        // NOLINTEND
-    };
-
-    struct InterventionPublishers {
-    public:
-        // InterventionPublishers inner types define
-        using BeginSignature = void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&);
-
-        using CleanupSignature = void(::FileArchiver::ExportType);
-
-        using CopyCompleteSignature =
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-        using LevelDataFinalizeSignature = void(::FileArchiver::ExportType, ::LevelData&);
-
-        using LevelDataMutationSignature = void(::FileArchiver::ExportType, ::LevelData&);
-
-        using PreFileRemovalSignature =
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-        using PrePackageSignature =
-            void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&);
-
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::std::string const&, ::Core::Path const&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mBegin;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mCopyComplete;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::LevelData&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mLevelDataMutation;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mPreFileRemoval;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::LevelData&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mLevelDataFinalize;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::Publisher<
-                void(::FileArchiver::ExportType, ::Core::PathBuffer<::Core::BasicStackString<char, 1024>> const&),
-                ::Bedrock::PubSub::ThreadModel::MultiThreaded,
-                0>>
-            mPrePackage;
-        ::ll::TypedStorage<
-            8,
-            128,
-            ::Bedrock::PubSub::
-                Publisher<void(::FileArchiver::ExportType), ::Bedrock::PubSub::ThreadModel::MultiThreaded, 0>>
-            mCleanup;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI InterventionPublishers();
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor();
         // NOLINTEND
     };
 

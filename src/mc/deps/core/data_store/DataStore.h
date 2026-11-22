@@ -24,8 +24,8 @@ public:
     // clang-format off
     struct CustomFileHandlers;
     class Viewer;
-    template<typename T0, typename T1> class AccessHandle;
     class Editor;
+    template<typename T0, typename T1> class AccessHandle;
     class EditorImpl;
     class Impl;
     class ViewerImpl;
@@ -62,9 +62,6 @@ public:
         // NOLINTEND
     };
 
-    template <typename T0, typename T1>
-    class AccessHandle {};
-
     class Editor : public ::Bedrock::DataStore::Viewer {
     public:
         // virtual functions
@@ -75,6 +72,9 @@ public:
         setValueForKey(::std::string_view key, ::Bedrock::JSONObject::ValueWrapper const& value) = 0;
         // NOLINTEND
     };
+
+    template <typename T0, typename T1>
+    class AccessHandle {};
 
     class EditorImpl : public ::Bedrock::DataStore::Editor {
     public:

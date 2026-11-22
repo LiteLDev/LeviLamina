@@ -668,7 +668,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::LessonProgressPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const& source, ::GuiDataPickItemPacket const& packet);
 
     MCAPI void $handle(::NetworkIdentifier const& source, ::ItemStackResponsePacket const& packet);
 
@@ -830,7 +830,7 @@ public:
 
     MCNAPI void $handle(::NetworkIdentifier const& source, ::PlayerLocationPacket const& packet);
 
-    MCNAPI void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet);
+    MCAPI void $handle(::NetworkIdentifier const&, ::PrimitiveShapesPacket const& packet);
 
     MCNAPI void $handle(::NetworkIdentifier const&, ::ClientboundDataStorePacket const& packet);
 
