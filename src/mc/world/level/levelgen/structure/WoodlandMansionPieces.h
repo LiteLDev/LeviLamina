@@ -24,14 +24,14 @@ public:
     // WoodlandMansionPieces inner types declare
     // clang-format off
     class FloorRoomCollection;
-    struct PlacementData;
-    class SimpleGrid;
-    class WoodlandMansionPiece;
     class FirstFloorRoomCollection;
+    struct PlacementData;
+    class SecondFloorRoomCollection;
+    class SimpleGrid;
     class MansionGrid;
     class MansionPiecePlacer;
-    class SecondFloorRoomCollection;
     class ThirdFloorRoomCollection;
+    class WoodlandMansionPiece;
     // clang-format on
 
     // WoodlandMansionPieces inner types define
@@ -54,125 +54,6 @@ public:
         virtual ::std::string get2x2(::Random& random) = 0;
 
         virtual ::std::string get2x2Secret(::Random& random) = 0;
-        // NOLINTEND
-    };
-
-    struct PlacementData {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<1, 1, ::Rotation>     mRotation;
-        ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
-        ::ll::TypedStorage<8, 32, ::std::string> mWallType;
-        // NOLINTEND
-    };
-
-    class SimpleGrid {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<int>>> mGrid;
-        ::ll::TypedStorage<4, 4, int>                                mWidth;
-        ::ll::TypedStorage<4, 4, int>                                mHeight;
-        ::ll::TypedStorage<4, 4, int>                                mValueIfOutside;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI bool edgesTo(int x, int y, int ifValue);
-        // NOLINTEND
-    };
-
-    class WoodlandMansionPiece : public ::TemplateStructurePiece {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
-        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
-        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
-        ::ll::TypedStorage<1, 1, ::Mirror>                                           mMirror;
-        ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
-        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mVindicatorPositions;
-        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mEvokerPositions;
-        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mAllayGroupPositions;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        WoodlandMansionPiece();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ::StructurePieceType getType() const /*override*/;
-
-        virtual void
-        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
-
-        virtual void _handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
-        ) /*override*/;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI WoodlandMansionPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation
-        );
-
-        MCNAPI WoodlandMansionPiece(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            ::Mirror                                          mirror
-        );
-        // NOLINTEND
-
-    public:
-        // constructor thunks
-        // NOLINTBEGIN
-        MCNAPI void* $ctor(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation
-        );
-
-        MCNAPI void* $ctor(
-            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
-            ::std::string const&                              templateName,
-            ::BlockPos const&                                 origin,
-            ::Rotation                                        rotation,
-            ::Mirror                                          mirror
-        );
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI ::StructurePieceType $getType() const;
-
-        MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
-
-        MCNAPI void $_handleDataMarker(
-            ::std::string const& markerId,
-            ::BlockPos const&    position,
-            ::BlockSource&       region,
-            ::Random&            random,
-            ::BoundingBox const& chunkBB
-        );
-
-
         // NOLINTEND
     };
 
@@ -215,6 +96,75 @@ public:
         MCNAPI ::std::string $get2x2Secret(::Random& random);
 
 
+        // NOLINTEND
+    };
+
+    struct PlacementData {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<1, 1, ::Rotation>     mRotation;
+        ::ll::TypedStorage<4, 12, ::BlockPos>    mPosition;
+        ::ll::TypedStorage<8, 32, ::std::string> mWallType;
+        // NOLINTEND
+    };
+
+    class SecondFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~SecondFloorRoomCollection() /*override*/ = default;
+
+        virtual ::std::string get1x1(::Random& random) /*override*/;
+
+        virtual ::std::string get1x1Secret(::Random& random) /*override*/;
+
+        virtual ::std::string get1x2SideEntrance(::Random& random, bool isStairsRoom) /*override*/;
+
+        virtual ::std::string get1x2FrontEntrance(::Random& random, bool isStairsRoom) /*override*/;
+
+        virtual ::std::string get1x2Secret(::Random& random) /*override*/;
+
+        virtual ::std::string get2x2(::Random& random) /*override*/;
+
+        virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI ::std::string $get1x1(::Random& random);
+
+        MCNAPI ::std::string $get1x1Secret(::Random& random);
+
+        MCNAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
+
+        MCNAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
+
+        MCNAPI ::std::string $get1x2Secret(::Random& random);
+
+        MCNAPI ::std::string $get2x2(::Random& random);
+
+        MCNAPI ::std::string $get2x2Secret(::Random& random);
+
+
+        // NOLINTEND
+    };
+
+    class SimpleGrid {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::std::vector<::std::vector<int>>> mGrid;
+        ::ll::TypedStorage<4, 4, int>                                mWidth;
+        ::ll::TypedStorage<4, 4, int>                                mHeight;
+        ::ll::TypedStorage<4, 4, int>                                mValueIfOutside;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI bool edgesTo(int x, int y, int ifValue);
         // NOLINTEND
     };
 
@@ -313,49 +263,99 @@ public:
         // NOLINTEND
     };
 
-    class SecondFloorRoomCollection : public ::WoodlandMansionPieces::FloorRoomCollection {
+    class ThirdFloorRoomCollection : public ::WoodlandMansionPieces::SecondFloorRoomCollection {};
+
+    class WoodlandMansionPiece : public ::TemplateStructurePiece {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::TypedStorage<8, 24, ::Bedrock::NotNullNonOwnerPtr<::StructureManager>> mStructureManager;
+        ::ll::TypedStorage<8, 32, ::std::string>                                     mTemplateName;
+        ::ll::TypedStorage<1, 1, ::Rotation>                                         mRotation;
+        ::ll::TypedStorage<1, 1, ::Mirror>                                           mMirror;
+        ::ll::TypedStorage<4, 12, ::BlockPos>                                        mPosition;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mVindicatorPositions;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mEvokerPositions;
+        ::ll::TypedStorage<8, 24, ::std::vector<::BlockPos>>                         mAllayGroupPositions;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        WoodlandMansionPiece();
+
     public:
         // virtual functions
         // NOLINTBEGIN
-        virtual ~SecondFloorRoomCollection() /*override*/ = default;
+        virtual ::StructurePieceType getType() const /*override*/;
 
-        virtual ::std::string get1x1(::Random& random) /*override*/;
+        virtual void
+        postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB) /*override*/;
 
-        virtual ::std::string get1x1Secret(::Random& random) /*override*/;
+        virtual void _handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        ) /*override*/;
+        // NOLINTEND
 
-        virtual ::std::string get1x2SideEntrance(::Random& random, bool isStairsRoom) /*override*/;
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI WoodlandMansionPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation
+        );
 
-        virtual ::std::string get1x2FrontEntrance(::Random& random, bool isStairsRoom) /*override*/;
+        MCNAPI WoodlandMansionPiece(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            ::Mirror                                          mirror
+        );
+        // NOLINTEND
 
-        virtual ::std::string get1x2Secret(::Random& random) /*override*/;
+    public:
+        // constructor thunks
+        // NOLINTBEGIN
+        MCNAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation
+        );
 
-        virtual ::std::string get2x2(::Random& random) /*override*/;
-
-        virtual ::std::string get2x2Secret(::Random& random) /*override*/;
+        MCNAPI void* $ctor(
+            ::Bedrock::NotNullNonOwnerPtr<::StructureManager> structureManager,
+            ::std::string const&                              templateName,
+            ::BlockPos const&                                 origin,
+            ::Rotation                                        rotation,
+            ::Mirror                                          mirror
+        );
         // NOLINTEND
 
     public:
         // virtual function thunks
         // NOLINTBEGIN
-        MCNAPI ::std::string $get1x1(::Random& random);
+        MCNAPI ::StructurePieceType $getType() const;
 
-        MCNAPI ::std::string $get1x1Secret(::Random& random);
+        MCNAPI void $postProcessMobsAt(::BlockSource& region, ::Random& random, ::BoundingBox const& chunkBB);
 
-        MCNAPI ::std::string $get1x2SideEntrance(::Random& random, bool isStairsRoom);
-
-        MCNAPI ::std::string $get1x2FrontEntrance(::Random& random, bool isStairsRoom);
-
-        MCNAPI ::std::string $get1x2Secret(::Random& random);
-
-        MCNAPI ::std::string $get2x2(::Random& random);
-
-        MCNAPI ::std::string $get2x2Secret(::Random& random);
+        MCNAPI void $_handleDataMarker(
+            ::std::string const& markerId,
+            ::BlockPos const&    position,
+            ::BlockSource&       region,
+            ::Random&            random,
+            ::BoundingBox const& chunkBB
+        );
 
 
         // NOLINTEND
     };
-
-    class ThirdFloorRoomCollection : public ::WoodlandMansionPieces::SecondFloorRoomCollection {};
 
     using FloorRoomCollection = ::WoodlandMansionPieces::FloorRoomCollection;
 

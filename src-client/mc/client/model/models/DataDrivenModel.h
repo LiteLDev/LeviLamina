@@ -70,7 +70,7 @@ public:
 
     MCNAPI bool hasScript(::HashedString const& name) const;
 
-    MCNAPI void render(
+    MCAPI void render(
         ::std::shared_ptr<::DataDrivenRenderer> renderer,
         ::ActorRenderData&                      actorRenderData,
         ::Vec3 const&                           modelTranslationWithWorldRotation,

@@ -14,33 +14,33 @@ MCAPI ::TerrainLayer const& Alpha();
 
 MCAPI ::TerrainLayer const& AlphaSeasons();
 
-MCNAPI ::TerrainLayer const& AlphaShifts();
+MCAPI ::TerrainLayer const& AlphaShifts();
 
 MCAPI ::TerrainLayer const& AlphaSingleSide();
 
-MCNAPI ::TerrainLayer const& AlphaSingleSideShifts();
+MCAPI ::TerrainLayer const& AlphaSingleSideShifts();
 
 MCAPI ::TerrainLayer const& Barrier();
 
 MCAPI ::TerrainLayer const& Blend();
 
-MCNAPI ::TerrainLayer const& DeferredWater();
+MCAPI ::TerrainLayer const& DeferredWater();
 
 MCAPI ::TerrainLayer const& DoubleSide();
 
 MCAPI ::TerrainLayer const& EndPortal();
 
-MCNAPI ::TerrainLayer const& Light();
+MCAPI ::TerrainLayer const& Light();
 
-MCNAPI ::TerrainLayer const& LightSource();
+MCAPI ::TerrainLayer const& LightSource();
 
 MCAPI ::TerrainLayer const& Opaque();
 
 MCAPI ::TerrainLayer const& OpaqueSeasons();
 
-MCNAPI ::TerrainLayer const& OpaqueShifts();
+MCAPI ::TerrainLayer const& OpaqueShifts();
 
-MCNAPI ::TerrainLayer const& RayTracedWater();
+MCAPI ::TerrainLayer const& RayTracedWater();
 
 MCAPI ::TerrainLayer const& StructureVoid();
 // NOLINTEND

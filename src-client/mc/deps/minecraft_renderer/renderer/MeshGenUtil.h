@@ -13,7 +13,7 @@ namespace mce::MeshGenUtil {
 // NOLINTBEGIN
 MCNAPI ::mce::VertexLayout findVertexLayout(::mce::MeshData const& data, bool splitStream);
 
-MCNAPI void generateOldStyleVertexBufferData(
+MCAPI void generateOldStyleVertexBufferData(
     ::mce::MeshData const&                      data,
     ::mce::VertexLayout const&                  layout,
     ::std::vector<uchar>&                       dataOut,

@@ -147,7 +147,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $preRender(
+    MCFOLD void $preRender(
         ::BaseActorRenderContext& renderContext,
         ::ActorRenderData&        actorRenderData,
         ::RenderParams&           renderParams

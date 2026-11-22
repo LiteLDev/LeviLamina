@@ -75,7 +75,7 @@ public:
 
     MCAPI RenderMaterial(::mce::RenderMaterial const& parent);
 
-    MCNAPI ::mce::ActorMaterialVariation
+    MCAPI ::mce::ActorMaterialVariation
     getActorVariation(::mce::MaterialRenderType renderType, bool pointLightShadingEnabled);
 
     MCNAPI ::std::optional<::mce::MaterialType> const getMaterialType();

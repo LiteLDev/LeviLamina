@@ -68,10 +68,10 @@ public:
         ::Vec3&                    posDelta
     );
 
-    MCNAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
+    MCAPI static bool getPos(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos);
 
 #ifdef LL_PLAT_C
-    MCNAPI static bool getPosOffs(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos, float offs);
+    MCAPI static bool getPosOffs(::IConstBlockSource const& region, ::Vec3& valueVec, ::Vec3 pos, float offs);
 #endif
     // NOLINTEND
 

@@ -10,8 +10,8 @@ public:
     // clang-format off
     struct MinimapOreUIMarkerData;
     struct MapDimensions;
-    struct MinimapHoverInfo;
     struct MinimapData;
+    struct MinimapHoverInfo;
     // clang-format on
 
     // EditorMinimapFacet inner types define
@@ -19,9 +19,9 @@ public:
 
     struct MapDimensions {};
 
-    struct MinimapHoverInfo {};
-
     struct MinimapData {};
+
+    struct MinimapHoverInfo {};
 };
 
 } // namespace OreUI

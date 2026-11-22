@@ -21,8 +21,8 @@ public:
     // VideoEncoderConfig inner types declare
     // clang-format off
     class EncoderSpecificSettings;
-    class VideoStreamFactoryInterface;
     class Av1EncoderSpecificSettings;
+    class VideoStreamFactoryInterface;
     class Vp8EncoderSpecificSettings;
     class Vp9EncoderSpecificSettings;
     // clang-format on
@@ -47,17 +47,6 @@ public:
         // NOLINTEND
     };
 
-    class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ::std::vector<::webrtc::VideoStream>
-        CreateEncoderStreams(::webrtc::FieldTrialsView const&, int, int, ::webrtc::VideoEncoderConfig const&) = 0;
-
-        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
-        // NOLINTEND
-    };
-
     class Av1EncoderSpecificSettings : public ::webrtc::VideoEncoderConfig::EncoderSpecificSettings {
     public:
         // member variables
@@ -77,6 +66,17 @@ public:
         virtual void FillVideoCodecAv1(::webrtc::VideoCodecAV1*) const /*override*/;
 
         virtual ~Av1EncoderSpecificSettings() /*override*/ = default;
+        // NOLINTEND
+    };
+
+    class VideoStreamFactoryInterface : public ::webrtc::RefCountInterface {
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ::std::vector<::webrtc::VideoStream>
+        CreateEncoderStreams(::webrtc::FieldTrialsView const&, int, int, ::webrtc::VideoEncoderConfig const&) = 0;
+
+        virtual ~VideoStreamFactoryInterface() /*override*/ = default;
         // NOLINTEND
     };
 

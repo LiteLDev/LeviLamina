@@ -8,8 +8,8 @@ public:
     // clang-format off
     struct PreviousPosition;
     struct RuntimeValues;
-    struct WeatherParameters;
     struct RenderRuntimeSettings;
+    struct WeatherParameters;
     // clang-format on
 
     // WeatherRenderObject inner types define
@@ -19,7 +19,7 @@ public:
 
     struct RuntimeValues {};
 
-    struct WeatherParameters {};
-
     struct RenderRuntimeSettings {};
+
+    struct WeatherParameters {};
 };

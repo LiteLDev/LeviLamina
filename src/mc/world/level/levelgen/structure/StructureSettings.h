@@ -41,13 +41,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI ::BoundingBox getTransformedBoundBox() const;
+    MCAPI ::BoundingBox getTransformedBoundBox() const;
 
     MCNAPI bool operator==(::StructureSettings const& rhs) const;
 
     MCAPI void setPaletteName(::std::string paletteName);
 
-    MCNAPI void setPivot(::Vec3 const& pivot);
+    MCAPI void setPivot(::Vec3 const& pivot);
 
     MCAPI ~StructureSettings();
     // NOLINTEND

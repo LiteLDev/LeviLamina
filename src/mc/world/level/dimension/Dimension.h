@@ -351,7 +351,7 @@ public:
 
     MCNAPI void flagEntityforChunkMove(::Actor& e);
 
-    MCNAPI void flushRunTimeLighting();
+    MCAPI void flushRunTimeLighting();
 
 #ifdef LL_PLAT_C
     MCNAPI float getSkyDarken(float a) const;

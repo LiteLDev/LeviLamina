@@ -21,12 +21,12 @@ public:
     // clang-format off
     struct HistoryTimestampData;
     struct HistoryItem;
+    struct MotionHistoryItem;
+    struct MoveHistoryItem;
+    class HistoryCache;
     struct PredictionDbgWindowData;
     struct PredictionDbgData;
     struct RuntimePredictionData;
-    class HistoryCache;
-    struct MotionHistoryItem;
-    struct MoveHistoryItem;
     // clang-format on
 
     // PredictedMovementComponent inner types define
@@ -103,6 +103,130 @@ public:
         MCNAPI ::std::string $toString() const;
 
 
+        // NOLINTEND
+    };
+
+    struct MotionHistoryItem : public ::PredictedMovementComponent::HistoryItem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkeba6ba;
+        ::ll::UntypedStorage<4, 12> mUnka8087d;
+        ::ll::UntypedStorage<1, 1>  mUnkd62109;
+        ::ll::UntypedStorage<4, 12> mUnk391ca0;
+        ::ll::UntypedStorage<4, 8>  mUnkccd7ff;
+        ::ll::UntypedStorage<4, 4>  mUnk131d7f;
+        ::ll::UntypedStorage<1, 1>  mUnkeea86e;
+        ::ll::UntypedStorage<1, 1>  mUnk3bfc51;
+        ::ll::UntypedStorage<1, 1>  mUnk766402;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MotionHistoryItem& operator=(MotionHistoryItem const&);
+        MotionHistoryItem(MotionHistoryItem const&);
+        MotionHistoryItem();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool isValidStartItem() const /*override*/;
+
+        virtual bool isAddedActorItem() const /*override*/;
+
+        virtual bool isMotionHintItem() const /*override*/;
+
+        virtual ::Vec3 const& getPos() const /*override*/;
+
+        virtual ::Vec2 const& getRot() const /*override*/;
+
+        virtual float getYHeadRot() const /*override*/;
+
+        virtual bool isOnGround() const /*override*/;
+        // NOLINTEND
+    };
+
+    struct MoveHistoryItem : public ::PredictedMovementComponent::HistoryItem {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 12> mUnkf7e85b;
+        ::ll::UntypedStorage<4, 8>  mUnk188a45;
+        ::ll::UntypedStorage<4, 4>  mUnk4ca4c2;
+        ::ll::UntypedStorage<1, 1>  mUnk262622;
+        ::ll::UntypedStorage<1, 1>  mUnk1dbcf5;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        MoveHistoryItem& operator=(MoveHistoryItem const&);
+        MoveHistoryItem(MoveHistoryItem const&);
+        MoveHistoryItem();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual bool isValidStartItem() const /*override*/;
+
+        virtual bool isAddedActorItem() const /*override*/;
+
+        virtual bool isMotionHintItem() const /*override*/;
+
+        virtual ::Vec3 const& getPos() const /*override*/;
+
+        virtual ::Vec2 const& getRot() const /*override*/;
+
+        virtual float getYHeadRot() const /*override*/;
+
+        virtual bool isOnGround() const /*override*/;
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI bool $isValidStartItem() const;
+
+        MCNAPI bool $isAddedActorItem() const;
+
+        MCNAPI bool $isMotionHintItem() const;
+
+        MCNAPI ::Vec3 const& $getPos() const;
+
+        MCNAPI ::Vec2 const& $getRot() const;
+
+        MCNAPI float $getYHeadRot() const;
+
+        MCNAPI bool $isOnGround() const;
+
+
+        // NOLINTEND
+    };
+
+    class HistoryCache {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 40> mUnk7822d9;
+        ::ll::UntypedStorage<8, 16> mUnk468c22;
+        ::ll::UntypedStorage<8, 16> mUnk93cee2;
+        ::ll::UntypedStorage<8, 40> mUnk4e7465;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        HistoryCache& operator=(HistoryCache const&);
+        HistoryCache(HistoryCache const&);
+        HistoryCache();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI void _clearHistory();
+
+        MCNAPI void addHistory(
+            ::MoveActorAbsoluteData const&                 moveData,
+            ::std::chrono::steady_clock::time_point const& receiveTimepoint
+        );
         // NOLINTEND
     };
 
@@ -212,130 +336,6 @@ public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
-        // NOLINTEND
-    };
-
-    class HistoryCache {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 40> mUnk7822d9;
-        ::ll::UntypedStorage<8, 16> mUnk468c22;
-        ::ll::UntypedStorage<8, 16> mUnk93cee2;
-        ::ll::UntypedStorage<8, 40> mUnk4e7465;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HistoryCache& operator=(HistoryCache const&);
-        HistoryCache(HistoryCache const&);
-        HistoryCache();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI void _clearHistory();
-
-        MCNAPI void addHistory(
-            ::MoveActorAbsoluteData const&                 moveData,
-            ::std::chrono::steady_clock::time_point const& receiveTimepoint
-        );
-        // NOLINTEND
-    };
-
-    struct MotionHistoryItem : public ::PredictedMovementComponent::HistoryItem {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkeba6ba;
-        ::ll::UntypedStorage<4, 12> mUnka8087d;
-        ::ll::UntypedStorage<1, 1>  mUnkd62109;
-        ::ll::UntypedStorage<4, 12> mUnk391ca0;
-        ::ll::UntypedStorage<4, 8>  mUnkccd7ff;
-        ::ll::UntypedStorage<4, 4>  mUnk131d7f;
-        ::ll::UntypedStorage<1, 1>  mUnkeea86e;
-        ::ll::UntypedStorage<1, 1>  mUnk3bfc51;
-        ::ll::UntypedStorage<1, 1>  mUnk766402;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MotionHistoryItem& operator=(MotionHistoryItem const&);
-        MotionHistoryItem(MotionHistoryItem const&);
-        MotionHistoryItem();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual bool isValidStartItem() const /*override*/;
-
-        virtual bool isAddedActorItem() const /*override*/;
-
-        virtual bool isMotionHintItem() const /*override*/;
-
-        virtual ::Vec3 const& getPos() const /*override*/;
-
-        virtual ::Vec2 const& getRot() const /*override*/;
-
-        virtual float getYHeadRot() const /*override*/;
-
-        virtual bool isOnGround() const /*override*/;
-        // NOLINTEND
-    };
-
-    struct MoveHistoryItem : public ::PredictedMovementComponent::HistoryItem {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 12> mUnkf7e85b;
-        ::ll::UntypedStorage<4, 8>  mUnk188a45;
-        ::ll::UntypedStorage<4, 4>  mUnk4ca4c2;
-        ::ll::UntypedStorage<1, 1>  mUnk262622;
-        ::ll::UntypedStorage<1, 1>  mUnk1dbcf5;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        MoveHistoryItem& operator=(MoveHistoryItem const&);
-        MoveHistoryItem(MoveHistoryItem const&);
-        MoveHistoryItem();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual bool isValidStartItem() const /*override*/;
-
-        virtual bool isAddedActorItem() const /*override*/;
-
-        virtual bool isMotionHintItem() const /*override*/;
-
-        virtual ::Vec3 const& getPos() const /*override*/;
-
-        virtual ::Vec2 const& getRot() const /*override*/;
-
-        virtual float getYHeadRot() const /*override*/;
-
-        virtual bool isOnGround() const /*override*/;
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI bool $isValidStartItem() const;
-
-        MCNAPI bool $isAddedActorItem() const;
-
-        MCNAPI bool $isMotionHintItem() const;
-
-        MCNAPI ::Vec3 const& $getPos() const;
-
-        MCNAPI ::Vec2 const& $getRot() const;
-
-        MCNAPI float $getYHeadRot() const;
-
-        MCNAPI bool $isOnGround() const;
-
-
         // NOLINTEND
     };
 

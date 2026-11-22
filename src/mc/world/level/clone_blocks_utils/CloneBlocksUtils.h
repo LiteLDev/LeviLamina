@@ -17,7 +17,7 @@ namespace CloneBlocksUtils { struct FilterBlockInfo; }
 namespace CloneBlocksUtils {
 // functions
 // NOLINTBEGIN
-MCNAPI ::CloneBlocksUtils::CloneBlocksResult cloneBlocks(
+MCAPI ::CloneBlocksUtils::CloneBlocksResult cloneBlocks(
     ::BlockPos const&                                                beginLocation,
     ::BlockPos const&                                                endLocation,
     ::BlockPos const&                                                destination,

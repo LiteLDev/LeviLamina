@@ -451,7 +451,7 @@ public:
     MCNAPI void pruneBiomesAboveHeightmap();
 
 #ifdef LL_PLAT_C
-    MCNAPI void recalculateChunkSkyLight();
+    MCAPI void recalculateChunkSkyLight();
 #endif
 
     MCAPI void recomputeHeightMap(bool resetLighting);

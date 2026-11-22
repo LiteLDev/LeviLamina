@@ -35,14 +35,14 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI ConstDeserializeDataParams(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
 
-    MCNAPI ConstDeserializeDataParams(
+    MCAPI ConstDeserializeDataParams(
         ::Json::Value const&      value,
         ::SemVersion const&       formatVersion,
         ::MinEngineVersion const& minEngineVersion
     );
 #endif
 
-    MCNAPI ~ConstDeserializeDataParams();
+    MCAPI ~ConstDeserializeDataParams();
     // NOLINTEND
 
 public:
@@ -53,7 +53,7 @@ public:
 #ifdef LL_PLAT_C
     MCNAPI void* $ctor(::Json::Value const& value, ::ConstDeserializeDataParams const& parent);
 
-    MCNAPI void*
+    MCAPI void*
     $ctor(::Json::Value const& value, ::SemVersion const& formatVersion, ::MinEngineVersion const& minEngineVersion);
 #endif
     // NOLINTEND
@@ -61,6 +61,6 @@ public:
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

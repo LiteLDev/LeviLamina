@@ -16,8 +16,8 @@ public:
     // PerfContextTracker inner types declare
     // clang-format off
     class Duration;
-    class EventScope;
     class Timer;
+    class EventScope;
     // clang-format on
 
     // PerfContextTracker inner types define
@@ -49,33 +49,6 @@ public:
         MCNAPI void $reset();
 
 
-        // NOLINTEND
-    };
-
-    class EventScope {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 8>  mUnkad1144;
-        ::ll::UntypedStorage<8, 40> mUnk7fb3d1;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        EventScope& operator=(EventScope const&);
-        EventScope(EventScope const&);
-        EventScope();
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ~EventScope();
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
         // NOLINTEND
     };
 
@@ -111,6 +84,33 @@ public:
         // vftables
         // NOLINTBEGIN
         MCNAPI static void** $vftable();
+        // NOLINTEND
+    };
+
+    class EventScope {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<8, 8>  mUnkad1144;
+        ::ll::UntypedStorage<8, 40> mUnk7fb3d1;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        EventScope& operator=(EventScope const&);
+        EventScope(EventScope const&);
+        EventScope();
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ~EventScope();
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
         // NOLINTEND
     };
 

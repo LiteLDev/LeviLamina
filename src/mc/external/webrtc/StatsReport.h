@@ -12,8 +12,8 @@ class StatsReport {
 public:
     // StatsReport inner types declare
     // clang-format off
-    struct Value;
     class IdBase;
+    struct Value;
     // clang-format on
 
     // StatsReport inner types define
@@ -184,6 +184,50 @@ public:
         KStatsValueNameLocalCandidateRelayProtocol         = 143,
     };
 
+    class IdBase : public ::webrtc::RefCountInterface {
+    public:
+        // member variables
+        // NOLINTBEGIN
+        ::ll::UntypedStorage<4, 4> mUnk2bda72;
+        // NOLINTEND
+
+    public:
+        // prevent constructor by default
+        IdBase& operator=(IdBase const&);
+        IdBase(IdBase const&);
+        IdBase();
+
+    public:
+        // virtual functions
+        // NOLINTBEGIN
+        virtual ~IdBase() /*override*/;
+
+        virtual bool Equals(::webrtc::StatsReport::IdBase const& other) const;
+
+        virtual ::std::string ToString() const = 0;
+        // NOLINTEND
+
+    public:
+        // member functions
+        // NOLINTBEGIN
+        MCNAPI ::webrtc::StatsReport::StatsType type() const;
+        // NOLINTEND
+
+    public:
+        // destructor thunk
+        // NOLINTBEGIN
+        MCNAPI void $dtor();
+        // NOLINTEND
+
+    public:
+        // virtual function thunks
+        // NOLINTBEGIN
+        MCNAPI bool $Equals(::webrtc::StatsReport::IdBase const& other) const;
+
+
+        // NOLINTEND
+    };
+
     struct Value {
     public:
         // Value inner types define
@@ -231,50 +275,6 @@ public:
         // member functions
         // NOLINTBEGIN
         MCNAPI ::std::string const& string_val() const;
-        // NOLINTEND
-    };
-
-    class IdBase : public ::webrtc::RefCountInterface {
-    public:
-        // member variables
-        // NOLINTBEGIN
-        ::ll::UntypedStorage<4, 4> mUnk2bda72;
-        // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        IdBase& operator=(IdBase const&);
-        IdBase(IdBase const&);
-        IdBase();
-
-    public:
-        // virtual functions
-        // NOLINTBEGIN
-        virtual ~IdBase() /*override*/;
-
-        virtual bool Equals(::webrtc::StatsReport::IdBase const& other) const;
-
-        virtual ::std::string ToString() const = 0;
-        // NOLINTEND
-
-    public:
-        // member functions
-        // NOLINTBEGIN
-        MCNAPI ::webrtc::StatsReport::StatsType type() const;
-        // NOLINTEND
-
-    public:
-        // destructor thunk
-        // NOLINTBEGIN
-        MCNAPI void $dtor();
-        // NOLINTEND
-
-    public:
-        // virtual function thunks
-        // NOLINTBEGIN
-        MCNAPI bool $Equals(::webrtc::StatsReport::IdBase const& other) const;
-
-
         // NOLINTEND
     };
 

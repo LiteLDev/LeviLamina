@@ -28,8 +28,8 @@ public:
         // Impl inner types declare
         // clang-format off
         struct AsyncItem;
-        struct WorkMap;
         class AsyncItemQueue;
+        struct WorkMap;
         // clang-format on
 
         // Impl inner types define
@@ -46,6 +46,20 @@ public:
             AsyncItem& operator=(AsyncItem const&);
             AsyncItem(AsyncItem const&);
             AsyncItem();
+        };
+
+        class AsyncItemQueue {
+        public:
+            // member variables
+            // NOLINTBEGIN
+            ::ll::UntypedStorage<8, 104> mUnk7533b0;
+            // NOLINTEND
+
+        public:
+            // prevent constructor by default
+            AsyncItemQueue& operator=(AsyncItemQueue const&);
+            AsyncItemQueue(AsyncItemQueue const&);
+            AsyncItemQueue();
         };
 
         struct WorkMap {
@@ -99,20 +113,6 @@ public:
             WorkMap& operator=(WorkMap const&);
             WorkMap(WorkMap const&);
             WorkMap();
-        };
-
-        class AsyncItemQueue {
-        public:
-            // member variables
-            // NOLINTBEGIN
-            ::ll::UntypedStorage<8, 104> mUnk7533b0;
-            // NOLINTEND
-
-        public:
-            // prevent constructor by default
-            AsyncItemQueue& operator=(AsyncItemQueue const&);
-            AsyncItemQueue(AsyncItemQueue const&);
-            AsyncItemQueue();
         };
 
     public:

@@ -7,23 +7,23 @@ public:
     // HudDebugOverlayRenderer inner types declare
     // clang-format off
     struct WorkerStatsSnapshot;
-    struct TaskStatsSnapshot;
-    struct SpinLockMetrics;
     struct WorkerStats;
+    struct TaskStatsSnapshot;
     struct TaskStats;
+    struct SpinLockMetrics;
     struct SpinLockStats;
     // clang-format on
 
     // HudDebugOverlayRenderer inner types define
     struct WorkerStatsSnapshot {};
 
-    struct TaskStatsSnapshot {};
-
-    struct SpinLockMetrics {};
-
     struct WorkerStats {};
 
+    struct TaskStatsSnapshot {};
+
     struct TaskStats {};
+
+    struct SpinLockMetrics {};
 
     struct SpinLockStats {};
 };

@@ -41,8 +41,8 @@ public:
     class Connection;
     class Channel;
     class ConnectionSpy;
-    class SignalingServiceSpy;
     class JsonRpcInterop;
+    class SignalingServiceSpy;
     // clang-format on
 
     // SignalingService inner types define
@@ -194,8 +194,6 @@ public:
 
     class ConnectionSpy {};
 
-    class SignalingServiceSpy {};
-
     class JsonRpcInterop : public ::ISignalingJsonRpcInterop, public ::JsonRpc::IObserver {
     public:
         // member variables
@@ -291,6 +289,8 @@ public:
 
         // NOLINTEND
     };
+
+    class SignalingServiceSpy {};
 
 public:
     // member variables
