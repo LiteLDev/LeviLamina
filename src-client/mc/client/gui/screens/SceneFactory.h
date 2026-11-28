@@ -408,7 +408,7 @@ public:
     MCNAPI ::std::shared_ptr<::AbstractScene>
     createInGameSceneFromUrl(::std::string const& url, ::OreUI::RouteMode mode);
 
-    MCNAPI ::std::shared_ptr<::AbstractScene>
+    MCAPI ::std::shared_ptr<::AbstractScene>
     createInGameScreen(::std::string const& name, ::Player& player, ::BlockPos const& pos, ::ActorUniqueID uniqueId);
 
     MCNAPI ::std::shared_ptr<::AbstractScene> createInventoryScreen(::CraftingType craftingType);
@@ -763,7 +763,7 @@ public:
 
     MCNAPI void precacheGameplayScreens();
 
-    MCNAPI void registerInGameScreen(
+    MCAPI void registerInGameScreen(
         ::std::string const& registeredName,
         ::std::string const& resourceName,
         ::std::function<::std::shared_ptr<

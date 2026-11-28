@@ -31,7 +31,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI WebToken(::WebToken const&);
+    MCAPI WebToken(::WebToken const&);
 
     MCNAPI ::std::string getKeyId() const;
 
@@ -74,13 +74,13 @@ public:
         ::std::variant<::PublicKeySignatureType, ::CertificateSNIType> const& signatureType
     );
 
-    MCNAPI static ::std::optional<::WebToken> parse(::std::string_view token, uint64 maxLength);
+    MCAPI static ::std::optional<::WebToken> parse(::std::string_view token, uint64 maxLength);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::WebToken const&);
+    MCAPI void* $ctor(::WebToken const&);
     // NOLINTEND
 
 public:

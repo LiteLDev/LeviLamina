@@ -226,7 +226,7 @@ public:
 
     MCAPI ::ItemStackBase const& _getVisualItemStack(::std::string const& collectionName, int collectionIndex) const;
 
-    MCNAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
+    MCAPI void _handleAddAllToCursor(::std::string const& collectionName, int collectionIndex);
 
     MCAPI void _handleAutoPlace(int amount, ::std::string const& collectionName, int index);
 
@@ -235,9 +235,9 @@ public:
 
     MCAPI void _handleDropSelectedItem(::ItemTransferAmount transferAmount);
 
-    MCNAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
+    MCAPI void _handleSplit(::std::string const& collectionName, int collectionIndex);
 
-    MCNAPI void _handleTakeAll(::std::string const& collectionName, int index);
+    MCAPI void _handleTakeAll(::std::string const& collectionName, int index);
 
     MCAPI void _handleTakeAmount(int amount, ::std::string const& collectionName, int index);
 

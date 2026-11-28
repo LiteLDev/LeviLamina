@@ -79,7 +79,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void updateAttribute(
+    MCAPI static void updateAttribute(
         ::AttributeData const&          attributeData,
         ::AttributeInstanceRef          attributeRef,
         ::AttributeModificationContext& context

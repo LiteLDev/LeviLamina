@@ -43,7 +43,7 @@ public:
 
     MCNAPI static ::LoadingState getLoadingState(::WeakRef<::EntityContext> entityRef);
 
-    MCNAPI static bool hasFinishedLoading(::EntityContext const& entity);
+    MCAPI static bool hasFinishedLoading(::EntityContext const& entity);
 
     MCNAPI static bool hasFinishedLoading(::WeakRef<::EntityContext> entityRef);
 #endif

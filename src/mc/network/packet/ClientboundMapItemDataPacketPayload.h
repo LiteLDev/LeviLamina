@@ -71,7 +71,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
+    MCAPI void applyToMap(::MapItemSavedData& map, bool resampleMap) const;
 
     MCNAPI ::std::vector<::ActorUniqueID> getMapIds() const;
 

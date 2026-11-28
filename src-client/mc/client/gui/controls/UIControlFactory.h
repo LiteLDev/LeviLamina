@@ -122,7 +122,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static void
+    MCAPI static void
     _createGradientRenderer(::CustomRenderComponent& customRenderComponent, ::UIResolvedDef const& def);
 
     MCNAPI static void _populateButtonComponent(::UIResolvedDef const& def, ::UIControl& ownerControl);

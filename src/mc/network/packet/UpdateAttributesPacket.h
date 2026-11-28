@@ -68,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit UpdateAttributesPacket(::UpdateAttributesPacketPayload payload);
+    MCAPI explicit UpdateAttributesPacket(::UpdateAttributesPacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::UpdateAttributesPacketPayload payload);
+    MCAPI void* $ctor(::UpdateAttributesPacketPayload payload);
     // NOLINTEND
 
 public:

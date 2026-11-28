@@ -28,7 +28,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PlayerUIContainerModel(::ContainerEnumName containerName, ::Player& player);
+    MCAPI PlayerUIContainerModel(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
+    MCAPI void* $ctor(::ContainerEnumName containerName, ::Player& player);
     // NOLINTEND
 
 public:

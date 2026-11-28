@@ -304,9 +304,9 @@ public:
 
     MCNAPI ::ID3D11SamplerState* getSamplerState(uint _flags, float const* _rgba);
 
-    MCNAPI void postReset();
+    MCAPI void postReset();
 
-    MCNAPI void preReset();
+    MCAPI void preReset();
 
     MCNAPI void setBlendState(uint64 _state, uint _rgba);
 
@@ -481,7 +481,7 @@ public:
 
     MCNAPI void $advanceToNextFrame();
 
-    MCNAPI void $flip();
+    MCAPI void $flip();
 
     MCNAPI void $waitForFlipQueue();
     // NOLINTEND

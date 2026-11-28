@@ -280,7 +280,7 @@ public:
 
     MCNAPI void _initBegin();
 
-    MCNAPI bool _initFinalize();
+    MCAPI bool _initFinalize();
 
     MCNAPI void _initPending(bool async);
 

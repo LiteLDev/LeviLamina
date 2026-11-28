@@ -470,11 +470,11 @@ public:
 
     MCNAPI void $destroy();
 
-    MCNAPI void $setOutputDevice(::SoundSystemGUID& outputDevice);
+    MCAPI void $setOutputDevice(::SoundSystemGUID& outputDevice);
 
     MCNAPI void $setAsyncLoadFunction(::std::function<void(::SoundLoadTask)> asyncLoad);
 
-    MCNAPI void $enable(bool status);
+    MCAPI void $enable(bool status);
 
     MCNAPI void $mute(bool muted);
 
@@ -617,7 +617,7 @@ public:
 
     MCNAPI ::std::string $getCurrentlyPlayingEventName() const;
 
-    MCNAPI void $update(float elapsedTime);
+    MCAPI void $update(float elapsedTime);
 
     MCNAPI void $playSound(
         float                 x,
@@ -704,7 +704,7 @@ public:
 
     MCNAPI void $playRawUISoundStream(uint64 handle);
 
-    MCNAPI void $pauseRawUISoundStream(uint64 handle);
+    MCAPI void $pauseRawUISoundStream(uint64 handle);
 
     MCNAPI void $feedRawUISoundStream(uint64 handle, int samples, float** pcm, int channels);
 

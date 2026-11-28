@@ -69,7 +69,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCAPI PathFinder(::BlockSource& region, ::NavigationComponent const& navigation);
 
     MCNAPI bool _checkBlockAndNeighborsProperty(
         ::ActorPathingData const&                                data,
@@ -169,13 +169,13 @@ public:
         ::CanClimbIntoNode        climbIntoNode
     );
 
-    MCNAPI ~PathFinder();
+    MCAPI ~PathFinder();
     // NOLINTEND
 
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::ActorPathingData extractPathingData(
+    MCAPI static ::ActorPathingData extractPathingData(
         ::Actor&                        mutableActor,
         ::PathFinder::ExtractionPurpose purpose,
         ::std::optional<::Vec3>         targetPos
@@ -191,12 +191,12 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
+    MCAPI void* $ctor(::BlockSource& region, ::NavigationComponent const& navigation);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

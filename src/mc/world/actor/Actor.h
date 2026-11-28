@@ -1315,7 +1315,7 @@ public:
 
     MCNAPI bool $isAlive() const;
 
-    MCNAPI bool $isOnFire() const;
+    MCAPI bool $isOnFire() const;
 
     MCNAPI bool $isSurfaceMob() const;
 

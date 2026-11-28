@@ -60,7 +60,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
+    MCAPI HudContainerManagerModel(::ContainerID containerId, ::Player& player);
 
 #ifdef LL_PLAT_C
     MCNAPI void cleanUpDynamicContainers();
@@ -72,7 +72,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ContainerID containerId, ::Player& player);
+    MCAPI void* $ctor(::ContainerID containerId, ::Player& player);
     // NOLINTEND
 
 public:

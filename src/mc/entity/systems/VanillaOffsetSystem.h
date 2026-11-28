@@ -103,7 +103,7 @@ public:
 public:
     // static functions
     // NOLINTBEGIN
-    MCNAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
+    MCAPI static ::Vec3 getCameraPosition(::Actor const& actor, float alpha);
     // NOLINTEND
 
 public:

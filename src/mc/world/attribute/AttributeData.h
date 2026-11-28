@@ -35,24 +35,24 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit AttributeData(::AttributeInstance const& instance);
+    MCAPI explicit AttributeData(::AttributeInstance const& instance);
 
     MCNAPI ::Bedrock::Result<void> read(::ReadOnlyBinaryStream& stream);
 
     MCNAPI void write(::BinaryStream& stream) const;
 
-    MCNAPI ~AttributeData();
+    MCAPI ~AttributeData();
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::AttributeInstance const& instance);
+    MCAPI void* $ctor(::AttributeInstance const& instance);
     // NOLINTEND
 
 public:
     // destructor thunk
     // NOLINTBEGIN
-    MCNAPI void $dtor();
+    MCAPI void $dtor();
     // NOLINTEND
 };

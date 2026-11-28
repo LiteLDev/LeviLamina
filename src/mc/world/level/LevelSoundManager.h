@@ -226,7 +226,7 @@ public:
         ::DimensionType                     dimension
     );
 
-    MCNAPI void playPredictiveSynchronizedSound(
+    MCAPI void playPredictiveSynchronizedSound(
         ::IDimension&                  dimension,
         ::SoundEventIdentifier const&  soundEvent,
         ::Vec3 const&                  pos,

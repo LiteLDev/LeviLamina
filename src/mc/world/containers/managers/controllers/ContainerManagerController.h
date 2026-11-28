@@ -199,9 +199,9 @@ public:
     // member functions
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
+    MCAPI explicit ContainerManagerController(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
 
-    MCNAPI void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
+    MCAPI void _addContainer(::std::shared_ptr<::ContainerController> uiContainer);
 
     MCNAPI void _addOutputsAsDestinations(
         ::ContainerScreenActionResult const& result,
@@ -369,7 +369,7 @@ public:
     // constructor thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void* $ctor(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
+    MCAPI void* $ctor(::std::weak_ptr<::ContainerManagerModel> containerManagerModel);
 #endif
     // NOLINTEND
 
@@ -385,7 +385,7 @@ public:
     // virtual function thunks
     // NOLINTBEGIN
 #ifdef LL_PLAT_C
-    MCNAPI void $postInit(::std::weak_ptr<::ContainerManagerController> self);
+    MCFOLD void $postInit(::std::weak_ptr<::ContainerManagerController> self);
 
     MCNAPI void $registerContainerCallbacks();
 

@@ -288,7 +288,7 @@ public:
 
     MCNAPI void setCommandsEnabled(bool commandsEnabled);
 
-    MCNAPI void setDaylightCycle(::DaylightCycle daylightCycle);
+    MCAPI void setDaylightCycle(::DaylightCycle daylightCycle);
 
     MCNAPI void setEduSharedUriResource(::EduSharedUriResource const& eduSharedUriResource);
 

@@ -67,7 +67,7 @@ public:
 
     MCAPI ResourceLocation(::Core::PathView path, ::ResourceFileSystem fileSystem);
 
-    MCNAPI ::Core::PathBuffer<::std::string> getFullPath() const;
+    MCAPI ::Core::PathBuffer<::std::string> getFullPath() const;
 
 #ifdef LL_PLAT_C
     MCNAPI ::HashedString getHashedPath() const;

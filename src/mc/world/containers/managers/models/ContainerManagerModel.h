@@ -177,7 +177,7 @@ public:
 
     MCAPI bool $isServerAuthoritative() const;
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
     MCAPI void $serverInitItemStackIds();
 

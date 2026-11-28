@@ -997,7 +997,7 @@ public:
     MCAPI bool isItemOnCooldown(::HashedString const& category) const;
 
 #ifdef LL_PLAT_C
-    MCNAPI bool isScoping() const;
+    MCAPI bool isScoping() const;
 #endif
 
     MCNAPI void playPredictiveSynchronizedSound(

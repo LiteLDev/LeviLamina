@@ -224,7 +224,7 @@ public:
 
     MCAPI void $_postLevelRender(::ScreenContext& screenContext, ::LevelRenderer& levelRenderer);
 
-    MCNAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
+    MCAPI bool $_shouldRenderFirstPersonObjects(::LevelRenderer& levelRenderer) const;
 
     MCNAPI bool $_updateFreeformPickDirection(
         float,
