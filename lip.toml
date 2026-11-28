@@ -1,6 +1,6 @@
 format = 4
 id = "github.com/LiteLDev/LeviLamina"
-version = "26.60.9"
+version = "26.60.10"
 
 [info]
 name = "LeviLamina"
@@ -25,7 +25,7 @@ purge = ["bedrock_server_mod.exe", "bedrock_server_mod.exe/"]
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.17"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.6-server.18"
 
 [[variants."".assets]]
 type = "zip"
@@ -51,7 +51,7 @@ platform = "win-x64"
 "github.com/LiteLDev/levilamina-loc" = "1.7.*"
 "github.com/LiteLDev/PeEditor" = "3.9.*"
 "github.com/LiteLDev/PreLoader" = "1.16.8"
-"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.17"
+"github.com/LiteLDev/bedrock-runtime-data" = "26.60.5-client.18"
 
 [[variants."".assets]]
 type = "zip"
