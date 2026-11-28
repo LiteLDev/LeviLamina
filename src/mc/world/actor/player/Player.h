@@ -895,7 +895,7 @@ public:
 #ifdef LL_PLAT_C
     MCAPI bool isOperator() const;
 
-    MCNAPI bool isScoping() const;
+    MCAPI bool isScoping() const;
 #endif
 
     MCNAPI void playPredictiveSynchronizedSound(

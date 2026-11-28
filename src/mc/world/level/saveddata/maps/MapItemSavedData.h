@@ -138,7 +138,7 @@ public:
 
     MCNAPI void copyMapData(::MapItemSavedData const& map);
 
-    MCNAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
+    MCAPI ::std::unique_ptr<::Packet> getFullDataPacket() const;
 
     MCNAPI ::std::shared_ptr<::MapItemTrackedActor> getTrackedMapEntity(::Actor& entity);
 

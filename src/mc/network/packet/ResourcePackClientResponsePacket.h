@@ -68,13 +68,13 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI explicit ResourcePackClientResponsePacket(::ResourcePackClientResponsePacketPayload payload);
+    MCAPI explicit ResourcePackClientResponsePacket(::ResourcePackClientResponsePacketPayload payload);
     // NOLINTEND
 
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::ResourcePackClientResponsePacketPayload payload);
+    MCAPI void* $ctor(::ResourcePackClientResponsePacketPayload payload);
     // NOLINTEND
 
 public:

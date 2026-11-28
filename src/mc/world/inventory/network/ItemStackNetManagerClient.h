@@ -243,7 +243,7 @@ public:
 
     MCNAPI ::ItemStackNetManagerClient::ClientScreenData const* _tryGetCurrentClientScreen() const;
 
-    MCNAPI ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
+    MCFOLD ::ItemStackNetManagerClient::ClientScreenData* _tryGetCurrentClientScreen();
 
     MCNAPI void addContainerToRequest(::ItemStackRequestId requestId, ::Container* container);
 
@@ -261,11 +261,11 @@ public:
 
     MCNAPI void clearZeroedOutItem(::Container* container, ::ItemStackRequestId const& requestId, int slot);
 
-    MCNAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
+    MCAPI ::std::unordered_map<::FullContainerName, ::std::shared_ptr<::Container>> getPredictiveContainers();
 
-    MCNAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
+    MCAPI void handleItemStackResponse(::std::vector<::ItemStackResponseInfo> const& responses);
 
-    MCNAPI void trySendBatch();
+    MCAPI void trySendBatch();
 #endif
     // NOLINTEND
 

@@ -457,7 +457,7 @@ public:
 
     MCNAPI void $tickLevelRendererCamera();
 
-    MCNAPI void $tickRain();
+    MCAPI void $tickRain();
 
     MCAPI void $onWillChangeDimension(::Player& player);
 

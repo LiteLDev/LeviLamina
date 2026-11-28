@@ -71,7 +71,7 @@ public:
     MCNAPI ::IVanillaCameraAPI::VehicleSeatCameraOptions
     $getVehicleSeatCameraOptions(::WeakRef<::EntityContext> const actorId) const;
 
-    MCNAPI ::std::optional<::IVanillaCameraAPI::PortalData> $tryGetPortalData() const;
+    MCAPI ::std::optional<::IVanillaCameraAPI::PortalData> $tryGetPortalData() const;
 
     MCNAPI ::SharedTypes::v1_21_100::PlayerViewMode $getPlayerViewPerspectiveOption() const;
 

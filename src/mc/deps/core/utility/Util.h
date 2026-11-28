@@ -71,7 +71,7 @@ MCNAPI int _splitInto(
 
 MCNAPI ::std::string base64_decode(::std::string const& encoded_string);
 
-MCNAPI ::std::string base64_encode(uchar const* bytes_to_encode, uint64 in_len, bool pad);
+MCAPI ::std::string base64_encode(uchar const* bytes_to_encode, uint64 in_len, bool pad);
 
 MCNAPI ::std::string base64url_decode(::std::string encoded);
 

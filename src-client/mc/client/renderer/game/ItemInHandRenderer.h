@@ -14,6 +14,7 @@
 #include "mc/deps/minecraft_renderer/renderer/TexturePtr.h"
 #include "mc/deps/renderer/MatrixStack.h"
 #include "mc/world/item/HandSlot.h"
+#include "mc/world/item/ItemStack.h"
 #include "mc/world/level/block/BlockShape.h"
 
 // auto generated forward declare list
@@ -28,7 +29,6 @@ class ConduitBlockActor;
 class DecoratedPotBlockActor;
 class IClientInstance;
 class ItemRenderCall;
-class ItemStack;
 class Level;
 class Mob;
 class Player;
@@ -37,7 +37,9 @@ class Tessellator;
 class TextureTessellator;
 struct Brightness;
 namespace dragon { struct RenderMetadata; }
+namespace mce { class Camera; }
 namespace mce { class TextureGroup; }
+namespace mce { struct ViewportInfo; }
 namespace mce::framebuilder { struct FrameLightingModelCapabilities; }
 // clang-format on
 
@@ -67,13 +69,13 @@ public:
         public:
             // member variables
             // NOLINTBEGIN
-            ::ll::UntypedStorage<1, 1> mUnk8b3a1f;
-            ::ll::UntypedStorage<8, 8> mUnkad04bd;
-            ::ll::UntypedStorage<8, 8> mUnk711535;
-            ::ll::UntypedStorage<8, 8> mUnk673c3d;
-            ::ll::UntypedStorage<1, 1> mUnk70d991;
-            ::ll::UntypedStorage<4, 4> mUnk1a7539;
-            ::ll::UntypedStorage<1, 1> mUnkb8460a;
+            ::ll::TypedStorage<1, 1, ::ItemInHandRenderer::OffsetForLowAspectRatio::Direction> mDirection;
+            ::ll::TypedStorage<8, 8, ::MatrixStack::MatrixStackRef&>                           mWorldMatrix;
+            ::ll::TypedStorage<8, 8, ::mce::ViewportInfo const&>                               mViewportInfo;
+            ::ll::TypedStorage<8, 8, ::mce::Camera const&>                                     mCamera;
+            ::ll::TypedStorage<1, 1, bool>                                                     mIsFirstPerson;
+            ::ll::TypedStorage<4, 4, float>                                                    mXScale;
+            ::ll::TypedStorage<1, 1, bool>                                                     mApplied;
             // NOLINTEND
 
         public:
@@ -100,17 +102,11 @@ public:
     public:
         // member variables
         // NOLINTBEGIN
-        ::ll::UntypedStorage<8, 152> mUnk22ed02;
-        ::ll::UntypedStorage<4, 4>   mUnkfb9cfa;
-        ::ll::UntypedStorage<4, 4>   mUnkf89994;
-        ::ll::UntypedStorage<4, 4>   mUnk1f4926;
+        ::ll::TypedStorage<8, 152, ::ItemStack> mItem;
+        ::ll::TypedStorage<4, 4, int>           mSlot;
+        ::ll::TypedStorage<4, 4, float>         mHeight;
+        ::ll::TypedStorage<4, 4, float>         mPreviousHeight;
         // NOLINTEND
-
-    public:
-        // prevent constructor by default
-        HandAnimationState& operator=(HandAnimationState const&);
-        HandAnimationState(HandAnimationState const&);
-        HandAnimationState();
     };
 
     using RenderMap = ::std::map<::ItemInHandRenderFrameId, ::ItemRenderCall>;

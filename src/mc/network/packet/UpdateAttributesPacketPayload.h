@@ -29,7 +29,7 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI UpdateAttributesPacketPayload(
+    MCAPI UpdateAttributesPacketPayload(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,
@@ -42,7 +42,7 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(
+    MCAPI void* $ctor(
         ::ActorRuntimeID const&                         id,
         ::BaseAttributeMap const&                       map,
         ::std::vector<::AttributeInstanceHandle> const& dirtyData,

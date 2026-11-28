@@ -73,7 +73,7 @@ public:
 
     MCNAPI bool $evaluate(::CircuitSystem& system, ::BlockPos const& pos);
 
-    MCNAPI void $setStrength(int strength);
+    MCAPI void $setStrength(int strength);
 
     MCNAPI int $getStrength() const;
 

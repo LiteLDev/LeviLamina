@@ -12,7 +12,7 @@ namespace WeatherHelpers {
 // functions
 // NOLINTBEGIN
 #ifdef LL_PLAT_C
-MCNAPI ::BlockPos const getTopSnowBlockPos(::BlockSource& region, ::BlockPos const& pos);
+MCAPI ::BlockPos const getTopSnowBlockPos(::BlockSource& region, ::BlockPos const& pos);
 #endif
 
 MCNAPI bool shouldFreeze(::BlockSource& region, ::BlockPos const& pos, bool checkNeighbors);

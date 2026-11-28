@@ -100,14 +100,14 @@ public:
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
-    MCNAPI void handleRequestBatch(
+    MCAPI void handleRequestBatch(
         ::ItemStackRequestBatch const&                       requestBatch,
         ::Bedrock::NonOwnerPointer<::TextFilteringProcessor> textFilteringProcessor
     );
 
     MCNAPI void normalTick();
 
-    MCNAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
+    MCAPI ::CallbackToken tryCloseContainerScreen(::std::function<void()> onContainerScreenCloseCB);
     // NOLINTEND
 
 public:

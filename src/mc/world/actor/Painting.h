@@ -60,7 +60,7 @@ public:
     );
 
 #ifdef LL_PLAT_C
-    MCNAPI void clientInitialize(int dir, ::std::string const& motifName);
+    MCAPI void clientInitialize(int dir, ::std::string const& motifName);
 #endif
     // NOLINTEND
 
@@ -79,17 +79,17 @@ public:
     // NOLINTBEGIN
     MCNAPI float $getShadowRadius() const;
 
-    MCNAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
+    MCAPI ::std::unique_ptr<::Packet> $tryCreateAddActorPacket();
 
     MCNAPI int $getWidth() const;
 
     MCNAPI int $getHeight() const;
 
-    MCNAPI void $dropItem();
+    MCAPI void $dropItem();
 
     MCNAPI void $remove();
 
-    MCNAPI bool $placeHangingEntity(::BlockSource& region, int direction);
+    MCAPI bool $placeHangingEntity(::BlockSource& region, int direction);
 
     MCNAPI void $addAdditionalSaveData(::CompoundTag& tag) const;
 

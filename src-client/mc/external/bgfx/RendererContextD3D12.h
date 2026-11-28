@@ -521,7 +521,7 @@ public:
 
     MCNAPI void $advanceToNextFrame();
 
-    MCNAPI void $flip();
+    MCAPI void $flip();
 
     MCNAPI void $waitForFlipQueue();
 

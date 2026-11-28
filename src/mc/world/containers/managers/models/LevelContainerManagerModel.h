@@ -71,7 +71,7 @@ public:
 
     MCAPI void $broadcastChanges();
 
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
     MCNAPI ::ContainerScreenContext $_postInit();
 

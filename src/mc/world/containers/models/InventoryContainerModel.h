@@ -51,13 +51,13 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI void $postInit();
+    MCAPI void $postInit();
 
     MCNAPI void $releaseResources();
 
     MCNAPI void $containerContentChanged(int slot);
 
-    MCNAPI bool $isValid();
+    MCFOLD bool $isValid();
 
     MCNAPI ::ContainerWeakRef $getContainerWeakRef() const;
 

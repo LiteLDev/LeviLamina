@@ -67,7 +67,7 @@ public:
 
     MCNAPI void serverTick();
 
-    MCNAPI void tick();
+    MCAPI void tick();
 
     MCNAPI bool
     tryToPlaceTopSnow(::BlockSource& region, ::BlockPos const& pos, bool fromFallingSnow, bool fillLowerNeighborsFirst);

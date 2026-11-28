@@ -40,7 +40,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI bool $isValid(float pickRange);
+    MCAPI bool $isValid(float pickRange);
 
     MCNAPI ::ContainerScreenContext $_postInit();
 

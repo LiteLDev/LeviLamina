@@ -242,7 +242,7 @@ public:
     // NOLINTBEGIN
     MCNAPI void $pauseMusic(bool state);
 
-    MCNAPI uint64 $play(
+    MCAPI uint64 $play(
         ::std::string const&                 name,
         ::Vec3 const&                        pos,
         float                                volume,
@@ -250,7 +250,7 @@ public:
         ::std::optional<::ServerSoundHandle> serverSoundHandle
     );
 
-    MCNAPI uint64 $play(::PlaySoundOptions options);
+    MCAPI uint64 $play(::PlaySoundOptions options);
 
     MCNAPI void $stop(::std::string const& name);
 
@@ -278,7 +278,7 @@ public:
 
     MCNAPI ::std::optional<::std::string> $getSubtitle(::std::string const& name) const;
 
-    MCNAPI uint64 $playUI(::std::string const& name, float volume, float pitch);
+    MCAPI uint64 $playUI(::std::string const& name, float volume, float pitch);
 
     MCNAPI void $playMusic(::PlayMusicOptions options);
 

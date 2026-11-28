@@ -396,7 +396,7 @@ public:
 
     MCNAPI ::Bedrock::LevelChunkTimingData getTimingDataDiagnosticOnly() const;
 
-    MCNAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
+    MCAPI ::BlockPos const getTopRainBlockPos(::ChunkBlockPos const& pos);
 
 #ifdef LL_PLAT_C
     MCNAPI void handleHeightmapDataFromSubChunkPacket(

@@ -100,7 +100,7 @@ public:
         ::Actor&                     actor
     );
 
-    MCNAPI void setupAttachableNoChecks(
+    MCAPI void setupAttachableNoChecks(
         ::ItemStack const&           itemInstance,
         ::AttachableSlotIndex const& attachableSlotIndex,
         ::RenderParams&              renderParams,

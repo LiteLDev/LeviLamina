@@ -27,16 +27,16 @@ public:
         // member functions
         // NOLINTBEGIN
 #ifdef LL_PLAT_C
-        MCNAPI ::Motif const& getMotifByName(::std::string const& name) const;
+        MCAPI ::Motif const& getMotifByName(::std::string const& name) const;
 #endif
 
-        MCNAPI void init(::BaseGameVersion const& baseGameVersion);
+        MCAPI void init(::BaseGameVersion const& baseGameVersion);
         // NOLINTEND
 
     public:
         // static functions
         // NOLINTBEGIN
-        MCNAPI static ::Motif::Registry& get();
+        MCAPI static ::Motif::Registry& get();
         // NOLINTEND
     };
 
@@ -58,9 +58,9 @@ public:
 public:
     // member functions
     // NOLINTBEGIN
-    MCNAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
+    MCAPI Motif(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
 
-    MCNAPI ::std::string const getName() const;
+    MCFOLD ::std::string const getName() const;
     // NOLINTEND
 
 public:
@@ -172,6 +172,6 @@ public:
 public:
     // constructor thunks
     // NOLINTBEGIN
-    MCNAPI void* $ctor(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
+    MCAPI void* $ctor(::std::string name, int w, int h, ::glm::vec4 UVs, bool isPublic, bool isSplitMeshPainting);
     // NOLINTEND
 };

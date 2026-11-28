@@ -119,7 +119,7 @@ public:
 
     MCNAPI bool biomeHasTag(::Biome const& biome, ::WellKnownTagID const& tagID) const;
 
-    MCNAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
+    MCAPI ::std::vector<::Biome const*> getBiomesInDimension(::DimensionType type) const;
 
     MCNAPI void
     initializeWithLevelStorageManagerConnector(::ILevelStorageManagerConnector& levelStorageManagerConnector);

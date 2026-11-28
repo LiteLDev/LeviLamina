@@ -281,7 +281,7 @@ public:
 
     MCNAPI bool _showPocketUI() const;
 
-    MCNAPI bool _showSurvivalUI() const;
+    MCAPI bool _showSurvivalUI() const;
 
     MCNAPI void displayOpenEmoteInstructions(::HudScreenController::ButtonLists const& buttonLists) const;
 
@@ -321,7 +321,7 @@ public:
 public:
     // virtual function thunks
     // NOLINTBEGIN
-    MCNAPI ::ui::DirtyFlag $tick();
+    MCAPI ::ui::DirtyFlag $tick();
 
     MCNAPI bool $bind(
         ::std::string const& collectionName,

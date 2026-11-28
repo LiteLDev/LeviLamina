@@ -329,7 +329,7 @@ public:
 
     MCNAPI float getJumpEffectAmplifierValue();
 
-    MCNAPI float getJumpMultiplier();
+    MCAPI float getJumpMultiplier();
 
     MCNAPI ::JumpPreventionResult getJumpPrevention();
 
@@ -361,7 +361,7 @@ public:
 
     MCAPI void hurtArmor(::ActorDamageSource const& source, int damage);
 
-    MCNAPI bool isAbleToMove() const;
+    MCAPI bool isAbleToMove() const;
 
     MCNAPI bool isTransitioningSitting() const;
 

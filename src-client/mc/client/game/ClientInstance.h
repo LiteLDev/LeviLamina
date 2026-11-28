@@ -1492,7 +1492,7 @@ public:
 
     MCNAPI ::ListenerState const* $getListenerState() const;
 
-    MCNAPI ::Actor* $getCameraTargetActor() const;
+    MCAPI ::Actor* $getCameraTargetActor() const;
 
     MCNAPI void $setCameraTargetActor(::Actor* cameraTargetActor);
 
@@ -2134,7 +2134,7 @@ public:
 
     MCNAPI void $onBeforeSimTick();
 
-    MCNAPI void $onTick(int nTick, int maxTick);
+    MCAPI void $onTick(int nTick, int maxTick);
 
     MCNAPI void $onInternetUpdate();
 
